@@ -60,20 +60,16 @@
     },
     "lint-staged": {
         "*.{js,jsx}": [
-            "eslint --fix",
-            "git add"
+            "eslint --fix"
         ],
         "*.json": [
-            "prettier --write",
-            "git add"
+            "prettier --write"
         ],
         "*.md": [
-            "prettier --write",
-            "git add"
+            "prettier --write"
         ],
         "*.{scss}": [
-            "stylelint --config .styletinrc.json",
-            "git add"
+            "stylelint --config .styletinrc.json"
         ]
     },
     "prettier": {
