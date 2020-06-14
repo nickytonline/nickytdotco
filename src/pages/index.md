@@ -13,7 +13,7 @@ sections:
       num_posts_displayed: 4
       actions:
           - label: Blog
-            url: blog/index.html
+            url: blog
 menus:
     main:
         weight: 1
