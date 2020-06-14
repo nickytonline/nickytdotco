@@ -87,16 +87,21 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
     // underlying node.
     return graphql(`
         {
-            allMarkdownRemark {
+            allMarkdownRemark(
+                filter: { frontmatter: { tags: { nin: "weeklylearn" } } }
+            ) {
                 edges {
                     node {
-                        id
                         html
+                        id
+                        frontmatter {
+                            tags
+                        }
                     }
                 }
             }
         }
-    `).then(result => {
+    `).then((result) => {
         if (result.errors) {
             return Promise.reject(result.errors);
         }
@@ -109,7 +114,7 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
         const sitePageNodes = getNodesByType('SitePage');
         const sitePageNodesByPath = _.keyBy(sitePageNodes, 'path');
 
-        const pages = nodes.map(graphQLNode => {
+        const pages = nodes.map((graphQLNode) => {
             // Use the node id to get the underlying node. It is not exactly the
             // same node returned by GraphQL, because GraphQL resolvers might
             // transform node fields.
@@ -125,7 +130,7 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
             };
         });
 
-        nodes.forEach(graphQLNode => {
+        nodes.forEach((graphQLNode) => {
             const node = getNode(graphQLNode.id);
             const url = node.fields.url;
             const template = node.frontmatter.template;
