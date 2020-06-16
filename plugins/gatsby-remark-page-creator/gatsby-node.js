@@ -91,7 +91,7 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
             allMarkdownRemark(
                 filter: {
                     frontmatter: {
-                        tags: { nin: ["weeklylearn", "watercooler"] }
+                        tags: { nin: ["weeklylearn", "watercooler", "jokes"] }
                     }
                 }
             ) {
