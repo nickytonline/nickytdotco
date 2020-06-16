@@ -119,6 +119,7 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
             // same node returned by GraphQL, because GraphQL resolvers might
             // transform node fields.
             const node = getNode(graphQLNode.id);
+
             return {
                 url: node.fields.url,
                 relativePath: node.fields.relativePath,
@@ -132,6 +133,14 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
 
         nodes.forEach((graphQLNode) => {
             const node = getNode(graphQLNode.id);
+            const matches = /<a href="([^"]+)">This post is also available on DEV\.<\/a>/.exec(
+                graphQLNode.html,
+            );
+
+            if (matches !== null) {
+                node.frontmatter.dev_url = matches[1];
+            }
+
             const url = node.fields.url;
             const template = node.frontmatter.template;
             const component = path.resolve(`./src/templates/${template}.js`);

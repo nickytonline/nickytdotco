@@ -49,6 +49,16 @@ export default class Post extends React.Component {
                         {htmlToReact(_.get(this.props, 'pageContext.html'))}
                     </div>
                     <footer className="post-meta">
+                        <p>
+                            <a
+                                href={`${_.get(
+                                    this.props,
+                                    'pageContext.frontmatter.dev_url',
+                                )}#comments`}
+                            >
+                                Comment on the post
+                            </a>
+                        </p>
                         <time
                             className="published"
                             dateTime={moment(

@@ -368,6 +368,10 @@ models:
         name: menus
         label: Post Menus
         description: Which menus should this page show up in
+      - type: string
+        name: dev_url
+        label: DEV URL
+        description: The DEV URL for the post.
   section:
     type: object
     label: Section
