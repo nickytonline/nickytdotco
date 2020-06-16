@@ -40,6 +40,13 @@ export default class Body extends React.Component {
                                 : `Welcome to Nick Taylor's Web Site`
                         }
                     />
+                    <meta
+                        name="monetization"
+                        content={_.get(
+                            this.props,
+                            'pageContext.site.siteMetadata.monetization',
+                        )}
+                    />
                     <link rel="preload" href="https://fonts.googleapis.com" />
                     <link
                         rel="stylesheet"
