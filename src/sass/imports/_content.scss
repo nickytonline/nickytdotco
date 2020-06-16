@@ -9,6 +9,11 @@
 
 .post-header {
     margin-bottom: 1.66667em;
+
+    .published {
+        font-size: 0.8em;
+        font-style: italic;
+    }
 }
 
 .post-title {
@@ -45,10 +50,6 @@
     line-height: 1.5;
     margin-bottom: 1.66667rem;
     text-transform: uppercase;
-
-    .published {
-        font-size: 0.8em;
-    }
 }
 
 /* Post feed */

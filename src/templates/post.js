@@ -14,6 +14,22 @@ export default class Post extends React.Component {
                         <h1 className="post-title underline">
                             {_.get(this.props, 'pageContext.frontmatter.title')}
                         </h1>
+                        <time
+                            className="published"
+                            dateTime={moment(
+                                _.get(
+                                    this.props,
+                                    'pageContext.frontmatter.date',
+                                ),
+                            ).strftime('%Y-%m-%d %H:%M')}
+                        >
+                            {moment(
+                                _.get(
+                                    this.props,
+                                    'pageContext.frontmatter.date',
+                                ),
+                            ).strftime('%A, %B %e, %Y')}
+                        </time>
                     </header>
                     {_.get(this.props, 'pageContext.frontmatter.subtitle') && (
                         <div className="post-subtitle">
@@ -59,22 +75,6 @@ export default class Post extends React.Component {
                                 Comment on the post
                             </a>
                         </p>
-                        <time
-                            className="published"
-                            dateTime={moment(
-                                _.get(
-                                    this.props,
-                                    'pageContext.frontmatter.date',
-                                ),
-                            ).strftime('%Y-%m-%d %H:%M')}
-                        >
-                            {moment(
-                                _.get(
-                                    this.props,
-                                    'pageContext.frontmatter.date',
-                                ),
-                            ).strftime('%A, %B %e, %Y')}
-                        </time>
                     </footer>
                 </article>
             </Layout>
