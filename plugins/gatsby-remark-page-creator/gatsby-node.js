@@ -1,3 +1,4 @@
+/* global require, exports */
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const _ = require('lodash');
@@ -88,7 +89,11 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
     return graphql(`
         {
             allMarkdownRemark(
-                filter: { frontmatter: { tags: { nin: "weeklylearn" } } }
+                filter: {
+                    frontmatter: {
+                        tags: { nin: ["weeklylearn", "watercooler"] }
+                    }
+                }
             ) {
                 edges {
                     node {
