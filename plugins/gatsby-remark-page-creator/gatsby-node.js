@@ -160,7 +160,10 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
                     base: node.fields.base,
                     name: node.fields.name,
                     frontmatter: node.frontmatter,
-                    html: graphQLNode.html,
+                    html: graphQLNode.html.replace(
+                        /<a href="[^"]+">This post is also available on DEV\.<\/a>/,
+                        '',
+                    ),
                     pages: pages,
                     site: {
                         siteMetadata: siteNode.siteMetadata,
