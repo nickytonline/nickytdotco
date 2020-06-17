@@ -98,6 +98,7 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
                                 "jokes"
                                 "fun"
                                 "explainlikeimfive"
+                                "introductions"
                             ]
                         }
                     }
