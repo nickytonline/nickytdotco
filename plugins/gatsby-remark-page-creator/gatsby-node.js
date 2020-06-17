@@ -92,7 +92,13 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
                 filter: {
                     frontmatter: {
                         tags: {
-                            nin: ["weeklylearn", "watercooler", "jokes", "fun"]
+                            nin: [
+                                "weeklylearn"
+                                "watercooler"
+                                "jokes"
+                                "fun"
+                                "explainlikeimfive"
+                            ]
                         }
                     }
                 }
