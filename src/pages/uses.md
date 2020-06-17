@@ -48,7 +48,8 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 -   [Kap](https://getkap.co/) - Screen shares GIFs
 -   [Spectacle](https://www.spectacleapp.com/) - Awesome windows management for MacOS
 -   [Spotify](https://www.spotify.com/us/download/) - Because music.
--   [Gimp](https://www.gimp.org/downloads/) - An alternative to Photoshop.
+-   [Seashore](https://apps.apple.com/us/app/seashore/id1448648921?mt=12) - An alternative to Photoshop
+-   [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
 
 ## Additional Resources
 
