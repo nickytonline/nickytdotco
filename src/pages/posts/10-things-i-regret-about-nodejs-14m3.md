@@ -13,7 +13,7 @@ tags:
   - typescript
   - go
   - node
-canonical_url: 'https://dev.to/nickytonline/10-things-i-regret-about-nodejs-14m3'
+canonical_url: 'https://www.iamdeveloper.com/posts/10-things-i-regret-about-nodejs-14m3/'
 template: post
 ---
 

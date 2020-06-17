@@ -9,7 +9,7 @@ positive_reactions_count: 67
 tags:
   - githunt
   - git
-canonical_url: 'https://dev.to/nickytonline/git-history-20nh'
+canonical_url: 'https://www.iamdeveloper.com/posts/git-history-20nh/'
 template: post
 ---
 

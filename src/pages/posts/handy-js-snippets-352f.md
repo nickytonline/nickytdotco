@@ -8,14 +8,11 @@ comments_count: 17
 positive_reactions_count: 58
 tags:
   - javascript
-  - fun
   - showdev
-canonical_url: 'https://dev.to/nickytonline/handy-js-snippets-352f'
+canonical_url: 'https://www.iamdeveloper.com/posts/handy-js-snippets-352f/'
 template: post
 ---
 
-
-Cover image care of Flickr user [Wayne Grivell](https://www.flickr.com/photos/56462773@N07/8995095069/in/photolist-eGSdo2-eVj8Xm-F7SDKj-gyziYJ-5GmieA-aQjZ5Z-qB3MDY-gG1f-4CPscx-bdrdAv-Mcpb8-Ds5Ck5-UPFRjE-cooZaE-7JL9Ce-6hB26p-5JFmTS-aDC2mi-4RCrCE-8qaRq-adbMyX-8pCVMh-bnJfyw-sXQZ7-fnCVbL-4RCroh-dVzSH6-fckNay-pA6MdP-6VHf97-662aRZ-aiJwYD-9Liq36-pfXnJ2-81t4TV-fnoErz-76pUCy-aDFSfu-8GBKvz-dBM5-e4tTWW-9kHH6Q-r6hZzK-95uyfv-rdHr-qBJTsu-fc3tgQ-cwgbMh-7ZQGwo-UA7SdP).
 
 So it's pretty simple. I'm looking for **one or two lines of JavaScript** that do something useful.
 
@@ -117,6 +114,8 @@ const flattenedArray = [].concat(...arrayToFlatten);
 
 
 And go!
+
+Cover image care of Flickr user [Wayne Grivell](https://www.flickr.com/photos/56462773@N07/8995095069/in/photolist-eGSdo2-eVj8Xm-F7SDKj-gyziYJ-5GmieA-aQjZ5Z-qB3MDY-gG1f-4CPscx-bdrdAv-Mcpb8-Ds5Ck5-UPFRjE-cooZaE-7JL9Ce-6hB26p-5JFmTS-aDC2mi-4RCrCE-8qaRq-adbMyX-8pCVMh-bnJfyw-sXQZ7-fnCVbL-4RCroh-dVzSH6-fckNay-pA6MdP-6VHf97-662aRZ-aiJwYD-9Liq36-pfXnJ2-81t4TV-fnoErz-76pUCy-aDFSfu-8GBKvz-dBM5-e4tTWW-9kHH6Q-r6hZzK-95uyfv-rdHr-qBJTsu-fc3tgQ-cwgbMh-7ZQGwo-UA7SdP).
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/handy-js-snippets-352f)*
 

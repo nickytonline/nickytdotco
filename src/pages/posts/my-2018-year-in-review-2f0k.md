@@ -11,7 +11,7 @@ positive_reactions_count: 33
 tags:
   - yearinreview
   - webdev
-canonical_url: 'https://www.iamdeveloper.com/blog/2018-12-29-2018-year-in-review/'
+canonical_url: 'https://www.iamdeveloper.com/posts/my-2018-year-in-review-2f0k/'
 template: post
 ---
 

@@ -11,7 +11,7 @@ positive_reactions_count: 6
 tags:
   - hardware
   - discuss
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-11-05-webcam-suggestions-anyone/'
+canonical_url: 'https://www.iamdeveloper.com/posts/webcam-suggestions-anyone-125h/'
 template: post
 ---
 

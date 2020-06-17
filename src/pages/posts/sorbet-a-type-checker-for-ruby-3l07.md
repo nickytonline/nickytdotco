@@ -11,7 +11,7 @@ positive_reactions_count: 47
 tags:
   - discuss
   - ruby
-canonical_url: 'https://dev.to/nickytonline/sorbet-a-type-checker-for-ruby-3l07'
+canonical_url: 'https://www.iamdeveloper.com/posts/sorbet-a-type-checker-for-ruby-3l07/'
 template: post
 ---
 Stripe open sourced Sorbet today, a fast, powerful type checker for Ruby. 

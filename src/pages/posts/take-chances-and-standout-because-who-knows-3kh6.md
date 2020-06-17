@@ -12,7 +12,8 @@ tags:
   - career
   - interview
   - motivation
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-01-05-take-chances-and-standout/'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/take-chances-and-standout-because-who-knows-3kh6/
 template: post
 ---
 

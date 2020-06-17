@@ -13,7 +13,7 @@ tags:
   - storybook
   - javascript
   - ui
-canonical_url: 'https://www.iamdeveloper.com/blog/2018-09-02-setting-up-storybook-for-preact/'
+canonical_url: 'https://www.iamdeveloper.com/posts/setting-up-storybook-for-preact-p5a/'
 template: post
 ---
 

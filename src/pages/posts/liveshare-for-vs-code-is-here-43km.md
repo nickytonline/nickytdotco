@@ -13,7 +13,7 @@ tags:
   - pairprogramming
   - visualstudiocode
   - debugging
-canonical_url: 'https://dev.to/nickytonline/liveshare-for-vs-code-is-here-43km'
+canonical_url: 'https://www.iamdeveloper.com/posts/liveshare-for-vs-code-is-here-43km/'
 template: post
 ---
 

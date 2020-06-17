@@ -13,7 +13,7 @@ tags:
   - gatsby
   - netlify
 canonical_url: >-
-  https://dev.to/nickytonline/help-serving-assets-over-http2-for-a-gatsby-netlify-hosted-site--nc3
+  https://www.iamdeveloper.com/posts/help-serving-assets-over-http2-for-a-gatsby-netlify-hosted-site--nc3/
 template: post
 ---
 

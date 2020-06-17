@@ -13,7 +13,7 @@ tags:
   - javascript
   - browserextension
 canonical_url: >-
-  https://www.iamdeveloper.com/blog/2019-03-31-an-a11y-extension-coming-to-a-browser-near-you/
+  https://www.iamdeveloper.com/posts/an-a11y-extension-coming-to-a-browser-near-you-1mg2/
 template: post
 ---
 

@@ -10,7 +10,7 @@ comments_count: 2
 positive_reactions_count: 41
 tags:
   - hacktoberfest
-canonical_url: 'https://dev.to/nickytonline/my-hacktoberfest-2019-32i2'
+canonical_url: 'https://www.iamdeveloper.com/posts/my-hacktoberfest-2019-32i2/'
 template: post
 ---
 Originally published at [iamdeveloper.com](https://www.iamdeveloper.com/blog/2019-10-14-my-hacktoberfest-2019/)

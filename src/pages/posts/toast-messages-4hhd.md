@@ -11,7 +11,7 @@ positive_reactions_count: 37
 tags:
   - codepen
   - html
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-10-23-toast-messages/'
+canonical_url: 'https://www.iamdeveloper.com/posts/toast-messages-4hhd/'
 template: post
 ---
 

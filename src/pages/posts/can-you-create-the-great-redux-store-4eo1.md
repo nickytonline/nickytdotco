@@ -12,7 +12,7 @@ tags:
   - challenge
   - redux
   - javascript
-canonical_url: 'https://dev.to/nickytonline/can-you-create-the-great-redux-store-4eo1'
+canonical_url: 'https://www.iamdeveloper.com/posts/can-you-create-the-great-redux-store-4eo1/'
 template: post
 ---
 

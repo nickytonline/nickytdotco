@@ -14,7 +14,7 @@ tags:
   - preact
   - webpack
 canonical_url: >-
-  https://www.iamdeveloper.com/blog/2019-04-06-dev-to-with-a-typescript-or-flow-frontend-codebase/
+  https://www.iamdeveloper.com/posts/dev-to-s-frontend-a-brain-dump-in-one-act-7mg/
 template: post
 ---
 

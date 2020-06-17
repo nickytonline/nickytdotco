@@ -14,7 +14,7 @@ tags:
   - react
   - career
 canonical_url: >-
-  https://www.iamdeveloper.com/blog/2019-01-21-any-contribution-to-oss-is-valuable/
+  https://www.iamdeveloper.com/posts/any-contribution-to-open-source-is-valuable-57d3/
 template: post
 ---
 

@@ -10,7 +10,7 @@ tags:
   - npm
   - node
   - javascript
-canonical_url: 'https://dev.to/nickytonline/npm-tipstricks-10ea'
+canonical_url: 'https://www.iamdeveloper.com/posts/npm-tipstricks-10ea/'
 template: post
 ---
 

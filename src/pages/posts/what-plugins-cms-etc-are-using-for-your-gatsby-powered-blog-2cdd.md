@@ -14,7 +14,7 @@ tags:
   - react
   - blogging
 canonical_url: >-
-  https://dev.to/nickytonline/what-plugins-cms-etc-are-using-for-your-gatsby-powered-blog-2cdd
+  https://www.iamdeveloper.com/posts/what-plugins-cms-etc-are-using-for-your-gatsby-powered-blog-2cdd/
 template: post
 ---
 

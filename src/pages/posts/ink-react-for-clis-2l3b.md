@@ -12,7 +12,7 @@ tags:
   - githunt
   - react
   - cli
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-03-09-ink-react-for-clis/'
+canonical_url: 'https://www.iamdeveloper.com/posts/ink-react-for-clis-2l3b/'
 template: post
 ---
 

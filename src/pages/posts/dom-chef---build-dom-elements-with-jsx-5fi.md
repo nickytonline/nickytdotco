@@ -11,7 +11,7 @@ tags:
   - webdev
   - javascript
   - ui
-canonical_url: 'https://dev.to/nickytonline/dom-chef---build-dom-elements-with-jsx-5fi'
+canonical_url: 'https://www.iamdeveloper.com/posts/dom-chef---build-dom-elements-with-jsx-5fi/'
 template: post
 ---
 

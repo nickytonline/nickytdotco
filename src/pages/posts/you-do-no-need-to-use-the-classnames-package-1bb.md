@@ -12,7 +12,7 @@ tags:
   - javascript
   - react
 canonical_url: >-
-  https://www.iamdeveloper.com/blog/2019-10-23-you-do-no-need-to-use-the-classnames-package/
+  https://www.iamdeveloper.com/posts/you-do-no-need-to-use-the-classnames-package-1bb/
 template: post
 ---
 

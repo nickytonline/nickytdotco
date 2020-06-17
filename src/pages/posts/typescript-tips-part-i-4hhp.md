@@ -12,7 +12,7 @@ tags:
   - typescript
   - javascript
   - react
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-01-24-typescript-tips-part-i/'
+canonical_url: 'https://www.iamdeveloper.com/posts/typescript-tips-part-i-4hhp/'
 template: post
 ---
 

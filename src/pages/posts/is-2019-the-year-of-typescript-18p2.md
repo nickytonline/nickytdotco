@@ -13,7 +13,7 @@ tags:
   - typescript
   - javascript
   - flow
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-01-19-is-2019-the-year-of-typescript/'
+canonical_url: 'https://www.iamdeveloper.com/posts/is-2019-the-year-of-typescript-18p2/'
 template: post
 ---
 

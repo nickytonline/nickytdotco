@@ -8,6 +8,7 @@ comments_count: 14
 positive_reactions_count: 45
 tags:
   - discuss
+  - jokes
 canonical_url: 'https://dev.to/nickytonline/google-decides-to-not-phase-out-inbox-3ijd'
 template: post
 ---

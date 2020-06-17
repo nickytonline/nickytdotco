@@ -14,7 +14,7 @@ tags:
   - javascript
   - webdev
 canonical_url: >-
-  https://dev.to/nickytonline/formidable-labs-to-start-paying-for-oss-contributions-2l9l
+  https://www.iamdeveloper.com/posts/formidable-labs-to-start-paying-for-oss-contributions-2l9l/
 template: post
 ---
 

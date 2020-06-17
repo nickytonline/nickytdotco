@@ -2,8 +2,8 @@
 title: Google to pay JavaScript frameworks to implement performance-first code
 date: '2018-11-26T11:55:59.414Z'
 excerpt: >-
-  Photo care of Unsplash user Sharon McCutcheon  Interesting initiative by
-  Google, Google to pay JavaSc...
+  Interesting initiative by Google, Google to pay JavaScript frameworks to
+  implement performance-first...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--f1Pwx0bs--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://images.unsplash.com/photo-1526304640581-d334cdbbf45e%3Fixlib%3Drb-0.3.5%26q%3D85%26fm%3Djpg%26crop%3Dentropy%26cs%3Dsrgb%26dl%3Dsharon-mccutcheon-665638-unsplash.jpg%26s%3D31238c8c05cbaa631e25b191c79c249e
 comments_count: 30
@@ -14,12 +14,10 @@ tags:
   - javascript
   - webdev
 canonical_url: >-
-  https://dev.to/nickytonline/google-to-pay-javascript-frameworks-to-implement-performance-first-code-3f57
+  https://www.iamdeveloper.com/posts/google-to-pay-javascript-frameworks-to-implement-performance-first-code-3f57/
 template: post
 ---
 
-
-Photo care of Unsplash user [Sharon McCutcheon](https://unsplash.com/photos/8lnbXtxFGZw)
 
 Interesting initiative by Google, [Google to pay JavaScript frameworks to implement performance-first code](https://www.zdnet.com/google-amp/article/google-to-pay-javascript-frameworks-to-implement-performance-first-code).
 
@@ -39,6 +37,8 @@ Thoughts?
 
 <iframe class="liquidTag" src="https://dev.to/embed/devcomment?args=75p3" style="border: 0; width: 100%;"></iframe>
 
+
+Photo care of Unsplash user [Sharon McCutcheon](https://unsplash.com/photos/8lnbXtxFGZw)
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/google-to-pay-javascript-frameworks-to-implement-performance-first-code-3f57)*
 

@@ -10,7 +10,7 @@ comments_count: 27
 positive_reactions_count: 42
 tags:
   - hacktoberfest
-canonical_url: 'https://dev.to/nickytonline/show-off-your-hacktoberfest-swag-479'
+canonical_url: 'https://www.iamdeveloper.com/posts/show-off-your-hacktoberfest-swag-479/'
 template: post
 ---
 I completed Hacktoberfest this year. It was actually the first time I participated. I am definitively looking forward to receiving my t-shirt and stickers, but in the meantime, if you got yours, post a pic or post your tweet!

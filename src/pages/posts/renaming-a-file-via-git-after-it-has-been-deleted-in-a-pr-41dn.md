@@ -13,7 +13,7 @@ tags:
   - git
   - github
 canonical_url: >-
-  https://dev.to/nickytonline/renaming-a-file-via-git-after-it-has-been-deleted-in-a-pr-41dn
+  https://www.iamdeveloper.com/posts/renaming-a-file-via-git-after-it-has-been-deleted-in-a-pr-41dn/
 template: post
 ---
 

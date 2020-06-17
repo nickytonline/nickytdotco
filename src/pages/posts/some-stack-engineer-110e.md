@@ -10,7 +10,7 @@ comments_count: 10
 positive_reactions_count: 12
 tags:
   - discuss
-canonical_url: 'https://dev.to/nickytonline/some-stack-engineer-110e'
+canonical_url: 'https://www.iamdeveloper.com/posts/some-stack-engineer-110e/'
 template: post
 ---
 Photo by [Bill Oxford](https://unsplash.com/@bill_oxford?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/cogs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -9,8 +9,7 @@ positive_reactions_count: 12
 tags:
   - githunt
   - typescript
-canonical_url: >-
-  https://www.iamdeveloper.com/blog/2019-02-25-an-enhanced-typescript-playground/
+canonical_url: 'https://www.iamdeveloper.com/posts/an-enhanced-typescript-playground-49j6/'
 template: post
 ---
 

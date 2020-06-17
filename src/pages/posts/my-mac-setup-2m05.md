@@ -12,7 +12,7 @@ tags:
   - productivity
   - developertools
   - webdev
-canonical_url: 'https://www.iamdeveloper.com/blog/2018-01-12-my-mac-setup/'
+canonical_url: 'https://www.iamdeveloper.com/posts/my-mac-setup-2m05/'
 template: post
 ---
 

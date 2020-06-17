@@ -13,7 +13,7 @@ tags:
   - git
   - github
   - news
-canonical_url: 'https://dev.to/nickytonline/github-draft-prs-are-here--26aa'
+canonical_url: 'https://www.iamdeveloper.com/posts/github-draft-prs-are-here--26aa/'
 template: post
 ---
 

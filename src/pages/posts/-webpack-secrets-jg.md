@@ -11,7 +11,7 @@ tags:
   - webdev
   - javascript
   - node
-canonical_url: 'https://dev.to/nickytonline/-webpack-secrets-jg'
+canonical_url: 'https://www.iamdeveloper.com/posts/-webpack-secrets-jg/'
 template: post
 ---
 

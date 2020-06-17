@@ -12,7 +12,8 @@ tags:
   - discuss
   - katas
   - programming
-canonical_url: 'https://dev.to/nickytonline/what-are-your-favourite-programming-katas-site-ke2'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/what-are-your-favourite-programming-katas-site-ke2/
 template: post
 ---
 

@@ -13,7 +13,7 @@ tags:
   - typescript
   - javascript
 canonical_url: >-
-  https://dev.to/nickytonline/what-are-some-concepts-in-typescript-that-youd-like-to-know-more-about-noo
+  https://www.iamdeveloper.com/posts/what-are-some-concepts-in-typescript-that-youd-like-to-know-more-about-noo/
 template: post
 ---
 

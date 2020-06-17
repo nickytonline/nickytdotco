@@ -9,7 +9,7 @@ positive_reactions_count: 11
 tags:
   - meta
 canonical_url: >-
-  https://dev.to/nickytonline/are-there-plans-for-reviewers-of-articles-we-post--42nf
+  https://www.iamdeveloper.com/posts/are-there-plans-for-reviewers-of-articles-we-post--42nf/
 template: post
 ---
 

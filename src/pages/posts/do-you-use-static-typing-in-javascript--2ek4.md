@@ -13,7 +13,8 @@ tags:
   - javascript
   - node
   - typescript
-canonical_url: 'https://dev.to/nickytonline/do-you-use-static-typing-in-javascript--2ek4'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/do-you-use-static-typing-in-javascript--2ek4/
 template: post
 ---
 

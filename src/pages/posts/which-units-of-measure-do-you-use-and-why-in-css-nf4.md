@@ -13,7 +13,7 @@ tags:
   - css
   - frontend
 canonical_url: >-
-  https://dev.to/nickytonline/which-units-of-measure-do-you-use-and-why-in-css-nf4
+  https://www.iamdeveloper.com/posts/which-units-of-measure-do-you-use-and-why-in-css-nf4/
 template: post
 ---
 

@@ -10,7 +10,7 @@ tags:
   - githunt
   - css
   - cssinjs
-canonical_url: 'https://dev.to/nickytonline/scoped-style--36n3'
+canonical_url: 'https://www.iamdeveloper.com/posts/scoped-style--36n3/'
 template: post
 ---
 

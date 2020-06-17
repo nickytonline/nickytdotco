@@ -9,7 +9,7 @@ tags:
   - discuss
   - ruby
 canonical_url: >-
-  https://dev.to/nickytonline/what-arewere-your-go-to-resources-for-learning-ruby-and-rails-5611
+  https://www.iamdeveloper.com/posts/what-arewere-your-go-to-resources-for-learning-ruby-and-rails-5611/
 template: post
 ---
 

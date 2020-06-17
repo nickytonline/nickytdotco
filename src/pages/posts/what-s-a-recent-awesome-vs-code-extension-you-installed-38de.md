@@ -13,7 +13,7 @@ tags:
   - vscode
   - texteditor
 canonical_url: >-
-  https://dev.to/nickytonline/what-s-a-recent-awesome-vs-code-extension-you-installed-38de
+  https://www.iamdeveloper.com/posts/what-s-a-recent-awesome-vs-code-extension-you-installed-38de/
 template: post
 ---
 

@@ -12,7 +12,8 @@ tags:
   - storybook
   - react
   - talks
-canonical_url: 'https://www.iamdeveloper.com/blog/2017-06-26-react-storybook-js-montreal-talk/'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/my-talk-on-react-storybook-at-the-js-montreal-meetup-2598/
 template: post
 ---
 

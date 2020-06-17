@@ -14,7 +14,7 @@ tags:
   - cypress
   - netlify
 canonical_url: >-
-  https://www.iamdeveloper.com/blog/2019-08-15-update-dependencies-with-dependabot-cypress-and-netlify/
+  https://www.iamdeveloper.com/posts/update-dependencies-with-dependabot-cypress-and-netlify-3lkf/
 template: post
 ---
 

@@ -13,7 +13,7 @@ tags:
   - browsers
   - browserwars
   - discuss
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-05-20-the-chromium-browser-wars/'
+canonical_url: 'https://www.iamdeveloper.com/posts/the-chromium-browser-wars-51oc/'
 template: post
 ---
 

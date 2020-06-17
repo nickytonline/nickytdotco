@@ -14,7 +14,7 @@ tags:
   - webdev
   - windows
 canonical_url: >-
-  https://dev.to/nickytonline/microsoft-is-building-a-chromium-based-browser-2nca
+  https://www.iamdeveloper.com/posts/microsoft-is-building-a-chromium-based-browser-2nca/
 template: post
 ---
 

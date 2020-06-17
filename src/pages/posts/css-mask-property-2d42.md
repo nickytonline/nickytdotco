@@ -12,7 +12,7 @@ tags:
   - beginners
   - css
   - ui
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-01-09-css-mask-property/'
+canonical_url: 'https://www.iamdeveloper.com/posts/css-mask-property-2d42/'
 template: post
 ---
 

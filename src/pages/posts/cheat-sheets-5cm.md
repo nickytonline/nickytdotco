@@ -11,7 +11,7 @@ positive_reactions_count: 30
 tags:
   - discuss
   - cheatsheets
-canonical_url: 'https://dev.to/nickytonline/cheat-sheets-5cm'
+canonical_url: 'https://www.iamdeveloper.com/posts/cheat-sheets-5cm/'
 template: post
 ---
 

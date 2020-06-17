@@ -8,10 +8,9 @@ comments_count: 0
 positive_reactions_count: 11
 tags:
   - css
-  - fun
   - codepen
 canonical_url: >-
-  https://dev.to/nickytonline/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m
+  https://www.iamdeveloper.com/posts/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m/
 template: post
 ---
 

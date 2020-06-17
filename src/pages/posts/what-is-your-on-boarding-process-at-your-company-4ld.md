@@ -10,7 +10,7 @@ tags:
   - discuss
   - onboarding
 canonical_url: >-
-  https://dev.to/nickytonline/what-is-your-on-boarding-process-at-your-company-4ld
+  https://www.iamdeveloper.com/posts/what-is-your-on-boarding-process-at-your-company-4ld/
 template: post
 ---
 

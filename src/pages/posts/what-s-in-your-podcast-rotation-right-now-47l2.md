@@ -11,7 +11,8 @@ positive_reactions_count: 118
 tags:
   - discuss
   - podcast
-canonical_url: 'https://dev.to/nickytonline/what-s-in-your-podcast-rotation-right-now-47l2'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/what-s-in-your-podcast-rotation-right-now-47l2/
 template: post
 ---
 

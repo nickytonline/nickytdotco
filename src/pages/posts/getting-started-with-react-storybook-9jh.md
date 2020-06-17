@@ -13,8 +13,7 @@ tags:
   - beginners
   - storybook
   - ui
-canonical_url: >-
-  https://www.iamdeveloper.com/blog/2018-03-26-getting-started-with-react-storybook/
+canonical_url: 'https://www.iamdeveloper.com/posts/getting-started-with-react-storybook-9jh/'
 template: post
 ---
 

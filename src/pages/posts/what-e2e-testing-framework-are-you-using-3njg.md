@@ -11,7 +11,8 @@ tags:
   - testing
   - e2etesting
   - javascript
-canonical_url: 'https://dev.to/nickytonline/what-e2e-testing-framework-are-you-using-3njg'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/what-e2e-testing-framework-are-you-using-3njg/
 template: post
 ---
 

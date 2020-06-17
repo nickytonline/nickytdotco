@@ -10,7 +10,7 @@ tags:
   - git
   - productivity
   - developertools
-canonical_url: 'https://www.iamdeveloper.com/blog/2018-08-25-my-git-aliases/'
+canonical_url: 'https://www.iamdeveloper.com/posts/my-git-aliases-5dea/'
 template: post
 ---
 

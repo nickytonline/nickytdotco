@@ -10,10 +10,10 @@ comments_count: 11
 positive_reactions_count: 55
 tags:
   - gatsby
-  - oss
+  - opensource
   - typescript
   - jamstack
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-02-28-showcase-your-gatsby-site/'
+canonical_url: 'https://www.iamdeveloper.com/posts/showcase-your-gatsby-site-266/'
 template: post
 ---
 Have you created a Gatsby site that you're proud of? It could be for a client or just your personal site. Either way, you can submit it to the Gatsby showcase.

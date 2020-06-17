@@ -11,7 +11,7 @@ positive_reactions_count: 11
 tags:
   - discuss
   - smartwatch
-canonical_url: 'https://dev.to/nickytonline/apple-watch-or-a-decent-alternative-49i1'
+canonical_url: 'https://www.iamdeveloper.com/posts/apple-watch-or-a-decent-alternative-49i1/'
 template: post
 ---
 Photo by [chuttersnap](https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/watch-apple?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

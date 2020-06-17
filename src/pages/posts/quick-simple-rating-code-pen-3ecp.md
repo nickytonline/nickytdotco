@@ -10,9 +10,8 @@ comments_count: 3
 positive_reactions_count: 10
 tags:
   - css
-  - fun
   - codepen
-canonical_url: 'https://dev.to/nickytonline/quick-simple-rating-code-pen-3ecp'
+canonical_url: 'https://www.iamdeveloper.com/posts/quick-simple-rating-code-pen-3ecp/'
 template: post
 ---
 

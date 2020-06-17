@@ -12,7 +12,7 @@ tags:
   - zsh
   - cli
   - shell
-canonical_url: 'https://www.iamdeveloper.com/blog/2019-10-10-my-shell-aliases/'
+canonical_url: 'https://www.iamdeveloper.com/posts/my-shell-aliases-1obk/'
 template: post
 ---
 

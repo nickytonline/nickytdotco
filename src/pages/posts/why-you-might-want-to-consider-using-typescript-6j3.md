@@ -10,7 +10,8 @@ tags:
   - beginners
   - typescript
   - javascript
-canonical_url: 'https://www.iamdeveloper.com/blog/2017-10-07-consider-using-typescript/'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/why-you-might-want-to-consider-using-typescript-6j3/
 template: post
 ---
 

@@ -12,7 +12,7 @@ tags:
   - discuss
   - infrastructure
   - ourstack
-canonical_url: 'https://dev.to/nickytonline/whats-your-tech-stack-1301'
+canonical_url: 'https://www.iamdeveloper.com/posts/whats-your-tech-stack-1301/'
 template: post
 ---
 

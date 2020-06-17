@@ -8,9 +8,8 @@ comments_count: 6
 positive_reactions_count: 20
 tags:
   - css
-  - fun
   - codepen
-canonical_url: 'https://dev.to/nickytonline/a--notification-code-pen-4o0n'
+canonical_url: 'https://www.iamdeveloper.com/posts/a--notification-code-pen-4o0n/'
 template: post
 ---
 

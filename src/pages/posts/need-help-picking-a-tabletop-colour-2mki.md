@@ -9,7 +9,7 @@ comments_count: 4
 positive_reactions_count: 6
 tags:
   - homeoffice
-canonical_url: 'https://dev.to/nickytonline/need-help-picking-a-tabletop-colour-2mki'
+canonical_url: 'https://www.iamdeveloper.com/posts/need-help-picking-a-tabletop-colour-2mki/'
 template: post
 ---
 Hey peeps, I'm gonna buy a motorized standing desk with some award points I got from work. Which colour top should I go with? Mind chiming in on the Twitter poll? 🙏

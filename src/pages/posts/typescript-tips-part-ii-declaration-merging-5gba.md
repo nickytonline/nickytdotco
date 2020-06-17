@@ -13,7 +13,7 @@ tags:
   - webdev
   - frontend
 canonical_url: >-
-  https://www.iamdeveloper.com/blog/2019-02-11-typescript-tips-part-declaration-merging/
+  https://www.iamdeveloper.com/posts/typescript-tips-part-ii-declaration-merging-5gba/
 template: post
 ---
 

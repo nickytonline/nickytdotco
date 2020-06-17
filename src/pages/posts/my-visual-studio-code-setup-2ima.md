@@ -11,7 +11,7 @@ tags:
   - developertools
   - texteditor
   - vscode
-canonical_url: 'https://www.iamdeveloper.com/blog/2017-12-20-my-visual-studio-code-setup/'
+canonical_url: 'https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/'
 template: post
 ---
 

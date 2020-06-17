@@ -12,7 +12,7 @@ tags:
   - typescript
   - flow
 canonical_url: >-
-  https://dev.to/nickytonline/dev-to-with-a-typescript-or-flow-frontend-codebase-1n33
+  https://www.iamdeveloper.com/posts/dev-to-with-a-typescript-or-flow-frontend-codebase-1n33/
 template: post
 ---
 

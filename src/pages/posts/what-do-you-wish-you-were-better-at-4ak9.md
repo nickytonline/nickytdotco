@@ -12,7 +12,7 @@ tags:
   - discuss
   - mentorship
   - career
-canonical_url: 'https://dev.to/nickytonline/what-do-you-wish-you-were-better-at-4ak9'
+canonical_url: 'https://www.iamdeveloper.com/posts/what-do-you-wish-you-were-better-at-4ak9/'
 template: post
 ---
 
