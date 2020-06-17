@@ -6,8 +6,8 @@ excerpt: >-
   post                                         Frontend Developer R...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--lG9pd-HO--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--2hy9n3z0--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/1hz3sarb4dof2gvtunbr.png
-comments_count: 16
-positive_reactions_count: 66
+comments_count: 27
+positive_reactions_count: 133
 tags:
   - discuss
   - html
