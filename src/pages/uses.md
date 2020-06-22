@@ -39,14 +39,13 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 -   [f.lux](https://justgetflux.com/) - Be kind to your eyeballs
 -   [Fork](https://git-fork.com/) - A great git GUI
 -   [Bear](https://bear.app/) - Awesome note taking app
--   [Better Touch Tool](https://folivora.ai/) - Add extra gestures to your mouse/trackpad
+-   [Better Touch Tool](https://folivora.ai/) - Add extra gestures to your mouse/trackpad. I even use it for Windows management. Basically all the shortcuts I had for [Spectacle](https://www.spectacleapp.com/)) are now shortcuts in this tool.
 -   [Docker Desktop](https://www.docker.com/products/docker-desktop) - Because Docker
 -   [Sizzy](https://sizzy.app) - Test your app/site for various devices/screen resolutions
 -   [xScope](https://xscope.app) - Awesome toolset for frontend development. Rulers, guides etc.
 -   [Dato](https://sindresorhus.com/dato) - A better date app for MacOS.
 -   [iTerm](https://iterm2.com/) - A better terminal for MacOS
 -   [Kap](https://getkap.co/) - Screen shares GIFs
--   [Spectacle](https://www.spectacleapp.com/) - Awesome windows management for MacOS
 -   [Spotify](https://www.spotify.com/us/download/) - Because music.
 -   [Seashore](https://apps.apple.com/us/app/seashore/id1448648921?mt=12) - An alternative to Photoshop
 -   [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
