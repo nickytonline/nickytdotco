@@ -1,18 +1,18 @@
 ---
-title: 'June 12th, 2020: What did you learn this week?'
-date: '2020-06-12T14:07:37.833Z'
+title: 'June 19th, 2020: What did you learn this week?'
+date: '2020-06-19T12:17:29.550Z'
 excerpt: >-
   It's that time of the week again.  So wonderful devs, what did you learn this
   week? It could be progr...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--SANM1fXm--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--b_pMI6Xv--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/c7agrcpsjsa3xqtsyswj.png
-comments_count: 31
-positive_reactions_count: 21
+  https://res.cloudinary.com/practicaldev/image/fetch/s--vq3zCdIi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--dhnsAbOS--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/zfsydkk8w4gkduwm4w2e.png
+comments_count: 25
+positive_reactions_count: 24
 tags:
   - weeklylearn
   - discuss
   - weeklyretro
-canonical_url: 'https://dev.to/nickytonline/june-12th-2020-what-did-you-learn-this-week-2ec1'
+canonical_url: 'https://dev.to/nickytonline/june-19th-2020-what-did-you-learn-this-week-13bj'
 template: post
 ---
 It's that time of the week again.
@@ -21,7 +21,7 @@ So wonderful devs, what did you learn this week? It could be programming tips, c
 
 <center>
 
-![Homer Simpson studying](https://media.giphy.com/media/IPbS5R4fSUl5S/giphy.gif)
+![PSA "Learn to use the Internet Level II](https://media.giphy.com/media/SPZFhfUJjsJO0/giphy.gif)
 
 </center>
 
@@ -39,11 +39,11 @@ And remember, if something you learnt was a big win for you, then you know where
 
 <center>
 
-![Bender from Futurama dancing](https://media.giphy.com/media/mIZ9rPeMKefm0/giphy.gif)
+![Wrestler screaming "Yes!"](https://media.giphy.com/media/2RGhmKXcl0ViM/giphy.gif)
 
 </center>
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/june-12th-2020-what-did-you-learn-this-week-2ec1)*
+*[This post is also available on DEV.](https://dev.to/nickytonline/june-19th-2020-what-did-you-learn-this-week-13bj)*
 
 
 <script>
