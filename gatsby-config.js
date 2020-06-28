@@ -1,9 +1,24 @@
+/* global require, module, process, __dirname */
+
+require('dotenv').config();
+
 module.exports = {
     pathPrefix: '/',
     siteMetadata: require('./site-metadata.json'),
     plugins: [
         `gatsby-plugin-preact`,
         `gatsby-plugin-react-helmet`,
+        {
+            resolve: 'gatsby-plugin-cloudinary-social-cards',
+            options: {
+                cloudName: 'dnqmeyy4c',
+                apiKey: process.env.CLOUDINARY_API_KEY,
+                apiSecret: process.env.CLOUDINARY_API_SECRET,
+                imageTemplate: 'static/images/social.jpg',
+                titleExtraConfig: '_bold', // optional - set title font weight to bold
+                textColor: 'ffffff',
+            },
+        },
         `gatsby-source-data`,
         {
             resolve: `gatsby-source-filesystem`,
