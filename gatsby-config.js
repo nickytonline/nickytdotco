@@ -15,8 +15,11 @@ module.exports = {
                 apiKey: process.env.CLOUDINARY_API_KEY,
                 apiSecret: process.env.CLOUDINARY_API_SECRET,
                 imageTemplate: 'static/images/social.jpg',
-                titleExtraConfig: '_bold', // optional - set title font weight to bold
-                textColor: 'ffffff',
+                imageOptions: {
+                    titleExtraConfig: '_bold', // optional - set title font weight to bold
+                    font: 'futura',
+                    textColor: 'ffff00',
+                },
             },
         },
         `gatsby-source-data`,

@@ -59,13 +59,16 @@ export default class Body extends React.Component {
                             this.props,
                             'pageContext.frontmatter.canonical_url',
                         ) && <link rel="canonical" href={canonicalUrl} />}
-                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:creator" content="@nickytonline" />
+                    <meta property="twitter:title" content={title} />
+                    <meta property="twitter:description" content={excerpt} />
                     <meta property="og:url" content={canonicalUrl} />
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={excerpt} />
                 </Helmet>
                 <GatsbySocialImage
+                    options
                     title={title || siteTitle}
                     tagline={excerpt}
                 />
