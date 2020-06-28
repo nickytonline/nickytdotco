@@ -8,7 +8,7 @@ template: page
 ---
 
 This page details pretty much all I use as a developer. If you decide to make your own, consider adding it to [uses.tech](https://uses.tech) that was created by [Wes Bos](https://twitter.com/wesbos).
-I use a Mac so most tools are macOS specific, but there are definitely some OS agnostic ones in the list as well.
+I use a Mac so most tools are macOS specific, but there are definitely some OS agnostic ones in the list as well. You might also be interested in [My Mac Setup](https://www.iamdeveloper.com/posts/my-mac-setup-2m05/) post although it is a little outdated.
 
 ## Editor
 
