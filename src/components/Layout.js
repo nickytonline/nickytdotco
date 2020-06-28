@@ -7,20 +7,44 @@ import { safePrefix } from '../utils';
 import Header from './Header';
 import Footer from './Footer';
 
+function getPageExcerpt(path) {
+    switch (path) {
+        case '/about/':
+            return 'A little blurb about me.';
+
+        case '/blog/':
+            return 'My writings about all kinds of things.';
+
+        case '/uses/':
+            return 'My whole setup from software all the way to the shoes I wear at home.';
+
+        case '/thanks/':
+            return 'Thanks to the projects that made this site possible.';
+
+        case '/contact/':
+            return `Let's get in touch.`;
+
+        default:
+            return `Welcome to Nick Taylor's Web Site`;
+    }
+}
+
 export default class Body extends React.Component {
     render() {
+        const { path } = this.props;
+
         const siteTitle = _.get(
             this.props,
             'pageContext.site.siteMetadata.title',
         );
-        const title = _.get(this.props, 'pageContext.frontmatter.title')
+        const postTitle = _.get(this.props, 'pageContext.frontmatter.title')
             ? _.get(this.props, 'pageContext.frontmatter.title')
             : '';
 
         const excerpt =
             _.get(this.props, 'pageContext.frontmatter.template') === 'post'
                 ? _.get(this.props, 'pageContext.frontmatter.excerpt')
-                : `Welcome to Nick Taylor's Web Site`;
+                : getPageExcerpt(path);
 
         const canonicalUrl = _.get(
             this.props,
@@ -30,7 +54,7 @@ export default class Body extends React.Component {
         return (
             <React.Fragment>
                 <Helmet>
-                    <title>{title + ' - ' + siteTitle}</title>
+                    <title>{postTitle + ' - ' + siteTitle}</title>
                     <meta charSet="utf-8" />
                     <meta
                         name="viewport"
@@ -58,15 +82,15 @@ export default class Body extends React.Component {
                         ) && <link rel="canonical" href={canonicalUrl} />}
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:creator" content="@nickytonline" />
-                    <meta property="twitter:title" content={title} />
+                    <meta property="twitter:title" content={postTitle} />
                     <meta property="twitter:description" content={excerpt} />
                     <meta property="og:url" content={canonicalUrl} />
-                    <meta property="og:title" content={title} />
+                    <meta property="og:title" content={postTitle} />
                     <meta property="og:description" content={excerpt} />
                 </Helmet>
                 <GatsbySocialImage
                     options
-                    title={title || siteTitle}
+                    title={postTitle || siteTitle}
                     tagline={excerpt}
                 />
                 <div
