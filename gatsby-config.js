@@ -11,7 +11,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-cloudinary-social-cards',
             options: {
-                cloudName: 'dnqmeyy4c',
+                cloudName: 'nickytonline',
                 apiKey: process.env.CLOUDINARY_API_KEY,
                 apiSecret: process.env.CLOUDINARY_API_SECRET,
                 imageTemplate: 'static/images/social.jpg',
