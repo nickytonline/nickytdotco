@@ -13,7 +13,7 @@ export default class Body extends React.Component {
             this.props,
             'pageContext.site.siteMetadata.title',
         );
-        const postTitle = _.get(this.props, 'pageContext.frontmatter.title')
+        const title = _.get(this.props, 'pageContext.frontmatter.title')
             ? _.get(this.props, 'pageContext.frontmatter.title') + ' - '
             : '';
 
@@ -22,11 +22,16 @@ export default class Body extends React.Component {
                 ? _.get(this.props, 'pageContext.frontmatter.excerpt')
                 : `Welcome to Nick Taylor's Web Site`;
 
+        const canonicalUrl = _.get(
+            this.props,
+            'pageContext.frontmatter.canonical_url',
+        );
+
         return (
             <React.Fragment>
                 <Helmet>
                     <title>
-                        {postTitle}
+                        {title}
                         {}
                     </title>
                     <meta charSet="utf-8" />
@@ -53,18 +58,15 @@ export default class Body extends React.Component {
                         _.get(
                             this.props,
                             'pageContext.frontmatter.canonical_url',
-                        ) && (
-                            <link
-                                rel="canonical"
-                                href={_.get(
-                                    this.props,
-                                    'pageContext.frontmatter.canonical_url',
-                                )}
-                            />
-                        )}
+                        ) && <link rel="canonical" href={canonicalUrl} />}
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:creator" content="@nickytonline" />
+                    <meta property="og:url" content={canonicalUrl} />
+                    <meta property="og:title" content={title} />
+                    <meta property="og:description" content={excerpt} />
                 </Helmet>
                 <GatsbySocialImage
-                    title={postTitle || siteTitle}
+                    title={title || siteTitle}
                     tagline={excerpt}
                 />
                 <div
