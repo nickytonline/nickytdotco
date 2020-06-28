@@ -19,7 +19,6 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 ### Chrome/Brave/Firefox Browser Extensions
 
 -   [Refined GitHub](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf) - GitHub on steroids
--   [Grammarly](https://grammarly.com) - Spelling mistakes folks
 -   [VisBug](https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc?hl=en) - An awesome tool for frontend (this one’s new for me) (only for Chromium based browsers)
 -   [Gitpod](https://www.gitpod.io/docs/20_browser_extension/) - Allows you to work on repos in a browser. Kind of Sandbox like
 -   [Tota11y](https://www.iamdeveloper.com/blog/2019-03-31-an-a11y-extension-coming-to-a-browser-near-you/) - Unpacked browser extension that I created, but VisBug supports it now, so I may just opt for VisBug.
