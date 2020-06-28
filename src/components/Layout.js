@@ -7,8 +7,8 @@ import { safePrefix } from '../utils';
 import Header from './Header';
 import Footer from './Footer';
 
-function getPageExcerpt(path) {
-    switch (path) {
+function getPageExcerpt(pathname) {
+    switch (pathname) {
         case '/about/':
             return 'A little blurb about me.';
 
@@ -31,7 +31,7 @@ function getPageExcerpt(path) {
 
 export default class Body extends React.Component {
     render() {
-        const { path } = this.props;
+        const { location } = this.props;
 
         const siteTitle = _.get(
             this.props,
@@ -44,7 +44,7 @@ export default class Body extends React.Component {
         const excerpt =
             _.get(this.props, 'pageContext.frontmatter.template') === 'post'
                 ? _.get(this.props, 'pageContext.frontmatter.excerpt')
-                : getPageExcerpt(path);
+                : getPageExcerpt(location.pathname);
 
         const canonicalUrl = _.get(
             this.props,
