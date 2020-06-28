@@ -14,7 +14,7 @@ export default class Body extends React.Component {
             'pageContext.site.siteMetadata.title',
         );
         const title = _.get(this.props, 'pageContext.frontmatter.title')
-            ? _.get(this.props, 'pageContext.frontmatter.title') + ' - '
+            ? _.get(this.props, 'pageContext.frontmatter.title')
             : '';
 
         const excerpt =
@@ -30,10 +30,7 @@ export default class Body extends React.Component {
         return (
             <React.Fragment>
                 <Helmet>
-                    <title>
-                        {title}
-                        {}
-                    </title>
+                    <title>{title + ' - ' + siteTitle}</title>
                     <meta charSet="utf-8" />
                     <meta
                         name="viewport"
