@@ -18,7 +18,7 @@ module.exports = {
                 imageOptions: {
                     titleExtraConfig: '_bold', // optional - set title font weight to bold
                     font: 'futura',
-                    textColor: 'ffff00',
+                    textColor: 'ffffff',
                 },
             },
         },
