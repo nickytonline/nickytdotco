@@ -16,7 +16,7 @@ module.exports = {
                 apiSecret: process.env.CLOUDINARY_API_SECRET,
                 imageTemplate: 'static/images/social.jpg',
                 imageOptions: {
-                    titleExtraConfig: '_bold', // optional - set title font weight to bold
+                    titleExtraConfig: '_bold',
                     font: 'futura',
                     textColor: 'ffffff',
                 },
