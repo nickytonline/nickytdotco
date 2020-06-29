@@ -25,6 +25,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
     https://twitter.com/argyleink/status/1215052867716804608
 
 -   [React DevTools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) - Because React
+-   [Preact DevTools](https://preactjs.github.io/preact-devtools/) - Because Preact
 -   [Axe](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd) - For web accessibility testing
 -   [HTTPS Everywhere](https://www.eff.org/https-everywhere) - What it's called is what it does 😉 (not required for Brave browser)
 -   [uBlock](https://ublock.org/) - An ad blocker (not required for Brave browser)
