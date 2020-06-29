@@ -16,9 +16,14 @@ module.exports = {
                 apiSecret: process.env.CLOUDINARY_API_SECRET,
                 imageTemplate: 'static/images/social.jpg',
                 imageOptions: {
+                    titleFont: 'futura',
                     titleExtraConfig: '_bold',
-                    font: 'futura',
+                    titleLeftOffset: 30,
+                    titleBottomOffset: 179,
+                    taglineLeftOffset: 30,
+                    taglineTopOffset: 500,
                     textColor: 'ffffff',
+                    textAreaWidth: 860,
                 },
             },
         },
@@ -91,6 +96,20 @@ module.exports = {
             options: {
                 google: {
                     families: ['Roboto'],
+                },
+            },
+        },
+        {
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+                // usePrefix defaults to false
+                // usePrefix: true is the same as ["oembed"]
+                usePrefix: ['oembed', 'video'],
+                providers: {
+                    // Important to exclude providers
+                    // that adds js to the page.
+                    // If you do not need them.
+                    exclude: ['Twitter', 'YouTube', 'Instagram'],
                 },
             },
         },
