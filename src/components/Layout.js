@@ -16,7 +16,7 @@ function getPageExcerpt(pathname) {
             return 'My writings about all kinds of things.';
 
         case '/uses/':
-            return 'My whole setup from software all the way to the shoes I wear at home.';
+            return 'My whole setup, from software all the way to the shoes I wear at home.';
 
         case '/thanks/':
             return 'Thanks to the projects that made this site possible.';
