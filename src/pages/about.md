@@ -7,7 +7,7 @@ menus:
 template: page
 ---
 
-My name is Nick Taylor. I am a Senior Software Developer at <a href="https://dev.to">DEV</a> working on all things DEV. I am a big fan of TypeScript, JavaScript, React and Node. Once upon a time, I was into C#/ASP.NET. Aside from programming, I enjoy hitting the gym, snowboarding in the winter and a long long time ago, rugby. I am also not a big fan of spiders.
+My name is Nick Taylor. I am a Senior Software Developer at <a href="https://dev.to">DEV</a> working on all things DEV. I am a big fan of TypeScript, JavaScript, React and Node. Once upon a time, I was into C#/ASP.NET. Aside from programming, I enjoy hitting the gym, snowboarding, and a long long time ago, rugby. I am also not a big fan of spiders.
 
 I enjoy contributing to open source. Here are some highlights of my most recent open source work.
 
