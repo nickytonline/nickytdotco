@@ -56,21 +56,21 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 
 ## Office Setup
 
--   Desk: [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://www.bestbuy.ca/en-ca/product/motiongrey-adjustable-dual-motors-electric-sit-to-stand-computer-office-standing-desk-black-frame-table-top-included/12852211) - I snagged it at a great price. It appears to go on sale often.
--   Chair: Herman Miller Aeron. These are pricey, so look out for one on online classifieds. I snagged one with a bunch of new parts for just under a third of the price.
+-   [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://www.bestbuy.ca/en-ca/product/motiongrey-adjustable-dual-motors-electric-sit-to-stand-computer-office-standing-desk-black-frame-table-top-included/12852211) - I snagged it at a great price. It appears to go on sale often.
+-   Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with a bunch of new parts for just under a third of the price.
 -   [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
--   Headphones: [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3/buy/wh1000xm3-s) - I snagged them during Boxing Day week.
--   Microphone: [Blue Designs Yeti](https://www.bluedesigns.com/products/yeti/)
--   Stand for Mac: [Rain mStand 360](https://www.raindesigninc.com/mstand360.html)
--   Laptop stand for when I'm not at home: [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237)
--   Wireless charger for phone: [Anker Wireless Charger](https://www.amazon.ca/gp/product/B07THL8PP1)
--   Webcam: [Logitech C922x Pro Stream](https://www.amazon.ca/gp/product/B01LXCDPPK/) with this [Laptop Webcam Cover](https://www.amazon.ca/gp/product/B0748FZX99/)
--   Monitor: [BenQ GW2760HS 27-inch FHD 1920x1080 HDMI VGA LED Monitor](https://www.amazon.com/BenQ-GW2760HS-27-inch-1920x1080-Monitor/dp/B00ITORMDC) with [iKross Single Monitor Desk Mount with Free Stand Base](https://www.amazon.ca/gp/product/B07CVR6355)
--   Charger: [Anker Premium 60W 5-Port Desktop Charger](https://www.amazon.ca/gp/product/B072K5ZJXF)
--   Backup Drive: [Seagate Backup Plus Slim 2TB External Drive](https://www.amazon.ca/gp/product/B00FRHTTIA)
--   Dongles: [Anker USB-C to HDMI Adapter](http://amazon.ca/gp/product/B01MYUCWOK)
--   Whiteboard: [VIZ-PRO Dry Erase Board/Whiteboard](https://www.amazon.ca/gp/product/B01461WT9S)
--   Working from home sneakers: [Under Armour Men’s Charged Commit 2.0 Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
--   Standing desk mat: [Topo Comfort Mat by Ergodriven](https://www.amazon.ca/gp/product/B00V3TO9HW/)
--   Office air purifier: [LEVOIT Air Purifier Core 300](https://www.amazon.ca/gp/product/B07S3D4MRJ/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
+-   [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3/buy/wh1000xm3-s) headphones - I snagged them during Boxing Day week.
+-   [Blue Designs Yeti](https://www.bluedesigns.com/products/yeti/) microphone
+-   [Rain mStand 360](https://www.raindesigninc.com/mstand360.html) laptop stand
+-   [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237) - Laptop stand for when I'm not at home
+-   [Anker Wireless Charger](https://www.amazon.ca/gp/product/B07THL8PP1)
+-   [Logitech C922x Pro Stream](https://www.amazon.ca/gp/product/B01LXCDPPK/) webcam with [webcam cover](https://www.amazon.ca/gp/product/B0748FZX99/)
+-   [BenQ GW2760HS 27-inch FHD 1920x1080 HDMI VGA LED Monitor](https://www.amazon.com/BenQ-GW2760HS-27-inch-1920x1080-Monitor/dp/B00ITORMDC) with [iKross Single Monitor Desk Mount with Free Stand Base](https://www.amazon.ca/gp/product/B07CVR6355)
+-   [Anker Premium 60W 5-Port Desktop Charger](https://www.amazon.ca/gp/product/B072K5ZJXF)
+-   [Seagate Backup Plus Slim 2TB External Drive](https://www.amazon.ca/gp/product/B00FRHTTIA)
+-   [Anker USB-C to HDMI Adapter](http://amazon.ca/gp/product/B01MYUCWOK)
+-   [VIZ-PRO Dry Erase Board/Whiteboard](https://www.amazon.ca/gp/product/B01461WT9S)
+-   [Under Armour Men’s Charged Commit 2.0 Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) - My work from home sneakers
+-   [Topo Comfort Mat by Ergodriven](https://www.amazon.ca/gp/product/B00V3TO9HW/) standing desk mat
+-   [LEVOIT Air Purifier Core 300](https://www.amazon.ca/gp/product/B07S3D4MRJ/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
 -   [Vornado Pivot Personal Air Circulator Fan](https://www.amazon.ca/gp/product/B01NAYWFLL/)
