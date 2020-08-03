@@ -62,6 +62,7 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 -   Headphones: [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3/buy/wh1000xm3-s) - I snagged them during Boxing Day week.
 -   Microphone: [Blue Designs Yeti](https://www.bluedesigns.com/products/yeti/)
 -   Stand for Mac: [Rain mStand 360](https://www.raindesigninc.com/mstand360.html)
+-   Laptop stand for when I'm not at home: [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237)
 -   Wireless charger for phone: [Anker Wireless Charger](https://www.amazon.ca/gp/product/B07THL8PP1)
 -   Webcam: [Logitech C922x Pro Stream](https://www.amazon.ca/gp/product/B01LXCDPPK/) with this [Laptop Webcam Cover](https://www.amazon.ca/gp/product/B0748FZX99/)
 -   Monitor: [BenQ GW2760HS 27-inch FHD 1920x1080 HDMI VGA LED Monitor](https://www.amazon.com/BenQ-GW2760HS-27-inch-1920x1080-Monitor/dp/B00ITORMDC) with [iKross Single Monitor Desk Mount with Free Stand Base](https://www.amazon.ca/gp/product/B07CVR6355)
