@@ -5,7 +5,7 @@ excerpt: >-
   Photo by Bill Oxford on Unsplash  Anybody down for starting the some-stack
   engineer movement?...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--vBN5pZRe--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--S1ku3xhH--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/cw2erwmgf1ugodcmyd6z.jpg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--S1ku3xhH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/cw2erwmgf1ugodcmyd6z.jpg
 comments_count: 10
 positive_reactions_count: 12
 tags:

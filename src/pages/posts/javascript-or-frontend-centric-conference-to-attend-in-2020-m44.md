@@ -24,7 +24,7 @@ The only conference I’ve ever attended was [JBCN](https://www.jbcnconf.com/201
 I’ve never been to a JavaScript or frontend centric conference before. If you were to pick one to attend, regardless of location and cost, which one would you choose?‬
 
 <center>
-<p><img src="https://media.giphy.com/media/OvDTq5V3EepBS/giphy.gif" alt="Morphius asking Neo to choose the red or blue pill"></p>
+<img src="https://media.giphy.com/media/OvDTq5V3EepBS/giphy.gif" alt="Morphius asking Neo to choose the red or blue pill" />
 </center>
 
 P.S. I’m also a fan of React, so the conference could be React centric.

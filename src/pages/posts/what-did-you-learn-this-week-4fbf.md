@@ -5,7 +5,7 @@ excerpt: >-
   This is not a new concept for a post or Tweet. David Walsh usually posts one
   every week....
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--pLkPKJQ4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--CqlzI9cS--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/irbtpbia01c5wt77hki6.png
+  https://res.cloudinary.com/practicaldev/image/fetch/s--CqlzI9cS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/irbtpbia01c5wt77hki6.png
 comments_count: 27
 positive_reactions_count: 18
 tags:

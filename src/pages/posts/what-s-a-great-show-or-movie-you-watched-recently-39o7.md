@@ -3,7 +3,7 @@ title: What's a great show or movie you watched recently?
 date: '2019-10-28T00:51:15.516Z'
 excerpt: "Photo by Georgia Vagim on Unsplash  I just finished watching Living with Yourself on Netflix.  Big \U0001F44D..."
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--SSYw-Orz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--rhq45VXK--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/z4yjh26j3jxwc3p5wpsd.jpg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--rhq45VXK--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/z4yjh26j3jxwc3p5wpsd.jpg
 comments_count: 33
 positive_reactions_count: 14
 tags:

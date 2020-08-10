@@ -1,18 +1,18 @@
 ---
-title: 'May 29th, 2020: What did you learn this week?'
-date: '2020-05-29T12:48:32.649Z'
+title: 'July 17th, 2020: What did you learn this week?'
+date: '2020-07-17T04:00:07.068Z'
 excerpt: >-
   It's that time of the week again.  So wonderful devs, what did you learn this
   week? It could be progr...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--J1SdaKNE--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/zsrfe66z4in514kzrdbl.jpeg
-comments_count: 24
-positive_reactions_count: 5
+  https://res.cloudinary.com/practicaldev/image/fetch/s--xylypMBS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/3austk1o80gncwp8ulp1.png
+comments_count: 36
+positive_reactions_count: 31
 tags:
   - weeklylearn
   - discuss
   - weeklyretro
-canonical_url: 'https://dev.to/nickytonline/may-29th-2020-what-did-you-learn-this-week-2pf0'
+canonical_url: 'https://dev.to/nickytonline/july-17th-2020-what-did-you-learn-this-week-b97'
 template: post
 ---
 It's that time of the week again.
@@ -21,7 +21,7 @@ So wonderful devs, what did you learn this week? It could be programming tips, c
 
 <center>
 
-![Claymation owl teacher helping a student owl](https://media.giphy.com/media/3ohzdU2IVgD2goFS3S/giphy.gif)
+![Carmen Sandiego saying "Let's find out!"](https://media.giphy.com/media/yvqRaXlOsc068DDTzt/giphy.gif)
 
 </center>
 
@@ -34,16 +34,16 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
 
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fgraciegregory%2Fwhat-was-your-win-this-week-3j8i" style="border: 0; width: 100%;"></iframe>
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-46km" style="border: 0; width: 100%;"></iframe>
 
 
 <center>
 
-![Winning!](https://media.giphy.com/media/OHZ1gSUThmEso/giphy.gif)
+![Kid riding flying animal in the Neverending Story movie](https://media.giphy.com/media/cOB8cDnKM6eyY/giphy-downsized-large.gif)
 
 </center>
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/may-29th-2020-what-did-you-learn-this-week-2pf0)*
+*[This post is also available on DEV.](https://dev.to/nickytonline/july-17th-2020-what-did-you-learn-this-week-b97)*
 
 
 <script>

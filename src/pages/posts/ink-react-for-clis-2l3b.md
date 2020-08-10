@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--yzFlGYUf--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ewrl8i5l3v9avgxpocjc.jpg
 comments_count: 3
-positive_reactions_count: 46
+positive_reactions_count: 48
 tags:
   - githunt
   - react

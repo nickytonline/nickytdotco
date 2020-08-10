@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--q2i_vNRX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6v67gbppb6cqqj3pqrp3.png
 comments_count: 40
-positive_reactions_count: 99
+positive_reactions_count: 101
 tags:
   - meta
   - career

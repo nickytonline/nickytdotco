@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--Q7k4S3jr--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/jivsyirs8gft16kuji62.png
 comments_count: 7
-positive_reactions_count: 59
+positive_reactions_count: 55
 tags:
   - testing
   - automation

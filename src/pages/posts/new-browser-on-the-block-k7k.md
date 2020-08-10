@@ -6,8 +6,8 @@ excerpt: >-
   ecosystem is getting another...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--at8pc9C---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/iz4xq0m0qu5806a0nlw2.jpg
-comments_count: 18
-positive_reactions_count: 73
+comments_count: 19
+positive_reactions_count: 72
 tags:
   - browsers
   - discuss

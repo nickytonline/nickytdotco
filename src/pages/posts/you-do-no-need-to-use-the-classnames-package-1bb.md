@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--jCK8u0FL--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/vxmx385yqbvafn2si5f5.jpg
 comments_count: 6
-positive_reactions_count: 22
+positive_reactions_count: 24
 tags:
   - javascript
   - react

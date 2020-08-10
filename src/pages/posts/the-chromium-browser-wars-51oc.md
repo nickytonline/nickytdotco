@@ -5,7 +5,7 @@ excerpt: >-
   I’ve purposely left out FireFox here because this is not about Firefox. It’s
   about Chromium based bro...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--d_tZDxyb--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://media.giphy.com/media/xT0xemNCRU4TRrGDAI/giphy.gif
+  https://res.cloudinary.com/practicaldev/image/fetch/s--tKEtJz5u--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://media.giphy.com/media/xT0xemNCRU4TRrGDAI/giphy.gif
 comments_count: 4
 positive_reactions_count: 15
 tags:

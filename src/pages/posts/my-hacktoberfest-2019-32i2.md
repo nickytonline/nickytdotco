@@ -5,7 +5,7 @@ excerpt: >-
   Originally published at iamdeveloper.com  Like many of you, I am participating
   in Hacktoberfest as we...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--AdZZglM4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--UWW67K9v--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/p2th95jqhkylbvffrrz0.png
+  https://res.cloudinary.com/practicaldev/image/fetch/s--UWW67K9v--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/p2th95jqhkylbvffrrz0.png
 comments_count: 2
 positive_reactions_count: 41
 tags:

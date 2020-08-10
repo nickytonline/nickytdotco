@@ -5,7 +5,7 @@ excerpt: >-
   An interesting blog post came out today from Formidable Labs. As the blog
   title says, "Paying Cold, H...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--wnEjBdXz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://media.giphy.com/media/1pAbbPYxZMeFzvWrGB/giphy.gif
+  https://res.cloudinary.com/practicaldev/image/fetch/s--XEwZfu76--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://media.giphy.com/media/1pAbbPYxZMeFzvWrGB/giphy.gif
 comments_count: 20
 positive_reactions_count: 70
 tags:

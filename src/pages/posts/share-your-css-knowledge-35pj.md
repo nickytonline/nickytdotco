@@ -5,7 +5,7 @@ excerpt: >-
   Today I learnt about the :placeholder-shown pseudo-selector thanks to Daniel’s
   Tweet....
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--PR6E3nu0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--qcwGtJd7--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/pztd7cvaak344h9i8yw1.png
+  https://res.cloudinary.com/practicaldev/image/fetch/s--qcwGtJd7--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/pztd7cvaak344h9i8yw1.png
 comments_count: 34
 positive_reactions_count: 123
 tags:

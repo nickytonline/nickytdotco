@@ -5,7 +5,7 @@ excerpt: >-
   Stripe open sourced Sorbet today, a fast, powerful type checker for Ruby.  
   Here's the full blog post...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--Kwmwug4V--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--wRt5ruqn--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/twa5j9w03r1m97ipt8hx.png
+  https://res.cloudinary.com/practicaldev/image/fetch/s--wRt5ruqn--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/twa5j9w03r1m97ipt8hx.png
 comments_count: 33
 positive_reactions_count: 47
 tags:

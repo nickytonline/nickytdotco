@@ -5,7 +5,7 @@ excerpt: >-
   My first PR to the DEV repository was when I added Storybook to the project.
   In fact, this was in Mar...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--Sqclji0m--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--QXgm3mdo--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/ln7awag96agh8pxsjsui.jpg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--QXgm3mdo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/ln7awag96agh8pxsjsui.jpg
 comments_count: 6
 positive_reactions_count: 54
 tags:

@@ -3,7 +3,7 @@ title: Why don't fish like React?
 date: '2019-07-08T04:26:47.234Z'
 excerpt: "Hooks! \U0001F602..."
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--YwNqLdgn--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--X9B0I60K--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/cuu579bbypd897yzyf2d.jpeg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--X9B0I60K--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/cuu579bbypd897yzyf2d.jpeg
 comments_count: 5
 positive_reactions_count: 50
 tags:

@@ -6,7 +6,7 @@ excerpt: >-
   today while I was doing som...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--uBj_0QWl--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/xlcmo0xfz2dwksmkik27.jpg
-comments_count: 57
+comments_count: 58
 positive_reactions_count: 112
 tags:
   - discuss

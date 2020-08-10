@@ -5,7 +5,7 @@ excerpt: >-
   You could already subscribe to a post's comments on DEV, but the problem was
   many community members w...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--fPk3BY0m--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--tP_qSg05--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/3h4jxtefrd7uaq1c5gos.png
+  https://res.cloudinary.com/practicaldev/image/fetch/s--tP_qSg05--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/3h4jxtefrd7uaq1c5gos.png
 comments_count: 20
 positive_reactions_count: 43
 tags:

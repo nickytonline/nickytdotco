@@ -5,7 +5,7 @@ excerpt: >-
   I completed Hacktoberfest this year. It was actually the first time I
   participated. I am definitively...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--A4bb04Jp--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--6ODCZShu--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/rsjo0qju1w6sqt1h4ig3.jpeg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--6ODCZShu--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/rsjo0qju1w6sqt1h4ig3.jpeg
 comments_count: 27
 positive_reactions_count: 42
 tags:

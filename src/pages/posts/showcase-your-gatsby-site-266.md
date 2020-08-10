@@ -5,7 +5,7 @@ excerpt: >-
   Have you created a Gatsby site that you're proud of? It could be for a client
   or just your personal s...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--dV0cgEQH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--2CkRqNCp--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/epig0488nwfmsdm59t48.png
+  https://res.cloudinary.com/practicaldev/image/fetch/s--2CkRqNCp--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/epig0488nwfmsdm59t48.png
 comments_count: 11
 positive_reactions_count: 55
 tags:

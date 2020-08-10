@@ -5,8 +5,8 @@ excerpt: >-
   It's that time of the week again.  So wonderful devs, what did you learn this
   week? It could be progr...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--vq3zCdIi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--dhnsAbOS--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/zfsydkk8w4gkduwm4w2e.png
-comments_count: 28
+  https://res.cloudinary.com/practicaldev/image/fetch/s--dhnsAbOS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/zfsydkk8w4gkduwm4w2e.png
+comments_count: 30
 positive_reactions_count: 24
 tags:
   - weeklylearn

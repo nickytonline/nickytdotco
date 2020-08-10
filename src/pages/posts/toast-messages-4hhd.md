@@ -2,8 +2,8 @@
 title: Toast Messages
 date: '2019-10-24T03:45:40.000Z'
 excerpt: >-
-  Photo by Jonathan Pielmayer on Unsplash  So I made a little toast message demo
-  tonight. It also works...
+  So I made a little toast message demo tonight. It also works with the keyboard
+  if you tab. It will fo...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--FiPUmzgc--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tixpt06bbncusm7apgze.jpg
 comments_count: 4
@@ -15,8 +15,6 @@ canonical_url: 'https://www.iamdeveloper.com/posts/toast-messages-4hhd/'
 template: post
 ---
 
-
-Photo by [Jonathan Pielmayer](https://unsplash.com/@jonathanpielmayer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/toast-breakfast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 So I made a little toast message demo tonight. It also works with the keyboard if you tab. It will focus on the close button of the toaster and it you hit ENTER, the toast is toast!
 
@@ -31,6 +29,8 @@ I was just having a little fun, but it brought up a question for me. What type o
 
 
 I will have a follow up post sometime in the near future explaining all the moving parts. 😉
+
+Photo by [Jonathan Pielmayer](https://unsplash.com/@jonathanpielmayer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/toast-breakfast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/toast-messages-4hhd)*
 

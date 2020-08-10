@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--wu3fsFJF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/1lnsa2cfa2m4oogcas4f.jpg
 comments_count: 4
-positive_reactions_count: 41
+positive_reactions_count: 36
 tags:
   - productivity
 canonical_url: >-

@@ -5,7 +5,7 @@ excerpt: >-
   Photo by Wes Hicks on Unsplash  It's that time of the week again, just a day
   early. I'm off tomorrow...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--9gd1uyCI--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--S_Vs942S--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/reh35kbnip2qi6itqp82.jpg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--S_Vs942S--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/reh35kbnip2qi6itqp82.jpg
 comments_count: 14
 positive_reactions_count: 18
 tags:

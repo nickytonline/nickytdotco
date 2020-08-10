@@ -5,7 +5,7 @@ excerpt: >-
   Photo by Chris Benson on Unsplash  It's that time of the week again.  So
   wonderful devs, what did you...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--Ap-6Qsbj--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--dSx0pZXs--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/i908ztosazf6k6olikm7.jpg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--dSx0pZXs--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/i908ztosazf6k6olikm7.jpg
 comments_count: 28
 positive_reactions_count: 22
 tags:

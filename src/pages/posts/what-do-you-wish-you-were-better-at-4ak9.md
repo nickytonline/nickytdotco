@@ -5,9 +5,9 @@ excerpt: >-
   I'm sure all of us wish we were better at certain things regardless of where
   we are in our careers. W...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--nOEmqKN6--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tegc5w5d9i1ul82iwseh.gif
-comments_count: 26
-positive_reactions_count: 46
+  https://res.cloudinary.com/practicaldev/image/fetch/s--hHz9odhK--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tegc5w5d9i1ul82iwseh.gif
+comments_count: 25
+positive_reactions_count: 45
 tags:
   - discuss
   - mentorship

@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--vasWZK4---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/cu5csch4pwfki2r0yfac.jpg
 comments_count: 14
-positive_reactions_count: 12
+positive_reactions_count: 13
 tags:
   - help
   - git

@@ -5,7 +5,7 @@ excerpt: >-
   Photo by Dave Phillips on Unsplash  Kent C. Dodds has a great post, 5 Tips to
   Help You Avoid React Ho...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--r2RYl65p--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--lWdTL3VB--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/d1udmr81ruxc8ms60aw1.jpg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--lWdTL3VB--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/d1udmr81ruxc8ms60aw1.jpg
 comments_count: 14
 positive_reactions_count: 28
 tags:

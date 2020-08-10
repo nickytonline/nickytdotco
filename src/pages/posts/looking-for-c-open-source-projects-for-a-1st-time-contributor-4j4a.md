@@ -5,9 +5,9 @@ excerpt: >-
   Hey awesome devs at DEV. I have an acquaintance that is looking at getting
   into open source via a C#...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--RmgWJRT5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--bTDHycXq--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/j2xbsg8yqzsan8m1tuhg.jpg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--bTDHycXq--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/j2xbsg8yqzsan8m1tuhg.jpg
 comments_count: 12
-positive_reactions_count: 33
+positive_reactions_count: 35
 tags:
   - discuss
   - csharp

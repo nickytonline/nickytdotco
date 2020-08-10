@@ -2,12 +2,12 @@
 title: Any contribution to Open Source is valuable
 date: '2019-01-22T03:24:42.000Z'
 excerpt: >-
-  Photo by Slava Bowman on Unsplash  We hear people say it all the time, but I
-  would like to reiterate...
+  We hear people say it all the time, but I would like to reiterate it. Any
+  contribution you make to op...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--8Dc9k6Ml--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/2h3puantbcb0a0sfusny.jpg
 comments_count: 16
-positive_reactions_count: 68
+positive_reactions_count: 66
 tags:
   - opensource
   - gatsby
@@ -18,8 +18,6 @@ canonical_url: >-
 template: post
 ---
 
-
-Photo by [Slava Bowman](https://unsplash.com/photos/pkKeuRiDa2Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/community?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 We hear people say it all the time, but I would like to reiterate it. Any contribution you make to open source is a valuable contribution. Sure we all like adding features or fixing bugs in a project, but updating documentation is still worthwhile. I was reminded of this on the weekend.
 
@@ -67,6 +65,8 @@ At this point, I was like, well if I spent 15-20 minutes trying to figure out wh
 
 
 Thanks for the thanks @raae!
+
+Photo by [Slava Bowman](https://unsplash.com/photos/pkKeuRiDa2Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/community?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/any-contribution-to-open-source-is-valuable-57d3)*
 

@@ -5,8 +5,8 @@ excerpt: >-
   Photo by chuttersnap on Unsplash  Hi DEVers,  I received some award points at
   work that translate to...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--lC3P9Gav--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--nQJ0NjJZ--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/8b96dyvzm39b8hgcdzvp.jpg
-comments_count: 14
+  https://res.cloudinary.com/practicaldev/image/fetch/s--nQJ0NjJZ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/8b96dyvzm39b8hgcdzvp.jpg
+comments_count: 15
 positive_reactions_count: 11
 tags:
   - discuss

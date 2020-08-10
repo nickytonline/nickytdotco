@@ -3,7 +3,7 @@ title: What’s the weather like where you live?
 date: '2019-11-07T11:46:25.398Z'
 excerpt: Well the first snowfall has arrived in Montreal....
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--PTt4xyF1--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--uyAb7NxF--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/v2623s7c2d4gdtsusnnc.jpeg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--uyAb7NxF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/v2623s7c2d4gdtsusnnc.jpeg
 comments_count: 31
 positive_reactions_count: 34
 tags:

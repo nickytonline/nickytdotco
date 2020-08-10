@@ -5,9 +5,9 @@ excerpt: >-
   An explanation to the best of my knowledge on all things front-end in the
   dev.to codebase
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--T6ji3oZh--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://media.giphy.com/media/TI32JwHmWQEi4/giphy.gif
+  https://res.cloudinary.com/practicaldev/image/fetch/s--3uLkqBYG--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://media.giphy.com/media/TI32JwHmWQEi4/giphy.gif
 comments_count: 7
-positive_reactions_count: 130
+positive_reactions_count: 125
 tags:
   - meta
   - javascript

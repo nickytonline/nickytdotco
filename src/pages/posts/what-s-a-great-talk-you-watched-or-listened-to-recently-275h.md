@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--4WYBZmqA--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/om8i7nxzn5dx6gu5x7k3.png
 comments_count: 23
-positive_reactions_count: 84
+positive_reactions_count: 83
 tags:
   - watercooler
 canonical_url: >-

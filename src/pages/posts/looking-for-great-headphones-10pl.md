@@ -2,20 +2,18 @@
 title: Looking for Great Headphones
 date: '2019-11-14T00:35:56.272Z'
 excerpt: >-
-  Photo by Frank Septillion on Unsplash  I've generally been working with cheap
-  headphones. I currently...
+  I've generally been working with cheap headphones. I currently have a pair of
+  MPow H7 headphones. The...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--hzwLls2E--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--cy4rVNwt--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/k9e77sw6miueiw7nfl71.jpg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--cy4rVNwt--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/k9e77sw6miueiw7nfl71.jpg
 comments_count: 32
-positive_reactions_count: 35
+positive_reactions_count: 37
 tags:
   - hardware
   - discuss
 canonical_url: 'https://www.iamdeveloper.com/posts/looking-for-great-headphones-10pl/'
 template: post
 ---
-Photo by [Frank Septillion](https://unsplash.com/@septillion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/headphones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 I've generally been working with cheap headphones. I currently have a pair of [MPow H7](https://www.amazon.com/Mpow-Headphones-Comfortable-Rechargeable-Microphone/dp/B07C48ZYXR) headphones. They're not bad for a non-audiophile, but I am not fooling myself into thinking these are premium noise-cancelling headphones.
 
 I have never considered a high-end set of headphones because I've broken every pair I've ever owned at some point. I'd like to think I'm a little more careful these days with them though, so I think it's time to grab a solid upgrade.
@@ -30,6 +28,8 @@ I'm going to throw out a couple here that I might consider, but I'd love to hear
 
 
 ![Yeah](https://media.giphy.com/media/zOdOzXm2UvdXW/giphy.gif)
+
+Photo by [Frank Septillion](https://unsplash.com/@septillion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/headphones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/looking-for-great-headphones-10pl)*
 

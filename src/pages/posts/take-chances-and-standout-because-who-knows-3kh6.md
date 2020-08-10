@@ -2,11 +2,11 @@
 title: Take chances and standout
 date: '2019-01-05T18:40:00.000Z'
 excerpt: >-
-  Photo by Nick Ewings on Unsplash  This is my first time writing a post about
-  career advice. This kind...
+  This is my first time writing a post about career advice. This kind of advice
+  is definitely not a one...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--gMX84Q9b--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/fgimfk93vbdn6v0csx5e.jpg
-comments_count: 5
+comments_count: 6
 positive_reactions_count: 29
 tags:
   - career
@@ -17,8 +17,6 @@ canonical_url: >-
 template: post
 ---
 
-
-Photo by [Nick Ewings](https://unsplash.com/photos/7cLIUI6rVDc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/standout?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 This is my first time writing a post about career advice. This kind of advice is definitely not a one size fits all. Everyone has their own experiences, circumstances etc., but hopefully some of what I discuss will resonate with you.
 
@@ -70,6 +68,8 @@ So remember:
 - Apply to places, even when you think you're not good enough, because you never know. And even when interviewing somewhere doesn't work out, you still learn something about yourself or work. And who knows, maybe you'll have some interesting conversations along the way.
 
 ![follow your dreams giphy meme](https://media.giphy.com/media/htmzQfHfZF9wQ/giphy-downsized.gif "follow your dreams giphy meme")
+
+Photo by [Nick Ewings](https://unsplash.com/photos/7cLIUI6rVDc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/standout?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6)*
 

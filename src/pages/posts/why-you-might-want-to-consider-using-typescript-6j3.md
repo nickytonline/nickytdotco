@@ -5,7 +5,7 @@ excerpt: A small write up on the benefits of using TypeScript.
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--myl1s_qT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/k8pe37firnq0uhi5546a.png
 comments_count: 8
-positive_reactions_count: 54
+positive_reactions_count: 56
 tags:
   - beginners
   - typescript

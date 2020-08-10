@@ -6,8 +6,8 @@ excerpt: >-
   article.                                         Yo...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--txUc6TTd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6nx4xj3l7dk99em1bdww.png
-comments_count: 2
-positive_reactions_count: 54
+comments_count: 5
+positive_reactions_count: 55
 tags:
   - stackbit
   - headlesscms

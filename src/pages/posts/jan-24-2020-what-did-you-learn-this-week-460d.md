@@ -5,7 +5,7 @@ excerpt: >-
   It's that time of the week again. So wonderful devs, what did you learn this
   week? It could be progra...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--Ib8pb9ed--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/njy44wnsgmtebrc7n1iw.gif
+  https://res.cloudinary.com/practicaldev/image/fetch/s--QbWz7lUH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://thepracticaldev.s3.amazonaws.com/i/njy44wnsgmtebrc7n1iw.gif
 comments_count: 44
 positive_reactions_count: 20
 tags:

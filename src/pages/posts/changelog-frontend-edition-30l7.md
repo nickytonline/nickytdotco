@@ -2,15 +2,16 @@
 title: 'Changelog: Frontend Edition'
 date: '2020-06-24T19:09:12.079Z'
 excerpt: I Tweeted this out last week that we moved to Preact X and Testing Library....
-thumb_img_path: null
-comments_count: 2
-positive_reactions_count: 11
+thumb_img_path: >-
+  https://res.cloudinary.com/practicaldev/image/fetch/s--RbUzG7vH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/taavig1ker0pmxi35grk.png
+comments_count: 11
+positive_reactions_count: 89
 tags:
   - changelog
   - meta
   - javascript
   - testing
-canonical_url: 'https://dev.to/devteam/changelog-frontend-edition-30l7'
+canonical_url: 'https://www.iamdeveloper.com/posts/changelog-frontend-edition-30l7/'
 template: post
 ---
 I Tweeted this out last week that we moved to Preact X and Testing Library.
@@ -100,7 +101,7 @@ In addition to that, we have a custom [Storybook decorator](https://storybook.js
 
 ![Screenshot of DEV's Storybook theme switcher](https://dev-to-uploads.s3.amazonaws.com/i/5m5nmopxsvq7l4g8jywe.png)
 
-You can view DEV's work in progress Storybook [here](https://story.dev.to). Every merge to our main branch related to Storybook stories will deploy an updated Storybook, so what you see is always the latest and greatest. Thanks to [Netlify](https://www.netlify.com/) deploy previews, you can see the Storybook related to every PR! 🔥
+You can view DEV's work in progress Storybook [here](https://storybook.forem.com). Every merge to our main branch related to Storybook stories will deploy an updated Storybook, so what you see is always the latest and greatest. Thanks to [Netlify](https://www.netlify.com/) deploy previews, you can see the Storybook related to every PR! 🔥
 
 ### Improvements to Jest
 
@@ -122,7 +123,7 @@ module.exports = {
 ```
 
 
-Another super handy addition is in jest watch mode, you can now filter by a test’s name or filename.
+Another super handy addition is in jest watch mode. You can now filter by a test’s name or filename.
 
 ![Screenshot of jest test runner options in watch mode](https://dev-to-uploads.s3.amazonaws.com/i/6alsv3g4epkpn9r84qgy.png)
 
