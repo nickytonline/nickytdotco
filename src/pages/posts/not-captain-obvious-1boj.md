@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--aM9IE2Yl--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/g6zipfc343b56kfou7pw.png
 comments_count: 6
-positive_reactions_count: 29
+positive_reactions_count: 30
 tags:
   - career
   - writing
