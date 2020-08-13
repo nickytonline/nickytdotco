@@ -13,6 +13,7 @@ tags:
   - frontend
 canonical_url: 'https://www.iamdeveloper.com/posts/forem-s-css-utility-classes-o6j/'
 template: post
+forem_instance_url: 'https://forem.dev/nickytonline/forem-s-css-utility-classes-o6j'
 ---
 When I joined in January of this year, I had a call with one of our product designers, Pawel (@pp).
 

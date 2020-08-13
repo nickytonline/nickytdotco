@@ -69,7 +69,7 @@ export default class Post extends React.Component {
                             <a
                                 href={`${_.get(
                                     this.props,
-                                    'pageContext.frontmatter.dev_url',
+                                    'pageContext.frontmatter.forem_instance_url',
                                 )}#comments`}
                             >
                                 Comment on the post

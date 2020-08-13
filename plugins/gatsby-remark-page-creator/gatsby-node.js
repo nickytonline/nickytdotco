@@ -151,8 +151,8 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
                 graphQLNode.html,
             );
 
-            if (matches !== null) {
-                node.frontmatter.dev_url = matches[1];
+            if (matches !== null && !node.frontmatter.forem_instance_url) {
+                node.frontmatter.forem_instance_url = matches[1];
             }
 
             const url = node.fields.url;

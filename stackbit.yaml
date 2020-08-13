@@ -369,9 +369,9 @@ models:
         label: Post Menus
         description: Which menus should this page show up in
       - type: string
-        name: dev_url
-        label: DEV URL
-        description: The DEV URL for the post.
+        name: forem_instance_url
+        label: The Forem instance URL
+        description: The Forem instance URL for the post.
   section:
     type: object
     label: Section
