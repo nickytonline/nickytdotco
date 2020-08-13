@@ -23,13 +23,13 @@ Fast forward a bit and we had another discussion about CSS. We opted to go with 
 
 Here's Pawel's PR for that if you're interested
 
-{% github https://github.com/thepracticaldev/dev.to/pull/6334 %}
+<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fthepracticaldev%2Fdev.to%2Fpull%2F6334" style="border: 0; width: 100%;"></iframe>
 
 For those that have contributed to the Forem code base in the frontend, at some point, you have most likely touched some CSS. Not many have used our CSS utility classes though unless it was brought up as there is no documentation for it. Even core team members aren't really aware!
 
 This PR changes that. Now there will be documentation hosted for utility classes in Storybook. ~~At the time of writing, the PR is still in review, but will most likely be merged this week.~~ It's merged!
 
-{%github https://github.com/forem/forem/pull/9633 %}
+<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fforem%2Fforem%2Fpull%2F9633" style="border: 0; width: 100%;"></iframe>
 
 It's mentioned in the PR, but you can check out the PR's [Storybook](https://deploy-preview-9633--storybookdevto.netlify.app/?path=/story/5-css-utility-classes-align-content--content-start) so that you can see it in action.
 
