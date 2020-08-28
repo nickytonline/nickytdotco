@@ -42,6 +42,13 @@ exports.onCreateNode = ({ node, getNode, actions }, options) => {
             );
         }
 
+        const value = createFilePath({ node, getNode });
+        createNodeField({
+            name: `slug`,
+            node,
+            value,
+        });
+
         let url;
         if (node.frontmatter.url) {
             url = node.frontmatter.url;
