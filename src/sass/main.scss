@@ -8,13 +8,15 @@ $font: (
     ),
 );
 
+$primary: #33383f;
+
 // Palette.
 $palette: (
-    primary: #555e69,
-    secondary: darken(#555e69, 15%),
-    meta: lighten(#555e69, 25%),
-    border: lighten(#555e69, 55%),
-    border-alt: lighten(#555e69, 25%),
+    primary: $primary,
+    secondary: darken($primary, 15%),
+    meta: lighten($primary, 25%),
+    border: lighten($primary, 55%),
+    border-alt: lighten($primary, 25%),
     accent: #1de2bc,
     accent-blue: #10bcf9,
     accent-violet: #9371e6,
