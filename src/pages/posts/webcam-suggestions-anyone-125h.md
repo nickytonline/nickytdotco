@@ -6,7 +6,7 @@ excerpt: >-
   quite well, it's just when...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--KUlaDCOI--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5l6xundreqtk25dgj83u.JPG
-comments_count: 8
+comments_count: 9
 positive_reactions_count: 6
 tags:
   - hardware

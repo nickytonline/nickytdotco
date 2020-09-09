@@ -4,8 +4,8 @@ date: '2017-12-23T14:11:11.594Z'
 excerpt: A small write up on my Visual Studio Code setup
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--GzTj3t37--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6e271uy3v8ia1h0e1c7q.png
-comments_count: 42
-positive_reactions_count: 300
+comments_count: 43
+positive_reactions_count: 303
 tags:
   - visualstudiocode
   - developertools

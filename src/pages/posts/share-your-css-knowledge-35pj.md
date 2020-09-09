@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--qcwGtJd7--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/pztd7cvaak344h9i8yw1.png
 comments_count: 34
-positive_reactions_count: 123
+positive_reactions_count: 126
 tags:
   - css
   - discuss

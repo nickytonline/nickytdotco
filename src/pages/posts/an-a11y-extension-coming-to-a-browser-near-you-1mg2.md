@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--KQEdO3mC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ir0wzbkqn1rw9vu67irj.png
 comments_count: 6
-positive_reactions_count: 40
+positive_reactions_count: 42
 tags:
   - a11y
   - javascript

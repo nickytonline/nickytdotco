@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--w2AnZqqT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/qlvdfwxlexb8f27jy7c1.jpg
 comments_count: 1
-positive_reactions_count: 30
+positive_reactions_count: 31
 tags:
   - discuss
   - katas

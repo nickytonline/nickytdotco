@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--1j9Z4MyX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/d0slehzp7b26buouwz33.png
 comments_count: 16
-positive_reactions_count: 811
+positive_reactions_count: 825
 tags:
   - frontend
   - javascript
@@ -94,7 +94,11 @@ Fun fact, I converted it to a Chrome/Firefox extension for those interested.
 
 #### axe
 
-Deque's axe extension is another great one. It is available for [Chrome](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd) and [Firefox](https://addons.mozilla.org/en-CA/firefox/addon/axe-devtools/).
+Deque's axe browser extension is another great one. It is available for [Chrome](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd) and [Firefox](https://addons.mozilla.org/en-CA/firefox/addon/axe-devtools/). It's great for finding accessibility issues in your app.
+
+#### WAVE
+
+WebAIM's [WAVE](https://wave.webaim.org/extension/) browser extension is great as well for finding accessibility issues in your app.
 
 ### cssgrid.io
 
@@ -162,9 +166,17 @@ There is also TSDX, which is some fantastic work by Jared Palmer (@jaredpalmer).
 
 And you know what? If you're still not a fan of types, that's OK. 😺
 
+### The JavaScript Event Loop
+
+[Philip Roberts](https://twitter.com/philip_roberts) talk at JSConf EU "What the heck is the event loop anyway?" is a great explanation of the event loop.
+
+
+<iframe class="liquidTag" src="https://dev.to/embed/youtube?args=8aGhZQkoFbQ" style="border: 0; width: 100%;"></iframe>
+
+
 ### Some JavaScript Knowledge Nuggets care of Jake Archibald
 
-This is definitely a great watch for those looking to understand JavaScript's event loop.
+This is definitely a great watch for those looking to understand JavaScript's event loop building off of Philip Robert's talk above.
 
 
 <iframe class="liquidTag" src="https://dev.to/embed/youtube?args=cCOL7MC4Pl0" style="border: 0; width: 100%;"></iframe>

@@ -5,7 +5,7 @@ excerpt: I Tweeted this out last week that we moved to Preact X and Testing Libr
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--RbUzG7vH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/taavig1ker0pmxi35grk.png
 comments_count: 11
-positive_reactions_count: 89
+positive_reactions_count: 92
 tags:
   - changelog
   - meta

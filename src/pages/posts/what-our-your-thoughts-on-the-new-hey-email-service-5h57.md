@@ -6,7 +6,7 @@ excerpt: >-
   DEV think of the new Hey...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--Dgy1zBiW--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/mujuivymljr71rgv9cjq.png
-comments_count: 31
+comments_count: 33
 positive_reactions_count: 26
 tags:
   - discuss
