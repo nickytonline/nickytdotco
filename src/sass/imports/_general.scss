@@ -290,7 +290,6 @@ a.button {
 
     transition: 0.3s ease;
 
-    &:hover,
     &:focus,
     &:active {
         background: 0;
@@ -299,7 +298,6 @@ a.button {
     }
 }
 
-a:hover,
 a:focus,
 a:active {
     background: 0;
@@ -319,7 +317,6 @@ a.circle {
     padding: 0;
     width: 3em;
 
-    &:hover,
     &:focus,
     &:active {
         background: _palette(accent);

@@ -20,14 +20,12 @@
         border-color: _palette(accent-blue);
         color: _palette(secondary);
 
-        &:hover,
         &:focus,
         &:active {
             outline-color: rgba(_palette(accent-orange), 0.75);
         }
     }
 
-    a:hover,
     a:focus,
     a:active {
         outline-color: rgba(_palette(accent-orange), 0.75);
@@ -36,7 +34,6 @@
     a.button.circle {
         background: transparent;
 
-        &:hover,
         &:focus,
         &:active {
             background: _palette(accent-orange);
