@@ -60,12 +60,18 @@ export default class Body extends React.Component {
                         href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
                         as="style"
                     />
+                    <link rel="preload" href="/css/fontawesome.min.css" />
+                    <link rel="preload" href="/css/brands.min.css" />
                     <link
                         rel="preload"
                         href="/assets/css/main.css"
                         as="style"
                     />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" />
+                    <link
+                        rel="preconnect"
+                        href="https://fonts.gstatic.com"
+                        crossOrigin="anonymous"
+                    />
                     <meta charSet="utf-8" />
                     <meta
                         name="viewport"
