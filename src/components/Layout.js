@@ -55,6 +55,17 @@ export default class Body extends React.Component {
             <React.Fragment>
                 <Helmet>
                     <title>{postTitle + ' - ' + siteTitle}</title>
+                    <link
+                        rel="preload"
+                        href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+                        as="style"
+                    />
+                    <link
+                        rel="preload"
+                        href="/assets/css/main.css"
+                        as="style"
+                    />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <meta charSet="utf-8" />
                     <meta
                         name="viewport"
@@ -69,7 +80,10 @@ export default class Body extends React.Component {
                             'pageContext.site.siteMetadata.monetization',
                         )}
                     />
-                    <link rel="preload" href="https://fonts.googleapis.com" />
+                    <link
+                        href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+                        rel="stylesheet"
+                    />
                     <link
                         rel="stylesheet"
                         href={safePrefix('assets/css/main.css')}

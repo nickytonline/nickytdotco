@@ -4,7 +4,9 @@
  */
 html {
     font-display: swap;
-    font-family: _font(primary);
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
     font-size: 112.5%;
     height: 100%;
     min-height: 100%;
@@ -40,7 +42,7 @@ h4,
 h5,
 h6 {
     color: _palette(secondary);
-    font-weight: bold;
+    font-weight: 400;
     line-height: 1.2;
     margin: 1.66667rem 0 0.83333rem;
     text-rendering: optimizeLegibility;
@@ -160,7 +162,7 @@ dl {
 }
 
 dt {
-    font-weight: bold;
+    font-weight: 400;
 }
 
 dd {
@@ -209,13 +211,13 @@ td {
 
 th {
     color: _palette(secondary);
-    font-weight: bold;
+    font-weight: 400;
 }
 
 /* Form fields */
 label {
     color: _palette(secondary);
-    font-weight: bold;
+    font-weight: 400;
 }
 
 label > span {
