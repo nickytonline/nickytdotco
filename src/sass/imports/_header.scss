@@ -69,6 +69,11 @@
         border: 0;
         color: inherit;
     }
+
+    a:focus {
+        outline: none;
+        color: rgba(_palette(accent-yellow), 0.75);
+    }
 }
 
 .site-description {

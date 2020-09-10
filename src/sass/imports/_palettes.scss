@@ -22,13 +22,13 @@
 
         &:focus,
         &:active {
-            outline-color: rgba(_palette(accent-orange), 0.75);
+            outline-color: rgba(_palette(accent-yellow), 0.75);
         }
     }
 
     a:focus,
     a:active {
-        outline-color: rgba(_palette(accent-orange), 0.75);
+        outline-color: rgba(_palette(accent-yellow), 0.75);
     }
 
     a.button.circle {
@@ -59,12 +59,12 @@
 
         .headshot {
             display: inline-block;
-            border: 3px solid transparent;
+            border: 10px solid transparent;
             border-radius: 100%;
         }
 
         .headshot:focus {
-            border-color: _palette(accent-orange);
+            border-color: rgba(_palette(accent-yellow), 0.75);
             outline: none;
         }
     }
@@ -77,21 +77,29 @@
     .social-links {
         a {
             border-color: _palette(border);
+            border-left-color: transparent;
+            border-right-color: transparent;
 
             &:hover {
                 background: _palette(accent-blue);
-                border-color: _palette(accent-blue);
+                border-top-color: _palette(accent-blue);
+                border-bottom-color: _palette(accent-blue);
                 box-shadow: 0 0 1px 5px rgba(_palette(accent-blue), 0.2);
             }
 
             &:focus {
                 outline: none;
-                background: _palette(accent-yellow);
-                border-color: _palette(accent-yellow);
+                background: rgba(_palette(accent-yellow), 0.75);
+                border-top-color: rgba(_palette(accent-yellow), 0.75);
+                border-bottom-color: rgba(_palette(accent-yellow), 0.75);
                 color: #000;
                 box-shadow: 0 0 1px 5px rgba(_palette(accent-yellow), 0.2);
             }
         }
+    }
+
+    .site-main a:focus {
+        outline-color: _palette(accent-blue);
     }
 
     .dark .social-links {
