@@ -16,8 +16,11 @@ export default class HeroBlock extends React.Component {
                     </h2>
                 ) : (
                     <h2 className="hero-title">
-                        <em>Hi!</em> {`I'm`}
-                        {_.get(this.props, 'pageContext.site.data.author.name')}
+                        <em>Hi!</em>{' '}
+                        {`I'm ${_.get(
+                            this.props,
+                            'pageContext.site.data.author.name',
+                        )}`}
                     </h2>
                 )}
                 <div className="hero-text">
