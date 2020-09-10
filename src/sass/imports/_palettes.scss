@@ -83,6 +83,14 @@
                 border-color: _palette(accent-blue);
                 box-shadow: 0 0 1px 5px rgba(_palette(accent-blue), 0.2);
             }
+
+            &:focus {
+                outline: none;
+                background: _palette(accent-yellow);
+                border-color: _palette(accent-yellow);
+                color: #000;
+                box-shadow: 0 0 1px 5px rgba(_palette(accent-yellow), 0.2);
+            }
         }
     }
 
