@@ -23,9 +23,14 @@
         &:hover,
         &:focus,
         &:active {
-            background: 0;
-            box-shadow: 0 0 1px 7px rgba(_palette(accent-blue), 0.2);
+            outline-color: rgba(_palette(accent-orange), 0.75);
         }
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        outline-color: rgba(_palette(accent-orange), 0.75);
     }
 
     a.button.circle {
@@ -34,7 +39,8 @@
         &:hover,
         &:focus,
         &:active {
-            background: _palette(accent-blue);
+            background: _palette(accent-orange);
+            outline-color: rgba(_palette(accent-orange), 0.75);
         }
     }
 
@@ -52,6 +58,17 @@
             @media only screen and (min-width: 801px) {
                 box-shadow: 0 0 1px 11px rgba(_palette(accent-blue), 0.2);
             }
+        }
+
+        .headshot {
+            display: inline-block;
+            border: 3px solid transparent;
+            border-radius: 100%;
+        }
+
+        .headshot:focus {
+            border-color: _palette(accent-orange);
+            outline: none;
         }
     }
 

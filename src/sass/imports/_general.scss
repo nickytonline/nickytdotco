@@ -254,7 +254,7 @@ textarea {
     width: 100%;
 
     &:focus {
-        outline: 0;
+        outline: 1px solid rgba(_palette(accent), 0.75);
     }
 }
 
@@ -292,10 +292,17 @@ a.button {
     &:focus,
     &:active {
         background: 0;
-        box-shadow: 0 0 1px 7px rgba(_palette(accent), 0.2);
         color: _palette(secondary);
-        outline: 0;
+        outline: 3px solid rgba(_palette(accent), 0.75);
     }
+}
+
+a:hover,
+a:focus,
+a:active {
+    background: 0;
+    outline: 3px solid rgba(_palette(accent), 0.75);
+    color: _palette(secondary);
 }
 
 a.button {

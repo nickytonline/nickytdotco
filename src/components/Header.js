@@ -22,7 +22,10 @@ export default class Header extends React.Component {
                                 'pageContext.site.siteMetadata.header.profile_img',
                             ) && (
                                 <p className="profile">
-                                    <Link to={safePrefix('/')}>
+                                    <Link
+                                        className="headshot"
+                                        to={safePrefix('/')}
+                                    >
                                         <img
                                             src={safePrefix(
                                                 _.get(
