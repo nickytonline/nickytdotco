@@ -270,39 +270,41 @@ select {
     height: 2.625em;
 }
 
-button,
-input[type='submit'],
-input[type='button'],
-input[type='reset'],
-a.button {
-    background: _palette(accent);
-    border: 2px solid _palette(accent);
-    border-radius: 30px;
-    box-sizing: border-box;
-    color: #fff;
-    display: inline-block;
-    font-size: 14px;
-    height: 3em;
-    letter-spacing: 0.075em;
-    line-height: 1.5;
-    padding: 0.25em 35px;
-    text-transform: uppercase;
+.site-main {
+    & button,
+    & input[type='submit'],
+    & input[type='button'],
+    & input[type='reset'],
+    & a.button {
+        background: _palette(accent);
+        border: 2px solid _palette(accent);
+        border-radius: 30px;
+        box-sizing: border-box;
+        color: #fff;
+        display: inline-block;
+        font-size: 14px;
+        height: 3em;
+        letter-spacing: 0.075em;
+        line-height: 1.5;
+        padding: 0.25em 35px;
+        text-transform: uppercase;
 
-    transition: 0.3s ease;
+        transition: 0.3s ease;
 
-    &:focus,
-    &:active {
-        background: 0;
-        color: _palette(secondary);
-        outline: 3px solid rgba(_palette(accent), 0.75);
+        &:focus,
+        &:active {
+            background: 0;
+            color: _palette(secondary);
+            outline: 3px solid rgba(_palette(accent), 0.75);
+        }
     }
-}
 
-a:focus,
-a:active {
-    background: 0;
-    outline: 3px solid rgba(_palette(accent), 0.75);
-    color: _palette(secondary);
+    & a:focus,
+    & a:active {
+        background: 0;
+        outline: 3px solid rgba(_palette(accent), 0.75);
+        color: _palette(secondary);
+    }
 }
 
 a.button {
@@ -333,6 +335,14 @@ a.circle {
     padding: 0;
     position: relative;
     width: 30px;
+
+    &:focus {
+        outline: none;
+
+        & .icon-menu {
+            color: rgba(_palette(accent-yellow), 0.75);
+        }
+    }
 }
 
 /* Videos, audios and embeds */
