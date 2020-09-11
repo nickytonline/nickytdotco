@@ -77,8 +77,17 @@
         }
     }
 
-    .site-main a:focus {
-        color: _palette(accent-blue);
+    .site-main a {
+        &:focus:not(.post-inside) {
+            color: _palette(accent-blue);
+        }
+
+        &.post-inside:focus,
+        &.post-inside:active {
+            background: 0;
+            border-width: 3px;
+            border-color: _palette(accent-blue);
+        }
     }
 
     .dark .social-links {

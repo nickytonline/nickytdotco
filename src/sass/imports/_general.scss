@@ -295,10 +295,16 @@ select {
 
         transition: 0.3s ease;
 
-        &:focus,
-        &:active {
+        &:focus:not(.post-inside),
+        &:active:not(.post-inside) {
             background: 0;
             color: _palette(secondary);
+            border-color: _palette(secondary);
+        }
+
+        &.post-inside:focus,
+        &.post-inside:active {
+            background: 0;
             border-color: _palette(secondary);
         }
     }
