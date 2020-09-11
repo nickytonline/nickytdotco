@@ -26,36 +26,26 @@ export default class PostsBlock extends React.Component {
                 <div className="post-feed">
                     {_.map(recent_posts, (post, post_idx) => (
                         <article key={post_idx} className="post">
-                            <div className="post-inside">
+                            <Link
+                                className="post-inside"
+                                to={safePrefix(_.get(post, 'url'))}
+                            >
                                 {_.get(post, 'frontmatter.thumb_img_path') && (
-                                    <Link
-                                        className="post-thumbnail"
-                                        to={safePrefix(_.get(post, 'url'))}
-                                    >
-                                        <img
-                                            className="thumbnail"
-                                            src={safePrefix(
-                                                _.get(
-                                                    post,
-                                                    'frontmatter.thumb_img_path',
-                                                ),
-                                            )}
-                                            alt={_.get(
+                                    <img
+                                        className="thumbnail"
+                                        src={safePrefix(
+                                            _.get(
                                                 post,
-                                                'frontmatter.title',
-                                            )}
-                                            loading="lazy"
-                                        />
-                                    </Link>
+                                                'frontmatter.thumb_img_path',
+                                            ),
+                                        )}
+                                        alt={_.get(post, 'frontmatter.title')}
+                                        loading="lazy"
+                                    />
                                 )}
                                 <header className="post-header">
                                     <h3 className="post-title">
-                                        <Link
-                                            to={safePrefix(_.get(post, 'url'))}
-                                            rel="bookmark"
-                                        >
-                                            {_.get(post, 'frontmatter.title')}
-                                        </Link>
+                                        {_.get(post, 'frontmatter.title')}
                                     </h3>
                                 </header>
                                 <div className="post-content">
@@ -73,7 +63,7 @@ export default class PostsBlock extends React.Component {
                                         ).strftime('%B %d, %Y')}
                                     </time>
                                 </footer>
-                            </div>
+                            </Link>
                         </article>
                     ))}
                 </div>
