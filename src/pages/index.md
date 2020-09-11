@@ -12,7 +12,7 @@ sections:
       title: Recent Posts
       num_posts_displayed: 4
       actions:
-          - label: Blog
+          - label: More posts...
             url: blog
 menus:
     main:

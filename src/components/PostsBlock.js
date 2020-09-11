@@ -75,7 +75,6 @@ export default class PostsBlock extends React.Component {
                                 <Link
                                     key={action_idx}
                                     to={safePrefix(_.get(action, 'url'))}
-                                    className="button"
                                 >
                                     {_.get(action, 'label')}
                                 </Link>
