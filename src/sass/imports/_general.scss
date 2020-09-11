@@ -16,6 +16,10 @@ html {
     }
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
     background: #fff;
     color: _palette(primary);
@@ -295,15 +299,8 @@ select {
         &:active {
             background: 0;
             color: _palette(secondary);
-            outline: 3px solid rgba(_palette(accent), 0.75);
+            border-color: _palette(secondary);
         }
-    }
-
-    & a:focus,
-    & a:active {
-        background: 0;
-        outline: 3px solid rgba(_palette(accent), 0.75);
-        color: _palette(secondary);
     }
 }
 

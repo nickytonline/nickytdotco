@@ -19,26 +19,6 @@
         background: 0;
         border-color: _palette(accent-blue);
         color: _palette(secondary);
-
-        &:focus,
-        &:active {
-            outline-color: rgba(_palette(accent-yellow), 0.75);
-        }
-    }
-
-    a:focus,
-    a:active {
-        outline-color: rgba(_palette(accent-yellow), 0.75);
-    }
-
-    a.button.circle {
-        background: transparent;
-
-        &:focus,
-        &:active {
-            background: _palette(accent-orange);
-            outline-color: rgba(_palette(accent-orange), 0.75);
-        }
     }
 
     .underline {
@@ -65,7 +45,6 @@
 
         .headshot:focus {
             border-color: rgba(_palette(accent-yellow), 0.75);
-            outline: none;
         }
     }
 
@@ -99,7 +78,7 @@
     }
 
     .site-main a:focus {
-        outline-color: _palette(accent-blue);
+        color: _palette(accent-blue);
     }
 
     .dark .social-links {
@@ -115,6 +94,12 @@
     .post-title {
         a:hover {
             color: _palette(accent-blue);
+        }
+    }
+
+    .menu {
+        & a:focus {
+            color: rgba(_palette(accent-yellow), 0.75);
         }
     }
 }
