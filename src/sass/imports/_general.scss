@@ -408,3 +408,7 @@ img {
     content: '';
     display: table;
 }
+
+iframe.liquidTag {
+    height: min-content;
+}
