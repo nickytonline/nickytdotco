@@ -5,7 +5,7 @@ sections:
       component: HeroBlock
       type: heroblock
       content: >-
-          I am a Senior Software Developer at [Forem](https://www.forem.com/)/[DEV](https://dev.to) working on all things Forem. I do not get along with spiders.
+          I am a Senior Software Engineer at [Forem](https://www.forem.com/)/[DEV](https://dev.to) working on all things Forem. I do not get along with spiders.
     - section_id: recent-posts
       component: PostsBlock
       type: postsblock
