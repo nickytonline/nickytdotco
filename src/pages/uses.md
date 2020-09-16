@@ -63,15 +63,19 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 -   [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3/buy/wh1000xm3-s) headphones - I snagged them during Boxing Day week.
 -   [Blue Designs Yeti](https://www.bluedesigns.com/products/yeti/) microphone
 -   [Rain mStand 360](https://www.raindesigninc.com/mstand360.html) laptop stand
--   [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237) - Laptop stand for when I'm not at home
 -   [Anker Wireless Charger](https://www.amazon.ca/gp/product/B07THL8PP1)
 -   [Logitech C922x Pro Stream](https://www.amazon.ca/gp/product/B01LXCDPPK/) webcam with [webcam cover](https://www.amazon.ca/gp/product/B0748FZX99/)
 -   [BenQ GW2760HS 27-inch FHD 1920x1080 HDMI VGA LED Monitor](https://www.amazon.com/BenQ-GW2760HS-27-inch-1920x1080-Monitor/dp/B00ITORMDC) with [iKross Single Monitor Desk Mount with Free Stand Base](https://www.amazon.ca/gp/product/B07CVR6355)
+-   [Anker USB C Hub, PowerExpand 8-in-1 USB C Adapter](https://www.amazon.ca/gp/product/B0874M3KW4)
 -   [Anker Premium 60W 5-Port Desktop Charger](https://www.amazon.ca/gp/product/B072K5ZJXF)
 -   [Seagate Backup Plus Slim 2TB External Drive](https://www.amazon.ca/gp/product/B00FRHTTIA)
--   [Anker USB-C to HDMI Adapter](http://amazon.ca/gp/product/B01MYUCWOK)
 -   [VIZ-PRO Dry Erase Board/Whiteboard](https://www.amazon.ca/gp/product/B01461WT9S)
 -   [Under Armour Men’s Charged Commit 2.0 Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) - My work from home sneakers
 -   [Topo Comfort Mat by Ergodriven](https://www.amazon.ca/gp/product/B00V3TO9HW/) standing desk mat
 -   [LEVOIT Air Purifier Core 300](https://www.amazon.ca/gp/product/B07S3D4MRJ/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
 -   [Vornado Pivot Personal Air Circulator Fan](https://www.amazon.ca/gp/product/B01NAYWFLL/)
+
+## Travel Gear
+
+-   [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237)
+-   [Anker USB-C to HDMI Adapter](http://amazon.ca/gp/product/B01MYUCWOK) and other dongles
