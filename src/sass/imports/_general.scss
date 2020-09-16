@@ -409,6 +409,7 @@ img {
     display: table;
 }
 
-iframe.liquidTag {
-    height: min-content;
+iframe:not([src*="https://dev.to/embed/user"]).liquidTag
+{
+    height: 500px;
 }

@@ -29,8 +29,3 @@ $palette: (
 @import 'imports/footer';
 @import 'imports/palettes';
 @import 'imports/banner';
-
-// Fixes an issue with embed heights.
-.liquidTag {
-    height: 500px;
-}
