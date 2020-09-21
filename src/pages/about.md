@@ -2,7 +2,7 @@
 title: About
 menus:
     main:
-        weight: 2
+        weight: 3
         title: About
 template: page
 ---
