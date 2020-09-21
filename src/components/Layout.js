@@ -15,6 +15,9 @@ function getPageExcerpt(pathname) {
         case '/blog/':
             return 'My writings about all kinds of things.';
 
+        case '/live-coding/':
+            return 'My stream where I live code on Twitch.';
+
         case '/uses/':
             return 'My whole setup, from software all the way to the shoes I wear at home.';
 
