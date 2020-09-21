@@ -6,7 +6,7 @@ excerpt: >-
   Chuck Smith....
 thumb_img_path: null
 comments_count: 0
-positive_reactions_count: 5
+positive_reactions_count: 19
 tags:
   - livecoding
   - streaming
@@ -40,10 +40,16 @@ Give them a follow on DEV as well as Twitter and just a reminder... they're look
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1274682855042560002" style="border: 0; width: 100%;"></iframe>
 
 
-Now that summer is over and I'm back from vacation, we're getting back into the swing of things for pairing on Forem issues. I'll be joined by TJ Harris this week on Thursday.
+Now that summer is over and I'm back from vacation, we're getting back into the swing of things for pairing on Forem issues.
 
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1305924794865659906" style="border: 0; width: 100%;"></iframe>
+
+
+I'll be joined by TJ this week on Thursday.
+
+
+<iframe class="liquidTag" src="https://dev.to/embed/user?args=taniyahljackson" style="border: 0; width: 100%;"></iframe>
 
 
 Looking forward to the next pairing session!

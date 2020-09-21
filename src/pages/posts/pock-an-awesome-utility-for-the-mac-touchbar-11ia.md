@@ -6,7 +6,7 @@ excerpt: >-
   the Dock. I actually hid...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--wu3fsFJF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/1lnsa2cfa2m4oogcas4f.jpg
-comments_count: 4
+comments_count: 5
 positive_reactions_count: 36
 tags:
   - productivity
