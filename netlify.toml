@@ -107,3 +107,9 @@ from = "/2018-resolutions/"
 to = "/posts/2018-resolutions-1deo/"
 status = 301
 force = true
+
+[[redirects]]
+from = "/great-pr/"
+to = "https://dev.to/nickytonline/great-examples-of-issues-and-pull-requests-2nne"
+status = 301
+force = true
