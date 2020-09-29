@@ -6,7 +6,7 @@ excerpt: >-
   good read. I was just won...
 thumb_img_path: null
 comments_count: 4
-positive_reactions_count: 23
+positive_reactions_count: 24
 tags:
   - explainlikeimfive
   - functional

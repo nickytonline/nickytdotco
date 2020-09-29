@@ -8,6 +8,7 @@ positive_reactions_count: 142
 tags:
   - discuss
   - ruby
+  - rails
 canonical_url: >-
   https://www.iamdeveloper.com/posts/what-arewere-your-go-to-resources-for-learning-ruby-and-rails-5611/
 template: post

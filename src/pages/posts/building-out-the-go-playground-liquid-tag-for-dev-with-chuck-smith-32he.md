@@ -54,7 +54,7 @@ I'll be joined by TJ this week on Thursday.
 
 Looking forward to the next pairing session!
 
-P.S.: Feel free to subscribe to [My Twitch](https://livecoding.ca) and [my channel](https://m.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ). 😉
+P.S.: Feel free to subscribe to [my Twitch](https://livecoding.ca) channel and [my YouTube channel](https://m.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ). 😉
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he)*
 

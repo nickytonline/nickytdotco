@@ -6,7 +6,7 @@ excerpt: >-
   potentially pair progr...
 thumb_img_path: null
 comments_count: 2
-positive_reactions_count: 32
+positive_reactions_count: 35
 tags:
   - livecoding
   - streaming

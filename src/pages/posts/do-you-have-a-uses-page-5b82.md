@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--axXi9TbA--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/ejq0k7i48j73zlj5eatz.JPG
 comments_count: 29
-positive_reactions_count: 56
+positive_reactions_count: 55
 tags:
   - discuss
   - productivity

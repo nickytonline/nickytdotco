@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--xylypMBS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/3austk1o80gncwp8ulp1.png
 comments_count: 36
-positive_reactions_count: 31
+positive_reactions_count: 32
 tags:
   - weeklylearn
   - discuss

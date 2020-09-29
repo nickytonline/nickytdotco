@@ -5,7 +5,7 @@ excerpt: "A while back, I wrote about My Mac Setup (yes, shameless plug \U0001F6
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--s5JCtcf3--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/bcz0ib9rl1ddretjo9xl.jpg
 comments_count: 30
-positive_reactions_count: 39
+positive_reactions_count: 40
 tags:
   - discuss
   - developertools
