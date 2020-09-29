@@ -67,7 +67,7 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 -   [Logitech C922x Pro Stream](https://www.amazon.ca/gp/product/B01LXCDPPK/) webcam with [webcam cover](https://www.amazon.ca/gp/product/B0748FZX99/)
 -   [Webcam Light Stand for Live Stream, Selfie Ring Light with Webcam Mount](https://www.amazon.ca/gp/product/B07G379ZBH)
 -   [BenQ GW2760HS 27-inch FHD 1920x1080 HDMI VGA LED Monitor](https://www.amazon.com/BenQ-GW2760HS-27-inch-1920x1080-Monitor/dp/B00ITORMDC) with [iKross Single Monitor Desk Mount with Free Stand Base](https://www.amazon.ca/gp/product/B07CVR6355)
--   [Anker USB C Hub, PowerExpand 8-in-1 USB C Adapter](https://www.amazon.ca/gp/product/B0874M3KW4)
+-   [Anker USB C Hub, 5-In-1 USB C Adapter](https://www.amazon.ca/gp/product/B071G83L1J)
 -   [Anker Premium 60W 5-Port Desktop Charger](https://www.amazon.ca/gp/product/B072K5ZJXF)
 -   [Seagate Backup Plus Slim 2TB External Drive](https://www.amazon.ca/gp/product/B00FRHTTIA)
 -   [VIZ-PRO Dry Erase Board/Whiteboard](https://www.amazon.ca/gp/product/B01461WT9S)
