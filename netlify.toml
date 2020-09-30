@@ -113,3 +113,9 @@ from = "/great-pr/"
 to = "https://dev.to/nickytonline/great-examples-of-issues-and-pull-requests-2nne"
 status = 301
 force = true
+
+[[redirects]]
+from = "/pair/"
+to = "https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he"
+status = 301
+force = true
