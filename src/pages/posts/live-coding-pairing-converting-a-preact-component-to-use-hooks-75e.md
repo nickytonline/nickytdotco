@@ -13,7 +13,7 @@ tags:
   - pairprogramming
   - javascript
 canonical_url: >-
-  https://dev.to/nickytonline/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e
+  https://dev.to/devteam/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e
 template: post
 ---
 A few weeks ago, I wrote a post asking DEV community members if they wanted to potentially pair program with me during a live coding session.
@@ -62,7 +62,7 @@ Looking forward to the next pairing session!
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fsophia_wyl%2Flearnings-from-1st-live-pairing-session-1st-pull-request-to-forem-2lh0" style="border: 0; width: 100%;"></iframe>
 
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e)*
+*[This post is also available on DEV.](https://dev.to/devteam/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e)*
 
 
 <script>

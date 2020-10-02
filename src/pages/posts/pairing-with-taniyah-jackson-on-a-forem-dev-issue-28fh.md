@@ -12,8 +12,7 @@ tags:
   - streaming
   - pairprogramming
   - ruby
-canonical_url: >-
-  https://dev.to/nickytonline/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh
+canonical_url: 'https://dev.to/devteam/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh'
 template: post
 ---
 I had a lot of fun with Taniyah Jackson on the pairing today. She's brand new to Ruby and Ruby on Rails and I barely have any Rails experience, so it was fun being in the hot seat.
@@ -50,7 +49,7 @@ Looking forward to the next pairing and thanks again Taniyah!
 
 P.S.: Feel free to subscribe to [my Twitch](https://livecoding.ca) channel and [my YouTube channel](https://m.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ). 😉
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh)*
+*[This post is also available on DEV.](https://dev.to/devteam/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh)*
 
 
 <script>

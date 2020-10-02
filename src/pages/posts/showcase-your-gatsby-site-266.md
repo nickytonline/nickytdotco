@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--2CkRqNCp--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/epig0488nwfmsdm59t48.png
 comments_count: 11
-positive_reactions_count: 55
+positive_reactions_count: 49
 tags:
   - gatsby
   - opensource

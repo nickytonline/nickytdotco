@@ -13,7 +13,7 @@ tags:
   - pairprogramming
   - ruby
 canonical_url: >-
-  https://dev.to/nickytonline/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he
+  https://dev.to/devteam/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he
 template: post
 ---
 At then end of July, I had a chance to pair with awesome community member Chuck Smith.
@@ -56,7 +56,7 @@ Looking forward to the next pairing session!
 
 P.S.: Feel free to subscribe to [my Twitch](https://livecoding.ca) channel and [my YouTube channel](https://m.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ). 😉
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he)*
+*[This post is also available on DEV.](https://dev.to/devteam/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he)*
 
 
 <script>
