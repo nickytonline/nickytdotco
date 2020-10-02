@@ -13,7 +13,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 ## Editor
 
 -   [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/), here’s [my setup](https://www.iamdeveloper.com/blog/2017-12-20-my-visual-studio-code-setup/)
--   Theme: [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) by [Sarah Drasner](https://twitter.com/sarah_edo) - Occasionally I switch to [Min Dark](https://marketplace.visualstudio.com/items?itemName=miguelsolorio.min-theme).
+-   Theme: [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) and [In Bed by 7pm](https://marketplace.visualstudio.com/items?itemName=sdras.inbedby7pm) by [Sarah Drasner](https://twitter.com/sarah_edo)
 -   Font: [Dank Mono](https://dank.sh) by [Phil Plückthun](https://twitter.com/_philpl)
 
 ### Chrome/Brave/Firefox Browser Extensions
