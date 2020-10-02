@@ -122,6 +122,6 @@ force = true
 
 [[redirects]]
 from = "/hacktoberfest2020/"
-to = "https://docs.google.com/presentation/d/e/2PACX-1vRv3l00oWyRwW4MWthji8--Pq8HB4uncyetqSu5GeKa7shpsYgf1P32-KWFiyRxxQS6rCKxklJ1xUnH/pub?start=false&loop=false&delayms=3000"
+to = "https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source"
 status = 301
 force = true
