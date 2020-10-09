@@ -36,7 +36,7 @@ If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca)
 `oembed: https://www.youtube.com/watch?v=YUA7k3MQx5g`
 
 -   [Blog post about pairing](/posts/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh)
--   [Taiyah's web site](https://taniyah-l-jackson.github.io/)
+-   [Taniyah's web site](https://taniyah-l-jackson.github.io/)
 
 ## Building out the Go Playground Liquid Tag for DEV with Chuck Smith
 
