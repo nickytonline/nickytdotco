@@ -12,7 +12,7 @@ I [started live coding](/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/
 The goal of these pairings is a few things:
 
 -   It's potentially intimidating for people to contribute to an open source project, so why not help them out?
--   Some folks are looking to land there first role. I thought this could be a great way to give them some exposure and confidence to help them along their way to landing that first role while contributing to a real world code base.
+-   Some folks are looking to land their first role. I thought this could be a great way to give them some exposure and confidence to help them along their way to landing that first role while contributing to a real world code base.
 -   They are [learning in public](https://www.swyx.io/writing/learn-in-public/) because we are streaming on the Internet.
 -   It's fun meeting people from the community.
 -   I potentially get to learn new things as well!
