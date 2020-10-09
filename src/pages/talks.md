@@ -2,7 +2,7 @@
 title: Talks
 menus:
     main:
-        weight: 3
+        weight: 2
         title: Talks
 template: page
 ---
