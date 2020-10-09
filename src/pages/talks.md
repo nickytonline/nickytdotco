@@ -7,7 +7,7 @@ menus:
 template: page
 ---
 
-## An Introduction to React Storybook
+## Getting the Most out of Open Source
 
 <time datetime="2020-10-01">October 1st, 2020</time>
 
@@ -16,7 +16,7 @@ template: page
 -   [Slide deck and additional resources](https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source)
 -   [js-montreal talks page](https://js-montreal.org/archive.html)
 
-## Getting the Most out of Open Source
+## An Introduction to React Storybook
 
 <time datetime="2017-06-15">June 13th, 2017</time>
 
