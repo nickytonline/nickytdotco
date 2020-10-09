@@ -17,8 +17,31 @@ The goal of these pairings is a few things:
 -   It's fun meeting people from the community.
 -   I potentially get to learn new things as well!
 
-Hacktoberfest 2020 is right around the corner so I'll be pairing a lot more in October for issues in the Forem codebase to help folks get to that goal of 4 merged pull requests for Hacktoberfest. If you haven't already signed up for [Hacktoberfest](https://hacktoberfest.digitalocean.com/), there's still time.
+If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca). And if you're interested in pairing, [hit me up on Twitter](https://twitter.com/nickytonline) or send me a [direct message on DEV](https://dev.to/nickytonline). I initially started pairing on my stream, but since the pairings are all [Forem](https://github.com/forem/forem/) based, I've been doing them on the [DEV](https://www.twitch.tv/thepracticaldev) Twitch stream.
 
-And if you do plan on participating in Hacktoberfest 2020, be sure to check out my talk [Getting the Most Out of Open Source](https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source) on October 1st.
+## Pairing with Taniyah Jackson on a Forem/DEV issue
 
-If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca). And if you're interested in pairing, [hit me up on Twitter](https://twitter.com/nickytonline) or send me a [direct message on DEV](https://dev.to/nickytonline).
+<time datetime="2020-09-21">September 21st, 2020</time>
+
+`oembed: https://www.youtube.com/watch?v=YUA7k3MQx5g`
+
+-   [Blog post about pairing](/post/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh)
+-   [Taiyah's web site](https://taniyah-l-jackson.github.io/)
+
+## Building out the Go Playground Liquid Tag for DEV with Chuck Smith
+
+<time datetime="2020-07-30">July 30th, 2020</time>
+
+`oembed: https://www.youtube.com/watch?v=4mDY2uyakuM`
+
+-   [Blog post about pairing](/post/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he)
+-   [Chuck's web site](https://www.eclecticsaddlebag.com/)
+
+## Converting a Preact Component to use hooks with Sophia Li
+
+<time datetime="2020-07-17">July 17th, 2020</time>
+
+`oembed: https://www.youtube.com/watch?v=gy2LyxQtlSQ`
+
+-   [Blog post about pairing](/post/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e)
+-   [Sophia's web site](https://sophiali.dev/)
