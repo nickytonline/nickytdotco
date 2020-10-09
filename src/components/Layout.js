@@ -18,6 +18,9 @@ function getPageExcerpt(pathname) {
         case '/live-coding/':
             return 'My stream where I live code on Twitch.';
 
+        case '/talks/':
+            return `Talks I've given and panels I've been on`;
+
         case '/uses/':
             return 'My whole setup, from software all the way to the shoes I wear at home.';
 

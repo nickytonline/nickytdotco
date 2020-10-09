@@ -10,6 +10,7 @@
         "serve": "gatsby serve"
     },
     "dependencies": {
+        "@raae/gatsby-remark-oembed": "^0.1.1",
         "@stackbit/gatsby-plugin-menus": "0.0.4",
         "fs-extra": "^9.0.1",
         "gatsby": "2.23.3",

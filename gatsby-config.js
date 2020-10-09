@@ -46,7 +46,19 @@ module.exports = {
         {
             resolve: `gatsby-transformer-remark`,
             options: {
-                plugins: [`gatsby-remark-component`],
+                plugins: [
+                    `gatsby-remark-component`,
+                    {
+                        resolve: `@raae/gatsby-remark-oembed`,
+                        options: {
+                            usePrefix: ['oembed', 'video'],
+                            providers: {
+                                include: ['YouTube'],
+                                exclude: ['Reddit'],
+                            },
+                        },
+                    },
+                ],
             },
         },
         {
