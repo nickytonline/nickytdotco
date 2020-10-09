@@ -25,7 +25,7 @@ If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca)
 
 `oembed: https://www.youtube.com/watch?v=YUA7k3MQx5g`
 
--   [Blog post about pairing](/post/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh)
+-   [Blog post about pairing](/posts/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh)
 -   [Taiyah's web site](https://taniyah-l-jackson.github.io/)
 
 ## Building out the Go Playground Liquid Tag for DEV with Chuck Smith
@@ -34,7 +34,7 @@ If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca)
 
 `oembed: https://www.youtube.com/watch?v=4mDY2uyakuM`
 
--   [Blog post about pairing](/post/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he)
+-   [Blog post about pairing](/posts/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he)
 -   [Chuck's web site](https://www.eclecticsaddlebag.com/)
 
 ## Converting a Preact Component to use hooks with Sophia Li
@@ -43,5 +43,5 @@ If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca)
 
 `oembed: https://www.youtube.com/watch?v=gy2LyxQtlSQ`
 
--   [Blog post about pairing](/post/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e)
+-   [Blog post about pairing](/posts/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e)
 -   [Sophia's web site](https://sophiali.dev/)
