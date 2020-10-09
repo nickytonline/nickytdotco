@@ -19,6 +19,16 @@ The goal of these pairings is a few things:
 
 If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca). And if you're interested in pairing, [hit me up on Twitter](https://twitter.com/nickytonline) or send me a [direct message on DEV](https://dev.to/nickytonline). I initially started pairing on my stream, but since the pairings are all [Forem](https://github.com/forem/forem/) based, I've been doing them on the [DEV](https://www.twitch.tv/thepracticaldev) Twitch stream.
 
+## Pairing with Eliot Sanford on an Accessibility Issue in the Forem Code Base
+
+<time datetime="2020-10-09">October 9th, 2020</time>
+
+`oembed: https://www.youtube.com/watch?v=9edLszgV2VE`
+
+-   2020-10-09: [Full stream](https://www.twitch.tv/videos/764315674) available on Twitch and the YouTube video will be up soon.
+-   Blog post about pairing coming soon.
+-   [Eliot's web site](https://techieeliot.com/)
+
 ## Pairing with Taniyah Jackson on a Forem/DEV issue
 
 <time datetime="2020-09-21">September 21st, 2020</time>
