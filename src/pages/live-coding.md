@@ -59,7 +59,7 @@ https://www.youtube.com/watch?v=gy2LyxQtlSQ
 -   [Blog post about pairing](/posts/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e)
 -   [Sophia's web site](https://sophiali.dev/)
 
-## Other Live Coding Projects
+## Other Live Coding/Streaming Projects
 
 ### Walkthrough Wednesdays
 
