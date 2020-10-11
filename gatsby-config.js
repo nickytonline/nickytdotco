@@ -51,7 +51,6 @@ module.exports = {
                     {
                         resolve: `@raae/gatsby-remark-oembed`,
                         options: {
-                            usePrefix: ['oembed', 'video'],
                             providers: {
                                 include: ['YouTube'],
                                 exclude: ['Reddit'],

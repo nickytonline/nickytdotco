@@ -11,7 +11,7 @@ template: page
 
 <time datetime="2020-10-01">October 1st, 2020</time>
 
-`oembed: https://www.youtube.com/watch?v=Tn3MBiWYeEI`
+https://www.youtube.com/watch?v=Tn3MBiWYeEI
 
 -   [Slide deck and additional resources](https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source)
 
