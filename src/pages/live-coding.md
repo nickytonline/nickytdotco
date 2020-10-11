@@ -23,9 +23,8 @@ If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca)
 
 <time datetime="2020-10-09">October 9th, 2020</time>
 
-`oembed: https://www.youtube.com/watch?v=9edLszgV2VE`
+`oembed: https://www.youtube.com/watch?v=LBDqggawwNE`
 
--   2020-10-09: [Full stream](https://www.twitch.tv/videos/764315674) available on Twitch and the YouTube video will be up soon.
 -   Blog post about pairing coming soon.
 -   [Eliot's web site](https://techieeliot.com/)
 
