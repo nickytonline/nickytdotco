@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--S1-vDujY--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/cc61ssp14pyl9of3i37y.jpg
 comments_count: 6
-positive_reactions_count: 48
+positive_reactions_count: 49
 tags:
   - rails
   - webpack

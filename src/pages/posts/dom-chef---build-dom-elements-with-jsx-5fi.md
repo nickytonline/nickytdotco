@@ -5,7 +5,7 @@ excerpt: dom-chef-  Build DOM Elements with JSX
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--zP7lTySV--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/pkajv39sn98rgfgdeotf.jpg
 comments_count: 1
-positive_reactions_count: 42
+positive_reactions_count: 44
 tags:
   - githunt
   - webdev

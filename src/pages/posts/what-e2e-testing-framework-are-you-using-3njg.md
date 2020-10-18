@@ -4,8 +4,8 @@ date: '2018-03-19T00:24:49.342Z'
 excerpt: Discussion about end to end (E2E) testing frameworks.
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--RVWETNKR--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/0e73045dnzv7luijm1d1.jpg
-comments_count: 23
-positive_reactions_count: 25
+comments_count: 24
+positive_reactions_count: 26
 tags:
   - discuss
   - testing

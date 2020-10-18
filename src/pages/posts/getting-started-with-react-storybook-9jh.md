@@ -114,7 +114,7 @@ storiesOf('Button', module)
 ```
 
 
-That’s pretty much all there is to writing stories. It’s really easy to use and such a great tool. In my next post, we’ll dig into some of the cool features of Storybook.
+That’s pretty much all there is to writing stories. It��s really easy to use and such a great tool. In my next post, we’ll dig into some of the cool features of Storybook.
 
 ## References
 
