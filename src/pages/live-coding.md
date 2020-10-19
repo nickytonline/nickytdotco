@@ -25,11 +25,11 @@ If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca)
 
 ### Pairing with Eliot Sanford on an Accessibility Issue in the Forem Code Base
 
-<time datetime="2020-10-09">October 9th, 2020</time>
+<time datetime="2020-10-08">October 8th, 2020</time>
 
 https://www.youtube.com/watch?v=LBDqggawwNE
 
--   Blog post about pairing coming soon.
+-   [Blog post about pairing](/posts/pairing-with-community-member-eliot-sanford-f7a)
 -   [Eliot's web site](https://techieeliot.com/)
 
 ### Pairing with Taniyah Jackson on a Forem/DEV issue
