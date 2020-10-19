@@ -23,6 +23,15 @@ The goal of these pairings is a few things:
 
 If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca). And if you're interested in pairing, [hit me up on Twitter](https://twitter.com/nickytonline) or send me a [direct message on DEV](https://dev.to/nickytonline). I initially started pairing on my stream, but since the pairings are all [Forem](https://github.com/forem/forem/) based, I've been doing them on the [DEV](https://www.twitch.tv/thepracticaldev) Twitch stream.
 
+### Pair Programming Thursday: Enhancing the Twitch Liquid Tag with Rachael Wright-Munn
+
+<time datetime="2020-10-15">October 15th, 2020</time>
+
+https://www.youtube.com/watch?v=CKlNLcfxiHs
+
+-   Blog post about pairing coming soon.
+-   [Rachael's Twitch Stream](https://www.twitch.tv/ChaelCodes)
+
 ### Pairing with Eliot Sanford on an Accessibility Issue in the Forem Code Base
 
 <time datetime="2020-10-08">October 8th, 2020</time>
