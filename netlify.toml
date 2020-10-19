@@ -125,3 +125,9 @@ from = "/hacktoberfest2020/"
 to = "https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source"
 status = 301
 force = true
+
+[[redirects]]
+from = "/youtube/"
+to = "https://www.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ"
+status = 301
+force = true
