@@ -6,8 +6,8 @@ excerpt: >-
   week? It could be progra...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--ZkAnA0F4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/ctk9h7im4cl8bt6vq6l9.png
-comments_count: 41
-positive_reactions_count: 17
+comments_count: 43
+positive_reactions_count: 18
 tags:
   - weeklylearn
   - discuss

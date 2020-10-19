@@ -5,7 +5,7 @@ excerpt: I’m going to provide my list of git aliases and explain what each ali
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--Bsq7n131--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/c31gesmnfndo89bh4673.jpg
 comments_count: 28
-positive_reactions_count: 188
+positive_reactions_count: 192
 tags:
   - git
   - productivity
