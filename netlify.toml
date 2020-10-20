@@ -131,3 +131,9 @@ from = "/youtube/"
 to = "https://www.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ"
 status = 301
 force = true
+
+[[redirects]]
+from = "/walkwednesday/"
+to = "https://airtable.com/shr2FPWZ4zwQFs8vS"
+status = 301
+force = true
