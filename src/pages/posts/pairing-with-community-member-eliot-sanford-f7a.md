@@ -5,8 +5,8 @@ excerpt: >-
   On October 8th, DEV Community member Eliot Sanford joined Christina and I on
   the pairing stream to wo...
 thumb_img_path: null
-comments_count: 0
-positive_reactions_count: 6
+comments_count: 2
+positive_reactions_count: 31
 tags:
   - livecoding
   - streaming

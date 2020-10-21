@@ -5,7 +5,7 @@ excerpt: A small write up on my Visual Studio Code setup
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--GzTj3t37--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6e271uy3v8ia1h0e1c7q.png
 comments_count: 43
-positive_reactions_count: 329
+positive_reactions_count: 330
 tags:
   - visualstudiocode
   - developertools

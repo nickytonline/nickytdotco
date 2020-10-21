@@ -6,8 +6,8 @@ excerpt: >-
   ESLint, Prettier, husky and...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--aq5cDtoo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/olzaevg5khtiad835vke.png
-comments_count: 4
-positive_reactions_count: 182
+comments_count: 6
+positive_reactions_count: 195
 tags:
   - javascript
   - webdev
@@ -125,12 +125,23 @@ In the root of your project, create a file called
 
 
 ```javascript
+/* eslint-env node */
 module.exports = {
-    extends: ['eslint:recommended', 'prettier'],
-    plugins: ['prettier'],
+  extends: ['eslint:recommended', 'prettier'],
+  plugins: ['prettier'],
+  parserOptions: {
+    ecmaVersion: 2018, // Put whatever version you want here
+  },
+  env: {
+    browser: true,
+  }, 
 };
 ```
 
+
+Note: 
+`/* eslint-env node */`
+ is being used as it's a frontend project and the .eslintrc.js file is Node.js. It allows us to say, "This file is a Node.js file". Thanks to [Rafi](https://dev.to/rafi993) for [pointing this out to me](https://github.com/forem/forem/pull/10767# pullrequestreview-507865219).
 
 This is a base eslint configuration. If you were for example using React in your project, there would be additional configuration for React eslint rules.
 
