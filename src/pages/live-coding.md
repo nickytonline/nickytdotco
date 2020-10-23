@@ -21,7 +21,7 @@ The goal of these pairings is a few things:
 -   It's fun meeting people from the community.
 -   I potentially get to learn new things as well!
 
-If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca). And if you're interested in pairing, [hit me up on Twitter](https://twitter.com/nickytonline) or send me a [direct message on DEV](https://dev.to/nickytonline). I initially started pairing on my stream, but since the pairings are all [Forem](https://github.com/forem/forem/) based, I've been doing them on the [DEV](https://www.twitch.tv/thepracticaldev) Twitch stream.
+If you want to check out my stream, visit [livecoding.ca](https://livecoding.ca). And if you're interested in pairing, fill out the [pairing form](https://iamdeveloper.com/pair). I initially started pairing on my stream, but since the pairings are all [Forem](https://github.com/forem/forem/) based, I've been doing them on the [DEV Twitch stream](https://www.twitch.tv/thepracticaldev). If you want to pair on something non-Forem based, we can pair on my own stream.
 
 ### Pair Programming Thursday: Enhancing the Twitch Liquid Tag with Rachael Wright-Munn
 
