@@ -60,8 +60,11 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 -   [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://www.bestbuy.ca/en-ca/product/motiongrey-adjustable-dual-motors-electric-sit-to-stand-computer-office-standing-desk-black-frame-table-top-included/12852211) - I snagged it at a great price. It appears to go on sale often.
 -   Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with a bunch of new parts for just under a third of the price.
 -   [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
+-   [Apple Magic Trackpad 2](https://www.apple.com/shop/product/MRMF2LL/A/magic-trackpad-2-space-gray)
+-   [Apple Magic Keyboard with Numeric Keypad](https://www.apple.com/shop/product/MQ052B/A/magic-keyboard-with-numeric-keypad-british-english-silver)
 -   [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3/buy/wh1000xm3-s) headphones - I snagged them during Boxing Day week.
 -   [Blue Designs Yeti](https://www.bluedesigns.com/products/yeti/) microphone
+-   [RODE PSA1 Swivel Mount Studio Microphone Boom Arm](https://www.amazon.ca/gp/product/B001D7UYBO)
 -   [Rain mStand 360](https://www.raindesigninc.com/mstand360.html) laptop stand
 -   [Anker Wireless Charger](https://www.amazon.ca/gp/product/B07THL8PP1)
 -   [Logitech C922x Pro Stream](https://www.amazon.ca/gp/product/B01LXCDPPK/) webcam with [webcam cover](https://www.amazon.ca/gp/product/B0748FZX99/)
@@ -80,3 +83,4 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 
 -   [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237)
 -   [Anker USB-C to HDMI Adapter](http://amazon.ca/gp/product/B01MYUCWOK) and other dongles
+-   [Jelly Comb Ultra Slim Folding Bluetooth Keyboard](https://www.amazon.ca/gp/product/B07YYTHMCG)
