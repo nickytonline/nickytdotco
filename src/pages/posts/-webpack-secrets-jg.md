@@ -5,7 +5,7 @@ excerpt: "Things you can do \U0001F528 with webpack \U0001F4E6 that you might no
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--F5XqwMMD--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/hinf6qqn57jfinnmpprk.png
 comments_count: 8
-positive_reactions_count: 78
+positive_reactions_count: 84
 tags:
   - webpack
   - webdev

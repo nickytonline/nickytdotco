@@ -6,7 +6,7 @@ excerpt: >-
   the pairing stream to wo...
 thumb_img_path: null
 comments_count: 2
-positive_reactions_count: 31
+positive_reactions_count: 33
 tags:
   - livecoding
   - streaming

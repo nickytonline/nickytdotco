@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--MtJjMbPq--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/bugh4u64a8y94dv7izg6.png
 comments_count: 21
-positive_reactions_count: 53
+positive_reactions_count: 54
 tags:
   - discuss
   - programming
