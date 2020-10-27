@@ -38,7 +38,7 @@ https://www.youtube.com/watch?v=ajz8nGCqLbM
 
 https://www.youtube.com/watch?v=CKlNLcfxiHs
 
--   Blog post about pairing coming soon.
+-   [Blog post about pairing](/posts/pairing-with-community-member-rachael-wright-munn-5bol)
 -   [Rachael's Twitch Stream](https://www.twitch.tv/ChaelCodes)
 
 ### Pairing with Eliot Sanford on an Accessibility Issue in the Forem Code Base
