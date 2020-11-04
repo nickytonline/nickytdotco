@@ -48,11 +48,11 @@ module.exports = {
             options: {
                 plugins: [
                     `gatsby-remark-component`,
+                    `gatsby-remark-preprocess`,
                     {
                         resolve: `@raae/gatsby-remark-oembed`,
                         options: {
                             providers: {
-                                include: ['YouTube'],
                                 exclude: ['Reddit'],
                             },
                         },
