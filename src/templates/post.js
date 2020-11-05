@@ -14,22 +14,32 @@ export default class Post extends React.Component {
                         <h1 className="post-title underline">
                             {_.get(this.props, 'pageContext.frontmatter.title')}
                         </h1>
-                        <time
-                            className="published"
-                            dateTime={moment(
-                                _.get(
+                        <div className="post-header__meta-data">
+                            <time
+                                className="published"
+                                dateTime={moment(
+                                    _.get(
+                                        this.props,
+                                        'pageContext.frontmatter.date',
+                                    ),
+                                ).strftime('%Y-%m-%d %H:%M')}
+                            >
+                                {moment(
+                                    _.get(
+                                        this.props,
+                                        'pageContext.frontmatter.date',
+                                    ),
+                                ).strftime('%A, %B %e, %Y')}
+                            </time>
+                            <a
+                                href={_.get(
                                     this.props,
-                                    'pageContext.frontmatter.date',
-                                ),
-                            ).strftime('%Y-%m-%d %H:%M')}
-                        >
-                            {moment(
-                                _.get(
-                                    this.props,
-                                    'pageContext.frontmatter.date',
-                                ),
-                            ).strftime('%A, %B %e, %Y')}
-                        </time>
+                                    'pageContext.frontmatter.forem_instance_url',
+                                )}
+                            >
+                                Boost on DEV
+                            </a>
+                        </div>
                     </header>
                     {_.get(this.props, 'pageContext.frontmatter.subtitle') && (
                         <div className="post-subtitle">

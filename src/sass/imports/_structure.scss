@@ -65,4 +65,12 @@
         margin-right: auto;
         max-width: 760px;
     }
+
+    .post-header__meta-data {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
 }
