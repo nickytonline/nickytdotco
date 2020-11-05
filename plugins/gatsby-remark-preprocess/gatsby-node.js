@@ -45,9 +45,10 @@ function processMarkdown(markdown) {
 }
 
 exports.mutateSource = ({ markdownNode: { internal } }) => {
+    console.log('Processing dev.to embeds');
+
     if (internal.content.includes('dev.to/embed')) {
         instagramCounter = 0;
-        console.log('processing a dev.to embed');
         internal.content = processMarkdown(internal.content);
     }
 };
