@@ -1,23 +1,27 @@
 ---
-title: 'Jan. 10, 2020: What did you learn this week?'
-date: '2020-01-10T05:14:27.892Z'
+title: 'October 30th, 2020: What did you learn this week?'
+date: '2020-10-30T13:27:02.026Z'
 excerpt: >-
   It's that time of the week again. So wonderful devs, what did you learn this
   week? It could be progra...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--D_llltnf--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/dbzds2pufmi88h97h4qw.png
-comments_count: 12
-positive_reactions_count: 14
+  https://res.cloudinary.com/practicaldev/image/fetch/s--H_HH-OgS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/8ur9k4nbmcbsdzmx12e6.png
+comments_count: 42
+positive_reactions_count: 15
 tags:
   - weeklylearn
   - discuss
   - weeklyretro
-canonical_url: 'https://dev.to/nickytonline/jan-10-2020-what-did-you-learn-this-week-2b9c'
+canonical_url: >-
+  https://dev.to/nickytonline/october-30th-2020-what-did-you-learn-this-week-35ga
 template: post
 ---
 It's that time of the week again. So wonderful devs, what did you learn this week? It could be programming tips, career advice etc.
 
-![Two hockey players reading a play book](https://media.giphy.com/media/OqJdvB5VyUUqNoZdjO/giphy-downsized-large.gif)
+<center>
+
+![A picture it a dog waving their paw with the caption “Learning, cool at school or at home”](https://media.giphy.com/media/1xpm1nTQiRL96Di3Q6/giphy.gif)
+</center>
 
 Feel free to comment with what you learnt and/or reference your TIL post to give it some more exposure.
 
@@ -28,12 +32,15 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
 
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fjess%2Fwhat-was-your-win-this-past-week-4ac4" style="border: 0; width: 100%;"></iframe>
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-6id" style="border: 0; width: 100%;"></iframe>
 
 
-![Victory!](https://media.giphy.com/media/K3RxMSrERT8iI/giphy.gif)
+<center>
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/jan-10-2020-what-did-you-learn-this-week-2b9c)*
+![Drama from Entourage screaming “Victory!”](https://media.giphy.com/media/lnlAifQdenMxW/giphy.gif)
+</center>
+
+*[This post is also available on DEV.](https://dev.to/nickytonline/october-30th-2020-what-did-you-learn-this-week-35ga)*
 
 
 <script>

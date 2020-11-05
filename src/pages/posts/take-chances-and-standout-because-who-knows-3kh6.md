@@ -1,5 +1,5 @@
 ---
-title: Take chances and standout
+title: Take chances and stand out
 date: '2019-01-05T18:40:00.000Z'
 excerpt: >-
   This is my first time writing a post about career advice. This kind of advice

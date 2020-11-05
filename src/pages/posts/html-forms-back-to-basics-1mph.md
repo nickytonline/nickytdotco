@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--t9c1XIrR--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tdhxw07gd7gwo6ctib50.png
 comments_count: 4
-positive_reactions_count: 83
+positive_reactions_count: 77
 tags:
   - dom
   - javascript

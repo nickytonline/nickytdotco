@@ -6,7 +6,7 @@ excerpt: >-
   I on the pairing strea...
 thumb_img_path: null
 comments_count: 0
-positive_reactions_count: 0
+positive_reactions_count: 18
 tags:
   - livecoding
   - streaming
