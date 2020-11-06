@@ -6,6 +6,7 @@ import { GatsbySocialImage } from 'gatsby-plugin-cloudinary-social-cards';
 import { safePrefix } from '../utils';
 import Header from './Header';
 import Footer from './Footer';
+import { SkipLink } from './SkipLink';
 
 function getPageExcerpt(pathname) {
     switch (pathname) {
@@ -137,6 +138,7 @@ export default class Body extends React.Component {
                         )
                     }
                 >
+                    <SkipLink />
                     <Header {...this.props} />
                     <div id="content" className="site-content">
                         <div className="inner">
