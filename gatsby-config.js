@@ -53,7 +53,7 @@ module.exports = {
                         resolve: `@raae/gatsby-remark-oembed`,
                         options: {
                             providers: {
-                                exclude: ['Reddit'],
+                                exclude: ['Reddit', 'Flickr'],
                             },
                         },
                     },
