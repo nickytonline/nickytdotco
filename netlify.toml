@@ -133,7 +133,7 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/walkwednesday/"
-to = "https://airtable.com/shr2FPWZ4zwQFs8vS"
+from = "/lightning2020/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vRHfnRD5-ZTiPbBZsT3fNtsB4KcKiemJCLhUxPjtGE5nR2JxmtbtK3_iLSeYbg3ctgVAJEiqPSnAVUQ/pub?start=false&loop=false&delayms=3000"
 status = 301
 force = true
