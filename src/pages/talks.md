@@ -7,6 +7,14 @@ menus:
 template: page
 ---
 
+## Words Matter: Conventional Comments
+
+<time datetime="2020-11-20">November 20th, 2020</time>
+
+-   Video coming soon
+
+-   [Slide deck and additional resources](/lightning2020)
+
 ## Getting the Most out of Open Source
 
 <time datetime="2020-10-01">October 1st, 2020</time>
