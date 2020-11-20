@@ -11,7 +11,9 @@ template: page
 
 <time datetime="2020-11-20">November 20th, 2020</time>
 
--   Video coming soon
+<iframe width="1920" height="777" src="https://www.youtube.com/embed/MMabY-Cm_V4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+I'm on [at this point](https://www.youtube.com/watch?v=MMabY-Cm_V4&t=3010) in the lightning talks
 
 -   [Slide deck and additional resources](/lightning2020)
 
