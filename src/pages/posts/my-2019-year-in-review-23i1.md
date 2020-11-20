@@ -6,8 +6,8 @@ excerpt: >-
   Lot’s of interesting stuff...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--2NiTSnuS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/z8awferjpkro7ig0ciey.jpg
-comments_count: 6
-positive_reactions_count: 47
+comments_count: 7
+positive_reactions_count: 48
 tags:
   - yearinreview
 canonical_url: 'https://www.iamdeveloper.com/posts/my-2019-year-in-review-23i1/'

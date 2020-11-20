@@ -2,8 +2,8 @@
 title: 'May 1st, 2020: What did you learn this week?'
 date: '2020-05-01T04:00:04.811Z'
 excerpt: >-
-  Photo by Wes Hicks on Unsplash  It's that time of the week again, just a day
-  early. I'm off tomorrow...
+  It's that time of the week again, just a day early. I'm off tomorrow and
+  Monday so posting this now....
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--S_Vs942S--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/reh35kbnip2qi6itqp82.jpg
 comments_count: 14
@@ -15,8 +15,6 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/may-1st-2020-what-did-you-learn-this-week-448d'
 template: post
 ---
-Photo by [Wes Hicks](https://unsplash.com/@sickhews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](Photo by Wes Hicks on Unsplash)
-
 It's that time of the week again, just a day early. I'm off tomorrow and Monday so posting this now.
 
 So wonderful devs, what did you learn this week? It could be programming tips, career advice etc.
@@ -44,6 +42,8 @@ And remember, if something you learnt was a big win for you, then you know where
 ![Johnny Rose from Shitt's Creek giving a power high five](https://media.giphy.com/media/4QFAH0qZ0LQnIwVYKT/giphy.gif)
 
 </center>
+
+Photo by [Wes Hicks](https://unsplash.com/@sickhews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](Photo by Wes Hicks on Unsplash)
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/may-1st-2020-what-did-you-learn-this-week-448d)*
 

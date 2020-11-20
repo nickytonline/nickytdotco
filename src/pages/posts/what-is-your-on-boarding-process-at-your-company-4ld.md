@@ -5,7 +5,7 @@ excerpt: Discussion of onboarding processes at various companies.
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--fqpaRay5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/2oo5nyi8bkmpgctjvh7n.JPG
 comments_count: 10
-positive_reactions_count: 50
+positive_reactions_count: 51
 tags:
   - discuss
   - onboarding

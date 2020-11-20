@@ -3,7 +3,7 @@ title: What are/were your go to resources for learning Ruby and Rails?
 date: '2018-08-18T13:54:38.803Z'
 excerpt: Discussion on great resources to learn Ruby and Rails
 thumb_img_path: null
-comments_count: 34
+comments_count: 35
 positive_reactions_count: 145
 tags:
   - discuss

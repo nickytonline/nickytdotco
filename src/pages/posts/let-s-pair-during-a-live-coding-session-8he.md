@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--qsJFxVOe--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/nqqvyinfbwzjb4fhemff.jpg
 comments_count: 6
-positive_reactions_count: 78
+positive_reactions_count: 80
 tags:
   - webdev
   - pairprogramming
@@ -85,6 +85,8 @@ Things to do to get you prepared for a live coding pairing session:
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1282785725725933568" style="border: 0; width: 100%;"></iframe>
 
+
+Want to pair? Fill out the [pairing form](https://iamdeveloper.com/pair).
 
 Looking forward to potentially pairing with you! <i role="image">🍐</i>
 

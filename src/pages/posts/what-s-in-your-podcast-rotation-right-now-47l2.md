@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--w9j96Z57--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/l6yh78n11ti09ufu9ft3.png
 comments_count: 59
-positive_reactions_count: 118
+positive_reactions_count: 113
 tags:
   - discuss
   - podcast

@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--bTDHycXq--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/j2xbsg8yqzsan8m1tuhg.jpg
 comments_count: 12
-positive_reactions_count: 36
+positive_reactions_count: 37
 tags:
   - discuss
   - csharp
