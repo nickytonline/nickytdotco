@@ -7,7 +7,7 @@ menus:
 template: page
 ---
 
-## Words Matter: Conventional Comments
+<h2 id="lightning2020">Words Matter: Conventional Comments</h2>
 
 <time datetime="2020-11-20">November 20th, 2020</time>
 
@@ -17,7 +17,7 @@ I'm on [at this point](https://www.youtube.com/watch?v=MMabY-Cm_V4&t=3010) in th
 
 -   [Slide deck and additional resources](/lightning2020)
 
-## Getting the Most out of Open Source
+<h2 id="hacktoberfest2020">Getting the Most out of Open Source</h2>
 
 <time datetime="2020-10-01">October 1st, 2020</time>
 
@@ -25,7 +25,7 @@ https://www.youtube.com/watch?v=Tn3MBiWYeEI
 
 -   [Slide deck and additional resources](https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source)
 
-## An Introduction to React Storybook
+<h2 id="introtostorybook">An Introduction to React Storybook</h2>
 
 <time datetime="2017-06-15">June 13th, 2017</time>
 
