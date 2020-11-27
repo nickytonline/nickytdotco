@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--mj-nucf1--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/f3b89f40dgu0qul4dmxn.png
 comments_count: 78
-positive_reactions_count: 172
+positive_reactions_count: 173
 tags:
   - discuss
   - vscode

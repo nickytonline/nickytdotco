@@ -37,7 +37,7 @@ And remember, if something you learnt was a big win for you, then you know where
 
 <center>
 
-![Drama from Entourage screaming “Victory!”](https://media.giphy.com/media/lnlAifQdenMxW/giphy.gif)
+![Drama from Entourage screaming ���Victory!”](https://media.giphy.com/media/lnlAifQdenMxW/giphy.gif)
 </center>
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/october-30th-2020-what-did-you-learn-this-week-35ga)*

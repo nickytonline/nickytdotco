@@ -7,7 +7,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--Wautikxg--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/244k7ct9qj9jnvd4otjd.jpg
 comments_count: 12
-positive_reactions_count: 11
+positive_reactions_count: 12
 tags:
   - help
   - gatsby

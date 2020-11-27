@@ -135,6 +135,7 @@ One that I revisit every now and then is [JS Katas](https://jskatas.org/), previ
 This is a great genre of learning. There are paid resources, but a couple of notable free ones are:
 
 * [Flexbox Froggy](https://flexboxfroggy.com/)
+* [Flexbox Zombies](https://geddski.teachable.com/p/flexbox-zombies)
 * [CSSBattle](https://cssbattle.dev/)
 
 ### TypeScript
