@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/do-you-use-static-typing-in-javascript--2ek4
 title: Do you use Static Typing in JavaScript?
 date: '2018-03-13T03:24:39.910Z'
 excerpt: >-

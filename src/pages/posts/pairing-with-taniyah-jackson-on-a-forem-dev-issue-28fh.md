@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh
 title: Pairing with Taniyah Jackson on Pinning Comments to Articles
 date: '2020-09-21T21:44:45.486Z'
 excerpt: >-

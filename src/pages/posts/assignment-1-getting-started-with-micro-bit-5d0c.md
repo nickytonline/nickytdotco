@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/assignment-1-getting-started-with-micro-bit-5d0c
 title: 'Assignment #1: Getting Started with micro:bit'
 date: '2020-03-15T19:32:38.788Z'
 excerpt: >-

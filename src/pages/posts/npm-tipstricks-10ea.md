@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/npm-tipstricks-10ea
 title: npm tips/tricks
 date: '2018-01-10T03:44:30.902Z'
 excerpt: Discussion of npm tips/tricks.

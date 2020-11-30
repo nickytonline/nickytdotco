@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-is-your-on-boarding-process-at-your-company-4ld
 title: What is your on-boarding process at your company?
 date: '2018-04-22T00:51:01.519Z'
 excerpt: Discussion of onboarding processes at various companies.

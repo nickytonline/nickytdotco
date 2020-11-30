@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/can-you-create-the-great-redux-store-4eo1
 title: Can you create the great Redux store?
 date: '2018-09-08T03:46:46.954Z'
 excerpt: >-

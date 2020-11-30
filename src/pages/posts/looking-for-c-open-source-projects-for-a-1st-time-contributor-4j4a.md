@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/looking-for-c-open-source-projects-for-a-1st-time-contributor-4j4a
 title: Looking for C# Open Source Projects for a 1st Time Contributor
 date: '2020-05-29T02:51:57.579Z'
 excerpt: >-

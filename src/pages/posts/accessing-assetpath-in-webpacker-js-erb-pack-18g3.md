@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/accessing-assetpath-in-webpacker-js-erb-pack-18g3
 title: Accessing asset_path in webpacker *.js.erb pack
 date: '2020-02-18T22:49:11.880Z'
 excerpt: >-

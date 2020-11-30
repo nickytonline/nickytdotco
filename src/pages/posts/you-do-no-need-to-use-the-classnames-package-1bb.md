@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/you-do-no-need-to-use-the-classnames-package-1bb
 title: You do not need to use the classnames package
 date: '2019-10-23T18:27:07.000Z'
 excerpt: >-

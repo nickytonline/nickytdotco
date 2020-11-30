@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/take-chances-and-standout-because-who-knows-3kh6
 title: Take chances and stand out
 date: '2019-01-05T18:40:00.000Z'
 excerpt: >-

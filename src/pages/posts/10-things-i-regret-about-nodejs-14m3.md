@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/10-things-i-regret-about-nodejs-14m3
 title: 10 Things I Regret About Node.js
 date: '2018-06-07T15:03:07.345Z'
 excerpt: >-

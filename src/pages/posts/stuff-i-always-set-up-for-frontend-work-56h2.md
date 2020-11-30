@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/stuff-i-always-set-up-for-frontend-work-56h2
 title: Stuff I always Set Up for Frontend Work
 date: '2020-10-18T04:20:19.736Z'
 excerpt: >-

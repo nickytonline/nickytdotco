@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/share-some-frontend-resources-15j5
 title: Share some frontend resources!
 date: '2020-06-16T17:18:56.416Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/showcase-your-gatsby-site-266
 title: Showcase your Gatsby Site
 date: '2019-02-28T22:02:28.275Z'
 excerpt: >-

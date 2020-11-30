@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/dev-to-s-frontend-a-brain-dump-in-one-act-7mg
 title: 'dev.to’s Frontend: a brain dump in one act'
 date: '2019-04-23T04:27:39.487Z'
 excerpt: >-

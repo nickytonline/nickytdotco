@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/sorbet-a-type-checker-for-ruby-3l07
 title: 'Sorbet: A Type Checker for Ruby'
 date: '2019-06-20T23:08:13.733Z'
 excerpt: >-

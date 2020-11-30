@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/changelog-frontend-edition-30l7
 title: 'Changelog: Frontend Edition'
 date: '2020-06-24T19:09:12.079Z'
 excerpt: I Tweeted this out last week that we moved to Preact X and Testing Library....

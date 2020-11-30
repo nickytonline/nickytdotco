@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/quick-hulk-code-pen-18i1
 title: Quick Hulk Code Pen
 date: '2018-01-13T04:37:21.697Z'
 excerpt: I give you "Hulk table rage"

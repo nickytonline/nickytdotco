@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/difficulties-encountered-with-react-hooks-5a7j
 title: Difficulties Encountered with React Hooks
 date: '2020-05-18T02:13:55.842Z'
 excerpt: >-

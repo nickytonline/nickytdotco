@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/-webpack-secrets-jg
 title: "\U0001F4E6 webpack secrets"
 date: '2019-01-01T14:05:58.023Z'
 excerpt: "Things you can do \U0001F528 with webpack \U0001F4E6 that you might not be aware of."

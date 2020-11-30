@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-s-the-weather-like-where-you-live-1fdm
 title: What’s the weather like where you live?
 date: '2019-11-07T11:46:25.398Z'
 excerpt: Well the first snowfall has arrived in Montreal....

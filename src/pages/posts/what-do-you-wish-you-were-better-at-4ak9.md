@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-do-you-wish-you-were-better-at-4ak9
 title: What do you wish you were better at?
 date: '2018-08-27T04:31:38.823Z'
 excerpt: >-

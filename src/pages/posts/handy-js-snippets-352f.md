@@ -1,11 +1,12 @@
 ---
+stackbit_url_path: posts/handy-js-snippets-352f
 title: Have a Handy JS Snippet You Want to Share?
 date: '2018-01-23T01:07:14.326Z'
 excerpt: Quick ES5/ES6 snippets for doing awesome things in Javascript.
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--8TPM73BB--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://c2.staticflickr.com/8/7282/8995095069_9e88b3bba5_b.jpg
 comments_count: 17
-positive_reactions_count: 69
+positive_reactions_count: 70
 tags:
   - javascript
   - showdev

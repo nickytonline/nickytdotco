@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/programming-resources-for-kids-apb
 title: Programming Resources for Kids
 date: '2020-03-28T16:25:48.736Z'
 excerpt: >-

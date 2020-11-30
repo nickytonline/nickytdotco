@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-s-a-great-show-or-movie-you-watched-recently-39o7
 title: What's a great show or movie you watched recently?
 date: '2019-10-28T00:51:15.516Z'
 excerpt: "Photo by Georgia Vagim on Unsplash  I just finished watching Living with Yourself on Netflix.  Big \U0001F44D..."

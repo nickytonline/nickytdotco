@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-plugins-cms-etc-are-using-for-your-gatsby-powered-blog-2cdd
 title: 'What plugins, CMS etc. are using for your Gatsby powered blog?'
 date: '2019-01-08T14:57:51.953Z'
 excerpt: >-

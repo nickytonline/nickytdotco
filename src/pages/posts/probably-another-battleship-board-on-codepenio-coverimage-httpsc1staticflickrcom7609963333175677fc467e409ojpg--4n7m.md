@@ -1,4 +1,6 @@
 ---
+stackbit_url_path: >-
+  posts/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m
 title: Probably another Battleship board on Code Pen
 date: '2018-02-09T05:01:39.457Z'
 excerpt: A basic Battleship board with some random hits and misses.

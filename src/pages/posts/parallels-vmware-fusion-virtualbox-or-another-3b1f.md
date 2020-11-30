@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/parallels-vmware-fusion-virtualbox-or-another-3b1f
 title: 'Parallels, VMWare Fusion, VirtualBox or Another?'
 date: '2020-01-05T20:39:24.841Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/why-you-might-want-to-consider-using-typescript-6j3
 title: Consider Using TypeScript
 date: '2017-10-08T14:35:45.516Z'
 excerpt: A small write up on the benefits of using TypeScript.

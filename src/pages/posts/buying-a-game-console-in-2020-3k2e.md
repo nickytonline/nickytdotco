@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/buying-a-game-console-in-2020-3k2e
 title: Buying a game console in 2020
 date: '2020-03-29T17:47:31.915Z'
 excerpt: >-

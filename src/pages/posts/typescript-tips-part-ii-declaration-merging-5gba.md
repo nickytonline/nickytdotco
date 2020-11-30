@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/typescript-tips-part-ii-declaration-merging-5gba
 title: 'TypeScript Tips Part II: Declaration Merging'
 date: '2019-02-12T02:45:09.000Z'
 excerpt: >-

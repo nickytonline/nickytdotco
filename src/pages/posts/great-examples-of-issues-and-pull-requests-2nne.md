@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/great-examples-of-issues-and-pull-requests-2nne
 title: Great Examples of Issues and Pull Requests
 date: '2020-08-16T04:29:34.484Z'
 excerpt: >-

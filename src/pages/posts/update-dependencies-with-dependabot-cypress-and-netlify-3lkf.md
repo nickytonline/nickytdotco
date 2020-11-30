@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/update-dependencies-with-dependabot-cypress-and-netlify-3lkf
 title: 'Update Dependencies with Dependabot, Cypress and Netlify'
 date: '2019-08-16T02:11:34.000Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/apple-watch-or-a-decent-alternative-49i1
 title: Apple Watch or a Decent Alternative?
 date: '2019-10-13T03:33:03.158Z'
 excerpt: >-

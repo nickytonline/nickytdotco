@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/why-don-t-fish-like-react-389l
 title: Why don't fish like React?
 date: '2019-07-08T04:26:47.234Z'
 excerpt: "Hooks! \U0001F602..."

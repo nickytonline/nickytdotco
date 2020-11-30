@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/changelog-subscribe-to-a-post-s-threads-v2-5fn0
 title: 'Changelog: Subscribe to a Post’s Threads v2'
 date: '2020-05-06T09:45:02.025Z'
 excerpt: >-

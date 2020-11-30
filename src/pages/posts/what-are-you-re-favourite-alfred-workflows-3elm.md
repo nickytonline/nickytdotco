@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-are-you-re-favourite-alfred-workflows-3elm
 title: What are your favourite Alfred workflows?
 date: '2019-11-21T16:27:53.101Z'
 excerpt: Alfred is such a great tool if you use a Mac....

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/are-you-in-the-github-arctic-code-vault-n86
 title: Are you in the GitHub Arctic Code Vault?
 date: '2020-07-16T19:50:20.118Z'
 excerpt: >-

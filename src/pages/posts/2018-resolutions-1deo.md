@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/2018-resolutions-1deo
 title: 2018 Resolutions
 date: '2018-01-03T00:00:00.000Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/explain-what-a-monoid-is-like-im-five-4gpf
 title: Explain what a monoid is Like I'm Five
 date: '2018-05-20T18:32:16.692Z'
 excerpt: >-

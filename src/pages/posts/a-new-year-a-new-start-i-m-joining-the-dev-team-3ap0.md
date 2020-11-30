@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0
 title: 'A New Year, a New Start: I''m Joining the DEV Team!'
 date: '2020-01-21T18:09:58.642Z'
 excerpt: >-

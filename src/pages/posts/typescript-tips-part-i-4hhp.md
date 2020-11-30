@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/typescript-tips-part-i-4hhp
 title: TypeScript Tips Part I
 date: '2019-01-25T02:13:23.000Z'
 excerpt: >-

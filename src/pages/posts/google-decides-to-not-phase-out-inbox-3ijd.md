@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/google-decides-to-not-phase-out-inbox-3ijd
 title: Google decides to not phase out Inbox!
 date: '2019-04-01T05:27:28.627Z'
 excerpt: "I can't believe Google decided to keep Inbox! Our voices have been heard. \U0001F4AF\U0001F64C..."

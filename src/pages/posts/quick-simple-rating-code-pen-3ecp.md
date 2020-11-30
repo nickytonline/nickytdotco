@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/quick-simple-rating-code-pen-3ecp
 title: A Simple ⭐ Rating Code Pen
 date: '2018-01-19T04:12:02.207Z'
 excerpt: >-

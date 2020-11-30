@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/renaming-a-file-via-git-after-it-has-been-deleted-in-a-pr-41dn
 title: Git file renaming issues (deleting/adding instead of renaming)
 date: '2019-02-07T03:10:19.770Z'
 excerpt: >-

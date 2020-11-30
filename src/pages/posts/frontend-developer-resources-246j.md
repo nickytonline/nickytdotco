@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/frontend-developer-resources-246j
 title: Frontend Developer Resources
 date: '2020-01-06T05:00:06.851Z'
 excerpt: >-
@@ -7,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--1j9Z4MyX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/d0slehzp7b26buouwz33.png
 comments_count: 16
-positive_reactions_count: 851
+positive_reactions_count: 852
 tags:
   - frontend
   - javascript

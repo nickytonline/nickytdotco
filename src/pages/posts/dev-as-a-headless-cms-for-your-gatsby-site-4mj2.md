@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/dev-as-a-headless-cms-for-your-gatsby-site-4mj2
 title: DEV as a Headless CMS for your Gatsby Site
 date: '2020-04-15T13:09:54.295Z'
 excerpt: >-

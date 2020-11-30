@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/ink-react-for-clis-2l3b
 title: 'Ink: React for CLIs'
 date: '2019-03-09T21:34:54.000Z'
 excerpt: >-

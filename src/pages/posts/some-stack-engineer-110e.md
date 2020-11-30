@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/some-stack-engineer-110e
 title: Some-Stack Engineer
 date: '2019-11-01T02:15:01.356Z'
 excerpt: >-

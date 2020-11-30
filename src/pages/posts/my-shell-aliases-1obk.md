@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/my-shell-aliases-1obk
 title: My Shell Aliases
 date: '2019-10-11T01:45:17.000Z'
 excerpt: >-

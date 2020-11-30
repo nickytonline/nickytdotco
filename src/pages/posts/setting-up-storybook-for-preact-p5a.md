@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/setting-up-storybook-for-preact-p5a
 title: Setting up Storybook for Preact
 date: '2018-09-02T00:00:00.000Z'
 excerpt: >-

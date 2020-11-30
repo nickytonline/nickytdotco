@@ -1,4 +1,6 @@
 ---
+stackbit_url_path: >-
+  posts/google-to-pay-javascript-frameworks-to-implement-performance-first-code-3f57
 title: Google to pay JavaScript frameworks to implement performance-first code
 date: '2018-11-26T11:55:59.414Z'
 excerpt: >-

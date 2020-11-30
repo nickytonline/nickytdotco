@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/javascript-or-frontend-centric-conference-to-attend-in-2020-m44
 title: JavaScript or Frontend centric conference to attend in 2020?
 date: '2019-12-17T02:05:30.000Z'
 excerpt: >-

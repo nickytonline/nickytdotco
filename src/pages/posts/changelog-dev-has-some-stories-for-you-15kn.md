@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/changelog-dev-has-some-stories-for-you-15kn
 title: 'Changelog: DEV has Some Stories for You'
 date: '2020-05-22T13:46:37.866Z'
 excerpt: >-

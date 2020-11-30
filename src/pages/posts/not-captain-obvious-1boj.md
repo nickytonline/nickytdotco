@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/not-captain-obvious-1boj
 title: Not Captain Obvious
 date: '2020-08-03T03:37:54.196Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/which-pi-43hf
 title: Which Pi?
 date: '2018-02-03T00:19:25.515Z'
 excerpt: Need help deciding on a Pi brand/model.

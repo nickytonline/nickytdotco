@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he
 title: Building out the Go Playground Liquid Tag for DEV with Chuck Smith
 date: '2020-09-15T21:40:01.223Z'
 excerpt: >-

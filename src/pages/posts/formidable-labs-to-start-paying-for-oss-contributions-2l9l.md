@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/formidable-labs-to-start-paying-for-oss-contributions-2l9l
 title: Formidable Labs to Start Paying for OSS Contributions
 date: '2019-05-03T13:32:45.378Z'
 excerpt: >-

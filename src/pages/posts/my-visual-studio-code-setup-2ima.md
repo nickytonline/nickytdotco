@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/my-visual-studio-code-setup-2ima
 title: My Visual Studio Code Setup
 date: '2017-12-23T14:11:11.594Z'
 excerpt: A small write up on my Visual Studio Code setup

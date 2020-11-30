@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/september-10th-2020-what-did-you-learn-this-week-41d8
 title: 'September 10th, 2020: What did you learn this week?'
 date: '2020-09-11T02:29:08.901Z'
 excerpt: >-

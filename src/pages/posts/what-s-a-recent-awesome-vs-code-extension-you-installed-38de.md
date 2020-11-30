@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-s-a-recent-awesome-vs-code-extension-you-installed-38de
 title: What's an awesome VS Code extension you recently installed?
 date: '2019-04-04T02:11:42.623Z'
 excerpt: >-

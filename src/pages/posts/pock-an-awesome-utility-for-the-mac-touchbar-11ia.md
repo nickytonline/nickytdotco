@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/pock-an-awesome-utility-for-the-mac-touchbar-11ia
 title: Pock an awesome utility for the Mac Touchbar
 date: '2020-01-21T02:51:30.510Z'
 excerpt: >-

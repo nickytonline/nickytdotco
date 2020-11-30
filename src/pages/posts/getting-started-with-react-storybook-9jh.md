@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/getting-started-with-react-storybook-9jh
 title: Getting Started with Storybook for React
 date: '2018-03-26T05:00:00.000Z'
 excerpt: >-

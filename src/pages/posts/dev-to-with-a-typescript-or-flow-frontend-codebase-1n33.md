@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/dev-to-with-a-typescript-or-flow-frontend-codebase-1n33
 title: dev.to with a TypeScript or Flow frontend codebase?
 date: '2019-04-07T03:37:54.000Z'
 excerpt: Consider moving dev.to frontend codebase to TypeScript or Flow?

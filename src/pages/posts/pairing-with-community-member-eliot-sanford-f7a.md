@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/pairing-with-community-member-eliot-sanford-f7a
 title: Pairing with Community Member Eliot Sanford
 date: '2020-10-19T20:40:03.850Z'
 excerpt: >-

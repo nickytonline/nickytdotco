@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/my-git-aliases-5dea
 title: My Git Aliases
 date: '2018-08-26T00:00:00.000Z'
 excerpt: I’m going to provide my list of git aliases and explain what each alias does

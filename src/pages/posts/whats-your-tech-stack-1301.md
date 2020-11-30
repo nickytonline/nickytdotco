@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/whats-your-tech-stack-1301
 title: What's your tech stack?
 date: '2018-04-25T13:38:29.976Z'
 excerpt: >-

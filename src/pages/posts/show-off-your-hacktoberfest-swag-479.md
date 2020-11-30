@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/show-off-your-hacktoberfest-swag-479
 title: Show off your Hacktoberfest Swag!
 date: '2019-11-10T01:02:56.876Z'
 excerpt: >-

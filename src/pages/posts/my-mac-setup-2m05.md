@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/my-mac-setup-2m05
 title: My Mac Setup
 date: '2018-01-12T10:00:00.000Z'
 excerpt: >-

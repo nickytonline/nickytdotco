@@ -1,4 +1,6 @@
 ---
+stackbit_url_path: >-
+  posts/would-you-contribute-to-a-javascript-oss-project-that-uses-static-types-195p
 title: Would you contribute to a JavaScript OSS Project that uses static types?
 date: '2018-07-17T03:04:09.191Z'
 excerpt: >-

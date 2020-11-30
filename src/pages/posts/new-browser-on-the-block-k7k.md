@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/new-browser-on-the-block-k7k
 title: New browser on the block!
 date: '2019-11-28T23:19:29.227Z'
 excerpt: >-

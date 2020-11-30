@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/is-2019-the-year-of-typescript-18p2
 title: Is 2019 the year of TypeScript?
 date: '2019-01-16T23:59:04.583Z'
 excerpt: >-

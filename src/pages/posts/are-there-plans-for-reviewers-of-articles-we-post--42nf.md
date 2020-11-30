@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/are-there-plans-for-reviewers-of-articles-we-post--42nf
 title: Are there plans for reviewers of articles we post?
 date: '2018-02-11T16:47:19.331Z'
 excerpt: Asking about article reviewers.

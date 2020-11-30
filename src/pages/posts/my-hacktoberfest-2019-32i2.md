@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/my-hacktoberfest-2019-32i2
 title: My Hacktoberfest 2019
 date: '2019-10-15T01:00:22.650Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e
 title: Converting a Preact Component to use hooks with Sophia Li
 date: '2020-07-27T04:01:08.932Z'
 excerpt: >-

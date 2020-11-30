@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/see-the-big-picture-22bg
 title: See the big picture
 date: '2020-08-30T03:55:25.642Z'
 excerpt: >-

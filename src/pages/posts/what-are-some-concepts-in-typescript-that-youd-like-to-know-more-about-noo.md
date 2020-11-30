@@ -1,4 +1,6 @@
 ---
+stackbit_url_path: >-
+  posts/what-are-some-concepts-in-typescript-that-youd-like-to-know-more-about-noo
 title: What are some concepts in TypeScript that you'd like to know more about?
 date: '2018-06-29T03:24:19.658Z'
 excerpt: >-

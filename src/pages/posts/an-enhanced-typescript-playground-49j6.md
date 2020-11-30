@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/an-enhanced-typescript-playground-49j6
 title: An Enhanced TypeScript Playground
 date: '2019-02-26T03:58:04.000Z'
 excerpt: The TypeScript playground with enhancements

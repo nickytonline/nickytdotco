@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/my-2019-year-in-review-23i1
 title: My 2019 Year in Review
 date: '2020-01-02T03:50:01.743Z'
 excerpt: >-

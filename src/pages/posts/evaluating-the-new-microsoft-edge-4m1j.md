@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/evaluating-the-new-microsoft-edge-4m1j
 title: Evaluating the new Microsoft Edge
 date: '2019-11-23T02:25:44.000Z'
 excerpt: >-

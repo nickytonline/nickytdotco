@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-are-your-favourite-programming-katas-site-ke2
 title: What are your favourite programming katas sites?
 date: '2018-04-22T00:32:42.242Z'
 excerpt: >-

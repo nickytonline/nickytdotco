@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/an-a11y-extension-coming-to-a-browser-near-you-1mg2
 title: An a11y extension coming to a browser near you
 date: '2019-04-01T01:02:21.000Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/reveal-your-macos-secrets-4d0i
 title: Reveal your macOS Secrets
 date: '2018-04-17T01:58:48.795Z'
 excerpt: "A while back, I wrote about My Mac Setup (yes, shameless plug \U0001F604). I have it pretty much tweaked to ma..."

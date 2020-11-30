@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/playwright-for-e2e-testing-2d08
 title: Playwright for E2E testing?
 date: '2020-09-11T14:48:01.224Z'
 excerpt: >-

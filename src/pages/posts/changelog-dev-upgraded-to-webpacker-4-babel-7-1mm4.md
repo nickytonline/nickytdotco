@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/changelog-dev-upgraded-to-webpacker-4-babel-7-1mm4
 title: 'Changelog: DEV upgraded to Webpacker 4/Babel 7'
 date: '2020-03-20T11:51:52.851Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/scoped-style--36n3
 title: 'scoped-style '
 date: '2018-12-30T23:12:39.460Z'
 excerpt: a tiny CSS in JS library

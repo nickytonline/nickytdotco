@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/my-talk-on-react-storybook-at-the-js-montreal-meetup-2598
 title: My Talk on React Storybook at the js-montreal Meetup
 date: '2017-06-27T03:00:00.000Z'
 excerpt: >-

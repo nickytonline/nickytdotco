@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/git-history-20nh
 title: git-history
 date: '2019-02-13T05:05:26.412Z'
 excerpt: 'Quickly browse the history of a git repository '

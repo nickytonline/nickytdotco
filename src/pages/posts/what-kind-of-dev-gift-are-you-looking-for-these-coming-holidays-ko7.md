@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-kind-of-dev-gift-are-you-looking-for-these-coming-holidays-ko7
 title: What kind of dev gift are you looking for these coming holidays?
 date: '2018-12-13T22:49:54.828Z'
 excerpt: >-

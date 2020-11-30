@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/projects-with-great-documentation-352h
 title: Projects with Great Documentation
 date: '2020-09-28T20:55:50.715Z'
 excerpt: >-

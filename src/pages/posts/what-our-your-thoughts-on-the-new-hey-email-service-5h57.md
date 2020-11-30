@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-our-your-thoughts-on-the-new-hey-email-service-5h57
 title: What our your thoughts on the new Hey email service?
 date: '2020-06-28T03:28:31.617Z'
 excerpt: >-

@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/july-23rd-2020-what-did-you-learn-this-week-1ogb
 title: 'July 23rd, 2020: What did you learn this week? CodeLand Edition'
 date: '2020-07-24T03:03:04.286Z'
 excerpt: >-

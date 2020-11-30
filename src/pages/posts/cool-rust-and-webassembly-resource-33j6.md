@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/cool-rust-and-webassembly-resource-33j6
 title: Cool Rust and WebAssembly Resource
 date: '2019-12-07T12:56:29.000Z'
 excerpt: >-

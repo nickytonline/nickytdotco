@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/css-mask-property-2d42
 title: The CSS mask property
 date: '2019-01-09T16:44:39.000Z'
 excerpt: >-

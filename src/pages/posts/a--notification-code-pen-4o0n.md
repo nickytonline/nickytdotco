@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/a--notification-code-pen-4o0n
 title: "A \U0001F4A9 Notification Code Pen"
 date: '2018-01-27T07:33:25.366Z'
 excerpt: A fun notification component.

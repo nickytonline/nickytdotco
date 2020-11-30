@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/hi-im-nick-taylor
 title: 'Hi, I''m Nick Taylor'
 date: '2017-03-12T20:22:41.310Z'
 excerpt: My introduction post

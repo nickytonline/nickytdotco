@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/help-serving-assets-over-http2-for-a-gatsby-netlify-hosted-site--nc3
 title: 'Help serving assets over HTTP/2 for a Gatsby Netlify hosted site '
 date: '2019-01-29T03:50:49.550Z'
 excerpt: >-

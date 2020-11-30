@@ -1,4 +1,5 @@
 ---
+stackbit_url_path: posts/what-e2e-testing-framework-are-you-using-3njg
 title: ‪What E2E testing framework are you using?
 date: '2018-03-19T00:24:49.342Z'
 excerpt: Discussion about end to end (E2E) testing frameworks.
