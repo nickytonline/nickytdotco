@@ -1,3 +1,6 @@
+/* eslint-env node */
+require('prismjs/themes/prism-coy.css');
+
 /**
  * Implement Gatsby's Browser APIs in this file.
  *

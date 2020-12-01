@@ -6,6 +6,7 @@ module.exports = {
     pathPrefix: '/',
     siteMetadata: require('./site-metadata.json'),
     plugins: [
+        `gatsby-plugin-postcss`,
         `gatsby-plugin-feed`,
         `gatsby-plugin-preact`,
         `gatsby-plugin-react-helmet`,
@@ -57,6 +58,7 @@ module.exports = {
                             },
                         },
                     },
+                    `gatsby-remark-prismjs`,
                 ],
             },
         },
