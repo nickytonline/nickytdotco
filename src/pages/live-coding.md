@@ -9,7 +9,7 @@ template: page
 
 I [started live coding](/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/) on Twitch at the end of March 2020. It started off as a small experiment, and then I started getting into a groove. Initially I was live coding by myself, but then I thought it might be fun and helpful to engage with the folks that contribute to the open source project I work on, [Forem](https://forem.com), the code that runs [DEV](https://dev.to).
 
-## Live Code Pairings
+<h2 id="pair">Live Code Pairings</h2>
 
 So I asked the DEV community if [anyone was interested](/let-s-pair-during-a-live-coding-session-8he/) in pairing and folks definitely were. I did my [first pairing with Sophia Li](/posts/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e/) near the end of July 2020.
 
@@ -77,15 +77,15 @@ https://www.youtube.com/watch?v=gy2LyxQtlSQ
 -   [Blog post about pairing](/posts/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e)
 -   [Sophia's web site](https://sophiali.dev/)
 
-## Other Live Coding/Streaming Projects
+<h2 id="stream-projects">Other Live Coding/Streaming Projects</h2>
 
-### Walkthrough Wednesdays
+<h3 id="walkthrough-wed">Walkthrough Wednesdays</h3>
 
 I thought this would be a fun way to explore the tech in Forem, but it can also be used for going through features in Forem and even non-Forem related stuff, like explaining some sort of tech.
 
 https://www.youtube.com/watch?v=GHiUOuASv2g&list=PL8Bb2WLXhUaDCHK5HrxDXZWmuTARKDiV3
 
-### Hacktoberfest 2020 Twitch Stream Highlights
+<h3 id="hacktober-2020">Hacktoberfest 2020 Twitch Stream Highlights</h3>
 
 Some highlights we did for Hacktoberfest 2020.
 
