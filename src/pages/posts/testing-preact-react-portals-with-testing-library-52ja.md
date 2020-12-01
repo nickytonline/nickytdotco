@@ -6,9 +6,9 @@ excerpt: >-
   This post was going to be about troubles I ran into testing Portals, but in
   the end after writing thr...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--QKlm36gi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/5k0g29qxe74ob9kty1ee.png
+  https://res.cloudinary.com/practicaldev/image/fetch/s--CS11Dyqa--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/zi8jv3lu5ewdh5oim3rl.png
 comments_count: 0
-positive_reactions_count: 4
+positive_reactions_count: 11
 tags:
   - react
   - preact
@@ -62,14 +62,14 @@ Once I figured that out, I got all the moving parts working. Check out my PR as 
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fforem%2Fforem%2Fpull%2F11525" style="border: 0; width: 100%;"></iframe>
 
 
-Alright, so now the component and portal work great in the actual application. With all that context under out belts lets discuss the issues I ran into while testing out this component with [preact-testing-library](https://github.com/testing-library/preact-testing-library), one of the testing libraries in the [Testing Library](https://testing-library.com/) family.
+Alright, so now the component and portal work great in the actual application. With all that context under out belts lets discuss testing out this component with [preact-testing-library](https://github.com/testing-library/preact-testing-library), one of the testing libraries in the [Testing Library](https://testing-library.com/) family.
 
 If you’re using preact-testing-library or [react-testing-library](https://github.com/testing-library/react-testing-library), the APIs are the same. If you’re interested you can see [what’s available in the API](https://testing-library.com/docs/preact-testing-library/api). We’re going to focus on the [render](https://testing-library.com/docs/preact-testing-library/api# render) function for the time being.
 
 Typically you test a component like this. Note that you can choose what to destructure from the result of the render function based on what’s available in the API for your needs. We are going to go with a function that finds a DOM element by its label text.
 
 
-```jsx
+```javascript
 it('should synchronize search forms', async () => {
     const { findByLabelText } = render(<SearchFormSync />);
 
@@ -200,41 +200,57 @@ From there we need to assert that the search forms are in sync.
 Let's put that all together.
 
 
-```jsx
-it('should synchronize search forms', async () => {
-  // This part of the DOM would be rendered in the search results from the server side.
-  // See search.html.erb.
-  document.body.innerHTML +=
-    '<div id="mobile-search-container"><form></form></div>';
+```javascript
+describe('<SearchFormSync />', () => {
+  beforeEach(() => {
+    // This part of the DOM would be rendered in the search results from the server side.
+    // See search.html.erb.
+    // It is where the portal will render.
+    document.body.innerHTML =
+      '<div id="mobile-search-container"><form></form></div>';
 
-  const { findByLabelText, findAllByLabelText } = render(<SearchFormSync />);
+    setWindowLocation(`
+https://locahost:3000/
+`);
 
-  // Only one input is rendered at this point because the synchSearchForms custom event is what
-  // tells us that there is a new search form to sync with the existing one.
-  const searchInput = await findByLabelText('search');
+    global.InstantClick = jest.fn(() => ({
+      on: jest.fn(),
+      off: jest.fn(),
+      preload: jest.fn(),
+      display: jest.fn(),
+    }))();
+  });
 
-  // Because window.location has no search term in it's URL
-  expect(searchInput.value).toEqual('');
+  it('should synchronize search forms', async () => {
+    const { findByLabelText, findAllByLabelText } = render(<SearchFormSync />);
 
-  // https://www.theatlantic.com/technology/archive/2012/09/here-it-is-the-best-word-ever/262348/
-  const searchTerm = 'diphthong';
+    // Only one input is rendered at this point because the synchSearchForms custom event is what
+    // tells us that there is a new search form to sync with the existing one.
+    const searchInput = await findByLabelText('search');
 
-  // simulates a search result returned which contains the server side rendered search form for mobile only.
-  setWindowLocation(`
+    // Because window.location has no search term in it's URL
+    expect(searchInput.value).toEqual('');
+
+    // https://www.theatlantic.com/technology/archive/2012/09/here-it-is-the-best-word-ever/262348/
+    const searchTerm = 'diphthong';
+
+    // simulates a search result returned which contains the server side rendered search form for mobile only.
+    setWindowLocation(`
 https://locahost:3000/search?q=${searchTerm}
 `);
 
-  fireEvent(
-    window,
-    new CustomEvent('syncSearchForms', {
-      detail: { querystring: window.location.search },
-    }),
-  );
+    fireEvent(
+      window,
+      new CustomEvent('syncSearchForms', {
+        detail: { querystring: window.location.search },
+      }),
+    );
 
-  const [desktopSearch, mobileSearch] = await findAllByLabelText('search');
+    const [desktopSearch, mobileSearch] = await findAllByLabelText('search');
 
-  expect(desktopSearch.value).toEqual(searchTerm);
-  expect(mobileSearch.value).toEqual(searchTerm);
+    expect(desktopSearch.value).toEqual(searchTerm);
+    expect(mobileSearch.value).toEqual(searchTerm);
+  });
 });
 ```
 
@@ -242,7 +258,7 @@ https://locahost:3000/search?q=${searchTerm}
 Let's rerun the tests.
 
 
-```bash
+```
  PASS  app/javascript/Search/__tests__/SearchFormSync.test.jsx
   <SearchFormSync />
     ✓ should synchronize search forms (31 ms)
@@ -302,38 +318,39 @@ There is an optional options parameter which we can see here destructured.
 
 In our case we're not using these so based on the code, we have no 
 `baseElement`
- option set since we are not passing it in and it's default value is the 
+ option set since we are not passing it in and its default value is the 
 `container`
  option which is 
 `undefined`
  since we did not pass one in. So, the 
-`baseElement in our case is `
-document.body
-`
+`baseElement`
+ in our case is 
+`document.body`
+.
 
-Since we have no container defined, it gets set to `
-baseElement.appendChild(document.createElement('div'))
-` which is a `
-<div />
-` appended to the `
-document.body
-`. Remember from our test set up, we added the portal container DOM element via 
+Since we have no container defined, it gets set to 
+`baseElement.appendChild(document.createElement('div'))`
+ which is a 
+`<div />`
+ appended to the 
+`document.body`
+. Remember from our test set up, we added the portal container DOM element via 
 
-```
-javascript
+
+```jsx
 // This part of the DOM would be rendered in the search results from the server side.
 // See search.html.erb.
-document.body.innerHTML +=
+document.body.innerHTML =
   '<div id="mobile-search-container"><form></form></div>';
-
 ```
 
-So before our test runs, this is what the `
-document.body
-` looks like
 
-```
-html
+So before our test runs, this is what the 
+`document.body`
+ looks like
+
+
+```html
 <body>
   <div
     id="mobile-search-container"
@@ -345,72 +362,83 @@ html
   <div>
   </div>
 </body>
-
 ```
+
 
 Let's use preact-testing-library's [debug](https://testing-library.com/docs/react-testing-library/api/# debug) so that we can see the successful test rendered as HTML.
 
-To use `
-debug()
-`, we need to add it to the destructured functions like so:
+To use 
+`debug()`
+, we need to add it to the destructured functions like so:
 
-```
-jsx
+
+```javascript
 const { debug, findByLabelText, findAllByLabelText } = render(<SearchFormSync />);
-
 ```
 
-Alright, now let's add the `
-debug()
-` call to the test.
 
-```
-jsx
-it('should synchronize search forms', async () => {
-  // This part of the DOM would be rendered in the search results from the server side.
-  // See search.html.erb.
-  document.body.innerHTML +=
-    '<div id="mobile-search-container"><form></form></div>';
+Alright, now let's add the 
+`debug()`
+ call to the test.
 
-  const { debug, findByLabelText, findAllByLabelText } = render(
-    <SearchFormSync />,
-  );
 
-  // Only one input is rendered at this point because the synchSearchForms custom event is what
-  // tells us that there is a new search form to sync with the existing one.
-  const searchInput = await findByLabelText('search');
+```jsx
+describe('<SearchFormSync />', () => {
+  beforeEach(() => {
+    // This part of the DOM would be rendered in the search results from the server side.
+    // See search.html.erb.
+    // It is where the portal will render.
+    document.body.innerHTML =
+      '<div id="mobile-search-container"><form></form></div>';
 
-  // Because window.location has no search term in it's URL
-  expect(searchInput.value).toEqual('');
+    setWindowLocation('https://locahost:3000/');
 
-  // https://www.theatlantic.com/technology/archive/2012/09/here-it-is-the-best-word-ever/262348/
-  const searchTerm = 'diphthong';
+    global.InstantClick = jest.fn(() => ({
+      on: jest.fn(),
+      off: jest.fn(),
+      preload: jest.fn(),
+      display: jest.fn(),
+    }))();
+  });
 
-  // simulates a search result returned which contains the server side rendered search form for mobile only.
-  setWindowLocation(
-`https://locahost:3000/search?q=${searchTerm}`
-);
+  it('should synchronize search forms', async () => {
+    const { debug, findByLabelText, findAllByLabelText } = render(<SearchFormSync />);
 
-  fireEvent(
-    window,
-    new CustomEvent('syncSearchForms', {
-      detail: { querystring: window.location.search },
-    }),
-  );
+    // Only one input is rendered at this point because the synchSearchForms custom event is what
+    // tells us that there is a new search form to sync with the existing one.
+    const searchInput = await findByLabelText('search');
 
-  const [desktopSearch, mobileSearch] = await findAllByLabelText('search');
+    // Because window.location has no search term in it's URL
+    expect(searchInput.value).toEqual('');
 
-  expect(desktopSearch.value).toEqual(searchTerm);
-  expect(mobileSearch.value).toEqual(searchTerm);
-  debug();
+    // https://www.theatlantic.com/technology/archive/2012/09/here-it-is-the-best-word-ever/262348/
+    const searchTerm = 'diphthong';
+
+    // simulates a search result returned which contains the server side rendered search form for mobile only.
+    setWindowLocation(`
+https://locahost:3000/search?q=${searchTerm}
+`);
+
+    fireEvent(
+      window,
+      new CustomEvent('syncSearchForms', {
+        detail: { querystring: window.location.search },
+      }),
+    );
+
+    const [desktopSearch, mobileSearch] = await findAllByLabelText('search');
+    debug();
+    expect(desktopSearch.value).toEqual(searchTerm);
+    expect(mobileSearch.value).toEqual(searchTerm);
+  });
 });
-
 ```
+
 
 The test runs again successfully, but now we also have some outputted markup from the rendering.
 
-```
-bash
+
+```bash
  PASS  app/javascript/Search/__tests__/SearchFormSync.test.jsx
   <SearchFormSync />
     ✓ should synchronize search forms (43 ms)
@@ -474,15 +502,16 @@ Time:        1.516 s
 Ran all test suites matching /sync/i.
 
 Watch Usage: Press w to show more.
-
 ```
 
-So from the outputted markup, we see that the original form rendered (desktop) and the mobile search form also rendered in the portal container `
-<div id="mobile-search-container" />
-`.
 
-Using `
-debug()` in preact-testing-library or react-testing-library is super handy if you run into rendering issues.
+So from the outputted markup, we see that the original form rendered (desktop) and the mobile search form also rendered in the portal container 
+`<div id="mobile-search-container" />`
+.
+
+Using 
+`debug()`
+ in preact-testing-library or react-testing-library is super handy if you run into rendering issues.
 
 And that's it! To recap, we had a component that also rendered a portal and we tested that the original component and the portal both rendered.
 
