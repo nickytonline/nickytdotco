@@ -8,14 +8,14 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--CS11Dyqa--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/zi8jv3lu5ewdh5oim3rl.png
 comments_count: 0
-positive_reactions_count: 11
+positive_reactions_count: 15
 tags:
   - react
   - preact
   - testing
   - webdev
 canonical_url: >-
-  https://dev.to/nickytonline/testing-preact-react-portals-with-testing-library-52ja
+  https://www.iamdeveloper.com/posts/testing-preact-react-portals-with-testing-library-52ja/
 template: post
 ---
 This post was going to be about troubles I ran into testing Portals, but in the end after writing three quarters of this post, the problems I thought I had were not problems and I ended up simplifying my tests. 🙃
@@ -155,8 +155,8 @@ So in our test we need to do a few things:
 
 
 ```javascript
-    // simulates a search result returned which contains the server side rendered search form for mobile only.
-    setWindowLocation(`
+// simulates a search result returned which contains the server side rendered search form for mobile only.
+setWindowLocation(`
 https://locahost:3000/search?q=${searchTerm}
 `);
 ```
@@ -258,7 +258,7 @@ https://locahost:3000/search?q=${searchTerm}
 Let's rerun the tests.
 
 
-```
+```bash
  PASS  app/javascript/Search/__tests__/SearchFormSync.test.jsx
   <SearchFormSync />
     ✓ should synchronize search forms (31 ms)
@@ -275,7 +275,7 @@ Watch Usage: Press w to show more.
 
 Awesome, so the original search form (desktop search) and the new search form (mobile/smaller screens) render properly.
 
-Let's take a look at what happens under the hood by looking at preact-testing-library's render function](https://github.com/testing-library/preact-testing-library/blob/master/src/pure.js# L24)
+Let's take a look at what happens under the hood by looking at [preact-testing-library's render function](https://github.com/testing-library/preact-testing-library/blob/master/src/pure.js# L24)
 
 
 ```javascript
@@ -337,7 +337,7 @@ Since we have no container defined, it gets set to
 . Remember from our test set up, we added the portal container DOM element via 
 
 
-```jsx
+```javascript
 // This part of the DOM would be rendered in the search results from the server side.
 // See search.html.erb.
 document.body.innerHTML =
@@ -382,7 +382,7 @@ Alright, now let's add the
  call to the test.
 
 
-```jsx
+```javascript
 describe('<SearchFormSync />', () => {
   beforeEach(() => {
     // This part of the DOM would be rendered in the search results from the server side.

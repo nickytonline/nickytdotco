@@ -14,7 +14,8 @@ tags:
   - webdev
   - beginners
   - productivity
-canonical_url: 'https://dev.to/nickytonline/stuff-i-always-set-up-for-frontend-work-56h2'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/stuff-i-always-set-up-for-frontend-work-56h2/
 template: post
 ---
 There's a few things I always set up when working on a frontend project: ESLint, Prettier, husky and lint-staged.

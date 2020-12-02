@@ -13,7 +13,8 @@ tags:
   - streaming
   - pairprogramming
   - ruby
-canonical_url: 'https://dev.to/devteam/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh/
 template: post
 ---
 I had a lot of fun with Taniyah Jackson on the pairing today. She's brand new to Ruby and Ruby on Rails and I barely have any Rails experience, so it was fun being in the hot seat.

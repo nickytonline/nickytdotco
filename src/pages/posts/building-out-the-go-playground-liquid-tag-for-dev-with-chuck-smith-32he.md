@@ -14,7 +14,7 @@ tags:
   - pairprogramming
   - ruby
 canonical_url: >-
-  https://dev.to/devteam/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he
+  https://www.iamdeveloper.com/posts/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he/
 template: post
 ---
 At then end of July, I had a chance to pair with awesome community member Chuck Smith.

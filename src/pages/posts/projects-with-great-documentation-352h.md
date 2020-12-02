@@ -14,7 +14,7 @@ tags:
   - documentation
   - opensource
   - hacktoberfest
-canonical_url: 'https://dev.to/nickytonline/projects-with-great-documentation-352h'
+canonical_url: 'https://www.iamdeveloper.com/posts/projects-with-great-documentation-352h/'
 template: post
 ---
 I'm looking to compile a list of projects with great documentation so as to provide examples to contributors and maintainers for Hacktoberfest.

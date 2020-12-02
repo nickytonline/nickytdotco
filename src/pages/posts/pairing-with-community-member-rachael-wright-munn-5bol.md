@@ -13,7 +13,8 @@ tags:
   - streaming
   - pairprogramming
   - ruby
-canonical_url: 'https://dev.to/devteam/pairing-with-community-member-rachael-wright-munn-5bol'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/pairing-with-community-member-rachael-wright-munn-5bol/
 template: post
 ---
 On October 15th, DEV Community member Rachael Wright-Munn joined Christina and I on the pairing stream to work on improving the Twitch liquid tag.

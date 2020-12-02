@@ -13,7 +13,8 @@ tags:
   - streaming
   - pairprogramming
   - javascript
-canonical_url: 'https://dev.to/devteam/pairing-with-community-member-eliot-sanford-f7a'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/pairing-with-community-member-eliot-sanford-f7a/
 template: post
 ---
 On October 8th, DEV Community member Eliot Sanford joined Christina and I on the pairing stream to work on an accessibilty issue.

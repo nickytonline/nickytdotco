@@ -13,7 +13,8 @@ tags:
   - streaming
   - pairprogramming
   - ruby
-canonical_url: 'https://dev.to/devteam/pairing-with-community-member-marie-antons-3doi'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/pairing-with-community-member-marie-antons-3doi/
 template: post
 ---
 On October 22nd, DEV Community member Marie Antons joined Christina and I on the pairing stream to work on improving the Twitch liquid tag.
