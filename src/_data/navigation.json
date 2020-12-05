@@ -1,17 +1,37 @@
 {
   "items": [
     {
-      "text": "Home",
-      "url": "/",
+      "text": "About",
+      "url": "/about",
+      "external": false
+    },
+    {
+      "text": "Live Coding",
+      "url": "/live-coding",
+      "external": false
+    },
+    {
+      "text": "Talks",
+      "url": "/talks",
+      "external": false
+    },
+    {
+      "text": "Uses",
+      "url": "/uses",
+      "external": false
+    },
+    {
+      "text": "Thanks",
+      "url": "/thanks",
       "external": false
     },
     {
       "text": "GitHub",
-      "url": "https://github.com/hankchizljaw/hylia",
+      "url": "https://github.com/nickytonline",
       "external": true
     },
     {
-      "text": "Example Contact Page",
+      "text": "Contact",
       "url": "/contact",
       "external": false
     }
