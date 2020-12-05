@@ -1,0 +1,134 @@
+---
+stackbit_url_path: posts/typescript-tips-part-i-4hhp
+title: TypeScript Tips Part I
+date: '2019-01-25T02:13:23.000Z'
+excerpt: >-
+  We'll start off with the usual shameless plug of another blog post. If you
+  haven't read it yet, check...
+thumb_img_path: >-
+  https://res.cloudinary.com/practicaldev/image/fetch/s--sCiwS2Hz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tb6vvhqlpheuuns86mli.png
+comments_count: 8
+positive_reactions_count: 39
+tags:
+  - typescript
+  - javascript
+  - react
+canonical_url: 'https://www.iamdeveloper.com/posts/typescript-tips-part-i-4hhp/'
+template: post
+---
+
+
+We'll start off with the usual shameless plug of another blog post. If you haven't read it yet, check out my blog post, [Consider Using TypeScript](https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3).
+
+We're going to look at a few tips that may/can help you on your journey in TypeScript land.
+
+First let's start off with some things to remember if you're migrating a React application to TypeScript.
+
+- When porting components to TypeScript, ensure that the file extension is 
+`.tsx`
+, not 
+`.ts`
+. If you don't, you'll be scratching your head for hours as to why JSX is not being recognized.
+
+- Also, ensure that you have the 
+`"jsx"`
+ TypeScript compiler option set properly as well. By default, it's set to 
+`"preserve"`
+. You want it to be set to 
+`"react"`
+. e.g. [https://github.com/nickytonline/www.iamdeveloper.com/blob/master/tsconfig.json# L12](https://github.com/nickytonline/www.iamdeveloper.com/blob/master/tsconfig.json# L12)
+
+   
+<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1088614757127593985" style="border: 0; width: 100%;"></iframe>
+
+
+- Create a reusable 
+`children`
+ prop and add it to your component props' type via an intersection.
+
+   
+```javascript
+   // some file housing the ChildrenProp
+   export type ChildrenProp = { children: React.ReactNode };
+      
+   // some other component file that consumes it.
+   export type SomeComponentProps = ChildrenProp & {
+       someOtherProp: boolean;
+       ...
+   };
+   ```
+
+
+- Bonus points, make it generic with a default, [https://github.com/nickytonline/www.iamdeveloper.com/blob/master/types/children-prop.d.ts](https://github.com/nickytonline/www.iamdeveloper.com/blob/master/types/children-prop.d.ts)
+
+
+Alright, let's move on to outside of React Land.
+
+- If you're not sure what the shape of something you're building is yet, or you're consuming something that for whatever reason you don't know the shape, you're going to type it as 
+`any`
+ until you start to figure things out. If you're using TypeScript 3.0 and up, don't. Prefer the 
+`unknown`
+ type.
+
+You get all the benefits of the 
+`any`
+ type, but as soon as you try to access anything on the object, you will need to do a type assertion. For more information, see the documentation on the [
+`unknown`
+](https://blogs.msdn.microsoft.com/typescript/2018/07/30/announcing-typescript-3-0/# the-unknown-type) type
+
+   
+<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1087886002063138816" style="border: 0; width: 100%;"></iframe>
+
+
+   Here's a [TypeScript Playgound](https://www.typescriptlang.org/play/# src=type%20SomeType%20%3D%20%7B%0D%0A%20%20noYolo%3A%20string%3B%0D%0A%20%20dontNo%3A%20string%3B%0D%0A%7D%0D%0A%0D%0A%2F%2F%20unknown%20complains%20about%20everything%0D%0Aconst%20someObject%3A%20unknown%20%3D%20%7B%0D%0A%20%20noYolo%3A%20'hi'%2C%0D%0A%20%20dontNo%3A%20'%3F'%0D%0A%7D%0D%0A%0D%0Aconsole.log(someObject.noYolo%20!%3D%3D%20undefined)%3B%20%2F%2F%20TS%20Complains%2C%20no%20dice%0D%0A%0D%0A%2F%2F%20We're%20sure%20of%20the%20shape%2C%20or%20some%20other%20kind%20of%20type%20checking%20done%20here%0D%0Aconsole.log((%3CSomeType%3EsomeObject).noYolo)%3B%0D%0A%0D%0A%2F%2F%20any%20on%20the%20other%20hand...%0D%0Aconst%20someOtherObject%3A%20any%20%3D%20%7B%0D%0A%20%20yolo%3A%20'yolo!'%0D%0A%7D%0D%0A%0D%0A%2F%2F%20YOLO%0D%0Aconsole.log(someOtherObject.yolo)%3B%0D%0A%0D%0A) example if you want to see it in action.
+
+- Sometimes you have code where you know something is going to exist no matter what, so you don't want to have a check to see if it's null or undefined. TypeScript allows you via the 
+`!`
+ operator to basically say, "Hey TypeScript, trust me, I know what I'm doing.".
+
+For example, instead of doing this
+
+
+```javascript
+const someElementReference = document.querySelector('.awesome-selector');
+
+if (someElementReference) {
+  someElementReference.setAttribute('data-i-checked-first', `
+I wasn't sure if you'd exist
+`);
+}
+```
+
+
+you could do this
+
+
+```javascript
+const someElementReference = document.querySelector('.awesome-selector');
+
+someElementReference!.setAttribute('data-yolo', `
+I know what I'm doing!
+`);
+```
+
+
+Use this sparingly because, well, this giphy.
+
+![I got the power! Bruce Almighty movie gif](https://media.giphy.com/media/A9grgCQ0Dm012/giphy-downsized.gif)
+
+That's all for now, until part II. I said it, so I need to write it now. 😉
+
+*[This post is also available on DEV.](https://dev.to/nickytonline/typescript-tips-part-i-4hhp)*
+
+
+<script>
+const parent = document.getElementsByTagName('head')[0];
+const script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
+script.charset = 'utf-8';
+script.onload = function() {
+    window.iFrameResize({}, '.liquidTag');
+};
+parent.appendChild(script);
+</script>    
