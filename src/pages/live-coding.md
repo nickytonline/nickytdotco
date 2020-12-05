@@ -1,10 +1,5 @@
 ---
 title: Live Coding
-menus:
-    main:
-        weight: 2
-        title: Live Coding
-template: page
 ---
 
 I [started live coding](/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/) on Twitch at the end of March 2020. It started off as a small experiment, and then I started getting into a groove. Initially I was live coding by myself, but then I thought it might be fun and helpful to engage with the folks that contribute to the open source project I work on, [Forem](https://forem.com), the code that runs [DEV](https://dev.to).
