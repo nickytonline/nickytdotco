@@ -38,16 +38,27 @@ module.exports = function(config) {
 
   const now = new Date();
 
+  function filterOutUnwantedTags(collection) {
+    return collection.getFilteredByGlob('./src/pages/posts/*.md').filter(post => {
+      const {tags = []} = post.data;
+
+      return (
+        !tags.includes('weeklylearn') &&
+        !tags.includes('weeklyretro') &&
+        !tags.includes('devhumor') &&
+        !tags.includes('discuss')
+      );
+    });
+  }
+
   // Custom collections
   const livePosts = post => post.date <= now && !post.data.draft;
   config.addCollection('posts', collection => {
-    return [
-      ...collection.getFilteredByGlob('./src/posts/*.md').filter(livePosts)
-    ].reverse();
+    return [...filterOutUnwantedTags(collection).filter(livePosts)].reverse();
   });
 
   config.addCollection('postFeed', collection => {
-    return [...collection.getFilteredByGlob('./src/posts/*.md').filter(livePosts)]
+    return [...filterOutUnwantedTags(collection).filter(livePosts)]
       .reverse()
       .slice(0, site.maxPostsPerPage);
   });
