@@ -2,27 +2,27 @@
   "items": [
     {
       "text": "About",
-      "url": "/about",
+      "url": "/pages/about",
       "external": false
     },
     {
       "text": "Live Coding",
-      "url": "/live-coding",
+      "url": "/pages/live-coding",
       "external": false
     },
     {
       "text": "Talks",
-      "url": "/talks",
+      "url": "/pages/talks",
       "external": false
     },
     {
       "text": "Uses",
-      "url": "/uses",
+      "url": "/pages/uses",
       "external": false
     },
     {
       "text": "Thanks",
-      "url": "/thanks",
+      "url": "/pages/thank-you",
       "external": false
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "text": "Contact",
-      "url": "/contact",
+      "url": "/pages/contact",
       "external": false
     }
   ]
