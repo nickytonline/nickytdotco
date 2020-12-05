@@ -1,6 +1,5 @@
 ---
-title: 'Thank you'
-permalink: '/thank-you/index.html'
+title: 'Thanks'
 ---
 
 Thanks to all the wonderful projects that made it possible to build this blog.
