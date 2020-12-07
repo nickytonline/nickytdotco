@@ -2,8 +2,41 @@
 publish = "dist"
 command = "./stackbit-build.sh"
 
-[[plugins]]
-package = "netlify-plugin-gatsby-cache"
+[[redirects]]
+from = "/about"
+to = "/pages/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/live-coding"
+to = "/pages/live-coding"
+status = 301
+force = true
+
+[[redirects]]
+from = "/talks"
+to = "/pages/talks"
+status = 301
+force = true
+
+[[redirects]]
+from = "/uses"
+to = "/pages/uses"
+status = 301
+force = true
+
+[[redirects]]
+from = "/thanks"
+to = "/pages/thanks"
+status = 301
+force = true
+
+[[redirects]]
+from = "/contact"
+to = "/pages/contact"
+status = 301
+force = true
 
 [[redirects]]
 from = "https://webflow.iamdeveloper.com/*"
