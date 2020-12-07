@@ -39,7 +39,7 @@ module.exports = function(config) {
   const now = new Date();
 
   function filterOutUnwantedTags(collection) {
-    return collection.getFilteredByGlob('./src/pages/posts/*.md').filter(post => {
+    return collection.getFilteredByGlob('./src/posts/*.md').filter(post => {
       const {tags = []} = post.data;
 
       return (
