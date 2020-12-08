@@ -123,4 +123,18 @@ function convertDevEmbeds(markdown) {
   return processedMarkdown;
 }
 
+/**
+ * Removes the posted on DEV link at the end of the content.
+ *
+ * @param {string} postBody The body of a post
+ *
+ * @returns The content minus the posted on DEV link at the end of the content.
+ */
+function removePostIsOnDevLink(postBody) {
+  return postBody.replace(
+    /<a href="[^"]+">This post is also available on DEV\.<\/a>/,
+    ''
+  );
+}
+
 module.exports = {convertDevEmbeds};

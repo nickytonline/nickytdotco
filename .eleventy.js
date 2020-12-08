@@ -6,7 +6,10 @@ const fs = require('fs');
 const dateFilter = require('./src/filters/date-filter.js');
 const markdownFilter = require('./src/filters/markdown-filter.js');
 const w3DateFilter = require('./src/filters/w3-date-filter.js');
-const {convertDevEmbeds} = require('./src/filters/convertDevEmbeds.js');
+const {
+  convertDevEmbeds,
+  removePostIsOnDevLink
+} = require('./src/filters/devToFilters.js');
 
 // Import transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
@@ -21,6 +24,7 @@ module.exports = function(config) {
   config.addFilter('markdownFilter', markdownFilter);
   config.addFilter('w3DateFilter', w3DateFilter);
   config.addFilter('convertDevEmbeds', convertDevEmbeds);
+  config.addFilter('removePostIsOnDevLink', removePostIsOnDevLink);
 
   // Layout aliases
   config.addLayoutAlias('home', 'layouts/home.njk');
