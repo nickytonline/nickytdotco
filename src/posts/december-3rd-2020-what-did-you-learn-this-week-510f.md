@@ -7,8 +7,8 @@ excerpt: >-
   https://dev.to/devteam/what-was-your-win-this-week-2e3d %}' was not prop...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--Yv0g1nLw--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6o8rwuhdgc4ysqt22yhg.png
-comments_count: 21
-positive_reactions_count: 9
+comments_count: 22
+positive_reactions_count: 11
 tags:
   - weeklylearn
   - discuss
