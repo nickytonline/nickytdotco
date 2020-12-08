@@ -84,3 +84,6 @@ src/scss/_tokens.scss
 
 # Hide compiled CSS
 src/_includes/assets/*
+
+# Do not include posts pulled from Stackbit from DEV
+src/pages/posts
