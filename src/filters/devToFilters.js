@@ -92,7 +92,6 @@ const reEmbedFinder = new RegExp(
  * @returns A string of markup for an iframe for the given oEmbed type and oEmbed ID.
  */
 function generateEmbeddedMarkup(fullRawMarkdown, oEmbedType, oEmbedAssetId) {
-  console.log('oEmbed info', {oEmbedType, oEmbedAssetId});
   switch (oEmbedType) {
     case YOUTUBE_OEMBED_TYPE:
       return createYouTubeEmbedMarkup(oEmbedAssetId);
