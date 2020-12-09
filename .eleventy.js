@@ -42,6 +42,21 @@ module.exports = function(config) {
   config.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
   config.addPassthroughCopy('src/robots.txt');
 
+  config.addShortcode('youtube', videoUrl => {
+    const videoId = videoUrl.replace(/.+\?v=(.+)/, '$1');
+
+    return `<iframe
+        loading="lazy"
+        src="https://www.youtube.com/embed/${videoId}?feature=oembed"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen="allowFullScreen"
+        style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"
+        width="480"
+        height="270"
+        frameborder="0"
+      ></iframe>`;
+  });
+
   const now = new Date();
 
   function filterOutUnwantedTags(collection) {
