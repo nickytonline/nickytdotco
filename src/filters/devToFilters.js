@@ -130,11 +130,11 @@ function convertDevEmbeds(markdown) {
  *
  * @returns The content minus the posted on DEV link at the end of the content.
  */
-function removePostIsOnDevLink(postBody) {
+function removePostIsOnDevLink(postBody = '') {
   return postBody.replace(
     /<a href="[^"]+">This post is also available on DEV\.<\/a>/,
     ''
   );
 }
 
-module.exports = {convertDevEmbeds};
+module.exports = {convertDevEmbeds, removePostIsOnDevLink};
