@@ -42,6 +42,14 @@ module.exports = function(config) {
   config.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
   config.addPassthroughCopy('src/robots.txt');
 
+  config.addShortcode('boostButton', (fileSlug, url) => {
+    if (!url.startsWith('/posts/')) {
+      return '';
+    }
+
+    return `<a href="https://dev.to/nickytonline/${fileSlug}" class="booster">Boost on DEV</a>`;
+  });
+
   config.addShortcode('youtube', videoUrl => {
     const videoId = videoUrl.replace(/.+\?v=(.+)/, '$1');
 
