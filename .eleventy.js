@@ -11,6 +11,8 @@ const {
   removePostIsOnDevLink
 } = require('./src/filters/devToFilters.js');
 
+const {youtube, boostButton} = require('./src/shortCodes');
+
 // Import transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
 const parseTransform = require('./src/transforms/parse-transform.js');
@@ -42,28 +44,9 @@ module.exports = function(config) {
   config.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
   config.addPassthroughCopy('src/robots.txt');
 
-  config.addShortcode('boostButton', (fileSlug, url) => {
-    if (!url.startsWith('/posts/')) {
-      return '';
-    }
+  config.addShortcode('boostButton', boostButton);
 
-    return `<a href="https://dev.to/nickytonline/${fileSlug}" class="booster">Boost on DEV</a>`;
-  });
-
-  config.addShortcode('youtube', videoUrl => {
-    const videoId = videoUrl.replace(/.+\?v=(.+)/, '$1');
-
-    return `<iframe
-        loading="lazy"
-        src="https://www.youtube.com/embed/${videoId}?feature=oembed"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen="allowFullScreen"
-        style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"
-        width="480"
-        height="270"
-        frameborder="0"
-      ></iframe>`;
-  });
+  config.addShortcode('youtube', youtube);
 
   const now = new Date();
 
