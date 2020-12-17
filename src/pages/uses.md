@@ -85,3 +85,4 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 -   [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237)
 -   [Anker USB-C to HDMI Adapter](http://amazon.ca/gp/product/B01MYUCWOK) and other dongles
 -   [Jelly Comb Ultra Slim Folding Bluetooth Keyboard](https://www.amazon.ca/gp/product/B07YYTHMCG)
+-   [Anker PowerCore Essential 20000 Power Bank](https://www.amazon.ca/gp/product/B07S829LBX)
