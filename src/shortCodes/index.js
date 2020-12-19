@@ -1,4 +1,5 @@
 /* eslint-env node */
+const site = require('../_data/site.json');
 
 /**
  * Generates markup for a boost on DEV button.
@@ -38,4 +39,32 @@ function youtube(videoUrl) {
       ></iframe>`;
 }
 
-module.exports = {boostButton, youtube};
+/**
+ * Generates a code snippet for Google Analytics
+ *
+ * @param {string} googleAnalyticsId A Google Analytics ID
+ * @param {boolean} isProduction Whether or not the application is being built for production or not.
+ *
+ * @returns {string} The markup snippet to inject Google Analytics.
+ */
+function googleAnalytics(
+  googleAnalyticsId = site.googleAnalyticsId,
+  isProduction = process.env.NODE_ENV === `production`
+) {
+  if (!isProduction) {
+    return '';
+  }
+
+  return `<script async="async" src="https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-55732414-1');
+    </script>`;
+}
+
+module.exports = {boostButton, youtube, googleAnalytics};

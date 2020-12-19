@@ -11,7 +11,7 @@ const {
   removePostIsOnDevLink
 } = require('./src/filters/devToFilters.js');
 
-const {youtube, boostButton} = require('./src/shortCodes');
+const {youtube, boostButton, googleAnalytics} = require('./src/shortCodes');
 
 // Import transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
@@ -44,9 +44,10 @@ module.exports = function(config) {
   config.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
   config.addPassthroughCopy('src/robots.txt');
 
+  // Short Codes
   config.addShortcode('boostButton', boostButton);
-
   config.addShortcode('youtube', youtube);
+  config.addShortcode('googleAnalytics', googleAnalytics);
 
   const now = new Date();
 
