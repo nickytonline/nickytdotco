@@ -12,29 +12,29 @@ Get started now by **[deploying Hylia to Netlify.][deploy-to-netlify]**
 
 Hylia version 0.7.0 features:
 
-✍️ A pre-configured [Netlify CMS](https://www.netlifycms.org/) setup  
-🎨 Customisable design tokens to make it your own  
-🌍 Customisable global data and navigation  
-📂 Tags and tag archives  
-✅ Progressively enhanced, semantic and accessible  
-🎈 _Super_ lightweight front-end  
-🚰 Sass powered CSS system with utility class generator  
-⚙️ Service worker that caches pages so people can read your articles offline  
-🚀 An RSS feed for your posts  
+✍️ A pre-configured [Netlify CMS](https://www.netlifycms.org/) setup
+🎨 Customisable design tokens to make it your own
+🌍 Customisable global data and navigation
+📂 Tags and tag archives
+✅ Progressively enhanced, semantic and accessible
+🎈 _Super_ lightweight front-end
+🚰 Sass powered CSS system with utility class generator
+⚙️ Service worker that caches pages so people can read your articles offline
+🚀 An RSS feed for your posts
 💌 A basic contact form, ready for [Netlify Forms](https://docs.netlify.com/forms/setup/#html-forms)
 
 ## Roadmap
 
-💬 [Netlify Forms](https://www.netlify.com/docs/form-handling/) powered comments  
-💡 ~~Dark/Light mode toggle~~ [Added in 0.4.0](https://github.com/hankchizljaw/hylia/releases/tag/0.4.0)  
-🗣 Webmentions  
-📖 Pagination  
-🐦 Web sharing API integration  
-🗒 Offline mode with links to cached pages  
-📄 Documentation site  
-💅 Proper Sass documentation  
-✍️ Proper CMS documentation  
-🖼 A facility for you to be able to add your logo / branding  
+💬 [Netlify Forms](https://www.netlify.com/docs/form-handling/) powered comments
+💡 ~~Dark/Light mode toggle~~ [Added in 0.4.0](https://github.com/hankchizljaw/hylia/releases/tag/0.4.0)
+🗣 Webmentions
+📖 Pagination
+🐦 Web sharing API integration
+🗒 Offline mode with links to cached pages
+📄 Documentation site
+💅 Proper Sass documentation
+✍️ Proper CMS documentation
+🖼 A facility for you to be able to add your logo / branding
 
 ---
 
@@ -80,21 +80,6 @@ npm run sass:process
 ```bash
 npm run sass:tokens
 ```
-
-## Getting started with the CMS
-
-Before you can use the CMS, you need to do some config in Netlify. Luckily they provide a [very handy guide to get started](https://www.netlify.com/docs/identity/).
-
-In short, though:
-
-- Once you’ve set up the site on Netlify, go to “Settings” > “Identity” and enable Identity
-- Scroll down to the “Git Gateway” area, click “Enable Git Gateway” and follow the steps
-- Click the “Identity” tab at the top
-- Once you’ve enabled identity, click “Invite Users”
-- Check the invite link in your inbox and click the link in the email that’s sent to you
-- Set a password in the popup box
-- Go to `/admin` on your site and login
-- You’re in and ready to edit your content!
 
 ## Design Tokens and Styleguide
 
