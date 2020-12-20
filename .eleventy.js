@@ -11,7 +11,7 @@ const {
   removePostIsOnDevLink
 } = require('./src/filters/devToFilters.js');
 
-const {youtube, boostButton, googleAnalytics} = require('./src/shortCodes');
+const {youtube, boostButton, googleAnalytics, socialImage} = require('./src/shortCodes');
 
 // Import transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
@@ -46,6 +46,7 @@ module.exports = function(config) {
   config.addShortcode('boostButton', boostButton);
   config.addShortcode('youtube', youtube);
   config.addShortcode('googleAnalytics', googleAnalytics);
+  config.addShortcode('socialImage', socialImage);
 
   const now = new Date();
 
