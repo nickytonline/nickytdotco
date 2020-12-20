@@ -7,7 +7,7 @@ I [started live coding](/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/
 
 <h2 id="pair">Live Code Pairings</h2>
 
-So I asked the DEV community if [anyone was interested](/let-s-pair-during-a-live-coding-session-8he/) in pairing and folks definitely were. I did my [first pairing with Sophia Li](/posts/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e/) near the end of July 2020.
+So I asked the DEV community if [anyone was interested](/posts/let-s-pair-during-a-live-coding-session-8he/) in pairing and folks definitely were. I did my [first pairing with Sophia Li](/posts/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e/) near the end of July 2020.
 
 The goal of these pairings is a few things:
 
