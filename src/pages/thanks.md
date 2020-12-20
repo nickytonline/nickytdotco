@@ -1,5 +1,6 @@
 ---
 title: 'Thanks'
+metaDesc: 'Thanks to all these wonderful projects for making this web site possible.'
 ---
 
 Thanks to all the wonderful projects that made it possible to build this blog.

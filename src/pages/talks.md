@@ -1,5 +1,6 @@
 ---
 title: Talks
+metaDesc: 'Talks Nick Taylor has given.'
 ---
 
 <h2 id="lightning2020">Words Matter: Conventional Comments</h2>
