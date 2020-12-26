@@ -17,8 +17,7 @@ const EMBED_TYPES = Object.freeze([
  * @returns A string of markup for an iframe for the YouTube video.
  */
 function createYouTubeEmbedMarkup(videoId) {
-  return `<div class="video-player">
-  <iframe
+  return `<iframe
     loading="lazy"
     src="https://www.youtube.com/embed/${videoId}?feature=oembed"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -27,8 +26,7 @@ function createYouTubeEmbedMarkup(videoId) {
     width="480"
     height="270"
     frameborder="0"
-  ></iframe>
-</div>`;
+  ></iframe>`;
 }
 
 /**
