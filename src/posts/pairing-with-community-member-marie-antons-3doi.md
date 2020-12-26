@@ -22,7 +22,7 @@ On October 22nd, DEV Community member Marie Antons joined Christina and I on the
 Aside from code, we talked about culinary school, and some embarrassing things that happened to me. 🤣
 
 
-<iframe class="liquidTag" src="https://dev.to/embed/youtube?args=CKlNLcfxiHs" style="border: 0; width: 100%;"></iframe>
+<iframe class="liquidTag" src="https://dev.to/embed/youtube?args=ajz8nGCqLbM" style="border: 0; width: 100%;"></iframe>
 
 
 While Marie and I didn't get a chance to start working on the actual issue of podcast validation live, we did discuss what liquid tags are, how to create a podcast on Forem, and debugging my local environment. 

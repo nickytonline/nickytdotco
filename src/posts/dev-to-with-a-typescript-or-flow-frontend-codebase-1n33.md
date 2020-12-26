@@ -6,7 +6,7 @@ excerpt: Consider moving dev.to frontend codebase to TypeScript or Flow?
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--WEWF7NVH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://thepracticaldev.s3.amazonaws.com/i/8d2nn4w6f0smjm9ca4yf.gif
 comments_count: 10
-positive_reactions_count: 20
+positive_reactions_count: 21
 tags:
   - meta
   - javascript

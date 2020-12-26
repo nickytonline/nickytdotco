@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--7gNGWOAZ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/2q3kjdxcp1wpwfof9yh7.png
 comments_count: 196
-positive_reactions_count: 91
+positive_reactions_count: 93
 tags:
   - discuss
   - opensource

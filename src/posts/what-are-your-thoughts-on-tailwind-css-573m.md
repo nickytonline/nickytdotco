@@ -7,8 +7,8 @@ excerpt: >-
   Tailwind CSS. I'm a big fan of...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--zXI3FdvB--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6ec38a7pi1y0msny4tv0.jpg
-comments_count: 96
-positive_reactions_count: 102
+comments_count: 101
+positive_reactions_count: 103
 tags:
   - discuss
   - css

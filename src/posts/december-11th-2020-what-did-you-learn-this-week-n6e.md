@@ -1,20 +1,20 @@
 ---
-stackbit_url_path: posts/november-13th-2020-what-did-you-learn-this-week-2520
-title: 'November 13th, 2020: What did you learn this week?'
-date: '2020-11-13T11:17:16.320Z'
+stackbit_url_path: posts/december-11th-2020-what-did-you-learn-this-week-n6e
+title: 'December 11th, 2020: What did you learn this week?'
+date: '2020-12-11T14:27:08.650Z'
 excerpt: >-
   It's that time of the week again. So wonderful devs, what did you learn this
   week? It could be progra...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--8OVH3mrT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/seixs9mk0sbik6zaoesp.jpg
-comments_count: 36
-positive_reactions_count: 6
+  https://res.cloudinary.com/practicaldev/image/fetch/s--d8Hvawm0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/v9gnm9n6cykcgtd88v6m.png
+comments_count: 30
+positive_reactions_count: 13
 tags:
   - weeklylearn
   - discuss
   - weeklyretro
 canonical_url: >-
-  https://dev.to/nickytonline/november-13th-2020-what-did-you-learn-this-week-2520
+  https://dev.to/nickytonline/december-11th-2020-what-did-you-learn-this-week-n6e
 template: post
 ---
 It's that time of the week again. So wonderful devs, what did you learn this week? It could be programming tips, career advice etc.
@@ -22,7 +22,6 @@ It's that time of the week again. So wonderful devs, what did you learn this wee
 <center>
 
 ![Information flowing through your brain](https://media.giphy.com/media/qKltgF7Aw515K/giphy.gif)
-
 </center>
 
 Feel free to comment with what you learnt and/or reference your TIL post to give it some more exposure.
@@ -31,20 +30,18 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 <iframe class="liquidTag" src="https://dev.to/embed/tag?args=todayilearned" style="border: 0; width: 100%;"></iframe>
 
 
-<center>
-
 And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
 
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-391j" style="border: 0; width: 100%;"></iframe>
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-k8n" style="border: 0; width: 100%;"></iframe>
 
 
-![Someone feeling like "Yaaas!"](https://media.giphy.com/media/zBhZiVNNQjfTG/giphy.gif)
+<center>
+
+![Price is Right contestant celebrating](https://media.giphy.com/media/gF29UEqBhSoDY8LHKg/giphy.gif)
 </center>
 
-Photo by [Wes Hicks](https://unsplash.com/@sickhews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](Photo by Wes Hicks on Unsplash)
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/november-13th-2020-what-did-you-learn-this-week-2520)*
+*[This post is also available on DEV.](https://dev.to/nickytonline/december-11th-2020-what-did-you-learn-this-week-n6e)*
 
 
 <script>

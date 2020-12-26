@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--K1c7Tgjm--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/f5pq8in32y3sbid6lm4k.jpg
 comments_count: 7
-positive_reactions_count: 57
+positive_reactions_count: 58
 tags:
   - discuss
   - gatsby
