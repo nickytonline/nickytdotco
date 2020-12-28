@@ -134,6 +134,30 @@
       padding: get-size(700);
       font-size: get-size(500);
     }
+
+    .ltag__user {
+      display: flex;
+      color: var(--color-dark);
+      background-color: var(--color-theme-highlight);
+      padding: 1rem;
+      justify-content: space-between;
+      align-items: center;
+
+      &__pic {
+        width: 150px;
+        height: 150px;
+
+        & img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+        }
+      }
+
+      &__content {
+        margin-left: 1rem;
+      }
+    }
   }
 
   &__footer {

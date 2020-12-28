@@ -3,8 +3,57 @@ const {JSDOM} = jsdom;
 const minify = require('../utils/minify.js');
 const slugify = require('slugify');
 const getSize = require('image-size');
+const fetch = require('node-fetch');
 
-module.exports = function(value, outputPath) {
+async function processDevToUserProfileEmbeds(embeds, document) {
+  const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
+  const devToUserHtmls = await Promise.all(responses.map(response => response.text()));
+
+  embeds.forEach((devToUserEmbed, index) => {
+    const html = devToUserHtmls[index];
+    const holderElement = document.createElement('div');
+    holderElement.innerHTML = html;
+    const devUserContent = holderElement.querySelector('.ltag__user');
+    devUserContent.className = 'ltag__user';
+    devUserContent.removeAttribute('style');
+    devUserContent.removeChild(devUserContent.querySelector('style'));
+
+    const userImageLink = devUserContent.querySelector('.profile-image-link');
+    const updatedUserProfileUrl = `https://dev.to${userImageLink.getAttribute('href')}`;
+    userImageLink.setAttribute('aria-hidden', true);
+    userImageLink.setAttribute('tabindex', -1);
+    userImageLink.setAttribute('href', updatedUserProfileUrl);
+
+    for (const link of devUserContent.querySelectorAll(
+      '.ltag__user__content .ltag__user__link'
+    )) {
+      link.setAttribute('href', updatedUserProfileUrl);
+      link.removeAttribute('class');
+
+      if (link.closest('.ltag__user__summary')) {
+        link.setAttribute('aria-hidden', true);
+        link.setAttribute('tabindex', -1);
+        link.setAttribute('href', updatedUserProfileUrl);
+      }
+    }
+
+    const followButton = devUserContent.querySelector('.follow-action-button');
+    followButton.parentElement.removeChild(followButton);
+
+    devToUserEmbed.replaceWith(devUserContent);
+  });
+}
+
+// TODO: Pull this function out of here.
+async function processDevToEmbeds(embeds = [], document) {
+  const devToUserEmbeds = embeds.filter(({src}) =>
+    src.startsWith('https://dev.to/embed/user')
+  );
+
+  await processDevToUserProfileEmbeds(devToUserEmbeds, document);
+}
+
+module.exports = async function(value, outputPath) {
   if (outputPath.endsWith('.html')) {
     const DOM = new JSDOM(value, {
       resources: 'usable'
@@ -15,7 +64,10 @@ module.exports = function(value, outputPath) {
     const articleHeadings = [
       ...document.querySelectorAll('main article h2, main article h3')
     ];
-    const articleEmbeds = [...document.querySelectorAll('main article iframe')];
+    const articleEmbeds = [
+      ...document.querySelectorAll('main article iframe:not(.liquidTag)')
+    ];
+    const devToEmbeds = [...document.querySelectorAll('.liquidTag')];
 
     if (articleImages.length) {
       articleImages.forEach(image => {
@@ -78,7 +130,10 @@ module.exports = function(value, outputPath) {
       }
     });
 
-    return '<!DOCTYPE html>\r\n' + document.documentElement.outerHTML;
+    await processDevToEmbeds(devToEmbeds, document);
+
+    return '<!DOCTYPE html>\r\n' + (await document.documentElement.outerHTML);
   }
+
   return value;
 };
