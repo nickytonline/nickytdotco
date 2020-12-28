@@ -158,6 +158,14 @@
         margin-left: 1rem;
       }
     }
+
+    .github-wrapper {
+      background-color: var(--color-light);
+
+      iframe {
+        border: none;
+      }
+    }
   }
 
   &__footer {

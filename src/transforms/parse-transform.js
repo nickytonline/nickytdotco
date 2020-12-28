@@ -50,6 +50,24 @@ async function processDevToEmbeds(embeds = [], document) {
     src.startsWith('https://dev.to/embed/user')
   );
 
+  const githubEmbeds = embeds.filter(({src}) =>
+    src.startsWith('https://dev.to/embed/github')
+  );
+
+  // Give GitHub embeds a better background for colour contrast.
+  githubEmbeds.forEach(embed => {
+    embed.removeAttribute('style');
+
+    const player = document.createElement('div');
+
+    // TODO: consolidate into just GitHub wrapper class.
+    player.classList.add('video-player');
+    player.classList.add('github-wrapper');
+    player.appendChild(embed.cloneNode(true));
+
+    embed.replaceWith(player);
+  });
+
   await processDevToUserProfileEmbeds(devToUserEmbeds, document);
 }
 
