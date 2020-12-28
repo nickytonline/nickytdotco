@@ -135,13 +135,11 @@
       font-size: get-size(500);
     }
 
+    // This class is related to dev.to embed that was converted from an iframe
     .ltag__user {
-      display: flex;
       color: var(--color-dark);
       background-color: var(--color-theme-highlight);
       padding: 1rem;
-      justify-content: space-between;
-      align-items: center;
 
       &__pic {
         width: 150px;
@@ -155,7 +153,9 @@
       }
 
       &__content {
-        margin-left: 1rem;
+        @include media-query('md') {
+          margin-left: 1rem;
+        }
 
         a:focus {
           outline: 1px solid var(--color-dark);

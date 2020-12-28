@@ -14,7 +14,8 @@ async function processDevToUserProfileEmbeds(embeds, document) {
     const holderElement = document.createElement('div');
     holderElement.innerHTML = html;
     const devUserContent = holderElement.querySelector('.ltag__user');
-    devUserContent.className = 'ltag__user';
+    devUserContent.className =
+      'ltag__user box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after';
     devUserContent.removeAttribute('style');
     devUserContent.removeChild(devUserContent.querySelector('style'));
 

@@ -70,7 +70,8 @@ $stalfos-config: (
   ),
   'flex': (
     'items': (
-      'wrap': 'wrap'
+      'wrap': 'wrap',
+      'nowrap': 'nowrap'
     ),
     'output': 'responsive',
     'property': 'flex-wrap'
@@ -127,7 +128,9 @@ $stalfos-config: (
     'items': (
       'between': 'space-between',
       'around': 'space-around',
-      'before': 'flex-end'
+      'before': 'flex-end',
+      'after': 'flex-start',
+      'center': 'center'
     ),
     'output': 'responsive',
     'property': 'justify-content'
