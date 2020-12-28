@@ -159,11 +159,16 @@
       }
     }
 
-    .github-wrapper {
+    .devto-embed-wrapper {
+      display: flex;
+      place-items: center;
       background-color: var(--color-light);
+      padding: 1rem;
 
       iframe {
+        width: 100%;
         border: none;
+        height: auto;
       }
     }
   }

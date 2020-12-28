@@ -62,7 +62,22 @@ async function processDevToEmbeds(embeds = [], document) {
 
     // TODO: consolidate into just GitHub wrapper class.
     player.classList.add('video-player');
-    player.classList.add('github-wrapper');
+    player.classList.add('devto-embed-wrapper');
+    player.appendChild(embed.cloneNode(true));
+
+    embed.replaceWith(player);
+  });
+
+  const remainingEmbeds = embeds.filter(({src}) =>
+    src.startsWith('https://dev.to/embed/listing')
+  );
+
+  remainingEmbeds.forEach(embed => {
+    embed.removeAttribute('style');
+
+    const player = document.createElement('div');
+
+    player.classList.add('devto-embed-wrapper');
     player.appendChild(embed.cloneNode(true));
 
     embed.replaceWith(player);
