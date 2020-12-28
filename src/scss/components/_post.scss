@@ -144,6 +144,12 @@
       &__pic {
         width: 150px;
         height: 150px;
+        margin-bottom: 1rem;
+
+        @include media-query('md') {
+          margin-left: 1rem;
+          margin-bottom: none;
+        }
 
         & img {
           width: 150px;
