@@ -27,6 +27,9 @@ module.exports = function(config) {
   config.addFilter('w3DateFilter', w3DateFilter);
   config.addFilter('convertDevEmbeds', convertDevEmbeds);
   config.addFilter('removePostIsOnDevLink', removePostIsOnDevLink);
+  config.addFilter('htmlDateString', dateObj =>
+    DateTime.fromJSDate(dateObj).toFormat('yyyy-LL-dd')
+  );
 
   // Layout aliases
   config.addLayoutAlias('home', 'layouts/home.njk');
