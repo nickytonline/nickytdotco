@@ -156,6 +156,14 @@
 
       &__content {
         margin-left: 1rem;
+
+        a:focus {
+          outline: 1px solid var(--color-dark);
+        }
+      }
+
+      &__summary {
+        margin-top: 1rem;
       }
     }
 
