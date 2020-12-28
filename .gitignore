@@ -70,3 +70,20 @@ yarn-error.log
 
 src/data
 .env.local
+
+# eleventy specific
+*.scssc
+.DS_Store
+.sass-cache
+dist
+
+# Specifics
+
+# Hide design tokens
+src/scss/_tokens.scss
+
+# Hide compiled CSS
+src/_includes/assets/*
+
+# Do not include posts pulled from Stackbit from DEV
+src/pages/posts

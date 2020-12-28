@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "text": "About",
+      "url": "/pages/about",
+      "external": false
+    },
+    {
+      "text": "Live Coding",
+      "url": "/pages/live-coding",
+      "external": false
+    },
+    {
+      "text": "Talks",
+      "url": "/pages/talks",
+      "external": false
+    },
+    {
+      "text": "Uses",
+      "url": "/pages/uses",
+      "external": false
+    },
+    {
+      "text": "Thanks",
+      "url": "/pages/thanks",
+      "external": false
+    },
+    {
+      "text": "GitHub",
+      "url": "https://github.com/nickytonline",
+      "external": true
+    },
+    {
+      "text": "Contact",
+      "url": "/pages/contact",
+      "external": false
+    }
+  ]
+}

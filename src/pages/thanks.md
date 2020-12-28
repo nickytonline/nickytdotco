@@ -1,18 +1,14 @@
 ---
-title: Thanks
-menus:
-  main:
-    weight: 4
-    title: Thanks
-template: page
+title: 'Thanks'
+metaDesc: 'Thanks to all these wonderful projects for making this web site possible.'
 ---
 
 Thanks to all the wonderful projects that made it possible to build this blog.
 
 - [DEV](https://dev.to 'DEV website')
-- [Stackbit](stackbit.com 'Stackbit website')
-- [Babel](https://babeljs.io 'Babel website')
-- [React](https://reactjs.org 'React website')
-- [Gatsby](https://gatsbyjs.org 'Gatsby JS website')
-- [Netlify](https://www.netlify.com 'Netlify Website')
+- [Stackbit](stackbit.com)
+- [Babel](https://babeljs.io)
+- [Eleventy](https://www.11ty.dev/)
+- [Netlify](https://www.netlify.com)
+- [Hylia Eleventy template](https://github.com/hankchizljaw/hylia) care of [Andy Bell](https://piccalil.li/)
 - and OSS in general.

@@ -1,0 +1,14 @@
+{
+  "showThemeCredit": true,
+  "name": "Just Some Dev",
+  "shortDesc": "Welcome to Nick Taylor's personal website.",
+  "url": "https://iamdeveloper.com",
+  "authorEmail": "nick@iamdeveloper.com",
+  "authorHandle": "@nickytonline",
+  "authorName": "Nick Taylor",
+  "enableThirdPartyComments": false,
+  "maxPostsPerPage": 5,
+  "paymentPointer": "$ilp.uphold.com/MZMhAWA7bkGa",
+  "faviconPath": "/images/favicon.png",
+  "googleAnalyticsId": "UA-55732414-1"
+}

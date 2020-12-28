@@ -1,0 +1,43 @@
+{% set pageTitle = title + ' - ' + site.name %}
+{% set pageDesc = '' %}
+{% set siteTitle = site.name %}
+{% set currentUrl = site.url + page.url %}
+
+{% if metaTitle %}
+  {% set pageTitle = metaTitle %}
+{% endif %}
+
+{% if metaDesc %}
+  {% set pageDesc = metaDesc %}
+{% endif %}
+
+{% if excerpt %}
+  {% set pageDesc = excerpt %}
+{% endif %}
+
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}"/>
+
+<meta property="og:site_name" content="{{ siteTitle }}"/>
+<meta property="og:title" content="{{ pageTitle }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ currentUrl }}"/>
+
+{% if site.authorHandle %}
+  <meta name="twitter:creator" content="@{{ site.authorHandle | replace('@', '') }}"/>
+{% endif %}
+
+{% if pageDesc %}
+  <meta name="description" content="{{ pageDesc }}"/>
+  <meta name="twitter:description" content="{{ pageDesc }}"/>
+  <meta property="og:description" content="{{ pageDesc }}"/>
+{% endif %}
+
+<meta property="og:image" content="{% socialImage title, pageDesc %}"/>
+<meta name="twitter:image" content="{% socialImage title, pageDesc  %}"/>
+<meta property="og:image:alt" content="Page image for the page {{ title }}"/>
+<meta name="twitter:image:alt" content="Page image for the page {{ title }}"/>
+
+{% if site.paymentPointer %}
+  <meta name="monetization" content="{{ site.paymentPointer }}"/>
+{% endif %}
