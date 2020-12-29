@@ -7,6 +7,33 @@ const fetch = require('node-fetch');
 const DEV_TO_URL = 'https://dev.to';
 
 async function processDevToUserProfileEmbeds(embeds, document) {
+  /** This is what the markup from the iframe that gets converted looks like:
+   * <div class="ltag__user ltag__user__id__215107" style="border-color:#021e2f;box-shadow: 3px 3px 0px #021e2f;">
+   *   <style>
+   *     .ltag__user__id__215107 .follow-action-button {
+   *       background-color: #d7dee2 !important;
+   *       color: #022235 !important;
+   *       border-color: #d7dee2 !important;
+   *     }
+   *   </style>
+   *   <a href="/sophia_wyl" class="ltag__user__link profile-image-link">
+   *     <div class="ltag__user__pic">
+   *       <img
+   *         src="https://res.cloudinary.com/practicaldev/image/fetch/s--n2iFbG7W--/c_fill,f_auto,fl_progressive,h_150,q_auto,w_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/215107/81f83b7e-9084-462c-b447-23450438f20d.jpg"
+   *         alt="sophia_wyl image" />
+   *     </div>
+   *   </a>
+   *   <div class="ltag__user__content">
+   *     <h2><a class="ltag__user__link" href="/sophia_wyl">Sophia Li</a><button class="crayons-btn follow-action-button "
+   *         data-info="{&quot;id&quot;:215107,&quot;className&quot;:&quot;User&quot;,&quot;style&quot;:&quot;full&quot;}"
+   *         data-follow-action-button="true" /></h2>
+   *     <div class="ltag__user__summary">
+   *       <a class="ltag__user__link" href="/sophia_wyl">Software engineer (she/her)</a>
+   *     </div>
+   *   </div>
+   * </div>
+   */
+
   if (embeds.length === 0) {
     return;
   }
@@ -50,7 +77,31 @@ async function processDevToUserProfileEmbeds(embeds, document) {
   });
 }
 
+// TODO: Pull this function out of here.
 async function processDevArticleEmbeds(embeds, document) {
+  /** This is what the markup from the iframe that gets converted looks like:
+   *
+   * <div class="ltag__link">
+   *   <a href="/nickytonline" class="ltag__link__link">
+   *     <div class="ltag__link__pic">
+   *       <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zhsA-ZEm--/c_fill,f_auto,fl_progressive,h_150,q_auto,w_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/68d6245f-3152-4ed2-a245-d015fca4160b.jpeg" alt="nickytonline image">
+   *     </div>
+   *   </a>
+   *   <a href="/devteam/let-s-pair-during-a-live-coding-session-8he" class="ltag__link__link">
+   *     <div class="ltag__link__content">
+   *       <h2>Let's Pair during a Live Coding Session!</h2>
+   *       <h3>Nick Taylor (he/him) ・ Jul 14 ・ 2 min read</h3>
+   *       <div class="ltag__link__taglist">
+   *         <span class="ltag__link__tag">#webdev</span>
+   *         <span class="ltag__link__tag">#pairprogramming</span>
+   *         <span class="ltag__link__tag">#livecoding</span>
+   *         <span class="ltag__link__tag">#meta</span>
+   *       </div>
+   *     </div>
+   *   </a>
+   * </div>
+   *
+   */
   if (embeds.length === 0) {
     return;
   }
