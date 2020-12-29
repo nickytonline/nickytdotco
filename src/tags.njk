@@ -24,7 +24,7 @@ permalink: /tags/{{ tag }}/
 {# Post list content #}
 {% set postListHeadingLevel = '2' %}
 {% set postListHeading = 'Posts' %}
-{% set postListItems = collections[tag] %}
+{% set postListItems = collections[tag] | reverse %}
 
 {% block content %}
   <main id="main-content" tabindex="-1">
