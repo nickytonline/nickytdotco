@@ -37,7 +37,7 @@
     "start": "concurrently \"npm run sass:process -- --watch\" \"npm run serve\"",
     "serve": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "preproduction": "cp src/pages/posts/*.md src/posts/",
-    "production": "npm run sass:process && eleventy"
+    "production": "npm run sass:process && NODE_ENV=production eleventy"
   },
   "repository": {
     "type": "git",
