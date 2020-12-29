@@ -4,8 +4,13 @@ const minify = require('../utils/minify.js');
 const slugify = require('slugify');
 const getSize = require('image-size');
 const fetch = require('node-fetch');
+const DEV_TO_URL = 'https://dev.to';
 
 async function processDevToUserProfileEmbeds(embeds, document) {
+  if (embeds.length === 0) {
+    return;
+  }
+
   const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
   const devToUserHtmls = await Promise.all(responses.map(response => response.text()));
 
@@ -20,7 +25,7 @@ async function processDevToUserProfileEmbeds(embeds, document) {
     devUserContent.removeChild(devUserContent.querySelector('style'));
 
     const userImageLink = devUserContent.querySelector('.profile-image-link');
-    const updatedUserProfileUrl = `https://dev.to${userImageLink.getAttribute('href')}`;
+    const updatedUserProfileUrl = `${DEV_TO_URL}${userImageLink.getAttribute('href')}`;
     userImageLink.setAttribute('aria-hidden', true);
     userImageLink.setAttribute('tabindex', -1);
     userImageLink.setAttribute('href', updatedUserProfileUrl);
@@ -42,6 +47,34 @@ async function processDevToUserProfileEmbeds(embeds, document) {
     followButton.parentElement.removeChild(followButton);
 
     devToUserEmbed.replaceWith(devUserContent);
+  });
+}
+
+async function processDevArticleEmbeds(embeds, document) {
+  if (embeds.length === 0) {
+    return;
+  }
+
+  const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
+  const devToArticleHtmls = await Promise.all(responses.map(response => response.text()));
+
+  embeds.forEach((embed, index) => {
+    const html = devToArticleHtmls[index];
+    const holderElement = document.createElement('div');
+    holderElement.innerHTML = html;
+    const articleContent = holderElement.querySelector('.ltag__link');
+    articleContent.className =
+      'ltag__link box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after';
+
+    for (const link of articleContent.querySelectorAll('.ltag__link__link')) {
+      link.setAttribute('href', DEV_TO_URL + link.getAttribute('href'));
+
+      if (!link.querySelector('.ltag__link__pic')) {
+        link.removeAttribute('class');
+      }
+    }
+
+    embed.replaceWith(articleContent);
   });
 }
 
@@ -85,6 +118,12 @@ async function processDevToEmbeds(embeds = [], document) {
   });
 
   await processDevToUserProfileEmbeds(devToUserEmbeds, document);
+
+  const devArticleEmbeds = embeds.filter(({src}) =>
+    src.startsWith('https://dev.to/embed/link')
+  );
+
+  await processDevArticleEmbeds(devArticleEmbeds, document);
 }
 
 module.exports = async function(value, outputPath) {

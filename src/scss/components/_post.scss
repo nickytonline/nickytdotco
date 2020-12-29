@@ -173,6 +173,37 @@
       }
     }
 
+    .ltag__link {
+      color: var(--color-dark);
+      background-color: var(--color-theme-highlight);
+      padding: 1rem;
+
+      &__link {
+        margin-right: none;
+        margin-bottom: 1rem;
+
+        @include media-query('md') {
+          margin-right: 1rem;
+          margin-bottom: none;
+        }
+      }
+
+      &__pic {
+        width: 150px;
+        height: 150px;
+
+        & img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+        }
+      }
+
+      a:focus {
+        outline: 1px solid var(--color-dark);
+      }
+    }
+
     .devto-embed-wrapper {
       display: flex;
       place-items: center;
