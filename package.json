@@ -1,7 +1,7 @@
 {
-  "name": "hylia",
-  "version": "0.7.0",
-  "description": "A simple Eleventy starter kit to help you have a blog of your own",
+  "name": "iamdeveloper.com",
+  "version": "1.0.0",
+  "description": "My site built with Eleventy and Andy Bell's Hylia template",
   "main": "index.js",
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
@@ -41,13 +41,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hankchizljaw/hylia.git"
+    "url": "git+https://github.com/nickytonline/robust-petunia"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hankchizljaw/hylia/issues"
+    "url": "https://github.com/nickytonline/robust-petunia"
   },
-  "homepage": "https://github.com/hankchizljaw/hylia#readme"
+  "homepage": "https://github.com/nickytonline/robust-petunia#readme"
 }
