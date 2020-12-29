@@ -22,6 +22,7 @@
     "bl": "^3.0.0",
     "chokidar-cli": "^2.1.0",
     "cross-env": "^5.2.1",
+    "luxon": "^1.25.0",
     "make-dir-cli": "^2.0.0",
     "node-fetch": "^2.6.1",
     "prettier": "^1.19.1",
