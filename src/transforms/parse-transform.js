@@ -146,7 +146,6 @@ async function processDevToEmbeds(embeds = [], document) {
     const player = document.createElement('div');
 
     // TODO: consolidate into just GitHub wrapper class.
-    player.classList.add('video-player');
     player.classList.add('devto-embed-wrapper');
     player.appendChild(embed.cloneNode(true));
 
