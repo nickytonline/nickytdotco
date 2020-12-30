@@ -63,7 +63,7 @@ module.exports = function(config) {
    * @returns {boolean} True if the post is valid for publishing, otherwise false.
    */
   function isValidPost(post) {
-    const {tags = []} = post.data || {};
+    const {tags = []} = post.data ?? {};
 
     return (
       !tags.includes('weeklylearn') &&
