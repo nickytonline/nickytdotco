@@ -54,17 +54,27 @@ module.exports = function(config) {
 
   const now = new Date();
 
-  function filterOutUnwantedTags(collection) {
-    return collection.getFilteredByGlob('./src/posts/*.md').filter(post => {
-      const {tags = []} = post.data;
+  /**
+   * Determines whethere or not a post coming from DEV (the CMS) is valid or not to publish
+   * on this blog.
+   *
+   * @param {object} post The post to validate.
+   *
+   * @returns {boolean} True if the post is valid for publishing, otherwise false.
+   */
+  function isValidPost(post) {
+    const {tags = []} = post.data ?? {};
 
-      return (
-        !tags.includes('weeklylearn') &&
-        !tags.includes('weeklyretro') &&
-        !tags.includes('devhumor') &&
-        !tags.includes('discuss')
-      );
-    });
+    return (
+      !tags.includes('weeklylearn') &&
+      !tags.includes('weeklyretro') &&
+      !tags.includes('devhumor') &&
+      !tags.includes('discuss')
+    );
+  }
+
+  function filterOutUnwantedTags(collection) {
+    return collection.getFilteredByGlob('./src/posts/*.md').filter(isValidPost);
   }
 
   // Custom collections
@@ -77,6 +87,11 @@ module.exports = function(config) {
     return [...filterOutUnwantedTags(collection).filter(livePosts)]
       .reverse()
       .slice(0, site.maxPostsPerPage);
+  });
+
+  config.addCollection('sitemapPages', function(collection) {
+    // get unsorted items
+    return collection.getAll().filter(isValidPost);
   });
 
   // Plugins
