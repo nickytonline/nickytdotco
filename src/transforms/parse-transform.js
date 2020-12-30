@@ -69,7 +69,10 @@ async function processDevToTagEmbeds(embeds, document) {
     followButton.parentElement.removeChild(followButton);
 
     const tagLink = devToTagContent.querySelector('.ltag__tag__link');
-    const updatedUserProfileUrl = `${DEV_TO_URL}${tagLink.getAttribute('href')}`;
+    const tagUrl = `${DEV_TO_URL}${tagLink.getAttribute('href')}`;
+
+    tagLink.setAttribute('href', tagUrl);
+    tagLink.removeAttribute('class');
 
     embed.replaceWith(devToTagContent);
   });

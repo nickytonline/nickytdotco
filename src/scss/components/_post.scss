@@ -135,12 +135,16 @@
       font-size: get-size(500);
     }
 
-    // This class is related to dev.to embed that was converted from an iframe
+    // These classes is related to dev.to embed that was converted from an iframe
+    .ltag__tag,
+    .ltag__link,
     .ltag__user {
       color: var(--color-dark);
       background-color: var(--color-theme-highlight);
       padding: 1rem;
+    }
 
+    .ltag__user {
       &__pic {
         width: 150px;
         height: 150px;
@@ -174,10 +178,6 @@
     }
 
     .ltag__link {
-      color: var(--color-dark);
-      background-color: var(--color-theme-highlight);
-      padding: 1rem;
-
       &__link {
         margin-right: none;
         margin-bottom: 1rem;
