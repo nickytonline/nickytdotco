@@ -22,7 +22,9 @@ async function addMissingIframeTitleAttributes(embeds, document) {
     const holderElement = document.createElement('div');
     holderElement.innerHTML = devToUserHtmls[index];
 
-    const title = holderElement.querySelector('title').textContent.trim();
+    const title =
+      holderElement.querySelector('title')?.textContent?.trim() ||
+      'This framed page appears to have no title.';
 
     embed.setAttribute('title', title);
   });
