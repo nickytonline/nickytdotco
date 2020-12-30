@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--CS11Dyqa--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/zi8jv3lu5ewdh5oim3rl.png
 comments_count: 0
-positive_reactions_count: 21
+positive_reactions_count: 22
 tags:
   - react
   - preact
