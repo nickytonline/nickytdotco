@@ -6,6 +6,28 @@ const getSize = require('image-size');
 const fetch = require('node-fetch');
 const DEV_TO_URL = 'https://dev.to';
 
+// TODO: Pull this out and import.
+/**
+ * Adds a missing title attribute to iframes that are missing them by pulling
+ * the title text from the iframe's document.
+ *
+ * @param {HTMLElement[]} embeds
+ * @param {Document} document
+ */
+async function addMissingIframeTitleAttributes(embeds, document) {
+  const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
+  const devToUserHtmls = await Promise.all(responses.map(response => response.text()));
+
+  embeds.forEach((embed, index) => {
+    const holderElement = document.createElement('div');
+    holderElement.innerHTML = devToUserHtmls[index];
+
+    const title = holderElement.querySelector('title').textContent.trim();
+
+    embed.setAttribute('title', title);
+  });
+}
+
 async function processDevToUserProfileEmbeds(embeds, document) {
   /** This is what the markup from the iframe that gets converted looks like:
    * <div class="ltag__user ltag__user__id__215107" style="border-color:#021e2f;box-shadow: 3px 3px 0px #021e2f;">
@@ -254,6 +276,12 @@ module.exports = async function(value, outputPath) {
     });
 
     await processDevToEmbeds(devToEmbeds, document);
+
+    // Fixes a11y issue of iframes from embeds missing a title attribute
+    const iframesWithMissingTitleAttributes = [
+      ...document.querySelectorAll('iframe:not([title])')
+    ];
+    await addMissingIframeTitleAttributes(iframesWithMissingTitleAttributes, document);
 
     return '<!DOCTYPE html>\r\n' + (await document.documentElement.outerHTML);
   }
