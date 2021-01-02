@@ -1,5 +1,4 @@
 /* eslint-env node */
-const site = require('../_data/site.json');
 
 /**
  * Generates markup for a boost on DEV button.
@@ -48,7 +47,7 @@ function youtube(videoUrl) {
  * @returns {string} The markup snippet to inject Google Analytics.
  */
 function googleAnalytics(
-  googleAnalyticsId = site.googleAnalyticsId,
+  googleAnalyticsId,
   isProduction = process.env.NODE_ENV === `production`
 ) {
   if (!isProduction) {
@@ -63,7 +62,7 @@ function googleAnalytics(
       }
       gtag('js', new Date());
 
-      gtag('config', 'UA-55732414-1');
+      gtag('config', '${googleAnalyticsId}');
     </script>`;
 }
 
