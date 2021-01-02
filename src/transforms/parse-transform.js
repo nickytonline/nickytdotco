@@ -5,6 +5,25 @@ const slugify = require('slugify');
 const getSize = require('image-size');
 const fetch = require('node-fetch');
 const DEV_TO_URL = 'https://dev.to';
+const site = require('../_data/site.json');
+
+// TODO: Pull this out and import the
+
+/**
+ * Updates an article URL to point to my article on my site if it is an article of mine from DEV. Otherwise, point to the DEV article link,
+ *
+ * @param {string} url
+ *
+ * @returns An updated article URL.
+ */
+function updateArticleUrl(url) {
+  if (/\/nickytonline\/.+/.test(url)) {
+    // This is my own article from DEV, so I want the URL to be the one on my site instead.
+    return site.url + url.replace('/nickytonline', '/posts');
+  }
+
+  return DEV_TO_URL + url;
+}
 
 // TODO: Pull this out and import.
 /**
@@ -190,7 +209,7 @@ async function processDevArticleEmbeds(embeds, document) {
       'ltag__link box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after';
 
     for (const link of articleContent.querySelectorAll('.ltag__link__link')) {
-      link.setAttribute('href', DEV_TO_URL + link.getAttribute('href'));
+      link.setAttribute('href', updateArticleUrl(link.getAttribute('href')));
 
       if (!link.querySelector('.ltag__link__pic')) {
         link.removeAttribute('class');
