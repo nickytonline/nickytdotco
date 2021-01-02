@@ -1,10 +1,8 @@
 ---
 stackbit_url_path: posts/frontend-developer-resources-246j
-title: Frontend Developer Resources
+title: Front-end Developer Resources
 date: '2020-01-06T05:00:06.851Z'
-excerpt: >-
-  The cover image is a partial screenshot of my site's thank you page, but the
-  illustration comes from...
+excerpt: 'It’s 2020, post year in review, so let’s start off with some 2020 content....'
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--1j9Z4MyX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/d0slehzp7b26buouwz33.png
 comments_count: 16
@@ -17,8 +15,6 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/frontend-developer-resources-246j/'
 template: post
 ---
-The cover image is a partial screenshot of my site's thank you page, but the illustration comes from the wonderful work of Katerina Limpitsouni's [undraw.co](https://undraw.co)
-
 It’s 2020, post [year in review](https://dev.to/nickytonline/my-2019-year-in-review-23i1), so let’s start off with some 2020 content.
 
 
@@ -381,6 +377,8 @@ If you have resources not listed that you think other frontend developers would 
 Until next time peeps!
 
 ![Stay tuned](https://media.giphy.com/media/J4zA6LplubvC5weDyo/giphy.gif)
+
+The cover image is a partial screenshot of my site's thank you page, but the illustration comes from the wonderful work of Katerina Limpitsouni's [undraw.co](https://undraw.co)
 
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/frontend-developer-resources-246j)*

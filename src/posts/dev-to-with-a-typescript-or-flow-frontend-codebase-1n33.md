@@ -107,6 +107,7 @@ If you really don't want to see the codebase converted to use types, that's OK t
 Are static types something that would interest people in the dev.to community who are contributing to or are thinking about contributing to the frontend codebase? Feel free to discuss in the comments here and/or jump on over to the [GitHub issue](https://github.com/thepracticaldev/dev.to/issues/383) and comment there.
 
 <center>
+
 ![Debate animated gif from giphy.com](https://media.giphy.com/media/Wv493An4dA0xi/giphy.gif)
 </center>
 
