@@ -76,6 +76,13 @@ $stalfos-config: (
     'output': 'responsive',
     'property': 'flex-wrap'
   ),
+  'flex-dir': (
+    'items': (
+      'col': 'column'
+    ),
+    'output': 'responsive',
+    'property': 'flex-direction'
+  ),
   'font': (
     'items': map-get($tokens, 'fonts'),
     'output': 'standard',
