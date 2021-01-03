@@ -47,10 +47,6 @@
       @include apply-utility('leading', 'tight');
     }
 
-    a:not([class]):hover {
-      text-decoration: underline;
-    }
-
     code {
       font-size: 1.2em;
       color: var(--color-theme-primary);
