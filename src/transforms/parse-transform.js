@@ -98,7 +98,7 @@ async function processDevCommentEmbeds(embeds, document) {
 
     const updatedMarkup = markup`
       <article class="liquid-comment box-flex flex-dir-col">
-        <a href="${commentUrl}" class="liquid-comment__link">
+        <a href="${commentUrl}" class="liquid-comment__link" aria-label="A dev.to comment from community member ${commentUsername} at ${timeElement.datetime}">
           <header class="box-flex flex-wrap md:flex-nowrap align-center">
             ${avatar.outerHTML}
             <h2 class="box-flex flex-dir-col">
