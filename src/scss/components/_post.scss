@@ -144,6 +144,10 @@
       color: var(--color-dark);
       background-color: var(--color-theme-highlight);
       padding: 1rem;
+
+      a:focus {
+        outline: 1px solid var(--color-dark);
+      }
     }
 
     .ltag__user {
@@ -200,10 +204,6 @@
           border-radius: 50%;
         }
       }
-
-      a:focus {
-        outline: 1px solid var(--color-dark);
-      }
     }
 
     .liquid-comment {
@@ -219,10 +219,6 @@
         @include media-query('md') {
           margin-right: 1rem;
         }
-      }
-
-      a:focus {
-        outline: 1px solid var(--color-dark);
       }
     }
 
