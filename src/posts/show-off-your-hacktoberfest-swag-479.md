@@ -7,7 +7,7 @@ excerpt: >-
   participated. I am definitively...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--6ODCZShu--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/rsjo0qju1w6sqt1h4ig3.jpeg
-comments_count: 27
+comments_count: 28
 positive_reactions_count: 42
 tags:
   - hacktoberfest

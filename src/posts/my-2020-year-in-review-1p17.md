@@ -7,11 +7,11 @@ excerpt: >-
   person, but even I suc...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--uxTsAdVo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/1a5umajlfyh8j9g4ngms.png
-comments_count: 4
-positive_reactions_count: 30
+comments_count: 5
+positive_reactions_count: 34
 tags:
   - yearinreview
-canonical_url: 'https://dev.to/nickytonline/my-2020-year-in-review-1p17'
+canonical_url: 'https://www.iamdeveloper.com/posts/my-2020-year-in-review-1p17/'
 template: post
 ---
 
