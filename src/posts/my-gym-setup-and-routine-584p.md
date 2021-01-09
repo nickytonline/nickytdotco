@@ -11,7 +11,7 @@ positive_reactions_count: 0
 tags:
   - homegym
   - workout
-canonical_url: 'https://dev.to/nickytonline/my-gym-setup-and-routine-584p'
+canonical_url: 'https://iamdeveloper.com/posts/my-gym-setup-and-routine-584p'
 template: post
 ---
 
