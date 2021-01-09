@@ -52,6 +52,7 @@ In terms of gear, here's the list:
 - [ZELUS 23 Inch Half Exercise Ball ](https://www.amazon.ca/gp/product/B074W5PL13)
 - 3 sets of spin lock dumbbells ([Cap Barbell Dumbbell Weights Set, 40-lb](https://www.canadiantire.ca/en/pdp/cap-barbell-dumbbell-weights-set-40-lb-0840760p.html), [Sunny Chrome Dumbbell Bar](https://www.amazon.ca/gp/product/B003XFXOPM/))
 - Freeweights purchases from Walmart, Canadian tire, and Amazon. I had to time things to get good prices because of the pandemic.
+- 2 x 35lb CAP kettlebells
 - The mini trampoline was being given away, so I picked that up for free.
 - The spin bike came off of the online classifieds for 100\$ CAD.
 - [TRX PRO 4](https://store.trxtraining.com/products/trx-pro/)
@@ -59,17 +60,3 @@ In terms of gear, here's the list:
 - Flooring is [BalanceFrom Puzzle Exercise Mat with EVA Foam Interlocking Tiles](https://www.amazon.ca/gp/product/B074DSJLLY/)
 
 What's your current routine and/or setup?
-
-_[This post is also available on DEV.](https://dev.to/nickytonline/my-gym-setup-and-routine-584p)_
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
