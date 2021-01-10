@@ -5,15 +5,24 @@
  *
  * @param {string} fileSlug A pages file slug.
  * @param {string} url A pages URL.
+ * @param {string} bloggingPlatform The blogging platform where the post was written.
  *
- * @returns {string} Markup for a boost on DEV button.
+ * @returns {string} Markup for a boost on blogging platform button.
  */
-function boostButton(fileSlug, url) {
+function boostButton(fileSlug, url, bloggingPlatform) {
   if (!url.startsWith('/posts/')) {
     return '';
   }
 
-  return `<a href="https://dev.to/nickytonline/${fileSlug}" class="booster">Boost on DEV</a>`;
+  switch (bloggingPlatform) {
+    // Workout articles
+    case 'flowstate':
+      return `<a href="https://flowstate.to/nickytonline/${fileSlug}" class="booster">Boost on Flowstate</a>`;
+
+    // Developer related articles
+    default:
+      return `<a href="https://dev.to/nickytonline/${fileSlug}" class="booster">Boost on DEV</a>`;
+  }
 }
 
 /**

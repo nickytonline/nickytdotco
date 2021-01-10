@@ -13,6 +13,7 @@ tags:
   - workout
 canonical_url: 'https://iamdeveloper.com/posts/my-gym-setup-and-routine-584p'
 template: post
+platform: flowstate
 ---
 
 I enjoy going to the gym, but... pandemic.
