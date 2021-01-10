@@ -68,8 +68,7 @@ module.exports = function(config) {
     return (
       !tags.includes('weeklylearn') &&
       !tags.includes('weeklyretro') &&
-      !tags.includes('devhumor') &&
-      !tags.includes('discuss')
+      !tags.includes('devhumor')
     );
   }
 
