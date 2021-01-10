@@ -6,22 +6,26 @@
  * @param {string} fileSlug A pages file slug.
  * @param {string} url A pages URL.
  * @param {string} bloggingPlatform The blogging platform where the post was written.
+ * @param {boolean} isComment Whether or not the button is for commenting.
  *
  * @returns {string} Markup for a boost on blogging platform button.
  */
-function boostButton(fileSlug, url, bloggingPlatform) {
+function boostButton(fileSlug, url, bloggingPlatform, isComment = false) {
   if (!url.startsWith('/posts/')) {
     return '';
   }
 
+  const callToActionText = isComment ? 'Comment' : 'Boost';
+  const commentHash = isComment ? '#comments' : '';
+
   switch (bloggingPlatform) {
     // Workout articles
     case 'flowstate':
-      return `<a href="https://flowstate.to/nickytonline/${fileSlug}" class="booster">Boost on Flowstate</a>`;
+      return `<a href="https://flowstate.to/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on Flowstate</a>`;
 
     // Developer related articles
     default:
-      return `<a href="https://dev.to/nickytonline/${fileSlug}" class="booster">Boost on DEV</a>`;
+      return `<a href="https://dev.to/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on DEV</a>`;
   }
 }
 

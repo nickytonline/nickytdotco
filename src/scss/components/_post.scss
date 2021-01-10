@@ -1,5 +1,6 @@
 .post {
-  .booster {
+  .boost-link,
+  .comment-link {
     color: var(--color-theme-highlight);
     position: relative;
     display: inline-block;
@@ -13,6 +14,11 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .comment-link {
+    background: var(--color-theme-highlight);
+    color: var(--color-dark);
   }
 
   &__body {
