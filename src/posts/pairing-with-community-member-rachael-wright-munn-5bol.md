@@ -9,8 +9,7 @@ thumb_img_path: null
 comments_count: 0
 positive_reactions_count: 21
 tags:
-  - livecoding
-  - streaming
+  - devstream
   - pairprogramming
   - ruby
 canonical_url: >-

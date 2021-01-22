@@ -12,7 +12,7 @@ positive_reactions_count: 80
 tags:
   - webdev
   - pairprogramming
-  - livecoding
+  - devstream
   - meta
 canonical_url: 'https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he'
 template: post
