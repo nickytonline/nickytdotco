@@ -8,13 +8,13 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--BvMbIlsm--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/j4m63b3wupg2r2lpctc7.png
 comments_count: 0
-positive_reactions_count: 3
+positive_reactions_count: 4
 tags:
   - devstream
   - pairprogramming
   - css
   - html
-canonical_url: 'https://dev.to/devteam/pairing-with-community-member-rafi-5169'
+canonical_url: 'https://www.iamdeveloper.com/posts/pairing-with-community-member-rafi-5169/'
 template: post
 ---
 On <time datetime="2021-01-21">January 21st</time>, DEV Community member Rafi joined Christina and I on the pairing stream to work on improving some accessibility issues in the onboarding for a Forem instance, e.g. DEV onboarding.
