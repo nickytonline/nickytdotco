@@ -58,12 +58,11 @@
 
 /* lora-700 - latin */
 @font-face {
-  font-family: 'Lora';
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local('Lora Bold'), local('Lora-Bold'),
-    url('/fonts/lora-v13-latin-700.woff') format('woff');
+  src: local('Raleway-Bold'), url('/fonts/Raleway/Raleway-Bold.ttf') format('truetype');
 }
 
 body {
@@ -77,7 +76,7 @@ body {
 h1,
 h2,
 h3 {
-  @include apply-utility('font', 'serif');
+  @include apply-utility('font', 'sans-serif');
 }
 
 h1 {
