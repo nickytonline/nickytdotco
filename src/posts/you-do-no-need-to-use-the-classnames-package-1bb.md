@@ -27,7 +27,7 @@ If you are not familiar with the
  package, it allows you to build a set of CSS classes based on some conditionals. Straight from there documentation:
 
 
-```
+```javascript
 classNames('foo', 'bar'); // => 'foo bar'
 classNames('foo', { bar: true }); // => 'foo bar'
 classNames({ 'foo-bar': true }); // => 'foo-bar'
@@ -48,7 +48,7 @@ Having said that, JavaScript has come a long way and there are features in the l
 If you are not familiar with template strings, you can build a string with variables mixed in. Let us look at the previous examples, but this time with template strings.
 
 
-```
+```javascript
 `
 foo bar
 ` // => 'foo bar', not that exciting
@@ -78,7 +78,7 @@ These are trivial examples, but it is just to show you that you can do pretty mu
 
 
 
-```
+```jsx
 ...
 <nav
    className={`
