@@ -31,9 +31,9 @@
       "external": false
     },
     {
-      "text": "GitHub",
-      "url": "https://github.com/nickytonline",
-      "external": true
+      "text": "Social",
+      "url": "/pages/social",
+      "external": false
     },
     {
       "text": "Contact",
