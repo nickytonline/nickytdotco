@@ -10,7 +10,7 @@ comments_count: 0
 positive_reactions_count: 18
 tags:
   - livecoding
-  - streaming
+  - devstream
   - pairprogramming
   - ruby
 canonical_url: >-

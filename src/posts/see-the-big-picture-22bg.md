@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--RuCk74km--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6qeji3ozp4ypayd0h8au.JPG
 comments_count: 9
-positive_reactions_count: 94
+positive_reactions_count: 95
 tags:
   - career
   - beginners
