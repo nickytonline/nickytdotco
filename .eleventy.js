@@ -78,6 +78,16 @@ module.exports = function(config) {
   }
 
   // Custom collections
+  config.addCollection('pairing', collection => {
+    return [
+      ...filterOutUnwantedTags(collection).filter(function isValidPost(post) {
+        const {tags = []} = post.data ?? {};
+
+        return tags.includes('pairprogramming') && tags.includes('devstream');
+      })
+    ].reverse();
+  });
+
   const livePosts = post => post.date <= now && !post.data.draft;
   config.addCollection('posts', collection => {
     return [...filterOutUnwantedTags(collection).filter(livePosts)].reverse();

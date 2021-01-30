@@ -55,6 +55,19 @@ img {
   margin-scroll-top: 2ex;
 }
 
+.pairing {
+  list-style: none;
+  margin-left: get-size(800);
+
+  li + li {
+    margin-top: get-size(300);
+  }
+
+  & li::before {
+    content: '🍐 ';
+  }
+}
+
 /**
  * PROJECT IMPORTS
  */
