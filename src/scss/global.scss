@@ -57,14 +57,18 @@ img {
 
 .pairing {
   list-style: none;
-  margin-left: get-size(800);
+  margin-left: none;
 
   li + li {
-    margin-top: get-size(300);
+    margin-top: get-size(600);
   }
 
   & li::before {
     content: '🍐 ';
+  }
+
+  & li time::before {
+    content: '📆 ';
   }
 }
 
