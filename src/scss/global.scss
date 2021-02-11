@@ -57,10 +57,6 @@ img {
 
 details > summary {
   cursor: pointer;
-
-  &::before {
-    content: '👨‍💻🍐👩‍💻 ';
-  }
 }
 
 .pairing {
