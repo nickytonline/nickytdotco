@@ -104,7 +104,7 @@ You'll need to install all the dependencies mentioned above plus a few more. I'l
 
 
 ```bash
-npm install -D eslint prettier eslint-config-prettier eslint-plugin-prettier husky lint-staged
+npm install -D eslint prettier eslint-config-prettier eslint-plugin-prettier husky lint-staged stylelint stylelint-config-standard
 ```
 
 
