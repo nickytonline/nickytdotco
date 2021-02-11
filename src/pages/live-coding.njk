@@ -10,6 +10,9 @@ metaDesc: 'Live Coding and other streaming projects that Nick Taylor does.'
   <a href="https://dev.to">DEV</a>.</p>
 
 <h2>Live Coding Pairings</h2>
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/videoseries?list=PL8Bb2WLXhUaBGrYRnmDaF73LDCjEGzjIE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+
 <p>So I asked the DEV community if
   <a href="/posts/let-s-pair-during-a-live-coding-session-8he/">anyone was interested</a>
   in pairing and folks definitely were. I did my
@@ -31,18 +34,19 @@ metaDesc: 'Live Coding and other streaming projects that Nick Taylor does.'
   <a href="https://github.com/forem/forem/">Forem</a>
   based, since Hacktoberfest 2020, I've been doing them on the
   <a href="https://www.twitch.tv/thepracticaldev">DEV Twitch stream</a>. If you want to pair on something non-Forem based, we can still pair on my own stream. If you're interested in pairing, fill out the
-  <a href="https://iamdeveloper.com/pair">pairing form</a>.</p>
+  <a href="https://iamdeveloper.com/pair">pair with Nick form</a>.</p>
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/videoseries?list=PL8Bb2WLXhUaBGrYRnmDaF73LDCjEGzjIE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
-
-<ul class="pairing">
-  {%- for post in collections.pairing -%}
-    <li>
-      <a href="{{post.url}}" class="post-list__link word-break-normal" rel="bookmark">{{ post.data.title }}</a>
-      <time class="box-block" datetime="{{ post.date | w3DateFilter }}">{{ post.date | dateFilter }}</time>
-    </li>
-  {%- endfor -%}
-</ul>
+<details>
+  <summary>Full List of Live Coding Pairing Sessions</summary>
+  <ul class="pairing">
+    {%- for post in collections.pairing -%}
+      <li>
+        <a href="{{post.url}}" class="post-list__link word-break-normal weight-bold" rel="bookmark">{{ post.data.title }}</a>
+        <time class="box-block" datetime="{{ post.date | w3DateFilter }}">{{ post.date | dateFilter }}</time>
+      </li>
+    {%- endfor -%}
+  </ul>
+</details>
 
 <h2>Walkthrough Wednesdays</h2>
 <p>Every second week on the

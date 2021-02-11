@@ -55,20 +55,21 @@ img {
   margin-scroll-top: 2ex;
 }
 
+details > summary {
+  cursor: pointer;
+
+  &::before {
+    content: '👨‍💻🍐👩‍💻 ';
+  }
+}
+
 .pairing {
   list-style: none;
-  margin-left: none;
+  margin-left: 1rem;
+  margin-top: 1rem;
 
   li + li {
     margin-top: get-size(600);
-  }
-
-  & li::before {
-    content: '🍐 ';
-  }
-
-  & li time::before {
-    content: '📆 ';
   }
 }
 
