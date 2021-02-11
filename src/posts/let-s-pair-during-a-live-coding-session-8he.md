@@ -14,7 +14,8 @@ tags:
   - pairprogramming
   - devstream
   - meta
-canonical_url: 'https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he'
+canonical_url: >-
+  https://www.iamdeveloper.com/posts/let-s-pair-during-a-live-coding-session-8he/
 template: post
 ---
 I started live streaming a couple of months ago.

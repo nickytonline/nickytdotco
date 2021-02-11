@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--hHz9odhK--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tegc5w5d9i1ul82iwseh.gif
 comments_count: 25
-positive_reactions_count: 45
+positive_reactions_count: 46
 tags:
   - discuss
   - mentorship
