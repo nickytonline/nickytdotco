@@ -66,6 +66,7 @@ module.exports = function(config) {
     const {tags = []} = post.data ?? {};
 
     return (
+      !tags.includes('jokes') &&
       !tags.includes('weeklylearn') &&
       !tags.includes('weeklyretro') &&
       !tags.includes('watercooler') &&
