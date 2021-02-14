@@ -15,7 +15,11 @@ template: post
 platform: flowstate
 ---
 
-I get up about 5:50am on training days and train at 7am. The thing is, everyone else is sleeping in the house at this point, so I can't be blaring my iPad while my trainer is giving out instructions.
+In my previous post, I talked about my gym setup and routine.
+
+<iframe class="liquidTag" src="https://www.flowstate.to/embed/link?args=https%3A%2F%2Fwww.flowstate.to%2Fnickytonline%2Fmy-gym-setup-and-routine-5acb" style="border: 0; width: 100%;"></iframe>
+
+As I mentioned in that post, I get up about 5:50am on training days and train at 7am. The thing is, everyone else is sleeping in the house at this point, so I can't be blaring my iPad while my trainer is giving out instructions.
 
 I had a pair of [Anker Soundbuds Slim](https://www.amazon.ca/gp/product/B01N6DC2ZE/) earbuds for quite a while, but they have a wire that wraps around the neck which causes an earbud to pop out at some point, at least for me.
 

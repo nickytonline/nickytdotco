@@ -5,6 +5,7 @@ const slugify = require('slugify');
 const getSize = require('image-size');
 const fetch = require('node-fetch');
 const DEV_TO_URL = 'https://dev.to';
+const FLOWSTATE_URL = 'https://www.flowstate.to';
 const site = require('../_data/site.json');
 const markup = String.raw;
 
@@ -17,13 +18,13 @@ const markup = String.raw;
  *
  * @returns An updated article URL.
  */
-function updateArticleUrl(url) {
+function updateArticleUrl(url, isFlowState) {
   if (/\/nickytonline\/.+/.test(url)) {
     // This is my own article from DEV, so I want the URL to be the one on my site instead.
     return site.url + url.replace('/nickytonline', '/posts');
   }
 
-  return DEV_TO_URL + url;
+  return (isFlowState ? FLOWSTATE_URL : DEV_TO_URL) + url;
 }
 
 // TODO: Pull this out and import.
@@ -237,7 +238,7 @@ async function processDevToUserProfileEmbeds(embeds, document) {
 }
 
 // TODO: Pull this function out of here.
-async function processDevArticleEmbeds(embeds, document) {
+async function processArticleEmbeds(embeds, document) {
   /** This is what the markup from the iframe that gets converted looks like:
    *
    * <div class="ltag__link">
@@ -269,6 +270,7 @@ async function processDevArticleEmbeds(embeds, document) {
   const devToArticleHtmls = await Promise.all(responses.map(response => response.text()));
 
   embeds.forEach((embed, index) => {
+    const isFlowState = embed.src.startsWith(FLOWSTATE_URL);
     const html = devToArticleHtmls[index];
     const holderElement = document.createElement('div');
     holderElement.innerHTML = html;
@@ -277,7 +279,7 @@ async function processDevArticleEmbeds(embeds, document) {
       'ltag__link box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after';
 
     for (const link of articleContent.querySelectorAll('.ltag__link__link')) {
-      link.setAttribute('href', updateArticleUrl(link.getAttribute('href')));
+      link.setAttribute('href', updateArticleUrl(link.getAttribute('href'), isFlowState));
 
       if (!link.querySelector('.ltag__link__pic')) {
         link.removeAttribute('class');
@@ -319,11 +321,13 @@ async function processDevToEmbeds(embeds = [], document) {
 
   await processDevToUserProfileEmbeds(devToUserEmbeds, document);
 
-  const devArticleEmbeds = embeds.filter(({src}) =>
-    src.startsWith('https://dev.to/embed/link')
+  const articleEmbeds = embeds.filter(
+    ({src}) =>
+      src.startsWith(DEV_TO_URL + '/embed/link') ||
+      src.startsWith(FLOWSTATE_URL + '/embed/link')
   );
 
-  await processDevArticleEmbeds(devArticleEmbeds, document);
+  await processArticleEmbeds(articleEmbeds, document);
 
   const devCommentEmbeds = embeds.filter(({src}) =>
     src.startsWith('https://dev.to/embed/devcomment')
