@@ -2,7 +2,7 @@
 stackbit_url_path: posts/myworkout-headphones-19o9
 title: 'My Workout Headphones'
 date: '2021-01-12T04:55:09.142Z'
-excerpt: 'As I mentioned in that post, I get up about 5:50am on training days and train at 7am.'
+excerpt: 'I get up about 5:50am on training days and train at 7am. The thing is, everyone else is sleeping in the house at this point'
 thumb_img_path: >-
   https://www.flowstate.to/images/1VmPzYnze9p18Fkho0DFNSMnYrLRqAlgF0rU5vJe-Ks/s:1000:420/mb:500000/aHR0cHM6Ly93d3cu/Zmxvd3N0YXRlLnRv/L3JlbW90ZWltYWdl/cy9pLzVzMWcwNDIy/amlzZWVhbTJlbzVt/LkpQRw
 comments_count: 8
