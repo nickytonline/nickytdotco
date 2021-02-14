@@ -7,7 +7,7 @@ excerpt: >-
   online classifieds and...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--hg8iAp8F--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/0mtm7xhbgr6efe68gepp.jpeg
-comments_count: 46
+comments_count: 45
 positive_reactions_count: 35
 tags:
   - watercooler

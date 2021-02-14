@@ -12,6 +12,7 @@ positive_reactions_count: 37
 tags:
   - hardware
   - discuss
+  - headphones
 canonical_url: 'https://www.iamdeveloper.com/posts/looking-for-great-headphones-10pl/'
 template: post
 ---
