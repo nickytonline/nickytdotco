@@ -6,7 +6,7 @@ excerpt: 'It’s 2020, post year in review, so let’s start off with some 2020 
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--1j9Z4MyX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/d0slehzp7b26buouwz33.png
 comments_count: 16
-positive_reactions_count: 861
+positive_reactions_count: 860
 tags:
   - frontend
   - javascript

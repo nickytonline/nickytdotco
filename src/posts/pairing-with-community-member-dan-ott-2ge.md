@@ -69,7 +69,7 @@ Looking forward to seeing you on future streams! If you're interested in pairing
 
 P.S. [Follow DEV on Twitch](https://twitch.tv/thepracticaldev) to be notified when future streams begin and catch old streams on [YouTube](https://www.youtube.com/c/thepracticaldevteam)
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/pairing-with-community-member-dan-ott-2ge)*
+*[This post is also available on DEV.](https://dev.to/devteam/pairing-with-community-member-dan-ott-2ge)*
 
 
 <script>

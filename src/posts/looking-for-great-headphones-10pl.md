@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--cy4rVNwt--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/k9e77sw6miueiw7nfl71.jpg
 comments_count: 32
-positive_reactions_count: 37
+positive_reactions_count: 38
 tags:
   - hardware
   - discuss
@@ -24,7 +24,7 @@ I'm looking for Bluetooth, noise-cancelling, great sound and ideally a great bui
 
 I'm going to throw out a couple here that I might consider, but I'd love to hear peoples suggestions as I've only begun my research.
 
-* [Bose QC-35 II](https://www.bose.ca/en_ca/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html# v=qc35_ii_rose_gold)
+* [Bose QC-35 II](https://www.bose.ca/en_ca/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html)
 * [Sony WH-1000XM3](https://www.amazon.ca/Sony-WH1000XM3-Canceling-Headphones-WH-1000XM3/dp/B07G4MNFS1)
 * [Sennheiser PXC 550](https://www.amazon.ca/Sennheiser-PXC-550-Wireless-Cancelling/dp/B01E3XLNA0/)
 
