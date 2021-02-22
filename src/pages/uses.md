@@ -47,6 +47,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Seashore](https://apps.apple.com/us/app/seashore/id1448648921?mt=12) - An alternative to Photoshop
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
 - [Streamlabs OBS](https://streamlabs.com/streamlabs-obs) - For streaming on Twitch
+- [Insomnia](https://insomnia.rest) - For exploring REST and GraphQL APIs
 
 ## Additional Resources
 
