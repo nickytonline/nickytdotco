@@ -3,7 +3,7 @@ title: About
 metaDesc: Nick Taylor, a sofware engineer with a focus on the front-end.
 ---
 
-My name is Nick Taylor. I am a Senior Software Engineer at [Forem](https://www.forem.com/), the software that powers [DEV](https://dev.to) working on all things Forem. I work on the front-end and I am a <em>big</em> fan of TypeScript, JavaScript, (P)React and Node. Once upon a time, I was into C#/ASP.NET. Aside from programming, I enjoy contributing to open source, hitting the gym, snowboarding, and a long long time ago, rugby.
+My name is Nick Taylor. I am a Lead Software Engineer at [Forem](https://www.forem.com/), the software that powers [DEV](https://dev.to) working on all things Forem. I work on the front-end and I am a <em>big</em> fan of TypeScript, JavaScript, (P)React and Node. Once upon a time, I was into C#/ASP.NET. Aside from programming, I enjoy contributing to open source, hitting the gym, snowboarding, and a long long time ago, rugby.
 
 I am also not a big fan of spiders. 😬
 
