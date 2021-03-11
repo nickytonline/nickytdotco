@@ -28,14 +28,3 @@ I'm on [at this point](https://www.youtube.com/watch?v=MMabY-Cm_V4&t=3010) in th
 {% youtube 'https://www.youtube.com/watch?v=Tn3MBiWYeEI' %}
 
 - [Slide deck and additional resources](https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source)
-
-<h2 id="introtostorybook">An Introduction to React Storybook</h2>
-
-<time datetime="2017-06-15">June 13th, 2017</time>
-
-The talk was not recorded
-
-- [Blog post about the talk](/posts/my-talk-on-react-storybook-at-the-js-montreal-meetup-2598)
-- [Repository for the talk](https://github.com/nickytonline/js-montreal-storybook-talk-2017-06-130)
-- [Slide Deck](https://storybookslides.iamdeveloper.com/#/?_k=a89mml)
-- [js-montreal talks page](https://js-montreal.org/archive.html)
