@@ -39,6 +39,8 @@ For those saying Gatsby is overkill for a static site, maybe, maybe not. I've be
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fgatsbyjs%2Fgatsby" style="border: 0; width: 100%;"></iframe>
 
 
+**update 2021: My site is built with [Eleventy](https://www.11ty.dev/) now, but still Give Gatsby a look, or [Next.js](https://nextjs.org/). All open source! 😎**
+
 #### Netlify
 
 I use [Netlify](https://www.netlify.com/) on the free tier to host my site. They offer a great service and it integrates well with GitHub and continuous integration. I am not cheap, it is just that at the moment, I do not need more than the free tier. I actually went over my build minutes last month and paid a small fee, so now that they have my credit card... 😆
@@ -358,7 +360,7 @@ There are browser extensions that do part of what xScope does, but a few years a
 These will most likely not come as a surprise, but it's worth mentioning them.
 
 * [Egghead](https://egghead.io) (a happy subscriber)
-* [Frontend Masters](https://frontendmasters.com/) (a happy subscriber. Thank you for the subscription [Shotgun](https://www.shotgunsoftware.com/)!)
+* [Frontend Masters](https://frontendmasters.com/) (a happy subscriber. Thank you for the subscription [Shotgun](https://www.shotgunsoftware.com/) (my previous employer)!)
 * [testingjavascript.com](https://testingjavascript.com/) (a happy license owner. Thanks x 2 Shotgun!)
 * Anything Wes Bos. Check out his [courses](https://wesbos.com/courses/).
 

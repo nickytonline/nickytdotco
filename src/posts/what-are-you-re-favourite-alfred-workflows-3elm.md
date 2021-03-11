@@ -5,7 +5,7 @@ date: '2019-11-21T16:27:53.101Z'
 excerpt: Alfred is such a great tool if you use a Mac....
 thumb_img_path: null
 comments_count: 12
-positive_reactions_count: 97
+positive_reactions_count: 98
 tags:
   - productivity
   - discuss
