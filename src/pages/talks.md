@@ -7,7 +7,7 @@ metaDesc: 'Talks Nick Taylor has given.'
 
 <time datetime="2021-03-10">March 10th, 2021</time>
 
-Video will be available in the next few days.
+{% youtube 'https://www.youtube.com/watch?v=ypsD-9qQzYg' %}
 
 - [Slide deck](/storybook2021)
 
