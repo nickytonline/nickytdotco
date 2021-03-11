@@ -170,3 +170,9 @@ from = "/lightning2020/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vRHfnRD5-ZTiPbBZsT3fNtsB4KcKiemJCLhUxPjtGE5nR2JxmtbtK3_iLSeYbg3ctgVAJEiqPSnAVUQ/pub?start=false&loop=false&delayms=3000"
 status = 301
 force = true
+
+[[redirects]]
+from = "/storybook2021/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vRVZS5fW795LoPUioxbpIO0k0gaUA7g-J9je8bCaoHKGl678_NgbpNXdsiw3HIrt5BHTLr_l2MmvaNU/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
