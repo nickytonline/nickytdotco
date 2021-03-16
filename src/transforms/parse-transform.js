@@ -315,11 +315,13 @@ async function processDevToEmbeds(embeds = [], document) {
 
   await processDevToTagEmbeds(devToTagEmbeds, document);
 
-  const devToUserEmbeds = embeds.filter(({src}) =>
-    src.startsWith('https://dev.to/embed/user')
+  const devToUserAndOrgEmbeds = embeds.filter(
+    ({src}) =>
+      src.startsWith('https://dev.to/embed/user') ||
+      src.startsWith('https://dev.to/embed/organization')
   );
 
-  await processDevToUserProfileEmbeds(devToUserEmbeds, document);
+  await processDevToUserProfileEmbeds(devToUserAndOrgEmbeds, document);
 
   const articleEmbeds = embeds.filter(
     ({src}) =>
