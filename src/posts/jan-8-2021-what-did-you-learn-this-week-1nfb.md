@@ -1,6 +1,6 @@
 ---
 stackbit_url_path: posts/jan-8-2021-what-did-you-learn-this-week-1nfb
-title: 'Jan. 8, 2021: What did you learn this week?'
+title: 'Jan. 8th, 2021: What did you learn this week?'
 date: '2021-01-08T11:14:59.997Z'
 excerpt: >-
   It's that time of the week again folks for the first time in 2021. Last week
@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--Gm8zDyUb--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/xigg7hqnxj9yxjyxxsru.jpeg
 comments_count: 29
-positive_reactions_count: 6
+positive_reactions_count: 7
 tags:
   - weeklylearn
   - discuss

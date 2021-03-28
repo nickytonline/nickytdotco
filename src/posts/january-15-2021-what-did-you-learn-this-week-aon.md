@@ -1,6 +1,6 @@
 ---
 stackbit_url_path: posts/january-15-2021-what-did-you-learn-this-week-aon
-title: 'January 15, 2021: What did you learn this week?'
+title: 'January 15th, 2021: What did you learn this week?'
 date: '2021-01-15T14:33:51.525Z'
 excerpt: >-
   Liquid syntax error: Tag '{%

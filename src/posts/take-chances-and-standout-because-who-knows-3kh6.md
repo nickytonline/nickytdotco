@@ -55,7 +55,11 @@ Here's a screen capture of my PR in action
 
 I was lucky enough to get a second interview, with none other than [John Resig](https://johnresig.com), the creator of [jQuery](https://jquery.com). I did not know that he was working at Khan, so I was a little nervous but excited at the same time. I got to speak with John for a solid hour about front-end. It was amazing.
 
+<center>
+
 ![awesome giphy meme](https://media.giphy.com/media/Z6f7vzq3iP6Mw/giphy.gif "awesome giphy meme")
+
+</center>
 
 Things moved on to a third interview with a potential future co-worker and then from there, it'd be wrapping things up. Unfortunately things did not work out in the end, but even though I was disappointed, it was still amazing because I got to PR what I thought was a cool browser extension of their a11y tool and I got to speak to John Resig for a solid hour, just the two of us.
 
@@ -68,7 +72,11 @@ So remember:
   - standout in another way that you think would set you apart from other candidates.
 - Apply to places, even when you think you're not good enough, because you never know. And even when interviewing somewhere doesn't work out, you still learn something about yourself or work. And who knows, maybe you'll have some interesting conversations along the way.
 
+<center>
+
 ![follow your dreams giphy meme](https://media.giphy.com/media/htmzQfHfZF9wQ/giphy-downsized.gif "follow your dreams giphy meme")
+
+</center>
 
 Photo by [Nick Ewings](https://unsplash.com/photos/7cLIUI6rVDc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/standout?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

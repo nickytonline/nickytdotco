@@ -5,18 +5,19 @@ date: '2021-03-16T03:43:46.574Z'
 excerpt: >-
   Last week, I gave a talk on Storybook at a The Collab Lab
   meetup.                                   N...
-thumb_img_path: null
+thumb_img_path: >-
+  https://res.cloudinary.com/practicaldev/image/fetch/s--nDJchRza--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/436wuamj05szgisfdtrm.jpeg
 comments_count: 0
-positive_reactions_count: 11
+positive_reactions_count: 23
 tags:
   - javascript
   - react
-  - ui
+  - storybook
   - ux
 canonical_url: 'https://www.iamdeveloper.com/posts/storybook-talk-live-coding-klp'
 template: post
 ---
-Last week, I gave a talk on [Storybook](https://storybook.js.org/) at a The Collab Lab meetup.
+Last week, I gave a talk on [Storybook](https://storybook.js.org/) at a [The Collab Lab meetup](https://www.meetup.com/tech-talks-by-the-collab-lab/).
 
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1370056928383090689" style="border: 0; width: 100%;"></iframe>
@@ -44,7 +45,7 @@ A Storybook story is view of a component in a certain state. A component can hav
 
 Storybook was originally built for React only but has since evolved to support most of today’s popular frameworks like Vue, Angular, and Svelte etc.
 
-There's more, including incorporating Storybook into a The Collab Lab project, so check out the full talk and [slide deck](https://iamdeveloper.com/storybook2021).
+There's more, including some live coding and incorporating Storybook into a The Collab Lab project, so check out the full talk and [slide deck](https://iamdeveloper.com/storybook2021).
 
 
 <iframe class="liquidTag" src="https://dev.to/embed/youtube?args=ypsD-9qQzYg" style="border: 0; width: 100%;"></iframe>

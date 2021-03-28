@@ -6,7 +6,7 @@ excerpt: 'It’s 2020, post year in review, so let’s start off with some 2020 
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--1j9Z4MyX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/d0slehzp7b26buouwz33.png
 comments_count: 16
-positive_reactions_count: 862
+positive_reactions_count: 864
 tags:
   - frontend
   - javascript
@@ -27,20 +27,6 @@ Let's get to it!
 
 ## Open-Source and Free Resources
 
-### Gatsby
-
-My personal site, [iamdeveloper.com](https://iamdeveloper.com), is currently built with [Gatsby](https://www.gatsbyjs.org/). I chose it mainly as another outlet to mess around with React back in the fall of 2017. It's matured quite a bit since then with quite an ecosystem of plugins as well as theming now.
-
-I understand GraphQL from a high-level, but I am still nowhere near mastering it, mainly because I have not had/made time to learn it yet. I have still managed to add some additional fields and alter queries, mainly thanks to the built-in GraphQL query/viewer tool that ships with Gatsby.
-
-For those saying Gatsby is overkill for a static site, maybe, maybe not. I've been happy so far with it. I leave it up to you to see what works best for you.
-
-
-<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fgatsbyjs%2Fgatsby" style="border: 0; width: 100%;"></iframe>
-
-
-**update 2021: My site is built with [Eleventy](https://www.11ty.dev/) now, but still Give Gatsby a look, or [Next.js](https://nextjs.org/). All open source! 😎**
-
 #### Netlify
 
 I use [Netlify](https://www.netlify.com/) on the free tier to host my site. They offer a great service and it integrates well with GitHub and continuous integration. I am not cheap, it is just that at the moment, I do not need more than the free tier. I actually went over my build minutes last month and paid a small fee, so now that they have my credit card... 😆
@@ -52,14 +38,6 @@ I wrote about automating my deployments to Netlify here. 👇
 
 
 Note: [Zeit](https://zeit.co/) is amazing as well. I just happen to be using Netlify.
-
-### Netlify CMS
-
-I went with [Netlify CMS](https://www.netlifycms.org/) mainly because I was sick of updating markup on my local and doing a git push. Also, at the time, from what I recall, there were not many options, if any. Since then, there has been an explosion of [headless CMS](https://en.wikipedia.org/wiki/Headless_content_management_system)es. Maybe at some point I'll take another CMS for a spin.
-
-
-<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fnetlify%2Fnetlify-cms" style="border: 0; width: 100%;"></iframe>
-
 
 ### Lighthouse CI
 
