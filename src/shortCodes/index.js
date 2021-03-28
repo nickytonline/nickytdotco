@@ -23,6 +23,9 @@ function boostButton(fileSlug, url, bloggingPlatform, isComment = false) {
     case 'flowstate':
       return `<a href="https://flowstate.to/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on Flowstate</a>`;
 
+    case 'codenewbie':
+      return `<a href="https://community.codenewbie.org/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on CodeNewbie Community</a>`;
+
     // Developer related articles
     default:
       return `<a href="https://dev.to/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on DEV</a>`;
