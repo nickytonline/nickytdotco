@@ -11,8 +11,6 @@ comments_count: 16
 positive_reactions_count: 66
 tags:
   - opensource
-  - gatsby
-  - react
   - career
 canonical_url: >-
   https://www.iamdeveloper.com/posts/any-contribution-to-open-source-is-valuable-57d3/
