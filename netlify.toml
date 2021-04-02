@@ -176,3 +176,9 @@ from = "/storybook2021/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vRVZS5fW795LoPUioxbpIO0k0gaUA7g-J9je8bCaoHKGl678_NgbpNXdsiw3HIrt5BHTLr_l2MmvaNU/pub?start=false&loop=false&delayms=5000"
 status = 301
 force = true
+
+[[redirects]]
+from = "/debug2021/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vSPMh7JIhImdVWJxUJQOICyib6uETKfpXZ9PDpO-6p-qxn3gW2QxKJHj2ofMxi_s31gAhnwl0nWugOQ/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
