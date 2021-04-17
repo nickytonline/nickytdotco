@@ -91,8 +91,11 @@ function googleAnalytics(
  * @returns {string} An URL in string format representing a social image for a page.
  */
 function socialImage(title, excerpt = '') {
+  const innerWhitespaceTrimmedExcerpt = excerpt.replace(/\s+/g, ' ');
   const truncatedExcerpt =
-    excerpt.length > 101 ? excerpt.substr(0, 101) + '...' : excerpt;
+    innerWhitespaceTrimmedExcerpt.length > 101
+      ? innerWhitespaceTrimmedExcerpt.substr(0, 101) + '...'
+      : innerWhitespaceTrimmedExcerpt;
   const encodedTitle = encodeURIComponent(encodeURIComponent(title));
   const encodedExcerpt = encodeURIComponent(encodeURIComponent(truncatedExcerpt));
 
