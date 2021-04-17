@@ -9,17 +9,17 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 ## Editor
 
 - [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/), here’s [my setup](https://www.iamdeveloper.com/blog/2017-12-20-my-visual-studio-code-setup/)
-- Theme: [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) and [In Bed by 7pm](https://marketplace.visualstudio.com/items?itemName=sdras.inbedby7pm) by [Sarah Drasner](https://twitter.com/sarah_edo)
+- Themes I alternate between:
+  - [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) by [Sarah Drasner](https://twitter.com/sarah_edo)
+  - [In Bed by 7pm](https://marketplace.visualstudio.com/items?itemName=sdras.inbedby7pm) by [Sarah Drasner](https://twitter.com/sarah_edo)
+  - [Cobalt2 Theme Official](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) by [Wes Bos](https://wesbos.com)
+  - [Moonlight](https://marketplace.visualstudio.com/items?itemName=atomiks.moonlight) (I currently use the Moonlight II theme in there) by [atomiks](https://marketplace.visualstudio.com/publishers/atomiks)
 - Font: [Dank Mono](https://dank.sh) by [Phil Plückthun](https://twitter.com/_philpl)
 
 ### Chrome/Brave/Firefox Browser Extensions
 
 - [Refined GitHub](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf) - GitHub on steroids
 - [VisBug](https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc?hl=en) - An awesome tool for frontend (this one’s new for me) (only for Chromium based browsers)
-- [Gitpod](https://www.gitpod.io/docs/20_browser_extension/) - Allows you to work on repos in a browser. Kind of Sandbox like
-- [Tota11y](https://www.iamdeveloper.com/blog/2019-03-31-an-a11y-extension-coming-to-a-browser-near-you/) - Unpacked browser extension that I created, but VisBug supports it now, so I may just opt for VisBug.
-  https://twitter.com/argyleink/status/1215052867716804608
-
 - [React DevTools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) - Because React
 - [Preact DevTools](https://preactjs.github.io/preact-devtools/) - Because Preact
 - [Axe](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd) - For web accessibility testing
@@ -42,11 +42,12 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [xScope](https://xscope.app) - Awesome toolset for frontend development. Rulers, guides etc.
 - [Dato](https://sindresorhus.com/dato) - A better date app for MacOS.
 - [iTerm](https://iterm2.com/) - A better terminal for MacOS
-- [Kap](https://getkap.co/) - Screen shares GIFs
+- [Starship](https://starship.rs/) - A cross shell prompt
+- [Giphy Capture](https://giphy.com/apps/giphycapture/) - For creating animated GIFs and screenshares
 - [Spotify](https://www.spotify.com/us/download/) - Because music.
 - [Seashore](https://apps.apple.com/us/app/seashore/id1448648921?mt=12) - An alternative to Photoshop
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
-- [Streamlabs OBS](https://streamlabs.com/streamlabs-obs) - For streaming on Twitch
+- [OBS](https://obsproject.com/download) and [OBS.live](https://www.obs.live/) - For streaming on Twitch
 - [Insomnia](https://insomnia.rest) - For exploring REST and GraphQL APIs
 
 ## Additional Resources
@@ -58,6 +59,7 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 - [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://www.bestbuy.ca/en-ca/product/motiongrey-adjustable-dual-motors-electric-sit-to-stand-computer-office-standing-desk-black-frame-table-top-included/12852211) - I snagged it at a great price. It appears to go on sale often.
 - Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with a bunch of new parts for just under a third of the price.
 - [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
+- Macbook Pro 2019 16"
 - [Apple Magic Trackpad 2](https://www.apple.com/shop/product/MRMF2LL/A/magic-trackpad-2-space-gray)
 - [Apple Magic Keyboard with Numeric Keypad](https://www.apple.com/shop/product/MQ052B/A/magic-keyboard-with-numeric-keypad-british-english-silver)
 - [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3/buy/wh1000xm3-s) headphones - I snagged them during Boxing Day week.
