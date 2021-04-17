@@ -2,6 +2,11 @@
 publish = "dist"
 command = "./stackbit-build.sh"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
+
 [[redirects]]
 from = "/about"
 to = "/pages/about"
