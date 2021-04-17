@@ -17,7 +17,7 @@ template: post
 ---
 So I have an XBox 360, which is ten years old. I’ve been able to get games via online classifieds and Amazon sometimes, but I’m realizing they’re harder to find and starting to become more expensive than probably just buying a new console.
 
-I’m not a huge gamer, so I have no idea what is the best console out there. PS 4? XBox One? Switch? etc.
+I��m not a huge gamer, so I have no idea what is the best console out there. PS 4? XBox One? Switch? etc.
 
 For all the gamers out there, what’s your gaming console recommendations?
 

@@ -7,8 +7,8 @@ excerpt: >-
   again. So wonderful devs,...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--bbQz_wqG--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b0g8apsh3wwzccoejiln.jpeg
-comments_count: 2
-positive_reactions_count: 2
+comments_count: 26
+positive_reactions_count: 11
 tags:
   - weeklylearn
   - discuss

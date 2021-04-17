@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--MP7_0KCc--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1cp6w4lj5inz3iz0x3mz.jpeg
 comments_count: 0
-positive_reactions_count: 17
+positive_reactions_count: 18
 tags:
   - devstream
   - pairprogramming

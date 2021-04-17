@@ -3,8 +3,8 @@ stackbit_url_path: posts/my-2019-year-in-review-23i1
 title: My 2019 Year in Review
 date: '2020-01-02T03:50:01.743Z'
 excerpt: >-
-  Photo by NordWood Themes on Unsplash           The Intro   2019 was great.
-  Lot’s of interesting stuff...
+  The Intro   2019 was great. Lot’s of interesting stuff happened. Let’s dig in.
+  But first, I...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--2NiTSnuS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/z8awferjpkro7ig0ciey.jpg
 comments_count: 7
@@ -14,8 +14,6 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/my-2019-year-in-review-23i1/'
 template: post
 ---
-Photo by [NordWood Themes](https://unsplash.com/@nordwood?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/2019?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 ## The Intro
 
 2019 was great. Lot’s of interesting stuff happened. Let’s dig in. But first, I say to you 2019... good day.
@@ -176,6 +174,7 @@ As the year came to a close, I decided to accept an unbelievably amazing opportu
 
 Thanks for reading and Happy New Year!
 
+Photo by [NordWood Themes](https://unsplash.com/@nordwood?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/2019?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/my-2019-year-in-review-23i1)*
 
