@@ -193,3 +193,15 @@ from = "https://youtube.iamdeveloper.com/*"
 to = "https://www.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "https://livecoding.ca/*"
+to = "https://twitch.tv/nickytonline/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.livecoding.ca/*"
+to = "https://twitch.tv/nickytonline/:splat"
+status = 301
+force = true
