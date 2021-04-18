@@ -165,12 +165,6 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/youtube/"
-to = "https://www.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ"
-status = 301
-force = true
-
-[[redirects]]
 from = "/lightning2020/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vRHfnRD5-ZTiPbBZsT3fNtsB4KcKiemJCLhUxPjtGE5nR2JxmtbtK3_iLSeYbg3ctgVAJEiqPSnAVUQ/pub?start=false&loop=false&delayms=3000"
 status = 301
@@ -190,7 +184,7 @@ force = true
 
 [[redirects]]
 from = "https://youtube.iamdeveloper.com/*"
-to = "https://www.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ:splat"
+to = "https://www.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ/:splat"
 status = 301
 force = true
 
