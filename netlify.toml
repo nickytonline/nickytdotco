@@ -195,7 +195,7 @@ status = 301
 force = true
 
 [[redirects]]
-from = "https://www.livecoding.ca/*"
-to = "https://twitch.tv/nickytonline/:splat"
+from = "https://www.livecoding.ca/learn-rust/*"
+to = "https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAFF1MYfuoGa6FeksKcMz-O/:splat"
 status = 301
 force = true
