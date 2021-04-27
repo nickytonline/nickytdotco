@@ -7,7 +7,7 @@ excerpt: >-
   was time off for me.  Ch...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--Gm8zDyUb--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/xigg7hqnxj9yxjyxxsru.jpeg
-comments_count: 29
+comments_count: 31
 positive_reactions_count: 7
 tags:
   - weeklylearn

@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--xsTcdKf---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7lzygyai23v4nhw3bl81.jpeg
 comments_count: 2
-positive_reactions_count: 17
+positive_reactions_count: 31
 tags:
   - twitch
   - streaming
@@ -44,7 +44,7 @@ I thought to get back in the swing of things with my stream, that it made sense 
 <iframe class="liquidTag" src="https://dev.to/embed/youtube?args=H7HGYV2dT-w" style="border: 0; width: 100%;"></iframe>
 
 
-Things that I cover are how I made the layout, what I use for video/screen sharing and how to provide and enable closed captioning for viewers.
+Things that I cover are how I made the layout, what I use for video/screen sharing and **how to provide and enable closed captioning** for viewers.
 
 I talk about using Discord for video and screen sharing, but initially I started with Zoom. It worked, but I found it clunky having to transition to the shared screen view. Maybe if I had a stream deck, this wouldn't have been an issue. There is also [obs.ninja](https://obs.ninja) which I've used when I was on @chaelcodes's [stream](https://www.twitch.tv/chaelcodes). I'm exploring using this right now for my own stream, and maybe eventually the [DEV stream](https://www.twitch.tv/thepracticaldev).
 

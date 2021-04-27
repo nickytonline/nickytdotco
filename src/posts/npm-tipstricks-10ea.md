@@ -5,7 +5,7 @@ date: '2018-01-10T03:44:30.902Z'
 excerpt: Discussion of npm tips/tricks.
 thumb_img_path: null
 comments_count: 13
-positive_reactions_count: 16
+positive_reactions_count: 17
 tags:
   - discuss
   - npm
