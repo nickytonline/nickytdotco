@@ -190,7 +190,7 @@ force = true
 
 [[redirects]]
 from = "https://livecoding.ca/learn-rust/*"
-to = "https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAFF1MYfuoGa6FeksKcMz-O/:splat"
+to = "https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAFF1MYfuoGa6FeksKcMz-O"
 status = 301
 force = true
 
