@@ -199,3 +199,9 @@ from = "https://livecoding.ca/*"
 to = "https://twitch.tv/nickytonline/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "https://javascripthours.com/*"
+to = "https://twitch.tv/nickytonline/:splat"
+status = 301
+force = true
