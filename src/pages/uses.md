@@ -77,6 +77,7 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 - [Topo Comfort Mat by Ergodriven](https://www.amazon.ca/gp/product/B00V3TO9HW/) standing desk mat
 - [LEVOIT Air Purifier Core 300](https://www.amazon.ca/gp/product/B07S3D4MRJ/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
 - [Vornado Pivot Personal Air Circulator Fan](https://www.amazon.ca/gp/product/B01NAYWFLL/)
+- [Elgato Streamd Deck XL](https://www.elgato.com/en/stream-deck-xl)
 
 ## Travel Gear
 
