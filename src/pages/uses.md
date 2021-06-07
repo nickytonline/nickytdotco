@@ -16,7 +16,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
   - [Moonlight](https://marketplace.visualstudio.com/items?itemName=atomiks.moonlight) (I currently use the Moonlight II theme in there) by [atomiks](https://marketplace.visualstudio.com/publishers/atomiks)
 - Font: [Dank Mono](https://dank.sh) by [Phil Plückthun](https://twitter.com/_philpl)
 
-### Chrome/Brave/Firefox Browser Extensions
+### Chrome/Edge/Firefox Browser Extensions
 
 - [Refined GitHub](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf) - GitHub on steroids
 - [VisBug](https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc?hl=en) - An awesome tool for frontend (this one’s new for me) (only for Chromium based browsers)
@@ -24,8 +24,8 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Preact DevTools](https://preactjs.github.io/preact-devtools/) - Because Preact
 - [Axe](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd) - For web accessibility testing
 - [WAVE](https://wave.webaim.org/extension/) - For web accessibility testing
-- [HTTPS Everywhere](https://www.eff.org/https-everywhere) - What it's called is what it does 😉 (not required for Brave browser)
-- [uBlock](https://ublock.org/) - An ad blocker (not required for Brave browser)
+- [HTTPS Everywhere](https://www.eff.org/https-everywhere)
+- [uBlock](https://ublock.org/)
 
 ## Desktop Apps
 
@@ -45,7 +45,6 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Starship](https://starship.rs/) - A cross shell prompt
 - [Giphy Capture](https://giphy.com/apps/giphycapture/) - For creating animated GIFs and screenshares
 - [Spotify](https://www.spotify.com/us/download/) - Because music.
-- [Seashore](https://apps.apple.com/us/app/seashore/id1448648921?mt=12) - An alternative to Photoshop
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
 - [OBS](https://obsproject.com/download) and [OBS.live](https://www.obs.live/) - For streaming on Twitch
 - [Insomnia](https://insomnia.rest) - For exploring REST and GraphQL APIs
