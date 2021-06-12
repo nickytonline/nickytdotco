@@ -12,14 +12,14 @@ positive_reactions_count: 55
 tags:
   - discuss
   - productivity
-canonical_url: 'https://dev.to/nickytonline/do-you-have-a-uses-page-5b82'
+canonical_url: 'https://www.iamdeveloper.com/posts/do-you-have-a-uses-page-5b82/'
 template: post
 ---
 We all are particular about the software and hardware we use. Something common that came about out of all this is tech folks that blog, stream and/or give talks started getting a lot of questions like, what font do you use? What theme is that? What kind of monitor etc.
 
 So tech folk that have web sites started creating a "uses" page. If you have a uses page, share it in the comments and consider adding it to @wesbos' awesome project [uses.tech](https://uses.tech).
 
-If you don't have one, here is mine as an example, https://iamdeveloper.com/uses
+If you don't have one, [here my uses page](https://iamdeveloper.com/uses) as an example of one.
 
 Might as well share a workstation photo too while you're at it.
 

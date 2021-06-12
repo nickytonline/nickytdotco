@@ -1,27 +1,26 @@
 ---
-stackbit_url_path: posts/february-25th-2021-what-did-you-learn-this-week-2hpm
-title: 'February 25th, 2021: What did you learn this week?'
-date: '2021-02-26T03:31:39.848Z'
+stackbit_url_path: posts/june-3rd-2021-what-did-you-learn-this-week-gfn
+title: 'June 3rd, 2021: What did you learn this week?'
+date: '2021-06-03T23:28:47.842Z'
 excerpt: >-
   It's that time of the week again. So wonderful devs, what did you learn this
   week? It could be progra...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--yVuT0l1S--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mm17om567jgmzsalfqqr.jpeg
-comments_count: 16
+  https://res.cloudinary.com/practicaldev/image/fetch/s--hPfpSriN--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rkyojwwd7ei845brpu99.jpeg
+comments_count: 22
 positive_reactions_count: 5
 tags:
   - weeklylearn
   - discuss
   - weeklyretro
-canonical_url: >-
-  https://dev.to/nickytonline/february-25th-2021-what-did-you-learn-this-week-2hpm
+canonical_url: 'https://dev.to/nickytonline/june-3rd-2021-what-did-you-learn-this-week-gfn'
 template: post
 ---
 It's that time of the week again. So wonderful devs, what did you learn this week? It could be programming tips, career advice etc.
 
 <center>
 
-![Image of the brain](https://media.giphy.com/media/ojmB7lOn3VUU8/giphy.gif)
+![Yoda wooping someone's butt](https://media.giphy.com/media/yDYAHbqe5DfyM/giphy.gif)
 </center>
 
 Feel free to comment with what you learnt and/or reference your TIL post to give it some more exposure.
@@ -30,10 +29,10 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 <iframe class="liquidTag" src="https://dev.to/embed/tag?args=todayilearned" style="border: 0; width: 100%;"></iframe>
 
 
-And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇����👇🏽👇🏾👇🏿
+And remembered, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
 
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-1kg5" style="border: 0; width: 100%;"></iframe>
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-4ko9" style="border: 0; width: 100%;"></iframe>
 
 
 <center>
@@ -41,7 +40,7 @@ And remember, if something you learnt was a big win for you, then you know where
 ![Little kid making a fist as if to say "Yes!"](https://media.giphy.com/media/6brH8dM3zeMyA/giphy.gif)
 </center>
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/february-25th-2021-what-did-you-learn-this-week-2hpm)*
+*[This post is also available on DEV.](https://dev.to/nickytonline/june-3rd-2021-what-did-you-learn-this-week-gfn)*
 
 
 <script>

@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--r2953H4R--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/b1fs54ljjhu08hzcj4tk.jpg
 comments_count: 13
-positive_reactions_count: 30
+positive_reactions_count: 32
 tags:
   - discuss
   - cheatsheets

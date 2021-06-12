@@ -7,7 +7,7 @@ excerpt: >-
   ago.                                         I've Started...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--qsJFxVOe--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/nqqvyinfbwzjb4fhemff.jpg
-comments_count: 6
+comments_count: 8
 positive_reactions_count: 81
 tags:
   - webdev

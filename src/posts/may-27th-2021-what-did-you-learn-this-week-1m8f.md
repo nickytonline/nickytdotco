@@ -1,20 +1,19 @@
 ---
-stackbit_url_path: posts/november-13th-2020-what-did-you-learn-this-week-2520
-title: 'November 13th, 2020: What did you learn this week?'
-date: '2020-11-13T11:17:16.320Z'
+stackbit_url_path: posts/may-27th-2021-what-did-you-learn-this-week-1m8f
+title: 'May 27th, 2021: What did you learn this week?'
+date: '2021-05-28T02:49:11.727Z'
 excerpt: >-
   It's that time of the week again. So wonderful devs, what did you learn this
   week? It could be progra...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--8OVH3mrT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/seixs9mk0sbik6zaoesp.jpg
-comments_count: 36
-positive_reactions_count: 6
+  https://res.cloudinary.com/practicaldev/image/fetch/s--llX3qWnH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ofcnouvmdvccc7yujm88.jpg
+comments_count: 7
+positive_reactions_count: 8
 tags:
   - weeklylearn
   - discuss
   - weeklyretro
-canonical_url: >-
-  https://dev.to/nickytonline/november-13th-2020-what-did-you-learn-this-week-2520
+canonical_url: 'https://dev.to/nickytonline/may-27th-2021-what-did-you-learn-this-week-1m8f'
 template: post
 ---
 It's that time of the week again. So wonderful devs, what did you learn this week? It could be programming tips, career advice etc.
@@ -31,20 +30,18 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 <iframe class="liquidTag" src="https://dev.to/embed/tag?args=todayilearned" style="border: 0; width: 100%;"></iframe>
 
 
-And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
-
-
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-391j" style="border: 0; width: 100%;"></iframe>
-
-
 <center>
+
+And remember, if something you learned was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
+
+
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-2ei4" style="border: 0; width: 100%;"></iframe>
+
 
 ![Someone feeling like "Yaaas!"](https://media.giphy.com/media/zBhZiVNNQjfTG/giphy.gif)
 </center>
 
-Photo by [Wes Hicks](https://unsplash.com/@sickhews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](Photo by Wes Hicks on Unsplash)
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/november-13th-2020-what-did-you-learn-this-week-2520)*
+*[This post is also available on DEV.](https://dev.to/nickytonline/may-27th-2021-what-did-you-learn-this-week-1m8f)*
 
 
 <script>

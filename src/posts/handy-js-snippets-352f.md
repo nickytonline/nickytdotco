@@ -6,7 +6,7 @@ excerpt: Quick ES5/ES6 snippets for doing awesome things in Javascript.
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--8TPM73BB--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://c2.staticflickr.com/8/7282/8995095069_9e88b3bba5_b.jpg
 comments_count: 17
-positive_reactions_count: 70
+positive_reactions_count: 71
 tags:
   - javascript
   - showdev
