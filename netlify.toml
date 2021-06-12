@@ -229,3 +229,9 @@ from = "https://updates.iamdeveloper.com/*"
 to = "https://timeline.iamdeveloper.com/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "https://newsletter.iamdeveloper.com/*"
+to = "https://buttondown.email/nickytonline/:splat"
+status = 301
+force = true
