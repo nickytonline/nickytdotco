@@ -68,6 +68,7 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 - [Anker Wireless Charger](https://www.amazon.ca/gp/product/B07THL8PP1)
 - [Logitech C922x Pro Stream](https://www.amazon.ca/gp/product/B01LXCDPPK/) webcam with [webcam cover](https://www.amazon.ca/gp/product/B0748FZX99/)
 - [Webcam Light Stand for Live Stream, Selfie Ring Light with Webcam Mount](https://www.amazon.ca/gp/product/B07G379ZBH)
+- [UBeesize 10" LED Ring Light with Tripod Stand & Phone Holder](https://www.amazon.ca/gp/product/B0822GQR3Z)
 - [BenQ GW2760HS 27-inch FHD 1920x1080 HDMI VGA LED Monitor](https://www.amazon.com/BenQ-GW2760HS-27-inch-1920x1080-Monitor/dp/B00ITORMDC) with [iKross Single Monitor Desk Mount with Free Stand Base](https://www.amazon.ca/gp/product/B07CVR6355)
 - [Anker USB C Hub, 5-In-1 USB C Adapter](https://www.amazon.ca/gp/product/B071G83L1J)
 - [Anker Premium 60W 5-Port Desktop Charger](https://www.amazon.ca/gp/product/B072K5ZJXF)
