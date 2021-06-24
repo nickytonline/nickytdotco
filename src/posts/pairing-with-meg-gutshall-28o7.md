@@ -7,7 +7,7 @@ excerpt: >-
   on the pairing stream...
 thumb_img_path: null
 comments_count: 1
-positive_reactions_count: 15
+positive_reactions_count: 18
 tags:
   - devstream
   - pairprogramming

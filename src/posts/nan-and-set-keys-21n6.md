@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--6k6LoX3G--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4jsgcriiqp4o7nbu8rmn.jpeg
 comments_count: 4
-positive_reactions_count: 13
+positive_reactions_count: 14
 tags:
   - discuss
   - help
