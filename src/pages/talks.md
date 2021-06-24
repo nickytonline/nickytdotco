@@ -3,6 +3,14 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
+<h2>Virtual Coffee Brown Bag: Debugging JavaScript</h2>
+
+<time datetime="2021-04-02">April 2nd, 2021</time>
+
+{% youtube 'https://www.youtube.com/watch?v=I9A0Pifn0Uw' %}
+
+- [Slide deck](https://iamdeveloper.com/debug2021)
+
 <h2>Storybook 2021</h2>
 
 <time datetime="2021-03-10">March 10th, 2021</time>
