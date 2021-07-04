@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--LxZFwaP4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5vnflnscj2k2amsyzwkg.jpg
 comments_count: 18
-positive_reactions_count: 97
+positive_reactions_count: 98
 tags:
   - zsh
   - cli

@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--gMX84Q9b--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/fgimfk93vbdn6v0csx5e.jpg
 comments_count: 6
-positive_reactions_count: 27
+positive_reactions_count: 29
 tags:
   - career
   - interview

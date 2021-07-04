@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--3uLkqBYG--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://media.giphy.com/media/TI32JwHmWQEi4/giphy.gif
 comments_count: 7
-positive_reactions_count: 126
+positive_reactions_count: 127
 tags:
   - meta
   - javascript
