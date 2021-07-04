@@ -11,9 +11,8 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/), here’s [my setup](https://www.iamdeveloper.com/blog/2017-12-20-my-visual-studio-code-setup/)
 - Themes I alternate between:
   - [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) by [Sarah Drasner](https://twitter.com/sarah_edo)
-  - [In Bed by 7pm](https://marketplace.visualstudio.com/items?itemName=sdras.inbedby7pm) by [Sarah Drasner](https://twitter.com/sarah_edo)
   - [Cobalt2 Theme Official](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) by [Wes Bos](https://wesbos.com)
-  - [Moonlight](https://marketplace.visualstudio.com/items?itemName=atomiks.moonlight) (I currently use the Moonlight II theme in there) by [atomiks](https://marketplace.visualstudio.com/publishers/atomiks)
+  - [Shades of Purple](https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple) by [Ahmad Awais](https://ahmadawais.com/)
 - Font: [Dank Mono](https://dank.sh) by [Phil Plückthun](https://twitter.com/_philpl)
 
 ### Chrome/Edge/Firefox Browser Extensions
@@ -26,17 +25,18 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [WAVE](https://wave.webaim.org/extension/) - For web accessibility testing
 - [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 - [uBlock](https://ublock.org/)
+- [Language Tool](https://languagetool.org/) - A grammar and spell checking tool
+- [Pocket](https://getpocket.com/) - For bookmarking stuff to read
 
 ## Desktop Apps
 
 - [Vanilla](https://matthewpalmer.net/vanilla/) - A great app for hiding icons in your menu bar
 - [Rocket](https://matthewpalmer.net/rocket/) - Emojis, emojis
-- [Alfred](https://www.alfredapp.com/) - Workflows, snippets, MacOS spotlight on steroids
+- [Raycast](https://raycast.com) - Workflows, snippets, MacOS spotlight on steroids. I was previously using [Alfred](https://www.alfredapp.com/), another amazing Spotlight alternative.
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12) - Prevent your Mac from going to sleep
 - [f.lux](https://justgetflux.com/) - Be kind to your eyeballs
 - [Fork](https://git-fork.com/) - A great git GUI
 - [Bear](https://bear.app/) - Awesome note taking app
-- [Better Touch Tool](https://folivora.ai/) - Add extra gestures to your mouse/trackpad. I even use it for Windows management. Basically all the shortcuts I had for [Spectacle](https://www.spectacleapp.com/)) are now shortcuts in this tool.
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) - Because Docker
 - [Sizzy](https://sizzy.app) - Test your app/site for various devices/screen resolutions
 - [xScope](https://xscope.app) - Awesome toolset for frontend development. Rulers, guides etc.
@@ -48,6 +48,8 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
 - [OBS](https://obsproject.com/download) and [OBS.live](https://www.obs.live/) - For streaming on Twitch
 - [Insomnia](https://insomnia.rest) - For exploring REST and GraphQL APIs
+- [Descript](https://www.descript.com/) - For editing my Twitch streams so they can be published to YouTube.
+- [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to Zoom in my webcam.
 
 ## Additional Resources
 
