@@ -63,7 +63,7 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 - Macbook Pro 2019 16"
 - [Apple Magic Trackpad 2](https://www.apple.com/shop/product/MRMF2LL/A/magic-trackpad-2-space-gray)
 - [Apple Magic Keyboard with Numeric Keypad](https://www.apple.com/shop/product/MQ052B/A/magic-keyboard-with-numeric-keypad-british-english-silver)
-- [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3/buy/wh1000xm3-s) headphones - I snagged them during Boxing Day week.
+- [Sony WH-1000XM3](https://www.sony.ca/en/electronics/headband-headphones/wh-1000xm3) headphones - I snagged them during Boxing Day week.
 - [Blue Designs Yeti](https://www.bluedesigns.com/products/yeti/) microphone
 - [RODE PSA1 Swivel Mount Studio Microphone Boom Arm](https://www.amazon.ca/gp/product/B001D7UYBO)
 - [Rain mStand 360](https://www.raindesigninc.com/mstand360.html) laptop stand
