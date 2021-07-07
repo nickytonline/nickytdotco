@@ -10,6 +10,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 
 - [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/), here’s [my setup](https://www.iamdeveloper.com/blog/2017-12-20-my-visual-studio-code-setup/)
 - Themes I alternate between:
+  - [Fortnite](https://marketplace.visualstudio.com/items?itemName=sdras.fortnite-vscode-theme) by [Sarah Drasner](https://twitter.com/sarah_edo)
   - [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) by [Sarah Drasner](https://twitter.com/sarah_edo)
   - [Cobalt2 Theme Official](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) by [Wes Bos](https://wesbos.com)
   - [Shades of Purple](https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple) by [Ahmad Awais](https://ahmadawais.com/)
