@@ -8,7 +8,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 
 ## Editor
 
-- [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/), here’s [my setup](https://www.iamdeveloper.com/blog/2017-12-20-my-visual-studio-code-setup/)
+- [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/), here’s [my setup](https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/)
 - Themes I alternate between:
   - [Fortnite](https://marketplace.visualstudio.com/items?itemName=sdras.fortnite-vscode-theme) by [Sarah Drasner](https://twitter.com/sarah_edo)
   - [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) by [Sarah Drasner](https://twitter.com/sarah_edo)
