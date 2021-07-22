@@ -229,3 +229,9 @@ from = "https://newsletter.iamdeveloper.com/*"
 to = "https://buttondown.email/nickytonline/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "/stream2021/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vR0cBGMDt11jQ3tP-Z8UPf6BFYXLWX8XzsmfCb26RAYd5gX_ct662YJQrk-fCVp0MOv9tUW4mvBgam8/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
