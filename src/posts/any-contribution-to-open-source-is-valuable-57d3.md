@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--8Dc9k6Ml--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/2h3puantbcb0a0sfusny.jpg
 comments_count: 16
-positive_reactions_count: 68
+positive_reactions_count: 69
 tags:
   - opensource
   - career

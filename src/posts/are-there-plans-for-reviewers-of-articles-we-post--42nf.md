@@ -6,7 +6,7 @@ excerpt: Asking about article reviewers.
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--ij0eMxBx--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5cwbmzbxhzfeeo9sr579.png
 comments_count: 7
-positive_reactions_count: 11
+positive_reactions_count: 12
 tags:
   - meta
 canonical_url: >-

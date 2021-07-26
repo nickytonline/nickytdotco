@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--qmQ3lmo2--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3wu8ld8pjl64goxmb6ay.jpg
 comments_count: 7
-positive_reactions_count: 31
+positive_reactions_count: 33
 tags:
   - news
   - webdev

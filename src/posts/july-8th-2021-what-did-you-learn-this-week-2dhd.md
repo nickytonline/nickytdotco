@@ -1,19 +1,19 @@
 ---
-stackbit_url_path: posts/april-16th-2021-what-did-you-learn-this-week-3e72
-title: 'April 16th, 2021: What did you learn this week?'
-date: '2021-04-16T10:29:20.754Z'
+stackbit_url_path: posts/july-8th-2021-what-did-you-learn-this-week-2dhd
+title: 'July 8th, 2021: What did you learn this week?'
+date: '2021-07-09T03:41:58.400Z'
 excerpt: >-
   It's that time of the week again. So wonderful devs, what did you learn this
   week? It could be...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--x0-Fu2wI--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y2gyrnidmt7xdz2ga1cb.jpeg
-comments_count: 20
-positive_reactions_count: 11
+  https://res.cloudinary.com/practicaldev/image/fetch/s--x3aMvxEC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gpeurv0trlny72o5wxkd.jpeg
+comments_count: 25
+positive_reactions_count: 3
 tags:
   - weeklylearn
   - discuss
   - weeklyretro
-canonical_url: 'https://dev.to/nickytonline/april-16th-2021-what-did-you-learn-this-week-3e72'
+canonical_url: 'https://dev.to/nickytonline/july-8th-2021-what-did-you-learn-this-week-2dhd'
 template: post
 ---
 It's that time of the week again. So wonderful devs, what did you learn this week? It could be programming tips, career advice etc.
@@ -29,11 +29,10 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 <iframe class="liquidTag" src="https://dev.to/embed/tag?args=todayilearned" style="border: 0; width: 100%;"></iframe>
 
 
-
 And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
 
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-53nb" style="border: 0; width: 100%;"></iframe>
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-4h3g" style="border: 0; width: 100%;"></iframe>
 
 
 <center>
@@ -42,9 +41,8 @@ And remember, if something you learnt was a big win for you, then you know where
 </center>
 
 Photo by <a href="https://unsplash.com/@qmikola?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mikołaj</a> on <a href="https://unsplash.com/s/photos/book?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/april-16th-2021-what-did-you-learn-this-week-3e72)*
+*[This post is also available on DEV.](https://dev.to/nickytonline/july-8th-2021-what-did-you-learn-this-week-2dhd)*
 
 
 <script>
