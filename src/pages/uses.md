@@ -37,7 +37,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12) - Prevent your Mac from going to sleep
 - [f.lux](https://justgetflux.com/) - Be kind to your eyeballs
 - [Fork](https://git-fork.com/) - A great git GUI
-- [Bear](https://bear.app/) - Awesome note taking app
+- [Obsidian](https://obsidian.md) - Note Taking/My Second Brain
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) - Because Docker
 - [Sizzy](https://sizzy.app) - Test your app/site for various devices/screen resolutions
 - [xScope](https://xscope.app) - Awesome toolset for frontend development. Rulers, guides etc.
@@ -47,7 +47,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Giphy Capture](https://giphy.com/apps/giphycapture/) - For creating animated GIFs and screenshares
 - [Spotify](https://www.spotify.com/us/download/) - Because music.
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
-- [OBS](https://obsproject.com/download) and [OBS.live](https://www.obs.live/) - For streaming on Twitch
+- [OBS](https://obsproject.com/download) - For streaming on Twitch
 - [Insomnia](https://insomnia.rest) - For exploring REST and GraphQL APIs
 - [Descript](https://www.descript.com/) - For editing my Twitch streams so they can be published to YouTube.
 - [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to Zoom in my webcam.
@@ -77,7 +77,6 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 - [Anker Premium 60W 5-Port Desktop Charger](https://www.amazon.ca/gp/product/B072K5ZJXF)
 - [Seagate Backup Plus Slim 2TB External Drive](https://www.amazon.ca/gp/product/B00FRHTTIA)
 - [VIZ-PRO Dry Erase Board/Whiteboard](https://www.amazon.ca/gp/product/B01461WT9S)
-- [Under Armour Men’s Charged Commit 2.0 Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) - My work from home sneakers
 - [Topo Comfort Mat by Ergodriven](https://www.amazon.ca/gp/product/B00V3TO9HW/) standing desk mat
 - [LEVOIT Air Purifier Core 300](https://www.amazon.ca/gp/product/B07S3D4MRJ/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
 - [Vornado Pivot Personal Air Circulator Fan](https://www.amazon.ca/gp/product/B01NAYWFLL/)
