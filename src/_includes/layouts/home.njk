@@ -1,22 +1,23 @@
 {% extends 'layouts/base.njk' %}
-
 {# Intro content #}
 {% set introHeading = title %}
 {% set introSummary %}
-  {{ content | safe }}
+{{ content | safe }}
 {% endset %}
-
 {# Post list content #}
 {% set postListHeading = postsHeading %}
 {% set postListItems = collections.postFeed %}
-
 {# Archive link #}
-{% if postListItems.length < collections.posts.length %} 
+{% if postListItems.length < collections.posts.length %}
   {% set paginationNextText = archiveButtonText %}
   {% set paginationNextUrl = '/archive' %}
 {% endif %}
-
 {% block content %}
+  <aside>
+    <span>I started a
+      <a href="https://newsletter.iamdeveloper.com" aria-label="subscribe to my newsletter">newsletter!</a>
+    </span>
+  </aside>
   <main id="main-content" tabindex="-1">
     {% include "partials/components/intro.njk" %}
     {% include "partials/components/post-list.njk" %}
