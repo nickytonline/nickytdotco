@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--YB4J_ik4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z4v5ldpkdcyphu9m07w4.png
 comments_count: 15
-positive_reactions_count: 108
+positive_reactions_count: 113
 tags:
   - regularexpressions
   - regex

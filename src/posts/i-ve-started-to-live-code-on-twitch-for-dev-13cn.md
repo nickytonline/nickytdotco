@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--L53rXEkz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/4or5dqsjdsqzf3jfsr7t.png
 comments_count: 14
-positive_reactions_count: 66
+positive_reactions_count: 67
 tags:
   - twitch
   - streaming

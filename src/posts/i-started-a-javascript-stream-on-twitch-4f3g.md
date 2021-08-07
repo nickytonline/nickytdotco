@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--CJ6wCRQy--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jmo1ghh4bvxzuuog6w8p.jpg
 comments_count: 0
-positive_reactions_count: 20
+positive_reactions_count: 21
 tags:
   - javascript
   - twitchstreamer

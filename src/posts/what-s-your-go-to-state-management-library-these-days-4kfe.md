@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--FCetHozy--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75d4oei8hj450uez4e6z.jpeg
 comments_count: 26
-positive_reactions_count: 28
+positive_reactions_count: 29
 tags:
   - discuss
   - react

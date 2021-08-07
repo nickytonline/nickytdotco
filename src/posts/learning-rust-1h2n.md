@@ -4,7 +4,7 @@ title: Learning Rust
 date: '2021-04-18T19:47:05.587Z'
 excerpt: >-
   My awesome coworker @citizen428  dropped a new resource for learning the Rust
-  language care of Micros...
+  language care of...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--MM-nL96G--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4xq8xpxzzghjhh1nli1g.jpeg
 comments_count: 6
