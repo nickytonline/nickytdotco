@@ -18,6 +18,7 @@ canonical_url: >-
   https://www.iamdeveloper.com/posts/stuff-i-always-set-up-for-frontend-work-56h2/
 template: post
 ---
+
 There's a few things I always set up when working on a frontend project: ESLint, Prettier, husky and lint-staged.
 
 ## ESLint
@@ -42,12 +43,11 @@ ESLint, stylelint and Prettier enable you to remove any discussion of what they 
 
 ## husky
 
-Note: As of Husky version 7, the setup is completely different. Please follow the steps in the [4 to 7 migration guide](https://typicode.github.io/husky/# /?id=migrate-from-v4-to-v7).
+Note: As of Husky version 7, the setup is completely different. Please follow the steps in the [4 to 7 migration guide](https://typicode.github.io/husky/#/?id=migrate-from-v4-to-v7).
 
 [husky](https://github.com/typicode/husky) is a node package that makes creating [Git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) a joy. What's a Git hook? It's a script that runs during an event in a repository. For example, before a commit. Once the husky package is installed, all that is required is a configuration to decide which Git hooks to use and what to run for that particular hook.
 
 Here is a sample configuration.
-
 
 ```json
 "husky": {
@@ -57,19 +57,17 @@ Here is a sample configuration.
 }
 ```
 
-
-When a file is being committed to the repository, the above configuration will run 
+When a file is being committed to the repository, the above configuration will run
 `echo 'hi'`
- before the file is committed.
+before the file is committed.
 
-![A Git pre-commit hook running in a terminal before a commit](https://dev-to-uploads.s3.amazonaws.com/i/x64xahqayl7uj5xiqapb.png)  
+![A Git pre-commit hook running in a terminal before a commit](https://dev-to-uploads.s3.amazonaws.com/i/x64xahqayl7uj5xiqapb.png)
 
 ## lint-staged
 
-[lint-staged](https://github.com/okonet/lint-staged) is a node package that makes it easier to run tasks for staged files in a Git repository. If we go back to our example above that echo's hi, we can change that command to 
+[lint-staged](https://github.com/okonet/lint-staged) is a node package that makes it easier to run tasks for staged files in a Git repository. If we go back to our example above that echo's hi, we can change that command to
 `lint-staged`
 .
-
 
 ```json
 "husky": {
@@ -79,9 +77,7 @@ When a file is being committed to the repository, the above configuration will r
 }
 ```
 
-
 If we commit a file, the Git pre-commit hook will run lint-staged, but nothing will happen. We need to let lint-staged know what we want to do during the pre-commit. Let's get a configuration set up for lint-staged.
-
 
 ```json
 "lint-staged": {
@@ -90,7 +86,6 @@ If we commit a file, the Git pre-commit hook will run lint-staged, but nothing w
   ]
 }
 ```
-
 
 Now if we commit a file, the pre-commit hook will run and if any JavaScript files are being committed, the pre-commit hook, thanks to lint-staged will run prettier on the file and update the file with any formatting changes and then commit the file.
 
@@ -104,29 +99,26 @@ Now let's bring it all together so you can use this in your own project.
 
 You'll need to install all the dependencies mentioned above plus a few more. I'll explain why in a minute.
 
-
 ```bash
 npm install -D eslint prettier eslint-config-prettier eslint-plugin-prettier husky lint-staged stylelint stylelint-config-standard
 ```
 
-
 `eslint-config-prettier`
- and 
+and
 `eslint-plugin-prettier stylelint stylelint-config-standard`
- are required so that eslint is only in charge of rules that do not related to formatting as prettier handles formatting.
+are required so that eslint is only in charge of rules that do not related to formatting as prettier handles formatting.
 
-If you're wondering what the 
+If you're wondering what the
 `-D`
- is for, that's so they get installed as 
+is for, that's so they get installed as
 `devDependencies`
- instead of 
+instead of
 `dependencies`
- in the package.json. For more on that, see [Specifying dependencies and devDependencies in a package.json file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
+in the package.json. For more on that, see [Specifying dependencies and devDependencies in a package.json file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
 
-In the root of your project, create a file called 
+In the root of your project, create a file called
 `.eslintrc.js`
 . This will house the eslint configuration that we want. We'll go with the eslint recommended rules.
-
 
 ```javascript
 /* eslint-env node */
@@ -134,25 +126,23 @@ module.exports = {
   extends: ['eslint:recommended', 'prettier'],
   plugins: ['prettier'],
   parserOptions: {
-    ecmaVersion: 2018, // Put whatever version you want here
+    ecmaVersion: 2018 // Put whatever version you want here
   },
   env: {
-    browser: true,
-  }, 
+    browser: true
+  }
 };
 ```
 
-
-Note: 
+Note:
 `/* eslint-env node */`
- is being used as it's a frontend project and the .eslintrc.js file is Node.js. It allows us to say, "This file is a Node.js file". Thanks to [Rafi](https://dev.to/rafi993) for [pointing this out to me](https://github.com/forem/forem/pull/10767# pullrequestreview-507865219).
+is being used as it's a frontend project and the .eslintrc.js file is Node.js. It allows us to say, "This file is a Node.js file". Thanks to [Rafi](https://dev.to/rafi993) for [pointing this out to me](https://github.com/forem/forem/pull/10767# pullrequestreview-507865219).
 
 This is a base eslint configuration. If you were for example using React in your project, there would be additional configuration for React eslint rules.
 
-In the root of your project, create a file called 
+In the root of your project, create a file called
 `.stylelintrc.json`
 . This will house the stylelint configuration that we want. We'll go with the stylelint recommended rules.
-
 
 ```json
 {
@@ -160,11 +150,9 @@ In the root of your project, create a file called
 }
 ```
 
-
 This is a base stylelint configuration. Feel free to expand on these standard stylelint rules.
 
 Next up we need to our husky and lint-staged configurations. In your package.json file add these two configuration sections.
-
 
 ```json
 "lint-staged": {
@@ -185,10 +173,9 @@ Next up we need to our husky and lint-staged configurations. In your package.jso
 }
 ```
 
-
-If you don’t trust the robots for fixing your code, remove the 
+If you don’t trust the robots for fixing your code, remove the
 `—-fix`
- argument off of the eslint command.
+argument off of the eslint command.
 
 The [prettier configuration](https://prettier.io/docs/en/configuration.html) above is what I use, but feel free to tweak it to your liking.
 
@@ -200,7 +187,6 @@ I added this as a bonus tip, because not all projects use jest.
 
 But... if your project uses [jest](https://jestjs.io), you can also run tests related to files that are being committed.
 
-
 ```json
 "lint-staged": {
     "*.js": [
@@ -210,7 +196,6 @@ But... if your project uses [jest](https://jestjs.io), you can also run tests re
     ]
 }
 ```
-
 
 ## Learn More About Your Tools
 
@@ -222,10 +207,7 @@ Until next time folks!
 
 ![Character in a film saying "Yes! That is awesome](https://media.giphy.com/media/Z6f7vzq3iP6Mw/giphy.gif)
 
-
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/stuff-i-always-set-up-for-frontend-work-56h2)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/stuff-i-always-set-up-for-frontend-work-56h2)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -237,4 +219,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>
