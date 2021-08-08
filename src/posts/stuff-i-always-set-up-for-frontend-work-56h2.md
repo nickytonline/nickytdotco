@@ -1,6 +1,6 @@
 ---
 stackbit_url_path: posts/stuff-i-always-set-up-for-frontend-work-56h2
-title: Stuff I always Set Up for Frontend Work
+title: 'Set up a precommit hook with husky, lint-staged, prettier, and stylelint'
 date: '2020-10-18T04:20:19.736Z'
 excerpt: >-
   There's a few things I always set up when working on a frontend project:
@@ -41,6 +41,8 @@ There's a few things I always set up when working on a frontend project: ESLint,
 ESLint, stylelint and Prettier enable you to remove any discussion of what they do from a code review, because the rules are already set in place. This is great because it allows you to focus on the actual code review which is the bug you're trying to fix or a feature you're implementing.
 
 ## husky
+
+Note: As of Husky version 7, the setup is completely different. Please follow the steps in the [4 to 7 migration guide](https://typicode.github.io/husky/# /?id=migrate-from-v4-to-v7).
 
 [husky](https://github.com/typicode/husky) is a node package that makes creating [Git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) a joy. What's a Git hook? It's a script that runs during an event in a repository. For example, before a commit. Once the husky package is installed, all that is required is a configuration to decide which Git hooks to use and what to run for that particular hook.
 
