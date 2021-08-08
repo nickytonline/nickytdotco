@@ -8,7 +8,6 @@
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@tbranyen/jsdom": "^13.0.0",
-    "concurrently": "^5.3.0",
     "html-minifier": "^4.0.0",
     "image-size": "^0.8.3",
     "json-to-scss": "^1.5.0",
@@ -34,10 +33,11 @@
   "scripts": {
     "sass:tokens": "json-to-scss src/_data/tokens.json src/scss/_tokens.scss",
     "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/_includes/assets/css/global.css --style=compressed",
-    "start": "concurrently \"npm run sass:process -- --watch\" \"npm run serve\"",
-    "serve": "cross-env ELEVENTY_ENV=development eleventy --serve",
-    "preproduction": "cp src/pages/posts/*.md src/posts/",
-    "production": "npm run sass:process && NODE_ENV=production eleventy"
+    "start": "npm run sass:process -- --watch & npm run serve",
+    "serve": "eleventy --serve",
+    "preproduction": "cp src/pages/posts/*.md src/posts/ && npm run sass:process",
+    "production": "NODE_ENV=production eleventy",
+    "watch": "eleventy --watch"
   },
   "repository": {
     "type": "git",
