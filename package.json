@@ -33,7 +33,7 @@
   "scripts": {
     "sass:tokens": "json-to-scss src/_data/tokens.json src/scss/_tokens.scss",
     "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/_includes/assets/css/global.css --style=compressed",
-    "start": "npm run sass:process -- --watch & npm run serve",
+    "start": "npm run sass:process -- --watch & npm run serve -- --incremental",
     "serve": "eleventy --serve",
     "preproduction": "cp src/pages/posts/*.md src/posts/ && npm run sass:process",
     "production": "NODE_ENV=production eleventy",
