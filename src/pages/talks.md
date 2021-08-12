@@ -3,7 +3,7 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
-<h2>Virtual Coffee Brown Bag: Debugging JavaScript</h2>
+<h2>Virtual Coffee Lunch & Learn: Debugging JavaScript</h2>
 
 <time datetime="2021-04-02">April 2nd, 2021</time>
 
