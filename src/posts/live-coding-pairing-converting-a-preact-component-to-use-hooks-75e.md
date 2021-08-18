@@ -7,7 +7,7 @@ excerpt: >-
   potentially pair progr...
 thumb_img_path: null
 comments_count: 2
-positive_reactions_count: 35
+positive_reactions_count: 36
 tags:
   - devstream
   - pairprogramming

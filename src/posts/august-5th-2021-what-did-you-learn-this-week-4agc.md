@@ -7,7 +7,7 @@ excerpt: >-
   week? It could be...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--LC4LRFQp--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5fgen1zp5dohhv175se0.jpeg
-comments_count: 4
+comments_count: 6
 positive_reactions_count: 3
 tags:
   - weeklylearn
