@@ -1,14 +1,14 @@
 ---
 stackbit_url_path: posts/impressions-of-polywork-3pbp
-title: Impressions of Polywork
+title: First impressions of Polywork as a software engineer
 date: '2021-08-18T19:58:35.304Z'
 excerpt: >-
   Polywork is a new professional platform that has been getting a lot of
   attention lately. I can't...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--LtbkdgH0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a5quwfpvmt36uxvrfj2j.jpeg
-comments_count: 0
-positive_reactions_count: 4
+comments_count: 8
+positive_reactions_count: 37
 tags:
   - review
   - career
@@ -16,7 +16,7 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/impressions-of-polywork-3pbp/'
 template: post
 ---
-Polywork is a new professional platform that has been getting a lot of attention lately. I can't remember exactly where I came across it initially on Twitter. I think @aspittel (Ali Spittel) may have Tweeted about it.
+Polywork is a new professional platform that has been getting a lot of attention lately. I can't remember exactly where I came across it initially on Twitter. I think [Ali Spittel](https://twitter.com/ASpittel) may have Tweeted about it.
 
 ## Getting Access to Polywork
 
@@ -34,7 +34,7 @@ I secured my handle, *nickytonline*, because [that's me everywhere on the Intern
 
 The first thing I enjoyed about Polywork was the minimal design (like Zen mode in your editor for all the devs out there).
 
-I completed the intro section and added some initial badges to my profile. Badges in the context of Polywork are interests and skills you have. I work in open source, and I snowboard, so I added two badges to my profile.
+I completed the intro section and added some initial badges to my profile. Badges in the context of Polywork are interests and skills you have. I work in open source, and I snowboard, so I added those badges to my profile.
 
 ![Polywork badges section](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bwyf96wnsevx9juwoe7a.png)
 
@@ -52,8 +52,8 @@ One exciting feature that rolled out after I had signed up was Highlights for st
 
 The main area of prominence on your profile page is the timeline.
 
-![Polywork timeline](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p27njvml14ijk8zkmcmz.png)
- 
+![A Polywork highlight about me taking time off](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p27njvml14ijk8zkmcmz.png)
+
 It's where you'll spend most of your time filling out your profile. It took me a while to add my work here, but mainly because I was backfilling many things I've done. Filling out the timeline was nostalgic, and I realized how much I've accomplished once I saw it all in chronological order.
 
 ### Creating a Highlight
@@ -80,7 +80,7 @@ If you've collaborated on something, you can add collaborators to a highlight by
 
 You can add as many collaborators as you want. I'm sure there is a limit; I just haven't reached it yet. 😎
 
-![Polywork add collaborators](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s5oeoq25fgta8b70qo49.png)
+![Polywork add collaborators](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ayczagfav0fuz2mzhp33.png)
 
 One thing to note about collaborators is they have to confirm they collaborated with you. It prevents people from being needlessly tagged on highlights and adds more authenticity to a piece of collaborative work.
 
@@ -88,7 +88,7 @@ One thing to note about collaborators is they have to confirm they collaborated 
 
 At first glance, this looks like retweeting on Twitter, but it's a bit different. For one thing, you cannot repost anyone's highlight. As far as I’m aware, the only way you can repost is if someone collaborated with you. Once you confirm that you collaborated with someone, you will be able to repost their highlight.
 
-![A Polywork reposted highlight](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/17rxhti3wp0zp2l2915e.png)
+![A Polywork reposted highlight of the DEV Twitch stream with Ben Hong](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/17rxhti3wp0zp2l2915e.png)
 
 ### Filtering
 
@@ -108,7 +108,7 @@ Another great feature about your profile is you can use a custom domain. Setting
 
 ![Polywork, set up a custom domain](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2cttxmz8boembroh3ypb.png)
 
-The steps are pretty straightforward. When I initially set things up, I ran into some issues, but improvements to using a custom domain rolled out the following week and then it was smooth sailing setting things up [timeline.iamdeveloper.com](https://timeline.iamdeveloper.com)
+The steps are pretty straightforward. When I initially set things up, I ran into some issues, but improvements to using a custom domain rolled out the following week and then it was smooth sailing setting things up for [timeline.iamdeveloper.com](https://timeline.iamdeveloper.com)
 
 ## Contact Preferences
 Like other professional and social media applications, you can also contact someone on Polywork. To contact them, you need to specify a reason from the available options they’ve provided.
@@ -144,7 +144,7 @@ I've already submitted some suggestions and improvements myself.
 
 It's early days for Polywork, but the future is bright. **If you're looking to showcase your work, consider Polywork.** ✨  Once you get access, give me a follow at [timeline.iamdeveloper.com](https://timeline.iamdeveloper.com).
 
-*I don't have an infinite supply, but if you need an invite code, [drop me a DM on Twitter](https://twitter.com/nickytonline).*
+I don't have an infinite supply, but if you need an invite code, **yolo-2021** is good for 100 invites. 😎
 
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/impressions-of-polywork-3pbp)*
