@@ -1,8 +1,10 @@
 ---
 stackbit_url_path: posts/frontend-developer-resources-246j
-title: Front-end Developer Resources
+title: Frontend Developer Resources
 date: '2020-01-06T05:00:06.851Z'
-excerpt: 'It’s 2020, post year in review, so let’s start off with some 2020 content....'
+excerpt: >-
+  It’s 2020, post year in review, so let’s start off with some 2020
+  content.                         ...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--1j9Z4MyX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/d0slehzp7b26buouwz33.png
 comments_count: 16
@@ -114,6 +116,15 @@ This is a great genre of learning. There are paid resources, but a couple of not
 * [Flexbox Froggy](https://flexboxfroggy.com/)
 * [Flexbox Zombies](https://geddski.teachable.com/p/flexbox-zombies)
 * [CSSBattle](https://cssbattle.dev/)
+
+### Anything Stephanie Eckles
+
+All the below resources can be found at [Stephanie's web site](https://thinkdobecreate.com/).
+
+- [ModernCSS.dev](https://ModernCSS.dev) - Modern CSS solutions for old CSS problems
+- [smolcss.dev](https://smolcss.dev/) - Minimal snippets for modern CSS layouts and components
+- [11ty.rocks](https://11ty.rocks/) - A great [Eleventy](https://www.11ty.dev/) resource
+- [stylestage.dev](https://stylestage.dev) - A modern CSS showcase styled by community contributions
 
 ### TypeScript
 

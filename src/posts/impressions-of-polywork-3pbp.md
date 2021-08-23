@@ -7,7 +7,7 @@ excerpt: >-
   attention lately. I can't...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--LtbkdgH0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a5quwfpvmt36uxvrfj2j.jpeg
-comments_count: 8
+comments_count: 9
 positive_reactions_count: 37
 tags:
   - review
@@ -26,7 +26,7 @@ I [signed up for the waiting list](https://www.polywork.com/users/sign_up), gave
 
 ## Onboarding
 
-I secured my handle, *nickytonline*, because [that's me everywhere on the Internet](https://www.iamdeveloper.com/pages/social/). It's been a couple of months, so I don't remember most of the onboarding process, but I remember choosing your assistant as part of the onboarding—a fun touch.
+I secured my handle, *nickytonline*, because [that's me everywhere on the Internet](https://www.iamdeveloper.com/pages/social/). I signed up in May, so I don't remember most of the onboarding process, but I remember choosing your assistant as part of the onboarding—a fun touch.
 
 ![Polywork assitant](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hoaz3ladpk05d9endst0.png)
 
@@ -86,7 +86,7 @@ One thing to note about collaborators is they have to confirm they collaborated 
 
 ### Reposting Someone's Highlight
 
-At first glance, this looks like retweeting on Twitter, but it's a bit different. For one thing, you cannot repost anyone's highlight. As far as I’m aware, the only way you can repost is if someone collaborated with you. Once you confirm that you collaborated with someone, you will be able to repost their highlight.
+At first glance, this looks like retweeting on Twitter, but it's a bit different. For one thing, you cannot repost anyone's highlight. As far as I'm aware, the only way you can repost is if someone collaborated with you. Once you confirm that you collaborated with someone, you will be able to repost their highlight.
 
 ![A Polywork reposted highlight of the DEV Twitch stream with Ben Hong](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/17rxhti3wp0zp2l2915e.png)
 
@@ -111,7 +111,7 @@ Another great feature about your profile is you can use a custom domain. Setting
 The steps are pretty straightforward. When I initially set things up, I ran into some issues, but improvements to using a custom domain rolled out the following week and then it was smooth sailing setting things up for [timeline.iamdeveloper.com](https://timeline.iamdeveloper.com)
 
 ## Contact Preferences
-Like other professional and social media applications, you can also contact someone on Polywork. To contact them, you need to specify a reason from the available options they’ve provided.
+Like other professional and social media applications, you can also contact someone on Polywork. To contact them, you need to specify a reason from the available options they've provided.
 
 ![Polywork contact preferences modal](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xhltgezs5akylwspnvyi.png)
 
@@ -124,7 +124,7 @@ Think of the Mulitiverse (MV) as a one-stop shop for searching for members of Po
 
 There are several sections in the MV: featured members, trending badges, folks who have recently joined, what's everyone doing, and possibilities.
 
-*It’s unclear to me what the Possibilities section is. Maybe it’s for like-minded folks or folks that you may find interesting based on some algorithm?*
+* It's unclear to me what the Possibilities section is. Maybe it's for like-minded folks or folks that you may find interesting based on some algorithm?*
 
 ## Space Station
 As mentioned in the Contact Preferences section above, folks can be open to collaborating on specific topics, e.g. People available for live streaming. BTW, I am available for [live streaming](https://www.iamdeveloper.com/pages/live-coding/). 😎
@@ -145,7 +145,6 @@ I've already submitted some suggestions and improvements myself.
 It's early days for Polywork, but the future is bright. **If you're looking to showcase your work, consider Polywork.** ✨  Once you get access, give me a follow at [timeline.iamdeveloper.com](https://timeline.iamdeveloper.com).
 
 I don't have an infinite supply, but if you need an invite code, **yolo-2021** is good for 100 invites. 😎
-
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/impressions-of-polywork-3pbp)*
 
