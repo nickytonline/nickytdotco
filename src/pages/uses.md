@@ -47,6 +47,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Giphy Capture](https://giphy.com/apps/giphycapture/) - For creating animated GIFs and screenshares
 - [Spotify](https://www.spotify.com/us/download/) - Because music.
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
+- [Meeter](https://trymeeter.com) - For joining meetings faster
 - [OBS](https://obsproject.com/download) - For streaming on Twitch
 - [Insomnia](https://insomnia.rest) - For exploring REST and GraphQL APIs
 - [Descript](https://www.descript.com/) - For editing my Twitch streams so they can be published to YouTube.
