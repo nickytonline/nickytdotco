@@ -28,6 +28,9 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [uBlock](https://ublock.org/)
 - [Language Tool](https://languagetool.org/) - A grammar and spell checking tool
 - [Pocket](https://getpocket.com/) - For bookmarking stuff to read
+- [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) - A prettified view of JSON payloads
+- [Productive Twitter](https://chrome.google.com/webstore/detail/productive-twitter/elgfikcdihncknnnedljbbignlmnppii) - Zen mode for
+- [a11y Twitter](https://github.com/nickytonline/a11y-twitter) - Small changes to how you use Twitter to promote Tweeting in an accessible manner/
 
 ## Desktop Apps
 
