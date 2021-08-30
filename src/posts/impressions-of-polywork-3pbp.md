@@ -3,12 +3,12 @@ stackbit_url_path: posts/impressions-of-polywork-3pbp
 title: First impressions of Polywork as a software engineer
 date: '2021-08-18T19:58:35.304Z'
 excerpt: >-
-  Polywork is a new professional platform that has been getting a lot of
-  attention lately. I can't...
+  This post was sponsored by Polywork, but it is my own authentic review 
+  Polywork is a new...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--LtbkdgH0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a5quwfpvmt36uxvrfj2j.jpeg
 comments_count: 9
-positive_reactions_count: 37
+positive_reactions_count: 39
 tags:
   - review
   - career
@@ -16,6 +16,8 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/impressions-of-polywork-3pbp/'
 template: post
 ---
+*This post was sponsored by Polywork, but it is my own authentic review*
+
 Polywork is a new professional platform that has been getting a lot of attention lately. I can't remember exactly where I came across it initially on Twitter. I think [Ali Spittel](https://twitter.com/ASpittel) may have Tweeted about it.
 
 ## Getting Access to Polywork

@@ -7,8 +7,8 @@ excerpt: >-
   week? It could be...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--StZYXN3z--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/08iwdnb5dtxuvbjvasdw.jpeg
-comments_count: 8
-positive_reactions_count: 2
+comments_count: 9
+positive_reactions_count: 3
 tags:
   - weeklylearn
   - discuss
@@ -29,20 +29,16 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 <iframe class="liquidTag" src="https://dev.to/embed/tag?args=todayilearned" style="border: 0; width: 100%;"></iframe>
 
 
-<!--
-
 And remembered, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
 
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-4ko9" style="border: 0; width: 100%;"></iframe>
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-last-week-4f0n" style="border: 0; width: 100%;"></iframe>
 
 
 <center>
 
 ![Little kid making a fist as if to say "Yes!"](https://media.giphy.com/media/6brH8dM3zeMyA/giphy.gif)
 </center>
-
--->
 
 *[This post is also available on DEV.](https://dev.to/nickytonline/august-20th-2021-what-did-you-learn-this-week-3g8d)*
 

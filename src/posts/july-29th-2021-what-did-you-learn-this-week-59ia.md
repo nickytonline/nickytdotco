@@ -7,7 +7,7 @@ excerpt: >-
   week? It could be...
 thumb_img_path: null
 comments_count: 8
-positive_reactions_count: 5
+positive_reactions_count: 7
 tags:
   - weeklylearn
   - discuss

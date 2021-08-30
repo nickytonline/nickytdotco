@@ -20,7 +20,7 @@ template: post
 ---
 
 
-There is currently an issue open to improve the frontend documentation (see [Frontend �� DEV Docs](https://docs.dev.to/frontend/)) to get people onboarded quicker in the frontend. Big shout out to @rhymes for opening this issue!
+There is currently an issue open to improve the frontend documentation (see [Frontend · DEV Docs](https://docs.dev.to/frontend/)) to get people onboarded quicker in the frontend. Big shout out to @rhymes for opening this issue!
 
 
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fthepracticaldev%2Fdev.to%2Fissues%2F2507" style="border: 0; width: 100%;"></iframe>
