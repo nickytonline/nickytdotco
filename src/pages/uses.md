@@ -56,6 +56,14 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Descript](https://www.descript.com/) - For editing my Twitch streams so they can be published to YouTube.
 - [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to Zoom in my webcam.
 
+## CLIs
+
+- [Homebrew](https://brew.sh) - The Missing Package Manager for macOS (or Linux)
+- [hub](https://github.com/github/hub) - GitHub's improved git (can be safely aliased to git)
+- [GitHub CLI](https://github.com/cli/cli) - GitHub on the command line. Great for creating PRs, etc.
+- [rbenv](https://github.com/rbenv/rbenv) - Ruby version manager
+- [nvm](https://github.com/nvm-sh/nvm) - Node version manager
+
 ## Additional Resources
 
 Also, for those interested, here’s a big list I made for [Frontend Developer Resources](https://www.iamdeveloper.com/blog/2020-01-06-frontend-developer-resources/). Some of the things mentioned above are probably already in this list.
