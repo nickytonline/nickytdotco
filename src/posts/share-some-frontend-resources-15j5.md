@@ -7,7 +7,7 @@ excerpt: >-
   post                                         Frontend Developer R...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--2hy9n3z0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/1hz3sarb4dof2gvtunbr.png
-comments_count: 44
+comments_count: 45
 positive_reactions_count: 374
 tags:
   - discuss

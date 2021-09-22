@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--LtbkdgH0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a5quwfpvmt36uxvrfj2j.jpeg
 comments_count: 9
-positive_reactions_count: 39
+positive_reactions_count: 42
 tags:
   - review
   - career

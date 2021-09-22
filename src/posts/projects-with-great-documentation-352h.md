@@ -7,7 +7,7 @@ excerpt: >-
   provide examples to contr...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--BMpxsrDO--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/zhsbjgazf8xf49p2wsvv.png
-comments_count: 63
+comments_count: 64
 positive_reactions_count: 51
 tags:
   - discuss
