@@ -40,18 +40,21 @@ function boostButton(fileSlug, url, bloggingPlatform, isComment = false) {
  * @returns {string} Markup for a YouTube video embed.
  */
 function youtube(videoUrl) {
-  const videoId = videoUrl.replace(/.+\?v=(.+)/, '$1');
+  const [, videoId, time] = videoUrl.match(/.+\?v=([^&]+)(?:&t=([^&]+)s)?/);
+  const timeQueryParameter = time ? `start=${time}` : '';
 
   return `<iframe
-        loading="lazy"
-        src="https://www.youtube.com/embed/${videoId}?feature=oembed"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen="allowFullScreen"
-        style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"
-        width="480"
-        height="270"
-        frameborder="0"
-      ></iframe>`;
+    loading="lazy"
+    src="https://www.youtube.com/embed/${videoId}?${timeQueryParameter}"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen="allowFullScreen"
+    style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"
+    width="560"
+    height="315"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`;
 }
 
 /**
