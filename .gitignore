@@ -87,3 +87,6 @@ src/_includes/assets/*
 
 # Do not include posts pulled from Stackbit from DEV
 src/pages/posts
+
+# yarn isn't being used
+yarn.lock
