@@ -3,6 +3,14 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
+<h2>AppWrite Hacktoberfest Kickoff</h2>
+
+<time datetime="2021-04-02">September 29th, 2021</time>
+
+{% youtube 'https://www.youtube.com/watch?v=cyJAz-c1OWs&t=4183s' %}
+
+- [Slide deck](https://iamdeveloper.com/hacktoberfest2021)
+
 <h2>Virtual Coffee Lunch & Learn: Debugging JavaScript</h2>
 
 <time datetime="2021-04-02">April 2nd, 2021</time>
