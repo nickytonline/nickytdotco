@@ -226,7 +226,7 @@ force = true
 
 [[redirects]]
 from = "https://newsletter.iamdeveloper.com/*"
-to = "https://buttondown.email/nickytonline/:splat"
+to = "https://www.getrevue.co/profile/nickytonline/:splat"
 status = 301
 force = true
 
