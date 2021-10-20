@@ -11,6 +11,15 @@ metaDesc: 'Talks Nick Taylor has given.'
 
 - [Slide deck](https://iamdeveloper.com/hacktoberfest2021)
 
+<h2>Getting Started with Streaming on Twitch – Nick Taylor – Lunch & Learn</h2>
+
+<time datetime="2021-09-20">September 20th, 2021</time>
+
+{% youtube 'https://www.youtube.com/watch?v=aDofyI6E2t4' %}
+
+- [Slide deck](https://iamdeveloper.com/stream2021)
+- [Getting Started with Streaming on Twitch](https://www.iamdeveloper.com/posts/getting-started-with-streaming-on-twitch-4im7/)
+
 <h2>Virtual Coffee Lunch & Learn: Debugging JavaScript</h2>
 
 <time datetime="2021-04-02">April 2nd, 2021</time>
