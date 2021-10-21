@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--xrj9uU0f--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fm42fqy3ziu3r1zyahel.png
 comments_count: 4
-positive_reactions_count: 48
+positive_reactions_count: 53
 tags:
   - twitch
   - beginners

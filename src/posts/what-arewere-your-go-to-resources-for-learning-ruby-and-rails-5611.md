@@ -5,7 +5,7 @@ date: '2018-08-18T13:54:38.803Z'
 excerpt: Discussion on great resources to learn Ruby and Rails
 thumb_img_path: null
 comments_count: 43
-positive_reactions_count: 157
+positive_reactions_count: 158
 tags:
   - discuss
   - ruby

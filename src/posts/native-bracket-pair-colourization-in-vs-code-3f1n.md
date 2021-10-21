@@ -6,8 +6,8 @@ excerpt: >-
   Cross-posted from community.VSCodeTips.com  I’m a big fan of the Bracket Pair
   Colorizer extension,...
 thumb_img_path: null
-comments_count: 3
-positive_reactions_count: 19
+comments_count: 5
+positive_reactions_count: 22
 tags:
   - vscode
 canonical_url: >-

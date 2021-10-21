@@ -7,7 +7,7 @@ excerpt: >-
   post about it to keep a...
 thumb_img_path: null
 comments_count: 1
-positive_reactions_count: 19
+positive_reactions_count: 20
 tags:
   - web3
   - hacktoberfest

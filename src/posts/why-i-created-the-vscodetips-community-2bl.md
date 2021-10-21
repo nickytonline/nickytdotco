@@ -29,7 +29,7 @@ Whenever I go to edit code online now, I expect the VS Code experience. 😎
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1425505817827151872" style="border: 0; width: 100%;"></iframe>
 
 
-Being a fan of VS Code, I decided to create a [vscodetips Twitter handle](https://twitter.com/vscodetips) back in September of 2017. Over the past 4 years, the vscodetips Twitter community has gotten modestly large at almost 5000 followers.
+Being a fan of VS Code, I decided to create a [vscodetips Twitter handle](https://twitter.com/vscodetips) back in September of 2017. Over the past 4 years, the vscodetips Twitter community has gotten modestly large at just over 5000 followers.
 
 I work at [Forem](https://forem.com), where we build community software that powers sites like DEV and the [CodeNewbie community](https://community.codenewbie.org/). I put out a poll to see if folks would be interested in a community site to compliment the Twitter account.
 

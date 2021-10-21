@@ -26,7 +26,7 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 <iframe class="liquidTag" src="https://dev.to/embed/tag?args=todayilearned" style="border: 0; width: 100%;"></iframe>
 
 
-And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
+And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇���
 
 
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fjess%2Fwhat-was-your-win-this-past-week-4ac4" style="border: 0; width: 100%;"></iframe>
