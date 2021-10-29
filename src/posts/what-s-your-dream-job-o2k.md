@@ -6,7 +6,7 @@ excerpt: >-
   Just having some Tuesday night fun here. I'm curious what folks' dream job is.
   Let's hear it at all....
 thumb_img_path: null
-comments_count: 18
+comments_count: 19
 positive_reactions_count: 15
 tags:
   - watercooler

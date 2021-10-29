@@ -7,14 +7,14 @@ excerpt: >-
   buildspace.  The project was...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--0MpNYl1t--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vi2yi9st53f151flz189.png
-comments_count: 7
-positive_reactions_count: 88
+comments_count: 9
+positive_reactions_count: 134
 tags:
   - dapp
   - web3
   - nextjs
   - react
-canonical_url: 'https://dev.to/nickytonline/i-built-my-first-dapp-3pbm'
+canonical_url: 'https://www.iamdeveloper.com/posts/i-built-my-first-dapp-3pbm/'
 template: post
 ---
 This past weekend I completed a [web3](https://www.freecodecamp.org/news/what-is-web3/) project from the awesome folks at [buildspace](https://buildspace.so).
