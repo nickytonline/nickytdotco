@@ -1,6 +1,6 @@
 [build]
 publish = "dist"
-command = "./stackbit-build.sh"
+command = "npm run production"
 
 [[headers]]
   for = "/*"
