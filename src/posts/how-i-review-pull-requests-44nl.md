@@ -7,7 +7,7 @@ excerpt: >-
   pull requests (PR)...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--XuDzaAIL--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iz97ilpuk9knd74mixxu.jpeg
-comments_count: 3
+comments_count: 4
 positive_reactions_count: 49
 tags:
   - beginners
@@ -33,7 +33,7 @@ Sometimes there is no choice but to have a significantly large PR. I've seen thi
 
 If the above does not hold, these are the reasons I see why PRs get bloated:
 
-* The person spots refactorings they can do, but they're not related to the PR. Ask them to put these into a separate PR and keep the PR to the task at hand.
+* The person spots refactorings or bug fixes they can do, but they're not related to the PR. Ask them to put these into a separate PR and keep the PR to the task at hand.
 * The work to be done is not broken down. Do work that moves the more extensive work forward. For example, a utility function used throughout the feature can be in a separate PR. Is the person building out a new UI? They can build the components independently and put up a different PR, potentially using a tool like [Storybook](https://virtualcoffee.io) to build them out. 
 
 **Remember that an issue or feature does not need to map to one PR.**
@@ -42,7 +42,7 @@ Finally, I look at some code! I search for issues that stand out to me without p
 
 Things I look for:
 * logic errors
-* a language feature the person wasn't aware of
+* a language feature the person might not be aware of that can be used in the PR
 * leveraging existing utility functions in the codebase
 * tests
 * documentation
