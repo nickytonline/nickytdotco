@@ -90,3 +90,6 @@ src/pages/posts
 
 # yarn isn't being used
 yarn.lock
+
+# Local Netlify folder
+.netlify
