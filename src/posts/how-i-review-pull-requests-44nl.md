@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--XuDzaAIL--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iz97ilpuk9knd74mixxu.jpeg
 comments_count: 4
-positive_reactions_count: 49
+positive_reactions_count: 51
 tags:
   - beginners
   - programming
