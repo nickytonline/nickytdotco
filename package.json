@@ -35,7 +35,7 @@
     "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/_includes/assets/css/global.css --style=compressed",
     "start": "npm run sass:process -- --watch & npm run serve -- --incremental",
     "serve": "eleventy --serve",
-    "preproduction": "cp src/pages/posts/*.md src/posts/ && npm run sass:process",
+    "preproduction": "npm run sass:process",
     "production": "NODE_ENV=production eleventy",
     "watch": "eleventy --watch"
   },
