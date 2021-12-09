@@ -4,7 +4,7 @@ title: Toast Messages
 date: '2019-10-24T03:45:40.000Z'
 excerpt: >-
   So I made a little toast message demo tonight. It also works with the keyboard
-  if you tab. It will fo...
+  if you tab. It will...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--FiPUmzgc--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tixpt06bbncusm7apgze.jpg
 comments_count: 4

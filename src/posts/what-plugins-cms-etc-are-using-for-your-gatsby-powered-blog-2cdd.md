@@ -4,7 +4,7 @@ title: 'What plugins, CMS etc. are using for your Gatsby powered blog?'
 date: '2019-01-08T14:57:51.953Z'
 excerpt: >-
   Photo by Damian Zaleski on Unsplash  I'm really impressed with Gatsby's plugin
-  architecture. Here's m...
+  architecture. Here's...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--K1c7Tgjm--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/f5pq8in32y3sbid6lm4k.jpg
 comments_count: 7

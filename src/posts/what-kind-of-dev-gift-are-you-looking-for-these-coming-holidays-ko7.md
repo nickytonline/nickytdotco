@@ -4,7 +4,7 @@ title: What kind of dev gift are you looking for these coming holidays?
 date: '2018-12-13T22:49:54.828Z'
 excerpt: >-
   Photo by Plush Design Studio on Unsplash  A short and sweet fun post. I was
-  inspired by this tweet. W...
+  inspired by this tweet....
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--b_Emu08h--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/lpkb9d14p9xadbvwj71v.jpg
 comments_count: 14

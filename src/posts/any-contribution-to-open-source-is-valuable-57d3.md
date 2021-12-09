@@ -4,7 +4,7 @@ title: Any contribution to Open Source is valuable
 date: '2019-01-22T03:24:42.000Z'
 excerpt: >-
   We hear people say it all the time, but I would like to reiterate it. Any
-  contribution you make to op...
+  contribution you make to...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--8Dc9k6Ml--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/2h3puantbcb0a0sfusny.jpg
 comments_count: 16

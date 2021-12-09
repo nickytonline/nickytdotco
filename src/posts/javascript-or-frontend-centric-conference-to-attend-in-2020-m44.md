@@ -4,7 +4,7 @@ title: JavaScript or Frontend centric conference to attend in 2020?
 date: '2019-12-17T02:05:30.000Z'
 excerpt: >-
   The only conference I’ve ever attended was JBCN in 2016 for Java when I worked
-  in Barcelona because m...
+  in Barcelona because...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--gc4kUDPq--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/yy5za1fjbfq1m3jh6wvk.png
 comments_count: 13

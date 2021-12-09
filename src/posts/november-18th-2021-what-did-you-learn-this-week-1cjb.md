@@ -1,26 +1,27 @@
 ---
-stackbit_url_path: posts/october-22nd-2021-what-did-you-learn-this-week-bh3
-title: 'October 22nd, 2021: What did you learn this week?'
-date: '2021-10-22T03:05:33.013Z'
+stackbit_url_path: posts/november-18th-2021-what-did-you-learn-this-week-1cjb
+title: 'November 18th, 2021: What did you learn this week?'
+date: '2021-11-19T01:29:17.925Z'
 excerpt: >-
   It's that time of the week again. So wonderful devs, what did you learn this
   week? It could be...
 thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--V3AYV81G--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i8cvy4ytjlnho84ctkud.jpeg
+  https://res.cloudinary.com/practicaldev/image/fetch/s--XYiONMQ0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1o3qf8vuh3x94db2nwca.jpeg
 comments_count: 29
-positive_reactions_count: 16
+positive_reactions_count: 7
 tags:
   - weeklylearn
   - discuss
   - weeklyretro
-canonical_url: 'https://dev.to/nickytonline/october-22nd-2021-what-did-you-learn-this-week-bh3'
+canonical_url: >-
+  https://dev.to/nickytonline/november-18th-2021-what-did-you-learn-this-week-1cjb
 template: post
 ---
 It's that time of the week again. So wonderful devs, what did you learn this week? It could be programming tips, career advice etc.
 
 <center>
 
-![Information flowing through your brain](https://media.giphy.com/media/qKltgF7Aw515K/giphy.gif)
+![A picture it a dog waving their paw with the caption “Learning, cool at school or at home”](https://media.giphy.com/media/1xpm1nTQiRL96Di3Q6/giphy.gif)
 </center>
 
 Feel free to comment with what you learnt and/or reference your TIL post to give it some more exposure.
@@ -29,20 +30,18 @@ Feel free to comment with what you learnt and/or reference your TIL post to give
 <iframe class="liquidTag" src="https://dev.to/embed/tag?args=todayilearned" style="border: 0; width: 100%;"></iframe>
 
 
-<!--
 And remember, if something you learnt was a big win for you, then you know where to drop it as well.👇👇🏻👇🏼👇🏽👇🏾👇🏿
 
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-145j" style="border: 0; width: 100%;"></iframe>
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwhat-was-your-win-this-week-3ad7" style="border: 0; width: 100%;"></iframe>
 
 
 <center>
 
-![Price is Right contestant celebrating](https://media.giphy.com/media/gF29UEqBhSoDY8LHKg/giphy.gif)
+![Drama from Entourage screaming “Victory!”](https://media.giphy.com/media/lnlAifQdenMxW/giphy.gif)
 </center>
--->
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/october-22nd-2021-what-did-you-learn-this-week-bh3)*
+*[This post is also available on DEV.](https://dev.to/nickytonline/november-18th-2021-what-did-you-learn-this-week-1cjb)*
 
 
 <script>

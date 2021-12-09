@@ -4,7 +4,7 @@ title: Getting Started with Storybook for React
 date: '2018-03-26T05:00:00.000Z'
 excerpt: >-
   UPDATE: A lot has changed in Storybook land since this was written. If you are
-  adding Storybook to yo...
+  adding Storybook to...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--AMjsJsC0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/9zm6yatidby4ls11xzeg.png
 comments_count: 0

@@ -5,7 +5,7 @@ title: What are some concepts in TypeScript that you'd like to know more about?
 date: '2018-06-29T03:24:19.658Z'
 excerpt: >-
   Cover photo care of flickr user souravsarkar2013  I wrote an introductory post
-  on TypeScript last Oct...
+  on TypeScript last...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--2GKagXMM--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/luvah6kr7f6vetiiqaxg.jpg
 comments_count: 14

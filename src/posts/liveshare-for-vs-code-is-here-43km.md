@@ -4,7 +4,7 @@ title: Liveshare for VS Code is Here!
 date: '2018-05-07T23:24:58.083Z'
 excerpt: >-
   Cover photo care of Flickr user Uli Harder  Liveshare is finally here. It's a
-  public preview, but non...
+  public preview, but...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--XL89itBN--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/q8xtqj12h6y3xoit6a83.jpg
 comments_count: 17

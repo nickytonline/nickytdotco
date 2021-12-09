@@ -2,7 +2,7 @@
 stackbit_url_path: posts/reveal-your-macos-secrets-4d0i
 title: Reveal your macOS Secrets
 date: '2018-04-17T01:58:48.795Z'
-excerpt: "A while back, I wrote about My Mac Setup (yes, shameless plug \U0001F604). I have it pretty much tweaked to ma..."
+excerpt: "A while back, I wrote about My Mac Setup (yes, shameless plug \U0001F604). I have it pretty much tweaked to..."
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--s5JCtcf3--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/bcz0ib9rl1ddretjo9xl.jpg
 comments_count: 30

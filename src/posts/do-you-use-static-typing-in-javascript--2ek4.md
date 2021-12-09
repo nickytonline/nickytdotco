@@ -4,7 +4,7 @@ title: Do you use Static Typing in JavaScript?
 date: '2018-03-13T03:24:39.910Z'
 excerpt: >-
   I wrote an article last year, Consider Using TypeScript, to explain some of
-  the benefits of using Typ...
+  the benefits of using...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--85a6yavX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/rtb2j7q2w78u79q0xahm.png
 comments_count: 4

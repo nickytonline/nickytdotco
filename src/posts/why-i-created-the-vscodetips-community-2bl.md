@@ -8,7 +8,7 @@ excerpt: >-
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s---x_PMQck--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07jhp9p39ti9bisymp6a.png
 comments_count: 3
-positive_reactions_count: 30
+positive_reactions_count: 31
 tags:
   - vscode
   - beginners

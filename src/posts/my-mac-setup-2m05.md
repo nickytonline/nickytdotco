@@ -4,7 +4,7 @@ title: My Mac Setup
 date: '2018-01-12T10:00:00.000Z'
 excerpt: >-
   Maybe I should start a series called “Not just a Gist”, as I’m slowly
-  converting gists of mine to blo...
+  converting gists of mine to...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--C6fxx9Ly--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/qkwvsk3lp64lvchg69tm.png
 comments_count: 56

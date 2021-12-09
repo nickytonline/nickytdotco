@@ -7,7 +7,7 @@ excerpt: >-
   Let's hear it at all....
 thumb_img_path: null
 comments_count: 19
-positive_reactions_count: 15
+positive_reactions_count: 14
 tags:
   - watercooler
 canonical_url: 'https://dev.to/nickytonline/what-s-your-dream-job-o2k'

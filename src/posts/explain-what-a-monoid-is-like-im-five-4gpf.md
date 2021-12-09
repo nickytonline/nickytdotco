@@ -4,7 +4,7 @@ title: Explain what a monoid is Like I'm Five
 date: '2018-05-20T18:32:16.692Z'
 excerpt: >-
   I purchased and I've started reading Functional Light Javascript. So far, a
-  good read. I was just won...
+  good read. I was just...
 thumb_img_path: null
 comments_count: 4
 positive_reactions_count: 28

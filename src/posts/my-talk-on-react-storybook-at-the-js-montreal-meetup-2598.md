@@ -2,9 +2,7 @@
 stackbit_url_path: posts/my-talk-on-react-storybook-at-the-js-montreal-meetup-2598
 title: My Talk on React Storybook at the js-montreal Meetup
 date: '2017-06-27T03:00:00.000Z'
-excerpt: >-
-  My talk at the June 13th, 2017 js-montreal meetup slides are available at
-  storybookslides.iamdevelope...
+excerpt: 'My talk at the June 13th, 2017 js-montreal meetup slides are available at...'
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--5M9qqV-W--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/7ss87wh6suac1t8n4gz6.jpg
 comments_count: 0

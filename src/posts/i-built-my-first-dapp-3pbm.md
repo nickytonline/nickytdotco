@@ -7,8 +7,8 @@ excerpt: >-
   buildspace.  The project was...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--0MpNYl1t--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vi2yi9st53f151flz189.png
-comments_count: 9
-positive_reactions_count: 134
+comments_count: 10
+positive_reactions_count: 144
 tags:
   - dapp
   - web3

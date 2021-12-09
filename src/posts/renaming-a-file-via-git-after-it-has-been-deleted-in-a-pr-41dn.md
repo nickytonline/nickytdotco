@@ -4,7 +4,7 @@ title: Git file renaming issues (deleting/adding instead of renaming)
 date: '2019-02-07T03:10:19.770Z'
 excerpt: >-
   Photo by Markus Spiske on Unsplash  Hey folks, I need a little help as I've
-  kind of reached the exten...
+  kind of reached the...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--vasWZK4---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/cu5csch4pwfki2r0yfac.jpg
 comments_count: 14

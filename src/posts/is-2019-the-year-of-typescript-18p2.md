@@ -4,7 +4,7 @@ title: Is 2019 the year of TypeScript?
 date: '2019-01-16T23:59:04.583Z'
 excerpt: >-
   Also published at iamdeveloper.com on Jan 16, 2019  Photo by NordWood Themes
-  on Unsplash  This commen...
+  on Unsplash  This...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--0D19xE52--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/eoz2gg948ys22w1ir00h.jpg
 comments_count: 68

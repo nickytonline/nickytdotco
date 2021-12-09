@@ -4,7 +4,7 @@ title: Setting up Storybook for Preact
 date: '2018-09-02T00:00:00.000Z'
 excerpt: >-
   Update 2019/06/30: Storybook now has an option via the CLI to install for
-  Preact. For more info see P...
+  Preact. For more info see...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--AMjsJsC0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/9zm6yatidby4ls11xzeg.png
 comments_count: 5

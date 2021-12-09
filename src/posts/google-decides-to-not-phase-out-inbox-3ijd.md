@@ -2,7 +2,7 @@
 stackbit_url_path: posts/google-decides-to-not-phase-out-inbox-3ijd
 title: Google decides to not phase out Inbox!
 date: '2019-04-01T05:27:28.627Z'
-excerpt: "I can't believe Google decided to keep Inbox! Our voices have been heard. \U0001F4AF\U0001F64C..."
+excerpt: "I can't believe Google decided to keep Inbox! Our voices have been heard. \U0001F4AF\U0001F64C                         ..."
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--UthIpSB4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/usslllpni1upsb9apsol.jpeg
 comments_count: 14

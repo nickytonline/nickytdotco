@@ -4,7 +4,7 @@ title: The CSS mask property
 date: '2019-01-09T16:44:39.000Z'
 excerpt: >-
   Photo by Neven Krcmarek on Unsplash  Say you have a background that you want a
-  certain colour, but yo...
+  certain colour, but...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--UPQWL4-u--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/fzgrjq82fzh5gtm4jur5.jpg
 comments_count: 0

@@ -4,7 +4,7 @@ title: 'Ink: React for CLIs'
 date: '2019-03-09T21:34:54.000Z'
 excerpt: >-
   Photo by Pierre Bamin on Unsplash  This one is short and sweet.  Are you
-  familiar with React? Then yo...
+  familiar with React? Then...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--yzFlGYUf--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ewrl8i5l3v9avgxpocjc.jpg
 comments_count: 3

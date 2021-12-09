@@ -4,7 +4,7 @@ title: What do you wish you were better at?
 date: '2018-08-27T04:31:38.823Z'
 excerpt: >-
   I'm sure all of us wish we were better at certain things regardless of where
-  we are in our careers. W...
+  we are in our careers....
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--hHz9odhK--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tegc5w5d9i1ul82iwseh.gif
 comments_count: 25

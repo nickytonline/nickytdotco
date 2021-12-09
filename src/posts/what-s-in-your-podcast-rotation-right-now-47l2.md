@@ -4,7 +4,7 @@ title: What's in your podcast rotation right now?
 date: '2019-04-11T02:40:48.197Z'
 excerpt: >-
   Curious what everyone is listening to for podcasts these days, whether it be
-  technical or not. I've b...
+  technical or not. I've...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--OJuKTVM4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/92l49uwieldm3m1llqna.png
 comments_count: 59

@@ -4,7 +4,7 @@ title: Can you create the great Redux store?
 date: '2018-09-08T03:46:46.954Z'
 excerpt: >-
   Photo courtesy of Flickr user Sarah Gilbert  There's a great free video course
-  on Redux from Dan Abra...
+  on Redux from Dan...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--WfMtcLv8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/usmlgnkwhg89ihcajy8f.jpg
 comments_count: 0

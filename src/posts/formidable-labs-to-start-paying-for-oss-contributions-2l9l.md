@@ -4,7 +4,7 @@ title: Formidable Labs to Start Paying for OSS Contributions
 date: '2019-05-03T13:32:45.378Z'
 excerpt: >-
   An interesting blog post came out today from Formidable Labs. As the blog
-  title says, "Paying Cold, H...
+  title says, "Paying Cold,...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--XEwZfu76--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://media.giphy.com/media/1pAbbPYxZMeFzvWrGB/giphy.gif
 comments_count: 20

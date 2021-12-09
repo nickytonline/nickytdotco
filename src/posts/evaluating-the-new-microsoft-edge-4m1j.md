@@ -4,7 +4,7 @@ title: Evaluating the new Microsoft Edge
 date: '2019-11-23T02:25:44.000Z'
 excerpt: >-
   About a month ago I Tweeted that I was going to take the new MS Edge browser
-  for a tour....
+  for a tour.             ...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--ORlH7LDT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tz6e8mu5mw2o2rx66egy.png
 comments_count: 10

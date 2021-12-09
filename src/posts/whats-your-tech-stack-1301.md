@@ -4,7 +4,7 @@ title: What's your tech stack?
 date: '2018-04-25T13:38:29.976Z'
 excerpt: >-
   Photo courtesy of Flickr user kreturn  I came across this post from @ben 
-  today while I was doing som...
+  today while I was doing...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--uBj_0QWl--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/xlcmo0xfz2dwksmkik27.jpg
 comments_count: 58

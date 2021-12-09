@@ -4,7 +4,7 @@ title: "Microsoft is building a Chromium based browser! \U0001F632"
 date: '2018-12-04T04:07:55.045Z'
 excerpt: >-
   Photo by yu tang on Unsplash  This tweet says it all. Holy cow. Did not see
-  that coming....
+  that coming.             ...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--l9_sErxG--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/p09ju49ekcwpgi77vgs4.jpg
 comments_count: 35

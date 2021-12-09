@@ -5,7 +5,7 @@ title: Would you contribute to a JavaScript OSS Project that uses static types?
 date: '2018-07-17T03:04:09.191Z'
 excerpt: >-
   If you wanted to contribute to a large/popular front-end or node project, but
-  discovered it used stat...
+  discovered it used...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--cz7sP-SO--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/7w2tskezj69c2phjkt6i.jpg
 comments_count: 6

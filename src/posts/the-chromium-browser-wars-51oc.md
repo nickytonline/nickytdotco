@@ -4,7 +4,7 @@ title: The Chromium Browser Wars
 date: '2019-05-21T03:44:26.000Z'
 excerpt: >-
   I’ve purposely left out FireFox here because this is not about Firefox. It’s
-  about Chromium based bro...
+  about Chromium based...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--tKEtJz5u--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://media.giphy.com/media/xT0xemNCRU4TRrGDAI/giphy.gif
 comments_count: 4

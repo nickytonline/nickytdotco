@@ -4,7 +4,7 @@ title: A Simple ⭐ Rating Code Pen
 date: '2018-01-19T04:12:02.207Z'
 excerpt: >-
   Cover image care of Flickr user sparkyloe.  Continuing along with my 2018
-  Resolutions to make Code Pe...
+  Resolutions to make Code...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--l5Yv15Ln--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://c2.staticflickr.com/4/3864/15120161855_a640e93573_b.jpg
 comments_count: 3

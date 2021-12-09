@@ -4,7 +4,7 @@ title: My 2018 Year in Review
 date: '2018-12-29T10:00:00.000Z'
 excerpt: >-
   So here’s my 2018 Resolutions.                                       2018
-  Resolutions       Nick Tayl...
+  Resolutions       Nick...
 thumb_img_path: >-
   https://res.cloudinary.com/practicaldev/image/fetch/s--8VoeKWdX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tu12q4khv30zeubo2jw7.jpg
 comments_count: 7
