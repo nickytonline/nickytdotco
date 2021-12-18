@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /*!
  * @preserve
  * Dank Mono (v0.491)
@@ -68,7 +70,7 @@
 body {
   // Strip the unit off the size ratio to generate a line height
   $line-height: get-size(600);
-  line-height: $line-height / ($line-height * 0 + 1);
+  line-height: math.div($line-height, $line-height * 0 + 1);
 
   @include apply-utility('font', 'base');
 }
