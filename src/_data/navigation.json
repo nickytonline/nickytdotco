@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "text": "Home",
-      "url": "/",
-      "external": false
-    },
-    {
       "text": "About",
       "url": "/pages/about",
       "external": false
