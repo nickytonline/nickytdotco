@@ -10,21 +10,21 @@ tags:
 template: post
 ---
 
-I don't know if I'll keep doing this every year, but I did one of these in 2020 and that post got some good signal, so I renamed it to Frontend Developer Resources 2020 which brings us to Frontend Developer Resources 2022. Oops, I missed 2021. Technically we're still in 2021, but humour me. Sprinkles of shameless plugs will also be included. 😎
+I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got some good signal, so I renamed it to Frontend Developer Resources 2020, which brings us to Frontend Developer Resources 2022. Oops, I missed 2021. Technically we're still in 2021, but humour me. I also added sprinkles of shameless plugs. 😎
 
-This is not a complete list, more a list of stuff I found compelling in 2021 that will keep you set in 2022 and on and builds off of my previous list. You may see some repeats in here from my previous post, but that's only because they're still super relevant.
+This post is not a complete list, more a list of stuff I found compelling in 2021 that will keep you set in 2022 and build off of my previous list. You may see some repeats from my 2020 post here, but they're still super relevant.
 
-Most resources are free, but some are paid. I also highly recommend an [egghead.io](https://egghead.io) subscription. I've been a happy subscriber for quite a while now.
+Most resources are free, but some resources you need to pay. I also highly recommend an [egghead.io](https://egghead.io) subscription. I've been a happy subscriber for quite a while now.
 
-If you have an educational stipend at work, use it. Also, a lot of public libraries give you access for free to paid resources like LinkedIn Learning. Check out your local library before purchasing certain content. Also, just a huge shoutout to public libraries. 😎
+If you have an educational stipend at work, use it. Also, many public libraries give you access for free to paid resources like LinkedIn Learning. Check out your local library before purchasing certain content. Also, just a massive shoutout to public libraries. 😎
 
-I work with Preact in my day to day and I also work with React. There are obviously other libraries and frameworks out there, but I'm going to veer away from all that in this post. The only mention I'll make is in the browser extensions section.
+I work with Preact daily, and I also work with React. There are other libraries and frameworks out there, but I will veer away from all that in this post. The browser extensions section is the only place where I'll mention frameworks and libraries.
 
-This is a work in progress, so expect this list to be updated over the course of 2022.
+This post is a work in progress, so expect this list to update throughout 2022.
 
 ## JavaScript
 
-Regardless of whether or not you start with a library or framework, at some point as a frontend developer, you will need to understand JavaScript in more depth. Here's some good resources to get you there.
+Regardless of whether or not you start with a library or framework, at some point, as a frontend developer, you will need to understand JavaScript in more depth. Here are some excellent resources to get you there.
 
 - [JavaScript 30](https://javascript30.com) – A classic care of [Wes Bos](https://wesbos.com/). These are fun projects to help solidify some JS fundamentals.
 - [JavaScript Katas](https://jskatas.org) – I found this resource a long time ago, but it's gotten a refresh in recent years. I even did a live stream of doing some of the Katas!
@@ -35,7 +35,7 @@ Regardless of whether or not you start with a library or framework, at some poin
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1472833175923478531" style="border: 0; width: 100%;"></iframe>
 
-- [Philip Roberts](https://twitter.com/philip_roberts) talk at JSConf EU "What the heck is the event loop anyway?" is a great explanation of the event loop.
+- [Philip Roberts](https://twitter.com/philip_roberts) talk at JSConf EU "What the heck is the event loop anyway?" is an excellent explanation of the event loop.
 
 {% youtube 'https://www.youtube.com/watch?v=8aGhZQkoFbQ' %}
 
@@ -45,12 +45,12 @@ Regardless of whether or not you start with a library or framework, at some poin
 
 - [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) – A great post from Jake Archibald on some more advanced stuff
 
-- [Lydia Hallie's JavaScript Visualized series on DEV](https://dev.to/lydiahallie/series/3341) – Lydia is so good at explaining concepts.
-- [Just JavaScritpt](https://justjavascript.com) – From Dan Abramaov and Maggie Appleton. Like the site says:
+- [Lydia Hallie's JavaScript Visualized series on DEV](https://dev.to/lydiahallie/series/3341) – Lydia is great at explaining concepts through visualizations.
+- [Just JavaScript](https://justjavascript.com) – From Dan Abramaov and Maggie Appleton. Like the site says:
 
 > Discover and rebuild your JavaScript mental models.
 
-- We don't go super deep in this lunch and learn, but I give some tips on how to get started debugging with JavaScript.
+- I don't go super deep in this lunch and learn, but I give some tips on how to get started with debugging JavaScript.
 
 {% youtube 'https://www.youtube.com/watch?v=I9A0Pifn0Uw' %}
 
@@ -58,15 +58,15 @@ Regardless of whether or not you start with a library or framework, at some poin
 
 TypeScript is getting more and more popular every year. Even if you're not a fan of it, it's good to be at least aware of it.
 
-- Anything by [Marius Schulz](https://mariusschulz.com) – Marius has a tonne of great blog posts about TypeScript and also has some great courses on Egghead.
-- [Practical Advanced TypeScript](https://egghead.io/courses/practical-advanced-typescript) – I really loved this course from Rares Matei
-- [The TypeScript teams 2021 type | treat series on DEV](https://dev.to/orta/series/15226) – Orta from the TypeScript team put some really great challenges together this year
-- [TypeScript Playground](https://www.typescriptlang.org/play) – The TypeScript Playground keeps improving and is a great place to just test stuff out.
-- [Learn TypeScript from the Ground Up with James Henry](https://typescriptcourses.com/typescript-fundamentals) – A really great free course from James Henry. If you enjoy it, consider buying his advanced course.
+- Anything by [Marius Schulz](https://mariusschulz.com) – Marius has a tonne of great blog posts about TypeScript and some great courses on Egghead.
+- [Practical Advanced TypeScript](https://egghead.io/courses/practical-advanced-typescript) – I loved this course from Rares Matei
+- [The TypeScript teams 2021 type | treat series on DEV](https://dev.to/orta/series/15226) – Orta from the TypeScript team put some amazing challenges together this year
+- [TypeScript Playground](https://www.typescriptlang.org/play) – The TypeScript Playground keeps improving and is a great place to test stuff out.
+- [Learn TypeScript from the Ground Up with James Henry](https://typescriptcourses.com/typescript-fundamentals) – A great free course from James Henry. If you enjoy it, consider buying his advanced course.
 
 ## CSS
 
-Let's skip the centering jokes in CSS. We're in the 2020s now and this is something fairly easy to do nowadays. Dig in and level up on your CSS.
+Let's skip the centring jokes in CSS. We're in the 2020s now, and this is something relatively easy to do nowadays. Dig in and level up on your CSS.
 
 - [Andy Bell's Modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/)
 - [Josh W. Comeau's CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
@@ -81,7 +81,7 @@ Let's skip the centering jokes in CSS. We're in the 2020s now and this is someth
 
 ## HTML
 
-If you're doing web development, longterm, it's crucial that you become familiar with semantic markup. Pass on the order for `<div />` soup.
+If you're doing web development long-term, you must become familiar with semantic markup. Pass on the order for `<div />` soup.
 
 - [MDN](https://developer.mozilla.org/en-US/) as always
 - [HTMHell](https://www.htmhell.dev) – A great site with horrible examples of HTML and how to fix them
@@ -89,20 +89,22 @@ If you're doing web development, longterm, it's crucial that you become familiar
 
 ## Accessibility
 
-Accessibility is super important and honestly, if you want to standout as a frontend developer, levelling up here is definitely a good move.
+Accessibility is super important and honestly, if you want to stand out as a frontend developer, levelling up here is a good move.
 
 - [WebAIM's contrast checker](https://webaim.org/resources/contrastchecker) – An easy way to check colour contrast
 - [ButtonBuddy](https://buttonbuddy.dev) – A fun interactive building tool to create accessible buttons
 - [Inclusive Components](https://inclusive-components.design) – A great site on how to build inclusive components
 - [5 things I'm thinking about when I check a Pull Request for accessibility](https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo) – A great checklist of things to look for when reviewing frontend related pull requests
-- [Forem Developer documentation on Accessibility](https://developers.forem.com/frontend/accessibility) – I'm biased, but I love out a11y documentation
+- [Forem Developer documentation on accessibility](https://developers.forem.com/frontend/accessibility) – I'm biased, but I love out a11y documentation
 
 ## Animations
 
+Animations are a great way of enhancing a user experience, but remember, don't add animations to your site for the sake of adding animations. Here's some great people's work to check out in this space.
+
 - [Anything by Jhey Thompkins](https://codepen.io/jh3y)
 - [Anything by Cassie Evans](https://www.cassie.codes)
-- I'm biased, but my co-worker @coffeecraftcode is a whiz when it comes to animations. Check out her [codepen profile](https://codepen.io/cgorton/) and [LinkedIn courses](https://www.linkedin.com/learning/instructors/christina-gorton). I've paired with her a bunch of times to learn about animations, so I can 100% guarantee that she knows what she's talking about.
-- [prefers-reduced-motion: Taking a no-motion-first approach to animations](https://www.tatianamac.com/posts/prefers-reduced-motion) by [Tatiana Mac](https://twitter.com/TatianaTMac) – This falls under accessibility in relation to animations, but I'm putting it here to make it stand out a bit more
+- I'm biased, but my co-worker @coffeecraftcode is a whiz when it comes to animations. Check out her [codepen profile](https://codepen.io/cgorton/) and [LinkedIn courses](https://www.linkedin.com/learning/instructors/christina-gorton). I've paired with her a bunch of times to learn about animations, so I can 100% guarantee that she knows her stuff.
+- [prefers-reduced-motion: Taking a no-motion-first approach to animations](https://www.tatianamac.com/posts/prefers-reduced-motion) by [Tatiana Mac](https://twitter.com/TatianaTMac) – This falls under accessibility concerning animations, but I'm putting it here to make it stand out a bit more
 
 ## Jamstack
 
@@ -122,12 +124,12 @@ Accessibility is super important and honestly, if you want to standout as a fron
 
 ## Testing
 
-Testing is a big topic and I'll just scratch the surface here, but knowing what to test and what kind of test is super important. At the end of the day, when you ship something, ask yourself, "Do I feel confident with shipping this?".
+Testing is a big topic, and I'll scratch the surface here, but knowing what to test is super important. At the end of the day, when you ship something, ask yourself, "Do I feel confident with shipping this?".
 
-- I'm a fan of Cypress and we use it at Forem (the software that powers dev.to). We've been building out our documentation over time, and I think it's a really great resource if you dive into end to end testing. Check out [Writing Cypress Tests](https://developers.forem.com/tests/e2e-tests#writing-cypress-tests)
+- I'm a fan of Cypress, and we use it at Forem (the software that powers dev.to). Over time, we've been building out our documentation, and I think it's a great resource if you dive into end-to-end testing. Check out [Writing Cypress Tests](https://developers.forem.com/tests/e2e-tests#writing-cypress-tests)
 - Testing library's suite of tools. Whether it's component tests in React, Svelte, plain old HTML/CSS/JS or end to end testing, [Testing Library](https://testing-library.com/) has you covered.
 
-## Cloud IDEs/full blown development environments
+## Cloud IDEs/full-blown development environments
 
 - [Gitpod](https://gitpod.io)
 - [vscode.dev](https://vscode.dev)
@@ -147,10 +149,10 @@ A lot of cool stuff is happening on The Edge. I haven't done much here, but look
 
 ## Tooling
 
-We all love tools. There's plenty to go round, but I'll just touch on a few.
+We all love tools. There's plenty to go around, but I'll touch on a few.
 
 - Storybook – [learnstorybook.com](https://learnstorybook.com)
-- If you have Node.js installed and need to configure a JavaScript based project's gitignore file, from the root of the project run `npx gitgnore node` (It works for other languages as well or if you omit the language, it will give you a list of all the supported gitignores)
+- If you have Node.js installed and need to configure a JavaScript-based project's gitignore file from the root of the project, run `npx gitgnore node` (It works for other languages as well, or if you omit the language, it will give you a list of all the supported gitignores)
 - [Parcel](https://parceljs.org)
 - [Vite](https://vitejs.dev)
 - [Turborepo](https://turborepo.org)
@@ -176,4 +178,4 @@ I'm a big fan of Twitch. I stream on my own at [livecoding.ca](https://livecodin
 - [Ben Myers](https://www.twitch.tv/SomeAnticsDev)
 - [Learn with Jason](https://www.learnwithjason.dev)
 
-I'm sure I've missed some stuff, but this is the initial brain dump. As mentioned at the beginning, I will update this over the coming year.
+I'm sure I've missed some stuff, but this is the initial brain dump. As mentioned initially, I will update this over the coming year.
