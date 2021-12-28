@@ -15,7 +15,7 @@ This is not a complete list, more a list of stuff I found compelling in 2021 tha
 
 Most resources are free, but some are paid. I also highly recommend an [egghead.io](https://egghead.io) subscription. I've been a happy subscriber for quite a while now.
 
-If you have an educational stipend, I highly recommend egghead. Also, a lot of public libraries give you access for free to paid resources like LinkedIn Learning. Check out your local library before purchasing certain content. Also, just a huge shoutout to public libraries. 😎
+If you have an educational stipend at work, use it. Also, a lot of public libraries give you access for free to paid resources like LinkedIn Learning. Check out your local library before purchasing certain content. Also, just a huge shoutout to public libraries. 😎
 
 I work with Preact in my day to day and I also work with React. There are obviously other libraries and frameworks out there, but I'm going to veer away from all that in this post. The only mention I'll make is in the browser extensions section.
 
