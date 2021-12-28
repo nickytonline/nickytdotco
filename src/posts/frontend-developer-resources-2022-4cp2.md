@@ -6,6 +6,7 @@ tags:
   - javascript
   - html
   - css
+  - typescript
 template: post
 ---
 
@@ -25,8 +26,11 @@ This is a work in progress, so expect this list to be updated over the course of
 
 Regardless of whether or not you start with a library or framework, at some point as a frontend developer, you will need to understand JavaScript in more depth. Here's some good resources to get you there.
 
-- [JavaScript 30](https://javascript30.com)
-- [JavaScript Katas](https://jskatas.org)
+- [JavaScript 30](https://javascript30.com) – A classic care of [Wes Bos](https://wesbos.com/). These are fun projects to help solidify some JS fundamentals.
+- [JavaScript Katas](https://jskatas.org) – I found this resource a long time ago, but it's gotten a refresh in recent years. I even did a live stream of doing some of the Katas!
+
+{% youtube 'https://www.youtube.com/watch?v=9CY9tTyTWfs' %}
+
 - [patterns.dev](https://www.patterns.dev)
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1472833175923478531" style="border: 0; width: 100%;"></iframe>
@@ -39,19 +43,21 @@ Regardless of whether or not you start with a library or framework, at some poin
 
 {% youtube 'https://www.youtube.com/watch?v=cCOL7MC4Pl0' %}
 
-- [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
+- [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) – A great post from Jake Archibald on some more advnaced stuff
 
-- [Lydia Hallie's JavaScript Visualized series on DEV](https://dev.to/lydiahallie/series/3341)
+- [Lydia Hallie's JavaScript Visualized series on DEV](https://dev.to/lydiahallie/series/3341) – Lydia is so good at explaining concepts.
+- [Just JavaScritpt](https://justjavascript.com) – From Dan Abramaov and Maggie Appleton. Like the site says, "
+  Discover and rebuild your JavaScript mental models."
 
 ## TypeScript
 
 TypeScript is getting more and more popular every year. Even if you're not a fan of it, it's good to be at least aware of it.
 
-- Anything by [Marius Schulz](https://mariusschulz.com)
-- [Practical Advanced TypeScript](https://egghead.io/courses/practical-advanced-typescript)
-- [The TypeScript teams 2021 type | treat series on DEV](https://dev.to/orta/series/15226)
-- [TypeScript Playground](https://www.typescriptlang.org/play)
-- [Learn TypeScript from the Ground Up with James Henry](https://typescriptcourses.com/typescript-fundamentals)
+- Anything by [Marius Schulz](https://mariusschulz.com) – Marius has a tonne of great blog posts about TypeScript and also has some great courses on Egghead.
+- [Practical Advanced TypeScript](https://egghead.io/courses/practical-advanced-typescript) – I really loved this course from Rares Matei
+- [The TypeScript teams 2021 type | treat series on DEV](https://dev.to/orta/series/15226) – Orta from the TypeScript team put some really great challenges together this year
+- [TypeScript Playground](https://www.typescriptlang.org/play) – The TypeScript Playground keeps improving and is a great place to just test stuff out.
+- [Learn TypeScript from the Ground Up with James Henry](https://typescriptcourses.com/typescript-fundamentals) – A really great free course from James Henry. If you enjoy it, consider buying his advanced course.
 
 ## CSS
 
@@ -71,15 +77,18 @@ Let's skip the centering jokes in CSS. We're in the 2020's now and this is somet
 ## HTML
 
 - [MDN](https://developer.mozilla.org/en-US/) as always
-- [HTMLHell](https://www.htmhell.dev)
+- [HTMHell](https://www.htmhell.dev) – A great site with horrible examples of HTML and how to fix them
+- [Periodic table of HTML elements](https://madebymike.github.io/html5-periodic-table) – A fun spin on the classic periodic table
 
 ## Accessibility
 
-- [WebAIM's contrast checker](https://webaim.org/resources/contrastchecker)
-- [ButtonBuddy](https://buttonbuddy.dev)
-- [Inclusive Components](https://inclusive-components.design)
-- [5 things I'm thinking about when I check a Pull Request for accessibility](https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo)
-- [Forem Developer documentation on Accessibility](https://developers.forem.com/frontend/accessibility)
+Accessibility is super important and honestly, if you want to standout as a frontend developer, levelling up here is definitely a good move.
+
+- [WebAIM's contrast checker](https://webaim.org/resources/contrastchecker) – An easy way to check colour contrast
+- [ButtonBuddy](https://buttonbuddy.dev) – A fun interactive building tool to create accessible buttons
+- [Inclusive Components](https://inclusive-components.design) – A great site on how to build inclusive components
+- [5 things I'm thinking about when I check a Pull Request for accessibility](https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo) – A great checklist of things to look for when reviewing frontend related pull requests
+- [Forem Developer documentation on Accessibility](https://developers.forem.com/frontend/accessibility) – I'm biased, but I love out a11y documentation
 
 ## Animations
 
