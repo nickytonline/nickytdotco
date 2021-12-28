@@ -25,24 +25,6 @@ body {
   flex-direction: column;
 }
 
-aside {
-  display: grid;
-  justify-content: center;
-  margin: 1rem;
-}
-
-aside a {
-  &,
-  &:visited {
-    color: var(--color-theme-primary);
-    text-decoration: none;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 main {
   flex: 1 0 auto;
   &:focus {
