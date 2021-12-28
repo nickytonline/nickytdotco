@@ -5,11 +5,18 @@
     --flow-space: #{get-size(500)};
     font-size: get-size(500);
 
-    a {
+    a:not([class]) {
       color: currentColor;
+      position: relative;
+      display: inline-block;
+      text-underline-offset: 0.2em;
+      text-decoration: underline;
+      word-break: break-word;
+
+      @include apply-utility('leading', 'tight');
 
       &:hover {
-        text-decoration: none;
+        text-decoration-style: wavy;
       }
     }
   }
