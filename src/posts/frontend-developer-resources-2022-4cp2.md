@@ -10,7 +10,7 @@ tags:
 template: post
 ---
 
-I don't know if I'll keep doing this every year, but I did one of these in 2020 and that post got some good signal, so I renamed it to Frontend Developer Resources 2020 which brings us to Frontend Developer Resources 2022. Oops, I missed 2021. Technically we're still in 2021, but humour me. 😎
+I don't know if I'll keep doing this every year, but I did one of these in 2020 and that post got some good signal, so I renamed it to Frontend Developer Resources 2020 which brings us to Frontend Developer Resources 2022. Oops, I missed 2021. Technically we're still in 2021, but humour me. Sprinkles of shameless plugs will also be included. 😎
 
 This is not a complete list, more a list of stuff I found compelling in 2021 that will keep you set in 2022 and on and builds off of my previous list. You may see some repeats in here from my previous post, but that's only because they're still super relevant.
 
@@ -43,11 +43,16 @@ Regardless of whether or not you start with a library or framework, at some poin
 
 {% youtube 'https://www.youtube.com/watch?v=cCOL7MC4Pl0' %}
 
-- [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) – A great post from Jake Archibald on some more advnaced stuff
+- [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) – A great post from Jake Archibald on some more advanced stuff
 
 - [Lydia Hallie's JavaScript Visualized series on DEV](https://dev.to/lydiahallie/series/3341) – Lydia is so good at explaining concepts.
-- [Just JavaScritpt](https://justjavascript.com) – From Dan Abramaov and Maggie Appleton. Like the site says, "
-  Discover and rebuild your JavaScript mental models."
+- [Just JavaScritpt](https://justjavascript.com) – From Dan Abramaov and Maggie Appleton. Like the site says:
+
+> Discover and rebuild your JavaScript mental models.
+
+- We don't go super deep in this lunch and learn, but I give some tips on how to get started debugging with JavaScript.
+
+{% youtube 'https://www.youtube.com/watch?v=I9A0Pifn0Uw' %}
 
 ## TypeScript
 
@@ -61,7 +66,7 @@ TypeScript is getting more and more popular every year. Even if you're not a fan
 
 ## CSS
 
-Let's skip the centering jokes in CSS. We're in the 2020's now and this is something fairly easy to do nowadays. Dig in and level up on your CSS.
+Let's skip the centering jokes in CSS. We're in the 2020s now and this is something fairly easy to do nowadays. Dig in and level up on your CSS.
 
 - [Andy Bell's Modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/)
 - [Josh W. Comeau's CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
@@ -75,6 +80,8 @@ Let's skip the centering jokes in CSS. We're in the 2020's now and this is somet
 - [A Primer On CSS Container Queries](https://www.smashingmagazine.com/2021/05/complete-guide-css-container-queries)
 
 ## HTML
+
+If you're doing web development, longterm, it's crucial that you become familiar with semantic markup. Pass on the order for `<div />` soup.
 
 - [MDN](https://developer.mozilla.org/en-US/) as always
 - [HTMHell](https://www.htmhell.dev) – A great site with horrible examples of HTML and how to fix them
@@ -94,7 +101,8 @@ Accessibility is super important and honestly, if you want to standout as a fron
 
 - [Anything by Jhey Thompkins](https://codepen.io/jh3y)
 - [Anything by Cassie Evans](https://www.cassie.codes)
-- My co-worker @coffeecraftcode is a whiz when it comes to animations as well. Check out her [codepen profile](https://codepen.io/cgorton/) and [LinkedIn courses](https://www.linkedin.com/learning/instructors/christina-gorton). I've paired with her a bunch of times to learn about animations, so I can 100% guarantee that she knows what she's talking about.
+- I'm biased, but my co-worker @coffeecraftcode is a whiz when it comes to animations. Check out her [codepen profile](https://codepen.io/cgorton/) and [LinkedIn courses](https://www.linkedin.com/learning/instructors/christina-gorton). I've paired with her a bunch of times to learn about animations, so I can 100% guarantee that she knows what she's talking about.
+- [prefers-reduced-motion: Taking a no-motion-first approach to animations](https://www.tatianamac.com/posts/prefers-reduced-motion) by [Tatiana Mac](https://twitter.com/TatianaTMac) – This falls under accessibility in relation to animations, but I'm putting it here to make it stand out a bit more
 
 ## Jamstack
 
@@ -114,6 +122,8 @@ Accessibility is super important and honestly, if you want to standout as a fron
 
 ## Testing
 
+Testing is a big topic and I'll just scratch the surface here, but knowing what to test and what kind of test is super important. At the end of the day, when you ship something, ask yourself, "Do I feel confident with shipping this?".
+
 - I'm a fan of Cypress and we use it at Forem (the software that powers dev.to). We've been building out our documentation over time, and I think it's a really great resource if you dive into end to end testing. Check out [Writing Cypress Tests](https://developers.forem.com/tests/e2e-tests#writing-cypress-tests)
 - Testing library's suite of tools. Whether it's component tests in React, Svelte, plain old HTML/CSS/JS or end to end testing, [Testing Library](https://testing-library.com/) has you covered.
 
@@ -126,7 +136,18 @@ Accessibility is super important and honestly, if you want to standout as a fron
 - [CodeSandbox](https://codesandbox.io)
 - [vscodetips.com](https://vscodetips.com) – a community discussing all things VS Code including cloud IDEs. Full disclosure that this is a shameless plug. It's a new community I started this year.
 
+## Living on the Edge
+
+A lot of cool stuff is happening on The Edge. I haven't done much here, but looking to level up in 2022.
+
+- [Cloudflare Workers](https://workers.cloudflare.com) – Includes stuff like Durable Objects, key value stores etc.
+- [Cloudflare Pages](https://pages.cloudflare.com)
+- [Netlify Edge Handlers](https://www.netlify.com/products/edge/edge-handlers)
+- [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions)
+
 ## Tooling
+
+We all love tools. There's plenty to go round, but I'll just touch on a few.
 
 - Storybook – [learnstorybook.com](https://learnstorybook.com)
 - If you have Node.js installed and need to configure a JavaScript based project's gitignore file, from the root of the project run `npx gitgnore node` (It works for other languages as well or if you omit the language, it will give you a list of all the supported gitignores)
@@ -138,11 +159,15 @@ Accessibility is super important and honestly, if you want to standout as a fron
 
 ## Books
 
+These are some great reads.
+
 - [Move Things With CSS](https://jh3y.gumroad.com/l/move-things-with-css)
 - [TypeScript in 50 Lessons](https://typescript-book.com)
 - [Inclusive Components: The Book](http://book.inclusive-components.design/)
 
 ## Twitch Streams
+
+I'm a big fan of Twitch. I stream on my own at [livecoding.ca](https://livecoding.ca) as well as on the [DEV Twitch stream](https://www.twitch.tv/thepracticaldev). Here are some great folks you should be watching.
 
 - [TrostCodes](https://www.twitch.tv/trostcodes)
 - [Stephanie Eckles](https://www.twitch.tv/5t3phdev)
