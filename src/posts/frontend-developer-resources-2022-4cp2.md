@@ -115,12 +115,12 @@ Animations are a great way of enhancing a user experience, but remember, don't a
 
 ## Browser Extensions
 
-- [WAVE](https://wave.webaim.org/extension)
-- [axe](https://www.deque.com/axe/browser-extensions)
-- [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview/)
+- [WAVE](https://wave.webaim.org/extension) – "evaluate web content for accessibility issues directly within your browser"
+- [axe](https://www.deque.com/axe/browser-extensions) – "test your web applications to help identify and resolve common accessibility issues"
+- [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview/) – "helps developers find and fix accessibility issues in web apps and sites"
 - If you're working with React: React DevTools ([Chromium based browsers](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) | [Firefox](https://addons.mozilla.org/en-CA/firefox/addon/react-devtools))
 - If you're working with Preact: [Preact DevTools](https://preactjs.github.io/preact-devtools/)
-- [VisBug](https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc?hl=en) (Chromium based browsers only)
+- [VisBug](https://github.com/GoogleChromeLabs/ProjectVisBug#installation) – Open source web design debug tools
 
 ## Testing
 
