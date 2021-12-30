@@ -56,6 +56,18 @@
       }
     }
 
+    .ltag__link a:not([class]) {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+
+        h2 {
+          text-decoration: underline;
+        }
+      }
+    }
+
     code {
       font-size: 1.2em;
       color: var(--color-theme-primary);
