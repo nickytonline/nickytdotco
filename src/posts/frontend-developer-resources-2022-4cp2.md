@@ -94,8 +94,10 @@ Accessibility is super important and honestly, if you want to stand out as a fro
 - [WebAIM's contrast checker](https://webaim.org/resources/contrastchecker) – An easy way to check colour contrast
 - [ButtonBuddy](https://buttonbuddy.dev) – A fun interactive building tool to create accessible buttons
 - [Inclusive Components](https://inclusive-components.design) – A great site on how to build inclusive components
-- [5 things I'm thinking about when I check a Pull Request for accessibility](https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo) – A great checklist of things to look for when reviewing frontend related pull requests
 - [Forem Developer documentation on accessibility](https://developers.forem.com/frontend/accessibility) – I'm biased, but I love our a11y documentation
+- 5 things I'm thinking about when I check a Pull Request for accessibility – A great checklist of things to look for when reviewing frontend related pull requests
+
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https:%2F%2Fdev.to%2Fs_aitchison%2F5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo" style="border: 0; width: 100%;"></iframe>
 
 ## Animations
 
