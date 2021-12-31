@@ -60,7 +60,7 @@ TypeScript is getting more and more popular every year. Even if you're not a fan
 
 - Anything by [Marius Schulz](https://mariusschulz.com) – Marius has a tonne of great blog posts about TypeScript and some great courses on Egghead.
 - [Practical Advanced TypeScript](https://egghead.io/courses/practical-advanced-typescript) – I loved this course from Rares Matei
-- [The TypeScript teams 2021 type | treat series on DEV](https://dev.to/orta/series/15226) – Orta from the TypeScript team put some amazing challenges together this year
+- [The TypeScript team's 2021 type | treat series on DEV](https://dev.to/orta/series/15226) – Orta from the TypeScript team put some amazing challenges together this year
 - [TypeScript Playground](https://www.typescriptlang.org/play) – The TypeScript Playground keeps improving and is a great place to test stuff out.
 - [Learn TypeScript from the Ground Up with James Henry](https://typescriptcourses.com/typescript-fundamentals) – A great free course from James Henry. If you enjoy it, consider buying his advanced course.
 
