@@ -73,7 +73,7 @@ It's funny how this section of my year in review is short, but nonetheless, I ma
 
 - I got end-to-end (E2E) testing in place
 - Revived Gitpod in time for Hacktoberfest for Forem
-- Mentored and paired a tonne
+- Mentored and paired a tonne (outside of work too)
 - Shipped features
 - Worked a lot with the community (we're open source)
 
