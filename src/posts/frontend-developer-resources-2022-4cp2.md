@@ -114,6 +114,7 @@ Animations are a great way of enhancing a user experience, but remember, don't a
 - [jamstack.org](https://jamstack.org)
 - [Incremental Static Regeneration](https://vercel.com/docs/concepts/next.js/incremental-static-regeneration)
 - [Distributed Persistent Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds)
+- [Understanding Rendering in the Jamstack](https://bejamas.io/blog/understanding-rendering-in-the-jamstack)
 
 ## Browser Extensions
 
