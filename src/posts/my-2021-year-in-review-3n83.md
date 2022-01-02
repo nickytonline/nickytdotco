@@ -142,6 +142,8 @@ How it's going
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1476037817553895427" style="border: 0; width: 100%;"></iframe>
 
+More [2021 highlights on Polywork](https://timeline.iamdeveloper.com/nickytonline/collections/846281)!
+
 Stay safe friends and see you in 2022!
 
 Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/s/photos/2021?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
