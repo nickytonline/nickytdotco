@@ -88,3 +88,7 @@ img {
 @import 'components/skip-link';
 @import 'components/syntax-highlighting';
 @import 'components/video-player';
+
+.theme-toggle .button {
+  border-radius: 50%;
+}
