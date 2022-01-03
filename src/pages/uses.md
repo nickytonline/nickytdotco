@@ -26,7 +26,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [WAVE](https://wave.webaim.org/extension/) - For web accessibility testing
 - [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 - [uBlock](https://ublock.org/)
-- [Language Tool](https://languagetool.org/) - A grammar and spell checking tool
+- [Grammarly](https://grammarly.com/) - A grammar and spell checking tool
 - [Pocket](https://getpocket.com/) - For bookmarking stuff to read
 - [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) - A prettified view of JSON payloads
 - [Productive Twitter](https://chrome.google.com/webstore/detail/productive-twitter/elgfikcdihncknnnedljbbignlmnppii) - Zen mode for
@@ -55,6 +55,14 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Insomnia](https://insomnia.rest) - For exploring REST and GraphQL APIs
 - [Descript](https://www.descript.com/) - For editing my Twitch streams so they can be published to YouTube.
 - [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to Zoom in my webcam.
+- [Cleanshot X](https://cleanshot.com/) - For better screen shots and screen recordings
+- [Cloudflare Warp](https://blog.cloudflare.com/1111-warp-better-vpn/) - Faster Internet and some VPN goodness
+- [Plash](https://apps.apple.com/us/app/plash/id1494023538) - An interactive desktop background (one or more web pages) for your Mac
+- [Krisp](https://krisp.ai/) - Filter out unwanted noise on calls and streams
+- [GPG Suite](https://gpgtools.org/) - For all things GPG
+- [Fig](https://fig.io) - VSCode style autocomplete in your terminal
+- [Figma](https://www.figma.com/) - Design collaboratively on the web
+- [Loopback](https://rogueamoeba.com/loopback/) - Great for virtual audio sources
 
 ## CLIs
 
@@ -63,6 +71,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [GitHub CLI](https://github.com/cli/cli) - GitHub on the command line. Great for creating PRs, etc.
 - [rbenv](https://github.com/rbenv/rbenv) - Ruby version manager
 - [nvm](https://github.com/nvm-sh/nvm) - Node version manager
+- [ngrok](https://ngrok.com/) - Exposes local servers to the public internet over secure tunnels
 
 ## Additional Resources
 
