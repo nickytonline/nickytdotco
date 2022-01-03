@@ -36,8 +36,7 @@
     "start": "npm run sass:process -- --watch & npm run serve -- --incremental",
     "serve": "eleventy --serve",
     "preproduction": "npm run sass:process",
-    "production": "NODE_ENV=production eleventy",
-    "watch": "eleventy --watch"
+    "production": "NODE_ENV=production eleventy"
   },
   "repository": {
     "type": "git",
