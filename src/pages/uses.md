@@ -42,7 +42,6 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Fork](https://git-fork.com/) - A great git GUI
 - [Obsidian](https://obsidian.md) - Note Taking/My Second Brain
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) - Because Docker
-- [Sizzy](https://sizzy.app) - Test your app/site for various devices/screen resolutions
 - [xScope](https://xscope.app) - Awesome toolset for frontend development. Rulers, guides etc.
 - [Dato](https://sindresorhus.com/dato) - A better date app for MacOS.
 - [iTerm](https://iterm2.com/) - A better terminal for MacOS
