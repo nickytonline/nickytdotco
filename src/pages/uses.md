@@ -62,6 +62,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Fig](https://fig.io) - VSCode style autocomplete in your terminal
 - [Figma](https://www.figma.com/) - Design collaboratively on the web
 - [Loopback](https://rogueamoeba.com/loopback/) - Great for virtual audio sources
+- [CleanMyMac X](https://macpaw.com/cleanmymac)
 
 ## CLIs
 
