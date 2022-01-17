@@ -7,7 +7,7 @@ metaDesc: Nick Taylor, a sofware engineer with a focus on the front-end.
 
 I am a Lead Software Engineer with a focus on the front-end at [Forem](https://forem.com), the software that powers communities like [dev.to](https://dev.to) and the [CodeNewbie community](https://community.codenewbie.org).
 
-I co-host the [DEV Twitch stream](https://www.twitch.tv/thepracticaldev), and also stream at [livecoding.ca](https://livecoding.ca).
+I host the [DEV Twitch stream](https://www.twitch.tv/thepracticaldev), and also stream at [livecoding.ca](https://livecoding.ca).
 
 Furthermore, I am a <em>big</em> fan of TypeScript, JavaScript, (P)React and Node. Once upon a time, I was into C#/ASP.NET. Aside from programming, I enjoy contributing to open source, hitting the gym, snowboarding, and a long long time ago, rugby.
 
