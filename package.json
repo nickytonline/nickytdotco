@@ -18,7 +18,7 @@
   "devDependencies": {
     "@erquhart/rollup-plugin-node-builtins": "^2.1.5",
     "luxon": "^1.25.0",
-    "node-fetch": "^2.6.6",
+    "node-fetch": "^2.6.7",
     "prettier": "^1.19.1"
   },
   "scripts": {
