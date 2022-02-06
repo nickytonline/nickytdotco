@@ -241,3 +241,9 @@ from = "/hacktoberfest2021/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vTUIycMPdV3wRo_nLOhfpiYiUYeML5Bvu4aA1W692VOsvA5p3XIQEC-Y5fPEGWk4uGkpP_z2QNJkJGR/pub?start=false&loop=false&delayms=5000"
 status = 301
 force = true
+
+[[redirects]]
+from = "/codementor2022/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vQWw0j07xs3gzh8QOUQH6V5kdtX6xPCMmdnSWBfcniNUgqPTYDeMm2CB3BzdiTG0LOKKKg-Ky8r21ko/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
