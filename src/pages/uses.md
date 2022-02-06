@@ -63,7 +63,6 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Figma](https://www.figma.com/) - Design collaboratively on the web
 - [Loopback](https://rogueamoeba.com/loopback/) - Great for virtual audio sources
 - [CleanMyMac X](https://macpaw.com/cleanmymac)
-- [Rectangle](https://rectangleapp.com/) - Great for window management
 
 ## CLIs
 
@@ -80,7 +79,7 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 
 ## Office Setup
 
-- [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://www.bestbuy.ca/en-ca/product/motiongrey-adjustable-dual-motors-electric-sit-to-stand-computer-office-standing-desk-black-frame-table-top-included/12852211) - I snagged it at a great price. It appears to go on sale often.
+- [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141) - I snagged it at a great price. It appears to go on sale often.
 - Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with a bunch of new parts for just under a third of the price.
 - [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
 - Macbook Pro 2019 16"
