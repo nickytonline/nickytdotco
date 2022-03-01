@@ -82,7 +82,7 @@ Also, for those interested, here’s a big list I made for [Frontend Developer R
 - [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141) - I snagged it at a great price. It appears to go on sale often.
 - Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with a bunch of new parts for just under a third of the price.
 - [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
-- Macbook Pro 2019 16"
+- Macbook Pro 14" (2021)
 - [Apple Magic Trackpad 2](https://www.apple.com/shop/product/MRMF2LL/A/magic-trackpad-2-space-gray)
 - [Apple Magic Keyboard with Numeric Keypad](https://www.apple.com/shop/product/MQ052B/A/magic-keyboard-with-numeric-keypad-british-english-silver)
 - [Sony WH-1000XM3](https://www.sony.ca/en/electronics/headband-headphones/wh-1000xm3) headphones - I snagged them during Boxing Day week.
