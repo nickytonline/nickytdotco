@@ -34,7 +34,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 
 ## Desktop Apps
 
-- [Vanilla](https://matthewpalmer.net/vanilla/) - A great app for hiding icons in your menu bar
+- [Bartender](https://www.macbartender.com) - For managing your menu bar. I used to use [Vanilla](https://matthewpalmer.net/vanilla/), but with the notch in newer MacBook Pros, Bartender made the menubar more usable when dealing with lots of menubar icons.
 - [Rocket](https://matthewpalmer.net/rocket/) - Emojis, emojis
 - [Raycast](https://raycast.com) - Workflows, snippets, MacOS spotlight on steroids. I was previously using [Alfred](https://www.alfredapp.com/), another amazing Spotlight alternative.
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12) - Prevent your Mac from going to sleep
