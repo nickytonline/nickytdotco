@@ -33,4 +33,4 @@ metaDesc: 'Live Coding and other streaming projects that Nick Taylor does.'
 
 <p>I also stream on <a href="https://livecoding.ca">my own Twitch channel</a>, but I've been busier with the DEV Twitch stream lately. I'm looking to do more on my own channel in 2022.</p>
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/eSVxhbbfT34" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/dW5BEB9kRK4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
