@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/what-s-a-great-show-or-movie-you-watched-recently-39o7
 title: What's a great show or movie you watched recently?
 date: '2019-10-28T00:51:15.516Z'
 excerpt: "Photo by Georgia Vagim on Unsplash  I just finished watching Living with Yourself on Netflix.  Big \U0001F44D..."
@@ -13,20 +12,18 @@ canonical_url: >-
   https://dev.to/nickytonline/what-s-a-great-show-or-movie-you-watched-recently-39o7
 template: post
 ---
+
 Photo by [Georgia Vagim](https://unsplash.com/@georgiavagim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/popcorn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 I just finished watching Living with Yourself on Netflix.
 
 Big 👍
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/youtube?args=5w54yW2Ur50" style="border: 0; width: 100%;"></iframe>
-
 
 What's a great show or movie you watched recently?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/what-s-a-great-show-or-movie-you-watched-recently-39o7)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/what-s-a-great-show-or-movie-you-watched-recently-39o7)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -38,4 +35,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

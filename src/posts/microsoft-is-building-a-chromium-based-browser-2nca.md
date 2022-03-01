@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/microsoft-is-building-a-chromium-based-browser-2nca
 title: "Microsoft is building a Chromium based browser! \U0001F632"
 date: '2018-12-04T04:07:55.045Z'
 excerpt: >-
@@ -19,24 +18,19 @@ canonical_url: >-
 template: post
 ---
 
-
 Photo by [yu tang](https://unsplash.com/@tangyu) on [Unsplash](https://unsplash.com)
 
 This tweet says it all. Holy cow. Did not see that coming.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1069803607170695169" style="border: 0; width: 100%;"></iframe>
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1069762090708160513" style="border: 0; width: 100%;"></iframe>
-
 
 It's definitely good news for web devs. I also wonder if the move is to help push forward [Desktop PWAs](https://medium.com/dailyjs/goodbye-electron-hello-desktop-pwas-f316b8f39882) on Windows?
 
 What are your thoughts on Microsoft's move?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/microsoft-is-building-a-chromium-based-browser-2nca)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/microsoft-is-building-a-chromium-based-browser-2nca)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -48,4 +42,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

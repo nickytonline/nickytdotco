@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/take-chances-and-standout-because-who-knows-3kh6
 title: Take chances and stand out
 date: '2019-01-05T18:40:00.000Z'
 excerpt: >-
@@ -18,20 +17,17 @@ canonical_url: >-
 template: post
 ---
 
-
 This is my first time writing a post about career advice. This kind of advice is definitely not a one size fits all. Everyone has their own experiences, circumstances etc., but hopefully some of what I discuss will resonate with you.
 
 In May of 2016, I decided to embark with a startup and live in Barcelona for the summer in a front-end focused developer role using React, TypeScript, Node and other goodies. My bosses and I (future Montreal office) were in Barcelona to learn the business, help get the office in Spain staffed and then the plan was to return to Montreal to open the Montreal office.
 
 The risk for me was that although I had just over a year of professional TypeScript experience and plenty of JavaScript under the belt, I had no professional experience with React or Node (aside from some build tools) and had only ever had mainly full-stackish roles all in the .NET ecosystem. In the past, when opportunities like this would come around, I would have said to myself, you’re not what they’re looking for. But I had already been interviewing for JS full-stack and front-end roles, so I knew this was what I wanted. And so I took the plunge. It was probably the best decision in my career as it put me on the path that I really wanted to be on.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=970335487071342593" style="border: 0; width: 100%;"></iframe>
-
 
 Although I had no professional React experience, I had started to contribute to a pretty popular React/Redux boilerplate called [React Slingshot](https://github.com/coryhouse/react-slingshot/commits?author=nickytonline) (eventually I was [asked to become a maintainer](%5Bhttps://github.com/coryhouse/react-slingshot/pull/298# issuecomment-258616537%5D) and accepted 😉) to help me learn React along with [Dan Abramov](https://dev.to/dan_abramov)’s awesome free egghead.io Redux Course. With that under my belt, I took off for Barcelona.
 
-![Do it Ben Stiller Meme](https://media.giphy.com/media/wi8Ez1mwRcKGI/giphy.gif "Do it Ben Stiller Meme")
+![Do it Ben Stiller Meme](https://media.giphy.com/media/wi8Ez1mwRcKGI/giphy.gif 'Do it Ben Stiller Meme')
 
 I met/worked with a lot of great people, got to head to London a couple of times to visit/work with my UK co-workers and finished off the summer by spending a bit of downtime on the coast of Spain as well as seeing a free (thank you Tourism Andorra) outdoor show of Cirque du Soleil's [Scalada : Vision](https://visitandorra.com/en/agenda/scalada-vision-by-cirque-du-soleil-2016/) in Andorra in the mountains.
 
@@ -45,19 +41,17 @@ While I was interviewing for a new job at several places last summer/fall, Khan 
 
 I wasn't expecting to hear back from them, but eventually I did. I initially corresponded with one of their talent recruiters via e-mail who set me up with an interview with my potential Engineering manager. That interview seem to go well, and I mentioned that [I had put up a PR](https://github.com/Khan/tota11y/pull/131) for their t0ta11y project.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2FKhan%2Ftota11y" style="border: 0; width: 100%;"></iframe>
-
 
 Here's a screen capture of my PR in action
 
-![t0ta11y browser extension screen capture](https://www.iamdeveloper.com/static/t0ta11y-screen-capture-b30522dad097e6a4c9193e75dcd0bab5.gif "t0ta11y browser extension screen capture")
+![t0ta11y browser extension screen capture](https://www.iamdeveloper.com/static/t0ta11y-screen-capture-b30522dad097e6a4c9193e75dcd0bab5.gif 't0ta11y browser extension screen capture')
 
 I was lucky enough to get a second interview, with none other than [John Resig](https://johnresig.com), the creator of [jQuery](https://jquery.com). I did not know that he was working at Khan, so I was a little nervous but excited at the same time. I got to speak with John for a solid hour about front-end. It was amazing.
 
 <center>
 
-![awesome giphy meme](https://media.giphy.com/media/Z6f7vzq3iP6Mw/giphy.gif "awesome giphy meme")
+![awesome giphy meme](https://media.giphy.com/media/Z6f7vzq3iP6Mw/giphy.gif 'awesome giphy meme')
 
 </center>
 
@@ -74,14 +68,13 @@ So remember:
 
 <center>
 
-![follow your dreams giphy meme](https://media.giphy.com/media/htmzQfHfZF9wQ/giphy-downsized.gif "follow your dreams giphy meme")
+![follow your dreams giphy meme](https://media.giphy.com/media/htmzQfHfZF9wQ/giphy-downsized.gif 'follow your dreams giphy meme')
 
 </center>
 
 Photo by [Nick Ewings](https://unsplash.com/photos/7cLIUI6rVDc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/standout?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -93,4 +86,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

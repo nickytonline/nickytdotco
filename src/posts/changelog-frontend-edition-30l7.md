@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/changelog-frontend-edition-30l7
 title: 'Changelog: Frontend Edition'
 date: '2020-06-24T19:09:12.079Z'
 excerpt: I Tweeted this out last week that we moved to Preact X and Testing Library....
@@ -15,27 +14,27 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/changelog-frontend-edition-30l7/'
 template: post
 ---
+
 I Tweeted this out last week that we moved to Preact X and Testing Library.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1273706469096140802" style="border: 0; width: 100%;"></iframe>
-
 
 Let’s dig in to all the improvements we’ve been making in the frontend.
 
 ## Preact X
 
 DEV is now running Preact X (currently 10.4.4 at the time of writing this post). I followed the [official Preact X upgrade guide](https://preactjs.com/guide/v10/upgrade-guide/) to move us from 8.5.2 to 10.4.4. So, what does the new version of Preact give us as developers? You can read about all the new things in the [What’s new in Preact X
-](https://preactjs.com/guide/v10/whats-new/) post on the Preact site. In a nutshell, a lot of the functionality that was previously only available in React is now available in Preact as well—hooks, fragments, context, 
+](https://preactjs.com/guide/v10/whats-new/) post on the Preact site. In a nutshell, a lot of the functionality that was previously only available in React is now available in Preact as well—hooks, fragments, context,
 `componentDidCatch`
- to name a few.
+to name a few.
 
 ## Testing Library
+
 DEV has moved away from [preact-render-spy](https://github.com/mzgoddard/preact-render-spy) and [preact-render-to-json](https://github.com/nathancahill/preact-render-to-json) for a couple of reasons. The main one was that neither of these tools were working with the Preact upgrade. The second is that the official React documentation recommends [react-testing-library](https://testing-library.com/docs/react-testing-library) and [Jest](https://jestjs.io/) as the tools of choice when working with React components. For those reasons, we moved to [preact-testing-library](https://github.com/testing-library/preact-testing-library), a project that is also a part of the [Testing Library](https://testing-library.com/) family.
 
-As part of the move, we deprecated the usage of snapshot testing except for in design system components. I am still fairly new to [Testing Library](https://testing-library.com/), but have found it to be fairly intuitive and it encourages building accessible applications. I’m also a big fan of the 
+As part of the move, we deprecated the usage of snapshot testing except for in design system components. I am still fairly new to [Testing Library](https://testing-library.com/), but have found it to be fairly intuitive and it encourages building accessible applications. I’m also a big fan of the
 `debug()`
- function.
+function.
 
 ### Accessibility (a11y) Testing
 
@@ -45,21 +44,16 @@ When jest-axe is used in conjunction with preact-testing-library, we get notifie
 
 A typical a11y test in a component test file looks like this.
 
-
 ```javascript
-  it('should have no a11y violations', async () => {
-    const { container } = render(
-      <MyComponent />,
-    );
-    const results = await axe(container);
+it('should have no a11y violations', async () => {
+  const {container} = render(<MyComponent />);
+  const results = await axe(container);
 
-    expect(results).toHaveNoViolations();
-  });
+  expect(results).toHaveNoViolations();
+});
 ```
 
-
 And when this test fails, you are presented with readable errors to fix the a11y issues.
-
 
 ```bash
 expect(received).toHaveNoViolations(expected)
@@ -80,19 +74,17 @@ expect(received).toHaveNoViolations(expected)
       Element's default semantics were not overridden with role="none"
       Element has no title attribute or the title attribute is empty
 
-    You can find more information on this issue here: 
+    You can find more information on this issue here:
     https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI
 ```
 
-
 ## More Frontend Updates!
+
 ### Storybook Updates
 
 In May, I wrote an update about our usage of Storybook.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fchangelog-dev-has-some-stories-for-you-15kn" style="border: 0; width: 100%;"></iframe>
-
 
 Since then, we’ve continued to use Storybook to build out design system components and some critical application components. Moving to Preact X has allowed us to finally start using some more powerful Storybook addons. I mentioned a11y testing above, so to complement this, we added the [Storybook a11y addon](https://github.com/storybookjs/storybook/tree/master/addons/a11y).
 
@@ -108,7 +100,6 @@ You can view DEV's work in progress Storybook [here](https://storybook.forem.com
 
 There are no big changes to our Jest setup, just a few tweaks. First off, as we have been testing more in the frontend, our code coverage has been increasing. So as coverage goes up, we want to avoid any drop in coverage, so we added coverage thresholds to our Jest configuration.
 
-
 ```javascript
 module.exports = {
   ...
@@ -122,7 +113,6 @@ module.exports = {
   },
 ...
 ```
-
 
 Another super handy addition is in jest watch mode. You can now filter by a test’s name or filename.
 
@@ -142,12 +132,7 @@ A **big shoutout** to my co-worker @ridhwana for helping me migrate all the test
 
 That’s all for now folks!
 
-
-
-
-
-*[This post is also available on DEV.](https://dev.to/devteam/changelog-frontend-edition-30l7)*
-
+_[This post is also available on DEV.](https://dev.to/devteam/changelog-frontend-edition-30l7)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -159,4 +144,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

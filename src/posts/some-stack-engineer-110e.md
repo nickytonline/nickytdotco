@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/some-stack-engineer-110e
 title: Some-Stack Engineer
 date: '2019-11-01T02:15:01.356Z'
 excerpt: >-
@@ -14,13 +13,12 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/some-stack-engineer-110e/'
 template: post
 ---
+
 Photo by [Bill Oxford](https://unsplash.com/@bill_oxford?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/cogs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Anybody down for starting the **some-stack** engineer movement?
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1190083118880833537" style="border: 0; width: 100%;"></iframe>
-
 
 In all seriousness, no one can really be full-stack these days.
 
@@ -30,8 +28,7 @@ There are too many moving parts. Frontend, design, backend, database, deployment
 
 Thoughts?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/some-stack-engineer-110e)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/some-stack-engineer-110e)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -43,4 +40,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

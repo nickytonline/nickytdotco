@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/do-you-doodle-49d
 title: Do you Doodle?
 date: '2020-01-03T21:16:47.752Z'
 excerpt: >-
@@ -15,16 +14,14 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/do-you-doodle-49d'
 template: post
 ---
-Anybody like to doodle or draw? I'm definitely no @reverentgeek, but this is my work of art this afternoon while having a coffee.
 
+Anybody like to doodle or draw? I'm definitely no @reverentgeek, but this is my work of art this afternoon while having a coffee.
 
 <iframe class="liquidTag" src="https://dev.to/embed/instagram?args=B643kd2JlpA" style="border: 0; width: 100%;"></iframe>
 
+Feel free to post your doodles in the comments.
 
-Feel free to post your doodles in the comments. 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/do-you-doodle-49d)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/do-you-doodle-49d)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -36,4 +33,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

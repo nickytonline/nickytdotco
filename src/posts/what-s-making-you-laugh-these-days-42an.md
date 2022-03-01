@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/what-s-making-you-laugh-these-days-42an
 title: What’s making you laugh these days?
 date: '2019-12-13T03:12:46.073Z'
 excerpt: >-
@@ -14,18 +13,16 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/what-s-making-you-laugh-these-days-42an'
 template: post
 ---
+
 I watched the movie Hot Rod with Andy Samberg around the time it came out (2007), but it popped in the Netflix catalog yesterday. I gave it a watch again and I was dying. 😂
 
 Here’s a preview
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/youtube?args=TOUrLn1FFCA" style="border: 0; width: 100%;"></iframe>
-
 
 What’s been making you laugh recently?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/what-s-making-you-laugh-these-days-42an)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/what-s-making-you-laugh-these-days-42an)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -37,4 +34,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

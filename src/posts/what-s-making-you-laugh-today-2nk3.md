@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/what-s-making-you-laugh-today-2nk3
 title: What's making you laugh today?
 date: '2019-10-25T18:56:07.470Z'
 excerpt: "I can't stop watching this. I'm dying \U0001F923..."
@@ -11,14 +10,12 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/what-s-making-you-laugh-today-2nk3'
 template: post
 ---
-I can't stop watching this. I'm dying 🤣
 
+I can't stop watching this. I'm dying 🤣
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1187760247663927296" style="border: 0; width: 100%;"></iframe>
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/what-s-making-you-laugh-today-2nk3)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/what-s-making-you-laugh-today-2nk3)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -30,4 +27,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/recursion-5fbf
 title: Recursion
 date: '2019-11-10T02:54:53.323Z'
 excerpt: Recursion
@@ -11,14 +10,12 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/recursion-5fbf'
 template: post
 ---
-[Recursion](https://dev.to/nickytonline/recursion-5fbf)
 
+[Recursion](https://dev.to/nickytonline/recursion-5fbf)
 
 <iframe class="liquidTag" src="https://dev.to/embed/instagram?args=B4qzQvlpN1g" style="border: 0; width: 100%;"></iframe>
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/recursion-5fbf)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/recursion-5fbf)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -30,4 +27,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

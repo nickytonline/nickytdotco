@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/changelog-dev-has-some-stories-for-you-15kn
 title: 'Changelog: DEV has Some Stories for You'
 date: '2020-05-22T13:46:37.866Z'
 excerpt: >-
@@ -18,6 +17,7 @@ canonical_url: >-
   https://www.iamdeveloper.com/posts/changelog-dev-has-some-stories-for-you-15kn/
 template: post
 ---
+
 My first PR to the DEV repository was when I added Storybook to the project. In fact, this was in March of 2018, when the repository was private (which means that I can't even link you to the PR where I added it!)
 
 <center>
@@ -30,13 +30,11 @@ If you're interested, here is the [commit](https://github.com/thepracticaldev/de
 
 If you are new to Storybook I recommend giving this post I wrote a while back a read as well as checking out the [Storybook documentation](https://storybook.js.org/docs/basics/introduction/).
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fgetting-started-with-react-storybook-9jh" style="border: 0; width: 100%;"></iframe>
-
 
 The TLDR is, Storybook allows you to build out components in isolation and test them visually based on the different states they could be in. Each story you write is the component in a different state.
 
-I added some stories for some [Preact](https://preactjs.com/) components, but after that, Storybook never really got used. Fast forward to January 2020. I started working at DEV and I had some discussions with my awesome product designer Pawel, @pp, about the design system. I mentioned that Storybook was already in the project, but needed to be resuscitated. Once I got it back up and running, we started collaborating, building out design system components and some application components. 
+I added some stories for some [Preact](https://preactjs.com/) components, but after that, Storybook never really got used. Fast forward to January 2020. I started working at DEV and I had some discussions with my awesome product designer Pawel, @pp, about the design system. I mentioned that Storybook was already in the project, but needed to be resuscitated. Once I got it back up and running, we started collaborating, building out design system components and some application components.
 
 Storybook could be run locally if you had the DEV codebase but it was not deploying as part of our CI/CD pipeline. After doing some pairing with @andy this week, we got it deploying to [Netlify](https://www.netlify.com/) (awesome service!) whenever JavaScript files changed on master.
 
@@ -44,8 +42,7 @@ Storybook could be run locally if you had the DEV codebase but it was not deploy
 
 Photo by [Robyn Budlender](https://unsplash.com/@robzy_m?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/stories?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-*[This post is also available on DEV.](https://dev.to/devteam/changelog-dev-has-some-stories-for-you-15kn)*
-
+_[This post is also available on DEV.](https://dev.to/devteam/changelog-dev-has-some-stories-for-you-15kn)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -57,4 +54,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

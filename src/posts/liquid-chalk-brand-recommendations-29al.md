@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/liquid-chalk-brand-recommendations-29al
 title: 'Liquid Chalk Brand Recommendations?'
 date: '2021-07-26T19:47:05.587Z'
 excerpt: >-

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/projects-with-great-documentation-352h
 title: Projects with Great Documentation
 date: '2020-09-28T20:55:50.715Z'
 excerpt: >-
@@ -17,16 +16,14 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/projects-with-great-documentation-352h/'
 template: post
 ---
+
 I'm looking to compile a list of projects with great documentation so as to provide examples to contributors and maintainers for Hacktoberfest.
 
 Some projects with great documentation that come to mind are React and Vue.
 
 What's a project that you know of that has great documentation?
 
-
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/projects-with-great-documentation-352h)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/projects-with-great-documentation-352h)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -38,4 +35,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

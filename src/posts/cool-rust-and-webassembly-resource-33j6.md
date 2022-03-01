@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/cool-rust-and-webassembly-resource-33j6
 title: Cool Rust and WebAssembly Resource
 date: '2019-12-07T12:56:29.000Z'
 excerpt: >-
@@ -16,19 +15,15 @@ canonical_url: 'https://www.iamdeveloper.com/posts/cool-rust-and-webassembly-res
 template: post
 ---
 
-
 Photo by [takis politis](https://unsplash.com/@citylop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 I still haven’t really dug into [Rust](https://www.rust-lang.org) and [WebAssembly](https://webassembly.org) (WASM) yet, but this project looks really cool.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1202898165420249089" style="border: 0; width: 100%;"></iframe>
-
 
 It looks like a really great way to learn Rust and WASM. 👏
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/cool-rust-and-webassembly-resource-33j6)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/cool-rust-and-webassembly-resource-33j6)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -40,4 +35,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

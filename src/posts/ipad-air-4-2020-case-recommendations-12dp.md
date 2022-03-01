@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/ipad-air-4-2020-case-recommendations-12dp
 title: iPad Air 4 (2020) Case Recommendations?
 date: '2021-01-10T04:54:45.887Z'
 excerpt: >-
@@ -15,19 +14,19 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/ipad-air-4-2020-case-recommendations-12dp'
 template: post
 ---
+
 I'm upgrading my super old iPad to the iPad Air 4 (2020). I've been doing a lot of research for a great cover, but there are so many brands and models.
 
 In terms of criteria:
 
-* I do not need a keyboard integrated. I have a small foldable one already.
-* Shouldn't be too bulky, but still be able to protect the device really well
-* All cutouts should expose ports, camera, mic, speakers really well. (There are some that don't)
-* Be able to hold and protect an Apple Pencil
+- I do not need a keyboard integrated. I have a small foldable one already.
+- Shouldn't be too bulky, but still be able to protect the device really well
+- All cutouts should expose ports, camera, mic, speakers really well. (There are some that don't)
+- Be able to hold and protect an Apple Pencil
 
 I've been leaning towards some cases from ESR, but I'm wondering if anyone has recommendations for a case with that criteria?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/ipad-air-4-2020-case-recommendations-12dp)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/ipad-air-4-2020-case-recommendations-12dp)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -39,4 +38,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/great-examples-of-issues-and-pull-requests-2nne
 title: Great Examples of Issues and Pull Requests
 date: '2020-08-16T04:29:34.484Z'
 excerpt: >-
@@ -16,6 +15,7 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/great-examples-of-issues-and-pull-requests-2nne'
 template: post
 ---
+
 Hey awesome devs! For those of you that have been contributing to open source, do you have examples of issues or pull requests (PRs) that you thought really stood out? They can be yours or someone else's from any publicly accessible code base.
 
 The goal is to provide a list of links to great examples that new and seasoned open source enthusiasts can look to for inspiration when creating their own issues and PRs.
@@ -28,8 +28,7 @@ Alright go!
 
 <span>Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/s/photos/open-source?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/great-examples-of-issues-and-pull-requests-2nne)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/great-examples-of-issues-and-pull-requests-2nne)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -41,4 +40,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

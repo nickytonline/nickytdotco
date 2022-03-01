@@ -1,6 +1,4 @@
 ---
-stackbit_url_path: >-
-  posts/google-to-pay-javascript-frameworks-to-implement-performance-first-code-3f57
 title: Google to pay JavaScript frameworks to implement performance-first code
 date: '2018-11-26T11:55:59.414Z'
 excerpt: >-
@@ -20,30 +18,23 @@ canonical_url: >-
 template: post
 ---
 
-
 Interesting initiative by Google, [Google to pay JavaScript frameworks to implement performance-first code](https://www.zdnet.com/google-amp/article/google-to-pay-javascript-frameworks-to-implement-performance-first-code).
 
 Just curious how this will affect OSS, at least in the JS ecosystem.
 
 On one hand I see this as a good thing where OSS maintainers get paid,
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=931195056479965185" style="border: 0; width: 100%;"></iframe>
-
 
 but on the other hand will it create a divide in OSS?
 
-
 Thoughts?
-
 
 <iframe class="liquidTag" src="https://dev.to/embed/devcomment?args=75p3" style="border: 0; width: 100%;"></iframe>
 
-
 Photo care of Unsplash user [Sharon McCutcheon](https://unsplash.com/photos/8lnbXtxFGZw)
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/google-to-pay-javascript-frameworks-to-implement-performance-first-code-3f57)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/google-to-pay-javascript-frameworks-to-implement-performance-first-code-3f57)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -55,4 +46,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/my-gym-setup-and-routine-584p
 title: My Gym Setup and Routine
 date: '2021-01-09T04:55:09.142Z'
 excerpt: >-

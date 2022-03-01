@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/whats-your-dj-name-1apm
 title: What's your DJ name?
 date: '2019-03-20T22:09:48.993Z'
 excerpt: Just having some fun building your DJ name
@@ -16,25 +15,19 @@ canonical_url: 'https://dev.to/nickytonline/whats-your-dj-name-1apm'
 template: post
 ---
 
-
 Just a fun thread I'm putting out here while on vacation.
-
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1108488529926127620" style="border: 0; width: 100%;"></iframe>
 
-
 Your DJ name is **DJ** plus the **last method or function you used/wrote**.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1108056758692528128" style="border: 0; width: 100%;"></iframe>
-
 
 They call me **DJ describe**
 
 Feel free to reply here and/or to the [Twitter thread](https://twitter.com/nickytonline/status/1108056758692528128).
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/whats-your-dj-name-1apm)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/whats-your-dj-name-1apm)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -46,4 +39,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

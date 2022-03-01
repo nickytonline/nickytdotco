@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/what-plugins-cms-etc-are-using-for-your-gatsby-powered-blog-2cdd
 title: 'What plugins, CMS etc. are using for your Gatsby powered blog?'
 date: '2019-01-08T14:57:51.953Z'
 excerpt: >-
@@ -18,7 +17,6 @@ canonical_url: >-
   https://www.iamdeveloper.com/posts/what-plugins-cms-etc-are-using-for-your-gatsby-powered-blog-2cdd/
 template: post
 ---
-
 
 Photo by [Damian Zaleski](https://unsplash.com/photos/RYyr-k3Ysqg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/blog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -48,9 +46,7 @@ What Gatsby plugins do you have installed?
 
 I've been using Gatsby since fall 2017, but only recently switched it to [Netlify CMS](https://www.netlifycms.org), which is amazing by the way. The Workflow feature is not enabled by default in the CMS starter, but it's pretty easy to enable. In your config.yaml simply add the following line
 
-
-```publish_mode: editorial_workflow```
-
+`publish_mode: editorial_workflow`
 
 For more information about additional config, see [their docs](https://www.netlifycms.org/docs/configuration-options).
 
@@ -60,8 +56,7 @@ As soon as this is enabled you have drafts (new branch), ready for publish (PR o
 
 If you have a CMS enabled, what are you using?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/what-plugins-cms-etc-are-using-for-your-gatsby-powered-blog-2cdd)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/what-plugins-cms-etc-are-using-for-your-gatsby-powered-blog-2cdd)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -73,4 +68,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

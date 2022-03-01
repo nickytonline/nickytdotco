@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/which-units-of-measure-do-you-use-and-why-in-css-nf4
 title: Which units of measure do you use and why in CSS?
 date: '2018-10-23T14:37:23.839Z'
 excerpt: >-
@@ -18,18 +17,15 @@ canonical_url: >-
 template: post
 ---
 
-
-I just opened an issue in the dev.to repo in regards to considering standardizing units of measure in the CSS part of the codebase. In a nutshell, I'm promoting the usage of 
+I just opened an issue in the dev.to repo in regards to considering standardizing units of measure in the CSS part of the codebase. In a nutshell, I'm promoting the usage of
 `rem`
- (and 
+(and
 `em`
- when necessary) like I use in my day to day at work as I'm sold on 
+when necessary) like I use in my day to day at work as I'm sold on
 `rem`
 .
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fthepracticaldev%2Fdev.to%2Fissues%2F987" style="border: 0; width: 100%;"></iframe>
-
 
 There are many articles that have discussed this in detail. A simple Google of "rem vs." will provide you with an abundance of articles.
 
@@ -37,8 +33,7 @@ There are many articles that have discussed this in detail. A simple Google of "
 
 I'm curious what everyone's thoughts are on this. Feel free to comment here as well as in the GitHub issue.
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/which-units-of-measure-do-you-use-and-why-in-css-nf4)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/which-units-of-measure-do-you-use-and-why-in-css-nf4)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -50,4 +45,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

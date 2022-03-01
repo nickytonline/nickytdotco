@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn
 title: I've Started to Live Code on Twitch for DEV
 date: '2020-04-01T12:54:42.333Z'
 excerpt: >-
@@ -17,6 +16,7 @@ canonical_url: >-
   https://www.iamdeveloper.com/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/
 template: post
 ---
+
 Yesterday, I did my first official live coding on Twitch. If you're interested in following me on Twitch, I'm [nickytonline](https://www.twitch.tv/nickytonline) there as well.
 
 It felt very natural live-coding. I talked to my audience pretty much the whole time. Thank you to the 12 people that watched. 👏🏻 My colleague @maestromac was kind enough to jump in on the chat to say hi.
@@ -33,7 +33,7 @@ Before installing OBS, ensure that Twitch is set up correctly. Assuming you've c
 
 ![Twitch Channel Settings](https://dev-to-uploads.s3.amazonaws.com/i/d82fvqzkqo6jda6jwste.png)
 
-Two things to note here. One, you will need to copy the Primary Stream Key. This is required for OBS so that it can stream to Twitch. The other thing to note is that *Store past broadcasts* should be enabled (assuming you want to save your broadcasts). I forgot to do this initially. Since most will have a free account, broadcasts are stored for up to 14 days and then scrapped.
+Two things to note here. One, you will need to copy the Primary Stream Key. This is required for OBS so that it can stream to Twitch. The other thing to note is that _Store past broadcasts_ should be enabled (assuming you want to save your broadcasts). I forgot to do this initially. Since most will have a free account, broadcasts are stored for up to 14 days and then scrapped.
 
 Once OBS is installed, go to the OBS preferences and add your Twitch Primary Stream Key.
 
@@ -53,18 +53,15 @@ It turns out it was just a setting in the Security & Privacy system preferences.
 
 ![OBS display source working](https://dev-to-uploads.s3.amazonaws.com/i/buqf8e5u5gt4oqixxsed.png)
 
-From there as soon as you are ready to stream on Twitch, simply click the *Start Streaming* button in the Controls section at the bottom right of the OBS window.
+From there as soon as you are ready to stream on Twitch, simply click the _Start Streaming_ button in the Controls section at the bottom right of the OBS window.
 
 Happy streaming!
 
 UPDATE APR 3, 2020:
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1246102255620829184" style="border: 0; width: 100%;"></iframe>
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/i-ve-started-to-live-code-on-twitch-for-dev-13cn)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/i-ve-started-to-live-code-on-twitch-for-dev-13cn)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -76,4 +73,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

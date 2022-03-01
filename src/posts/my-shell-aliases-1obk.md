@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/my-shell-aliases-1obk
 title: My Shell Aliases
 date: '2019-10-11T01:45:17.000Z'
 excerpt: >-
@@ -17,17 +16,13 @@ canonical_url: 'https://www.iamdeveloper.com/posts/my-shell-aliases-1obk/'
 template: post
 ---
 
-
 Photo by [Krzysztof Niewolny](https://unsplash.com/@epan5?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/shell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Everyone has their favourite aliases for git and the shell. I have written about my git aliases before but not my shell aliases.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fmy-git-aliases-5dea" style="border: 0; width: 100%;"></iframe>
 
-
 It is not a long list, but I have some that I find useful that you may find useful as well. Currently, my preferred shell is zsh. Here is what I currently have in my config.
-
 
 ```
 alias zshconfig='vi $HOME/.zshrc'
@@ -47,17 +42,15 @@ crat() {
 }
 ```
 
-
-The 
+The
 `edge`
- and 
+and
 `chrome`
- aliases are useful to me because I like to use VS Code when debugging. Having the browsers start up with remote debugging makes that process easier.
+aliases are useful to me because I like to use VS Code when debugging. Having the browsers start up with remote debugging makes that process easier.
 
 What's in your shell aliases?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/my-shell-aliases-1obk)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/my-shell-aliases-1obk)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -69,4 +62,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

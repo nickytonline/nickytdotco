@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/do-you-use-static-typing-in-javascript--2ek4
 title: Do you use Static Typing in JavaScript?
 date: '2018-03-13T03:24:39.910Z'
 excerpt: >-
@@ -19,19 +18,15 @@ canonical_url: >-
 template: post
 ---
 
-
 I wrote an article last year, [Consider Using TypeScript](https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3), to explain some of the benefits of using TypeScript and I'm just curious for those in the JS ecosystem if you use a language like [TypeScript](typescriptlang.org), [Reason ML](https://reasonml.github.io/), or Facebook's [Flow](https://flow.org) type checker.
 
 This [short post](http://2ality.com/2018/03/javascript-typescript-reasonml.html) on the [2ality blog](http://2ality.com) is relevant and a good read as well.
 
-If you currently don't use one of the above, are you considering trying one of them? If you did try or use one of them, what kinds of issues, if any did you have?  Difficult to setup? Learning curve etc.
-
+If you currently don't use one of the above, are you considering trying one of them? If you did try or use one of them, what kinds of issues, if any did you have? Difficult to setup? Learning curve etc.
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=972285677172875264" style="border: 0; width: 100%;"></iframe>
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/do-you-use-static-typing-in-javascript--2ek4)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/do-you-use-static-typing-in-javascript--2ek4)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -43,4 +38,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/explain-what-a-monoid-is-like-im-five-4gpf
 title: Explain what a monoid is Like I'm Five
 date: '2018-05-20T18:32:16.692Z'
 excerpt: >-
@@ -15,11 +14,9 @@ canonical_url: 'https://dev.to/nickytonline/explain-what-a-monoid-is-like-im-fiv
 template: post
 ---
 
-
 I purchased and I've started reading [Functional Light Javascript](https://github.com/getify/Functional-Light-JS). So far, a good read. I was just wondering if some of you awesome folks on dev.to could take a stab as well at explaining what a monoid is in simple terms.
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/explain-what-a-monoid-is-like-im-five-4gpf)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/explain-what-a-monoid-is-like-im-five-4gpf)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -31,4 +28,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

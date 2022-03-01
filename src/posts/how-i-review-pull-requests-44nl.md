@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/how-i-review-pull-requests-44nl
 title: How I Review Pull Requests
 date: '2021-12-09T00:57:44.993Z'
 excerpt: >-
@@ -16,6 +15,7 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/how-i-review-pull-requests-44nl/'
 template: post
 ---
+
 Someone in my [Virtual Coffee](https://virtualcoffee.io) community asked about getting better at reviewing pull requests (PR) today, which prompted this post. Hopefully, you find something helpful here. I'd love to hear from you if you do! And if you don't, that's OK too. Suggestions to improve my process are welcome!
 
 First, I read the title and description to see what this is all about. If there are issues or other PRs referenced, I check those out if I need more context. If there are user interface (UI) changes, I look for before and after screenshots. If there are no screenshots and UI changes are present, I ask the reviewer to include some. It makes it a lot easier to assess changes from a high-level glance.
@@ -26,27 +26,28 @@ Next, I start skimming through all the changed files. If there are many changes 
 
 In general, PRs should be small for a couple of reasons:
 
-* It's easier to review
-* The fewer changes to code you have, the less potential for bugs. I say potential because even a one-liner can cause bugs.
+- It's easier to review
+- The fewer changes to code you have, the less potential for bugs. I say potential because even a one-liner can cause bugs.
 
 Sometimes there is no choice but to have a significantly large PR. I've seen this mainly in UI work, but it applies to backend work as well, typically an all-or-nothing scenario.
 
 If the above does not hold, these are the reasons I see why PRs get bloated:
 
-* The person spots refactorings or bug fixes they can do, but they're not related to the PR. Ask them to put these into a separate PR and keep the PR to the task at hand.
-* The work to be done is not broken down. Do work that moves the more extensive work forward. For example, a utility function used throughout the feature can be in a separate PR. Is the person building out a new UI? They can build the components independently and put up a different PR, potentially using a tool like [Storybook](https://virtualcoffee.io) to build them out. 
+- The person spots refactorings or bug fixes they can do, but they're not related to the PR. Ask them to put these into a separate PR and keep the PR to the task at hand.
+- The work to be done is not broken down. Do work that moves the more extensive work forward. For example, a utility function used throughout the feature can be in a separate PR. Is the person building out a new UI? They can build the components independently and put up a different PR, potentially using a tool like [Storybook](https://virtualcoffee.io) to build them out.
 
 **Remember that an issue or feature does not need to map to one PR.**
 
 Finally, I look at some code! I search for issues that stand out to me without pulling down the PR and running the code on my local. I'm not talking about formatting/coding style issues because nowadays, many projects have toolings like linters or code formatters.
 
 Things I look for:
-* logic errors
-* a language feature the person might not be aware of that can be used in the PR
-* leveraging existing utility functions in the codebase
-* tests
-* documentation
-* accessibility issues
+
+- logic errors
+- a language feature the person might not be aware of that can be used in the PR
+- leveraging existing utility functions in the codebase
+- tests
+- documentation
+- accessibility issues
 
 In some cases, coding style might come up, for example, returning early when a condition fails in a function or method. **If changes come up during a review that can be changed automatically, automate away! Do that in a separate PR, though. 😎**
 
@@ -58,9 +59,7 @@ At this point, there will most likely be review feedback still, so I continue th
 
 Lastly, the tone of a review matters. I've grown accustomed to using a framework for commenting called [Conventional Comments](https://conventionalcomments.org). If you're interested in learning more, I gave a [lightning talk on Conventional Comments](https://www.iamdeveloper.com/pages/talks/# heading-words-matter:-conventional-comments) last year. Netlify created a similar system called Feedback Ladders. Check out Leslie's Tweet to read more on that.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1420188172726771714" style="border: 0; width: 100%;"></iframe>
-
 
 If you made it this far, your PR is approved! 😎
 
@@ -68,8 +67,7 @@ Thanks and until next time!
 
 Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/s/photos/review?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/how-i-review-pull-requests-44nl)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/how-i-review-pull-requests-44nl)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -81,4 +79,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

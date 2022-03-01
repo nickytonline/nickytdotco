@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/are-you-in-the-github-arctic-code-vault-n86
 title: Are you in the GitHub Arctic Code Vault?
 date: '2020-07-16T19:50:20.118Z'
 excerpt: >-
@@ -15,19 +14,16 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/are-you-in-the-github-arctic-code-vault-n86'
 template: post
 ---
+
 Looks like GitHub is pushing out new contributor badges.
 
 It looks like this.
 
 ![Screenshot of my GitHub profile showcasing the Arctic Code Vault badge](https://dev-to-uploads.s3.amazonaws.com/i/hqv40hx958gudce6dgdx.png)
 
-
 Have you made it into the GitHub arctic code vault? ❄️ Share a screenshot!
 
-
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/are-you-in-the-github-arctic-code-vault-n86)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/are-you-in-the-github-arctic-code-vault-n86)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -39,4 +35,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/new-browser-on-the-block-k7k
 title: New browser on the block!
 date: '2019-11-28T23:19:29.227Z'
 excerpt: >-
@@ -15,13 +14,12 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/new-browser-on-the-block-k7k/'
 template: post
 ---
+
 Photo by [Jacalyn Beales](https://unsplash.com/@jacalynbeales?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/evergreen-tree?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Well, it looks like the web browser ecosystem is getting another browser.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1200188106584023040" style="border: 0; width: 100%;"></iframe>
-
 
 This is healthy for the web assuming standards are followed. From the Tweets I've seen it appears to be fast, but it is early days and from what I can tell there is no preview version to download yet.
 
@@ -29,8 +27,7 @@ What are your thoughts on another browser entering into the browser ecosystem?
 
 ![Old school Netscape logo](https://media.giphy.com/media/anjRJ4nv9WJzO/giphy.gif)
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/new-browser-on-the-block-k7k)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/new-browser-on-the-block-k7k)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -42,4 +39,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

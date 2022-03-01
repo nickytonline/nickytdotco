@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/why-don-t-fish-like-react-389l
 title: Why don't fish like React?
 date: '2019-07-08T04:26:47.234Z'
 excerpt: "Hooks! \U0001F602..."
@@ -12,14 +11,12 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/why-don-t-fish-like-react-389l'
 template: post
 ---
-Hooks! 😂
 
+Hooks! 😂
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1148084640231677952" style="border: 0; width: 100%;"></iframe>
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/why-don-t-fish-like-react-389l)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/why-don-t-fish-like-react-389l)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -31,4 +28,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

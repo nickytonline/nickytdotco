@@ -1,6 +1,5 @@
 ---
-stackbit_url_path: posts/hi-im-nick-taylor
-title: 'Hi, I''m Nick Taylor'
+title: "Hi, I'm Nick Taylor"
 date: '2017-03-12T20:22:41.310Z'
 excerpt: My introduction post
 thumb_img_path: null
@@ -12,7 +11,6 @@ canonical_url: 'https://dev.to/nickytonline/hi-im-nick-taylor'
 template: post
 ---
 
-
 You can find me on GitHub as [nickytonline](https://github.com/nickytonline) or find out more about me at [iamdeveloper.com](http://iamdeveloper.com).
 
 I live in Montreal, Quebec, Canada.
@@ -21,8 +19,7 @@ I mostly program in JavaScript/TypeScript and love React.
 
 Nice to meet you.
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/hi-im-nick-taylor)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/hi-im-nick-taylor)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -34,4 +31,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/frontend-developer-resources-246j
 title: Frontend Developer Resources 2020
 date: '2020-01-06T05:00:06.851Z'
 excerpt: >-

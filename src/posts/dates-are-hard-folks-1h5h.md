@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/dates-are-hard-folks-1h5h
 title: Dates are hard folks
 date: '2020-08-07T13:25:41.532Z'
 excerpt: >-
@@ -15,18 +14,16 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/dates-are-hard-folks-1h5h'
 template: post
 ---
+
 I saw this posted yesterday and thought it would be fun to discuss. "Scientists rename human genes to stop Microsoft Excel from misreading them as dates".
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1291723650748551173" style="border: 0; width: 100%;"></iframe>
-
 
 Dates can be hard when handling them in code. There's a reason people reach for date libraries. 😉
 
 Anyone have some great stories about working with dates?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/dates-are-hard-folks-1h5h)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/dates-are-hard-folks-1h5h)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -38,4 +35,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

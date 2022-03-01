@@ -1,6 +1,4 @@
 ---
-stackbit_url_path: >-
-  posts/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m
 title: Probably another Battleship board on Code Pen
 date: '2018-02-09T05:01:39.457Z'
 excerpt: A basic Battleship board with some random hits and misses.
@@ -16,7 +14,6 @@ canonical_url: >-
 template: post
 ---
 
-
 Photo courtesy of Flickr user [drtran](https://www.flickr.com/photos/drtran/5639332304/sizes/l).
 
 If you want to see the previous Code Pen I did, check out [A 💩 Notification Code Pen](https://dev.to/nickytonline/a--notification-code-pen-4o0n).
@@ -29,14 +26,11 @@ I've been doing [@wesbos](https://dev.to/wesbos)'s awesome [CSS Grid course](htt
 
 Maybe at some point, I'll make the full game, but for now, a board with some simulated hits and misses.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/codepen?args=https%3A%2F%2Fcodepen.io%2Fnickytonline%2Fpen%2FzRNMvO" style="border: 0; width: 100%;"></iframe>
-
 
 I'll end with some cheese, "You sank my battleship!".
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -48,4 +42,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

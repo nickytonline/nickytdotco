@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/apple-watch-or-a-decent-alternative-49i1
 title: Apple Watch or a Decent Alternative?
 date: '2019-10-13T03:33:03.158Z'
 excerpt: >-
@@ -15,6 +14,7 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/apple-watch-or-a-decent-alternative-49i1/'
 template: post
 ---
+
 Photo by [chuttersnap](https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/watch-apple?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Hi DEVers,
@@ -27,8 +27,7 @@ I have no plans on getting an Apple Music subscription, so if this is not possib
 
 Any recommendations peeps?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/apple-watch-or-a-decent-alternative-49i1)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/apple-watch-or-a-decent-alternative-49i1)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -40,4 +39,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

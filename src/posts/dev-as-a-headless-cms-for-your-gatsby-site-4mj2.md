@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/dev-as-a-headless-cms-for-your-gatsby-site-4mj2
 title: DEV as a Headless CMS for your Gatsby Site
 date: '2020-04-15T13:09:54.295Z'
 excerpt: >-
@@ -17,11 +16,10 @@ canonical_url: >-
   https://www.iamdeveloper.com/posts/dev-as-a-headless-cms-for-your-gatsby-site-4mj2/
 template: post
 ---
+
 Near the end of September 2019, @ben posted this article.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fyou-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5" style="border: 0; width: 100%;"></iframe>
-
 
 I won't go into all the details as they are already mentioned in the article, but the TLDR is, by creating a site via Stackbit, you can use DEV as a headless CMS for your self-hosted site.
 
@@ -37,11 +35,9 @@ Since my previous site was a Gatsby site, I decided to generate a Gatsby site us
 
 ![Stackbit site creation step one. Select a theme](https://dev-to-uploads.s3.amazonaws.com/i/0hdv0ev9tlvkjno28mwo.png)
 
-And then within about a minute, I had my new site, built and deployed to Netlify at https://robust-petunia-478cc.netlify.com. 
-
+And then within about a minute, I had my new site, built and deployed to Netlify at https://robust-petunia-478cc.netlify.com.
 
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fnickytonline%2Frobust-petunia" style="border: 0; width: 100%;"></iframe>
-
 
 My actual website is https://iamdeveloper.com, so at that point, I just configured my site in Netlify to point to iamdeveloper.com.
 
@@ -59,7 +55,6 @@ So why did I decide to do this if I already had a website running Gatsby with my
 1. Currently, Stackbit does not copy over images, it references the same image that is hosted by DEV. This is not a deal-breaker right now, but it would be nice to have all the assets hosted by my site.
 1. Stackbit redeploys your site when draft posts are saved.
 
-
 I ran into some a11y issues which may have been related to the template I chose, but if you look at my commits, you can see where I fixed some things. As well, there were a bunch of Gatsby plugins that I added back from my old site that I required, e.g. sitemap, Google Analytics.
 
 ## Verdict?
@@ -70,12 +65,7 @@ I definitely recommend you give it a try, especially if you currently do not hav
 
 That's all peeps!
 
-
-
-
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/dev-as-a-headless-cms-for-your-gatsby-site-4mj2)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/dev-as-a-headless-cms-for-your-gatsby-site-4mj2)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -87,4 +77,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

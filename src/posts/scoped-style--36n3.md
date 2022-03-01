@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/scoped-style--36n3
 title: 'scoped-style '
 date: '2018-12-30T23:12:39.460Z'
 excerpt: a tiny CSS in JS library
@@ -15,17 +14,13 @@ canonical_url: 'https://www.iamdeveloper.com/posts/scoped-style--36n3/'
 template: post
 ---
 
-
-
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fsadick254%2Fscoped-style" style="border: 0; width: 100%;"></iframe>
-
 
 A new kid on the CSS in JS block.
 
 Plays nicely with Preact, React, Hyperapp and InfernoJS.
 
 An example from the readme for React:
-
 
 ```
 import React from "react"
@@ -71,9 +66,7 @@ const App = () => (
 
 ```
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/scoped-style--36n3)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/scoped-style--36n3)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -85,4 +78,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

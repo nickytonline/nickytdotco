@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/getting-started-with-regular-expressions-11dg
 title: Getting Started with Regular Expressions
 date: '2021-07-18T04:17:00.531Z'
 excerpt: >-
@@ -18,13 +17,12 @@ canonical_url: >-
   https://www.iamdeveloper.com/posts/getting-started-with-regular-expressions-11dg
 template: post
 ---
+
 Regular expressions (regex) are one of those things that folks seem to make fun of most of the time because they don't understand them, or partially understand them.
 
 I decided to write this post after Ben Hong Tweeted out asking for good regex resources.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1416417046150193152" style="border: 0; width: 100%;"></iframe>
-
 
 Is this post going to make you a regex expert? No, but it will teach some of the pitfalls that developers succumb to when writing them.
 
@@ -32,64 +30,57 @@ The example code snippets shown in the post will be for regular expressions in J
 
 ## Be Specific
 
-Know exactly what you're looking for. This may sound obvious on the surface, but it's not always the case. Let's say I want to find instances of 
+Know exactly what you're looking for. This may sound obvious on the surface, but it's not always the case. Let's say I want to find instances of
 `three`
- in a text file because we need to replace all instances of 
+in a text file because we need to replace all instances of
 `three`
- with the number 
+with the number
 `3`
 . You've done a bit of Googling and or checked out [regex101.com](https://regex101.com). You're feeling pretty good so you write out this regular expression.
 
-
 ```javascript
-const reMatchThree = /three/g
+const reMatchThree = /three/g;
 ```
 
-
-Note: If you're new to regular expressions, everything between the starting 
+Note: If you're new to regular expressions, everything between the starting
 `/`
- and the ending 
+and the ending
 `/`
- is the regular expression. The 
+is the regular expression. The
 `g`
- after the last 
+after the last
 `/`
- means global, as in find all instances.
+means global, as in find all instances.
 
-You run the regular expression to match all instances of 
+You run the regular expression to match all instances of
 `three`
- so it can be replaced with 
+so it can be replaced with
 `3`
 . You look at what got replaced in the text and you're a little perplexed.
-
 
 ```diff
 - There were three little pigs who lived in their own houses to stay safe from the big bad wolf who was thirty-three years old.
 + There were 3 little pigs who lived in their own houses to stay safe from the big bad wolf who was thirty-3 years old.
 ```
 
-
-
 `three`
- got replaced by 
+got replaced by
 `3`
- everywhere in the file, but why was thirty-three replaced? You only wanted 
+everywhere in the file, but why was thirty-three replaced? You only wanted
 `three`
-s replaced. And here we have our first lesson. Be specific. We only want to match when it's only the word 
+s replaced. And here we have our first lesson. Be specific. We only want to match when it's only the word
 `three`
-. So we need to beef up this regex a little. We only want to find the 
+. So we need to beef up this regex a little. We only want to find the
 `three`
- when it's the first word in a sentence, has white space before and after it or some punctuation before and/or after it, or if it's the last word in a sentence. With that criteria, the regex might look like this now.
-
+when it's the first word in a sentence, has white space before and after it or some punctuation before and/or after it, or if it's the last word in a sentence. With that criteria, the regex might look like this now.
 
 ```javascript
-const reMatchThree = /\b(three)\b/g
+const reMatchThree = /\b(three)\b/g;
 ```
 
-
-Note: Don't worry if you're not familiar with all the syntax. The 
+Note: Don't worry if you're not familiar with all the syntax. The
 `\b`
- character means a [word boundary character](https://regular-expressions.mobi/wordboundaries.html?wlr=1).
+character means a [word boundary character](https://regular-expressions.mobi/wordboundaries.html?wlr=1).
 
 When parts of a regex are contained by parentheses, it means a [group](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges# using_groups), and what's in that group will return as a group as part of the match.
 
@@ -97,93 +88,81 @@ When parts of a regex are contained by parentheses, it means a [group](https://d
 
 Greed is usually not a good thing and greed in regex is no exception. Let's say you're tasked with finding all the text snippets between double quotes. For the sake of this example, we are going to assume the happy path, i.e. no double quoted strings withing double quoted strings.
 
-You set out to build your regex. 
-
+You set out to build your regex.
 
 ```javascript
-const reMatchBetweenDoubleQuotes = /"(.+)"/g
+const reMatchBetweenDoubleQuotes = /"(.+)"/g;
 ```
 
-
-Remember that 
+Remember that
 `(`
- and 
+and
 `)`
- represent a group. The 
+represent a group. The
 `.`
- character means any character. Another special character is  
+character means any character. Another special character is
 `+`
-. It means at least one character. 
+. It means at least one character.
 
 You're feeling good and you run this regex over the file you need to extract the texts from.
-
 
 ```text
 Hi there "this text is in double quotes". As well, "this text is in double quotes too".
 ```
 
-
 The results come in and here are the texts that the regex matched for texts within double quotes:
 
-
 `this text is in double quotes". As well, "this text is in double quotes too`
-
 
 Wait a minute!? That's not what you were expecting. There are clearly two sets of text within double quotes, so what went wrong? Lesson number two. Don't be greedy.
 
-If we look again at the regex you created, it contains 
+If we look again at the regex you created, it contains
 `.+`
- which means literally match any character as many times as possible, which is why we end up matching only 
+which means literally match any character as many times as possible, which is why we end up matching only
 `this text is in double quotes". As well, "this text is in double quotes too`
- because 
+because
 `"`
- is considered any character. You got greedy, or more specifically the regex did.
+is considered any character. You got greedy, or more specifically the regex did.
 
-There are a couple of ways to approach this. We can use the non-greedy version of 
+There are a couple of ways to approach this. We can use the non-greedy version of
 `+`
-, by replacing it with 
+, by replacing it with
 `+?`
 
-
-
 ```javascript
-const reMatchBetweenDoubleQuotes = /"(.+?)"/g
+const reMatchBetweenDoubleQuotes = /"(.+?)"/g;
 ```
 
-
-Which means find a 
+Which means find a
 `"`
-, start a capturing group then find as many characters as possible before you hit a 
+, start a capturing group then find as many characters as possible before you hit a
 `"`
-
 
 Another approach, which I prefer, is the following:
 
-
 ```javascript
-const reMatchBetweenDoubleQuotes = /"([^"]+)"/g
+const reMatchBetweenDoubleQuotes = /"([^"]+)"/g;
 ```
 
-
-Which means find a 
+Which means find a
 `"`
-, start a capturing group then find as many characters as possible that aren't 
+, start a capturing group then find as many characters as possible that aren't
 `"`
- before you hit a 
+before you hit a
 `"`
 .
 
-Note: We've introduced some more special characters. 
+Note: We've introduced some more special characters.
 `[`
- and 
+and
 `]`
- are a way to say match any of the following characters. In our use case, we're using it with 
+are a way to say match any of the following characters. In our use case, we're using it with
 `^`
-, i.e. 
+, i.e.
 `[^`
-, to say do not match any of the following things. In our case, we're saying do not match the 
+, to say do not match any of the following things. In our case, we're saying do not match the
 `"`
- character.
+character.
 
 ## Focus on What You’re Searching For
 
@@ -200,9 +179,7 @@ Regexes are super powerful for manipulating text, and now you’re armed with so
 - [regexper](https://regexper.com/) (Thanks @link2twenty!)
 - [VerbalExpressions](https://github.com/VerbalExpressions) repository (Thanks @citizen428!)
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/getting-started-with-regular-expressions-11dg)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/getting-started-with-regular-expressions-11dg)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -214,4 +191,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

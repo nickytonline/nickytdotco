@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/what-s-a-great-talk-you-watched-or-listened-to-recently-275h
 title: What's a great talk you watched or listened to recently?
 date: '2020-01-10T03:22:20.586Z'
 excerpt: >-
@@ -15,16 +14,14 @@ canonical_url: >-
   https://www.iamdeveloper.com/posts/what-s-a-great-talk-you-watched-or-listened-to-recently-275h/
 template: post
 ---
-I came across a great talk by [James Long](https://twitter.com/jlongster) tonight that he gave at [dotJS](https://www.dotjs.io/) 2019. I really enjoyed it and definitely recommend that you give it a watch.
 
+I came across a great talk by [James Long](https://twitter.com/jlongster) tonight that he gave at [dotJS](https://www.dotjs.io/) 2019. I really enjoyed it and definitely recommend that you give it a watch.
 
 <iframe class="liquidTag" src="https://dev.to/embed/youtube?args=DEcwa68f-jY" style="border: 0; width: 100%;"></iframe>
 
-
 This one happens to be software related, but what is a great talk (any topic) that you watched or listened to recently?
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/what-s-a-great-talk-you-watched-or-listened-to-recently-275h)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/what-s-a-great-talk-you-watched-or-listened-to-recently-275h)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -36,4 +33,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

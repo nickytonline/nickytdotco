@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/google-decides-to-not-phase-out-inbox-3ijd
 title: Google decides to not phase out Inbox!
 date: '2019-04-01T05:27:28.627Z'
 excerpt: "I can't believe Google decided to keep Inbox! Our voices have been heard. \U0001F4AF\U0001F64C                         ..."
@@ -14,15 +13,11 @@ canonical_url: 'https://dev.to/nickytonline/google-decides-to-not-phase-out-inbo
 template: post
 ---
 
-
 I can't believe Google decided to keep Inbox! Our voices have been heard. 💯🙌
-
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1112585735050285056" style="border: 0; width: 100%;"></iframe>
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/google-decides-to-not-phase-out-inbox-3ijd)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/google-decides-to-not-phase-out-inbox-3ijd)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -34,4 +29,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/an-nft-based-game-1jfk
 title: An NFT based game
 date: '2021-10-28T02:29:29.209Z'
 excerpt: >-
@@ -17,7 +16,9 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/an-nft-based-game-1jfk/'
 template: post
 ---
+
 ## The project
+
 So this past week I built out my second dApp with the current cohort in the [Buildspace](https://buildspace.so) community. This time round, the project was to create an NFT based game. The goal was to make a game where you could attack a big boss via a transaction on the blockchain that would use a game smart contract.
 
 So like the previous dApp, this required some knowledge of Solidity to build out our smart contact, [Hardhat](https://hardhat.org/) to help us develop our dApp with ETH, and some frontend skills (React and JavaScript).
@@ -57,22 +58,18 @@ Like the first dApp I built, I made it my own. Here's some fun screenshots from 
 <center>
 
 ![When your player is dead](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c5ask849iqilo3r53uw0.png)
- 
 
 </center>
 
 If you're interested in how it's all built, I've open sourced it. I’m sure there’s some refactoring to do, but I’m really happy hour it turned out.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fnickytonline%2Fterrible-characters" style="border: 0; width: 100%;"></iframe>
-
 
 If you want to just check out the game, head on over to [nftgame.iamdeveloper.com](https://nftgame.iamdeveloper.com). Note that it's only on the Rinkeby test network so no real coin will be used.
 
 Until next time!
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/an-nft-based-game-1jfk)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/an-nft-based-game-1jfk)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -84,4 +81,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

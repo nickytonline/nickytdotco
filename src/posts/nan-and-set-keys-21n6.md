@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/nan-and-set-keys-21n6
 title: NaN and Set Keys
 date: '2021-06-05T12:08:27.334Z'
 excerpt: >-
@@ -16,42 +15,40 @@ tags:
 canonical_url: 'https://dev.to/nickytonline/nan-and-set-keys-21n6'
 template: post
 ---
+
 On Thursday, during my JavaScriptHours stream, we came across something interesting.
 
-In JavaScript, 
+In JavaScript,
 `NaN !== NaN`
-. With a 
+. With a
 `Set`
-, the values are unique. If you try to add the same value, there will always be one of it in the 
+, the values are unique. If you try to add the same value, there will always be one of it in the
 `Set`
 .
 
-During the stream, I created a 
+During the stream, I created a
 `Set`
- and added 
+and added
 `NaN`
- to it twice. Some of the audience in the chat as well as myself were surprised and perplexed that the 
+to it twice. Some of the audience in the chat as well as myself were surprised and perplexed that the
 `Set`
- contained one value after adding 
+contained one value after adding
 `NaN`
- twice given that 
+twice given that
 `NaN !== NaN`
 .
-
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1400498933554683904" style="border: 0; width: 100%;"></iframe>
 
-
-Does anyone know why this is? My only guess is that maybe there is a 
+Does anyone know why this is? My only guess is that maybe there is a
 `Symbol`
- that indicates 
+that indicates
 `NaN`
- is unique even though 
+is unique even though
 `NaN !== NaN`
 .
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/nan-and-set-keys-21n6)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/nan-and-set-keys-21n6)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -63,4 +60,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

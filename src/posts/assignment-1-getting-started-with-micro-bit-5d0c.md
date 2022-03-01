@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/assignment-1-getting-started-with-micro-bit-5d0c
 title: 'Assignment #1: Getting Started with micro:bit'
 date: '2020-03-15T19:32:38.788Z'
 excerpt: >-
@@ -16,6 +15,7 @@ canonical_url: >-
   https://www.iamdeveloper.com/posts/assignment-1-getting-started-with-micro-bit-5d0c/
 template: post
 ---
+
 The [micro:bit](https://microbit.org/) Educational Foundation is an awesome initiative that was created by a [UK-based not for profit organization](https://microbit.org/about/) with the goal of getting everyone to learn to code. micro:bits are small pieces of hardware that you can program and it's a lot of fun.
 
 Most people I know are at home with their children due to COVID-19 at the moment, so I thought this would be a fun activity that your child or your child and you can do. Even as an adult, it's quite a lot of fun. 😃
@@ -54,9 +54,7 @@ Here is the [demo](https://makecode.microbit.org/_9zKDVEg1cCP3). It includes the
 
 Have fun! Until the next assignment. 👋🏻
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/assignment-1-getting-started-with-micro-bit-5d0c)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/assignment-1-getting-started-with-micro-bit-5d0c)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -68,4 +66,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

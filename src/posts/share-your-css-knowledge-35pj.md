@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/share-your-css-knowledge-35pj
 title: Share your CSS knowledge
 date: '2019-11-14T22:21:47.374Z'
 excerpt: >-
@@ -15,24 +14,20 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/share-your-css-knowledge-35pj/'
 template: post
 ---
-Today I learnt about the 
-`:placeholder-shown`
- pseudo-selector thanks to Daniel’s Tweet.
 
+Today I learnt about the
+`:placeholder-shown`
+pseudo-selector thanks to Daniel’s Tweet.
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1195101813793538048" style="border: 0; width: 100%;"></iframe>
 
-
-
 <iframe class="liquidTag" src="https://dev.to/embed/codepen?args=https%3A%2F%2Fcodepen.io%2Fnickytonline%2Fpen%2FzYYmVKz" style="border: 0; width: 100%;"></iframe>
-
 
 What are some things about CSS that you've learnt about recently or something you already knew and think others would benefit from knowing?
 
 ![Let's talk about it](https://media.giphy.com/media/WqLmcthJ7AgQKwYJbb/giphy.gif)
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/share-your-css-knowledge-35pj)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/share-your-css-knowledge-35pj)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -44,4 +39,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

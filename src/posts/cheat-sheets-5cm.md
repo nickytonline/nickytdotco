@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/cheat-sheets-5cm
 title: What's Your Favourite Cheat Sheets?
 date: '2018-04-05T13:27:58.909Z'
 excerpt: >-
@@ -16,19 +15,15 @@ canonical_url: 'https://www.iamdeveloper.com/posts/cheat-sheets-5cm/'
 template: post
 ---
 
-
 Photo care of Flick user [Luther Cunningham](https://www.flickr.com/photos/21155452@N08/2099818325/)
 
 Have an awesome cheat sheet or cheat sheet repo you wanna share with the rest of us?
 
 I'll get things started. Here's a nice cheat sheet from @dan_abramov for modern React lifecycle methods (React 16.3+)
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=981712092611989509" style="border: 0; width: 100%;"></iframe>
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/cheat-sheets-5cm)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/cheat-sheets-5cm)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -40,4 +35,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

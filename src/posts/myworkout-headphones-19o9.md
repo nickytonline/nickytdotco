@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/myworkout-headphones-19o9
 title: 'My Workout Headphones'
 date: '2021-01-12T04:55:09.142Z'
 excerpt: 'I get up about 5:50am on training days and train at 7am. The thing is, everyone else is sleeping in the house at this point'

@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/my-2019-year-in-review-23i1
 title: My 2019 Year in Review
 date: '2020-01-02T03:50:01.743Z'
 excerpt: >-
@@ -14,6 +13,7 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/my-2019-year-in-review-23i1/'
 template: post
 ---
+
 ## The Intro
 
 2019 was great. Lot’s of interesting stuff happened. Let’s dig in. But first, I say to you 2019... good day.
@@ -28,55 +28,41 @@ I enjoyed another great year in open source and also contributed to some new pro
 
 My site which is pretty much just a blog at the moment uses Gatsby. One interesting plugin I came across was from [@raee](https://dev.to/raae) called gatsby-remark-oembed. It allows you to embed resources as widgets that support oembed, e.g. Twitter.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fraae%2Fgatsby-remark-oembed" style="border: 0; width: 100%;"></iframe>
 
-
-I got it all installed but ran into issues. In the end, the documentation for setting up the plugin needed to be updated. I [put up a PR](https://github.com/raae/gatsby-remark-oembed/pull/35) to update the documentation, so others wouldn't stumble on the issue I ran into. And of course I wrote about it. 
-
+I got it all installed but ran into issues. In the end, the documentation for setting up the plugin needed to be updated. I [put up a PR](https://github.com/raae/gatsby-remark-oembed/pull/35) to update the documentation, so others wouldn't stumble on the issue I ran into. And of course I wrote about it.
 
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fany-contribution-to-open-source-is-valuable-57d3" style="border: 0; width: 100%;"></iframe>
-
 
 ### Project: Gatsby
 
 This was a big contribution LOL. I added my site to the list of showcased sites. As a thank you for my first PR, I got myself some Gatsby socks. I also wrote a short post about this.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fshowcase-your-gatsby-site-266" style="border: 0; width: 100%;"></iframe>
-
 
 ### Project: Refined GitHub
 
 For this project, I helped migrate the Refined GitHub extension to TypeScript. This was a huge endeavour that spanned several months. I am currently not using TypeScript at work, so this was one of my outlets to flex some TypeScript muscle. I comment about this as a big win for me in April on DEV.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/devcomment?args=a85d" style="border: 0; width: 100%;"></iframe>
-
 
 ### Project: TypeScript
 
 This was a contribution to the TypeScript repository but in the form of filing an issue. While working on the Refined GitHub extension refactor to TypeScript, I discovered an issue with the NamedNodeMap interface in the core types that ships with TypeScript. The issue got labelled as a bug so it is in their backlog now.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2FMicrosoft%2FTypeScript%2Fissues%2F30928" style="border: 0; width: 100%;"></iframe>
-
 
 ### Project: dev.to codebase
 
 I [continued to contribute](https://github.com/thepracticaldev/dev.to/commits?author=nickytonline) to my favourite open source project, DEV.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fthepracticaldev%2Fdev.to" style="border: 0; width: 100%;"></iframe>
-
 
 ### Hacktoberfest
 
 This year was my first year participating in Hacktoberfest. It was a fun endeavour which included contributions to DEV as well as adding some automation for properly formatting markdown files for the [learnstorybook.com](https://learnstorybook.com) project.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fmy-hacktoberfest-2019-32i2" style="border: 0; width: 100%;"></iframe>
-
 
 ### Open Source in 2020
 
@@ -86,15 +72,11 @@ I will definitely continue to contribute to open source in 2020. What about you?
 
 I’ve been athletic pretty much since elementary school, but in recent years, I’ve had a few setbacks with injuries. Last fall, I joined the corporate soccer team and a few practices in, I ended up tearing one of my calves. While I was recovering from my injury, I ended up putting on quite a few pounds, so end of April this year, I hit the tipping point and began my journey to getting back in shape.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/instagram?args=B0ClFBSJ4Hu" style="border: 0; width: 100%;"></iframe>
-
 
 Initially, it was quite tough, because even though I had completed my physiotherapy for my torn calf, I was nowhere near being in any kind of running shape. I ended up joining an Orange Theory and the rest was history. I busted my butt and got back into pretty awesome shape, dropping literally 35-40lbs of fat.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/instagram?args=B1xaOVvp820" style="border: 0; width: 100%;"></iframe>
-
 
 I put a couple back on as it’s the Christmas holidays, but will be getting back into the swing of things post-holidays.
 
@@ -106,17 +88,13 @@ I have probably already saved a good 50 hours this year not updating and testing
 
 And yes, I wrote a post about it.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fupdate-dependencies-with-dependabot-cypress-and-netlify-3lkf" style="border: 0; width: 100%;"></iframe>
-
 
 ## Page Load Time Improvements for Shotgun
 
 I improved the page load times of the product I work on, [Shotgun](https://shotgunsoftware.com), with some webpack and frontend build changes I made. One of our high profile clients, [Lucasfilm Ltd. was very happy](https://dev.to/nickytonline/comment/ip05) about the improvements. It felt really good when our support team posted in Slack that Lucasfilm noticed a 20% speed improvement based on their own internal testing. 🔥
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/devcomment?args=ip05" style="border: 0; width: 100%;"></iframe>
-
 
 ## Interviewing at Facebook
 
@@ -130,15 +108,11 @@ I moved on to the second interview, and once again did well. I got the phone cal
 
 One of my cousins lives in California, so I also took the opportunity to visit some family. Aside from that, I contacted [Brian Vaughn](https://twitter.com/brian_d_vaughn), one of the core React team members just to see if he wanted to grab a bite to eat/coffee with a random Canadian. I’ll be honest, I generally do not ask strangers to meet up, but he seemed like such a nice person on Twitter and GitHub, that I just went for it. We grabbed some sushi and a coffee on Sunday and just chit-chatted. It was really nice of him to do that while I was there.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/instagram?args=B3Aii_CpCP0" style="border: 0; width: 100%;"></iframe>
-
 
 Thanks Brian and I am definitely hooked on Philz coffee now! Philz Coffee… please come to Canada, specifically Montreal. 😆
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/instagram?args=B3AjS5kpdh5" style="border: 0; width: 100%;"></iframe>
-
 
 On Monday, I had an intense day of interviewing at Facebook, but there was a lunch break. At lunchtime, none other than [Andrew Clark](https://twitter.com/acdlite) from the React core team joined me for lunch. It was awesome. We spent an hour together at lunch talking about all kinds of things including React. Thanks for lunch Andrew! Andrew is super nice BTW.
 
@@ -148,9 +122,7 @@ I finished my day at Facebook exhausted and headed back on a redeye to Montreal.
 
 And yes, I have a post about that.
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Ftake-chances-and-standout-because-who-knows-3kh6" style="border: 0; width: 100%;"></iframe>
-
 
 ## Building a Course
 
@@ -164,9 +136,7 @@ I created the [@vscodetips](https://twitter.com/vscodetips) Twitter account back
 
 VS Code tips is also on DEV, but I have not done much there yet. You can check out the profile here
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/organization?args=vscodetips" style="border: 0; width: 100%;"></iframe>
-
 
 ## New Beginnings Starting in 2020
 
@@ -176,8 +146,7 @@ Thanks for reading and Happy New Year!
 
 Photo by [NordWood Themes](https://unsplash.com/@nordwood?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/2019?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/my-2019-year-in-review-23i1)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/my-2019-year-in-review-23i1)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -189,4 +158,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

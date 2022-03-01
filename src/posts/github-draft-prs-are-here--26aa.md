@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/github-draft-prs-are-here--26aa
 title: 'GitHub draft PRs are here! '
 date: '2019-02-14T19:56:36.069Z'
 excerpt: >-
@@ -18,7 +17,6 @@ canonical_url: 'https://www.iamdeveloper.com/posts/github-draft-prs-are-here--26
 template: post
 ---
 
-
 Photo by [EJ Yao](https://unsplash.com/photos/D46mXLsQRJw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/construction?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Gone or soon to be gone are the days of creating a PR and marking it as WIP or DON'T MERGE!
@@ -27,16 +25,13 @@ For galentine's, GitHub has given us Draft PRs
 
 ![Happy Galentine's](https://media.giphy.com/media/xUOwG3SLkvkEzSwZJC/giphy.gif)
 
-
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1096093162345508864" style="border: 0; width: 100%;"></iframe>
-
 
 I think it's great. What are your thoughts on draft PRs?
 
 ![SNL Coffee Talk](https://media.giphy.com/media/l2SpQRuCQzY1RXHqM/giphy-downsized.gif)
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/github-draft-prs-are-here--26aa)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/github-draft-prs-are-here--26aa)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -48,4 +43,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

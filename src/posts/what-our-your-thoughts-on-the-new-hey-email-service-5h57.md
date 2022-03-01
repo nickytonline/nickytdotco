@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/what-our-your-thoughts-on-the-new-hey-email-service-5h57
 title: What our your thoughts on the new Hey email service?
 date: '2020-06-28T03:28:31.617Z'
 excerpt: >-
@@ -16,14 +15,12 @@ canonical_url: >-
   https://dev.to/nickytonline/what-our-your-thoughts-on-the-new-hey-email-service-5h57
 template: post
 ---
-I ran a poll on Twitter that is still going, but I'm wondering what folks on DEV think of the new Hey email service. Is it worth it or are you fine with GMail and the rest of the old guard? I am still conflicted.
 
+I ran a poll on Twitter that is still going, but I'm wondering what folks on DEV think of the new Hey email service. Is it worth it or are you fine with GMail and the rest of the old guard? I am still conflicted.
 
 <iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1277000517294665731" style="border: 0; width: 100%;"></iframe>
 
-
-*[This post is also available on DEV.](https://dev.to/nickytonline/what-our-your-thoughts-on-the-new-hey-email-service-5h57)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/what-our-your-thoughts-on-the-new-hey-email-service-5h57)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -35,4 +32,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>

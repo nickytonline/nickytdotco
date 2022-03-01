@@ -1,5 +1,4 @@
 ---
-stackbit_url_path: posts/programming-resources-for-kids-apb
 title: Programming Resources for Kids
 date: '2020-03-28T16:25:48.736Z'
 excerpt: >-
@@ -15,12 +14,12 @@ tags:
 canonical_url: 'https://www.iamdeveloper.com/posts/programming-resources-for-kids-apb/'
 template: post
 ---
+
 For those of you with children at home during these “interesting” times that are teaching programming at home, what are your go to resources?
 
 If possible, list the age range for the resource. Hopefully we can build an awesome list of resources here. 💪
 
-*[This post is also available on DEV.](https://dev.to/nickytonline/programming-resources-for-kids-apb)*
-
+_[This post is also available on DEV.](https://dev.to/nickytonline/programming-resources-for-kids-apb)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
@@ -32,4 +31,4 @@ script.onload = function() {
     window.iFrameResize({}, '.liquidTag');
 };
 parent.appendChild(script);
-</script>    
+</script>
