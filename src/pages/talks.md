@@ -3,6 +3,14 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
+<h2>Tools for web developers: Live coding and debugging</h2>
+
+<time datetime="2021-02-10">February 10th, 2022</time>
+
+{% youtube 'https://www.youtube.com/watch?v=k0nSJ1MtSao' %}
+
+- [Slide deck](https://iamdeveloper.com/codementor2022)
+
 <h2>AppWrite Hacktoberfest Kickoff</h2>
 
 <time datetime="2021-04-02">September 29th, 2021</time>
