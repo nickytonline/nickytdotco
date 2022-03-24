@@ -19,9 +19,11 @@ How did you influence the place you worked at in your work—stuff like big proj
 
 I'm going to start with the most recent company that I worked at, Forem, the software that powers sites like dev.to where you might be reading this blog post.
 
+I'm really proud of all the work I did while at Forem, and I wanted to take note of it all while it's still fresh in my head.
+
 # Pre-commit hooks/Coding standards
 
-My work focused mainly on the frontend, and I put pre-commit hooks that run stuff like prettier, eslint and jest. It expanded to more than that, for example, running rubocop on Ruby files. Check out my post on pre-commit hooks if you're curious about all that.
+My work focused mainly on the frontend, and I put pre-commit hooks that ran stuff like prettier, eslint and jest. It expanded to more than that, for example, running rubocop on Ruby files. Check out my post on pre-commit hooks if you're curious about all that.
 
 <iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fstuff-i-always-set-up-for-frontend-work-56h2" style="border: 0; width: 100%;"></iframe>
 
