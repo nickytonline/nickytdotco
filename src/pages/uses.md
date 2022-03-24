@@ -51,7 +51,6 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
 - [Meeter](https://trymeeter.com) - For joining meetings faster
 - [OBS](https://obsproject.com/download) - For streaming on Twitch
-- [Insomnia](https://insomnia.rest) - For exploring REST and GraphQL APIs
 - [Descript](https://www.descript.com/) - For editing my Twitch streams so they can be published to YouTube.
 - [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to Zoom in my webcam.
 - [Cleanshot X](https://cleanshot.com/) - For better screen shots and screen recordings
