@@ -27,6 +27,16 @@ My work focused mainly on the frontend, and I put pre-commit hooks that run stuf
 
 Pre-commit hooks, linting, etc., were super important to me because I was the only frontend on the project for a long time. Hence, code maintenance was always on the brain and still is. 😎
 
+# Moving to Preact X, Testing Library
+
+We were running an older version of Preact. The older version was blocking us from using a lot of the functionality that was previously only available in React—hooks, fragments, context, componentDidCatch to name a few. Upgrading Preact wasn't a huge change, but the testing library we used for components in the project was. It worked with the older version of Preact and not the newer one.
+
+Around this time, React Testing Library ([Preact Testing Library](https://preactjs.com/guide/v10/preact-testing-library/) in our case) had started gaining traction. It clicked with me how this library tested components. So, another significant change came with the migration to Preact X. You can read more about that in the referenced changelog post.
+
+<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fchangelog-frontend-edition-30l7" style="border: 0; width: 100%;"></iframe>
+
+I mention this in the changelog post, but a big shoutout to my co-worker Ridhwana Khan (@ridhwana) for helping me migrate all the tests to preact-testing-library.
+
 # Accessibility
 
 I'm not an accessibility expert, but I had the chance to work with Marcy Sutton (@marcysutton) while I was at Forem. She joined us for about six weeks in the fall of 2020. I learned a lot from her. It also invigorated me to advocate for accessibility as a focal point as we built out the product. We were building welcoming, inclusive communities, so it would seem hypocritical not to take accessibility into account.
@@ -43,13 +53,15 @@ As the application grew more significant and feature-rich, it was super importan
 
 It took about a month to get the CI/CD pipeline to run the tests and maybe another couple of weeks to tweak how we run them locally during development.
 
+A big shoutout to my knowledgeable Rails co-workers Josh Puetz, Michael Kohl, Rhymes, and Mac Siri for helping find the best strategy for cleaning the database between test runs.
+
 # Mentoring
 
-As a more senior person on the team, you have to help scale the team and impart knowledge. Pairing is something I consistently did regarding all things frontend and programming in general. And another great thing about mentoring? You learn too!
+As a more senior person on the team, you have to help scale the team and impart knowledge. I consistently did Pairing regarding all things front-end and programming in general. And another great thing about mentoring? You learn too!
 
 # What else?
 
-I missed probably a few things, but these are the big lines. I'll probably add more to this as I enjoy my time off between roles.
+I probably missed a few things, but these are the big lines. I'll probably add more to this as I enjoy my time off between roles.
 
 The last thing I'll leave you with is to lift your teammates, listen to others, be kind, and have fun if you want to impact your organization.
 
