@@ -50,44 +50,14 @@ status = 301
 force = true
 
 [[redirects]]
-from = "https://vscode.iamdeveloper.com/*"
-to = "/posts/my-visual-studio-code-setup-2ima/"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://osx.iamdeveloper.com/*"
-to = "https://gist.github.com/nickytonline/378e7a6584542112f53c0067a6a4684c:splat"
-status = 301
-force = true
-
-[[redirects]]
 from = "https://story.iamdeveloper.com/*"
 to = "https://github.com/nickytonline/js-montreal-storybook-talk-2017-06-13:splat"
 status = 301
 force = true
 
 [[redirects]]
-from = "https://resources.iamdeveloper.com/*"
-to = "https://gist.github.com/nickytonline/5cf16c4adab6c558552d384db4cc2057:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://mac.iamdeveloper.com/*"
-to = "/posts/my-mac-setup-2m05/"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://gitaliases.iamdeveloper.com/*"
-to = "/posts/my-git-aliases-5dea/"
-status = 301
-force = true
-
-[[redirects]]
 from = "https://cv.iamdeveloper.com/*"
-to = "https://stackoverflow.com/cv/nickytonline:splat"
+to = "https://www.linkedin.com/in/nickytonline/:splat"
 status = 301
 force = true
 
@@ -215,12 +185,6 @@ force = true
 [[redirects]]
 from = "https://www.javascripthours.com/*"
 to = "https://twitch.tv/nickytonline/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://updates.iamdeveloper.com/*"
-to = "https://timeline.iamdeveloper.com/:splat"
 status = 301
 force = true
 
