@@ -18,7 +18,4 @@ Assuming you have Node.js installed on your machine, you can run `npx gitignore 
 
 Here's a clip from my stream today showing it in action. Maybe you'll find it useful in your next project!
 
-<iframe
-    src="https://player.twitch.tv/?video=1436774539&autoplay=false&parent=www.iamdeveloper.com"
-    allowfullscreen>
-</iframe>
+{% youtube 'https://www.youtube.com/watch?v=pSq7bSk3WqU' %}
