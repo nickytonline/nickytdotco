@@ -10,9 +10,11 @@ template: post
 
 Did you know that you can use [hooks](https://beta.reactjs.org/learn#using-hooks) in [class components](https://reactjs.org/docs/react-component.html)?
 
-OK, I'm lying kind of. You can't use a hook directly in a class component, but you can use a hook in a wrapped function component with a [render prop](https://reactjs.org/docs/render-props.html) to achieve this.
+OK, I'm lying, kind of. You can't use a hook directly in a class component, but you can use a hook in a wrapped function component with a [render prop](https://reactjs.org/docs/render-props.html) to achieve this.
 
 Before going ahead with this, if you're able to convert your class component to a function component, prefer that. But if the component needs to remain a class component for whatever reason, this pattern works great. You will most likely encounter this scenario when working on a mature React codebase.
+
+The beauty of this pattern is you can build new components as function components using hooks. Class components that can't be upgraded for whatever reason benefit from the same functionality via a thin compatibility layer, the wrapper component.
 
 Let's first create a hook.
 
