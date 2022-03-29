@@ -15,6 +15,7 @@ tags:
   - react
 canonical_url: 'https://www.iamdeveloper.com/posts/i-built-my-first-dapp-3pbm/'
 template: post
+hashnode_url: https://nickytonline.hashnode.dev/i-built-my-first-dapp
 ---
 
 This past weekend I completed a [web3](https://www.freecodecamp.org/news/what-is-web3/) project from the awesome folks at [buildspace](https://buildspace.so).
