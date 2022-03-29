@@ -1,6 +1,6 @@
 ---
 title: Productivity Tools I Use
-date: '2022-03-28T03:44:30.902Z'
+date: '2022-03-29T03:44:30.902Z'
 excerpt: Did you know that you can use hooks in class components? OK, I'm lying kind of. You can't use a hook directly
 tags:
   - tooling
