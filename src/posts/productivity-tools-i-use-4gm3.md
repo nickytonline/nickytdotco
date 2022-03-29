@@ -48,7 +48,7 @@ Here is a short list of some great tools I've discovered over the past year.
 
 ![Fig autocomplete in action](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/avp5xo335g46nqi3bmot.png)
 
-- mcfly - An enhance search for your shell history. Super charged <kbd>CTRL</kbd> + <kbd>R</kbd>!
+- [mcfly](https://github.com/cantino/mcfly) - An enhance search for your shell history. Super charged <kbd>CTRL</kbd> + <kbd>R</kbd>!
 
 ![mcfly shell history search in action](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fvjdht5vlmrj2xqcchs5.png)
 
