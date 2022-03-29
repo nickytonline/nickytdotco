@@ -5,31 +5,30 @@
  *
  * @param {string} fileSlug A pages file slug.
  * @param {string} url A pages URL.
- * @param {string} bloggingPlatform The blogging platform where the post was written.
+ * @param {string} hashnode_url Blogpost URL on Hashnode.
  * @param {boolean} isComment Whether or not the button is for commenting.
  *
  * @returns {string} Markup for a boost on blogging platform button.
  */
-function boostButton(fileSlug, url, bloggingPlatform, isComment = false) {
+function boostButton(fileSlug, url, hashnode_url, isComment = false) {
   if (!url.startsWith('/posts/')) {
     return '';
   }
 
   const callToActionText = isComment ? 'Comment' : 'Boost';
   const commentHash = isComment ? '#comments' : '';
+  let hashnodeBoosterLink = '';
 
-  switch (bloggingPlatform) {
-    // Workout articles
-    case 'flowstate':
-      return `<a href="https://flowstate.to/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on Flowstate</a>`;
-
-    case 'codenewbie':
-      return `<a href="https://community.codenewbie.org/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on CodeNewbie Community</a>`;
-
-    // Developer related articles
-    default:
-      return `<a href="https://dev.to/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on DEV</a>`;
+  if (hashnode_url) {
+    hashnodeBoosterLink =
+      `<a href="${hashnode_url}" class="boost-link">Boost on Hashnode</a>` +
+      hashnodeBoosterLink;
   }
+
+  return (
+    `<a href="https://dev.to/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on DEV</a>` +
+    hashnodeBoosterLink
+  );
 }
 
 /**

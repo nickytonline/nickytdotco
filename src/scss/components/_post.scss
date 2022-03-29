@@ -1,4 +1,8 @@
 .post {
+  .boost-link + .boost-link {
+    margin-left: 1rem;
+  }
+
   .boost-link,
   .comment-link {
     color: var(--color-theme-highlight);
