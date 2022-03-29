@@ -3,8 +3,8 @@ title: Uses
 metaDesc: 'This page details pretty much all I use as a developer.'
 ---
 
-This page details pretty much all I use as a developer. If you decide to make your own, consider adding it to [uses.tech](https://uses.tech) that was created by [Wes Bos](https://twitter.com/wesbos).
-I use a Mac so most tools are macOS specific, but there are definitely some OS agnostic ones in the list as well. You might also be interested in [My Mac Setup](https://www.iamdeveloper.com/posts/my-mac-setup-2m05/) post although it is a little outdated.
+This page details pretty much all I use as a developer. If you decide to make your own, consider adding it to [Wes Bos](https://twitter.com/wesbos)' [uses.tech](https://uses.tech).
+I use a Mac, so most tools are macOS specific, but there are some OS-agnostic ones in the list. You might also be interested in [My Mac Setup](https://www.iamdeveloper.com/posts/my-mac-setup-2m05/) post, although it is a little outdated.
 
 ## Editor
 
@@ -36,7 +36,7 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 
 - [Bartender](https://www.macbartender.com) - For managing your menu bar. I used to use [Vanilla](https://matthewpalmer.net/vanilla/), but with the notch in newer MacBook Pros, Bartender made the menubar more usable when dealing with lots of menubar icons.
 - [Rocket](https://matthewpalmer.net/rocket/) - Emojis, emojis
-- [Raycast](https://raycast.com) - Workflows, snippets, MacOS spotlight on steroids. I was previously using [Alfred](https://www.alfredapp.com/), another amazing Spotlight alternative.
+- [Raycast](https://raycast.com) - Workflows, snippets, MacOS spotlight on steroids. I previously used [Alfred](https://www.alfredapp.com/), another amazing Spotlight alternative.
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12) - Prevent your Mac from going to sleep
 - [f.lux](https://justgetflux.com/) - Be kind to your eyeballs
 - [Fork](https://git-fork.com/) - A great git GUI
@@ -46,14 +46,13 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [Dato](https://sindresorhus.com/dato) - A better date app for MacOS.
 - [iTerm](https://iterm2.com/) - A better terminal for MacOS
 - [Starship](https://starship.rs/) - A cross shell prompt
-- [Giphy Capture](https://giphy.com/apps/giphycapture/) - For creating animated GIFs and screenshares
 - [Spotify](https://www.spotify.com/us/download/) - Because music.
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
 - [Meeter](https://trymeeter.com) - For joining meetings faster
 - [OBS](https://obsproject.com/download) - For streaming on Twitch
-- [Descript](https://www.descript.com/) - For editing my Twitch streams so they can be published to YouTube.
-- [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to Zoom in my webcam.
-- [Cleanshot X](https://cleanshot.com/) - For better screen shots and screen recordings
+- [Descript](https://www.descript.com/) - For editing and publishing my Twitch streams to YouTube.
+- [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to zoom in on my webcam.
+- [Cleanshot X](https://cleanshot.com/) - For better screenshots and screen recordings
 - [Cloudflare Warp](https://blog.cloudflare.com/1111-warp-better-vpn/) - Faster Internet and some VPN goodness
 - [Plash](https://apps.apple.com/us/app/plash/id1494023538) - An interactive desktop background (one or more web pages) for your Mac
 - [Krisp](https://krisp.ai/) - Filter out unwanted noise on calls and streams
@@ -71,17 +70,18 @@ I use a Mac so most tools are macOS specific, but there are definitely some OS a
 - [rbenv](https://github.com/rbenv/rbenv) - Ruby version manager
 - [nvm](https://github.com/nvm-sh/nvm) - Node version manager
 - [ngrok](https://ngrok.com/) - Exposes local servers to the public internet over secure tunnels
+- [mcfly](https://github.com/cantino/mcfly) - An enhance search for your shell history. Super charged <kbd>CTRL</kbd> + <kbd>R</kbd>!
 
 ## Additional Resources
 
-Also, for those interested, here’s a big list I made for [Frontend Developer Resources](https://www.iamdeveloper.com/blog/2020-01-06-frontend-developer-resources/). Some of the things mentioned above are probably already in this list.
+Also, I made an extensive list for [Frontend Developer Resources](https://www.iamdeveloper.com/blog/2020-01-06-frontend-developer-resources/). Some of the things mentioned above are probably already on this list.
 
 ## Office Setup
 
 - [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141) - I snagged it at a great price. It appears to go on sale often.
-- Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with a bunch of new parts for just under a third of the price.
+- Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with many new parts for just under a third of the price.
 - [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
-- Macbook Pro 14" (2021)
+- MacBook Pro 14" (2021)
 - [Apple Magic Trackpad 2](https://www.apple.com/shop/product/MRMF2LL/A/magic-trackpad-2-space-gray)
 - [Apple Magic Keyboard with Numeric Keypad](https://www.apple.com/shop/product/MQ052B/A/magic-keyboard-with-numeric-keypad-british-english-silver)
 - [Sony WH-1000XM3](https://www.sony.ca/en/electronics/headband-headphones/wh-1000xm3) headphones - I snagged them during Boxing Day week.
