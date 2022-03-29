@@ -16,6 +16,7 @@ tags:
 canonical_url: >-
   https://www.iamdeveloper.com/posts/getting-started-with-regular-expressions-11dg
 template: post
+hashnode_url: https://nickytonline.hashnode.dev/getting-started-with-regular-expressions
 ---
 
 Regular expressions (regex) are one of those things that folks seem to make fun of most of the time because they don't understand them, or partially understand them.

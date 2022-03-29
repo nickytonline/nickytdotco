@@ -10,6 +10,7 @@ tags:
   - npm
 canonical_url: 'https://www.iamdeveloper.com/posts/npx-gitignore-5087/'
 template: post
+hashnode_url: https://nickytonline.hashnode.dev/npx-gitignore
 ---
 
 I've done this a few times on a live stream and there is always someone unaware of this so I wanted to share.

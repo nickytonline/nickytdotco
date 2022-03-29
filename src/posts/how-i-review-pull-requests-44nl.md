@@ -14,6 +14,7 @@ tags:
   - career
 canonical_url: 'https://www.iamdeveloper.com/posts/how-i-review-pull-requests-44nl/'
 template: post
+hashnode_url: https://nickytonline.hashnode.dev/how-i-review-pull-requests
 ---
 
 Someone in my [Virtual Coffee](https://virtualcoffee.io) community asked about getting better at reviewing pull requests (PR) today, which prompted this post. Hopefully, you find something helpful here. I'd love to hear from you if you do! And if you don't, that's OK too. Suggestions to improve my process are welcome!

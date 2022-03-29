@@ -5,6 +5,7 @@ excerpt: 'Like last year, 2021 has been quite the year. Despite the pandemic, I 
 tags:
   - yearinreview
 template: post
+hashnode_url: https://nickytonline.hashnode.dev/my-2021-year-in-review
 ---
 
 Like last year, 2021 has been quite the year. Despite the pandemic, I stayed healthy and managed to have a pretty good year.

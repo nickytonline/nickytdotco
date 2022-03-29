@@ -11,6 +11,7 @@ tags:
   - career
 canonical_url: 'https://www.iamdeveloper.com/posts/my-impact-at-forem-23mj.md'
 template: post
+hashnode_url: https://nickytonline.hashnode.dev/my-impact-at-forem
 ---
 
 This is my first post about impact. What do I mean by impact?

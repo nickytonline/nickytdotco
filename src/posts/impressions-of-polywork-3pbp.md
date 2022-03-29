@@ -14,6 +14,7 @@ tags:
   - polywork
 canonical_url: 'https://www.iamdeveloper.com/posts/impressions-of-polywork-3pbp/'
 template: post
+hashnode_url: https://nickytonline.hashnode.dev/first-impressions-of-polywork-as-a-software-engineer
 ---
 
 _This post was sponsored by Polywork, but it is my own authentic review_

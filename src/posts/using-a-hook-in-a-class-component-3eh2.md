@@ -6,6 +6,7 @@ tags:
   - react
   - javascript
 template: post
+hashnode_url: https://nickytonline.hashnode.dev/using-a-hook-in-a-class-component
 ---
 
 Did you know that you can use [hooks](https://beta.reactjs.org/learn#using-hooks) in [class components](https://reactjs.org/docs/react-component.html)?
