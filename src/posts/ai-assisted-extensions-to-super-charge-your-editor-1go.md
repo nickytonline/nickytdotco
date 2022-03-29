@@ -11,7 +11,6 @@ tags:
   - machinelearning
 canonical_url: https://www.iamdeveloper.com/posts/ai-assisted-extensions-to-super-charge-your-editor-1go/
 template: post
-platform: codenewbie
 ---
 
 Most editors have extensions. Did you know there are some AI assisted extensions to help super charge your coding experience?

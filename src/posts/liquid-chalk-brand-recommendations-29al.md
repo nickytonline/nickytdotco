@@ -10,7 +10,6 @@ tags:
   - discuss
 canonical_url: 'https://www.iamdeveloper.com/posts/liquid-chalk-brand-recommendations-29al/'
 template: post
-platform: flowstate
 ---
 
 Does anyone have any recommendations for liquid chalk brands? I'm a sweat ball when doing HIIT, but don't want to use traditional chalk for weights as it's a bit of a mess for my tiny garage gym.

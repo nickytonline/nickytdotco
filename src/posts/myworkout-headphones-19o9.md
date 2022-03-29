@@ -11,7 +11,6 @@ tags:
   - headphones
 canonical_url: 'https://www.iamdeveloper.com/posts/myworkout-headphones-19o9'
 template: post
-platform: flowstate
 ---
 
 In my previous post, I talked about my gym setup and routine.
