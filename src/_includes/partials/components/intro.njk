@@ -5,7 +5,7 @@
     {% if introSummary %}
       <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]">{{ introSummary | safe }}</div>
     {% endif %}
-    {% boostButton page.fileSlug,
+    {% boostLink page.fileSlug,
     page.url,
     hashnode_url %}
   </div>

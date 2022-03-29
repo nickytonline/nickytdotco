@@ -12,7 +12,7 @@ const {
   removePostIsOnDevLink
 } = require('./src/filters/devToFilters.js');
 
-const {youtube, boostButton, googleAnalytics, socialImage} = require('./src/shortCodes');
+const {youtube, boostLink, googleAnalytics, socialImage} = require('./src/shortCodes');
 
 // Import transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
@@ -47,7 +47,7 @@ module.exports = function(config) {
   config.addPassthroughCopy('src/robots.txt');
 
   // Short Codes
-  config.addShortcode('boostButton', boostButton);
+  config.addShortcode('boostLink', boostLink);
   config.addShortcode('youtube', youtube);
   config.addShortcode('googleAnalytics', googleAnalytics);
   config.addShortcode('socialImage', socialImage);

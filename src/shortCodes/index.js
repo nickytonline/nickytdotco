@@ -10,7 +10,7 @@
  *
  * @returns {string} Markup for a boost on blogging platform button.
  */
-function boostButton(fileSlug, url, hashnode_url, isComment = false) {
+function boostLink(fileSlug, url, hashnode_url, isComment = false) {
   if (!url.startsWith('/posts/')) {
     return '';
   }
@@ -104,4 +104,4 @@ function socialImage(title, excerpt = '') {
   return `https://res.cloudinary.com/nickytonline/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:ffffff,g_south_west,x_30,y_280,l_text:roboto_64_bold:${encodedTitle}/w_860,c_fit,co_rgb:ffffff,g_north_west,x_30,y_410,l_text:arial_48:${encodedExcerpt}/social`;
 }
 
-module.exports = {boostButton, youtube, googleAnalytics, socialImage};
+module.exports = {boostLink, youtube, googleAnalytics, socialImage};
