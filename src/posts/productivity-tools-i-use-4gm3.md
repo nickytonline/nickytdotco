@@ -15,7 +15,7 @@ Here is a short list of some great tools I've discovered over the past year.
 
 ### Free Apps
 
-- [Raycast](https://raycast.com/) - Workflows, snippets, MacOS spotlight on steroids. I previously used [Alfred](https://www.alfredapp.com/), another excellent Spotlight alternative. There are [plans to create a version for Linux and Windows](https://www.raycast.com/faq#is-raycast-available-on-windows-or-linux), but they want to get it right on macOS first.
+- [Raycast](https://raycast.com/) - Workflows, snippets, macOS spotlight on steroids. I previously used [Alfred](https://www.alfredapp.com/), another excellent Spotlight alternative. There are [plans to create a version for Linux and Windows](https://www.raycast.com/faq#is-raycast-available-on-windows-or-linux), but they want to get it right on macOS first.
 
 ![Raycast Search](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rrrls5ct9ld8ezq47tl0.png)
 
