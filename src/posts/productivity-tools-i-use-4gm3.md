@@ -19,7 +19,7 @@ Here is a short list of some great tools I've discovered over the past year.
 
 ![Raycast Search](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rrrls5ct9ld8ezq47tl0.png)
 
-- [Dato](https://sindresorhus.com/dato) - A better date app for MacOS. I also love that you can have clocks for different timezones. I have a UTC clock which is super helpful when working on a remote team with colleagues all over the planet.
+- [Dato](https://sindresorhus.com/dato) - A better date app for macOS. I also love that you can have clocks for different timezones. I have a UTC clock which is super helpful when working on a remote team with colleagues all over the planet.
 
 ![Dato Calendar App](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0upcfu8ujartdzhy2tw1.png)
 
