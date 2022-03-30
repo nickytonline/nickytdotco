@@ -6,17 +6,14 @@
  * @param {string} fileSlug A pages file slug.
  * @param {string} url A pages URL.
  * @param {string} hashnode_url Blogpost URL on Hashnode.
- * @param {boolean} isComment Whether or not the button is for commenting.
  *
- * @returns {string} Markup for a boost on blogging platform button.
+ * @returns {string} Markup for a boost links on DEV and Hashnode.
  */
-function boostLink(fileSlug, url, hashnode_url, isComment = false) {
+function boostLink(fileSlug, url, hashnode_url) {
   if (!url.startsWith('/posts/')) {
     return '';
   }
 
-  const callToActionText = isComment ? 'Comment' : 'Boost';
-  const commentHash = isComment ? '#comments' : '';
   let hashnodeBoosterLink = '';
 
   if (hashnode_url) {
@@ -26,7 +23,7 @@ function boostLink(fileSlug, url, hashnode_url, isComment = false) {
   }
 
   return (
-    `<a href="https://dev.to/nickytonline/${fileSlug}${commentHash}" class="${callToActionText.toLowerCase()}-link">${callToActionText} on DEV</a>` +
+    `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>` +
     hashnodeBoosterLink
   );
 }
