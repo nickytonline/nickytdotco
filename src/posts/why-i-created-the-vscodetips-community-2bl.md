@@ -13,7 +13,6 @@ tags:
   - beginners
 canonical_url: 'https://community.vscodetips.com/nickytonline/why-vscodetips-1jmd'
 template: post
-hashnode_url: https://nickytonline.hashnode.dev/why-i-created-the-vscodetips-community
 ---
 
 I'm a big fan of Visual Studio Code. I was an early adopter. I started using VS Code in 2015. I was working at a Microsoft technology based company and the project I was on was to include TypeScript, pretty new at the time even though TypeScript had existed since 2012.

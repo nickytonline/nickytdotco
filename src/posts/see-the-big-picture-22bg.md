@@ -13,7 +13,6 @@ tags:
   - beginners
 canonical_url: 'https://dev.to/nickytonline/see-the-big-picture-22bg'
 template: post
-hashnode_url: https://nickytonline.hashnode.dev/see-the-big-picture
 ---
 
 Depending on where you are at in your career, you may have heard of the term get the **big picture** or see the full picture.

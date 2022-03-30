@@ -12,7 +12,6 @@ tags:
 canonical_url: >-
   https://community.vscodetips.com/nickytonline/native-bracket-pair-colourization-in-vs-code-310a
 template: post
-hashnode_url: https://nickytonline.hashnode.dev/native-bracket-pair-colourization-in-vs-code
 ---
 
 Cross-posted from [community.VSCodeTips.com](https://community.vscodetips.com/nickytonline/native-bracket-pair-colourization-in-vs-code-310a)

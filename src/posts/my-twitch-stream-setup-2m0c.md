@@ -14,7 +14,6 @@ tags:
   - learninpublic
 canonical_url: 'https://dev.to/nickytonline/my-twitch-stream-setup-2m0c'
 template: post
-hashnode_url: https://nickytonline.hashnode.dev/my-twitch-stream-setup
 ---
 
 So I started streaming on Twitch last year.

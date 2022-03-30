@@ -14,7 +14,6 @@ tags:
   - livecoding
 canonical_url: 'https://www.iamdeveloper.com/posts/learning-rust-1h2n/'
 template: post
-hashnode_url: https://nickytonline.hashnode.dev/learning-rust
 ---
 
 My awesome coworker @citizen428 dropped a new resource for learning the Rust language care of Microsoft. It's called [Get started with Rust](https://docs.microsoft.com/en-us/learn/paths/rust-first-steps/).

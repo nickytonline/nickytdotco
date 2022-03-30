@@ -6,7 +6,6 @@ tags:
   - tooling
   - productivity
 template: post
-hashnode_url: https://nickytonline.hashnode.dev/productivity-tools-i-use
 ---
 
 Here is a short list of some great tools I've discovered over the past year.

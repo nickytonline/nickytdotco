@@ -8,7 +8,6 @@ tags:
   - css
   - typescript
 template: post
-hashnode_url: https://nickytonline.hashnode.dev/frontend-developer-resources-2022
 ---
 
 I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got some good signal, so I renamed it to Frontend Developer Resources 2020, which brings us to Frontend Developer Resources 2022. Oops, I missed 2021. Technically we're still in 2021, but humour me. I also added sprinkles of shameless plugs. 😎

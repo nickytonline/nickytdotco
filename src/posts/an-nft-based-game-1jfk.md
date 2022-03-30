@@ -15,7 +15,6 @@ tags:
   - react
 canonical_url: 'https://www.iamdeveloper.com/posts/an-nft-based-game-1jfk/'
 template: post
-hashnode_url: https://nickytonline.hashnode.dev/an-nft-based-game
 ---
 
 ## The project
