@@ -19,14 +19,15 @@
     "@erquhart/rollup-plugin-node-builtins": "^2.1.5",
     "luxon": "^1.25.0",
     "node-fetch": "^2.6.7",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "rss-parser": "^3.12.0"
   },
   "scripts": {
     "sass:tokens": "json-to-scss src/_data/tokens.json src/scss/_tokens.scss",
     "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/_includes/assets/css/global.css --style=compressed",
     "start": "npm run sass:process -- --watch & npm run serve -- --incremental",
     "serve": "eleventy --serve",
-    "preproduction": "npm run sass:process",
+    "preproduction": "npm run sass:process && ./generateHashnodeUrlMapping.js",
     "production": "NODE_ENV=production eleventy"
   },
   "repository": {

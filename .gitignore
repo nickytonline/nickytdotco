@@ -95,3 +95,6 @@ yarn.lock
 .netlify
 
 src/posts/.christmas-tunes-55i1.md
+
+# Custom build artifacts
+src/_data/hashnodeUrls.json

@@ -1,24 +1,26 @@
 /* eslint-env node */
 
+const hashnodeData = require(`../_data/hashnodeUrls.json`);
+
 /**
  * Generates markup for a boost on DEV button.
  *
  * @param {string} fileSlug A pages file slug.
  * @param {string} url A pages URL.
- * @param {string} hashnode_url Blogpost URL on Hashnode.
  *
  * @returns {string} Markup for a boost links on DEV and Hashnode.
  */
-function boostLink(fileSlug, url, hashnode_url) {
+function boostLink(fileSlug, url) {
   if (!url.startsWith('/posts/')) {
     return '';
   }
 
   let hashnodeBoosterLink = '';
+  const hashnodeUrl = hashnodeData[fileSlug];
 
-  if (hashnode_url) {
+  if (hashnodeUrl) {
     hashnodeBoosterLink =
-      `<a href="${hashnode_url}" class="boost-link">Boost on Hashnode</a>` +
+      `<a href="${hashnodeUrl}" class="boost-link">Boost on Hashnode</a>` +
       hashnodeBoosterLink;
   }
 
