@@ -22,6 +22,10 @@ Here is a short list of some great tools I've discovered over the past year.
 
 ![Dato Calendar App](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0upcfu8ujartdzhy2tw1.png)
 
+- [Fig](https://fig.io/) - VSCode style autocomplete in your terminal. It's more than that, but this is one of the first big things they've released.
+
+![Fig autocomplete in action](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/avp5xo335g46nqi3bmot.png)
+
 ### Paid Apps
 
 - [Bartender](https://www.macbartender.com/) - For managing your menu bar. I used to use [Vanilla](https://matthewpalmer.net/vanilla/), but with the notch in newer MacBook Pros, Bartender made the menubar more usable when dealing with lots of menubar icons.
@@ -42,10 +46,6 @@ Here is a short list of some great tools I've discovered over the past year.
 - [Starship](https://starship.rs/) - A customizable cross shell prompt. I love the extra info out of the box it provides for the shell prompt.
 
 ![Starship shell prompt in action](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9w2uut5vy2kvaavazjg0.png)
-
-- [Fig](https://fig.io/) - VSCode style autocomplete in your terminal. It's more than that, but this is one of the first big things they've released.
-
-![Fig autocomplete in action](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/avp5xo335g46nqi3bmot.png)
 
 - [mcfly](https://github.com/cantino/mcfly) - An enhance search for your shell history. Super charged <kbd>CTRL</kbd> + <kbd>R</kbd>!
 
