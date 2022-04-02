@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@erquhart/rollup-plugin-node-builtins": "^2.1.5",
+    "dotenv": "^16.0.0",
     "luxon": "^1.25.0",
     "node-fetch": "^2.6.7",
     "prettier": "^1.19.1",
@@ -27,7 +28,7 @@
     "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/_includes/assets/css/global.css --style=compressed",
     "start": "npm run sass:process -- --watch & npm run serve -- --incremental",
     "serve": "eleventy --serve",
-    "preproduction": "npm run sass:process && ./generateHashnodeUrlMapping.js",
+    "preproduction": "npm run sass:process && ./generateHashnodeUrlMapping.js && ./bin/generateDevToPosts.js",
     "production": "NODE_ENV=production eleventy"
   },
   "repository": {

@@ -52,30 +52,104 @@ module.exports = function(config) {
   config.addShortcode('googleAnalytics', googleAnalytics);
   config.addShortcode('socialImage', socialImage);
 
+  config.addShortcode(
+    'twitter',
+    tweetId =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=${tweetId}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'codepen',
+    url =>
+      `<iframe class="liquidTag" src="${url.replace(
+        '/pen/',
+        '/embed/'
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'link',
+    url =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/link?args=${encodeURIComponent(
+        url
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'devcomment',
+    commentId =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/devcomment?args=${commentId}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'github',
+    url =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/github?args=${encodeURIComponent(
+        url
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'instagram',
+    url =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/instagram?args=${encodeURIComponent(
+        url
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'user',
+    userId =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/user?args=${encodeURIComponent(
+        userId
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'tag',
+    tagId =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/tag?args=${encodeURIComponent(
+        tagId
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'organization',
+    organizationId =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/org?args=${encodeURIComponent(
+        organizationId
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'organization',
+    organizationId =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/org?args=${encodeURIComponent(
+        organizationId
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'replit',
+    url =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/replit?args=${encodeURIComponent(
+        url
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'podcast',
+    url =>
+      `<iframe class="liquidTag" src="https://dev.to/embed/podcast?args=${encodeURIComponent(
+        url
+      )}" style="border: 0; width: 100%;"></iframe>`
+  );
+  config.addShortcode(
+    'codesandbox',
+    sandboxId =>
+      `<iframe src="https://codesandbox.io/embed/${sandboxId}?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="${sandboxId}"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>`
+  );
+
+  config.addShortcode('embed', () => '');
+
   const now = new Date();
 
-  /**
-   * Determines whethere or not a post coming from DEV (the CMS) is valid or not to publish
-   * on this blog.
-   *
-   * @param {object} post The post to validate.
-   *
-   * @returns {boolean} True if the post is valid for publishing, otherwise false.
-   */
-  function isValidPost(post) {
-    const {tags = []} = post.data ?? {};
-
-    return (
-      !tags.includes('jokes') &&
-      !tags.includes('weeklylearn') &&
-      !tags.includes('weeklyretro') &&
-      !tags.includes('watercooler') &&
-      !tags.includes('devhumor')
-    );
-  }
-
   function filterOutUnwantedTags(collection) {
-    return collection.getFilteredByGlob('./src/posts/*.md').filter(isValidPost);
+    return collection.getFilteredByGlob('./src/posts/*.md');
   }
 
   // Custom collections
@@ -92,7 +166,7 @@ module.exports = function(config) {
 
   config.addCollection('sitemapPages', function(collection) {
     // get unsorted items
-    return collection.getAll().filter(isValidPost);
+    return collection.getAll();
   });
 
   // Plugins

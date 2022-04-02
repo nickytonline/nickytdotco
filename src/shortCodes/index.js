@@ -38,7 +38,7 @@ function boostLink(fileSlug, url) {
  * @returns {string} Markup for a YouTube video embed.
  */
 function youtube(videoUrl) {
-  const [, videoId, time] = videoUrl.match(/.+\?v=([^&]+)(?:&t=([^&]+)s)?/);
+  const [, videoId, time] = videoUrl.match(/.+\?v=([^&]+)(?:&t=([^&]+)s)?/) ?? [];
   const timeQueryParameter = time ? `start=${time}` : '';
 
   return `<iframe
