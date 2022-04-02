@@ -60,10 +60,7 @@ module.exports = function(config) {
   config.addShortcode(
     'codepen',
     url =>
-      `<iframe class="liquidTag" src="${url.replace(
-        '/pen/',
-        '/embed/'
-      )}" style="border: 0; width: 100%;"></iframe>`
+      `<iframe height="300" style="width: 100%;" scrolling="no" title="Codepen from ${url}" src="${url}?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>`
   );
   config.addShortcode(
     'link',
