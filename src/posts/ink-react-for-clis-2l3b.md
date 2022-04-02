@@ -1,0 +1,84 @@
+---json
+{
+  "title": "Ink: React for CLIs",
+  "excerpt": "Photo by Pierre Bamin on Unsplash  This one is short and sweet.  Are you familiar with React? Then...",
+  "date": "2019-03-09T21:34:54.000Z",
+  "tags": [
+    "githunt",
+    "react",
+    "cli"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--yzFlGYUf--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ewrl8i5l3v9avgxpocjc.jpg",
+  "template": "post"
+}
+---
+Photo by [Pierre Bamin](https://unsplash.com/photos/-ltjzTfhpCI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+This one is short and sweet.
+
+Are you familiar with React? Then you know Ink. I haven't tried this out yet, but basically it's a [custom React renderer](https://github.com/nitin42/Making-a-custom-React-renderer) that allows you to build beautiful CLIs.
+
+{% github "https://github.com/vadimdemedes/ink" %}
+
+Flexbox in a CLI? 🤯 React hooks in a CLI? YOLO my friend, YOLO.
+
+<center>
+![Holy Forking Shirt!](https://media.giphy.com/media/xT0xeGWDzEfcsd8QzC/giphy.gif)
+</center>
+
+Here's a little example straight from the repository's ReadME:
+
+```javascript
+import React, {Component} from 'react';
+import {render, Color} from 'ink';
+
+class Counter extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			i: 0
+		};
+	}
+
+	render() {
+		return (
+			<Color green>
+				{this.state.i} tests passed
+			</Color>
+		);
+	}
+
+	componentDidMount() {
+		this.timer = setInterval(() => {
+			this.setState({
+				i: this.state.i + 1
+			});
+		}, 100);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.timer);
+	}
+}
+
+render(<Counter/>);
+```
+
+And here's the author of Gatsby working on a build flow using Ink.
+
+{% twitter "1104163517945397249" %}
+
+The jest example is also very cool.
+
+{% replit "@vadimdemedes/ink-jest-demo" %}
+
+Even the folks at npm think it's kinda cool.
+
+{% twitter "1103347697107361792" %}
+
+Vadim, the author of Ink has a great intro post to it, [Building rich command-line interfaces with Ink and React](https://vadimdemedes.com/posts/building-rich-command-line-interfaces-with-ink-and-react).
+
+So what are you going to build with Ink? 😉
+
+Happy coding!

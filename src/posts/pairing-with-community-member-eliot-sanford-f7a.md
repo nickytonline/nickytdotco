@@ -1,0 +1,42 @@
+---json
+{
+  "title": "Pairing with Community Member Eliot Sanford",
+  "excerpt": "On October 8th, DEV Community member Eliot Sanford joined Christina and I on the pairing stream to...",
+  "date": "2020-10-19T20:40:03.850Z",
+  "tags": [
+    "devstream",
+    "pairprogramming",
+    "javascript"
+  ],
+  "cover_image": null,
+  "template": "post"
+}
+---
+On October 8th, DEV Community member Eliot Sanford joined Christina and I on the pairing stream to work on an accessibilty issue.
+
+We had a lot of fun and got a proof of concept running on the frontend to lint markdown. Here's the full stream.
+
+{% youtube "LBDqggawwNE" %}
+
+Eliot is still working on the issue, so feel free to follow its progress.
+
+{% github "https://github.com/forem/forem/issues/4807" %}
+
+You can also find the three of us all over the web here:
+
+{% user "techieeliot" %}
+
+{% user "nickytonline" %}
+
+{% user "coffeecraftcode" %}
+
+* [Eliot's Web Site](https://techieeliot.com)
+* [Eliot on Twitter](https://twitter.com/techieeliot)
+* [DEV Twitch Stream](https://www.twitch.tv/thepracticaldev)
+* [DEV YouTube Channel](https://www.youtube.com/c/thepracticaldevteam)
+* [Nick's Twitch Stream](https://www.twitch.tv/nickytonline)
+* [Nick's YouTube Channel](https://iamdeveloper.com/youtube)
+* [Nick on Twitter](https://twitter.com/nickytonline)
+* [Christina on Twitter](https://twitter.com/coffeecraftcode)
+
+Looking forward to seeing you on future streams! [Follow DEV on Twitch](twitch.tv/thepracticaldev) to be notified when future streams begin. Happy Hacktoberfest!
