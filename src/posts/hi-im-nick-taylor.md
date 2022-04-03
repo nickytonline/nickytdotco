@@ -10,14 +10,6 @@
   "template": "post"
 }
 ---
----
-title: Hi, I'm Nick Taylor
-published: true
-description: My introduction post
-cover_image: 
-tags: introductions
----
-
 You can find me on GitHub as [nickytonline](https://github.com/nickytonline) or find out more about me at [iamdeveloper.com](http://iamdeveloper.com).
 
 I live in Montreal, Quebec, Canada.
