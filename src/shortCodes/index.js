@@ -106,29 +106,32 @@ function socialImage(title, excerpt = '') {
 /**
  * Generates an embed based on the given URL.
  *
- * @param {string} url URL to embed.
+ * @param {string} rawUrl URL to embed.
  *
  * @returns {string} Markup for the embed.
  */
-function embedEmbed(url) {
+function embedEmbed(rawUrl) {
+  const url = new URL(rawUrl);
+
   // This is based off the generic dev.to embed liquid tag.
-  if (url.includes('youtube.com')) {
-    const videoId = new URL(url).searchParams.get('v');
+  if (url.hostname === `youtube.com`) {
+    const videoId = url.searchParams.get('v');
+
     return youtubeEmbed(videoId);
   }
 
-  if (url.includes('github.com')) {
+  if (url.hostname === `github.com`) {
     return githubEmbed(url);
   }
 
-  if (url.includes('twitter.com')) {
+  if (url.hostname === `twitter.com`) {
     const {tweetId} = url.match(
       /twitter\.com\/[^\/]+\/status\/(?<tweetId>[^\/]+)/
     ).groups;
     return twitterEmbed(tweetId);
   }
 
-  if (url.includes('dev.to')) {
+  if (url.hostname === `dev.to`) {
     const {username, slug} = url.match(
       /dev\.to\/(?<username>[^\/]+)\/(?<slug>[^\/]+)/
     ).groups;
