@@ -17,7 +17,7 @@ OK, I'm lying, kind of. You can't use a hook directly in a class component, but 
 
 Before going ahead with this, if you're able to convert your class component to a function component, prefer that. But if the component needs to remain a class component for whatever reason, this pattern works great. You will most likely encounter this scenario when working on a mature React codebase.
 
-The beauty of this pattern is you can build new components as function components using hooks. Class components that can't be upgraded for whatever reason benefit from the same functionality via a thin compatibility layer, the wrapper component.
+The beauty of this pattern is that you can build new components as function components using hooks. Class components that can't be upgraded for whatever reason benefit from the same functionality via a thin compatibility layer, the wrapper component.
 
 Let's first create a hook.
 
