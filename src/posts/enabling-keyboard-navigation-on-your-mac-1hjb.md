@@ -24,7 +24,7 @@ All right, we need to head on over to our Keyboard settings.
 
 See that checkbox labelled `Use keyboard navigation to move focus between controls`? You're going to want to check that.
 
-![Keyboard settings in macOS preferences](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/od2go90ia2g3kbuj4ruf.png)
+![Keyboard settings in macOS preferences](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x1vsaa2szv8cgosh4c8i.png)
 
 And you're done! Now you can use the keyboard for things like confirmation dialogs.
 
