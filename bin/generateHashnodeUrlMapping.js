@@ -5,7 +5,7 @@ const fs = require('fs/promises');
 const path = require('path');
 
 const HASHNODE_RSS_FEED_URL = 'https://hashnode.iamdeveloper.com/rss.xml';
-const hashnodeUrlsFilePath = path.resolve(__dirname, './src/_data/hashnodeUrls.json');
+const hashnodeUrlsFilePath = path.resolve(__dirname, '../src/_data/hashnodeUrls.json');
 
 /**
  * Generates Eleventy data for generating boost links for Hashnode.
