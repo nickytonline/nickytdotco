@@ -47,7 +47,8 @@ function isValidPost(post) {
     !tags.includes('watercooler') &&
     !tags.includes('devhumor') &&
     !tags.includes('discuss') &&
-    !tags.includes('vscodetip')
+    !tags.includes('vscodetip') &&
+    !tags.includes('explainlikeimfive')
   );
 }
 
