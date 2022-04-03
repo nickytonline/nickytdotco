@@ -114,25 +114,25 @@ function embedEmbed(rawUrl) {
   const url = new URL(rawUrl);
 
   // This is based off the generic dev.to embed liquid tag.
-  if (url.hostname === `youtube.com`) {
+  if (url.hostname.includes(`youtube.com`)) {
     const videoId = url.searchParams.get('v');
 
     return youtubeEmbed(videoId);
   }
 
-  if (url.hostname === `github.com`) {
+  if (url.hostname.includes(`github.com`)) {
     return githubEmbed(url);
   }
 
-  if (url.hostname === `twitter.com`) {
-    const {tweetId} = url.match(
+  if (url.hostname.includes(`twitter.com`)) {
+    const {tweetId} = rawUrl.match(
       /twitter\.com\/[^\/]+\/status\/(?<tweetId>[^\/]+)/
     ).groups;
     return twitterEmbed(tweetId);
   }
 
-  if (url.hostname === `dev.to`) {
-    const {username, slug} = url.match(
+  if (url.hostname.includes(`dev.to`)) {
+    const {username, slug} = rawUrl.match(
       /dev\.to\/(?<username>[^\/]+)\/(?<slug>[^\/]+)/
     ).groups;
 
