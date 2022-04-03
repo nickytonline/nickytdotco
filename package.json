@@ -28,7 +28,7 @@
     "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/_includes/assets/css/global.css --style=compressed",
     "start": "npm run sass:process -- --watch & npm run serve -- --incremental",
     "serve": "eleventy --serve",
-    "preproduction": "npm run sass:process && ./bin/generateHashnodeUrlMapping.js && ./bin/generateDevToPosts.js",
+    "preproduction": "npm run sass:process",
     "production": "NODE_ENV=production eleventy"
   },
   "repository": {
