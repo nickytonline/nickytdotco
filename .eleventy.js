@@ -12,7 +12,25 @@ const {
   removePostIsOnDevLink
 } = require('./src/filters/devToFilters.js');
 
-const {youtube, boostLink, googleAnalytics, socialImage} = require('./src/shortCodes');
+const {
+  boostLink,
+  youtubeEmbed,
+  googleAnalytics,
+  socialImage,
+  embedEmbed,
+  twitterEmbed,
+  codepenEmbed,
+  devLinkEmbed,
+  devCommentEmbed,
+  githubEmbed,
+  instagramEmbed,
+  devUserEmbed,
+  devTagEmbed,
+  devOrgEmbed,
+  replitEmbed,
+  devPodcastEmbed,
+  codeSandboxEmbed
+} = require('./src/shortCodes');
 
 // Import transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
@@ -48,100 +66,24 @@ module.exports = function(config) {
 
   // Short Codes
   config.addShortcode('boostLink', boostLink);
-  config.addShortcode('youtube', youtube);
+  config.addShortcode('youtube', youtubeEmbed);
   config.addShortcode('googleAnalytics', googleAnalytics);
   config.addShortcode('socialImage', socialImage);
 
-  config.addShortcode(
-    'twitter',
-    tweetId =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=${tweetId}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'codepen',
-    url =>
-      `<iframe height="300" style="width: 100%;" scrolling="no" title="Codepen from ${url}" src="${url}?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>`
-  );
-  config.addShortcode(
-    'link',
-    url =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/link?args=${encodeURIComponent(
-        url
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'devcomment',
-    commentId =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/devcomment?args=${commentId}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'github',
-    url =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/github?args=${encodeURIComponent(
-        url
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'instagram',
-    url =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/instagram?args=${encodeURIComponent(
-        url
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'user',
-    userId =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/user?args=${encodeURIComponent(
-        userId
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'tag',
-    tagId =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/tag?args=${encodeURIComponent(
-        tagId
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'organization',
-    organizationId =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/org?args=${encodeURIComponent(
-        organizationId
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'organization',
-    organizationId =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/org?args=${encodeURIComponent(
-        organizationId
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'replit',
-    url =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/replit?args=${encodeURIComponent(
-        url
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'podcast',
-    url =>
-      `<iframe class="liquidTag" src="https://dev.to/embed/podcast?args=${encodeURIComponent(
-        url
-      )}" style="border: 0; width: 100%;"></iframe>`
-  );
-  config.addShortcode(
-    'codesandbox',
-    sandboxId =>
-      `<iframe src="https://codesandbox.io/embed/${sandboxId}?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="${sandboxId}"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>`
-  );
+  config.addShortcode('twitter', twitterEmbed);
+  config.addShortcode('codepen', codepenEmbed);
+  config.addShortcode('link', devLinkEmbed);
+  config.addShortcode('devcomment', devCommentEmbed);
+  config.addShortcode('github', githubEmbed);
+  config.addShortcode('instagram', instagramEmbed);
+  config.addShortcode('user', devUserEmbed);
+  config.addShortcode('tag', devTagEmbed);
+  config.addShortcode('organization', devOrgEmbed);
+  config.addShortcode('replit', replitEmbed);
+  config.addShortcode('podcast', devPodcastEmbed);
+  config.addShortcode('codesandbox', codeSandboxEmbed);
 
-  config.addShortcode('embed', () => '');
+  config.addShortcode('embed', embedEmbed);
 
   const now = new Date();
 
