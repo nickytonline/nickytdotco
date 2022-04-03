@@ -17,6 +17,7 @@ jobs:
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
         run: |
           npm install
+          rm -rf src/posts/*.md
           node bin/generateDevToPosts.js
           node bin/generateHashnodeUrlMapping.js
       - name: Commit changes
