@@ -1,13 +1,16 @@
+---json
+{
+  "title": "Strongly Typed JSON in TypeScript",
+  "excerpt": "Someone in one of the Slack communities I'm a part of asked today how to type JSON in TypeScript,...",
+  "date": "2022-04-01T03:36:19.595Z",
+  "tags": [
+    "typescript",
+    "beginners"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--kzB8DJTv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7sjay11pqa91it8euj0l.png",
+  "template": "post"
+}
 ---
-title: Strongly Typed JSON in TypeScript
-date: '2022-03-31T06:44:30.902Z'
-excerpt: Someone in one of the Slack communities I'm a part of asked today how to type JSON in TypeScript, specifically importing JSON and then typing it.
-tags:
-  - typescript
-  - beginners
-template: post
----
-
 Someone in one of the Slack communities I'm a part of asked today how to type JSON in TypeScript, specifically importing JSON and then typing it. They wondered if casting the JSON to `unknown` and then casting to a known type when consumed was a good approach.
 
 The solution is not that complicated. We just need to get our hands a little dirty and dig into the TypeScript compiler options for our project.
@@ -23,7 +26,7 @@ So TypeScript tells us what to do. Add the `--resolveJsonModule` flag. This is h
 ```json
 {
   "compilerOptions": {
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
     // more awesome compiler options
   }
 }
@@ -41,9 +44,4 @@ This is great for using data in a typed manner, but what if we needed the JSON t
 
 You can play around with this CodeSandbox and have some fun seeing it all in action.
 
-<iframe src="https://codesandbox.io/embed/zealous-marco-urxdvy?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="zealous-marco-urxdvy"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+{% codesandbox "zealous-marco-urxdvy" %}

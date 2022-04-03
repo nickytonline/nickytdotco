@@ -1,137 +1,134 @@
+---json
+{
+  "title": "My Visual Studio Code Setup",
+  "excerpt": "A small write up on my Visual Studio Code setup",
+  "date": "2017-12-23T14:11:11.594Z",
+  "tags": [
+    "visualstudiocode",
+    "developertools",
+    "texteditor",
+    "vscode"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--GzTj3t37--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6e271uy3v8ia1h0e1c7q.png",
+  "template": "post"
+}
 ---
-title: My Visual Studio Code Setup
-date: '2017-12-23T14:11:11.594Z'
-excerpt: A small write up on my Visual Studio Code setup
-thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--GzTj3t37--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6e271uy3v8ia1h0e1c7q.png
-comments_count: 43
-positive_reactions_count: 338
-tags:
-  - visualstudiocode
-  - developertools
-  - texteditor
-  - vscode
-canonical_url: 'https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/'
-template: post
----
-
 This article is also available on [iamdeveloper.com](https://www.iamdeveloper.com/blog/2017-12-20-my-visual-studio-code-setup/).
 
 This originally was [just a gist](https://gist.github.com/nickytonline/3d5ffeab871a6662d7a3f89bb0bed0f8), but I thought it made sense to just convert it to a blog post.
 
 As the [stateofjs.com](https://stateofjs.com) survey this year noted, Visual Studio Code is quickly becoming the [editor of choice](https://stateofjs.com/2017/other-tools/) for many web developers.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=940799686826430464" style="border: 0; width: 100%;"></iframe>
+{% twitter "940799686826430464" %}
 
 [VS Code](https://code.visualstudio.com/Download) is my editor of choice. It's great for web dev, and if you're developing with [TypeScript](http://www.typescriptlang.org), it's definitely the way to go. Fun fact... it's written in TypeScript. If you're interested in learning more about TypeScript, check out my blog post [Consider Using TypeScript](https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3).
 
-TypeScript is what gives VS Code its refactoring and intellisense capabilities. Here's the really cool part. You get typed intellisense even if you're not using TypeScript via [Automatic Type Acquisition](https://code.visualstudio.com/docs/languages/javascript# \_automatic-type-acquisition).
+TypeScript is what gives VS Code its refactoring and intellisense capabilities. Here's the really cool part. You get typed intellisense even if you're not using TypeScript via [Automatic Type Acquisition](https://code.visualstudio.com/docs/languages/javascript#_automatic-type-acquisition).
 
 Alright, let's get to it. Here's my current [Visual Studio Code](https://code.visualstudio.com) setup.
 
 ## Extensions
 
-VS Code has a huge array of extensions available on their [marketplace](https://marketplace.visualstudio.com/vscode). As well as extensions, in 2017, [extension packs](https://code.visualstudio.com/docs/extensionAPI/extension-manifest# \_extension-packs) became available. tl;dr, they're a grouping of extensions.
+VS Code has a huge array of extensions available on their [marketplace](https://marketplace.visualstudio.com/vscode). As well as extensions, in 2017, [extension packs](https://code.visualstudio.com/docs/extensionAPI/extension-manifest#_extension-packs) became available. tl;dr, they're a grouping of extensions.
 
 [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) is a must have extension and I recommend installing it as your first extension. With this extension, you'll be able to backup most of your settings to a private gist. From there, restoring your settings is pretty easy. It's great for backing up settings as well as synching settings, which is what I do between my work and personal laptop.
 
 ### Node/JS
 
-- [Node extension pack](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack) (must have)
-- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+* [Node extension pack](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack) (must have)
+* [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
 
 ### Formatting/Linting
 
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-- [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
-- [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json)
-- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+* [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+* [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
+* [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json)
+* [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ### CSS
 
-- [IntelliSense for CSS class names](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
-- [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
-- [Color Picker](https://marketplace.visualstudio.com/items?itemName=anseki.vscode-color)
-- [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
-- [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
+* [IntelliSense for CSS class names](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+* [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
+* [Color Picker](https://marketplace.visualstudio.com/items?itemName=anseki.vscode-color)
+* [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+* [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 
 ### Debugging
 
-Language extensions like Go and Python (see below) when installed get all the proper tooling set up to debug for those specific languages. Here's some others. The easiest way to get started with debugging is to press
-`F5`
-and VS Code will offer you debugging configurations to get set up with.
+Language extensions like Go and Python (see below) when installed get all the proper tooling set up to debug for those specific languages. Here's some others. The easiest way to get started with debugging is to press `F5` and VS Code will offer you debugging configurations to get set up with.
 
-- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+* [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
 
 ### Git
 
-- [Git extension pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack) (must have)
-- [Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)
-- [gitflow](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.gitflow)
-- [Open in GitHub / Bitbucket / Gitlab / VisualStudio.com !](https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github)
+* [Git extension pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack) (must have)
+* [Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)
+* [gitflow](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.gitflow)
+* [Open in GitHub / Bitbucket / Gitlab / VisualStudio.com !](https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github)
 
 ### Unit Testing
 
-- [JavaScript Unit Test snippets](https://marketplace.visualstudio.com/items?itemName=iZDT.javascript-unit-test-snippet)
-- [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
+* [JavaScript Unit Test snippets](https://marketplace.visualstudio.com/items?itemName=iZDT.javascript-unit-test-snippet)
+* [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
 
 ### React
 
-- [React Redux ES6 Snippets](https://marketplace.visualstudio.com/items?itemName=timothymclane.react-redux-es6-snippets)
-- [Reactjs code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
-- [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
+* [React Redux ES6 Snippets](https://marketplace.visualstudio.com/items?itemName=timothymclane.react-redux-es6-snippets)
+* [Reactjs code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
+* [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
 ### Other Languages
 
-- [Go](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go)
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* [Go](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go)
+* [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 ### REPLs/Playgrounds
 
-- [Quokka.js](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode) (check out [Introducing Quokka...](https://medium.com/@artem.govorov/introducing-quokka-the-live-scratchpad-for-javascript-free-developer-tool-a0eb15bb4f54))
+* [Quokka.js](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode) (check out [Introducing Quokka...](https://medium.com/@artem.govorov/introducing-quokka-the-live-scratchpad-for-javascript-free-developer-tool-a0eb15bb4f54))
 
 ### Viewers
 
-- [Image Preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview)
-- [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)
-- [View in Browser](https://marketplace.visualstudio.com/items?itemName=qinjia.view-in-browser)
-- **Update 2018/02/16:** [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode), not a viewer per se, but a great way to take beautiful images of code snippets.
+* [Image Preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview)
+* [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)
+* [View in Browser](https://marketplace.visualstudio.com/items?itemName=qinjia.view-in-browser)
+* **Update 2018/02/16:** [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode), not a viewer per se, but a great way to take beautiful images of code snippets.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=964579536137523200" style="border: 0; width: 100%;"></iframe>
+{% twitter "964579536137523200" %}
 
 ### DevOpsy Stuff
 
-- [Jenkinsfile Support](https://marketplace.visualstudio.com/items?itemName=secanis.jenkinsfile-support)
-- [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
+* [Jenkinsfile Support](https://marketplace.visualstudio.com/items?itemName=secanis.jenkinsfile-support)
+* [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
 
 ### Hack the Editor
 
-- [Guides](https://marketplace.visualstudio.com/items?itemName=spywhere.guides)
-- [Custom CSS and JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css) (currently used for the [Cobalt 2 theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2).)
+* [Guides](https://marketplace.visualstudio.com/items?itemName=spywhere.guides)
+* [Custom CSS and JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css) (currently used for the [Cobalt 2 theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2).)
 
 **Update 2018/01/28:** The Custom CSS and JS Loader can also be used to get a kind of Operator Mono look by using two fonts. See the tweet below. I did run in to some issues though. The main one was that the CSS class names had changed. Just read the whole tweet thread for all the info.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=957434255872839680" style="border: 0; width: 100%;"></iframe>
+{% twitter "957434255872839680" %}
 
 TLDR; check out https://gist.github.com/nickytonline/8086319bf5836797ee3dea802a77000d. (maybe another gist to blog post? 😉). And the end result is this. Not sure if I like the cursive in code yet, but maybe it'll grow on me.
 
 ![](https://thepracticaldev.s3.amazonaws.com/i/hnlbb6v5eorv1u8mb70k.png)
 
+
 ### Miscellaneous
 
-- [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
-- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
-- [Gatsby Snippets](https://marketplace.visualstudio.com/items?itemName=nickytonline.vscode-gatsby-snippets)
-- [XML Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
+* [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
+* [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
+* [Gatsby Snippets](https://marketplace.visualstudio.com/items?itemName=nickytonline.vscode-gatsby-snippets)
+* [XML Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
 
 ## Themes
 
-- [Cobalt 2](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2)
-- [Dracula theme](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
-- [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)
-- [Material theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)
+* [Cobalt 2](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2)
+* [Dracula theme](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
+* [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)
+* [Material theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)
 
 ### Current Theme Setup
 
@@ -151,7 +148,7 @@ I use [Fish Shell](https://fishshell.com) and [Fisherman](https://github.com/fis
 
 ## Font
 
-I use [Fira Code](https://github.com/tonsky/FiraCode) in VS Code. Once you've [installed](https://github.com/tonsky/FiraCode/wiki# installing-font) Fira Code, the setup in Code is quite easy.
+I use [Fira Code](https://github.com/tonsky/FiraCode) in VS Code. Once you've [installed](https://github.com/tonsky/FiraCode/wiki#installing-font) Fira Code, the setup in Code is quite easy.
 
 ![Fira Font](https://camo.githubusercontent.com/3a8948f34284f378ead7af5846aa432035c687ad/687474703a2f2f732e746f6e736b792e6d652f696d67732f666972615f636f64655f6c6f676f2e737667)
 
@@ -194,17 +191,3 @@ Boom! Bob's your uncle and you now have Fira Code in all it's awesome ligaturene
 Also, if you're looking for great tips and tricks on Visual Studio code, check out [www.vscodetips.com](https://www.vscodetips.com). One last thing that I'm really looking forward to is the availabilty of [Live Share](https://code.visualstudio.com/blogs/2017/11/15/live-share).
 
 Questions or comments? Hit me up on [Twitter](https://twitter.com/nickytonline/status/878284255146557444).
-
-_[This post is also available on DEV.](https://dev.to/nickytonline/my-visual-studio-code-setup-2ima)_
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>

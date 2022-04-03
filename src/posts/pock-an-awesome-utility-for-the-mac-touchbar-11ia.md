@@ -1,20 +1,15 @@
+---json
+{
+  "title": "Pock an awesome utility for the Mac Touchbar",
+  "excerpt": "Photo by ian dooley on Unsplash  I'm on a Mac and I honestly have no use for the Dock. I actually hid...",
+  "date": "2020-01-21T02:51:30.510Z",
+  "tags": [
+    "productivity"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--wu3fsFJF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/1lnsa2cfa2m4oogcas4f.jpg",
+  "template": "post"
+}
 ---
-title: Pock an awesome utility for the Mac Touchbar
-date: '2020-01-21T02:51:30.510Z'
-excerpt: >-
-  Photo by ian dooley on Unsplash  I'm on a Mac and I honestly have no use for
-  the Dock. I actually hid...
-thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--wu3fsFJF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/1lnsa2cfa2m4oogcas4f.jpg
-comments_count: 5
-positive_reactions_count: 38
-tags:
-  - productivity
-canonical_url: >-
-  https://www.iamdeveloper.com/posts/pock-an-awesome-utility-for-the-mac-touchbar-11ia/
-template: post
----
-
 Photo by [ian dooley](https://unsplash.com/@sadswim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/productivity?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 I'm on a Mac and I honestly have no use for the Dock. I actually hide it for an eternity so it never appears by running the following command.
@@ -31,18 +26,4 @@ Having said that, I came across a very interesting project a few weeks ago calle
 
 ![Pock in action](https://thepracticaldev.s3.amazonaws.com/i/qyf7zba4vejkjcjvd6lu.jpg)
 
-<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fpigigaldi%2FPock" style="border: 0; width: 100%;"></iframe>
-
-_[This post is also available on DEV.](https://dev.to/nickytonline/pock-an-awesome-utility-for-the-mac-touchbar-11ia)_
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
+{% github "https://github.com/pigigaldi/Pock" %}

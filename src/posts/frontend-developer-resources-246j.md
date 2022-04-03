@@ -1,25 +1,21 @@
+---json
+{
+  "title": "Frontend Developer Resources 2020",
+  "excerpt": "It’s 2020, post year in review, so let’s start off with some 2020 content.                         ...",
+  "date": "2020-01-06T05:00:06.851Z",
+  "tags": [
+    "frontend",
+    "javascript",
+    "css",
+    "html"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--1j9Z4MyX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/d0slehzp7b26buouwz33.png",
+  "template": "post"
+}
 ---
-title: Frontend Developer Resources 2020
-date: '2020-01-06T05:00:06.851Z'
-excerpt: >-
-  It’s 2020, post year in review, so let’s start off with some 2020
-  content.                         ...
-thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--1j9Z4MyX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/d0slehzp7b26buouwz33.png
-comments_count: 16
-positive_reactions_count: 875
-tags:
-  - frontend
-  - javascript
-  - css
-  - html
-canonical_url: 'https://www.iamdeveloper.com/posts/frontend-developer-resources-246j/'
-template: post
----
-
 It’s 2020, post [year in review](https://dev.to/nickytonline/my-2019-year-in-review-23i1), so let’s start off with some 2020 content.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1213657972322324482" style="border: 0; width: 100%;"></iframe>
+{% twitter "1213657972322324482" %}
 
 I was updating my personal site the other day and thought, why don’t I write about some of the tech I’ve been using, some tools I use in my day-to-day as well as other resources that I use, even if they aren't everyday "go-to"s in regards to frontend. I've also popped in some resources that I think will just be helpful.
 
@@ -27,13 +23,13 @@ Let's get to it!
 
 ## Open-Source and Free Resources
 
-#### Netlify
+### Netlify
 
 I use [Netlify](https://www.netlify.com/) on the free tier to host my site. They offer a great service and it integrates well with GitHub and continuous integration. I am not cheap, it is just that at the moment, I do not need more than the free tier. I actually went over my build minutes last month and paid a small fee, so now that they have my credit card... 😆
 
 I wrote about automating my deployments to Netlify here. 👇
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fupdate-dependencies-with-dependabot-cypress-and-netlify-3lkf" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf" %}
 
 Note: [Zeit](https://zeit.co/) is amazing as well. I just happen to be using Netlify.
 
@@ -41,7 +37,7 @@ Note: [Zeit](https://zeit.co/) is amazing as well. I just happen to be using Net
 
 I have not used this on a project yet, just the Lighthouse audit tools in the browser, but Lighthouse CI looks pretty amazing. Integrate Lighthouse audits into your continuous integration (CI).
 
-<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2FGoogleChrome%2Flighthouse-ci" style="border: 0; width: 100%;"></iframe>
+{% github "https://github.com/GoogleChrome/lighthouse-ci" %}
 
 ### undraw.co
 
@@ -51,15 +47,15 @@ This site is amazing if you're looking for some quality illustrations in SVG or 
 
 I am not an accessibility expert (so many things in the frontend! 😆), so tools like the ones below are super helpful. Someone who knows quite a bit about this topic though, is Lindsay Kopacz (@lkopacz). Definitely a great follow.
 
-#### Tota11y
+### Tota11y
 
 This is a great accessibility visualization toolkit that was started by [Jordan Scales](https://twitter.com/jdan) while he was working at Khan Academy.
 
-<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2FKhan%2Ftota11y" style="border: 0; width: 100%;"></iframe>
+{% github "https://github.com/Khan/tota11y" %}
 
 Fun fact, I converted it to a Chrome/Firefox extension for those interested.
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fan-a11y-extension-coming-to-a-browser-near-you-1mg2" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2" %}
 
 #### axe
 
@@ -85,15 +81,15 @@ I purchased [Every Layout](https://every-layout.dev/) while on sale last year, b
 
 There are tonnes of sites out there, so I'm just going to drop a few since this post is already an 11 minute read LOL.
 
-- [CSS Tricks](https://css-tricks.com)
-- [MDN](https://developer.mozilla.org/)
-- [Dev Docs](https://devdocs.io)
+* [CSS Tricks](https://css-tricks.com)
+* [MDN](https://developer.mozilla.org/)
+* [Dev Docs](https://devdocs.io)
 
 ### Know Your CSS Triggers
 
 I do not know the list of all CSS triggers by heart, so [CSS Triggers](https://csstriggers.com/) is a great resource.
 
-Also, speaking of CSS Tricks, here's a [short but quick explanation](https://css-tricks.com/css-triggers/) by Chris Coyier (@chriscoyier) about CSS triggers.
+Also, speaking of CSS Tricks, here's a [short but quick explanation](https://css-tricks.com/css-triggers/) by Chris Coyier (@chriscoyier) about CSS triggers. 
 
 ### Kata Time
 
@@ -103,9 +99,9 @@ One that I revisit every now and then is [JS Katas](https://jskatas.org/), previ
 
 This is a great genre of learning. There are paid resources, but a couple of notable free ones are:
 
-- [Flexbox Froggy](https://flexboxfroggy.com/)
-- [Flexbox Zombies](https://geddski.teachable.com/p/flexbox-zombies)
-- [CSSBattle](https://cssbattle.dev/)
+* [Flexbox Froggy](https://flexboxfroggy.com/)
+* [Flexbox Zombies](https://geddski.teachable.com/p/flexbox-zombies)
+* [CSSBattle](https://cssbattle.dev/)
 
 ### Anything Stephanie Eckles
 
@@ -122,21 +118,20 @@ This one, I will admit, is probably overkill for my personal site which is curre
 
 Having said that, I've worked on several large projects using TypeScript and can 100% say, it allows for quicker refactorings, discoverability and avoiding silly errors. I have a mini-series on TypeScript for those interested.
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fwhy-you-might-want-to-consider-using-typescript-6j3" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3" %}
 
 If you've been on the fence about TypeScript, consider giving it a try in 2020. There is a huge ecosystem of types now and a lot of the popular frameworks either provide out of the box support or pretty easy setups to get going with TypoScript:
 
-- React via [Create React App](https://create-react-app.dev/docs/adding-typescript/). TLDR;
-  `npx create-react-app my-app --template typescript`
-
-- Angular (TypeScript out of the box)
-- Vue with [some simple setup](https://vuejs.org/v2/guide/typescript.html)
-- Next.js (TypeScript out of the box)
-- [NestJS](https://nestjs.com/) has a [TypeScript Starter project](https://github.com/nestjs/typescript-starter)
+* React via [Create React App](https://create-react-app.dev/docs/adding-typescript/). TLDR; `npx create-react-app my-app --template typescript`
+* Angular (TypeScript out of the box)
+* Vue with [some simple setup]
+(https://vuejs.org/v2/guide/typescript.html)
+* Next.js (TypeScript out of the box)
+* [NestJS](https://nestjs.com/) has a [TypeScript Starter project](https://github.com/nestjs/typescript-starter)
 
 There is also TSDX, which is some fantastic work by Jared Palmer (@jaredpalmer). It's a great bootstrapping tool for TypeScript for different types of projects and it's officially endorsed by the TypeScript team.
 
-<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fjaredpalmer%2Ftsdx" style="border: 0; width: 100%;"></iframe>
+{% github "https://github.com/jaredpalmer/tsdx" %}
 
 And you know what? If you're still not a fan of types, that's OK. 😺
 
@@ -144,13 +139,13 @@ And you know what? If you're still not a fan of types, that's OK. 😺
 
 [Philip Roberts](https://twitter.com/philip_roberts) talk at JSConf EU "What the heck is the event loop anyway?" is a great explanation of the event loop.
 
-<iframe class="liquidTag" src="https://dev.to/embed/youtube?args=8aGhZQkoFbQ" style="border: 0; width: 100%;"></iframe>
+{% youtube "8aGhZQkoFbQ" %}
 
 ### Some JavaScript Knowledge Nuggets care of Jake Archibald
 
 This is definitely a great watch for those looking to understand JavaScript's event loop building off of Philip Robert's talk above.
 
-<iframe class="liquidTag" src="https://dev.to/embed/youtube?args=cCOL7MC4Pl0" style="border: 0; width: 100%;"></iframe>
+{% youtube "cCOL7MC4Pl0" %}
 
 Jake also has a great blog post about [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/).
 
@@ -162,7 +157,7 @@ Storybook is such a great tool for building components and design systems. It st
 
 I will be the first to admit that I have not done a lot of work with animations, so I tend to Google stuff a lot when it comes to this space. Two gentleman that are experts in animation though have a great podcast and YouTube channel where they rebuild animations. The Keyframers is an awesome collaboration by @davidkpiano and @shshaw.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1211998464692891648" style="border: 0; width: 100%;"></iframe>
+{% twitter "1211998464692891648" %}
 
 I still have many episodes to watch and to learn from.
 
@@ -172,11 +167,11 @@ A newer frontend tool out there that looks really interesting is [VisBug](https:
 
 This is the handy work of [Adam Argyle](https://www.twitter.com/argyleink).
 
-<iframe class="liquidTag" src="https://dev.to/embed/youtube?args=lc9PZxX6mIQ" style="border: 0; width: 100%;"></iframe>
+{% youtube "lc9PZxX6mIQ" %}
 
 **Update January 8th 2020:** Adam Tweeted back to me that you can launch tota11y from VisBug. Cool stuff. Thanks Adam!
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1215052867716804608" style="border: 0; width: 100%;"></iframe>
+{% twitter "1215052867716804608" %}
 
 Note: This browser extension is currently only available for Chrome.
 
@@ -190,17 +185,16 @@ Someone that knows these tools well and that I highly suggest you follow is Umar
 
 What's going on with your web requests? Looks like there is a traffic jam. These tools have your back:
 
-- [Fiddler](https://www.telerik.com/download/fiddler) (cross-platform, but at the moment, it's only decent on a Windows machine.) Fiddler was my go-to for anything network related when I was on a Windows machine. Replaying requests, modifying payloads, proxying through it to capture traffic from the site/application you're working on.
-- [Postman](https://www.getpostman.com/)
-- [Postwoman](https://postwoman.io/)
-
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fliyasthomas%2Fpostwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0" style="border: 0; width: 100%;"></iframe>
+* [Fiddler](https://www.telerik.com/download/fiddler) (cross-platform, but at the moment, it's only decent on a Windows machine.) Fiddler was my go-to for anything network related when I was on a Windows machine. Replaying requests, modifying payloads, proxying through it to capture traffic from the site/application you're working on.
+* [Postman](https://www.getpostman.com/)
+* [Postwoman](https://postwoman.io/)
+{% link "https://dev.to/liyasthomas/postwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0" %}
 
 ### Josh Comeau's Picks
 
 Josh Comeau is a talented frontend who currently works for Gatsby. He Tweeted during the holidays some other great open-source/free resources that I suggest you check out. Here's the Tweet thread. He's also a great follow.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1212416797254832130" style="border: 0; width: 100%;"></iframe>
+{% twitter "1212416797254832130" %}
 
 ### JavaScript January
 
@@ -210,15 +204,15 @@ Emily Freeman (@editingemily) started this in I believe 2017. Lots of great arti
 
 DEV has so many great posts from people from all over the globe in regards to frontend. I'll share some that I love, but definitely navigate around. So many great ones.
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fananyaneogi%2Fhtml-can-do-that-c0n" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/ananyaneogi/html-can-do-that-c0n" %}
 
 Lydia Hallie's (@lydiahallie) posts on JavaScript
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1213135686502699008" style="border: 0; width: 100%;"></iframe>
+{% twitter "1213135686502699008" %}
 
 Michael Chan's React Holiday Series
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fchantastic%2Flearn-react-in-25-short-lessons-react-holiday-2019-24np" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/chantastic/learn-react-in-25-short-lessons-react-holiday-2019-24np" %}
 
 ### Visual Studio Code
 
@@ -228,11 +222,11 @@ This has been my go-to editor for work-related stuff since believe it or not 201
 
 A great addition to the ecosystem has been the [Live Share extension pack](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack). This is such a great way to do [pair programming](https://en.wikipedia.org/wiki/Pair_programming). 🍐
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1075155769870307329" style="border: 0; width: 100%;"></iframe>
+{% twitter "1075155769870307329" %}
 
 If you're interested, it is a little outdated, but here is my VS Code setup. These days, I roll with Sarah Edo's [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) theme and the wonderful font, [Dank Mono](https://dank.sh) (yes I paid for it, but it's nowhere near the price of Operator Mono).
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fmy-visual-studio-code-setup-2ima" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/nickytonline/my-visual-studio-code-setup-2ima" %}
 
 ### VS Code Tips
 
@@ -240,7 +234,7 @@ I created the [@vscodetips](https://twitter.com/vscodetips) Twitter account back
 
 VS Code tips is also on DEV, but I have not done much there yet. You can check out the profile here
 
-<iframe class="liquidTag" src="https://dev.to/embed/organization?args=vscodetips" style="border: 0; width: 100%;"></iframe>
+{% organization "vscodetips" %}
 
 ### Refined GitHub Browser Extension
 
@@ -252,7 +246,7 @@ There are too many features to mention, but my favourites are automatically dele
 
 The extension integrates so well, I no longer know what is a new GitHub feature or a Refined GitHub feature.
 
-<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fsindresorhus%2Frefined-github" style="border: 0; width: 100%;"></iframe>
+{% github "https://github.com/sindresorhus/refined-github" %}
 
 ### Online Editors/Playgrounds
 
@@ -262,12 +256,13 @@ More and more development is being done directly on the web, whether it be proof
 
 Here's some staples:
 
-- [codepen](https://codepen.io/)
-- [CodeSandbox](https://codesandbox.io/)
-- [Stackblitz](https://stackblitz.com/)
-- [jsbin](https://jsbin.com/)
-- [jsfiddle](https://jsfiddle.net/)
-- [repl.it](https://repl.it/)
+* [codepen](https://codepen.io/)
+* [CodeSandbox](https://codesandbox.io/)
+* [Stackblitz](https://stackblitz.com/)
+* [jsbin](https://jsbin.com/)
+* [jsfiddle](https://jsfiddle.net/)
+* [repl.it](https://repl.it/)
+
 
 ## Paid Tools/Resources
 
@@ -279,7 +274,7 @@ I purchased the [Refactoring UI](https://refactoringui.com/book/) book last year
 
 There is also a YouTube channel that you can subscribe to or just search for Refactoring UI on YouTube.
 
-<iframe class="liquidTag" src="https://dev.to/embed/youtube?args=5gdYHlYAKDY" style="border: 0; width: 100%;"></iframe>
+{% youtube "5gdYHlYAKDY" %}
 
 Also, Steve Schoger ([@steveschoger](https://www.twitter.com/steveschoger) on Twitter), one of the authors of the book, Tweets a lot too about Refactoring UI. A great follow.
 
@@ -291,7 +286,7 @@ As mentioned above, I purchased [Every Layout](https://every-layout.dev/checkout
 
 There are browser extensions that do part of what xScope does, but a few years ago, a co-worker introduced me to [xScope](https://xscope.app). The only downside to this tool is that it is only available for Mac. If you are on a Mac though, I highly recommend it.
 
-![Screenshot of xScope in action](https://thepracticaldev.s3.amazonaws.com/i/z9ib0s1cc88dwa7qvv5n.png)
+![Screenshot of xScope in action](https://thepracticaldev.s3.amazonaws.com/i/z9ib0s1cc88dwa7qvv5n.png) 
 
 ### Sizzy
 
@@ -303,14 +298,14 @@ There are browser extensions that do part of what xScope does, but a few years a
 
 These will most likely not come as a surprise, but it's worth mentioning them.
 
-- [Egghead](https://egghead.io) (a happy subscriber)
-- [Frontend Masters](https://frontendmasters.com/) (a happy subscriber. Thank you for the subscription [Shotgun](https://www.shotgunsoftware.com/) (my previous employer)!)
-- [testingjavascript.com](https://testingjavascript.com/) (a happy license owner. Thanks x 2 Shotgun!)
-- Anything Wes Bos. Check out his [courses](https://wesbos.com/courses/).
+* [Egghead](https://egghead.io) (a happy subscriber)
+* [Frontend Masters](https://frontendmasters.com/) (a happy subscriber. Thank you for the subscription [Shotgun](https://www.shotgunsoftware.com/) (my previous employer)!)
+* [testingjavascript.com](https://testingjavascript.com/) (a happy license owner. Thanks x 2 Shotgun!)
+* Anything Wes Bos. Check out his [courses](https://wesbos.com/courses/).
 
 Also, there is a new kid on the block, [Educative](https://educative.io). Looks like they are gaining some traction, so probably worth checking out as well. They're also on DEV, posting great content.
 
-<iframe class="liquidTag" src="https://dev.to/embed/organization?args=educative" style="border: 0; width: 100%;"></iframe>
+{% organization "educative" %}
 
 ### That's All She Wrote
 
@@ -324,16 +319,3 @@ Until next time peeps!
 
 The cover image is a partial screenshot of my site's thank you page, but the illustration comes from the wonderful work of Katerina Limpitsouni's [undraw.co](https://undraw.co)
 
-_[This post is also available on DEV.](https://dev.to/nickytonline/frontend-developer-resources-246j)_
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>

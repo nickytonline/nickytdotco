@@ -4,9 +4,9 @@
   "excerpt": "I'm starting a new role soon, and they shipped me a brand new Macbook Pro.  I got everything set up...",
   "date": "2022-04-02T21:29:36.747Z",
   "tags": [
-    "macbook",
     "a11y",
-    "productivity"
+    "productivity",
+    "macos"
   ],
   "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--5dgW_UV9--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7n6dsveguxcnv8fyfid9.jpeg",
   "template": "post"

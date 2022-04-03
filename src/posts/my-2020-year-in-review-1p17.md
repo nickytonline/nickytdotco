@@ -1,17 +1,14 @@
----
-title: My 2020 Year in Review
-date: '2020-12-31T13:50:55.432Z'
-excerpt: >-
-  2020, it’s been a year. It’s been tough on a lot of folks. I’m a pretty upbeat
-  person, but even I suc...
-thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--uxTsAdVo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/1a5umajlfyh8j9g4ngms.png
-comments_count: 5
-positive_reactions_count: 34
-tags:
-  - yearinreview
-canonical_url: 'https://www.iamdeveloper.com/posts/my-2020-year-in-review-1p17/'
-template: post
+---json
+{
+  "title": "My 2020 Year in Review",
+  "excerpt": "2020, it’s been a year. It’s been tough on a lot of folks. I’m a pretty upbeat person, but even I suc...",
+  "date": "2020-12-31T13:50:55.432Z",
+  "tags": [
+    "yearinreview"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--uxTsAdVo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/1a5umajlfyh8j9g4ngms.png",
+  "template": "post"
+}
 ---
 
 2020, it’s been a year. It’s been tough on a lot of folks. I’m a pretty upbeat person, but even I succumbed to the dumpster fire of a year that is 2020. I really don’t talk about personal stuff on social media or blog about it, but so many folks have been pretty open this year in regards to all that’s happened to them in 2020, that I thought it would be good to share.
@@ -40,19 +37,19 @@ Alright, now let’s get to some positives, because there are some big ones for 
 
 The first one is, I joined the Forem team, a.k.a. the artists formerly known as the DEV team! I won’t go into it too much here as I’ve already written about it which I’ll link. In a nutshell, I’d been a fan of DEV for a few years before I joined the team. I was actually the first external contributor and made a lot of contributions prior to joining the team.
 
-<iframe class="liquidTag" src="https://dev.to/embed/github?args=https%3A%2F%2Fgithub.com%2Fforem%2Fforem" style="border: 0; width: 100%;"></iframe>
+{% github "https://github.com/forem/forem" %}
 
 I was so excited to join the team as it checked off so many things for me. It truly is my first dream job. I have amazing coworkers, work remote, have stellar working conditions, and I work on a product that I use and love.
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fa-new-year-a-new-start-i-m-joining-the-dev-team-3ap0" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0" %}
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fdevteam%2Fwelcoming-three-new-team-members-38hp" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/devteam/welcoming-three-new-team-members-38hp" %}
 
 ### Virtual Coffee
 
 I joined a virtual coffee group which was the second best thing that happened to me in 2020. I’m a sociable person and typically will head out with friends, but given the current pandemic, not really an option. I came across a tweet from my now friend [Bekah](https://dev.to/bekahhw) where she dropped a Tweet about virtual coffee. I'm not positive, but I think this is the Tweet that got me to DM her and to join virtual Coffee.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1250169810308288512" style="border: 0; width: 100%;"></iframe>
+{% twitter "1250169810308288512" %}
 
 From there it became a regular thing for me and all of a sudden, I had some Internet friends, something I’ve never had. Everyone has always been just folks I follow on Twitter. Bekah, thanks again so much for creating this.
 
@@ -62,23 +59,23 @@ If you want to learn more about [Virtual Coffee](https://virtualcoffee.io/), com
 
 Another thing I started this year was live coding on Twitch.
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fi-ve-started-to-live-code-on-twitch-for-dev-13cn" style="border: 0; width: 100%;"></iframe>
+{% link "https://dev.to/nickytonline/i-ve-started-to-live-code-on-twitch-for-dev-13cn" %}
 
 I started this for a few reasons. Others were doing it, I wanted to learn in public through a different medium, and it was a pandemic, so YOLO. This was inspired by swyx, a.k.a. Shawn Wang, who is a big proponent of learning in public.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1317556860480851969" style="border: 0; width: 100%;"></iframe>
+{% twitter "1317556860480851969" %}
 
 As well, I really enjoyed watching [Jason Lengstorf’s live stream](https://www.learnwithjason.dev/) (still do), so I took some inspiration from there too, although my production quality is not quite where his is at… yet. 😎
 
-When Hacktoberfest rolled around, I got to work with my awesome coworker Christina Gorton (@coffeecraftcode). We were doing <a href="https://www.iamdeveloper.com/pages/live-coding/# heading-other-live-codingstreaming-projects">all kinds of streams</a> on the [DEV Twitch stream](https://www.twitch.tv/thepracticaldev). Walkthrough Wednesdays, a gratitude stream dedicated to our contributors, live coding pairing sessions with community members, as well as joining the [raise.dev stream](https://www.twitch.tv/raisedevs).
+When Hacktoberfest rolled around, I got to work with my awesome coworker Christina Gorton (@coffeecraftcode). We were doing <a href="https://www.iamdeveloper.com/pages/live-coding/#heading-other-live-codingstreaming-projects">all kinds of streams</a> on the [DEV Twitch stream](https://www.twitch.tv/thepracticaldev). Walkthrough Wednesdays, a gratitude stream dedicated to our contributors, live coding pairing sessions with community members, as well as joining the [raise.dev stream](https://www.twitch.tv/raisedevs).
 
 It's been really great as I've been able to meet so many wonderful people in the community.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1334216947639201794" style="border: 0; width: 100%;"></iframe>
+{% twitter "1334216947639201794" %}
 
 ### Talks
 
-I gave two talks in 2020 that I was proud of. One was for Hacktoberfest on the Digital Ocean community titled, <a href="https://www.iamdeveloper.com/pages/talks/# heading-getting-the-most-out-of-open-source">Getting the Most Out of Open Source</a>. The other was a lightning talk I gave at my Virtual Coffee group's lightning talks titled, <a href="https://www.iamdeveloper.com/pages/talks/# heading-words-matter:-conventional-comments">Words Matter: Conventional Comments</a>.
+I gave two talks in 2020 that I was proud of. One was for Hacktoberfest on the Digital Ocean community titled, <a href="https://www.iamdeveloper.com/pages/talks/#heading-getting-the-most-out-of-open-source">Getting the Most Out of Open Source</a>. The other was a lightning talk I gave at my Virtual Coffee group's lightning talks titled, <a href="https://www.iamdeveloper.com/pages/talks/#heading-words-matter:-conventional-comments">Words Matter: Conventional Comments</a>.
 
 ### Getting Back in Shape
 
@@ -88,21 +85,21 @@ Being an athlete, getting back into shape is always doable, because your body re
 
 Since everything is locked down, I’ve been doing Zoom group sessions with a personal trainer I know. I love these sessions. They are at 7am on Mondays, Wednesdays, and Fridays. Getting it out of the way early in the day prevents me from making excuses to not workout, and I like the good social pressure of showing up because others are expecting you to be there. Also, it would be a big waste of money if I didn’t show up, or empty the tank during a session.
 
-<iframe class="liquidTag" src="https://dev.to/embed/instagram?args=CHu6NrGJO_g" style="border: 0; width: 100%;"></iframe>
+{% instagram "CHu6NrGJO_g" %}
 
 ### Maybe I'm Handy
 
 Other things I’ve been proud of this year are, I’ve become slightly more handy thanks to the pandemic. I’m still not great, but doing better. The one thing that folks seem to be impressed by is I built a skating rink in my backyard.
 
-<iframe class="liquidTag" src="https://dev.to/embed/instagram?args=CH_bVy9JFFi" style="border: 0; width: 100%;"></iframe>
+{% instagram "CH_bVy9JFFi" %}
 
-<iframe class="liquidTag" src="https://dev.to/embed/instagram?args=CIuKYkdplX_" style="border: 0; width: 100%;"></iframe>
+{% instagram "CIuKYkdplX_" %}
 
 ### Website Refresh
 
 My personal site got an upgrade/refresh just this week. I'd been looking to move to 11ty for a while, but it was low on my priority list in terms of stuff I had to do. I started the move on December 10th and then when the holidays came around, I finally had some time to finish it.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1343778755353997319" style="border: 0; width: 100%;"></iframe>
+{% twitter "1343778755353997319" %}
 
 I went with the [Hylia template](https://hylia.website) from [Andy Bell](https://www.twitter.com/piccalilli_) (@hankchizljaw) for a few reasons. It's 100% all around on lighthouse, I liked the look of it, and I honestly didn't have time to design my whole site. My goal of my site is to provide content.
 
@@ -112,16 +109,4 @@ I said it before on Twitter, but saying it again here. Thanks Andy!
 
 We’ll see what 2021 brings, but regardless I know I’ll still be pumped to keep training, live stream, blog, and continue to build out Forem with my awesome team. Peace folks!
 
-_[This post is also available on DEV.](https://dev.to/nickytonline/my-2020-year-in-review-1p17)_
 
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>

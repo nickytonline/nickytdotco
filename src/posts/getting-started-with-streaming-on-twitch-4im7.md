@@ -1,29 +1,24 @@
+---json
+{
+  "title": "Getting Started with Streaming on Twitch",
+  "excerpt": "Last Friday, I gave a brownbag talk for my Virtual Coffee community on getting started with streaming...",
+  "date": "2021-07-28T03:22:25.699Z",
+  "tags": [
+    "twitch",
+    "beginners",
+    "streaming"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--xrj9uU0f--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fm42fqy3ziu3r1zyahel.png",
+  "template": "post"
+}
 ---
-title: Getting Started with Streaming on Twitch
-date: '2021-07-28T03:22:25.699Z'
-excerpt: >-
-  Last Friday, I gave a brownbag talk for my Virtual Coffee community on getting
-  started with streaming...
-thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--xrj9uU0f--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fm42fqy3ziu3r1zyahel.png
-comments_count: 4
-positive_reactions_count: 54
-tags:
-  - twitch
-  - beginners
-  - streaming
-canonical_url: >-
-  https://www.iamdeveloper.com/posts/getting-started-with-streaming-on-twitch-4im7/
-template: post
----
-
 Last Friday, I gave a brownbag talk for my Virtual Coffee community on getting started with streaming on Twitch.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1418581450023182341" style="border: 0; width: 100%;"></iframe>
+{% twitter "1418581450023182341" %}
 
 The video isn't up on YouTube yet, but you can grab the slide deck at [iamdeveloper.com/stream2021](iamdeveloper.com/stream2021).
 
-This is a work in progress post. I'm just putting out what I had in my slide deck here, but in a more readable format than the bullet points in the slide deck. Feedback is welcome.
+This is a work in progress post. I'm just putting out what I had in my slide deck here, but in a more readable format than the bullet points in the slide deck. Feedback is welcome. 
 
 ## Open Broadcaster Software (OBS)
 
@@ -36,7 +31,6 @@ For the remainder of the post, I will refer to just OBS instead of OBS/SLOBS.
 I won't do a deep dive into all the things you can do with OBS, but know that you can [create scenes with many sources](https://ryanharris.dev/2019-12-11-obs-scenes/). A scene can be for example a starting soon page, and when you're ready to start talking you transition to another scene, perhaps called chatting or coding view.
 
 There are many sources you can add to a scene:
-
 - images
 - browser sources, e.g. a web page used for an overlay in your stream
 - display capture, e.g. an external monitor
@@ -73,22 +67,22 @@ Here are some streaming tips that I've found useful
 - If you’re live coding, talk through what you’re doing
 - Tweet midway through your stream that you’re still streaming about topic X or live coding
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1405219963045036033" style="border: 0; width: 100%;"></iframe>
+{% twitter "1405219963045036033" %}
 
 - Post your streams to Polywork, LinkedIn and Twitter. Here are some examples at [timeline.iamdeveloper.com](https://timeline.iamdeveloper.com/nickytonline/highlights/cdfcb228-92a7-4678-86f0-6de6f0a432fe), [my LinkedIn](https://www.linkedin.com/in/nickytonline/detail/featured-list/urn:li:fsd_profile:ACoAAABbWMMBK1FLcaTloEjdod1_1cHxB9hL1xU/), and Twitter
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1384980393770815488" style="border: 0; width: 100%;"></iframe>
+{% twitter "1384980393770815488" %}
 
 - Have a consistent schedule
-- Don’t worry if no one or few people are watching your stream when you get started out
+- Don’t worry  if no one or few people are watching your stream when you get started out
 - Zoom in your editor and browser to help folks see things better
 - If you use [Visual Studio Code](https://code.visualstudio.com), @john_papa created an amazing extension for hiding environment files called [Cloak](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak)
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1421683536952709120" style="border: 0; width: 100%;"></iframe>
+{% twitter "1421683536952709120" %}
 
 - If you plan on uploading your streams to YouTube or want to create clips later, ensure that you have Store past broadcasts on in your [stream settings](https://dashboard.twitch.tv/u/nickytonline/settings/stream)
 
-![Store past broadcast setting in Twitch stream VOD settings](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qxhxkf7zpa0cvxuyup2c.png)
+![Store past broadcast setting in Twitch stream VOD settings](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qxhxkf7zpa0cvxuyup2c.png) 
 
 ## Having Guests on Your Stream
 
@@ -131,7 +125,7 @@ Although not required when starting out with streaming, these are things you can
 - Better Web Cam or Camera
 - Streaming Deck
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=1420685669479985152" style="border: 0; width: 100%;"></iframe>
+{% twitter "1420685669479985152" %}
 
 ## Additional Resources
 
@@ -141,7 +135,7 @@ Although not required when starting out with streaming, these are things you can
 - [The Invisible Zoom Streaming method](https://dev.to/chaelcodes/the-invisible-zoom-streaming-method-37ii) by [Rachael Wright-Munn](https://twitter.com/ChaelCodes)
 - Pair Programming with Jhey (shows how to use ComfyJS)
 
-<iframe class="liquidTag" src="https://dev.to/embed/youtube?args=DDJB8KSh-Sw" style="border: 0; width: 100%;"></iframe>
+{% youtube "DDJB8KSh-Sw" %}
 
 - [livecoding.ca](https://livecoding.ca)’s [interactions using ComfyJS](https://github.com/nickytonline/dotca-bot)
 - [My Uses Page](https://iamdeveloper.com/uses) (software and hardware I use)
@@ -154,17 +148,3 @@ And last but not least, some shameless plugs!
 - [My YouTube](https://youtube.iamdeveloper.com)
 
 Until next time folks!
-
-_[This post is also available on DEV.](https://dev.to/nickytonline/getting-started-with-streaming-on-twitch-4im7)_
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>

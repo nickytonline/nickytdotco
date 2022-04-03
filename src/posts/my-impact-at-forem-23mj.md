@@ -1,18 +1,15 @@
+---json
+{
+  "title": "My Impact at Forem",
+  "excerpt": "This is my first post about impact. What do I mean by impact?  How did you influence the place where...",
+  "date": "2022-03-24T03:47:23.928Z",
+  "tags": [
+    "career"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--1kVhnhTE--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i0wmq5dpcg6r0b9ym1bv.jpeg",
+  "template": "post"
+}
 ---
-title: My Impact at Forem
-date: '2022-03-23T16:08:40.433Z'
-excerpt: >-
-  This is my first post about impact. What do I mean by impact? How did you
-  influence the place you...
-thumb_img_path: null
-comments_count: 7
-positive_reactions_count: 0
-tags:
-  - career
-canonical_url: 'https://www.iamdeveloper.com/posts/my-impact-at-forem-23mj.md'
-template: post
----
-
 This is my first post about impact. What do I mean by impact?
 
 How did you influence the place where you worked? Stuff like big projects or processes that you put in place that helped the company.
@@ -25,7 +22,7 @@ I'm proud of all the work I did while at Forem, and I wanted to take note of it 
 
 My work focused mainly on the frontend, and I put pre-commit hooks that ran stuff like prettier, eslint and jest. It expanded to more than that, for example, running rubocop on Ruby files. Check out my post on pre-commit hooks if you're curious about all that.
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fstuff-i-always-set-up-for-frontend-work-56h2" style="border: 0; width: 100%;"></iframe>
+{% embed "https://dev.to/nickytonline/stuff-i-always-set-up-for-frontend-work-56h2" %}
 
 Pre-commit hooks, linting, etc., were super important to me because I was the only frontend on the project for a long time. Hence, code maintenance was always on the brain and still is. 😎
 
@@ -35,7 +32,7 @@ We were running an older version of Preact. The older version was blocking us fr
 
 Around this time, React Testing Library ([Preact Testing Library](https://preactjs.com/guide/v10/preact-testing-library/) in our case) had started gaining traction. It clicked with me how this library tested components. So, another significant change came with the migration to Preact X. You can read more about that in the referenced changelog post.
 
-<iframe class="liquidTag" src="https://dev.to/embed/link?args=https%3A%2F%2Fdev.to%2Fnickytonline%2Fchangelog-frontend-edition-30l7" style="border: 0; width: 100%;"></iframe>
+{% embed "https://dev.to/devteam/changelog-frontend-edition-30l7" %}
 
 I mention this in the changelog post, but a big shoutout to my co-worker Ridhwana Khan (@ridhwana) for helping me migrate all the tests to preact-testing-library.
 

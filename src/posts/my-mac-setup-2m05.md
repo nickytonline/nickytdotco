@@ -1,47 +1,35 @@
+---json
+{
+  "title": "My Mac Setup",
+  "excerpt": "Maybe I should start a series called “Not just a Gist”, as I’m slowly converting gists of mine to...",
+  "date": "2018-01-12T10:00:00.000Z",
+  "tags": [
+    "productivity",
+    "developertools",
+    "webdev"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--C6fxx9Ly--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/qkwvsk3lp64lvchg69tm.png",
+  "template": "post"
+}
 ---
-title: My Mac Setup
-date: '2018-01-12T10:00:00.000Z'
-excerpt: >-
-  Maybe I should start a series called “Not just a Gist”, as I’m slowly
-  converting gists of mine to...
-thumb_img_path: >-
-  https://res.cloudinary.com/practicaldev/image/fetch/s--C6fxx9Ly--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/qkwvsk3lp64lvchg69tm.png
-comments_count: 56
-positive_reactions_count: 510
-tags:
-  - productivity
-  - developertools
-  - webdev
-canonical_url: 'https://www.iamdeveloper.com/posts/my-mac-setup-2m05/'
-template: post
----
-
 Maybe I should start a series called “Not just a Gist”, as I’m slowly converting gists of mine to blog posts. The last one I converted was all about [My Visual Studio Code Setup](https://vscode.iamdeveloper.com).
 
-I participated in this week’s [# devdiscuss about tooling](https://twitter.com/ThePracticalDev/status/950910573369229313), and I posted a few links to gists that are my setup on my Mac.
+I participated in this week’s [#devdiscuss about tooling](https://twitter.com/ThePracticalDev/status/950910573369229313), and I posted a few links to gists that are my setup on my Mac.
 
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=950912727622529024" style="border: 0; width: 100%;"></iframe>
+{% twitter "950912727622529024" %}
 
 ## Tools you absolutely need on your Mac
 
-- The Homebrew duo. These are a must have to simplify installing most things on your Mac. As soon as these are installed, you may proceed. - [Homebrew](https://brew.sh) - run
-  `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-  from the command line to install it. - [Homebrew Cask](https://caskroom.github.io) - run
-  `brew tap caskroom/cask`
-  from the command line to install it.
-- [Spectacle](https://www.spectacleapp.com), the best application I’ve found for managing windows on macOS. This is especially useful for anyone coming from Windows who are used to this out of the box functionality. Run
-  `brew cask install spectacle`
-  from the command line to install it.
-- [Alfred](https://www.alfredapp.com) ([buy the Alfred Powerpack](https://www.alfredapp.com/powerpack/buy/) to get the full use of Alfred). Run
-  `brew cask install alfred`
-  from the command line to install it.
+- The Homebrew duo. These are a must have to simplify installing most things on your Mac. As soon as these are installed, you may proceed.
+    - [Homebrew](https://brew.sh) - run `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` from the command line to install it.
+    - [Homebrew Cask](https://caskroom.github.io) - run `brew tap caskroom/cask` from the command line to install it.
+- [Spectacle](https://www.spectacleapp.com), the best application I’ve found for managing windows on macOS. This is especially useful for anyone coming from Windows who are used to this out of the box functionality. Run `brew cask install spectacle` from the command line to install it.
+- [Alfred](https://www.alfredapp.com) ([buy the Alfred Powerpack](https://www.alfredapp.com/powerpack/buy/) to get the full use of Alfred). Run `brew cask install alfred` from the command line to install it.
 
 ### Alfred Setup
 
 Alfred is so awesome, it deserves it’s own section in this post. It’s basically Spotlight on steroids and a bag of chips. It’s more than an application launcher. It allows you to create workflows for repetitive tasks you do everyday and there is also a huge array of existing [workflows](https://www.alfredapp.com/workflows/) for it available. I even decided to make some of my own, [nickytonline/alfred-workflows: Hopefully useful workflows for Alfred](https://github.com/nickytonline/alfred-workflows).
-
-<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=950915346596327424" style="border: 0; width: 100%;"></iframe>
-
+{% twitter "950915346596327424" %}
 ![](https://thepracticaldev.s3.amazonaws.com/i/3a5uy98t5v0dskpk36nu.png)
 
 I never used Alfred until this past summer. Why did I not use it sooner?!
@@ -67,15 +55,7 @@ At the time of this writing, here’s all the workflows that I currently have in
 - [gharlan/alfred-github-workflow: GitHub Workflow for Alfred 3](https://github.com/gharlan/alfred-github-workflow). Grab it [here](https://github.com/gharlan/alfred-github-workflow/releases).
 - [ngreenstein/alfred-process-killer](https://github.com/nathangreenstein/alfred-process-killer). Grab it [here](https://github.com/ngreenstein/alfred-process-killer/blob/master/Kill%20Process.alfredworkflow?raw=true).
 - [RunCommand](http://www.packal.org/workflow/runcommand). I only really use this to start Visual Studio Code from the command line.
-- [StackOverflow Search](http://www.packal.org/workflow/stackoverflow-search). Search stackoverflow.com right from Alfred. The only tweak I did to this workflow was change the keyword to launch it. I switched
-  `.so`
-  to
-  `sos`
-  . Otherwise it launches the RunCommand workflow and errors out because of the initial
-  `.`
-  running an invalid command. I also find it funny that I called it
-  `sos`
-  . Send help! 🆘
+- [StackOverflow Search](http://www.packal.org/workflow/stackoverflow-search). Search stackoverflow.com right from Alfred. The only tweak I did to this workflow was change the keyword to launch it. I switched `.so` to `sos`. Otherwise it launches the RunCommand workflow and errors out because of the initial `.` running an invalid command. I also find it funny that I called it `sos`. Send help! 🆘
 - [TimeZones](http://geekzone.philosophicalzombie.net/post/45823505821/alfred-workflow-timezones-a-customizable-world). Grab it [here]([http://cl.ly/UamX/download/TimeZones](http://cl.ly/UamX/download/TimeZones) v1.7.alfredworkflow). A super quick way to get the time in a country or city.
 - [UUIDgen](http://www.packal.org/workflow/uuidgen).
 - [Packal Updater](http://www.packal.org/workflow/packal-updater). It updates any workflows you have that you grabbed via [Packal](http://www.packal.org), a popular workflow and themes directory for Alfred.
@@ -85,56 +65,29 @@ At the time of this writing, here’s all the workflows that I currently have in
 
 If you use Alfred and have some workflows that are not listed here, please mention them in the comments. I’m always looking for new ones to improve my whole dev workflow.
 
-You can also launch the terminal from Alfred, by typing
-`>`
-in the Alfred search bar followed by the command you wish to run. Since I use iTerm, I want that to open instead of the default Terminal app. Since [Alfred 2.7.2](https://www.alfredapp.com/blog/tips-and-tricks/better-iterm-integration-in-alfred), you can run a custom Applescript to launch another terminal application. Open the Alfred preferences window and click on the Features button in the top of the preferences window then click on the Terminal / Shell button at the bottom. In the Application drop down menu, select Custom and paste in [this script](https://raw.githubusercontent.com/stuartcryan/custom-iterm-applescripts-for-alfred/master/custom_iterm_script_iterm_2.9.applescript) from the [Custom iTerm Applescripts for Alfred](https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred) repository.
+You can also launch the terminal from Alfred, by typing `>` in the Alfred search bar followed by the command you wish to run. Since I use iTerm, I want that to open instead of the default Terminal app. Since [Alfred 2.7.2](https://www.alfredapp.com/blog/tips-and-tricks/better-iterm-integration-in-alfred), you can run a custom Applescript to launch another terminal application. Open the Alfred preferences window and click on the Features button in the top of the preferences window then click on the Terminal / Shell button at the bottom. In the Application drop down menu, select Custom and paste in [this script](https://raw.githubusercontent.com/stuartcryan/custom-iterm-applescripts-for-alfred/master/custom_iterm_script_iterm_2.9.applescript) from the [Custom iTerm Applescripts for Alfred](https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred) repository.
 
 ![](https://thepracticaldev.s3.amazonaws.com/i/30almlm8iljcxrzcqlk4.png)
 
-You're all good to go. To test it out launch Alfred and in the search bar type
-`> ls`
-and press ENTER. iTerm should open up with a listing of the current directory.
+You're all good to go. To test it out launch Alfred and in the search bar type `> ls` and press ENTER. iTerm should open up with a listing of the current directory.
 
 ## Tools for Web Development
 
-- [VS Code](https://code.visualstudio.com), here’s [my setup](http://vscode.iamdeveloper.com). Run
-  `brew cask install visual-studio-code`
-  from the command line to install it.
-- [n](https://github.com/tj/n), for installing different versions of node. I’m sure someone is going to suggest using [nvm](https://github.com/creationix/nvm). The problem was though, when I switched from [zsh](http://www.zsh.org/) (another great choice for a shell), I was unable to get nvm working with fish, so I just switched to n which works super well. Run
-  `brew install n`
-  from the command line to install it.
-- [now.sh](https://now.sh), great for hosting but also great for knocking out some POCs and deploying it. Run
-  `brew cask install now`
-  from the command line to install it.
-- [Docker](https://www.docker.com/get-docker), containerize all the things! Run
-  `brew cask install docker`
-  from the command line to install it.
-- [Fira Code font](https://github.com/tonsky/FiraCode) for my shell and my favourite editor. Run the following only once as it's used for installing any font,
-  `brew tap caskroom/fonts`
-  . Once that is installed, you can install Fira Code by running
-  `brew cask install font-fira-code`
-  .
-- I’ve discovered what the [whole commotion is about
-  `npx`
-  ](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b), so I’ve also added that to my tool belt. Thanks [Peter Kühne](https://dev.to/peter_kuehne/comment/213k)!
+- [VS Code](https://code.visualstudio.com), here’s [my setup](http://vscode.iamdeveloper.com). Run `brew cask install visual-studio-code` from the command line to install it.
+- [n](https://github.com/tj/n), for installing different versions of node. I’m sure someone is going to suggest using [nvm](https://github.com/creationix/nvm). The problem was though, when I switched from [zsh](http://www.zsh.org/) (another great choice for a shell), I was unable to get nvm working with fish, so I just switched to n which works super well. Run `brew install n` from the command line to install it.
+- [now.sh](https://now.sh), great for hosting but also great for knocking out some POCs and deploying it. Run `brew cask install now` from the command line to install it.
+- [Docker](https://www.docker.com/get-docker), containerize all the things! Run `brew cask install docker` from the command line to install it.
+- [Fira Code font](https://github.com/tonsky/FiraCode) for my shell and my favourite editor. Run the following only once as it's used for installing any font, `brew tap caskroom/fonts`. Once that is installed, you can install Fira Code by running `brew cask install font-fira-code`.
+- I’ve discovered what the [whole commotion is about `npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b), so I’ve also added that to my tool belt. Thanks [Peter Kühne](https://dev.to/peter_kuehne/comment/213k)!
 
 ## Shell/Terminal Setup
 
-- [iTerm2](https://www.iterm2.com/), a better terminal than the out of the box macOS terminal app. Run
-  `brew cask install iterm2`
-  from the command line to install it.
-- [Fish shell](http://fishshell.com), a better shell experience. Run
-  `brew cask install fish`
-  from the command line to install it.
-- [Fisherman](https://github.com/fisherman/fisherman), for themes and other utilities for the fish shell. Run
-  `curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher`
-  from the command line to install it.
-- edc/bass (to support bash utilities) - Assumes Fisherman is installed. Run
-  `fisher edc/bass`
-  from the command line to install it.
+- [iTerm2](https://www.iterm2.com/), a better terminal than the out of the box macOS terminal app. Run `brew cask install iterm2` from the command line to install it.
+- [Fish shell](http://fishshell.com), a better shell experience. Run `brew cask install fish` from the command line to install it.
+- [Fisherman](https://github.com/fisherman/fisherman), for themes and other utilities for the fish shell. Run `curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher` from the command line to install it.
+- edc/bass (to support bash utilities) - Assumes Fisherman is installed. Run `fisher edc/bass` from the command line to install it.
 - I use the git CLI with [git aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases). Here’s my list of [git aliases](https://gitaliases.iamdeveloper.com).
-- fish shell aliases I use because I'm a lazy typer or just can't remember the real command. Feel free to run the script snippet below to add them to your 🐡 🐚 .\*\*
-
+- fish shell aliases I use because I'm a lazy typer or just can't remember the real command. Feel free to run the script snippet below to add them to your 🐡 🐚 .**
 ```bash
 alias cg="eval \"git clone git@github.com:$argv.git\"" # Clones a gist, just pass in the gist ID
 funcsave cg
@@ -167,34 +120,18 @@ funcsave hot
 
 ## Useful Utilities
 
-- [The Unarchiver](https://theunarchiver.com) - run
-  `brew cask install the-unarchiver`
-  from the command line to install it.
+- [The Unarchiver](https://theunarchiver.com) - run `brew cask install the-unarchiver` from the command line to install it.
 - [Amphetamine](https://itunes.apple.com/us/app/amphetamine/id937984704), sometimes you just want your laptop to stay awake… 💊
-- [VLC](https://www.videolan.org/vlc/download-macosx.html) - run
-  `brew cask install vlc`
-  from the command line to install it.
-- [f.lux](https://justgetflux.com), so you can be nice to your 👀 in the evening. Run
-  `brew cask install flux`
-  from the command line to install it.
-- [Dropbox](https://www.dropbox.com/downloading), I use it to sync my Alfred settings, fish, fisherman etc. via symlinks.Run
-  `brew cask install dropbox`
-  from the command line to install it.
-- [dark-mode](https://github.com/sindresorhus/dark-mode) - run
-  `brew install dark-mode`
-  from the command line to install it.
-- [vanilla](http://matthewpalmer.net/vanilla) for OS X menu bar. Hide the clutter. Run
-  `brew cask install vanilla`
-  from the command line to install it.
+- [VLC](https://www.videolan.org/vlc/download-macosx.html) - run `brew cask install vlc` from the command line to install it.
+- [f.lux](https://justgetflux.com), so you can be nice to your 👀 in the evening. Run `brew cask install flux` from the command line to install it.
+- [Dropbox](https://www.dropbox.com/downloading), I use it to sync my Alfred settings, fish, fisherman etc. via symlinks.Run `brew cask install dropbox` from the command line to install it.
+- [dark-mode](https://github.com/sindresorhus/dark-mode) - run `brew install dark-mode` from the command line to install it.
+- [vanilla](http://matthewpalmer.net/vanilla) for OS X menu bar. Hide the clutter. Run `brew cask install vanilla` from the command line to install it.
 - [Slack](https://slack.com/downloads/osx)
 - [Trello](https://itunes.apple.com/app/trello/id1278508951?mt=12), I’m using this less and less though since I discovered Bear. I’ve fallen more in a todo list mode with [Bear](http://www.bear-writer.com/).
 - [Bear](http://www.bear-writer.com/), this is definitely my favourite new app. It’s the first note taking app that I’m consistently using. I think it’s all due to markdown support and simplicity.
-- [LiceCap](https://www.cockos.com/licecap), for animated GIF screen captures. I find this tool very easy to use and the animated screen captures are pretty decent. Run
-  `brew cask install licecap`
-  from the command line to install it.
-- Onyx. It's great for general maintenance of your computer. To install it run
-  `brew cask install onyx`
-  .
+- [LiceCap](https://www.cockos.com/licecap), for animated GIF screen captures. I find this tool very easy to use and the animated screen captures are pretty decent. Run `brew cask install licecap` from the command line to install it.
+- Onyx. It's great for general maintenance of your computer. To install it run `brew cask install onyx`.
 
 ## Tweaking macOS
 
@@ -205,18 +142,4 @@ That’s pretty much the round up of what I have on my machine at the moment. I 
 
 I’m always looking for new tools to make me more efficient, so feel free to chime in in the comments below.
 
-And here's the link to [my mac setup script](https://gist.github.com/nickytonline/729fc106a0146345c0b90f3356a41e4d# file-my-mac-setup-sh "my mac setup script") which I made a little while's after this blog post. It's not perfect, but it's helped me set up a few machines pretty easily.
-
-_[This post is also available on DEV.](https://dev.to/nickytonline/my-mac-setup-2m05)_
-
-<script>
-const parent = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.min.js';
-script.charset = 'utf-8';
-script.onload = function() {
-    window.iFrameResize({}, '.liquidTag');
-};
-parent.appendChild(script);
-</script>
+And here's the link to [my mac setup script](https://gist.github.com/nickytonline/729fc106a0146345c0b90f3356a41e4d#file-my-mac-setup-sh "my mac setup script") which I made a little while's after this blog post. It's not perfect, but it's helped me set up a few machines pretty easily.

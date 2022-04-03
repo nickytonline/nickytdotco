@@ -12,7 +12,25 @@ const {
   removePostIsOnDevLink
 } = require('./src/filters/devToFilters.js');
 
-const {youtube, boostLink, googleAnalytics, socialImage} = require('./src/shortCodes');
+const {
+  boostLink,
+  youtubeEmbed,
+  googleAnalytics,
+  socialImage,
+  embedEmbed,
+  twitterEmbed,
+  codepenEmbed,
+  devLinkEmbed,
+  devCommentEmbed,
+  githubEmbed,
+  instagramEmbed,
+  devUserEmbed,
+  devTagEmbed,
+  devOrgEmbed,
+  replitEmbed,
+  devPodcastEmbed,
+  codeSandboxEmbed
+} = require('./src/shortCodes');
 
 // Import transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
@@ -48,34 +66,29 @@ module.exports = function(config) {
 
   // Short Codes
   config.addShortcode('boostLink', boostLink);
-  config.addShortcode('youtube', youtube);
+  config.addShortcode('youtube', youtubeEmbed);
   config.addShortcode('googleAnalytics', googleAnalytics);
   config.addShortcode('socialImage', socialImage);
 
+  config.addShortcode('twitter', twitterEmbed);
+  config.addShortcode('codepen', codepenEmbed);
+  config.addShortcode('link', devLinkEmbed);
+  config.addShortcode('devcomment', devCommentEmbed);
+  config.addShortcode('github', githubEmbed);
+  config.addShortcode('instagram', instagramEmbed);
+  config.addShortcode('user', devUserEmbed);
+  config.addShortcode('tag', devTagEmbed);
+  config.addShortcode('organization', devOrgEmbed);
+  config.addShortcode('replit', replitEmbed);
+  config.addShortcode('podcast', devPodcastEmbed);
+  config.addShortcode('codesandbox', codeSandboxEmbed);
+
+  config.addShortcode('embed', embedEmbed);
+
   const now = new Date();
 
-  /**
-   * Determines whethere or not a post coming from DEV (the CMS) is valid or not to publish
-   * on this blog.
-   *
-   * @param {object} post The post to validate.
-   *
-   * @returns {boolean} True if the post is valid for publishing, otherwise false.
-   */
-  function isValidPost(post) {
-    const {tags = []} = post.data ?? {};
-
-    return (
-      !tags.includes('jokes') &&
-      !tags.includes('weeklylearn') &&
-      !tags.includes('weeklyretro') &&
-      !tags.includes('watercooler') &&
-      !tags.includes('devhumor')
-    );
-  }
-
   function filterOutUnwantedTags(collection) {
-    return collection.getFilteredByGlob('./src/posts/*.md').filter(isValidPost);
+    return collection.getFilteredByGlob('./src/posts/*.md');
   }
 
   // Custom collections
@@ -92,7 +105,7 @@ module.exports = function(config) {
 
   config.addCollection('sitemapPages', function(collection) {
     // get unsorted items
-    return collection.getAll().filter(isValidPost);
+    return collection.getAll();
   });
 
   // Plugins

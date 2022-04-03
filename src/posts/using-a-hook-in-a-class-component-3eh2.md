@@ -1,14 +1,17 @@
+---json
+{
+  "title": "Using a Hook in a Class Component",
+  "excerpt": "Did you know that you can use hooks in class components?   OK, I'm lying, kind of. You can't use a...",
+  "date": "2022-03-28T19:03:10.011Z",
+  "tags": [
+    "react",
+    "javascript"
+  ],
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--NBwmN8Qr--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h8jx0vy2dbgwqsfpynbu.jpeg",
+  "template": "post"
+}
 ---
-title: Using a Hook in a Class Component
-date: '2022-03-28T03:44:30.902Z'
-excerpt: Did you know that you can use hooks in class components? OK, I'm lying kind of. You can't use a hook directly
-tags:
-  - react
-  - javascript
-template: post
----
-
-Did you know that you can use [hooks](https://beta.reactjs.org/learn#using-hooks) in [class components](https://reactjs.org/docs/react-component.html)?
+Did you know that you can use [hooks](https://beta.reactjs.org/learn#using-hooks) in [class components](https://reactjs.org/docs/react-component.html)? 
 
 OK, I'm lying, kind of. You can't use a hook directly in a class component, but you can use a hook in a wrapped function component with a [render prop](https://reactjs.org/docs/render-props.html) to achieve this.
 
@@ -19,7 +22,7 @@ The beauty of this pattern is you can build new components as function component
 Let's first create a hook.
 
 ```javascript
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
 
 export function useDarkMode() {
   // Taken from https://usehooks.com/useDarkMode/
@@ -31,7 +34,7 @@ export function useDarkMode() {
   const enabled = enabledState;
 
   useEffect(() => {
-    const className = 'dark-mode';
+    const className = "dark-mode";
     const element = document.body;
     if (enabled) {
       element.classList.add(className);
@@ -48,7 +51,7 @@ Now let's create a function component that has a render prop. Note that the prop
 ```jsx
 // I wouldn't normally call a component something like this.
 // It's just to convey what it is doing for the purpose of the article
-const UseDarkModeHookWrapperComponent = ({render}) => {
+const UseDarkModeHookWrapperComponent = ({ render }) => {
   const [darkMode, setDarkMode] = useDarkMode(false);
 
   // Uses the render prop called render that will expose the value and
@@ -68,11 +71,11 @@ export default class App extends Component {
           return (
             <div
               style={{
-                display: 'grid',
-                gridTemplateColumns: '200px',
-                gap: '2rem',
-                maxWidth: '50%',
-                placeItems: 'center'
+                display: "grid",
+                gridTemplateColumns: "200px",
+                gap: "2rem",
+                maxWidth: "50%",
+                placeItems: "center"
               }}
             >
               <ThemeToggler darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -88,13 +91,7 @@ export default class App extends Component {
 
 And voilà! You're using your hook in a class component. Here's the complete application in action.
 
-<iframe src="https://codesandbox.io/embed/recursing-haibt-uxgkke?fontsize=14&hidenavigation=1&theme=dark"
-    loading="lazy"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="recursing-haibt-uxgkke"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+{% codesandbox "recursing-haibt-uxgkke" %}
 
 If you want to see a real-world example, look no further than the Forem codebase. Here's the [useMediaQuery hook](https://github.com/forem/forem/blob/main/app/javascript/shared/components/useMediaQuery.js), and here's the [wrapper component](https://github.com/forem/forem/blob/main/app/javascript/shared/components/MediaQuery.jsx). If you want to see it in action, it's called in the [ReadingList component](https://github.com/forem/forem/blob/main/app/javascript/readingList/readingList.jsx#L240-L277).
 
