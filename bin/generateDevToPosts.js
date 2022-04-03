@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 require('dotenv').config();
 
-const {createMapFromString} = require('html-minifier/src/utils');
 const fetch = require('node-fetch');
 const path = require('path');
 const fs = require('fs').promises;
@@ -9,7 +8,15 @@ const DEV_TO_API_URL = 'https://dev.to/api/articles/me/published?per_page=1000';
 const {DEV_API_KEY} = process.env;
 const postsDirectory = path.join(__dirname, '../src/posts');
 
-function sanitizeMarkdown(markdown) {
+/**
+ * Ensures that embeds coming from dev.to that are strings are in quotes in the markdown.
+ * Otherwise Eleventy misinterprets and tries to parse them as a number.
+ *
+ * @param {string} markdown
+ *
+ * @returns sanitized markdown
+ */
+function sanitizeMarkdownEmbeds(markdown) {
   const sanitizedMarkdown = markdown.replaceAll(
     /{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
     '{% $1 "$2" %}'
@@ -62,6 +69,11 @@ Sample post format:
 
 */
 
+/**
+ * Retrieves the latest blog posts from dev.to.
+ *
+ * @returns {Promise<object[]>} A promise that resolves to an array of blog posts.
+ */
 async function getDevPosts() {
   const response = await fetch(DEV_TO_API_URL, {
     headers: {
@@ -73,13 +85,11 @@ async function getDevPosts() {
   return posts.filter(isValidPost);
 }
 
-// Fetch all articles minus markdown
-// https://dev.to/api/articles/me/published?per_page=1000
-
-// loop through each articles and grab markdown
-
-// write each file in src/posts using the format for the filename as slug.md
-
+/**
+ * Generates a markdown file for the given blog post.
+ *
+ * @param {object} post The blog post to generate a markdown file for.
+ */
 async function createPostFile(post) {
   const {
     body_markdown,
@@ -107,7 +117,7 @@ async function createPostFile(post) {
   )}\n---\n${markdownBody}\n`;
 
   const postFile = path.join(postsDirectory, `${slug}.md`);
-  await fs.writeFile(postFile, sanitizeMarkdown(markdown));
+  await fs.writeFile(postFile, sanitizeMarkdownEmbeds(markdown));
 
   return {status: 'success'};
 }
@@ -117,13 +127,6 @@ async function createPostFile(post) {
 
   const posts = await getDevPosts();
 
-  /*
----json
-{
-  "title": "My page title"
-}
----
-*/
   for (const post of posts) {
     const {status} = await createPostFile(post);
     console.log(status);
