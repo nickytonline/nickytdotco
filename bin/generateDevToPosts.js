@@ -8,6 +8,10 @@ const DEV_TO_API_URL = 'https://dev.to/api/articles/me/published?per_page=1000';
 const {DEV_API_KEY} = process.env;
 const postsDirectory = path.join(__dirname, '../src/posts');
 
+if (!DEV_API_KEY) {
+  throw new Error('Missing DEV_API_KEY environment variable');
+}
+
 /**
  * Ensures that embeds coming from dev.to that are strings are in quotes in the markdown.
  * Otherwise Eleventy misinterprets and tries to parse them as a number.
@@ -129,6 +133,11 @@ async function createPostFile(post) {
 
   for (const post of posts) {
     const {status} = await createPostFile(post);
-    console.log(status);
+
+    if (status !== 'success') {
+      console.error(`Failed to create post file for ${JSON.stringify(post, null, 2)}`);
+
+      throw new Error(`Unabled to generate markdown file: status ${status}`);
+    }
   }
 })();
