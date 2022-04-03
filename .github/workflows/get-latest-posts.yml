@@ -28,5 +28,7 @@ jobs:
           git config user.email "<>"
           git pull origin main
           git add .
-          git commit -m "Got latest blog posts"
-          git push origin main
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git commit -m "Update blog posts"
+            git push origin main
+          fi
