@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Learning Rust",
-  "excerpt": "My awesome coworker @citizen428  dropped a new resource for learning the Rust language care of...",
+  "excerpt": "My awesome coworker @citizen428 dropped a new resource for learning the Rust language care of...",
   "date": "2021-04-18T19:47:05.587Z",
   "tags": [
     "rust",

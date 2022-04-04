@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Pairing with Jhey Tompkins",
-  "excerpt": "On April 28th, DEV Community member Jhey Tompkins joined @coffeecraftcode  and I on the pairing strea...",
+  "excerpt": "On April 28th, DEV Community member Jhey Tompkins joined @coffeecraftcode and I on the pairing stream...",
   "date": "2021-05-12T18:38:25.697Z",
   "tags": [
     "devstream",

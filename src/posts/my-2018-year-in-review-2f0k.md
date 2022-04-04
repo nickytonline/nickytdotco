@@ -4,8 +4,7 @@
   "excerpt": "So here’s my 2018 Resolutions.                                       2018 Resolutions       Nick...",
   "date": "2018-12-29T10:00:00.000Z",
   "tags": [
-    "yearinreview",
-    "webdev"
+    "yearinreview"
   ],
   "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--8VoeKWdX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tu12q4khv30zeubo2jw7.jpg",
   "template": "post"

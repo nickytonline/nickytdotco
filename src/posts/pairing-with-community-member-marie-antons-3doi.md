@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Pairing with Community Member Marie Antons",
-  "excerpt": "On October 22nd, DEV Community member Marie Antons joined Christina and I on the pairing stream to wo...",
+  "excerpt": "On October 22nd, DEV Community member Marie Antons joined Christina and I on the pairing stream to...",
   "date": "2020-11-02T14:11:10.031Z",
   "tags": [
     "livecoding",

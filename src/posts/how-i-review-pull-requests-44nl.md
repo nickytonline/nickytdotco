@@ -4,9 +4,10 @@
   "excerpt": "Someone in my Virtual Coffee community asked about getting better at reviewing pull requests (PR)...",
   "date": "2021-12-09T00:57:44.993Z",
   "tags": [
-    "beginners",
+    "career",
     "programming",
-    "career"
+    "github",
+    "git"
   ],
   "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--XuDzaAIL--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iz97ilpuk9knd74mixxu.jpeg",
   "template": "post"

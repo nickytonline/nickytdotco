@@ -1,7 +1,7 @@
 ---json
 {
   "title": "My Twitch Stream Setup",
-  "excerpt": "So I started streaming on Twitch last year.                                         I've Started to L...",
+  "excerpt": "So I started streaming on Twitch last year.                                         I've Started to...",
   "date": "2021-04-17T19:27:33.836Z",
   "tags": [
     "twitch",

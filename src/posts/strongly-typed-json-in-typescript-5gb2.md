@@ -4,8 +4,7 @@
   "excerpt": "Someone in one of the Slack communities I'm a part of asked today how to type JSON in TypeScript,...",
   "date": "2022-04-01T03:36:19.595Z",
   "tags": [
-    "typescript",
-    "beginners"
+    "typescript"
   ],
   "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--kzB8DJTv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7sjay11pqa91it8euj0l.png",
   "template": "post"

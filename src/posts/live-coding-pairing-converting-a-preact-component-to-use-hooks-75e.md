@@ -1,12 +1,13 @@
 ---json
 {
   "title": "Converting a Preact Component to use hooks with Sophia Li",
-  "excerpt": "A few weeks ago, I wrote a post asking DEV community members if they wanted to potentially pair progr...",
+  "excerpt": "A few weeks ago, I wrote a post asking DEV community members if they wanted to potentially pair...",
   "date": "2020-07-27T04:01:08.932Z",
   "tags": [
-    "devstream",
+    "learninpublic",
     "pairprogramming",
-    "javascript"
+    "javascript",
+    "react"
   ],
   "cover_image": null,
   "template": "post"

@@ -1,7 +1,7 @@
 ---json
 {
   "title": "My 2020 Year in Review",
-  "excerpt": "2020, it’s been a year. It’s been tough on a lot of folks. I’m a pretty upbeat person, but even I suc...",
+  "excerpt": "2020, it’s been a year. It’s been tough on a lot of folks. I’m a pretty upbeat person, but even I...",
   "date": "2020-12-31T13:50:55.432Z",
   "tags": [
     "yearinreview"

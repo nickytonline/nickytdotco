@@ -5,7 +5,7 @@
   "date": "2021-08-28T04:49:00.886Z",
   "tags": [
     "vscode",
-    "beginners"
+    "community"
   ],
   "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s---x_PMQck--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07jhp9p39ti9bisymp6a.png",
   "template": "post"

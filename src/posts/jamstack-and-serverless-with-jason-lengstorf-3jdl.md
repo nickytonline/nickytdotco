@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Jamstack and Serverless with Jason Lengstorf",
-  "excerpt": "On April 21st, Jason Lengstorf (VP of Developer Experience at Netlify and DEV Community member) joine...",
+  "excerpt": "On April 21st, Jason Lengstorf (VP of Developer Experience at Netlify and DEV Community member)...",
   "date": "2021-05-07T03:21:25.070Z",
   "tags": [
     "devstream",

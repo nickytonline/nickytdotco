@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Pairing with Community Member Jono Yeong",
-  "excerpt": "On February 17th, DEV Community member Jono Yeong joined Christina and I on the pairing stream to wor...",
+  "excerpt": "On February 17th, DEV Community member Jono Yeong joined Christina and I on the pairing stream to...",
   "date": "2021-02-19T19:38:48.199Z",
   "tags": [
     "devstream",

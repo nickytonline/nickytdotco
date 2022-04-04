@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Pairing with Community Member Rafi",
-  "excerpt": "On January 21st, DEV Community member Rafi joined Christina and I on the pairing stream to work on im...",
+  "excerpt": "On January 21st, DEV Community member Rafi joined Christina and I on the pairing stream to work on...",
   "date": "2021-01-22T21:36:29.748Z",
   "tags": [
     "devstream",
