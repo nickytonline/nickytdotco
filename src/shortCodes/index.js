@@ -38,12 +38,20 @@ function boostLink(fileSlug, url) {
  * @returns {string} Markup for a YouTube video embed.
  */
 function youtubeEmbed(videoUrl) {
-  const [, videoId, time] = videoUrl.match(/.+\?v=([^&]+)(?:&t=([^&]+)s)?/) ?? [];
-  const timeQueryParameter = time ? `start=${time}` : '';
+  let videoId;
+  let time;
+
+  if (videoUrl.includes('https://')) {
+    [, videoId, time] = videoUrl.match(/.+\?v=([^&]+)(?:&t=([^&]+)s)?/) ?? [];
+  } else {
+    videoId = videoUrl;
+  }
+
+  const timeQueryParameter = time ? `?start=${time}` : '';
 
   return `<iframe
     loading="lazy"
-    src="https://www.youtube.com/embed/${videoId}?${timeQueryParameter}"
+    src="https://www.youtube.com/embed/${videoId}${timeQueryParameter}"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen="allowFullScreen"
     style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"
