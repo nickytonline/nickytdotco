@@ -4,7 +4,7 @@ require('dotenv').config();
 const fetch = require('node-fetch');
 const path = require('path');
 const fs = require('fs').promises;
-const {DEV_API_KEY} = process.env;
+const {DEV_API_KEY, NODE_ENV} = process.env;
 
 const DEV_TO_API_URL = 'https://dev.to/api/articles/me/published?per_page=1000';
 const POSTS_DIRECTORY = path.join(__dirname, '../src/posts');
@@ -14,6 +14,8 @@ const POSTS_IMAGES_DIRECTORY = path.join(
   '../src',
   POSTS_IMAGES_PUBLIC_DIRECTORY
 );
+
+let {url: siteUrl} = require('../src/_data/site.json');
 
 if (!DEV_API_KEY) {
   throw new Error('Missing DEV_API_KEY environment variable');
@@ -152,7 +154,7 @@ async function createPostFile(post) {
  * @param {string} imageFilePath The path to save the image to.
  *
  */
-async function saveImage(imageUrl, imageFilePath) {
+async function saveImageUrl(imageUrl, imageFilePath) {
   const response = await fetch(imageUrl);
   const buffer = await response.buffer();
 
@@ -161,23 +163,86 @@ async function saveImage(imageUrl, imageFilePath) {
   );
 }
 
-async function saveCoverImage(coverImage = null) {
-  let newCoverImageUrl = null;
+/**
+ * Generates an image URL hosted by the domain the blog is hosted on.
+ *
+ * @param {URL} imageUrl
+ * @returns {string} The new image URL.
+ */
+function generateNewImageUrl(imageUrl) {
+  const imagefilename = imageUrl.pathname.replaceAll('/', '_');
+  const newImageUrl = new URL(
+    siteUrl + path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename)
+  ).toString();
 
-  if (coverImage) {
-    const coverImageUrl = new URL(coverImage);
-    const imagefilename = coverImageUrl.pathname.replaceAll('/', '_');
+  return newImageUrl;
+}
+
+/**
+ * Saves a markdown image URL to a local file and returns the new image URL.
+ * TODO: Fix mixing two concerns.
+ * @param {string} markdownImageUrl
+ *
+ * @returns {string} Returns the new image URL.
+ */
+async function saveMarkdownImageUrl(markdownImageUrl = null) {
+  let newMarkdownImageUrl = null;
+
+  if (markdownImageUrl) {
+    const imageUrl = new URL(markdownImageUrl);
+    const imagefilename = imageUrl.pathname.replaceAll('/', '_');
     const localCoverImagePath = path.join(POSTS_IMAGES_DIRECTORY, imagefilename);
 
-    newCoverImageUrl = path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename);
+    newMarkdownImageUrl = generateNewImageUrl(imageUrl);
 
     if (!(await fileExists(localCoverImagePath))) {
-      console.log(`Saving image ${coverImageUrl} to ${localCoverImagePath}`);
-      await saveImage(coverImage, localCoverImagePath);
+      console.log(`Saving image ${imageUrl} to ${localCoverImagePath}`);
+      await saveImageUrl(markdownImageUrl, localCoverImagePath);
     }
   }
 
-  return newCoverImageUrl;
+  return newMarkdownImageUrl;
+}
+
+/**
+ * Saves all markdown images to local files to be served by the blog.
+ *
+ * @param {string[]} imagesToSave
+ */
+async function saveMarkdownImages(imagesToSave) {
+  for (const imageToSave of imagesToSave) {
+    await saveMarkdownImageUrl(imageToSave);
+  }
+}
+
+/**
+ * Updates all markdown image URLs with URLs hosted by the domain the blog is hosted on.
+ * @param {string} markdown
+ *
+ * @returns The updated markdown.
+ */
+async function updateMarkdownImageUrls(markdown) {
+  let updatedMarkdown = markdown;
+  const imagesToSave = [];
+  const matches = markdown.matchAll(/!\[.*?\]\((?<oldImageUrl>.*?)\)/g);
+
+  for (const match of matches) {
+    const {oldImageUrl} = match.groups;
+
+    const imageUrl = new URL(oldImageUrl);
+
+    if (!imageUrl.host.includes('giphy.com')) {
+      const newImageUrl = generateNewImageUrl(imageUrl);
+
+      updatedMarkdown = updatedMarkdown.replace(oldImageUrl, newImageUrl);
+      imagesToSave.push(oldImageUrl);
+    }
+  }
+
+  return {
+    markdown: updatedMarkdown,
+    imagesToSave
+  };
 }
 
 (async () => {
@@ -187,9 +252,16 @@ async function saveCoverImage(coverImage = null) {
   const posts = await getDevPosts();
 
   for (const post of posts) {
-    const updatedCoverImage = await saveCoverImage(post.cover_image);
+    const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
+    const {markdown, imagesToSave} = await updateMarkdownImageUrls(post.body_markdown);
 
-    const updatedPost = {...post, cover_image: updatedCoverImage};
+    await saveMarkdownImages(imagesToSave);
+
+    const updatedPost = {
+      ...post,
+      cover_image: updatedCoverImage,
+      body_markdown: markdown
+    };
     const {status} = await createPostFile(updatedPost);
 
     if (status !== 'success') {

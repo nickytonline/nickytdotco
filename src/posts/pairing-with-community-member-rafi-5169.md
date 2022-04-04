@@ -9,7 +9,7 @@
     "css",
     "html"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--BvMbIlsm--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_j4m63b3wupg2r2lpctc7.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--BvMbIlsm--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_j4m63b3wupg2r2lpctc7.png",
   "template": "post"
 }
 ---

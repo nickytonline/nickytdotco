@@ -9,7 +9,7 @@
     "javascript",
     "ui"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--AMjsJsC0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_9zm6yatidby4ls11xzeg.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--AMjsJsC0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_9zm6yatidby4ls11xzeg.png",
   "template": "post"
 }
 ---
@@ -46,7 +46,7 @@ Note that this is a super bare bones webpack configuration. You can add anything
 2. Open this file and remove the React reference and replace it with `import { h } from "preact";`
 3. All that’s left to do is run `npm run storybook` and navigate to Storybook in a browser.
 
-![Screenshot of Storybook in action](https://www.iamdeveloper.com/storybook-cc90189bb245b5d5bdea02cbff77fd3c.gif)
+![Screenshot of Storybook in action](https://www.iamdeveloper.com/images/posts/_storybook-cc90189bb245b5d5bdea02cbff77fd3c.gif)
 
 ## Extras
 

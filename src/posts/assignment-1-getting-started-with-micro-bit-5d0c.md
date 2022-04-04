@@ -7,7 +7,7 @@
     "microbit",
     "beginners"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--M2MF_ris--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_hcyzorobxiccxbqn4lbp.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--M2MF_ris--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_hcyzorobxiccxbqn4lbp.png",
   "template": "post"
 }
 ---
@@ -41,7 +41,7 @@ If you press the B button, it ends the game and shows the words “GAME OVER” 
 
 Below are all the micro:bit blocks required to build the game. If you are not sure what a Microbit-block does, check out their help, https://makecode.microbit.org/reference
 
-![micro:bit blocks required for the assignment](https://dev-to-uploads.s3.amazonaws.com/i/nqw1odtqiy60zfjzmm4u.png)
+![micro:bit blocks required for the assignment](https://www.iamdeveloper.com/images/posts/_i_nqw1odtqiy60zfjzmm4u.png)
 
 ## Demo and Solution
 

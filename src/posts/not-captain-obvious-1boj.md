@@ -8,7 +8,7 @@
     "writing",
     "learninpublic"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--aM9IE2Yl--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_g6zipfc343b56kfou7pw.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--aM9IE2Yl--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_g6zipfc343b56kfou7pw.png",
   "template": "post"
 }
 ---

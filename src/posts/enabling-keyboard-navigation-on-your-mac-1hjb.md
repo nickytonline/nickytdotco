@@ -8,7 +8,7 @@
     "productivity",
     "macos"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--5dgW_UV9--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7n6dsveguxcnv8fyfid9.jpeg",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--5dgW_UV9--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7n6dsveguxcnv8fyfid9.jpeg",
   "template": "post"
 }
 ---
@@ -18,14 +18,14 @@ I got everything set up on my Mac over the past few weeks, but today I got a pro
 
 All right, we need to head on over to our Keyboard settings.
 
-![System preferences main panel in macOS](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4pktrkdwpvpb1k2kw3e2.png)
+![System preferences main panel in macOS](https://www.iamdeveloper.com/images/posts/_uploads_articles_4pktrkdwpvpb1k2kw3e2.png)
 
 See that checkbox labelled `Use keyboard navigation to move focus between controls`? You're going to want to check that.
 
-![Keyboard settings in macOS preferences](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x1vsaa2szv8cgosh4c8i.png)
+![Keyboard settings in macOS preferences](https://www.iamdeveloper.com/images/posts/_uploads_articles_x1vsaa2szv8cgosh4c8i.png)
 
 And you're done! Now you can use the keyboard for things like confirmation dialogs.
 
-![A deletion prompt in VS Code](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/196fplgyqth8bwqacbg7.png) 
+![A deletion prompt in VS Code](https://www.iamdeveloper.com/images/posts/_uploads_articles_196fplgyqth8bwqacbg7.png) 
 
 Photo by <a href="https://unsplash.com/@hannahjoshua?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">hannah joshua</a> on <a href="https://unsplash.com/s/photos/mac-keyboard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

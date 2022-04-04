@@ -9,7 +9,7 @@
     "nextjs",
     "react"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--WS9QK_wT--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_iezxljfb8pspnqkmea00.jpg",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--WS9QK_wT--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_iezxljfb8pspnqkmea00.jpg",
   "template": "post"
 }
 ---
@@ -28,7 +28,7 @@ Like the first dApp I built, I made it my own. Here's some fun screenshots from 
 
 <center>
 
-![Mint your player in Terrible Characters](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n5apna2gthcp2uzp67vd.gif)
+![Mint your player in Terrible Characters](https://www.iamdeveloper.com/images/posts/_uploads_articles_n5apna2gthcp2uzp67vd.gif)
 
 </center>
 
@@ -36,7 +36,7 @@ Like the first dApp I built, I made it my own. Here's some fun screenshots from 
 
 <center>
 
-![Player being minted](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uh00c3pltuxe2gexjzk3.gif)
+![Player being minted](https://www.iamdeveloper.com/images/posts/_uploads_articles_uh00c3pltuxe2gexjzk3.gif)
 
  </center>
 
@@ -44,7 +44,7 @@ Like the first dApp I built, I made it my own. Here's some fun screenshots from 
 
 <center>
 
-![A player with a minted NFT attacking a big boss in Terrible Characters](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n1w4w5ypmaa2bazttn66.gif)
+![A player with a minted NFT attacking a big boss in Terrible Characters](https://www.iamdeveloper.com/images/posts/_uploads_articles_n1w4w5ypmaa2bazttn66.gif)
 
 </center>
 
@@ -52,7 +52,7 @@ Like the first dApp I built, I made it my own. Here's some fun screenshots from 
 
 <center>
 
-![When your player is dead](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c5ask849iqilo3r53uw0.png)
+![When your player is dead](https://www.iamdeveloper.com/images/posts/_uploads_articles_c5ask849iqilo3r53uw0.png)
  
 
 </center>

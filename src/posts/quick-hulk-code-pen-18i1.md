@@ -7,7 +7,7 @@
     "css",
     "codepen"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--_l7DUBNK--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c1.staticflickr.com_3_2825_34089505692_6d6cb68560_h.jpg",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--_l7DUBNK--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c1.staticflickr.com_3_2825_34089505692_6d6cb68560_h.jpg",
   "template": "post"
 }
 ---

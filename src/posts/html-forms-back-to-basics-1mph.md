@@ -9,7 +9,7 @@
     "html",
     "beginners"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--t9c1XIrR--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_tdhxw07gd7gwo6ctib50.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--t9c1XIrR--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_tdhxw07gd7gwo6ctib50.png",
   "template": "post"
 }
 ---
@@ -25,7 +25,7 @@ With newer DOM APIs like `querySelector` and `querySelectorAll`, we can access f
 
 So let’s say we’re on [amazon.ca](https://amazon.ca).
 
-![](https://www.iamdeveloper.com/img/form-in-dev-tools.png)
+![Image description](https://www.iamdeveloper.com/images/posts/_uploads_articles_gcz82rwr8gldorgtdw73.png)
 
 You have a form that looks like this:
 
@@ -37,11 +37,11 @@ You have a form that looks like this:
 
 OK, so you know there is a `document.forms` object. Let’s take a peek in the dev tools.
 
-![Chrome DevTools Console screenshot](https://www.iamdeveloper.com/img/form-in-dev-tools2.png "Chrome DevTools Console screenshot")
+![Chrome DevTools Console screenshot](https://www.iamdeveloper.com/images/posts/_uploads_articles_l5iw6ju9j72f65y7st8f.png)
 
 `document.forms[0]` finds our form, and there is one other form on the page, but there’s also two more properties on `document.forms`. There’s `site-search` and `ue_backdetect`. If we look at the markup above for our form, we see it has a `name` attribute with the value `’site-search'`. That’s one of the extra properties on `document.forms`. Sure enough, `document.forms[‘site-search’]` gives us a form. If we do `document.forms[0] === document.forms[‘site-search’]` in the console of our dev tools, we’ll see that it returns true.
 
-![Chrome DevTools Console screenshot](https://www.iamdeveloper.com/img/form-in-dev-tools3.png "Chrome DevTools Console screenshot")
+![Chrome DevTools Console screenshot](https://www.iamdeveloper.com/images/posts/_uploads_articles_qfjpo95l3mht6x2nanr1.png)
 
 If you haven’t caught on yet, this means that you can access forms via an index, which represents the order they appear in the DOM, but you can also access it via a form’s `name` attribute.
 
@@ -53,11 +53,11 @@ Alright, there’s more folks. Let’s get a reference to our form by running th
 
 Now let’s see what properties are available on our form.
 
-![Chrome DevTools Console screenshot](https://www.iamdeveloper.com/img/form-properties.gif "Chrome DevTools Console screenshot")
+![Chrome DevTools Console screenshot](https://www.iamdeveloper.com/images/posts/_uploads_articles_b6u4q9l1a1lr9hi161hp.png)
 
 OK, so we see some properties like `action`, for the URL to `GET`/`POST` to, but as we go down the list, there’s one called `elements`. Hmm, what could that be? 😉 If we access it in the dev tools console, we get the following:
 
-![Chrome DevTools Console screenshot](https://www.iamdeveloper.com/img/form-in-dev-tools4.png "Chrome DevTools Console screenshot")
+![Chrome DevTools Console screenshot](https://www.iamdeveloper.com/images/posts/_uploads_articles_ldmbv7r0ppsl0sztlxh1.png)
 
 What? All the form inputs are in there! That’s right folks, you have access to all the `<input />`s, `<textarea />`s etc via this property. Pretty cool eh? Not only that, if the form inputs have a `name` attribute, we can do the same thing we did for `document.forms`. We can access the form inputs by index or their name, e.g. `siteSearchForm.elements[‘field-keywords’]`.
 
@@ -65,7 +65,7 @@ So accessing forms and form inputs can be done right off the `document` via the 
 
 One last fun fact. Each form element has a `form` property which is a reference to the `<form />` DOM node that the form element is contained within.
 
-![Console log of a form element](https://thepracticaldev.s3.amazonaws.com/i/ddf6hbntoqnde9u7i3ke.png)
+![Console log of a form element](https://www.iamdeveloper.com/images/posts/_uploads_articles_aeirppe0s4qazjc89nr0.png)
 
 Hope you enjoyed this DOM Throwback Thursday.
 

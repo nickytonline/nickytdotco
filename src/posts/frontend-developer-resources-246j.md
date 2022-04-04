@@ -9,7 +9,7 @@
     "css",
     "html"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--1j9Z4MyX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_d0slehzp7b26buouwz33.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--1j9Z4MyX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_d0slehzp7b26buouwz33.png",
   "template": "post"
 }
 ---
@@ -242,7 +242,7 @@ Refined GitHub is not frontend specific, but a lot of us use GitHub for work. It
 
 There are too many features to mention, but my favourites are automatically deleting a branch after it is merged, and prompting you to create a PR if you're on GitHub and just pushed a branch or made changes to a branch that currently does not have a PR open.
 
-![Screen shot of Refined GitHub prompting a user to create a PR](https://thepracticaldev.s3.amazonaws.com/i/qo9qd11owzquv5j3zywa.png)
+![Screen shot of Refined GitHub prompting a user to create a PR](https://www.iamdeveloper.com/images/posts/_i_qo9qd11owzquv5j3zywa.png)
 
 The extension integrates so well, I no longer know what is a new GitHub feature or a Refined GitHub feature.
 
@@ -286,13 +286,13 @@ As mentioned above, I purchased [Every Layout](https://every-layout.dev/checkout
 
 There are browser extensions that do part of what xScope does, but a few years ago, a co-worker introduced me to [xScope](https://xscope.app). The only downside to this tool is that it is only available for Mac. If you are on a Mac though, I highly recommend it.
 
-![Screenshot of xScope in action](https://thepracticaldev.s3.amazonaws.com/i/z9ib0s1cc88dwa7qvv5n.png) 
+![Screenshot of xScope in action](https://www.iamdeveloper.com/images/posts/_i_z9ib0s1cc88dwa7qvv5n.png) 
 
 ### Sizzy
 
 [Sizzy](https://sizzy.app/) is a new one in my toolbelt, but so far I am loving it. I snagged it at a great price during Boxing Day week. In a nutshell, it allows you to work on a site or application and see how it appears in different devices. It has more to it than that, but I am still new to it, so I probably haven't unleashed all its awesomeness yet. Kudos to @thekitze for building this awesomeness.
 
-![Screenshot of Sizzy in action](https://thepracticaldev.s3.amazonaws.com/i/cqu87zz9l97zk55ng3p5.png)
+![Screenshot of Sizzy in action](https://www.iamdeveloper.com/images/posts/_i_cqu87zz9l97zk55ng3p5.png)
 
 ### Learning through Video
 

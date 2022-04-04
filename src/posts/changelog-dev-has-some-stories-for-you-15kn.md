@@ -9,7 +9,7 @@
     "css",
     "javascript"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--QXgm3mdo--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_ln7awag96agh8pxsjsui.jpg",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--QXgm3mdo--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_ln7awag96agh8pxsjsui.jpg",
   "template": "post"
 }
 ---
@@ -17,7 +17,7 @@ My first PR to the DEV repository was when I added Storybook to the project. In 
 
 <center>
 
-![Screenshot of my first commits to the DEV codebase](https://dev-to-uploads.s3.amazonaws.com/i/x23u4dfcyplsubjkouzp.png)
+![Screenshot of my first commits to the DEV codebase](https://www.iamdeveloper.com/images/posts/_i_x23u4dfcyplsubjkouzp.png)
 
 </center>
 

@@ -6,7 +6,7 @@
   "tags": [
     "productivity"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--wu3fsFJF--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_1lnsa2cfa2m4oogcas4f.jpg",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--wu3fsFJF--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_1lnsa2cfa2m4oogcas4f.jpg",
   "template": "post"
 }
 ---
@@ -20,10 +20,10 @@ I use Alfred and that basically gives me all I really need in terms of opening a
 
 I also do not really use the touch bar except for mapping it to function keys (<kbd>F1</kbd> - <kbd>F12</kbd>) when I have a browser open or VS Code.
 
-![Keyboard preferences for mapping function keys in touch bar for certain apps](https://thepracticaldev.s3.amazonaws.com/i/5xj2scviq8o2kivnyhy0.png)
+![Keyboard preferences for mapping function keys in touch bar for certain apps](https://www.iamdeveloper.com/images/posts/_i_5xj2scviq8o2kivnyhy0.png)
 
 Having said that, I came across a very interesting project a few weeks ago called Pock that lets you put the Dock into the touch bar. This combined with "permanently" hiding the Dock makes the touch bar more useful for me. If I'm honest, it's just to see if I have a Slack notification, but that alone is worth it.
 
-![Pock in action](https://thepracticaldev.s3.amazonaws.com/i/qyf7zba4vejkjcjvd6lu.jpg)
+![Pock in action](https://www.iamdeveloper.com/images/posts/_i_qyf7zba4vejkjcjvd6lu.jpg)
 
 {% github "https://github.com/pigigaldi/Pock" %}

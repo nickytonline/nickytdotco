@@ -9,7 +9,7 @@
     "testing",
     "webdev"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--CS11Dyqa--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_zi8jv3lu5ewdh5oim3rl.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--CS11Dyqa--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_zi8jv3lu5ewdh5oim3rl.png",
   "template": "post"
 }
 ---
@@ -37,7 +37,7 @@ My coworker [Pawel](https://dev.to/pp) has a pull request up that adds a new sea
 
 Pawel, ran into some issues synchronizing the main search form (larger screens) with the smaller one that is contained within the search results. Right away this screamed, use a portal since it is an element that renders in a different DOM element, i.e. a Portal's container.
 
-![An Excalidraw drawing showing the different parts of the search page rendered](https://dev-to-uploads.s3.amazonaws.com/i/3kra38249j5h7tiksj28.png) 
+![An Excalidraw drawing showing the different parts of the search page rendered](https://www.iamdeveloper.com/images/posts/_i_3kra38249j5h7tiksj28.png) 
 
 I reworked things so that there was now a parent component that managed the state of the original search text box and the mobile search text box that gets rendered within the search results using the [useState](https://preactjs.com/guide/v10/hooks/#usestate) hook. I did some initial tests in Pawel’s PR and it seemed to work, but on subsequent searches it stopped working.
 
@@ -45,7 +45,7 @@ And then it clicked. Portals are the right approach, but when new search results
 
 So typing in the mobile view stopped synching the search term between search text boxes because the search text box created by the portal got wiped out by the server-side render.
  
-![An Excalidraw drawing showing the different parts of the search page rendered with a new search result](https://dev-to-uploads.s3.amazonaws.com/i/384ozzl4bytwkl6jz7ig.png)
+![An Excalidraw drawing showing the different parts of the search page rendered with a new search result](https://www.iamdeveloper.com/images/posts/_i_384ozzl4bytwkl6jz7ig.png)
 
 Once I figured that out, I got all the moving parts working. Check out my PR as it contains more information in the comments about this.
 

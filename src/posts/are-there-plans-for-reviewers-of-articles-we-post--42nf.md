@@ -6,7 +6,7 @@
   "tags": [
     "meta"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--ij0eMxBx--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_5cwbmzbxhzfeeo9sr579.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--ij0eMxBx--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_5cwbmzbxhzfeeo9sr579.png",
   "template": "post"
 }
 ---

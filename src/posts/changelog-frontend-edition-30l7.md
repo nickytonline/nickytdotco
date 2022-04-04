@@ -9,7 +9,7 @@
     "javascript",
     "testing"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--RbUzG7vH--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_taavig1ker0pmxi35grk.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--RbUzG7vH--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_taavig1ker0pmxi35grk.png",
   "template": "post"
 }
 ---
@@ -82,11 +82,11 @@ In May, I wrote an update about our usage of Storybook.
 
 Since then, we’ve continued to use Storybook to build out design system components and some critical application components. Moving to Preact X has allowed us to finally start using some more powerful Storybook addons. I mentioned a11y testing above, so to complement this, we added the [Storybook a11y addon](https://github.com/storybookjs/storybook/tree/master/addons/a11y).
 
-![Screenshot of DEV's Storybook](https://dev-to-uploads.s3.amazonaws.com/i/6r9hi9d4dzks6xg830dn.png)
+![Screenshot of DEV's Storybook](https://www.iamdeveloper.com/images/posts/_i_6r9hi9d4dzks6xg830dn.png)
 
 In addition to that, we have a custom [Storybook decorator](https://storybook.js.org/docs/addons/introduction/#1-decorators) that allows you to change DEV themes so you can ensure you are building out things correctly for each theme we support.
 
-![Screenshot of DEV's Storybook theme switcher](https://dev-to-uploads.s3.amazonaws.com/i/5m5nmopxsvq7l4g8jywe.png)
+![Screenshot of DEV's Storybook theme switcher](https://www.iamdeveloper.com/images/posts/_i_5m5nmopxsvq7l4g8jywe.png)
 
 You can view DEV's work in progress Storybook [here](https://storybook.forem.com). Every merge to our main branch related to Storybook stories will deploy an updated Storybook, so what you see is always the latest and greatest. Thanks to [Netlify](https://www.netlify.com/) deploy previews, you can see the Storybook related to every PR! 🔥
 
@@ -110,9 +110,9 @@ module.exports = {
 
 Another super handy addition is in jest watch mode. You can now filter by a test’s name or filename.
 
-![Screenshot of jest test runner options in watch mode](https://dev-to-uploads.s3.amazonaws.com/i/6alsv3g4epkpn9r84qgy.png)
+![Screenshot of jest test runner options in watch mode](https://www.iamdeveloper.com/images/posts/_i_6alsv3g4epkpn9r84qgy.png)
 
-![Screenshot of jest test runner options in watch mode for filtering test files based on filename](https://dev-to-uploads.s3.amazonaws.com/i/i4yqse0rnlxpsfmydy4e.png)
+![Screenshot of jest test runner options in watch mode for filtering test files based on filename](https://www.iamdeveloper.com/images/posts/_i_i4yqse0rnlxpsfmydy4e.png)
 
 Is that all? Yes it is. Surely you jest. 😆
 

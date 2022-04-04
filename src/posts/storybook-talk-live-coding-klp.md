@@ -9,7 +9,7 @@
     "storybook",
     "ux"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--nDJchRza--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_436wuamj05szgisfdtrm.jpeg",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--nDJchRza--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_436wuamj05szgisfdtrm.jpeg",
   "template": "post"
 }
 ---
@@ -21,19 +21,19 @@ Last week, I gave a talk on [Storybook](https://storybook.js.org/) at a [The Col
 
 Think of it as a workbench for building out components that your application consumes without the burden of running your application. It is also living interactive documentation for your entire team/consumers of components.
 
-![Describing building components in Storybook vs. your applciation](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6x3jsi7yoj9id3xyhgg3.png)
+![Describing building components in Storybook vs. your applciation](https://www.iamdeveloper.com/images/posts/_uploads_articles_6x3jsi7yoj9id3xyhgg3.png)
  
 By building out your components in isolation, it forces you (in a good way) to really think about how you are building your component. Building things in Storybook will potentially (hopefully) help you avoid tightly coupling things together. 
 
 For example, at Forem, we use [Elastic Search](https://www.elastic.co/) for search results including the list of users returned in the mention autocomplete component below.
 
-![The Forem mention autocomplete component in action in Forem's Storybook](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3s1qbca47opj18adanwh.png)
+![The Forem mention autocomplete component in action in Forem's Storybook](https://www.iamdeveloper.com/images/posts/_uploads_articles_3s1qbca47opj18adanwh.png)
  
 This component knows nothing about Elastic Search. All it knows is that it gets a list of users from a function [prop](https://reactjs.org/docs/components-and-props.html) called `fetchSuggestions` and renders them. In Storybook, we mock that prop by creating a function that returns some mocked data.
 
 A Storybook story is view of a component in a certain state. A component can have many stories. Here we show a button component with different variants.
 
-![Different views of a button component in different states in Storybook](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mw0e2cmaf72ybu2t78e4.png)
+![Different views of a button component in different states in Storybook](https://www.iamdeveloper.com/images/posts/_uploads_articles_mw0e2cmaf72ybu2t78e4.png)
 
 Storybook was originally built for React only but has since evolved to support most of today’s popular frameworks like Vue, Angular, and Svelte etc.
 

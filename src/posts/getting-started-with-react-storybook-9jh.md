@@ -9,7 +9,7 @@
     "storybook",
     "ui"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--AMjsJsC0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_9zm6yatidby4ls11xzeg.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--AMjsJsC0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_9zm6yatidby4ls11xzeg.png",
   "template": "post"
 }
 ---
@@ -45,7 +45,7 @@ We’ll assume you already have a React project created.
 - Navigate to `http://localhost:6006` (or whichever port Storybook gives you in the `storybook` npm script.
 - Boom! You’re in Storybook land. Go pat yourself on the back.
 
-![Screenshot of Storybook in action](https://thepracticaldev.s3.amazonaws.com/i/7a9brlemrfxvrizy8ipu.gif)
+![Screenshot of Storybook in action](https://www.iamdeveloper.com/images/posts/_i_7a9brlemrfxvrizy8ipu.gif)
 
 - The other script, `build-storybook`, if run, will generate a static Storybook site that you can deploy to wherever you like. By default, it will be generated into a folder called `storybook-static`.
 

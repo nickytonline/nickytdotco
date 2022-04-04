@@ -7,7 +7,7 @@
     "javascript",
     "react"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--jCK8u0FL--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_vxmx385yqbvafn2si5f5.jpg",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--jCK8u0FL--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_vxmx385yqbvafn2si5f5.jpg",
   "template": "post"
 }
 ---

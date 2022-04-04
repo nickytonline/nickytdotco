@@ -9,7 +9,7 @@
     "nextjs",
     "react"
   ],
-  "cover_image": "/images/posts/_practicaldev_image_fetch_s--0MpNYl1t--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_vi2yi9st53f151flz189.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--0MpNYl1t--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_vi2yi9st53f151flz189.png",
   "template": "post"
 }
 ---
@@ -23,7 +23,7 @@ The buildspace projects have really straightforward instructions. I did go a bit
 
 I also decided to make the project my own and made some modifications. For one, I added another field for the message in the smart contract for storing a URL. I was doing this quickly, so just opted to use images from a funny site I love, [http.cat](https://http.cat).
 
-![An open message on pics.iamdeveloper.com showing a picture of a cat in the message](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5en7a1fzcyrmikyjmj9k.png)
+![An open message on pics.iamdeveloper.com showing a picture of a cat in the message](https://www.iamdeveloper.com/images/posts/_uploads_articles_5en7a1fzcyrmikyjmj9k.png)
  
 The code is still a bit scrappy as it really was a weekend project, but I'm still happy with how it turned out. I've made some tweaks since then, but there's still a bunch of refactoring to do. 😅
 
@@ -35,5 +35,5 @@ The dapp is live running the contract off the [Rinkeby network](https://www.rink
 
 And while you're here, check out the live dapp at [pics.iamdeveloper.com](https://pics.iamdeveloper.com)!
 
-![The picture portal site](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vsmhsmo18sfdtji14ydw.png)
+![The picture portal site](https://www.iamdeveloper.com/images/posts/_uploads_articles_vsmhsmo18sfdtji14ydw.png)
  
