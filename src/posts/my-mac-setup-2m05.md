@@ -8,7 +8,7 @@
     "developertools",
     "webdev"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--C6fxx9Ly--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/qkwvsk3lp64lvchg69tm.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--C6fxx9Ly--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_qkwvsk3lp64lvchg69tm.png",
   "template": "post"
 }
 ---

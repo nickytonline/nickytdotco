@@ -4,12 +4,30 @@ require('dotenv').config();
 const fetch = require('node-fetch');
 const path = require('path');
 const fs = require('fs').promises;
-const DEV_TO_API_URL = 'https://dev.to/api/articles/me/published?per_page=1000';
 const {DEV_API_KEY} = process.env;
-const postsDirectory = path.join(__dirname, '../src/posts');
+
+const DEV_TO_API_URL = 'https://dev.to/api/articles/me/published?per_page=1000';
+const POSTS_DIRECTORY = path.join(__dirname, '../src/posts');
+const POSTS_IMAGES_PUBLIC_DIRECTORY = '/images/posts';
+const POSTS_IMAGES_DIRECTORY = path.join(
+  __dirname,
+  '../src',
+  POSTS_IMAGES_PUBLIC_DIRECTORY
+);
 
 if (!DEV_API_KEY) {
   throw new Error('Missing DEV_API_KEY environment variable');
+}
+
+/**
+ * Determine whether or not a file exists.
+ *
+ * @param {string} path
+ *
+ * @returns True if the file exists, otherwise false.
+ */
+async function fileExists(path) {
+  return !!(await fs.stat(path).catch(_error => false));
 }
 
 /**
@@ -121,19 +139,58 @@ async function createPostFile(post) {
     2
   )}\n---\n${markdownBody}\n`;
 
-  const postFile = path.join(postsDirectory, `${slug}.md`);
+  const postFile = path.join(POSTS_DIRECTORY, `${slug}.md`);
   await fs.writeFile(postFile, sanitizeMarkdownEmbeds(markdown));
 
   return {status: 'success'};
 }
 
+/**
+ * Save an image URL to a local file.
+ *
+ * @param {string} imageUrl The URL of the image to save.
+ * @param {string} imageFilePath The path to save the image to.
+ *
+ */
+async function saveImage(imageUrl, imageFilePath) {
+  const response = await fetch(imageUrl);
+  const buffer = await response.buffer();
+
+  await fs.writeFile(imageFilePath, buffer, () =>
+    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`)
+  );
+}
+
+async function saveCoverImage(coverImage = null) {
+  let newCoverImageUrl = null;
+
+  if (coverImage) {
+    const coverImageUrl = new URL(coverImage);
+    const imagefilename = coverImageUrl.pathname.replaceAll('/', '_');
+    const localCoverImagePath = path.join(POSTS_IMAGES_DIRECTORY, imagefilename);
+
+    newCoverImageUrl = path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename);
+
+    if (!(await fileExists(localCoverImagePath))) {
+      console.log(`Saving image ${coverImageUrl} to ${localCoverImagePath}`);
+      await saveImage(coverImage, localCoverImagePath);
+    }
+  }
+
+  return newCoverImageUrl;
+}
+
 (async () => {
-  await fs.mkdir(postsDirectory, {recursive: true});
+  await fs.mkdir(POSTS_DIRECTORY, {recursive: true});
+  await fs.mkdir(POSTS_IMAGES_DIRECTORY, {recursive: true});
 
   const posts = await getDevPosts();
 
   for (const post of posts) {
-    const {status} = await createPostFile(post);
+    const updatedCoverImage = await saveCoverImage(post.cover_image);
+
+    const updatedPost = {...post, cover_image: updatedCoverImage};
+    const {status} = await createPostFile(updatedPost);
 
     if (status !== 'success') {
       console.error(`Failed to create post file for ${JSON.stringify(post, null, 2)}`);

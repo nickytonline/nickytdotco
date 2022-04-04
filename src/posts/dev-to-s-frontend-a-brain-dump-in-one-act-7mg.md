@@ -9,7 +9,7 @@
     "preact",
     "webpack"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--3uLkqBYG--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://media.giphy.com/media/TI32JwHmWQEi4/giphy.gif",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--3uLkqBYG--_c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000_https:__media.giphy.com_media_TI32JwHmWQEi4_giphy.gif",
   "template": "post"
 }
 ---

@@ -7,7 +7,7 @@
     "microbit",
     "beginners"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--M2MF_ris--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/hcyzorobxiccxbqn4lbp.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--M2MF_ris--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_hcyzorobxiccxbqn4lbp.png",
   "template": "post"
 }
 ---

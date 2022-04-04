@@ -9,7 +9,7 @@
     "beginners",
     "productivity"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--aq5cDtoo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/olzaevg5khtiad835vke.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--aq5cDtoo--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_olzaevg5khtiad835vke.png",
   "template": "post"
 }
 ---

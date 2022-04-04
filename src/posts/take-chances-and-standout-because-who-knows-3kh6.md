@@ -8,7 +8,7 @@
     "interview",
     "motivation"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--gMX84Q9b--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/fgimfk93vbdn6v0csx5e.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--gMX84Q9b--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_fgimfk93vbdn6v0csx5e.jpg",
   "template": "post"
 }
 ---

@@ -7,7 +7,7 @@
     "githunt",
     "typescript"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--4PAvToRP--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5rrpk58vqffc396paebe.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--4PAvToRP--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_5rrpk58vqffc396paebe.jpg",
   "template": "post"
 }
 ---

@@ -8,7 +8,7 @@
     "headlesscms",
     "gatsby"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--txUc6TTd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6nx4xj3l7dk99em1bdww.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--txUc6TTd--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_6nx4xj3l7dk99em1bdww.png",
   "template": "post"
 }
 ---

@@ -6,7 +6,7 @@
   "tags": [
     "yearinreview"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--14PKK-wD--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1fgj6dfj33nd55i17c9c.jpeg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--14PKK-wD--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_1fgj6dfj33nd55i17c9c.jpeg",
   "template": "post"
 }
 ---

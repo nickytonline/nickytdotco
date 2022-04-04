@@ -6,7 +6,7 @@
   "tags": [
     "typescript"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--kzB8DJTv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7sjay11pqa91it8euj0l.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--kzB8DJTv--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7sjay11pqa91it8euj0l.png",
   "template": "post"
 }
 ---

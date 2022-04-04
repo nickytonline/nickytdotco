@@ -8,7 +8,7 @@
     "productivity",
     "macos"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--5dgW_UV9--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7n6dsveguxcnv8fyfid9.jpeg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--5dgW_UV9--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7n6dsveguxcnv8fyfid9.jpeg",
   "template": "post"
 }
 ---

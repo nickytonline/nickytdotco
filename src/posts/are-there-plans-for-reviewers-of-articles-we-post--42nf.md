@@ -6,7 +6,7 @@
   "tags": [
     "meta"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--ij0eMxBx--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5cwbmzbxhzfeeo9sr579.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--ij0eMxBx--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_5cwbmzbxhzfeeo9sr579.png",
   "template": "post"
 }
 ---

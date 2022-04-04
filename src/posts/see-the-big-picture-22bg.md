@@ -7,7 +7,7 @@
     "career",
     "beginners"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--RuCk74km--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6qeji3ozp4ypayd0h8au.JPG",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--RuCk74km--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_6qeji3ozp4ypayd0h8au.JPG",
   "template": "post"
 }
 ---

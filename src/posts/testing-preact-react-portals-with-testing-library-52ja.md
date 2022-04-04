@@ -9,7 +9,7 @@
     "testing",
     "webdev"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--CS11Dyqa--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/zi8jv3lu5ewdh5oim3rl.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--CS11Dyqa--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_zi8jv3lu5ewdh5oim3rl.png",
   "template": "post"
 }
 ---

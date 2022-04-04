@@ -9,7 +9,7 @@
     "html",
     "beginners"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--t9c1XIrR--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/tdhxw07gd7gwo6ctib50.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--t9c1XIrR--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_tdhxw07gd7gwo6ctib50.png",
   "template": "post"
 }
 ---

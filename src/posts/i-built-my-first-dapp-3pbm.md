@@ -9,7 +9,7 @@
     "nextjs",
     "react"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--0MpNYl1t--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vi2yi9st53f151flz189.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--0MpNYl1t--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_vi2yi9st53f151flz189.png",
   "template": "post"
 }
 ---

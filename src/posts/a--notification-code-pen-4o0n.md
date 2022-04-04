@@ -7,7 +7,7 @@
     "css",
     "codepen"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--WvDL10qV--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/nmx6enjnka59n8c5jwc6.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--WvDL10qV--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_nmx6enjnka59n8c5jwc6.png",
   "template": "post"
 }
 ---

@@ -9,7 +9,7 @@
     "javascript",
     "preact"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--MP7_0KCc--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1cp6w4lj5inz3iz0x3mz.jpeg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--MP7_0KCc--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_1cp6w4lj5inz3iz0x3mz.jpeg",
   "template": "post"
 }
 ---

@@ -8,7 +8,7 @@
     "beginners",
     "streaming"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--xrj9uU0f--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fm42fqy3ziu3r1zyahel.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--xrj9uU0f--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_fm42fqy3ziu3r1zyahel.png",
   "template": "post"
 }
 ---

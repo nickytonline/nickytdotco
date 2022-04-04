@@ -8,7 +8,7 @@
     "beginners",
     "javascript"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--YB4J_ik4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z4v5ldpkdcyphu9m07w4.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--YB4J_ik4--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_z4v5ldpkdcyphu9m07w4.png",
   "template": "post"
 }
 ---

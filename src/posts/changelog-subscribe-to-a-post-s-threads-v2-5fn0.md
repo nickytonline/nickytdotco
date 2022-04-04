@@ -7,7 +7,7 @@
     "meta",
     "changelog"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--tP_qSg05--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/3h4jxtefrd7uaq1c5gos.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--tP_qSg05--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_3h4jxtefrd7uaq1c5gos.png",
   "template": "post"
 }
 ---

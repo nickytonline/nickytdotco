@@ -7,7 +7,7 @@
     "news",
     "webdev"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--qmQ3lmo2--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3wu8ld8pjl64goxmb6ay.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--qmQ3lmo2--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_3wu8ld8pjl64goxmb6ay.jpg",
   "template": "post"
 }
 ---

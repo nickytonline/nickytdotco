@@ -8,7 +8,7 @@
     "css",
     "ui"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--UPQWL4-u--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/fzgrjq82fzh5gtm4jur5.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--UPQWL4-u--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_fzgrjq82fzh5gtm4jur5.jpg",
   "template": "post"
 }
 ---

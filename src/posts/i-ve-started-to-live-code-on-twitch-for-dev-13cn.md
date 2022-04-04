@@ -8,7 +8,7 @@
     "streaming",
     "livecoding"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--L53rXEkz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/4or5dqsjdsqzf3jfsr7t.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--L53rXEkz--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_4or5dqsjdsqzf3jfsr7t.png",
   "template": "post"
 }
 ---

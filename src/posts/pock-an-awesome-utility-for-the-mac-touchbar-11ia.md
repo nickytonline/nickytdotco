@@ -6,7 +6,7 @@
   "tags": [
     "productivity"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--wu3fsFJF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/1lnsa2cfa2m4oogcas4f.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--wu3fsFJF--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_1lnsa2cfa2m4oogcas4f.jpg",
   "template": "post"
 }
 ---

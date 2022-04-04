@@ -8,7 +8,7 @@
     "react",
     "talks"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--5M9qqV-W--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/7ss87wh6suac1t8n4gz6.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--5M9qqV-W--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_7ss87wh6suac1t8n4gz6.jpg",
   "template": "post"
 }
 ---

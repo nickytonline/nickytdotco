@@ -9,7 +9,7 @@
     "cypress",
     "netlify"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--Q7k4S3jr--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/jivsyirs8gft16kuji62.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--Q7k4S3jr--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_jivsyirs8gft16kuji62.png",
   "template": "post"
 }
 ---

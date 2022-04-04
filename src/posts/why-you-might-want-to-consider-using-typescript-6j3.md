@@ -8,7 +8,7 @@
     "typescript",
     "javascript"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--myl1s_qT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/k8pe37firnq0uhi5546a.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--myl1s_qT--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_k8pe37firnq0uhi5546a.png",
   "template": "post"
 }
 ---

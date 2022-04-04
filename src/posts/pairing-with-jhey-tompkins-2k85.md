@@ -9,7 +9,7 @@
     "greensock",
     "javascript"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--8lWRVbUC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e4ekxgolwzakw0ntuny9.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--8lWRVbUC--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_e4ekxgolwzakw0ntuny9.jpg",
   "template": "post"
 }
 ---

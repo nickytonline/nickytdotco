@@ -7,7 +7,7 @@
     "opensource",
     "career"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--8Dc9k6Ml--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/2h3puantbcb0a0sfusny.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--8Dc9k6Ml--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_2h3puantbcb0a0sfusny.jpg",
   "template": "post"
 }
 ---

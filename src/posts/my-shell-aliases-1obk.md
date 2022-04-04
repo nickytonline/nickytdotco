@@ -8,7 +8,7 @@
     "cli",
     "shell"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--LxZFwaP4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5vnflnscj2k2amsyzwkg.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--LxZFwaP4--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_5vnflnscj2k2amsyzwkg.jpg",
   "template": "post"
 }
 ---

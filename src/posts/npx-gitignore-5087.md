@@ -8,7 +8,7 @@
     "npm",
     "git"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--bpzJ3l21--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hurs5x435k11rkd4nbnt.jpeg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--bpzJ3l21--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_hurs5x435k11rkd4nbnt.jpeg",
   "template": "post"
 }
 ---

@@ -8,7 +8,7 @@
     "career",
     "personal"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--q2i_vNRX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6v67gbppb6cqqj3pqrp3.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--q2i_vNRX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_6v67gbppb6cqqj3pqrp3.png",
   "template": "post"
 }
 ---

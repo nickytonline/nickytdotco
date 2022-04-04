@@ -9,7 +9,7 @@
     "typescript",
     "jamstack"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--2CkRqNCp--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/epig0488nwfmsdm59t48.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--2CkRqNCp--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_epig0488nwfmsdm59t48.png",
   "template": "post"
 }
 ---

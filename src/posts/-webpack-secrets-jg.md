@@ -9,7 +9,7 @@
     "javascript",
     "node"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--F5XqwMMD--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/hinf6qqn57jfinnmpprk.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--F5XqwMMD--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_hinf6qqn57jfinnmpprk.png",
   "template": "post"
 }
 ---

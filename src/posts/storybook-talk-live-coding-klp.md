@@ -9,7 +9,7 @@
     "storybook",
     "ux"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--nDJchRza--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/436wuamj05szgisfdtrm.jpeg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--nDJchRza--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_436wuamj05szgisfdtrm.jpeg",
   "template": "post"
 }
 ---

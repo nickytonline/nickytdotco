@@ -9,7 +9,7 @@
     "serverless",
     "jamstack"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--6sR4EG05--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e8fnjv5l9je77p01qq0z.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--6sR4EG05--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_e8fnjv5l9je77p01qq0z.jpg",
   "template": "post"
 }
 ---

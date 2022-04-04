@@ -7,7 +7,7 @@
     "vscode",
     "community"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s---x_PMQck--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07jhp9p39ti9bisymp6a.png",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s---x_PMQck--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_07jhp9p39ti9bisymp6a.png",
   "template": "post"
 }
 ---

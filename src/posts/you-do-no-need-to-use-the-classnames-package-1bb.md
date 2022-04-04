@@ -7,7 +7,7 @@
     "javascript",
     "react"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--jCK8u0FL--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/vxmx385yqbvafn2si5f5.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--jCK8u0FL--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_vxmx385yqbvafn2si5f5.jpg",
   "template": "post"
 }
 ---

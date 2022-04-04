@@ -8,7 +8,7 @@
     "git",
     "github"
   ],
-  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--vasWZK4---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/cu5csch4pwfki2r0yfac.jpg",
+  "cover_image": "/images/posts/_practicaldev_image_fetch_s--vasWZK4---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_cu5csch4pwfki2r0yfac.jpg",
   "template": "post"
 }
 ---
