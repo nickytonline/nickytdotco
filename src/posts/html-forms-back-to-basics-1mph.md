@@ -17,9 +17,7 @@ Let's forget frameworks and libraries for a moment. Today we’re just going to 
 
 For web devs who are getting a little long in the tooth, you’re probably familiar with most of this, but for newer devs, this might be news to you. Either way, buckle up because we’re about to go old school with forms.
 
-<center>
-![Will Ferell in Old School in a grocery store sayinh "Awesome!"](https://media.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy.gif)
-</center>
+![Will Ferell in Old School in a grocery store saying "Awesome!"](https://media.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy.gif)
 
 With newer DOM APIs like `querySelector` and `querySelectorAll`, we can access forms via a selector, e.g. `document.querySelector(‘form’);`. Did you know that you can also access forms directly from the `document`? There is an `HTMLCollections` of forms available via `document.forms`. Go ahead, I’ll let you open the dev tools in your favourite editor. Pretty neat eh?
 
@@ -45,9 +43,7 @@ OK, so you know there is a `document.forms` object. Let’s take a peek in the d
 
 If you haven’t caught on yet, this means that you can access forms via an index, which represents the order they appear in the DOM, but you can also access it via a form’s `name` attribute.
 
-<center>
 ![Character in a movie saying "Yes!"](https://media.giphy.com/media/Qh6NZWsFx1G1O/giphy.gif)
-</center>
 
 Alright, there’s more folks. Let’s get a reference to our form by running the following in the console, `const siteSearchForm = document.forms['site-search']`.
 
@@ -69,6 +65,4 @@ One last fun fact. Each form element has a `form` property which is a reference 
 
 Hope you enjoyed this DOM Throwback Thursday.
 
-<center>
 <img src="https://media.giphy.com/media/3h3ZcimVNfmi0MVvGA/giphy.gif" />
-</center>
