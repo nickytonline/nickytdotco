@@ -17,9 +17,7 @@ A few weeks ago, I wrote a post asking DEV community members if they wanted to p
 
 {% link "https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he" %}
 
-A lot of interest was generated and so we did our first live coding pairing session that was streamed on [doingdevfordev.com](https://doingdevfordev.com). It was with DEV community member Sophia Li.
-
-{% user "sophia_wyl" %}
+A lot of interest was generated and so we did our first live coding pairing session that was streamed on [doingdevfordev.com](https://doingdevfordev.com). It was with DEV community member [Sophia Li](https://twitter.com/sophia_wyl).
 
 She worked on the `<ImageUploader />` Preact component in the DEV/forem codebase. It was originally a class component that she converted to a function component using the [useState](https://reactjs.org/docs/hooks-reference.html#usestate) hook.
 
