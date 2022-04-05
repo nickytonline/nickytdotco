@@ -74,7 +74,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 
 ## Additional Resources
 
-Also, I made an extensive list for [Frontend Developer Resources](https://www.iamdeveloper.com/blog/2020-01-06-frontend-developer-resources/). Some of the things mentioned above are probably already on this list.
+Also, I made an extensive list for [Frontend Developer Resources](https://www.iamdeveloper.com/posts/frontend-developer-resources-246j/). Some of the things mentioned above are probably already on this list.
 
 ## Office Setup
 
