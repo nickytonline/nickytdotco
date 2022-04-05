@@ -8,7 +8,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 
 ## Editor
 
-- [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/), here’s [my setup](https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/)
+- [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/)
 - Themes I alternate between:
   - [Fortnite](https://marketplace.visualstudio.com/items?itemName=sdras.fortnite-vscode-theme) by [Sarah Drasner](https://twitter.com/sarah_edo)
   - [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) by [Sarah Drasner](https://twitter.com/sarah_edo)
@@ -29,8 +29,8 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [Grammarly](https://grammarly.com/) - A grammar and spell checking tool
 - [Pocket](https://getpocket.com/) - For bookmarking stuff to read
 - [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) - A prettified view of JSON payloads
-- [Productive Twitter](https://chrome.google.com/webstore/detail/productive-twitter/elgfikcdihncknnnedljbbignlmnppii) - Zen mode for
-- [a11y Twitter](https://github.com/nickytonline/a11y-twitter) - Small changes to how you use Twitter to promote Tweeting in an accessible manner/
+- [Productive Twitter](https://chrome.google.com/webstore/detail/productive-twitter/elgfikcdihncknnnedljbbignlmnppii) - Gets rid of a lot of noise in the Twitter UI
+- [a11y Twitter](https://github.com/nickytonline/a11y-twitter) - Small changes to how you use Twitter to promote Tweeting in an accessible manner.
 
 ## Desktop Apps
 
@@ -60,7 +60,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [Fig](https://fig.io) - VSCode style autocomplete in your terminal
 - [Figma](https://www.figma.com/) - Design collaboratively on the web
 - [Loopback](https://rogueamoeba.com/loopback/) - Great for virtual audio sources
-- [CleanMyMac X](https://macpaw.com/cleanmymac)
+- [CleanMyMac X](https://macpaw.com/cleanmymac) - A suite of utilities for keeping your Mac in tip top shape.
 
 ## CLIs
 
@@ -82,8 +82,8 @@ Also, I made an extensive list for [Frontend Developer Resources](https://www.ia
 - Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with many new parts for just under a third of the price.
 - [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
 - MacBook Pro 14" (2021)
-- [Apple Magic Trackpad 2](https://www.apple.com/shop/product/MRMF2LL/A/magic-trackpad-2-space-gray)
-- [Apple Magic Keyboard with Numeric Keypad](https://www.apple.com/shop/product/MQ052B/A/magic-keyboard-with-numeric-keypad-british-english-silver)
+- [Logitech MX Master 3 mouse](https://www.logitech.com/en-ca/products/mice/mx-master-3.910-005647.html)
+- [Logitech ERGO K860 wireless split keyboard](https://www.logitech.com/en-ca/products/keyboards/k860-split-ergonomic.920-009166.html)
 - [Sony WH-1000XM3](https://www.sony.ca/en/electronics/headband-headphones/wh-1000xm3) headphones - I snagged them during Boxing Day week.
 - [Blue Designs Yeti](https://www.bluedesigns.com/products/yeti/) microphone
 - [RODE PSA1 Swivel Mount Studio Microphone Boom Arm](https://www.amazon.ca/gp/product/B001D7UYBO)
