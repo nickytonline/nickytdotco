@@ -128,21 +128,6 @@ async function processDevToEmbeds(embeds = [], document) {
   );
 
   await processArticleEmbeds(articleEmbeds, document);
-
-  const remainingEmbeds = embeds.filter(({src}) =>
-    src.startsWith('https://dev.to/embed/listing')
-  );
-
-  remainingEmbeds.forEach(embed => {
-    embed.removeAttribute('style');
-
-    const player = document.createElement('div');
-
-    player.classList.add('devto-embed-wrapper');
-    player.appendChild(embed.cloneNode(true));
-
-    embed.replaceWith(player);
-  });
 }
 
 module.exports = async function(value, outputPath) {
