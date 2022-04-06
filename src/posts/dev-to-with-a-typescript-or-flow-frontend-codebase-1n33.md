@@ -39,10 +39,6 @@ There is also a great episode on the React Podcast that talks about TypeScript w
 
 {% twitter "1111321292966264832" %}
 
-Also check out the TypeScript tag
-
-{% tag "typescript" %}
-
 Take TypeScript for a spin in one of the playgrounds:
 
 * Unofficial Playground
@@ -60,11 +56,7 @@ Here are some links if you want to read up on Flow.
 * [Writing Better JavaScript with Flow](https://www.sitepoint.com/writing-better-javascript-with-flow)
 * [An Introduction to Flow](https://pusher.com/sessions/meetup/js-monthly-london/flow)
 * [Flow: A Static Type Checker for JavaScript](https://dzone.com/articles/flow-a-static-type-checker-for-javascript)
-* I honestly did not really find many posts on dev.to about Flow, but feel free to check out these tags.
-
-{% tag "flow" %}
-
-{% tag "flowtype" %}
+* I honestly did not really find many posts on dev.to about Flow, but feel free to check out the [flowtype tag](https://dev.to/t/flowtype).
 
 Take Flow for a spin in the [Flow REPL](https://flow.org/try/)
 
