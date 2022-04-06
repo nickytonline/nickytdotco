@@ -4,9 +4,7 @@
   "excerpt": "A small write up on the benefits of using TypeScript.",
   "date": "2017-10-08T14:35:45.516Z",
   "tags": [
-    "beginners",
-    "typescript",
-    "javascript"
+    "typescript"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--myl1s_qT--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_k8pe37firnq0uhi5546a.png",
   "template": "post"
@@ -85,7 +83,8 @@ Here are some additional resources to get you up and running.
 * [TypeScript Deep Dive](https://www.gitbook.com/book/basarat/typescript)
 * [Full-stack TypeScript](https://fullstacktypescript.slack.com) on Slack
 * [TypeScript Fundamentals](https://typescriptcourses.com/typescript-fundamentals) (Great free course)
-* [Quokka.js](https://quokkajs.com) (live scratchpad for JS with TypeScript support but 
+* [Marius Schulz’s Blog](https://mariusschulz.com/blog/series/typescript-evolution)
+* [Quokka.js](https://quokkajs.com) (live scratchpad for JS with TypeScript support) 
 * Accounts to follow on Twitter:
   * The Offical TypeScript account ([@typescriptlang](https://twitter.com/typescriptlang))
   * Daniel Rosenwasser ([@drosenwasser](https://twitter.com/drosenwasser))
