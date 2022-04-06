@@ -24,19 +24,20 @@ Eliot is still working on the issue, so feel free to follow its progress.
 
 You can also find the three of us all over the web here:
 
-{% user "techieeliot" %}
+Eliot:
 
-{% user "nickytonline" %}
+* [Twitter](https://twitter.com/techieEliot)
+* [Website](https://techieeliot.com/)
 
-{% user "coffeecraftcode" %}
+Nick:
 
-* [Eliot's Web Site](https://techieeliot.com)
-* [Eliot on Twitter](https://twitter.com/techieeliot)
-* [DEV Twitch Stream](https://www.twitch.tv/thepracticaldev)
-* [DEV YouTube Channel](https://www.youtube.com/c/thepracticaldevteam)
-* [Nick's Twitch Stream](https://www.twitch.tv/nickytonline)
-* [Nick's YouTube Channel](https://iamdeveloper.com/youtube)
-* [Nick on Twitter](https://twitter.com/nickytonline)
-* [Christina on Twitter](https://twitter.com/coffeecraftcode)
+* [Twitter](https://twitter.com/nickytonline)
+* [Website](https://iamdeveloper.com/)
+* [livecoding.ca](https://livecoding.ca)
+* [YouTube](https://youtube.iamdeveloper.com)
+
+Christina:
+
+* [Twitter](https://twitter.com/coffeecraftcode)
 
 Looking forward to seeing you on future streams! [Follow DEV on Twitch](twitch.tv/thepracticaldev) to be notified when future streams begin. Happy Hacktoberfest!

@@ -37,17 +37,21 @@ Thanks again for coming on the stream, Seth!
 
 ### You can also find the three of us all over the web here:
 
-{% user "sethburtonhall" %}
+Seth:
+
 * [Twitter](https://twitter.com/sethburtonhall)
 * [Website](https://www.sethhallcreative.com/)
 * [Protege.dev](https://protege.dev/)
 
-{% user "nickytonline" %}
-* [Twitter](https://twitter.com/nickytonline)
-* [Twitch](https://www.twitch.tv/nickytonline)
-* [YouTube](https://iamdeveloper.com/youtube)
+Nick:
 
-{% user "coffeecraftcode" %}
+* [Twitter](https://twitter.com/nickytonline)
+* [Website](https://iamdeveloper.com/)
+* [livecoding.ca](https://livecoding.ca)
+* [YouTube](https://youtube.iamdeveloper.com)
+
+Christina:
+
 * [Twitter](https://twitter.com/coffeecraftcode)
 
 Looking forward to seeing you on future streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). We’d love to tackle an issue with you that the whole community could learn from!

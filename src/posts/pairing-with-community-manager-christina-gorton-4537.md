@@ -35,12 +35,15 @@ Thanks again for listening to me ramble on about testing, Christina!
 
 ### You can also find the both of us all over the web here:
 
-{% user "nickytonline" %}
+Nick:
+
 * [Twitter](https://twitter.com/nickytonline)
+* [Website](https://iamdeveloper.com/)
 * [livecoding.ca](https://livecoding.ca)
 * [YouTube](https://youtube.iamdeveloper.com)
 
-{% user "coffeecraftcode" %}
+Christina:
+
 * [Twitter](https://twitter.com/coffeecraftcode)
 
 Christina and I look forward to seeing you on future streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). We’d love to tackle an issue with you that the whole community could learn from!.

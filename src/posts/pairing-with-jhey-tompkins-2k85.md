@@ -39,17 +39,20 @@ Thanks again for coming on the stream, Jhey!
 
 ### You can also find the three of us all over the web here:
 
-{% user "jh3y" %}
+Jhey:
+
 * [Twitter](https://twitter.com/jh3yy)
 * [Jhey everywhere](https://jhey.dev/links)
 
-{% user "nickytonline" %}
+Nick:
+
 * [Twitter](https://twitter.com/nickytonline)
 * [Website](https://iamdeveloper.com/)
 * [livecoding.ca](https://livecoding.ca)
 * [YouTube](https://youtube.iamdeveloper.com)
 
-{% user "coffeecraftcode" %}
+Christina:
+
 * [Twitter](https://twitter.com/coffeecraftcode)
 
 We hope to see you on future DEV streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). Christina and I would love to tackle an issue with you that the whole community could learn from.

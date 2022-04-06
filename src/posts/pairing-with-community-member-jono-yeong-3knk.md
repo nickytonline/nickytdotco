@@ -36,21 +36,22 @@ Thanks again for coming on the stream, Jono!
 
 ### You can also find the three of us all over the web here:
 
-{% user "jonoyeong" %}
+Jono:
+
 * [Twitter](https://twitter.com/JonoYeong)
 * [Website](https://www.jonathanyeong.com/)
 * [YouTubel](https://www.youtube.com/channel/UClb6km0HLkGUOEjHlp5WdPA0)
 * [Newsletter](https://newsletter.jonathanyeong.com/)
 
+Nick:
 
-{% user "nickytonline" %}
 * [Twitter](https://twitter.com/nickytonline)
-* [Twitch](https://www.twitch.tv/nickytonline)
-* [YouTube](https://iamdeveloper.com/youtube)
+* [Website](https://iamdeveloper.com/)
+* [livecoding.ca](https://livecoding.ca)
+* [YouTube](https://youtube.iamdeveloper.com)
 
+Christina:
 
-
-{% user "coffeecraftcode" %}
 * [Twitter](https://twitter.com/coffeecraftcode)
 
 Looking forward to seeing you on future streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). We’d love to tackle an issue with you that the whole community could learn from!

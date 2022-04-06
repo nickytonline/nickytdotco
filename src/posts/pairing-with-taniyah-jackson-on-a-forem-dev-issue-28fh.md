@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Pairing with Taniyah Jackson on Pinning Comments to Articles",
-  "excerpt": "I had a lot of fun with Taniyah Jackson on the pairing today. She's brand new to Ruby and Ruby on Rai...",
+  "excerpt": "I had a lot of fun with Taniyah Jackson on the pairing today. She's brand new to Ruby and Ruby on...",
   "date": "2020-09-21T21:44:45.486Z",
   "tags": [
     "devstream",
@@ -30,9 +30,16 @@ You can check out the [full stream on Twitch](https://www.twitch.tv/videos/74795
 
 Taniyah is looking for her first developer role, so give her a follow on DEV and Twitter and help get her hired!
 
-{% user "taniyahljackson" %}
+Taniyah:
 
-{% twitter "1308137677800300544" %}
+* [Twitter](https://twitter.com/Code_Kuroi)
+
+Nick:
+
+* [Twitter](https://twitter.com/nickytonline)
+* [Website](https://iamdeveloper.com/)
+* [livecoding.ca](https://livecoding.ca)
+* [YouTube](https://youtube.iamdeveloper.com)
 
 Looking forward to the next pairing and thanks again Taniyah!
 

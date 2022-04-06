@@ -37,11 +37,21 @@ Thanks again for coming on the stream, Dan!
 
 ### You can also find the three of us all over the web here:
 
-{% user "danieltott" %}
+Dan:
 
-{% user "nickytonline" %}
+* [Twitter](https://twitter.com/danieltott)
+* [Website](https://www.dtott.com/)
 
-{% user "coffeecraftcode" %}
+Nick:
+
+* [Twitter](https://twitter.com/nickytonline)
+* [Website](https://iamdeveloper.com/)
+* [livecoding.ca](https://livecoding.ca)
+* [YouTube](https://youtube.iamdeveloper.com)
+
+Christina:
+
+* [Twitter](https://twitter.com/coffeecraftcode)
 
 * [Dan on Twitter](https://twitter.com/danieltott)
 * [Dan's Website](https://www.dtott.com/)

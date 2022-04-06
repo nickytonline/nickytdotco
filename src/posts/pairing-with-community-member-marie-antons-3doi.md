@@ -27,19 +27,20 @@ After walking through these concepts together, Marie is now able to start workin
 
 You can also find the three of us all over the web here:
 
-{% user "marieantons" %}
+Marie:
 
-{% user "nickytonline" %}
+* [Twitter](https://twitter.com/MarieAntons)
 
-{% user "coffeecraftcode" %}
+Nick:
 
-* [Marie's Twitter](https://twitter.com/MarieAntons)
-* [DEV Twitch Stream](https://www.twitch.tv/thepracticaldev)
-* [DEV YouTube Channel](https://www.youtube.com/c/thepracticaldevteam)
-* [Nick's Twitch Stream](https://www.twitch.tv/nickytonline)
-* [Nick's YouTube Channel](https://iamdeveloper.com/youtube)
-* [Nick on Twitter](https://twitter.com/nickytonline)
-* [Christina on Twitter](https://twitter.com/coffeecraftcode)
+* [Twitter](https://twitter.com/nickytonline)
+* [Website](https://iamdeveloper.com/)
+* [livecoding.ca](https://livecoding.ca)
+* [YouTube](https://youtube.iamdeveloper.com)
+
+Christina:
+
+* [Twitter](https://twitter.com/coffeecraftcode)
 
 Looking forward to seeing you on future streams! [Follow DEV on Twitch](twitch.tv/thepracticaldev) to be notified when future streams begin. 
 

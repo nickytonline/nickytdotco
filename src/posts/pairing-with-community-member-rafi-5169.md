@@ -38,19 +38,20 @@ Thanks again for coming on the stream Rafi!
 
 You can also find the three of us all over the web here:
 
-{% user "rafi993" %}
-
-{% user "nickytonline" %}
-
-{% user "coffeecraftcode" %}
+Rafi:
 
 * [Rafi's Website](https://rafi993.me)
-* [DEV Twitch Stream](https://www.twitch.tv/thepracticaldev)
-* [DEV YouTube Channel](https://www.youtube.com/c/thepracticaldevteam)
-* [Nick's Twitch Stream](https://www.twitch.tv/nickytonline)
-* [Nick's YouTube Channel](https://iamdeveloper.com/youtube)
-* [Nick on Twitter](https://twitter.com/nickytonline)
-* [Christina on Twitter](https://twitter.com/coffeecraftcode)
+
+Nick:
+
+* [Twitter](https://twitter.com/nickytonline)
+* [Website](https://iamdeveloper.com/)
+* [livecoding.ca](https://livecoding.ca)
+* [YouTube](https://youtube.iamdeveloper.com)
+
+Christina:
+
+* [Twitter](https://twitter.com/coffeecraftcode)
 
 Looking forward to seeing you on future streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). We’d love to tackle an issue with you that the whole community could learn from!
 

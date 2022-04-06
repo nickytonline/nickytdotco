@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Building out the Go Playground Liquid Tag for DEV with Chuck Smith",
-  "excerpt": "At then end of July, I had a chance to pair with awesome community member Chuck Smith....",
+  "excerpt": "At then end of July, I had a chance to pair with awesome community member Chuck Smith.  They...",
   "date": "2020-09-15T21:40:01.223Z",
   "tags": [
     "devstream",
@@ -12,9 +12,7 @@
   "template": "post"
 }
 ---
-At then end of July, I had a chance to pair with awesome community member Chuck Smith.
-
-{% user "eclecticcoding" %}
+At then end of July, I had a chance to pair with awesome [community member Chuck Smith](https://dev.to/eclecticcoding).
 
 They implemented a liquid tag for the [Go Playground](https://play.golang.org/). For those interested, here is the PR.
 
@@ -32,9 +30,7 @@ Now that summer is over and I'm back from vacation, we're getting back into the 
 
 {% twitter "1305924794865659906" %}
 
-I'll be joined by TJ this week on Thursday.
-
-{% user "taniyahljackson" %}
+I'll be joined by [TJ](https://dev.to/taniyahljackson) this week on Thursday.
 
 Looking forward to the next pairing session!
 
