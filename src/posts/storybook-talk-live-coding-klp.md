@@ -41,8 +41,6 @@ There's more, including some live coding and incorporating Storybook into a The 
 
 {% youtube "ypsD-9qQzYg" %}
 
-If you aren't already, give The Collab Lab a follow on DEV!
-
-{% organization "the-collab-lab" %}
+If you aren't already, give [The Collab Lab](https://dev.to/the-collab-lab) a follow on DEV!
 
 

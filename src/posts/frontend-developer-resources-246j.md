@@ -232,9 +232,7 @@ If you're interested, it is a little outdated, but here is my VS Code setup. The
 
 I created the [@vscodetips](https://twitter.com/vscodetips) Twitter account back in September 2017. People seem to enjoy the tips I post or things I retweet related to VS Code. If VS Code is your jam, consider giving it a follow.
 
-VS Code tips is also on DEV, but I have not done much there yet. You can check out the profile here
-
-{% organization "vscodetips" %}
+[VS Code tips is also on DEV](https://dev.to/vscodetips), but I have not done much there yet. You can check out the profile here
 
 ### Refined GitHub Browser Extension
 
@@ -304,8 +302,6 @@ These will most likely not come as a surprise, but it's worth mentioning them.
 * Anything Wes Bos. Check out his [courses](https://wesbos.com/courses/).
 
 Also, there is a new kid on the block, [Educative](https://educative.io). Looks like they are gaining some traction, so probably worth checking out as well. They're also on DEV, posting great content.
-
-{% organization "educative" %}
 
 ### That's All She Wrote
 
