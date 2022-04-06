@@ -166,77 +166,6 @@ async function processDevToTagEmbeds(embeds, document) {
   });
 }
 
-async function processDevToUserProfileEmbeds(embeds, document) {
-  /** This is what the markup from the iframe that gets converted looks like:
-   * <div class="ltag__user ltag__user__id__215107" style="border-color:#021e2f;box-shadow: 3px 3px 0px #021e2f;">
-   *   <style>
-   *     .ltag__user__id__215107 .follow-action-button {
-   *       background-color: #d7dee2 !important;
-   *       color: #022235 !important;
-   *       border-color: #d7dee2 !important;
-   *     }
-   *   </style>
-   *   <a href="/sophia_wyl" class="ltag__user__link profile-image-link">
-   *     <div class="ltag__user__pic">
-   *       <img
-   *         src="https://res.cloudinary.com/practicaldev/image/fetch/s--n2iFbG7W--/c_fill,f_auto,fl_progressive,h_150,q_auto,w_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/215107/81f83b7e-9084-462c-b447-23450438f20d.jpg"
-   *         alt="sophia_wyl image" />
-   *     </div>
-   *   </a>
-   *   <div class="ltag__user__content">
-   *     <h2><a class="ltag__user__link" href="/sophia_wyl">Sophia Li</a><button class="crayons-btn follow-action-button "
-   *         data-info="{&quot;id&quot;:215107,&quot;className&quot;:&quot;User&quot;,&quot;style&quot;:&quot;full&quot;}"
-   *         data-follow-action-button="true" /></h2>
-   *     <div class="ltag__user__summary">
-   *       <a class="ltag__user__link" href="/sophia_wyl">Software engineer (she/her)</a>
-   *     </div>
-   *   </div>
-   * </div>
-   */
-
-  if (embeds.length === 0) {
-    return;
-  }
-
-  const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
-  const devToUserHtmls = await Promise.all(responses.map(response => response.text()));
-
-  embeds.forEach((devToUserEmbed, index) => {
-    const html = devToUserHtmls[index];
-    const holderElement = document.createElement('div');
-    holderElement.innerHTML = html;
-    const devUserContent = holderElement.querySelector('.ltag__user');
-    devUserContent.className =
-      'ltag__user box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after';
-    devUserContent.removeAttribute('style');
-    devUserContent.removeChild(devUserContent.querySelector('style'));
-
-    const userImageLink = devUserContent.querySelector('.profile-image-link');
-    const updatedUserProfileUrl = `${DEV_TO_URL}${userImageLink.getAttribute('href')}`;
-    userImageLink.setAttribute('aria-hidden', true);
-    userImageLink.setAttribute('tabindex', -1);
-    userImageLink.setAttribute('href', updatedUserProfileUrl);
-
-    for (const link of devUserContent.querySelectorAll(
-      '.ltag__user__content .ltag__user__link'
-    )) {
-      link.setAttribute('href', updatedUserProfileUrl);
-      link.removeAttribute('class');
-
-      if (link.closest('.ltag__user__summary')) {
-        link.setAttribute('aria-hidden', true);
-        link.setAttribute('tabindex', -1);
-        link.setAttribute('href', updatedUserProfileUrl);
-      }
-    }
-
-    const followButton = devUserContent.querySelector('.follow-action-button');
-    followButton.parentElement.removeChild(followButton);
-
-    devToUserEmbed.replaceWith(devUserContent);
-  });
-}
-
 // TODO: Pull this function out of here.
 async function processArticleEmbeds(embeds, document) {
   /** This is what the markup from the iframe that gets converted looks like:
@@ -314,13 +243,6 @@ async function processDevToEmbeds(embeds = [], document) {
   );
 
   await processDevToTagEmbeds(devToTagEmbeds, document);
-
-  const devToUserEmbeds = embeds.filter(
-    ({src}) =>
-      src.startsWith('https://dev.to/embed/user') ||
-  );
-
-  await processDevToUserProfileEmbeds(devToUserEmbeds, document);
 
   const articleEmbeds = embeds.filter(
     ({src}) =>
