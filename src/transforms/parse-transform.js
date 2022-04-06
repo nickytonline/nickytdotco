@@ -52,54 +52,6 @@ async function addMissingIframeTitleAttributes(embeds, document) {
 
 // TODO: Pull this out and import
 
-async function processDevToTagEmbeds(embeds, document) {
-  /** This is what the markup from the iframe that gets converted looks like:
-   * <div class="ltag__tag ltag__tag__id__187" style="border-color:#0000000;box-shadow: 3px 3px 0px #0000000;">
-   *   <style>
-   *     .ltag__tag__id__187 .follow-action-button{
-   *       background-color:  !important;
-   *       color:  !important;
-   *       border-color:  !important;
-   *     }
-   *   </style>
-   *     <div class="ltag__tag__content">
-   *       <h2>#<a href="/t/flow" class="ltag__tag__link">flow</a> <button class="crayons-btn follow-action-button " data-info="{&quot;id&quot;:187,&quot;className&quot;:&quot;Tag&quot;,&quot;style&quot;:&quot;full&quot;}" data-follow-action-button="true"></button></h2>
-   *       <div class="ltag__tag__summary">
-   *
-   *       </div>
-   *     </div>
-   * </div>
-   */
-
-  if (embeds.length === 0) {
-    return;
-  }
-
-  const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
-  const devToTagHtmls = await Promise.all(responses.map(response => response.text()));
-
-  embeds.forEach((embed, index) => {
-    const html = devToTagHtmls[index];
-    const holderElement = document.createElement('div');
-    holderElement.innerHTML = html;
-    const devToTagContent = holderElement.querySelector('.ltag__tag');
-    devToTagContent.className =
-      'ltag__tag box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after';
-    devToTagContent.removeAttribute('style');
-
-    const followButton = devToTagContent.querySelector('.follow-action-button');
-    followButton.parentElement.removeChild(followButton);
-
-    const tagLink = devToTagContent.querySelector('.ltag__tag__link');
-    const tagUrl = `${DEV_TO_URL}${tagLink.getAttribute('href')}`;
-
-    tagLink.setAttribute('href', tagUrl);
-    tagLink.removeAttribute('class');
-
-    embed.replaceWith(devToTagContent);
-  });
-}
-
 // TODO: Pull this function out of here.
 async function processArticleEmbeds(embeds, document) {
   /** This is what the markup from the iframe that gets converted looks like:
@@ -170,12 +122,6 @@ async function processDevToEmbeds(embeds = [], document) {
 
     embed.replaceWith(player);
   });
-
-  const devToTagEmbeds = embeds.filter(({src}) =>
-    src.startsWith('https://dev.to/embed/tag')
-  );
-
-  await processDevToTagEmbeds(devToTagEmbeds, document);
 
   const articleEmbeds = embeds.filter(({src}) =>
     src.startsWith(DEV_TO_URL + '/embed/link')
