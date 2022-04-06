@@ -5,7 +5,6 @@ const slugify = require('slugify');
 const getSize = require('image-size');
 const fetch = require('node-fetch');
 const DEV_TO_URL = 'https://dev.to';
-const FLOWSTATE_URL = 'https://www.flowstate.to';
 const site = require('../_data/site.json');
 const markup = String.raw;
 
@@ -18,13 +17,13 @@ const markup = String.raw;
  *
  * @returns An updated article URL.
  */
-function updateArticleUrl(url, isFlowState) {
+function updateArticleUrl(url) {
   if (/\/nickytonline\/.+/.test(url)) {
     // This is my own article from DEV, so I want the URL to be the one on my site instead.
     return site.url + url.replace('/nickytonline', '/posts');
   }
 
-  return (isFlowState ? FLOWSTATE_URL : DEV_TO_URL) + url;
+  return DEV_TO_URL + url;
 }
 
 // TODO: Pull this out and import.
@@ -134,7 +133,6 @@ async function processArticleEmbeds(embeds, document) {
   const devToArticleHtmls = await Promise.all(responses.map(response => response.text()));
 
   embeds.forEach((embed, index) => {
-    const isFlowState = embed.src.startsWith(FLOWSTATE_URL);
     const html = devToArticleHtmls[index];
     const holderElement = document.createElement('div');
     holderElement.innerHTML = html;
@@ -143,7 +141,7 @@ async function processArticleEmbeds(embeds, document) {
       'ltag__link box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after';
 
     for (const link of articleContent.querySelectorAll('.ltag__link__link')) {
-      link.setAttribute('href', updateArticleUrl(link.getAttribute('href'), isFlowState));
+      link.setAttribute('href', updateArticleUrl(link.getAttribute('href')));
 
       if (!link.querySelector('.ltag__link__pic')) {
         link.removeAttribute('class');
@@ -179,10 +177,8 @@ async function processDevToEmbeds(embeds = [], document) {
 
   await processDevToTagEmbeds(devToTagEmbeds, document);
 
-  const articleEmbeds = embeds.filter(
-    ({src}) =>
-      src.startsWith(DEV_TO_URL + '/embed/link') ||
-      src.startsWith(FLOWSTATE_URL + '/embed/link')
+  const articleEmbeds = embeds.filter(({src}) =>
+    src.startsWith(DEV_TO_URL + '/embed/link')
   );
 
   await processArticleEmbeds(articleEmbeds, document);
