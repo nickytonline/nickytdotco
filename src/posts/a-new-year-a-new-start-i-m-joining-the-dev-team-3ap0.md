@@ -30,9 +30,7 @@ I love this community and have been a code contributor and content creator on th
 
 ![Hackerman from Kung Fry typing on a keyboard with a Nintendo Power Glove](https://media.giphy.com/media/VHHxxFAeLaYzS/giphy.gif)
 
-One of the many things I love about DEV is that the team interacts with the community. I give you exhibit A.
-
-{% devcomment "493" %}
+One of the many things I love about DEV is that the [team interacts with the community](https://dev.to/ben/comment/493). I give you exhibit A.
 
 Some fun facts about me:
 

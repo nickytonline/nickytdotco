@@ -38,9 +38,7 @@ This was a big contribution LOL. I added my site to the list of showcased sites.
 
 ### Project: Refined GitHub
 
-For this project, I helped migrate the Refined GitHub extension to TypeScript. This was a huge endeavour that spanned several months. I am currently not using TypeScript at work, so this was one of my outlets to flex some TypeScript muscle. I comment about this as a big win for me in April on DEV.
-
-{% devcomment "a85d" %}
+For this project, I helped migrate the Refined GitHub extension to TypeScript. This was a huge endeavour that spanned several months. I am currently not using TypeScript at work, so this was one of my outlets to flex some TypeScript muscle. I [comment about this as a big win for me in April on DEV](https://dev.to/nickytonline/comment/a85d).
 
 ### Project: TypeScript
 
@@ -88,9 +86,7 @@ And yes, I wrote a post about it.
 
 ## Page Load Time Improvements for Shotgun
 
-I improved the page load times of the product I work on, [Shotgun](https://shotgunsoftware.com), with some webpack and frontend build changes I made. One of our high profile clients, [Lucasfilm Ltd. was very happy](https://dev.to/nickytonline/comment/ip05) about the improvements. It felt really good when our support team posted in Slack that Lucasfilm noticed a 20% speed improvement based on their own internal testing. 🔥
-
-{% devcomment "ip05" %}
+I [improved the page load times](https://dev.to/nickytonline/comment/ip05) of the product I work on, [Shotgun](https://shotgunsoftware.com), with some webpack and frontend build changes I made. One of our high profile clients, [Lucasfilm Ltd. was very happy](https://dev.to/nickytonline/comment/ip05) about the improvements. It felt really good when our support team posted in Slack that Lucasfilm noticed a 20% speed improvement based on their own internal testing. 🔥
 
 ## Interviewing at Facebook
 

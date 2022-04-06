@@ -52,8 +52,6 @@ Note that this is a super bare bones webpack configuration. You can add anything
 
 - If you want to see an example of the final result, have a look at [my first commit to the dev.to repo](https://github.com/thepracticaldev/dev.to/commit/6a8df8c8ddec739280325c0000d6d32593f70ed0) I made in March of this year.
 
-- I haven’t had time yet, but I was discussing with the Storybook maintainers about potentially having a config for Preact out of the box.
-
-{% devcomment "4ccd" %}
+- I haven’t had time yet, but I was [discussing with the Storybook maintainers](https://dev.to/norbertdelangen/comment/4ccd) about potentially having a config for Preact out of the box.
 
 Maybe I’ll get to it at some point, but if you’re interested, by all means go for it. 🙃
