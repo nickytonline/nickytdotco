@@ -53,71 +53,6 @@ async function addMissingIframeTitleAttributes(embeds, document) {
 
 // TODO: Pull this out and import
 
-async function processDevCommentEmbeds(embeds, document) {
-  /** This is what the markup from the iframe that gets converted looks like:
-   * <div class="liquid-comment">
-   *   <div class="details">
-   *     <a href="/ben">
-   *       <img class="profile-pic" src="https://res.cloudinary.com/practicaldev/image/fetch/s--TZxgOuTM--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1/f451a206-11c8-4e3d-8936-143d0a7e65bb.png" alt="ben profile image">
-   *     </a>
-   *     <a href="/ben">
-   *       <span class="comment-username">Ben Halpern</span>
-   *     </a>
-   *     <span class="color-base-30 px-2" role="presentation">•</span>
-   *     <a href="https://dev.to/ben/comment/493" class="comment-date crayons-link crayons-link--secondary fs-s">
-   *       <time datetime="2017-03-12T21:55:06Z">Mar 12 '17</time>
-   *     </a>
-   *   </div>
-   *   <div class="body">
-   *     <p>Welcome, Nick, fellow Canadian! 🇨🇦</p>
-   *   </div>
-   * </div>
-   */
-
-  if (embeds.length === 0) {
-    return;
-  }
-
-  const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
-  const devToCommentHtmls = await Promise.all(responses.map(response => response.text()));
-
-  embeds.forEach((embed, index) => {
-    const html = devToCommentHtmls[index];
-    const holderElement = document.createElement('div');
-    holderElement.innerHTML = html;
-    const devToCommentContent = holderElement.querySelector('.liquid-comment');
-
-    const detailsElement = devToCommentContent.querySelector('.details');
-    const commentUsername = detailsElement.querySelector('.comment-username').textContent;
-
-    const avatar = devToCommentContent.querySelector('.profile-pic');
-    const userProfileLink = avatar.closest('a').getAttribute('href');
-    const timeElement = devToCommentContent.querySelector('time');
-    const commentBody = devToCommentContent.querySelector('.body');
-    const {commentId} = /.+\?args=(?<commentId>.+)/.exec(embed.src).groups;
-    const commentUrl = DEV_TO_URL + userProfileLink + '/comment/' + commentId;
-
-    const updatedMarkup = markup`
-      <article class="liquid-comment box-flex flex-dir-col">
-        <a href="${commentUrl}" class="liquid-comment__link" aria-label="A dev.to comment from community member ${commentUsername} at ${timeElement.datetime}">
-          <header class="box-flex flex-wrap md:flex-nowrap align-center">
-            ${avatar.outerHTML}
-            <h2 class="box-flex flex-dir-col">
-              <span>dev.to comment from</span>
-              <span>${commentUsername} &centerdot; ${timeElement.outerHTML}</span>
-            </h2>
-          </header>
-        </a>
-        ${commentBody.outerHTML}
-      </article>
-    `;
-
-    holderElement.innerHTML = updatedMarkup;
-
-    embed.replaceWith(holderElement.firstElementChild);
-  });
-}
-
 async function processDevToTagEmbeds(embeds, document) {
   /** This is what the markup from the iframe that gets converted looks like:
    * <div class="ltag__tag ltag__tag__id__187" style="border-color:#0000000;box-shadow: 3px 3px 0px #0000000;">
@@ -251,12 +186,6 @@ async function processDevToEmbeds(embeds = [], document) {
   );
 
   await processArticleEmbeds(articleEmbeds, document);
-
-  const devCommentEmbeds = embeds.filter(({src}) =>
-    src.startsWith('https://dev.to/embed/devcomment')
-  );
-
-  await processDevCommentEmbeds(devCommentEmbeds, document);
 
   const remainingEmbeds = embeds.filter(({src}) =>
     src.startsWith('https://dev.to/embed/listing')
