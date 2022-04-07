@@ -1,5 +1,6 @@
 /* eslint-env node */
 
+const fetch = require('node-fetch');
 const hashnodeData = require(`../_data/hashnodeUrls.json`);
 
 /**
@@ -37,7 +38,7 @@ function boostLink(fileSlug, url) {
  *
  * @returns {string} Markup for a YouTube video embed.
  */
-function youtubeEmbed(videoUrl) {
+async function youtubeEmbed(videoUrl) {
   let videoId;
   let time;
 
@@ -48,10 +49,16 @@ function youtubeEmbed(videoUrl) {
   }
 
   const timeQueryParameter = time ? `?start=${time}` : '';
+  const url = `https://www.youtube.com/embed/${videoId}${timeQueryParameter}`;
+  const response = await fetch(
+    `https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v%3D${videoId}&format=json`
+  );
+  const {title} = await response.json();
 
   return `<iframe
+    title="${title}"
     loading="lazy"
-    src="https://www.youtube.com/embed/${videoId}${timeQueryParameter}"
+    src="${url}"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen="allowFullScreen"
     style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"
