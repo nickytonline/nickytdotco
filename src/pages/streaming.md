@@ -3,13 +3,7 @@ title: Streaming
 metaDesc: 'Live Coding and other streaming projects that Nick Taylor does.'
 ---
 
-<p>I
-  <a href="/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/">started live coding</a>
-  on Twitch at the end of March 2020. It started off as a small experiment, and then I started getting into a groove. Initially I was live coding by myself, but then I thought it might be fun and helpful to engage with the folks that contribute to the open source project I work on,
-  <a href="https://forem.com">Forem</a>, the code that runs
-  <a href="https://dev.to">DEV</a>.</p>
-
-<p>I stream on Twitch at <a href="https://livecoding.ca">livecoding.ca</a> and post them to [my YouTube channel](https://youtube.iamdeveloper.com).</p>
+I [started live coding on Twitch](https://www.iamdeveloper.com/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn) at the end of March 2020. It started off as a small experiment, and then I started getting into a groove. Initially I was live coding by myself, but then I thought it might be fun and helpful to engage with the folks that contribute to the open source project I worked on, [Forem](https://github.com/forem/forem). These days, I only stream on [my Twitch stream](https://livecoding.ca) and I post most of them to [my YouTube channel](https://youtube.iamdeveloper.com).
 
 ## Latest Videos
 
