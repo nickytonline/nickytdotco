@@ -12,7 +12,7 @@ metaDesc: 'Live Coding and other streaming projects that Nick Taylor does.'
 <h2>Walkthrough Wednesdays</h2>
 <p>Every second week on the
   <a href="https://www.twitch.tv/thepracticaldev">DEV Twitch stream</a>, we interview someone from the tech space.</p>
-<iframe loading="lazy" src="https://www.youtube.com/embed/videoseries?list=PL8Bb2WLXhUaDCHK5HrxDXZWmuTARKDiV3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowFullScreen" style="position:absolute;width:100%;height:100%;left:0;top:0" title="YouTube" width="480" height="270" frameborder="0"></iframe>
+<iframe title="The Practical DEV Walkthrough Wednesdays series" loading="lazy" src="https://www.youtube.com/embed/videoseries?list=PL8Bb2WLXhUaDCHK5HrxDXZWmuTARKDiV3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowFullScreen" style="position:absolute;width:100%;height:100%;left:0;top:0" title="YouTube" width="480" height="270" frameborder="0"></iframe>
 
 <h2>Live Coding Pairings</h2>
 
