@@ -1,5 +1,5 @@
 
-name: Get latest blog posts
+name: Get latest blog posts and videos
 on:
   schedule:
     # Everyday at midnight UTC
@@ -8,16 +8,17 @@ on:
 
 jobs:
   update_profile_data:
-    name: Get latest blog posts
+    name: Get latest blog posts and videos
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get blog posts
+      - name: Get blog posts and videos
         env:
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
         run: |
           npm install
           rm -rf src/posts/*.md
+          node bin/udpdateStreamingPage.js
           node bin/generateDevToPosts.js
           node bin/generateHashnodeUrlMapping.js
       - name: Commit changes
@@ -30,6 +31,6 @@ jobs:
           git pull origin main
           git add .
           if [[ -n "$(git status --porcelain)" ]]; then
-            git commit -m "Update blog posts"
+            git commit -m "Update blog posts and videos"
             git push origin main
           fi
