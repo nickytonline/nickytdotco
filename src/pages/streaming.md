@@ -13,8 +13,7 @@ metaDesc: 'Live Coding and other streaming projects that Nick Taylor does.'
 
 ## Latest Videos
 
-<!-- VIDEO-LIST:START -->
-<!-- VIDEO-LIST:END -->
+<!-- VIDEO-LIST:START --><div class="video-panel"><a href="https://www.youtube.com/watch?v=pSq7bSk3WqU" title="npx gitignore"><img src="https://i1.ytimg.com/vi/pSq7bSk3WqU/hqdefault.jpg" alt="npx gitignore" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=KHsFkoXgxoE" title="Prettier VS Code Extension"><img src="https://i4.ytimg.com/vi/KHsFkoXgxoE/hqdefault.jpg" alt="Prettier VS Code Extension" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=f1bghXpBYmg" title="Deepgram Hackathon Project Part I"><img src="https://i3.ytimg.com/vi/f1bghXpBYmg/hqdefault.jpg" alt="Deepgram Hackathon Project Part I" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=wXCohlKW3KA" title="Creating a GitHub Action with Matt Foley - Part 4"><img src="https://i4.ytimg.com/vi/wXCohlKW3KA/hqdefault.jpg" alt="Creating a GitHub Action with Matt Foley - Part 4" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=lo3V4CM5CCg" title="Creating a GitHub Action with Matt Foley - Part 3"><img src="https://i1.ytimg.com/vi/lo3V4CM5CCg/hqdefault.jpg" alt="Creating a GitHub Action with Matt Foley - Part 3" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=2wqMbHZgpLA" title="Creating a GitHub Action with Matt Foley - Part 2"><img src="https://i3.ytimg.com/vi/2wqMbHZgpLA/hqdefault.jpg" alt="Creating a GitHub Action with Matt Foley - Part 2" width="240" height="180" /></a></div><!-- VIDEO-LIST:END -->
 
 ## DEV Twitch Stream
 
