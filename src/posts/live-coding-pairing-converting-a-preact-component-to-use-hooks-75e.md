@@ -36,7 +36,3 @@ It was awesome pairing with Sophia and by the way, she’s looking for her next 
 {% twitter "1273775174718943232" %}
 
 Looking forward to the next pairing session!
-
-**Update August 6th, 2020: Check out Sophia’s post!**
-
-{% link "https://dev.to/sophia_wyl/learnings-from-1st-live-pairing-session-1st-pull-request-to-forem-2lh0" %}
