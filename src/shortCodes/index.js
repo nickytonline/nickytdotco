@@ -195,13 +195,16 @@ function codepenEmbed(url) {
  */
 function devLinkEmbed(blogPostUrl) {
   const {
-    url,
+    url: devToUrl,
     title,
     published_timestamp,
     reading_time_minutes,
     tags,
+    canonical_url,
     user: {name, username, profile_image}
   } = blogPostEmbeds[blogPostUrl];
+
+  const url = canonical_url ?? devToUrl;
   const publishDate = DateTime.fromJSDate(new Date(published_timestamp))
     .setLocale('en-CA')
     .toLocaleString(DateTime.DATE_FULL);
