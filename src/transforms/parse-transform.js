@@ -8,24 +8,6 @@ const DEV_TO_URL = 'https://dev.to';
 const site = require('../_data/site.json');
 const markup = String.raw;
 
-// TODO: Pull this out and import
-
-/**
- * Updates an article URL to point to my article on my site if it is an article of mine from DEV. Otherwise, point to the DEV article link,
- *
- * @param {string} url
- *
- * @returns An updated article URL.
- */
-function updateArticleUrl(url) {
-  if (/\/nickytonline\/.+/.test(url)) {
-    // This is my own article from DEV, so I want the URL to be the one on my site instead.
-    return site.url + url.replace('/nickytonline', '/posts');
-  }
-
-  return DEV_TO_URL + url;
-}
-
 // TODO: Pull this out and import.
 /**
  * Adds a missing title attribute to iframes that are missing them by pulling
@@ -50,60 +32,6 @@ async function addMissingIframeTitleAttributes(embeds, document) {
   });
 }
 
-// TODO: Pull this out and import
-
-// TODO: Pull this function out of here.
-async function processArticleEmbeds(embeds, document) {
-  /** This is what the markup from the iframe that gets converted looks like:
-   *
-   * <div class="ltag__link">
-   *   <a href="/nickytonline" class="ltag__link__link">
-   *     <div class="ltag__link__pic">
-   *       <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zhsA-ZEm--/c_fill,f_auto,fl_progressive,h_150,q_auto,w_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/68d6245f-3152-4ed2-a245-d015fca4160b.jpeg" alt="nickytonline image">
-   *     </div>
-   *   </a>
-   *   <a href="/devteam/let-s-pair-during-a-live-coding-session-8he" class="ltag__link__link">
-   *     <div class="ltag__link__content">
-   *       <h2>Let's Pair during a Live Coding Session!</h2>
-   *       <h3>Nick Taylor (he/him) ・ Jul 14 ・ 2 min read</h3>
-   *       <div class="ltag__link__taglist">
-   *         <span class="ltag__link__tag">#webdev</span>
-   *         <span class="ltag__link__tag">#pairprogramming</span>
-   *         <span class="ltag__link__tag">#livecoding</span>
-   *         <span class="ltag__link__tag">#meta</span>
-   *       </div>
-   *     </div>
-   *   </a>
-   * </div>
-   *
-   */
-  if (embeds.length === 0) {
-    return;
-  }
-
-  const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
-  const devToArticleHtmls = await Promise.all(responses.map(response => response.text()));
-
-  embeds.forEach((embed, index) => {
-    const html = devToArticleHtmls[index];
-    const holderElement = document.createElement('div');
-    holderElement.innerHTML = html;
-    const articleContent = holderElement.querySelector('.ltag__link');
-    articleContent.className =
-      'ltag__link box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after';
-
-    for (const link of articleContent.querySelectorAll('.ltag__link__link')) {
-      link.setAttribute('href', updateArticleUrl(link.getAttribute('href')));
-
-      if (!link.querySelector('.ltag__link__pic')) {
-        link.removeAttribute('class');
-      }
-    }
-
-    embed.replaceWith(articleContent);
-  });
-}
-
 // TODO: Pull this function out of here.
 async function processDevToEmbeds(embeds = [], document) {
   const githubEmbeds = embeds.filter(({src}) =>
@@ -122,12 +50,6 @@ async function processDevToEmbeds(embeds = [], document) {
 
     embed.replaceWith(player);
   });
-
-  const articleEmbeds = embeds.filter(({src}) =>
-    src.startsWith(DEV_TO_URL + '/embed/link')
-  );
-
-  await processArticleEmbeds(articleEmbeds, document);
 }
 
 module.exports = async function(value, outputPath) {

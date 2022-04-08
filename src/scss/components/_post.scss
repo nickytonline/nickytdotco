@@ -109,7 +109,7 @@
     ul:not([class]) {
       margin-left: get-size(800);
 
-      li + li {
+      & > li + li {
         margin-top: get-size(300);
       }
     }
@@ -230,6 +230,18 @@
           height: 150px;
           border-radius: 50%;
         }
+      }
+
+      &__title {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+      }
+
+      &__taglist {
+        margin-top: 0.5rem;
+        display: flex;
+        gap: 1rem;
       }
     }
 

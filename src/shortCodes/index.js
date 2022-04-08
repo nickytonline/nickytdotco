@@ -1,7 +1,8 @@
 /* eslint-env node */
-
+const {DateTime} = require('luxon');
 const fetch = require('node-fetch');
 const hashnodeData = require(`../_data/hashnodeUrls.json`);
+const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
 
 /**
  * Generates markup for a boost on DEV button.
@@ -186,27 +187,43 @@ function codepenEmbed(url) {
 }
 
 /**
- * Generates a dev.to link embed for the given dev.to URL.
+ * Generates markup for the given dev.to blog post URL.
  *
- * @param {string} url A dev.to URL
+ * @param {string} blogPostUrl A dev.to URL
  *
  * @returns {string} Markup for the dev.to link embed.
  */
-function devLinkEmbed(url) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/link?args=${encodeURIComponent(
-    url
-  )}" style="border: 0; width: 100%;"></iframe>`;
-}
+function devLinkEmbed(blogPostUrl) {
+  const {
+    url,
+    title,
+    published_timestamp,
+    reading_time_minutes,
+    tags,
+    user: {name, username, profile_image}
+  } = blogPostEmbeds[blogPostUrl];
+  const publishDate = DateTime.fromJSDate(new Date(published_timestamp))
+    .setLocale('en-CA')
+    .toLocaleString(DateTime.DATE_FULL);
 
-/**
- * Generates a dev.to comment embed for the given dev.to comment ID.
- *
- * @param {string} commentId A dev.to comment ID.
- *
- * @returns {string} Markup for the dev.to comment embed.
- */
-function devCommentEmbed(commentId) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/devcomment?args=${commentId}" style="border: 0; width: 100%;"></iframe>`;
+  return `
+    <article class="ltag__link box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after" title="${title}">
+      <a rel="author" href="https://dev.to/${username}" class="ltag__link__link">
+        <div class="ltag__link__pic">
+          <img src="${profile_image}" alt="${`Author ${name}'s profile on dev.to`}">
+        </div>
+      </a>
+      <a href="${url}">
+        <div class="ltag__link__content">
+          <h1 class="ltag__link__title">${title}</h1>
+          <div><span aria-hidden="true">${name}</span> ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ ${reading_time_minutes} min read</div>
+          <ul class="ltag__link__taglist">
+            ${tags.map(tag => `<li>#${tag}</li>`).join(``)}
+          </ul>
+        </div>
+      </a>
+    </article>
+  `;
 }
 
 /**
@@ -325,7 +342,6 @@ module.exports = {
   twitterEmbed,
   codepenEmbed,
   devLinkEmbed,
-  devCommentEmbed,
   githubEmbed,
   instagramEmbed,
   devUserEmbed,
