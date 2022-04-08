@@ -20,7 +20,6 @@ const EMBEDDED_POSTS_MARKUP_FILE = path.join(
   __dirname,
   '../src/_data/embeddedPostsMarkup.json'
 );
-const DEV_TO_URL = 'https://dev.to';
 const currentEmbeds = require('../src/_data/embeddedPostsMarkup.json');
 const embeds = new Map(Object.entries(currentEmbeds));
 const DOM = new JSDOM(`<!DOCTYPE html><html><head></head><body></body></html>`, {
@@ -322,22 +321,6 @@ async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
       embeds.set(embedUrl, markup);
     }
   }
-}
-
-/**
- * Updates an article URL to point to my article on my site if it is an article of mine from DEV. Otherwise, point to the DEV article link,
- *
- * @param {string} url
- *
- * @returns An updated article URL.
- */
-function updateArticleUrl(url) {
-  if (/\/nickytonline\/.+/.test(url)) {
-    // This is my own article from DEV, so I want the URL to be the one on my site instead.
-    return new URL(siteUrl + url.replace('/nickytonline', '/posts')).toString();
-  }
-
-  return DEV_TO_URL + url;
 }
 
 async function updateBlogPostEmbeds(embeds, filePaths) {
