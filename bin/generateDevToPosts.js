@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 require('dotenv').config();
 
+const jsdom = require('@tbranyen/jsdom');
+const {JSDOM} = jsdom;
 const fetch = require('node-fetch');
 const path = require('path');
 const fs = require('fs').promises;
 const {DEV_API_KEY, NODE_ENV} = process.env;
 
-const DEV_TO_API_URL = 'https://dev.to/api/articles/me/published?per_page=1000';
+const DEV_TO_API_URL = 'https://dev.to/api';
 const POSTS_DIRECTORY = path.join(__dirname, '../src/posts');
 const POSTS_IMAGES_PUBLIC_DIRECTORY = '/images/posts';
 const POSTS_IMAGES_DIRECTORY = path.join(
@@ -14,7 +16,18 @@ const POSTS_IMAGES_DIRECTORY = path.join(
   '../src',
   POSTS_IMAGES_PUBLIC_DIRECTORY
 );
+const EMBEDDED_POSTS_MARKUP_FILE = path.join(
+  __dirname,
+  '../src/_data/embeddedPostsMarkup.json'
+);
+const DEV_TO_URL = 'https://dev.to';
+const currentEmbeds = require('../src/_data/embeddedPostsMarkup.json');
+const embeds = new Map(Object.entries(currentEmbeds));
+const DOM = new JSDOM(`<!DOCTYPE html><html><head></head><body></body></html>`, {
+  resources: 'usable'
+});
 
+const {document} = DOM.window;
 let {url: siteUrl} = require('../src/_data/site.json');
 
 if (!DEV_API_KEY) {
@@ -100,7 +113,7 @@ Sample post format:
  * @returns {Promise<object[]>} A promise that resolves to an array of blog posts.
  */
 async function getDevPosts() {
-  const response = await fetch(DEV_TO_API_URL, {
+  const response = await fetch(DEV_TO_API_URL + '/articles/me/published?per_page=1000', {
     headers: {
       'api-key': DEV_API_KEY
     }
@@ -108,6 +121,43 @@ async function getDevPosts() {
   const posts = await response.json();
 
   return posts.filter(isValidPost);
+}
+
+let retries = 0;
+
+/**
+ * Retrieves the blog post for the given blog post ID.
+ *
+ * @param {string} id The ID of the blog post to retrieve.
+ *
+ * @returns {Promise<object>} A promise that resolves to a blog posts.
+ */
+async function getDevPost(blogPostId) {
+  const getArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
+  const response = await fetch(getArticleUrl, {
+    headers: {
+      'api-key': DEV_API_KEY,
+      'Content-Type': 'application/json'
+    }
+  });
+
+  let post;
+
+  try {
+    post = await response.json();
+  } catch (error) {
+    if (retries > 3) {
+      retries = 0;
+      throw error;
+    }
+
+    console.log(`Retry attemps ${retries} for ${getArticleUrl}`);
+    retries++;
+
+    await getDevPost(blogPostId);
+  }
+
+  return post;
 }
 
 /**
@@ -245,6 +295,79 @@ async function updateMarkdownImageUrls(markdown) {
   };
 }
 
+async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
+  const matches = markdown.matchAll(/{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g);
+
+  for (const match of matches) {
+    const {embedType, embedUrl} = match.groups;
+
+    let url = null;
+
+    try {
+      url = new URL(embedUrl);
+    } catch (error) {
+      url = null;
+    }
+
+    if (
+      url &&
+      !embeds.has(embedUrl) &&
+      url.host === 'dev.to' &&
+      embedType !== 'podcast' &&
+      embedType !== 'tag'
+    ) {
+      const respones = await fetch(embedUrl);
+      const markup = await respones.text();
+
+      embeds.set(embedUrl, markup);
+    }
+  }
+}
+
+/**
+ * Updates an article URL to point to my article on my site if it is an article of mine from DEV. Otherwise, point to the DEV article link,
+ *
+ * @param {string} url
+ *
+ * @returns An updated article URL.
+ */
+function updateArticleUrl(url) {
+  if (/\/nickytonline\/.+/.test(url)) {
+    // This is my own article from DEV, so I want the URL to be the one on my site instead.
+    return new URL(siteUrl + url.replace('/nickytonline', '/posts')).toString();
+  }
+
+  return DEV_TO_URL + url;
+}
+
+async function updateBlogPostEmbeds(embeds, filePaths) {
+  let blogPostEmbedsMarkup = {};
+
+  for (const [url, markup] of embeds) {
+    // You can't use the dev.to API to grab an article by slug, so we need to use the URL instead
+    // to fetch the markup of the article page to extract the article ID.
+    // This is only an issue for article embeds.
+    const response = await fetch(url);
+    const html = await response.text();
+    const match = html.match(/data-article-id="(?<blogPostId>.+?)"/);
+
+    if (match) {
+      const {blogPostId} = match.groups;
+      const {body_html, body_markdown, ...data} = await getDevPost(blogPostId);
+
+      blogPostEmbedsMarkup[url] = data;
+    } else {
+      throw new Error(`Could not find blog post at ${url}`);
+    }
+  }
+
+  const data = JSON.stringify(blogPostEmbedsMarkup, null, 2);
+
+  await fs.writeFile(filePaths, data, () =>
+    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`)
+  );
+}
+
 (async () => {
   await fs.mkdir(POSTS_DIRECTORY, {recursive: true});
   await fs.mkdir(POSTS_IMAGES_DIRECTORY, {recursive: true});
@@ -255,7 +378,10 @@ async function updateMarkdownImageUrls(markdown) {
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const {markdown, imagesToSave} = await updateMarkdownImageUrls(post.body_markdown);
 
-    await saveMarkdownImages(imagesToSave);
+    await Promise.all([
+      saveMarkdownImages(imagesToSave),
+      getDevBlogPostEmbedsMarkup(markdown, embeds)
+    ]);
 
     const updatedPost = {
       ...post,
@@ -270,4 +396,6 @@ async function updateMarkdownImageUrls(markdown) {
       throw new Error(`Unabled to generate markdown file: status ${status}`);
     }
   }
+
+  await updateBlogPostEmbeds(embeds, EMBEDDED_POSTS_MARKUP_FILE);
 })();
