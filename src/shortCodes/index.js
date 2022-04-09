@@ -56,19 +56,21 @@ async function youtubeEmbed(videoUrl) {
   );
   const {title} = await response.json();
 
-  return `<iframe
-    title="${title}"
-    loading="lazy"
-    src="${url}"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen="allowFullScreen"
-    style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"
-    width="560"
-    height="315"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>`;
+  return `<div class="video-player">
+      <iframe
+        title="${title}"
+        loading="lazy"
+        src="${url}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen="allowFullScreen"
+        style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px"
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>`;
 }
 
 /**
