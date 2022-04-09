@@ -65,14 +65,6 @@ class Counter extends Component {
 render(<Counter/>);
 ```
 
-And here's the author of Gatsby working on a build flow using Ink.
-
-{% twitter "1104163517945397249" %}
-
-The jest example is also very cool.
-
-{% replit "@vadimdemedes/ink-jest-demo" %}
-
 Even the folks at npm think it's kinda cool.
 
 {% twitter "1103347697107361792" %}
