@@ -12,10 +12,7 @@
   "template": "post"
 }
 ---
-Alright, so @philnash [roped me into this one](https://dev.to/philnash/comment/518o). This keeps in line with my other posts that are “Not just a Gist”. If you want to read about those posts, check out these:
-
-{% link "https://dev.to/nickytonline/my-mac-setup-2m05" %}
-{% link "https://dev.to/nickytonline/my-visual-studio-code-setup-2ima" %}
+Alright, so @philnash [roped me into this one](https://dev.to/philnash/comment/518o).
 
 This post’s birth comes from [a gist](https://gist.github.com/nickytonline/128d7d164d1eea5daba6753ed0829f41#file-gitconfig) which is essentially a copy paste of my git aliases.
 
