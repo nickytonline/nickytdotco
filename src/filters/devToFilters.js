@@ -39,6 +39,7 @@ function createYouTubeEmbedMarkup(videoId) {
 function createInstagramEmbedMarkup(postId) {
   return `
     <iframe
+      title="Instagram post"
       loading="lazy"
       src="https://www.instagram.com/p/${postId}/embed/?cr=1&amp;v=12&amp;wp=628&amp;rd=https%3A%2F%2Fgatsby-remark-oembed.netlify.app&amp;rp=%2F#%7B%22ci%22%3A0%2C%22os%22%3A849.1599999833852%2C%22ls%22%3A714.7600001189858%2C%22le%22%3A792.0250000897795%7D"
       allowtransparency="true"

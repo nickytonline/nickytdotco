@@ -5,48 +5,6 @@ const slugify = require('slugify');
 const getSize = require('image-size');
 const fetch = require('node-fetch');
 
-/**
- * Adds a missing title attribute to iframes that are missing them by pulling
- * the title text from the iframe's document.
- *
- * @param {HTMLElement[]} embeds
- * @param {Document} document
- */
-async function addMissingIframeTitleAttributes(embeds, document) {
-  const responses = await Promise.all(embeds.map(({src}) => fetch(src)));
-  const devToUserHtmls = await Promise.all(responses.map(response => response.text()));
-
-  embeds.forEach((embed, index) => {
-    const holderElement = document.createElement('div');
-    holderElement.innerHTML = devToUserHtmls[index];
-
-    const title =
-      holderElement.querySelector('title')?.textContent?.trim() ||
-      'This framed page appears to have no title.';
-
-    embed.setAttribute('title', title);
-  });
-}
-
-async function processDevToEmbeds(embeds = [], document) {
-  const githubEmbeds = embeds.filter(({src}) =>
-    src.startsWith('https://dev.to/embed/github')
-  );
-
-  // Give GitHub embeds a better background for colour contrast.
-  githubEmbeds.forEach(embed => {
-    embed.removeAttribute('style');
-
-    const player = document.createElement('div');
-
-    // TODO: consolidate into just GitHub wrapper class.
-    player.classList.add('devto-embed-wrapper');
-    player.appendChild(embed.cloneNode(true));
-
-    embed.replaceWith(player);
-  });
-}
-
 module.exports = async function(value, outputPath) {
   if (!outputPath.endsWith('.html')) {
     return value;
@@ -61,7 +19,6 @@ module.exports = async function(value, outputPath) {
   const articleHeadings = [
     ...document.querySelectorAll('main article h2, main article h3')
   ];
-  const devToEmbeds = [...document.querySelectorAll('.liquidTag')];
 
   if (articleImages.length) {
     articleImages.forEach(image => {
@@ -110,14 +67,6 @@ module.exports = async function(value, outputPath) {
     heading.setAttribute('id', `heading-${headingSlug}`);
     heading.appendChild(anchor);
   });
-
-  await processDevToEmbeds(devToEmbeds, document);
-
-  // Fixes a11y issue of iframes from embeds missing a title attribute
-  const iframesWithMissingTitleAttributes = [
-    ...document.querySelectorAll('iframe:not([title])')
-  ];
-  await addMissingIframeTitleAttributes(iframesWithMissingTitleAttributes, document);
 
   return '<!DOCTYPE html>\r\n' + (await document.documentElement.outerHTML);
 };
