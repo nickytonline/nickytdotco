@@ -336,7 +336,14 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
 
     if (match) {
       const {blogPostId} = match.groups;
-      const {body_html, body_markdown, ...data} = await getDevPost(blogPostId);
+      const {
+        body_html,
+        body_markdown,
+        comments_count,
+        public_reactions_count,
+        positive_reactions_count,
+        ...data
+      } = await getDevPost(blogPostId);
 
       blogPostEmbedsMarkup[url] = data;
     } else {
