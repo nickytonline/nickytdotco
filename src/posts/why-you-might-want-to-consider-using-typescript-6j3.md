@@ -81,10 +81,13 @@ Here are some additional resources to get you up and running.
 {% link "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6" %}
 
 * [TypeScript Deep Dive](https://www.gitbook.com/book/basarat/typescript)
-* [Full-stack TypeScript](https://fullstacktypescript.slack.com) on Slack
 * [TypeScript Fundamentals](https://typescriptcourses.com/typescript-fundamentals) (Great free course)
 * [Marius Schulz’s Blog](https://mariusschulz.com/blog/series/typescript-evolution)
-* [Quokka.js](https://quokkajs.com) (live scratchpad for JS with TypeScript support) 
+* [Quokka.js](https://quokkajs.com) (live scratchpad for JS with TypeScript support)
+* The TypeScript team’s Type | Treat series on DEV
+
+{% embed "https://dev.to/typescript/type-treat-2021-day-1-6an" %}
+
 * Accounts to follow on Twitter:
   * The Offical TypeScript account ([@typescriptlang](https://twitter.com/typescriptlang))
   * Daniel Rosenwasser ([@drosenwasser](https://twitter.com/drosenwasser))
