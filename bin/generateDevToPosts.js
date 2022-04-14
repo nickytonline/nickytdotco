@@ -53,10 +53,14 @@ async function fileExists(path) {
  * @returns sanitized markdown
  */
 function sanitizeMarkdownEmbeds(markdown) {
-  const sanitizedMarkdown = markdown.replaceAll(
-    /{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
-    '{% $1 "$2" %}'
-  );
+  const sanitizedMarkdown = markdown
+    .replaceAll(/{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g, '{% $1 "$2" %}')
+    // Fixes a liquid JS issues when {{ code }} is used in a markdown code block
+    // see https://github.com/11ty/eleventy/issues/2273
+    .replaceAll(
+      /```(?<language>.*)\n(?<code>(.|\n)+?)\n```/g,
+      '```$1\n{% raw %}\n$2\n{% endraw %}\n```'
+    );
 
   return sanitizedMarkdown;
 }

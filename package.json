@@ -4,7 +4,7 @@
   "description": "My site built with Eleventy and Andy Bell's Hylia template",
   "main": "index.js",
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@tbranyen/jsdom": "^13.0.0",
