@@ -45,7 +45,7 @@ Since we’re currently talking about a JavaScript project, let’s add the npm 
 2. Install the fkill CLI package as we’ll need that as well by running `npm install fkill-cli -D`
 3. Now let’s add some npm scripts to our package.json
 
-```
+```json
 {% raw %}
   "scripts": {
 		...
@@ -66,7 +66,7 @@ Alright, let’s run the Cypress task runner. From the command line, run `npm ru
 
 For the sake of this post, we’re just going to create one simple test. Let’s create a file in the `cypress/integration` folder called, `smoke.spec.js`. Open that file and add the following:
 
-```
+```javascript
 {% raw %}
 describe('Smoke test site', () => {
     it('Should load the main page', () => {
@@ -94,7 +94,7 @@ At this point we’re ready to revisit our Dependabot configuration for our repo
 
 Alright, let’s go through the extra setup to have Cypress run as part of our CI/CD pipeline. The `prebuild` script is required because, at least on Netlify, you cannot cache binaries. See this article, [Test on Netlify | Gatsby + Netlify + Cypress.io](https://gatsby-blog-0a5be4.netlify.com/test-on-netlify/), for more information.
 
-```
+```json
 {% raw %}
     	"prebuild": "CI=1 npm i cypress",
 {% endraw %}
@@ -102,7 +102,7 @@ Alright, let’s go through the extra setup to have Cypress run as part of our C
 
 The `e2e` script is what we’ll use to run Cypress in our CI/CD pipeline. It runs all the e2e test files in a headless browser.
 
-```
+```json
 {% raw %}
     	"e2e": "cypress run",
 {% endraw %}
@@ -110,7 +110,7 @@ The `e2e` script is what we’ll use to run Cypress in our CI/CD pipeline. It ru
 
 The `build` script is what I used to build my site. It’s included just to explain the `postbuild`. 😉 If you’re not aware, you can run pre and post scripts on npm script. For more information, see the [npm documentation](https://docs.npmjs.com/misc/scripts).
 
-```
+```json
 {% raw %}
 		"postbuild":"gatsby serve & npm run e2e && fkill:9000",
 {% endraw %}
@@ -123,5 +123,3 @@ For our `postbuild` script, we want to run our Gatsby site in the container. The
 If you’d like to see the whole setup of this on my site, check out my repository on GitHub.
 
 {% github "https://github.com/nickytonline/iamdeveloper.com" %}
-
-👋
