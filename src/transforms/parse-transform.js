@@ -4,23 +4,23 @@ const minify = require('../utils/minify.js');
 const slugify = require('slugify');
 const getSize = require('image-size');
 
-module.exports = async function(value, outputPath) {
+module.exports = async function (value, outputPath) {
   if (!outputPath.endsWith('.html')) {
     return value;
   }
 
   const DOM = new JSDOM(value, {
-    resources: 'usable'
+    resources: 'usable',
   });
 
   const document = DOM.window.document;
   const articleImages = [...document.querySelectorAll('main article img, .intro img')];
   const articleHeadings = [
-    ...document.querySelectorAll('main article h2, main article h3')
+    ...document.querySelectorAll('main article h2, main article h3'),
   ];
 
   if (articleImages.length) {
-    articleImages.forEach(image => {
+    articleImages.forEach((image) => {
       image.setAttribute('loading', 'lazy');
 
       const file = image.getAttribute('src');
@@ -51,7 +51,7 @@ module.exports = async function(value, outputPath) {
   }
 
   // Loop each heading and add a little anchor and an ID to each one
-  articleHeadings.forEach(heading => {
+  articleHeadings.forEach((heading) => {
     const headingSlug = slugify(heading.textContent.toLowerCase());
     const anchor = document.createElement('a');
 

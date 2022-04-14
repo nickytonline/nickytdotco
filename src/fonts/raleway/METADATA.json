@@ -169,11 +169,6 @@
       "copyright": "Copyright (c) 2010 - 2012, Matt McInerney (matt@pixelspread.com), Pablo Impallari (impallari@gmail.com), Rodrigo Fuenzalida (hello@rfuenzalida.com) with Reserved Font Name \"Raleway\""
     }
   ],
-  "subsets": [
-    "cyrillic",
-    "latin",
-    "latin-ext",
-    "menu"
-  ],
+  "subsets": ["cyrillic", "latin", "latin-ext", "menu"],
   "dateAdded": "2012-09-07"
 }

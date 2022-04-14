@@ -30,7 +30,7 @@ $stalfos-util-prefix: 'sf-';
 $metrics: (
   'wrap-max-width': 58rem,
   'wrap-inner-max-width': 52rem,
-  'md-breakpoint': 48rem
+  'md-breakpoint': 48rem,
 );
 
 /**
@@ -43,102 +43,102 @@ $stalfos-config: (
     'items': (
       'start': 'flex-start',
       'center': 'center',
-      'end': 'flex-end'
+      'end': 'flex-end',
     ),
     'output': 'responsive',
-    'property': 'align-items'
+    'property': 'align-items',
   ),
   'bg': (
     'items': $stalfos-colors,
     'output': 'standard',
-    'property': 'background'
+    'property': 'background',
   ),
   'color': (
     'items': $stalfos-colors,
     'output': 'standard',
-    'property': 'color'
+    'property': 'color',
   ),
   'box': (
     'items': (
       'block': 'block',
       'flex': 'flex',
       'inline-flex': 'inline-flex',
-      'hide': 'none'
+      'hide': 'none',
     ),
     'output': 'responsive',
-    'property': 'display'
+    'property': 'display',
   ),
   'flex': (
     'items': (
       'wrap': 'wrap',
-      'nowrap': 'nowrap'
+      'nowrap': 'nowrap',
     ),
     'output': 'responsive',
-    'property': 'flex-wrap'
+    'property': 'flex-wrap',
   ),
   'flex-dir': (
     'items': (
-      'col': 'column'
+      'col': 'column',
     ),
     'output': 'responsive',
-    'property': 'flex-direction'
+    'property': 'flex-direction',
   ),
   'word-break': (
     'items': (
       'normal': normal,
       // 'all': 'break-all',
-        // 'keep-all': 'keep-all'
+      // 'keep-all': 'keep-all',
     ),
     output: 'standard',
-    property: 'word-break'
+    property: 'word-break',
   ),
   'font': (
     'items': map-get($tokens, 'fonts'),
     'output': 'standard',
-    'property': 'font-family'
+    'property': 'font-family',
   ),
   'gap-top': (
     'items': $stalfos-size-scale,
     'output': 'standard',
-    'property': 'margin-top'
+    'property': 'margin-top',
   ),
   'gap-bottom': (
     'items': $stalfos-size-scale,
     'output': 'standard',
-    'property': 'margin-bottom'
+    'property': 'margin-bottom',
   ),
   'leading': (
     'items': (
       'tight': '1.2',
       'mid': '1.5',
-      'loose': '1.7'
+      'loose': '1.7',
     ),
     'output': 'standard',
-    'property': 'line-height'
+    'property': 'line-height',
   ),
   'measure': (
     'items': (
       'long': '75ch',
       'short': '60ch',
-      'compact': '40ch'
+      'compact': '40ch',
     ),
     'output': 'standard',
-    'property': 'max-width'
+    'property': 'max-width',
   ),
   'pad-top': (
     'items': $stalfos-size-scale,
     'output': 'standard',
-    'property': 'padding-top'
+    'property': 'padding-top',
   ),
   'pad-bottom': (
     'items': $stalfos-size-scale,
     'output': 'standard',
-    'property': 'padding-bottom'
+    'property': 'padding-bottom',
   ),
   'pad-left': (
     'items': $stalfos-size-scale,
     'output': 'standard',
-    'property': 'padding-left'
+    'property': 'padding-left',
   ),
   'space': (
     'items': (
@@ -146,10 +146,10 @@ $stalfos-config: (
       'around': 'space-around',
       'before': 'flex-end',
       'after': 'flex-start',
-      'center': 'center'
+      'center': 'center',
     ),
     'output': 'responsive',
-    'property': 'justify-content'
+    'property': 'justify-content',
   ),
   'stack': (
     'items': (
@@ -157,52 +157,52 @@ $stalfos-config: (
       '400': 10,
       '500': 20,
       '600': 30,
-      '700': 40
+      '700': 40,
     ),
     'output': 'standard',
-    'property': 'z-index'
+    'property': 'z-index',
   ),
   'ta': (
     'items': (
       'right': 'right',
       'left': 'left',
-      'center': 'center'
+      'center': 'center',
     ),
     'output': 'responsive',
-    'property': 'text-align'
+    'property': 'text-align',
   ),
   'text': (
     'items': $stalfos-size-scale,
     'output': 'responsive',
-    'property': 'font-size'
+    'property': 'font-size',
   ),
   'weight': (
     'items': (
       'light': '300',
       'regular': '400',
       'mid': '600',
-      'bold': '700'
+      'bold': '700',
     ),
     'output': 'standard',
-    'property': 'font-weight'
+    'property': 'font-weight',
   ),
   'width': (
     'items': (
       'full': '100%',
       'half': '50%',
       'quarter': '25%',
-      'third': '33.33%'
+      'third': '33.33%',
     ),
     'output': 'responsive',
-    'property': 'width'
+    'property': 'width',
   ),
   'breakpoints': (
-    'md': #{'(min-width: ' + map-get($metrics, 'md-breakpoint') + ')'}
+    'md': #{'(min-width: ' + map-get($metrics, 'md-breakpoint') + ')'},
   ),
   'utilities': (
     'reset': 'on',
     'icon': 'off',
     'flow': 'on',
-    'wrapper': 'off'
-  )
+    'wrapper': 'off',
+  ),
 );

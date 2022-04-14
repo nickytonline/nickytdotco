@@ -203,7 +203,7 @@ function devLinkEmbed(blogPostUrl) {
     reading_time_minutes,
     tags,
     canonical_url,
-    user: {name, username, profile_image}
+    user: {name, username, profile_image},
   } = blogPostEmbeds[blogPostUrl];
 
   const url = canonical_url ?? devToUrl;
@@ -223,7 +223,7 @@ function devLinkEmbed(blogPostUrl) {
           <h1 class="ltag__link__title">${title}</h1>
           <div><span aria-hidden="true">${name}</span> ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ ${reading_time_minutes} min read</div>
           <ul class="ltag__link__taglist">
-            ${tags.map(tag => `<li>#${tag}</li>`).join(``)}
+            ${tags.map((tag) => `<li>#${tag}</li>`).join(``)}
           </ul>
         </div>
       </a>
@@ -354,5 +354,5 @@ module.exports = {
   devOrgEmbed,
   replitEmbed,
   devPodcastEmbed,
-  codeSandboxEmbed
+  codeSandboxEmbed,
 };

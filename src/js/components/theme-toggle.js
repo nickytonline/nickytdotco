@@ -73,9 +73,7 @@ class ThemeToggle extends HTMLElement {
     this.innerHTML = html`
       <div class="theme-toggle">
         <div role="status" class="[ visually-hidden ][ js-mode-status ]"></div>
-        <button class="button js-mode-toggle">
-          ${darkModeIcon}
-        </button>
+        <button class="button js-mode-toggle">${darkModeIcon}</button>
       </div>
     `;
 
@@ -86,7 +84,7 @@ class ThemeToggle extends HTMLElement {
     this.modeToggleButton = document.querySelector('.js-mode-toggle');
     this.modeStatusElement = document.querySelector('.js-mode-status');
 
-    this.modeToggleButton.addEventListener('click', evt => {
+    this.modeToggleButton.addEventListener('click', (evt) => {
       evt.preventDefault();
 
       this.applySetting(this.toggleSetting());

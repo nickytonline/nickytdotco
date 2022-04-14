@@ -1,6 +1,6 @@
 const CACHE_KEYS = {
   PRE_CACHE: `precache-${VERSION}`,
-  RUNTIME: `runtime-${VERSION}`
+  RUNTIME: `runtime-${VERSION}`,
 };
 
 // URLS that we don’t want to end up in the cache
@@ -18,27 +18,27 @@ const IGNORED_HOSTS = ['localhost'];
  * @param {String} cacheName
  * @param {Array} items=[]
  */
-const addItemsToCache = function(cacheName, items = []) {
-  caches.open(cacheName).then(cache => cache.addAll(items));
+const addItemsToCache = function (cacheName, items = []) {
+  caches.open(cacheName).then((cache) => cache.addAll(items));
 };
 
-self.addEventListener('install', evt => {
+self.addEventListener('install', (evt) => {
   self.skipWaiting();
 
   addItemsToCache(CACHE_KEYS.PRE_CACHE, PRE_CACHE_URLS);
 });
 
-self.addEventListener('activate', evt => {
+self.addEventListener('activate', (evt) => {
   // Look for any old caches that don't match our set and clear them out
   evt.waitUntil(
     caches
       .keys()
-      .then(cacheNames => {
-        return cacheNames.filter(item => !Object.values(CACHE_KEYS).includes(item));
+      .then((cacheNames) => {
+        return cacheNames.filter((item) => !Object.values(CACHE_KEYS).includes(item));
       })
-      .then(itemsToDelete => {
+      .then((itemsToDelete) => {
         return Promise.all(
-          itemsToDelete.map(item => {
+          itemsToDelete.map((item) => {
             return caches.delete(item);
           })
         );
@@ -47,7 +47,7 @@ self.addEventListener('activate', evt => {
   );
 });
 
-self.addEventListener('fetch', evt => {
+self.addEventListener('fetch', (evt) => {
   const {hostname} = new URL(evt.request.url);
 
   // Check we don't want to ignore this host
@@ -56,27 +56,27 @@ self.addEventListener('fetch', evt => {
   }
 
   // Check we don't want to ignore this URL
-  if (EXCLUDED_URLS.some(page => evt.request.url.indexOf(page) > -1)) {
+  if (EXCLUDED_URLS.some((page) => evt.request.url.indexOf(page) > -1)) {
     return;
   }
 
   evt.respondWith(
-    caches.match(evt.request).then(cachedResponse => {
+    caches.match(evt.request).then((cachedResponse) => {
       // Item found in cache so return
       if (cachedResponse) {
         return cachedResponse;
       }
 
       // Nothing found so load up the request from the network
-      return caches.open(CACHE_KEYS.RUNTIME).then(cache => {
+      return caches.open(CACHE_KEYS.RUNTIME).then((cache) => {
         return fetch(evt.request)
-          .then(response => {
+          .then((response) => {
             // Put the new response in cache and return it
             return cache.put(evt.request, response.clone()).then(() => {
               return response;
             });
           })
-          .catch(ex => {
+          .catch((ex) => {
             return;
           });
       });

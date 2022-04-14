@@ -5,5 +5,5 @@ module.exports = {
     };
     return `${segment()}-${segment()}-${segment()}`;
   },
-  now: Date.now()
+  now: Date.now(),
 };
