@@ -27,6 +27,7 @@ First let's start off with some things to remember if you're migrating a React a
 - Create a reusable `children` prop and add it to your component props' type via an intersection.
 
    ```javascript
+{% raw %}
    // some file housing the ChildrenProp
    export type ChildrenProp = { children: React.ReactNode };
       
@@ -54,6 +55,7 @@ You get all the benefits of the `any` type, but as soon as you try to access any
 
 For example, instead of doing this
 
+{% endraw %}
 ```javascript
 const someElementReference = document.querySelector('.awesome-selector');
 
@@ -61,9 +63,11 @@ if (someElementReference) {
   someElementReference.setAttribute('data-i-checked-first', `I wasn't sure if you'd exist`);
 }
 ```
+{% raw %}
 
 you could do this
 
+{% endraw %}
 ```javascript
 const someElementReference = document.querySelector('.awesome-selector');
 

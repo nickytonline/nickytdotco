@@ -155,11 +155,13 @@ I use [Fira Code](https://github.com/tonsky/FiraCode) in VS Code. Once you've [i
 Open your user settings and add the following:
 
 ```json
+{% raw %}
   // Controls the font family.
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   // Controls the font size.
   "editor.fontSize": 14,
+{% endraw %}
 ```
 
 Boom! Bob's your uncle and you now have Fira Code in all it's awesome ligatureness (is that a word?).
@@ -167,6 +169,7 @@ Boom! Bob's your uncle and you now have Fira Code in all it's awesome ligaturene
 ## Custom Key Bindings
 
 ```json
+{% raw %}
 // Place your key bindings in this file to overwrite the defaults
 [
   {
@@ -186,6 +189,7 @@ Boom! Bob's your uncle and you now have Fira Code in all it's awesome ligaturene
     "command": "workbench.action.terminal.kill"
   }
 ]
+{% endraw %}
 ```
 
 Also, if you're looking for great tips and tricks on Visual Studio code, check out [www.vscodetips.com](https://www.vscodetips.com). One last thing that I'm really looking forward to is the availabilty of [Live Share](https://code.visualstudio.com/blogs/2017/11/15/live-share).

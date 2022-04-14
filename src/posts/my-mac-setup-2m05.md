@@ -89,6 +89,7 @@ You're all good to go. To test it out launch Alfred and in the search bar type `
 - I use the git CLI with [git aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases). Here’s my list of [git aliases](https://gitaliases.iamdeveloper.com).
 - fish shell aliases I use because I'm a lazy typer or just can't remember the real command. Feel free to run the script snippet below to add them to your 🐡 🐚 .**
 ```bash
+{% raw %}
 alias cg="eval \"git clone git@github.com:$argv.git\"" # Clones a gist, just pass in the gist ID
 funcsave cg
 
@@ -116,6 +117,7 @@ funcsave nib
 # ensure your npm is upgraded to the latest and greatest.
 alias hot="npx browser-sync start --server src/ --files \"src/*.html\" \"src/css/*.css\" \"src/js/*.js\""
 funcsave hot
+{% endraw %}
 ```
 
 ## Useful Utilities

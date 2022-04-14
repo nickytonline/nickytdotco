@@ -23,12 +23,14 @@ By default, if you import JSON, TypeScript will mention that it can't import it 
 So TypeScript tells us what to do. Add the `--resolveJsonModule` flag. This is helpful if we're running the TypeScript CLI, but that is not what we're doing. What needs to be done is to add the `resolveJsonModule` key to the compiler options in the tsconfig.json file and set it to `true`.
 
 ```json
+{% raw %}
 {
   "compilerOptions": {
     "resolveJsonModule": true,
     // more awesome compiler options
   }
 }
+{% endraw %}
 ```
 
 Once that's done, you'll notice that if you type `data.`, we have fully typed JSON data.

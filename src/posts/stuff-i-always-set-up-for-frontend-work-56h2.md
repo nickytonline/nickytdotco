@@ -44,11 +44,13 @@ Note: As of Husky version 7, the setup is completely different. Please follow th
 Here is a sample configuration.
 
 ```json
+{% raw %}
 "husky": {
   "hooks": {
     "pre-commit": "echo 'hi'"
   }
 }
+{% endraw %}
 ```
 
 When a file is being committed to the repository, the above configuration will run `echo 'hi'` before the file is committed.
@@ -60,21 +62,25 @@ When a file is being committed to the repository, the above configuration will r
 [lint-staged](https://github.com/okonet/lint-staged) is a node package that makes it easier to run tasks for staged files in a Git repository. If we go back to our example above that echo's hi, we can change that command to `lint-staged`.
 
 ```json
+{% raw %}
 "husky": {
   "hooks": {
     "pre-commit": "lint-staged"
   }
 }
+{% endraw %}
 ```
 
 If we commit a file, the Git pre-commit hook will run lint-staged, but nothing will happen. We need to let lint-staged know what we want to do during the pre-commit. Let's get a configuration set up for lint-staged.
 
 ```json
+{% raw %}
 "lint-staged": {
   "*.{js}": [
     "prettier --write"
   ]
 }
+{% endraw %}
 ```
 
 Now if we commit a file, the pre-commit hook will run and if any JavaScript files are being committed, the pre-commit hook, thanks to lint-staged will run prettier on the file and update the file with any formatting changes and then commit the file.
@@ -90,7 +96,9 @@ Now let's bring it all together so you can use this in your own project.
 You'll need to install all the dependencies mentioned above plus a few more. I'll explain why in a minute.
 
 ```bash
+{% raw %}
 npm install -D eslint prettier eslint-config-prettier eslint-plugin-prettier husky lint-staged stylelint stylelint-config-standard
+{% endraw %}
 ```
 `eslint-config-prettier` and `eslint-plugin-prettier stylelint stylelint-config-standard` are required so that eslint is only in charge of rules that do not related to formatting as prettier handles formatting.
 
@@ -99,6 +107,7 @@ If you're wondering what the `-D` is for, that's so they get installed as `devDe
 In the root of your project, create a file called `.eslintrc.js`. This will house the eslint configuration that we want. We'll go with the eslint recommended rules.
 
 ```javascript
+{% raw %}
 /* eslint-env node */
 module.exports = {
   extends: ['eslint:recommended', 'prettier'],
@@ -110,6 +119,7 @@ module.exports = {
     browser: true,
   }, 
 };
+{% endraw %}
 ```
 
 Note: `/* eslint-env node */` is being used as it's a frontend project and the .eslintrc.js file is Node.js. It allows us to say, "This file is a Node.js file". Thanks to [Rafi](https://dev.to/rafi993) for [pointing this out to me](https://github.com/forem/forem/pull/10767#pullrequestreview-507865219).
@@ -119,9 +129,11 @@ This is a base eslint configuration. If you were for example using React in your
 In the root of your project, create a file called `.stylelintrc.json`. This will house the stylelint configuration that we want. We'll go with the stylelint recommended rules.
 
 ```json
+{% raw %}
 {
   "extends": "stylelint-config-standard"
 }
+{% endraw %}
 ```
 
 This is a base stylelint configuration. Feel free to expand on these standard stylelint rules.
@@ -129,6 +141,7 @@ This is a base stylelint configuration. Feel free to expand on these standard st
 Next up we need to our husky and lint-staged configurations. In your package.json file add these two configuration sections.
 
 ```json
+{% raw %}
 "lint-staged": {
     "*.js": [
         "eslint —-fix",
@@ -145,6 +158,7 @@ Next up we need to our husky and lint-staged configurations. In your package.jso
     "printWidth": 80,
     "tabWidth": 4
 }
+{% endraw %}
 ```
 
 If you don’t trust the robots for fixing your code, remove the `—-fix` argument off of the eslint command.
@@ -160,6 +174,7 @@ I added this as a bonus tip, because not all projects use jest.
 But... if your project uses [jest](https://jestjs.io), you can also run tests related to files that are being committed.
 
 ```json
+{% raw %}
 "lint-staged": {
     "*.js": [
         "eslint —-fix",
@@ -167,6 +182,7 @@ But... if your project uses [jest](https://jestjs.io), you can also run tests re
         "jest --findRelatedTests"
     ]
 }
+{% endraw %}
 ```
 
 ## Learn More About Your Tools

@@ -21,6 +21,7 @@ Everyone has their favourite aliases for git and the shell. I have written about
 It is not a long list, but I have some that I find useful that you may find useful as well. Currently, my preferred shell is zsh. Here is what I currently have in my config.
 
 ```
+{% raw %}
 alias zshconfig='vi $HOME/.zshrc'
 alias rimraf='rm -rf'
 alias flushdns='sudo killall -HUP mDNSResponder'
@@ -36,6 +37,7 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --r
 crat() {
         npx create-react-app $1 --typescript
 }
+{% endraw %}
 ```
 
 The `edge` and `chrome` aliases are useful to me because I like to use VS Code when debugging. Having the browsers start up with remote debugging makes that process easier.

@@ -27,7 +27,9 @@ The example code snippets shown in the post will be for regular expressions in J
 Know exactly what you're looking for. This may sound obvious on the surface, but it's not always the case. Let's say I want to find instances of `three` in a text file because we need to replace all instances of `three` with the number `3`. You've done a bit of Googling and or checked out [regex101.com](https://regex101.com). You're feeling pretty good so you write out this regular expression.
 
 ```javascript
+{% raw %}
 const reMatchThree = /three/g
+{% endraw %}
 ```
 
 Note: If you're new to regular expressions, everything between the starting `/` and the ending `/` is the regular expression. The `g` after the last `/` means global, as in find all instances.
@@ -35,14 +37,18 @@ Note: If you're new to regular expressions, everything between the starting `/` 
 You run the regular expression to match all instances of `three` so it can be replaced with `3`. You look at what got replaced in the text and you're a little perplexed.
 
 ```diff
+{% raw %}
 - There were three little pigs who lived in their own houses to stay safe from the big bad wolf who was thirty-three years old.
 + There were 3 little pigs who lived in their own houses to stay safe from the big bad wolf who was thirty-3 years old.
+{% endraw %}
 ```
 
 `three` got replaced by `3` everywhere in the file, but why was thirty-three replaced? You only wanted `three`s replaced. And here we have our first lesson. Be specific. We only want to match when it's only the word `three`. So we need to beef up this regex a little. We only want to find the `three` when it's the first word in a sentence, has white space before and after it or some punctuation before and/or after it, or if it's the last word in a sentence. With that criteria, the regex might look like this now.
 
 ```javascript
+{% raw %}
 const reMatchThree = /\b(three)\b/g
+{% endraw %}
 ```
 
 Note: Don't worry if you're not familiar with all the syntax. The `\b` character means a [word boundary character](https://regular-expressions.mobi/wordboundaries.html?wlr=1).
@@ -56,7 +62,9 @@ Greed is usually not a good thing and greed in regex is no exception. Let's say 
 You set out to build your regex. 
 
 ```javascript
+{% raw %}
 const reMatchBetweenDoubleQuotes = /"(.+)"/g
+{% endraw %}
 ```
 
 Remember that `(` and `)` represent a group. The `.` character means any character. Another special character is  `+`. It means at least one character. 
@@ -64,7 +72,9 @@ Remember that `(` and `)` represent a group. The `.` character means any charact
 You're feeling good and you run this regex over the file you need to extract the texts from.
 
 ```text
+{% raw %}
 Hi there "this text is in double quotes". As well, "this text is in double quotes too".
+{% endraw %}
 ```
 
 The results come in and here are the texts that the regex matched for texts within double quotes:
@@ -78,7 +88,9 @@ If we look again at the regex you created, it contains `.+` which means literall
 There are a couple of ways to approach this. We can use the non-greedy version of `+`, by replacing it with `+?`
 
 ```javascript
+{% raw %}
 const reMatchBetweenDoubleQuotes = /"(.+?)"/g
+{% endraw %}
 ```
 
 Which means find a `"`, start a capturing group then find as many characters as possible before you hit a `"`
@@ -86,7 +98,9 @@ Which means find a `"`, start a capturing group then find as many characters as 
 Another approach, which I prefer, is the following:
 
 ```javascript
+{% raw %}
 const reMatchBetweenDoubleQuotes = /"([^"]+)"/g
+{% endraw %}
 ```
 
 Which means find a `"`, start a capturing group then find as many characters as possible that aren't `"` before you hit a `"`.

@@ -29,6 +29,7 @@ Flexbox in a CLI? 🤯 React hooks in a CLI? YOLO my friend, YOLO.
 Here's a little example straight from the repository's ReadME:
 
 ```javascript
+{% raw %}
 import React, {Component} from 'react';
 import {render, Color} from 'ink';
 
@@ -63,6 +64,7 @@ class Counter extends Component {
 }
 
 render(<Counter/>);
+{% endraw %}
 ```
 
 Even the folks at npm think it's kinda cool.

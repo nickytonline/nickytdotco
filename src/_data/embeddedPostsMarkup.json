@@ -762,7 +762,7 @@
     "type_of": "article",
     "id": 157403,
     "title": "Update Dependencies with Dependabot, Cypress and Netlify",
-    "description": "To preface things, this post is in the context of a JavaScript project, specifically, my blog iamdeve...",
+    "description": "To preface things, this post is in the context of a JavaScript project, specifically, my blog...",
     "readable_publish_date": "Aug 16 '19",
     "slug": "update-dependencies-with-dependabot-cypress-and-netlify-3lkf",
     "path": "/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf",
@@ -773,7 +773,7 @@
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--PLiPVgbM--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/jivsyirs8gft16kuji62.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/update-dependencies-with-dependabot-cypress-and-netlify-3lkf/",
     "created_at": "2019-08-16T03:23:34Z",
-    "edited_at": "2020-06-17T02:45:54Z",
+    "edited_at": "2022-04-14T18:29:24Z",
     "crossposted_at": "2019-08-16T04:05:50Z",
     "published_at": "2019-08-16T02:11:34Z",
     "last_comment_at": "2019-08-20T23:39:06Z",
@@ -810,7 +810,7 @@
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--r8A9ykUM--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ir0wzbkqn1rw9vu67irj.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/an-a11y-extension-coming-to-a-browser-near-you-1mg2/",
     "created_at": "2019-04-01T01:14:49Z",
-    "edited_at": "2020-06-17T02:50:36Z",
+    "edited_at": "2022-04-14T18:22:39Z",
     "crossposted_at": "2019-04-01T04:27:37Z",
     "published_at": "2019-04-01T01:02:21Z",
     "last_comment_at": "2019-08-26T15:37:19Z",
@@ -1274,7 +1274,7 @@
     },
     "flare_tag": {
       "name": "discuss",
-      "bg_color_hex": "#000000",
+      "bg_color_hex": "#1ad643",
       "text_color_hex": "#FFFFFF"
     }
   },

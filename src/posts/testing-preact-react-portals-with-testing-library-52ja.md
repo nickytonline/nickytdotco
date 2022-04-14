@@ -58,6 +58,7 @@ If you’re using preact-testing-library or [react-testing-library](https://gith
 Typically you test a component like this. Note that you can choose what to destructure from the result of the render function based on what’s available in the API for your needs. We are going to go with a function that finds a DOM element by its label text.
 
 ```javascript
+{% raw %}
 it('should synchronize search forms', async () => {
     const { findByLabelText } = render(<SearchFormSync />);
 
@@ -68,6 +69,7 @@ it('should synchronize search forms', async () => {
     // Because window.location has no search term in it's URL
     expect(searchInput.value).toEqual('');
 });
+{% endraw %}
 ```
 
 The test above does the following:
@@ -79,6 +81,7 @@ The test above does the following:
 At this point there is nothing out of the ordinary about this test. And everything passes.
 
 ```bash
+{% raw %}
  PASS  app/javascript/Search/__tests__/SearchFormSync.test.jsx
   <SearchFormSync />
     ✓ should synchronize search forms (19 ms)
@@ -90,11 +93,13 @@ Time:        1.751 s, estimated 2 s
 Ran all test suites related to changed files.
 
 Watch Usage: Press w to show more.
+{% endraw %}
 ```
 
 Alright, let’s continue with our testing. So next up we want to ensure that both the desktop and mobile search forms render the same. Under the hood, the way it works is when a search result is returned, the search results include the mobile search form and have a little snippet of JS that emits a custom event to synchronize the forms.
 
 ```html
+{% raw %}
 <div id="mobile-search-container">
   <form
     accept-charset="UTF-8"
@@ -123,48 +128,58 @@ Alright, let’s continue with our testing. So next up we want to ensure that bo
   // A custom event that gets dispatched to notify search forms to synchronize their state.
   window.dispatchEvent(new CustomEvent('syncSearchForms', { detail: { querystring: location.search } }));
 </script>
+{% endraw %}
 ```
 
 So in our test we need to do a few things:
 1. Simulate the search results URL
 
 ```javascript
+{% raw %}
 // simulates a search result returned which contains the server side rendered search form for mobile only.
 setWindowLocation(`https://locahost:3000/search?q=${searchTerm}`);
+{% endraw %}
 ```
 
 2. Have a DOM element available for the portal’s container.
 
 ```javascript
+{% raw %}
 // This part of the DOM would be rendered in the search results from the server side.
 // See search.html.erb.
 document.body.innerHTML =
   '<div id="mobile-search-container"><form></form></div>';
+{% endraw %}
 ```
 
 3. Emit the custom event
 
 ```javascript
+{% raw %}
 fireEvent(
   window,
   new CustomEvent('syncSearchForms', {
     detail: { querystring: window.location.search },
   }),
 );
+{% endraw %}
 ```
 
 From there we need to assert that the search forms are in sync.
 
 ```javascript
+{% raw %}
     const [desktopSearch, mobileSearch] = await findAllByLabelText('search');
     
     expect(desktopSearch.value).toEqual(searchTerm);
     expect(mobileSearch.value).toEqual(searchTerm);
+{% endraw %}
 ```
 
 Let's put that all together.
 
 ```javascript
+{% raw %}
 describe('<SearchFormSync />', () => {
   beforeEach(() => {
     // This part of the DOM would be rendered in the search results from the server side.
@@ -212,11 +227,13 @@ describe('<SearchFormSync />', () => {
     expect(mobileSearch.value).toEqual(searchTerm);
   });
 });
+{% endraw %}
 ```
 
 Let's rerun the tests.
 
 ```bash
+{% raw %}
  PASS  app/javascript/Search/__tests__/SearchFormSync.test.jsx
   <SearchFormSync />
     ✓ should synchronize search forms (31 ms)
@@ -228,6 +245,7 @@ Time:        1.326 s
 Ran all test suites matching /sync/i.
 
 Watch Usage: Press w to show more.
+{% endraw %}
 ```
 
 Awesome, so the original search form (desktop search) and the new search form (mobile/smaller screens) render properly.
@@ -235,6 +253,7 @@ Awesome, so the original search form (desktop search) and the new search form (m
 Let's take a look at what happens under the hood by looking at [preact-testing-library's render function](https://github.com/testing-library/preact-testing-library/blob/master/src/pure.js#L24)
 
 ```javascript
+{% raw %}
 function render (
   ui,
   {
@@ -255,11 +274,13 @@ function render (
     container = baseElement.appendChild(document.createElement('div'))
   }
 ...
+{% endraw %}
 ```
 
 There is an optional options parameter which we can see here destructured.
 
 ```javascript
+{% raw %}
 {
   container,
   baseElement = container,
@@ -267,6 +288,7 @@ There is an optional options parameter which we can see here destructured.
   hydrate = false,
   wrapper: WrapperComponent
 } = {}
+{% endraw %}
 ```
 
 In our case we're not using these so based on the code, we have no `baseElement` option set since we are not passing it in and its default value is the `container` option which is `undefined` since we did not pass one in. So, the `baseElement` in our case is `document.body`.
@@ -274,15 +296,18 @@ In our case we're not using these so based on the code, we have no `baseElement`
 Since we have no container defined, it gets set to `baseElement.appendChild(document.createElement('div'))` which is a `<div />` appended to the `document.body`. Remember from our test set up, we added the portal container DOM element via 
 
 ```javascript
+{% raw %}
 // This part of the DOM would be rendered in the search results from the server side.
 // See search.html.erb.
 document.body.innerHTML =
   '<div id="mobile-search-container"><form></form></div>';
+{% endraw %}
 ```
 
 So before our test runs, this is what the `document.body` looks like
 
 ```html
+{% raw %}
 <body>
   <div
     id="mobile-search-container"
@@ -294,6 +319,7 @@ So before our test runs, this is what the `document.body` looks like
   <div>
   </div>
 </body>
+{% endraw %}
 ```
 
 Let's use preact-testing-library's [debug](https://testing-library.com/docs/react-testing-library/api/#debug) so that we can see the successful test rendered as HTML.
@@ -301,12 +327,15 @@ Let's use preact-testing-library's [debug](https://testing-library.com/docs/reac
 To use `debug()`, we need to add it to the destructured functions like so:
 
 ```javascript
+{% raw %}
 const { debug, findByLabelText, findAllByLabelText } = render(<SearchFormSync />);
+{% endraw %}
 ```
 
 Alright, now let's add the `debug()` call to the test.
 
 ```javascript
+{% raw %}
 describe('<SearchFormSync />', () => {
   beforeEach(() => {
     // This part of the DOM would be rendered in the search results from the server side.
@@ -354,11 +383,13 @@ describe('<SearchFormSync />', () => {
     expect(mobileSearch.value).toEqual(searchTerm);
   });
 });
+{% endraw %}
 ```
 
 The test runs again successfully, but now we also have some outputted markup from the rendering.
 
 ```bash
+{% raw %}
  PASS  app/javascript/Search/__tests__/SearchFormSync.test.jsx
   <SearchFormSync />
     ✓ should synchronize search forms (43 ms)
@@ -422,6 +453,7 @@ Time:        1.516 s
 Ran all test suites matching /sync/i.
 
 Watch Usage: Press w to show more.
+{% endraw %}
 ```
 
 So from the outputted markup, we see that the original form rendered (desktop) and the mobile search form also rendered in the portal container `<div id="mobile-search-container" />`.

@@ -18,6 +18,7 @@ Photo by [Mike Enerio](https://unsplash.com/photos/2IkxeDKaZdY?utm_source=unspla
 There's plenty of examples in the documentation, so let's just start off with something simple.
 
 ```javascript
+{% raw %}
 enum HardDriveType {
 	ssd,
 	sata
@@ -48,6 +49,7 @@ const myPC: Computer = {
 const myBadPC: Computer = {
 	hardDriveType: HardDriveType.ssd,
 };
+{% endraw %}
 ```
 
 You can [play around with the example](https://www.typescriptlang.org/play/#src=enum%20HardDriveType%20%7B%0A%09ssd%2C%0A%09sata%0A%7D%0A%0Aenum%20ProcessorType%20%7B%0A%09i3%2C%0A%09i5%2C%0A%09i7%2C%0A%09i9%0A%7D%0A%0Ainterface%20Computer%20%7B%0A%09processor%3A%20ProcessorType%3B%0A%7D%0A%0Ainterface%20Computer%20%7B%0A%09hardDriveType%3A%20HardDriveType%3B%0A%7D%0A%0A%2F%2F%20interface%20has%20been%20merged%0Aconst%20myPC%3A%20Computer%20%3D%20%7B%0A%09hardDriveType%3A%20HardDriveType.ssd%2C%0A%09processor%3A%20ProcessorType.i9%0A%7D%3B%0A%0A%2F%2F%20interface%20is%20merged%20so%20type%20checking%20fails%20since%20the%20processor%20property%20is%20missing%0Aconst%20myBadPC%3A%20Computer%20%3D%20%7B%0A%09hardDriveType%3A%20HardDriveType.ssd%2C%0A%7D%3B) in the TypeScript Playground.
@@ -58,6 +60,7 @@ You are using a third-party library or it's something in your project that needs
 Let's use our a fictitious 3rd party library called `awesomeThing`. It gets loaded onto the `window` object so we need to enhance the `Window` interface.
 
 ```javascript
+{% raw %}
 export interface AwesomeThing {
 	doIt: () => void;
 }
@@ -73,6 +76,7 @@ window.awesomeThing.doIt();
 
 // Errors because it's not on the `Window` interface.
 window.thingThatIsNotOnWindow.doIt();
+{% endraw %}
 ```
 
 You can [play around with the example](https://www.typescriptlang.org/play/#src=export%20interface%20AwesomeThing%20%7B%0D%0A%09doIt%3A%20()%20%3D%3E%20void%3B%0D%0A%7D%0D%0A%0D%0Adeclare%20global%20%7B%0D%0A%09interface%20Window%20%7B%0D%0A%09%09awesomeThing%3A%20AwesomeThing%0D%0A%09%7D%0D%0A%7D%0D%0A%0D%0A%2F%2F%20The%20window%20interface%20has%20been%20merged%20with%20our%20interface%20to%20add%20awesomeThing.%0D%0Awindow.awesomeThing.doIt()%3B%0D%0A%0D%0A%2F%2F%20Errors%20because%20it's%20not%20on%20the%20%60Window%60%20interface.%0D%0Awindow.thingThatIsNotOnWindow.doIt()%3B) in the TypeScript Playground.

@@ -19,7 +19,9 @@ This post’s birth comes from [a gist](https://gist.github.com/nickytonline/128
 I’m going to provide my list of git aliases and explain what each alias does, plain and simple. Let’s get started! 🏁 For those new to git aliases, please see the [defacto docs on aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases). In a nutshell though, to create your own aliases, use the following git command.
 
 ```bash
+{% raw %}
 git config --global alias.somealias some-git-command
+{% endraw %}
 ```
 
 Before we get started, why git aliases? Well for one thing, I don’t know about you, but some git commands are hard to remember and also, we’re programmers, which means we’re lazy by default to be efficient. 🐢 —\> 🐇
@@ -46,15 +48,18 @@ Before we get started, why git aliases? Well for one thing, I don’t know about
 - `sfc = diff-tree --no-commit-id --name-only -r` — Shows files (relative file paths) for a specific commit, e.g.
 
 ```bash
+{% raw %}
 ❯ git sfc HEAD                                
 src/posts/any-contribution-to-open-source-is-valuable-57d3.md
 src/posts/april-16th-2021-what-did-you-learn-this-week-3e72.md
 src/posts/are-there-plans-for-reviewers-of-articles-we-post--42nf.md
+{% endraw %}
 ```
  
 - `s = status -s` — Running `git s` will give you a more terse [status](https://git-scm.com/docs/git-status). Instead of this
 
 ```bash
+{% raw %}
 On branch post/my-git-aliases
 Your branch is up to date with 'origin/post/my-git-aliases'.
 
@@ -65,19 +70,24 @@ Changes not staged for commit:
        modified: src/pages/articles/2018-08-24-my-git-aliases/index.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
+{% endraw %}
 ```
 
 You get this
 
 ```bash
+{% raw %}
 M src/pages/articles/2018-08-24-my-git-aliases/index.md
+{% endraw %}
 ```
 - `stashes = stash list` — Running `git stashes` shows you all the stashes you have from [stashing](https://git-scm.com/book/en/v1/Git-Tools-Stashing). e.g.
 
 ```bash
+{% raw %}
 stash@{0}: WIP on upgrade: bff6257 Destructuring OCD...
 stash@{1}: WIP on upgrade: 3d73199 Fixed LiceCap link.
 stash@{2}: WIP on upgrade: c2f78g6 Update default title.
+{% endraw %}
 ```
 - `unstash = stash pop` — Running `git unstash` pops a stash off the list of saved stashes.
 - `vc = clean -dfx` — Running `git vc` cleans your git repository, so anything not in git is wiped, e.g. `node_modules`, settings files which aren’t supposed to be in a repo etc. So BEWARE before you run this.

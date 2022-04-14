@@ -38,6 +38,7 @@ When jest-axe is used in conjunction with preact-testing-library, we get notifie
 A typical a11y test in a component test file looks like this.
 
 ```javascript
+{% raw %}
   it('should have no a11y violations', async () => {
     const { container } = render(
       <MyComponent />,
@@ -46,11 +47,13 @@ A typical a11y test in a component test file looks like this.
 
     expect(results).toHaveNoViolations();
   });
+{% endraw %}
 ```
 
 And when this test fails, you are presented with readable errors to fix the a11y issues.
 
 ```bash
+{% raw %}
 expect(received).toHaveNoViolations(expected)
 
     Expected the HTML found at $('.crayons-btn--icon') to have no violations:
@@ -71,6 +74,7 @@ expect(received).toHaveNoViolations(expected)
 
     You can find more information on this issue here: 
     https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI
+{% endraw %}
 ```
 
 ## More Frontend Updates!
@@ -95,6 +99,7 @@ You can view DEV's work in progress Storybook [here](https://storybook.forem.com
 There are no big changes to our Jest setup, just a few tweaks. First off, as we have been testing more in the frontend, our code coverage has been increasing. So as coverage goes up, we want to avoid any drop in coverage, so we added coverage thresholds to our Jest configuration.
 
 ```javascript
+{% raw %}
 module.exports = {
   ...
   coverageThreshold: {
@@ -106,6 +111,7 @@ module.exports = {
     },
   },
 ...
+{% endraw %}
 ```
 
 Another super handy addition is in jest watch mode. You can now filter by a test’s name or filename.

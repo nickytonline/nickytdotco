@@ -23,7 +23,9 @@ I’m a big fan of the [Bracket Pair Colorizer](https://marketplace.visualstudio
 3. Open your user settings via <kbd>CMD</kbd>  (<kbd>CTRL</kbd> for non-Mac users) + <kbd>Shift</kbd>  + <kbd>P</kbd>  and type settings. The settings JSON file will open. Add the following:
 
 ```json
+{% raw %}
 "editor.bracketPairColorization.enabled": true
+{% endraw %}
 ```
 
 All colors are themeable and up to six colors can be configured.

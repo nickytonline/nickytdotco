@@ -22,6 +22,7 @@ Plays nicely with Preact, React, Hyperapp and InfernoJS.
 An example from the readme for React:
 
 ```
+{% raw %}
 import React from "react"
 import scoped from "scoped-style"
 
@@ -59,4 +60,5 @@ const App = () => (
 
 // Your rendering code
 
+{% endraw %}
 ```

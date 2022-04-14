@@ -34,11 +34,13 @@ Scripts for webpack entry points are added to Ruby ERB templates, but they use t
 [dev.to/webpacker.yml at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/config/webpacker.yml)
 
 ``` yaml
+{% raw %}
 ...
 default: &default
   source_path: app/javascript
   source_entry_path: packs
 ...
+{% endraw %}
 ```
 
 Looking at the configuration above, this part of the frontend code base can be found in the `app/javascript` folder with webpack entry points found in the `app/javascript/packs` folder.
@@ -48,6 +50,7 @@ This represents the base configuration for webpack. If additional configuration 
 [dev.to/development.js at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/config/webpack/development.js)
 
 ``` javascript
+{% raw %}
 const environment = require('./environment');
 const config = environment.toWebpackConfig();
 
@@ -55,6 +58,7 @@ const config = environment.toWebpackConfig();
 config.devtool = 'eval-source-map';
 
 module.exports = config;
+{% endraw %}
 ```
 
 As the project continues to move forward, expect to see some more things client side becoming preactitized (I just made that up, boom!).
@@ -68,6 +72,7 @@ As the project continues to move forward, expect to see some more things client 
 [dev.to/application.html.erb at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/views/layouts/application.html.erb#L38)
 
 ``` html
+{% raw %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -86,6 +91,7 @@ As the project continues to move forward, expect to see some more things client 
       ...
       <%= javascript_pack_tag "Search", defer: true %>
 ...
+{% endraw %}
 ```
 
 2. The search bar is rendered server-side as well on initial page load. This is what I currently call ghetto server-side rendering (SSR) for Preact. I know that @ben wanted to add preact SSR at some point, but it wasn't that high a priority at the time. Maybe now it will rank higher as more components are created with preact.
@@ -93,6 +99,7 @@ As the project continues to move forward, expect to see some more things client 
 [dev.to/_top_bar.html.erb at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/views/layouts/_top_bar.html.erb#L12)
 
 ``` html
+{% raw %}
 ...
     <div id="nav-search-form-root">
       <div class="nav-search-form">
@@ -102,6 +109,7 @@ As the project continues to move forward, expect to see some more things client 
       </div>
     </div>
 ...
+{% endraw %}
 ```
 
 3. On the client-side once the DOM content has loaded, Preact takes over.
@@ -109,6 +117,7 @@ As the project continues to move forward, expect to see some more things client 
 [dev.to/Search.jsx at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/javascript/packs/Search.jsx#L5)
 
 ``` javascript
+{% raw %}
 import { h, render } from ‘preact’;
 import { Search } from ‘../src/components/Search’;
 
@@ -117,6 +126,7 @@ document.addEventListener(‘DOMContentLoaded’, () => {
 
   render(<Search />, root, root.firstElementChild);
 });
+{% endraw %}
 ```
 
 4. From there on in, all interactions with the Search box are client-side.
@@ -129,11 +139,13 @@ Aside from prefetching pages, InstantClick also allows you to customize what hap
 [dev.to/githubRepos.jsx at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/javascript/packs/githubRepos.jsx#L11)
 
 ``` javascript
+{% raw %}
 ...
 window.InstantClick.on('change', () => {
   loadElement();
 });
 ...
+{% endraw %}
 ```
 
 You can also decide whether or not to reevaluate a script in an InstantClick loaded page via the `data-no-instant` attribute. I don’t believe there are any examples in the code base that blacklist script reevaluation. You can also blacklist a link. Here is an example from the codebase.
@@ -141,6 +153,7 @@ You can also decide whether or not to reevaluate a script in an InstantClick loa
 [dev.to/buildCommentHTML.js.erb at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/assets/javascripts/utilities/buildCommentHTML.js.erb#L80)
 
 ``` html
+{% raw %}
 ...
 
 function actions(comment) {
@@ -154,6 +167,7 @@ function actions(comment) {
             </div>';
   } else {
 ...
+{% endraw %}
 ```
 
 For more information on this, see the [Events and script re-evaluation in InstantClick](http://instantclick.io/scripts) documentation.
@@ -166,6 +180,7 @@ The project uses eslint with the Prettier plugin. This means that all eslint rul
 As well, as mentioned above, there are some objects that live in the global scope, e.g. `Pusher`. We need to tell eslint that it is defined otherwise it will complain that it is not defined. This is where the eslint `globals` section comes in handy.
 
 ``` javascript
+{% raw %}
 ...
   globals: {
     InstantClick: false,
@@ -174,6 +189,7 @@ As well, as mentioned above, there are some objects that live in the global scop
     algoliasearch: false,
   }
 ...
+{% endraw %}
 ```
 
 
@@ -209,6 +225,7 @@ The magic of theme toggling can be seen in action in the user configuration. Her
 [dev.to/_user_config.html.erb at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/views/layouts/_user_config.html.erb#L8)
 
 ``` php
+{% raw %}
 <script>
   try {
     var bodyClass = localStorage.getItem('config_body_class');
@@ -234,6 +251,7 @@ The magic of theme toggling can be seen in action in the user configuration. Her
       console.log(e)
   }
 </script>
+{% endraw %}
 ```
 
 So if you’re contributing to anything CSS related in the project, keep in the back of your head if you need theming applied to what you’re working on. Don't be shy, just ask if it's not obvious in the issue. @venarius has worked a lot on this, so he’s probably a good person to talk to about theming.

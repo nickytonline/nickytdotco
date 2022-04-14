@@ -18,12 +18,14 @@ Do not get me wrong, the [classnames](https://www.npmjs.com/package/classnames) 
 If you are not familiar with the `classnames` package, it allows you to build a set of CSS classes based on some conditionals. Straight from there documentation:
 
 ```javascript
+{% raw %}
 classNames('foo', 'bar'); // => 'foo bar'
 classNames('foo', { bar: true }); // => 'foo bar'
 classNames({ 'foo-bar': true }); // => 'foo-bar'
 classNames({ 'foo-bar': false }); // => ''
 classNames({ foo: true }, { bar: true }); // => 'foo bar'
 classNames({ foo: true, bar: true }); // => 'foo bar'
+{% endraw %}
 ```
 
 Note: `true` and `false` are used to simplify the example, but normally these would be conditional variables, methods or functions.
@@ -33,12 +35,14 @@ Having said that, JavaScript has come a long way and there are features in the l
 If you are not familiar with template strings, you can build a string with variables mixed in. Let us look at the previous examples, but this time with template strings.
 
 ```javascript
+{% raw %}
 `foo bar` // => 'foo bar', not that exciting
 `foo ${ true ? 'bar': '' }`; // => 'foo bar'
 `${true ? 'foo-bar': '' }`; // => 'foo-bar'
 `${ false ? 'foo-bar' : ''}` // => ''
 `${ true? 'foo': '' }, { true ? 'bar': '' }`; // => 'foo bar'
 `${ true ? 'foo' : ''} ${ true? 'bar' : '' }`; // => 'foo bar'
+{% endraw %}
 ```
 
 These are trivial examples, but it is just to show you that you can do pretty much the same thing with template literals. If you want to see this in action, here is an example from my site's source:
@@ -47,6 +51,7 @@ These are trivial examples, but it is just to show you that you can do pretty mu
 
 
 ```jsx
+{% raw %}
 ...
 <nav
    className={`navbar is-transparent ${styles.navbar}`}
@@ -55,6 +60,7 @@ These are trivial examples, but it is just to show you that you can do pretty mu
    data-cy="nav-bar"
 >
 ...
+{% endraw %}
 ```
 
 [https://github.com/nickytonline/www.iamdeveloper.com/blob/master/src/components/Navbar.tsx#L51](https://github.com/nickytonline/www.iamdeveloper.com/blob/master/src/components/Navbar.tsx#L51)

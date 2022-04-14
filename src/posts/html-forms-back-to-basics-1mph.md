@@ -28,9 +28,11 @@ So let’s say we’re on [amazon.ca](https://amazon.ca).
 You have a form that looks like this:
 
 ```html
+{% raw %}
 <form class="nav-searchbar" name="site-search">
 ...
 </form>
+{% endraw %}
 ```
 
 OK, so you know there is a `document.forms` object. Let’s take a peek in the dev tools.

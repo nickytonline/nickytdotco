@@ -23,9 +23,11 @@ I have a Gatsby site deployed to Netlify, and some of my assets are being served
 I know that I need to add entries into my `_headers` file, e.g.
 
 ```
+{% raw %}
 /
   Link: </js/example-script.js>; rel=preload; as=script
   Link: </css/example-style.css>; rel=preload; as=style
+{% endraw %}
 ```
 
 but it would be a pain to update this after every deploy. Is anyone aware of a gatsby plugin that might do this, or how do you go about handling this with your Gatsby site when hosted on Netlify?

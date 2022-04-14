@@ -39,15 +39,19 @@ With so many concepts, patterns, tech stacks and new stuff popping out all the t
 For example, did you know that in JavaScript you can get an array with unique entries by using a [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)?
 
 ```javascript
+{% raw %}
 const arrayWithDuplicateValues = [1, 2, 3, 3, 1, 5];
 const uniqueArray = Array.from(new Set(arrayWithDuplicateValues);
+{% endraw %}
 ```
 
 or
 
 ```javascript
+{% raw %}
 const arrayWithDuplicateValues = [1, 2, 3, 3, 1, 5];
 const uniqueArray = [...new Set(arrayWithDuplicateValues)];
+{% endraw %}
 ```
 
 Side note, check out [Have a Handy JS Snippet You Want to Share?](https://dev.to/nickytonline/handy-js-snippets-352f).
