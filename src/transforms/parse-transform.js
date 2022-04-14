@@ -3,7 +3,6 @@ const {JSDOM} = jsdom;
 const minify = require('../utils/minify.js');
 const slugify = require('slugify');
 const getSize = require('image-size');
-const fetch = require('node-fetch');
 
 module.exports = async function(value, outputPath) {
   if (!outputPath.endsWith('.html')) {
