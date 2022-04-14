@@ -364,7 +364,8 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
 
   const posts = await getDevPosts();
 
-  for (const post of posts) {
+  // Only publish posts that are not under the vscodetips dev.to organization.
+  for (const post of posts.filter(post => post.organization?.username !== 'vscodetips')) {
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const {markdown, imagesToSave} = await updateMarkdownImageUrls(post.body_markdown);
 
