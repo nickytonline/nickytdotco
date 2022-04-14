@@ -6,19 +6,19 @@
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@tbranyen/jsdom": "^13.0.0",
     "html-minifier": "^4.0.0",
-    "image-size": "^0.8.3",
-    "json-to-scss": "^1.5.0",
-    "sass": "^1.45.0",
-    "slugify": "^1.6.4",
+    "image-size": "^1.0.1",
+    "json-to-scss": "^1.6.2",
+    "sass": "^1.50.0",
+    "slugify": "^1.6.5",
     "stalfos": "github:hankchizljaw/stalfos#c8971d22726326cfc04089b2da4d51eeb1ebb0eb"
   },
   "devDependencies": {
     "@erquhart/rollup-plugin-node-builtins": "^2.1.5",
     "dotenv": "^16.0.0",
-    "luxon": "^1.25.0",
+    "luxon": "^2.3.1",
     "node-fetch": "^2.6.7",
     "prettier": "^1.19.1",
     "rss-parser": "^3.12.0"
