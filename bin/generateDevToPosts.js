@@ -23,7 +23,7 @@ const EMBEDDED_POSTS_MARKUP_FILE = path.join(
 const currentEmbeds = require('../src/_data/embeddedPostsMarkup.json');
 const embeds = new Map(Object.entries(currentEmbeds));
 const DOM = new JSDOM(`<!DOCTYPE html><html><head></head><body></body></html>`, {
-  resources: 'usable'
+  resources: 'usable',
 });
 
 const {document} = DOM.window;
@@ -41,7 +41,7 @@ if (!DEV_API_KEY) {
  * @returns True if the file exists, otherwise false.
  */
 async function fileExists(path) {
-  return !!(await fs.stat(path).catch(_error => false));
+  return !!(await fs.stat(path).catch((_error) => false));
 }
 
 /**
@@ -84,7 +84,8 @@ function isValidPost(post) {
     !tags.includes('devhumor') &&
     !tags.includes('discuss') &&
     !tags.includes('vscodetip') &&
-    !tags.includes('explainlikeimfive')
+    !tags.includes('explainlikeimfive') &&
+    !tags.includes('help')
   );
 }
 
@@ -118,8 +119,8 @@ Sample post format:
 async function getDevPosts() {
   const response = await fetch(DEV_TO_API_URL + '/articles/me/published?per_page=1000', {
     headers: {
-      'api-key': DEV_API_KEY
-    }
+      'api-key': DEV_API_KEY,
+    },
   });
   const posts = await response.json();
 
@@ -140,8 +141,8 @@ async function getDevPost(blogPostId) {
   const response = await fetch(getArticleUrl, {
     headers: {
       'api-key': DEV_API_KEY,
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   });
 
   let post;
@@ -176,7 +177,7 @@ async function createPostFile(post) {
     published_at: date,
     tag_list: tags,
     cover_image,
-    slug
+    slug,
   } = post;
   const jsonFrontmatter = {title, excerpt, date, tags, cover_image, template: 'post'};
   let markdownBody;
@@ -294,7 +295,7 @@ async function updateMarkdownImageUrls(markdown) {
 
   return {
     markdown: updatedMarkdown,
-    imagesToSave
+    imagesToSave,
   };
 }
 
@@ -369,19 +370,21 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
   const posts = await getDevPosts();
 
   // Only publish posts that are not under the vscodetips dev.to organization.
-  for (const post of posts.filter(post => post.organization?.username !== 'vscodetips')) {
+  for (const post of posts.filter(
+    (post) => post.organization?.username !== 'vscodetips'
+  )) {
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const {markdown, imagesToSave} = await updateMarkdownImageUrls(post.body_markdown);
 
     await Promise.all([
       saveMarkdownImages(imagesToSave),
-      getDevBlogPostEmbedsMarkup(markdown, embeds)
+      getDevBlogPostEmbedsMarkup(markdown, embeds),
     ]);
 
     const updatedPost = {
       ...post,
       cover_image: updatedCoverImage,
-      body_markdown: markdown
+      body_markdown: markdown,
     };
     const {status} = await createPostFile(updatedPost);
 
