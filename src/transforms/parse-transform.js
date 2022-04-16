@@ -14,44 +14,40 @@ module.exports = async function (value, outputPath) {
   });
 
   const document = DOM.window.document;
-  const articleImages = [...document.querySelectorAll('main article img, .intro img')];
-  const articleHeadings = [
-    ...document.querySelectorAll('main article h2, main article h3'),
-  ];
+  const articleImages = document.querySelectorAll('main article img, .intro img');
+  const articleHeadings = document.querySelectorAll('main article h2, main article h3');
 
-  if (articleImages.length) {
-    articleImages.forEach((image) => {
-      image.setAttribute('loading', 'lazy');
+  for (const image of articleImages) {
+    image.setAttribute('loading', 'lazy');
 
-      const file = image.getAttribute('src');
+    const file = image.getAttribute('src');
 
-      if (file.indexOf('http') < 0) {
-        const dimensions = getSize('src' + file);
+    if (file.indexOf('http') < 0) {
+      const dimensions = getSize('src' + file);
 
-        image.setAttribute('width', dimensions.width);
-        image.setAttribute('height', dimensions.height);
-      }
+      image.setAttribute('width', dimensions.width);
+      image.setAttribute('height', dimensions.height);
+    }
 
-      // If an image has a title it means that the user added a caption
-      // so replace the image with a figure containing that image and a caption
-      if (image.hasAttribute('title')) {
-        const figure = document.createElement('figure');
-        const figCaption = document.createElement('figcaption');
+    // If an image has a title it means that the user added a caption
+    // so replace the image with a figure containing that image and a caption
+    if (image.hasAttribute('title')) {
+      const figure = document.createElement('figure');
+      const figCaption = document.createElement('figcaption');
 
-        figCaption.innerHTML = image.getAttribute('title');
+      figCaption.innerHTML = image.getAttribute('title');
 
-        image.removeAttribute('title');
+      image.removeAttribute('title');
 
-        figure.appendChild(image.cloneNode(true));
-        figure.appendChild(figCaption);
+      figure.appendChild(image.cloneNode(true));
+      figure.appendChild(figCaption);
 
-        image.replaceWith(figure);
-      }
-    });
+      image.replaceWith(figure);
+    }
   }
 
   // Loop each heading and add a little anchor and an ID to each one
-  articleHeadings.forEach((heading) => {
+  for (heading of articleHeadings) {
     const headingSlug = slugify(heading.textContent.toLowerCase());
     const anchor = document.createElement('a');
 
@@ -65,7 +61,7 @@ module.exports = async function (value, outputPath) {
 
     heading.setAttribute('id', `heading-${headingSlug}`);
     heading.appendChild(anchor);
-  });
+  }
 
   return '<!DOCTYPE html>\r\n' + (await document.documentElement.outerHTML);
 };
