@@ -9,7 +9,7 @@ const markdownFilter = require('./src/filters/markdown-filter.js');
 const w3DateFilter = require('./src/filters/w3-date-filter.js');
 const {
   convertDevEmbeds,
-  removePostIsOnDevLink
+  removePostIsOnDevLink,
 } = require('./src/filters/devToFilters.js');
 
 const {
@@ -29,7 +29,7 @@ const {
   devOrgEmbed,
   replitEmbed,
   devPodcastEmbed,
-  codeSandboxEmbed
+  codeSandboxEmbed,
 } = require('./src/shortCodes');
 
 // Import transforms
@@ -39,14 +39,14 @@ const parseTransform = require('./src/transforms/parse-transform.js');
 // Import data files
 const site = require('./src/_data/site.json');
 
-module.exports = function(config) {
+module.exports = function (config) {
   // Filters
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('markdownFilter', markdownFilter);
   config.addFilter('w3DateFilter', w3DateFilter);
   config.addFilter('convertDevEmbeds', convertDevEmbeds);
   config.addFilter('removePostIsOnDevLink', removePostIsOnDevLink);
-  config.addFilter('htmlDateString', dateObj =>
+  config.addFilter('htmlDateString', (dateObj) =>
     DateTime.fromJSDate(dateObj).toFormat('yyyy-LL-dd')
   );
 
@@ -61,7 +61,6 @@ module.exports = function(config) {
   config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/images');
   config.addPassthroughCopy('src/js');
-  config.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
   config.addPassthroughCopy('src/robots.txt');
 
   // Short Codes
@@ -92,18 +91,18 @@ module.exports = function(config) {
   }
 
   // Custom collections
-  const livePosts = post => post.date <= now && !post.data.draft;
-  config.addCollection('posts', collection => {
+  const livePosts = (post) => post.date <= now && !post.data.draft;
+  config.addCollection('posts', (collection) => {
     return [...filterOutUnwantedTags(collection).filter(livePosts)].reverse();
   });
 
-  config.addCollection('postFeed', collection => {
+  config.addCollection('postFeed', (collection) => {
     return [...filterOutUnwantedTags(collection).filter(livePosts)]
       .reverse()
       .slice(0, site.maxPostsPerPage);
   });
 
-  config.addCollection('sitemapPages', function(collection) {
+  config.addCollection('sitemapPages', function (collection) {
     // get unsorted items
     return collection.getAll();
   });
@@ -115,7 +114,7 @@ module.exports = function(config) {
   // 404
   config.setBrowserSyncConfig({
     callbacks: {
-      ready: function(err, browserSync) {
+      ready: function (err, browserSync) {
         const content_404 = fs.readFileSync('dist/404.html');
 
         browserSync.addMiddleware('*', (req, res) => {
@@ -123,15 +122,15 @@ module.exports = function(config) {
           res.write(content_404);
           res.end();
         });
-      }
-    }
+      },
+    },
   });
 
   return {
     dir: {
       input: 'src',
-      output: 'dist'
+      output: 'dist',
     },
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
   };
 };
