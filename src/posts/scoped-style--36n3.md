@@ -5,7 +5,6 @@
   "date": "2018-12-30T23:12:39.460Z",
   "tags": [
     "javascript",
-    "githunt",
     "css",
     "cssinjs"
   ],

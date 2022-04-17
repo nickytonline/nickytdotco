@@ -1,10 +1,9 @@
 ---json
 {
   "title": "Ink: React for CLIs",
-  "excerpt": "Photo by Pierre Bamin on Unsplash  This one is short and sweet.  Are you familiar with React? Then...",
+  "excerpt": "This one is short and sweet.  Are you familiar with React? Then you know Ink. I haven't tried this...",
   "date": "2019-03-09T21:34:54.000Z",
   "tags": [
-    "githunt",
     "react",
     "cli"
   ],
@@ -12,8 +11,6 @@
   "template": "post"
 }
 ---
-Photo by [Pierre Bamin](https://unsplash.com/photos/-ltjzTfhpCI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 This one is short and sweet.
 
 Are you familiar with React? Then you know Ink. I haven't tried this out yet, but basically it's a [custom React renderer](https://github.com/nitin42/Making-a-custom-React-renderer) that allows you to build beautiful CLIs.
@@ -76,3 +73,5 @@ Vadim, the author of Ink has a great intro post to it, [Building rich command-li
 So what are you going to build with Ink? 😉
 
 Happy coding!
+
+Photo by [Pierre Bamin](https://unsplash.com/photos/-ltjzTfhpCI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

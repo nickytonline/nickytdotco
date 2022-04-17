@@ -1,7 +1,7 @@
 ---json
 {
   "title": "TypeScript Tips Part II: Declaration Merging",
-  "excerpt": "Photo by Mike Enerio on Unsplash  Declaration merging has been around for a while now in TypeScript....",
+  "excerpt": "Declaration merging has been around for a while now in TypeScript. In a nutshell it lets you merge...",
   "date": "2019-02-12T02:45:09.000Z",
   "tags": [
     "typescript",
@@ -12,8 +12,6 @@
   "template": "post"
 }
 ---
-Photo by [Mike Enerio](https://unsplash.com/photos/2IkxeDKaZdY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/train-tracks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 [Declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) has been around for a while now in TypeScript. In a nutshell it lets you merge definitions of types.
 There's plenty of examples in the documentation, so let's just start off with something simple.
 
@@ -88,3 +86,5 @@ If you'd like to see some real world examples in open source, look no further th
 Specifically, check out [globals.d.ts](https://github.com/sindresorhus/refined-github/blob/master/source/globals.d.ts#L78) in the project.
 
 That's pretty much all there is to it. To summarize, declaration merging is a great way to enhance existing types.
+
+Photo by [Mike Enerio](https://unsplash.com/photos/2IkxeDKaZdY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/train-tracks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

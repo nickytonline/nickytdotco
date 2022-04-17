@@ -4,10 +4,8 @@
   "excerpt": "dom-chef-  Build DOM Elements with JSX",
   "date": "2019-02-02T23:45:45.270Z",
   "tags": [
-    "githunt",
     "webdev",
-    "javascript",
-    "ui"
+    "javascript"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--zP7lTySV--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_pkajv39sn98rgfgdeotf.jpg",
   "template": "post"
@@ -16,8 +14,6 @@
 build-dom-elements-with-jsx-5fi/
 cover_image: https://thepracticaldev.s3.amazonaws.com/i/pkajv39sn98rgfgdeotf.jpg
 ---
-
-Photo by [Wyron A](https://unsplash.com/photos/Lhb1DyyNr7U?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/chef?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 I came across dom-chef while working on a PR for [migrating Refined GitHub to TypeScript](https://github.com/sindresorhus/refined-github/pull/1750) (WIP and something that is interesting on its own if you're new to TypeScript).
 
@@ -38,3 +34,4 @@ Check out the repository
 
 {% github "https://github.com/vadimdemedes/dom-chef" %}
 
+Photo by [Wyron A](https://unsplash.com/photos/Lhb1DyyNr7U?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/chef?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

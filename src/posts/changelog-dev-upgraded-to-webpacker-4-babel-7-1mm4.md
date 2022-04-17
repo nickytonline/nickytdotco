@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Changelog: DEV upgraded to Webpacker 4/Babel 7",
-  "excerpt": "Photo by Sebastian Herrmann on Unsplash  This week brought a major upgrade to the frontend infrastruc...",
+  "excerpt": "This week brought a major upgrade to the frontend infrastructure for DEV. We've been on webpacker 3.x...",
   "date": "2020-03-20T11:51:52.851Z",
   "tags": [
     "rails",
@@ -13,8 +13,6 @@
   "template": "post"
 }
 ---
-Photo by [Sebastian Herrmann](https://unsplash.com/@herrherrmann?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/boxes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 This week brought a major upgrade to the frontend infrastructure for DEV. We've been on webpacker 3.x and Babel 6.x for quite a while now. There were several attempts, including a couple of my own prior to working at DEV that were unsuccessful. However, this week during the last week of our cool-down period before we start our next cycle of development, I had time to perform the upgrade successfully. We are now using webpacker 4.22 and Babel 7.x.
 
 If you're not familiar with webpacker, I encourage you to check out the project. The TLDR though is that it's a Ruby gem that makes integrating webpack bundles into a Rails app very easy.
@@ -38,3 +36,4 @@ For those interested, here is the [merged PR](https://github.com/thepracticaldev
 
 That's all for now peeps!
 
+Photo by [Sebastian Herrmann](https://unsplash.com/@herrherrmann?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/boxes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

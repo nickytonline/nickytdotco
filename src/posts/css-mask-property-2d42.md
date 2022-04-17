@@ -1,7 +1,7 @@
 ---json
 {
   "title": "The CSS mask property",
-  "excerpt": "Photo by Neven Krcmarek on Unsplash  Say you have a background that you want a certain colour, but...",
+  "excerpt": "Say you have a background that you want a certain colour, but you only want to show parts of the...",
   "date": "2019-01-09T16:44:39.000Z",
   "tags": [
     "beginners",
@@ -12,8 +12,6 @@
   "template": "post"
 }
 ---
-Photo by [Neven Krcmarek](https://unsplash.com/photos/0TH1H1rq_eY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Neven Krcmarek on unsplash.com") on [Unsplash](https://unsplash.com/search/photos/cookie-cutter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "unsplash.com website")
-
 Say you have a background that you want a certain colour, but you only want to show parts of the background. Enter the [CSS `mask` property](https://developer.mozilla.org/en-US/docs/Web/CSS/mask "MDN documentation for the CSS mask property"). Think of it like a cookie cutter. You want to bake a cookie, not a rectangular piece of dough. So how does this fit into a real world example on the web?
 
 Have you ever had an icon you liked and wanted to put on your site, but were like, "It would look so much better if I could integrate it with the colours in my site"? CSS `mask` property to the rescue. As you can see, if you interact with the [codepen](https://codepen.io) below, as you change the colour via the colour picker, the colour of the logo, [dev.to](https://dev.to "dev.to website") in this example, will only apply the background colour to the parts of the SVG that are filled. Shout out to [simpleicons.org](https://simpleicons.org "simpleicons.org website") for the dev.to icon!
@@ -31,3 +29,5 @@ Also, there's a little bonus with this blog post. I use [CSS variables](https://
 Have some fun and try it out in the codepen! 👋
 
 {% codepen "https://codepen.io/nickytonline/pen/ebxrpv" %}
+
+Photo by [Neven Krcmarek](https://unsplash.com/photos/0TH1H1rq_eY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Neven Krcmarek on unsplash.com") on [Unsplash](https://unsplash.com/search/photos/cookie-cutter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "unsplash.com website")

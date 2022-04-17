@@ -4,15 +4,12 @@
   "excerpt": "Quickly browse the history of a git repository ",
   "date": "2019-02-13T05:05:26.412Z",
   "tags": [
-    "githunt",
     "git"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--8_BptPUw--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_ulidmgllcwzax0a6g4yl.jpg",
   "template": "post"
 }
 ---
-Photo by [Nathan Anderson](https://unsplash.com/photos/c7fShzYk4bA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 Shout out to [Josh Comeau](https://twitter.com/JoshWComeau) for pointing me towards this repo. He popped it in my Twitter feed.
 
 A really cool way to view git history for those that like a nice visual. Slide through the history and see previous changes elegantly slide in.
@@ -24,3 +21,5 @@ A really cool way to view git history for those that like a nice visual. Slide t
 {% github "https://github.com/pomber/git-history" %}
 
 Thanks for the interesting project @pomber!
+
+Photo by [Nathan Anderson](https://unsplash.com/photos/c7fShzYk4bA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

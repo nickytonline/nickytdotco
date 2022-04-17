@@ -1,7 +1,7 @@
 ---json
 {
   "title": "You do not need to use the classnames package",
-  "excerpt": "Photo by David Rotimi on Unsplash  Do not get me wrong, the classnames package is really handy. It is...",
+  "excerpt": "Do not get me wrong, the classnames package is really handy. It is also quite popular with just over...",
   "date": "2019-10-23T18:27:07.000Z",
   "tags": [
     "javascript",
@@ -11,8 +11,6 @@
   "template": "post"
 }
 ---
-Photo by [David Rotimi](https://unsplash.com/@davidrotimi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/different?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 Do not get me wrong, the [classnames](https://www.npmjs.com/package/classnames) package is really handy. It is also quite popular with just over 3.5 million downloads per week as of the date of this blog post. Most React based projects I have worked on use it.
 
 If you are not familiar with the `classnames` package, it allows you to build a set of CSS classes based on some conditionals. Straight from there documentation:
@@ -47,7 +45,7 @@ If you are not familiar with template strings, you can build a string with varia
 
 These are trivial examples, but it is just to show you that you can do pretty much the same thing with template literals. If you want to see this in action, here is an example from my site's source:
 
-{% github "https://github.com/nickytonline/www.iamdeveloper.com" %}
+{% github "https://github.com/nickytonline/iamdeveloper.com" %}
 
 
 ```jsx
@@ -68,3 +66,5 @@ These are trivial examples, but it is just to show you that you can do pretty mu
 This is not mind blowing code, but just another way to do it.
 
 Happy coding!
+
+Photo by [David Rotimi](https://unsplash.com/@davidrotimi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/different?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

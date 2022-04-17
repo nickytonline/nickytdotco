@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Cool Rust and WebAssembly Resource",
-  "excerpt": "Photo by takis politis on Unsplash  I still haven’t really dug into Rust and WebAssembly (WASM) yet,...",
+  "excerpt": "I still haven’t really dug into Rust and WebAssembly (WASM) yet, but this project looks really...",
   "date": "2019-12-07T12:56:29.000Z",
   "tags": [
     "rust",
@@ -11,10 +11,10 @@
   "template": "post"
 }
 ---
-Photo by [takis politis](https://unsplash.com/@citylop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 I still haven’t really dug into [Rust](https://www.rust-lang.org) and [WebAssembly](https://webassembly.org) (WASM) yet, but this project looks really cool.
 
 {% twitter "1202898165420249089" %}
 
 It looks like a really great way to learn Rust and WASM. 👏
+
+Photo by [takis politis](https://unsplash.com/@citylop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

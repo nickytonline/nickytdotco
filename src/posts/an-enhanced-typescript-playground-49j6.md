@@ -4,15 +4,12 @@
   "excerpt": "The TypeScript playground with enhancements",
   "date": "2019-02-26T03:58:04.000Z",
   "tags": [
-    "githunt",
     "typescript"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--4PAvToRP--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_5rrpk58vqffc396paebe.jpg",
   "template": "post"
 }
 ---
-Photo by [Jorge Gonzalez](https://unsplash.com/photos/XGG12wqCkk8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/playground?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 As I was going through my Twitter feed earlier this evening, a tweet from someone I follow popped up.
 
 {% twitter "1100193610631397376" %}
@@ -40,3 +37,5 @@ What's even cooler is the fact that it's open sourced, so you can deploy it loca
 If you don't feel like cloning it, check it out at [typescript-play.js.org](https://typescript-play.js.org).
 
 Happy coding!
+
+Photo by [Jorge Gonzalez](https://unsplash.com/photos/XGG12wqCkk8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/playground?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -1,17 +1,16 @@
 ---json
 {
   "title": "Pock an awesome utility for the Mac Touchbar",
-  "excerpt": "Photo by ian dooley on Unsplash  I'm on a Mac and I honestly have no use for the Dock. I actually hid...",
+  "excerpt": "I'm on a Mac and I honestly have no use for the Dock. I actually hide it for an eternity so it never...",
   "date": "2020-01-21T02:51:30.510Z",
   "tags": [
-    "productivity"
+    "productivity",
+    "macos"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--wu3fsFJF--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_1lnsa2cfa2m4oogcas4f.jpg",
   "template": "post"
 }
 ---
-Photo by [ian dooley](https://unsplash.com/@sadswim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/productivity?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
 I'm on a Mac and I honestly have no use for the Dock. I actually hide it for an eternity so it never appears by running the following command.
 
 `defaults write com.apple.Dock autohide-delay -float 1000000`
@@ -27,3 +26,5 @@ Having said that, I came across a very interesting project a few weeks ago calle
 ![Pock in action](https://www.iamdeveloper.com/images/posts/_i_qyf7zba4vejkjcjvd6lu.jpg)
 
 {% github "https://github.com/pigigaldi/Pock" %}
+
+Photo by [ian dooley](https://unsplash.com/@sadswim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/productivity?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -1293,14 +1293,13 @@
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--2BQOCQiS--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5rrpk58vqffc396paebe.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/an-enhanced-typescript-playground-49j6/",
     "created_at": "2019-02-26T04:16:02Z",
-    "edited_at": "2020-06-17T02:52:31Z",
+    "edited_at": "2022-04-16T20:35:46Z",
     "crossposted_at": "2019-02-26T04:20:42Z",
     "published_at": "2019-02-26T03:58:04Z",
     "last_comment_at": "2020-05-10T04:52:47Z",
     "reading_time_minutes": 1,
-    "tag_list": "githunt, typescript",
+    "tag_list": "typescript",
     "tags": [
-      "githunt",
       "typescript"
     ],
     "user": {
