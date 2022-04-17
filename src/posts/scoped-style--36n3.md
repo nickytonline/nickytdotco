@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 {% github "https://github.com/sadick254/scoped-style" %}
 
 A new kid on the CSS in JS block.

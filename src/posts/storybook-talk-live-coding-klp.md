@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 Last week, I gave a talk on [Storybook](https://storybook.js.org/) at a [The Collab Lab meetup](https://www.meetup.com/tech-talks-by-the-collab-lab/).
 
 {% twitter "1370056928383090689" %}
@@ -42,5 +43,3 @@ There's more, including some live coding and incorporating Storybook into a The 
 {% youtube "ypsD-9qQzYg" %}
 
 If you aren't already, give [The Collab Lab](https://dev.to/the-collab-lab) a follow on DEV!
-
-

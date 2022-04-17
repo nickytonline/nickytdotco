@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 ## The Intro
 
 2019 was great. Lot’s of interesting stuff happened. Let’s dig in. But first, I say to you 2019... good day.

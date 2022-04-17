@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 As I was going through my Twitter feed earlier this evening, a tweet from someone I follow popped up.
 
 {% twitter "1100193610631397376" %}

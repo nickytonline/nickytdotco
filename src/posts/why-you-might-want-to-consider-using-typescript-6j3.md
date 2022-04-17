@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 I'm not going to be one of those that tells you have to use TypeScript (or Flow for that matter). I'm also not going to go into the whole [TS vs. Flow](https://www.google.ca/search?q=flow+vs.+typescript&rlz=1C5CHFA_enCA763CA763&oq=flow+vs.+typescript&aqs=chrome.0.0l4.3590j0j4&sourceid=chrome&ie=UTF-8) debate. There are plenty of people already doing that. All I want to do is present some good reasons why you might want to consider using TypeScript. After that, I leave it up to you.
 
 I've been using TypeScript since fall 2014 (v. 1.3). It's come a long way. The amount of care that has gone into the language to keep it as a superset of JavaScript (not altering the JS language) is amazing. Kudos to [Anders Hejlsberg, the entire TypeScript team and OSS peeps](https://github.com/Microsoft/TypeScript/graphs/contributors) that have made this such a great project.

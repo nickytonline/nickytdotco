@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 We'll start off with the usual shameless plug of another blog post. If you haven't read it yet, check out my blog post, [Consider Using TypeScript](https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3).
 
 We're going to look at a few tips that may/can help you on your journey in TypeScript land.

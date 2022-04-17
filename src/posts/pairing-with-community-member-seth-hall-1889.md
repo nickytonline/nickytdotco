@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 On <time datetime="2021-03-17">March 17th</time>, DEV Community member [Seth Hall](https://dev.to/sethburtonhall) joined [Christina](https://dev.to/coffeecraftcode) and I on the pairing stream to work on an issue related to image uploads in the editor.
 
 {% youtube "Khqq0KjoljE" %}
@@ -57,6 +58,3 @@ Christina:
 Looking forward to seeing you on future streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). We’d love to tackle an issue with you that the whole community could learn from!
 
 P.S. [Follow DEV on Twitch](https://twitch.tv/thepracticaldev) to be notified when future streams begin and catch old streams on [YouTube](https://www.youtube.com/c/thepracticaldevteam)
-
-
-

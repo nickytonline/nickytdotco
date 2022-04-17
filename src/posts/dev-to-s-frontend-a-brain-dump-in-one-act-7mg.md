@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 There is currently an issue open to improve the frontend documentation (see [Frontend · DEV Docs](https://docs.dev.to/frontend/)) to get people onboarded quicker in the frontend. Big shout out to @rhymes for opening this issue!
 
 {% github "https://github.com/thepracticaldev/dev.to/issues/2507" %}

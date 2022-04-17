@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 On <time datetime="2021-02-03">February 3rd</time>, DEV Community member Dan Ott joined Christina and I on the pairing stream to work on a CSS issue related to Flexbox gap not being supported in Safari.
 
 {% youtube "iVMPwTETH3Q" %}

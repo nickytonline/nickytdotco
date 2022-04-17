@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 At then end of July, I had a chance to pair with awesome [community member Chuck Smith](https://dev.to/eclecticcoding).
 
 They implemented a liquid tag for the [Go Playground](https://play.golang.org/). For those interested, here is the PR.

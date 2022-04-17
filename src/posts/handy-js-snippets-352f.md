@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 So it's pretty simple. I'm looking for **one or two lines of JavaScript** that do something useful.
 
 I'll get the ball rolling and start with some examples:

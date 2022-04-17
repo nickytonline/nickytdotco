@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 I still haven’t really dug into [Rust](https://www.rust-lang.org) and [WebAssembly](https://webassembly.org) (WASM) yet, but this project looks really cool.
 
 {% twitter "1202898165420249089" %}

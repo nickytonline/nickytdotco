@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 There's a few things I always set up when working on a frontend project: ESLint, Prettier, husky and lint-staged.
 
 ## ESLint
@@ -194,5 +195,3 @@ ESLint, prettier, stylelint, husky and lint-staged are great tools for the front
 Until next time folks!
 
 ![Character in a film saying "Yes! That is awesome](https://media.giphy.com/media/Z6f7vzq3iP6Mw/giphy.gif)
-
-

@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 Have you created a Gatsby site that you're proud of? It could be for a client or just your personal site. Either way, you can submit it to the Gatsby showcase.
 
 It's pretty simple to do. Just follow the instructions [here](https://www.gatsbyjs.org/contributing/site-showcase-submissions/). In a nutshell, you fork Gatsby on GitHub and add your site details to their showcase configuration file. Once the PR is approved and merged, the next time they deploy the Gatsby site, your site will be in the list!
@@ -38,8 +39,3 @@ And for those interested, here's my site's source code full of TypeScript, React
 <center>
 ![Lenoardo DiCaprio in the Great Gatsby on giphy](https://media.giphy.com/media/jNdw5Qmy5MOpq/giphy.gif)
 </center>
-
-
-
-
-

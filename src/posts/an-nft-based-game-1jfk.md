@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 ## The project
 So this past week I built out my second dApp with the current cohort in the [Buildspace](https://buildspace.so) community. This time round, the project was to create an NFT based game. The goal was to make a game where you could attack a big boss via a transaction on the blockchain that would use a game smart contract.
 

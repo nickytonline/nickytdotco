@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 I can't believe I'm saying this. I'M JOINING THE DEV TEAM!!!
 
 ![Thor Ragnarok: Thor in the gladiator ring seeing Hulk and gets excited](https://media.giphy.com/media/l4FGni1RBAR2OWsGk/giphy.gif)
@@ -64,11 +65,3 @@ That's all folks! Super stoked!
 P.S. I made this very expensive short film to accompany my announcement that I'm joining DEV. If you’re viewing this on mobile, it’s best viewed full-screen in landscape mode. And the Oscar goes to...
 
 {% youtube "dpMJBABCIiM" %}
-
-
-
-
-
-
-
-

@@ -108,5 +108,3 @@ I also found working with Eleventy not hard on the brain at all. I was able to m
 I said it before on Twitter, but saying it again here. Thanks Andy!
 
 We’ll see what 2021 brings, but regardless I know I’ll still be pumped to keep training, live stream, blog, and continue to build out Forem with my awesome team. Peace folks!
-
-

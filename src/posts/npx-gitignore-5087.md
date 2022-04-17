@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 I've done this a few times on a live stream and there is always someone unaware of this so I wanted to share.
 
 Assuming you have Node.js installed on your machine, you can run `npx gitignore your_language`, e.g. `npx gitignore node`, and it will generate a gitignore file for you for the given language.

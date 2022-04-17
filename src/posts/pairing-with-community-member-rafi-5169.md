@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 On <time datetime="2021-01-21">January 21st</time>, DEV Community member Rafi joined Christina and I on the pairing stream to work on improving some accessibility issues in the onboarding for a Forem instance, e.g. DEV onboarding.
 
 {% youtube "cVW5sVgouYA" %}
@@ -56,5 +57,3 @@ Christina:
 Looking forward to seeing you on future streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). We’d love to tackle an issue with you that the whole community could learn from!
 
 [Follow DEV on Twitch](twitch.tv/thepracticaldev) to be notified when future streams begin.
-
-

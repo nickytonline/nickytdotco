@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 Like last year, 2021 has been quite the year. Despite the pandemic, I stayed healthy and managed to have a pretty good year.
 
 {% twitter "1474400617271599105" %}

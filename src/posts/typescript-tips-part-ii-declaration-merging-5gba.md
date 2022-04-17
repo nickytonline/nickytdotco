@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 [Declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) has been around for a while now in TypeScript. In a nutshell it lets you merge definitions of types.
 There's plenty of examples in the documentation, so let's just start off with something simple.
 

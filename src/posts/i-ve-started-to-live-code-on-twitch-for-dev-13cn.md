@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 Yesterday, I did my first official live coding on Twitch. If you're interested in following me on Twitch, I'm [nickytonline](https://www.twitch.tv/nickytonline) there as well.
 
 It felt very natural live-coding. I talked to my audience pretty much the whole time. Thank you to the 12 people that watched. 👏🏻 My colleague @maestromac was kind enough to jump in on the chat to say hi.

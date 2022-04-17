@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 On October 22nd, DEV Community member Marie Antons joined Christina and I on the pairing stream to work on improving the Twitch liquid tag.
 
 Aside from code, we talked about culinary school, and some embarrassing things that happened to me. 🤣

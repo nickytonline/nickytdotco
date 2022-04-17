@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 Regular expressions (regex) are one of those things that folks seem to make fun of most of the time because they don't understand them, or partially understand them.
 
 I decided to write this post after Ben Hong Tweeted out asking for good regex resources.
@@ -121,4 +122,3 @@ Regexes are super powerful for manipulating text, and now you’re armed with so
 - [Regular Expressions | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [regexper](https://regexper.com/) (Thanks @link2twenty!)
 - [VerbalExpressions](https://github.com/VerbalExpressions) repository (Thanks @citizen428!)
-

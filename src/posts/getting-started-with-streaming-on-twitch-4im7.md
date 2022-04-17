@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 Last Friday, I gave a brownbag talk for my Virtual Coffee community on getting started with streaming on Twitch.
 
 {% twitter "1418581450023182341" %}

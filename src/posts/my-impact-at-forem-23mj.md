@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 This is my first post about impact. What do I mean by impact?
 
 How did you influence the place where you worked? Stuff like big projects or processes that you put in place that helped the company.

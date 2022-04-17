@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 What webpack secrets or less commonly known features do you know? This also includes loaders or plugins that not everyone might be aware of. Please share so we can all become webpack enlightened. 😉
 
 I'll start. Did you know that you can write your webpack config in TypeScript if you have the `ts-node` dev dependency installed? Type checking for my webpack config? Yes please!

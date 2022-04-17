@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 My awesome coworker @citizen428 dropped a new resource for learning the Rust language care of Microsoft. It's called [Get started with Rust](https://docs.microsoft.com/en-us/learn/paths/rust-first-steps/).
 
 I keep saying to myself that I want to learn Rust, so I'm killing two birds with one stone, since I [wanted to start streaming again](https://dev.to/nickytonline/my-twitch-stream-setup-2m0c) on [my own stream](https://livecoding.ca), and not just the [DEV stream](https://twitch.tv/thepracticaldev). 😎

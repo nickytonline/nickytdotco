@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got some good signal, so I renamed it to Frontend Developer Resources 2020, which brings us to Frontend Developer Resources 2022. Oops, I missed 2021. Technically we're still in 2021, but humour me. I also added sprinkles of shameless plugs. 😎
 
 This post is not a complete list, more a list of stuff I found compelling in 2021 that will keep you set in 2022 and build off of my previous list. You may see some repeats from my 2020 post here, but they're still super relevant.

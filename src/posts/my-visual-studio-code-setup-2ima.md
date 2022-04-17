@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 This article is also available on [iamdeveloper.com](https://www.iamdeveloper.com/blog/2017-12-20-my-visual-studio-code-setup/).
 
 This originally was [just a gist](https://gist.github.com/nickytonline/3d5ffeab871a6662d7a3f89bb0bed0f8), but I thought it made sense to just convert it to a blog post.

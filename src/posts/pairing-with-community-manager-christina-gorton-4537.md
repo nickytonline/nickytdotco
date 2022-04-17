@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 On <time datetime="2021-04-14">March 14th</time>, DEV Community manager [Christina](https://dev.to/coffeecraftcode) joined me on the pairing stream to talk about Cypress and how we use it at Forem for end to end (E2E) testing.
 
 {% youtube "Xm-nCsTObkE" %}
@@ -48,4 +49,3 @@ Christina:
 
 Christina and I look forward to seeing you on future streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). We’d love to tackle an issue with you that the whole community could learn from!.
 P.S. [Follow DEV on Twitch](https://twitch.tv/thepracticaldev) to be notified when future streams begin and catch old streams on [YouTube](https://www.youtube.com/c/thepracticaldevteam)
-

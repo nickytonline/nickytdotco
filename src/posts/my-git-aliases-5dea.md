@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 Alright, so @philnash [roped me into this one](https://dev.to/philnash/comment/518o).
 
 This post’s birth comes from [a gist](https://gist.github.com/nickytonline/128d7d164d1eea5daba6753ed0829f41#file-gitconfig) which is essentially a copy paste of my git aliases.

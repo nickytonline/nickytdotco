@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 So I made a little toast message demo tonight. It also works with the keyboard if you tab. It will focus on the close button of the toaster and it you hit ENTER, the toast is toast!
 
 {% codepen "https://codepen.io/nickytonline/pen/OJJmLyK" %}

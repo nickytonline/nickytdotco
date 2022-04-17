@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 I'm starting a new role soon, and they shipped me a brand new Macbook Pro.
 
 I got everything set up on my Mac over the past few weeks, but today I got a prompt about wanting to confirm the deletion of a file. I used the keyboard like I did on my previous Mac and realized it didn't work. I clearly had forgotten to adjust some settings on my new MacBook. Sure, I can use the mouse, but I had been so used to the keyboard for this.

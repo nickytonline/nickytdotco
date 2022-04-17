@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 I had a lot of fun with Taniyah Jackson on the pairing today. She's brand new to Ruby and Ruby on Rails and I barely have any Rails experience, so it was fun being in the hot seat.
 
 We didn't do a tonne of coding as we were going through some fundamentals about Ruby on Rails, [Active Record](https://guides.rubyonrails.org/active_record_basics.html) and [Object Relational Mappers](https://en.wikipedia.org/wiki/Object-relational_mapping) (ORM) to get us set up for working on the issue, but still great stuff.

@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 Cross-posted from [community.VSCodeTips.com](https://community.vscodetips.com/nickytonline/native-bracket-pair-colourization-in-vs-code-310a)
 
 I’m a big fan of the [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) extension, but it looks like this is [native in VS Code now](https://code.visualstudio.com/updates/v1_60#_high-performance-bracket-pair-colorization) and much faster!

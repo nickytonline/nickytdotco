@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 On October 8th, DEV Community member Eliot Sanford joined Christina and I on the pairing stream to work on an accessibilty issue.
 
 We had a lot of fun and got a proof of concept running on the frontend to lint markdown. Here's the full stream.

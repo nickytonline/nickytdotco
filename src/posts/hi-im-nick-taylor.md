@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 You can find me on GitHub as [nickytonline](https://github.com/nickytonline) or find out more about me at [iamdeveloper.com](http://iamdeveloper.com).
 
 I live in Montreal, Quebec, Canada.

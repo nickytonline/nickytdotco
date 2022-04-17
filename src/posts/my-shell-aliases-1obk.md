@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 Everyone has their favourite aliases for git and the shell. I have written about my git aliases before but not my shell aliases.
 
 {% link "https://dev.to/nickytonline/my-git-aliases-5dea" %}

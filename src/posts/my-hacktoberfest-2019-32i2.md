@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 Originally published at [iamdeveloper.com](https://www.iamdeveloper.com/blog/2019-10-14-my-hacktoberfest-2019/)
 
 Like many of you, I am participating in Hacktoberfest as well. Most of the contributions I have made in October have been for DEV. Here are the PRs that have been merged so far:
@@ -37,4 +38,3 @@ Although this is not from Hacktoberfest, the beauty of open source is that anyon
 {% twitter "1075866822006751233" %}
 
 I will probably contribute some more to the DEV codebase, but who knows, I may tackle an issue in another repository. YOLO.
-

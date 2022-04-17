@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 On <time datetime="2021-04-21">April 21st</time>, Jason Lengstorf (VP of Developer Experience at [Netlify](https://netlify.com/) and DEV Community member) joined @coffeecraftcode and I on the Walkthrough Wednesday stream to discuss Jamstack, serverless, and Jamstack Explorers.
 
 We used Netlify's serverless functions to quickly set up an API to grab DEV posts with the DEV API.
@@ -64,5 +65,3 @@ Christina:
 I hope to see you on future DEV streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). Christina and I would love to tackle an issue with you that the whole community could learn from.
 
 P.S. [Follow DEV on Twitch](https://twitch.tv/thepracticaldev) to be notified when future streams begin and catch old streams on [YouTube](https://www.youtube.com/c/thepracticaldevteam)
-
-

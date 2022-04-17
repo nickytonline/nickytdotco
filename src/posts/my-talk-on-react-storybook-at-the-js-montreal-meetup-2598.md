@@ -12,10 +12,9 @@
   "template": "post"
 }
 ---
-My talk at the June 13th, 2017 [js-montreal](http://js-montreal.org) meetup slides are available at [storybookslides.iamdeveloper.com](https://storybookslides.iamdeveloper.com). This was the first time I attended the js-montreal meetup. It was good to meet lots of new folks. Looking forward to the next one.
+
+My talk at the June 13th, 2017 [js-montreal](https://js-montreal.org/archive.html) meetup slides are available at [storybookslides.iamdeveloper.com](https://storybookslides.iamdeveloper.com). This was the first time I attended the js-montreal meetup. It was good to meet lots of new folks. Looking forward to the next one.
 
 {% github "https://github.com/nickytonline/js-montreal-storybook-talk-2017-06-13" %}
 
 Photo by [Sincerely Media](https://unsplash.com/@sincerelymedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
-

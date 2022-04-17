@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 Update 2019/06/30: Storybook now has an option via the CLI to install for Preact. For more info see [Preact for Storybook](https://storybook.js.org/docs/guides/guide-preact).TLDR `npx -p @storybook/cli sb init --type preact`.
 
 In my last Storybook post, [Getting Started with Storybook for React](https://dev.to/nickytonline/getting-started-with-react-storybook-9jh), I showed you how to install Storybook for React and gave a quick breakdown of what all the pieces were. I suggest giving that a quick read before continuing here.

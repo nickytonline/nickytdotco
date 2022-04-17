@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 This past weekend I completed a [web3](https://www.freecodecamp.org/news/what-is-web3/) project from the awesome folks at [buildspace](https://buildspace.so).
 
 The project was building out a [dapp](https://ethereum.org/en/developers/docs/dapps/) that allows you to send messages and store them on the blockchain. Under the hood, it was [Solidity](https://github.com/ethereum/solidity) for the [smart contract](https://ethereum.org/en/developers/docs/smart-contracts/), TypeScript, [NEXT.js](https://nextjs.org/), [Theme UI](https://theme-ui.com/), good old semantic markup, and a splash of ARIA in the frontend. Shoutout to the `<details />` element! Aside from that, some other web3 goodies like [hardhat](https://hardhat.org).
@@ -36,4 +37,3 @@ The dapp is live running the contract off the [Rinkeby network](https://www.rink
 And while you're here, check out the live dapp at [pics.iamdeveloper.com](https://pics.iamdeveloper.com)!
 
 ![The picture portal site](https://www.iamdeveloper.com/images/posts/_uploads_articles_vsmhsmo18sfdtji14ydw.png)
- 

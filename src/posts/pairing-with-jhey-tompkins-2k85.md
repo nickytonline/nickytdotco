@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 On <time datetime="2021-04-28">April 28th</time>, DEV Community member Jhey Tompkins joined @coffeecraftcode and I on the pairing stream to have some fun and help us build out a Twitch overlay using our mascot, Sloan!
 
 ![dev.to's mascot Sloan](https://www.iamdeveloper.com/images/posts/_uploads_articles_urutyzau41a6gfovx9ze.png)

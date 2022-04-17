@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 I've decided to start a newsletter!
 
 Yes, I know. Many folks do newsletters already, but I post a tonne of things on Slack that get lost in the "Slack"hole, so I figured I'd compliment that with a newsletter and collect all those links there too to share with all of you awesome folks. The majority of the content will pertain to web development, programming in general, and tech industry related news, but I may also throw in some fun random stuff occasionally.
@@ -22,4 +23,3 @@ There's a newsletter archive that comes with it out of the box as well, so you c
 Anyways, if you want yet another newsletter, I give you **Yet Another Newsletter LOL** available to you at [newsletter.iamdeveloper.com](https://newsletter.iamdeveloper.com).
 
 Photo by <a href="https://unsplash.com/@romankraft?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roman Kraft</a> on <a href="https://unsplash.com/s/photos/newspaper?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  

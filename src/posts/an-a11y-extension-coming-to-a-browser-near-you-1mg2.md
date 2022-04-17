@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 Last year when I was looking to take on a new role somewhere, one of the places I interviewed at was Khan Academy. TLDR, I wasn’t hired 😉. However, as a candidate, I wanted to stand out. Relevant post 👇
 
 {% link "https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6" %}

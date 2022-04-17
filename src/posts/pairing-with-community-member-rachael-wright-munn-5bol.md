@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 On October 15th, DEV Community member Rachael Wright-Munn joined Christina and I on the pairing stream to work on improving the Twitch liquid tag.
 
 Aside from coding, there was singing, mispronunciations and laughing. Here's the full stream.
@@ -41,5 +42,3 @@ Christina:
 * [Twitter](https://twitter.com/coffeecraftcode)
 
 Looking forward to seeing you on future streams! [Follow DEV on Twitch](twitch.tv/thepracticaldev) to be notified when the next installment begins. Happy [FINAL week](https://dev.to/devteam/final-week-of-hacktoberfest-4cch) of Hacktoberfest!
-
-

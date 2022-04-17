@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 I've been reading @swyx's book "The Career Coding Handbook". It launched on July 1st. Although I am not finished the book, I have thoroughly been enjoying it so far.
 
 {% link "https://dev.to/swyx/launching-the-coding-career-handbook-3f43" %}

@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 On <time datetime="2021-05-26">May 26th</time>, DEV Community member Meg Gutshall joined @coffeecraftcode and me on the pairing stream to work on an issue in regard to the `link` liquid tag. 
 
 {% github "https://github.com/forem/forem/issues/11880" %}
@@ -60,5 +61,3 @@ Christina:
 We hope to see you on future DEV streams! If you're interested in pairing, fill out [this form](https://iamdeveloper.com/pair). Christina and I would love to tackle an issue with you that the whole community could learn from.
 
 P.S. [Follow DEV on Twitch](https://twitch.tv/thepracticaldev) to be notified when future streams begin and catch old streams on [YouTube](https://www.youtube.com/c/thepracticaldevteam)
-
-

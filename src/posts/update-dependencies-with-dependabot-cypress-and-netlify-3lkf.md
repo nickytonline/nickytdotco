@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 To preface things, this post is in the context of a JavaScript project, specifically, my blog [iamdeveloper.com](https://iamdeveloper.com).
 
 In terms of hosting my site, I use [Netlify](https://www.netlify.com). They have great tools and it’s very easy to get setup so that PRs and pushes to master create deployments. If you want to check out Netlify, I highly recommend checking out their awesome [documentation](https://www.netlify.com/docs/).

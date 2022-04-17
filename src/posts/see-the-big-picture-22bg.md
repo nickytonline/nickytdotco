@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 Depending on where you are at in your career, you may have heard of the term get the **big picture** or see the full picture.
 
 Typically (not always) folks with less experience do not grasp this. This is not a bad thing. It is something that comes with experience and having a **deeper understanding of the system** you are working in. This is why more experienced co-workers are there to help and guide you.
@@ -48,4 +49,3 @@ All hypothetical questions and thoughts about some imaginary feature, but the po
 That's all for now folks, but I'll leave you with a fun action shot at the end of a very painful one mile walk.
 
 {% instagram "Bz9EApcpBGm" %}
-

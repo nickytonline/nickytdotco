@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 If you want to see the previous Code Pen I did, check out [A Simple ⭐ Rating Code Pen](https://dev.to/nickytonline/quick-simple-rating-code-pen-3ecp).
 
 Continuing along with my [2018 Resolutions](https://dev.to/nickytonline/2018-resolutions-1deo) to make Code Pens this year, here is my latest.

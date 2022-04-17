@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 You could already subscribe to a post's comments on DEV, but the problem was many community members were not aware that you could. We had this feature pretty well hidden. From a post page, you had to click on the three dots to see a post's comment subscription options.
 
 ![Screenshot of the old comment subscription feature](https://www.iamdeveloper.com/images/posts/_i_0sj1vxrqee4oji1r2yz2.png)
@@ -36,5 +37,3 @@ Here are the PRs related to this feature for those interested.
 {% github "https://github.com/thepracticaldev/dev.to/pull/7048" %}
 
 {% github "https://github.com/thepracticaldev/dev.to/pull/6987" %}
-
-

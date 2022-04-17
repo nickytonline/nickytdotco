@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 This week brought a major upgrade to the frontend infrastructure for DEV. We've been on webpacker 3.x and Babel 6.x for quite a while now. There were several attempts, including a couple of my own prior to working at DEV that were unsuccessful. However, this week during the last week of our cool-down period before we start our next cycle of development, I had time to perform the upgrade successfully. We are now using webpacker 4.22 and Babel 7.x.
 
 If you're not familiar with webpacker, I encourage you to check out the project. The TLDR though is that it's a Ruby gem that makes integrating webpack bundles into a Rails app very easy.

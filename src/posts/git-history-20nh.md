@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 Shout out to [Josh Comeau](https://twitter.com/JoshWComeau) for pointing me towards this repo. He popped it in my Twitter feed.
 
 A really cool way to view git history for those that like a nice visual. Slide through the history and see previous changes elegantly slide in.

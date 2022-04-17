@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 We hear people say it all the time, but I would like to reiterate it. Any contribution you make to open source is a valuable contribution. Sure we all like adding features or fixing bugs in a project, but updating documentation is still worthwhile. I was reminded of this on the weekend.
 
 My site, [iamdeveloper.com](https://www.iamdeveloper.com), is currently using [Gatsby](https://gatsbyjs.org), an awesome React based static site generator on steroids.

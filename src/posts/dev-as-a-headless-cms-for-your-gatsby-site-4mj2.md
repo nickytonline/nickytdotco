@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 Near the end of September 2019, @ben posted this article.
 
 {% link "https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5" %}
@@ -60,7 +61,3 @@ I'm going to continue dogfooding the Stackbit/DEV integration because I know it 
 I definitely recommend you give it a try, especially if you currently do not have a personal site.
 
 That's all peeps!
-
-
-
-

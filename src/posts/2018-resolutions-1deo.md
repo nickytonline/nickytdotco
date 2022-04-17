@@ -12,13 +12,6 @@
   "template": "post"
 }
 ---
----
-title: "2018 Resolutions"
-published: true
-tags: newyear, books, personaldevelopment
-canonical_url: https://www.iamdeveloper.com/2018-resolutions/
-cover_image: https://thepracticaldev.s3.amazonaws.com/i/el9zpvhbtnwrdmeel3rz.PNG
----
 
 So like many, I too will make resolutions for 2018. I made myself accountable by joining a recent [#DevDiscuss on Twitter](https://twitter.com/ThePracticalDev/status/948373905181478913).
 

@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 Shout out to @rhymes for giving this post a review. 👏
 
 Before the dev.to codebase was opensourced, I was working on it in the private repository and created an issue in there that has since been copied to the public repository (thanks @maestromac!).
@@ -77,5 +78,3 @@ Are static types something that would interest people in the dev.to community wh
 
 ![Debate animated gif from giphy.com](https://media.giphy.com/media/Wv493An4dA0xi/giphy.gif)
 </center>
-
-

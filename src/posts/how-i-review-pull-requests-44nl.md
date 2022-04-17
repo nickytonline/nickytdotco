@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 Someone in my [Virtual Coffee](https://virtualcoffee.io) community asked about getting better at reviewing pull requests (PR) today, which prompted this post. Hopefully, you find something helpful here. I'd love to hear from you if you do! And if you don't, that's OK too. Suggestions to improve my process are welcome!
 
 First, I read the title and description to see what this is all about. If there are issues or other PRs referenced, I check those out if I need more context. If there are user interface (UI) changes, I look for before and after screenshots. If there are no screenshots and UI changes are present, I ask the reviewer to include some. It makes it a lot easier to assess changes from a high-level glance.

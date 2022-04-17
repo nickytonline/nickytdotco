@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 This post was going to be about troubles I ran into testing Portals, but in the end after writing three quarters of this post, the problems I thought I had were not problems and I ended up simplifying my tests. 🙃
 
 Those test refinements are in
@@ -463,5 +464,3 @@ Using `debug()` in preact-testing-library or react-testing-library is super hand
 And that's it! To recap, we had a component that also rendered a portal and we tested that the original component and the portal both rendered.
 
 Until next time folks!
-
-

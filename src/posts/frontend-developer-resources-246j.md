@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 It’s 2020, post [year in review](https://dev.to/nickytonline/my-2019-year-in-review-23i1), so let’s start off with some 2020 content.
 
 {% twitter "1213657972322324482" %}
@@ -314,4 +315,3 @@ Until next time peeps!
 ![Stay tuned](https://media.giphy.com/media/J4zA6LplubvC5weDyo/giphy.gif)
 
 The cover image is a partial screenshot of my site's thank you page, but the illustration comes from the wonderful work of Katerina Limpitsouni's [undraw.co](https://undraw.co)
-

@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 I Tweeted this out last week that we moved to Preact X and Testing Library.
 
 {% twitter "1273706469096140802" %}
@@ -131,7 +132,3 @@ Just a reminder, we use [Prettier](https://prettier.io/) in the project, so that
 A **big shoutout** to my co-worker @ridhwana for helping me migrate all the tests to preact-testing-library. 👏 I'm really excited about all the changes we have been making on the frontend, and look forward to continue to improve it. If you feel like contributing to the project in regards to the frontend, don’t be shy to DM me on DEV, Twitter or wherever. I’m pretty much @nickytonline everywhere. If email is your jam, hit me up at nick@dev.to.
 
 That’s all for now folks!
-
-
-
-

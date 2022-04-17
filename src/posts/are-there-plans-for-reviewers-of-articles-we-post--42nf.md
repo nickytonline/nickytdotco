@@ -10,9 +10,9 @@
   "template": "post"
 }
 ---
+
 Since last October, I've started to blog more, and have been slowly adding some   articles on dev.to. Usually when I want a review of something, I'll tweet it to the planet and if someone bites, they may review it from my repo on GitHub for an unpublished article. I find this process a little clunky.
 
 {% twitter "916881082435465216" %}
 
 I was wondering if there are plans (if not I'm suggesting 😉) to allow other members of dev.to to review articles before an author publishes so they can get additional feedback.
-

@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 Here is a short list of some great tools I've discovered over the past year.
 
 ## macOS Only

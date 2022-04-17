@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 So here’s my 2018 Resolutions.{% link "https://dev.to/nickytonline/2018-resolutions-1deo" %}Did I complete them all? No, but honestly it’s not a big deal.
 
 - _Continue to contribute to open source_: Mission accomplished 🚀. I continued to be a collaborator on [react-slingshot](https://github.com/coryhouse/react-slingshot) and contributed some work there this year, fielded some issues etc.{% github "https://github.com/coryhouse/react-slingshot" %}

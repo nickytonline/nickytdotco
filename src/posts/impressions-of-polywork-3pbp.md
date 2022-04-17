@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 *This post was sponsored by Polywork, but it is my own authentic review*
 
 Polywork is a new professional platform that has been getting a lot of attention lately. I can't remember exactly where I came across it initially on Twitter. I think [Ali Spittel](https://twitter.com/ASpittel) may have Tweeted about it.

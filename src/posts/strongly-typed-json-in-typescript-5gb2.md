@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 Someone in one of the Slack communities I'm a part of asked today how to type JSON in TypeScript, specifically importing JSON and then typing it. They wondered if casting the JSON to `unknown` and then casting to a known type when consumed was a good approach.
 
 The solution is not that complicated. We need to get our hands a little dirty and dig into the TypeScript compiler options for our project.

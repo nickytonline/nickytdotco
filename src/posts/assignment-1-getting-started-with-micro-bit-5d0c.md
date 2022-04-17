@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 The [micro:bit](https://microbit.org/) Educational Foundation is an awesome initiative that was created by a [UK-based not for profit organization](https://microbit.org/about/) with the goal of getting everyone to learn to code. micro:bits are small pieces of hardware that you can program and it's a lot of fun.
 
 Most people I know are at home with their children due to COVID-19 at the moment, so I thought this would be a fun activity that your child or your child and you can do. Even as an adult, it's quite a lot of fun. 😃
@@ -48,4 +49,3 @@ Below are all the micro:bit blocks required to build the game. If you are not su
 Here is the [demo](https://makecode.microbit.org/_9zKDVEg1cCP3). It includes the answer so make sure that you've clicked on the Simulator tab so that your child does not see the answer.
 
 Have fun! Until the next assignment. 👋🏻
-

@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 Let's forget frameworks and libraries for a moment. Today we’re just going to talk about the `<form />` element and some of the things you can do with it in the DOM.
 
 For web devs who are getting a little long in the tooth, you’re probably familiar with most of this, but for newer devs, this might be news to you. Either way, buckle up because we’re about to go old school with forms.

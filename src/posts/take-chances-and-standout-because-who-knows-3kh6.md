@@ -12,6 +12,7 @@
   "template": "post"
 }
 ---
+
 This is my first time writing a post about career advice. This kind of advice is definitely not a one size fits all. Everyone has their own experiences, circumstances etc., but hopefully some of what I discuss will resonate with you.
 
 In May of 2016, I decided to embark with a startup and live in Barcelona for the summer in a front-end focused developer role using React, TypeScript, Node and other goodies. My bosses and I (future Montreal office) were in Barcelona to learn the business, help get the office in Spain staffed and then the plan was to return to Montreal to open the Montreal office.

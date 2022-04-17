@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 Did you know that you can use [hooks](https://beta.reactjs.org/learn#using-hooks) in [class components](https://reactjs.org/docs/react-component.html)? 
 
 OK, I'm lying, kind of. You can't use a hook directly in a class component, but you can use a hook in a wrapped function component with a [render prop](https://reactjs.org/docs/render-props.html) to achieve this.

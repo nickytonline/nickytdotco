@@ -13,6 +13,7 @@
   "template": "post"
 }
 ---
+
 A few weeks ago, I wrote a post asking DEV community members if they wanted to potentially pair program with me during a live coding session.
 
 {% link "https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he" %}

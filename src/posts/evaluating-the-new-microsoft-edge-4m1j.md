@@ -10,6 +10,7 @@
   "template": "post"
 }
 ---
+
 About a month ago I Tweeted that I was going to take the new MS Edge browser for a tour.
 
 {% twitter "1180654867850903552" %}

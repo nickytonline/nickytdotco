@@ -11,6 +11,7 @@
   "template": "post"
 }
 ---
+
 I'm on a Mac and I honestly have no use for the Dock. I actually hide it for an eternity so it never appears by running the following command.
 
 `defaults write com.apple.Dock autohide-delay -float 1000000`
