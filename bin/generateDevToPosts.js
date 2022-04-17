@@ -193,7 +193,7 @@ async function createPostFile(post) {
     jsonFrontmatter,
     null,
     2
-  )}\n---\n${markdownBody}\n`;
+  )}\n---\n\n${markdownBody.trim()}\n`;
 
   const postFile = path.join(POSTS_DIRECTORY, `${slug}.md`);
   await fs.writeFile(postFile, sanitizeMarkdownEmbeds(markdown));
