@@ -182,9 +182,9 @@ async function createPostFile(post) {
   const jsonFrontmatter = {title, excerpt, date, tags, cover_image, template: 'post'};
   let markdownBody;
 
-  if (/^---\n/.test(body_markdown)) {
+  if (/^---(\r|\n)/.test(body_markdown)) {
     // v1 editor
-    markdownBody = body_markdown.replace(/^---\n(.|[\r\n])*?---\n*/, '');
+    markdownBody = body_markdown.replace(/^---(\r|\n)(.|\r|\n)*?---\n*/, '');
   } else {
     markdownBody = body_markdown;
   }
