@@ -3,6 +3,7 @@ const {DateTime} = require('luxon');
 const fetch = require('node-fetch');
 const hashnodeData = require(`../_data/hashnodeUrls.json`);
 const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
+const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
 
 /**
  * Generates markup for a boost on DEV button.
@@ -174,15 +175,7 @@ function embedEmbed(rawUrl) {
  * @returns {string} Markup for the Twitter embed.
  */
 async function twitterEmbed(tweetId) {
-  // It doesn't matter who the user is. It's the Tweet ID that matters.
-  const response = await fetch(
-    `https://publish.twitter.com/oembed?url=${encodeURIComponent(
-      `https://twitter.com/anyone/status/${tweetId}`
-    )}`
-  );
-  const {html} = await response.json();
-
-  return html;
+  return twitterEmbeds[tweetId];
 }
 
 /**

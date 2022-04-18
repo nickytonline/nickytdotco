@@ -20,8 +20,12 @@ const EMBEDDED_POSTS_MARKUP_FILE = path.join(
   __dirname,
   '../src/_data/embeddedPostsMarkup.json'
 );
+const TWITTER_EMBEDS_FILE = path.join(__dirname, '../src/_data/twitterEmbeds.json');
 const currentEmbeds = require('../src/_data/embeddedPostsMarkup.json');
 const embeds = new Map(Object.entries(currentEmbeds));
+
+const currentTwitterEmbeds = require('../src/_data/twitterEmbeds.json');
+const twitterEmbeds = new Map(Object.entries(currentTwitterEmbeds));
 const DOM = new JSDOM(`<!DOCTYPE html><html><head></head><body></body></html>`, {
   resources: 'usable',
 });
@@ -198,6 +202,28 @@ async function createPostFile(post) {
   const postFile = path.join(POSTS_DIRECTORY, `${slug}.md`);
   await fs.writeFile(postFile, sanitizeMarkdownEmbeds(markdown));
 
+  const twitterEmbedMatches = markdown.matchAll(
+    /(?:{%\stwitter\s(?<id>[^"\s]+)\s%})|(?:{%\sembed\shttps:\/\/www?\.twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?\s%})/g
+  );
+
+  for (const {
+    groups: {id, id2},
+  } of twitterEmbedMatches) {
+    const tweetId = id ?? id2;
+
+    if (!twitterEmbeds.has(tweetId)) {
+      // It doesn't matter who the user is. It's the Tweet ID that matters.
+      const response = await fetch(
+        `https://publish.twitter.com/oembed?url=${encodeURIComponent(
+          `https://twitter.com/anyone/status/${tweetId}`
+        )}`
+      );
+      const {html} = await response.json();
+
+      twitterEmbeds.set(tweetId, html);
+    }
+  }
+
   return {status: 'success'};
 }
 
@@ -363,6 +389,16 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
   );
 }
 
+async function updateTwitterEmbeds(twitterEmbeds, filepath) {
+  let tweetEmbeds = Object.fromEntries(twitterEmbeds);
+
+  const data = JSON.stringify(tweetEmbeds, null, 2);
+
+  await fs.writeFile(filepath, data, () =>
+    console.log(`Saved Twitter embeds markup to ${filepath}!`)
+  );
+}
+
 (async () => {
   await fs.mkdir(POSTS_DIRECTORY, {recursive: true});
   await fs.mkdir(POSTS_IMAGES_DIRECTORY, {recursive: true});
@@ -395,5 +431,6 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
     }
   }
 
+  await updateTwitterEmbeds(twitterEmbeds, TWITTER_EMBEDS_FILE);
   await updateBlogPostEmbeds(embeds, EMBEDDED_POSTS_MARKUP_FILE);
 })();
