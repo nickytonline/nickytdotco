@@ -173,8 +173,16 @@ function embedEmbed(rawUrl) {
  *
  * @returns {string} Markup for the Twitter embed.
  */
-function twitterEmbed(tweetId) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/twitter?args=${tweetId}" style="border: 0; width: 100%;"></iframe>`;
+async function twitterEmbed(tweetId) {
+  // It doesn't matter who the user is. It's the Tweet ID that matters.
+  const response = await fetch(
+    `https://publish.twitter.com/oembed?url=${encodeURIComponent(
+      `https://twitter.com/anyone/status/${tweetId}`
+    )}`
+  );
+  const {html} = await response.json();
+
+  return html;
 }
 
 /**
