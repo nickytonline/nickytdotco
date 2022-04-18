@@ -21,8 +21,8 @@ const EMBEDDED_POSTS_MARKUP_FILE = path.join(
   '../src/_data/embeddedPostsMarkup.json'
 );
 const TWITTER_EMBEDS_FILE = path.join(__dirname, '../src/_data/twitterEmbeds.json');
-const currentEmbeds = require('../src/_data/embeddedPostsMarkup.json');
-const embeds = new Map(Object.entries(currentEmbeds));
+const currentBlogPostEmbeds = require('../src/_data/embeddedPostsMarkup.json');
+const blogPostEmbeds = new Map(Object.entries(currentBlogPostEmbeds));
 
 const currentTwitterEmbeds = require('../src/_data/twitterEmbeds.json');
 const twitterEmbeds = new Map(Object.entries(currentTwitterEmbeds));
@@ -357,7 +357,7 @@ async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
 async function updateBlogPostEmbeds(embeds, filePaths) {
   let blogPostEmbedsMarkup = {};
 
-  for (const [url, markup] of embeds) {
+  for (const [url] of embeds) {
     // You can't use the dev.to API to grab an article by slug, so we need to use the URL instead
     // to fetch the markup of the article page to extract the article ID.
     // This is only an issue for article embeds.
@@ -414,7 +414,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
 
     await Promise.all([
       saveMarkdownImages(imagesToSave),
-      getDevBlogPostEmbedsMarkup(markdown, embeds),
+      getDevBlogPostEmbedsMarkup(markdown, blogPostEmbeds),
     ]);
 
     const updatedPost = {
@@ -432,5 +432,5 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
   }
 
   await updateTwitterEmbeds(twitterEmbeds, TWITTER_EMBEDS_FILE);
-  await updateBlogPostEmbeds(embeds, EMBEDDED_POSTS_MARKUP_FILE);
+  await updateBlogPostEmbeds(blogPostEmbeds, EMBEDDED_POSTS_MARKUP_FILE);
 })();
