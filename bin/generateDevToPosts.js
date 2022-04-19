@@ -197,13 +197,13 @@ async function createPostFile(post) {
     jsonFrontmatter,
     null,
     2
-  )}\n---\n\n${markdownBody.trim()}\n`;
+  )}\n---\n\n${sanitizeMarkdownEmbeds(markdownBody).trim()}\n`;
 
   const postFile = path.join(POSTS_DIRECTORY, `${slug}.md`);
-  await fs.writeFile(postFile, sanitizeMarkdownEmbeds(markdown));
+  await fs.writeFile(postFile, markdown);
 
   const twitterEmbedMatches = markdown.matchAll(
-    /(?:{%\stwitter\s(?<id>[^"\s]+)\s%})|(?:{%\sembed\shttps:\/\/www?\.twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?\s%})/g
+    /(?:{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/www?\.twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g
   );
 
   for (const {

@@ -175,7 +175,7 @@ function embedEmbed(rawUrl) {
  * @returns {string} Markup for the Twitter embed.
  */
 async function twitterEmbed(tweetId) {
-  return twitterEmbeds[tweetId];
+  return twitterEmbeds[tweetId] ?? `<div>Missing Tweet embed with ID ${tweetId}</div>`;
 }
 
 /**
