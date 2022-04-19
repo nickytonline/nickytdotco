@@ -257,71 +257,6 @@ function instagramEmbed(url) {
 }
 
 /**
- * Generates a dev.to user embed for the given dev.to username.
- *
- * @param {string} username A dev.to username
- *
- * @returns {string} Markup for the dev.to user embed.
- */
-function devUserEmbed(username) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/user?args=${encodeURIComponent(
-    username
-  )}" style="border: 0; width: 100%;"></iframe>`;
-}
-
-/**
- * Generates a dev.to tag embed for the given dev.to tag ID.
- *
- * @param {string} tagId A dev.to username
- *
- * @returns {string} Markup for the dev.to tag embed.
- */
-function devTagEmbed(tagId) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/tag?args=${encodeURIComponent(
-    tagId
-  )}" style="border: 0; width: 100%;"></iframe>`;
-}
-
-/**
- * Generates a dev.to org embed for the given dev.to organization ID.
- *
- * @param {string} orgId A dev.to organization ID
- *
- * @returns {string} Markup for the dev.to user embed.
- */
-function devOrgEmbed(orgId) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/organization?args=${encodeURIComponent(
-    orgId
-  )}" style="border: 0; width: 100%;"></iframe>`;
-}
-
-/**
- * Generates a repl.it embed for the given repl.it URL.
- *
- * @param {string} url A repl.it URL
- *
- * @returns {string} Markup for the repl.it embed.
- */
-function replitEmbed(url) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/replit?args=${encodeURIComponent(
-    url
-  )}" style="border: 0; width: 100%;"></iframe>`;
-}
-
-/**
- * Generates a dev.to podcast embed for the given dev.to podcast URL.
- *
- * @param {string} url An dev.to podcast URL
- *
- * @returns {string} Markup for the dev.to podcast embed.
- */
-function devPodcastEmbed(url) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/podcast?args=${encodeURIComponent(
-    url
-  )}" style="border: 0; width: 100%;"></iframe>`;
-}
-
-/**
  * Generates a CodeSandbox embed for the given CodeSandbox ID.
  *
  * @param {string} sandboxId A CodeSandbox ID.
@@ -348,10 +283,5 @@ module.exports = {
   devLinkEmbed,
   githubEmbed,
   instagramEmbed,
-  devUserEmbed,
-  devTagEmbed,
-  devOrgEmbed,
-  replitEmbed,
-  devPodcastEmbed,
   codeSandboxEmbed,
 };

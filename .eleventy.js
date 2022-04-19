@@ -24,11 +24,6 @@ const {
   devCommentEmbed,
   githubEmbed,
   instagramEmbed,
-  devUserEmbed,
-  devTagEmbed,
-  devOrgEmbed,
-  replitEmbed,
-  devPodcastEmbed,
   codeSandboxEmbed,
 } = require('./src/shortCodes');
 
@@ -75,11 +70,6 @@ module.exports = function (config) {
   config.addShortcode('devcomment', devCommentEmbed);
   config.addShortcode('github', githubEmbed);
   config.addShortcode('instagram', instagramEmbed);
-  config.addShortcode('user', devUserEmbed);
-  config.addShortcode('tag', devTagEmbed);
-  config.addShortcode('organization', devOrgEmbed);
-  config.addShortcode('replit', replitEmbed);
-  config.addShortcode('podcast', devPodcastEmbed);
   config.addShortcode('codesandbox', codeSandboxEmbed);
 
   config.addShortcode('embed', embedEmbed);
