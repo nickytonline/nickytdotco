@@ -71,6 +71,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [nvm](https://github.com/nvm-sh/nvm) - Node version manager
 - [ngrok](https://ngrok.com/) - Exposes local servers to the public internet over secure tunnels
 - [mcfly](https://github.com/cantino/mcfly) - An enhance search for your shell history. Super charged <kbd>CTRL</kbd> + <kbd>R</kbd>!
+- [httpie](https://github.com/httpie/httpie) - A command-line HTTP client
 
 ## Additional Resources
 
