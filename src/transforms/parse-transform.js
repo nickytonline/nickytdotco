@@ -53,5 +53,5 @@ module.exports = async function (value, outputPath) {
     heading.appendChild(anchor);
   }
 
-  return '<!DOCTYPE html>\r\n' + minify(await document.documentElement.outerHTML);
+  return '<!DOCTYPE html>\r\n' + (await document.documentElement.outerHTML);
 };
