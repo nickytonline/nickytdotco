@@ -238,7 +238,7 @@ function devLinkEmbed(blogPostUrl) {
  * @returns {string} Markup for the GitHub embed.
  */
 function githubEmbed(url) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/github?args=${encodeURIComponent(
+  return `<iframe title="GitHub repository ${url}" class="liquidTag" src="https://dev.to/embed/github?args=${encodeURIComponent(
     url
   )}" style="border: 0; width: 100%;"></iframe>`;
 }
@@ -251,7 +251,7 @@ function githubEmbed(url) {
  * @returns {string} Markup for the Instagram embed.
  */
 function instagramEmbed(url) {
-  return `<iframe class="liquidTag" src="https://dev.to/embed/instagram?args=${encodeURIComponent(
+  return `<iframe title="Instagram post at ${url}" class="liquidTag" src="https://dev.to/embed/instagram?args=${encodeURIComponent(
     url
   )}" style="border: 0; width: 100%;"></iframe>`;
 }
@@ -266,7 +266,7 @@ function instagramEmbed(url) {
 function codeSandboxEmbed(sandboxId) {
   return `<iframe src="https://codesandbox.io/embed/${sandboxId}?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="${sandboxId}"
+     title="CodeSandbox with ID ${sandboxId}"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>`;
