@@ -242,8 +242,8 @@ function githubEmbed(url) {
 
   return `<a href="${url}">
   <span class="visually-hidden">The ${url} repository on GitHub</span><picture>
-  <source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${encodedUrl}/small/webp/ 375w, https://v1.opengraph.11ty.dev/https%3A%2F%2Fgithub.com%2Fnickytonline%2Fiamdeveloper.com/medium/webp/ 650w" sizes="100vw" />
-  <source type="image/jpeg" srcset="https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/ 375w, https://v1.opengraph.11ty.dev/https%3A%2F%2Fgithub.com%2Fnickytonline%2Fiamdeveloper.com/medium/jpeg/ 650w" sizes="100vw" />
+  <source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${encodedUrl}/small/webp/ 375w, https://v1.opengraph.11ty.dev/${encodedUrl}/medium/webp/ 650w" sizes="100vw" />
+  <source type="image/jpeg" srcset="https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/ 375w, https://v1.opengraph.11ty.dev/${encodedUrl}/medium/jpeg/ 650w" sizes="100vw" />
   <img alt="OpenGraph image for ${url}" loading="lazy" decoding="async" src="https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/" width="650" height="341" />
 </picture></a>`;
 }
