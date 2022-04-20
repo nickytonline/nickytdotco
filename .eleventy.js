@@ -7,10 +7,6 @@ const fs = require('fs');
 const dateFilter = require('./src/filters/date-filter.js');
 const markdownFilter = require('./src/filters/markdown-filter.js');
 const w3DateFilter = require('./src/filters/w3-date-filter.js');
-const {
-  convertDevEmbeds,
-  removePostIsOnDevLink,
-} = require('./src/filters/devToFilters.js');
 
 const {
   boostLink,
@@ -39,8 +35,6 @@ module.exports = function (config) {
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('markdownFilter', markdownFilter);
   config.addFilter('w3DateFilter', w3DateFilter);
-  config.addFilter('convertDevEmbeds', convertDevEmbeds);
-  config.addFilter('removePostIsOnDevLink', removePostIsOnDevLink);
   config.addFilter('htmlDateString', (dateObj) =>
     DateTime.fromJSDate(dateObj).toFormat('yyyy-LL-dd')
   );
