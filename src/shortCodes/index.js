@@ -251,11 +251,21 @@ function githubEmbed(url) {
 /**
  * Generates a Instagram embed for the given Instagram URL.
  *
- * @param {string} url An Instagram URL
+ * @param {string} postId An Instagram post ID
  *
  * @returns {string} Markup for the Instagram embed.
  */
-function instagramEmbed(url) {
+function instagramEmbed(postId) {
+  return `<iframe
+      title="Instagram post at https://www.instagram.com/p/${postId}"
+      loading="lazy"
+      src="https://www.instagram.com/p/${postId}/embed/"
+      allowtransparency="true"
+      frameborder="0"
+      height="832"
+      scrolling="no"
+      style="background: white; max-width: 658px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"
+    ></iframe>`;
   return `<iframe title="Instagram post at ${url}" class="liquidTag" src="https://dev.to/embed/instagram?args=${encodeURIComponent(
     url
   )}" style="border: 0; width: 100%;"></iframe>`;
