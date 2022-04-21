@@ -26,7 +26,7 @@ I checked out the npm package, [@raae/gatsby-remark-oembed](https://www.npmjs.co
 
 I fired up my development environment and I was getting errors about the plugin not being found.
 
-```
+```bash
 {% raw %}
 Error: Unable to find plugin "gatsby-remark-oembed". Perhaps you need to install its package?
 {% endraw %}

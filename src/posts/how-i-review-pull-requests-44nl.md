@@ -58,6 +58,10 @@ Lastly, the tone of a review matters. I've grown accustomed to using a framework
 
 {% twitter "1420188172726771714" %}
 
+UPDATE APRIL 2022: I work at Netlify now, so I've started to use Feedback Ladders. So far I'm enjoying it.
+
+{% embed "https://twitter.com/nickytonline/status/1516859340728246276" %}
+
 If you made it this far, your PR is approved! 😎
 
 Thanks and until next time!

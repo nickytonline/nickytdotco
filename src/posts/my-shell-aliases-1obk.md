@@ -19,7 +19,7 @@ Everyone has their favourite aliases for git and the shell. I have written about
 
 It is not a long list, but I have some that I find useful that you may find useful as well. Currently, my preferred shell is zsh. Here is what I currently have in my config.
 
-```
+```bash
 {% raw %}
 alias rimraf='rm -rf'
 alias flushdns='sudo killall -HUP mDNSResponder'

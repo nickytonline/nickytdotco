@@ -13,9 +13,15 @@
 
 So here’s my 2018 Resolutions.{% link "https://dev.to/nickytonline/2018-resolutions-1deo" %}Did I complete them all? No, but honestly it’s not a big deal.
 
-- _Continue to contribute to open source_: Mission accomplished 🚀. I continued to be a collaborator on [react-slingshot](https://github.com/coryhouse/react-slingshot) and contributed some work there this year, fielded some issues etc.{% github "https://github.com/coryhouse/react-slingshot" %}
-My other focus was the [dev.to](https://github.com/thepracticaldev/dev.to) repository.
-{% github "https://github.com/thepracticaldev/dev.to" %}I was accepted as an early contributor before the [project went open source](https://dev.to/ben/devto-is-now-open-source-5n1) and continued to contribute after it went public. It felt really good to be the [first contributor outside of the core team](https://dev.to/jess/dev-monthly-report--march-2018-579p) to have a PR merged.</p>
+- _Continue to contribute to open source_: Mission accomplished 🚀. I continued to be a collaborator on [react-slingshot](https://github.com/coryhouse/react-slingshot) and contributed some work there this year, fielded some issues etc.
+
+{% github "https://github.com/coryhouse/react-slingshot" %}
+
+My other focus was the dev.to repository.
+
+{% github "https://github.com/thepracticaldev/dev.to" %}
+
+I was accepted as an early contributor before the [project went open source](https://dev.to/ben/devto-is-now-open-source-5n1) and continued to contribute after it went public. It felt really good to be the [first contributor outside of the core team](https://dev.to/jess/dev-monthly-report--march-2018-579p) to have a PR merged.</p>
 
 {% link "https://dev.to/jess/dev-monthly-report--march-2018-579p" %}
 Although I didn’t contribute to TypeScript or VS Code, I’m still very happy with this year’s contributions.
