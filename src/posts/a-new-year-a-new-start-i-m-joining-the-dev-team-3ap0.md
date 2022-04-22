@@ -4,9 +4,7 @@
   "excerpt": "I can't believe I'm saying this. I'M JOINING THE DEV TEAM!!!    For those of you that don't know me,...",
   "date": "2020-01-21T18:09:58.642Z",
   "tags": [
-    "meta",
-    "career",
-    "personal"
+    "career"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--q2i_vNRX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_6v67gbppb6cqqj3pqrp3.png",
   "template": "post"

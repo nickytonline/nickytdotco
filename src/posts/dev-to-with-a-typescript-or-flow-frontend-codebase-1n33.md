@@ -4,7 +4,6 @@
   "excerpt": "Consider moving dev.to frontend codebase to TypeScript or Flow?",
   "date": "2019-04-07T03:37:54.000Z",
   "tags": [
-    "meta",
     "javascript",
     "typescript",
     "flow"

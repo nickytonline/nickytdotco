@@ -1,13 +1,13 @@
 ---json
 {
   "title": "Changelog: DEV has Some Stories for You",
-  "excerpt": "My first PR to the DEV repository was when I added Storybook to the project. In fact, this was in Mar...",
+  "excerpt": "My first PR to the DEV repository was when I added Storybook to the project. In fact, this was in...",
   "date": "2020-05-22T13:46:37.866Z",
   "tags": [
-    "meta",
     "html",
     "css",
-    "javascript"
+    "javascript",
+    "storybook"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--QXgm3mdo--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_ln7awag96agh8pxsjsui.jpg",
   "template": "post"

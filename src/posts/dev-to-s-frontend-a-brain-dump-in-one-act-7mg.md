@@ -4,12 +4,11 @@
   "excerpt": "An explanation to the best of my knowledge on all things front-end in the dev.to codebase",
   "date": "2019-04-23T04:27:39.487Z",
   "tags": [
-    "meta",
     "javascript",
     "preact",
     "webpack"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--3uLkqBYG--_c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000_https:__media.giphy.com_media_TI32JwHmWQEi4_giphy.gif",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--EtbkTn3s--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_6k8d3qedhotdzvk8qesq.jpeg",
   "template": "post"
 }
 ---
@@ -284,3 +283,5 @@ Additional resources:
 * [GitHub - okonet/lint-staged: 🚫💩 — Run linters on git staged files](https://github.com/okonet/lint-staged)
 * [Storybook: UI component workshop for frontend developers](https://storybook.js.org/)
 * [InstantClick — JS library to make your website instant](http://instantclick.io/)
+
+Photo by <a href="https://unsplash.com/@fakurian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Milad Fakurian</a> on <a href="https://unsplash.com/s/photos/brain?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

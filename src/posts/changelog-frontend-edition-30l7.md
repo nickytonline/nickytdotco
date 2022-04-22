@@ -1,11 +1,10 @@
 ---json
 {
   "title": "Changelog: Frontend Edition",
-  "excerpt": "I Tweeted this out last week that we moved to Preact X and Testing Library....",
+  "excerpt": "I Tweeted this out last week that we moved to Preact X and Testing Library.                         ...",
   "date": "2020-06-24T19:09:12.079Z",
   "tags": [
     "changelog",
-    "meta",
     "javascript",
     "testing"
   ],
