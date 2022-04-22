@@ -45,6 +45,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [xScope](https://xscope.app) - Awesome toolset for frontend development. Rulers, guides etc.
 - [Dato](https://sindresorhus.com/dato) - A better date app for macOS.
 - [iTerm](https://iterm2.com/) - A better terminal for macOS
+- [warp](https://www.warp.dev/) - A modern terminal (trying it out)
 - [Starship](https://starship.rs/) - A cross shell prompt
 - [Spotify](https://www.spotify.com/us/download/) - Because music.
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
