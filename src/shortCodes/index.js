@@ -1,6 +1,5 @@
 /* eslint-env node */
 const {DateTime} = require('luxon');
-const fetch = require('node-fetch');
 const hashnodeData = require(`../_data/hashnodeUrls.json`);
 const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
 const twitterEmbeds = require(`../_data/twitterEmbeds.json`);

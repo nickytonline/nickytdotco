@@ -3,7 +3,6 @@ require('dotenv').config();
 
 const jsdom = require('@tbranyen/jsdom');
 const {JSDOM} = jsdom;
-const fetch = require('node-fetch');
 const path = require('path');
 const fs = require('fs').promises;
 const {DEV_API_KEY, NODE_ENV} = process.env;

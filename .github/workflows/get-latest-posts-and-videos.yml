@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.0
       - name: Get blog posts and videos
         env:
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
@@ -19,7 +22,7 @@ jobs:
           npm install
           rm -rf src/posts/*.md
           node bin/udpdateStreamingPage.js
-          node bin/generateDevToPosts.js
+          node --experimental-fetch bin/generateDevToPosts.js
           node bin/generateHashnodeUrlMapping.js
       - name: Commit changes
         id: commit
