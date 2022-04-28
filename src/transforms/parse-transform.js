@@ -2,13 +2,19 @@ const jsdom = require('@tbranyen/jsdom');
 const {JSDOM} = jsdom;
 const slugify = require('slugify');
 
+class CustomResourceLoader extends jsdom.ResourceLoader {
+  fetch(_url, _options) {
+    return Promise.resolve(Buffer.from('<html></html>'));
+  }
+}
+
 module.exports = async function (value, outputPath) {
   if (!outputPath.endsWith('.html')) {
     return value;
   }
 
   const DOM = new JSDOM(value, {
-    resources: 'usable',
+    resources: new CustomResourceLoader(),
   });
 
   const document = DOM.window.document;
