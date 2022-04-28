@@ -5,7 +5,11 @@
     {% if introSummary %}
       <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]">{{ introSummary | safe }}</div>
     {% endif %}
-    {% boostLink page.fileSlug,
-    page.url %}
+    <div class="box-flex space-between align-center">
+      <div>
+        {% boostLink page.fileSlug, page.url %}
+      </div>
+      <theme-toggle></theme-toggle>
+    </div>
   </div>
 </header>
