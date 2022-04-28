@@ -90,6 +90,7 @@ If you're doing web development long-term, you must become familiar with semanti
 * [MDN](https://developer.mozilla.org/en-US/) as always
 * [HTMHell](https://www.htmhell.dev) – A great site with horrible examples of HTML and how to fix them
 * [Periodic table of HTML elements](https://madebymike.github.io/html5-periodic-table) – A fun spin on the classic periodic table
+* This one isn't just HTML, so I should probably create another section. 🙃 Check out [buildexcellentwebsit.es](https://buildexcellentwebsit.es) for key foundations & principles of building great sites.
 
 ## Accessibility
 
@@ -151,7 +152,7 @@ A lot of cool stuff is happening on The Edge. I haven't done much here, but look
 
 * [Cloudflare Workers](https://workers.cloudflare.com) – Includes stuff like Durable Objects, key value stores etc.
 * [Cloudflare Pages](https://pages.cloudflare.com)
-* [Netlify Edge Handlers](https://www.netlify.com/products/edge/edge-handlers)
+* [Living on the edge: A deep dive into Netlify Edge Functions](https://www.netlify.com/blog/deep-dive-into-netlify-edge-functions/)
 * [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions)
 
 ## Tooling
