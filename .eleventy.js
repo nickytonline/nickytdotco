@@ -70,18 +70,14 @@ module.exports = function (config) {
 
   const now = new Date();
 
-  function filterOutUnwantedTags(collection) {
-    return collection.getFilteredByGlob('./src/posts/*.md');
-  }
-
   // Custom collections
-  const livePosts = (post) => post.date <= now && !post.data.draft;
   config.addCollection('posts', (collection) => {
-    return [...filterOutUnwantedTags(collection).filter(livePosts)].reverse();
+    return collection.getFilteredByGlob('./src/posts/*.md').reverse();
   });
 
   config.addCollection('postFeed', (collection) => {
-    return [...filterOutUnwantedTags(collection).filter(livePosts)]
+    return collection
+      .getFilteredByGlob('./src/posts/*.md')
       .reverse()
       .slice(0, site.maxPostsPerPage);
   });
