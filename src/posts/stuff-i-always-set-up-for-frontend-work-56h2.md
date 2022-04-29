@@ -4,10 +4,8 @@
   "excerpt": "There's a few things I always set up when working on a frontend project: ESLint, Prettier, husky and...",
   "date": "2020-10-18T04:20:19.736Z",
   "tags": [
-    "javascript",
-    "webdev",
-    "beginners",
-    "productivity"
+    "git",
+    "webdev"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--aq5cDtoo--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_olzaevg5khtiad835vke.png",
   "template": "post"

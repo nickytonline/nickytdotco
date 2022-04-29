@@ -14,20 +14,18 @@
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--_qOdb_yx--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/olzaevg5khtiad835vke.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/stuff-i-always-set-up-for-frontend-work-56h2/",
     "created_at": "2020-10-18T03:17:00Z",
-    "edited_at": "2021-08-08T12:20:25Z",
+    "edited_at": "2022-04-28T01:28:39Z",
     "crossposted_at": null,
     "published_at": "2020-10-18T04:20:19Z",
     "last_comment_at": "2020-12-01T15:22:00Z",
     "reading_time_minutes": 5,
-    "tag_list": "javascript, webdev, beginners, productivity",
+    "tag_list": "git, webdev",
     "tags": [
-      "javascript",
-      "webdev",
-      "beginners",
-      "productivity"
+      "git",
+      "webdev"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -63,7 +61,7 @@
       "testing"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -107,7 +105,7 @@
       "ux"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -143,7 +141,7 @@
       "streaming"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -178,7 +176,7 @@
       "community"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -293,7 +291,7 @@
       "livecoding"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -329,7 +327,7 @@
       "livecoding"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -365,7 +363,7 @@
       "devstream"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -406,7 +404,7 @@
       "career"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -587,7 +585,7 @@
       "storybook"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -631,7 +629,7 @@
       "ui"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -711,7 +709,7 @@
       "motivation"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -782,7 +780,7 @@
       "netlify"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -818,7 +816,7 @@
       "browserextension"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -852,7 +850,7 @@
       "typescript"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1001,7 +999,7 @@
       "vscode"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1036,7 +1034,7 @@
       "career"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1073,7 +1071,7 @@
       "jamstack"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1107,7 +1105,7 @@
       "hacktoberfest"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1143,7 +1141,7 @@
       "developertools"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1260,7 +1258,7 @@
       "flow"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1299,7 +1297,7 @@
       "typescript"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1335,7 +1333,7 @@
       "personaldevelopment"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1371,7 +1369,7 @@
       "webdev"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1440,7 +1438,7 @@
       "codepen"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1475,7 +1473,7 @@
       "codepen"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1510,7 +1508,7 @@
       "codepen"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
@@ -1545,7 +1543,7 @@
       "codepen"
     ],
     "user": {
-      "name": "Nick Taylor",
+      "name": "Nick Taylor (he/him)",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
