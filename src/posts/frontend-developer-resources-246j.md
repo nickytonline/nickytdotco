@@ -4,10 +4,10 @@
   "excerpt": "It’s 2020, post year in review, so let’s start off with some 2020 content.                         ...",
   "date": "2020-01-06T05:00:06.851Z",
   "tags": [
-    "frontend",
     "javascript",
     "css",
-    "html"
+    "html",
+    "a11y"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--1j9Z4MyX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_d0slehzp7b26buouwz33.png",
   "template": "post"
