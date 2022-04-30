@@ -27,15 +27,9 @@ class ThemeToggle extends HTMLElement {
     return response;
   }
 
-  applySetting(passedSetting) {
-    let currentSetting = passedSetting || localStorage.getItem(this.STORAGE_KEY);
-
-    if (currentSetting) {
-      document.documentElement.setAttribute('data-user-color-scheme', currentSetting);
-      this.setButtonLabelAndStatus(currentSetting);
-    } else {
-      this.setButtonLabelAndStatus(this.getCSSCustomProp(this.COLOR_MODE_KEY));
-    }
+  applySetting(colorScheme) {
+    document.documentElement.setAttribute('data-user-color-scheme', colorScheme);
+    this.setButtonLabelAndStatus(colorScheme);
   }
 
   toggleSetting() {
@@ -90,7 +84,12 @@ class ThemeToggle extends HTMLElement {
       this.applySetting(this.toggleSetting());
     });
 
-    this.applySetting();
+    if (!localStorage.getItem(this.STORAGE_KEY)) {
+      !localStorage.setItem(this.STORAGE_KEY, 'light');
+    }
+
+    const colorScheme = localStorage.getItem(this.STORAGE_KEY);
+    this.applySetting(colorScheme);
   }
 }
 
