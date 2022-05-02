@@ -235,7 +235,7 @@ async function createPostFile(post) {
  */
 async function saveImageUrl(imageUrl, imageFilePath) {
   const response = await fetch(imageUrl);
-  const buffer = await response.buffer();
+  const buffer = await response.arrayBuffer();
 
   await fs.writeFile(imageFilePath, buffer, () =>
     console.log(`Saved image ${imageUrl} to ${imageFilePath}!`)
