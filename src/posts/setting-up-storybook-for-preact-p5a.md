@@ -49,8 +49,8 @@ Note that this is a super bare bones webpack configuration. You can add anything
 2. Open this file and remove the React reference and replace it with `import { h } from "preact";`
 3. All that’s left to do is run `npm run storybook` and navigate to Storybook in a browser.
 
-![Screenshot of Storybook in action](https://www.iamdeveloper.com/images/posts/_storybook-cc90189bb245b5d5bdea02cbff77fd3c.gif)
-
+![Storybook in action](https://www.iamdeveloper.com/images/posts/_uploads_articles_wfth0zitsjm9fv9g5vlu.gif)
+ 
 ## Extras
 
 - If you want to see an example of the final result, have a look at [my first commit to the dev.to repo](https://github.com/thepracticaldev/dev.to/commit/6a8df8c8ddec739280325c0000d6d32593f70ed0) I made in March of this year.

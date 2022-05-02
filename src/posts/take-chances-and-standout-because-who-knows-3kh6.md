@@ -41,7 +41,7 @@ I wasn't expecting to hear back from them, but eventually I did. I initially cor
 
 Here's a screen capture of my PR in action
 
-![t0ta11y browser extension screen capture](https://www.iamdeveloper.com/images/posts/_static_t0ta11y-screen-capture-b30522dad097e6a4c9193e75dcd0bab5.gif%20%22t0ta11y%20browser%20extension%20screen%20capture%22)
+![tota11y browser extension screen capture](https://www.iamdeveloper.com/images/posts/_uploads_articles_yui7xuac32hvlun83g71.gif)
 
 I was lucky enough to get a second interview, with none other than [John Resig](https://johnresig.com), the creator of [jQuery](https://jquery.com). I did not know that he was working at Khan, so I was a little nervous but excited at the same time. I got to speak with John for a solid hour about front-end. It was amazing.
 

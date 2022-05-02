@@ -91,7 +91,7 @@ Congrats, you are awesome. At this point you would right more tests to the point
 
 At this point we’re ready to revisit our Dependabot configuration for our repository. Let’s change the settings to allow for automatic PR merging of all our dependencies (or configure it to the level you prefer.
 
-![Dependabot Automatic PR merging settings](https://www.iamdeveloper.com/images/posts/_img_dependabot_settings.png)
+![Dependabot Automatic PR merging settings](https://www.iamdeveloper.com/images/posts/_uploads_articles_y41agaxm0dim2c45ba8h.png)
 
 Alright, let’s go through the extra setup to have Cypress run as part of our CI/CD pipeline. The `prebuild` script is required because, at least on Netlify, you cannot cache binaries. See this article, [Test on Netlify | Gatsby + Netlify + Cypress.io](https://gatsby-blog-0a5be4.netlify.com/test-on-netlify/), for more information.
 

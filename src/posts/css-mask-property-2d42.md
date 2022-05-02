@@ -17,9 +17,9 @@ Say you have a background that you want a certain colour, but you only want to s
 
 Have you ever had an icon you liked and wanted to put on your site, but were like, "It would look so much better if I could integrate it with the colours in my site"? CSS `mask` property to the rescue. As you can see, if you interact with the [codepen](https://codepen.io) below, as you change the colour via the colour picker, the colour of the logo, [dev.to](https://dev.to "dev.to website") in this example, will only apply the background colour to the parts of the SVG that are filled. Shout out to [simpleicons.org](https://simpleicons.org "simpleicons.org website") for the dev.to icon!
 
-![](https://www.iamdeveloper.com/images/posts/_static_css-mask-property-in-actio-acec5ed6b7d7c56fea5542832dfd6cca.gif)
+![Image description](https://www.iamdeveloper.com/images/posts/_uploads_articles_bsulgiwvihhizv0jr5bd.gif) 
 
-If you want to see it in action, take a look at the icons in the menu of my website, [iamdeveloper.com](https://www.iamdeveloper.com "www.iamdeveloper.com web site").
+If you want to see it in action, take a look at the icons in the menu of my website, [iamdeveloper.com](https://www.iamdeveloper.com).
 
 Support for the CSS mask property is [pretty good](https://caniuse.com/#feat=css-masks) unless you still need to support Internet Explorer. If that's the case, a quick Google will provide you with some fallback options.
 
