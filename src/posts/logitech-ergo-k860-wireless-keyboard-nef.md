@@ -43,6 +43,10 @@ The software is a nice touch, but the big thing I love about this keyboard is it
 
 This is the first time I have a keyboard that can connect with a USB dongle or Bluetooth. I've had USB dongle or Bluetooth keyboards, but never the option for both. Since I've owned Macs, I had Apple keyboards, all Bluetooth before this keyboard. I thought I would have to use the USB dongle, so I was pleasantly surprised that it was Bluetooth.
 
+![Three keys labeled 1, 2, and 3 with a tiny computer icon on each on the ERGO K860 keyboard to switch between devices](https://www.iamdeveloper.com/images/posts/_uploads_articles_5vxnwtzdopn7dwsmmi4o.png) 
+
+Another cool thing about the Bluetooth support is you can pair the keyboard with up to three devices. This is not something I use often, but it was handy when moving from my old computer and my new work laptop.
+
 ### The Look
 
 If you're looking for a keyboard that stands out visually, this is not that, but it has a sleek dark grey look which definitely doesn't look terrible.
