@@ -42,7 +42,7 @@ Some fun facts about me:
 
 {% instagram "B0WJGwsJrCb" %}
 
-* I played rugby for many years.
+* I played rugby for many years
 
 {% instagram "B0Cm4-7pr4T" %}
 
