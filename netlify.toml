@@ -8,18 +8,6 @@ command = "npm run production"
     Permissions-Policy = "interest-cohort=()"
 
 [[redirects]]
-from = "/about"
-to = "/pages/about"
-status = 301
-force = true
-
-[[redirects]]
-from = "/live-coding"
-to = "/pages/live-coding"
-status = 301
-force = true
-
-[[redirects]]
 from = "/talks"
 to = "/pages/talks"
 status = 301
@@ -31,36 +19,6 @@ to = "/pages/uses"
 status = 301
 force = true
 
-[[redirects]]
-from = "/thanks"
-to = "/pages/thanks"
-status = 301
-force = true
-
-[[redirects]]
-from = "/contact"
-to = "/pages/contact"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://webflow.iamdeveloper.com/*"
-to = "http://nick-taylors-first-project.webflow.io:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://story.iamdeveloper.com/*"
-to = "https://github.com/nickytonline/js-montreal-storybook-talk-2017-06-13:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://cv.iamdeveloper.com/*"
-to = "https://www.linkedin.com/in/nickytonline/:splat"
-status = 301
-force = true
-
 # Redirects for old URLs of blog posts pre-2019
 [[redirects]]
 from = "/consider-using-typescript/"
@@ -69,50 +27,8 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/2018-resolutions/"
-to = "/posts/2018-resolutions-1deo/"
-status = 301
-force = true
-
-[[redirects]]
-from = "/my-mac-setup/"
-to = "/posts/my-mac-setup-2m05/"
-status = 301
-force = true
-
-[[redirects]]
-from = "/2018-03-26-getting-started-with-react-storybook/"
-to = "/posts/getting-started-with-react-storybook-9jh/"
-status = 301
-force = true
-
-[[redirects]]
-from = "/2018-08-25-my-git-aliases/"
-to = "/posts/my-git-aliases-5dea/"
-status = 301
-force = true
-
-[[redirects]]
-from = "/2018-09-02-setting-up-storybook-for-preact/"
-to = "/posts/setting-up-storybook-for-preact-p5a/"
-status = 301
-force = true
-
-[[redirects]]
-from = "/2018-12-29-2018-year-in-review/"
-to = "/posts/my-2018-year-in-review-2f0k/"
-status = 301
-force = true
-
-[[redirects]]
 from = "/blog/2020-01-21-a-new-year-a-new-start-im-joining-the-dev-team/"
 to = "/posts/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0/"
-status = 301
-force = true
-
-[[redirects]]
-from = "/2018-resolutions/"
-to = "/posts/2018-resolutions-1deo/"
 status = 301
 force = true
 
