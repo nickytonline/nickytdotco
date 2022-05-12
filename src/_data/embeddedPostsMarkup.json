@@ -1598,5 +1598,41 @@
       "bg_color_hex": "#bf1942",
       "text_color_hex": "#ffffff"
     }
+  },
+  "https://dev.to/whitep4nth3r/were-all-living-on-it-but-what-exactly-is-the-edge-4n5l": {
+    "type_of": "article",
+    "id": 1068773,
+    "title": "We're all living on it. But what exactly is The Edge?",
+    "description": "More and more cloud hosting providers and software-as-a-service platforms are offering serverless...",
+    "readable_publish_date": "Apr 27",
+    "slug": "were-all-living-on-it-but-what-exactly-is-the-edge-4n5l",
+    "path": "/whitep4nth3r/were-all-living-on-it-but-what-exactly-is-the-edge-4n5l",
+    "url": "https://dev.to/whitep4nth3r/were-all-living-on-it-but-what-exactly-is-the-edge-4n5l",
+    "collection_id": null,
+    "published_timestamp": "2022-04-27T14:52:17Z",
+    "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--AYaAUJHn--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3af3in6ynwcfjox4c98d.png",
+    "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--bZMI1nPi--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3af3in6ynwcfjox4c98d.png",
+    "canonical_url": "https://whitep4nth3r.com/blog/what-is-the-edge-serverless-functions/",
+    "created_at": "2022-04-27T14:52:17Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2022-04-27T14:52:17Z",
+    "last_comment_at": "2022-04-30T14:44:28Z",
+    "reading_time_minutes": 8,
+    "tag_list": "serverless, javascript, jamstack",
+    "tags": [
+      "serverless",
+      "javascript",
+      "jamstack"
+    ],
+    "user": {
+      "name": "Salma Alam-Naylor",
+      "username": "whitep4nth3r",
+      "twitter_username": "whitep4nth3r",
+      "github_username": "whitep4nth3r",
+      "website_url": "https://whitep4nth3r.com/",
+      "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--45siZtW9--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/492757/3e8de3e2-8172-4cf6-958c-ed1221225d6a.jpg",
+      "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--pl-4Gutk--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/492757/3e8de3e2-8172-4cf6-958c-ed1221225d6a.jpg"
+    }
   }
 }
