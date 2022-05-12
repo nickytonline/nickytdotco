@@ -2,7 +2,7 @@
 {
   "title": "Ecosystem and Frameworks: My Role at Netlify",
   "excerpt": "I'm curious what frontend frameworks you're all interested in these days? Powerful meta frameworks...",
-  "date": "2022-05-12T03:29:20.177Z",
+  "date": "2022-05-12T03:29:20.000Z",
   "tags": [
     "frontend",
     "javascript",
@@ -38,7 +38,7 @@ One of the core team members had issues getting Edge functions to work with Remi
 
 It's not fixed yet, at least when writing this post, but the Remix core team is working on it. It was tons of fun to figure things out publicly and share my findings, as this is open-source baby!
 
-I'm stoked to continue exploring this role, working with the developer community, our customers, and open-source!
+I'm stoked to continue exploring this role, working with the developer community, our customers, my co-workers, and open-source community!
 
 Peace peeps!
 
