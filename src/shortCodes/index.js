@@ -3,6 +3,7 @@ const {DateTime} = require('luxon');
 const hashnodeData = require(`../_data/hashnodeUrls.json`);
 const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
 const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
+const site = require(`../_data/site.json`);
 
 /**
  * Generates markup for a boost on DEV button.
@@ -12,7 +13,7 @@ const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
  *
  * @returns {string} Markup for a boost links on DEV and Hashnode.
  */
-function boostLink(fileSlug, url) {
+function boostLink(title, fileSlug, url) {
   if (!url.startsWith('/posts/')) {
     return '';
   }
@@ -26,10 +27,11 @@ function boostLink(fileSlug, url) {
       hashnodeBoosterLink;
   }
 
-  return (
-    `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>` +
-    hashnodeBoosterLink
-  );
+  const intentToTweet = `<a class="boost-link" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(
+    `${title} by ${site.authorHandle} ${site.url}${url}`
+  )}">Share on Twitter</a>`;
+
+  return `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>${hashnodeBoosterLink}${intentToTweet}`;
 }
 
 /**
