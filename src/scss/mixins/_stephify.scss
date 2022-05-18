@@ -1,0 +1,13 @@
+@mixin stephify() {
+  // see https://twitter.com/5t3ph/status/1525666711243988993
+  --section-padding: 10vh;
+  --clip-point: calc(var(--section-padding) / 2);
+
+  padding-block: var(--section-padding);
+  clip-path: polygon(
+    0 var(--clip-point),
+    /* top left */ 100% 0%,
+    /* top right */ 100% calc(100% - var(--clip-point)),
+    /* bottom right */ 0% 100% /* bottom left */
+  );
+}

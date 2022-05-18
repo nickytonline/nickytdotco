@@ -1,5 +1,6 @@
 .intro {
   background: var(--color-theme-highlight-block);
+  @include stephify;
 
   &__summary {
     --flow-space: #{get-size(500)};

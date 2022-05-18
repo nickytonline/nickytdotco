@@ -279,6 +279,7 @@
 
   &__footer {
     background: var(--color-theme-highlight);
+    @include stephify;
 
     h2 {
       flex-shrink: 0;
