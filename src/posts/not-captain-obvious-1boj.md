@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Not Captain Obvious",
-  "excerpt": "I've been reading @swyx 's book \"The Career Coding Handbook\". It launched on July 1st. Although I am...",
+  "excerpt": "I've been reading @swyx's book \"The Career Coding Handbook\". It launched on July 1st. Although I am...",
   "date": "2020-08-03T03:37:54.196Z",
   "tags": [
     "career",
@@ -31,9 +31,9 @@ This sense that things are obvious is so prevalent, that hotels.com created the 
 
 {% youtube "EsURuI8n9s8" %}
 
-@ben has posted about this before as well.
+[Ben](https://dev.to/ben) has posted about this before as well.
 
-{% link "https://dev.to/ben/nothing-in-software-development-is-obvious--5hmm" %}
+{% embed "https://dev.to/ben/nothing-in-software-development-is-obvious--5hmm" %}
 
 With so many concepts, patterns, tech stacks and new stuff popping out all the time as well as all the tech and business jargon out there, everything is not obvious and that's OK. We just need to learn from each other and keep spreading the knowledge.
 
