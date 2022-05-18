@@ -388,13 +388,13 @@
     "slug": "a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
     "path": "/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
     "url": "https://dev.to/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
-    "collection_id": null,
+    "collection_id": 4084,
     "published_timestamp": "2020-01-21T18:09:58Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--q2i_vNRX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6v67gbppb6cqqj3pqrp3.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--yGFi_bEu--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6v67gbppb6cqqj3pqrp3.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0/",
     "created_at": "2020-01-14T04:16:09Z",
-    "edited_at": "2022-05-08T16:47:42Z",
+    "edited_at": "2022-05-12T12:37:24Z",
     "crossposted_at": null,
     "published_at": "2020-01-21T18:09:58Z",
     "last_comment_at": "2021-04-04T16:33:57Z",
@@ -919,7 +919,7 @@
     "edited_at": "2019-06-26T06:18:21Z",
     "crossposted_at": null,
     "published_at": "2019-06-25T21:38:30Z",
-    "last_comment_at": "2022-05-01T20:41:29Z",
+    "last_comment_at": "2022-05-16T15:07:05Z",
     "reading_time_minutes": 2,
     "tag_list": "webdev, html",
     "tags": [
@@ -1023,15 +1023,15 @@
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--SOsoC6PH--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/2h3puantbcb0a0sfusny.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/any-contribution-to-open-source-is-valuable-57d3/",
     "created_at": "2019-01-22T03:54:33Z",
-    "edited_at": "2022-04-20T10:44:21Z",
+    "edited_at": "2022-05-12T22:37:18Z",
     "crossposted_at": "2019-01-22T04:02:06Z",
     "published_at": "2019-01-22T03:24:42Z",
     "last_comment_at": "2021-06-18T12:50:00Z",
     "reading_time_minutes": 2,
-    "tag_list": "opensource, career",
+    "tag_list": "opensource, gatsby",
     "tags": [
       "opensource",
-      "career"
+      "gatsby"
     ],
     "user": {
       "name": "Nick Taylor (he/him)",
