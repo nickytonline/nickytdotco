@@ -295,5 +295,21 @@
       background: var(--color-bg);
       padding: 0.4em 0.6em;
     }
+
+    .tag {
+      clip-path: polygon(0% 0%, 83% 0, 100% 50%, 83% 100%, 0% 100%);
+
+      a {
+        padding-right: 0.9em;
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+          color: var(--color-bg);
+          background: var(--color-text);
+          outline: none;
+        }
+      }
+    }
   }
 }
