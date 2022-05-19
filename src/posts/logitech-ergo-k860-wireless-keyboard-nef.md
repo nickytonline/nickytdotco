@@ -33,7 +33,13 @@ There are more options if you click on the More link.
 
 The keys are low profile but have a nice tactile feel to them. It's not a clickety-clack loud keyboard which I appreciate. They seem pretty durable; I've only had the keyboard for a couple of months, so time will tell.
 
-The only thing that annoys me about the keyboard is the <kbd>Print Screen</kbd> key position. It's directly above the <kbd>backspace</kbd>. I'm constantly taking random screenshots of my desktop because of where it's located. I sorted that out tonight though, by installing [Karabiner-Elements](https://karabiner-elements.pqrs.org/). I've heard about it before but installed it tonight to disable the <kbd>Print Screen</kbd> key. Life is already better. Look out for a post on Karabiner-Elements sometime later this year. 😎
+The only thing that annoys me about the keyboard is the <kbd>Print Screen</kbd> key position. It's directly above the <kbd>backspace</kbd>. I'm constantly taking random screenshots of my desktop because of where it's located.
+ 
+![LogiOptions software open on the keyboard settings showing keys outlined in white that can be remapped including the Print Screen key](https://www.iamdeveloper.com/images/posts/_uploads_articles_55gqpfbgmfj6gpwempty.png)
+
+To avoid constantly print screening you can use the LogiOptions to remap this key. I decide to remap it to the <kbd>backspace</kbd> key as that's the only time I press the <kbd>Print Screen</kbd> key.
+
+![The keystroke assignment window to remap the Print Screen key](https://www.iamdeveloper.com/images/posts/_uploads_articles_osai6yn70ofwtkvrkv4f.png)
 
 ### Comfort
 
