@@ -103,6 +103,7 @@ Also, I made an extensive list for [Frontend Developer Resources](https://www.ia
 - [LEVOIT Air Purifier Core 300](https://www.amazon.ca/gp/product/B07S3D4MRJ/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
 - [Vornado Pivot Personal Air Circulator Fan](https://www.amazon.ca/gp/product/B01NAYWFLL/)
 - [Elgato Streamd Deck XL](https://www.elgato.com/en/stream-deck-xl)
+- [Quartet Glass Desktop Computer Pad, 18 inch x 6 inch](https://www.amazon.ca/gp/product/B01M2DADUX), a handy desk whiteboard. Thanks for the suggestion [Jhey](https://jhey.dev)!
 
 ## Travel Gear
 
