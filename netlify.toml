@@ -133,3 +133,9 @@ from = "https://book.iamdeveloper.com/*"
 to = "https://calendly.com/nickytonline/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "/11tyMeetupMay2022/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vSSj2W1UDxVH2nNBhH0O_5CNia76ri2C0fx8jygK1ZDE6EXs6_CFUZQp64-zyciFaV7xhJWFSYoLsb7/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
