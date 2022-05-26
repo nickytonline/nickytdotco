@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "My Eleventy Meetup Talk",
+  "title": "Automate syndication of your content with Eleventy, dev.to, and GitHub Actions",
   "excerpt": "Hey friends watching the stream. This is a test post that I'll update with the video once it's...",
   "date": "2022-05-26T17:12:32.116Z",
   "tags": [
