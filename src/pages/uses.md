@@ -104,6 +104,7 @@ Also, I made an extensive list for [Frontend Developer Resources](https://www.ia
 - [Vornado Pivot Personal Air Circulator Fan](https://www.amazon.ca/gp/product/B01NAYWFLL/)
 - [Elgato Streamd Deck XL](https://www.elgato.com/en/stream-deck-xl)
 - [Quartet Glass Desktop Computer Pad, 18 inch x 6 inch](https://www.amazon.ca/gp/product/B01M2DADUX), a handy desk whiteboard. Thanks for the suggestion [Jhey](https://jhey.dev)!
+- [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/), my working at home shoes
 
 ## Travel Gear
 
