@@ -60,6 +60,8 @@ I'm using [short codes](https://www.11ty.dev/docs/shortcodes/) in Eleventy which
 
 In my project, I have shortcodes for specific embeds, e.g. {% raw %}`{% github "url" %}`{% endraw %}, {% raw %}`{% twitter "url" %}`{% endraw %}, etc. I have older posts that use the old liquid tags of DEV, but newer posts use the {% raw %}`{% embed "url" %}`{% endraw %} liquid tag. On my end I manipulate the markdown to convert e.g. {% raw %}`{% embed "https://twitter.com/nickytonline/status/1521650477674471424" %}`{% endraw %} to {% raw %}`{% twitter "https://twitter.com/nickytonline/status/1521650477674471424" %}`{% endraw %}
 
+I don't support all embeds at the moment. For example, comment and tag embeds. I had DEV comment embeds at one point, but it proved troublesome for comment embeds with Tweets or any embed. I used so few of them in blog posts that I made it a rule to create a hyperlink to the comment instead. For the tag embed, I barely used it, so I made another rule to not reference a tag on DEV or, if I did, to create a hyperlink instead.
+
 There are some other manipulations I do to the markdown that I'm probably forgetting. The markdown of a blog post from DEV is now in a state that Eleventy can consume.
 
 #### Boost links
@@ -211,6 +213,8 @@ Thanks to our caching efforts, all the markdown is in a state that Eleventy can 
 * I haven't dug into this yet, but sometimes the GitHub action errors out. I'm not overly concerned at the moment as it generally passes. However, still, it'd be nice for it to recover or handle this error more gracefully.
 
 * Currently, I manually post blog posts to Hashnode via their import from DEV functionality, add the associated tags, set the canonical URL and save the post. It would be nice to post to them when a new post is created on my blog. They don't use liquid tags. They use another format like this `%[some url]`, so I would need to handle that.
+
+* It'd be nice to support more embeds from DEV in my blog
 
 * Automatically posting my latest posts to social media would be nice, but I'm on the fence about this one. I enjoy writing these Tweets or short posts manually instead of having some generic Tweet or post on LinkedIn.
 
