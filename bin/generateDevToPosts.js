@@ -201,8 +201,9 @@ async function createPostFile(post) {
   const postFile = path.join(POSTS_DIRECTORY, `${slug}.md`);
   await fs.writeFile(postFile, markdown);
 
+  // Checking for a backtick before the Twitter embed so that we're not pulling in a code example of an embed.
   const twitterEmbedMatches = markdown.matchAll(
-    /(?:{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/www?\.twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g
+    /(?:[^`]{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/www?\.twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g
   );
 
   for (const {
@@ -217,6 +218,11 @@ async function createPostFile(post) {
           `https://twitter.com/anyone/status/${tweetId}`
         )}`
       );
+
+      console.log(
+        `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`
+      );
+
       const {html} = await response.json();
 
       twitterEmbeds.set(tweetId, html);
@@ -325,7 +331,10 @@ async function updateMarkdownImageUrls(markdown) {
 }
 
 async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
-  const matches = markdown.matchAll(/{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g);
+  // Checking for a backtick before the embed so that we're not pulling in a code example of an embed.
+  const matches = markdown.matchAll(
+    /[^`]{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g
+  );
 
   for (const match of matches) {
     const {embedType, embedUrl} = match.groups;
