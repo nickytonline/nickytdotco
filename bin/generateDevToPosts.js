@@ -63,7 +63,10 @@ function sanitizeMarkdownEmbeds(markdown) {
     .replaceAll(
       /```(?<language>.*)\n(?<code>(.|\n)+?)\n```/g,
       '```$1\n{% raw %}\n$2\n{% endraw %}\n```'
-    );
+    )
+    // We need to add raw shortcodes to prevent shortcodes within code blocks from rendering.
+    // For now, this only supports single-line code blocks.
+    .replaceAll(/(`{%[^%]+%}`)/g, '{% raw %}$1{% endraw %}');
 
   return sanitizedMarkdown;
 }

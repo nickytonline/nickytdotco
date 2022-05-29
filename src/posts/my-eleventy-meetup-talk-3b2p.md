@@ -54,11 +54,11 @@ I filter out certain posts via the `isValidPost(post)` function. I filter out di
 
 ### Manipulating the markdown and shortcodes
 
-DEV uses [liquid tags](https://shopify.github.io/liquid/basics/variations/) for embedding content in blog posts. For those interested, here is the [complete list of supported embeds](https://dev.to/p/editor_guide#liquidtags) via the DEV `{% embed "url" %}` liquid tag.
+DEV uses [liquid tags](https://shopify.github.io/liquid/basics/variations/) for embedding content in blog posts. For those interested, here is the [complete list of supported embeds](https://dev.to/p/editor_guide#liquidtags) via the DEV {% raw %}`{% embed "url" %}`{% endraw %} liquid tag.
 
-I'm using [short codes](https://www.11ty.dev/docs/shortcodes/) in Eleventy which are the same syntax as liquid tags. In the past DEV had specific liquid tags for different embeds. For example, to embed a GitHub repository, you'd use the `{% github "url" %}` liquid tag. The liquid tag is still supported, but they now have a generic embed liquid tag, `{% embed "url" %}` which determines what type of embed based on the URL.
+I'm using [short codes](https://www.11ty.dev/docs/shortcodes/) in Eleventy which are the same syntax as liquid tags. In the past DEV had specific liquid tags for different embeds. For example, to embed a GitHub repository, you'd use the {% raw %}`{% github "url" %}`{% endraw %} liquid tag. The liquid tag is still supported, but they now have a generic embed liquid tag, {% raw %}`{% embed "url" %}`{% endraw %} which determines what type of embed based on the URL.
 
-In my project, I have shortcodes for specific embeds, e.g. `{% github "url" %}`, `{% twitter "url" %}`, etc. I have older posts that use the old liquid tags of DEV, but newer posts use the `{% embed "url" %}` liquid tag. On my end I manipulate the markdown to convert e.g. `{% embed "https://twitter.com/nickytonline/status/1521650477674471424" %}` to `{% twitter "https://twitter.com/nickytonline/status/1521650477674471424" %}`
+In my project, I have shortcodes for specific embeds, e.g. {% raw %}`{% github "url" %}`{% endraw %}, {% raw %}`{% twitter "url" %}`{% endraw %}, etc. I have older posts that use the old liquid tags of DEV, but newer posts use the {% raw %}`{% embed "url" %}`{% endraw %} liquid tag. On my end I manipulate the markdown to convert e.g. {% raw %}`{% embed "https://twitter.com/nickytonline/status/1521650477674471424" %}`{% endraw %} to {% raw %}`{% twitter "https://twitter.com/nickytonline/status/1521650477674471424" %}`{% endraw %}
 
 There are some other manipulations I do to the markdown that I'm probably forgetting. The markdown of a blog post from DEV is now in a state that Eleventy can consume.
 
