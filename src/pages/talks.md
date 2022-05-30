@@ -13,7 +13,7 @@ metaDesc: 'Talks Nick Taylor has given.'
 
 <h2>Tools for web developers: Live coding and debugging</h2>
 
-<time datetime="2021-02-10">February 10th, 2022</time>
+<time datetime="2022-02-10">February 10th, 2022</time>
 
 {% youtube 'https://www.youtube.com/watch?v=k0nSJ1MtSao' %}
 
