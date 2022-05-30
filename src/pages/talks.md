@@ -3,6 +3,14 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
+<h2>Virtual Coffee Lunch & Learn: Asking Coding Questions</h2>
+
+<time datetime="2022-05-27">May 27th, 2022</time>
+
+{% youtube 'https://www.youtube.com/watch?v=DVqtr3iwkwQ' %}
+
+- [Related discussion series](https://dev.to/virtualcoffee/navigating-a-new-code-base-94d)
+
 <h2>Tools for web developers: Live coding and debugging</h2>
 
 <time datetime="2021-02-10">February 10th, 2022</time>
