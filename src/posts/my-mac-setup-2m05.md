@@ -9,6 +9,7 @@
     "webdev"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--C6fxx9Ly--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_qkwvsk3lp64lvchg69tm.png",
+  "reading_time_minutes": 9,
   "template": "post"
 }
 ---

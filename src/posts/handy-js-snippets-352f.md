@@ -8,6 +8,7 @@
     "showdev"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--8TPM73BB--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c2.staticflickr.com_8_7282_8995095069_9e88b3bba5_b.jpg",
+  "reading_time_minutes": 2,
   "template": "post"
 }
 ---

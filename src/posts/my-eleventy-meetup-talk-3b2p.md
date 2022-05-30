@@ -10,6 +10,7 @@
     "webdev"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--foEy2Mck--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_2x523d97n7fem0pci10s.png",
+  "reading_time_minutes": 6,
   "template": "post"
 }
 ---

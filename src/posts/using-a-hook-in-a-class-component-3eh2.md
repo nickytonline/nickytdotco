@@ -8,6 +8,7 @@
     "javascript"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--NBwmN8Qr--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_h8jx0vy2dbgwqsfpynbu.jpeg",
+  "reading_time_minutes": 2,
   "template": "post"
 }
 ---

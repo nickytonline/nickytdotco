@@ -7,6 +7,7 @@
     "hacktoberfest"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--UWW67K9v--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_p2th95jqhkylbvffrrz0.png",
+  "reading_time_minutes": 1,
   "template": "post"
 }
 ---

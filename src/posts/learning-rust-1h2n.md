@@ -9,6 +9,7 @@
     "livecoding"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--MM-nL96G--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_4xq8xpxzzghjhh1nli1g.jpeg",
+  "reading_time_minutes": 1,
   "template": "post"
 }
 ---

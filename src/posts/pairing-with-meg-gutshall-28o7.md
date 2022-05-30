@@ -10,6 +10,7 @@
     "ruby"
   ],
   "cover_image": null,
+  "reading_time_minutes": 1,
   "template": "post"
 }
 ---

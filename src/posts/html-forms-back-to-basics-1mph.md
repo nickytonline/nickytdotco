@@ -10,6 +10,7 @@
     "beginners"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--t9c1XIrR--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_tdhxw07gd7gwo6ctib50.png",
+  "reading_time_minutes": 3,
   "template": "post"
 }
 ---

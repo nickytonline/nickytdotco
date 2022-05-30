@@ -9,6 +9,7 @@
     "motivation"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--gMX84Q9b--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_fgimfk93vbdn6v0csx5e.jpg",
+  "reading_time_minutes": 5,
   "template": "post"
 }
 ---

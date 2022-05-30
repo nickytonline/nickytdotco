@@ -9,6 +9,7 @@
     "gatsby"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--txUc6TTd--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_6nx4xj3l7dk99em1bdww.png",
+  "reading_time_minutes": 3,
   "template": "post"
 }
 ---

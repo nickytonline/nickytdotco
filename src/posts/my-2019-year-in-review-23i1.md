@@ -7,6 +7,7 @@
     "yearinreview"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--2NiTSnuS--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_z8awferjpkro7ig0ciey.jpg",
+  "reading_time_minutes": 17,
   "template": "post"
 }
 ---
