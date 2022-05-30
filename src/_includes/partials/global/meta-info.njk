@@ -39,6 +39,12 @@
 <meta name="twitter:image:alt" content="Page image for the page {{ title }}"/>
 <meta name="twitter:card" content="summary_large_image">
 
+<!-- extra metadata for Slack unfurls -->
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="{{ site.authorName }}" />
+<meta name="twitter:label2" content="Reading time" />
+<meta name="twitter:data2" content="{{ reading_time_minutes }} minute read" />
+
 {% if site.paymentPointer %}
   <meta name="monetization" content="{{ site.paymentPointer }}"/>
 {% endif %}

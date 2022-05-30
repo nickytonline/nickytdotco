@@ -182,10 +182,19 @@ async function createPostFile(post) {
     description: excerpt,
     published_at: date,
     tag_list: tags,
+    reading_time_minutes,
     cover_image,
     slug,
   } = post;
-  const jsonFrontmatter = {title, excerpt, date, tags, cover_image, template: 'post'};
+  const jsonFrontmatter = {
+    title,
+    excerpt,
+    date,
+    tags,
+    cover_image,
+    reading_time_minutes,
+    template: 'post',
+  };
   let markdownBody;
 
   if (/^---(\r|\n)/.test(body_markdown)) {
