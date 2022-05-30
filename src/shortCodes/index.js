@@ -134,8 +134,8 @@ function embedEmbed(rawUrl) {
   const url = new URL(rawUrl);
 
   // This is based off the generic dev.to embed liquid tag.
-  if (url.hostname.includes(`youtube.com`)) {
-    const videoId = url.searchParams.get('v');
+  if (url.hostname.includes(`youtube.com`) || url.hostname.includes(`youtu.be`)) {
+    const videoId = url.searchParams.get('v') ?? url.pathname.substr(1);
 
     return youtubeEmbed(videoId);
   }
