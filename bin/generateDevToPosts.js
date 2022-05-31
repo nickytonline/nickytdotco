@@ -427,7 +427,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
 
   // Only publish posts that are not under the vscodetips dev.to organization.
   for (const post of posts.filter(
-    (post) => post.organization?.username !== 'vscodetips'
+    (post) => !['vscodetips', 'virtualcoffee'].includes(post.organization?.username)
   )) {
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const {markdown, imagesToSave} = await updateMarkdownImageUrls(post.body_markdown);
