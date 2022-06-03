@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Automate syndication of your content with Eleventy, dev.to, and GitHub Actions",
-  "excerpt": "This started off as a test post for my talk I gave this past week at the Eleventy Meetup.  The...",
+  "excerpt": "This started off as a test post for my talk I gave this past week at the Eleventy Meetup.      Here’s...",
   "date": "2022-05-26T17:12:32.116Z",
   "tags": [
     "eleventy",
@@ -17,7 +17,9 @@
 
 This started off as a test post for my talk I gave this past week at the [Eleventy Meetup](https://11tymeetup.dev/).
 
-The recording isn't up yet, but for now you can check out the slide deck, [iamdeveloper.com/11tyMeetupMay2022](https://iamdeveloper.com/11tyMeetupMay2022).
+{% embed "https://youtu.be/Yy4eHUjLWAs" %}
+
+Here’s the accompanying slide deck, [iamdeveloper.com/11tyMeetupMay2022](https://iamdeveloper.com/11tyMeetupMay2022).
 
 I wasn't able to go into as much detail as I would have liked to during the talk, so this blog post compliments the talk.
 
