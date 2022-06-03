@@ -3,6 +3,16 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
+<h2>Automate syndication and ownership of your content with Eleventy</h2>
+
+<time datetime="2022-05-26">May 26th, 2022</time>
+
+{% youtube 'https://www.youtube.com/watch?v=Yy4eHUjLWAs' %}
+
+- A talk I gave at the Eleventy Meetup
+- [Slide deck](Automate syndication of your content with Eleventy, dev.to, and GitHub Actions)
+- Accompanying article. [Automate syndication of your content with Eleventy, dev.to, and GitHub Actions](https://www.iamdeveloper.com/posts/my-eleventy-meetup-talk-3b2p/)
+
 <h2>Virtual Coffee Lunch & Learn: Asking Coding Questions</h2>
 
 <time datetime="2022-05-27">May 27th, 2022</time>
