@@ -119,8 +119,11 @@ function socialImage(title, excerpt = '') {
       : innerWhitespaceTrimmedExcerpt;
   const encodedTitle = encodeURIComponent(encodeURIComponent(title));
   const encodedExcerpt = encodeURIComponent(encodeURIComponent(truncatedExcerpt));
+  const encodedAuthor = encodeURIComponent(
+    encodeURIComponent(`${site.authorName} ${site.authorHandle}`)
+  );
 
-  return `https://res.cloudinary.com/nickytonline/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:433c3d,g_south_west,x_370,y_380,l_text:roboto_64_bold:${encodedTitle}/w_860,c_fit,co_rgb:433c3d,g_north_west,x_370,y_320,l_text:arial_48:${encodedExcerpt}/twitter-blog-post-social-card_rh0al8`;
+  return `https://res.cloudinary.com/nickytonline/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:433c3d,g_south_west,x_370,y_380,l_text:roboto_64_bold:${encodedTitle}/w_860,c_fit,co_rgb:433c3d,g_north_west,x_370,y_320,l_text:arial_42:${encodedExcerpt}/w_860,c_fit,co_rgb:433c3d,g_north_west,x_820,y_600,l_text:arial_36:${encodedAuthor}/twitter-blog-post-social-card_rh0al8`;
 }
 
 /**
