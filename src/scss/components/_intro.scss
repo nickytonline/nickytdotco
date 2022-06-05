@@ -1,5 +1,11 @@
 .intro {
   background: var(--color-theme-highlight-block);
+
+  @media screen and (min-width: 1180px) {
+    background-image: url(https://res.cloudinary.com/nickytonline/image/upload/c_scale,h_200,w_200/v1653353570/alpaca-icon_r9sskj.png);
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+  }
   @include stephify;
 
   &__summary {
