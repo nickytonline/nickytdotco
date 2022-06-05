@@ -80,6 +80,18 @@ Also, I made an extensive list for [Frontend Developer Resources](https://www.ia
 
 ## Office Setup
 
+<figure>
+<img sizes="(min-width: 30em) 28em, 100vw"
+  srcset="https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_256/v1654355126/my%20website/office/desk-setup_deurmi.jpg 256w,
+          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_512/v1654355126/my%20website/office/desk-setup_deurmi.jpg 512w,
+          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_768/v1654355126/my%20website/office/desk-setup_deurmi.jpg 768w,
+          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_1024/v1654355126/my%20website/office/desk-setup_deurmi.jpg 1024w,
+          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_1280/v1654355126/my%20website/office/desk-setup_deurmi.jpg 1280w"
+src="https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_512/v1654355126/my%20website/office/desk-setup_deurmi.jpg"
+alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in the middle, a microphone and boom on the right, and a keyboard, mouse, desk whiteboard, and Stream deck in the front. There are also ring lights around the desk for streaming." />
+<figcaption>My desk setup. My Mac is on a stand on the left, a wide screen monitor in the middle, a microphone and boom on the right, and a keyboard, mouse, desk whiteboard, and Stream deck in the front. There are also ring lights around the desk for streaming.</figcaption>
+</figure>
+
 - [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141) - I snagged it at a great price. It appears to go on sale often.
 - Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with many new parts for just under a third of the price.
 - [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
@@ -105,6 +117,18 @@ Also, I made an extensive list for [Frontend Developer Resources](https://www.ia
 - [Elgato Streamd Deck XL](https://www.elgato.com/en/stream-deck-xl)
 - [Quartet Glass Desktop Computer Pad, 18 inch x 6 inch](https://www.amazon.ca/gp/product/B01M2DADUX), a handy desk whiteboard. Thanks for the suggestion [Jhey](https://jhey.dev)!
 - [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/), my working at home shoes
+
+<figure>
+<img sizes="(min-width: 30em) 28em, 100vw"
+  srcset="https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_256/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 256w,
+          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_512/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 512w,
+          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_768/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 768w,
+          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_1024/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 1024w,
+          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_1280/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 1280w"
+src="https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_512/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg"
+alt="My office's back wall has a whiteboard on it. There are erasable markers, an eraser, and a small flat plastic cute cat throwing up a rainbow. To the right is my bookshelf." />
+<figcaption>My office's back wall has a whiteboard on it. There are erasable markers, an eraser, and a small flat plastic cute cat throwing up a rainbow. To the right is my bookshelf.</figcaption>
+</figure>
 
 ## Travel Gear
 
