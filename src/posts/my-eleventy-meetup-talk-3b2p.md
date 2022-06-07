@@ -55,6 +55,8 @@ async function getDevPosts() {
 
 I filter out certain posts via the `isValidPost(post)` function. I filter out discussion posts, water cooler posts etc., as I enjoy having them on DEV, but not my blog.
 
+The API does allow you to exclude tags instead of doing it once you’ve received all posts, but for some reason it doesn’t work and I have haven’t had time to investigate why. 
+
 ### Manipulating the markdown and shortcodes
 
 DEV uses [liquid tags](https://shopify.github.io/liquid/basics/variations/) for embedding content in blog posts. For those interested, here is the [complete list of supported embeds](https://dev.to/p/editor_guide#liquidtags) via the DEV {% raw %}`{% embed "url" %}`{% endraw %} liquid tag.
