@@ -1,9 +1,9 @@
 ---
 layout: home
-title: Hi! I'm Nick Taylor
+title: Well, hello there!
 postsHeading: Latest posts
 archiveButtonText: See all posts
-metaDesc: Welcome to Nick Taylor's Web Site. I am a sofware engineer with a focus on the front-end.
+metaDesc: Welcome to Nick Taylor's Web Site. Nick is a Staff Software Engineer focusing on front-end technologies and tooling.
 ---
 
-I am a Staff Software Engineer at [Netlify](https://netlify.com) on the ecosystem team. I'm not a big fan of spiders, but I know they're doing good work eating bugs.
+My name is Nick Taylor. I am a Staff Software Engineer focusing on front-end technologies and tooling with a growing interest in serverless and edge computing.
