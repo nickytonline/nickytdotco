@@ -10,8 +10,8 @@ metaDesc: 'Talks Nick Taylor has given.'
 {% youtube 'https://www.youtube.com/watch?v=Yy4eHUjLWAs' %}
 
 - A talk I gave at the Eleventy Meetup
-- [Slide deck](Automate syndication of your content with Eleventy, dev.to, and GitHub Actions)
-- Accompanying article. [Automate syndication of your content with Eleventy, dev.to, and GitHub Actions](https://www.iamdeveloper.com/posts/my-eleventy-meetup-talk-3b2p/)
+- [Slide deck](https://www.iamdeveloper.com/11tyMeetupMay2022)
+- Accompanying article, [Automate syndication of your content with Eleventy, dev.to, and GitHub Actions](https://www.iamdeveloper.com/posts/my-eleventy-meetup-talk-3b2p/)
 
 <h2>Virtual Coffee Lunch & Learn: Asking Coding Questions</h2>
 
