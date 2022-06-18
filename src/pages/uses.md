@@ -9,11 +9,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 ## Editor
 
 - [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/)
-- Themes I alternate between:
-  - [Fortnite](https://marketplace.visualstudio.com/items?itemName=sdras.fortnite-vscode-theme) by [Sarah Drasner](https://twitter.com/sarah_edo)
-  - [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) by [Sarah Drasner](https://twitter.com/sarah_edo)
-  - [Cobalt2 Theme Official](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) by [Wes Bos](https://wesbos.com)
-  - [Shades of Purple](https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple) by [Ahmad Awais](https://ahmadawais.com/)
+- Theme: [Fortnite](https://marketplace.visualstudio.com/items?itemName=sdras.fortnite-vscode-theme) by [Sarah Drasner](https://twitter.com/sarah_edo)
 - Font: [Dank Mono](https://dank.sh) by [Phil Plückthun](https://twitter.com/_philpl)
 
 ### Chrome/Edge/Firefox Browser Extensions
@@ -43,13 +39,12 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [Obsidian](https://obsidian.md) - Note Taking/My Second Brain
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) - Because Docker
 - [xScope](https://xscope.app) - Awesome toolset for frontend development. Rulers, guides etc.
-- [Dato](https://sindresorhus.com/dato) - A better date app for macOS.
+- [Dato](https://sindresorhus.com/dato) - A better date app for macOS. It's great for having multiple time zones in the address bar. I have my local time as well as UTC. I also use it for upcoming meetings and events. Previously I was using [Meeter](https://trymeeter.com) which is great for this, but it's one less app I need now.
 - [iTerm](https://iterm2.com/) - A better terminal for macOS
 - [warp](https://www.warp.dev/) - A modern terminal (trying it out)
 - [Starship](https://starship.rs/) - A cross shell prompt
 - [Spotify](https://www.spotify.com/us/download/) - Because music.
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
-- [Meeter](https://trymeeter.com) - For joining meetings faster
 - [OBS](https://obsproject.com/download) - For streaming on Twitch
 - [Descript](https://www.descript.com/) - For editing and publishing my Twitch streams to YouTube.
 - [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to zoom in on my webcam.
@@ -69,7 +64,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [hub](https://github.com/github/hub) - GitHub's improved git (can be safely aliased to git)
 - [GitHub CLI](https://github.com/cli/cli) - GitHub on the command line. Great for creating PRs, etc.
 - [rbenv](https://github.com/rbenv/rbenv) - Ruby version manager
-- [nvm](https://github.com/nvm-sh/nvm) - Node version manager
+- [n](https://github.com/tj/n) - Node version manager
 - [ngrok](https://ngrok.com/) - Exposes local servers to the public internet over secure tunnels
 - [mcfly](https://github.com/cantino/mcfly) - An enhance search for your shell history. Super charged <kbd>CTRL</kbd> + <kbd>R</kbd>!
 - [httpie](https://github.com/httpie/httpie) - A command-line HTTP client
