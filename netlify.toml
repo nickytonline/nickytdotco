@@ -93,6 +93,18 @@ status = 301
 force = true
 
 [[redirects]]
+from = "https://structuredyolo.com/*"
+to = "https://twitch.tv/nickytonline/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.structuredyolo.com/*"
+to = "https://twitch.tv/nickytonline/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://javascripthours.com/*"
 to = "https://twitch.tv/nickytonline/:splat"
 status = 301
