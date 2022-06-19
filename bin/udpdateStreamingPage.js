@@ -33,7 +33,7 @@ function generateVideosMarkup(videos) {
   for (const video of videos) {
     const {link, thumbnail, title} = video;
 
-    markup += `<a href="${link}" title="${title}"><img src="${thumbnail}" alt="${title}" width="240" height="180" /></a>`;
+    markup += `<a href="${link}" title="${title}"><img src="${thumbnail}" alt="${title}" width="360" height="270" /></a>`;
   }
 
   markup += '</div>';
@@ -53,22 +53,22 @@ function generateVideosMarkup(videos) {
  *  }
  * ]
  */
-async function getVideos(videoFeedUrl, numberOfVideos = 6) {
+async function getVideos(videoFeedUrl, numberOfVideos = 4) {
   const parser = new Parser({
     customFields: {
-      item: ['media:group', 'media:thumbnail']
-    }
+      item: ['media:group', 'media:thumbnail'],
+    },
   });
 
   const feed = await parser.parseURL(videoFeedUrl);
 
-  return feed.items.slice(0, numberOfVideos).map(m => {
+  return feed.items.slice(0, numberOfVideos).map((m) => {
     return {
       title: m.title,
       link: m.link,
       description: m['media:group']['media:description'][0],
       thumbnail: m['media:group']['media:thumbnail'][0].$.url,
-      date: m.pubDate ? new Date(m.pubDate) : new Date()
+      date: m.pubDate ? new Date(m.pubDate) : new Date(),
     };
   });
 }

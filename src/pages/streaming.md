@@ -7,7 +7,7 @@ I [started live coding on Twitch](https://www.iamdeveloper.com/posts/i-ve-starte
 
 ## Latest Videos
 
-<!-- VIDEO-LIST:START --><div class="video-panel"><a href="https://www.youtube.com/watch?v=7dKkcJ6cTpA" title="Debugging Node.js and deno"><img src="https://i4.ytimg.com/vi/7dKkcJ6cTpA/hqdefault.jpg" alt="Debugging Node.js and deno" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=IG697qDkvYY" title="Moving the Virtual Coffee site to Remix with Dan Ott"><img src="https://i2.ytimg.com/vi/IG697qDkvYY/hqdefault.jpg" alt="Moving the Virtual Coffee site to Remix with Dan Ott" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=mOTK5HdrTSc" title="Building a themed chat overlay using showmy.chat with Ben Myers"><img src="https://i2.ytimg.com/vi/mOTK5HdrTSc/hqdefault.jpg" alt="Building a themed chat overlay using showmy.chat with Ben Myers" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=rOSqy02eiuk" title="Rest2GraphQL & Other GraphQL Tools with Lucia Cerchie"><img src="https://i3.ytimg.com/vi/rOSqy02eiuk/hqdefault.jpg" alt="Rest2GraphQL & Other GraphQL Tools with Lucia Cerchie" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=URQSVmrr8Vo" title="RedwoodJS Walkthrough with Anthony Campolo, RedwoodJS core team member"><img src="https://i2.ytimg.com/vi/URQSVmrr8Vo/hqdefault.jpg" alt="RedwoodJS Walkthrough with Anthony Campolo, RedwoodJS core team member" width="240" height="180" /></a><a href="https://www.youtube.com/watch?v=pSq7bSk3WqU" title="npx gitignore"><img src="https://i1.ytimg.com/vi/pSq7bSk3WqU/hqdefault.jpg" alt="npx gitignore" width="240" height="180" /></a></div><!-- VIDEO-LIST:END -->
+<!-- VIDEO-LIST:START --><div class="video-panel"><a href="https://www.youtube.com/watch?v=7dKkcJ6cTpA" title="Debugging Node.js and deno"><img src="https://i4.ytimg.com/vi/7dKkcJ6cTpA/hqdefault.jpg" alt="Debugging Node.js and deno" width="360" height="270" /></a><a href="https://www.youtube.com/watch?v=IG697qDkvYY" title="Moving the Virtual Coffee site to Remix with Dan Ott"><img src="https://i2.ytimg.com/vi/IG697qDkvYY/hqdefault.jpg" alt="Moving the Virtual Coffee site to Remix with Dan Ott" width="360" height="270" /></a><a href="https://www.youtube.com/watch?v=mOTK5HdrTSc" title="Building a themed chat overlay using showmy.chat with Ben Myers"><img src="https://i2.ytimg.com/vi/mOTK5HdrTSc/hqdefault.jpg" alt="Building a themed chat overlay using showmy.chat with Ben Myers" width="360" height="270" /></a><a href="https://www.youtube.com/watch?v=rOSqy02eiuk" title="Rest2GraphQL & Other GraphQL Tools with Lucia Cerchie"><img src="https://i3.ytimg.com/vi/rOSqy02eiuk/hqdefault.jpg" alt="Rest2GraphQL & Other GraphQL Tools with Lucia Cerchie" width="360" height="270" /></a></div><!-- VIDEO-LIST:END -->
 
 ## DEV Twitch Stream
 
@@ -22,7 +22,7 @@ Good times and great guests. Thanks to everyone that was a part of it.
     ><img
       src="https://i4.ytimg.com/vi/cmooRSV4sr8/hqdefault.jpg"
       alt="Stacie Taylor, Engineering Team Lead at Zapier and Co-founder at Collab Lab"
-      width="240" height="180"
+      width="360" height="270"
 /></a
   ><a
     href="https://www.youtube.com/watch?v=zMEvgvSrPuo"
@@ -30,7 +30,7 @@ Good times and great guests. Thanks to everyone that was a part of it.
     ><img
       src="https://i3.ytimg.com/vi/zMEvgvSrPuo/hqdefault.jpg"
       alt="Walkthrough Wednesday with Sunil Pai, Workers Team at Cloudflare"
-      width="240" height="180"
+      width="360" height="270"
 /></a
   ><a
     href="https://www.youtube.com/watch?v=MWkJFsC9jZo"
@@ -38,7 +38,7 @@ Good times and great guests. Thanks to everyone that was a part of it.
     ><img
       src="https://i2.ytimg.com/vi/MWkJFsC9jZo/hqdefault.jpg"
       alt="Walkthrough Wednesday with Jenn Schiffer"
-      width="240" height="180"
+      width="360" height="270"
 /></a
   ><a
     href="https://www.youtube.com/watch?v=IH2IcYMxab4"
@@ -46,7 +46,7 @@ Good times and great guests. Thanks to everyone that was a part of it.
     ><img
       src="https://i2.ytimg.com/vi/IH2IcYMxab4/hqdefault.jpg"
       alt="Walkthrough Wednesday with Stephanie Eckles"
-      width="240" height="180"
+      width="360" height="270"
 /></a
   ><a
     href="https://www.youtube.com/watch?v=wHWzxGD_cRk"
@@ -54,7 +54,7 @@ Good times and great guests. Thanks to everyone that was a part of it.
     ><img
       src="https://i4.ytimg.com/vi/wHWzxGD_cRk/hqdefault.jpg"
       alt="Walkthrough Wednesday: Learn Terraform with Andrew Brown"
-      width="240" height="180"
+      width="360" height="270"
 /></a
   ><a
     href="https://www.youtube.com/watch?v=d1KCS6C4Rus"
@@ -62,7 +62,7 @@ Good times and great guests. Thanks to everyone that was a part of it.
     ><img
       src="https://i1.ytimg.com/vi/d1KCS6C4Rus/hqdefault.jpg"
       alt="Walkthrough Wednesday with Brian Douglas"
-      width="240" height="180"
+      width="360" height="270"
 /></a
   >
 </div>
