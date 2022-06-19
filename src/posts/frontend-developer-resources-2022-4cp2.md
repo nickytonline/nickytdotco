@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Frontend Developer Resources 2022",
-  "excerpt": "I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got...",
+  "excerpt": "También puedes leer este artículo en español gracias a Chema Bescós!  I don't know if I'll keep doing...",
   "date": "2021-12-28T04:16:47.727Z",
   "tags": [
     "javascript",
@@ -10,10 +10,12 @@
     "typescript"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--W2oGsRSm--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_xlvhwaqhlebll79nx1jt.png",
-  "reading_time_minutes": 7,
+  "reading_time_minutes": 8,
   "template": "post"
 }
 ---
+
+[También puedes leer este artículo en español](https://www.ibidem-translations.com/edu/traduccion-desarrolladores-web-frontend/) gracias a [Chema Bescós](https://www.linkedin.com/in/josemariabescos)!
 
 I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got some good signal, so I renamed it to Frontend Developer Resources 2020, which brings us to Frontend Developer Resources 2022. Oops, I missed 2021. Technically we're still in 2021, but humour me. I also added sprinkles of shameless plugs. 😎
 
