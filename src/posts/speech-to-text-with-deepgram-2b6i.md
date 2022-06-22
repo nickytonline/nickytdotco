@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Speech-to-text with Deepgram",
-  "excerpt": "Bekah Hawrot Weigel (@bekahhw) joined me on the stream today to show how you can transcribe text...",
+  "excerpt": "Bekah Hawrot Weigel (@bekahhw) joined me on my stream today to show how you can transcribe text using...",
   "date": "2022-06-22T22:00:16.434Z",
   "tags": [
     "node",
@@ -14,7 +14,7 @@
 }
 ---
 
-Bekah Hawrot Weigel (@bekahhw) joined me on the stream today to show how you can transcribe text using Deepgram's [Node.js SDK](https://developers.deepgram.com/sdks-tools/sdks/node-sdk/).
+Bekah Hawrot Weigel (@bekahhw) joined me on [my stream](https://livecoding.ca) today to show how you can transcribe text using Deepgram's [Node.js SDK](https://developers.deepgram.com/sdks-tools/sdks/node-sdk/).
 
 {% embed "https://youtu.be/tHe2yBLh_Hc" %}
 
