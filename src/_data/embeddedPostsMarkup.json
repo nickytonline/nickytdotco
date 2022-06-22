@@ -1634,5 +1634,48 @@
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--45siZtW9--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/492757/3e8de3e2-8172-4cf6-958c-ed1221225d6a.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--pl-4Gutk--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/492757/3e8de3e2-8172-4cf6-958c-ed1221225d6a.jpg"
     }
+  },
+  "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404": {
+    "type_of": "article",
+    "id": 1120451,
+    "title": "How to Add Speech Recognition to Your React and Node.js Project",
+    "description": "Do you have a React project that could use speech-to-text? This tutorial will go through the steps to upgrade your React project with Deepgram transcriptions.",
+    "readable_publish_date": "Jun 21",
+    "slug": "how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
+    "path": "/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
+    "url": "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
+    "collection_id": null,
+    "published_timestamp": "2022-06-21T15:34:24Z",
+    "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--8zhQT4DJ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/deepgram/image/upload/f_auto%2Cq_auto%2Cw_auto%2Cc_fit/v1655815938/blog/2022/06/how-to-add-speech-recognition-to-your-react-project/How-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
+    "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--9IxmlCam--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://res.cloudinary.com/deepgram/image/upload/f_auto%2Cq_auto%2Cw_auto%2Cc_fit/v1655815938/blog/2022/06/how-to-add-speech-recognition-to-your-react-project/How-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
+    "canonical_url": "https://developers.deepgram.com/blog/2022/06/how-to-add-speech-recognition-to-your-react-project/",
+    "created_at": "2022-06-21T15:34:14Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2022-06-21T15:34:24Z",
+    "last_comment_at": "2022-06-22T16:35:35Z",
+    "reading_time_minutes": 6,
+    "tag_list": "react, webdev, node",
+    "tags": [
+      "react",
+      "webdev",
+      "node"
+    ],
+    "user": {
+      "name": "BekahHW",
+      "username": "bekahhw",
+      "twitter_username": "BekahHW",
+      "github_username": "BekahHW",
+      "website_url": "https://bekahhw.github.io/",
+      "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--70NJXeRV--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/345658/a72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
+      "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--7Ds1FVu_--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/345658/a72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
+    },
+    "organization": {
+      "name": "Deepgram",
+      "username": "deepgram",
+      "slug": "deepgram",
+      "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--7ZcPZGcP--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/4019/b921b72d-3c60-425e-a223-189a5fce8839.jpg",
+      "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--PScdE06w--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/4019/b921b72d-3c60-425e-a223-189a5fce8839.jpg"
+    }
   }
 }
