@@ -31,9 +31,9 @@ function boostLink(title, fileSlug, url) {
     `${title} by ${site.authorHandle} ${site.url}${url}`
   )}">Share on Twitter</a>`;
 
-  const intentToLinkedIn = `<a class="boost-link" href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
+  const intentToLinkedIn = `<a class="boost-link" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
     site.url + url
-  )}&title=${encodeURIComponent(title)}">Share on LinkedIn</a>`;
+  )}">Share on LinkedIn</a>`;
 
   return `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
 }
