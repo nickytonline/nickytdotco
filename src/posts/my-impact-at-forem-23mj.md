@@ -7,7 +7,7 @@
     "career"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--1kVhnhTE--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_i0wmq5dpcg6r0b9ym1bv.jpeg",
-  "reading_time_minutes": 3,
+  "reading_time_minutes": 4,
   "template": "post"
 }
 ---
@@ -59,6 +59,12 @@ A big shoutout to my knowledgeable Rails co-workers Josh Puetz, Michael Kohl, Rh
 ## Mentoring
 
 As a more senior person on the team, you have to help scale the team and impart knowledge. I consistently did Pairing regarding all things frontend and programming in general. And another great thing about mentoring? You learn too!
+
+## Positivity
+
+I'm adding a [direct quote from Gracie Gregory](https://dev.to/graciegregory/comment/1n5ec), my old co-worker. Thanks for the kind words and for helping me round up my list. ♥️
+
+> You definitely forgot a big one on this list: POSITIVITY. I have consistently been so impressed with the way you lift others up, encourage everyone, and inject fun and humor into your interactions with everyone — both internally and in the wider community. More appreciated than you know!
 
 ## What Else?
 
