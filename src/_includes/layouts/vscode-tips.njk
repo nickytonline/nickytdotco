@@ -1,0 +1,21 @@
+{% extends 'layouts/base.njk' %}
+{# Intro content #}
+{% set introHeading = title %}
+{% set introSummary %}
+{{ content | safe }}
+{% endset %}
+{# Post list content #}
+{% set postListHeading = postsHeading %}
+{% set postListItems = collections.vscodeTipsPostFeed %}
+{# Archive link #}
+{% if postListItems.length < collections.vscodeTipsPosts.length %}
+  {% set paginationNextText = archiveButtonText %}
+  {% set paginationNextUrl = '/pages/all-vscode-tips' %}
+{% endif %}
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    {% include "partials/components/intro.njk" %}
+    {% include "partials/components/vscode-tips-post-list.njk" %}
+    {% include "partials/components/pagination.njk" %}
+  </main>
+{% endblock %}

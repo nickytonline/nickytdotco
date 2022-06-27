@@ -87,6 +87,17 @@ module.exports = function (config) {
     return collection.getAll();
   });
 
+  config.addCollection('vscodeTipsPosts', (collection) => {
+    return collection.getFilteredByGlob('./src/vscodetips/**/*.md').reverse();
+  });
+
+  config.addCollection('vscodeTipsPostFeed', (collection) => {
+    return collection
+      .getFilteredByGlob('./src/vscodetips/**/*.md')
+      .reverse()
+      .slice(0, site.maxPostsPerPage);
+  });
+
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);

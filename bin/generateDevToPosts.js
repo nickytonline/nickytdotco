@@ -9,6 +9,7 @@ const {DEV_API_KEY, NODE_ENV} = process.env;
 
 const DEV_TO_API_URL = 'https://dev.to/api';
 const POSTS_DIRECTORY = path.join(__dirname, '../src/posts');
+const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, '../src/vscodetips');
 const POSTS_IMAGES_PUBLIC_DIRECTORY = '/images/posts';
 const POSTS_IMAGES_DIRECTORY = path.join(
   __dirname,
@@ -210,7 +211,10 @@ async function createPostFile(post) {
     2
   )}\n---\n\n${sanitizeMarkdownEmbeds(markdownBody).trim()}\n`;
 
-  const postFile = path.join(POSTS_DIRECTORY, `${slug}.md`);
+  const basePath = tags.includes('vscodetips')
+    ? path.join(VSCODE_TIPS_POSTS_DIRECTORY, new Date(date).getFullYear().toString())
+    : POSTS_DIRECTORY;
+  const postFile = path.join(basePath, `${slug}.md`);
   await fs.writeFile(postFile, markdown);
 
   // Checking for a backtick before the Twitter embed so that we're not pulling in a code example of an embed.
@@ -421,14 +425,27 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
 
 (async () => {
   await fs.mkdir(POSTS_DIRECTORY, {recursive: true});
+  await fs.mkdir(POSTS_DIRECTORY, {
+    recursive: true,
+  });
+  await fs.mkdir(
+    path.join(VSCODE_TIPS_POSTS_DIRECTORY, new Date().getFullYear().toString()),
+    {
+      recursive: true,
+    }
+  );
   await fs.mkdir(POSTS_IMAGES_DIRECTORY, {recursive: true});
 
   const posts = await getDevPosts();
 
   // Only publish posts that are not under the vscodetips dev.to organization.
-  for (const post of posts.filter(
-    (post) => !['vscodetips', 'virtualcoffee'].includes(post.organization?.username)
-  )) {
+  for (const post of posts.filter((post) => {
+    return (
+      !['vscodetips', 'virtualcoffee'].includes(post.organization?.username) ||
+      (post.organization?.username === 'vscodetips' &&
+        post.tag_list.includes('vscodetips'))
+    );
+  })) {
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const {markdown, imagesToSave} = await updateMarkdownImageUrls(post.body_markdown);
 
