@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "June 6th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: New Tailwind CSS language mode for VS Code",
   "excerpt": "Tailwind uses a bunch of non-standard at-rules like @tailwind and @apply, so you get lint warnings...",
   "date": "2022-06-07T02:39:25.653Z",
   "tags": [
@@ -8,7 +8,7 @@
     "vscodetips"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--7_frz8py--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_hpcporzgaefiuzx2bl2w.png",
-  "canonicalUrl": "https://dev.to/vscodetips/june-6th-2022-vs-code-tip-of-the-week-m5h",
+  "canonicalUrl": "https://community.vscodetips.com/nickytonline/june-6th-2022-vs-code-tip-of-the-week-pf0",
   "reading_time_minutes": 1,
   "template": "post"
 }

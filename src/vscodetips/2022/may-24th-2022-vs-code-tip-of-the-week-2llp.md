@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "May 24th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: The Timeline Panel",
   "excerpt": "I was on vacation so this week’s tip is coming in a little late. The Timeline panel is your...",
   "date": "2022-05-25T04:49:38.917Z",
   "tags": [

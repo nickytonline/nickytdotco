@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "March 22nd, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: Keyboard Shortcuts for Moving Focus",
   "excerpt": "This week's tip of the week is all about configuring some shortcuts that allow you to move focus...",
   "date": "2022-03-23T03:20:47.656Z",
   "tags": [

@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "June 13th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: Add a gitignore via VS Code",
   "excerpt": "This week's tip of the week is coming from my old coworker @citizen428. On one my streams on...",
   "date": "2022-06-14T03:44:53.806Z",
   "tags": [

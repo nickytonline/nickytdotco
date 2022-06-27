@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "Watermelon VS Code Extension",
+  "title": "VS Code Tip of the Week: Watermelon VS Code Extension",
   "excerpt": "I discovered the Watermelon VS Code extension yesterday.    What it does is give you the context of a...",
   "date": "2022-03-08T13:20:11.106Z",
   "tags": [

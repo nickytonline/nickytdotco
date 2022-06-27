@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "May 30th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: Find in Folder",
   "excerpt": "This week's tip of the week is care of Justin Noel. Justin is in my Virtual Coffee community....",
   "date": "2022-05-30T03:45:09.100Z",
   "tags": [

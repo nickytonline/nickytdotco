@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "April 4th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: Open a Project from the Shell into same VS Code Window",
   "excerpt": "This week's tip is short and sweet.  My friend Chris on Twitter this week asked how do you open a...",
   "date": "2022-04-14T21:31:28.224Z",
   "tags": [

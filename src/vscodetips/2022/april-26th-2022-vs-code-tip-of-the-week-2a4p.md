@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "April 26th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: The JavaScript Debug Terminal",
   "excerpt": "This week’s VS Code tip of the week is coming a day late. I’m still ramping up at my new job and...",
   "date": "2022-04-26T12:04:03.744Z",
   "tags": [

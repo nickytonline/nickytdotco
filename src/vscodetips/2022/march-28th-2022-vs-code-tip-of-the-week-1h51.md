@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "March 28th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: Advanced Collapsing Code Blocks",
   "excerpt": "This week's tip of the week is all about collapsing code blocks. You can click on the fold caret icon...",
   "date": "2022-03-28T04:07:54.673Z",
   "tags": [

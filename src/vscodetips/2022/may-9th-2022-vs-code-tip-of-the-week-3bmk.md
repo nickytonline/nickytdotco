@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "May 9th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: Fonts for Languages",
   "excerpt": "This week's tip of the week is care of my old co-worker @citizen428. He mentioned that you can set a...",
   "date": "2022-05-10T01:03:37.000Z",
   "tags": [

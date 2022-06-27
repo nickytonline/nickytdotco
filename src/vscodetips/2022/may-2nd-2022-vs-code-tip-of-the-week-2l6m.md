@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "May 2nd, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: TypeScript Error Translator Extension",
   "excerpt": "This week's VS Code Tip of the Week is a newly released extension, TypeScript Error Translator, that...",
   "date": "2022-05-02T20:48:48.129Z",
   "tags": [

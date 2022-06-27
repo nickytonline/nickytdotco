@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "May 16th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: Refactor Markdown Headers",
   "excerpt": "This week's tip of the week is care of Matt Bierner from the Twitters. TIL you can refactor markdown...",
   "date": "2022-05-17T00:19:08.711Z",
   "tags": [

@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "April 11th, 2022: VS Code Tip of the Week",
+  "title": "VS Code Tip of the Week: Local History",
   "excerpt": "This week's tip of the week is care of Benjamin Pasero from the Twitters.  Local history has landed...",
   "date": "2022-04-14T21:33:54.409Z",
   "tags": [
