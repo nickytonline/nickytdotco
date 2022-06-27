@@ -221,7 +221,7 @@ async function createPostFile(post) {
 
   // Checking for a backtick before the Twitter embed so that we're not pulling in a code example of an embed.
   const twitterEmbedMatches = markdown.matchAll(
-    /(?:[^`]{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/www?\.twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g
+    /(?:[^`]{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/(?:www\.)?twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g
   );
 
   for (const {
