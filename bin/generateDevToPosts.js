@@ -426,17 +426,19 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
 }
 
 (async () => {
-  await fs.mkdir(POSTS_DIRECTORY, {recursive: true});
-  await fs.mkdir(POSTS_DIRECTORY, {
-    recursive: true,
-  });
-  await fs.mkdir(
-    path.join(VSCODE_TIPS_POSTS_DIRECTORY, new Date().getFullYear().toString()),
-    {
+  await Promise.all([
+    fs.mkdir(POSTS_DIRECTORY, {recursive: true}),
+    fs.mkdir(POSTS_DIRECTORY, {
       recursive: true,
-    }
-  );
-  await fs.mkdir(POSTS_IMAGES_DIRECTORY, {recursive: true});
+    }),
+    fs.mkdir(
+      path.join(VSCODE_TIPS_POSTS_DIRECTORY, new Date().getFullYear().toString()),
+      {
+        recursive: true,
+      }
+    ),
+    fs.mkdir(POSTS_IMAGES_DIRECTORY, {recursive: true}),
+  ]);
 
   const posts = await getDevPosts();
 
