@@ -7,7 +7,7 @@
   "authorHandle": "@nickytonline",
   "authorName": "Nick Taylor",
   "enableThirdPartyComments": false,
-  "maxPostsPerPage": 6,
+  "maxPostsPerPage": 5,
   "paymentPointer": "$ilp.uphold.com/MZMhAWA7bkGa",
   "faviconPath": "/images/favicon.png",
   "googleAnalyticsId": "UA-55732414-1"
