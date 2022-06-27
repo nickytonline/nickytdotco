@@ -13,8 +13,10 @@ const site = require(`../_data/site.json`);
  *
  * @returns {string} Markup for a boost links on DEV and Hashnode.
  */
-function boostLink(title, fileSlug, url) {
-  if (!url.startsWith('/posts/')) {
+function boostLink(title, fileSlug, url, canonicalUrl) {
+  const isVsCodeTips = url.startsWith('/vscodetips/');
+
+  if (!url.startsWith('/posts/') && !isVsCodeTips) {
     return '';
   }
 
@@ -35,7 +37,15 @@ function boostLink(title, fileSlug, url) {
     site.url + url
   )}">Share on LinkedIn</a>`;
 
-  return `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
+  let firstBoostLink;
+
+  if (isVsCodeTips) {
+    firstBoostLink = `<a href="${canonicalUrl}" class="boost-link">Boost on vscodetips.com</a>`;
+  } else {
+    firstBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
+  }
+
+  return `${firstBoostLink}${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
 }
 
 /**

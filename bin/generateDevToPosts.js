@@ -186,6 +186,7 @@ async function createPostFile(post) {
     reading_time_minutes,
     cover_image,
     slug,
+    canonical_url: canonicalUrl,
   } = post;
   const jsonFrontmatter = {
     title,
@@ -193,6 +194,7 @@ async function createPostFile(post) {
     date,
     tags,
     cover_image,
+    canonicalUrl,
     reading_time_minutes,
     template: 'post',
   };
