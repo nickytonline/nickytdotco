@@ -10,6 +10,7 @@
     "javascript"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--BJB7xvkj--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_s5r46f0hchn0bwqb6da9.jpg",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/pairing-with-community-manager-christina-gorton-4537/",
   "reading_time_minutes": 1,
   "template": "post"
 }

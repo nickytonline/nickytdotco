@@ -9,6 +9,7 @@
     "ruby"
   ],
   "cover_image": null,
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he/",
   "reading_time_minutes": 1,
   "template": "post"
 }

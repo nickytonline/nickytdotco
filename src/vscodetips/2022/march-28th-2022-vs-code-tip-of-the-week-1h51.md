@@ -8,6 +8,7 @@
     "vscodetips"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--4X6LPM3---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_i497o9k7o3nvn7li5zv1.png",
+  "canonicalUrl": "https://community.vscodetips.com/nickytonline/march-28th-2022-vs-code-tip-of-the-week-4724",
   "reading_time_minutes": 1,
   "template": "post"
 }

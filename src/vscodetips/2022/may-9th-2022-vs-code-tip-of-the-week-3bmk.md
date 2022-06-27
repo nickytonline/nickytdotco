@@ -8,6 +8,7 @@
     "vscodetips"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--JZ9MOln1--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_n2gv6n0tzbk02bsuf41w.png",
+  "canonicalUrl": "https://community.vscodetips.com/nickytonline/may-9th-2022-vs-code-tip-of-the-week-3dga",
   "reading_time_minutes": 1,
   "template": "post"
 }

@@ -10,6 +10,7 @@
     "a11y"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--1j9Z4MyX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_d0slehzp7b26buouwz33.png",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/frontend-developer-resources-246j/",
   "reading_time_minutes": 11,
   "template": "post"
 }

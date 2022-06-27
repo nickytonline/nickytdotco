@@ -7,6 +7,7 @@
     "homeoffice"
   ],
   "cover_image": null,
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/need-help-picking-a-tabletop-colour-2mki/",
   "reading_time_minutes": 1,
   "template": "post"
 }

@@ -10,6 +10,7 @@
     "react"
   ],
   "cover_image": null,
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e/",
   "reading_time_minutes": 1,
   "template": "post"
 }

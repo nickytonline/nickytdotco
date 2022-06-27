@@ -10,6 +10,7 @@
     "changelog"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--S1-vDujY--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_cc61ssp14pyl9of3i37y.jpg",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/changelog-dev-upgraded-to-webpacker-4-babel-7-1mm4/",
   "reading_time_minutes": 2,
   "template": "post"
 }

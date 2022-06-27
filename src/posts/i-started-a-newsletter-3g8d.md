@@ -8,6 +8,7 @@
     "webdev"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--qmQ3lmo2--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_3wu8ld8pjl64goxmb6ay.jpg",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/i-started-a-newsletter-3g8d/",
   "reading_time_minutes": 1,
   "template": "post"
 }

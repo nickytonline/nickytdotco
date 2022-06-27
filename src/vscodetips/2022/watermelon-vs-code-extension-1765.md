@@ -8,6 +8,7 @@
     "vscodetips"
   ],
   "cover_image": null,
+  "canonicalUrl": "https://community.vscodetips.com/nickytonline/march-7th-2022-vs-code-tip-of-the-week-22gd",
   "reading_time_minutes": 1,
   "template": "post"
 }

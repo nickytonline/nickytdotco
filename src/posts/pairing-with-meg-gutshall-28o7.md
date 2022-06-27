@@ -10,6 +10,7 @@
     "ruby"
   ],
   "cover_image": null,
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/pairing-with-meg-gutshall-28o7/",
   "reading_time_minutes": 1,
   "template": "post"
 }

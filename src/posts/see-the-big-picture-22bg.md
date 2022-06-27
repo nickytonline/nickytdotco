@@ -8,6 +8,7 @@
     "beginners"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--RuCk74km--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_6qeji3ozp4ypayd0h8au.JPG",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/see-the-big-picture-22bg/",
   "reading_time_minutes": 2,
   "template": "post"
 }

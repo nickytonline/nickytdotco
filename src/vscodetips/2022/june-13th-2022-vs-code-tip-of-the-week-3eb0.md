@@ -9,6 +9,7 @@
     "vscodetips"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--dHJ0T4me--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_9816ipfrohvyragw2g50.png",
+  "canonicalUrl": "https://community.vscodetips.com/nickytonline/june-13th-2022-vs-code-tip-of-the-week-3lnd",
   "reading_time_minutes": 1,
   "template": "post"
 }

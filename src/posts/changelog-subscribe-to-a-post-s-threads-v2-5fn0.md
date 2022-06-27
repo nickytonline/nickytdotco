@@ -7,6 +7,7 @@
     "changelog"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--tP_qSg05--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_3h4jxtefrd7uaq1c5gos.png",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/changelog-subscribe-to-a-post-s-threads-v2-5fn0/",
   "reading_time_minutes": 1,
   "template": "post"
 }

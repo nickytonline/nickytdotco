@@ -10,6 +10,7 @@
     "html"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--85gtE3t4--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_2le4kbbcn38tvhrnidd2.jpeg",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/pairing-with-community-member-dan-ott-2ge/",
   "reading_time_minutes": 2,
   "template": "post"
 }

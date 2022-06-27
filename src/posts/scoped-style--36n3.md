@@ -9,6 +9,7 @@
     "cssinjs"
   ],
   "cover_image": null,
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/scoped-style--36n3/",
   "reading_time_minutes": 1,
   "template": "post"
 }

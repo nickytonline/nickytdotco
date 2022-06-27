@@ -9,6 +9,7 @@
     "shell"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--LxZFwaP4--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_5vnflnscj2k2amsyzwkg.jpg",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/my-shell-aliases-1obk/",
   "reading_time_minutes": 1,
   "template": "post"
 }
