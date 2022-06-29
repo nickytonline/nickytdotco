@@ -3,6 +3,18 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
+<h2>Expert Panel: Trending Tools and Frameworks – What’s Hype and What’s Not</h2>
+<time datetime="2022-06-23">June 26th, 2022</time>
+
+<div class="video-player">
+  <iframe src="https://player.vimeo.com/video/724340575?h=118d599345&color=ff0179&title=0&byline=0&portrait=0" width="560" height="315" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+  <p class="visually-hidden"><a href="https://vimeo.com/724340575">Expert Panel - Trending Tools and Frameworks &ndash; What&rsquo;s Hype and What&rsquo;s Not</a> from <a href="https://vimeo.com/applitools">Applitools</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+- Joe Colantonio moderates this lively Q&A panel where Tiffany Le-Nguyen, Skyler Brungardt, Nick Taylor, and Dan Giordano share their thoughts on upcoming tools and framework innovations at their respective companies.
+- [Expert Panel: Trending Tools and Frameworks – What’s Hype and What’s Not](https://applitools.com/event/expert-panel-trending-tools-and-frameworks-whats-hype-and-whats-not/)
+
 <h2>Automate syndication and ownership of your content with Eleventy</h2>
 
 <time datetime="2022-05-26">May 26th, 2022</time>
