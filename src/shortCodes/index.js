@@ -1,9 +1,20 @@
 /* eslint-env node */
+const path = require('path');
+const fs = require('fs').promises;
 const {DateTime} = require('luxon');
 const hashnodeData = require(`../_data/hashnodeUrls.json`);
 const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
 const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
 const site = require(`../_data/site.json`);
+const TWITTER_EMBEDS_FILE_PATH = path.join(__dirname, '../_data/twitterEmbeds.json');
+
+async function updateTwitterEmbeds(twitterEmbeds, filepath) {
+  const data = JSON.stringify(twitterEmbeds, null, 2);
+
+  await fs.writeFile(filepath, data, () =>
+    console.log(`Saved Twitter embeds markup to ${filepath}!`)
+  );
+}
 
 /**
  * Generates markup for a boost on DEV button.
@@ -13,10 +24,8 @@ const site = require(`../_data/site.json`);
  *
  * @returns {string} Markup for a boost links on DEV and Hashnode.
  */
-function boostLink(title, fileSlug, url, canonicalUrl) {
-  const isVsCodeTips = url.startsWith('/vscodetips/');
-
-  if (!url.startsWith('/posts/') && !isVsCodeTips) {
+function boostLink(title, fileSlug, url) {
+  if (!url.startsWith('/posts/')) {
     return '';
   }
 
@@ -37,15 +46,7 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
     site.url + url
   )}">Share on LinkedIn</a>`;
 
-  let firstBoostLink;
-
-  if (isVsCodeTips) {
-    firstBoostLink = `<a href="${canonicalUrl}" class="boost-link">Boost on vscodetips.com</a>`;
-  } else {
-    firstBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
-  }
-
-  return `${firstBoostLink}${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
+  return `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
 }
 
 /**
@@ -194,6 +195,22 @@ function embedEmbed(rawUrl) {
  * @returns {string} Markup for the Twitter embed.
  */
 async function twitterEmbed(tweetId) {
+  if (!twitterEmbeds[tweetId]) {
+    // It doesn't matter who the user is. It's the Tweet ID that matters.
+    const response = await fetch(
+      `https://publish.twitter.com/oembed?url=${encodeURIComponent(
+        `https://twitter.com/anyone/status/${tweetId}`
+      )}`
+    );
+
+    console.log(`Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`);
+
+    const {html} = await response.json();
+
+    twitterEmbeds[tweetId] = html;
+    await updateTwitterEmbeds(twitterEmbeds, TWITTER_EMBEDS_FILE_PATH);
+  }
+
   return twitterEmbeds[tweetId] ?? `<div>Missing Tweet embed with ID ${tweetId}</div>`;
 }
 
