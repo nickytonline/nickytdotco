@@ -47,6 +47,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [Muzzle](https://muzzleapp.com/) - A simple app for silencing notifications during screen sharing
 - [OBS](https://obsproject.com/download) - For streaming on Twitch
 - [Descript](https://www.descript.com/) - For editing and publishing my Twitch streams to YouTube.
+- [Recut](https://getrecut.com/) - For video editing
 - [Webcam Settings](https://apps.apple.com/us/app/webcam-settings/id533696630) - Helps me prevent my Logitech webcam from losing focus. I also use it to zoom in on my webcam.
 - [Cleanshot X](https://cleanshot.com/) - For better screenshots and screen recordings
 - [Cloudflare Warp](https://blog.cloudflare.com/1111-warp-better-vpn/) - Faster Internet and some VPN goodness
