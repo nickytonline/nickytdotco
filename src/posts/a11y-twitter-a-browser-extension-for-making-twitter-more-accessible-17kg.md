@@ -1,12 +1,13 @@
 ---json
 {
-  "title": "a11y-twitter: a browser extension for making Twitter more accessible",
+  "title": "a11y-twitter: a browser extension for making Tweets more accessible",
   "excerpt": "Just over a year ago, I made a post on Twitter, and I realized that I had forgotten to add alternate...",
   "date": "2022-07-02T12:58:14.679Z",
   "tags": [
     "a11y",
     "browserextension",
-    "javascript"
+    "javascript",
+    "twitter"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--HNLFdciq--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_ohui3uolsgdzho1drrny.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/a11y-twitter-a-browser-extension-for-making-twitter-more-accessible-17kg",
