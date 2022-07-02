@@ -9,7 +9,7 @@
     "javascript",
     "twitter"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--HNLFdciq--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_ohui3uolsgdzho1drrny.png",
+  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--RiTF1_s0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_b49xiiod8cv4ldudb2l0.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/a11y-twitter-a-browser-extension-for-making-twitter-more-accessible-17kg",
   "reading_time_minutes": 4,
   "template": "post"
@@ -26,7 +26,7 @@ As someone familiar with browser extensions (I used to work on a password manage
 
 The extension doesn't do much, but it does one thing well. It checks if you've added alt text before Tweeting. In its current form, I decided to not bug the user too much, so it only prompts you to add alt text once during a Tweet. That may change in the future, but for now, I thought this made sense as it makes folks aware of alt text, but does not nag them.
 
-When you create a browser extension, you hijack a page to some degree. [Content scripts](https://developer.chrome.com/docs/extensions/mv3/content_scripts/) (JavaScript) and additional CSS can alter the look and interactivity of the page you're on. If you've ever used a password manager, that's what's happening. They inject images and JavaScript to inject to the page to allow you to access your credentials.
+When you create a browser extension, you hijack a page to some degree. [Content scripts](https://developer.chrome.com/docs/extensions/mv3/content_scripts/) (JavaScript) and additional CSS can alter the look and interactivity of the page you're on. If you've ever used a password manager, that's what's happening. They inject images and JavaScript to the page to allow you to access your credentials.
 
 ![The 1Password browser extension active on the Twitter login page](https://www.iamdeveloper.com/images/posts/_uploads_articles_prgttpjavc09f4lk4tr1.png) 
 
