@@ -24,8 +24,9 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
  *
  * @returns {string} Markup for a boost links on DEV and Hashnode.
  */
-function boostLink(title, fileSlug, url) {
-  if (!url.startsWith('/posts/')) {
+function boostLink(title, fileSlug, url, canonicalUrl) {
+  const isVsCodeTips = url.startsWith('/vscodetips/');
+  if (!url.startsWith('/posts/') && !isVsCodeTips) {
     return '';
   }
 
@@ -46,7 +47,15 @@ function boostLink(title, fileSlug, url) {
     site.url + url
   )}">Share on LinkedIn</a>`;
 
-  return `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
+  let foremBoostLink;
+
+  if (isVsCodeTips) {
+    foremBoostLink = `<a href="${canonicalUrl}" class="boost-link">Boost on vscodetips.com</a>`;
+  } else {
+    foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
+  }
+
+  return `${foremBoostLink}${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
 }
 
 /**
