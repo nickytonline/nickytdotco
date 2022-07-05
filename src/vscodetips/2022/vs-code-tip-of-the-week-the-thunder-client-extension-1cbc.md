@@ -20,7 +20,7 @@ This week's VS Code Tip off the Week is the [Thunder Client](https://marketplace
 
 > Thunder Client is a lightweight Rest API Client Extension for Visual Studio Code
 
-There's amazing tools out there like [Postman](https://www.postman.com/), [Postwoman](https://dev.to/liyasthomas/postwoman-is-changing-name-igp) (now [Hoppscotch](https://hoppscotch.io/)), etc. but I like the fact that I can use this directly within. VS Code.
+There's amazing tools out there like [Postman](https://www.postman.com/), [Postwoman](https://dev.to/liyasthomas/postwoman-is-changing-name-igp) (now [Hoppscotch](https://hoppscotch.io/)), etc. but I like the fact that I can use this directly within VS Code.
 
 ![Typing thund in the VS Code Command Palette](https://www.iamdeveloper.com/images/posts/_uploads_articles_w3v74xjb4da0pyeixmcq.png)
  
