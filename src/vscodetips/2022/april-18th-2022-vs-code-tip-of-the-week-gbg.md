@@ -6,7 +6,8 @@
   "tags": [
     "vscode",
     "markdown",
-    "vscodetips"
+    "vscodetips",
+    "vscodeextension"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--_HLvkuxw--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_eudoag3yn4hpa9x70qjq.png",
   "canonicalUrl": "https://community.vscodetips.com/nickytonline/april-18th-2022-vs-code-tip-of-the-week-2f29",

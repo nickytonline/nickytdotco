@@ -5,7 +5,8 @@
   "date": "2022-03-08T13:20:11.106Z",
   "tags": [
     "vscode",
-    "vscodetips"
+    "vscodetips",
+    "vscodeextension"
   ],
   "cover_image": null,
   "canonicalUrl": "https://community.vscodetips.com/nickytonline/march-7th-2022-vs-code-tip-of-the-week-22gd",
