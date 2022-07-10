@@ -42,6 +42,6 @@ I'll update these resources as I find new ones.
 ## Courses
 
 * [TypeScript Fundamentals](https://typescriptcourses.com/typescript-fundamentals) (free) from James Henry. If you enjoy this, I encourage you to purchase his [TypeScript Pro](https://typescriptcourses.com/typescript-pro) course.
-* The [Advanced TypeScript](https://www.mattpocock.com/) course hasn't dropped yet, but anything Matthew Pocock is worth checking out. (see hist TypeScript Tips I mentioned above)
+* The [Advanced TypeScript](https://www.mattpocock.com/) course hasn't dropped yet, but anything Matthew Pocock is worth checking out. (see his TypeScript Tips I mentioned above)
 * Marius Schulz's [Advanced TypeScript Fundamentals](https://egghead.io/courses/advanced-typescript-fundamentals-579c174f) egghead.io course
 * Rares Matei's [Practical Advanced TypeScript](https://egghead.io/courses/practical-advanced-typescript) egghead.io course
