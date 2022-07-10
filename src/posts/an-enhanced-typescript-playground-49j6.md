@@ -35,7 +35,7 @@ What's even cooler is the fact that it's open sourced, so you can deploy it loca
 
 {% github "https://github.com/agentcooper/typescript-play" %}
 
-<center>![Kanye West Awesome from giphy](https://media.giphy.com/media/5fMlYckytHM4g/giphy-downsized.gif)</center>
+![Kanye West Awesome from giphy](https://media.giphy.com/media/5fMlYckytHM4g/giphy-downsized.gif)
  
 If you don't feel like cloning it, check it out at [typescript-play.js.org](https://typescript-play.js.org).
 
