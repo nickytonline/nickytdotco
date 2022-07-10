@@ -15,6 +15,8 @@
 
 I've had folks ask me for Typescript resources a few times over the past couple of months, so I might as well share what I think are great resources for getting started with and continuing with TypeScript.
 
+![Obiwan saying hello there!](https://media.giphy.com/media/xTiIzJSKB4l7xTouE8/giphy.gif)
+
 These are paid and free resources, but I think they're all great. Remember that your work probably has an educational stipend, so leverage that if you can.
 
 I'll update these resources as I find new ones.
