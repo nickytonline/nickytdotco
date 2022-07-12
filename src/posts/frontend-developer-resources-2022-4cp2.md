@@ -72,6 +72,10 @@ TypeScript is getting more and more popular every year. Even if you're not a fan
 * [TypeScript Playground](https://www.typescriptlang.org/play) – The TypeScript Playground keeps improving and is a great place to test stuff out.
 * [Learn TypeScript from the Ground Up with James Henry](https://typescriptcourses.com/typescript-fundamentals) – A great free course from James Henry. If you enjoy it, consider buying his advanced course.
 
+Update July 2022: I created a new post for TypeScript learning resources, so check that out too!
+
+{% embed "https://dev.to/nickytonline/learning-resources-for-typescript-4g1n" %}
+
 ## CSS
 
 Let's skip the centring jokes in CSS. We're in the 2020s now, and this is something relatively easy to do nowadays. Dig in and level up on your CSS.
