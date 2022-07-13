@@ -70,7 +70,7 @@ force = true
 
 [[redirects]]
 from = "https://youtube.iamdeveloper.com/*"
-to = "https://www.youtube.com/channel/UCBLlEq0co24VFJIMEHNcPOQ/:splat"
+to = "https://youtube.com/NickTaylorYolo/:splat"
 status = 301
 force = true
 
