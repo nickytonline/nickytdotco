@@ -20,7 +20,7 @@ I got to hang with Deno core team member Luca Casonato a couple of weeks ago to 
 
 Fresh runs on [Deno](https://deno.land/), modern runtime for JavaScript and TypeScript. Luca gives a great explainer about what Deno is. Check out the video but if you'd prefer to read or have your browser dictate it to you or some other assistive technology, I've also included the transcript below.
 
-{% embed "https://www.youtube.com/watch?v=nBrcmlrekV4" %}
+{% embed "https://www.youtube.com/watch?v=7digrkx1YZ0" %}
 
 ## Transcript of Fresh: a new full stack web framework for Deno with guest Luca Casonato
 
