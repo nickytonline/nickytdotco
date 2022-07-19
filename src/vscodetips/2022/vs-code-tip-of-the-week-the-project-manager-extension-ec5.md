@@ -21,13 +21,13 @@ This extension allows you to manage projects, where projects are a folder that y
 
 ## Pick a project to open
 
-Press CMD + Option + P to load your list of projects then use the keyboard or mouse to select the project you want to load.
+Press <kbd>CTRL</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> (<kbd>CMD</kbd> + <kbd>Option</kbd> + <kbd>P</kbd> on macOS) to load your list of projects then use the keyboard or mouse to select the project you want to load.
 
 ![List of projects that the Project Manager VS Code extension is aware of](https://www.iamdeveloper.com/images/posts/_uploads_articles_3lxmhrcuigniwmrmxjoh.png)
 
 ## Add a project to the list of projects
 
-In a project that hasn't been added to the list of projects managed my the Project Manager extension? Press CMD + Shift + P to load the command menu and type in `save project`, The command to save a project appears. Use the keyboard or mouse to select the command.
+In a project that hasn't been added to the list of projects managed my the Project Manager extension? Press <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (<kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> on macOS) to load the command menu and type in `save project`, The command to save a project appears. Use the keyboard or mouse to select the command.
 
 ![The VS Code command menu open with the Project Manager: Save Project command in the list](https://www.iamdeveloper.com/images/posts/_uploads_articles_gnupeg2g5vmsrhgpvwgo.png)
 
