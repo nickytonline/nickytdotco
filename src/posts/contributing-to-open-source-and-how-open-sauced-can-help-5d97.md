@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Contributing to Open Source and how Open Sauced can help",
-  "excerpt": "Last week I got to hang with Brian Douglas (@bdougieyo) on my Twitch stream. We discussed...",
+  "excerpt": "Last week I got to hang with Brian Douglas on my Twitch stream. We discussed contributing to open...",
   "date": "2022-08-02T19:41:00.000Z",
   "tags": [
     "opensource",
@@ -14,7 +14,7 @@
 }
 ---
 
-Last week I got to hang with Brian Douglas (@bdougieyo) on my [Twitch stream](https://livecoding.ca). We discussed contributing to open source, and how [Open Sauced](https://opensauced.pizza/) can help people get involved with open source.
+Last week I got to hang with [Brian Douglas](https://dev.to/bdougieyo) on my [Twitch stream](https://livecoding.ca). We discussed contributing to open source, and how [Open Sauced](https://opensauced.pizza/) can help people get involved with open source.
 
 {% embed "https://www.youtube.com/watch?v=DeBAuW5Kf8c" %}
 
