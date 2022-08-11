@@ -80,6 +80,11 @@ async function youtubeEmbed(videoUrl) {
   const response = await fetch(
     `https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v%3D${videoId}&format=json`
   );
+
+  if (response.status === 404) {
+    return `<div class="video-player"><p>Video is no longer available.</p></div>`;
+  }
+
   const {title} = await response.json();
 
   return `<div class="video-player">
