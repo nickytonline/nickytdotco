@@ -57,6 +57,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [Figma](https://www.figma.com/) - Design collaboratively on the web
 - [Loopback](https://rogueamoeba.com/loopback/) - Great for virtual audio sources
 - [CleanMyMac X](https://macpaw.com/cleanmymac) - A suite of utilities for keeping your Mac in tip top shape.
+- [Camo](https://reincubate.com/camo/) - Use your mobile devices as cameras for your OS.
 
 ## CLIs
 
@@ -112,6 +113,7 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 - [Elgato Streamd Deck XL](https://www.elgato.com/en/stream-deck-xl)
 - [Quartet Glass Desktop Computer Pad, 18 inch x 6 inch](https://www.amazon.ca/gp/product/B01M2DADUX), a handy desk whiteboard. Thanks for the suggestion [Jhey](https://jhey.dev)!
 - [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/), my working at home shoes
+- [UBeesize 62" Phone Tripod](https://www.amazon.ca/gp/product/B09PNDZR9L/) - A tripod for my phone so I can use it as a webcam for streaming.
 
 <figure>
 <img sizes="(min-width: 30em) 28em, 100vw"
