@@ -19,7 +19,7 @@ Last Friday, I gave a brownbag talk for my Virtual Coffee community on getting s
 
 {% embed "https://www.youtube.com/watch?v=aDofyI6E2t4" %}
 
-[talk slide deck](iamdeveloper.com/stream2021)
+[accompanying slide deck](https://iamdeveloper.com/stream2021)
 
 This is a work in progress post. I'm just putting out what I had in my slide deck here, but in a more readable format than the bullet points in the slide deck. Feedback is welcome. 
 
