@@ -2,7 +2,7 @@
 {
   "title": "Getting Started with Streaming on Twitch",
   "excerpt": "Last Friday, I gave a brownbag talk for my Virtual Coffee community on getting started with streaming...",
-  "date": "2021-07-28T03:22:25.699Z",
+  "date": "2021-07-28T03:22:00.000Z",
   "tags": [
     "twitch",
     "beginners",
@@ -17,9 +17,9 @@
 
 Last Friday, I gave a brownbag talk for my Virtual Coffee community on getting started with streaming on Twitch.
 
-{% twitter "1418581450023182341" %}
+{% embed "https://www.youtube.com/watch?v=aDofyI6E2t4" %}
 
-The video isn't up on YouTube yet, but you can grab the slide deck at [iamdeveloper.com/stream2021](iamdeveloper.com/stream2021).
+[talk slide deck](iamdeveloper.com/stream2021)
 
 This is a work in progress post. I'm just putting out what I had in my slide deck here, but in a more readable format than the bullet points in the slide deck. Feedback is welcome. 
 
