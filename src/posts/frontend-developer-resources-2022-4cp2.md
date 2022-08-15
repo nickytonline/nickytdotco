@@ -1,8 +1,8 @@
 ---json
 {
   "title": "Frontend Developer Resources 2022",
-  "excerpt": "También puedes leer este artículo en español gracias a Chema Bescós!  I don't know if I'll keep doing...",
-  "date": "2021-12-28T04:16:47.727Z",
+  "excerpt": "I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got...",
+  "date": "2021-12-28T04:16:00.000Z",
   "tags": [
     "javascript",
     "html",
@@ -16,9 +16,9 @@
 }
 ---
 
-[También puedes leer este artículo en español](https://www.ibidem-translations.com/edu/traduccion-desarrolladores-web-frontend/) gracias a [Chema Bescós](https://www.linkedin.com/in/josemariabescos)!
-
 I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got some good signal, so I renamed it to Frontend Developer Resources 2020, which brings us to Frontend Developer Resources 2022. Oops, I missed 2021. Technically we're still in 2021, but humour me. I also added sprinkles of shameless plugs. 😎
+
+[También puedes leer este artículo en español](https://www.ibidem-translations.com/edu/traduccion-desarrolladores-web-frontend/) gracias a [Chema Bescós](https://www.linkedin.com/in/josemariabescos)!
 
 This post is not a complete list, more a list of stuff I found compelling in 2021 that will keep you set in 2022 and build off of my previous list. You may see some repeats from my 2020 post here, but they're still super relevant.
 
