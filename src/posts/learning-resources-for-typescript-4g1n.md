@@ -2,7 +2,7 @@
 {
   "title": "Learning Resources for TypeScript",
   "excerpt": "I've had folks ask me for Typescript resources a few times over the past couple of months, so I might...",
-  "date": "2022-07-10T04:16:34.040Z",
+  "date": "2022-07-10T04:16:00.000Z",
   "tags": [
     "typescript"
   ],
@@ -28,7 +28,8 @@ I'll update these resources as I find new ones.
 
 ## Reading + Videos
 
-* [TypeScript in 50 Lessons](https://www.smashingmagazine.com/printed-books/typescript-in-50-lessons/)
+* [TypeScript in 50 Lessons book](https://www.smashingmagazine.com/printed-books/typescript-in-50-lessons/)
+* [Learning TypeScript book](https://www.learningtypescript.com) - The book, companion projects and articles
 * [Marius Schulz's blog](https://mariusschulz.com/blog/series/typescript-evolution)
 * [TypeScript Deep Dive](https://www.gitbook.com/book/basarat/typescript)
 * [TypeScript Official Docs](https://www.typescriptlang.org/docs/)
