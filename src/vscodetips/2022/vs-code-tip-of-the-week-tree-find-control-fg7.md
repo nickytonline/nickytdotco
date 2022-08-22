@@ -1,7 +1,7 @@
 ---json
 {
   "title": "VS Code Tip of the Week: Tree Find Control",
-  "excerpt": "This week's VS Code tip is the Tree find control.  Bring focus to your tree explorer in VS Code via...",
+  "excerpt": "This week's VS Code tip is the Tree find control. Search for files within the tree explorer and have...",
   "date": "2022-08-22T00:50:00.000Z",
   "tags": [
     "vscode",
@@ -14,7 +14,7 @@
 }
 ---
 
-This week's VS Code tip is the [Tree find control](https://code.visualstudio.com/updates/v1_70#_tree-find-control).
+This week's VS Code tip is the [Tree find control](https://code.visualstudio.com/updates/v1_70#_tree-find-control). Search for files within the tree explorer and have them filter right in the tree view!
 
 Bring focus to your tree explorer in VS Code via keyboard or mouse. From there, press <kbd>CTRL</kbd> + <kbd>F</kbd> (<kbd>CMD</kbd> + <kbd>F</kbd> on macOS) to make the find control appear.
 
