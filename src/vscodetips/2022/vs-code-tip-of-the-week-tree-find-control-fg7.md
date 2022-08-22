@@ -1,7 +1,7 @@
 ---json
 {
   "title": "VS Code Tip of the Week: Tree Find Control",
-  "excerpt": "This week's VS Code tip if the Tree find control.  Bring focus to your tree explorer in VS Code via...",
+  "excerpt": "This week's VS Code tip is the Tree find control.  Bring focus to your tree explorer in VS Code via...",
   "date": "2022-08-22T00:50:00.000Z",
   "tags": [
     "vscode",
@@ -14,7 +14,7 @@
 }
 ---
 
-This week's VS Code tip if the [Tree find control](https://code.visualstudio.com/updates/v1_70#_tree-find-control).
+This week's VS Code tip is the [Tree find control](https://code.visualstudio.com/updates/v1_70#_tree-find-control).
 
 Bring focus to your tree explorer in VS Code via keyboard or mouse. From there, press <kbd>CTRL</kbd> + <kbd>F</kbd> (<kbd>CMD</kbd> + <kbd>F</kbd> on macOS) to make the find control appear.
 
@@ -25,7 +25,7 @@ In the find control, enter what you're looking for. In my case, I'm looking for 
 ![Tree find control in VS Code with the word svelte entered](https://www.iamdeveloper.com/images/posts/_uploads_articles_54oktefmw59mmv0z3zsm.png)
  
  
-Press the filter button or use the keyboard to filter and voilà!
+Press the filter button or use the keyboard to filter, and voilà!
 
 ![Tree find control in VS Code with the word svelte entered displaying filtered files in the tree view](https://www.iamdeveloper.com/images/posts/_uploads_articles_r7fym384hayk6ej0p79n.png)
 
