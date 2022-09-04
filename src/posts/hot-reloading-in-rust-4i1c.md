@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "Hot reloading in Rust",
+  "title": "Live reloading in Rust",
   "excerpt": "I've been learning Rust on and off since last fall. I'm still not proficient in the language as I...",
   "date": "2022-09-03T04:13:20.651Z",
   "tags": [
