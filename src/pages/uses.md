@@ -25,7 +25,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [Grammarly](https://grammarly.com/) - A grammar and spell checking tool
 - [Pocket](https://getpocket.com/) - For bookmarking stuff to read
 - [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) - A prettified view of JSON payloads
-- [Productive Twitter](https://chrome.google.com/webstore/detail/productive-twitter/elgfikcdihncknnnedljbbignlmnppii) - Gets rid of a lot of noise in the Twitter UI
+- [Tweak New Twitter](https://github.com/insin/tweak-new-twitter/) - Gets rid of a lot of noise in the Twitter UI
 - [a11y Twitter](https://github.com/nickytonline/a11y-twitter) - Small changes to how you use Twitter to promote Tweeting in an accessible manner.
 
 ## Desktop Apps
