@@ -28,6 +28,10 @@ If you aren't already subscribed to my Twitch and YouTube channels, what are you
 * [livecoding.ca](https://livecoding.ca)
 * [YouTube](https://www.youtube.com/watch?v=eSVxhbbfT34&list=PLcR4ZgxWXeIAFF1MYfuoGa6FeksKcMz-O)
 
+Update 2022: I've finished this so you can check out the replay if you're interested in the course as well.
+
+{% embed "https://www.youtube.com/watch?v=eSVxhbbfT34&list=PLcR4ZgxWXeIAFF1MYfuoGa6FeksKcMz-O&index=1" %}
+
 ---
 
 Photo by <a href="https://unsplash.com/@chanphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Chandler Cruttenden</a> on <a href="https://unsplash.com/s/photos/crab?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
