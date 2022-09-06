@@ -37,8 +37,9 @@ I'll update these resources as I find new ones.
 * If you're a fan of React, check out the [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)
 * Matt Pocock's [Tweet thread of TypeScript tips](https://twitter.com/mattpocockuk/status/1497262298368409605)
 * [Matt Pocock's YouTube channel](https://www.youtube.com/channel/UCswG6FSbgZjbWtdf_hMLaow)
+* Matt’s mega thread of his free content
 
-{% embed "https://www.youtube.com/watch?v=hBk4nV7q6-w" %}
+{% embed "https://twitter.com/mattpocockuk/status/1566739592249835520" %}
 
 ## Courses
 
