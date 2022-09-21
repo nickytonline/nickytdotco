@@ -47,13 +47,7 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
     site.url + url
   )}">Share on LinkedIn</a>`;
 
-  let foremBoostLink;
-
-  if (isVsCodeTips) {
-    foremBoostLink = `<a href="${canonicalUrl}" class="boost-link">Boost on vscodetips.com</a>`;
-  } else {
-    foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
-  }
+  const foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
 
   return `${foremBoostLink}${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
 }
