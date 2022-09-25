@@ -15,7 +15,7 @@
 }
 ---
 
-Hacktoberfest 2022 is almost upon us!
+[Hacktoberfest 2022](https://hacktoberfest.com/) is almost upon us!
 
 ![A woman saying it's go time to another woman](https://media.giphy.com/media/yaR8Dux1s0fAI/giphy.gif)
 
