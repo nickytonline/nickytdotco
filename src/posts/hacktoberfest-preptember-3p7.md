@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "Hacktoberfest: Preptember!",
+  "title": "Hacktoberfest 2022: Preptember!",
   "excerpt": "Hacktoberfest 2022 is almost upon us!    Whether you are new to Hacktoberfest or a seasoned veteran,...",
   "date": "2022-09-25T04:17:09.264Z",
   "tags": [
