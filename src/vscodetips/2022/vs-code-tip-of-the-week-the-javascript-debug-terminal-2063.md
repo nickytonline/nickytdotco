@@ -9,7 +9,7 @@
     "node"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--uMMGKugW--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_5uhh2kbhn8jky3yuck8d.png",
-  "canonicalUrl": "https://iamdeveloper.com/posts/vs-code-tip-of-the-week-the-javascript-debug-terminal-2063",
+  "canonicalUrl": "https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-javascript-debug-terminal-2063/",
   "reading_time_minutes": 1,
   "template": "post"
 }
@@ -30,6 +30,6 @@ You can start an npm script, a node process, anything that starts Node.js and yo
 
 I always use to run `node --inspect-brk ./some-node-process.js` but now that is no longer required in a lot of cases.
 
-![Debugging JavaScript in VS Code](https://www.iamdeveloper.com/images/posts/_uploads_articles_8amqjmd0a4h6cr5v6fku.png)
+![Debugging JavaScript in VS Code](https://www.iamdeveloper.com/images/posts/_uploads_articles_5ei14x4k40q0xm7aksey.png)
 
 If you'd like to learn more about the JavaScript debug terminal, check out [the official documenation](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_javascript-debug-terminal).
