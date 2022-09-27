@@ -10,7 +10,7 @@
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--7VU3ZzoD--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_u5m021y0uwlib2yokrn6.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/hacktoberfest-preptember-3p7/",
-  "reading_time_minutes": 1,
+  "reading_time_minutes": 2,
   "template": "post"
 }
 ---
@@ -36,6 +36,12 @@ I talk about [conventional comments](https://conventionalcomments.org/) in that 
 My Virtual Coffee community also did a great Preptember stream that you should check out!
 
 {% embed "https://www.youtube.com/watch?v=QAUodCQnpkQ" %}
+
+@eddiejaoude ran a [great Twitter Space](https://twitter.com/eddiejaoude/status/1574050967057846274) today with folks contributing lots of great tips for open source and Hacktoberfest. Check it out!
+
+<a href="https://twitter.com/eddiejaoude/status/1574050967057846274">
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1og7r6t3307bw6nevlz7.png" alt="Twitter Spaces UI attendees list for Eddie Jaoude's Hacktoberfest Twitter Space today" />
+</a>
 
 Remember to be kind to maintainers and fellow contributors. Now go have fun and contribute!
 
