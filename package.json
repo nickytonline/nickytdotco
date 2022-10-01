@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My site built with Eleventy and Andy Bell's Hylia template",
   "engines": {
-    "node": ">=16.15.0"
+    "node": ">=16.17.1"
   },
   "main": "index.js",
   "devDependencies": {
