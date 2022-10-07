@@ -8,6 +8,22 @@
     margin: 0 auto;
   }
 
+  .intro__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  time::before {
+    content: '📅';
+    margin-right: 0.3rem;
+  }
+
+  .reading-time::before {
+    content: '⏱';
+    margin-right: 0.3rem;
+  }
+
   .boost-link,
   .comment-link {
     color: var(--color-theme-highlight);

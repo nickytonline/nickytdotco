@@ -265,7 +265,7 @@ function devLinkEmbed(blogPostUrl) {
       <a href="${url}">
         <div class="ltag__link__content">
           <h1 class="ltag__link__title">${title}</h1>
-          <div><span aria-hidden="true">${name}</span> ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ ${reading_time_minutes} min read</div>
+          <div><span aria-hidden="true">${name}</span> ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ <span class="reading-time">${reading_time_minutes} min read</span></div>
           <ul class="ltag__link__taglist">
             ${tags.map((tag) => `<li>#${tag}</li>`).join(``)}
           </ul>
