@@ -6,6 +6,7 @@ const {JSDOM} = jsdom;
 const path = require('path');
 const fs = require('fs').promises;
 const {DEV_API_KEY, NODE_ENV} = process.env;
+const SLUG_EXCLUSION_LIST = require('./slugExclusionList.json');
 
 const DEV_TO_API_URL = 'https://dev.to/api';
 const POSTS_DIRECTORY = path.join(__dirname, '../src/posts');
@@ -81,18 +82,19 @@ function sanitizeMarkdownEmbeds(markdown) {
  * @returns {boolean} True if the post is valid for publishing, otherwise false.
  */
 function isValidPost(post) {
-  const {tag_list: tags = []} = post;
+  const {tag_list: tags = [], slug} = post;
 
   return (
-    !tags.includes('jokes') &&
-    !tags.includes('weeklylearn') &&
-    !tags.includes('weeklyretro') &&
-    !tags.includes('watercooler') &&
-    !tags.includes('devhumor') &&
-    !tags.includes('discuss') &&
-    !tags.includes('vscodetip') &&
-    !tags.includes('explainlikeimfive') &&
-    !tags.includes('help')
+    (!tags.includes('jokes') &&
+      !tags.includes('weeklylearn') &&
+      !tags.includes('weeklyretro') &&
+      !tags.includes('watercooler') &&
+      !tags.includes('devhumor') &&
+      !tags.includes('discuss') &&
+      !tags.includes('vscodetip') &&
+      !tags.includes('explainlikeimfive') &&
+      !tags.includes('help')) ||
+    SLUG_EXCLUSION_LIST.includes(slug)
   );
 }
 
