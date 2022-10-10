@@ -5,8 +5,8 @@ const jsdom = require('@tbranyen/jsdom');
 const {JSDOM} = jsdom;
 const path = require('path');
 const fs = require('fs').promises;
-const {DEV_API_KEY, NODE_ENV} = process.env;
-const SLUG_EXCLUSION_LIST = require('./slugExclusionList.json');
+const {DEV_API_KEY} = process.env;
+const SLUG_INCLUSION_LIST = require('./slugInclusionList.json');
 
 const DEV_TO_API_URL = 'https://dev.to/api';
 const POSTS_DIRECTORY = path.join(__dirname, '../src/posts');
@@ -94,7 +94,7 @@ function isValidPost(post) {
       !tags.includes('vscodetip') &&
       !tags.includes('explainlikeimfive') &&
       !tags.includes('help')) ||
-    SLUG_EXCLUSION_LIST.includes(slug)
+    SLUG_INCLUSION_LIST.includes(slug)
   );
 }
 
