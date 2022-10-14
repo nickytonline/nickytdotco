@@ -153,7 +153,13 @@ status = 301
 force = true
 
 [[redirects]]
+from = "https://pod.iamdeveloper.com/2065897/*"
+to = "https://pod.iamdeveloper.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://pod.iamdeveloper.com/*"
-to = "https://nickscuts.buzzsprout.com/:splat"
+to = "https://nickscuts.buzzsprout.com/2065897/:splat"
 status = 301
 force = true
