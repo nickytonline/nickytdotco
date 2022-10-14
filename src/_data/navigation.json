@@ -11,6 +11,11 @@
       "external": false
     },
     {
+      "text": "Podcast",
+      "url": "https://pod.iamdeveloper.com",
+      "external": true
+    },
+    {
       "text": "Talks",
       "url": "/pages/talks",
       "external": false
