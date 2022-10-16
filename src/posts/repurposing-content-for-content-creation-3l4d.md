@@ -29,6 +29,10 @@ Aside from saving me time from creating new content, repurposing content allows 
 
 {% embed "https://twitter.com/danieltott/status/1580551359673249794" %}
 
+I also put time into editing my transcripts because even the transcripts can become content. For example, I used the transcript from a highlight from one stream as a blog post.
+
+{% embed "https://dev.to/nickytonline/what-is-deno-13he" %}
+
 I'm still no pro at content creation, but folks in the space do like the concept of repurposing content.
 
 {% embed "https://twitter.com/bdougieYO/status/1580388377496457217" %}
