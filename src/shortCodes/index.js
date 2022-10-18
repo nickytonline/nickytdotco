@@ -178,6 +178,12 @@ function embedEmbed(rawUrl) {
     return twitterEmbed(tweetId);
   }
 
+  if (url.hostname.includes(`twitch.tv`)) {
+    const {videoId} = url.pathname.match(/\/videos\/(?<videoId>[^\/]+)/).groups;
+
+    return twitchEmbed(videoId);
+  }
+
   if (url.hostname.includes(`dev.to`)) {
     const {username, slug} = rawUrl.match(
       /dev\.to\/(?<username>[^\/]+)\/(?<slug>[^\/]+)/
@@ -329,6 +335,25 @@ function codeSandboxEmbed(sandboxId) {
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>`;
+}
+
+/**
+ * Generates a Twitch embed for the given video ID.
+ *
+ * @param {string} videoId A Twitch video ID.
+ *
+ * @returns {string} Markup for the Twitch embed.
+ */
+function twitchEmbed(videoId) {
+  const {host} = new URL(site.url);
+
+  return `<iframe
+    src="https://player.twitch.tv/?video=${videoId}&parent=${host}&autoplay=false"
+    loading="lazy"
+    height="399"
+    width="710"
+    allowfullscreen>
+</iframe>`;
 }
 
 module.exports = {
