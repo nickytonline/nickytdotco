@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Build framework-agnostic components with Mitosis",
-  "excerpt": "I had a chance to chat with Sami Jaber today about Mitosis. Here's the transcript from the stream we...",
+  "excerpt": "Sami Jaber, Software Engineer @ Builder.io joined me recently to discuss Mitosis, a tool for building...",
   "date": "2022-10-18T00:35:07.253Z",
   "tags": [
     "react",
@@ -10,21 +10,21 @@
     "vue"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--iLw4lL5a--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_lg2kt0vfm90g2a3ljlbm.jpg",
-  "canonicalUrl": "https://dev.to/nickytonline/build-framework-agnostic-components-with-mitosis-4c4k",
+  "canonicalUrl": "https://www.iamdeveloper.com/posts/build-framework-agnostic-components-with-mitosis-4c4k",
   "reading_time_minutes": 4,
   "template": "post"
 }
 ---
 
-I had a chance to chat with Sami Jaber today about Mitosis. Here's the transcript from the stream we did that I think sums up what Mitosis is very well.
+[Sami Jaber](https://twitter.com/samijaber_), Software Engineer @ [Builder.io](https://Builder.io) joined me recently to discuss Mitosis, a tool for building framework-agnostic components.
 
 {% embed "https://github.com/builderio/mitosis" %}
 
-## Transcript
-
-Here's the transcript from a highlight from the stream and here's the stream highlight if you want to check that out.
+Here's the transcript from a highlight from the Twitch stream that I think sums up what Mitosis is really well.
 
 {% embed "https://www.twitch.tv/videos/1626946940" %}
+
+## Transcript
 
 Nick Taylor:
 
@@ -45,23 +45,12 @@ and over is for certain people the need to be able to make the right the same fr
 
 > And so the number one suggestion that most people would give after hearing this would be like, huge Web Components. That's kind of like the de facto. Like, that's kind of like the, the communities like, standard solution or like, that's what we're trying to do is like, that's like the standard way of trying to solve this problem of interop, operable Web Components.
 
-Nick Taylor: 
-
-> Yeah.
-
-Sami Jaber:
-
 > But Web Components is not really, it's, I mean, it's not a framework. It's more of like a combination of technologies that are built on top of browsers. And so, I mean, we're already like trying to like dive deep, but for reasons that can like, I dunno if you wanna dive into those reasons, like now or later, but essentially we tried that at Builder. We tried to solve our need for multiple, like framework agnostic components using, Web Components and that didn't quite cut it for our needs.
 
 > Especially because we wanted, you know, out of the box support for SSR (server-side rendering) for every single output. We wanted it to feel as close, like not feel assholes as well, to feel like a native component in that framework every time. So we have a React user using a React SDK we want that, that SDK to feel literally like a React component, like no other additional steps.
 
 > No other like, Stuff to finagle and like set up instructions like, hey, you know, to set it up, you're gonna have to do this and this and that. And we also had things like we, we wanted to, our SDKs really needed to be very capable and be able to use all of the features of those frameworks. So I kind of like skipped that part. Is that, that's why we, that's one of the main reasons we use mitosis is to build our SDKs, which we have like,
 
-Nick Taylor:
-
-> okay,
-
-Sami Jaber:
 > one, one for React. That was written by hand, but then we're like, Okay, that's like not gonna, we're not gonna be able to do that over and over. So how are we gonna do the Vue 2 SDK, the Vue 3 SDK, the SolidJS SDK, the Svelte SDK, the Qwik SDK. I don't know if there's another one that I forgot to list, but that's already a lot of them.
 
 > So, yeah, so Web Components was not really an approach that we were able to use, given that we wanted our components to be able to call our users' components and vice versa, just like a lot of very intricate functionality was needed. And so we started playing with this idea of, well, could you, write a component once and have it be a Vue component, like a real dot Vue component, and then a React dot JSX component, and then a dot Svelte component.
@@ -73,7 +62,7 @@ Sami Jaber:
 
 - [Sami's Website](https://sami.website)
 - [Sami on Twitter](https://twitter.com/samijaber_)
+- [Mitosis Fiddle](https://mitosis.builder.io)
+- [Sveltosis](https://try.sveltosis.dev)
 
 Photo by <a href="https://unsplash.com/@nci?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">National Cancer Institute</a> on <a href="https://unsplash.com/s/photos/mitosis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-- Mitosis Fiddle, https://mitosis.builder.io
-- Sveltosis, https://try.sveltosis.dev
