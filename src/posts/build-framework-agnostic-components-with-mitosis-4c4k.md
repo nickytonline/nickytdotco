@@ -28,8 +28,6 @@ Here's the transcript from a highlight from the Twitch stream that I think sums 
 
 Nick Taylor:
 
-Nick Taylor:
-
 > So we're gonna talk about Mitosis and like the tagline on the stream here is building framework agnostic components with Mitosis. So can you kind of maybe unwrap that for everybody, uh, who might not be familiar with the project?
 
 Sami Jaber:
