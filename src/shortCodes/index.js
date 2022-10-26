@@ -198,7 +198,23 @@ function embedEmbed(rawUrl) {
     }
   }
 
+  if (url.hostname.includes(`nickscuts.buzzsprout.com`)) {
+    const episodeId = url.pathname.split('/').pop().replace(/-.*/g, '');
+
+    return buzzsproutEmbed(url.href, episodeId);
+  }
+
   throw new Error(`unsupported embed for ${url}`);
+}
+
+/**
+ * Generates an embed for a Buzzsprout podcast episode.
+ * @param {string} episodeId
+ *
+ * @returns {string} Markup for the Buzzsprout podcast episode embed.
+ */
+async function buzzsproutEmbed(episodeUrl, episodeId) {
+  return `<div id="buzzsprout-player-${episodeId}"></div><script src="${episodeUrl}.js?container_id=buzzsprout-player-${episodeId}&player=small" type="text/javascript" charset="utf-8"></script>`;
 }
 
 /**
