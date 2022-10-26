@@ -29,6 +29,8 @@ is like, Tell us about a time you had to give somebody feedback.
 
 – Stacie Taylor
 
-Check out the full podcast episode at [pod.iamdeveloper.com/11507005-the-collab-lab-with-stacie-taylor](https://pod.iamdeveloper.com/11507005-the-collab-lab-with-stacie-taylor)
+Check out the full podcast episode 👇🏻
+
+{% embed "https://nickscuts.buzzsprout.com/2065897/11507005-the-collab-lab-with-stacie-taylor" %}
 
 Photo by <a href="https://unsplash.com/@johnschno?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Schnobrich</a> on <a href="https://unsplash.com/s/photos/collaborate?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
