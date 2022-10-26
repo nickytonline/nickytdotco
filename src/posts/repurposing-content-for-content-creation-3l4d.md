@@ -17,6 +17,8 @@
 
 So I've been [streaming on Twitch](https://livecoding.ca) since July 2020, blogging, and [given some talks](https://iamdeveloper.com/talks). To keep on with the "learning in public" theme and content creation, I've started a podcast called Nick's Cuts, [pod.iamdeveloper.com](https://pod.iamdeveloper.com).
 
+{% embed "https://twitter.com/nickytonline/status/1580387119985750016" %}
+
 So what is it all about?
 
 > A podcast that is mainly tech related. It's conversations I've had on my Twitch stream, livecoding.ca, with awesome people and maybe some other things.
@@ -37,7 +39,7 @@ I'm still no pro at content creation, but folks in the space do like the concept
 
 {% embed "https://twitter.com/bdougieYO/status/1580388377496457217" %}
 
-I even came across a post about this topic from my co-worker Jason Lengstorf, @jlengstorf, a little while back titled [Turn 1 piece of dev content into 10+ — use the buffalo stick](https://www.jason.af/effective-devrel-buffalo-stick/).
+I even came across a post about this topic from my co-worker [Jason Lengstorf](https://dev.to/jlengstorf), a little while back titled [Turn 1 piece of dev content into 10+ — use the buffalo stick](https://www.jason.af/effective-devrel-buffalo-stick/).
 
 If you're a content creator, I'm curious about what your thoughts are on this or what other strategies you have for content creation.
 
