@@ -32,6 +32,6 @@ jobs:
           git pull origin main
           git add .
           if [[ -n "$(git status --porcelain)" ]]; then
-            git commit -m "Update blog posts and videos"
+            git commit -m "chore (automated): update blog posts and videos"
             git push origin main
           fi
