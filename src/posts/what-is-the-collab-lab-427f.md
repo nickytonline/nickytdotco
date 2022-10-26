@@ -1,7 +1,7 @@
 ---json
 {
   "title": "What is The Collab Lab?",
-  "excerpt": "Curious about what The Collab Lab is? I sat down with Stacie Taylor to discuss all thing Collab Lab...",
+  "excerpt": "Curious about what The Collab Lab is?  Here's the TL;DR   The Collab Lab increases access to web...",
   "date": "2022-10-26T01:17:00.075Z",
   "tags": [
     "career",
@@ -16,20 +16,19 @@
 }
 ---
 
-Curious about what [The Collab Lab](https://the-collab-lab.codes/) is? I sat down with [Stacie Taylor](https://twitter.com/the_real_stacie) to discuss all thing Collab Lab and her origin story. We even talked about career advice. I really enjoyed chatting with Stacie.
+Curious about what [The Collab Lab](https://the-collab-lab.codes/) is?
+
+Here's the TL;DR
+
+> The Collab Lab increases access to web development jobs for early-career developers and, in particular, people in under-represented groups in tech by providing experiential skills training in software team collaboration and career management.
+
+I sat down with [Stacie Taylor](https://twitter.com/the_real_stacie) to dive deeper into all thing Collab Lab.
 
 {% embed "https://twitter.com/nickytonline/status/1584893066971959297" %}
 
-Here's the TL;DR on The Collab Lab:
+We also discussed her origin story and we even talked about career advice. Thanks for the great conversation Stacie!
 
-> The collab lab really gives you that kinda experience so that you can talk about, you know, when an interviewer
-is like, Tell us about a time you had to give somebody feedback.
->
-> You're like, Yeah, I was working on a team of developers, and here's a very realistic time when that happens. So it's kind of like giving your first job in a very safe, comfortable space so that you can take those insights into the job search and really impress people.
-
-– Stacie Taylor
-
-Check out the full podcast episode 👇🏻
+Here's the full podcast episode. Now go listen to it on that walk or run. 😎
 
 {% embed "https://nickscuts.buzzsprout.com/2065897/11507005-the-collab-lab-with-stacie-taylor" %}
 
