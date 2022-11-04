@@ -177,6 +177,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "https://iamdeveloper.live/*"
+to = "https://twitch.tv/nickytonline/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://vscodetips.com/"
 to = "https://iamdeveloper.com/pages/vscode-tips/"
 status = 301
