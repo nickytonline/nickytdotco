@@ -1,4 +1,4 @@
-name: Get latest blog posts and videos
+name: Get latest videos
 on:
   schedule:
     # Everyday at midnight UTC
@@ -7,21 +7,17 @@ on:
 
 jobs:
   update_profile_data:
-    name: Get latest blog posts and videos
+    name: Get latest videos
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
           node-version: 16.17.1
-      - name: Get blog posts and videos
-        env:
-          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
+      - name: Get latest videos
         run: |
           npm install
           node bin/udpdateStreamingPage.js
-          node --experimental-fetch bin/generateDevToPosts.js
-          node bin/generateHashnodeUrlMapping.js
       - name: Commit changes
         id: commit
         env:
@@ -32,6 +28,6 @@ jobs:
           git pull origin main
           git add .
           if [[ -n "$(git status --porcelain)" ]]; then
-            git commit -m "chore (automated): update blog posts and videos"
+            git commit -m "chore (automated): update videos"
             git push origin main
           fi
