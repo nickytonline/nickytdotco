@@ -18,16 +18,12 @@ jobs:
         run: |
           npm install
           node bin/udpdateStreamingPage.js
-      - name: Commit changes
-        id: commit
+      - name: Setup git config
+        run: |
+          git config user.name 'token-generator-app[bot]'
+          git config user.email '82042599+token-generator-app[bot]@users.noreply.github.com'
+      - name: PR for Videos
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-          git pull origin main
-          git add .
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git commit -m "chore (automated): update videos"
-            git push origin main
-          fi
+          ./bin/pr-videos.sh
