@@ -72,12 +72,12 @@ module.exports = function (config) {
 
   // Custom collections
   config.addCollection('posts', (collection) => {
-    return collection.getFilteredByGlob('./src/posts/*.md').reverse();
+    return collection.getFilteredByGlob('./src/blog/*.md').reverse();
   });
 
   config.addCollection('postFeed', (collection) => {
     return collection
-      .getFilteredByGlob('./src/posts/*.md')
+      .getFilteredByGlob('./src/blog/*.md')
       .reverse()
       .slice(0, site.maxPostsPerPage);
   });

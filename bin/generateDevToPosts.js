@@ -9,7 +9,7 @@ const {DEV_API_KEY} = process.env;
 const SLUG_INCLUSION_LIST = require('./slugInclusionList.json');
 
 const DEV_TO_API_URL = 'https://dev.to/api';
-const POSTS_DIRECTORY = path.join(__dirname, '../src/posts');
+const POSTS_DIRECTORY = path.join(__dirname, '../src/blog');
 const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, '../src/vscodetips');
 const POSTS_IMAGES_PUBLIC_DIRECTORY = '/images/posts';
 const POSTS_IMAGES_DIRECTORY = path.join(

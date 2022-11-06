@@ -8,6 +8,12 @@ command = "npm run production"
     Permissions-Policy = "interest-cohort=()"
 
 [[redirects]]
+from = "/posts/*"
+to = "/blog/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "/talks"
 to = "/pages/talks"
 status = 301
