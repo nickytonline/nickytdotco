@@ -1,6 +1,6 @@
 ---json
 {
-  "title": "Automate and Merge Pull Requests using GitHub Actions and the GitHub CLI",
+  "title": "Automate and Auto-Merge Pull Requests using GitHub Actions and the GitHub CLI",
   "excerpt": "So I've written about how I automated content updates for my blog before. I even gave a talk on...",
   "date": "2022-11-06T01:32:09.368Z",
   "tags": [
