@@ -20,7 +20,7 @@
 
 {% embed "https://github.com/builderio/mitosis" %}
 
-Here's the transcript from a highlight from the Twitch stream that I think sums up what Mitosis is really well.
+Here's the transcript from a highlight from the Twitch stream that I think sums up what Mitosis is really well. If you want to check out the full video, I've added it to the end of this post.
 
 {% embed "https://www.twitch.tv/videos/1626946940" %}
 
@@ -51,6 +51,10 @@ like set up instructions like, Hey, you know, to set it up, you're gonna have to
 > And so we started playing with this idea of, well, could you, write a component once and have it be a Vue component, like a real dot Vue component, and then a React dot JSX component, and then a dot Svelte component.Like could you actually achieve that somehow?
 >
 > And we think we have, and that's what Mitosis is.
+
+Full video
+
+{% embed "https://www.youtube.com/watch?v=bVJymLTPFsA" %}
 
 ## Links
 
