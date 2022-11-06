@@ -192,6 +192,12 @@ gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
 {% endraw %}
 ```
 
+## The Result
+
+After publishing this post, I [ran the GitHub action](https://github.com/nickytonline/iamdeveloper.com/actions/runs/3402455746), and this is the PR it generated and auto-merged.
+
+{% embed "https://github.com/nickytonline/iamdeveloper.com/pull/64" %}
+
 And that's it. I love automated work, and GitHub Actions and the GitHub CLI facilitate this.
 
 Photo by <a href="https://unsplash.com/@richygreat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Richy Great</a> on <a href="https://unsplash.com/s/photos/github?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
