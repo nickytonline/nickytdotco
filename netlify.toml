@@ -205,3 +205,9 @@ from = "https://community.vscodetips.com/"
 to = "https://iamdeveloper.com/pages/vscode-tips/"
 status = 301
 force = true
+
+[[redirects]]
+from = "/coc/*"
+to = "/pages/coc/:splat"
+status = 301
+force = true
