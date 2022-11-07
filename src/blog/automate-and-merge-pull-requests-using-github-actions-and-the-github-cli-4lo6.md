@@ -5,13 +5,13 @@
   "date": "2022-11-06T01:32:09.368Z",
   "tags": [
     "github",
-    "automation",
-    "git",
-    "bash"
+    "githubcli",
+    "githubactions",
+    "git"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--MPFZD2M0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_n5zbeeuatd9c42b1etvc.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-  "reading_time_minutes": 4,
+  "reading_time_minutes": 5,
   "template": "post"
 }
 ---
@@ -62,7 +62,7 @@ Optionally, what I did was auto-delete branches. If you want to do the same, ens
 
 ### Configuring Branch Protection
 
-This is unnecessary, but I recommend enabling branch protection in general for a repository.
+This is not required for what I'm demonstrating, but I and many others in the industry highly recommend enabling branch protection in general for a repository.
 
 For the auto-merge PR use case, we'll add the following branch protection for the `main` branch:
 
