@@ -26,7 +26,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
  */
 function boostLink(title, fileSlug, url, canonicalUrl) {
   const isVsCodeTips = url.startsWith('/vscodetips/');
-  if (!url.startsWith('/posts/') && !isVsCodeTips) {
+  if (!url.startsWith('/blog/') && !isVsCodeTips) {
     return '';
   }
 
