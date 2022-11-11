@@ -211,3 +211,9 @@ from = "/coc/*"
 to = "/pages/coc/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "https://discord.iamdeveloper.com/*"
+to = "https://discord.gg/FkGSHMxbTe"
+status = 301
+force = true
