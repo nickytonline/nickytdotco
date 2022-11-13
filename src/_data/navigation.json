@@ -1,8 +1,8 @@
 {
   "items": [
     {
-      "text": "About",
-      "url": "/pages/about",
+      "text": "Blog",
+      "url": "/",
       "external": false
     },
     {
@@ -13,6 +13,11 @@
     {
       "text": "Podcast",
       "url": "/pages/podcast",
+      "external": true
+    },
+    {
+      "text": "Newsletter",
+      "url": "https://newsletter.iamdeveloper.com",
       "external": true
     },
     {
@@ -36,13 +41,13 @@
       "external": false
     },
     {
-      "text": "Newsletter",
-      "url": "https://newsletter.iamdeveloper.com",
-      "external": true
-    },
-    {
       "text": "Thanks",
       "url": "/pages/thanks",
+      "external": false
+    },
+    {
+      "text": "About",
+      "url": "/pages/about",
       "external": false
     },
     {
