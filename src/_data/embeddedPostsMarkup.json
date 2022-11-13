@@ -1912,5 +1912,46 @@
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
+  },
+  "https://dev.to/nickytonline/revue-being-phased-out-by-twitter-4kle": {
+    "type_of": "article",
+    "id": 1251234,
+    "title": "Revue being phased out by Twitter",
+    "description": "If you're like me, you may have jumped on the let me integrate Revue with my Twitter to better...",
+    "readable_publish_date": "Nov 10",
+    "slug": "revue-being-phased-out-by-twitter-4kle",
+    "path": "/nickytonline/revue-being-phased-out-by-twitter-4kle",
+    "url": "https://dev.to/nickytonline/revue-being-phased-out-by-twitter-4kle",
+    "collection_id": null,
+    "published_timestamp": "2022-11-10T13:40:01Z",
+    "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--u2MsVIGf--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h7ccqiujz5b8rg23rgcl.jpg",
+    "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--_Lrn8fyQ--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h7ccqiujz5b8rg23rgcl.jpg",
+    "canonical_url": "https://www.iamdeveloper.com/blog/revue-being-phased-out-by-twitter-4kle",
+    "created_at": "2022-11-10T13:40:02Z",
+    "edited_at": "2022-11-13T14:52:00Z",
+    "crossposted_at": null,
+    "published_at": "2022-11-10T13:40:01Z",
+    "last_comment_at": "2022-11-13T14:23:55Z",
+    "reading_time_minutes": 1,
+    "tag_list": "news, discuss",
+    "tags": [
+      "news",
+      "discuss"
+    ],
+    "user": {
+      "name": "Nick Taylor",
+      "username": "nickytonline",
+      "twitter_username": "nickytonline",
+      "github_username": "nickytonline",
+      "user_id": 9597,
+      "website_url": "https://timeline.iamdeveloper.com",
+      "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+    },
+    "flare_tag": {
+      "name": "news",
+      "bg_color_hex": "#111111",
+      "text_color_hex": "#fff9ac"
+    }
   }
 }
