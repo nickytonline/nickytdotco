@@ -28,7 +28,7 @@ That is important, but I also wanted all my past newsletter issues. Revue has an
 
 This works great, but I was like, let's make this easier for folks who want to grab their newsletters and not have to worry about coding all this. So I wrote a small app to do it.
 
-It uses [Netlify functions](https://www.netlify.com/products/functions/) written in TypeScript to grab the newsletter issues and good old HTML with some inlined style and inlined JavaScript.
+It uses a [Netlify function](https://www.netlify.com/products/functions/) written in TypeScript to grab the newsletter issues and good old HTML with some inlined style and inlined JavaScript.
 
 {% embed "https://twitter.com/nickytonline/status/1591627552128634880" %}
 
