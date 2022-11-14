@@ -36,4 +36,4 @@ Here's the source code if you're interested. It's all open source, MIT licensed.
 
 {% embed "https://github.com/nickytonline/get-revue-newsletters" %}
 
-If you have a Revue newsletter, try it out at [revue.iamdeveloper.com](https://revue.iamdeveloper.com). All you need to do is get a Revue API key. To get one, go to [https://getrevue.co/app/integrations](https://getrevue.co/app/integrations) and request one. It should be at the bottom of the page. It takes around 24 hours to get your API key.
+If you have a Revue newsletter, try it out at [revue.iamdeveloper.com](https://revue.iamdeveloper.com). All you need to do is get a Revue API key. To get one, go to [https://www.getrevue.co/app/integrations](https://www.getrevue.co/app/integrations) and request one. It should be at the bottom of the page. It takes around 24 hours to get your API key.
