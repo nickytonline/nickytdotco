@@ -81,6 +81,9 @@ img {
 @import 'components/video-player';
 
 .theme-toggle .button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
   border-radius: 50%;
 }
 
