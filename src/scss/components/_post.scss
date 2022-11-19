@@ -8,6 +8,15 @@
     margin: 0 auto;
   }
 
+  img.headshot {
+    width: 25%; // TODO fix this
+    border-radius: 50%;
+    shape-outside: ellipse(50% 50%);
+    margin-right: 1rem;
+    float: left;
+    margin-top: 2rem;
+  }
+
   .intro__meta {
     display: flex;
     flex-direction: column;
