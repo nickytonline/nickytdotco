@@ -5,7 +5,8 @@
   "date": "2022-11-20T06:20:37.765Z",
   "tags": [
     "socialmedia",
-    "mastodon"
+    "mastodon",
+    "discuss"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--UVOLc_dh--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_5i81ao7g5t81jr8i99lq.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/have-you-moved-from-twitter-to-mastodon-for-social-media-4a37",
@@ -22,7 +23,7 @@ I [tooted](https://docs.joinmastodon.org/user/posting/) a bit then came back to 
 
 The user experience is definitely different from Twitter, but even with its clunkiness, I have started to enjoy it.
 
-Another exciting development is some ex-Twitter employees have started their own Mastodon instance. I can't find the toot, but I'll update the post when I do.
+Another exciting development is some ex-Twitter employees have started their own Mastodon instance, [macaw.social](ttps://macaw.social). Thanks for linking it to me [Arthur Melo](https://mastodon.social/@arthur_melo/109377000937013389)!
 
 Some resources you may find handy if you're new to Mastodon:
 
@@ -31,8 +32,6 @@ Some resources you may find handy if you're new to Mastodon:
 
 If you're on Mastodon, feel free to drop your handles in the comments so others can give you a follow over there. You can find me at [@nickytonline@toot.cafe](https://toot.cafe/@nickytonline). 
 
-If you're on Mastodon, feel free to drop your handles so others can give you a follow over there. You can find me at [@nickytonline@toot.cafe](https://toot.cafe/@nickytonline). 
-
-What are your thoughts on Mastodon?
+What are your thoughts on Mastodon and are you considering, if you haven’t already, moving over there?
 
 Photo by <a href="https://unsplash.com/@redcharlie?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">redcharlie</a> on <a href="https://unsplash.com/s/photos/elephants?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
