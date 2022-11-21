@@ -123,14 +123,14 @@ status = 301
 force = true
 
 [[redirects]]
-from = "https://newsletter.iamdeveloper.com/*"
-to = "/pages/newsletter/"
+from = "https://newsletter.iamdeveloper.com"
+to = "https://news.iamdeveloper.com"
 status = 301
 force = true
 
 [[redirects]]
-from = "https://news.iamdeveloper.com/*"
-to = "https://newsletter.iamdeveloper.com/:splat"
+from = "https://news.iamdeveloper.com"
+to = "/pages/newsletter/"
 status = 301
 force = true
 
