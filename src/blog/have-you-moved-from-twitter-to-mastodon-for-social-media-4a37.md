@@ -33,8 +33,6 @@ Some resources you may find handy if you're new to Mastodon:
 
 If you're on Mastodon, feel free to drop your handles in the comments so others can give you a follow over there. You can find me at [@nickytonline@toot.cafe](https://toot.cafe/@nickytonline).
 
-One thing I'll caveat is that not everyone I was interacting is moving over to Mastodon, so although I'll primarily be active there, I won't fully
-
 What are your thoughts on Mastodon and are you considering, if you haven’t already, moving over there?
 
 Photo by <a href="https://unsplash.com/@redcharlie?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">redcharlie</a> on <a href="https://unsplash.com/s/photos/elephants?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
