@@ -130,7 +130,7 @@ force = true
 
 [[redirects]]
 from = "https://news.iamdeveloper.com"
-to = "/pages/newsletter/"
+to = "https://iamdeveloper.com/pages/newsletter/"
 status = 301
 force = true
 
