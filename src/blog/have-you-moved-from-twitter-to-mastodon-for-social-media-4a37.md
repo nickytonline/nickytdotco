@@ -9,7 +9,7 @@
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--UVOLc_dh--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_5i81ao7g5t81jr8i99lq.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/have-you-moved-from-twitter-to-mastodon-for-social-media-4a37",
-  "reading_time_minutes": 1,
+  "reading_time_minutes": 2,
   "template": "post"
 }
 ---
@@ -22,14 +22,18 @@ I [tooted](https://docs.joinmastodon.org/user/posting/) a bit then came back to 
 
 The user experience is definitely different from Twitter, but even with its clunkiness, I have started to enjoy it.
 
-Another exciting development is some ex-Twitter employees have started their own Mastodon instance, [macaw.social](ttps://macaw.social). Thanks for linking it to me [Arthur Melo](https://mastodon.social/@arthur_melo/109377000937013389)!
+Although I'll be tooting, for the most part, I've realized that some folks use Twitter as the main point of contact with me, so I'll still be checking DMs over there and still Tweeting (just not as much as tootin'). I'll probably also be [more active on LinkedIn](https://www.linkedin.com/in/nickytonline/) too.
+
+Another exciting development is some ex-Twitter employees have started their own Mastodon instance, [macaw.social](https://macaw.social). Thanks for linking it to me [Arthur Melo](https://mastodon.social/@arthur_melo/109377000937013389)!
 
 Some resources you may find handy if you're new to Mastodon:
 
 - Need a hand finding folks that are/were on Twitter and are on Mastodon instances now? The [FedFinder](https://fedifinder.glitch.me/) is a great tool.
 - Jeremy Keith has a great post to ease you into Mastodon, [That fediverse feeling](https://adactio.com/journal/19650)
 
-If you're on Mastodon, feel free to drop your handles in the comments so others can give you a follow over there. You can find me at [@nickytonline@toot.cafe](https://toot.cafe/@nickytonline). 
+If you're on Mastodon, feel free to drop your handles in the comments so others can give you a follow over there. You can find me at [@nickytonline@toot.cafe](https://toot.cafe/@nickytonline).
+
+One thing I'll caveat is that not everyone I was interacting is moving over to Mastodon, so although I'll primarily be active there, I won't fully
 
 What are your thoughts on Mastodon and are you considering, if you haven’t already, moving over there?
 
