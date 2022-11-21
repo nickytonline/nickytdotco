@@ -19,3 +19,7 @@ So welcome to links to cool and interesting stuff I found on the Internet during
     <a href="https://buttondown.email" target="_blank">Powered by Buttondown</a>
   </p>
 </form>
+
+You can also browse the [full archives](https://buttondown.email/nickytonline/archive/) of this newsletter.
+
+If you'd prefer, you can also [subscribe via RSS](https://buttondown.email/nickytonline/rss).
