@@ -183,6 +183,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "https://iamdeveloper.live/commands"
+to = "https://iamdeveloper.live/about"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://iamdeveloper.live/*"
 to = "https://twitch.tv/nickytonline/:splat"
 status = 301
