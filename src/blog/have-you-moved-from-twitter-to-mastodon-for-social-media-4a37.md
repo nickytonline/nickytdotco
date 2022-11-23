@@ -35,4 +35,10 @@ If you're on Mastodon, feel free to drop your handles in the comments so others 
 
 What are your thoughts on Mastodon and are you considering, if you haven’t already, moving over there?
 
+I'll end with this. I think Andy  Bell puts it best. 
+
+> Don’t feel under pressure to leave Twitter if it still brings you benefit. As soon as it becomes clear that it doesn’t, feel confident that you can leave Twitter and it’ll be fine.
+
+– Andy Bell from his post [Free of the bird](https://andy-bell.co.uk/free-of-the-bird/)
+
 Photo by <a href="https://unsplash.com/@redcharlie?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">redcharlie</a> on <a href="https://unsplash.com/s/photos/elephants?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
