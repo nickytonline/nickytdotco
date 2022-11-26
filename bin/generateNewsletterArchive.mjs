@@ -9,6 +9,15 @@ const NEWSLETTER_DIRECTORY = path.join(__dirname, '..', 'src', 'newsletter');
 const parser = new Parser();
 const feed = await parser.parseURL(site.newsletterRss);
 
+function sanitizeContent(rawContent) {
+  let updatedContent = rawContent
+    .trim()
+    .replaceAll(/<h2\s+[^>]+>/gi, '<h2>')
+    .replaceAll(/style="[^"]+"/gi, '');
+
+  return updatedContent;
+}
+
 async function generateNewsletterPost(feedItem) {
   const {title, link, pubDate, content, contentSnippet, guid, isoDate} = feedItem;
 
@@ -30,7 +39,7 @@ async function generateNewsletterPost(feedItem) {
     jsonFrontmatter,
     null,
     2
-  )}\n---\n\n${content.trim()}\n`;
+  )}\n---\n\n${sanitizeContent(content)}\n`;
 
   await fs.writeFile(path.join(NEWSLETTER_DIRECTORY, `${filename}.md`), markdown);
 }
