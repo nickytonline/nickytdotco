@@ -12,52 +12,52 @@
 
 <p>Another week, another newsletter. Let’s get to it!</p>
 
-<h2 class="header-text" style="cursor:auto;color:#030A10;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:24px;font-weight:700;line-height:32px;text-align:left;color: #E15718;">
+<h2>
       Around the Web
     </h2>
 
 <p>I love all the write ups, videos, podcast stuff that Swyx does and this is another great one.</p>
 
-<tbody><tr><td align="center" style="word-break:break-word;font-size:0px;padding:0px;"><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="width:650px;">
+<tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >
 <a href="https://youtube.com/watch?t=11&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter&amp;v=O7KVEwNau6w" target="_blank">
-<img alt="Bun and Deno: New Runtimes for the Third Age of JavaScript (Full Talk rerecorded)" height="auto" src="https://s3.amazonaws.com/revue/items/images/017/090/667/mail/hqdefault.jpg?1658596221" style="border:none;border-radius:0;display:block;outline:none;text-decoration:none;width:100%;height:auto;" title="Bun and Deno: New Runtimes for the Third Age of JavaScript (Full Talk rerecorded)" width="600"/>
-</a></td></tr></tbody></table></td></tr><tr><td align="center" style="word-break:break-word;font-size:0px;padding:0px;padding-top:16px;"><div style="cursor:auto;color:#95989C;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:13px;line-height:21px;text-align:center;">Bun and Deno: New Runtimes for the Third Age of JavaScript (Full Talk rerecorded)</div></td></tr></tbody>
+<img alt="Bun and Deno: New Runtimes for the Third Age of JavaScript (Full Talk rerecorded)" height="auto" src="https://s3.amazonaws.com/revue/items/images/017/090/667/mail/hqdefault.jpg?1658596221"  title="Bun and Deno: New Runtimes for the Third Age of JavaScript (Full Talk rerecorded)" width="600"/>
+</a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >Bun and Deno: New Runtimes for the Third Age of JavaScript (Full Talk rerecorded)</div></td></tr></tbody>
 
 <p>Maybe it’s obvious for a bunch of folks but I’ve only ever spoken on a Twitter Space. I’ve never hosted one, so this will definitely come in handy.</p>
 
-<tr><td align="left" style="word-break:break-word;font-size:0px;padding:0px;"><div style="cursor:auto;color:#3B424B;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:13px;font-weight: 400;line-height:22px;text-align:left;">
+<tr><td align="left" ><div >
 <!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" style="width:140px;"><tr><td style="padding:0 0 30px 30px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
           <![endif]-->
-<a href="https://www.businessinsider.com/how-to-pin-tweet-in-twitter-space?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="text-decoration: none;" target="_blank">
-<img align="right" alt="How to pin a tweet in a Twitter Space to share with your group conversation" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/094/378/thumb/62546a1c3df5750019f72f65?1658631110" style="padding-left: 30px; padding-bottom: 36px;border:none;border-radius:0;outline:none;text-decoration:none;" width="140"/>
+<a href="https://www.businessinsider.com/how-to-pin-tweet-in-twitter-space?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
+<img align="right" alt="How to pin a tweet in a Twitter Space to share with your group conversation" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/094/378/thumb/62546a1c3df5750019f72f65?1658631110"  width="140"/>
 </a> <!--[if mso]>
           </td></tr></table>
           <![endif]-->
 <div>
-<div class="link-title" style="padding-bottom: 4px;font-weight:700;font-family:Helvetica,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color: #000000;font-size:20px;line-height:28px;"><a href="https://www.businessinsider.com/how-to-pin-tweet-in-twitter-space?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #000000;text-decoration: none;" target="_blank">How to pin a tweet in a Twitter Space to share with your group conversation</a></div>
-<div class="serif small-text link-description" style="padding-bottom: 4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:16px;line-height:24px;color: #000000;"><div class="revue-p" style="margin:0;">To pin a tweet in a Twitter Space, use the Share icon on the tweet, then choose the Space from the list of sharing options.</div>
+<div class="link-title" ><a href="https://www.businessinsider.com/how-to-pin-tweet-in-twitter-space?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">How to pin a tweet in a Twitter Space to share with your group conversation</a></div>
+<div class="serif small-text link-description" ><div class="revue-p" >To pin a tweet in a Twitter Space, use the Share icon on the tweet, then choose the Space from the list of sharing options.</div>
 </div>
-<div class="link-url" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:14px;line-height:24px;"><a href="https://www.businessinsider.com/how-to-pin-tweet-in-twitter-space?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #3498DB;text-decoration:none;font-weight:400;" target="_blank">www.businessinsider.com</a></div>
+<div class="link-url" ><a href="https://www.businessinsider.com/how-to-pin-tweet-in-twitter-space?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.businessinsider.com</a></div>
 </div>
 </div></td></tr>
 
 <p>This was a cool video showing the evolution of the office desk.</p>
 
-<tr><td align="left" style="word-break:break-word;font-size:0px;padding:0px;"><div style="cursor:auto;color:#3B424B;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:13px;font-weight: 400;line-height:22px;text-align:left;">
+<tr><td align="left" ><div >
 <!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" style="width:140px;"><tr><td style="padding:0 0 30px 30px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
           <![endif]-->
-<a href="https://twitter.com/lostinhist0ry/status/1550715202362290176?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="text-decoration: none;" target="_blank">
-<img align="right" alt='Lost in history on Twitter: "Evolution of an office desk (1980-2014). https://t.co/AehBtQiJnF" / Twitter' class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/094/382/thumb/UaNAZ6pPl5J45MqN.jpg_large?1658631225" style="padding-left: 30px; padding-bottom: 36px;border:none;border-radius:0;outline:none;text-decoration:none;" width="140"/>
+<a href="https://twitter.com/lostinhist0ry/status/1550715202362290176?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
+<img align="right" alt='Lost in history on Twitter: "Evolution of an office desk (1980-2014). https://t.co/AehBtQiJnF" / Twitter' class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/094/382/thumb/UaNAZ6pPl5J45MqN.jpg_large?1658631225"  width="140"/>
 </a> <!--[if mso]>
           </td></tr></table>
           <![endif]-->
 <div>
-<div class="link-title" style="padding-bottom: 4px;font-weight:700;font-family:Helvetica,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color: #000000;font-size:20px;line-height:28px;"><a href="https://twitter.com/lostinhist0ry/status/1550715202362290176?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #000000;text-decoration: none;" target="_blank">Lost in history on Twitter: "Evolution of an office desk (1980-2014). https://t.co/AehBtQiJnF" / Twitter</a></div>
-<div class="serif small-text link-description" style="padding-bottom: 4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:16px;line-height:24px;color: #000000;"><div class="revue-p" style="margin:0;">“Evolution of an office desk (1980-2014).”</div>
+<div class="link-title" ><a href="https://twitter.com/lostinhist0ry/status/1550715202362290176?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Lost in history on Twitter: "Evolution of an office desk (1980-2014). https://t.co/AehBtQiJnF" / Twitter</a></div>
+<div class="serif small-text link-description" ><div class="revue-p" >“Evolution of an office desk (1980-2014).”</div>
 </div>
-<div class="link-url" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:14px;line-height:24px;"><a href="https://twitter.com/lostinhist0ry/status/1550715202362290176?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #3498DB;text-decoration:none;font-weight:400;" target="_blank">twitter.com</a></div>
+<div class="link-url" ><a href="https://twitter.com/lostinhist0ry/status/1550715202362290176?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">twitter.com</a></div>
 </div>
 </div></td></tr>
 
@@ -66,78 +66,78 @@
 <p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">life hack: command + shift + A allows you to search all your tabs in chrome (across all of your windows). <br/><br/>this might be the best thing since .new TLDs 🤯</p>— rita kozlov 🐀 (@ritakozlov_) <a href="https://twitter.com/ritakozlov_/status/1549442588570259456?ref_src=twsrc%5Etfw">July 19, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
-<h2 class="header-text" style="cursor:auto;color:#030A10;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:24px;font-weight:700;line-height:32px;text-align:left;color: #E15718;">
+<h2>
       Fun Stuff
     </h2>
 
 <p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">Using Biodata Sonification the bio-rhythms of living organisms can be turned into sound <br/><br/>Listen to this mushroom “singing” <br/>📹 by  <a href="https://twitter.com/TarunTspoon?ref_src=twsrc%5Etfw">@TarunTspoon</a> <a href="https://t.co/z7fRBwdWR1">pic.twitter.com/z7fRBwdWR1</a></p>— Science girl (@gunsnrosesgirl3) <a href="https://twitter.com/gunsnrosesgirl3/status/1550119734460293120?ref_src=twsrc%5Etfw">July 21, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
-<h2 class="header-text" style="cursor:auto;color:#030A10;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:24px;font-weight:700;line-height:32px;text-align:left;color: #E15718;">
+<h2>
       Words of Wisdom for the Week
     </h2>
 
 <p>https://twitter.com/thisone0verhere/status/1548026326233206784</p>
-<h2 class="header-text" style="cursor:auto;color:#030A10;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:24px;font-weight:700;line-height:32px;text-align:left;color: #E15718;">
+<h2>
       VS Code Tip of the Week
     </h2>
 
-<tr><td align="left" style="word-break:break-word;font-size:0px;padding:0px;"><div style="cursor:auto;color:#3B424B;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:13px;font-weight: 400;line-height:22px;text-align:left;">
+<tr><td align="left" ><div >
 <!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" style="width:140px;"><tr><td style="padding:0 0 30px 30px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
           <![endif]-->
-<a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-project-manager-extension-ec5/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="text-decoration: none;" target="_blank">
-<img align="right" alt="VS Code Tip of the Week: The Project Manager Extension - Just Some Dev" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/015/958/thumb/twitter-blog-post-social-card_bqhgzt?1658196822" style="padding-left: 30px; padding-bottom: 36px;border:none;border-radius:0;outline:none;text-decoration:none;" width="140"/>
+<a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-project-manager-extension-ec5/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
+<img align="right" alt="VS Code Tip of the Week: The Project Manager Extension - Just Some Dev" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/015/958/thumb/twitter-blog-post-social-card_bqhgzt?1658196822"  width="140"/>
 </a> <!--[if mso]>
           </td></tr></table>
           <![endif]-->
 <div>
-<div class="link-title" style="padding-bottom: 4px;font-weight:700;font-family:Helvetica,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color: #000000;font-size:20px;line-height:28px;"><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-project-manager-extension-ec5/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #000000;text-decoration: none;" target="_blank">VS Code Tip of the Week: The Project Manager Extension - Just Some Dev</a></div>
-<div class="serif small-text link-description" style="padding-bottom: 4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:16px;line-height:24px;color: #000000;"><div class="revue-p" style="margin:0;">This week’s VS Code Tip of the Week is the…</div>
+<div class="link-title" ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-project-manager-extension-ec5/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">VS Code Tip of the Week: The Project Manager Extension - Just Some Dev</a></div>
+<div class="serif small-text link-description" ><div class="revue-p" >This week’s VS Code Tip of the Week is the…</div>
 </div>
-<div class="link-url" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:14px;line-height:24px;"><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-project-manager-extension-ec5/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #3498DB;text-decoration:none;font-weight:400;" target="_blank">www.iamdeveloper.com</a></div>
+<div class="link-url" ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-project-manager-extension-ec5/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.iamdeveloper.com</a></div>
 </div>
 </div></td></tr>
 
-<h2 class="header-text" style="cursor:auto;color:#030A10;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:24px;font-weight:700;line-height:32px;text-align:left;color: #E15718;">
+<h2>
       Shameless plugs
     </h2>
 
 <p>Ian Douglas joined me on my Twitch stream this past Wednesday to show me the ins and outs of Postman! We also talked about interviewing, a passion of his. Here’s a highlight from the stream. The full recording will be up on YouTube sometime next week.</p>
 
-<tr><td align="left" style="word-break:break-word;font-size:0px;padding:0px;"><div style="cursor:auto;color:#3B424B;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:13px;font-weight: 400;line-height:22px;text-align:left;">
+<tr><td align="left" ><div >
 <!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" style="width:140px;"><tr><td style="padding:0 0 30px 30px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
           <![endif]-->
-<a href="https://www.twitch.tv/videos/1537621973?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="text-decoration: none;" target="_blank">
-<img align="right" alt="Highlight: Fun with Postman and Nerding Out on Interviewing - nickytonline on Twitch" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/090/749/thumb/custom-7c5fd6d5-a687-437d-87b7-1f803064935f-640x360.png?1658596648" style="padding-left: 30px; padding-bottom: 36px;border:none;border-radius:0;outline:none;text-decoration:none;" width="140"/>
+<a href="https://www.twitch.tv/videos/1537621973?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
+<img align="right" alt="Highlight: Fun with Postman and Nerding Out on Interviewing - nickytonline on Twitch" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/090/749/thumb/custom-7c5fd6d5-a687-437d-87b7-1f803064935f-640x360.png?1658596648"  width="140"/>
 </a> <!--[if mso]>
           </td></tr></table>
           <![endif]-->
 <div>
-<div class="link-title" style="padding-bottom: 4px;font-weight:700;font-family:Helvetica,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color: #000000;font-size:20px;line-height:28px;"><a href="https://www.twitch.tv/videos/1537621973?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #000000;text-decoration: none;" target="_blank">Highlight: Fun with Postman and Nerding Out on Interviewing - nickytonline on Twitch</a></div>
-<div class="serif small-text link-description" style="padding-bottom: 4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:16px;line-height:24px;color: #000000;"><div class="revue-p" style="margin:0;">nickytonline went live on Twitch. Catch up on their Software and Game Development VOD now.</div>
+<div class="link-title" ><a href="https://www.twitch.tv/videos/1537621973?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Highlight: Fun with Postman and Nerding Out on Interviewing - nickytonline on Twitch</a></div>
+<div class="serif small-text link-description" ><div class="revue-p" >nickytonline went live on Twitch. Catch up on their Software and Game Development VOD now.</div>
 </div>
-<div class="link-url" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:14px;line-height:24px;"><a href="https://www.twitch.tv/videos/1537621973?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #3498DB;text-decoration:none;font-weight:400;" target="_blank">www.twitch.tv</a></div>
+<div class="link-url" ><a href="https://www.twitch.tv/videos/1537621973?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.twitch.tv</a></div>
 </div>
 </div></td></tr>
 
-<p>I was on a podcast! I had a really great time chatting with <a href="https://twitter.com/EddieHinkle?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color:#3498DB;text-decoration:underline;" target="_blank">Eddie Hinkle</a> discussing my origin story and what brings me joy as an engineer.</p>
+<p>I was on a podcast! I had a really great time chatting with <a href="https://twitter.com/EddieHinkle?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Eddie Hinkle</a> discussing my origin story and what brings me joy as an engineer.</p>
 
-<tr><td align="left" style="word-break:break-word;font-size:0px;padding:0px;"><div style="cursor:auto;color:#3B424B;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-size:13px;font-weight: 400;line-height:22px;text-align:left;">
+<tr><td align="left" ><div >
 <!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" style="width:140px;"><tr><td style="padding:0 0 30px 30px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
           <![endif]-->
-<a href="https://webjoy.fm/episode/s1-e9-were-like-detectives-nick-nickytonline?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="text-decoration: none;" target="_blank">
-<img align="right" alt="S1 E9: We're like Detectives (Nick / @nickytonline) - WebJoy" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/094/396/thumb/wI-Drkq6EyK8Qg5Sw22MvTHu-facebook.png?1658631526" style="padding-left: 30px; padding-bottom: 36px;border:none;border-radius:0;outline:none;text-decoration:none;" width="140"/>
+<a href="https://webjoy.fm/episode/s1-e9-were-like-detectives-nick-nickytonline?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
+<img align="right" alt="S1 E9: We're like Detectives (Nick / @nickytonline) - WebJoy" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/094/396/thumb/wI-Drkq6EyK8Qg5Sw22MvTHu-facebook.png?1658631526"  width="140"/>
 </a> <!--[if mso]>
           </td></tr></table>
           <![endif]-->
 <div>
-<div class="link-title" style="padding-bottom: 4px;font-weight:700;font-family:Helvetica,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color: #000000;font-size:20px;line-height:28px;"><a href="https://webjoy.fm/episode/s1-e9-were-like-detectives-nick-nickytonline?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #000000;text-decoration: none;" target="_blank">S1 E9: We're like Detectives (Nick / @nickytonline) - WebJoy</a></div>
-<div class="serif small-text link-description" style="padding-bottom: 4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:16px;line-height:24px;color: #000000;"><div class="revue-p" style="margin:0;">Nick Taylor joins the show to talk about his origin story, how he got started working with spreadsheets on a yellow monochrome computer and how his inte…</div>
+<div class="link-title" ><a href="https://webjoy.fm/episode/s1-e9-were-like-detectives-nick-nickytonline?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">S1 E9: We're like Detectives (Nick / @nickytonline) - WebJoy</a></div>
+<div class="serif small-text link-description" ><div class="revue-p" >Nick Taylor joins the show to talk about his origin story, how he got started working with spreadsheets on a yellow monochrome computer and how his inte…</div>
 </div>
-<div class="link-url" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;font-weight:400;font-size:14px;line-height:24px;"><a href="https://webjoy.fm/episode/s1-e9-were-like-detectives-nick-nickytonline?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" style="color: #3498DB;text-decoration:none;font-weight:400;" target="_blank">webjoy.fm</a></div>
+<div class="link-url" ><a href="https://webjoy.fm/episode/s1-e9-were-like-detectives-nick-nickytonline?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">webjoy.fm</a></div>
 </div>
 </div></td></tr>
 
