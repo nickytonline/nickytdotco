@@ -1,0 +1,29 @@
+name: Get latest blog posts
+on:
+  schedule:
+    # 17:00 UTC on Sunday
+    - cron: '0 17 * * 7'
+  workflow_dispatch:
+
+jobs:
+  update_profile_data:
+    name: Get latest blog posts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Get Newsletter Archives
+        run: |
+          npm install
+          node generateNewsletterArchive.mjs
+      - name: Setup git config
+        run: |
+          git config user.name 'token-generator-app[bot]'
+          git config user.email '82042599+token-generator-app[bot]@users.noreply.github.com'
+      - name: PR for Newsletter Archive Updates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./bin/pr-news-archives.sh
