@@ -13,7 +13,13 @@ function sanitizeContent(rawContent) {
   let updatedContent = rawContent
     .trim()
     .replaceAll(/<h2\s+[^>]+>/gi, '<h2>')
-    .replaceAll(/style="[^"]+"/gi, '');
+    .replaceAll(/style="[^"]+"/gi, '')
+    .replaceAll(/class="[^"]+"/gi, '')
+    .replaceAll(
+      '?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter',
+      ''
+    )
+    .replace(/<!--\[if mso\]>.+?<!\[endif\]-->/gs, '');
 
   return updatedContent;
 }
