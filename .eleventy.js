@@ -98,6 +98,10 @@ module.exports = function (config) {
       .slice(0, site.maxPostsPerPage);
   });
 
+  config.addCollection('newsletters', (collection) => {
+    return collection.getFilteredByGlob('./src/newsletter/*.md').reverse();
+  });
+
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);

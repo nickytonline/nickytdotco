@@ -20,6 +20,6 @@ So welcome to links to cool and interesting stuff I found on the Internet during
   </p>
 </form>
 
-You can also browse the [full archives](https://buttondown.email/nickytonline/archive/) of this newsletter.
+You can also browse the [full archives](/pages/newsletter-archives) of this newsletter.
 
 If you'd prefer, you can also [subscribe via RSS](https://buttondown.email/nickytonline/rss).

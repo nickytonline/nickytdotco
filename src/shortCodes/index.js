@@ -141,7 +141,20 @@ function socialImage(title, excerpt = '') {
       ? innerWhitespaceTrimmedExcerpt.substr(0, 101) + '...'
       : innerWhitespaceTrimmedExcerpt;
   const encodedTitle = encodeURIComponent(encodeURIComponent(title));
-  const encodedExcerpt = encodeURIComponent(encodeURIComponent(truncatedExcerpt));
+
+  let encodedExcerpt;
+  try {
+    encodedExcerpt = encodeURIComponent(encodeURIComponent(truncatedExcerpt));
+  } catch (e) {
+    if (!(e instanceof URIError)) {
+      throw e;
+    }
+
+    // If it's not UTF-8, things go boom
+    encodedExcerpt = encodeURIComponent(
+      encodeURIComponent(Buffer.from(truncatedExcerpt, 'utf-8').toString())
+    );
+  }
   const encodedAuthor = encodeURIComponent(
     encodeURIComponent(`${site.authorName} ${site.authorHandle}`)
   );
