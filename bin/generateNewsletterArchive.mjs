@@ -10,8 +10,21 @@ const parser = new Parser();
 const feed = await parser.parseURL(site.newsletterRss);
 
 function sanitizeContent(rawContent) {
-  let updatedContent = rawContent
-    .trim()
+  let updatedContent = rawContent.trim();
+
+  const twitterEmbedRegex =
+    /<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>/gms;
+  const twitterEmbeds = updatedContent.matchAll(twitterEmbedRegex);
+
+  for (const twitterEmbed of twitterEmbeds) {
+    const {twitterUrl} = twitterEmbed.groups;
+    updatedContent = updatedContent.replace(
+      twitterEmbed[0],
+      `{% embed "${twitterUrl}" %}\n`
+    );
+  }
+
+  updatedContent = updatedContent
     .replaceAll(/<h2\s+[^>]+>/gi, '<h2>')
     .replaceAll(/style="[^"]+"/gi, '')
     .replaceAll(/class="[^"]+"/gi, '')
