@@ -28,7 +28,9 @@ Another exciting development is some ex-Twitter employees have started their own
 
 Some resources you may find handy if you're new to Mastodon:
 
-- Need a hand finding folks that are/were on Twitter and are on Mastodon instances now? The [FedFinder](https://fedifinder.glitch.me/) is a great tool.
+- Need a hand finding folks that are/were on Twitter and are on Mastodon instances now? Here’s a couple great tools:
+    - [FedFinder](https://fedifinder.glitch.me/)
+    - [Movetodon](https://www.movetodon.org/) (thanks [@citizen428](https://dev.to/citizen428)!)
 - Jeremy Keith has a great post to ease you into Mastodon, [That fediverse feeling](https://adactio.com/journal/19650)
 
 If you're on Mastodon, feel free to drop your handles in the comments so others can give you a follow over there. You can find me at [@nickytonline@toot.cafe](https://toot.cafe/@nickytonline).

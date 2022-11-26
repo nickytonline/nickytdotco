@@ -90,6 +90,8 @@ Let's skip the centring jokes in CSS. We're in the 2020s now, and this is someth
 * [SmolCSS](https://smolcss.dev)
 * [Every Layout](https://every-layout.dev)
 * [A Primer On CSS Container Queries](https://www.smashingmagazine.com/2021/05/complete-guide-css-container-queries)
+* [What the flexbox?!](https://flexbox.io/)
+* [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/)
 
 ## HTML
 
