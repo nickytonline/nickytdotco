@@ -78,16 +78,14 @@
 
 <p>I couldn’t stop watching this video as I’m terrible at folding clothes lol.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">😍Easy tips how to fold your clothes 👔 <a href="https://t.co/StiJEgbiIU">pic.twitter.com/StiJEgbiIU</a></p>— dan_OpenSea 🌊 (@dan_OpenSea_) <a href="https://twitter.com/dan_OpenSea_/status/1568922429845811201?ref_src=twsrc%5Etfw">September 11, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/dan_OpenSea_/status/1568922429845811201" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">some people spend their entire life taking, never giving, and wonder why they fail</p>— nader (🧱, 🚀) | nader.lens (@dabit3) <a href="https://twitter.com/dabit3/status/1569381330445533186?ref_src=twsrc%5Etfw">September 12, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/dabit3/status/1569381330445533186" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>

@@ -25,9 +25,8 @@
 <div  ><a href="https://visualgo.net/en"  target="_blank">visualgo.net</a></div>
 </div></td></tr></tbody>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">🎉 We&rsquo;ve launched another new <a href="https://t.co/biZidbePKZ">https://t.co/biZidbePKZ</a> course. Say hello to Learn Accessibility, written by <a href="https://twitter.com/cariefisher?ref_src=twsrc%5Etfw">@cariefisher</a>.<br/><br/>Seven modules are available now, and the full course will roll out over the rest of this year. <a href="https://t.co/qaMYr5hGmU">https://t.co/qaMYr5hGmU</a></p>— Chrome Developers (@ChromiumDev) <a href="https://twitter.com/ChromiumDev/status/1575893642304278528?ref_src=twsrc%5Etfw">September 30, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ChromiumDev/status/1575893642304278528" %}
+
 <tr><td align="left" ><div >
 
 <a href="https://web.dev/introducing-learn-accessibility/"  target="_blank">
@@ -65,16 +64,14 @@
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">This has been really helpful in Google docs. <a href="https://t.co/KMMFPK8S7J">pic.twitter.com/KMMFPK8S7J</a></p>— Karthik Ram @inundata@mastodon.social (@_inundata) <a href="https://twitter.com/_inundata/status/1578107934671716355?ref_src=twsrc%5Etfw">October 6, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/_inundata/status/1578107934671716355" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">There is some point when you’re learning something new where you understand the <em>pattern</em> of the thing rather than the single example you’re currently working on. That moment is one of the most fun parts of being alive.</p>— Sarah Drasner (@sarah_edo) <a href="https://twitter.com/sarah_edo/status/1575501691146760194?ref_src=twsrc%5Etfw">September 29, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/sarah_edo/status/1575501691146760194" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>

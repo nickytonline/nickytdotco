@@ -57,23 +57,20 @@
 
 <p>If you haven’t been following the <a href="https://twitter.com/randomMDN"  target="_blank">Random MDN Twitter account</a>, I encourage you to do so. I learn something everynow and then thanks to the randomness. 😎</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">🦖 Random MDN: Reason: CORS header &lsquo;Access-Control… 🦖<a href="https://t.co/jkqBnujGyV">https://t.co/jkqBnujGyV</a><br/><br/>The origin making the request does not match the origin permitted by the Access-Control-Allow-Origin header. This error can also occur if the response includes more than o…<a href="https://twitter.com/hashtag/webdev?src=hash&amp;ref_src=twsrc%5Etfw">#webdev</a> <a href="https://twitter.com/hashtag/HTTP?src=hash&amp;ref_src=twsrc%5Etfw">#HTTP</a></p>— Random MDN (@randomMDN) <a href="https://twitter.com/randomMDN/status/1562155312433582082?ref_src=twsrc%5Etfw">August 23, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/randomMDN/status/1562155312433582082" %}
+
 <h2>
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">This cameraman chose the wrong career <a href="https://t.co/DOolByVAQG">pic.twitter.com/DOolByVAQG</a></p>— Aviator Anil Chopra (@Chopsyturvey) <a href="https://twitter.com/Chopsyturvey/status/1561992909989093376?ref_src=twsrc%5Etfw">August 23, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Chopsyturvey/status/1561992909989093376" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Tip: Progress is not always linear. <br/><br/>Sometimes it can even feel like you&rsquo;re going in circles. Step back and acknowledge small wins towards your goals. They add up. Even if you have to start over, it&rsquo;s not always from scratch, it&rsquo;s often with experience. <a href="https://t.co/Cknosn0T4R">pic.twitter.com/Cknosn0T4R</a></p>— Addy Osmani (@addyosmani) <a href="https://twitter.com/addyosmani/status/1548371139893743616?ref_src=twsrc%5Etfw">July 16, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/addyosmani/status/1548371139893743616" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>

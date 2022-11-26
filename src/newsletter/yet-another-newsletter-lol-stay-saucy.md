@@ -70,9 +70,8 @@
 
 <p>This is just cool. That is all. 🌈</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">In theory, every rainbow is a circle, but from the ground, usually only its upper half can be seen. This is not the case of Anthony Killeen, who spotted and shared a full-circle rainbow in this 2017 video: <a href="https://t.co/A9gbmQ56gs">https://t.co/A9gbmQ56gs</a> [read more: <a href="https://t.co/46aWwgtz3l">https://t.co/46aWwgtz3l</a>] <a href="https://t.co/QUAjWTQzgN">pic.twitter.com/QUAjWTQzgN</a></p>— Massimo (@Rainmaker1973) <a href="https://twitter.com/Rainmaker1973/status/1553379891264950272?ref_src=twsrc%5Etfw">July 30, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Rainmaker1973/status/1553379891264950272" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>

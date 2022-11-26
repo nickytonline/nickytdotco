@@ -31,9 +31,8 @@
 
 <p>Even if you’re a “seasoned pro”, Estelle recommends still giving this a look.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">If you think you know HTML, you should still do a quick read of  Learn HTML. I thought I knew HTML, and then I started writing the series. I promise you&rsquo;ll learn something (possibly that you disagree with me, but that&rsquo;s still something 🤪) <a href="https://t.co/FhOsNb5Xyc">https://t.co/FhOsNb5Xyc</a></p>— Moved to estelle@front-end.social (@estellevw) <a href="https://twitter.com/estellevw/status/1578151642955862017?ref_src=twsrc%5Etfw">October 6, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/estellevw/status/1578151642955862017" %}
+
 <tr><td align="left" ><div >
 
 <a href="https://web.dev/learn/html/"  target="_blank">
@@ -54,9 +53,8 @@
 <img alt="Paradigm Lost | Shawn (swyx) Wang | CascadiaJS 2022" height="auto" src="https://s3.amazonaws.com/revue/items/images/018/444/047/mail/hqdefault.jpg?1665283781"  title="Paradigm Lost | Shawn (swyx) Wang | CascadiaJS 2022" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >Paradigm Lost | Shawn (swyx) Wang | CascadiaJS 2022</div></td></tr></tbody>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">New in <a href="https://twitter.com/ChromeDevTools?ref_src=twsrc%5Etfw">@ChromeDevTools</a>’s Style Pane: CSS Authoring Hints!<br/><br/>These hints tell you why certain CSS declarations have no effect. For example: <code>flex: 1</code> does nothing when the parent has no <code>display: flex</code> set.<br/><br/>Enabled by default in the most recent Chrome Canary (108.0.5354.2) <a href="https://t.co/Wz7wtcK7hL">pic.twitter.com/Wz7wtcK7hL</a></p>— Bramus (@bramus) <a href="https://twitter.com/bramus/status/1580098656136355840?ref_src=twsrc%5Etfw">October 12, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/bramus/status/1580098656136355840" %}
+
 <h2>
       Fun Stuff
     </h2>
@@ -118,6 +116,5 @@
 
 <p>Sami Jaber will join me tomorrow on <a href="https://www.twitch.tv/nickytonline/schedule?segmentID=92e8249b-7375-4387-b906-de41a4971b29&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">my Twitch stream</a> to teach us all about Mitosis!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">What is Mitosis? with <a href="https://twitter.com/samijaber_?ref_src=twsrc%5Etfw">@samijaber_</a>, Software Engineer <a href="https://twitter.com/builderio?ref_src=twsrc%5Etfw">@builderio</a>. Happening this Monday, October 17th at 5 pm UTC!<a href="https://t.co/DT5suTEIZE">https://t.co/DT5suTEIZE</a> <a href="https://t.co/ivUiMJ3MMU">pic.twitter.com/ivUiMJ3MMU</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1580756277776498690?ref_src=twsrc%5Etfw">October 14, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1580756277776498690" %}
+

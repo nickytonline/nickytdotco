@@ -80,16 +80,14 @@
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">H A L L O W E E N <a href="https://t.co/UVhtPgOdc9">pic.twitter.com/UVhtPgOdc9</a></p>— Lowcostcosplay (@LOWCOSTCOSPLAY) <a href="https://twitter.com/LOWCOSTCOSPLAY/status/1586696155630800899?ref_src=twsrc%5Etfw">October 30, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/LOWCOSTCOSPLAY/status/1586696155630800899" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Steve Jobs on Focus <a href="https://t.co/M4JJu7pete">pic.twitter.com/M4JJu7pete</a></p>— swyx 🗽 (@swyx) <a href="https://twitter.com/swyx/status/1583228023167647744?ref_src=twsrc%5Etfw">October 20, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/swyx/status/1583228023167647744" %}
+
 <h2>
       Shameless plugs
     </h2>
@@ -118,6 +116,5 @@
 
 <p>The fourth episode of Nick’s Cuts dropped this week. Check it out!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">The fourth episode of Nick’s Cuts has dropped! <a href="https://twitter.com/jamesqquick?ref_src=twsrc%5Etfw">@jamesqquick</a> joins me to discuss content creation, tooling, and SvelteKit! Thanks again for the great conversations James! <a href="https://t.co/nRcKXwhjg6">pic.twitter.com/nRcKXwhjg6</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1587209360857595910?ref_src=twsrc%5Etfw">October 31, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1587209360857595910" %}
+

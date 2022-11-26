@@ -48,9 +48,8 @@
 
 <p>Stay hydrated?</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Hydration is a horrible workaround because web frameworks don&rsquo;t embrace how browsers actually work.<br/><br/>Yet somehow we have turned it into a virtue.<br/><br/>Hydration is a hack to recover the app&amp;fw state by eagerly executing the app code in the browser.<br/><br/>That is why your app is slow.</p>— Miško Hevery (Builder.io/Qwik) (@mhevery) <a href="https://twitter.com/mhevery/status/1514087689246568448?ref_src=twsrc%5Etfw">April 13, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/mhevery/status/1514087689246568448" %}
+
 <tr><td align="left" ><div >
 
 <a href="https://www.builder.io/blog/hydration-is-pure-overhead"  target="_blank">
@@ -66,9 +65,8 @@
 
 <p>If you are looking to work with the Twitter API, Andy Piper from Twitter has a repo with some great resources</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Although I’m out for a bit… I’m just gonna leave this here - a side project I started to collate amazing resources and uses around the current Twitter API. ~20 stars already. Discussions are open (on GH). I might not immediately deal with PRs while away. <a href="https://t.co/Rdp0Xo2qmh">https://t.co/Rdp0Xo2qmh</a></p>— Andy Piper (@andypiper) <a href="https://twitter.com/andypiper/status/1526853766322040833?ref_src=twsrc%5Etfw">May 18, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/andypiper/status/1526853766322040833" %}
+
 <p>
 <a href="https://twitter.com/JoshWComeau"  target="_blank">Josh W. Comeau</a> always drops amazing content and as usual, his latest doesn’t disappoint.</p>
 
@@ -91,16 +89,14 @@
 
 <p>For the TypeScript or C# fans out here</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="zxx"><a href="https://t.co/GTUegQXrK6">pic.twitter.com/GTUegQXrK6</a></p>— Joe Valenzuela (@jvalenzu) <a href="https://twitter.com/jvalenzu/status/1527088348677910528?ref_src=twsrc%5Etfw">May 19, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/jvalenzu/status/1527088348677910528" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">That tip you think that everyone probably already knows? Share it anyway. I guarantee you&rsquo;ll be teaching at least one person something new.</p>— Kelly Vaughn (parody) (@kvlly) <a href="https://twitter.com/kvlly/status/1526639894717775873?ref_src=twsrc%5Etfw">May 17, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/kvlly/status/1526639894717775873" %}
+
 <h2>
       Shameless plugs
     </h2>

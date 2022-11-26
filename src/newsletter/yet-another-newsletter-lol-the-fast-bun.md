@@ -37,14 +37,12 @@
 
 <p>A super handy tip when using the browser dev tools in Chromium based browsers</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">🧐 To avoid seeing errors from extensions in Chrome DevTools, check &lsquo;Selected context only&rsquo;. <a href="https://t.co/QW9db4peom">pic.twitter.com/QW9db4peom</a></p>— Sam Dutton (@sw12) <a href="https://twitter.com/sw12/status/1545475163201978368?ref_src=twsrc%5Etfw">July 8, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/sw12/status/1545475163201978368" %}
+
 <p>A great talk from Andy Bell about building for the modern web</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">The recording of my talk, “Be the browser’s mentor, not its micromanager”, at <a href="https://twitter.com/heypresents?ref_src=twsrc%5Etfw">@heypresents</a> is here! <br/><br/>I put so much sweat into this talk (also while I did it)—all for a good reason, because I will change how you write CSS by the end <a href="https://t.co/rRlHQXRm7V">https://t.co/rRlHQXRm7V</a></p>— andy@bell.bz (@piccalilli_) <a href="https://twitter.com/piccalilli_/status/1544310058497998850?ref_src=twsrc%5Etfw">July 5, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/piccalilli_/status/1544310058497998850" %}
+
 <p>Rizèl talks about how awesome DevRel is, but it’s not without its flaws.</p>
 
 <tr><td align="left" ><div >
@@ -66,16 +64,14 @@
 
 <p>Waffles anyone? I feel like <a href="https://twitter.com/cassidoo"  target="_blank">Cassidy</a> made this. 🤣</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">It finally happened <a href="https://t.co/yo2CcrqfpV">pic.twitter.com/yo2CcrqfpV</a></p>— Marcin Wichary (@mwichary) <a href="https://twitter.com/mwichary/status/1544093905234251776?ref_src=twsrc%5Etfw">July 4, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/mwichary/status/1544093905234251776" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">At some point I realized that learning to hear and understand people even when they&rsquo;re not communicating very well is a superpower. There is so much more knowledge and wisdom you gain access to when you stop being blocked because people aren&rsquo;t using the &ldquo;right&rdquo; words.</p>— Marco Rogers (@polotek) <a href="https://twitter.com/polotek/status/1545479346680262656?ref_src=twsrc%5Etfw">July 8, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/polotek/status/1545479346680262656" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>
@@ -110,6 +106,5 @@
 
 <p>This coming week I’m hanging with <a href="https://www.linkedin.com/in/drew-clements-172333158/"  target="_blank">Drew Clements</a> from <a href="https://nacelle.com/"  target="_blank">Nacelle</a> to learn all about <a href="https://vuejs.org/"  target="_blank">Vue</a>! Come by and say hi at <a href="https://www.twitch.tv/nickytonline/schedule?segmentID=aee444cb-8c24-4f99-9448-bba04c030077&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">5pm UTC this Tuesday</a> (not the usual Wednesday)!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Looking forward to hanging with Drew Clements, <a href="https://twitter.com/drewclemcr8?ref_src=twsrc%5Etfw">@drewclemcr8</a>, next week to learn all about <a href="https://twitter.com/vuejs?ref_src=twsrc%5Etfw">@vuejs</a>!<br/><br/>Come by and say hi next Tuesday (not the usual Wednesday) at 5 pm UTC to learn all about Vue at <a href="https://t.co/IGCWhdTbZb">https://t.co/IGCWhdTbZb</a>! <br/><br/>Schedule: <a href="https://t.co/DwwjitZqIX">https://t.co/DwwjitZqIX</a> <a href="https://t.co/ko0TxnvgDg">pic.twitter.com/ko0TxnvgDg</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1545377166841577472?ref_src=twsrc%5Etfw">July 8, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1545377166841577472" %}
+

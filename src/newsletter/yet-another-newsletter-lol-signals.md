@@ -18,9 +18,8 @@
 
 <p>Jhey is always dropping great tips centered often around HTML and CSS. This is a great one about the <code >&lt;picture /&gt;</code> element.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">HTML / CSS Tip ✨<br/><br/>Use &lt;picture&gt; to display different images based on user preferences 🙏<br/><br/>Pass a media query to the &lt;source&gt; element to do things like &ldquo;Only show a GIF if the user has no motion preferences&rdquo; 🤙<br/><br/>Or, how about a different logo for light and dark mode? 😎 <a href="https://t.co/Z591kqemLF">pic.twitter.com/Z591kqemLF</a></p>— jhey 🔨🐻✨ (@jh3yy) <a href="https://twitter.com/jh3yy/status/1567193122312003585?ref_src=twsrc%5Etfw">September 6, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/jh3yy/status/1567193122312003585" %}
+
 <p>Signals come to Preact! This is an exciting change that I’m looking forward to trying out. There’s even a compatibility layer for React! 🔥</p>
 
 <tr><td align="left" ><div >
@@ -36,14 +35,12 @@
 </div>
 </div></td></tr>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Just so it doesn&rsquo;t get buried: we built Signals for Preact, but it works in React too - even the fancy granular text updates!  Just import the @preact/signals-react package.<a href="https://t.co/WtmFOObSZh">https://t.co/WtmFOObSZh</a> <a href="https://t.co/jRjZERlUFH">pic.twitter.com/jRjZERlUFH</a></p>— Jason Miller 🦊⚛ (@_developit) <a href="https://twitter.com/_developit/status/1567211141843111936?ref_src=twsrc%5Etfw">September 6, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/_developit/status/1567211141843111936" %}
+
 <p>You don’t always need an explicit state machine, i.e. XState</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">▶️ You might not need XState…<br/><br/>How to decide between useState, useReducer and XState:<a href="https://t.co/o8Ds28L91l">https://t.co/o8Ds28L91l</a></p>— Stately (@statelyai) <a href="https://twitter.com/statelyai/status/1567146137991118848?ref_src=twsrc%5Etfw">September 6, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/statelyai/status/1567146137991118848" %}
+
 <tbody><tr><td align="left" ><div>
 <div  ><a href="https://jvns.ca/blog/2022/08/30/a-way-to-categorize-debugging-skills/"  target="_blank">Some ways to get better at debugging</a></div>
 <div  ><div  >Some ways to get better at debugging</div>
@@ -57,9 +54,8 @@
 
 <p>My old coworker commented on an <a href="https://dev.to/heyjtk/big-o-notation-basics-made-dead-simple-1c9m"  target="_blank">article on Big O notation</a> with this funny Tweet. It’s from 2019, but pretty hilarious.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="tl">Alternative Big O notations: <br/><br/>O(1) = O(yeah)<br/><br/>O(log n) = O(nice)<br/><br/>O(nlogn) = O(k-ish)<br/><br/>O(n) = O(ok)<br/><br/>O(n²) = O(my)<br/><br/>O(2ⁿ) = O(no)<br/><br/>O(n^n) = O(fuck)<br/><br/>O(n!) = O(mg!)</p>— Pranay Pathole (@PPathole) <a href="https://twitter.com/PPathole/status/1155464941177987072?ref_src=twsrc%5Etfw">July 28, 2019</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/PPathole/status/1155464941177987072" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
@@ -68,9 +64,8 @@
 
 <p>A bit of advice as it’s almost time for Hacktoberfest 2022</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">If you want your OSS project to gain traction there&rsquo;s really only one thing you need to do:<br/><br/>Document it well.<br/><br/>- 10m quick start<br/>- Realistic examples that can be copy/paste/tweaked<br/>- <em>Contextualized</em> code samples for every API<br/>- Guides to put APIs together into a real use case</p>— Ryan Florence (@ryanflorence) <a href="https://twitter.com/ryanflorence/status/1568245672243240960?ref_src=twsrc%5Etfw">September 9, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ryanflorence/status/1568245672243240960" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>
@@ -94,7 +89,6 @@
 
 <p>Nothing going on this week! I’m wrapping this up for Sunday as I’m flying to my offsite in Hawaii! Back to streaming on September 21st!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">No stream this week peeps! I&rsquo;m off for a bit, but I&rsquo;ll be back in action with <a href="https://twitter.com/jamesqquick?ref_src=twsrc%5Etfw">@jamesqquick</a> on September 21st building out cool stuff with SvelteKit!<br/><br/>Mark your calendars and give a follow on Twitch if you aren&rsquo;t already so you know when the goodness drops! <a href="https://t.co/2wIYk74mTC">https://t.co/2wIYk74mTC</a> <a href="https://t.co/dvmKnEqSiq">pic.twitter.com/dvmKnEqSiq</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1565028070158893058?ref_src=twsrc%5Etfw">August 31, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1565028070158893058" %}
+
 <p>Also, if you aren’t already <a href="https://livecoding.ca"  target="_blank">following me on Twitch</a>, go hit that follow button! Lots of great folks coming on the stream this fall!</p>

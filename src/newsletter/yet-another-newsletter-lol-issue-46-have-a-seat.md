@@ -18,9 +18,8 @@
 
 <p>Steph, who is amazing, drops some well-supported modern CSS features. Check ‘em out/try them out if you haven’t already!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">💜 A few of my favorite well-supported modern CSS features:<br/><br/>- :is()/:where()<br/>- ::marker<br/>- :focus-visible<br/>- aspect-ratio<br/>- custom properties<br/>- clamp()/min()/max()<br/>- scroll-margin-top|bottom<br/>- outline-offset<br/>- text-underline-offset<br/>- everything about CSS grid<br/>- gap in flexbox (!)</p>— Stephanie Eckles (@5t3ph) <a href="https://twitter.com/5t3ph/status/1523835100722565121?ref_src=twsrc%5Etfw">May 10, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/5t3ph/status/1523835100722565121" %}
+
 <p>Stripe open sources Markdoc</p>
 
 <tr><td align="left" ><div >
@@ -45,25 +44,22 @@
 
 <p>Looking for a new coding font? Check out the replies to Rachel’s Tweet!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">What&rsquo;s your fave monospace font?</p>— React Nabors ~ back in black (@rachelnabors) <a href="https://twitter.com/rachelnabors/status/1525201824919064576?ref_src=twsrc%5Etfw">May 13, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/rachelnabors/status/1525201824919064576" %}
+
 <h2>
       Fun Stuff
     </h2>
 
 <p>Finally! Pizza people can sit down.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Printed some chairs for the lil pizza tables <a href="https://t.co/qU4176EmE0">pic.twitter.com/qU4176EmE0</a></p>— Sky (@docentdemagogue) <a href="https://twitter.com/docentdemagogue/status/1521925695617740800?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/docentdemagogue/status/1521925695617740800" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Hype your friends up</p>— Scott Hanselman (@shanselman) <a href="https://twitter.com/shanselman/status/1525299588835311617?ref_src=twsrc%5Etfw">May 14, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/shanselman/status/1525299588835311617" %}
+
 <h2>
       Shameless plugs
     </h2>
@@ -92,9 +88,7 @@
 
 <p>If you weren’t aware, I run a community at <a href="https://vscodetips.com"  target="_blank">vscodetips.com</a>. If you’re a fan of VS Code, check it out! Thanks for showing the love Forem and friends!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">It&rsquo;s a happy day over here when we get to highlight the dedication to community &amp; considerable knowledge that <a href="https://twitter.com/nickytonline?ref_src=twsrc%5Etfw">@nickytonline</a> possesses. <br/><br/>Read this post from <a href="https://twitter.com/bendhalpern?ref_src=twsrc%5Etfw">@bendhalpern</a> to learn why you should check out <a href="https://twitter.com/vscodetips?ref_src=twsrc%5Etfw">@vscodetips</a>: Nick&rsquo;s VS <a href="https://twitter.com/code?ref_src=twsrc%5Etfw">@code</a>-focused <a href="https://twitter.com/hashtag/Forem?src=hash&amp;ref_src=twsrc%5Etfw">#Forem</a>.<a href="https://t.co/Pg0JFmMxvT">https://t.co/Pg0JFmMxvT</a></p>— Forem (@forem) <a href="https://twitter.com/forem/status/1524810082881441804?ref_src=twsrc%5Etfw">May 12, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">&ldquo;Call to action for all VS Code users!&rdquo; by <a href="https://twitter.com/bendhalpern?ref_src=twsrc%5Etfw">@bendhalpern</a> <a href="https://twitter.com/hashtag/DEVCommunity?src=hash&amp;ref_src=twsrc%5Etfw">#DEVCommunity</a> <a href="https://t.co/U43YNVLgA6">https://t.co/U43YNVLgA6</a> <br/><br/>This is a great initiative from <a href="https://twitter.com/nickytonline?ref_src=twsrc%5Etfw">@nickytonline</a> - the more I use <a href="https://twitter.com/code?ref_src=twsrc%5Etfw">@code</a> the more I want to skill up and become more productive. Didn&rsquo;t realize there was a Forem for this. 🎉</p>— @nitya@fosstodon.org {👩🏽‍💻+🎨+💬+♥️} (@nitya) <a href="https://twitter.com/nitya/status/1524830884905500672?ref_src=twsrc%5Etfw">May 12, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/forem/status/1524810082881441804" %}
+
+{% embed "https://twitter.com/nitya/status/1524830884905500672" %}
+

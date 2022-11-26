@@ -85,21 +85,18 @@
 
 <p>This is seriously way too cute. Had to share.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Baby anteaters ride on their moms&rsquo; backs. <a href="https://t.co/H8ZVfxZRpb">pic.twitter.com/H8ZVfxZRpb</a></p>— Weird Science (@weird_sci) <a href="https://twitter.com/weird_sci/status/1517497461593550850?ref_src=twsrc%5Etfw">April 22, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Things are getting better <a href="https://t.co/Wjsev403nN">pic.twitter.com/Wjsev403nN</a></p>— Nabeel (@nabeeleats) <a href="https://twitter.com/nabeeleats/status/1530633768595251201?ref_src=twsrc%5Etfw">May 28, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/weird_sci/status/1517497461593550850" %}
+
+{% embed "https://twitter.com/nabeeleats/status/1530633768595251201" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
 <p>Dropping my own wisdom this week</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">A little YOLO can go a long way</p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1521650477674471424?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1521650477674471424" %}
+
 <h2>
       Shameless plugs
     </h2>

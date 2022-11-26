@@ -78,16 +78,14 @@
 
 <p>Finish him! Click through to see the video.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">a brutal attack on capybara day🥲 <a href="https://t.co/GqqY0uHSLy">pic.twitter.com/GqqY0uHSLy</a></p>— animals going goblin mode (@mischiefanimals) <a href="https://twitter.com/mischiefanimals/status/1546233391816871937?ref_src=twsrc%5Etfw">July 10, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/mischiefanimals/status/1546233391816871937" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">I used to obsess over time management, but I think what&rsquo;s better is working on energy management.<br/><br/>Sometimes I&rsquo;ll have time to do a thing, but I&rsquo;ll just be&hellip; tired after doing other tasks in the day.<br/><br/>Prioritizing + scheduling based on how many spoons I have has been helpful!</p>— Cassidy (@cassidoo) <a href="https://twitter.com/cassidoo/status/1546139632903110658?ref_src=twsrc%5Etfw">July 10, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/cassidoo/status/1546139632903110658" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>

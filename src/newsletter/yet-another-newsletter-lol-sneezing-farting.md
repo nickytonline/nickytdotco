@@ -59,23 +59,20 @@
 
 <p>Jhey is a legend. I’m always amazed at his talent and creativity. 🔥</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">✨ CSS Tip! (or Trick 🤔) ✨<br/><br/>Use the mask property to mask(hide) parts of an element<br/><br/>Use it to create a faux 3D content scroller 🤿<br/> <br/>.track {<br/>  mask: radial-gradient(transparent 0 30%, black 30%)<br/>              50% 20vmin / 250% 100%,<br/>}<br/><br/>👉 <a href="https://t.co/ESqAMykp1j">https://t.co/ESqAMykp1j</a> via <a href="https://twitter.com/CodePen?ref_src=twsrc%5Etfw">@CodePen</a> <a href="https://t.co/4aZUao2tqv">pic.twitter.com/4aZUao2tqv</a></p>— jhey 🔨🐻✨ (@jh3yy) <a href="https://twitter.com/jh3yy/status/1552822610274054145?ref_src=twsrc%5Etfw">July 29, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/jh3yy/status/1552822610274054145" %}
+
 <h2>
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">This is the technical term <a href="https://t.co/JARoxXdOqW">https://t.co/JARoxXdOqW</a> <a href="https://t.co/kSVEyQagSZ">pic.twitter.com/kSVEyQagSZ</a></p>— El Arroyo (@ElArroyo_ATX) <a href="https://twitter.com/ElArroyo_ATX/status/1518656575338074112?ref_src=twsrc%5Etfw">April 25, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ElArroyo_ATX/status/1518656575338074112" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">Being kind is so easy and can be the default state, instead people choose the hard path way too often.</p>— Vic 🌮 (@VicVijayakumar) <a href="https://twitter.com/VicVijayakumar/status/1552634276969078794?ref_src=twsrc%5Etfw">July 28, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/VicVijayakumar/status/1552634276969078794" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>
@@ -114,6 +111,5 @@
 
 <p>This coming Wednesday, I’m hanging with Brittney Postma! She’ll be giving me a primer on Svelte!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Looking forward to hanging with <a href="https://twitter.com/BrittneyPostma?ref_src=twsrc%5Etfw">@BrittneyPostma</a> next week! She&rsquo;ll be showing me how to get up and running with <a href="https://twitter.com/sveltejs?ref_src=twsrc%5Etfw">@sveltejs</a>!<br/><br/>Come by and say hi next Wednesday, August 3rd at 5 pm UTC at <a href="https://t.co/IGCWhdTbZb">https://t.co/IGCWhdTbZb</a>!<br/><br/>schedule: <a href="https://t.co/I5QyjuIygi">https://t.co/I5QyjuIygi</a> <a href="https://t.co/EJd1v0uc5O">pic.twitter.com/EJd1v0uc5O</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1552764083761471489?ref_src=twsrc%5Etfw">July 28, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1552764083761471489" %}
+

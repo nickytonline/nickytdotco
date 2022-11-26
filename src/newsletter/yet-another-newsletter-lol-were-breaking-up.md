@@ -74,16 +74,14 @@
 
 <p>Fun and educational. This cracked me up</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">easiest way to learn programming <a href="https://t.co/CTdgdKZ1ut">pic.twitter.com/CTdgdKZ1ut</a></p>— Supabase (@supabase) <a href="https://twitter.com/supabase/status/1583120874881703937?ref_src=twsrc%5Etfw">October 20, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/supabase/status/1583120874881703937" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Creating clarity where there was previously confusion/chaos is one of the most valuable and underrated skillsets</p>— Sarah Drasner (@sarah_edo) <a href="https://twitter.com/sarah_edo/status/1582451818000367616?ref_src=twsrc%5Etfw">October 18, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/sarah_edo/status/1582451818000367616" %}
+
 <h2>
       Shameless plugs
     </h2>

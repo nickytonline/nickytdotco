@@ -38,30 +38,26 @@
 </div>
 </div></td></tr>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">This week’s RapidAPI Comic: The Anatomy of HTTP Requests.<br/><br/>{ 1 / 7 } <a href="https://t.co/3pmNPv8Tyr">pic.twitter.com/3pmNPv8Tyr</a></p>— RapidAPI (@Rapid_API) <a href="https://twitter.com/Rapid_API/status/1540318725970198528?ref_src=twsrc%5Etfw">June 24, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Rapid_API/status/1540318725970198528" %}
+
 <p>This is a big win in terms of making reading code more accessible.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">TIL Prettier is considering making tabs the default in 3.0. This is huge — it would make an entire set of programming languages more accessible (if you&rsquo;re somehow still pro-spaces, read this comment to instantly convert), and, more importantly, vindicate my personal preferences <a href="https://t.co/qZvGbQCklb">https://t.co/qZvGbQCklb</a> <a href="https://t.co/MYxY5wYLI3">pic.twitter.com/MYxY5wYLI3</a></p>— Rich Harris (@Rich_Harris) <a href="https://twitter.com/Rich_Harris/status/1541761871585464323?ref_src=twsrc%5Etfw">June 28, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Rich_Harris/status/1541761871585464323" %}
+
 <h2>
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Apple would be crazy not to use them in the next iPhone campaign lmao <a href="https://t.co/lUbkDuzIPS">pic.twitter.com/lUbkDuzIPS</a></p>— Jannifer Gao 🌶 (@Jani__Gee) <a href="https://twitter.com/Jani__Gee/status/1541425313317625858?ref_src=twsrc%5Etfw">June 27, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Jani__Gee/status/1541425313317625858" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
 <p>Nader dopping the truth bombs</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">6 things I&rsquo;ve learned in 10 years as a developer<br/><br/>1. You&rsquo;re almost never being paid enough<br/>2. You&rsquo;ll never know everything<br/>3. You can learn anything<br/>4. Empathy &amp; communication &gt; strictly technical skills<br/>5. Specialization is more lucrative than being broad<br/>6. Shipped &gt; perfect</p>— nader (🧱, 🚀) | nader.lens (@dabit3) <a href="https://twitter.com/dabit3/status/1541184992000331776?ref_src=twsrc%5Etfw">June 26, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/dabit3/status/1541184992000331776" %}
+
 <h2>
       Shameless plugs
     </h2>
@@ -82,9 +78,8 @@
 
 <p>I’ll be hanging with <a href="https://twitter.com/lcasdev"  target="_blank">Luca Casonato</a> from the <a href="https://www.linkedin.com/company/deno/"  target="_blank">Deno</a> core team next week to discuss <a href="https://fresh.deno.dev/"  target="_blank">Fresh</a>, a new web framework for Deno. Come by and say hi next Wednesday, July 6th at 5 pm UTC at <a href="https://livecoding.ca/"  target="_blank">livecoding.ca</a>!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">I&rsquo;ll be hanging with <a href="https://twitter.com/lcasdev?ref_src=twsrc%5Etfw">@lcasdev</a> next week to discuss Fresh, a new web framework for <a href="https://twitter.com/deno_land?ref_src=twsrc%5Etfw">@deno_land</a>. Come by and say hi next Wednesday, July 6th at 5 pm UTC!<a href="https://t.co/C0svy502w8">https://t.co/C0svy502w8</a> <a href="https://t.co/rMIhvOz5CR">pic.twitter.com/rMIhvOz5CR</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1542296864321683457?ref_src=twsrc%5Etfw">June 30, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1542296864321683457" %}
+
 <tr><td align="left" ><div >
 
 <a href="https://www.twitch.tv/nickytonline/schedule?segmentID=85170916-c1b0-45b8-aeac-a3d6cb604a10&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">

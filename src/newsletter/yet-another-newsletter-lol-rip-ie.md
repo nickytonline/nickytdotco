@@ -88,9 +88,8 @@
 
 <p>Strong co-sign on this. Getting out of my comfort zone has propelled my own career.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Getting comfortable being uncomfortable is an important tool for growth</p>— Ryan Burgess (@burgessdryan) <a href="https://twitter.com/burgessdryan/status/1537121065054244866?ref_src=twsrc%5Etfw">June 15, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/burgessdryan/status/1537121065054244866" %}
+
 <h2>
       Shameless plugs
     </h2>

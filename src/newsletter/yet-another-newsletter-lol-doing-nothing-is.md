@@ -72,18 +72,16 @@
       Fun Stuff &amp; Interesting Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Volcanic Eruption as seen from Space! <a href="https://t.co/Pz0bV83YLN">pic.twitter.com/Pz0bV83YLN</a></p>— Physics-Astronomy✨🔭 (@Physdashastro) <a href="https://twitter.com/Physdashastro/status/1252607614845886465?ref_src=twsrc%5Etfw">April 21, 2020</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Physdashastro/status/1252607614845886465" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
 <p>Sometimes this is the right move.</p>
 
-<p><html><body><div><blockquote align="center"  data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">Doing nothing is underrated</p>— JSONP （╯°□°）╯︵ ┻━┻ (@palmerj3) <a href="https://twitter.com/palmerj3/status/1560819742826430464?ref_src=twsrc%5Etfw">August 20, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/palmerj3/status/1560819742826430464" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>
@@ -129,6 +127,5 @@
 
 <p>James Perkins from Clerk is joining me on my stream this week! Come by and say hi at <a href="https://www.twitch.tv/nickytonline/schedule?segmentID=179b350a-a4b8-4050-9b05-f76ab173c892&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">livecoding.ca</a> at 5pm UTC on August 24th!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">I&rsquo;ll be back next streaming next week with <a href="https://twitter.com/james_r_perkins?ref_src=twsrc%5Etfw">@james_r_perkins</a> discussing all things <a href="https://twitter.com/ClerkDev?ref_src=twsrc%5Etfw">@ClerkDev</a>! User identity doesn&rsquo;t have to be complex.<br/><br/>Come say hi on August 24th at 5 pm UTC! <a href="https://t.co/2iVrSJGC3d">https://t.co/2iVrSJGC3d</a><br/><br/>Looking forward to hanging James! <a href="https://t.co/Wv5ui13b3p">pic.twitter.com/Wv5ui13b3p</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1559169590579666944?ref_src=twsrc%5Etfw">August 15, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1559169590579666944" %}
+

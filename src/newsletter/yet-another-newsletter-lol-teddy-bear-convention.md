@@ -18,9 +18,8 @@
 
 <p>If you work in Reactland, David provides some effective advice about useEffect. Dig into the thread.</p>
 
-<p><html><body><div><blockquote align="center"  data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">*Don&rsquo;t use it for fire-and-forget effects.<br/><br/>Use it for synchronization.<br/><br/>Execute effects in event handlers.</p>— David K. 🎹 (@DavidKPiano) <a href="https://twitter.com/DavidKPiano/status/1521922758581448705?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/DavidKPiano/status/1521922758581448705" %}
+
 <p>If you’re into TypeScript and get confused by some errors, Matt Pocock dropped a useful extension for VS Code. More error translations are on the way. Thanks for this Matt!</p>
 
 <tr><td align="left" ><div >
@@ -53,9 +52,8 @@
 
 <p>Rapid API’s Twitter account has been churning out lots of great explainer threads. Here’s the latest one on websockets. If you aren’t already following on Twitter, I highly recommend it.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">An introduction to WebSockets.<br/><br/>A thread:</p>— RapidAPI (@Rapid_API) <a href="https://twitter.com/Rapid_API/status/1521076054420602880?ref_src=twsrc%5Etfw">May 2, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Rapid_API/status/1521076054420602880" %}
+
 <h2>
       Fun Stuff
     </h2>
@@ -63,18 +61,16 @@
 <p>https://twitter.com/buitengebieden/status/1520445588105576450</p>
 <p>For context, for non-Canadians, the CBC is the <a href="https://en.wikipedia.org/wiki/Canadian_Broadcasting_Corporation"  target="_blank">Canadian Broadcasting Corporation</a>, a TV channel that’s been around forever in Canada.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Before he was a Hollywood actor, KEANU REEVES worked for CBC and did a news report on a Teddy Bear convention in 1984. <a href="https://t.co/kXV8kyOWfB">pic.twitter.com/kXV8kyOWfB</a></p>— All The Right Movies (@ATRightMovies) <a href="https://twitter.com/ATRightMovies/status/1521489767589941248?ref_src=twsrc%5Etfw">May 3, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ATRightMovies/status/1521489767589941248" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
 <p>Fact</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">the best way to get the right answer on the internet is not to ask a question; it&rsquo;s to post the wrong answer.</p>— bdougie on the internet (@bdougieYO) <a href="https://twitter.com/bdougieYO/status/1522610641231650822?ref_src=twsrc%5Etfw">May 6, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/bdougieYO/status/1522610641231650822" %}
+
 <h2>
       Shameless plugs
     </h2>

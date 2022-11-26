@@ -46,9 +46,8 @@
 
 <p>A plug for work-related stuff, but Netlify has supported WASM on the Edge for a while now.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Netlify Edge Functions support WebAssembly, so you can be one of the cool kids running PHP at the edge right now!<br/><br/>Try it out: <a href="https://t.co/xWCXslqFzP">https://t.co/xWCXslqFzP</a><br/>See the code: <a href="https://t.co/uuLX67kbL7">https://t.co/uuLX67kbL7</a> <a href="https://t.co/Nd9w47nhim">pic.twitter.com/Nd9w47nhim</a></p>— Matt Kane (@ascorbic) <a href="https://twitter.com/ascorbic/status/1557713322849583104?ref_src=twsrc%5Etfw">August 11, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ascorbic/status/1557713322849583104" %}
+
 <tr><td align="left" ><div >
 
 <a href="https://addyosmani.com/blog/software-engineering-soft-parts/"  target="_blank">
@@ -81,16 +80,14 @@
 
 <p>You’ll need to click through below, but it’s super cool how they did these effects via lo-fi methods.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Behind the scenes of the development of Mortal Combat released in 1992 <a href="https://t.co/829zvc3bGt">pic.twitter.com/829zvc3bGt</a></p>— Historic Vids (@historyinmemes) <a href="https://twitter.com/historyinmemes/status/1555920869318336512?ref_src=twsrc%5Etfw">August 6, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/historyinmemes/status/1555920869318336512" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">whenever I&rsquo;m down I always watch this interview with Steve Jobs on his view of life. <br/><br/>&ldquo;Everything around you that you call life was made up by people that were no smarter than you.&rdquo; <a href="https://t.co/ieKyfLMaSm">pic.twitter.com/ieKyfLMaSm</a></p>— Taiki Green (@itstaiki) <a href="https://twitter.com/itstaiki/status/1318804751161511937?ref_src=twsrc%5Etfw">October 21, 2020</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/itstaiki/status/1318804751161511937" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>

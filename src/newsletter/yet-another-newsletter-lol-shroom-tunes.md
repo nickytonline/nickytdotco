@@ -55,16 +55,14 @@
 
 <p>This is such a great tip! I use multiple desktops on Mac and have Edge (my browser of choice) on several desktops. This makes it so much easier to switch in between them.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">life hack: command + shift + A allows you to search all your tabs in chrome (across all of your windows). <br/><br/>this might be the best thing since .new TLDs 🤯</p>— rita kozlov 🐀 (@ritakozlov_) <a href="https://twitter.com/ritakozlov_/status/1549442588570259456?ref_src=twsrc%5Etfw">July 19, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ritakozlov_/status/1549442588570259456" %}
+
 <h2>
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Using Biodata Sonification the bio-rhythms of living organisms can be turned into sound <br/><br/>Listen to this mushroom “singing” <br/>📹 by  <a href="https://twitter.com/TarunTspoon?ref_src=twsrc%5Etfw">@TarunTspoon</a> <a href="https://t.co/z7fRBwdWR1">pic.twitter.com/z7fRBwdWR1</a></p>— Science girl (@gunsnrosesgirl3) <a href="https://twitter.com/gunsnrosesgirl3/status/1550119734460293120?ref_src=twsrc%5Etfw">July 21, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/gunsnrosesgirl3/status/1550119734460293120" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
@@ -123,6 +121,5 @@
 
 <p>I’ll be hanging with Brian Douglas, a.k.a. bdougie next week to discuss contributing to open source and Open Sauced! Come join us this coming Wednesday!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Excited to hang out with Chief Sauce Officer <a href="https://twitter.com/bdougieYO?ref_src=twsrc%5Etfw">@bdougieYO</a> next week! We&rsquo;ll be discussing contributing to open source as well as <a href="https://twitter.com/saucedopen?ref_src=twsrc%5Etfw">@saucedopen</a>.<br/> <br/>Come hang with us next Wednesday, July 27th at 5 pm UTC at <a href="https://t.co/IGCWhdTbZb">https://t.co/IGCWhdTbZb</a><br/> <br/>schedule: <a href="https://t.co/Ag7xKNT5gt">https://t.co/Ag7xKNT5gt</a> <a href="https://t.co/jXc5WtuWeJ">pic.twitter.com/jXc5WtuWeJ</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1550200846381731843?ref_src=twsrc%5Etfw">July 21, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1550200846381731843" %}
+

@@ -61,9 +61,8 @@
 
 <p>This is so cool. It’s really amazing what you can do with just CSS these days.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Oh, this? 👀<br/><br/>Jus&rsquo; a pure CSS image zoom using CSS primitives 🔥<br/><br/>– :has()<br/>– object-view-box<br/>– Houdini @ property<br/><br/>Code 👇<br/><br/>img {<br/>  object-view-box: inset(var(&ndash;top) &hellip;);<br/>}<br/><br/>:root:has(<a href="https://twitter.com/hashtag/car?src=hash&amp;ref_src=twsrc%5Etfw">#car</a>:checked) {<br/>  &ndash;top: 61%;<br/>  &hellip;<br/>}<br/><br/>Amazing 🥲<br/><br/>👉 <a href="https://t.co/AVH0aRYiDN">https://t.co/AVH0aRYiDN</a> via <a href="https://twitter.com/CodePen?ref_src=twsrc%5Etfw">@CodePen</a> <a href="https://t.co/FBXknsIohH">pic.twitter.com/FBXknsIohH</a></p>— jhey 🔨🐻✨ (@jh3yy) <a href="https://twitter.com/jh3yy/status/1532145806278533120?ref_src=twsrc%5Etfw">June 1, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/jh3yy/status/1532145806278533120" %}
+
 <h2>
       Fun Stuff
     </h2>
@@ -75,18 +74,16 @@
 <img alt="A Tale of Web Development in Two Universes | Netlify" height="auto" src="https://s3.amazonaws.com/revue/items/images/016/223/944/mail/hqdefault.jpg?1654312910"  title="A Tale of Web Development in Two Universes | Netlify" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >A Tale of Web Development in Two Universes | Netlify</div></td></tr></tbody>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">I went to a meme birthday party yesterday and can’t get over how good  this was 😂 <a href="https://t.co/1EaWkudsR1">pic.twitter.com/1EaWkudsR1</a></p>— Dr Yewande Dental 🦷 (@Wands__) <a href="https://twitter.com/Wands__/status/1532680142799179777?ref_src=twsrc%5Etfw">June 3, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Wands__/status/1532680142799179777" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
 <p>Love my CodeNewbie fam dropping this gem</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">You are worthy of every single thing you want. Go out there and get it 💜</p>— CodeNewbie (@CodeNewbies) <a href="https://twitter.com/CodeNewbies/status/1532696352773267456?ref_src=twsrc%5Etfw">June 3, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/CodeNewbies/status/1532696352773267456" %}
+
 <h2>
       Shameless plugs
     </h2>

@@ -14,18 +14,16 @@
 
 <p>HTTP3 has been standardized</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Today, after over 5 years of work, HTTP/3 was finally standardized as RFC 9114! <a href="https://t.co/IGMNam0AOS">https://t.co/IGMNam0AOS</a><br/><br/>Together with RFC 9204 (QPACK header compression) and RFC 9218 (Extensible Priorities) it ushers in an important new chapter for the Web!<br/><br/>Proud to have been part of this! <a href="https://t.co/pzVKRxGRsb">pic.twitter.com/pzVKRxGRsb</a></p>— Robin Marx (@programmingart) <a href="https://twitter.com/programmingart/status/1533908423682756609?ref_src=twsrc%5Etfw">June 6, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/programmingart/status/1533908423682756609" %}
+
 <h2>
       Around the Web
     </h2>
 
 <p>I always love reading the Rapid API Tweets for explainers</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">How does JSON web token (JWT) authentication work?<br/><br/>Thread 🧵👇🏻</p>— RapidAPI (@Rapid_API) <a href="https://twitter.com/Rapid_API/status/1534180641352343553?ref_src=twsrc%5Etfw">June 7, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Rapid_API/status/1534180641352343553" %}
+
 <p>This was started by <a href="https://twitter.com/toddmotto"  target="_blank">Todd Motto</a> a while back and <a href="https://twitter.com/housecor/status/1533104117136097284"  target="_blank">Cory House dropped a Tweet</a> to remind us of this great list of public APIs</p>
 
 <tr><td align="left" ><div >
@@ -77,23 +75,20 @@
 
 <p>You’ll need to click the Tweet to see the TikTok, but it’s worth it</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">God I wish I was him <a href="https://t.co/13ppwZeKBy">pic.twitter.com/13ppwZeKBy</a></p>— Gators Daily 🐊 (@GatorsDaily) <a href="https://twitter.com/GatorsDaily/status/1533177897908846592?ref_src=twsrc%5Etfw">June 4, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/GatorsDaily/status/1533177897908846592" %}
+
 <p>Thor has competition</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">A year ago today I took a photo of a cow <a href="https://t.co/W1vm75pJM1">pic.twitter.com/W1vm75pJM1</a></p>— Freddy McKinney (@FreddyMcKinneyR) <a href="https://twitter.com/FreddyMcKinneyR/status/1535396384421072897?ref_src=twsrc%5Etfw">June 10, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/FreddyMcKinneyR/status/1535396384421072897" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
 <p>This made me laugh, but it’s also a friendly reminder to get your stuff out there and learn in public</p>
 
-<p><html><body><div><blockquote align="center"  data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">Remember it’s called a garbage CAN. Not a garbage CANT.</p>— Shaundai Person @shaundai@mas.to (@shaundai) <a href="https://twitter.com/shaundai/status/1534193984201015296?ref_src=twsrc%5Etfw">June 7, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/shaundai/status/1534193984201015296" %}
+
 <h2>
       Shameless plugs
     </h2>

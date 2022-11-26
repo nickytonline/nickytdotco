@@ -65,23 +65,20 @@
 
 <p>I’ve really been enjoying Ben Holmes’ #whiteboardtheweb Tweets. Here’s the latest one. Ben is definitely a great follow if you’re on Twitter.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Is <a href="https://twitter.com/solid_js?ref_src=twsrc%5Etfw">@solid_js</a> what <a href="https://twitter.com/reactjs?ref_src=twsrc%5Etfw">@reactjs</a> should&rsquo;ve been?? 😳<br/>Let&rsquo;s see what makes Solid so special, and why it&rsquo;s <em>my</em> rec for performance-minded JSX lovers 💙<a href="https://twitter.com/hashtag/whiteboardtheweb?src=hash&amp;ref_src=twsrc%5Etfw">#whiteboardtheweb</a> edition 48 <a href="https://t.co/TtwNLCcuIl">pic.twitter.com/TtwNLCcuIl</a></p>— youtube.com/@bholmesdev (@BHolmesDev) <a href="https://twitter.com/BHolmesDev/status/1572949152224485378?ref_src=twsrc%5Etfw">September 22, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/BHolmesDev/status/1572949152224485378" %}
+
 <h2>
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">In 2012, NASA retired the space shuttle Endeavour to the California Science Center in South Los Angeles. It had to slowly creep through 12 miles of LA streets. <a href="https://t.co/LEEsgcbYfD">https://t.co/LEEsgcbYfD</a> <a href="https://t.co/yLOahpMuoI">pic.twitter.com/yLOahpMuoI</a></p>— Fascinating (@fasc1nate) <a href="https://twitter.com/fasc1nate/status/1574336830832517121?ref_src=twsrc%5Etfw">September 26, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/fasc1nate/status/1574336830832517121" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">There&rsquo;s this idea that to become a better engineer, you need to pile on more languages, deeper CS concepts, more experience.<br/><br/>But investing in skills like project management, team building, communication, conflict resolution, and listening can amplify what you already have</p>— React Nabors ~ back in black (@rachelnabors) <a href="https://twitter.com/rachelnabors/status/1573500057860464640?ref_src=twsrc%5Etfw">September 24, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/rachelnabors/status/1573500057860464640" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>
@@ -105,8 +102,7 @@
 
 <p>Coming up this week on the stream, Josh Goldberg, will be discussing all things TypeScript with me!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">I&rsquo;m looking forward to hanging with <a href="https://twitter.com/JoshuaKGoldberg?ref_src=twsrc%5Etfw">@JoshuaKGoldberg</a> next week on the stream! We&rsquo;ll be discussing all things TypeScript including Josh&rsquo;s new book <a href="https://twitter.com/LearningTSBook?ref_src=twsrc%5Etfw">@LearningTSBook</a>!<br/><br/>Come by and say hi Wednesday, October 5th at 5 pm UTC!<a href="https://t.co/bThHJzVN1e">https://t.co/bThHJzVN1e</a> <a href="https://t.co/cotTjQ5OJ2">pic.twitter.com/cotTjQ5OJ2</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1575463150039826433?ref_src=twsrc%5Etfw">September 29, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1575463150039826433" %}
+
 <p>Also, Monday, Jörn will be streaming with me as there was issues with Twitch last Wednesday. Come by and say hi! <a href="https://www.twitch.tv/nickytonline/schedule?segmentID=d9dbd10a-634a-466d-b500-0d13103f6ab5&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">https://www.twitch.tv/nickytonline/schedule?segmentID=d9dbd10a-634a-466d-b500-0d13103f6ab5</a>
 </p>

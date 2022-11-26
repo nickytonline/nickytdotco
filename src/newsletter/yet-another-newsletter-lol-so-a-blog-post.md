@@ -18,14 +18,12 @@
 
 <p>some nice updates to Deno!</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Deno v1.23 in 60 seconds <a href="https://t.co/bkKclSKIHE">pic.twitter.com/bkKclSKIHE</a></p>— Deno (@deno_land) <a href="https://twitter.com/deno_land/status/1539245681210281984?ref_src=twsrc%5Etfw">June 21, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/deno_land/status/1539245681210281984" %}
+
 <p>Another great knowledge nugget for React care of David Kourshid</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">⚛️ React tip: did you know that you can use the <code>key</code> prop to &ldquo;reset&rdquo; individual components? They&rsquo;re not only for lists!<br/><br/>Changing the key creates a new instance of the component. No more useState/useEffect juggling for these resetting use-cases.<br/><br/>Demo: <a href="https://t.co/cKi47J6QKK">https://t.co/cKi47J6QKK</a> <a href="https://t.co/f8ETSe3pxY">pic.twitter.com/f8ETSe3pxY</a></p>— David K. 🎹 (@DavidKPiano) <a href="https://twitter.com/DavidKPiano/status/1539305613745868801?ref_src=twsrc%5Etfw">June 21, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/DavidKPiano/status/1539305613745868801" %}
+
 <p>Cloudflare was super proactive getting things sorted during the downtime on June 21, 2022. Here’s the postmortem</p>
 
 <tr><td align="left" ><div >
@@ -43,45 +41,38 @@
 
 <p>If you’re looking for an even more modern CSS reset, Elly has you covered</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">I put together a CSS Reset that uses modern CSS features such as :where(), logical properties, prefers-reduced-motion, etc. ✨<br/><br/>Lots of inspiration from <a href="https://twitter.com/JoshWComeau?ref_src=twsrc%5Etfw">@JoshWComeau</a>, <a href="https://twitter.com/hankchizljaw?ref_src=twsrc%5Etfw">@hankchizljaw</a>, and <a href="https://twitter.com/argyleink?ref_src=twsrc%5Etfw">@argyleink</a>.<a href="https://t.co/xfloCJfqGu">https://t.co/xfloCJfqGu</a> <a href="https://t.co/OUBQTsZY89">pic.twitter.com/OUBQTsZY89</a></p>— Elly ✨🌱 (@ellyloel) <a href="https://twitter.com/ellyloel/status/1538752447560110080?ref_src=twsrc%5Etfw">June 20, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ellyloel/status/1538752447560110080" %}
+
 <p>Longer Tweets or blogposts?</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">✨ Introducing: Notes ✨<br/><br/>We’re testing a way to write longer on Twitter. <a href="https://t.co/SnrS4Q6toX">pic.twitter.com/SnrS4Q6toX</a></p>— Twitter Write (@TwitterWrite) <a href="https://twitter.com/TwitterWrite/status/1539640956915290112?ref_src=twsrc%5Etfw">June 22, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">so, a blog post? <a href="https://t.co/dbN3aPHbVS">https://t.co/dbN3aPHbVS</a></p>— Angie Jones (@techgirl1908) <a href="https://twitter.com/techgirl1908/status/1539798179054583809?ref_src=twsrc%5Etfw">June 23, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/TwitterWrite/status/1539640956915290112" %}
+
+{% embed "https://twitter.com/techgirl1908/status/1539798179054583809" %}
+
 <h2>
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">I was today years old when I found out Cloudflare has a wall full of lava lamps they feed into a camera as a way to generate randomness to create cryptographic keys <a href="https://t.co/SKcuJUowJD">pic.twitter.com/SKcuJUowJD</a></p>— Jason Choi (@mrjasonchoi) <a href="https://twitter.com/mrjasonchoi/status/1539140816505274368?ref_src=twsrc%5Etfw">June 21, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/mrjasonchoi/status/1539140816505274368" %}
+
 <p>I was at Front-End Test Fest 2 this past week and at the lunch break Dan Gorelick put on an amazing visual and musical performance! I don’t know if there will be a full recording of it, but here’s a snippet of the performance on Twitter</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Sharing some music with code for <a href="https://twitter.com/Netlify?ref_src=twsrc%5Etfw">@Netlify</a> and <a href="https://twitter.com/Applitools?ref_src=twsrc%5Etfw">@Applitools</a> – thanks <a href="https://twitter.com/jlengstorf?ref_src=twsrc%5Etfw">@jlengstorf</a> &amp; <a href="https://twitter.com/cassidoo?ref_src=twsrc%5Etfw">@cassidoo</a> for the invite 🎉<br/><br/>link: <a href="https://t.co/kKsd4UgWVU">https://t.co/kKsd4UgWVU</a> <br/><br/>music created live w/ <a href="https://twitter.com/tidalcycles?ref_src=twsrc%5Etfw">@tidalcycles</a>, viz created live with hydra (<a href="https://t.co/FRt0eOoFto">https://t.co/FRt0eOoFto</a>) <a href="https://t.co/7Ni2nFj0fy">pic.twitter.com/7Ni2nFj0fy</a></p>— Dan Gorelick (@dqgorelick) <a href="https://twitter.com/dqgorelick/status/1540041927181012992?ref_src=twsrc%5Etfw">June 23, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/dqgorelick/status/1540041927181012992" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">So many things happen simply bc one person <em>gave a fuck</em><br/><br/>Get after the things you care about and watch them come to life &lt;3</p>— cami ᵍᵐ (@camiinthisthang) <a href="https://twitter.com/camiinthisthang/status/1539004464236941312?ref_src=twsrc%5Etfw">June 20, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/camiinthisthang/status/1539004464236941312" %}
+
 <h2>
       Shameless plugs
     </h2>
 
 <p>I was on a panel at <a href="https://front-endtestfest.com/4eo"  target="_blank">Front-End Test Fest 2</a>! It was lots of fun. I’m not sure when recordings will be ready, but check out the website for that</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Having some 🤯 conversations right now&hellip; <br/><br/>This panel is on fire 🔥🔥🔥<a href="https://twitter.com/hashtag/FrontEndTestFest?src=hash&amp;ref_src=twsrc%5Etfw">#FrontEndTestFest</a> <a href="https://twitter.com/tiffafoo?ref_src=twsrc%5Etfw">@tiffafoo</a> <a href="https://twitter.com/nickytonline?ref_src=twsrc%5Etfw">@nickytonline</a> <a href="https://t.co/tHPCoE7qmn">pic.twitter.com/tHPCoE7qmn</a></p>— Applitools (@Applitools) <a href="https://twitter.com/Applitools/status/1540033490862739456?ref_src=twsrc%5Etfw">June 23, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/Applitools/status/1540033490862739456" %}
+
 <p>Bekah Hawrot Weigel joined me on the stream this past Wednesday to show how you can transcribe text using Deepgram’s Node.js SDK. We went through the demo code all the way to building out an app with Express that allows you to submit a URL for transcription.</p>
 
 <tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >

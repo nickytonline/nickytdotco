@@ -18,9 +18,8 @@
 
 <p>I’m definitely going to swap in linkedom into my build step for my blog.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Found out about linkedom from <a href="https://twitter.com/WebReflection?ref_src=twsrc%5Etfw">@WebReflection</a>, swapping JSDOM out ended up giving me a 400% perf improvement 🤯<br/> <a href="https://t.co/h3KFjOubJq">https://t.co/h3KFjOubJq</a></p>— Sam Saccone (@samccone) <a href="https://twitter.com/samccone/status/1563634599363616768?ref_src=twsrc%5Etfw">August 27, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/samccone/status/1563634599363616768" %}
+
 <p>I need to dig into this more, but I’m still trying to understand the use case for the <code >satisfies</code> operator coming to TypeScript 4.9. I get that it’s better than casting via the <code >as</code> operator, but still not sure why I’d need this if things are typed correctly. 🤔</p>
 
 <tr><td align="left" ><div >
@@ -72,16 +71,14 @@
 
 <p>I’m dying…</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Currently feeling real dumb for how hard I laughed at this <a href="https://t.co/xFtBYIPqAI">pic.twitter.com/xFtBYIPqAI</a></p>— 🔥 🏠 with a Y 🏠 🔥 (@wyntermitchell) <a href="https://twitter.com/wyntermitchell/status/1563658810861883392?ref_src=twsrc%5Etfw">August 27, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/wyntermitchell/status/1563658810861883392" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Tip: It&rsquo;s powerful for senior engineers to admit when they don’t know something. You can learn from others who do. This normalizes admitting where you have knowledge gaps (but want to learn) and is healthy for teams to see.</p>— Addy Osmani (@addyosmani) <a href="https://twitter.com/addyosmani/status/1565775212095844352?ref_src=twsrc%5Etfw">September 2, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/addyosmani/status/1565775212095844352" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>

@@ -46,9 +46,8 @@
 
 <p>This looks to be a great algorithm course and it’s free forever on Frontend Masters! 👏</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Big Announcement<br/><br/>The Algorithms Course is going to free for <em>everyone</em><a href="https://t.co/k0MCCpmt5U">https://t.co/k0MCCpmt5U</a><br/><br/>No membership?  No problem.  Extremely kind of Frontend Masters to take their material and make it free <a href="https://t.co/pBb6bj24JC">pic.twitter.com/pBb6bj24JC</a></p>— ThePrimeagen (@ThePrimeagen) <a href="https://twitter.com/ThePrimeagen/status/1569796242258944000?ref_src=twsrc%5Etfw">September 13, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ThePrimeagen/status/1569796242258944000" %}
+
 <h2>
       Fun Stuff
     </h2>
@@ -60,9 +59,8 @@
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">It might actually be a positive quality to <em>not</em> think you’re a good judge of character.<br/><br/>A lot of my favorite people in the world didn’t make the best first impression. It’s good to keep an open mind, given unconscious biases, etc.</p>— Sarah Drasner (@sarah_edo) <a href="https://twitter.com/sarah_edo/status/1568672909723602945?ref_src=twsrc%5Etfw">September 10, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/sarah_edo/status/1568672909723602945" %}
+
 <h2>
       VS Code Tip of the Week
     </h2>
@@ -99,6 +97,5 @@
 
 <p>Not much else was going on as I had an amazing offsite with all the wonderful folks from Netlify! 🤩</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="zxx"><a href="https://t.co/okJqt7vsdy">pic.twitter.com/okJqt7vsdy</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1570632307383627776?ref_src=twsrc%5Etfw">September 16, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/nickytonline/status/1570632307383627776" %}
+

@@ -76,18 +76,16 @@ View the rendered text</div>
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">What&rsquo;s the difference between black<br/>eyed peas and chickpeas?<br/><br/>Black eyed peas can sing us a song while chickpeas can only hummus one</p>— PUNS (@ThePunnyWorld) <a href="https://twitter.com/ThePunnyWorld/status/1581690159237849089?ref_src=twsrc%5Etfw">October 16, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/ThePunnyWorld/status/1581690159237849089" %}
+
 <h2>
       Words of Wisdom for the Week
     </h2>
 
 <p>This was an acceptance speech from Fred Rogers, a.k.a. Mr. Rogers, but what he said had lots of wisdom in it. I encourage you to give it a listen.</p>
 
-<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">If you’re going to accept a prize and you have to give a speech, then here’s your blueprint, here’s possibly the greatest acceptance speech ever made - by FRED ROGERS upon receiving the Lifetime Achievement Award at the 1997 Emmy’s. <br/><br/>Beautiful beyond belief. <a href="https://t.co/2Ccm7V9eZj">pic.twitter.com/2Ccm7V9eZj</a></p>— Michael Warburton (@MichaelWarbur17) <a href="https://twitter.com/MichaelWarbur17/status/1580985212241993728?ref_src=twsrc%5Etfw">October 14, 2022</a></blockquote></p>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<p></div></body></html></p>
+{% embed "https://twitter.com/MichaelWarbur17/status/1580985212241993728" %}
+
 <h2>
       Shameless plugs
     </h2>
