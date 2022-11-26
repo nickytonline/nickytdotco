@@ -1,13 +1,13 @@
-name: Get latest blog posts
+name: Get latest newsletter archives
 on:
   schedule:
     # 17:00 UTC on Sunday
-    - cron: '0 17 * * 7'
+    - cron: '0 17 * * SUN'
   workflow_dispatch:
 
 jobs:
   update_profile_data:
-    name: Get latest blog posts
+    name: Get latest newsletter archives
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
       - name: Get Newsletter Archives
         run: |
           npm install
-          node generateNewsletterArchive.mjs
+          node bin/generateNewsletterArchive.mjs
       - name: Setup git config
         run: |
           git config user.name 'token-generator-app[bot]'
