@@ -17,7 +17,7 @@
 <ul>
 <li>Loved this conversation about unit testing. It&rsquo;s from April, but it just came on my radar. &ldquo;YOU DONT UNIT TEST??? DevHour #1&rdquo;</li>
 </ul>
-<p><a href="https://www.youtube.com/watch?v=pvBHyip4peo&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-issue-72-you-dont-unit" target="_blank"><img alt="YOU DONT UNIT TEST??? DevHour #1" class="newsletter-image" src="https://i.ytimg.com/vi/pvBHyip4peo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAXKBWW7lZxrYM0P1w2ic6QLJH7_g" /></a></p>
+<p><a href="https://www.youtube.com/watch?v=pvBHyip4peo&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-issue-72-you-dont-unit" target="_blank"><img alt="YOU DONT UNIT TEST??? DevHour #1"  src="https://i.ytimg.com/vi/pvBHyip4peo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAXKBWW7lZxrYM0P1w2ic6QLJH7_g" /></a></p>
 <ul>
 <li>
 <p>Jamstack 2022! I was working virtually for the event, but I still got to catch a lot of the talks. Really great stuff! Check out the <a href="https://www.youtube.com/channel/UC8bRyfU7ycLXnEBfvdorpUg?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-issue-72-you-dont-unit" target="_blank">Jamstack YouTube Channel</a> for this year&rsquo;s videos. They&rsquo;re not all there yet, but they should be in the next week or so.</p>
@@ -35,6 +35,6 @@
 <p>&ldquo;It&rsquo;s Dev Rel, not Dev Sell&rdquo; – Tejas Kumar on the Modern Web podcast <a href="https://modernweb.podbean.com/e/s09e19-the-future-of-devrel-and-databases-with-tejas-kumar/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-issue-72-you-dont-unit" target="_blank">S09E19- The Future of DevRel and Databases with Tejas Kumar</a></p>
 <h2>Shameless Plugs</h2>
 <p>The recording with Michael Chan, a.k.a. Chantastic, is up on YouTube! It was so much fun hanging with Chan and it was such a great conversation.</p>
-<p><a href="https://www.youtube.com/watch?v=UNzC-pNekMc&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-issue-72-you-dont-unit" target="_blank"><img alt="Storybook &amp; Chromatic with Chantastic" class="newsletter-image" src="https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/5d4e68f1689a06adbe47_nickytonline_59694314088_7288746524/thumb/custom-ae6bd773-bd87-40f8-bd36-69734b2f4967-640x360.png" /></a></p>
+<p><a href="https://www.youtube.com/watch?v=UNzC-pNekMc&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-issue-72-you-dont-unit" target="_blank"><img alt="Storybook &amp; Chromatic with Chantastic"  src="https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/5d4e68f1689a06adbe47_nickytonline_59694314088_7288746524/thumb/custom-ae6bd773-bd87-40f8-bd36-69734b2f4967-640x360.png" /></a></p>
 <p>This coming week, I&rsquo;ll be <a href="https://www.twitch.tv/nickytonline/schedule?segmentID=6fb67867-7605-4cf2-9900-256e0c8d4a0c&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-issue-72-you-dont-unit" target="_blank">hanging with my good friend Bekah</a> to work on the Deepgram browser extensions on stream.</p>
 <p>Later friends!</p>

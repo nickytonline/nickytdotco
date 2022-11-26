@@ -18,38 +18,34 @@
 
 <p>Steph, who is amazing, drops some well-supported modern CSS features. Check ‘em out/try them out if you haven’t already!</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">💜 A few of my favorite well-supported modern CSS features:<br/><br/>- :is()/:where()<br/>- ::marker<br/>- :focus-visible<br/>- aspect-ratio<br/>- custom properties<br/>- clamp()/min()/max()<br/>- scroll-margin-top|bottom<br/>- outline-offset<br/>- text-underline-offset<br/>- everything about CSS grid<br/>- gap in flexbox (!)</p>— Stephanie Eckles (@5t3ph) <a href="https://twitter.com/5t3ph/status/1523835100722565121?ref_src=twsrc%5Etfw">May 10, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">💜 A few of my favorite well-supported modern CSS features:<br/><br/>- :is()/:where()<br/>- ::marker<br/>- :focus-visible<br/>- aspect-ratio<br/>- custom properties<br/>- clamp()/min()/max()<br/>- scroll-margin-top|bottom<br/>- outline-offset<br/>- text-underline-offset<br/>- everything about CSS grid<br/>- gap in flexbox (!)</p>— Stephanie Eckles (@5t3ph) <a href="https://twitter.com/5t3ph/status/1523835100722565121?ref_src=twsrc%5Etfw">May 10, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <p>Stripe open sources Markdoc</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://markdoc.io/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Markdoc is a powerful, flexible, Markdown-based authoring framework." class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/015/814/494/thumb/share.png?1652410551"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://markdoc.io/"  target="_blank">
+<img align="right" alt="Markdoc is a powerful, flexible, Markdown-based authoring framework."  height="140" src="https://s3.amazonaws.com/revue/items/images/015/814/494/thumb/share.png?1652410551"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://markdoc.io/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Markdoc is a powerful, flexible, Markdown-based authoring framework.</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >From personal blogs to massive documentation sites, Markdoc is a content authoring system that grows with you.</div>
+<div  ><a href="https://markdoc.io/"  target="_blank">Markdoc is a powerful, flexible, Markdown-based authoring framework.</a></div>
+<div  ><div  >From personal blogs to massive documentation sites, Markdoc is a content authoring system that grows with you.</div>
 </div>
-<div class="link-url" ><a href="https://markdoc.io/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">markdoc.io</a></div>
+<div  ><a href="https://markdoc.io/"  target="_blank">markdoc.io</a></div>
 </div>
 </div></td></tr>
 
 <p>Hello page transitions API! This is experimental and only available in Chrome Canary at the moment, but exciting nonetheless.</p>
 
 <tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >
-<a href="https://www.youtube.com/watch?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter&amp;v=JCJUPJ_zDQ4" target="_blank">
+<a href="https://www.youtube.com/watch&amp;v=JCJUPJ_zDQ4" target="_blank">
 <img alt="Bringing page transitions to the web" height="auto" src="https://s3.amazonaws.com/revue/items/images/015/831/787/mail/maxresdefault.jpg?1652458663"  title="Bringing page transitions to the web" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >Bringing page transitions to the web</div></td></tr></tbody>
 
 <p>Looking for a new coding font? Check out the replies to Rachel’s Tweet!</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">What&rsquo;s your fave monospace font?</p>— React Nabors ~ back in black (@rachelnabors) <a href="https://twitter.com/rachelnabors/status/1525201824919064576?ref_src=twsrc%5Etfw">May 13, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">What&rsquo;s your fave monospace font?</p>— React Nabors ~ back in black (@rachelnabors) <a href="https://twitter.com/rachelnabors/status/1525201824919064576?ref_src=twsrc%5Etfw">May 13, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
@@ -58,14 +54,14 @@
 
 <p>Finally! Pizza people can sit down.</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">Printed some chairs for the lil pizza tables <a href="https://t.co/qU4176EmE0">pic.twitter.com/qU4176EmE0</a></p>— Sky (@docentdemagogue) <a href="https://twitter.com/docentdemagogue/status/1521925695617740800?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Printed some chairs for the lil pizza tables <a href="https://t.co/qU4176EmE0">pic.twitter.com/qU4176EmE0</a></p>— Sky (@docentdemagogue) <a href="https://twitter.com/docentdemagogue/status/1521925695617740800?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">Hype your friends up</p>— Scott Hanselman (@shanselman) <a href="https://twitter.com/shanselman/status/1525299588835311617?ref_src=twsrc%5Etfw">May 14, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Hype your friends up</p>— Scott Hanselman (@shanselman) <a href="https://twitter.com/shanselman/status/1525299588835311617?ref_src=twsrc%5Etfw">May 14, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
@@ -75,34 +71,30 @@
 <p>I’m back on the streaming scene! It’s been an intense break between switching roles and onboarding, but I’m back! I got to hand out with Anthony from the RedwoodJS core team to a=talk about all things RedwoodJS!</p>
 
 <tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >
-<a href="https://youtu.be/URQSVmrr8Vo?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" target="_blank">
+<a href="https://youtu.be/URQSVmrr8Vo" target="_blank">
 <img alt="RedwoodJS with Anthony Campolo, RedwoodJS core team member" height="auto" src="https://s3.amazonaws.com/revue/items/images/015/839/081/mail/hqdefault.jpg?1652487743"  title="RedwoodJS with Anthony Campolo, RedwoodJS core team member" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >RedwoodJS with Anthony Campolo, RedwoodJS core team member</div></td></tr></tbody>
 
 <p>I wrote a post about my new job!</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://www.iamdeveloper.com/posts/ecosystem-and-frameworks-my-role-at-netlify-306b/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Ecosystem and Frameworks: My Role at Netlify - Just Some Dev" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/015/814/483/thumb/social?1652410396"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://www.iamdeveloper.com/posts/ecosystem-and-frameworks-my-role-at-netlify-306b/"  target="_blank">
+<img align="right" alt="Ecosystem and Frameworks: My Role at Netlify - Just Some Dev"  height="140" src="https://s3.amazonaws.com/revue/items/images/015/814/483/thumb/social?1652410396"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://www.iamdeveloper.com/posts/ecosystem-and-frameworks-my-role-at-netlify-306b/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Ecosystem and Frameworks: My Role at Netlify - Just Some Dev</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >I’m curious what frontend frameworks you’re all interested in these days? Powerful meta frameworks…</div>
+<div  ><a href="https://www.iamdeveloper.com/posts/ecosystem-and-frameworks-my-role-at-netlify-306b/"  target="_blank">Ecosystem and Frameworks: My Role at Netlify - Just Some Dev</a></div>
+<div  ><div  >I’m curious what frontend frameworks you’re all interested in these days? Powerful meta frameworks…</div>
 </div>
-<div class="link-url" ><a href="https://www.iamdeveloper.com/posts/ecosystem-and-frameworks-my-role-at-netlify-306b/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.iamdeveloper.com</a></div>
+<div  ><a href="https://www.iamdeveloper.com/posts/ecosystem-and-frameworks-my-role-at-netlify-306b/"  target="_blank">www.iamdeveloper.com</a></div>
 </div>
 </div></td></tr>
 
-<p>If you weren’t aware, I run a community at <a href="https://vscodetips.com?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">vscodetips.com</a>. If you’re a fan of VS Code, check it out! Thanks for showing the love Forem and friends!</p>
+<p>If you weren’t aware, I run a community at <a href="https://vscodetips.com"  target="_blank">vscodetips.com</a>. If you’re a fan of VS Code, check it out! Thanks for showing the love Forem and friends!</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">It&rsquo;s a happy day over here when we get to highlight the dedication to community &amp; considerable knowledge that <a href="https://twitter.com/nickytonline?ref_src=twsrc%5Etfw">@nickytonline</a> possesses. <br/><br/>Read this post from <a href="https://twitter.com/bendhalpern?ref_src=twsrc%5Etfw">@bendhalpern</a> to learn why you should check out <a href="https://twitter.com/vscodetips?ref_src=twsrc%5Etfw">@vscodetips</a>: Nick&rsquo;s VS <a href="https://twitter.com/code?ref_src=twsrc%5Etfw">@code</a>-focused <a href="https://twitter.com/hashtag/Forem?src=hash&amp;ref_src=twsrc%5Etfw">#Forem</a>.<a href="https://t.co/Pg0JFmMxvT">https://t.co/Pg0JFmMxvT</a></p>— Forem (@forem) <a href="https://twitter.com/forem/status/1524810082881441804?ref_src=twsrc%5Etfw">May 12, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">It&rsquo;s a happy day over here when we get to highlight the dedication to community &amp; considerable knowledge that <a href="https://twitter.com/nickytonline?ref_src=twsrc%5Etfw">@nickytonline</a> possesses. <br/><br/>Read this post from <a href="https://twitter.com/bendhalpern?ref_src=twsrc%5Etfw">@bendhalpern</a> to learn why you should check out <a href="https://twitter.com/vscodetips?ref_src=twsrc%5Etfw">@vscodetips</a>: Nick&rsquo;s VS <a href="https://twitter.com/code?ref_src=twsrc%5Etfw">@code</a>-focused <a href="https://twitter.com/hashtag/Forem?src=hash&amp;ref_src=twsrc%5Etfw">#Forem</a>.<a href="https://t.co/Pg0JFmMxvT">https://t.co/Pg0JFmMxvT</a></p>— Forem (@forem) <a href="https://twitter.com/forem/status/1524810082881441804?ref_src=twsrc%5Etfw">May 12, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">&ldquo;Call to action for all VS Code users!&rdquo; by <a href="https://twitter.com/bendhalpern?ref_src=twsrc%5Etfw">@bendhalpern</a> <a href="https://twitter.com/hashtag/DEVCommunity?src=hash&amp;ref_src=twsrc%5Etfw">#DEVCommunity</a> <a href="https://t.co/U43YNVLgA6">https://t.co/U43YNVLgA6</a> <br/><br/>This is a great initiative from <a href="https://twitter.com/nickytonline?ref_src=twsrc%5Etfw">@nickytonline</a> - the more I use <a href="https://twitter.com/code?ref_src=twsrc%5Etfw">@code</a> the more I want to skill up and become more productive. Didn&rsquo;t realize there was a Forem for this. 🎉</p>— @nitya@fosstodon.org {👩🏽‍💻+🎨+💬+♥️} (@nitya) <a href="https://twitter.com/nitya/status/1524830884905500672?ref_src=twsrc%5Etfw">May 12, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">&ldquo;Call to action for all VS Code users!&rdquo; by <a href="https://twitter.com/bendhalpern?ref_src=twsrc%5Etfw">@bendhalpern</a> <a href="https://twitter.com/hashtag/DEVCommunity?src=hash&amp;ref_src=twsrc%5Etfw">#DEVCommunity</a> <a href="https://t.co/U43YNVLgA6">https://t.co/U43YNVLgA6</a> <br/><br/>This is a great initiative from <a href="https://twitter.com/nickytonline?ref_src=twsrc%5Etfw">@nickytonline</a> - the more I use <a href="https://twitter.com/code?ref_src=twsrc%5Etfw">@code</a> the more I want to skill up and become more productive. Didn&rsquo;t realize there was a Forem for this. 🎉</p>— @nitya@fosstodon.org {👩🏽‍💻+🎨+💬+♥️} (@nitya) <a href="https://twitter.com/nitya/status/1524830884905500672?ref_src=twsrc%5Etfw">May 12, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>

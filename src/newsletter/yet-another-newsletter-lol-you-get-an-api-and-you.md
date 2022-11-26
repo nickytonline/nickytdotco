@@ -14,7 +14,7 @@
 
 <p>HTTP3 has been standardized</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">Today, after over 5 years of work, HTTP/3 was finally standardized as RFC 9114! <a href="https://t.co/IGMNam0AOS">https://t.co/IGMNam0AOS</a><br/><br/>Together with RFC 9204 (QPACK header compression) and RFC 9218 (Extensible Priorities) it ushers in an important new chapter for the Web!<br/><br/>Proud to have been part of this! <a href="https://t.co/pzVKRxGRsb">pic.twitter.com/pzVKRxGRsb</a></p>— Robin Marx (@programmingart) <a href="https://twitter.com/programmingart/status/1533908423682756609?ref_src=twsrc%5Etfw">June 6, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Today, after over 5 years of work, HTTP/3 was finally standardized as RFC 9114! <a href="https://t.co/IGMNam0AOS">https://t.co/IGMNam0AOS</a><br/><br/>Together with RFC 9204 (QPACK header compression) and RFC 9218 (Extensible Priorities) it ushers in an important new chapter for the Web!<br/><br/>Proud to have been part of this! <a href="https://t.co/pzVKRxGRsb">pic.twitter.com/pzVKRxGRsb</a></p>— Robin Marx (@programmingart) <a href="https://twitter.com/programmingart/status/1533908423682756609?ref_src=twsrc%5Etfw">June 6, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
@@ -23,63 +23,51 @@
 
 <p>I always love reading the Rapid API Tweets for explainers</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">How does JSON web token (JWT) authentication work?<br/><br/>Thread 🧵👇🏻</p>— RapidAPI (@Rapid_API) <a href="https://twitter.com/Rapid_API/status/1534180641352343553?ref_src=twsrc%5Etfw">June 7, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">How does JSON web token (JWT) authentication work?<br/><br/>Thread 🧵👇🏻</p>— RapidAPI (@Rapid_API) <a href="https://twitter.com/Rapid_API/status/1534180641352343553?ref_src=twsrc%5Etfw">June 7, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
-<p>This was started by <a href="https://twitter.com/toddmotto?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Todd Motto</a> a while back and <a href="https://twitter.com/housecor/status/1533104117136097284?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Cory House dropped a Tweet</a> to remind us of this great list of public APIs</p>
+<p>This was started by <a href="https://twitter.com/toddmotto"  target="_blank">Todd Motto</a> a while back and <a href="https://twitter.com/housecor/status/1533104117136097284"  target="_blank">Cory House dropped a Tweet</a> to remind us of this great list of public APIs</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://github.com/public-apis/public-apis?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="GitHub - public-apis/public-apis: A collective list of free APIs" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/016/294/523/thumb/e5ee272c-dfe1-40e5-b66b-b0a36e815254?1654694546"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://github.com/public-apis/public-apis"  target="_blank">
+<img align="right" alt="GitHub - public-apis/public-apis: A collective list of free APIs"  height="140" src="https://s3.amazonaws.com/revue/items/images/016/294/523/thumb/e5ee272c-dfe1-40e5-b66b-b0a36e815254?1654694546"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://github.com/public-apis/public-apis?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">GitHub - public-apis/public-apis: A collective list of free APIs</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >A collective list of free APIs. Contribute to public-apis/public-apis development by creating an account on GitHub.</div>
+<div  ><a href="https://github.com/public-apis/public-apis"  target="_blank">GitHub - public-apis/public-apis: A collective list of free APIs</a></div>
+<div  ><div  >A collective list of free APIs. Contribute to public-apis/public-apis development by creating an account on GitHub.</div>
 </div>
-<div class="link-url" ><a href="https://github.com/public-apis/public-apis?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">github.com</a></div>
+<div  ><a href="https://github.com/public-apis/public-apis"  target="_blank">github.com</a></div>
 </div>
 </div></td></tr>
 
 <p>My coworker Ryan dropped a great read</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://dev.to/this-is-learning/patterns-for-building-javascript-websites-in-2022-5a93?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Patterns for Building JavaScript Websites in 2022 - DEV Community" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/016/318/959/thumb/nqfz6a0qg98oy64h4afi.jpeg?1654801771"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://dev.to/this-is-learning/patterns-for-building-javascript-websites-in-2022-5a93"  target="_blank">
+<img align="right" alt="Patterns for Building JavaScript Websites in 2022 - DEV Community"  height="140" src="https://s3.amazonaws.com/revue/items/images/016/318/959/thumb/nqfz6a0qg98oy64h4afi.jpeg?1654801771"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://dev.to/this-is-learning/patterns-for-building-javascript-websites-in-2022-5a93?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Patterns for Building JavaScript Websites in 2022 - DEV Community</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >Deciding on the approaches and tools to use to build on web these days can be a challenging prospect…. Tagged with javascript, webdev, patterns, architecture.</div>
+<div  ><a href="https://dev.to/this-is-learning/patterns-for-building-javascript-websites-in-2022-5a93"  target="_blank">Patterns for Building JavaScript Websites in 2022 - DEV Community</a></div>
+<div  ><div  >Deciding on the approaches and tools to use to build on web these days can be a challenging prospect…. Tagged with javascript, webdev, patterns, architecture.</div>
 </div>
-<div class="link-url" ><a href="https://dev.to/this-is-learning/patterns-for-building-javascript-websites-in-2022-5a93?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">dev.to</a></div>
+<div  ><a href="https://dev.to/this-is-learning/patterns-for-building-javascript-websites-in-2022-5a93"  target="_blank">dev.to</a></div>
 </div>
 </div></td></tr>
 
 <p>It’s not for everyone maybe, but I like the spirit and fun of badges. The YOLO one cracked me up. 🤣</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://github.blog/2022-06-09-introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Introducing Achievements: recognizing the many stages of a developer’s coding journey | The GitHub Blog" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/016/319/944/thumb/blog-header.png?1654807192"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://github.blog/2022-06-09-introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/"  target="_blank">
+<img align="right" alt="Introducing Achievements: recognizing the many stages of a developer’s coding journey | The GitHub Blog"  height="140" src="https://s3.amazonaws.com/revue/items/images/016/319/944/thumb/blog-header.png?1654807192"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://github.blog/2022-06-09-introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Introducing Achievements: recognizing the many stages of a developer’s coding journey | The GitHub Blog</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >Available in public beta today, we’re announcing Achievements as a new way to commemorate milestones on GitHub.</div>
+<div  ><a href="https://github.blog/2022-06-09-introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/"  target="_blank">Introducing Achievements: recognizing the many stages of a developer’s coding journey | The GitHub Blog</a></div>
+<div  ><div  >Available in public beta today, we’re announcing Achievements as a new way to commemorate milestones on GitHub.</div>
 </div>
-<div class="link-url" ><a href="https://github.blog/2022-06-09-introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">github.blog</a></div>
+<div  ><a href="https://github.blog/2022-06-09-introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/"  target="_blank">github.blog</a></div>
 </div>
 </div></td></tr>
 
@@ -89,12 +77,12 @@
 
 <p>You’ll need to click the Tweet to see the TikTok, but it’s worth it</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">God I wish I was him <a href="https://t.co/13ppwZeKBy">pic.twitter.com/13ppwZeKBy</a></p>— Gators Daily 🐊 (@GatorsDaily) <a href="https://twitter.com/GatorsDaily/status/1533177897908846592?ref_src=twsrc%5Etfw">June 4, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">God I wish I was him <a href="https://t.co/13ppwZeKBy">pic.twitter.com/13ppwZeKBy</a></p>— Gators Daily 🐊 (@GatorsDaily) <a href="https://twitter.com/GatorsDaily/status/1533177897908846592?ref_src=twsrc%5Etfw">June 4, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <p>Thor has competition</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">A year ago today I took a photo of a cow <a href="https://t.co/W1vm75pJM1">pic.twitter.com/W1vm75pJM1</a></p>— Freddy McKinney (@FreddyMcKinneyR) <a href="https://twitter.com/FreddyMcKinneyR/status/1535396384421072897?ref_src=twsrc%5Etfw">June 10, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">A year ago today I took a photo of a cow <a href="https://t.co/W1vm75pJM1">pic.twitter.com/W1vm75pJM1</a></p>— Freddy McKinney (@FreddyMcKinneyR) <a href="https://twitter.com/FreddyMcKinneyR/status/1535396384421072897?ref_src=twsrc%5Etfw">June 10, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
@@ -103,37 +91,33 @@
 
 <p>This made me laugh, but it’s also a friendly reminder to get your stuff out there and learn in public</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">Remember it’s called a garbage CAN. Not a garbage CANT.</p>— Shaundai Person @shaundai@mas.to (@shaundai) <a href="https://twitter.com/shaundai/status/1534193984201015296?ref_src=twsrc%5Etfw">June 7, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">Remember it’s called a garbage CAN. Not a garbage CANT.</p>— Shaundai Person @shaundai@mas.to (@shaundai) <a href="https://twitter.com/shaundai/status/1534193984201015296?ref_src=twsrc%5Etfw">June 7, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
       Shameless plugs
     </h2>
 
-<p>I got to <a href="https://twitter.com/nickytonline/status/1534653087016697856?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">hang with my friend Dan Ott</a> and talk about moving the Virtual Coffee site to Remix. Thanks for hanging Dan!</p>
+<p>I got to <a href="https://twitter.com/nickytonline/status/1534653087016697856"  target="_blank">hang with my friend Dan Ott</a> and talk about moving the Virtual Coffee site to Remix. Thanks for hanging Dan!</p>
 
 <tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >
-<a href="https://youtu.be/IG697qDkvYY?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter" target="_blank">
+<a href="https://youtu.be/IG697qDkvYY" target="_blank">
 <img alt="Moving the Virtual Coffee site to Remix with Dan Ott" height="auto" src="https://s3.amazonaws.com/revue/items/images/016/319/101/mail/hqdefault.jpg?1654802440"  title="Moving the Virtual Coffee site to Remix with Dan Ott" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >Moving the Virtual Coffee site to Remix with Dan Ott</div></td></tr></tbody>
 
 <p>I’ll be speaking on a panel at Front-End Test Fest 2022! I’m not gonna lie. I’m pretty excited! Hope to see you there virtually!</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://applitools.com/front-endtestfest/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Front-End Test Fest | June 2022 - Automated Visual Testing | Applitools" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/016/361/363/thumb/FETF_AJ-CW_1200.jpg?1655011327"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://applitools.com/front-endtestfest/"  target="_blank">
+<img align="right" alt="Front-End Test Fest | June 2022 - Automated Visual Testing | Applitools"  height="140" src="https://s3.amazonaws.com/revue/items/images/016/361/363/thumb/FETF_AJ-CW_1200.jpg?1655011327"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://applitools.com/front-endtestfest/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Front-End Test Fest | June 2022 - Automated Visual Testing | Applitools</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >A free one day, single track, virtual conference for software engineers looking to improve their front-end testing strategies.</div>
+<div  ><a href="https://applitools.com/front-endtestfest/"  target="_blank">Front-End Test Fest | June 2022 - Automated Visual Testing | Applitools</a></div>
+<div  ><div  >A free one day, single track, virtual conference for software engineers looking to improve their front-end testing strategies.</div>
 </div>
-<div class="link-url" ><a href="https://applitools.com/front-endtestfest/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">applitools.com</a></div>
+<div  ><a href="https://applitools.com/front-endtestfest/"  target="_blank">applitools.com</a></div>
 </div>
 </div></td></tr>
 
-<p>If you feel like putting up with me talking, feel free to give a follow on <a href="https://livecoding.ca?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">livecoding.ca</a> and <a href="https://youtube.iamdeveloper.com?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">youtube.iamdeveloper.com</a>. 😎</p>
+<p>If you feel like putting up with me talking, feel free to give a follow on <a href="https://livecoding.ca"  target="_blank">livecoding.ca</a> and <a href="https://youtube.iamdeveloper.com"  target="_blank">youtube.iamdeveloper.com</a>. 😎</p>

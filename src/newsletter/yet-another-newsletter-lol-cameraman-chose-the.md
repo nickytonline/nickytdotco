@@ -16,30 +16,26 @@
       Around the Web
     </h2>
 
-<p>I was previously using the <a href="https://github.com/sdras/productive-twitter?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Productive Twitter browser extension</a> to tweak my Twitter, but my old coworker Rhymes showed me the beauty that is tweak-new-twitter. Sooo good if you use Twitter for web.</p>
+<p>I was previously using the <a href="https://github.com/sdras/productive-twitter"  target="_blank">Productive Twitter browser extension</a> to tweak my Twitter, but my old coworker Rhymes showed me the beauty that is tweak-new-twitter. Sooo good if you use Twitter for web.</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://github.com/insin/tweak-new-twitter?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="GitHub - insin/tweak-new-twitter" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/556/010/thumb/tweak-new-twitter?1661131109"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://github.com/insin/tweak-new-twitter"  target="_blank">
+<img align="right" alt="GitHub - insin/tweak-new-twitter"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/556/010/thumb/tweak-new-twitter?1661131109"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://github.com/insin/tweak-new-twitter?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">GitHub - insin/tweak-new-twitter</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >Browser extension which removes algorithmic content from Twitter, hides news &amp; trends, lets you control which shared tweets appear on your timeline, and adds other UI improvements - GitHub - insin/tweak-new-twitter: Browser extension which removes algorithmic content from Twitter, hides news &amp; trends, lets you control which shared tweets appear on your timeline, and adds other UI improvements</div>
+<div  ><a href="https://github.com/insin/tweak-new-twitter"  target="_blank">GitHub - insin/tweak-new-twitter</a></div>
+<div  ><div  >Browser extension which removes algorithmic content from Twitter, hides news &amp; trends, lets you control which shared tweets appear on your timeline, and adds other UI improvements - GitHub - insin/tweak-new-twitter: Browser extension which removes algorithmic content from Twitter, hides news &amp; trends, lets you control which shared tweets appear on your timeline, and adds other UI improvements</div>
 </div>
-<div class="link-url" ><a href="https://github.com/insin/tweak-new-twitter?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">github.com</a></div>
+<div  ><a href="https://github.com/insin/tweak-new-twitter"  target="_blank">github.com</a></div>
 </div>
 </div></td></tr>
 
 <tbody><tr><td align="left" ><div>
-<div class="link-title" ><a href="https://webkit.org/blog/13096/css-has-pseudo-class/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Using :has() as a CSS Parent Selector and much more | WebKit</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >It’s been a long-standing dream of front-end developers to have a way to apply CSS to an element based on what’s happening inside that element.</div>
+<div  ><a href="https://webkit.org/blog/13096/css-has-pseudo-class/"  target="_blank">Using :has() as a CSS Parent Selector and much more | WebKit</a></div>
+<div  ><div  >It’s been a long-standing dream of front-end developers to have a way to apply CSS to an element based on what’s happening inside that element.</div>
 </div>
-<div class="link-url" ><a href="https://webkit.org/blog/13096/css-has-pseudo-class/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">webkit.org</a></div>
+<div  ><a href="https://webkit.org/blog/13096/css-has-pseudo-class/"  target="_blank">webkit.org</a></div>
 </div></td></tr></tbody>
 
 <p></p>
@@ -47,39 +43,35 @@
 <p>My coworker Ryan has a great write-up on resumability.</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://dev.to/this-is-learning/resumability-wtf-2gcm?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Resumability, WTF? - DEV Community" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/616/936/thumb/brs1olysihuz3kl8gdcf.png?1661397710"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://dev.to/this-is-learning/resumability-wtf-2gcm"  target="_blank">
+<img align="right" alt="Resumability, WTF? - DEV Community"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/616/936/thumb/brs1olysihuz3kl8gdcf.png?1661397710"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://dev.to/this-is-learning/resumability-wtf-2gcm?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Resumability, WTF? - DEV Community</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >Maybe you’ve heard the term Resumability thrown around recently. Maybe someone gushing over Miško… Tagged with javascript, webdev, marko, qwik.</div>
+<div  ><a href="https://dev.to/this-is-learning/resumability-wtf-2gcm"  target="_blank">Resumability, WTF? - DEV Community</a></div>
+<div  ><div  >Maybe you’ve heard the term Resumability thrown around recently. Maybe someone gushing over Miško… Tagged with javascript, webdev, marko, qwik.</div>
 </div>
-<div class="link-url" ><a href="https://dev.to/this-is-learning/resumability-wtf-2gcm?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">dev.to</a></div>
+<div  ><a href="https://dev.to/this-is-learning/resumability-wtf-2gcm"  target="_blank">dev.to</a></div>
 </div>
 </div></td></tr>
 
-<p>If you haven’t been following the <a href="https://twitter.com/randomMDN?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Random MDN Twitter account</a>, I encourage you to do so. I learn something everynow and then thanks to the randomness. 😎</p>
+<p>If you haven’t been following the <a href="https://twitter.com/randomMDN"  target="_blank">Random MDN Twitter account</a>, I encourage you to do so. I learn something everynow and then thanks to the randomness. 😎</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">🦖 Random MDN: Reason: CORS header &lsquo;Access-Control… 🦖<a href="https://t.co/jkqBnujGyV">https://t.co/jkqBnujGyV</a><br/><br/>The origin making the request does not match the origin permitted by the Access-Control-Allow-Origin header. This error can also occur if the response includes more than o…<a href="https://twitter.com/hashtag/webdev?src=hash&amp;ref_src=twsrc%5Etfw">#webdev</a> <a href="https://twitter.com/hashtag/HTTP?src=hash&amp;ref_src=twsrc%5Etfw">#HTTP</a></p>— Random MDN (@randomMDN) <a href="https://twitter.com/randomMDN/status/1562155312433582082?ref_src=twsrc%5Etfw">August 23, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">🦖 Random MDN: Reason: CORS header &lsquo;Access-Control… 🦖<a href="https://t.co/jkqBnujGyV">https://t.co/jkqBnujGyV</a><br/><br/>The origin making the request does not match the origin permitted by the Access-Control-Allow-Origin header. This error can also occur if the response includes more than o…<a href="https://twitter.com/hashtag/webdev?src=hash&amp;ref_src=twsrc%5Etfw">#webdev</a> <a href="https://twitter.com/hashtag/HTTP?src=hash&amp;ref_src=twsrc%5Etfw">#HTTP</a></p>— Random MDN (@randomMDN) <a href="https://twitter.com/randomMDN/status/1562155312433582082?ref_src=twsrc%5Etfw">August 23, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
       Fun Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">This cameraman chose the wrong career <a href="https://t.co/DOolByVAQG">pic.twitter.com/DOolByVAQG</a></p>— Aviator Anil Chopra (@Chopsyturvey) <a href="https://twitter.com/Chopsyturvey/status/1561992909989093376?ref_src=twsrc%5Etfw">August 23, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">This cameraman chose the wrong career <a href="https://t.co/DOolByVAQG">pic.twitter.com/DOolByVAQG</a></p>— Aviator Anil Chopra (@Chopsyturvey) <a href="https://twitter.com/Chopsyturvey/status/1561992909989093376?ref_src=twsrc%5Etfw">August 23, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
       Words of Wisdom for the Week
     </h2>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">Tip: Progress is not always linear. <br/><br/>Sometimes it can even feel like you&rsquo;re going in circles. Step back and acknowledge small wins towards your goals. They add up. Even if you have to start over, it&rsquo;s not always from scratch, it&rsquo;s often with experience. <a href="https://t.co/Cknosn0T4R">pic.twitter.com/Cknosn0T4R</a></p>— Addy Osmani (@addyosmani) <a href="https://twitter.com/addyosmani/status/1548371139893743616?ref_src=twsrc%5Etfw">July 16, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Tip: Progress is not always linear. <br/><br/>Sometimes it can even feel like you&rsquo;re going in circles. Step back and acknowledge small wins towards your goals. They add up. Even if you have to start over, it&rsquo;s not always from scratch, it&rsquo;s often with experience. <a href="https://t.co/Cknosn0T4R">pic.twitter.com/Cknosn0T4R</a></p>— Addy Osmani (@addyosmani) <a href="https://twitter.com/addyosmani/status/1548371139893743616?ref_src=twsrc%5Etfw">July 16, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
@@ -87,19 +79,15 @@
     </h2>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-tree-find-control-fg7/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="VS Code Tip of the Week: Tree Find Control - Just Some Dev" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/556/021/thumb/twitter-blog-post-social-card_bqhgzt?1661131228"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-tree-find-control-fg7/"  target="_blank">
+<img align="right" alt="VS Code Tip of the Week: Tree Find Control - Just Some Dev"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/556/021/thumb/twitter-blog-post-social-card_bqhgzt?1661131228"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-tree-find-control-fg7/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">VS Code Tip of the Week: Tree Find Control - Just Some Dev</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >This week’s VS Code tip is the Tree find control. Search for files within the tree explorer and have…</div>
+<div  ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-tree-find-control-fg7/"  target="_blank">VS Code Tip of the Week: Tree Find Control - Just Some Dev</a></div>
+<div  ><div  >This week’s VS Code tip is the Tree find control. Search for files within the tree explorer and have…</div>
 </div>
-<div class="link-url" ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-tree-find-control-fg7/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.iamdeveloper.com</a></div>
+<div  ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-tree-find-control-fg7/"  target="_blank">www.iamdeveloper.com</a></div>
 </div>
 </div></td></tr>
 
@@ -114,20 +102,16 @@
 <p>Thanks again for hanging @james_r_perkins!</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
+
 <a href="https://www.twitch.tv/videos/1573783720?filter=highlights&amp;sort=time&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Highlight: User identity doesn't have to be complex with James Perkins - nickytonline on Twitch" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/651/166/thumb/custom-1599c2f5-7667-4681-8c55-f0632113a7a8-640x360.png?1661572069"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+<img align="right" alt="Highlight: User identity doesn't have to be complex with James Perkins - nickytonline on Twitch"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/651/166/thumb/custom-1599c2f5-7667-4681-8c55-f0632113a7a8-640x360.png?1661572069"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://www.twitch.tv/videos/1573783720?filter=highlights&amp;sort=time&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Highlight: User identity doesn't have to be complex with James Perkins - nickytonline on Twitch</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >nickytonline went live on Twitch. Catch up on their Software and Game Development VOD now.</div>
+<div  ><a href="https://www.twitch.tv/videos/1573783720?filter=highlights&amp;sort=time&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Highlight: User identity doesn't have to be complex with James Perkins - nickytonline on Twitch</a></div>
+<div  ><div  >nickytonline went live on Twitch. Catch up on their Software and Game Development VOD now.</div>
 </div>
-<div class="link-url" ><a href="https://www.twitch.tv/videos/1573783720?filter=highlights&amp;sort=time&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.twitch.tv</a></div>
+<div  ><a href="https://www.twitch.tv/videos/1573783720?filter=highlights&amp;sort=time&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.twitch.tv</a></div>
 </div>
 </div></td></tr>
 
-<p>I also got to hang on <a href="https://www.linkedin.com/in/ACoAABtivRYBG57apHvPpjWRjjCGOcVVXzOLmQk?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Lucia Cerchie</a>‘s Twitter Space, Frontend Fun: JS Frameworks and Deployment Platforms, this past week. Thanks for having me and all thanks to all the awesome speakers! Check out the <a href="https://twitter.com/CerchieLucia/status/1562506344363483138?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">recording</a> if you missed it!</p>
+<p>I also got to hang on <a href="https://www.linkedin.com/in/ACoAABtivRYBG57apHvPpjWRjjCGOcVVXzOLmQk"  target="_blank">Lucia Cerchie</a>‘s Twitter Space, Frontend Fun: JS Frameworks and Deployment Platforms, this past week. Thanks for having me and all thanks to all the awesome speakers! Check out the <a href="https://twitter.com/CerchieLucia/status/1562506344363483138"  target="_blank">recording</a> if you missed it!</p>

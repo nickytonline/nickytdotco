@@ -19,64 +19,52 @@
 <p>I’ve been following Deno more closely since I started working at Netlify since we use it for our Edge offering. TLDR; using npm packages in Deno, speed etc.</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://deno.com/blog/changes?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Big Changes Ahead for Deno" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/453/088/thumb/og.png?1660566136"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://deno.com/blog/changes"  target="_blank">
+<img align="right" alt="Big Changes Ahead for Deno"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/453/088/thumb/og.png?1660566136"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://deno.com/blog/changes?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Big Changes Ahead for Deno</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >Learnings from our recent survey and feedback from across our community. We’ll discuss how we’re addressing this feedback and the features to expect from Deno in the coming months.</div>
+<div  ><a href="https://deno.com/blog/changes"  target="_blank">Big Changes Ahead for Deno</a></div>
+<div  ><div  >Learnings from our recent survey and feedback from across our community. We’ll discuss how we’re addressing this feedback and the features to expect from Deno in the coming months.</div>
 </div>
-<div class="link-url" ><a href="https://deno.com/blog/changes?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">deno.com</a></div>
+<div  ><a href="https://deno.com/blog/changes"  target="_blank">deno.com</a></div>
 </div>
 </div></td></tr>
 
 <p>I’ve often wondered why we need macros in Rust. Chris Biscardi has us covered!</p>
 
 <tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >
-<a href="https://www.youtube.com/watch?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter&amp;v=1oTwGkpvQjM" target="_blank">
+<a href="https://www.youtube.com/watch&amp;v=1oTwGkpvQjM" target="_blank">
 <img alt="Why do we need macros in Rust?" height="auto" src="https://s3.amazonaws.com/revue/items/images/017/495/788/mail/hqdefault.jpg?1660789039"  title="Why do we need macros in Rust?" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >Why do we need macros in Rust?</div></td></tr></tbody>
 
 <p>I haven’t used this on a project yet, but it looks like a great base for building out your design system. Design system tokens and CSS vars ftw!</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://open-props.style/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Open Props: sub-atomic styles" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/453/748/thumb/open-props-social.jpg?1660566980"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://open-props.style/"  target="_blank">
+<img align="right" alt="Open Props: sub-atomic styles"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/453/748/thumb/open-props-social.jpg?1660566980"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://open-props.style/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Open Props: sub-atomic styles</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >Open source CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript.</div>
+<div  ><a href="https://open-props.style/"  target="_blank">Open Props: sub-atomic styles</a></div>
+<div  ><div  >Open source CSS custom properties to help accelerate adaptive and consistent design. Available from a CDN or NPM, as CSS or Javascript.</div>
 </div>
-<div class="link-url" ><a href="https://open-props.style/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">open-props.style</a></div>
+<div  ><a href="https://open-props.style/"  target="_blank">open-props.style</a></div>
 </div>
 </div></td></tr>
 
 <p>Josh W. Comeau drops another banger. Josh is such a great teacher.</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://www.joshwcomeau.com/react/why-react-re-renders/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Why React Re-Renders" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/473/544/thumb/og-why-react-re-renders.png?1660669146"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://www.joshwcomeau.com/react/why-react-re-renders/"  target="_blank">
+<img align="right" alt="Why React Re-Renders"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/473/544/thumb/og-why-react-re-renders.png?1660669146"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://www.joshwcomeau.com/react/why-react-re-renders/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Why React Re-Renders</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >In React, we don’t update the DOM directly, we tell React what we want the DOM to look like, and React tackles the rest. But how exactly does it do this? In this tutorial, we’ll unpack exactly when and why React re-renders, and how we can use this information to optimize the performance of our React apps.</div>
+<div  ><a href="https://www.joshwcomeau.com/react/why-react-re-renders/"  target="_blank">Why React Re-Renders</a></div>
+<div  ><div  >In React, we don’t update the DOM directly, we tell React what we want the DOM to look like, and React tackles the rest. But how exactly does it do this? In this tutorial, we’ll unpack exactly when and why React re-renders, and how we can use this information to optimize the performance of our React apps.</div>
 </div>
-<div class="link-url" ><a href="https://www.joshwcomeau.com/react/why-react-re-renders/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.joshwcomeau.com</a></div>
+<div  ><a href="https://www.joshwcomeau.com/react/why-react-re-renders/"  target="_blank">www.joshwcomeau.com</a></div>
 </div>
 </div></td></tr>
 
@@ -84,7 +72,7 @@
       Fun Stuff &amp; Interesting Stuff
     </h2>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">Volcanic Eruption as seen from Space! <a href="https://t.co/Pz0bV83YLN">pic.twitter.com/Pz0bV83YLN</a></p>— Physics-Astronomy✨🔭 (@Physdashastro) <a href="https://twitter.com/Physdashastro/status/1252607614845886465?ref_src=twsrc%5Etfw">April 21, 2020</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">Volcanic Eruption as seen from Space! <a href="https://t.co/Pz0bV83YLN">pic.twitter.com/Pz0bV83YLN</a></p>— Physics-Astronomy✨🔭 (@Physdashastro) <a href="https://twitter.com/Physdashastro/status/1252607614845886465?ref_src=twsrc%5Etfw">April 21, 2020</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
@@ -93,7 +81,7 @@
 
 <p>Sometimes this is the right move.</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">Doing nothing is underrated</p>— JSONP （╯°□°）╯︵ ┻━┻ (@palmerj3) <a href="https://twitter.com/palmerj3/status/1560819742826430464?ref_src=twsrc%5Etfw">August 20, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-conversation="none" data-dnt="true"><p dir="ltr" lang="en">Doing nothing is underrated</p>— JSONP （╯°□°）╯︵ ┻━┻ (@palmerj3) <a href="https://twitter.com/palmerj3/status/1560819742826430464?ref_src=twsrc%5Etfw">August 20, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
@@ -101,19 +89,15 @@
     </h2>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-terminal-auto-replies-58lg/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="VS Code Tip of the Week: Terminal Auto Replies - Just Some Dev" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/461/097/thumb/twitter-blog-post-social-card_bqhgzt?1660596830"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-terminal-auto-replies-58lg/"  target="_blank">
+<img align="right" alt="VS Code Tip of the Week: Terminal Auto Replies - Just Some Dev"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/461/097/thumb/twitter-blog-post-social-card_bqhgzt?1660596830"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-terminal-auto-replies-58lg/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">VS Code Tip of the Week: Terminal Auto Replies - Just Some Dev</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >This week’s VS Code Tip came out in January of this year, but it seemed to go under the radar for…</div>
+<div  ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-terminal-auto-replies-58lg/"  target="_blank">VS Code Tip of the Week: Terminal Auto Replies - Just Some Dev</a></div>
+<div  ><div  >This week’s VS Code Tip came out in January of this year, but it seemed to go under the radar for…</div>
 </div>
-<div class="link-url" ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-terminal-auto-replies-58lg/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.iamdeveloper.com</a></div>
+<div  ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-terminal-auto-replies-58lg/"  target="_blank">www.iamdeveloper.com</a></div>
 </div>
 </div></td></tr>
 
@@ -124,31 +108,27 @@
 <p>The recording of the stream with Brittney Postma is up! Check it out!</p>
 
 <tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >
-<a href="https://www.youtube.com/watch?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter&amp;v=g4AG5LR73uU" target="_blank">
+<a href="https://www.youtube.com/watch&amp;v=g4AG5LR73uU" target="_blank">
 <img alt="Starting Svelte with Brittney Postma" height="auto" src="https://s3.amazonaws.com/revue/items/images/017/495/764/mail/hqdefault.jpg?1660788882"  title="Starting Svelte with Brittney Postma" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >Starting Svelte with Brittney Postma</div></td></tr></tbody>
 
 <p>I wrote this at the end of last year, but a lot of folks have found it super useful, so sharing it here again.</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://www.iamdeveloper.com/posts/frontend-developer-resources-2022-4cp2/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Frontend Developer Resources 2022 - Just Some Dev" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/454/158/thumb/twitter-blog-post-social-card_bqhgzt?1660568237"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://www.iamdeveloper.com/posts/frontend-developer-resources-2022-4cp2/"  target="_blank">
+<img align="right" alt="Frontend Developer Resources 2022 - Just Some Dev"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/454/158/thumb/twitter-blog-post-social-card_bqhgzt?1660568237"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://www.iamdeveloper.com/posts/frontend-developer-resources-2022-4cp2/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Frontend Developer Resources 2022 - Just Some Dev</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >I don’t know if I’ll keep doing this every year, but I did one of these in 2020, and that post got some good signal, so I renamed it to Frontend Developer Resources 2020, which brings us to Frontend Developer Resources 2022.</div>
+<div  ><a href="https://www.iamdeveloper.com/posts/frontend-developer-resources-2022-4cp2/"  target="_blank">Frontend Developer Resources 2022 - Just Some Dev</a></div>
+<div  ><div  >I don’t know if I’ll keep doing this every year, but I did one of these in 2020, and that post got some good signal, so I renamed it to Frontend Developer Resources 2020, which brings us to Frontend Developer Resources 2022.</div>
 </div>
-<div class="link-url" ><a href="https://www.iamdeveloper.com/posts/frontend-developer-resources-2022-4cp2/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.iamdeveloper.com</a></div>
+<div  ><a href="https://www.iamdeveloper.com/posts/frontend-developer-resources-2022-4cp2/"  target="_blank">www.iamdeveloper.com</a></div>
 </div>
 </div></td></tr>
 
 <p>James Perkins from Clerk is joining me on my stream this week! Come by and say hi at <a href="https://www.twitch.tv/nickytonline/schedule?segmentID=179b350a-a4b8-4050-9b05-f76ab173c892&amp;utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">livecoding.ca</a> at 5pm UTC on August 24th!</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">I&rsquo;ll be back next streaming next week with <a href="https://twitter.com/james_r_perkins?ref_src=twsrc%5Etfw">@james_r_perkins</a> discussing all things <a href="https://twitter.com/ClerkDev?ref_src=twsrc%5Etfw">@ClerkDev</a>! User identity doesn&rsquo;t have to be complex.<br/><br/>Come say hi on August 24th at 5 pm UTC! <a href="https://t.co/2iVrSJGC3d">https://t.co/2iVrSJGC3d</a><br/><br/>Looking forward to hanging James! <a href="https://t.co/Wv5ui13b3p">pic.twitter.com/Wv5ui13b3p</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1559169590579666944?ref_src=twsrc%5Etfw">August 15, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">I&rsquo;ll be back next streaming next week with <a href="https://twitter.com/james_r_perkins?ref_src=twsrc%5Etfw">@james_r_perkins</a> discussing all things <a href="https://twitter.com/ClerkDev?ref_src=twsrc%5Etfw">@ClerkDev</a>! User identity doesn&rsquo;t have to be complex.<br/><br/>Come say hi on August 24th at 5 pm UTC! <a href="https://t.co/2iVrSJGC3d">https://t.co/2iVrSJGC3d</a><br/><br/>Looking forward to hanging James! <a href="https://t.co/Wv5ui13b3p">pic.twitter.com/Wv5ui13b3p</a></p>— Nick Taylor (@nickytonline) <a href="https://twitter.com/nickytonline/status/1559169590579666944?ref_src=twsrc%5Etfw">August 15, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>

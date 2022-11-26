@@ -17,62 +17,50 @@
     </h2>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://techcrunch.com/2022/07/27/protestware-code-sabotage/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Protestware on the rise: Why developers are sabotaging their own code – TechCrunch" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/218/308/thumb/GettyImages-1069786222.jpg?1659311219"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://techcrunch.com/2022/07/27/protestware-code-sabotage/"  target="_blank">
+<img align="right" alt="Protestware on the rise: Why developers are sabotaging their own code – TechCrunch"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/218/308/thumb/GettyImages-1069786222.jpg?1659311219"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://techcrunch.com/2022/07/27/protestware-code-sabotage/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Protestware on the rise: Why developers are sabotaging their own code – TechCrunch</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >A wave of software developers have self-sabotaged their code to protest big corporations to Russia’s war in Ukraine.</div>
+<div  ><a href="https://techcrunch.com/2022/07/27/protestware-code-sabotage/"  target="_blank">Protestware on the rise: Why developers are sabotaging their own code – TechCrunch</a></div>
+<div  ><div  >A wave of software developers have self-sabotaged their code to protest big corporations to Russia’s war in Ukraine.</div>
 </div>
-<div class="link-url" ><a href="https://techcrunch.com/2022/07/27/protestware-code-sabotage/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">techcrunch.com</a></div>
+<div  ><a href="https://techcrunch.com/2022/07/27/protestware-code-sabotage/"  target="_blank">techcrunch.com</a></div>
 </div>
 </div></td></tr>
 
 <p>This came across my feed this past week. It’s from 2017, but is still a great watch if you’re looking to write technical articles.</p>
 
 <tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >
-<a href="https://www.youtube.com/watch?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter&amp;v=YODPgBadj80" target="_blank">
+<a href="https://www.youtube.com/watch&amp;v=YODPgBadj80" target="_blank">
 <img alt="How to write technical blog posts - talk by Quincy Larson" height="auto" src="https://s3.amazonaws.com/revue/items/images/017/235/765/mail/maxresdefault.jpg?1659387942"  title="How to write technical blog posts - talk by Quincy Larson" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >How to write technical blog posts - talk by Quincy Larson</div></td></tr></tbody>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://leaddev.com/career-paths-progression-promotion/engineering-manager-or-individual-contributor-which-path-right?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Engineering manager or individual contributor: Which path is right for you? | LeadDev" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/261/622/thumb/Engineering_20manager_20or_20individual_20contributor__20Which_20path_20is_20right_20for_20you_3F.png?1659543846"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://leaddev.com/career-paths-progression-promotion/engineering-manager-or-individual-contributor-which-path-right"  target="_blank">
+<img align="right" alt="Engineering manager or individual contributor: Which path is right for you? | LeadDev"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/261/622/thumb/Engineering_20manager_20or_20individual_20contributor__20Which_20path_20is_20right_20for_20you_3F.png?1659543846"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://leaddev.com/career-paths-progression-promotion/engineering-manager-or-individual-contributor-which-path-right?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Engineering manager or individual contributor: Which path is right for you? | LeadDev</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >How to choose the right career path as a software developer</div>
+<div  ><a href="https://leaddev.com/career-paths-progression-promotion/engineering-manager-or-individual-contributor-which-path-right"  target="_blank">Engineering manager or individual contributor: Which path is right for you? | LeadDev</a></div>
+<div  ><div  >How to choose the right career path as a software developer</div>
 </div>
-<div class="link-url" ><a href="https://leaddev.com/career-paths-progression-promotion/engineering-manager-or-individual-contributor-which-path-right?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">leaddev.com</a></div>
+<div  ><a href="https://leaddev.com/career-paths-progression-promotion/engineering-manager-or-individual-contributor-which-path-right"  target="_blank">leaddev.com</a></div>
 </div>
 </div></td></tr>
 
 <p>This was a great listen. Check it out!</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://podrocket.logrocket.com/architect-web-apps?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="PodRocket - A web development podcast from LogRocket: Improve how you architect web apps with Addy Osmani and Lydia Hallie" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/269/184/thumb/cover_medium.jpg?1659586009"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://podrocket.logrocket.com/architect-web-apps"  target="_blank">
+<img align="right" alt="PodRocket - A web development podcast from LogRocket: Improve how you architect web apps with Addy Osmani and Lydia Hallie"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/269/184/thumb/cover_medium.jpg?1659586009"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://podrocket.logrocket.com/architect-web-apps?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">PodRocket - A web development podcast from LogRocket: Improve how you architect web apps with Addy Osmani and Lydia Hallie</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >Patterns.dev is a free book on design patterns and component patterns for building powerful web apps with vanilla JavaScript and React. Join authors, Addy Osmani and Lydia Hallie as they discuss patterns, tips, and tricks for improving how you architect apps.</div>
+<div  ><a href="https://podrocket.logrocket.com/architect-web-apps"  target="_blank">PodRocket - A web development podcast from LogRocket: Improve how you architect web apps with Addy Osmani and Lydia Hallie</a></div>
+<div  ><div  >Patterns.dev is a free book on design patterns and component patterns for building powerful web apps with vanilla JavaScript and React. Join authors, Addy Osmani and Lydia Hallie as they discuss patterns, tips, and tricks for improving how you architect apps.</div>
 </div>
-<div class="link-url" ><a href="https://podrocket.logrocket.com/architect-web-apps?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">podrocket.logrocket.com</a></div>
+<div  ><a href="https://podrocket.logrocket.com/architect-web-apps"  target="_blank">podrocket.logrocket.com</a></div>
 </div>
 </div></td></tr>
 
@@ -82,7 +70,7 @@
 
 <p>This is just cool. That is all. 🌈</p>
 
-<p><html><body><div><blockquote align="center" class="twitter-tweet" data-dnt="true"><p dir="ltr" lang="en">In theory, every rainbow is a circle, but from the ground, usually only its upper half can be seen. This is not the case of Anthony Killeen, who spotted and shared a full-circle rainbow in this 2017 video: <a href="https://t.co/A9gbmQ56gs">https://t.co/A9gbmQ56gs</a> [read more: <a href="https://t.co/46aWwgtz3l">https://t.co/46aWwgtz3l</a>] <a href="https://t.co/QUAjWTQzgN">pic.twitter.com/QUAjWTQzgN</a></p>— Massimo (@Rainmaker1973) <a href="https://twitter.com/Rainmaker1973/status/1553379891264950272?ref_src=twsrc%5Etfw">July 30, 2022</a></blockquote></p>
+<p><html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">In theory, every rainbow is a circle, but from the ground, usually only its upper half can be seen. This is not the case of Anthony Killeen, who spotted and shared a full-circle rainbow in this 2017 video: <a href="https://t.co/A9gbmQ56gs">https://t.co/A9gbmQ56gs</a> [read more: <a href="https://t.co/46aWwgtz3l">https://t.co/46aWwgtz3l</a>] <a href="https://t.co/QUAjWTQzgN">pic.twitter.com/QUAjWTQzgN</a></p>— Massimo (@Rainmaker1973) <a href="https://twitter.com/Rainmaker1973/status/1553379891264950272?ref_src=twsrc%5Etfw">July 30, 2022</a></blockquote></p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p></div></body></html></p>
 <h2>
@@ -96,19 +84,15 @@
     </h2>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-inlay-hints-configuration-options-k1a/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="VS Code Tip of the Week: Inlay hints configuration options - Just Some Dev" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/269/460/thumb/twitter-blog-post-social-card_bqhgzt?1659588607"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-inlay-hints-configuration-options-k1a/"  target="_blank">
+<img align="right" alt="VS Code Tip of the Week: Inlay hints configuration options - Just Some Dev"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/269/460/thumb/twitter-blog-post-social-card_bqhgzt?1659588607"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-inlay-hints-configuration-options-k1a/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">VS Code Tip of the Week: Inlay hints configuration options - Just Some Dev</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >This week’s VS Code Tip of the Week is care of Matt Bierner. Matt always has amazing tips, so I…</div>
+<div  ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-inlay-hints-configuration-options-k1a/"  target="_blank">VS Code Tip of the Week: Inlay hints configuration options - Just Some Dev</a></div>
+<div  ><div  >This week’s VS Code Tip of the Week is care of Matt Bierner. Matt always has amazing tips, so I…</div>
 </div>
-<div class="link-url" ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-inlay-hints-configuration-options-k1a/?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">www.iamdeveloper.com</a></div>
+<div  ><a href="https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-inlay-hints-configuration-options-k1a/"  target="_blank">www.iamdeveloper.com</a></div>
 </div>
 </div></td></tr>
 
@@ -116,28 +100,24 @@
       Shameless plugs
     </h2>
 
-<p>The recording with Brian Douglas is up! We chatted about contributing to open source as well digging into the <a href="https://twitter.com/saucedopen?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Open Sauced</a> project and how it’s helping folks in open source.</p>
+<p>The recording with Brian Douglas is up! We chatted about contributing to open source as well digging into the <a href="https://twitter.com/saucedopen"  target="_blank">Open Sauced</a> project and how it’s helping folks in open source.</p>
 
 <tbody><tr><td align="center" ><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tbody><tr><td >
-<a href="https://www.youtube.com/watch?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter&amp;v=DeBAuW5Kf8c" target="_blank">
+<a href="https://www.youtube.com/watch&amp;v=DeBAuW5Kf8c" target="_blank">
 <img alt="Contributing to open source with Brian Douglas" height="auto" src="https://s3.amazonaws.com/revue/items/images/017/238/711/mail/hqdefault.jpg?1659409625"  title="Contributing to open source with Brian Douglas" width="600"/>
 </a></td></tr></tbody></table></td></tr><tr><td align="center" ><div >Contributing to open source with Brian Douglas</div></td></tr></tbody>
 
 <p>I got to hang with Brittney Postma this week. So much fun. Thanks again Brittney! The full recording will be available on YouTube late next week.</p>
 
 <tr><td align="left" ><div >
-<!--[if mso]>
-          <table border="0" cellpadding="0" cellspacing="0" width="140" align="right" ><tr><td >
-          <![endif]-->
-<a href="https://clips.twitch.tv/AcceptableSweetCoyotePrimeMe-HKmUp0frMsCp78pn?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">
-<img align="right" alt="Brittney knowledge nuggets - The purpose of streaming is for tangents" class="link-image" height="140" src="https://s3.amazonaws.com/revue/items/images/017/269/480/thumb/AT-cm_7C-jwYQhyplKdH6zLAqe_KZw-social-preview.jpg?1659588700"  width="140"/>
-</a> <!--[if mso]>
-          </td></tr></table>
-          <![endif]-->
+
+<a href="https://clips.twitch.tv/AcceptableSweetCoyotePrimeMe-HKmUp0frMsCp78pn"  target="_blank">
+<img align="right" alt="Brittney knowledge nuggets - The purpose of streaming is for tangents"  height="140" src="https://s3.amazonaws.com/revue/items/images/017/269/480/thumb/AT-cm_7C-jwYQhyplKdH6zLAqe_KZw-social-preview.jpg?1659588700"  width="140"/>
+</a> 
 <div>
-<div class="link-title" ><a href="https://clips.twitch.tv/AcceptableSweetCoyotePrimeMe-HKmUp0frMsCp78pn?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">Brittney knowledge nuggets - The purpose of streaming is for tangents</a></div>
-<div class="serif small-text link-description" ><div class="revue-p" >Watch nickytonline’s clip titled “The purpose of streaming is for tangents”</div>
+<div  ><a href="https://clips.twitch.tv/AcceptableSweetCoyotePrimeMe-HKmUp0frMsCp78pn"  target="_blank">Brittney knowledge nuggets - The purpose of streaming is for tangents</a></div>
+<div  ><div  >Watch nickytonline’s clip titled “The purpose of streaming is for tangents”</div>
 </div>
-<div class="link-url" ><a href="https://clips.twitch.tv/AcceptableSweetCoyotePrimeMe-HKmUp0frMsCp78pn?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter"  target="_blank">clips.twitch.tv</a></div>
+<div  ><a href="https://clips.twitch.tv/AcceptableSweetCoyotePrimeMe-HKmUp0frMsCp78pn"  target="_blank">clips.twitch.tv</a></div>
 </div>
 </div></td></tr>
