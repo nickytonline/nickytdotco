@@ -22,4 +22,4 @@ So welcome to links to cool and interesting stuff I found on the Internet during
 
 You can also browse the [full archives](/pages/newsletter-archives) of this newsletter.
 
-If you'd prefer, you can also [subscribe via RSS](https://buttondown.email/nickytonline/rss).
+If you'd prefer, you can also [subscribe via RSS](/newsletter.rss).
