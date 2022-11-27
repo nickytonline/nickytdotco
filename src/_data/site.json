@@ -5,6 +5,7 @@
   "url": "https://www.iamdeveloper.com",
   "authorEmail": "nick@iamdeveloper.com",
   "authorHandle": "@nickytonline",
+  "mastodonHandle": "@nickytonline@toot.cafe",
   "authorName": "Nick Taylor",
   "enableThirdPartyComments": false,
   "maxPostsPerPage": 5,

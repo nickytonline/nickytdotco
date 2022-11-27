@@ -47,9 +47,13 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
     site.url + url
   )}">Share on LinkedIn</a>`;
 
+  const intentToToot = `<a class="boost-link" href="https://toot.kytta.dev/?text=${encodeURIComponent(
+    `${title} by ${site.mastodonHandle} ${site.url}${url}`
+  )}">Toot it!</a>`;
+
   const foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
 
-  return `${foremBoostLink}${hashnodeBoosterLink}${intentToTweet}${intentToLinkedIn}`;
+  return `${foremBoostLink}${hashnodeBoosterLink}${intentToToot}${intentToTweet}${intentToLinkedIn}`;
 }
 
 /**
