@@ -4,7 +4,7 @@
   "shortDesc": "Welcome to Nick Taylor's personal website.",
   "url": "https://www.iamdeveloper.com",
   "authorEmail": "nick@iamdeveloper.com",
-  "authorHandle": "@nickytonline",
+  "twitterHandle": "@nickytonline",
   "mastodonHandle": "@nickytonline@toot.cafe",
   "authorName": "Nick Taylor",
   "enableThirdPartyComments": false,

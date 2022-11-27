@@ -40,7 +40,7 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
   }
 
   const intentToTweet = `<a class="boost-link" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    `${title} by ${site.authorHandle} ${site.url}${url}`
+    `${title} by ${site.twitterHandle} ${site.url}${url}`
   )}">Share on Twitter</a>`;
 
   const intentToLinkedIn = `<a class="boost-link" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
@@ -160,7 +160,7 @@ function socialImage(title, excerpt = '') {
     );
   }
   const encodedAuthor = encodeURIComponent(
-    encodeURIComponent(`${site.authorName} ${site.authorHandle}`)
+    encodeURIComponent(`${site.authorName} ${site.twitterHandle}`)
   );
   const textColor = '333333';
 
