@@ -13,14 +13,14 @@ function sanitizeContent(rawContent) {
   let updatedContent = rawContent.trim();
 
   const twitterEmbedRegex =
-    /<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>/gms;
+    /(<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>)|(<html><body>.+?href="(?<twitterUrl2>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw[^"]*">.+?<\/body><\/html>)/gms;
   const twitterEmbeds = updatedContent.matchAll(twitterEmbedRegex);
 
   for (const twitterEmbed of twitterEmbeds) {
-    const {twitterUrl} = twitterEmbed.groups;
+    const {twitterUrl, twitterUrl2} = twitterEmbed.groups;
     updatedContent = updatedContent.replace(
       twitterEmbed[0],
-      `{% embed "${twitterUrl}" %}\n`
+      `{% embed "${twitterUrl ?? twitterUrl2}" %}\n`
     );
   }
 
