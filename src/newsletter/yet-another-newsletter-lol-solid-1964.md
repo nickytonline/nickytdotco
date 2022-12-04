@@ -31,8 +31,7 @@
 <p><a href="https://www.youtube.com/watch?v=WsPHBD5NsS0&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-solid-1964" target="_blank">Worlds hardest jigsaw vs. puzzle machine (all white)</a></p>
 <h2>Words of Wisdom for the Week</h2>
 <p>This week&rsquo;s words of wisdom are for content creators of any kind.</p>
-<html><body><div><blockquote align="center"  data-dnt="true"><p dir="ltr" lang="en">If you make content that you would watch, you will succeed.</p>— Theo - ping.gg (@t3dotgg) <a href="https://twitter.com/t3dotgg/status/1598785020541341696?ref_src=twsrc%5Etfw&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-solid-1964">December 2, 2022</a></blockquote>
-<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-</div></body></html><h2>Shameless Plugs</h2>
+{% embed "https://twitter.com/t3dotgg/status/1598785020541341696" %}
+<h2>Shameless Plugs</h2>
 <p>The <a href="https://www.youtube.com/watch?v=zRPzc36OXxk&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-solid-1964" target="_blank">stream with my friend Bekah</a> is up on YouTube! She talked me through the Deepgram browser extension, I <a href="https://github.com/deepgram-devs/dg-translation-chrome-ext/pull/26?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-solid-1964" target="_blank">fixed a bug in the extension</a>, and we started the beginnings of a new feature that someone could take over based on my proof of concept.</p>
 <p><a href="https://www.youtube.com/watch?v=zRPzc36OXxk&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-solid-1964" target="_blank"><img alt="Deepgram Browser Extension: Live Browser Transcription with BekahHW"  src="https://buttondown.s3.us-west-2.amazonaws.com/images/8dcfc399-821b-46b9-b009-29298a365f53.png" /></a></p>
