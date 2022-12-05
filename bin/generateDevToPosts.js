@@ -93,7 +93,9 @@ function isValidPost(post) {
       !tags.includes('discuss') &&
       !tags.includes('vscodetip') &&
       !tags.includes('explainlikeimfive') &&
-      !tags.includes('help')) ||
+      !tags.includes('help') &&
+      // omits my newsletter posts which are already published on my site
+      !tags.includes('newsletter')) ||
     SLUG_INCLUSION_LIST.includes(slug)
   );
 }
