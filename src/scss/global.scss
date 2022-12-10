@@ -92,4 +92,15 @@ img {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+
+  .video-thumbnail {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    place-items: center;
+    text-align: center;
+    line-height: normal;
+    font-size: 0.8em;
+  }
 }

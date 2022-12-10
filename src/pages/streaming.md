@@ -30,58 +30,27 @@ Forem at the start of 2022 and continued the stream until the end of March 2022.
 Good times and great guests. Thanks to everyone that was a part of it.
 
 <div class="video-panel">
-  <a
-    href="https://www.youtube.com/watch?v=cmooRSV4sr8"
-    title="Stacie Taylor, Engineering Team Lead at Zapier and Co-founder at Collab Lab"
-    ><img
-      src="https://i4.ytimg.com/vi/cmooRSV4sr8/hqdefault.jpg"
-      alt="Stacie Taylor, Engineering Team Lead at Zapier and Co-founder at Collab Lab"
-      width="360"
-      height="270" /></a
-  ><a
-    href="https://www.youtube.com/watch?v=zMEvgvSrPuo"
-    title="Walkthrough Wednesday with Sunil Pai, Workers Team at Cloudflare"
-    ><img
-      src="https://i3.ytimg.com/vi/zMEvgvSrPuo/hqdefault.jpg"
-      alt="Walkthrough Wednesday with Sunil Pai, Workers Team at Cloudflare"
-      width="360"
-      height="270" /></a
-  ><a
-    href="https://www.youtube.com/watch?v=MWkJFsC9jZo"
-    title="Walkthrough Wednesday with Jenn Schiffer"
-    ><img
-      src="https://i2.ytimg.com/vi/MWkJFsC9jZo/hqdefault.jpg"
-      alt="Walkthrough Wednesday with Jenn Schiffer"
-      width="360"
-      height="270" /></a
-  ><a
-    href="https://www.youtube.com/watch?v=IH2IcYMxab4"
-    title="Walkthrough Wednesday with Stephanie Eckles"
-    ><img
-      src="https://i2.ytimg.com/vi/IH2IcYMxab4/hqdefault.jpg"
-      alt="Walkthrough Wednesday with Stephanie Eckles"
-      width="360"
-      height="270"
-  /></a>
-  <a
-    href="https://www.youtube.com/watch?v=ZncQIITVOPI"
-    title="Walkthrough Wednesday with Chris Coyier"
-    ><img
-      src="https://i1.ytimg.com/vi/ZncQIITVOPI/hqdefault.jpg"
-      alt="Walkthrough Wednesday with Chris Coyier"
-      width="360"
-      height="270"
-  /></a>
-  <a
-    href="https://www.youtube.com/watch?v=d1KCS6C4Rus"
-    title="Walkthrough Wednesday with Brian Douglas"
-    ><img
-      src="https://i1.ytimg.com/vi/d1KCS6C4Rus/hqdefault.jpg"
-      alt="Walkthrough Wednesday with Brian Douglas"
-      width="360"
-      height="270"
-    />
-  </a>
+  <div class="video-thumbnail">
+    <a href="https://www.youtube.com/watch?v=cmooRSV4sr8" title="Walkthrough Wednesday with Stacie Taylor, Engineering Team Lead at Zapier and Co-founder at Collab Lab"><img src="https://i4.ytimg.com/vi/cmooRSV4sr8/hqdefault.jpg" alt="Walkthrough Wednesday with Stacie Taylor, Engineering Team Lead at Zapier and Co-founder at Collab Lab" width="360" height="270" /></a>
+    <p>Walkthrough Wednesday with Stacie Taylor, Engineering Team Lead at Zapier and Co-founder at Collab Lab</p>
+  </div>
+  <div class="video-thumbnail"><a href="https://www.youtube.com/watch?v=zMEvgvSrPuo" title="Walkthrough Wednesday with Sunil Pai, Workers Team at Cloudflare"><img src="https://i3.ytimg.com/vi/zMEvgvSrPuo/hqdefault.jpg" alt="Walkthrough Wednesday with Sunil Pai, Workers Team at Cloudflare" width="360" height="270" /></a>
+    <p>Walkthrough Wednesday with Sunil Pai, Workers Team at Cloudflare</p>
+  </div>
+  <div class="video-thumbnail"><a href="https://www.youtube.com/watch?v=MWkJFsC9jZo" title="Walkthrough Wednesday with Jenn Schiffer"><img src="https://i2.ytimg.com/vi/MWkJFsC9jZo/hqdefault.jpg" alt="Walkthrough Wednesday with Jenn Schiffer" width="360" height="270" /></a>Walkthrough Wednesday with Jenn Schiffer</div>
+  <div class="video-thumbnail">
+    <a href="https://www.youtube.com/watch?v=IH2IcYMxab4" title="Walkthrough Wednesday with Stephanie Eckles"><img src="https://i2.ytimg.com/vi/IH2IcYMxab4/hqdefault.jpg" alt="Walkthrough Wednesday with Stephanie Eckles" width="360" height="270" /></a>
+    <p>Walkthrough Wednesday with Stephanie Eckles</p>
+  </div>
+  <div class="video-thumbnail">
+    <a href="https://www.youtube.com/watch?v=ZncQIITVOPI" title="Walkthrough Wednesday with Chris Coyier"><img src="https://i1.ytimg.com/vi/ZncQIITVOPI/hqdefault.jpg" alt="Walkthrough Wednesday with Chris Coyier" width="360" height="270" /></a>
+    <p>Walkthrough Wednesday with Chris Coyier</p>
+  </div>
+  <div class="video-thumbnail">
+    <a href="https://www.youtube.com/watch?v=d1KCS6C4Rus" title="Walkthrough Wednesday with Brian Douglas"><img src="https://i1.ytimg.com/vi/d1KCS6C4Rus/hqdefault.jpg" alt="Walkthrough Wednesday with Brian Douglas" width="360" height="270" />
+    </a>
+    <p>Walkthrough Wednesday with Brian Douglas</p>
+  </div>
 </div>
 
 Check out
