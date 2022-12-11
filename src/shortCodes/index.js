@@ -26,7 +26,9 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
  */
 function boostLink(title, fileSlug, url, canonicalUrl) {
   const isVsCodeTips = url.startsWith('/vscodetips/');
-  if (!url.startsWith('/blog/') && !isVsCodeTips) {
+  const isNewsletter = url.startsWith('/newsletter/');
+
+  if (!url.startsWith('/blog/') && !isNewsletter && !isVsCodeTips) {
     return '';
   }
 
@@ -51,7 +53,11 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
     `${title} by ${site.mastodonHandle} ${site.url}${url}`
   )}">Toot it!</a>`;
 
-  const foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
+  let foremBoostLink = '';
+
+  if (!isNewsletter) {
+    foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
+  }
 
   return `${foremBoostLink}${hashnodeBoosterLink}${intentToToot}${intentToTweet}${intentToLinkedIn}`;
 }
