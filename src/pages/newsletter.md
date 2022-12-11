@@ -20,6 +20,6 @@ So welcome to links to cool and interesting stuff I found on the Internet during
   </p>
 </form>
 
-You can also browse the [full archives](/pages/newsletter-archives) of this newsletter.
-
 If you'd prefer, you can also [subscribe via RSS](/newsletter.rss).
+
+The latest newsletter issue is <a href="{{ site.url }}{{ collections.newsletters[0].url }}">{{ collections.newsletters[0].data.title }}</a>. You can also browse the [full archives](/pages/newsletter-archives) of this newsletter.
