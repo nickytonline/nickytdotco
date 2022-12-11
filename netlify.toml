@@ -223,3 +223,9 @@ from = "https://discord.iamdeveloper.com/*"
 to = "https://discord.gg/FkGSHMxbTe"
 status = 301
 force = true
+
+[[redirects]]
+from = "/ChicagoFresh/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vQaaGHPbIdb7FPrzbK_1zI1VDhsrEkGJdmwwjRVLoxVz8USPwnw7Jc0kAfDau9gDw22jr2pvd3CB87c/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
