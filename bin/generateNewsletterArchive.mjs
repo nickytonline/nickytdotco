@@ -9,11 +9,13 @@ const NEWSLETTER_DIRECTORY = path.join(__dirname, '..', 'src', 'newsletter');
 const parser = new Parser();
 const feed = await parser.parseURL(site.newsletterRss);
 
+const twitterEmbedRegex =
+  /(<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>)|(<html><body>.+?href="(?<twitterUrl2>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw[^"]*">.+?<\/body><\/html>)/gms;
+const youtubeEmbedRegex =
+  /<a href="(?<YouTubeUrl>https:\/\/youtu.be\/[^\/]+)\?[^"]+">.+?<\/a>/gms;
+
 function sanitizeContent(rawContent) {
   let updatedContent = rawContent.trim();
-
-  const twitterEmbedRegex =
-    /(<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>)|(<html><body>.+?href="(?<twitterUrl2>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw[^"]*">.+?<\/body><\/html>)/gms;
   const twitterEmbeds = updatedContent.matchAll(twitterEmbedRegex);
 
   for (const twitterEmbed of twitterEmbeds) {
@@ -21,6 +23,17 @@ function sanitizeContent(rawContent) {
     updatedContent = updatedContent.replace(
       twitterEmbed[0],
       `{% embed "${twitterUrl ?? twitterUrl2}" %}\n`
+    );
+  }
+
+  // Replace YouTube embeds with embed shortcodes
+  const youtubeEmbeds = updatedContent.matchAll(youtubeEmbedRegex);
+
+  for (const youtubeEmbed of youtubeEmbeds) {
+    const {YouTubeUrl} = youtubeEmbed.groups;
+    updatedContent = updatedContent.replace(
+      youtubeEmbed[0],
+      `{% embed "${YouTubeUrl}" %}\n`
     );
   }
 
