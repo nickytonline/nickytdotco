@@ -51,12 +51,12 @@ function sanitizeContent(rawContent) {
 }
 
 async function generateNewsletterPost(feedItem) {
-  const {title, link, pubDate, content, contentSnippet, guid, isoDate} = feedItem;
+  const {title, link, pubDate, content, contentSnippet, isoDate} = feedItem;
 
   const jsonFrontmatter = {
     title,
     excerpt: contentSnippet,
-    date: new Date(pubDate).toISOString(),
+    date: isoDate,
     tags: ['newsletter'],
     template: 'newsletter',
   };
