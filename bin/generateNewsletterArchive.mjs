@@ -3,18 +3,25 @@ import {promises as fs, mkdirSync, existsSync} from 'fs';
 import path from 'path';
 import Parser from 'rss-parser';
 import site from '../src/_data/site.json' assert {type: 'json'};
+import {socialImage} from '../src/shortCodes/index.js';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const NEWSLETTER_DIRECTORY = path.join(__dirname, '..', 'src', 'newsletter');
 const parser = new Parser();
 const feed = await parser.parseURL(site.newsletterRss);
+const {DEV_API_KEY} = process.env;
+const DEV_TO_API_URL = 'https://dev.to/api';
+
+function generateEmbed(url, forDevTo = false) {
+  return forDevTo ? `{% embed ${url} %}\n` : `{% embed "${url}" %}\n`;
+}
 
 const twitterEmbedRegex =
   /(<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>)|(<html><body>.+?href="(?<twitterUrl2>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw[^"]*">.+?<\/body><\/html>)/gms;
 const youtubeEmbedRegex =
   /<a href="(?<YouTubeUrl>https:\/\/youtu.be\/[^\/]+)\?[^"]+">.+?<\/a>/gms;
 
-function sanitizeContent(rawContent) {
+function sanitizeContent(rawContent, forDevTo = false) {
   let updatedContent = rawContent.trim();
   const twitterEmbeds = updatedContent.matchAll(twitterEmbedRegex);
 
@@ -22,7 +29,7 @@ function sanitizeContent(rawContent) {
     const {twitterUrl, twitterUrl2} = twitterEmbed.groups;
     updatedContent = updatedContent.replace(
       twitterEmbed[0],
-      `{% embed "${twitterUrl ?? twitterUrl2}" %}\n`
+      generateEmbed(twitterUrl ?? twitterUrl2, forDevTo)
     );
   }
 
@@ -33,7 +40,7 @@ function sanitizeContent(rawContent) {
     const {YouTubeUrl} = youtubeEmbed.groups;
     updatedContent = updatedContent.replace(
       youtubeEmbed[0],
-      `{% embed "${YouTubeUrl}" %}\n`
+      generateEmbed(YouTubeUrl, forDevTo)
     );
   }
 
@@ -51,7 +58,7 @@ function sanitizeContent(rawContent) {
 }
 
 async function generateNewsletterPost(feedItem) {
-  const {title, link, pubDate, content, contentSnippet, isoDate} = feedItem;
+  const {title, link, content, contentSnippet, isoDate} = feedItem;
 
   const jsonFrontmatter = {
     title,
@@ -73,7 +80,44 @@ async function generateNewsletterPost(feedItem) {
     2
   )}\n---\n\n${sanitizeContent(content)}\n`;
 
-  await fs.writeFile(path.join(NEWSLETTER_DIRECTORY, `${filename}.md`), markdown);
+  const newsIssuePath = path.join(NEWSLETTER_DIRECTORY, `${filename}.md`);
+  const publishedToDevTo = existsSync(newsIssuePath);
+
+  await fs.writeFile(newsIssuePath, markdown);
+
+  if (publishedToDevTo) {
+    console.log(`Newsletter ${filename} already published to dev.to`);
+    return;
+  }
+
+  try {
+    const article = {
+      article: {
+        title,
+        published: true,
+        body_markdown: sanitizeContent(content, true),
+        tags: ['newsletter'],
+        series: 'Yet Another Newsletter LOL',
+        canonical_url: `${site.url}/newsletter/${filename}/`,
+        // main_image: socialImage(title, contentSnippet), TODO: sort this out
+      },
+    };
+
+    const response = await fetch(DEV_TO_API_URL + '/articles', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': DEV_API_KEY,
+      },
+      body: JSON.stringify(article),
+    });
+
+    if (response.status !== 201) {
+      console.error(`Couldn't create article on dev.to: ${response.statusText}`);
+    }
+  } catch (error) {
+    console.error("Couldn't create article on dev.to", error);
+  }
 }
 
 if (!existsSync(NEWSLETTER_DIRECTORY)) {
