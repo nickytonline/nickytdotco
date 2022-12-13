@@ -91,15 +91,19 @@ async function generateNewsletterPost(feedItem) {
   }
 
   try {
+    const main_image = socialImage(title, contentSnippet);
     const article = {
       article: {
         title,
         published: true,
-        body_markdown: sanitizeContent(content, true),
+        body_markdown: `<!-- cover image: ${main_image} -->\n\n${sanitizeContent(
+          content,
+          true
+        )}`,
         tags: ['newsletter'],
         series: 'Yet Another Newsletter LOL',
         canonical_url: `${site.url}/newsletter/${filename}/`,
-        // main_image: socialImage(title, contentSnippet), TODO: sort this out
+        // main_image, skipping for now as a Cloudinary URL in a dev.to Cloudinary URL goes boom.
       },
     };
 
