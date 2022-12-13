@@ -21,6 +21,8 @@ const twitterEmbedRegex =
 const youtubeEmbedRegex =
   /<a href="(?<YouTubeUrl>https:\/\/youtu.be\/[^\/]+)\?[^"]+">.+?<\/a>/gms;
 
+const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
+
 function sanitizeContent(rawContent, forDevTo = false) {
   let updatedContent = rawContent.trim();
   const twitterEmbeds = updatedContent.matchAll(twitterEmbedRegex);
@@ -45,6 +47,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
   }
 
   updatedContent = updatedContent
+    .replaceAll(devToEmbedsMatcher, `\n{% embed ${forDevTo ? '$1' : '"$1"'} %}`)
     .replaceAll(/<h2\s+[^>]+>/gi, '<h2>')
     .replaceAll(/style="[^"]+"/gi, '')
     .replaceAll(/class="[^"]+"/gi, '')
