@@ -89,7 +89,7 @@ img {
 
 .video-panel {
   display: flex;
-  gap: 1rem;
+  gap: 3.5rem;
   flex-wrap: wrap;
   justify-content: center;
 
@@ -100,7 +100,11 @@ img {
     gap: 0.5rem;
     place-items: center;
     text-align: center;
-    line-height: normal;
+    line-height: 1.25;
     font-size: 0.8em;
+
+    img {
+      border-radius: 0.5rem;
+    }
   }
 }
