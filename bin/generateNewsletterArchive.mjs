@@ -16,16 +16,16 @@ function generateEmbed(url, forDevTo = false) {
   return forDevTo ? `{% embed ${url} %}\n` : `{% embed "${url}" %}\n`;
 }
 
-const twitterEmbedRegex =
+const twitterEmbedMatcher =
   /(<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>)|(<html><body>.+?href="(?<twitterUrl2>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw[^"]*">.+?<\/body><\/html>)/gms;
-const youtubeEmbedRegex =
+const youtubeEmbedMatcher =
   /<a href="(?<YouTubeUrl>https:\/\/youtu.be\/[^\/]+)\?[^"]+">.+?<\/a>/gms;
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
 function sanitizeContent(rawContent, forDevTo = false) {
   let updatedContent = rawContent.trim();
-  const twitterEmbeds = updatedContent.matchAll(twitterEmbedRegex);
+  const twitterEmbeds = updatedContent.matchAll(twitterEmbedMatcher);
 
   for (const twitterEmbed of twitterEmbeds) {
     const {twitterUrl, twitterUrl2} = twitterEmbed.groups;
@@ -36,7 +36,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
   }
 
   // Replace YouTube embeds with embed shortcodes
-  const youtubeEmbeds = updatedContent.matchAll(youtubeEmbedRegex);
+  const youtubeEmbeds = updatedContent.matchAll(youtubeEmbedMatcher);
 
   for (const youtubeEmbed of youtubeEmbeds) {
     const {YouTubeUrl} = youtubeEmbed.groups;
