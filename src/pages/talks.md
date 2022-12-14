@@ -3,6 +3,16 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
+<h2>Fresh: A New Full Stack Web Framework for Deno</h2>
+
+<time datetime="2022-12-13">December 14th, 2022</time>
+
+{% youtube 'https://www.youtube.com/watch?v=JWjcWQz5g3U&t=2160s' %}
+
+- A talk I gave at the December 2022 ChicagoJS Meetup
+- [slide deck](https://iamdeveloper.com/ChicagoFresh)
+- [source code](https://github.com/nickytonline/chicago-js-dec-2022-fresh-demo)
+
 <h2>Expert Panel: Trending Tools and Frameworks – What’s Hype and What’s Not</h2>
 <time datetime="2022-06-23">June 26th, 2022</time>
 
