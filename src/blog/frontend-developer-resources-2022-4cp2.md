@@ -111,6 +111,7 @@ Accessibility is super important and honestly, if you want to stand out as a fro
 * [Inclusive Components](https://inclusive-components.design) – A great site on how to build inclusive components
 * [Forem Developer documentation on accessibility](https://developers.forem.com/frontend/accessibility) – I'm biased, but I love our a11y documentation
 * Marcy Sutton has a [great list of a11y tools](https://workshop-resources.testingaccessibility.com/) on her course site [testingaccessibility.com](https://testingaccessibility.com)
+* web.dev's [Learn Accessbility](https://web.dev/learn/accessibility/)
 * 5 things I'm thinking about when I check a Pull Request for accessibility – A great checklist of things to look for when reviewing frontend related pull requests
 
 {% link "https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo" %}
