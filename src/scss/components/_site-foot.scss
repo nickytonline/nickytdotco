@@ -1,4 +1,7 @@
 .site-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   // Reverse whatever the theme colors are
   background: var(--color-bg-glare);
   color: var(--color-text);
@@ -24,4 +27,9 @@
 
 html[data-user-color-scheme='dark'] .netlify-footer img {
   content: url('https://www.netlify.com/img/global/badges/netlify-light.svg');
+}
+
+the-claw-webring-widget {
+  display: flex;
+  justify-content: center;
 }
