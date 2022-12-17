@@ -30,3 +30,16 @@
     }
   }
 }
+
+[aria-label='Social links'] {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  & ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+}
