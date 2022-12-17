@@ -229,3 +229,9 @@ from = "/ChicagoFresh/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vQaaGHPbIdb7FPrzbK_1zI1VDhsrEkGJdmwwjRVLoxVz8USPwnw7Jc0kAfDau9gDw22jr2pvd3CB87c/pub?start=false&loop=false&delayms=5000"
 status = 301
 force = true
+
+# Thanks two Phils! https://www.hawksworx.com/blog/alias-your-mastodon-username-to-your-domain-with-one-netlify-config-setting/
+[[redirects]]
+  from = "/.well-known/webfinger"
+  to = "https://toot.cafe/.well-known/webfinger?resource=acct:nickytonline@toot.cafe"
+  status = 200
