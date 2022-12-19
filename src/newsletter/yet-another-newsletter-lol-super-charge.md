@@ -35,15 +35,15 @@
 <p>I'll be giving a virtual talk at the Chicago JS meetup this Tuesday talking all about <a href="https://fresh.deno.dev" rel="noopener noreferrer nofollow" target="_blank">Fresh</a>, a new full-stack web framework that runs on <a href="https://deno.land" rel="noopener noreferrer nofollow" target="_blank">Deno</a>. Come hang if that's your jam. The fun starts at 11:30 UTC (5:30 pm CT, 6:30 pm Eastern)</p>
 
 <a href="https://www.meetup.com/js-chi/events/288515415/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-super-charge">
-    <div >
+    <div class="news-social-card">
       <br />
-<div >
-            <img  src="https://secure.meetupstatic.com/web-next/online-events/share/online-events820x547.jpg" />
+<div class="float-left">
+            <img class="link-image" src="https://secure.meetupstatic.com/web-next/online-events/share/online-events820x547.jpg" />
         </div>
       <br />
-<div >
-            <h3  >Login to Meetup | Meetup</h3>
-            <h4  >Find groups that host online or in person events and meet people in your local community who share your interests.</h4>
+<div class="float-left news-social-card-text">
+            <h3 class="link-title" >Login to Meetup | Meetup</h3>
+            <h4 class="link-description" >Find groups that host online or in person events and meet people in your local community who share your interests.</h4>
         </div>
     </div>
 </a>

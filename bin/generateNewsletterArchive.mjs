@@ -49,8 +49,19 @@ function sanitizeContent(rawContent, forDevTo = false) {
   updatedContent = updatedContent
     .replaceAll(devToEmbedsMatcher, `\n{% embed ${forDevTo ? '$1' : '"$1"'} %}`)
     .replaceAll(/<h2\s+[^>]+>/gi, '<h2>')
+
+    // begin replacing inline styles from social cards in newsletter
+    .replaceAll(
+      /style="width: 100%; background: #fff; border: 1px #ced3d9 solid; border-radius: 5px; margin-top: 1em; overflow: auto; margin-bottom: 1em;"/g,
+      'class="news-social-card"'
+    )
+    .replaceAll(/style="float: left"/g, 'class="float-left"')
+    .replaceAll(
+      /style="float: left; color: #393f48; padding-left: 1em; padding-right: 1em;"/g,
+      'class="float-left news-social-card-text"'
+    )
     .replaceAll(/style="[^"]+"/gi, '')
-    .replaceAll(/class="[^"]+"/gi, '')
+    // end replacing inline styles from social cards in newsletter
     .replaceAll(
       '?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter',
       ''
@@ -131,6 +142,11 @@ if (!existsSync(NEWSLETTER_DIRECTORY)) {
   mkdirSync(NEWSLETTER_DIRECTORY);
 }
 
-await Promise.all(feed.items.map(generateNewsletterPost));
+// Only create/update the latest newsletter issue as this runs the day a newsletter is published
+const latestNewsletter = feed.items.find(
+  (issue) => new Date(issue.isoDate).toDateString() === new Date().toDateString()
+);
+
+await generateNewsletterPost(latestNewsletter);
 
 console.log('Finished generating newsletter archives');

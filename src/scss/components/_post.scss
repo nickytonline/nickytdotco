@@ -336,4 +336,21 @@
       }
     }
   }
+
+  // For the social card in the newsletter pages.
+  .news-social-card {
+    width: 100%;
+    background: #fff;
+    border: 1px #ced3d9 solid;
+    border-radius: 5px;
+    margin-top: 1em;
+    overflow: auto;
+    margin-bottom: 1em;
+
+    .news-social-card-text {
+      color: #393f48;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
 }

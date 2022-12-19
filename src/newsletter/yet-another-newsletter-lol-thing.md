@@ -20,15 +20,15 @@
 <li>If you use <a href="https://github.com/features/copilot?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-thing" target="_blank">GitHub Copilot</a>, which I&rsquo;be been finding super useful, they have a <a href="https://githubnext.com/projects/copilot-labs/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-thing" target="_blank">labs project</a>. One of the projects to come out of their recently is the Code brushes. Christian Heilmann wrote about them recently. To use them, make sure you add the GitHub Copilot Labs extension for VS Code. As far as I know, this is currently available in VS Code. Take it for a spin and let me know how you find it! I&rsquo;m going to take it for a spin myself!</li>
 </ul>
 <a href="https://dev.to/codepo8/code-brushes-for-github-copilot-4hij?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-thing">
-    <div >
+    <div class="news-social-card">
       <br />
-<div >
-            <img  src="https://res.cloudinary.com/practicaldev/image/fetch/s--fR0yWVnN--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cse0gj38clvgkwpkkxck.png" />
+<div class="float-left">
+            <img class="link-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--fR0yWVnN--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cse0gj38clvgkwpkkxck.png" />
         </div>
       <br />
-<div >
-            <h3  >Code brushes for GitHub Copilot - DEV Community 👩‍💻👨‍💻</h3>
-            <h4  >Github Next now showed a new feature in GitHub Copilot labs that allows you to change code you write to make it cleaner and safer </h4>
+<div class="float-left news-social-card-text">
+            <h3 class="link-title" >Code brushes for GitHub Copilot - DEV Community 👩‍💻👨‍💻</h3>
+            <h4 class="link-description" >Github Next now showed a new feature in GitHub Copilot labs that allows you to change code you write to make it cleaner and safer </h4>
         </div>
     </div>
 </a><ul>
