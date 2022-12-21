@@ -19,7 +19,7 @@ function generateEmbed(url, forDevTo = false) {
 const twitterEmbedMatcher =
   /(<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>)|(<html><body>.+?href="(?<twitterUrl2>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw[^"]*">.+?<\/body><\/html>)/gms;
 const youtubeEmbedMatcher =
-  /<a href="(?<YouTubeUrl>https:\/\/youtu.be\/[^\/]+)\?[^"]+">.+?<\/a>/gms;
+  /<a (?:class="video"\s+)?href="(?<YouTubeUrl>https:\/\/(youtu.be|(www\.)?youtube.com)[^"]+?)">.+?<\/a>/gms;
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 

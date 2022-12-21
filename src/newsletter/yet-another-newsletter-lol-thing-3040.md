@@ -29,19 +29,16 @@
 <blockquote>
 <p>how I can basically create more advocates of the product I&rsquo;m working for, as opposed to being the face of the thing I&rsquo;m talking about</p>
 </blockquote>
-<a class="video" href="https://www.youtube.com/watch?v=X8OV9cCcAV4">
-    <img class="youtube" src="https://img.youtube.com/vi/X8OV9cCcAV4/0.jpg" />
-</a><h2>Fun Stuff</h2>
+{% embed "https://www.youtube.com/watch?v=X8OV9cCcAV4" %}
+<h2>Fun Stuff</h2>
 <p>I&rsquo;m looking forward to the new Spider-Man, Across the Spider Verse. The trailer looks amazing!</p>
-<a class="video" href="https://www.youtube.com/watch?v=cqGjhVJWtEg">
-    <img class="youtube" src="https://img.youtube.com/vi/cqGjhVJWtEg/0.jpg" />
-</a><h2>Words of Wisdom for the Week</h2>
+{% embed "https://www.youtube.com/watch?v=cqGjhVJWtEg" %}
+<h2>Words of Wisdom for the Week</h2>
 <blockquote>
 <p>As software engineers, it&rsquo;s important to remember that the ultimate goal of the work we do is to solve business problems and provide value to our users and customers.</p>
 </blockquote>
 <p><a href="https://www.linkedin.com/posts/addyosmani_coding-programming-softwareengineering-activity-7010355640707547136-jyAO?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-thing-3040" target="_blank">Addy Osmani on LinkedIn</a></p>
 <h2>Shameless Plugs</h2>
 <p>Jessica Wilkins joined me on the stream last week. Such a great conversation. From music to code. Check it out!</p>
-<a class="video" href="https://www.youtube.com/watch?v=hiFtv9e9OyM">
-    <img class="youtube" src="https://img.youtube.com/vi/hiFtv9e9OyM/0.jpg" />
-</a>
+{% embed "https://www.youtube.com/watch?v=hiFtv9e9OyM" %}
+
