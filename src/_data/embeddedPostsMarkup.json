@@ -2025,5 +2025,49 @@
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
+  },
+  "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj": {
+    "type_of": "article",
+    "id": 1238663,
+    "title": "Bye for now VSCodeTips community!",
+    "description": "This short post mentions that community.vscodetips.com went offline on November 1st, 2022.           ...",
+    "readable_publish_date": "Nov 1",
+    "slug": "bye-for-now-vscodetips-community-3jkj",
+    "path": "/vscodetips/bye-for-now-vscodetips-community-3jkj",
+    "url": "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj",
+    "collection_id": null,
+    "published_timestamp": "2022-11-01T13:17:32Z",
+    "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--KndsdvCX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fizcan7995mzusoml6k4.png",
+    "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--DBQofohC--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fizcan7995mzusoml6k4.png",
+    "canonical_url": "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj",
+    "created_at": "2022-11-01T13:17:32Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2022-11-01T13:17:32Z",
+    "last_comment_at": "2022-11-06T17:00:56Z",
+    "reading_time_minutes": 1,
+    "tag_list": "vscodetips, vscode, community",
+    "tags": [
+      "vscodetips",
+      "vscode",
+      "community"
+    ],
+    "user": {
+      "name": "Nick Taylor",
+      "username": "nickytonline",
+      "twitter_username": "nickytonline",
+      "github_username": "nickytonline",
+      "user_id": 9597,
+      "website_url": "https://timeline.iamdeveloper.com",
+      "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+    },
+    "organization": {
+      "name": "VS Code Tips",
+      "username": "vscodetips",
+      "slug": "vscodetips",
+      "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--QGvBLtIN--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/458/c8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
+      "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--kc-tya3h--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/458/c8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
+    }
   }
 }

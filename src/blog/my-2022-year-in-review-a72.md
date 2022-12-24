@@ -8,7 +8,7 @@
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--DWXYRl4---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_549dl9ckop73uweqprka.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/my-2022-year-in-review-a72",
-  "reading_time_minutes": 3,
+  "reading_time_minutes": 4,
   "template": "post"
 }
 ---
@@ -50,6 +50,16 @@ I dipped my toes into the world of podcasting. I started repurposing content fro
 The podcast is still pretty new, but I've had a lot of fun pulling out what I think are great conversations from my Twitch stream and putting them in podcast format. Here's the latest episode with @chantastic. Loved this conversation with Chan!
 
 {% embed "https://nickscuts.buzzsprout.com/2065897/11881708-pandemic-life-storybook-chromatic-remote-work-and-so-much-more-with-chantastic" %}
+
+## VS Code Tips Community
+
+I started a community over a year ago for VS Code, as I'm a fan. Ultimately, I needed more time to grow the community, so I decided to shut down the community.
+
+{% embed "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj" %}
+
+## My Discord Server
+
+Although the VSCodeTips community didn't pan out in the end, I put my energy into a Discord community as it relates more to things I do weekly, like streaming. If you're interested in joining the community, head to [discord.iamdeveloper.com](https://discord.iamdeveloper.com).
 
 ## The Collab Lab
 
