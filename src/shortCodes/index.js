@@ -227,6 +227,13 @@ function embedEmbed(rawUrl) {
     return buzzsproutEmbed(url.href, episodeId);
   }
 
+  if (url.hostname.includes('vimeo.com')) {
+    // e,f, https://vimeo.com/724340575
+    const videoId = url.pathname.split('/').pop();
+
+    return vimeoEmbed(videoId);
+  }
+
   throw new Error(`unsupported embed for ${url}`);
 }
 
@@ -393,6 +400,17 @@ function twitchEmbed(videoId) {
     width="710"
     allowfullscreen>
 </iframe>`;
+}
+
+/**
+ * Generates a Vimeo video embed for the given video ID.
+ *
+ * @param {string} videoId A Twitch video ID.
+ *
+ * @returns {string} Markup for the Twitch embed.
+ */
+function vimeoEmbed(videoId) {
+  return `<iframe src="https://player.vimeo.com/video/${videoId}" width="640" height="360" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>`;
 }
 
 module.exports = {
