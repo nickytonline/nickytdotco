@@ -9,7 +9,7 @@
     "community"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--KndsdvCX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_fizcan7995mzusoml6k4.png",
-  "canonicalUrl": "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj",
+  "canonicalUrl": "https://www.iamdeveloper.com/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
   "reading_time_minutes": 1,
   "template": "post"
 }

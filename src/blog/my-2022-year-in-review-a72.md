@@ -19,7 +19,7 @@ Well, it's been a year! And you know what that means. Time for my year in review
 
 ### New beginnings
 
-After almost two and a half years at Forem, the software that powers dev.to, I decided to move on to new challenges.
+After almost two and a half years at [Forem](https://forem.com), the software that powers dev.to, I decided to move on to new challenges.
 
 {% embed "https://dev.to/nickytonline/my-impact-at-forem-23mj" %}
 
@@ -79,7 +79,7 @@ And lastly, a big thank you to all the guests! 👇🏻
 
 If you want to check out all the streaming I do, check out my [streaming page](https://www.iamdeveloper.com/pages/streaming/). 
 
-All streams end up on my [YouTube channel](https://youtube.iamdeveloper.com), so you know the drill. Hit that subscribe button. 😎 Check out great content like this interview with Deno core member [Luca Casonato](https://twitter.com/lcasdev), walking me through Fresh, a new full-stack web framework for Deno.
+All streams end up on my [YouTube channel](https://youtube.iamdeveloper.com), so you know the drill. Hit that subscribe button. 😎 Check out great content like this interview with Deno core member [Luca Casonato](https://twitter.com/lcasdev), walking me through [Fresh](https://fresh.deno.dev), a new full-stack web framework for Deno.
 
 {% embed "https://youtu.be/nBrcmlrekV4" %}
 
@@ -89,13 +89,15 @@ I dipped my toes into the world of podcasting. I started repurposing content fro
 
 {% embed "https://dev.to/nickytonline/repurposing-content-for-content-creation-3l4d" %}
 
-The podcast is still pretty new, but I've had a lot of fun pulling out what I think are great conversations from my Twitch stream and putting them in podcast format. Here's the latest episode with @chantastic. Loved this conversation with Chan!
+The podcast is still pretty new, but I've had a lot of fun pulling out what I think are great conversations from my Twitch stream and putting them in podcast format. Here's the latest episode with [@chantastic](https://chan.dev/). Loved this conversation with Chan!
 
 {% embed "https://nickscuts.buzzsprout.com/2065897/11881708-pandemic-life-storybook-chromatic-remote-work-and-so-much-more-with-chantastic" %}
 
 ### Blogging
 
 I haven't blogged a ton this year, but I still got some posts out, including one about automating my blogging workflow, which I'll discuss in the next section.
+
+{% embed "https://twitter.com/nickytonline/status/1601225073020764160" %}
 
 I also was one of the top authors for dev.to for 2022! The post I wrote about frontend developer resources was the number two post for the whole year! 🤯
 
