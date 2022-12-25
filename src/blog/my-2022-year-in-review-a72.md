@@ -93,6 +93,13 @@ The podcast is still pretty new, but I've had a lot of fun pulling out what I th
 
 {% embed "https://nickscuts.buzzsprout.com/2065897/11881708-pandemic-life-storybook-chromatic-remote-work-and-so-much-more-with-chantastic" %}
 
+### Podcast Guest
+
+I was also a podcast guest on a couple of podcasts. Thanks again for having me Eddie and Candost!
+
+* [webjoy.fm S1 E9: We're like Detectives](https://webjoy.fm/episode/s1-e9-were-like-detectives-nick-nickytonline)
+* [Live Pair Programming, Open Source, and Building Communities with Nick Taylor [Software World Ep. #25]](https://candost.blog/podcast/sw-25-live-pair-programming-open-source-and-building-communities-with-nick-taylor/)
+
 ### Blogging
 
 I haven't blogged a ton this year, but I still got some posts out, including one about automating my blogging workflow, which I'll discuss in the next section.
