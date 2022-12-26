@@ -1,14 +1,15 @@
 ---
-permalink: '/feed.xml'
+permalink: '/feed'
 excludeFromSitemap: true
 ---
+
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.name }}</title>
   <subtitle></subtitle>
   <link href="{{ site.url }}{{ permalink }}" rel="self"/>
   <link href="{{ site.url }}/"/>
-	{% if collections.posts|length %}
+  {% if collections.posts|length %}
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
   {% endif %}
   <id>{{ site.url }}</id>
@@ -23,9 +24,11 @@ excludeFromSitemap: true
       <link href="{{ absolutePostUrl }}"/>
       <updated>{{ post.date | rssDate }}</updated>
       <id>{{ absolutePostUrl }}</id>
-    <content type="html"><![CDATA[
+      <content type="html">
+        <![CDATA[
       {{ post.templateContent | safe }}
-    ]]></content>
+    ]]>
+      </content>
     </entry>
   {% endfor %}
 </feed>
