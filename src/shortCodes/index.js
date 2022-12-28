@@ -43,7 +43,7 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
 
   const intentToTweet = `<a class="boost-link" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(
     `${title} by ${site.twitterHandle} ${site.url}${url}`
-  )}">Share on Twitter</a>`;
+  )}">Tweet It!</a>`;
 
   const intentToLinkedIn = `<a class="boost-link" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
     site.url + url
