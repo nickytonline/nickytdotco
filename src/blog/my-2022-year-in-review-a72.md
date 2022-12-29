@@ -95,13 +95,11 @@ Aside from streaming on my own Twitch channel, I was also a guest on a few strea
 
 ### Twitter Spaces
 
-I listen to Twitter Spaces somewhat frequently and sometimes I'm also a speaker. I can't remember all the Twitter Spaces I spoke at, but here's a few I spoke on:
+I listen to Twitter Spaces somewhat frequently and sometimes I'm also a speaker. I can't remember all the Twitter Spaces I spoke at, but here's a couple I spoke on:
 
 {% embed "https://twitter.com/Polywork/status/1400862893982294016" %}
 
 {% embed "https://twitter.com/DeepgramAI/status/1577359421621026835" %}
-
-{% embed "https://twitter.com/GitHubCommunity/status/1458629983300169732" %}
 
 There's a [bunch more on my Polywork](https://www.polywork.com/nickytonline/collections/2134) if you want to check them out over there.
 
