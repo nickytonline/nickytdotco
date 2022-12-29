@@ -97,7 +97,11 @@ Aside from streaming on my own Twitch channel, I was also a guest on a few strea
 
 I listen to Twitter Spaces somewhat frequently and sometimes I'm also a speaker. I can't remember all the Twitter Spaces I spoke at, but here's a couple I spoke on:
 
-{% embed "https://twitter.com/Polywork/status/1400862893982294016" %}
+Frontend Fun: JS Frameworks and Deployment Platforms
+
+{% embed "https://twitter.com/CerchieLucia/status/1562506344363483138" %}
+
+Hacktoberfest Getting Started Q & A
 
 {% embed "https://twitter.com/DeepgramAI/status/1577359421621026835" %}
 
