@@ -8,7 +8,7 @@
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--DWXYRl4---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_549dl9ckop73uweqprka.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/my-2022-year-in-review-a72",
-  "reading_time_minutes": 5,
+  "reading_time_minutes": 6,
   "template": "post"
 }
 ---
@@ -83,13 +83,35 @@ All streams end up on my [YouTube channel](https://youtube.iamdeveloper.com), so
 
 {% embed "https://youtu.be/nBrcmlrekV4" %}
 
+### Twitch Stream Guest
+
+Aside from streaming on my own Twitch channel, I was also a guest on a few streams. Thanks for having me Deepgram, Jenn Junod, and Anthony Campolo!
+
+{% embed "https://twitter.com/ThePracticalDev/status/1507378802363559938" %}
+
+{% embed "https://twitter.com/JennJunod/status/1595087317420605441" %}
+
+{% embed "https://twitter.com/ajcwebdev/status/1584573260112412672" %}
+
+### Twitter Spaces
+
+I listen to Twitter Spaces somewhat frequently and sometimes I'm also a speaker. I can't remember all the Twitter Spaces I spoke at, but here's a few I spoke on:
+
+{% embed "https://twitter.com/Polywork/status/1400862893982294016" %}
+
+{% embed "https://twitter.com/DeepgramAI/status/1577359421621026835" %}
+
+{% embed "https://twitter.com/GitHubCommunity/status/1458629983300169732" %}
+
+There's a [bunch more on my Polywork](https://www.polywork.com/nickytonline/collections/2134) if you want to check them out over there.
+
 ### Podcasting
 
 I dipped my toes into the world of podcasting. I started repurposing content from my streams in audio format.
 
 {% embed "https://dev.to/nickytonline/repurposing-content-for-content-creation-3l4d" %}
 
-The podcast is still pretty new, but I've had a lot of fun pulling out what I think are great conversations from my Twitch stream and putting them in podcast format. Here's the latest episode with [@chantastic](https://chan.dev/). Loved this conversation with Chan!
+The podcast is still pretty new, but I've had a lot of fun pulling out what I think are great conversations from my Twitch stream and putting them in podcast format. Here's the latest episode with [chantastic](https://chan.dev/). Loved this conversation with Chan!
 
 {% embed "https://nickscuts.buzzsprout.com/2065897/11881708-pandemic-life-storybook-chromatic-remote-work-and-so-much-more-with-chantastic" %}
 
@@ -142,7 +164,7 @@ Although the VSCodeTips community didn't pan out in the end, I put my energy int
 
 ### Virtual Coffee
 
-Although I've been a lot busier this year with the new job, I still volunteer at Virtual Coffee. It's my favourite community. As always, thanks to Bekah (@bekahhw) for starting this community, and to all the volunteers that make it happen.
+Although I've been a lot busier this year with the new job, I still volunteer at Virtual Coffee. It's my favourite community. As always, thanks to [Bekah](https://bekahhw.github.io/) for starting this community, and to all the volunteers that make it happen.
 
 ### The Collab Lab
 
