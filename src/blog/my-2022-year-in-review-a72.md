@@ -144,7 +144,7 @@ Although the VSCodeTips community didn't pan out in the end, I put my energy int
 
 Although I've been a lot busier this year with the new job, I still volunteer at Virtual Coffee. It's my favourite community. As always, thanks to Bekah (@bekahhw) for starting this community, and to all the volunteers that make it happen.
 
-## The Collab Lab
+### The Collab Lab
 
 I've been helping at [The Collab Lab](https://the-collab-lab.codes/) since December 2021, but it was mainly in Slack, supporting people. This summer, though, I got to mentor my first cohort. It was a lot of fun, and I'm super proud of what my team accomplished.
 
