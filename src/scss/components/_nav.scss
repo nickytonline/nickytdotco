@@ -37,9 +37,14 @@
   width: 100%;
 
   & ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 24px);
     gap: 1rem;
     flex-wrap: wrap;
     list-style: none;
+
+    @media (width > 390px), (orientation: landscape) {
+      grid-template-columns: repeat(10, 24px);
+    }
   }
 }
