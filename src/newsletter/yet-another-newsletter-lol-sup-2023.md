@@ -35,16 +35,7 @@
 {% embed "https://twitter.com/mikebeckhamsm/status/1610237134778298369" %}
 <h2>Shameless Plugs</h2>
 <p>I had a great time hanging with Brian Rinaldi this week on the my first Twitch stream of the year. We discussed serverless edge and even did some live coding. Here&rsquo;s a highlight from the stream. The full stream will be dropping on my <a href="https://youtube.iamdeveloper.com?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">YouTube channel</a> next week.</p>
-<a href="https://www.twitch.tv/videos/1704629589?filter=highlights&amp;sort=time&amp;utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023">
-    <div class="news-social-card">
-      <br />
-<div class="float-left">
-            <img class="link-image" src="https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/a4d367e66e57cd445f2f_nickytonline_27767660836_6588413097/thumb/custom-f92ac3f4-d73c-4770-99b7-fd020ec59168-640x360.png" />
-        </div>
-      <br />
-<div class="float-left news-social-card-text">
-            <h3 class="link-title" >Twitch</h3>
-            <h4 class="link-description" >nickytonline went live on Twitch. Catch up on their Software and Game Development VOD now.</h4>
-        </div>
-    </div>
-</a><p>I&rsquo;ve also got two great guests next week for the stream. <a href="https://twitter.com/marktnoonan?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">Mark Noonan</a> from <a href="https://cypress.io?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">Cypress</a> joins me on Wednesday, and <a href="https://twitter.com/brandontroberts?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">Brandon Roberts</a> from <a href="https://opensauced.pizza/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">Open Sauced</a>, joins me Friday. Check out the <a href="https://www.twitch.tv/nickytonline/schedule?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">full schedule</a> and <a href="https://www.twitch.tv/nickytonline?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">give a follow</a> so you never miss a stream. 😎</p>
+
+{% embed "https://www.twitch.tv/videos/1704629589?filter=highlights&sort=time" %}
+
+<p>I&rsquo;ve also got two great guests next week for the stream. <a href="https://twitter.com/marktnoonan?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">Mark Noonan</a> from <a href="https://cypress.io?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">Cypress</a> joins me on Wednesday, and <a href="https://twitter.com/brandontroberts?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">Brandon Roberts</a> from <a href="https://opensauced.pizza/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">Open Sauced</a>, joins me Friday. Check out the <a href="https://www.twitch.tv/nickytonline/schedule?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">full schedule</a> and <a href="https://www.twitch.tv/nickytonline?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sup-2023" target="_blank">give a follow</a> so you never miss a stream. 😎</p>
