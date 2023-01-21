@@ -183,6 +183,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "https://iamdeveloper.live/chat"
+to = "https://www.twitch.tv/popout/nickytonline/chat?popout="
+status = 301
+force = true
+
+[[redirects]]
 from = "https://iamdeveloper.live/commands"
 to = "https://iamdeveloper.live/about"
 status = 301
