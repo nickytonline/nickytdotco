@@ -1,8 +1,8 @@
 name: Get latest newsletter archives
 on:
   schedule:
-    # 17:00 UTC on Sunday
-    - cron: '0 17 * * SUN'
+    # 15:00 UTC on Sunday
+    - cron: '0 15 * * SUN'
   workflow_dispatch:
 
 jobs:
