@@ -6,6 +6,7 @@
   "tags": [
     "newsletter"
   ],
+  "canonical_url": "https://buttondown.email/nickytonline/archive/yet-another-newsletter-lol-hello-houston/",
   "template": "newsletter"
 }
 ---
