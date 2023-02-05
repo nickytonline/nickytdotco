@@ -12,7 +12,11 @@
   {% set pageDesc = excerpt %}
 {% endif %}
 <title>{{ pageTitle }}</title>
-<link rel="canonical" href="{{ currentUrl }}"/>
+{% if canonical_url %}
+  <link rel="canonical" href="{{ canonical_url }}"/>
+{% else %}
+  <link rel="canonical" href="{{ currentUrl }}"/>
+{% endif %}
 <meta property="og:site_name" content="{{ siteTitle }}"/>
 <meta property="og:title" content="{{ pageTitle }}"/>
 <meta property="og:type" content="website"/>

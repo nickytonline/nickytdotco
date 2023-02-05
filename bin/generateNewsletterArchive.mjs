@@ -72,17 +72,18 @@ function sanitizeContent(rawContent, forDevTo = false) {
 }
 
 async function generateNewsletterPost(feedItem) {
-  const {title, link, content, contentSnippet, isoDate} = feedItem;
+  const {title, link: canonicalUrl, content, contentSnippet, isoDate} = feedItem;
 
   const jsonFrontmatter = {
     title,
     excerpt: contentSnippet,
     date: isoDate,
     tags: ['newsletter'],
+    canonical_url: canonicalUrl,
     template: 'newsletter',
   };
 
-  const url = new URL(link);
+  const url = new URL(canonicalUrl);
 
   const {filename} = url.pathname.match(/(?:\/([^/]+\/)+)(?<filename>.+)\//)?.groups;
 
@@ -116,7 +117,7 @@ async function generateNewsletterPost(feedItem) {
         )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).`,
         tags: ['newsletter'],
         series: 'Yet Another Newsletter LOL',
-        canonical_url: `${site.url}/newsletter/${filename}/`,
+        canonical_url: canonicalUrl,
         // main_image, skipping for now as a Cloudinary URL in a dev.to Cloudinary URL goes boom.
       },
     };
