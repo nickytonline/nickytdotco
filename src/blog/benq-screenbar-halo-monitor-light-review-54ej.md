@@ -8,7 +8,7 @@
     "productreview"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--HCfPX3h5--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_j9r7mpudfofan0lf6s0u.jpeg",
-  "canonicalUrl": "https://dev.to/nickytonline/benq-screenbar-halo-monitor-light-review-54ej",
+  "canonicalUrl": "https://www.iamdeveloper.com/blog/benq-screenbar-halo-monitor-light-review-54ej/",
   "reading_time_minutes": 4,
   "template": "post"
 }
@@ -18,7 +18,7 @@
 
 ## Unboxing
 
-The light comes in an aesthetically pleasing matte grey box. 
+The [BenQ ScreenBar Halo Monitor Light](https://www.benq.com/en-us/lighting/monitor-light/screenbar-halo.html) light comes in an aesthetically pleasing matte grey box. 
 
 ![BenQ ScreenBar Halo Monitor Light in the box it shipped in](https://www.iamdeveloper.com/images/posts/_uploads_articles_vgri3vc1mo0gz59l3sk6.jpeg)
 
@@ -81,6 +81,6 @@ Googling the price at the time this review was written, the BenQ ScreenBar Halo 
 
 Despite the issues I ran into with removing the packaging, which was not a dealbreaker at all, I'm impressed with this light, aside from the little annoyances I mentioned about the remote. The light is also pleasing to the eye.
 
-As mentioned, I use the rear light only in the evenings, and it provides me with enough light to work. Again, if you have a webcam set up as I do, the web cam accessory is a must.
+As mentioned, I use the rear light only in the evenings, and it provides me with enough light to work. Again, if you have a webcam set up as I do, the webcam accessory is a must.
 
 Again BenQ sent me this light, but after reviewing it, I would shell out the cash for it.
