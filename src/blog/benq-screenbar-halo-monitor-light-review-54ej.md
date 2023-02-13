@@ -18,7 +18,7 @@
 
 ## Unboxing
 
-The [BenQ ScreenBar Halo Monitor Light](https://www.benq.com/en-us/lighting/monitor-light/screenbar-halo.html) light comes in an aesthetically pleasing matte grey box. 
+The [BenQ ScreenBar Halo Monitor Light](https://pse.is/4mt8u9) light comes in an aesthetically pleasing matte grey box. 
 
 ![BenQ ScreenBar Halo Monitor Light in the box it shipped in](https://www.iamdeveloper.com/images/posts/_uploads_articles_vgri3vc1mo0gz59l3sk6.jpeg)
 
