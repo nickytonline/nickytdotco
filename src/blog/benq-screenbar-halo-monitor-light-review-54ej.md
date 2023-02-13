@@ -46,7 +46,7 @@ In the evenings, I prefer less light, so I tried it with just the backlight, and
 
 ![BenQ Halo Screenbar light on top of my monitor with only the rear light on](https://www.iamdeveloper.com/images/posts/_uploads_articles_7ln0hj1b79n02p1vpwl6.jpeg)
 
-## Remote
+### Remote
 
 The remote sits nicely on my desk, arm's length away. It looks really nice just sitting on the desk.
 
@@ -60,9 +60,9 @@ I've been using the automatic feature that adjusts the light throughout the day,
 
 I have yet to speak to the battery life of the remote, as I've only been using this for a few days.
 
-## Webcam accessory
+### Webcam accessory
 
-I checked their site when BenQ contacted me about trying out the light. I realized just sending me the light wouldn't work because I have a webcam that I mount in the middle on top of my monitor. I discovered they had a webcam accessory, so I asked if they could send that along with the light.
+I checked their site when BenQ contacted me about trying out the light. I realized just sending me the light wouldn't work because I have a webcam that I mount in the middle on top of my monitor. I discovered they had a [webcam accessory](https://www.benq.com/en-us/lighting/accessory/webcam-accessory.html), so I asked if they could send that along with the light.
 
 ![Side view behind my monitor of with my webcam on top of the Halo using the webcam accessory](https://www.iamdeveloper.com/images/posts/_uploads_articles_klowfvnbqkgp6g3ajq5i.jpeg)
 
