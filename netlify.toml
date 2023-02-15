@@ -88,37 +88,37 @@ force = true
 
 [[redirects]]
 from = "https://livecoding.ca/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://www.livecoding.ca/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://structuredyolo.com/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://www.structuredyolo.com/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://javascripthours.com/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://www.javascripthours.com/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
@@ -178,7 +178,7 @@ force = true
 
 [[redirects]]
 from = "https://live.iamdeveloper.com/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
@@ -190,19 +190,19 @@ force = true
 
 [[redirects]]
 from = "https://iamdeveloper.live/commands"
-to = "https://iamdeveloper.live/about"
+to = "https://twitch.tv/nickytonline/about"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://iamdeveloper.live/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://www.iamdeveloper.live/*"
-to = "https://twitch.tv/nickytonline/:splat"
+to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
 status = 301
 force = true
 
