@@ -23,7 +23,11 @@ I'm active on Twitter and Mastodon, but if you want to connect on more than a Tw
 
 ### Virtual Coffee
 
-I first joined Virtual Coffee sometime in April 2020. It's my favourite community. It was created by one of my now good friends, Bekah Hawrot Weigel (@bekahhw).
+I first joined Virtual Coffee sometime in April 2020.
+
+![A snippet of a Twitter DM conversation between Bekah and me where I ask if I can come to Virtual Coffee](https://www.iamdeveloper.com/images/posts/_uploads_articles_eyvzniuvnikuyaxk75er.jpeg)
+
+It's my favourite community. It was created by one of my now good friends, Bekah Hawrot Weigel (@bekahhw).
 
 It's weird. Before the pandemic, I had no Internet friends, just good old irl friends. The pandemic changed that for me.
 
@@ -65,7 +69,6 @@ Lots of good times meeting tonnes of folks from the community.
 
 A big shoutout to Christina Gorton for being my weekly partner in crime on the DEV Twitch stream!
 
-{% embed "https://twitter.com/nickytonline/status/1627315973253435392" %}
 
 ### iamdeveloper.com community
 
