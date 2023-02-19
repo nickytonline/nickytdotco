@@ -23,7 +23,7 @@ I'm active on Twitter and Mastodon, but if you want to connect on more than a Tw
 
 ### Virtual Coffee
 
-I first joined Virtual Coffee sometime in April 2020. It's my favourite community. It was created by one of my now good friends, @bekahhw.
+I first joined Virtual Coffee sometime in April 2020. It's my favourite community. It was created by one of my now good friends, Bekah Hawrot Weigel (@bekahhw).
 
 It's weird. Before the pandemic, I had no Internet friends, just good old irl friends. The pandemic changed that for me.
 
