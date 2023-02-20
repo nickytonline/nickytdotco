@@ -8,7 +8,7 @@
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--vECNB8No--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_b4sttely6muy169brptk.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/where-do-you-find-community-458p/",
-  "reading_time_minutes": 3,
+  "reading_time_minutes": 4,
   "template": "post"
 }
 ---
@@ -39,7 +39,9 @@ The community has exploded in popularity. Given that it's all run by volunteers,
 
 I was mainly a lurker here initially, but I am more active in the OpenSauced community now. What brought me here was Brian Douglas, a.k.a. @bdougieyo. Brian used to work at GitHub and is a big proponent of open source, as am I. I like what the community and he are doing around building a new product, [OpenSauced](https://opensauced.pizza/).
 
-It's now a business, but this community is more than a business. It's a great place to dive into open source with supportive people. I've contributed a bit to the project and plan to contribute more.
+It's now a business, but this community is more than a business. It's a great place to dive into open source with supportive people like @brandontroberts. I've contributed a bit to the project and plan to contribute more.
+
+{% embed "https://nickscuts.buzzsprout.com/2065897/11490473-contributing-to-open-source-with-brian-douglas" %}
 
 If you're interested in getting into open source, look as far as OpenSauced.
 
