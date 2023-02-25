@@ -88,6 +88,7 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 <figcaption>My desk setup. My Mac is on a stand on the left, a wide screen monitor in the middle, a microphone and boom on the right, and a keyboard, mouse, desk whiteboard, and Stream deck in the front. There are also ring lights around the desk for streaming.</figcaption>
 </figure>
 
+- [Benq ScreenBar Halo](https://pse.is/4mt8u9) with [Webcam accessory](https://www.benq.com/en-us/lighting/accessory/webcam-accessory.html)
 - [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141) - I snagged it at a great price. It appears to go on sale often.
 - Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with many new parts for just under a third of the price.
 - [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
