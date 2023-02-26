@@ -86,7 +86,7 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
     return {
       date,
       name,
-      title,
+      title: title ?? '',
       streamTitle,
     };
   });
