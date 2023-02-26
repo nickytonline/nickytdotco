@@ -10,6 +10,7 @@ interface StreamGuestInfo {
   twitch: string | undefined;
   github: string | undefined;
   website: string | undefined;
+  polywork: string | undefined;
 }
 
 const AIRTABLE_API_KEY = Deno.env.get('AIRTABLE_API_KEY');
@@ -86,6 +87,26 @@ function buildGithubLink({name, github}: {name: string; github: string | undefin
     </li>`;
 }
 
+function buildPolyworkUrl({
+  name,
+  polywork,
+}: {
+  name: string;
+  polywork: string | undefined;
+}) {
+  if (!polywork) {
+    return '';
+  }
+
+  const sanitizedPolyworkUrl = polywork.replace(/https:\/\/(www\.)?polywork\.com\//, '');
+
+  return `
+    <li>
+      <a href="https://polywork.com/${sanitizedPolyworkUrl}" title="${name}'s Polywork profile"><span class="visually-hidden">${name}'s Polywork profile</span>
+      <svg role="img" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M19.125 0H4.875A4.865 4.865 0 0 0 0 4.875v14.25C0 21.825 2.175 24 4.875 24h6.6c2.7 0 4.875-2.175 4.875-4.875V16.65h2.775c2.7 0 4.875-2.175 4.875-4.875v-6.9C24 2.175 21.825 0 19.125 0zM16.5 1.275h2.625a3.6 3.6 0 0 1 3.6 3.6v2.7H16.5v-6.3zM15.075 9v6.45H8.85V9h6.225zM8.85 1.2h6.225v6.375H8.85V1.2zM1.275 4.8a3.6 3.6 0 0 1 3.6-3.6H7.5v6.375H1.275V4.8zM7.5 9v6.45H1.2V9h6.3zm0 13.725H4.8a3.6 3.6 0 0 1-3.6-3.6V16.8h6.3v5.925zm7.575-3.525a3.6 3.6 0 0 1-3.6 3.6H8.85v-5.925h6.225V19.2zm7.65-7.35a3.6 3.6 0 0 1-3.6 3.6H16.5V9h6.225v2.85z"></path></svg>
+      </a>
+    </li>`;
+}
 function getScheduleMarkup({
   schedule,
   locale,
@@ -97,7 +118,18 @@ function getScheduleMarkup({
 }) {
   const scheduleMarkup = schedule
     .map(
-      ({date, streamTitle, name, title, twitter, website, twitch, youtube, github}) => {
+      ({
+        date,
+        streamTitle,
+        name,
+        title,
+        twitter,
+        website,
+        twitch,
+        youtube,
+        github,
+        polywork,
+      }) => {
         const guestDate = new Date(date).toLocaleString(locale, {
           timeZone: timezone,
           dateStyle: 'full',
@@ -118,6 +150,7 @@ function getScheduleMarkup({
           ${buildTwitterLink({name, twitter})}
           ${buildTwitchLink({name, twitch})}
           ${buildYoutubeLink({name, youtube})}
+          ${buildPolyworkUrl({name, polywork})}
           </ul>
         </nav>
       </div>
@@ -150,6 +183,7 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
     'GitHub Handle',
     'YouTube Channel',
     'Website',
+    'Polywork URL',
   ]
     .map(encodeURIComponent)
     .join('&fields[]=');
@@ -172,7 +206,8 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
     | 'Twitch Handle'
     | 'GitHub Handle'
     | 'YouTube Channel'
-    | 'Website';
+    | 'Website'
+    | 'Polywork URL';
 
   interface GuestRecord {
     createdTime: string;
@@ -192,6 +227,7 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
       'GitHub Handle': github,
       'YouTube Channel': youtube,
       Website: website,
+      'Polywork URL': polywork,
     } = fields;
 
     return {
@@ -204,6 +240,7 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
       github,
       youtube,
       website,
+      polywork,
     };
   });
 
