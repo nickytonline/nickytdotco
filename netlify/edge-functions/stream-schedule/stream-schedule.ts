@@ -107,6 +107,7 @@ function buildPolyworkUrl({
       </a>
     </li>`;
 }
+
 function getScheduleMarkup({
   schedule,
   locale,
@@ -163,6 +164,19 @@ function getScheduleMarkup({
   return `<ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]">${scheduleMarkup}</ol>`;
 }
 
+const GUEST_FIELDS = [
+  'Date',
+  'Name',
+  'Guest Title',
+  'Stream Title',
+  'Twitter Username',
+  'Twitch Handle',
+  'GitHub Handle',
+  'YouTube Channel',
+  'Website',
+  'Polywork URL',
+] as const;
+
 async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
   // Only get guests on the stream schedule from the day before and on
   const yesteday = new Date();
@@ -173,20 +187,7 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
   const sorter = `&sortField=Date&sortDirection=asc`;
 
   // Generates querystring key value pairs that look like this, Name&fields[]=Guest%20Title&fields[]=Stream%20Title
-  const fields = [
-    'Date',
-    'Name',
-    'Guest Title',
-    'Stream Title',
-    'Twitter Username',
-    'Twitch Handle',
-    'GitHub Handle',
-    'YouTube Channel',
-    'Website',
-    'Polywork URL',
-  ]
-    .map(encodeURIComponent)
-    .join('&fields[]=');
+  const fields = GUEST_FIELDS.map(encodeURIComponent).join('&fields[]=');
 
   // Uses the Airtable API's filterByFormula (see https://support.airtable.com/docs/how-to-sort-filter-or-retrieve-ordered-records-in-the-api)
   const streamGuestInfoQueryUrl = `https://api.airtable.com/v0/${AIRTABLE_STREAM_GUEST_BASE_ID}/Stream%20Guests?${filter}${sorter}&fields[]=${fields}`;
@@ -197,21 +198,9 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
     },
   });
 
-  type FieldKeys =
-    | 'Date'
-    | 'Name'
-    | 'Guest Title'
-    | 'Stream Title'
-    | 'Twitter Username'
-    | 'Twitch Handle'
-    | 'GitHub Handle'
-    | 'YouTube Channel'
-    | 'Website'
-    | 'Polywork URL';
-
   interface GuestRecord {
     createdTime: string;
-    fields: Record<FieldKeys, string>;
+    fields: Record<typeof GUEST_FIELDS[number], string>;
   }
 
   const {records} = (await response.json()) as {records: GuestRecord[]};
