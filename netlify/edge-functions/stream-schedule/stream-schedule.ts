@@ -4,29 +4,43 @@ interface StreamGuestInfo {
   date: string;
   streamTitle: string;
   name: string;
-  title: string;
+  title: string | undefined;
+  twitter: string | undefined;
+  youtube: string | undefined;
+  twitch: string | undefined;
+  github: string | undefined;
+  website: string | undefined;
 }
 
 const AIRTABLE_API_KEY = Deno.env.get('AIRTABLE_API_KEY');
 const AIRTABLE_STREAM_GUEST_BASE_ID = Deno.env.get('AIRTABLE_STREAM_GUEST_BASE_ID');
 
-function buildTwitterLink({
-  name,
-  twitterUrl,
-}: {
-  name: string;
-  twitterUrl: string | undefined;
-}) {
-  if (!twitterUrl) {
+function buildWebsiteLink({name, website}: {name: string; website: string | undefined}) {
+  if (!website) {
     return '';
   }
 
-  const sanitizedTwitterUrl = twitterUrl
+  return `
+  <li>
+    <a href="${website}" title="${name}'s Website">
+      <span class="visually-hidden">${name}'s Website</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+    </a>
+  </li>
+  `;
+}
+
+function buildTwitterLink({name, twitter}: {name: string; twitter: string | undefined}) {
+  if (!twitter) {
+    return '';
+  }
+
+  const sanitizedTwitterUrl = twitter
     .replace(/https:\/\/(www\.)?twitter\.com\//, '')
     .replace('@', '');
 
   return `
-  <a href="https://twitter.com/${sanitizedTwitterUrl}" title="${name}'s Twitter Profile"><span class="visually-hidden">Nick Taylor's Twitter Profile</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+  <li><a href="https://twitter.com/${sanitizedTwitterUrl}" title="${name}'s Twitter Profile"><span class="visually-hidden">${name}'s Twitter Profile</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></li>
   `;
 }
 
@@ -40,7 +54,7 @@ function getScheduleMarkup({
   timezone: string;
 }) {
   const scheduleMarkup = schedule
-    .map(({date, streamTitle, name, title}) => {
+    .map(({date, streamTitle, name, title, twitter, website}) => {
       const guestDate = new Date(date).toLocaleString(locale, {
         timeZone: timezone,
         dateStyle: 'full',
@@ -54,7 +68,12 @@ function getScheduleMarkup({
       <div>
         <div>${name}</div>
         <div>${title}</div>
-        <div>${buildTwitterLink({name, twitterUrl: 'twitterUrl'})}</div>
+        <nav class="nav" aria-label="Links for live stream guest ${name}">
+          <ul>
+          ${buildWebsiteLink({name, website})}
+          ${buildTwitterLink({name, twitter})}
+          </ul>
+        </nav>
       </div>
     </li>
   `;
@@ -74,7 +93,17 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
   const sorter = `&sortField=Date&sortDirection=asc`;
 
   // Generates querystring key value pairs that look like this, Name&fields[]=Guest%20Title&fields[]=Stream%20Title
-  const fields = ['Date', 'Name', 'Guest Title', 'Stream Title', 'Twitter Username']
+  const fields = [
+    'Date',
+    'Name',
+    'Guest Title',
+    'Stream Title',
+    'Twitter Username',
+    'Twitch Handle',
+    'GitHub Handle',
+    'YouTube Channel',
+    'Website',
+  ]
     .map(encodeURIComponent)
     .join('&fields[]=');
 
@@ -87,7 +116,16 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
     },
   });
 
-  type FieldKeys = 'Date' | 'Name' | 'Guest Title' | 'Stream Title' | 'Twitter Username';
+  type FieldKeys =
+    | 'Date'
+    | 'Name'
+    | 'Guest Title'
+    | 'Stream Title'
+    | 'Twitter Username'
+    | 'Twitch Handle'
+    | 'GitHub Handle'
+    | 'YouTube Channel'
+    | 'Website';
 
   interface GuestRecord {
     createdTime: string;
@@ -102,7 +140,11 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
       Name: name,
       'Guest Title': title,
       'Stream Title': streamTitle,
-      'Twitter Username': twitterUrl,
+      'Twitter Username': twitter,
+      'Twitch Handle': twitch,
+      'GitHub Handle': github,
+      'YouTube Channel': youtube,
+      Website: website,
     } = fields;
 
     return {
@@ -110,7 +152,11 @@ async function getStreamSchedule(): Promise<StreamGuestInfo[]> {
       name,
       title: title ?? '',
       streamTitle,
-      twitterUrl,
+      twitter,
+      twitch,
+      github,
+      youtube,
+      website,
     };
   });
 

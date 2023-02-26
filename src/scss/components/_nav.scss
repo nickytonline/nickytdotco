@@ -48,3 +48,11 @@
     }
   }
 }
+
+.nav[aria-label^='Links for live stream guest'] > ul {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  margin: 0 !important; // TODO: Sort out specificity
+  gap: 0.5rem;
+}
