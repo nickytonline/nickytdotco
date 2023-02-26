@@ -242,8 +242,14 @@ force = true
   to = "https://toot.cafe/.well-known/webfinger?resource=acct:nickytonline@toot.cafe"
   status = 200
 
-  [[redirects]]
+[[redirects]]
 from = "/fresh/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vRr2ClzHyIfhamV8rRh92UN5XLDDJKY4E5322hvy_vp6X0cKp3YSayfaSxE6jYG1C8brP3DgZqw6M6u/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
+
+[[redirects]]
+from = "/schedule/"
+to = "https://www.iamdeveloper.com/pages/stream-schedule/"
 status = 301
 force = true
