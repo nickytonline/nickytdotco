@@ -3,6 +3,8 @@ title: Streaming
 metaDesc: 'Live Coding and other streaming projects that Nick Taylor does.'
 ---
 
+<p class="weight-bold">Check out my <a href="/pages/stream-schedule">streaming schedule</a> to <em>see when I'm live</em>!</p>
+
 I
 [started live coding on Twitch](https://www.iamdeveloper.com/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn)
 at the end of March 2020. It started off as a small experiment, and then I
