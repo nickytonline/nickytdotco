@@ -131,7 +131,9 @@ export function getScheduleMarkup({
           timeStyle: 'long',
         });
 
-        const headingId = `${name} ${streamTitle}`.replace(/ /g, '-').toLowerCase();
+        const headingId = `${name} ${streamTitle}`
+          .replace(/[^a-zA-Z0-9]+/g, '-')
+          .toLowerCase();
 
         return `
     <li class="post-list__item">
