@@ -76,7 +76,7 @@ A big shoutout to Christina Gorton for being my weekly partner in crime on the D
 
 Yes, I'm plugging my own community. Not because it's necessarily the best community out there, but because I'm enjoying building out this community.
 
-It's still early days, but I'm learning more about Discord. Looking at you Discord bots! After shutting down the VSCodeTips community, I decided to embark on this community as it ties to another implicit community of mine, my Twitch and YouTube channels.
+It's still early days, but I'm learning more about Discord. Looking at you Discord bots! After [shutting down the VSCodeTips community](https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj), I decided to embark on this community as it ties to another implicit community of mine, my Twitch and YouTube channels.
 
 If you're looking for another friendly nook on the Internet, come say hey in our community.
 
