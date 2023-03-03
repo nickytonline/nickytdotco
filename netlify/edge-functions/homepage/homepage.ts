@@ -1,6 +1,6 @@
 import {Context} from 'https://edge.netlify.com';
-import {getScheduleMarkup} from '../utils/markupUtils.ts';
-import {getStreamSchedule} from '../utils/streamUtils.ts';
+import {getLatestGuestMarkup} from '../utils/markupUtils.ts';
+import {getLatestGuest} from '../utils/streamUtils.ts';
 
 const AIRTABLE_API_KEY = Deno.env.get('AIRTABLE_API_KEY');
 const AIRTABLE_STREAM_GUEST_BASE_ID = Deno.env.get('AIRTABLE_STREAM_GUEST_BASE_ID');
@@ -17,11 +17,11 @@ export default async (request: Request, context: Context) => {
     'en-US';
   const {timezone = ''} = context.geo;
 
-  const schedule = await getStreamSchedule({
+  const latestGuest = await getLatestGuest({
     apiKey: AIRTABLE_API_KEY,
     baseId: AIRTABLE_STREAM_GUEST_BASE_ID,
   });
-  const scheduleMarkup = getScheduleMarkup({schedule, locale, timezone});
+  const scheduleMarkup = getLatestGuestMarkup({guest: latestGuest, locale, timezone});
 
   const response = await context.next();
 
@@ -32,10 +32,13 @@ export default async (request: Request, context: Context) => {
 
   const text = await response.text();
 
-  return new Response(text.replace('replace-with-schedule', scheduleMarkup), response);
+  return new Response(
+    text.replace('replace-with-stream-guest', scheduleMarkup),
+    response
+  );
 };
 
 export const config = {
   cache: 'manual',
-  path: '/pages/stream-schedule/',
+  path: '/',
 };

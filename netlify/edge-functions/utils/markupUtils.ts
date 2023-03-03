@@ -102,6 +102,18 @@ function buildHeadingAnchor(headingId: string) {
   `;
 }
 
+function getHeadingId(name: string, title: string) {
+  return `${name} ${title}`.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase();
+}
+
+function getLocalizedDate(date: string, locale: string, timezone: string) {
+  return new Date(date).toLocaleString(locale, {
+    timeZone: timezone,
+    dateStyle: 'full',
+    timeStyle: 'long',
+  });
+}
+
 export function getScheduleMarkup({
   schedule,
   locale,
@@ -116,6 +128,7 @@ export function getScheduleMarkup({
       ({
         date,
         streamTitle,
+        streamDescription,
         name,
         title,
         twitter,
@@ -125,20 +138,13 @@ export function getScheduleMarkup({
         github,
         polywork,
       }) => {
-        const guestDate = new Date(date).toLocaleString(locale, {
-          timeZone: timezone,
-          dateStyle: 'full',
-          timeStyle: 'long',
-        });
-
-        const headingId = `${name} ${streamTitle}`
-          .replace(/[^a-zA-Z0-9]+/g, '-')
-          .toLowerCase();
-
+        const guestDate = getLocalizedDate(date, locale, timezone);
+        const headingId = getHeadingId(name, streamTitle);
+        console.log(streamDescription);
         return `
     <li class="post-list__item">
-    <h2 id="${headingId}">${streamTitle} ${buildHeadingAnchor(headingId)}</h2>
-    <time datetime="${date}">${guestDate}</time>
+      <h2 id="${headingId}">${streamTitle} ${buildHeadingAnchor(headingId)}</h2>
+      <time datetime="${date}">${guestDate}</time>
       <div>
         <div>${name}</div>
         <div>${title}</div>
@@ -152,6 +158,7 @@ export function getScheduleMarkup({
           ${buildPolyworkUrl({name, polywork})}
           </ul>
         </nav>
+        ${streamDescription ? `<p>${streamDescription}</p>` : ``}
       </div>
     </li>
   `;
@@ -160,4 +167,30 @@ export function getScheduleMarkup({
     .join('');
 
   return `<ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]">${scheduleMarkup}</ol>`;
+}
+
+export function getLatestGuestMarkup({
+  guest,
+  locale,
+  timezone,
+}: {
+  guest: StreamGuestInfo;
+  locale: string;
+  timezone: string;
+}) {
+  if (!guest) {
+    return ``;
+  }
+
+  const {date, streamTitle, name} = guest;
+  const headingId = getHeadingId(name, streamTitle);
+  const guestDate = getLocalizedDate(date, locale, timezone);
+
+  return `
+    <h2>Upcoming Live Stream</h2>
+    <h3 class="font-base leading-tight text-600 weight-mid">
+      <a href="/pages/stream-schedule/#${headingId}" class="post-list__link" rel="bookmark">${streamTitle}</a>
+    </h3>
+    <time datetime="${date}">${guestDate}</time>
+    `;
 }
