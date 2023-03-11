@@ -18,10 +18,10 @@
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
 }
