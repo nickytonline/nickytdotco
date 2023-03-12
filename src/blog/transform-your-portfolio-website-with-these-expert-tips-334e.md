@@ -10,7 +10,7 @@
     "frontend"
   ],
   "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--mgPMEmM4--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_55c1umcrwwox207gat3i.png",
-  "canonicalUrl": "https://dev.to/nickytonline/transform-your-portfolio-website-with-these-expert-tips-334e",
+  "canonicalUrl": "https://www.iamdeveloper.com/blog/transform-your-portfolio-website-with-these-expert-tips-334e/",
   "reading_time_minutes": 3,
   "template": "post"
 }
@@ -30,9 +30,7 @@ Say you're in a boot camp. You all typically do the same projects aside from you
 
 3. Consider adding some testing to the projects. That could be unit tests, component tests using something like [Testing Library](https://testing-library.com/docs/), [Storybook](https://storybook.js.org/), or [Cypress Component Testing](https://docs.cypress.io/guides/component-testing/overview). Or even end-to-end (E2E) testing using something like [Cypress](https://www.cypress.io/) or [Playwright](https://playwright.dev/). Btw, I'm giving a talk for [The Collab Lab](https://dev.to/the-collab-lab) this week on E2E testing with Cypress for anyone interested.
 
-<a href="https://www.meetup.com/tech-talks-by-the-collab-lab/events/291941066/" alt"The Collab Lab Meetup: End to End Testing with Cypress">
-![Image description](https://www.iamdeveloper.com/images/posts/_uploads_articles_03f2orqojal6ba2fmhlo.png)
-</a>
+[![The Collab Lab Meetup: End to End Testing with Cypress](https://www.iamdeveloper.com/images/posts/_uploads_articles_03f2orqojal6ba2fmhlo.png)](https://www.meetup.com/tech-talks-by-the-collab-lab/events/291941066/)
 
 4. Automate something aside from the deployment. Use something like  [GitHub Actions](https://docs.github.com/en/actions). There are lots of pre-built actions at your disposal, but creating your own for a task could be fun and make you stand out.
 
