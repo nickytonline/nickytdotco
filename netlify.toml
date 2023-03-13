@@ -253,3 +253,9 @@ from = "/schedule/"
 to = "https://www.iamdeveloper.com/pages/stream-schedule/"
 status = 301
 force = true
+
+[[redirects]]
+from = "/cypress2023/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vSrKxG3lMKiBXTGH5oDRa4Xn2a23ibQ0jn4iw0UK9VJaoLIF7Fl5GVAEJ5enQ6oEA93huBSBxX2lUdi/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
