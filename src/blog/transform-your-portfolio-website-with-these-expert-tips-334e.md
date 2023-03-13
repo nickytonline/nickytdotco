@@ -30,7 +30,7 @@ Say you're in a boot camp. You all typically do the same projects aside from you
 
 3. Consider adding some testing to the projects. That could be unit tests, component tests using something like [Testing Library](https://testing-library.com/docs/), [Storybook](https://storybook.js.org/), or [Cypress Component Testing](https://docs.cypress.io/guides/component-testing/overview). Or even end-to-end (E2E) testing using something like [Cypress](https://www.cypress.io/) or [Playwright](https://playwright.dev/). Btw, I'm giving a talk for [The Collab Lab](https://dev.to/the-collab-lab) this week on E2E testing with Cypress for anyone interested.
 
-[![The Collab Lab Meetup: End to End Testing with Cypress](https://www.iamdeveloper.com/images/posts/_uploads_articles_03f2orqojal6ba2fmhlo.png)](https://www.meetup.com/tech-talks-by-the-collab-lab/events/291941066/)
+    [![The Collab Lab Meetup: End to End Testing with Cypress](https://www.iamdeveloper.com/images/posts/_uploads_articles_03f2orqojal6ba2fmhlo.png)](https://www.meetup.com/tech-talks-by-the-collab-lab/events/291941066/)
 
 4. Automate something aside from the deployment. Use something like  [GitHub Actions](https://docs.github.com/en/actions). There are lots of pre-built actions at your disposal, but creating your own for a task could be fun and make you stand out.
 
@@ -44,6 +44,6 @@ Instead of having your portfolio site at e.g. https://my-awesome-portfilio.netli
 
 It looks more professional and shows that you know a bit about [DNS](https://jvns.ca/blog/2022/04/26/new-zine--how-dns-works-/) as you need to set it up to point to where your site is hosted. And they're not that expensive typically. 5-10$ USD can usually land you a decent domain name.
 
-There are many services out there that allow you to purchase a custom domain, but one that I've been delighted with [Namecheap](https://www.namecheap.com/) for a long time now. The prices are super reasonable, and I've never had any issues.
+There are many services out there that allow you to purchase a custom domain, but one that I've been delighted with is [Namecheap](https://www.namecheap.com/). The prices are super reasonable, and I've never had any issues.
 
 Hope these points help you out! Until the next one!
