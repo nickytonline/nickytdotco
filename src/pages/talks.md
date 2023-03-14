@@ -3,6 +3,15 @@ title: Talks
 metaDesc: 'Talks Nick Taylor has given.'
 ---
 
+<h2>End to End Testing with Cypress</h2>
+<time datetime="2023-03-14">March 14th, 2023</time>
+
+{% youtube 'https://www.youtube.com/watch?v=clj-71r4gEI' %}
+
+- A talk I gave at the March 2023 Collab Lab Tech Talks Meetup
+- [slide deck](https://iamdeveloper.com/cypress2023)
+- [source code](https://github.com/nickytonline/tcl-meetup-cypress)
+
 <h2>Fresh: A New Full Stack Web Framework for Deno</h2>
 
 <time datetime="2022-12-13">December 14th, 2022</time>
