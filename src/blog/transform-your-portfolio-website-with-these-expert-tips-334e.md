@@ -28,9 +28,7 @@ Say you're in a boot camp. You all typically do the same projects aside from you
 
 2. Consider accessibility (a11y). You don't need to be an accessibility expert, but you can get many a11y wins from just a bit of reading. I have a great list of a11y resources in my [Frontend Developer Resources 2022 article](https://www.iamdeveloper.com/blog/frontend-developer-resources-2022-4cp2/#heading-accessibility).
 
-3. Consider adding some testing to the projects. That could be unit tests, component tests using something like [Testing Library](https://testing-library.com/docs/), [Storybook](https://storybook.js.org/), or [Cypress Component Testing](https://docs.cypress.io/guides/component-testing/overview). Or even end-to-end (E2E) testing using something like [Cypress](https://www.cypress.io/) or [Playwright](https://playwright.dev/). Btw, I'm giving a talk for [The Collab Lab](https://dev.to/the-collab-lab) this week on E2E testing with Cypress for anyone interested.
-
-    [![The Collab Lab Meetup: End to End Testing with Cypress](https://www.iamdeveloper.com/images/posts/_uploads_articles_03f2orqojal6ba2fmhlo.png)](https://www.meetup.com/tech-talks-by-the-collab-lab/events/291941066/)
+3. Consider adding some testing to the projects. That could be [unit tests](https://martinfowler.com/bliki/UnitTest.html), [component tests](https://applitools.com/learn/concepts/component-testing/) using something like [Testing Library](https://testing-library.com/docs/), [Storybook](https://storybook.js.org/), or [Cypress Component Testing](https://docs.cypress.io/guides/component-testing/overview). Or even end-to-end (E2E) testing using something like [Cypress](https://www.cypress.io/) or [Playwright](https://playwright.dev/). Btw, I'm giving a talk for The Collab Lab this week on [E2E testing with Cypress for anyone interested](https://www.iamdeveloper.com/pages/talks/#heading-end-to-end-testing-with-cypress).
 
 4. Automate something aside from the deployment. Use something like  [GitHub Actions](https://docs.github.com/en/actions). There are lots of pre-built actions at your disposal, but creating your own for a task could be fun and make you stand out.
 
