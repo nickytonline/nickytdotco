@@ -1,5 +1,7 @@
 import {StreamGuestInfo} from './StreamGuestInfo.ts';
 
+const TWITCH_STREAM_URL = 'https://www.twitch.tv/nickytonline';
+
 function buildWebsiteLink({name, website}: {name: string; website: string | undefined}) {
   if (!website) {
     return '';
@@ -106,12 +108,36 @@ function getHeadingId(name: string, title: string) {
   return `${name} ${title}`.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase();
 }
 
-function getLocalizedDate(date: string, locale: string, timezone: string) {
-  return new Date(date).toLocaleString(locale, {
+export function getLocalizedDate({
+  date,
+  locale,
+  timezone,
+  showTime = false,
+}: {
+  date: string;
+  locale: string;
+  timezone: string;
+  showTime: boolean;
+}) {
+  const timeStyle = showTime ? 'long' : undefined;
+  const options: Intl.DateTimeFormatOptions = {
     timeZone: timezone,
     dateStyle: 'full',
-    timeStyle: 'long',
-  });
+    timeStyle,
+  };
+
+  return new Date(date).toLocaleString(locale, options);
+}
+
+function getStreamLinks(youtubeLink: string) {
+  return `
+    <div class="align-end box-flex gap-100">Watch live on:
+      <ul class="box-flex gap-100">
+        <li><a href="${youtubeLink}">YouTube</a></li>
+        <li><a href="${TWITCH_STREAM_URL}">Twitch</a></li>
+      </ul>
+    </div>
+  `;
 }
 
 export function getScheduleMarkup({
@@ -129,6 +155,7 @@ export function getScheduleMarkup({
         date,
         streamTitle,
         streamDescription,
+        youtubeStreamLink,
         name,
         title,
         twitter,
@@ -138,16 +165,20 @@ export function getScheduleMarkup({
         github,
         polywork,
       }) => {
-        const guestDate = getLocalizedDate(date, locale, timezone);
+        const guestDate = getLocalizedDate({
+          date,
+          locale,
+          timezone,
+          showTime: true,
+        });
         const headingId = getHeadingId(name, streamTitle);
-        console.log(streamDescription);
+
         return `
     <li class="post-list__item">
       <h2 id="${headingId}">${streamTitle} ${buildHeadingAnchor(headingId)}</h2>
       <time datetime="${date}">${guestDate}</time>
       <div>
-        <div>${name}</div>
-        <div>${title}</div>
+        <div>Guest: ${name}, ${title}</div>
         <nav class="nav" aria-label="Links for live stream guest ${name}">
           <ul>
           ${buildWebsiteLink({name, website})}
@@ -158,7 +189,8 @@ export function getScheduleMarkup({
           ${buildPolyworkUrl({name, polywork})}
           </ul>
         </nav>
-        ${streamDescription ? `<p>${streamDescription}</p>` : ``}
+        ${youtubeStreamLink ? getStreamLinks(youtubeStreamLink) : ``}
+        ${streamDescription ? `<p class="gap-top-300">${streamDescription}</p>` : ``}
       </div>
     </li>
   `;
@@ -184,7 +216,12 @@ export function getLatestGuestMarkup({
 
   const {date, streamTitle, name} = guest;
   const headingId = getHeadingId(name, streamTitle);
-  const guestDate = getLocalizedDate(date, locale, timezone);
+  const guestDate = getLocalizedDate({
+    date,
+    locale,
+    timezone,
+    showTime: true,
+  });
 
   return `
     <h2>Upcoming Live Stream</h2>
