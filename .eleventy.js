@@ -106,6 +106,15 @@ module.exports = function (config) {
     return collection.getFilteredByGlob('./src/talks/*.md').reverse();
   });
 
+  config.addCollection('latestTalk', (collection) => {
+    const latestTalk = collection
+      .getFilteredByGlob('./src/talks/*.md')
+      .reverse()
+      .slice(0, 1)[0]; // latestTalk.date = latestTalk.date.toISOString();
+
+    return latestTalk;
+  });
+
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
