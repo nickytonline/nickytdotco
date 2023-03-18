@@ -1,0 +1,13 @@
+{% extends 'layouts/base.njk' %}
+{# Intro content #}
+{% set introHeading = title %}
+{% set introSummary %}{{ content | safe }}{% endset %}
+{# Post list content #}
+{% set postListHeading = 'All Talks' %}
+{% set postListItems = collections.talks %}
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    {% include "partials/components/intro.njk" %}
+    {% include "partials/components/post-list.njk" %}
+  </main>
+{% endblock %}

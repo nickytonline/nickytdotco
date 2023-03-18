@@ -1,0 +1,63 @@
+{% extends 'layouts/base.njk' %}
+{# Intro content #}
+{% set introHeading = title %}
+{% set canonicalUrl = canonicalUrl %}
+{% set introSummary %}
+<p class="intro__meta text-500 leading-tight">
+  {% if date %}
+    <span class="box-flex gap-100">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-calendar">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      <time datetime="{{ date | w3DateFilter }}" class="dt-published">{{ date | dateFilter }}</time>
+    </span>
+  {% endif %}
+</p>
+{% endset %}
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    <article class="[ post ] [ h-entry ]">
+      {% include "partials/components/intro.njk" %}
+      <div class="[ post__body ] [ inner-wrapper ] [ leading-loose pad-top-900 {{ 'pad-bottom-900' if not
+          site.enableThirdPartyComments }} text-500 ] [ sf-flow ] [ e-content ]">
+        {{ content | safe }}
+      </div>
+      {% if site.enableThirdPartyComments %}
+        <hr/>
+        <aside class="[ post__body ] [ inner-wrapper ] [ pad-bottom-900 text-500 ]">
+          {% include "partials/global/third-party-comments.njk" %}
+        </aside>
+      {% endif %}
+      {% if tags %}
+        <footer class="[ post__footer ] [ pad-top-500 pad-bottom-500 ]">
+          <div class="inner-wrapper">
+            <div class="[ nav ] [ box-flex align-center flex-wrap ]">
+              <h2 class="font-base text-600 weight-mid">tags</h2>
+              <ul class="[ nav__list ] [ box-flex align-center pad-left-400 flex-wrap ] [ p-category ]">
+                {% for item in tags %}
+                  <li class="nav__item tag">
+                    <a href="/tags/{{ item }}">{{ item }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </footer>
+      {% endif %}
+    </article>
+  </main>
+{% endblock %}
+{{ content | safe }}</p>
