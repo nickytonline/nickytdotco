@@ -14,13 +14,13 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href={slideDeck}>slide deck</a>
+                  <a href="https://iamdeveloper.com/lightning2020">slide deck</a>
                 </li>
               
 
               
                     <li>
-                      <a href={link.url}>{link.title}</a>
+                      <a href="https://conventionalcomments.org">Conventional Comments</a>
                     </li>
                   
             </ul>

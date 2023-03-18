@@ -18,7 +18,7 @@
 
               
                     <li>
-                      <a href={link.url}>{link.title}</a>
+                      <a href="https://dev.to/virtualcoffee/navigating-a-new-code-base-94d">Navigating a new code base</a>
                     </li>
                   
             </ul>

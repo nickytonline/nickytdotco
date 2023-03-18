@@ -16,7 +16,7 @@ Contributing to open source should be fun and rewarding! Whether you are a begin
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href={slideDeck}>slide deck</a>
+                  <a href="https://iamdeveloper.com/hacktoberfest2020">slide deck</a>
                 </li>
               
 

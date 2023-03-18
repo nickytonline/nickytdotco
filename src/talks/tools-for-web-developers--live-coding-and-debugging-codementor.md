@@ -14,7 +14,7 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href={slideDeck}>slide deck</a>
+                  <a href="https://iamdeveloper.com/codementor2022">slide deck</a>
                 </li>
               
 
