@@ -1,0 +1,31 @@
+name: Get latest talks
+on:
+  schedule:
+    # Run this once a week on Sunday evening 11pm EDT
+    - cron: '0 23 * * 0'
+  workflow_dispatch:
+
+jobs:
+  update_profile_data:
+    name: Get latest talks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Get talks
+        env:
+          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
+        run: |
+          npm install
+          node bin/generateTalks.js
+      - name: Setup git config
+        run: |
+          git config user.name 'token-generator-app[bot]'
+          git config user.email '82042599+token-generator-app[bot]@users.noreply.github.com'
+      - name: PR for Talk Updates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./bin/pr-talks.sh
