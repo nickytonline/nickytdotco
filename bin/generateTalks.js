@@ -52,7 +52,7 @@ async function createTalkFile(talk) {
               ${
                 slideDeck
                   ? `<li>
-                  <a href={slideDeck}>slide deck</a>
+                  <a href="${slideDeck}">slide deck</a>
                 </li>`
                   : ''
               }
@@ -70,7 +70,7 @@ async function createTalkFile(talk) {
                       .map((link) => {
                         return `
                     <li>
-                      <a href={link.url}>{link.title}</a>
+                      <a href="${link.url}">${link.title}</a>
                     </li>
                   `;
                       })
