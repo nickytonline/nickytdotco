@@ -224,7 +224,7 @@ export function getLatestGuestMarkup({
   });
 
   return `
-    <h2>Upcoming Live Stream</h2>
+    <h2 class="post-list__heading text-700 md:text-800">Upcoming Live Stream</h2>
     <h3 class="font-base leading-tight text-600 weight-mid">
       <a href="/pages/stream-schedule/#${headingId}" class="post-list__link" rel="bookmark">${streamTitle}</a>
     </h3>
