@@ -9,15 +9,15 @@ excludeFromSitemap: true
   <subtitle></subtitle>
   <link href="{{ site.url }}{{ permalink }}" rel="self"/>
   <link href="{{ site.url }}/"/>
-  {% if collections.posts|length %}
-    <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
+  {% if collections.rssFeed|length %}
+    <updated>{{ collections.rssFeed | rssLastUpdatedDate }}</updated>
   {% endif %}
   <id>{{ site.url }}</id>
   <author>
     <name>{{ site.authorName }}</name>
     <email>{{ site.authorEmail }}</email>
   </author>
-  {% for post in collections.posts %}
+  {% for post in collections.rssFeed %}
     {% set absolutePostUrl %}{{ site.url }}{{ post.url | url }}{% endset %}
     <entry>
       <title>{{ post.data.title }}</title>

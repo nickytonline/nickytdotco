@@ -110,9 +110,13 @@ module.exports = function (config) {
     const latestTalk = collection
       .getFilteredByGlob('./src/talks/*.md')
       .reverse()
-      .slice(0, 1)[0]; // latestTalk.date = latestTalk.date.toISOString();
+      .slice(0, 1)[0];
 
     return latestTalk;
+  });
+
+  config.addCollection('rssFeed', (collection) => {
+    return collection.getFilteredByGlob('./src/{blog,talks}/*.md').reverse();
   });
 
   // Plugins
