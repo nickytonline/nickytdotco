@@ -9,7 +9,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@erquhart/rollup-plugin-node-builtins": "^2.1.5",
     "@tbranyen/jsdom": "^13.0.0",
     "dotenv": "^16.0.3",
