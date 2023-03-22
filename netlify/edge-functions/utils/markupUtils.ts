@@ -225,9 +225,13 @@ export function getLatestGuestMarkup({
 
   return `
     <h2 class="post-list__heading text-700 md:text-800">Upcoming Live Stream</h2>
-    <h3 class="font-base leading-tight text-600 weight-mid">
-      <a href="/pages/stream-schedule/#${headingId}" class="post-list__link" rel="bookmark">${streamTitle}</a>
-    </h3>
-    <time datetime="${date}" class="text-500 gap-top-300 weight-mid">${guestDate}</time>
+    <ol class="post-list__items sf-flow pad-top-300" reversed>
+      <li class="post-list__item">
+        <h3 class="font-base leading-tight text-600 weight-mid">
+          <a href="/pages/stream-schedule/#${headingId}" class="post-list__link" rel="bookmark">${streamTitle}</a>
+        </h3>
+        <time datetime="${date}" class="text-500 gap-top-300 weight-mid">${guestDate}</time>
+      </li>
+    </ol>
     `;
 }
