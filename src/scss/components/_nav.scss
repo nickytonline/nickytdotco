@@ -57,12 +57,13 @@
     margin: 0 !important; // TODO: Sort out specificity
     gap: 0.5rem;
   }
+}
 
-  & a svg {
-    opacity: 0.6;
-
-    &:hover {
-      opacity: 1;
+nav[aria-label] a {
+  &:hover,
+  &:focus-visible {
+    svg {
+      opacity: 0.6;
     }
   }
 }
