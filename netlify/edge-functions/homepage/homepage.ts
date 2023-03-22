@@ -21,7 +21,13 @@ export default async (request: Request, context: Context) => {
     apiKey: AIRTABLE_API_KEY,
     baseId: AIRTABLE_STREAM_GUEST_BASE_ID,
   });
-  const scheduleMarkup = getLatestGuestMarkup({guest: latestGuest, locale, timezone});
+  const scheduleMarkup = latestGuest
+    ? getLatestGuestMarkup({
+        guest: latestGuest,
+        locale,
+        timezone,
+      })
+    : '';
 
   const response = await context.next();
 
