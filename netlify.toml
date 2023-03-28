@@ -196,7 +196,7 @@ force = true
 
 [[redirects]]
 from = "https://iamdeveloper.live/*"
-to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
+to = "https://twitch.tv/nickytonline/:splat"
 status = 301
 force = true
 
