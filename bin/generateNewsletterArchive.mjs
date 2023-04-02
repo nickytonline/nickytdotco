@@ -72,7 +72,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
 }
 
 async function generateNewsletterPost(feedItem) {
-  const {title, link: canonicalUrl, content, contentSnippet, isoDate} = feedItem;
+  const {title, link: canonicalUrl, content, contentSnippet, isoDate, tags = ['newsletter']} = feedItem;
 
   const jsonFrontmatter = {
     title,
@@ -116,7 +116,8 @@ async function generateNewsletterPost(feedItem) {
           content,
           true
         )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).`,
-        tags: ['newsletter'],
+        // dev.to onlys supports up to 4 tags
+        tags: tags.length > 3 ? tags.slice(0, 3) : tags,
         series: 'Yet Another Newsletter LOL',
         canonical_url: canonicalUrl,
         main_image
