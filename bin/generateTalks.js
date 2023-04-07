@@ -27,14 +27,24 @@ Sample post format:
 async function createTalkFile(talk) {
   const [
     slug,
-    {title, date, venue, video, summary, slideDeck, sourceCode, tags, additionalLinks},
+    {
+      title,
+      date,
+      venue,
+      video,
+      summary,
+      slideDeck,
+      sourceCode,
+      tags = [],
+      additionalLinks,
+    },
   ] = talk;
 
   const jsonFrontmatter = {
     title,
     excerpt: summary,
     date: date.toISOString(),
-    tags,
+    tags: [...tags, 'talks'],
     template: 'post',
   };
 
