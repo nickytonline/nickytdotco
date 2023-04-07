@@ -64,7 +64,7 @@ const rawTalks = [
         url: 'https://www.iamdeveloper.com/posts/my-eleventy-meetup-talk-3b2p/',
       },
     ],
-    tag: ['eleventy', 'automation', 'github actions', 'netlify'],
+    tags: ['eleventy', 'automation', 'github actions', 'netlify'],
   },
   {
     title: `Asking Coding Questions`,
