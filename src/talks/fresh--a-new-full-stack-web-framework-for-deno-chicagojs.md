@@ -5,7 +5,8 @@
   "date": "2022-12-13T00:00:00.000Z",
   "tags": [
     "deno",
-    "typescript"
+    "typescript",
+    "talks"
   ],
   "template": "post"
 }
