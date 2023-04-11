@@ -178,7 +178,7 @@ export function getScheduleMarkup({
       <h2 id="${headingId}">${streamTitle} ${buildHeadingAnchor(headingId)}</h2>
       <time datetime="${date}">${guestDate}</time>
       <div>
-        <div>Guest: ${name}, ${title}</div>
+        <div>Guest: ${name}${title ? `, ${title}` : ''}</div>
         <nav class="nav" aria-label="Links for live stream guest ${name}">
           <ul>
           ${buildWebsiteLink({name, website})}
