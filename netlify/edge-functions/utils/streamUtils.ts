@@ -27,7 +27,8 @@ export async function getStreamSchedule({
   yesteday.setDate(yesteday.getDate() - 1);
 
   const startDate = yesteday.toISOString();
-  const filter = `&filterByFormula=IS_AFTER({Date}, '${startDate}')`;
+  // Only get guests on the stream schedule from the day before and on
+  const filter = `&filterByFormula=AND(IS_AFTER({Date}, '${startDate}'), {On%20Schedule})`;
   const sorter = `&sortField=Date&sortDirection=asc`;
 
   // Generates querystring key value pairs that look like this, Name&fields[]=Guest%20Title&fields[]=Stream%20Title
@@ -44,7 +45,7 @@ export async function getStreamSchedule({
 
   interface GuestRecord {
     createdTime: string;
-    fields: Record<typeof GUEST_FIELDS[number], string>;
+    fields: Record<(typeof GUEST_FIELDS)[number], string>;
   }
 
   const {records} = (await response.json()) as {records: GuestRecord[]};
