@@ -7,7 +7,7 @@
 {# Post list content #}
 {% set postListHeading = postsHeading %}
 {% set postListItems = collections.postFeed %}
-{% set talk = collections.latestTalk %}
+{% set talks = collections.latestTalks %}
 {# Archive link #}
 {% if postListItems.length < collections.posts.length %}
   {% set paginationNextText = archiveButtonText %}
@@ -17,7 +17,7 @@
   <main id="main-content" tabindex="-1">
     {% include "partials/components/intro.njk" %}
     {% include "partials/components/live-stream-home-page.njk" %}
-    {% include "partials/components/latest-talk.njk" %}
+    {% include "partials/components/latest-talks.njk" %}
     {% include "partials/components/post-list.njk" %}
     {% include "partials/components/pagination.njk" %}
   </main>

@@ -106,13 +106,13 @@ module.exports = function (config) {
     return collection.getFilteredByGlob('./src/talks/*.md').reverse();
   });
 
-  config.addCollection('latestTalk', (collection) => {
-    const latestTalk = collection
+  config.addCollection('latestTalks', (collection) => {
+    const latestTalks = collection
       .getFilteredByGlob('./src/talks/*.md')
       .reverse()
-      .slice(0, 1)[0];
+      .slice(0, 2);
 
-    return latestTalk;
+    return latestTalks;
   });
 
   config.addCollection('rssFeed', (collection) => {
