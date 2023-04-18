@@ -1,6 +1,7 @@
 import {StreamGuestInfo} from './StreamGuestInfo.ts';
 
 const TWITCH_STREAM_URL = 'https://www.twitch.tv/nickytonline';
+const YOUTUBE_STREAM_URL = 'https://www.youtube.com/@iamdeveloperdotcom/live';
 
 function buildWebsiteLink({name, website}: {name: string; website: string | undefined}) {
   if (!website) {
@@ -129,10 +130,10 @@ export function getLocalizedDate({
   return new Date(date).toLocaleString(locale, options);
 }
 
-function getStreamLinks(youtubeLink: string) {
+function getStreamLinks(youtubeLink = YOUTUBE_STREAM_URL) {
   return `
     <div class="align-end box-flex gap-100">Watch live on:
-      <ul class="box-flex gap-100">
+      <ul class="guest-stream-links box-flex gap-100">
         <li><a href="${youtubeLink}">YouTube</a></li>
         <li><a href="${TWITCH_STREAM_URL}">Twitch</a></li>
       </ul>
@@ -151,20 +152,23 @@ export function getScheduleMarkup({
 }) {
   const scheduleMarkup = schedule
     .map(
-      ({
-        date,
-        streamTitle,
-        streamDescription,
-        youtubeStreamLink,
-        name,
-        title,
-        twitter,
-        website,
-        twitch,
-        youtube,
-        github,
-        polywork,
-      }) => {
+      (
+        {
+          date,
+          streamTitle,
+          streamDescription,
+          youtubeStreamLink,
+          name,
+          title,
+          twitter,
+          website,
+          twitch,
+          youtube,
+          github,
+          polywork,
+        },
+        index
+      ) => {
         const guestDate = getLocalizedDate({
           date,
           locale,
@@ -189,7 +193,7 @@ export function getScheduleMarkup({
           ${buildPolyworkUrl({name, polywork})}
           </ul>
         </nav>
-        ${youtubeStreamLink ? getStreamLinks(youtubeStreamLink) : ``}
+        ${index === 0 ? getStreamLinks(youtubeStreamLink) : ``}
         ${streamDescription ? `<p class="gap-top-300">${streamDescription}</p>` : ``}
       </div>
     </li>

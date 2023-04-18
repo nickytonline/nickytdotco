@@ -112,3 +112,7 @@ img {
 .float-left {
   float: left;
 }
+
+.guest-stream-links li:first-of-type::after {
+  content: ',';
+}
