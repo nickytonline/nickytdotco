@@ -193,7 +193,7 @@ export function getScheduleMarkup({
           ${buildPolyworkUrl({name, polywork})}
           </ul>
         </nav>
-        ${index === 0 ? getStreamLinks(youtubeStreamLink) : ``}
+        ${getStreamLinks(youtubeStreamLink)}
         ${streamDescription ? `<p class="gap-top-300">${streamDescription}</p>` : ``}
       </div>
     </li>
