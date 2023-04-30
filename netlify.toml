@@ -129,8 +129,8 @@ status = 301
 force = true
 
 [[redirects]]
-from = "https://news.iamdeveloper.com"
-to = "https://iamdeveloper.com/pages/newsletter/"
+from = "https://news.iamdeveloper.com/*"
+to = "/pages/newsletter/:splat"
 status = 301
 force = true
 
@@ -184,13 +184,13 @@ force = true
 
 [[redirects]]
 from = "https://vscodetips.com/"
-to = "https://iamdeveloper.com/pages/vscode-tips/"
+to = "/pages/vscode-tips/"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://community.vscodetips.com/"
-to = "https://iamdeveloper.com/pages/vscode-tips/"
+to = "/pages/vscode-tips/"
 status = 301
 force = true
 
@@ -226,7 +226,7 @@ force = true
 
 [[redirects]]
 from = "/schedule/"
-to = "https://www.iamdeveloper.com/pages/stream-schedule/"
+to = "/stream-schedule/"
 status = 301
 force = true
 
