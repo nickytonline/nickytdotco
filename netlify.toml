@@ -129,7 +129,7 @@ force = true
 
 [[redirects]]
 from = "/schedule/"
-to = "/stream-schedule/"
+to = "/pages/stream-schedule/"
 status = 301
 force = true
 
