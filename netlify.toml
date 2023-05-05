@@ -33,7 +33,7 @@ force = true
 
 [[redirects]]
 from = "https://youtube.iamdeveloper.com/*"
-to = "https://youtube.com/@iamdeveloperdotcom/:splat"
+to = "https://youtube.com/@nickytlive/:splat"
 status = 301
 force = true
 
