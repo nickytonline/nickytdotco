@@ -18,7 +18,7 @@
     "luxon": "^3.3.0",
     "prettier": "^2.8.8",
     "rss-parser": "^3.13.0",
-    "sass": "^1.60.0",
+    "sass": "^1.62.1",
     "slugify": "^1.6.6",
     "stalfos": "github:hankchizljaw/stalfos#c8971d22726326cfc04089b2da4d51eeb1ebb0eb"
   },
