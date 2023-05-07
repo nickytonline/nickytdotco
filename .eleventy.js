@@ -102,6 +102,10 @@ module.exports = function (config) {
     return collection.getFilteredByGlob('./src/newsletter/*.md').reverse();
   });
 
+  config.addCollection('latestNewsletter', (collection) => {
+    return collection.getFilteredByGlob('./src/newsletter/*.md').reverse()[0];
+  });
+
   config.addCollection('talks', (collection) => {
     return collection.getFilteredByGlob('./src/talks/*.md').reverse();
   });
