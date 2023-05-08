@@ -130,11 +130,11 @@ export function getLocalizedDate({
   return new Date(date).toLocaleString(locale, options);
 }
 
-function getStreamLinks(youtubeLink = YOUTUBE_STREAM_URL) {
+function getStreamLinks(youtubeLink: string) {
   return `
     <div class="align-end box-flex gap-100">Watch live on:
       <ul class="guest-stream-links box-flex gap-100">
-        <li><a href="${youtubeLink}">YouTube</a></li>
+        ${youtubeLink ? `<li><a href="${youtubeLink}">YouTube</a></li>` : ''}
         <li><a href="${TWITCH_STREAM_URL}">Twitch</a></li>
       </ul>
     </div>
