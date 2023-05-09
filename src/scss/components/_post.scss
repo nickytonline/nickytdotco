@@ -352,7 +352,11 @@
 
 .post-list__item h3 {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 }
 
 .pill {
