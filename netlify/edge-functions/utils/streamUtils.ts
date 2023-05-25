@@ -23,10 +23,11 @@ export async function getStreamSchedule({
   baseId: string;
 }): Promise<StreamGuestInfo[]> {
   // Only get guests on the stream schedule from the day before and on
-  const yesteday = new Date();
-  yesteday.setDate(yesteday.getDate() - 1);
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  yesterday.setHours(23, 59, 0, 0);
 
-  const startDate = yesteday.toISOString();
+  const startDate = yesterday.toISOString();
   // Only get guests on the stream schedule from the day before and on
   const filter = `&filterByFormula=AND(IS_AFTER({Date}, '${startDate}'), {On%20Schedule})`;
   const sorter = `&sortField=Date&sortDirection=asc`;
