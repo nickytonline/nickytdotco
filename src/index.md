@@ -6,4 +6,4 @@ archiveButtonText: See all posts
 metaDesc: Welcome to Nick Taylor's Web Site. Nick is a Staff Software Engineer focusing on front-end technologies and tooling.
 ---
 
-My name is Nick Taylor. I am a Staff Software Engineer focusing on front-end technologies and tooling with a growing interest in serverless and edge computing.
+Not a big fan of spiders. I once walked a mile in high heels. You can find me on Twitch or working out. Community is key.
