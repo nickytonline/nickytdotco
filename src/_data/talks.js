@@ -181,7 +181,7 @@ const rawTalks = [
     },
     summary: `Storybook is a tool for building out components and documenting a system of components. It allows you to build components in an isolated environment. This promotes good component practices as well as potentially faster development time as you do not need to rely on the application(s) that consume them.`,
     venue: {
-      name: 'Collab Lab Meetup',
+      name: 'The Collab Lab Tech Talks',
       url: 'https://www.meetup.com/tech-talks-by-the-collab-lab/events/276679138/',
     },
     slideDeck: 'https://iamdeveloper.com/storybook2021',
