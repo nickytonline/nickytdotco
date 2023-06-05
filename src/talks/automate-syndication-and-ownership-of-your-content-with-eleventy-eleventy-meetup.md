@@ -2,7 +2,7 @@
 {
   "title": "Automate syndication and ownership of your content with Eleventy",
   "excerpt": "<p>I use <a href=\"http://dev.to/\">dev.to</a> as a headless CMS. We go through how I pull in my articles, transform and cache them, and how to sync links for Hashnode and dev.to with my own posts. We also touch on GitHub actions as well as deploying to Netlify.</p>",
-  "date": "2022-05-26T00:00:00.000Z",
+  "date": "2022-05-26T12:00:00.000Z",
   "tags": [
     "eleventy",
     "automation",

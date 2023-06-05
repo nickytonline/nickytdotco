@@ -2,7 +2,7 @@
 {
   "title": "Getting Started with Streaming on Twitch",
   "excerpt": "We cover how to get set up and streaming with Twitch using OBS. We cover some basics like live captioning, creating scenes, changing scenes, and having some fun with browser sources to add some interactivity to your stream. If you've been on the fence about whether or not to start streaming, this one's for you!",
-  "date": "2021-09-20T00:00:00.000Z",
+  "date": "2021-09-20T12:00:00.000Z",
   "tags": [
     "streaming",
     "twitch",

@@ -2,7 +2,7 @@
 {
   "title": "End to End Testing with Cypress",
   "excerpt": "This talk provides an introduction to the Cypress end-to-end (E2E) testing framework. We cover the benefits of E2E testing and then do a short demo using a Collab Lab cohort's project.",
-  "date": "2023-03-14T00:00:00.000Z",
+  "date": "2023-03-14T12:00:00.000Z",
   "tags": [
     "cypress",
     "testing",

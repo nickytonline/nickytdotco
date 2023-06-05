@@ -2,7 +2,7 @@
 {
   "title": "Expert Panel: Trending Tools and Frameworks – What’s Hype and What’s Not",
   "excerpt": "Joe Colantonio moderates this lively Q&A panel where Tiffany Le-Nguyen,\n  Skyler Brungardt, Nick Taylor, and Dan Giordano share their thoughts on\n  upcoming tools and framework innovations at their respective companies.",
-  "date": "2022-06-23T00:00:00.000Z",
+  "date": "2022-06-23T12:00:00.000Z",
   "tags": [
     "testing",
     "talks"
