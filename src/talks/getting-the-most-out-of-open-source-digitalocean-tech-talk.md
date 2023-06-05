@@ -2,6 +2,7 @@
 {
   "title": "Getting the Most out of Open Source",
   "excerpt": "Nick shares best practices, tips, and tools about how contributors and maintainers of all levels can have happy, productive, and meaningful interactions with the open source community.\n\nContributing to open source should be fun and rewarding! Whether you are a beginner or seasoned open source enthusiast, you’ll come away from this talk refreshed and ready to contribute to or maintain an open source project.",
+  "venue": "DigitalOcean Tech Talk",
   "date": "2020-10-01T12:00:00.000Z",
   "tags": [
     "open source",

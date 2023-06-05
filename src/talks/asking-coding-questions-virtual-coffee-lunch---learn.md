@@ -2,6 +2,7 @@
 {
   "title": "Asking Coding Questions",
   "excerpt": "One of the primary skills you'll need as a developer is asking good questions. We talk about the process of working through a problem and how to ask questions. Because when we ask good questions, we're growing as developers, respecting the time of others, and putting in the work we need to do.",
+  "venue": "Virtual Coffee Lunch & Learn",
   "date": "2022-05-27T12:00:00.000Z",
   "tags": [
     "career",

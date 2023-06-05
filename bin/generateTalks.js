@@ -43,6 +43,7 @@ async function createTalkFile(talk) {
   const jsonFrontmatter = {
     title,
     excerpt: summary,
+    venue: venue.name,
     date: date.toISOString(),
     tags: [...tags, 'talks'],
     template: 'post',
