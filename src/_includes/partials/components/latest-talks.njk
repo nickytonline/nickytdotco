@@ -4,6 +4,7 @@
       <h3 class="font-base leading-tight text-600 weight-mid">
         <span class="pill">Talk</span> <a href="{{talk.url}}" class="post-list__link" rel="bookmark">{{talk.data.title}}</a>
       </h3>
+      <p>{{talk.data.venue}}</p>
       <time datetime="{{ talk.date | w3DateFilter }}" class="text-500 gap-top-300 weight-mid">{{ talk.date | dateFilter }}</time>
     </li>
   {% endfor %}
