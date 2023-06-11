@@ -13,12 +13,7 @@
   <main id="main-content" tabindex="-1">
     <article class="[ post ] [ h-entry ]">
       {% include "partials/components/intro.njk" %}
-      <div class="[ post__body ] [ inner-wrapper ] [ leading-loose pad-top-900 {{ 'pad-bottom-900' if not
-          site.enableThirdPartyComments }} text-500 ] [ sf-flow ] [ e-content ]">
-        {{ content | safe }}
-      </div>
-      <hr/>
-      <aside class="[ post__body ] [ inner-wrapper ] [ pad-bottom-900 text-500 ]">
+      <aside class="[ post__body ] [ inner-wrapper ] [ pad-top-900 text-500 ]">
         <nav>
           <ul class="nav__list box-flex align-center flex-wrap">
             <li>
@@ -30,6 +25,10 @@
           </ul>
         </nav>
       </aside>
+      <div class="[ post__body ] [ inner-wrapper ] [ leading-loose pad-top-100 {{ 'pad-bottom-900' if not
+          site.enableThirdPartyComments }} text-500 ] [ sf-flow ] [ e-content ]">
+        {{ content | safe }}
+      </div>
       {% if tags %}
         <footer class="[ post__footer ] [ pad-top-500 pad-bottom-500 ]">
           <div class="inner-wrapper">
