@@ -112,14 +112,13 @@ async function generateNewsletterPost(feedItem) {
       article: {
         title,
         published: true,
-        body_markdown: `${sanitizeContent(
+        body_markdown: `<!-- ${main_image} -->\n${sanitizeContent(
           content,
           true
         )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).`,
         tags: ['newsletter'],
         series: 'Yet Another Newsletter LOL',
-        canonical_url: canonicalUrl,
-        main_image
+        canonical_url: canonicalUrl
       },
     };
 
