@@ -12,8 +12,8 @@ const feed = await parser.parseURL(site.newsletterRss);
 const {DEV_API_KEY} = process.env;
 const DEV_TO_API_URL = 'https://dev.to/api';
 
-function generateEmbed(url, forDevTo = false) {
-  return forDevTo ? `{% embed ${url} %}\n` : `{% embed "${url}" %}\n`;
+function generateEmbed(url, forDevTo = false, devToEmbedType = 'embed') {
+  return forDevTo ? `{% ${devToEmbedType} ${url} %}\n` : `{% embed "${url}" %}\n`;
 }
 
 const twitterEmbedMatcher =
@@ -31,7 +31,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
     const {twitterUrl, twitterUrl2} = twitterEmbed.groups;
     updatedContent = updatedContent.replace(
       twitterEmbed[0],
-      generateEmbed(twitterUrl ?? twitterUrl2, forDevTo)
+      generateEmbed(twitterUrl ?? twitterUrl2, forDevTo, 'twitter')
     );
   }
 
