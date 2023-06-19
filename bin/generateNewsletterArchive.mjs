@@ -93,7 +93,7 @@ async function generateNewsletterPost(feedItem) {
     jsonFrontmatter,
     null,
     2
-  )}\n---\n\n${sanitizeContent(content)}\n`;
+  )}\n---\n\n${sanitizeContent(content)}\n<!-- my newsletter -->`;
 
   const newsIssuePath = path.join(NEWSLETTER_DIRECTORY, `${filename}.md`);
   const publishedToDevTo = existsSync(newsIssuePath);

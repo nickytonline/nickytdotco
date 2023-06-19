@@ -454,6 +454,11 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
         post.tag_list.includes('vscodetips'))
     );
   })) {
+    // Newsletter posts are not published to the blog. The blog publishes the newsletter to DEV.
+    if (/<!-- my newsletter -->\s*$/.test(post.body_markdown)) {
+      console.warn(`Skipping newsletter post ${post.title}`);
+      continue;
+    }
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const {markdown, imagesToSave} = await updateMarkdownImageUrls(post.body_markdown);
 
