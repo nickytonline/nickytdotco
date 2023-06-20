@@ -109,34 +109,6 @@ async function youtubeEmbed(videoUrl) {
 }
 
 /**
- * Generates a code snippet for Google Analytics
- *
- * @param {string} googleAnalyticsId A Google Analytics ID
- * @param {boolean} isProduction Whether or not the application is being built for production or not.
- *
- * @returns {string} The markup snippet to inject Google Analytics.
- */
-function googleAnalytics(
-  googleAnalyticsId,
-  isProduction = process.env.NODE_ENV === `production`
-) {
-  if (!isProduction) {
-    return '';
-  }
-
-  return `<script async="async" src="https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', '${googleAnalyticsId}');
-    </script>`;
-}
-
-/**
  * Generates a social image for the given title and excerpt of a page.
  *
  * @param {string} title
@@ -416,7 +388,6 @@ function vimeoEmbed(videoId) {
 module.exports = {
   boostLink,
   youtubeEmbed,
-  googleAnalytics,
   socialImage,
   embedEmbed,
   twitterEmbed,

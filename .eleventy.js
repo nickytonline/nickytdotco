@@ -11,7 +11,6 @@ const w3DateFilter = require('./src/filters/w3-date-filter.js');
 const {
   boostLink,
   youtubeEmbed,
-  googleAnalytics,
   socialImage,
   embedEmbed,
   twitterEmbed,
@@ -55,7 +54,6 @@ module.exports = function (config) {
   // Short Codes
   config.addShortcode('boostLink', boostLink);
   config.addShortcode('youtube', youtubeEmbed);
-  config.addShortcode('googleAnalytics', googleAnalytics);
   config.addShortcode('socialImage', socialImage);
 
   config.addShortcode('twitter', twitterEmbed);
