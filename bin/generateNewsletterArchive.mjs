@@ -99,7 +99,7 @@ async function generateNewsletterPost(feedItem) {
     jsonFrontmatter,
     null,
     2
-  )}\n---\n\n${sanitizeContent(content)}\n<!-- my newsletter -->`;
+  )}\n---\n\n${sanitizeContent(content)}\n`;
 
   const newsIssuePath = path.join(NEWSLETTER_DIRECTORY, `${filename}.md`);
   const publishedToDevTo = existsSync(newsIssuePath);
@@ -121,7 +121,7 @@ async function generateNewsletterPost(feedItem) {
         body_markdown: `<!-- ${main_image} -->\n${sanitizeContent(
           content,
           true
-        )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).`,
+        )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).<!-- my newsletter -->`,
         tags: ['newsletter'],
         series: 'Yet Another Newsletter LOL',
         canonical_url: canonicalUrl
