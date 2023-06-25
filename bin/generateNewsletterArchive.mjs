@@ -5,6 +5,12 @@ import Parser from 'rss-parser';
 import site from '../src/_data/site.json' assert {type: 'json'};
 import {socialImage} from '../src/shortCodes/index.js';
 
+if (process.env.NODE_ENV === 'development') {
+  const dotenv = await import('dotenv');
+  // add code to import env variables using dotenv
+  dotenv.config();
+}
+
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const NEWSLETTER_DIRECTORY = path.join(__dirname, '..', 'src', 'newsletter');
 const parser = new Parser();
