@@ -4,6 +4,7 @@ import path from 'path';
 import Parser from 'rss-parser';
 import site from '../src/_data/site.json' assert {type: 'json'};
 import {socialImage} from '../src/shortCodes/index.js';
+import slugify from 'slugify';
 
 if (process.env.NODE_ENV === 'development') {
   const dotenv = await import('dotenv');
@@ -89,10 +90,7 @@ async function generateNewsletterPost(feedItem) {
     template: 'newsletter',
   };
 
-  const url = new URL(canonicalUrl);
-
-  const {filename} = url.pathname.match(/(?:\/([^/]+\/)+)(?<filename>.+)\//)?.groups;
-
+  const filename = slugify(`${isoDate.split('T')[0]} ${title.replace(/:/g, ' ')}`)
   console.log(`Saving newsletter ${filename}`);
 
   const markdown = `---json\n${JSON.stringify(
