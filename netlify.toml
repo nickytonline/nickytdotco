@@ -26,38 +26,32 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/great-pr/"
-to = "https://dev.to/nickytonline/great-examples-of-issues-and-pull-requests-2nne"
-status = 301
-force = true
-
-[[redirects]]
 from = "https://youtube.iamdeveloper.com/*"
 to = "https://youtube.com/@nickytlive/:splat"
 status = 301
 force = true
 
 [[redirects]]
-from = "https://livecoding.ca/learn-rust/*"
+from = "/learn-rust/*"
 to = "https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAFF1MYfuoGa6FeksKcMz-O"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://livecoding.ca/*"
-to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
+to = "https://youtube.com/@nickytlive/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://www.livecoding.ca/*"
-to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
+to = "https://youtube.com/@nickytlive/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://javascripthours.com/*"
-to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
+to = "https://youtube.com/@nickytlive/:splat"
 status = 301
 force = true
 
@@ -70,12 +64,6 @@ force = true
 [[redirects]]
 from = "https://news.iamdeveloper.com/*"
 to = "/pages/newsletter/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://book.iamdeveloper.com/*"
-to = "https://calendly.com/nickytonline/:splat"
 status = 301
 force = true
 
@@ -93,7 +81,7 @@ force = true
 
 [[redirects]]
 from = "https://live.iamdeveloper.com/*"
-to = "https://www.youtube.com/@iamdeveloperdotcom/:splat"
+to = "https://youtube.com/@nickytlive/:splat"
 status = 301
 force = true
 
