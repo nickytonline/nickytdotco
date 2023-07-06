@@ -26,6 +26,18 @@ status = 301
 force = true
 
 [[redirects]]
+from = "https://nickyt.tube/*"
+to = "https://youtube.com/@nickytlive/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.nickyt.tube/*"
+to = "https://youtube.com/@nickytlive/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://youtube.iamdeveloper.com/*"
 to = "https://youtube.com/@nickytlive/:splat"
 status = 301
