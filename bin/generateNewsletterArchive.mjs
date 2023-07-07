@@ -27,6 +27,8 @@ const twitterEmbedMatcher =
   /(<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>)|(<html><body>.+?href="(?<twitterUrl2>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw[^"]*">.+?<\/body><\/html>)/gms;
 const youtubeEmbedMatcher =
   /\n<a (?:class="video"\s+)?href="(?<YouTubeUrl>https:\/\/(youtu.be|(www\.)?youtube.com)[^"@]+?)">.+?<\/a>/gms;
+const twitchEmbedMatcher =
+  /\n<a\s+href="(?<TwitchUrl>https:\/\/(?:www\.)?twitch.tv\/[^"?]+)(?:\?.+)?">.+?<\/a>/gms;
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
@@ -50,6 +52,17 @@ function sanitizeContent(rawContent, forDevTo = false) {
     updatedContent = updatedContent.replace(
       youtubeEmbed[0],
       generateEmbed(YouTubeUrl, forDevTo)
+    );
+  }
+
+  // Replace Twitch embeds with embed shortcodes
+  const twitchEmbeds = updatedContent.matchAll(twitchEmbedMatcher);
+
+  for (const twitchEmbed of twitchEmbeds) {
+    const {TwitchUrl} = twitchEmbed.groups;
+    updatedContent = updatedContent.replace(
+      twitchEmbed[0],
+      generateEmbed(TwitchUrl, forDevTo)
     );
   }
 
