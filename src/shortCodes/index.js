@@ -365,13 +365,16 @@ function codeSandboxEmbed(sandboxId) {
 function twitchEmbed(videoId) {
   const {host} = new URL(site.url);
 
-  return `<iframe
+  return `<div class="video-player">
+  <iframe
     src="https://player.twitch.tv/?video=${videoId}&parent=${host}&autoplay=false"
     loading="lazy"
     height="399"
     width="710"
-    allowfullscreen>
-</iframe>`;
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowFullScreen" style="position:absolute;width:100%;height:100%;left:0;top:0">
+</iframe>
+</div>
+`;
 }
 
 /**
