@@ -35,6 +35,10 @@ const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
 function sanitizeContent(rawContent, forDevTo = false) {
   let updatedContent = rawContent.trim();
+
+  // Get rid of HTML comment that holds tags. The tags are used in the frontmatter
+  updatedContent = updatedContent.replace(tagsMatcher, '').replace('\n\n$', '\n');
+
   const twitterEmbeds = updatedContent.matchAll(twitterEmbedMatcher);
 
   for (const twitterEmbed of twitterEmbeds) {

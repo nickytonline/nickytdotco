@@ -40,4 +40,4 @@
 <li><a href="https://runwayml.com/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Runway</a> is looking for a <a href="https://boards.greenhouse.io/runwayml/jobs/4241587005?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Staff Frontend Engineer </a> as well as a <a href="https://boards.greenhouse.io/runwayml/jobs/4015509005?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Sr. Backend Engineer</a>.</li>
 </ul>
 <p>I post jobs in the iamdeveloper.com community, plus all other kinds of content, as do others. If you're looking for another friendly nook of the internet, head to <a href="https://discord.iamdeveloper.com?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">discord.iamdeveloper.com</a>.</p>
-<!-- tags: iot, a11y, javascript, devtools -->
+
