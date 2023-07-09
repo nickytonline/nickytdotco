@@ -29,6 +29,7 @@ const youtubeEmbedMatcher =
   /\n<a (?:class="video"\s+)?href="(?<YouTubeUrl>https:\/\/(youtu.be|(www\.)?youtube.com)[^"@]+?)">.+?<\/a>/gms;
 const twitchEmbedMatcher =
   /\n<a\s+href="(?<TwitchUrl>https:\/\/(?:www\.)?twitch.tv\/[^"]+)">.+?<\/a>/gms;
+const tagsMatcher = /<!-- tags:\s+(?<tags>.+?)\s+-->/s
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
@@ -93,12 +94,13 @@ function sanitizeContent(rawContent, forDevTo = false) {
 
 async function generateNewsletterPost(feedItem) {
   const {title, link: canonicalUrl, content, contentSnippet, isoDate} = feedItem;
+  const tags = content.match(tagsMatcher)?.groups.tags.split(',').map(tag => tag.trim()) ?? ['newsletter'];
 
   const jsonFrontmatter = {
     title,
     excerpt: contentSnippet,
     date: isoDate,
-    tags: ['newsletter'],
+    tags,
     canonical_url: canonicalUrl,
     template: 'newsletter',
   };
@@ -133,7 +135,7 @@ async function generateNewsletterPost(feedItem) {
           content,
           true
         )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).<!-- my newsletter -->`,
-        tags: ['newsletter'],
+        tags,
         series: 'Yet Another Newsletter LOL',
         canonical_url: canonicalUrl
       },
