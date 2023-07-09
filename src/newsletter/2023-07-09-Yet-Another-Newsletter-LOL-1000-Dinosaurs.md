@@ -30,6 +30,11 @@
 <p>The stream recording with <a href="https://andypiper.me/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Andy Piper</a> is up on YouTube. We discussed making, IoT messaging (MQTT), MicroPython and Mastodon. Thanks again for hanging Andy!</p>{% embed "https://youtu.be/gMA3oHDEqn0" %}
 <p>Remember to like and subscribe! 😎</p>
 <p>Also, it was awesome hanging with <a href="https://grahamthe.dev/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Graham Ritchie</a> this week on <a href="https://nickytlive?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">nickyt.live</a>. We discussed accessibility, provided some tips and tools to leverage, and even squeezed in a mini-audit.</p>
-<p>Here's a highlight showing the Chrome DevTools contrast checker in action. Thanks again for hanging, Graham!</p>{% embed "https://www.twitch.tv/videos/1864256324" %}
-.</p>
+<p>Here's a highlight showing the Chrome DevTools contrast checker in action. Thanks again for hanging, Graham!</p>{% embed "https://www.twitch.tv/videos/1864256324?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" %}
+<p>Lastly, I'm attending (not speaking) <a href="https://www.refactorconf.com?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Refactor DX 2023</a> in Toronto this coming week. If you're attending, don't be shy and come say hi!</p>
+<h2>Jobs</h2>
+<ul>
+<li><a href="https://runwayml.com/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Runway</a> is looking for a <a href="https://boards.greenhouse.io/runwayml/jobs/4241587005?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Staff Frontend Engineer </a> as well as a <a href="https://boards.greenhouse.io/runwayml/jobs/4015509005?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">Sr. Backend Engineer</a>.</li>
+</ul>
+<p>I post jobs in the iamdeveloper.com community, plus all other kinds of content, as do others. If you're looking for another friendly nook of the internet, head to <a href="https://discord.iamdeveloper.com?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-5670" target="_blank">discord.iamdeveloper.com</a>.</p>
 <!-- tags: iot, a11y, javascript, devtools -->
