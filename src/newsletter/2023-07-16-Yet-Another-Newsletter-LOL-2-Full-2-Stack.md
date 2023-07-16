@@ -22,7 +22,7 @@
 <li><a href="https://www.nan.fyi/svg-paths?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-2-full-2-stack" target="_blank">Understanding SVG Paths</a></li>
 </ul>
 <h2>Fun Stuff</h2>
-{% embed "https://twitter.com/tprstly/status/1678495861670572055" %}
+{% embed "https://twitter.com/ThugDebugger/status/1680591673334673414" %}
 <h2>Words of Wisdom for the Week</h2>
 <blockquote>
 <p>Nobody cares about your tech stack</p>
@@ -49,25 +49,24 @@
 
 <strong>Outline</strong>
 
-* Console.logging
-	* console.log
-	* log points
-* Debugging frontend code in the browser
-	* navigating files in the DevTools
-	* breakpoints
-	* conditional breakpoints
-	* debugger keyword
-* Debugging Node.js
-	* debug node process via node --inspect-brk and node --inspect
-	* Debugging in VS Code
-		* Attach to Process for Node.js
-		* Using VS Code’s JavaScript debug terminal</h4>
-        </div>
-    </div>
+- Console.logging
+  - console.log
+  - log points
+- Debugging frontend code in the browser
+  - navigating files in the DevTools
+  - breakpoints
+  - conditional breakpoints
+  - debugger keyword
+- Debugging Node.js
+_ debug node process via node --inspect-brk and node --inspect
+_ Debugging in VS Code
+_ Attach to Process for Node.js
+_ Using VS Code’s JavaScript debug terminal</h4>
+</div>
+</div>
 </a><p>Click the Notify Me link on YouTube so you do not miss it!</p>
 <h2>Jobs</h2>
 <ul>
 <li>tbd (yes that's the company name) is hiring for a <a href="https://jobs.smartrecruiters.com/ni/Square/d6a82029-93a4-46ce-9f6d-28b3591e1368-staff-developer-advocate?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-2-full-2-stack" target="_blank">Staff Developer Advocate</a>.</li>
 </ul>
 <p>I post jobs in the iamdeveloper.com community, plus all other kinds of content, as do others. If you're looking for another friendly nook of the internet, head to <a href="https://discord.iamdeveloper.com?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-2-full-2-stack" target="_blank">discord.iamdeveloper.com</a>.</p>
-
