@@ -237,9 +237,13 @@ async function twitterEmbed(tweetId) {
 
     console.log(`Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`);
 
-    const {html} = await response.json();
+    if (response.status === 404) {
+      twitterEmbeds[tweetId] = '<P>The Tweet has been deleted.</p>';
+    } else {
+      let {html} = await response.json();
 
-    twitterEmbeds[tweetId] = html;
+      twitterEmbeds[tweetId] = html;
+    }
     await updateTwitterEmbeds(twitterEmbeds, TWITTER_EMBEDS_FILE_PATH);
   }
 
