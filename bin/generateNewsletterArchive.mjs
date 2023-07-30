@@ -30,6 +30,7 @@ const youtubeEmbedMatcher =
 const twitchEmbedMatcher =
   /\n<a\s+href="(?<TwitchUrl>https:\/\/(?:www\.)?twitch.tv\/[^"]+)">.+?<\/a>/gms;
 const tagsMatcher = /<!-- tags:\s+(?<tags>.+?)\s+-->/s
+const codepenEmbedMatcher = /<a href="(?<url>https:\/\/codepen.io\/[^"]+?)">\s*?<\/a>/gms;
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
@@ -68,6 +69,17 @@ function sanitizeContent(rawContent, forDevTo = false) {
     updatedContent = updatedContent.replace(
       twitchEmbed[0],
       generateEmbed(TwitchUrl, forDevTo)
+    );
+  }
+
+    // Replace Twitch embeds with embed shortcodes
+  const codepenEmbeds = updatedContent.matchAll(codepenEmbedMatcher);
+
+  for (const codepenEmbed of codepenEmbeds) {
+    const {url} = codepenEmbed.groups;
+    updatedContent = updatedContent.replace(
+      codepenEmbed[0],
+      generateEmbed(url)
     );
   }
 
