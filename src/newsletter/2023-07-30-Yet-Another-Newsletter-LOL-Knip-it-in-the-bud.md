@@ -22,8 +22,8 @@
 </ul>
 <h2>Fun Stuff</h2>
 <p>I love sharing Jhey's creations here every now and then. This OS Dock demo is built with HTML and CSS' <code>:has</code> and trig functions. Zero JavaScript. Enjoy.</p>
-<a href="https://codepen.io/jh3y/pen/GRwwWoV?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-3666">https://codepen.io/jh3y/pen/GRwwWoV
-</a><h2>Words of Wisdom for the Week</h2>
+{% embed "https://codepen.io/jh3y/pen/GRwwWoV?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-3666" %}
+<h2>Words of Wisdom for the Week</h2>
 <blockquote>
 <p>If you are genuine in your interactions, it tends to pay dividends in the future. </p>
 <p>Be nice, give first.</p>

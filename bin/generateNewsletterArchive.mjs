@@ -30,7 +30,7 @@ const youtubeEmbedMatcher =
 const twitchEmbedMatcher =
   /\n<a\s+href="(?<TwitchUrl>https:\/\/(?:www\.)?twitch.tv\/[^"]+)">.+?<\/a>/gms;
 const tagsMatcher = /<!-- tags:\s+(?<tags>.+?)\s+-->/s
-const codepenEmbedMatcher = /<a href="(?<url>https:\/\/codepen.io\/[^"]+?)">\s*?<\/a>/gms;
+const codepenEmbedMatcher = /<a href="(?<url>https:\/\/codepen.io\/[^"]+?)">.+?<\/a>/gms;
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
