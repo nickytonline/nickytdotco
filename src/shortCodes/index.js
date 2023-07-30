@@ -155,6 +155,10 @@ function socialImage(title, excerpt = '') {
 function embedEmbed(rawUrl) {
   const url = new URL(rawUrl);
 
+  if (url.hostname.includes('codepen.io')) {
+    return codepenEmbed(url);
+  }
+
   // This is based off the generic dev.to embed liquid tag.
   if (url.hostname.includes(`youtube.com`) || url.hostname.includes(`youtu.be`)) {
     const videoId = url.searchParams.get('v') ?? url.pathname.substr(1);
