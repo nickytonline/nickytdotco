@@ -6,7 +6,9 @@ import site from '../src/_data/site.json' assert {type: 'json'};
 import {socialImage} from '../src/shortCodes/index.js';
 import slugify from 'slugify';
 
-if (process.env.NODE_ENV === 'development') {
+const isDevMode = process.env.NODE_ENV === 'development';
+
+if (isDevMode) {
   const dotenv = await import('dotenv');
   // add code to import env variables using dotenv
   dotenv.config();
@@ -135,7 +137,7 @@ async function generateNewsletterPost(feedItem) {
 
   await fs.writeFile(newsIssuePath, markdown);
 
-  if (publishedToDevTo) {
+  if (publishedToDevTo && !isDevMode) {
     console.log(`Newsletter ${filename} already published to dev.to`);
     return;
   }
