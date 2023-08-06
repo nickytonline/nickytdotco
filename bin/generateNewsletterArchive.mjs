@@ -31,7 +31,7 @@ const youtubeEmbedMatcher =
   /\n<a (?:class="video"\s+)?href="(?<YouTubeUrl>https:\/\/(youtu.be|(www\.)?youtube.com)[^"@]+?)">.+?<\/a>/gms;
 const twitchEmbedMatcher =
   /\n<a\s+href="(?<TwitchUrl>https:\/\/(?:www\.)?twitch.tv\/[^"]+)">.+?<\/a>/gms;
-const tagsMatcher = /<!-- tags:\s+(?<tags>.+?)\s+-->/s
+const tagsMatcher = /<!-- tags:\s+(?<tags>.+?)\s+-->/s;
 const codepenEmbedMatcher = /<a\s+href="(?<url>[^?"]+)(?:\?[^"]+)?">.+?<\/a>/gms;
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
@@ -74,7 +74,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
     );
   }
 
-    // Replace Twitch embeds with embed shortcodes
+  // Replace Twitch embeds with embed shortcodes
   const codepenEmbeds = updatedContent.matchAll(codepenEmbedMatcher);
 
   for (const codepenEmbed of codepenEmbeds) {
@@ -112,7 +112,10 @@ function sanitizeContent(rawContent, forDevTo = false) {
 
 async function generateNewsletterPost(feedItem) {
   const {title, link: canonicalUrl, content, contentSnippet, isoDate} = feedItem;
-  const tags = content.match(tagsMatcher)?.groups.tags.split(',').map(tag => tag.trim()) ?? ['newsletter'];
+  const tags = content
+    .match(tagsMatcher)
+    ?.groups.tags.split(',')
+    .map((tag) => tag.trim()) ?? ['newsletter'];
 
   const jsonFrontmatter = {
     title,
@@ -123,7 +126,7 @@ async function generateNewsletterPost(feedItem) {
     template: 'newsletter',
   };
 
-  const filename = slugify(`${isoDate.split('T')[0]} ${title.replace(/:/g, ' ')}`)
+  const filename = slugify(`${isoDate.split('T')[0]} ${title.replace(/:/g, ' ')}`);
   console.log(`Saving newsletter ${filename}`);
 
   const markdown = `---json\n${JSON.stringify(
@@ -155,7 +158,7 @@ async function generateNewsletterPost(feedItem) {
         )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).<!-- my newsletter -->`,
         tags,
         series: 'Yet Another Newsletter LOL',
-        canonical_url: canonicalUrl
+        canonical_url: canonicalUrl,
       },
     };
 

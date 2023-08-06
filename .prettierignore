@@ -1,2 +1,4 @@
 yarn.lock
 src/pages/posts
+dist
+src/**/*.md
