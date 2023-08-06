@@ -23,7 +23,7 @@
 </ul>
 <h2>Fun Stuff</h2>
 <p>View transition-powered drag and drop! This is a fantastic demo by <a href="https://twitter.com/argyleink/status/1686152381204160513?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sharp" target="_blank">Adam Argyle</a>. It only works in Chrome at the moment.</p>
-{% embed "https://codepen.io/argyleink/pen/rNQZbLr?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-sharp" %}
+{% embed "https://codepen.io/argyleink/pen/rNQZbLr" %}
 <h2>Words of Wisdom for the Week</h2>
 <blockquote>
 <p>The important thing is that we use our privileges to uplift others.</p>
