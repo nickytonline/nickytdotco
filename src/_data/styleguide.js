@@ -1,4 +1,4 @@
-const tokens = require('./tokens.json');
+const tokens = require("./tokens.json");
 
 module.exports = {
   colors() {
@@ -16,9 +16,9 @@ module.exports = {
   sizes() {
     let response = [];
 
-    Object.keys(tokens['size-scale']).forEach((key) => {
+    Object.keys(tokens["size-scale"]).forEach((key) => {
       response.push({
-        value: tokens['size-scale'][key],
+        value: tokens["size-scale"][key],
         key,
       });
     });

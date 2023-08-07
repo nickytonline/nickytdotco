@@ -20,7 +20,7 @@
       text-decoration: underline;
       word-break: break-word;
 
-      @include apply-utility('leading', 'tight');
+      @include apply-utility("leading", "tight");
 
       &:hover {
         text-decoration-style: wavy;

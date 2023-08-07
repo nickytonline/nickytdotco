@@ -22,7 +22,7 @@
     a {
       color: currentColor;
 
-      @include apply-utility('weight', 'mid');
+      @include apply-utility("weight", "mid");
 
       &:not(:hover) {
         text-decoration: none;
@@ -31,7 +31,7 @@
   }
 }
 
-[aria-label='Social links'] {
+[aria-label="Social links"] {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -49,7 +49,7 @@
   }
 }
 
-.nav[aria-label^='Links for live stream guest'] {
+.nav[aria-label^="Links for live stream guest"] {
   & > ul {
     display: flex;
     list-style: none;

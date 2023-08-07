@@ -34,7 +34,7 @@
     text-decoration: none;
     word-break: break-word;
 
-    @include apply-utility('leading', 'tight');
+    @include apply-utility("leading", "tight");
 
     &:hover {
       text-decoration: underline;
@@ -62,7 +62,7 @@
       position: relative;
       /*display: flex;*/
 
-      @include apply-utility('leading', 'tight');
+      @include apply-utility("leading", "tight");
     }
 
     a:not([class]),
@@ -74,7 +74,7 @@
       text-decoration: underline;
       word-break: break-word;
 
-      @include apply-utility('leading', 'tight');
+      @include apply-utility("leading", "tight");
 
       &:hover {
         text-decoration-style: wavy;
@@ -136,7 +136,7 @@
     .video-player,
     .video-player + *,
     video {
-      --flow-space: #{get-size('max')};
+      --flow-space: #{get-size("max")};
     }
 
     figure,
@@ -144,7 +144,7 @@
     .video-player,
     video {
       width: 100vw;
-      max-width: map-get($metrics, 'wrap-max-width');
+      max-width: map-get($metrics, "wrap-max-width");
       margin-left: 50%; /*changing this value to 47% removes the horizontal scrollbar once the viewport is < 930px */
       transform: translateX(
         -50%
@@ -166,7 +166,7 @@
     figcaption {
       font-size: 0.8em;
       font-style: italic;
-      max-width: map-get($metrics, 'wrap-inner-max-width');
+      max-width: map-get($metrics, "wrap-inner-max-width");
       margin: 0.5em auto 0 auto;
       padding: 0 get-size(500);
     }
@@ -199,7 +199,7 @@
         height: 150px;
         margin-bottom: 1em;
 
-        @include media-query('md') {
+        @include media-query("md") {
           margin-left: 1em;
           margin-bottom: none;
         }
@@ -212,7 +212,7 @@
       }
 
       &__content {
-        @include media-query('md') {
+        @include media-query("md") {
           margin-left: 1em;
         }
 
@@ -231,7 +231,7 @@
         margin-right: none;
         margin-bottom: 1em;
 
-        @include media-query('md') {
+        @include media-query("md") {
           margin-right: 1em;
           margin-bottom: none;
         }
@@ -271,7 +271,7 @@
         height: 50px;
         border-radius: 50px;
 
-        @include media-query('md') {
+        @include media-query("md") {
           margin-right: 1em;
         }
       }
@@ -298,7 +298,7 @@
 
     h2 {
       flex-shrink: 0;
-      margin-right: get-size('base');
+      margin-right: get-size("base");
       color: var(--color-dark);
     }
 

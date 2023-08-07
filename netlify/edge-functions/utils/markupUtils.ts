@@ -1,11 +1,17 @@
-import {StreamGuestInfo} from './StreamGuestInfo.ts';
+import { StreamGuestInfo } from "./StreamGuestInfo.ts";
 
-const TWITCH_STREAM_URL = 'https://www.twitch.tv/nickytonline';
-const YOUTUBE_STREAM_URL = 'https://www.youtube.com/@iamdeveloperdotcom/live';
+const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
+const YOUTUBE_STREAM_URL = "https://www.youtube.com/@iamdeveloperdotcom/live";
 
-function buildWebsiteLink({name, website}: {name: string; website: string | undefined}) {
+function buildWebsiteLink({
+  name,
+  website,
+}: {
+  name: string;
+  website: string | undefined;
+}) {
   if (!website) {
-    return '';
+    return "";
   }
 
   return `
@@ -18,40 +24,61 @@ function buildWebsiteLink({name, website}: {name: string; website: string | unde
   `;
 }
 
-function buildTwitterLink({name, twitter}: {name: string; twitter: string | undefined}) {
+function buildTwitterLink({
+  name,
+  twitter,
+}: {
+  name: string;
+  twitter: string | undefined;
+}) {
   if (!twitter) {
-    return '';
+    return "";
   }
 
   const sanitizedTwitterUrl = twitter
-    .replace(/https:\/\/(www\.)?twitter\.com\//, '')
-    .replace('@', '');
+    .replace(/https:\/\/(www\.)?twitter\.com\//, "")
+    .replace("@", "");
 
   return `
   <li><a href="https://twitter.com/${sanitizedTwitterUrl}" title="${name}'s Twitter Profile"><span class="visually-hidden">${name}'s Twitter Profile</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></li>
   `;
 }
 
-function buildTwitchLink({name, twitch}: {name: string; twitch: string | undefined}) {
+function buildTwitchLink({
+  name,
+  twitch,
+}: {
+  name: string;
+  twitch: string | undefined;
+}) {
   if (!twitch) {
-    return '';
+    return "";
   }
 
   const sanitizedTwitchUrl = twitch
-    .replace(/https:\/\/(www\.)?twitch\.tv\//, '')
-    .replace('@', '');
+    .replace(/https:\/\/(www\.)?twitch\.tv\//, "")
+    .replace("@", "");
 
   return `
   <li><a href="https://twitch.tv/${sanitizedTwitchUrl}" title="${name}'s Twitch Profile"><span class="visually-hidden">${name}'s Twitch Profile</span> <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path></svg></a></li>
   `;
 }
 
-function buildYoutubeLink({name, youtube}: {name: string; youtube: string | undefined}) {
+function buildYoutubeLink({
+  name,
+  youtube,
+}: {
+  name: string;
+  youtube: string | undefined;
+}) {
   if (!youtube) {
-    return '';
+    return "";
   }
 
-  const sanitizedYoutubeUrl = youtube.replace(/https?:\/\/(www\.)?youtube\.com\//, '');
+  const sanitizedYoutubeUrl = youtube.replace(
+    /https?:\/\/(www\.)?youtube\.com\//,
+    ""
+  );
 
   return `
   <li><a href="https://youtube.com/${sanitizedYoutubeUrl}" title="${name}'s YouTube channel"><span class="visually-hidden">${name}'s YouTube channel</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
@@ -60,12 +87,21 @@ function buildYoutubeLink({name, youtube}: {name: string; youtube: string | unde
   `;
 }
 
-function buildGithubLink({name, github}: {name: string; github: string | undefined}) {
+function buildGithubLink({
+  name,
+  github,
+}: {
+  name: string;
+  github: string | undefined;
+}) {
   if (!github) {
-    return '';
+    return "";
   }
 
-  const sanitizedGithubUrl = github.replace(/https:\/\/(www\.)?github\.com\//, '');
+  const sanitizedGithubUrl = github.replace(
+    /https:\/\/(www\.)?github\.com\//,
+    ""
+  );
 
   return `
     <li><a href="https://github.com/${sanitizedGithubUrl}" title="${name}'s GitHub profile"><span class="visually-hidden">${name}'s GitHub profile</span>
@@ -82,10 +118,13 @@ function buildPolyworkUrl({
   polywork: string | undefined;
 }) {
   if (!polywork) {
-    return '';
+    return "";
   }
 
-  const sanitizedPolyworkUrl = polywork.replace(/https:\/\/(www\.)?polywork\.com\//, '');
+  const sanitizedPolyworkUrl = polywork.replace(
+    /https:\/\/(www\.)?polywork\.com\//,
+    ""
+  );
 
   return `
     <li>
@@ -106,7 +145,7 @@ function buildHeadingAnchor(headingId: string) {
 }
 
 function getHeadingId(name: string, title: string) {
-  return `${name} ${title}`.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase();
+  return `${name} ${title}`.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase();
 }
 
 export function getLocalizedDate({
@@ -120,10 +159,10 @@ export function getLocalizedDate({
   timezone: string;
   showTime: boolean;
 }) {
-  const timeStyle = showTime ? 'long' : undefined;
+  const timeStyle = showTime ? "long" : undefined;
   const options: Intl.DateTimeFormatOptions = {
     timeZone: timezone,
-    dateStyle: 'full',
+    dateStyle: "full",
     timeStyle,
   };
 
@@ -134,7 +173,7 @@ function getStreamLinks(youtubeLink: string) {
   return `
     <div class="align-end box-flex gap-100">Watch live on:
       <ul class="guest-stream-links box-flex gap-100">
-        ${youtubeLink ? `<li><a href="${youtubeLink}">YouTube</a></li>` : ''}
+        ${youtubeLink ? `<li><a href="${youtubeLink}">YouTube</a></li>` : ""}
         <li><a href="${TWITCH_STREAM_URL}">Twitch</a></li>
       </ul>
     </div>
@@ -182,25 +221,29 @@ export function getScheduleMarkup({
       <h2 id="${headingId}">${streamTitle} ${buildHeadingAnchor(headingId)}</h2>
       <time datetime="${date}">${guestDate}</time>
       <div>
-        <div>Guest: ${name}${title ? `, ${title}` : ''}</div>
+        <div>Guest: ${name}${title ? `, ${title}` : ""}</div>
         <nav class="nav" aria-label="Links for live stream guest ${name}">
           <ul>
-          ${buildWebsiteLink({name, website})}
-          ${buildGithubLink({name, github})}
-          ${buildTwitterLink({name, twitter})}
-          ${buildTwitchLink({name, twitch})}
-          ${buildYoutubeLink({name, youtube})}
-          ${buildPolyworkUrl({name, polywork})}
+          ${buildWebsiteLink({ name, website })}
+          ${buildGithubLink({ name, github })}
+          ${buildTwitterLink({ name, twitter })}
+          ${buildTwitchLink({ name, twitch })}
+          ${buildYoutubeLink({ name, youtube })}
+          ${buildPolyworkUrl({ name, polywork })}
           </ul>
         </nav>
         ${getStreamLinks(youtubeStreamLink)}
-        ${streamDescription ? `<p class="gap-top-300">${streamDescription}</p>` : ``}
+        ${
+          streamDescription
+            ? `<p class="gap-top-300">${streamDescription}</p>`
+            : ``
+        }
       </div>
     </li>
   `;
       }
     )
-    .join('');
+    .join("");
 
   return `<ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]">${scheduleMarkup}</ol>`;
 }
@@ -218,7 +261,7 @@ export function getLatestGuestMarkup({
     return ``;
   }
 
-  const {date, streamTitle, name} = guest;
+  const { date, streamTitle, name } = guest;
   const headingId = getHeadingId(name, streamTitle);
   const guestDate = getLocalizedDate({
     date,

@@ -9,7 +9,7 @@
     }
 
     // Flip content if direction is backwards
-    &[data-direction='backwards'] {
+    &[data-direction="backwards"] {
       flex-direction: row-reverse;
 
       svg {
@@ -18,7 +18,7 @@
     }
 
     // If only child and forwards, push out to the right
-    &[data-direction='forwards']:only-child {
+    &[data-direction="forwards"]:only-child {
       margin-left: auto;
     }
   }

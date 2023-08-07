@@ -1,19 +1,22 @@
 // Thanks for the inpiration Michael Jolley!
 // https://github.com/MichaelJolley/michaeljolley/blob/main/scripts/readme/index.js
-const Parser = require('rss-parser');
-const fs = require('fs/promises');
-const path = require('path');
-const streamingPageFilePath = path.resolve(__dirname, '../src/pages/streaming.md');
+const Parser = require("rss-parser");
+const fs = require("fs/promises");
+const path = require("path");
+const streamingPageFilePath = path.resolve(
+  __dirname,
+  "../src/pages/streaming.md"
+);
 
-const START_VIDEO_LIST_MARKER = '<!-- VIDEO-LIST:START -->';
-const END_VIDEO_LIST_MARKER = '<!-- VIDEO-LIST:END -->';
+const START_VIDEO_LIST_MARKER = "<!-- VIDEO-LIST:START -->";
+const END_VIDEO_LIST_MARKER = "<!-- VIDEO-LIST:END -->";
 const VIDEO_MARKER_FINDER = new RegExp(
-  START_VIDEO_LIST_MARKER + '(.|[\r\n])*?' + END_VIDEO_LIST_MARKER
+  START_VIDEO_LIST_MARKER + "(.|[\r\n])*?" + END_VIDEO_LIST_MARKER
 );
 
 async function main() {
   const videos = await getVideos(
-    'https://www.youtube.com/feeds/videos.xml?channel_id=UCBLlEq0co24VFJIMEHNcPOQ'
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCBLlEq0co24VFJIMEHNcPOQ"
   );
   const videosMarkups = generateVideosMarkup(videos);
 
@@ -31,12 +34,12 @@ function generateVideosMarkup(videos) {
   let markup = '<div class="video-panel">';
 
   for (const video of videos) {
-    const {link, thumbnail, title} = video;
+    const { link, thumbnail, title } = video;
 
     markup += `<div class="video-thumbnail"><a href="${link}" title="${title}"><img src="${thumbnail}" alt="${title}" width="360" height="270" /></a><p>${title}</p></div>`;
   }
 
-  markup += '</div>';
+  markup += "</div>";
 
   return markup;
 }
@@ -56,7 +59,7 @@ function generateVideosMarkup(videos) {
 async function getVideos(videoFeedUrl, numberOfVideos = 6) {
   const parser = new Parser({
     customFields: {
-      item: ['media:group', 'media:thumbnail'],
+      item: ["media:group", "media:thumbnail"],
     },
   });
 
@@ -66,15 +69,15 @@ async function getVideos(videoFeedUrl, numberOfVideos = 6) {
     return {
       title: m.title,
       link: m.link,
-      description: m['media:group']['media:description'][0],
-      thumbnail: m['media:group']['media:thumbnail'][0].$.url,
+      description: m["media:group"]["media:description"][0],
+      thumbnail: m["media:group"]["media:thumbnail"][0].$.url,
       date: m.pubDate ? new Date(m.pubDate) : new Date(),
     };
   });
 }
 
 async function getTemplate() {
-  return await fs.readFile(streamingPageFilePath, 'utf-8');
+  return await fs.readFile(streamingPageFilePath, "utf-8");
 }
 
 async function saveReadMe(newReadMe) {

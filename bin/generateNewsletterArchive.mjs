@@ -1,28 +1,30 @@
-import * as url from 'url';
-import {promises as fs, mkdirSync, existsSync} from 'fs';
-import path from 'path';
-import Parser from 'rss-parser';
-import site from '../src/_data/site.json' assert {type: 'json'};
-import {socialImage} from '../src/shortCodes/index.js';
-import slugify from 'slugify';
+import * as url from "url";
+import { promises as fs, mkdirSync, existsSync } from "fs";
+import path from "path";
+import Parser from "rss-parser";
+import site from "../src/_data/site.json" assert { type: "json" };
+import { socialImage } from "../src/shortCodes/index.js";
+import slugify from "slugify";
 
-const isDevMode = process.env.NODE_ENV === 'development';
+const isDevMode = process.env.NODE_ENV === "development";
 
 if (isDevMode) {
-  const dotenv = await import('dotenv');
+  const dotenv = await import("dotenv");
   // add code to import env variables using dotenv
   dotenv.config();
 }
 
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-const NEWSLETTER_DIRECTORY = path.join(__dirname, '..', 'src', 'newsletter');
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+const NEWSLETTER_DIRECTORY = path.join(__dirname, "..", "src", "newsletter");
 const parser = new Parser();
 const feed = await parser.parseURL(site.newsletterRss);
-const {DEV_API_KEY} = process.env;
-const DEV_TO_API_URL = 'https://dev.to/api';
+const { DEV_API_KEY } = process.env;
+const DEV_TO_API_URL = "https://dev.to/api";
 
-function generateEmbed(url, forDevTo = false, devToEmbedType = 'embed') {
-  return forDevTo ? `{% ${devToEmbedType} ${url} %}\n` : `{% embed "${url}" %}\n`;
+function generateEmbed(url, forDevTo = false, devToEmbedType = "embed") {
+  return forDevTo
+    ? `{% ${devToEmbedType} ${url} %}\n`
+    : `{% embed "${url}" %}\n`;
 }
 
 const twitterEmbedMatcher =
@@ -32,7 +34,8 @@ const youtubeEmbedMatcher =
 const twitchEmbedMatcher =
   /\n<a\s+href="(?<TwitchUrl>https:\/\/(?:www\.)?twitch.tv\/[^"]+)">.+?<\/a>/gms;
 const tagsMatcher = /<!-- tags:\s+(?<tags>.+?)\s+-->/s;
-const codepenEmbedMatcher = /<a\s+href="(?<url>[^?"]+)(?:\?[^"]+)?">.+?<\/a>/gms;
+const codepenEmbedMatcher =
+  /<a\s+href="(?<url>[^?"]+)(?:\?[^"]+)?">.+?<\/a>/gms;
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
@@ -40,15 +43,17 @@ function sanitizeContent(rawContent, forDevTo = false) {
   let updatedContent = rawContent.trim();
 
   // Get rid of HTML comment that holds tags. The tags are used in the frontmatter
-  updatedContent = updatedContent.replace(tagsMatcher, '').replace('\n\n$', '\n');
+  updatedContent = updatedContent
+    .replace(tagsMatcher, "")
+    .replace("\n\n$", "\n");
 
   const twitterEmbeds = updatedContent.matchAll(twitterEmbedMatcher);
 
   for (const twitterEmbed of twitterEmbeds) {
-    const {twitterUrl, twitterUrl2} = twitterEmbed.groups;
+    const { twitterUrl, twitterUrl2 } = twitterEmbed.groups;
     updatedContent = updatedContent.replace(
       twitterEmbed[0],
-      generateEmbed(twitterUrl ?? twitterUrl2, forDevTo, 'twitter')
+      generateEmbed(twitterUrl ?? twitterUrl2, forDevTo, "twitter")
     );
   }
 
@@ -56,7 +61,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
   const youtubeEmbeds = updatedContent.matchAll(youtubeEmbedMatcher);
 
   for (const youtubeEmbed of youtubeEmbeds) {
-    const {YouTubeUrl} = youtubeEmbed.groups;
+    const { YouTubeUrl } = youtubeEmbed.groups;
     updatedContent = updatedContent.replace(
       youtubeEmbed[0],
       generateEmbed(YouTubeUrl, forDevTo)
@@ -67,7 +72,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
   const twitchEmbeds = updatedContent.matchAll(twitchEmbedMatcher);
 
   for (const twitchEmbed of twitchEmbeds) {
-    const {TwitchUrl} = twitchEmbed.groups;
+    const { TwitchUrl } = twitchEmbed.groups;
     updatedContent = updatedContent.replace(
       twitchEmbed[0],
       generateEmbed(TwitchUrl, forDevTo)
@@ -78,16 +83,16 @@ function sanitizeContent(rawContent, forDevTo = false) {
   const codepenEmbeds = updatedContent.matchAll(codepenEmbedMatcher);
 
   for (const codepenEmbed of codepenEmbeds) {
-    const {url} = codepenEmbed.groups;
+    const { url } = codepenEmbed.groups;
     updatedContent = updatedContent.replace(
       codepenEmbed[0],
-      generateEmbed(url, forDevTo, 'codepen')
+      generateEmbed(url, forDevTo, "codepen")
     );
   }
 
   updatedContent = updatedContent
-    .replaceAll(devToEmbedsMatcher, `\n{% embed ${forDevTo ? '$1' : '"$1"'} %}`)
-    .replaceAll(/<h2\s+[^>]+>/gi, '<h2>')
+    .replaceAll(devToEmbedsMatcher, `\n{% embed ${forDevTo ? "$1" : '"$1"'} %}`)
+    .replaceAll(/<h2\s+[^>]+>/gi, "<h2>")
 
     // begin replacing inline styles from social cards in newsletter
     .replaceAll(
@@ -99,23 +104,29 @@ function sanitizeContent(rawContent, forDevTo = false) {
       /style="float: left; color: #393f48; padding-left: 1em; padding-right: 1em;"/g,
       'class="float-left news-social-card-text"'
     )
-    .replaceAll(/style="[^"]+"/gi, '')
+    .replaceAll(/style="[^"]+"/gi, "")
     // end replacing inline styles from social cards in newsletter
     .replaceAll(
-      '?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter',
-      ''
+      "?utm_campaign=Yet%20Another%20Newsletter%20LOL&amp;utm_medium=email&amp;utm_source=Revue%20newsletter",
+      ""
     )
-    .replace(/<!--\[if mso\]>.+?<!\[endif\]-->/gs, '');
+    .replace(/<!--\[if mso\]>.+?<!\[endif\]-->/gs, "");
 
   return updatedContent;
 }
 
 async function generateNewsletterPost(feedItem) {
-  const {title, link: canonicalUrl, content, contentSnippet, isoDate} = feedItem;
+  const {
+    title,
+    link: canonicalUrl,
+    content,
+    contentSnippet,
+    isoDate,
+  } = feedItem;
   const tags = content
     .match(tagsMatcher)
-    ?.groups.tags.split(',')
-    .map((tag) => tag.trim()) ?? ['newsletter'];
+    ?.groups.tags.split(",")
+    .map((tag) => tag.trim()) ?? ["newsletter"];
 
   const jsonFrontmatter = {
     title,
@@ -123,10 +134,12 @@ async function generateNewsletterPost(feedItem) {
     date: isoDate,
     tags,
     canonical_url: canonicalUrl,
-    template: 'newsletter',
+    template: "newsletter",
   };
 
-  const filename = slugify(`${isoDate.split('T')[0]} ${title.replace(/:/g, ' ')}`);
+  const filename = slugify(
+    `${isoDate.split("T")[0]} ${title.replace(/:/g, " ")}`
+  );
   console.log(`Saving newsletter ${filename}`);
 
   const markdown = `---json\n${JSON.stringify(
@@ -147,7 +160,10 @@ async function generateNewsletterPost(feedItem) {
 
   try {
     // dev.to doesn't support webp for cover images so explicitly render as png
-    const main_image = socialImage(title, contentSnippet).replace(',f_auto', ',f_png');
+    const main_image = socialImage(title, contentSnippet).replace(
+      ",f_auto",
+      ",f_png"
+    );
     const article = {
       article: {
         title,
@@ -157,22 +173,24 @@ async function generateNewsletterPost(feedItem) {
           true
         )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).<!-- my newsletter -->`,
         tags,
-        series: 'Yet Another Newsletter LOL',
+        series: "Yet Another Newsletter LOL",
         canonical_url: canonicalUrl,
       },
     };
 
-    const response = await fetch(DEV_TO_API_URL + '/articles', {
-      method: 'POST',
+    const response = await fetch(DEV_TO_API_URL + "/articles", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'api-key': DEV_API_KEY,
+        "Content-Type": "application/json",
+        "api-key": DEV_API_KEY,
       },
       body: JSON.stringify(article),
     });
 
     if (response.status !== 201) {
-      console.error(`Couldn't create article on dev.to: ${response.statusText}`);
+      console.error(
+        `Couldn't create article on dev.to: ${response.statusText}`
+      );
     }
   } catch (error) {
     console.error("Couldn't create article on dev.to", error);
@@ -185,9 +203,10 @@ if (!existsSync(NEWSLETTER_DIRECTORY)) {
 
 // Only create/update the latest newsletter issue as this runs the day a newsletter is published
 const latestNewsletter = feed.items.find(
-  (issue) => new Date(issue.isoDate).toDateString() === new Date().toDateString()
+  (issue) =>
+    new Date(issue.isoDate).toDateString() === new Date().toDateString()
 );
 
 await generateNewsletterPost(latestNewsletter);
 
-console.log('Finished generating newsletter archives');
+console.log("Finished generating newsletter archives");

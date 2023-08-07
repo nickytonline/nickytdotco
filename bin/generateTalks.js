@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-const path = require('path');
-const {talks} = require('../src/_data/talks');
-const fs = require('fs').promises;
+const path = require("path");
+const { talks } = require("../src/_data/talks");
+const fs = require("fs").promises;
 
-const TALKS_DIRECTORY = path.join(__dirname, '../src/talks');
+const TALKS_DIRECTORY = path.join(__dirname, "../src/talks");
 
 /*
 
@@ -45,21 +45,25 @@ async function createTalkFile(talk) {
     excerpt: summary,
     venue: venue.name,
     date: date.toISOString(),
-    tags: [...tags, 'talks'],
-    template: 'post',
+    tags: [...tags, "talks"],
+    template: "post",
   };
 
   const markdownBody = `
-      ${video && video.type === 'youtube' ? `{% embed "${video.url}" %}` : ''}
-      ${video && video.type === 'vimeo' ? `{% embed "${video.url}" %}` : ''}
+      ${video && video.type === "youtube" ? `{% embed "${video.url}" %}` : ""}
+      ${video && video.type === "vimeo" ? `{% embed "${video.url}" %}` : ""}
       ${
-        video && video.type === 'custom'
+        video && video.type === "custom"
           ? `<a href="${video.url}" title="${title}"><img src="${video.image.url}" width="${video.image.width}" height="${video.image.height}" /></a>`
-          : ''
+          : ""
       }<p><span class="weight-bold">Venue:</span> <a href="${venue.url}">${
     venue.name
   }</a></p>
-      ${summary ? `<span class="weight-bold">Summary:</span> ${summary}</p>` : ''}
+      ${
+        summary
+          ? `<span class="weight-bold">Summary:</span> ${summary}</p>`
+          : ""
+      }
       ${
         slideDeck || sourceCode || additionalLinks
           ? `<p class="weight-bold">Links:</p>
@@ -69,14 +73,14 @@ async function createTalkFile(talk) {
                   ? `<li>
                   <a href="${slideDeck}">slide deck</a>
                 </li>`
-                  : ''
+                  : ""
               }
               ${
                 sourceCode
                   ? `<li>
                   <a href="${sourceCode}">source code</a>
                 </li>`
-                  : ''
+                  : ""
               }
 
               ${
@@ -89,11 +93,11 @@ async function createTalkFile(talk) {
                     </li>
                   `;
                       })
-                      .join('')
+                      .join("")
                   : ``
               }
             </ul>`
-          : ''
+          : ""
       }
   `;
 
@@ -106,7 +110,7 @@ async function createTalkFile(talk) {
   const talkFile = path.join(TALKS_DIRECTORY, `${slug}.md`);
   await fs.writeFile(talkFile, markdown);
 
-  return {status: 'success'};
+  return { status: "success" };
 }
 
 /**
@@ -119,33 +123,38 @@ async function createTalkFile(talk) {
  */
 function sanitizeMarkdownEmbeds(markdown) {
   const sanitizedMarkdown = markdown
-    .replaceAll(/{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g, '{% $1 "$2" %}')
+    .replaceAll(
+      /{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
+      '{% $1 "$2" %}'
+    )
     // Fixes a liquid JS issues when {{ code }} is used in a markdown code block
     // see https://github.com/11ty/eleventy/issues/2273
     .replaceAll(
       /```(?<language>.*)\n(?<code>(.|\n)+?)\n```/g,
-      '```$1\n{% raw %}\n$2\n{% endraw %}\n```'
+      "```$1\n{% raw %}\n$2\n{% endraw %}\n```"
     )
     // We need to add raw shortcodes to prevent shortcodes within code blocks from rendering.
     // For now, this only supports single-line code blocks.
-    .replaceAll(/(`{%[^%]+%}`)/g, '{% raw %}$1{% endraw %}');
+    .replaceAll(/(`{%[^%]+%}`)/g, "{% raw %}$1{% endraw %}");
 
   return sanitizedMarkdown;
 }
 
 (async () => {
   await Promise.all([
-    fs.mkdir(TALKS_DIRECTORY, {recursive: true}),
+    fs.mkdir(TALKS_DIRECTORY, { recursive: true }),
     fs.mkdir(TALKS_DIRECTORY, {
       recursive: true,
     }),
   ]);
 
   for (const talk of talks.entries()) {
-    const {status} = await createTalkFile(talk);
+    const { status } = await createTalkFile(talk);
 
-    if (status !== 'success') {
-      console.error(`Failed to create post file for ${JSON.stringify(talk, null, 2)}`);
+    if (status !== "success") {
+      console.error(
+        `Failed to create post file for ${JSON.stringify(talk, null, 2)}`
+      );
 
       throw new Error(`Unabled to generate markdown file: status ${status}`);
     }

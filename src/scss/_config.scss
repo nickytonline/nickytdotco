@@ -1,4 +1,4 @@
-@import 'tokens';
+@import "tokens";
 
 /**
  * SIZE SCALE
@@ -6,14 +6,14 @@
  * it is relevant for (font-size, margin, padding). All items are
  * calcuated off these tokens.
  */
-$stalfos-size-scale: map-get($tokens, 'size-scale');
+$stalfos-size-scale: map-get($tokens, "size-scale");
 
 /**
  * COLORS
  * Colors are shared between backgrounds and text by default.
  * You can also use them to power borders, fills or shadows, for example.
  */
-$stalfos-colors: map-get($tokens, 'colors');
+$stalfos-colors: map-get($tokens, "colors");
 
 /**
  * UTIL PREFIX
@@ -21,16 +21,16 @@ $stalfos-colors: map-get($tokens, 'colors');
  * Example: the wrapper utility is '.sf-wrapper' because the default
  * prefix is 'sf-'.
  */
-$stalfos-util-prefix: 'sf-';
+$stalfos-util-prefix: "sf-";
 
 /**
  * METRICS
  * Various misc metrics to use around the site
  */
 $metrics: (
-  'wrap-max-width': 58rem,
-  'wrap-inner-max-width': 52rem,
-  'md-breakpoint': 48rem,
+  "wrap-max-width": 58rem,
+  "wrap-inner-max-width": 52rem,
+  "md-breakpoint": 48rem,
 );
 
 /**
@@ -39,175 +39,175 @@ $metrics: (
  * to enabling/disabling pre-built components/utilities.
  */
 $stalfos-config: (
-  'align': (
-    'items': (
-      'start': 'flex-start',
-      'center': 'center',
-      'end': 'flex-end',
+  "align": (
+    "items": (
+      "start": "flex-start",
+      "center": "center",
+      "end": "flex-end",
     ),
-    'output': 'responsive',
-    'property': 'align-items',
+    "output": "responsive",
+    "property": "align-items",
   ),
-  'bg': (
-    'items': $stalfos-colors,
-    'output': 'standard',
-    'property': 'background',
+  "bg": (
+    "items": $stalfos-colors,
+    "output": "standard",
+    "property": "background",
   ),
-  'color': (
-    'items': $stalfos-colors,
-    'output': 'standard',
-    'property': 'color',
+  "color": (
+    "items": $stalfos-colors,
+    "output": "standard",
+    "property": "color",
   ),
-  'box': (
-    'items': (
-      'block': 'block',
-      'flex': 'flex',
-      'inline-flex': 'inline-flex',
-      'hide': 'none',
+  "box": (
+    "items": (
+      "block": "block",
+      "flex": "flex",
+      "inline-flex": "inline-flex",
+      "hide": "none",
     ),
-    'output': 'responsive',
-    'property': 'display',
+    "output": "responsive",
+    "property": "display",
   ),
-  'flex': (
-    'items': (
-      'wrap': 'wrap',
-      'nowrap': 'nowrap',
+  "flex": (
+    "items": (
+      "wrap": "wrap",
+      "nowrap": "nowrap",
     ),
-    'output': 'responsive',
-    'property': 'flex-wrap',
+    "output": "responsive",
+    "property": "flex-wrap",
   ),
-  'flex-dir': (
-    'items': (
-      'col': 'column',
+  "flex-dir": (
+    "items": (
+      "col": "column",
     ),
-    'output': 'responsive',
-    'property': 'flex-direction',
+    "output": "responsive",
+    "property": "flex-direction",
   ),
-  'word-break': (
-    'items': (
-      'normal': normal,
+  "word-break": (
+    "items": (
+      "normal": normal,
       // 'all': 'break-all',
-      // 'keep-all': 'keep-all',,,,
+      // 'keep-all': 'keep-all',,,,,,
     ),
-    output: 'standard',
-    property: 'word-break',
+    output: "standard",
+    property: "word-break",
   ),
-  'font': (
-    'items': map-get($tokens, 'fonts'),
-    'output': 'standard',
-    'property': 'font-family',
+  "font": (
+    "items": map-get($tokens, "fonts"),
+    "output": "standard",
+    "property": "font-family",
   ),
-  'gap': (
-    'items': $stalfos-size-scale,
-    'output': 'standard',
-    'property': 'gap',
+  "gap": (
+    "items": $stalfos-size-scale,
+    "output": "standard",
+    "property": "gap",
   ),
-  'gap-top': (
-    'items': $stalfos-size-scale,
-    'output': 'standard',
-    'property': 'margin-top',
+  "gap-top": (
+    "items": $stalfos-size-scale,
+    "output": "standard",
+    "property": "margin-top",
   ),
-  'gap-bottom': (
-    'items': $stalfos-size-scale,
-    'output': 'standard',
-    'property': 'margin-bottom',
+  "gap-bottom": (
+    "items": $stalfos-size-scale,
+    "output": "standard",
+    "property": "margin-bottom",
   ),
-  'leading': (
-    'items': (
-      'tight': '1.2',
-      'mid': '1.5',
-      'loose': '1.7',
+  "leading": (
+    "items": (
+      "tight": "1.2",
+      "mid": "1.5",
+      "loose": "1.7",
     ),
-    'output': 'standard',
-    'property': 'line-height',
+    "output": "standard",
+    "property": "line-height",
   ),
-  'measure': (
-    'items': (
-      'long': '75ch',
-      'short': '60ch',
-      'compact': '40ch',
+  "measure": (
+    "items": (
+      "long": "75ch",
+      "short": "60ch",
+      "compact": "40ch",
     ),
-    'output': 'standard',
-    'property': 'max-width',
+    "output": "standard",
+    "property": "max-width",
   ),
-  'pad-top': (
-    'items': $stalfos-size-scale,
-    'output': 'standard',
-    'property': 'padding-top',
+  "pad-top": (
+    "items": $stalfos-size-scale,
+    "output": "standard",
+    "property": "padding-top",
   ),
-  'pad-bottom': (
-    'items': $stalfos-size-scale,
-    'output': 'standard',
-    'property': 'padding-bottom',
+  "pad-bottom": (
+    "items": $stalfos-size-scale,
+    "output": "standard",
+    "property": "padding-bottom",
   ),
-  'pad-left': (
-    'items': $stalfos-size-scale,
-    'output': 'standard',
-    'property': 'padding-left',
+  "pad-left": (
+    "items": $stalfos-size-scale,
+    "output": "standard",
+    "property": "padding-left",
   ),
-  'space': (
-    'items': (
-      'between': 'space-between',
-      'around': 'space-around',
-      'before': 'flex-end',
-      'after': 'flex-start',
-      'center': 'center',
+  "space": (
+    "items": (
+      "between": "space-between",
+      "around": "space-around",
+      "before": "flex-end",
+      "after": "flex-start",
+      "center": "center",
     ),
-    'output': 'responsive',
-    'property': 'justify-content',
+    "output": "responsive",
+    "property": "justify-content",
   ),
-  'stack': (
-    'items': (
-      '300': 0,
-      '400': 10,
-      '500': 20,
-      '600': 30,
-      '700': 40,
+  "stack": (
+    "items": (
+      "300": 0,
+      "400": 10,
+      "500": 20,
+      "600": 30,
+      "700": 40,
     ),
-    'output': 'standard',
-    'property': 'z-index',
+    "output": "standard",
+    "property": "z-index",
   ),
-  'ta': (
-    'items': (
-      'right': 'right',
-      'left': 'left',
-      'center': 'center',
+  "ta": (
+    "items": (
+      "right": "right",
+      "left": "left",
+      "center": "center",
     ),
-    'output': 'responsive',
-    'property': 'text-align',
+    "output": "responsive",
+    "property": "text-align",
   ),
-  'text': (
-    'items': $stalfos-size-scale,
-    'output': 'responsive',
-    'property': 'font-size',
+  "text": (
+    "items": $stalfos-size-scale,
+    "output": "responsive",
+    "property": "font-size",
   ),
-  'weight': (
-    'items': (
-      'light': '300',
-      'regular': '400',
-      'mid': '600',
-      'bold': '700',
+  "weight": (
+    "items": (
+      "light": "300",
+      "regular": "400",
+      "mid": "600",
+      "bold": "700",
     ),
-    'output': 'standard',
-    'property': 'font-weight',
+    "output": "standard",
+    "property": "font-weight",
   ),
-  'width': (
-    'items': (
-      'full': '100%',
-      'half': '50%',
-      'quarter': '25%',
-      'third': '33.33%',
+  "width": (
+    "items": (
+      "full": "100%",
+      "half": "50%",
+      "quarter": "25%",
+      "third": "33.33%",
     ),
-    'output': 'responsive',
-    'property': 'width',
+    "output": "responsive",
+    "property": "width",
   ),
-  'breakpoints': (
-    'md': #{'(min-width: ' + map-get($metrics, 'md-breakpoint') + ')'},
+  "breakpoints": (
+    "md": #{"(min-width: " + map-get($metrics, "md-breakpoint") + ")"},
   ),
-  'utilities': (
-    'reset': 'on',
-    'icon': 'off',
-    'flow': 'on',
-    'wrapper': 'off',
+  "utilities": (
+    "reset": "on",
+    "icon": "off",
+    "flow": "on",
+    "wrapper": "off",
   ),
 );

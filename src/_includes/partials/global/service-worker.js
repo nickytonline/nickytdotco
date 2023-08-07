@@ -7,10 +7,10 @@ const CACHE_KEYS = {
 const EXCLUDED_URLS = [];
 
 // URLS that we want to be cached when the worker is installed
-const PRE_CACHE_URLS = ['/', '/fonts/Raleway/Raleway-Bold.ttf'];
+const PRE_CACHE_URLS = ["/", "/fonts/Raleway/Raleway-Bold.ttf"];
 
 // You might want to bypass a certain host
-const IGNORED_HOSTS = ['localhost'];
+const IGNORED_HOSTS = ["localhost"];
 
 /**
  * Takes an array of strings and puts them in a named cache store
@@ -22,19 +22,21 @@ const addItemsToCache = function (cacheName, items = []) {
   caches.open(cacheName).then((cache) => cache.addAll(items));
 };
 
-self.addEventListener('install', (evt) => {
+self.addEventListener("install", (evt) => {
   self.skipWaiting();
 
   addItemsToCache(CACHE_KEYS.PRE_CACHE, PRE_CACHE_URLS);
 });
 
-self.addEventListener('activate', (evt) => {
+self.addEventListener("activate", (evt) => {
   // Look for any old caches that don't match our set and clear them out
   evt.waitUntil(
     caches
       .keys()
       .then((cacheNames) => {
-        return cacheNames.filter((item) => !Object.values(CACHE_KEYS).includes(item));
+        return cacheNames.filter(
+          (item) => !Object.values(CACHE_KEYS).includes(item)
+        );
       })
       .then((itemsToDelete) => {
         return Promise.all(
@@ -47,8 +49,8 @@ self.addEventListener('activate', (evt) => {
   );
 });
 
-self.addEventListener('fetch', (evt) => {
-  const {hostname} = new URL(evt.request.url);
+self.addEventListener("fetch", (evt) => {
+  const { hostname } = new URL(evt.request.url);
 
   // Check we don't want to ignore this host
   if (IGNORED_HOSTS.indexOf(hostname) >= 0) {

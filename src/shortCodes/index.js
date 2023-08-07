@@ -1,12 +1,15 @@
 /* eslint-env node */
-const path = require('path');
-const fs = require('fs').promises;
-const {DateTime} = require('luxon');
+const path = require("path");
+const fs = require("fs").promises;
+const { DateTime } = require("luxon");
 const hashnodeData = require(`../_data/hashnodeUrls.json`);
 const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
 const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
 const site = require(`../_data/site.json`);
-const TWITTER_EMBEDS_FILE_PATH = path.join(__dirname, '../_data/twitterEmbeds.json');
+const TWITTER_EMBEDS_FILE_PATH = path.join(
+  __dirname,
+  "../_data/twitterEmbeds.json"
+);
 
 async function updateTwitterEmbeds(twitterEmbeds, filepath) {
   const data = JSON.stringify(twitterEmbeds, null, 2);
@@ -25,14 +28,14 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
  * @returns {string} Markup for a boost links on DEV and Hashnode.
  */
 function boostLink(title, fileSlug, url, canonicalUrl) {
-  const isVsCodeTips = url.startsWith('/vscodetips/');
-  const isNewsletter = url.startsWith('/newsletter/');
+  const isVsCodeTips = url.startsWith("/vscodetips/");
+  const isNewsletter = url.startsWith("/newsletter/");
 
-  if (!url.startsWith('/blog/') && !isNewsletter && !isVsCodeTips) {
-    return '';
+  if (!url.startsWith("/blog/") && !isNewsletter && !isVsCodeTips) {
+    return "";
   }
 
-  let hashnodeBoosterLink = '';
+  let hashnodeBoosterLink = "";
   const hashnodeUrl = hashnodeData[fileSlug];
 
   if (hashnodeUrl) {
@@ -53,7 +56,7 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
     `${title} by ${site.mastodonHandle} ${site.url}${url}`
   )}">Toot it!</a>`;
 
-  let foremBoostLink = '';
+  let foremBoostLink = "";
 
   if (!isNewsletter) {
     foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
@@ -73,13 +76,13 @@ async function youtubeEmbed(videoUrl) {
   let videoId;
   let time;
 
-  if (videoUrl.includes('https://')) {
+  if (videoUrl.includes("https://")) {
     [, videoId, time] = videoUrl.match(/.+\?v=([^&]+)(?:&t=([^&]+)s)?/) ?? [];
   } else {
     videoId = videoUrl;
   }
 
-  const timeQueryParameter = time ? `?start=${time}` : '';
+  const timeQueryParameter = time ? `?start=${time}` : "";
   const url = `https://www.youtube.com/embed/${videoId}${timeQueryParameter}`;
   const response = await fetch(
     `https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v%3D${videoId}&format=json`
@@ -89,7 +92,7 @@ async function youtubeEmbed(videoUrl) {
     return `<div class="video-player"><p>Video is no longer available.</p></div>`;
   }
 
-  const {title} = await response.json();
+  const { title } = await response.json();
 
   return `<div class="video-player">
       <iframe
@@ -116,11 +119,11 @@ async function youtubeEmbed(videoUrl) {
  *
  * @returns {string} An URL in string format representing a social image for a page.
  */
-function socialImage(title, excerpt = '') {
-  const innerWhitespaceTrimmedExcerpt = excerpt.replace(/\s+/g, ' ');
+function socialImage(title, excerpt = "") {
+  const innerWhitespaceTrimmedExcerpt = excerpt.replace(/\s+/g, " ");
   const truncatedExcerpt =
     innerWhitespaceTrimmedExcerpt.length > 101
-      ? innerWhitespaceTrimmedExcerpt.substr(0, 101) + '...'
+      ? innerWhitespaceTrimmedExcerpt.substr(0, 101) + "..."
       : innerWhitespaceTrimmedExcerpt;
   const encodedTitle = encodeURIComponent(encodeURIComponent(title));
 
@@ -134,13 +137,13 @@ function socialImage(title, excerpt = '') {
 
     // If it's not UTF-8, things go boom
     encodedExcerpt = encodeURIComponent(
-      encodeURIComponent(Buffer.from(truncatedExcerpt, 'utf-8').toString())
+      encodeURIComponent(Buffer.from(truncatedExcerpt, "utf-8").toString())
     );
   }
   const encodedAuthor = encodeURIComponent(
     encodeURIComponent(`${site.authorName} ${site.twitterHandle}`)
   );
-  const textColor = '333333';
+  const textColor = "333333";
 
   return `https://res.cloudinary.com/nickytonline/w_1280,h_669,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:${textColor},g_south_west,x_370,y_380,l_text:roboto_64_bold:${encodedTitle}/w_860,c_fit,co_rgb:${textColor},g_north_west,x_370,y_320,l_text:arial_42:${encodedExcerpt}/w_860,c_fit,co_rgb:${textColor},g_north_west,x_820,y_600,l_text:arial_36:${encodedAuthor}/twitter-blog-post-social-card_bqhgzt`;
 }
@@ -155,13 +158,16 @@ function socialImage(title, excerpt = '') {
 function embedEmbed(rawUrl) {
   const url = new URL(rawUrl);
 
-  if (url.hostname.includes('codepen.io')) {
+  if (url.hostname.includes("codepen.io")) {
     return codepenEmbed(url);
   }
 
   // This is based off the generic dev.to embed liquid tag.
-  if (url.hostname.includes(`youtube.com`) || url.hostname.includes(`youtu.be`)) {
-    const videoId = url.searchParams.get('v') ?? url.pathname.substr(1);
+  if (
+    url.hostname.includes(`youtube.com`) ||
+    url.hostname.includes(`youtu.be`)
+  ) {
+    const videoId = url.searchParams.get("v") ?? url.pathname.substr(1);
 
     return youtubeEmbed(videoId);
   }
@@ -171,20 +177,22 @@ function embedEmbed(rawUrl) {
   }
 
   if (url.hostname.includes(`twitter.com`)) {
-    const {tweetId} = rawUrl.match(
+    const { tweetId } = rawUrl.match(
       /twitter\.com\/[^\/]+\/status\/(?<tweetId>[^\/]+)/
     ).groups;
     return twitterEmbed(tweetId);
   }
 
   if (url.hostname.includes(`twitch.tv`)) {
-    const {videoId} = url.pathname.match(/\/videos\/(?<videoId>[^\/]+)/).groups;
+    const { videoId } = url.pathname.match(
+      /\/videos\/(?<videoId>[^\/]+)/
+    ).groups;
 
     return twitchEmbed(videoId);
   }
 
   if (url.hostname.includes(`dev.to`)) {
-    const {username, slug} = rawUrl.match(
+    const { username, slug } = rawUrl.match(
       /dev\.to\/(?<username>[^\/]+)\/(?<slug>[^\/]+)/
     ).groups;
 
@@ -198,14 +206,14 @@ function embedEmbed(rawUrl) {
   }
 
   if (url.hostname.includes(`nickscuts.buzzsprout.com`)) {
-    const episodeId = url.pathname.split('/').pop().replace(/-.*/g, '');
+    const episodeId = url.pathname.split("/").pop().replace(/-.*/g, "");
 
     return buzzsproutEmbed(url.href, episodeId);
   }
 
-  if (url.hostname.includes('vimeo.com')) {
+  if (url.hostname.includes("vimeo.com")) {
     // e,f, https://vimeo.com/724340575
-    const videoId = url.pathname.split('/').pop();
+    const videoId = url.pathname.split("/").pop();
 
     return vimeoEmbed(videoId);
   }
@@ -239,19 +247,24 @@ async function twitterEmbed(tweetId) {
       )}`
     );
 
-    console.log(`Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`);
+    console.log(
+      `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`
+    );
 
     if (response.status === 404) {
-      twitterEmbeds[tweetId] = '<P>The Tweet has been deleted.</p>';
+      twitterEmbeds[tweetId] = "<P>The Tweet has been deleted.</p>";
     } else {
-      let {html} = await response.json();
+      let { html } = await response.json();
 
       twitterEmbeds[tweetId] = html;
     }
     await updateTwitterEmbeds(twitterEmbeds, TWITTER_EMBEDS_FILE_PATH);
   }
 
-  return twitterEmbeds[tweetId] ?? `<div>Missing Tweet embed with ID ${tweetId}</div>`;
+  return (
+    twitterEmbeds[tweetId] ??
+    `<div>Missing Tweet embed with ID ${tweetId}</div>`
+  );
 }
 
 /**
@@ -280,12 +293,12 @@ function devLinkEmbed(blogPostUrl) {
     reading_time_minutes,
     tags,
     canonical_url,
-    user: {name, username, profile_image},
+    user: { name, username, profile_image },
   } = blogPostEmbeds[blogPostUrl];
 
   const url = canonical_url ?? devToUrl;
   const publishDate = DateTime.fromJSDate(new Date(published_timestamp))
-    .setLocale('en-CA')
+    .setLocale("en-CA")
     .toLocaleString(DateTime.DATE_FULL);
 
   return `<article class="ltag__link box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after" title="${title}">
@@ -314,7 +327,7 @@ function devLinkEmbed(blogPostUrl) {
  * @returns {string} Markup for the GitHub embed.
  */
 function githubEmbed(url) {
-  const encodedUrl = encodeURIComponent(url).replace(/\/$/, '');
+  const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
 
   return `<a href="${url}">
   <span class="visually-hidden">The ${url} repository on GitHub</span><picture>
@@ -371,7 +384,7 @@ function codeSandboxEmbed(sandboxId) {
  * @returns {string} Markup for the Twitch embed.
  */
 function twitchEmbed(videoId) {
-  const {host} = new URL(site.url);
+  const { host } = new URL(site.url);
 
   return `<div class="video-player">
   <iframe

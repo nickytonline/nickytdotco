@@ -15,7 +15,7 @@
     padding-top: 63%;
   }
 
-  @include media-query('md') {
+  @include media-query("md") {
     .post & {
       padding-top: 66%;
     }

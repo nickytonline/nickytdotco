@@ -1,41 +1,47 @@
 #!/usr/bin/env node
-require('dotenv').config();
+require("dotenv").config();
 
-const jsdom = require('@tbranyen/jsdom');
-const {JSDOM} = jsdom;
-const path = require('path');
-const fs = require('fs').promises;
-const {DEV_API_KEY} = process.env;
-const SLUG_INCLUSION_LIST = require('./slugInclusionList.json');
+const jsdom = require("@tbranyen/jsdom");
+const { JSDOM } = jsdom;
+const path = require("path");
+const fs = require("fs").promises;
+const { DEV_API_KEY } = process.env;
+const SLUG_INCLUSION_LIST = require("./slugInclusionList.json");
 
-const DEV_TO_API_URL = 'https://dev.to/api';
-const POSTS_DIRECTORY = path.join(__dirname, '../src/blog');
-const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, '../src/vscodetips');
-const POSTS_IMAGES_PUBLIC_DIRECTORY = '/images/posts';
+const DEV_TO_API_URL = "https://dev.to/api";
+const POSTS_DIRECTORY = path.join(__dirname, "../src/blog");
+const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, "../src/vscodetips");
+const POSTS_IMAGES_PUBLIC_DIRECTORY = "/images/posts";
 const POSTS_IMAGES_DIRECTORY = path.join(
   __dirname,
-  '../src',
+  "../src",
   POSTS_IMAGES_PUBLIC_DIRECTORY
 );
 const EMBEDDED_POSTS_MARKUP_FILE = path.join(
   __dirname,
-  '../src/_data/embeddedPostsMarkup.json'
+  "../src/_data/embeddedPostsMarkup.json"
 );
-const TWITTER_EMBEDS_FILE = path.join(__dirname, '../src/_data/twitterEmbeds.json');
-const currentBlogPostEmbeds = require('../src/_data/embeddedPostsMarkup.json');
+const TWITTER_EMBEDS_FILE = path.join(
+  __dirname,
+  "../src/_data/twitterEmbeds.json"
+);
+const currentBlogPostEmbeds = require("../src/_data/embeddedPostsMarkup.json");
 const blogPostEmbeds = new Map(Object.entries(currentBlogPostEmbeds));
 
-const currentTwitterEmbeds = require('../src/_data/twitterEmbeds.json');
+const currentTwitterEmbeds = require("../src/_data/twitterEmbeds.json");
 const twitterEmbeds = new Map(Object.entries(currentTwitterEmbeds));
-const DOM = new JSDOM(`<!DOCTYPE html><html><head></head><body></body></html>`, {
-  resources: 'usable',
-});
+const DOM = new JSDOM(
+  `<!DOCTYPE html><html><head></head><body></body></html>`,
+  {
+    resources: "usable",
+  }
+);
 
-const {document} = DOM.window;
-let {url: siteUrl} = require('../src/_data/site.json');
+const { document } = DOM.window;
+let { url: siteUrl } = require("../src/_data/site.json");
 
 if (!DEV_API_KEY) {
-  throw new Error('Missing DEV_API_KEY environment variable');
+  throw new Error("Missing DEV_API_KEY environment variable");
 }
 
 /**
@@ -59,16 +65,19 @@ async function fileExists(path) {
  */
 function sanitizeMarkdownEmbeds(markdown) {
   const sanitizedMarkdown = markdown
-    .replaceAll(/{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g, '{% $1 "$2" %}')
+    .replaceAll(
+      /{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
+      '{% $1 "$2" %}'
+    )
     // Fixes a liquid JS issues when {{ code }} is used in a markdown code block
     // see https://github.com/11ty/eleventy/issues/2273
     .replaceAll(
       /```(?<language>.*)\n(?<code>(.|\n)+?)\n```/g,
-      '```$1\n{% raw %}\n$2\n{% endraw %}\n```'
+      "```$1\n{% raw %}\n$2\n{% endraw %}\n```"
     )
     // We need to add raw shortcodes to prevent shortcodes within code blocks from rendering.
     // For now, this only supports single-line code blocks.
-    .replaceAll(/(`{%[^%]+%}`)/g, '{% raw %}$1{% endraw %}');
+    .replaceAll(/(`{%[^%]+%}`)/g, "{% raw %}$1{% endraw %}");
 
   return sanitizedMarkdown;
 }
@@ -82,20 +91,20 @@ function sanitizeMarkdownEmbeds(markdown) {
  * @returns {boolean} True if the post is valid for publishing, otherwise false.
  */
 function isValidPost(post) {
-  const {tag_list: tags = [], slug} = post;
+  const { tag_list: tags = [], slug } = post;
 
   return (
-    (!tags.includes('jokes') &&
-      !tags.includes('weeklylearn') &&
-      !tags.includes('weeklyretro') &&
-      !tags.includes('watercooler') &&
-      !tags.includes('devhumor') &&
-      !tags.includes('discuss') &&
-      !tags.includes('vscodetip') &&
-      !tags.includes('explainlikeimfive') &&
-      !tags.includes('help') &&
+    (!tags.includes("jokes") &&
+      !tags.includes("weeklylearn") &&
+      !tags.includes("weeklyretro") &&
+      !tags.includes("watercooler") &&
+      !tags.includes("devhumor") &&
+      !tags.includes("discuss") &&
+      !tags.includes("vscodetip") &&
+      !tags.includes("explainlikeimfive") &&
+      !tags.includes("help") &&
       // omits my newsletter posts which are already published on my site
-      !tags.includes('newsletter')) ||
+      !tags.includes("newsletter")) ||
     SLUG_INCLUSION_LIST.includes(slug)
   );
 }
@@ -128,11 +137,14 @@ Sample post format:
  * @returns {Promise<object[]>} A promise that resolves to an array of blog posts.
  */
 async function getDevPosts() {
-  const response = await fetch(DEV_TO_API_URL + '/articles/me/published?per_page=1000', {
-    headers: {
-      'api-key': DEV_API_KEY,
-    },
-  });
+  const response = await fetch(
+    DEV_TO_API_URL + "/articles/me/published?per_page=1000",
+    {
+      headers: {
+        "api-key": DEV_API_KEY,
+      },
+    }
+  );
   const posts = await response.json();
 
   return posts.filter(isValidPost);
@@ -151,8 +163,8 @@ async function getDevPost(blogPostId) {
   const getArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
   const response = await fetch(getArticleUrl, {
     headers: {
-      'api-key': DEV_API_KEY,
-      'Content-Type': 'application/json',
+      "api-key": DEV_API_KEY,
+      "Content-Type": "application/json",
     },
   });
 
@@ -200,13 +212,13 @@ async function createPostFile(post) {
     cover_image,
     canonicalUrl,
     reading_time_minutes,
-    template: 'post',
+    template: "post",
   };
   let markdownBody;
 
   if (/^---(\r|\n)/.test(body_markdown)) {
     // v1 editor
-    markdownBody = body_markdown.replace(/^---(\r|\n)(.|\r|\n)*?---\n*/, '');
+    markdownBody = body_markdown.replace(/^---(\r|\n)(.|\r|\n)*?---\n*/, "");
   } else {
     markdownBody = body_markdown;
   }
@@ -217,8 +229,11 @@ async function createPostFile(post) {
     2
   )}\n---\n\n${sanitizeMarkdownEmbeds(markdownBody).trim()}\n`;
 
-  const basePath = tags.includes('vscodetips')
-    ? path.join(VSCODE_TIPS_POSTS_DIRECTORY, new Date(date).getFullYear().toString())
+  const basePath = tags.includes("vscodetips")
+    ? path.join(
+        VSCODE_TIPS_POSTS_DIRECTORY,
+        new Date(date).getFullYear().toString()
+      )
     : POSTS_DIRECTORY;
   const postFile = path.join(basePath, `${slug}.md`);
   await fs.writeFile(postFile, markdown);
@@ -229,7 +244,7 @@ async function createPostFile(post) {
   );
 
   for (const {
-    groups: {id, id2},
+    groups: { id, id2 },
   } of twitterEmbedMatches) {
     const tweetId = id ?? id2;
 
@@ -245,13 +260,13 @@ async function createPostFile(post) {
         `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`
       );
 
-      const {html} = await response.json();
+      const { html } = await response.json();
 
       twitterEmbeds.set(tweetId, html);
     }
   }
 
-  return {status: 'success'};
+  return { status: "success" };
 }
 
 /**
@@ -277,7 +292,7 @@ async function saveImageUrl(imageUrl, imageFilePath) {
  * @returns {string} The new image URL.
  */
 function generateNewImageUrl(imageUrl) {
-  const imagefilename = imageUrl.pathname.replaceAll('/', '_');
+  const imagefilename = imageUrl.pathname.replaceAll("/", "_");
   const newImageUrl = new URL(
     siteUrl + path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename)
   ).toString();
@@ -297,8 +312,11 @@ async function saveMarkdownImageUrl(markdownImageUrl = null) {
 
   if (markdownImageUrl) {
     const imageUrl = new URL(markdownImageUrl);
-    const imagefilename = imageUrl.pathname.replaceAll('/', '_');
-    const localCoverImagePath = path.join(POSTS_IMAGES_DIRECTORY, imagefilename);
+    const imagefilename = imageUrl.pathname.replaceAll("/", "_");
+    const localCoverImagePath = path.join(
+      POSTS_IMAGES_DIRECTORY,
+      imagefilename
+    );
 
     newMarkdownImageUrl = generateNewImageUrl(imageUrl);
 
@@ -334,11 +352,11 @@ async function updateMarkdownImageUrls(markdown) {
   const matches = markdown.matchAll(/!\[.*?\]\((?<oldImageUrl>.*?)\)/g);
 
   for (const match of matches) {
-    const {oldImageUrl} = match.groups;
+    const { oldImageUrl } = match.groups;
 
     const imageUrl = new URL(oldImageUrl);
 
-    if (!imageUrl.host.includes('giphy.com')) {
+    if (!imageUrl.host.includes("giphy.com")) {
       const newImageUrl = generateNewImageUrl(imageUrl);
 
       updatedMarkdown = updatedMarkdown.replace(oldImageUrl, newImageUrl);
@@ -359,7 +377,7 @@ async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
   );
 
   for (const match of matches) {
-    const {embedType, embedUrl} = match.groups;
+    const { embedType, embedUrl } = match.groups;
 
     let url = null;
 
@@ -372,9 +390,9 @@ async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
     if (
       url &&
       !embeds.has(embedUrl) &&
-      url.host === 'dev.to' &&
-      embedType !== 'podcast' &&
-      embedType !== 'tag'
+      url.host === "dev.to" &&
+      embedType !== "podcast" &&
+      embedType !== "tag"
     ) {
       const respones = await fetch(embedUrl);
       const markup = await respones.text();
@@ -396,7 +414,7 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
     const match = html.match(/data-article-id="(?<blogPostId>.+?)"/);
 
     if (match) {
-      const {blogPostId} = match.groups;
+      const { blogPostId } = match.groups;
       const {
         body_html,
         body_markdown,
@@ -431,17 +449,20 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
 
 (async () => {
   await Promise.all([
-    fs.mkdir(POSTS_DIRECTORY, {recursive: true}),
+    fs.mkdir(POSTS_DIRECTORY, { recursive: true }),
     fs.mkdir(POSTS_DIRECTORY, {
       recursive: true,
     }),
     fs.mkdir(
-      path.join(VSCODE_TIPS_POSTS_DIRECTORY, new Date().getFullYear().toString()),
+      path.join(
+        VSCODE_TIPS_POSTS_DIRECTORY,
+        new Date().getFullYear().toString()
+      ),
       {
         recursive: true,
       }
     ),
-    fs.mkdir(POSTS_IMAGES_DIRECTORY, {recursive: true}),
+    fs.mkdir(POSTS_IMAGES_DIRECTORY, { recursive: true }),
   ]);
 
   const posts = await getDevPosts();
@@ -449,9 +470,9 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
   // Only publish posts that are not under the vscodetips dev.to organization.
   for (const post of posts.filter((post) => {
     return (
-      !['vscodetips', 'virtualcoffee'].includes(post.organization?.username) ||
-      (post.organization?.username === 'vscodetips' &&
-        post.tag_list.includes('vscodetips'))
+      !["vscodetips", "virtualcoffee"].includes(post.organization?.username) ||
+      (post.organization?.username === "vscodetips" &&
+        post.tag_list.includes("vscodetips"))
     );
   })) {
     // Newsletter posts are not published to the blog. The blog publishes the newsletter to DEV.
@@ -460,7 +481,9 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
       continue;
     }
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
-    const {markdown, imagesToSave} = await updateMarkdownImageUrls(post.body_markdown);
+    const { markdown, imagesToSave } = await updateMarkdownImageUrls(
+      post.body_markdown
+    );
 
     await Promise.all([
       saveMarkdownImages(imagesToSave),
@@ -472,10 +495,12 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
       cover_image: updatedCoverImage,
       body_markdown: markdown,
     };
-    const {status} = await createPostFile(updatedPost);
+    const { status } = await createPostFile(updatedPost);
 
-    if (status !== 'success') {
-      console.error(`Failed to create post file for ${JSON.stringify(post, null, 2)}`);
+    if (status !== "success") {
+      console.error(
+        `Failed to create post file for ${JSON.stringify(post, null, 2)}`
+      );
 
       throw new Error(`Unabled to generate markdown file: status ${status}`);
     }

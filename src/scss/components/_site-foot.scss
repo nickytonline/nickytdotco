@@ -22,11 +22,11 @@
 }
 
 .netlify-footer img {
-  content: url('https://www.netlify.com/img/global/badges/netlify-dark.svg');
+  content: url("https://www.netlify.com/img/global/badges/netlify-dark.svg");
 }
 
-html[data-user-color-scheme='dark'] .netlify-footer img {
-  content: url('https://www.netlify.com/img/global/badges/netlify-light.svg');
+html[data-user-color-scheme="dark"] .netlify-footer img {
+  content: url("https://www.netlify.com/img/global/badges/netlify-light.svg");
 }
 
 the-claw-webring-widget {
