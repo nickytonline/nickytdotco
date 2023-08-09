@@ -1,5 +1,8 @@
 Sitemap: https://www.iamdeveloper.com/sitemap.xml
 
+User-agent: GPTBot
+Disallow: /
+
 User-agent: *
 
 Disallow:
