@@ -31,10 +31,13 @@ Anna is a career transitioner who landed her first job in tech recently! It's a 
 
 It should be fun, and you all get to see me ugly sweat on Twitch, lol.
 
-Come hang with us tomorrow, Wednesday, August 9th, at 5 pm UTC!
+[Come hang with us](https://www.twitch.tv/nickytonline) tomorrow, Wednesday, August 9th, at 5 pm UTC!
 
+Update August 9, 2023: Here's some highlights from the stream!
 
-[![Kettlebells & Code with Anna Nettles](https://www.iamdeveloper.com/images/posts/_uploads_articles_p81oziz1cap3x7h4wgf6.png)](https://www.twitch.tv/nickytonline)
+{% embed "https://www.twitch.tv/videos/1894786803" %}
+
+{% embed "https://www.twitch.tv/videos/1894780260" %}
 
 P.S.: Yes I tagged this post with #healthydebate (channeling my inner dad jokes)
 
