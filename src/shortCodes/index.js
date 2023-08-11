@@ -5,7 +5,7 @@ const { DateTime } = require("luxon");
 const hashnodeData = require(`../_data/hashnodeUrls.json`);
 const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
 const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
-const site = require(`../_data/site`);
+const site = require(`../_data/site.json`);
 const TWITTER_EMBEDS_FILE_PATH = path.join(
   __dirname,
   "../_data/twitterEmbeds.json"

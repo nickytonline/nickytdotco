@@ -2,7 +2,7 @@ import * as url from "url";
 import { promises as fs, mkdirSync, existsSync } from "fs";
 import path from "path";
 import Parser from "rss-parser";
-import site from "../src/_data/site";
+import site from "../src/_data/site.json" assert { type: "json" };
 import { socialImage } from "../src/shortCodes/index.js";
 import slugify from "slugify";
 

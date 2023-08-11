@@ -1,0 +1,16 @@
+{
+  "showThemeCredit": true,
+  "name": "Just Some Dev",
+  "shortDesc": "Welcome to Nick Taylor's personal website.",
+  "url": "https://www.iamdeveloper.com",
+  "authorEmail": "nick@iamdeveloper.com",
+  "twitterHandle": "@nickytonline",
+  "mastodonHandle": "@nickytonline@toot.cafe",
+  "authorName": "Nick Taylor",
+  "enableThirdPartyComments": false,
+  "maxPostsPerPage": 3,
+  "paymentPointer": "$ilp.uphold.com/MZMhAWA7bkGa",
+  "faviconPath": "/images/favicon.png",
+  "newsletterName": "Yet Another Newsletter LOL",
+  "newsletterRss": "https://buttondown.email/nickytonline/rss"
+}

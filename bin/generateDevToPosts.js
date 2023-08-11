@@ -38,7 +38,7 @@ const DOM = new JSDOM(
 );
 
 const { document } = DOM.window;
-let { url: siteUrl } = require("../src/_data/site");
+let { url: siteUrl } = require("../src/_data/site.json");
 
 if (!DEV_API_KEY) {
   throw new Error("Missing DEV_API_KEY environment variable");

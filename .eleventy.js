@@ -27,7 +27,8 @@ const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 const parseTransform = require("./src/transforms/parse-transform.js");
 
 // Import data files
-const site = require("./src/_data/site");
+const site = require("./src/_data/site.json");
+
 module.exports = function (config) {
   // Filters
   config.addFilter("dateFilter", dateFilter);
