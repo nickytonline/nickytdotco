@@ -171,7 +171,7 @@ async function generateNewsletterPost(feedItem) {
         body_markdown: `<!-- ${main_image} -->\n${sanitizeContent(
           content,
           true
-        )}\nIf you liked this newsletter, you can [subscribe](https://www.iamdeveloper.com/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.iamdeveloper.com/newsletter.rss).<!-- my newsletter -->`,
+        )}\nIf you liked this newsletter, you can [subscribe](https://www.nickyt.co/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.nickyt.co/newsletter.rss).<!-- my newsletter -->`,
         tags,
         series: "Yet Another Newsletter LOL",
         canonical_url: canonicalUrl,
