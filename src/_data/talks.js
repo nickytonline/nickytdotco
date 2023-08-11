@@ -26,7 +26,7 @@ const rawTalks = [
       url: "https://portal.gitnation.org/contents/fresh-a-new-full-stack-web-framework-for-deno",
     },
     venue: { name: "Node Congress", url: "https://nodecongress.com/" },
-    slideDeck: "https://iamdeveloper.com/fresh",
+    slideDeck: "/fresh",
     summary: `Fresh is a web framework based on Web standards built to run on the edge anywhere you can run Deno. Fresh takes inspiration from existing frameworks to provide features like file-based routing, Islands architecture, server-side rendering and Typescript. Another compelling reason to consider Fresh is that there is no build step.`,
     sourceCode: "https://github.com/nickytonline/fresh-talk-demo",
     tags: ["deno", "typescript"],
@@ -43,7 +43,7 @@ const rawTalks = [
       url: "https://www.youtube.com/watch?v=clj-71r4gEI",
     },
     summary: `This talk provides an introduction to the Cypress end-to-end (E2E) testing framework. We cover the benefits of E2E testing and then do a short demo using a Collab Lab cohort's project.`,
-    slideDeck: "https://iamdeveloper.com/cypress2023",
+    slideDeck: "/cypress2023",
     sourceCode: "https://github.com/nickytonline/tcl-meetup-cypress",
     tags: ["cypress", "testing"],
   },
@@ -55,7 +55,7 @@ const rawTalks = [
       url: "https://www.youtube.com/watch?v=JWjcWQz5g3U&t=2160s",
     },
     venue: { name: "ChicagoJS", url: "https://chicagojs.org/" },
-    slideDeck: "https://iamdeveloper.com/ChicagoFresh",
+    slideDeck: "/ChicagoFresh",
     summary: `Fresh is a web framework based on Web standards built to run on the edge anywhere you can run Deno. Fresh takes inspiration from existing frameworks to provide features like file-based routing, Islands architecture, server-side rendering and Typescript. Another compelling reason to consider Fresh is that there is no build step.`,
     sourceCode:
       "https://github.com/nickytonline/chicago-js-dec-2022-fresh-demo",
@@ -90,12 +90,12 @@ const rawTalks = [
       name: "Eleventy Meetup",
       url: "https://11tymeetup.dev/events/ep-9-automatic-syndication-and-wordle-on-the-edge/",
     },
-    slideDeck: "https://www.iamdeveloper.com/11tyMeetupMay2022",
+    slideDeck: "/11tyMeetupMay2022",
     additionalLinks: [
       {
         title:
           "Automate syndication of your content with Eleventy, dev.to, and GitHub Actions",
-        url: "https://www.iamdeveloper.com/posts/my-eleventy-meetup-talk-3b2p/",
+        url: "/posts/my-eleventy-meetup-talk-3b2p/",
       },
     ],
     tags: ["eleventy", "automation", "github actions", "netlify"],
@@ -132,7 +132,7 @@ const rawTalks = [
       type: "youtube",
       url: "https://www.youtube.com/watch?v=k0nSJ1MtSao",
     },
-    slideDeck: "https://iamdeveloper.com/codementor2022",
+    slideDeck: "/codementor2022",
     tags: ["devtools", "career"],
   },
   {
@@ -147,7 +147,7 @@ const rawTalks = [
       type: "youtube",
       url: "https://www.youtube.com/watch?v=cyJAz-c1OWs&t=4183s",
     },
-    slideDeck: "https://iamdeveloper.com/hacktoberfest2021",
+    slideDeck: "/hacktoberfest2021",
     tags: ["hacktoberfest", "open source"],
   },
   {
@@ -162,11 +162,11 @@ const rawTalks = [
       name: "Virtual Coffee Lunch & Learn",
       url: "https://www.youtube.com/playlist?list=PLh9uT23TA65idCyc_orC85RefgY_-fKsG",
     },
-    slideDeck: "https://iamdeveloper.com/stream2021",
+    slideDeck: "/stream2021",
     additionalLinks: [
       {
         title: "Getting Started with Streaming on Twitch",
-        url: "https://www.iamdeveloper.com/blog/getting-started-with-streaming-on-twitch-4im7",
+        url: "/blog/getting-started-with-streaming-on-twitch-4im7",
       },
     ],
     tags: ["streaming", "twitch", "obs"],
@@ -184,7 +184,7 @@ const rawTalks = [
       name: "Virtual Coffee Lunch & Learn",
       url: "https://www.youtube.com/playlist?list=PLh9uT23TA65idCyc_orC85RefgY_-fKsG",
     },
-    slideDeck: "https://iamdeveloper.com/debug2021",
+    slideDeck: "/debug2021",
     tags: ["debugging", "devtools", "javascript"],
   },
 
@@ -200,7 +200,7 @@ const rawTalks = [
       name: "The Collab Lab Tech Talks",
       url: "https://www.meetup.com/tech-talks-by-the-collab-lab/events/276679138/",
     },
-    slideDeck: "https://iamdeveloper.com/storybook2021",
+    slideDeck: "/storybook2021",
     tags: ["storybook", "react", "javascript"],
   },
   {
@@ -215,7 +215,7 @@ const rawTalks = [
       name: "Virtual Coffee Lightning Talks",
       url: "https://virtualcoffee.io",
     },
-    slideDeck: "https://iamdeveloper.com/lightning2020",
+    slideDeck: "/lightning2020",
     additionalLinks: [
       {
         title: "Conventional Comments",
@@ -238,7 +238,7 @@ Contributing to open source should be fun and rewarding! Whether you are a begin
       name: "DigitalOcean Tech Talk",
       url: "https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source",
     },
-    slideDeck: "https://iamdeveloper.com/hacktoberfest2020",
+    slideDeck: "/hacktoberfest2020",
     tags: ["open source", "hacktoberfest"],
   },
 ];
