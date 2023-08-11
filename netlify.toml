@@ -3,9 +3,21 @@ publish = "dist"
 command = "npm run production"
 
 [[headers]]
-  for = "/*"
-  [headers.values]
-    Permissions-Policy = "interest-cohort=()"
+for = "/*"
+[headers.values]
+Permissions-Policy = "interest-cohort=()"
+
+[[redirects]]
+from = "https://iamdeveloper.com/*"
+to = "https://www.nickyt.co/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.iamdeveloper.com/*"
+to = "https://www.nickyt.co/:splat"
+status = 301
+force = true
 
 [[redirects]]
 from = "/posts/*"
@@ -123,9 +135,9 @@ force = true
 
 # Thanks two Phils! https://www.hawksworx.com/blog/alias-your-mastodon-username-to-your-domain-with-one-netlify-config-setting/
 [[redirects]]
-  from = "/.well-known/webfinger"
-  to = "https://toot.cafe/.well-known/webfinger?resource=acct:nickytonline@toot.cafe"
-  status = 200
+from = "/.well-known/webfinger"
+to = "https://toot.cafe/.well-known/webfinger?resource=acct:nickytonline@toot.cafe"
+status = 200
 
 [[redirects]]
 from = "/schedule/"
