@@ -12,7 +12,7 @@
     "published_timestamp": "2020-10-18T04:20:19Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--aq5cDtoo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/olzaevg5khtiad835vke.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--_qOdb_yx--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/olzaevg5khtiad835vke.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/stuff-i-always-set-up-for-frontend-work-56h2/",
+    "canonical_url": "https://www.nickyt.co/posts/stuff-i-always-set-up-for-frontend-work-56h2/",
     "created_at": "2020-10-18T03:17:00Z",
     "edited_at": "2022-04-28T01:28:39Z",
     "crossposted_at": null,
@@ -20,17 +20,14 @@
     "last_comment_at": "2020-12-01T15:22:00Z",
     "reading_time_minutes": 5,
     "tag_list": "git, webdev",
-    "tags": [
-      "git",
-      "webdev"
-    ],
+    "tags": ["git", "webdev"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -48,7 +45,7 @@
     "published_timestamp": "2020-06-24T19:09:12Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--RbUzG7vH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/taavig1ker0pmxi35grk.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--L3a5CQKh--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/taavig1ker0pmxi35grk.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/changelog-frontend-edition-30l7/",
+    "canonical_url": "https://www.nickyt.co/posts/changelog-frontend-edition-30l7/",
     "created_at": "2020-06-24T18:54:07Z",
     "edited_at": "2022-04-21T18:22:16Z",
     "crossposted_at": null,
@@ -56,18 +53,14 @@
     "last_comment_at": "2020-06-27T12:56:35Z",
     "reading_time_minutes": 5,
     "tag_list": "changelog, javascript, testing",
-    "tags": [
-      "changelog",
-      "javascript",
-      "testing"
-    ],
+    "tags": ["changelog", "javascript", "testing"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
@@ -92,7 +85,7 @@
     "published_timestamp": "2021-03-16T03:43:46Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--nDJchRza--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/436wuamj05szgisfdtrm.jpeg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--ZHR0UVpR--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/436wuamj05szgisfdtrm.jpeg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/storybook-talk-live-coding-klp/",
+    "canonical_url": "https://www.nickyt.co/posts/storybook-talk-live-coding-klp/",
     "created_at": "2021-03-16T03:41:56Z",
     "edited_at": "2022-04-06T02:50:01Z",
     "crossposted_at": null,
@@ -100,19 +93,14 @@
     "last_comment_at": "2021-05-12T20:57:13Z",
     "reading_time_minutes": 2,
     "tag_list": "javascript, react, storybook, ux",
-    "tags": [
-      "javascript",
-      "react",
-      "storybook",
-      "ux"
-    ],
+    "tags": ["javascript", "react", "storybook", "ux"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -130,7 +118,7 @@
     "published_timestamp": "2021-07-28T03:22:00Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--xrj9uU0f--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fm42fqy3ziu3r1zyahel.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--TL9rnaQO--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fm42fqy3ziu3r1zyahel.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/getting-started-with-streaming-on-twitch-4im7/",
+    "canonical_url": "https://www.nickyt.co/posts/getting-started-with-streaming-on-twitch-4im7/",
     "created_at": "2021-07-28T02:51:21Z",
     "edited_at": "2022-08-12T13:10:34Z",
     "crossposted_at": null,
@@ -138,18 +126,14 @@
     "last_comment_at": "2022-01-28T12:31:13Z",
     "reading_time_minutes": 5,
     "tag_list": "twitch, beginners, streaming",
-    "tags": [
-      "twitch",
-      "beginners",
-      "streaming"
-    ],
+    "tags": ["twitch", "beginners", "streaming"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -167,7 +151,7 @@
     "published_timestamp": "2021-08-28T04:49:00Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s---x_PMQck--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07jhp9p39ti9bisymp6a.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--4Ct9ddMl--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07jhp9p39ti9bisymp6a.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/why-i-created-the-vscodetips-community-2bl/",
+    "canonical_url": "https://www.nickyt.co/posts/why-i-created-the-vscodetips-community-2bl/",
     "created_at": "2021-08-28T04:49:00Z",
     "edited_at": "2022-04-06T02:44:54Z",
     "crossposted_at": null,
@@ -175,17 +159,14 @@
     "last_comment_at": "2021-09-01T02:08:18Z",
     "reading_time_minutes": 2,
     "tag_list": "vscode, community",
-    "tags": [
-      "vscode",
-      "community"
-    ],
+    "tags": ["vscode", "community"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
@@ -218,11 +199,7 @@
     "last_comment_at": "2022-01-21T03:02:14Z",
     "reading_time_minutes": 5,
     "tag_list": "a11y, webdev, javascript",
-    "tags": [
-      "a11y",
-      "webdev",
-      "javascript"
-    ],
+    "tags": ["a11y", "webdev", "javascript"],
     "user": {
       "name": "Suzanne Aitchison",
       "username": "s_aitchison",
@@ -255,11 +232,7 @@
     "last_comment_at": "2022-06-28T03:59:20Z",
     "reading_time_minutes": 6,
     "tag_list": "devtools, summaries, javascript",
-    "tags": [
-      "devtools",
-      "summaries",
-      "javascript"
-    ],
+    "tags": ["devtools", "summaries", "javascript"],
     "user": {
       "name": "swyx",
       "username": "swyx",
@@ -284,7 +257,7 @@
     "published_timestamp": "2021-04-18T19:47:05Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--MM-nL96G--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4xq8xpxzzghjhh1nli1g.jpeg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--5M78t3dE--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4xq8xpxzzghjhh1nli1g.jpeg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/learning-rust-1h2n/",
+    "canonical_url": "https://www.nickyt.co/posts/learning-rust-1h2n/",
     "created_at": "2021-04-18T19:47:05Z",
     "edited_at": "2022-09-05T03:51:48Z",
     "crossposted_at": null,
@@ -292,18 +265,14 @@
     "last_comment_at": "2021-04-28T11:10:41Z",
     "reading_time_minutes": 1,
     "tag_list": "rust, learninpublic, livecoding",
-    "tags": [
-      "rust",
-      "learninpublic",
-      "livecoding"
-    ],
+    "tags": ["rust", "learninpublic", "livecoding"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -321,7 +290,7 @@
     "published_timestamp": "2020-04-01T12:54:42Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--L53rXEkz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/4or5dqsjdsqzf3jfsr7t.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--Jc3bsr7c--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/4or5dqsjdsqzf3jfsr7t.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/",
+    "canonical_url": "https://www.nickyt.co/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/",
     "created_at": "2020-03-31T22:41:48Z",
     "edited_at": "2021-05-11T11:23:20Z",
     "crossposted_at": null,
@@ -329,18 +298,14 @@
     "last_comment_at": "2022-12-30T19:59:48Z",
     "reading_time_minutes": 2,
     "tag_list": "twitch, streaming, livecoding",
-    "tags": [
-      "twitch",
-      "streaming",
-      "livecoding"
-    ],
+    "tags": ["twitch", "streaming", "livecoding"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -358,7 +323,7 @@
     "published_timestamp": "2020-07-14T14:10:13Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--qsJFxVOe--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/nqqvyinfbwzjb4fhemff.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--3YaVYtag--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/nqqvyinfbwzjb4fhemff.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/let-s-pair-during-a-live-coding-session-8he/",
+    "canonical_url": "https://www.nickyt.co/posts/let-s-pair-during-a-live-coding-session-8he/",
     "created_at": "2020-07-13T20:13:20Z",
     "edited_at": "2022-04-21T18:21:58Z",
     "crossposted_at": null,
@@ -366,18 +331,14 @@
     "last_comment_at": "2021-05-28T05:30:35Z",
     "reading_time_minutes": 2,
     "tag_list": "webdev, pairprogramming, devstream",
-    "tags": [
-      "webdev",
-      "pairprogramming",
-      "devstream"
-    ],
+    "tags": ["webdev", "pairprogramming", "devstream"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
@@ -402,7 +363,7 @@
     "published_timestamp": "2020-01-21T18:09:58Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--q2i_vNRX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6v67gbppb6cqqj3pqrp3.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--yGFi_bEu--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6v67gbppb6cqqj3pqrp3.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0/",
+    "canonical_url": "https://www.nickyt.co/posts/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0/",
     "created_at": "2020-01-14T04:16:09Z",
     "edited_at": "2022-05-12T12:37:24Z",
     "crossposted_at": null,
@@ -410,16 +371,14 @@
     "last_comment_at": "2022-05-18T14:47:16Z",
     "reading_time_minutes": 2,
     "tag_list": "career",
-    "tags": [
-      "career"
-    ],
+    "tags": ["career"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -445,9 +404,7 @@
     "last_comment_at": "2020-04-27T09:49:21Z",
     "reading_time_minutes": 2,
     "tag_list": "meta",
-    "tags": [
-      "meta"
-    ],
+    "tags": ["meta"],
     "user": {
       "name": "Jess Lee",
       "username": "jess",
@@ -487,9 +444,7 @@
     "last_comment_at": "2020-07-01T13:08:37Z",
     "reading_time_minutes": 1,
     "tag_list": "advice",
-    "tags": [
-      "advice"
-    ],
+    "tags": ["advice"],
     "user": {
       "name": "swyx",
       "username": "swyx",
@@ -555,12 +510,7 @@
     "last_comment_at": "2019-03-31T23:52:45Z",
     "reading_time_minutes": 8,
     "tag_list": "productivity, vscode, collaboration, webdev",
-    "tags": [
-      "productivity",
-      "vscode",
-      "collaboration",
-      "webdev"
-    ],
+    "tags": ["productivity", "vscode", "collaboration", "webdev"],
     "user": {
       "name": "Jonathan Carter",
       "username": "lostintangent",
@@ -585,7 +535,7 @@
     "published_timestamp": "2020-05-22T13:46:37Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--QXgm3mdo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/ln7awag96agh8pxsjsui.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--UF1B9Teo--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/ln7awag96agh8pxsjsui.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/changelog-dev-has-some-stories-for-you-15kn/",
+    "canonical_url": "https://www.nickyt.co/posts/changelog-dev-has-some-stories-for-you-15kn/",
     "created_at": "2020-05-21T21:49:03Z",
     "edited_at": "2022-04-21T18:22:53Z",
     "crossposted_at": null,
@@ -593,19 +543,14 @@
     "last_comment_at": "2020-05-24T16:45:46Z",
     "reading_time_minutes": 2,
     "tag_list": "html, css, javascript, storybook",
-    "tags": [
-      "html",
-      "css",
-      "javascript",
-      "storybook"
-    ],
+    "tags": ["html", "css", "javascript", "storybook"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
@@ -630,7 +575,7 @@
     "published_timestamp": "2018-03-27T04:16:30Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--AMjsJsC0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/9zm6yatidby4ls11xzeg.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--e1Wz1Uuv--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/9zm6yatidby4ls11xzeg.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/getting-started-with-react-storybook-9jh/",
+    "canonical_url": "https://www.nickyt.co/posts/getting-started-with-react-storybook-9jh/",
     "created_at": "2018-03-27T04:10:33Z",
     "edited_at": "2020-06-17T03:11:40Z",
     "crossposted_at": "2018-03-27T04:16:30Z",
@@ -638,19 +583,14 @@
     "last_comment_at": "2018-03-26T05:00:00Z",
     "reading_time_minutes": 3,
     "tag_list": "react, beginners, storybook, ui",
-    "tags": [
-      "react",
-      "beginners",
-      "storybook",
-      "ui"
-    ],
+    "tags": ["react", "beginners", "storybook", "ui"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -676,12 +616,7 @@
     "last_comment_at": "2022-09-27T11:49:42Z",
     "reading_time_minutes": 4,
     "tag_list": "meta, projectbenatar, webdev, changelog",
-    "tags": [
-      "meta",
-      "projectbenatar",
-      "webdev",
-      "changelog"
-    ],
+    "tags": ["meta", "projectbenatar", "webdev", "changelog"],
     "user": {
       "name": "Ben Halpern",
       "username": "ben",
@@ -713,7 +648,7 @@
     "published_timestamp": "2019-01-07T05:07:51Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--gMX84Q9b--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/fgimfk93vbdn6v0csx5e.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--hWjAa-iS--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/fgimfk93vbdn6v0csx5e.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/take-chances-and-standout-because-who-knows-3kh6/",
+    "canonical_url": "https://www.nickyt.co/posts/take-chances-and-standout-because-who-knows-3kh6/",
     "created_at": "2019-01-07T03:39:58Z",
     "edited_at": "2022-05-02T11:49:27Z",
     "crossposted_at": "2019-01-07T05:07:51Z",
@@ -721,18 +656,14 @@
     "last_comment_at": "2020-09-26T03:45:58Z",
     "reading_time_minutes": 5,
     "tag_list": "career, interview, motivation",
-    "tags": [
-      "career",
-      "interview",
-      "motivation"
-    ],
+    "tags": ["career", "interview", "motivation"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -758,9 +689,7 @@
     "last_comment_at": "2018-04-03T22:09:08Z",
     "reading_time_minutes": 2,
     "tag_list": "meta",
-    "tags": [
-      "meta"
-    ],
+    "tags": ["meta"],
     "user": {
       "name": "Jess Lee",
       "username": "jess",
@@ -785,7 +714,7 @@
     "published_timestamp": "2019-08-16T04:05:50Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--Q7k4S3jr--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/jivsyirs8gft16kuji62.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--PLiPVgbM--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/jivsyirs8gft16kuji62.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/update-dependencies-with-dependabot-cypress-and-netlify-3lkf/",
+    "canonical_url": "https://www.nickyt.co/posts/update-dependencies-with-dependabot-cypress-and-netlify-3lkf/",
     "created_at": "2019-08-16T03:23:34Z",
     "edited_at": "2022-05-02T11:35:43Z",
     "crossposted_at": "2019-08-16T04:05:50Z",
@@ -793,19 +722,14 @@
     "last_comment_at": "2019-08-20T23:39:06Z",
     "reading_time_minutes": 6,
     "tag_list": "testing, automation, cypress, netlify",
-    "tags": [
-      "testing",
-      "automation",
-      "cypress",
-      "netlify"
-    ],
+    "tags": ["testing", "automation", "cypress", "netlify"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -823,7 +747,7 @@
     "published_timestamp": "2019-04-01T04:27:37Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--KQEdO3mC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ir0wzbkqn1rw9vu67irj.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--r8A9ykUM--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ir0wzbkqn1rw9vu67irj.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/an-a11y-extension-coming-to-a-browser-near-you-1mg2/",
+    "canonical_url": "https://www.nickyt.co/posts/an-a11y-extension-coming-to-a-browser-near-you-1mg2/",
     "created_at": "2019-04-01T01:14:49Z",
     "edited_at": "2022-05-02T11:39:08Z",
     "crossposted_at": "2019-04-01T04:27:37Z",
@@ -831,18 +755,14 @@
     "last_comment_at": "2019-08-26T15:37:19Z",
     "reading_time_minutes": 2,
     "tag_list": "a11y, javascript, browserextension",
-    "tags": [
-      "a11y",
-      "javascript",
-      "browserextension"
-    ],
+    "tags": ["a11y", "javascript", "browserextension"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -860,7 +780,7 @@
     "published_timestamp": "2017-10-08T14:35:45Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--myl1s_qT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/k8pe37firnq0uhi5546a.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--aG4eQXrj--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/k8pe37firnq0uhi5546a.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/why-you-might-want-to-consider-using-typescript-6j3/",
+    "canonical_url": "https://www.nickyt.co/posts/why-you-might-want-to-consider-using-typescript-6j3/",
     "created_at": "2017-10-08T13:46:29Z",
     "edited_at": "2022-04-14T00:23:00Z",
     "crossposted_at": null,
@@ -868,16 +788,14 @@
     "last_comment_at": "2022-05-22T17:58:50Z",
     "reading_time_minutes": 5,
     "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
+    "tags": ["typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -903,12 +821,7 @@
     "last_comment_at": "2023-01-28T15:46:50Z",
     "reading_time_minutes": 4,
     "tag_list": "githunt, showdev, javascript, productivity",
-    "tags": [
-      "githunt",
-      "showdev",
-      "javascript",
-      "productivity"
-    ],
+    "tags": ["githunt", "showdev", "javascript", "productivity"],
     "user": {
       "name": "Liyas Thomas",
       "username": "liyasthomas",
@@ -946,10 +859,7 @@
     "last_comment_at": "2023-07-30T16:11:30Z",
     "reading_time_minutes": 2,
     "tag_list": "webdev, html",
-    "tags": [
-      "webdev",
-      "html"
-    ],
+    "tags": ["webdev", "html"],
     "user": {
       "name": "Ananya Neogi",
       "username": "ananyaneogi",
@@ -982,10 +892,7 @@
     "last_comment_at": "2019-12-02T23:58:01Z",
     "reading_time_minutes": 1,
     "tag_list": "react, beginners",
-    "tags": [
-      "react",
-      "beginners"
-    ],
+    "tags": ["react", "beginners"],
     "user": {
       "name": "chantastic",
       "username": "chantastic",
@@ -1010,7 +917,7 @@
     "published_timestamp": "2017-12-23T14:11:11Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--GzTj3t37--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/6e271uy3v8ia1h0e1c7q.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--x22jQcfo--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--jsZGDzCJ--/c_limit%252Cf_auto%252Cfl_progressive%252Cq_auto%252Cw_880/https://gist.githubusercontent.com/nickytonline/3d5ffeab871a6662d7a3f89bb0bed0f8/raw/c00e3c60587414e788f62f89a503bc5a9b220bd0/dracula_joker_theme.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/",
+    "canonical_url": "https://www.nickyt.co/posts/my-visual-studio-code-setup-2ima/",
     "created_at": "2017-12-22T16:45:26Z",
     "edited_at": "2020-06-17T03:20:54Z",
     "crossposted_at": null,
@@ -1018,19 +925,14 @@
     "last_comment_at": "2020-09-04T11:40:44Z",
     "reading_time_minutes": 6,
     "tag_list": "visualstudiocode, developertools, texteditor, vscode",
-    "tags": [
-      "visualstudiocode",
-      "developertools",
-      "texteditor",
-      "vscode"
-    ],
+    "tags": ["visualstudiocode", "developertools", "texteditor", "vscode"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1048,7 +950,7 @@
     "published_timestamp": "2019-01-22T04:02:06Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--8Dc9k6Ml--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/2h3puantbcb0a0sfusny.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--SOsoC6PH--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/2h3puantbcb0a0sfusny.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/any-contribution-to-open-source-is-valuable-57d3/",
+    "canonical_url": "https://www.nickyt.co/posts/any-contribution-to-open-source-is-valuable-57d3/",
     "created_at": "2019-01-22T03:54:33Z",
     "edited_at": "2022-05-12T22:37:18Z",
     "crossposted_at": "2019-01-22T04:02:06Z",
@@ -1056,17 +958,14 @@
     "last_comment_at": "2021-06-18T12:50:00Z",
     "reading_time_minutes": 2,
     "tag_list": "opensource, gatsby",
-    "tags": [
-      "opensource",
-      "gatsby"
-    ],
+    "tags": ["opensource", "gatsby"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1084,7 +983,7 @@
     "published_timestamp": "2019-02-28T22:02:28Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--2CkRqNCp--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/epig0488nwfmsdm59t48.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--l3--gvmt--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/epig0488nwfmsdm59t48.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/showcase-your-gatsby-site-266/",
+    "canonical_url": "https://www.nickyt.co/posts/showcase-your-gatsby-site-266/",
     "created_at": "2019-02-28T22:02:28Z",
     "edited_at": "2020-06-17T02:52:08Z",
     "crossposted_at": null,
@@ -1092,19 +991,14 @@
     "last_comment_at": "2019-09-05T06:53:19Z",
     "reading_time_minutes": 1,
     "tag_list": "gatsby, opensource, typescript, jamstack",
-    "tags": [
-      "gatsby",
-      "opensource",
-      "typescript",
-      "jamstack"
-    ],
+    "tags": ["gatsby", "opensource", "typescript", "jamstack"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1122,7 +1016,7 @@
     "published_timestamp": "2019-10-15T01:00:22Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--UWW67K9v--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/p2th95jqhkylbvffrrz0.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--V3Ii_WJ3--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/p2th95jqhkylbvffrrz0.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-hacktoberfest-2019-32i2/",
+    "canonical_url": "https://www.nickyt.co/posts/my-hacktoberfest-2019-32i2/",
     "created_at": "2019-10-15T00:51:48Z",
     "edited_at": "2020-06-17T02:44:33Z",
     "crossposted_at": null,
@@ -1130,16 +1024,14 @@
     "last_comment_at": "2019-10-15T13:40:52Z",
     "reading_time_minutes": 1,
     "tag_list": "hacktoberfest",
-    "tags": [
-      "hacktoberfest"
-    ],
+    "tags": ["hacktoberfest"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1157,7 +1049,7 @@
     "published_timestamp": "2018-08-25T12:55:27Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--Bsq7n131--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/c31gesmnfndo89bh4673.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--zoP_hYDO--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/c31gesmnfndo89bh4673.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-git-aliases-5dea/",
+    "canonical_url": "https://www.nickyt.co/posts/my-git-aliases-5dea/",
     "created_at": "2018-08-25T12:49:44Z",
     "edited_at": "2022-04-08T18:24:17Z",
     "crossposted_at": "2018-08-25T12:55:27Z",
@@ -1165,18 +1057,14 @@
     "last_comment_at": "2020-08-28T09:47:12Z",
     "reading_time_minutes": 4,
     "tag_list": "git, productivity, developertools",
-    "tags": [
-      "git",
-      "productivity",
-      "developertools"
-    ],
+    "tags": ["git", "productivity", "developertools"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1202,12 +1090,7 @@
     "last_comment_at": "2019-03-31T18:32:54Z",
     "reading_time_minutes": 2,
     "tag_list": "contributorswanted, opensource, meta, css",
-    "tags": [
-      "contributorswanted",
-      "opensource",
-      "meta",
-      "css"
-    ],
+    "tags": ["contributorswanted", "opensource", "meta", "css"],
     "user": {
       "name": "Ben Halpern",
       "username": "ben",
@@ -1247,11 +1130,7 @@
     "last_comment_at": "2021-04-13T23:52:13Z",
     "reading_time_minutes": 10,
     "tag_list": "javascript, types, flow",
-    "tags": [
-      "javascript",
-      "types",
-      "flow"
-    ],
+    "tags": ["javascript", "types", "flow"],
     "user": {
       "name": "Preethi Kasireddy",
       "username": "iampeekay",
@@ -1276,7 +1155,7 @@
     "published_timestamp": "2019-01-16T23:59:04Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--0D19xE52--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/eoz2gg948ys22w1ir00h.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--eQIp-INd--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/eoz2gg948ys22w1ir00h.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/is-2019-the-year-of-typescript-18p2/",
+    "canonical_url": "https://www.nickyt.co/posts/is-2019-the-year-of-typescript-18p2/",
     "created_at": "2019-01-16T23:59:04Z",
     "edited_at": "2022-07-10T03:36:23Z",
     "crossposted_at": null,
@@ -1284,19 +1163,14 @@
     "last_comment_at": "2022-04-20T02:47:42Z",
     "reading_time_minutes": 1,
     "tag_list": "discuss, typescript, javascript, flow",
-    "tags": [
-      "discuss",
-      "typescript",
-      "javascript",
-      "flow"
-    ],
+    "tags": ["discuss", "typescript", "javascript", "flow"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
@@ -1319,7 +1193,7 @@
     "published_timestamp": "2019-02-26T04:20:42Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--4PAvToRP--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5rrpk58vqffc396paebe.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--2BQOCQiS--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5rrpk58vqffc396paebe.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/an-enhanced-typescript-playground-49j6/",
+    "canonical_url": "https://www.nickyt.co/posts/an-enhanced-typescript-playground-49j6/",
     "created_at": "2019-02-26T04:16:02Z",
     "edited_at": "2022-07-10T03:41:57Z",
     "crossposted_at": "2019-02-26T04:20:42Z",
@@ -1327,16 +1201,14 @@
     "last_comment_at": "2020-05-10T04:52:47Z",
     "reading_time_minutes": 1,
     "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
+    "tags": ["typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1354,7 +1226,7 @@
     "published_timestamp": "2018-01-04T04:58:18Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--NhdhmKvN--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/el9zpvhbtnwrdmeel3rz.PNG",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--lduKKkEK--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/el9zpvhbtnwrdmeel3rz.PNG",
-    "canonical_url": "https://www.iamdeveloper.com/2018-resolutions/",
+    "canonical_url": "https://www.nickyt.co/2018-resolutions/",
     "created_at": "2018-01-04T04:42:02Z",
     "edited_at": "2018-01-04T05:07:37Z",
     "crossposted_at": "2018-01-04T04:58:18Z",
@@ -1362,18 +1234,14 @@
     "last_comment_at": "2018-03-13T20:14:57Z",
     "reading_time_minutes": 0,
     "tag_list": "newyear, books, personaldevelopment",
-    "tags": [
-      "newyear",
-      "books",
-      "personaldevelopment"
-    ],
+    "tags": ["newyear", "books", "personaldevelopment"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1391,7 +1259,7 @@
     "published_timestamp": "2018-01-12T05:15:04Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--C6fxx9Ly--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/qkwvsk3lp64lvchg69tm.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--d4wker5T--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/qkwvsk3lp64lvchg69tm.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-mac-setup-2m05/",
+    "canonical_url": "https://www.nickyt.co/posts/my-mac-setup-2m05/",
     "created_at": "2018-01-12T05:07:48Z",
     "edited_at": "2022-05-30T02:13:19Z",
     "crossposted_at": "2018-01-12T05:15:04Z",
@@ -1399,18 +1267,14 @@
     "last_comment_at": "2021-05-01T05:37:32Z",
     "reading_time_minutes": 9,
     "tag_list": "productivity, developertools, webdev",
-    "tags": [
-      "productivity",
-      "developertools",
-      "webdev"
-    ],
+    "tags": ["productivity", "developertools", "webdev"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1436,9 +1300,7 @@
     "last_comment_at": "2023-02-22T10:15:58Z",
     "reading_time_minutes": 2,
     "tag_list": "top7",
-    "tags": [
-      "top7"
-    ],
+    "tags": ["top7"],
     "user": {
       "name": "dev.to staff",
       "username": "thepracticaldev",
@@ -1463,7 +1325,7 @@
     "published_timestamp": "2018-01-13T04:37:21Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--_l7DUBNK--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://c1.staticflickr.com/3/2825/34089505692_6d6cb68560_h.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--tQcnfmxA--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://c1.staticflickr.com/3/2825/34089505692_6d6cb68560_h.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/quick-hulk-code-pen-18i1/",
+    "canonical_url": "https://www.nickyt.co/posts/quick-hulk-code-pen-18i1/",
     "created_at": "2018-01-13T04:37:21Z",
     "edited_at": "2020-06-17T03:17:33Z",
     "crossposted_at": null,
@@ -1471,17 +1333,14 @@
     "last_comment_at": "2018-03-05T04:44:22Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
+    "tags": ["css", "codepen"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1499,7 +1358,7 @@
     "published_timestamp": "2018-01-19T04:12:02Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--l5Yv15Ln--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://c2.staticflickr.com/4/3864/15120161855_a640e93573_b.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--VmQYkIpj--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://c2.staticflickr.com/4/3864/15120161855_a640e93573_b.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/quick-simple-rating-code-pen-3ecp/",
+    "canonical_url": "https://www.nickyt.co/posts/quick-simple-rating-code-pen-3ecp/",
     "created_at": "2018-01-19T04:12:02Z",
     "edited_at": "2020-06-17T03:16:53Z",
     "crossposted_at": null,
@@ -1507,17 +1366,14 @@
     "last_comment_at": "2018-03-05T04:45:52Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
+    "tags": ["css", "codepen"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1535,7 +1391,7 @@
     "published_timestamp": "2018-02-09T05:01:39Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--MCAKzX1f--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://c2.staticflickr.com/6/5184/5639332304_9f91e58360_b.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--pHwJQJ5---/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://c2.staticflickr.com/6/5184/5639332304_9f91e58360_b.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m/",
+    "canonical_url": "https://www.nickyt.co/posts/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m/",
     "created_at": "2018-02-09T04:59:10Z",
     "edited_at": "2020-06-17T03:14:16Z",
     "crossposted_at": null,
@@ -1543,17 +1399,14 @@
     "last_comment_at": "2018-03-13T20:24:03Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
+    "tags": ["css", "codepen"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1571,7 +1424,7 @@
     "published_timestamp": "2018-01-27T07:33:25Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--WvDL10qV--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/nmx6enjnka59n8c5jwc6.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--s7ON3UYH--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/nmx6enjnka59n8c5jwc6.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/a--notification-code-pen-4o0n/",
+    "canonical_url": "https://www.nickyt.co/posts/a--notification-code-pen-4o0n/",
     "created_at": "2018-01-27T07:12:34Z",
     "edited_at": "2020-06-17T03:15:32Z",
     "crossposted_at": null,
@@ -1579,17 +1432,14 @@
     "last_comment_at": "2018-03-05T04:48:11Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
+    "tags": ["css", "codepen"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1615,10 +1465,7 @@
     "last_comment_at": "2022-02-03T10:39:02Z",
     "reading_time_minutes": 2,
     "tag_list": "typescript, challenge",
-    "tags": [
-      "typescript",
-      "challenge"
-    ],
+    "tags": ["typescript", "challenge"],
     "user": {
       "name": "Orta",
       "username": "orta",
@@ -1663,11 +1510,7 @@
     "last_comment_at": "2022-06-02T14:21:30Z",
     "reading_time_minutes": 8,
     "tag_list": "serverless, javascript, jamstack",
-    "tags": [
-      "serverless",
-      "javascript",
-      "jamstack"
-    ],
+    "tags": ["serverless", "javascript", "jamstack"],
     "user": {
       "name": "Salma Alam-Naylor",
       "username": "whitep4nth3r",
@@ -1700,11 +1543,7 @@
     "last_comment_at": "2022-06-22T16:35:35Z",
     "reading_time_minutes": 6,
     "tag_list": "react, webdev, node",
-    "tags": [
-      "react",
-      "webdev",
-      "node"
-    ],
+    "tags": ["react", "webdev", "node"],
     "user": {
       "name": "BekahHW",
       "username": "bekahhw",
@@ -1736,7 +1575,7 @@
     "published_timestamp": "2022-07-10T04:16:00Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--TDptlE7a--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o0css5hj2le5dyrzmj7l.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--wmGdHL9w--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o0css5hj2le5dyrzmj7l.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/learning-resources-for-typescript-4g1n/",
+    "canonical_url": "https://www.nickyt.co/posts/learning-resources-for-typescript-4g1n/",
     "created_at": "2022-07-10T04:16:34Z",
     "edited_at": "2022-09-06T01:49:25Z",
     "crossposted_at": null,
@@ -1744,16 +1583,14 @@
     "last_comment_at": "2022-07-14T22:28:10Z",
     "reading_time_minutes": 2,
     "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
+    "tags": ["typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1779,17 +1616,14 @@
     "last_comment_at": "2022-10-09T02:29:16Z",
     "reading_time_minutes": 1,
     "tag_list": "vscode, vscodetips",
-    "tags": [
-      "vscode",
-      "vscodetips"
-    ],
+    "tags": ["vscode", "vscodetips"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
@@ -1822,10 +1656,7 @@
     "last_comment_at": "2023-05-30T13:41:08Z",
     "reading_time_minutes": 2,
     "tag_list": "changelog, meta",
-    "tags": [
-      "changelog",
-      "meta"
-    ],
+    "tags": ["changelog", "meta"],
     "user": {
       "name": "Ben Halpern",
       "username": "ben",
@@ -1850,7 +1681,7 @@
     "published_timestamp": "2022-07-14T03:41:00Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--vO_muh2a--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s4rykg32xnqkbo8155be.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--PMrOxQ7_--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s4rykg32xnqkbo8155be.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/what-is-deno-13he/",
+    "canonical_url": "https://www.nickyt.co/posts/what-is-deno-13he/",
     "created_at": "2022-07-14T03:41:52Z",
     "edited_at": "2022-08-02T23:50:16Z",
     "crossposted_at": null,
@@ -1858,19 +1689,14 @@
     "last_comment_at": "2023-04-15T19:55:58Z",
     "reading_time_minutes": 8,
     "tag_list": "deno, typescript, rust, javascript",
-    "tags": [
-      "deno",
-      "typescript",
-      "rust",
-      "javascript"
-    ],
+    "tags": ["deno", "typescript", "rust", "javascript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1888,7 +1714,7 @@
     "published_timestamp": "2022-05-26T17:12:32Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--foEy2Mck--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2x523d97n7fem0pci10s.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--BSIbH_WC--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2x523d97n7fem0pci10s.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-eleventy-meetup-talk-3b2p/",
+    "canonical_url": "https://www.nickyt.co/posts/my-eleventy-meetup-talk-3b2p/",
     "created_at": "2022-05-26T17:12:32Z",
     "edited_at": "2022-06-07T02:26:10Z",
     "crossposted_at": null,
@@ -1896,19 +1722,14 @@
     "last_comment_at": "2022-05-26T20:03:30Z",
     "reading_time_minutes": 6,
     "tag_list": "eleventy, githubactions, node, webdev",
-    "tags": [
-      "eleventy",
-      "githubactions",
-      "node",
-      "webdev"
-    ],
+    "tags": ["eleventy", "githubactions", "node", "webdev"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -1926,7 +1747,7 @@
     "published_timestamp": "2022-11-10T13:40:01Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--u2MsVIGf--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h7ccqiujz5b8rg23rgcl.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--_Lrn8fyQ--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h7ccqiujz5b8rg23rgcl.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/blog/revue-being-phased-out-by-twitter-4kle",
+    "canonical_url": "https://www.nickyt.co/blog/revue-being-phased-out-by-twitter-4kle",
     "created_at": "2022-11-10T13:40:02Z",
     "edited_at": "2022-11-13T14:52:00Z",
     "crossposted_at": null,
@@ -1934,17 +1755,14 @@
     "last_comment_at": "2023-01-05T23:11:56Z",
     "reading_time_minutes": 1,
     "tag_list": "news, discuss",
-    "tags": [
-      "news",
-      "discuss"
-    ],
+    "tags": ["news", "discuss"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
@@ -1967,7 +1785,7 @@
     "published_timestamp": "2022-03-24T03:47:23Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--1kVhnhTE--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i0wmq5dpcg6r0b9ym1bv.jpeg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--eH6zv5co--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i0wmq5dpcg6r0b9ym1bv.jpeg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-impact-at-forem-23mj/",
+    "canonical_url": "https://www.nickyt.co/posts/my-impact-at-forem-23mj/",
     "created_at": "2022-03-24T03:47:23Z",
     "edited_at": "2022-06-26T02:52:50Z",
     "crossposted_at": null,
@@ -1975,16 +1793,14 @@
     "last_comment_at": "2022-03-29T18:26:29Z",
     "reading_time_minutes": 4,
     "tag_list": "career",
-    "tags": [
-      "career"
-    ],
+    "tags": ["career"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -2002,7 +1818,7 @@
     "published_timestamp": "2022-10-16T15:27:00Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--suyfwcd---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ovd3nhk3ukuqpfpxagw4.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--J9Da7TxL--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ovd3nhk3ukuqpfpxagw4.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/repurposing-content-for-content-creation-3l4d/",
+    "canonical_url": "https://www.nickyt.co/posts/repurposing-content-for-content-creation-3l4d/",
     "created_at": "2022-10-16T15:27:01Z",
     "edited_at": "2022-10-23T14:59:40Z",
     "crossposted_at": null,
@@ -2010,18 +1826,14 @@
     "last_comment_at": "2022-10-17T18:56:36Z",
     "reading_time_minutes": 2,
     "tag_list": "learninpublic, podcast, contentcreation",
-    "tags": [
-      "learninpublic",
-      "podcast",
-      "contentcreation"
-    ],
+    "tags": ["learninpublic", "podcast", "contentcreation"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -2039,7 +1851,7 @@
     "published_timestamp": "2022-11-01T13:17:32Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--KndsdvCX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fizcan7995mzusoml6k4.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--DBQofohC--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fizcan7995mzusoml6k4.png",
-    "canonical_url": "https://www.iamdeveloper.com/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
+    "canonical_url": "https://www.nickyt.co/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
     "created_at": "2022-11-01T13:17:32Z",
     "edited_at": "2022-12-24T14:45:22Z",
     "crossposted_at": null,
@@ -2047,18 +1859,14 @@
     "last_comment_at": "2022-11-06T17:00:56Z",
     "reading_time_minutes": 1,
     "tag_list": "vscodetips, vscode, community",
-    "tags": [
-      "vscodetips",
-      "vscode",
-      "community"
-    ],
+    "tags": ["vscodetips", "vscode", "community"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
@@ -2083,7 +1891,7 @@
     "published_timestamp": "2021-12-28T04:16:00Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--W2oGsRSm--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xlvhwaqhlebll79nx1jt.png",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--fDwfwDsR--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xlvhwaqhlebll79nx1jt.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/frontend-developer-resources-2022-4cp2/",
+    "canonical_url": "https://www.nickyt.co/posts/frontend-developer-resources-2022-4cp2/",
     "created_at": "2021-12-28T02:55:12Z",
     "edited_at": "2022-12-13T18:27:04Z",
     "crossposted_at": null,
@@ -2091,19 +1899,14 @@
     "last_comment_at": "2023-03-15T14:09:20Z",
     "reading_time_minutes": 8,
     "tag_list": "javascript, html, css, typescript",
-    "tags": [
-      "javascript",
-      "html",
-      "css",
-      "typescript"
-    ],
+    "tags": ["javascript", "html", "css", "typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -2121,7 +1924,7 @@
     "published_timestamp": "2022-11-06T01:32:09Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--MPFZD2M0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n5zbeeuatd9c42b1etvc.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T3IgPSM4--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n5zbeeuatd9c42b1etvc.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
+    "canonical_url": "https://www.nickyt.co/posts/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
     "created_at": "2022-11-06T01:01:37Z",
     "edited_at": "2022-11-11T16:57:18Z",
     "crossposted_at": null,
@@ -2129,19 +1932,14 @@
     "last_comment_at": "2022-11-06T01:32:09Z",
     "reading_time_minutes": 5,
     "tag_list": "github, githubcli, githubactions, git",
-    "tags": [
-      "github",
-      "githubcli",
-      "githubactions",
-      "git"
-    ],
+    "tags": ["github", "githubcli", "githubactions", "git"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
@@ -2159,7 +1957,7 @@
     "published_timestamp": "2023-02-19T14:52:22Z",
     "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--vECNB8No--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b4sttely6muy169brptk.jpg",
     "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--zllERg4c--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b4sttely6muy169brptk.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/blog/where-do-you-find-community-458p/",
+    "canonical_url": "https://www.nickyt.co/blog/where-do-you-find-community-458p/",
     "created_at": "2023-02-19T14:21:44Z",
     "edited_at": "2023-02-21T18:10:23Z",
     "crossposted_at": null,
@@ -2167,16 +1965,14 @@
     "last_comment_at": "2023-02-19T14:52:22Z",
     "reading_time_minutes": 4,
     "tag_list": "community",
-    "tags": [
-      "community"
-    ],
+    "tags": ["community"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
       "twitter_username": "nickytonline",
       "github_username": "nickytonline",
       "user_id": 9597,
-      "website_url": "https://iamdeveloper.com",
+      "website_url": "https://www.nickyt.co",
       "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--T9un0IK7--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--h-JUieId--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/9597/2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
