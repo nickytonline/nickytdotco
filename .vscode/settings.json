@@ -3,5 +3,15 @@
   "deno.enable": true,
   "deno.enablePaths": ["netlify/edge-functions"],
   "deno.unstable": true,
-  "deno.importMap": ".netlify/edge-functions-import-map.json"
+  "deno.importMap": ".netlify/edge-functions-import-map.json",
+  "search.useParentIgnoreFiles": true,
+  "explorer.autoRevealExclude": {
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+  },
+  "explorer.excludeGitIgnore": true
 }
