@@ -1,9 +1,9 @@
 const getSiteUrl = (context = process.env.CONTEXT) => {
   console.log("context", context);
-
-  return context === "production"
-    ? process.env.URL
-    : process.env.DEPLOY_PRIME_URL ?? "http://localhost:8080";
+  return "https://www.nickyt.co";
+//  return context === "production"
+//    ? process.env.URL
+//    : process.env.DEPLOY_PRIME_URL ?? "http://localhost:8080";
 };
 
 module.exports = {
