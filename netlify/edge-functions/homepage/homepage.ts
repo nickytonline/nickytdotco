@@ -14,7 +14,7 @@ if (!AIRTABLE_API_KEY || !AIRTABLE_STREAM_GUEST_BASE_ID) {
 export default async (request: Request, context: Context) => {
   const url = new URL(request.url);
 
-  if (!url.host.startsWith('www.')) {
+  if (!url.host.startsWith('www.nickyt.co')) {
     return
   }
 
