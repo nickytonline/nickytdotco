@@ -7,7 +7,7 @@
     "vscodetips",
     "vscodeextensions"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--EEKIHon3--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_epf2x8v0nsyemdtcdstd.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--EEKIHon3--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_epf2x8v0nsyemdtcdstd.png",
   "canonicalUrl": "https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-live-share-24b2/",
   "reading_time_minutes": 2,
   "template": "post"
@@ -20,11 +20,11 @@ I hinted at this week's tip a few weeks ago.
 
 This week's VS Code tip is the [Live Share](https://code.visualstudio.com/learn/collaboration/live-share) extension pack!
 
-![Live Share commands displayed in VS Code's command palette](https://www.iamdeveloper.com/images/posts/_uploads_articles_jrk6gl11vsobh70klosb.png)
+![Live Share commands displayed in VS Code's command palette](https://www.nickyt.co/images/posts/_uploads_articles_jrk6gl11vsobh70klosb.png)
 
 This is an excellent collaborative tool if you want to pair with others. If you've never used it, think Google Docs collaborative mode meets your editor.
 
-![Notification in VS Code stating a Live Share session is beginning](https://www.iamdeveloper.com/images/posts/_uploads_articles_217w2oh27z64neynkprl.png)
+![Notification in VS Code stating a Live Share session is beginning](https://www.nickyt.co/images/posts/_uploads_articles_217w2oh27z64neynkprl.png)
 
 Some notable features:
 

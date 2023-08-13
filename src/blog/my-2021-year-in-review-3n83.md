@@ -6,7 +6,7 @@
   "tags": [
     "yearinreview"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--14PKK-wD--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_1fgj6dfj33nd55i17c9c.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--14PKK-wD--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_1fgj6dfj33nd55i17c9c.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/my-2021-year-in-review-3n83/",
   "reading_time_minutes": 5,
   "template": "post"

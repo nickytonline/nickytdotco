@@ -9,7 +9,7 @@
     "githubactions",
     "git"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--MPFZD2M0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_n5zbeeuatd9c42b1etvc.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--MPFZD2M0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_n5zbeeuatd9c42b1etvc.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
   "reading_time_minutes": 5,
   "template": "post"
@@ -54,11 +54,11 @@ Having a PR brings all the things that were lacking:
 
 To be able to auto-merge a branch, you need to modify some settings in your repository. Navigate to, e.g. https://github.com/nickytonline/iamdeveloper.com/settings, scroll to the bottom of the general settings and ensure that `Allow auto-merge` is checked.
 
-![Allow auto-merge checked in a GitHub repository's general settings](https://www.iamdeveloper.com/images/posts/_uploads_articles_ydpifg55ey6b6rnvh1yc.png)
+![Allow auto-merge checked in a GitHub repository's general settings](https://www.nickyt.co/images/posts/_uploads_articles_ydpifg55ey6b6rnvh1yc.png)
 
 Optionally, what I did was auto-delete branches. If you want to do the same, ensure that `Automatically delete head branches` is checked.
 
-![Automatically delete head branches checked in a GitHub repository's general settings](https://www.iamdeveloper.com/images/posts/_uploads_articles_5ybamm8gve0cl96p1l38.png)
+![Automatically delete head branches checked in a GitHub repository's general settings](https://www.nickyt.co/images/posts/_uploads_articles_5ybamm8gve0cl96p1l38.png)
 
 ### Configuring Branch Protection
 
@@ -69,11 +69,11 @@ For the auto-merge PR use case, we'll add the following branch protection for th
 1. Require PRs for the main branch
 2. Do not require PR approvals
 
-![Pull request section of branch protection settings in a GitHub repository](https://www.iamdeveloper.com/images/posts/_uploads_articles_s8gl2yej8bmk1nu1jz6o.png)
+![Pull request section of branch protection settings in a GitHub repository](https://www.nickyt.co/images/posts/_uploads_articles_s8gl2yej8bmk1nu1jz6o.png)
 
 3. Require checks to pass
 
-![Required checks pane of branch protection settings in a GitHub repository](https://www.iamdeveloper.com/images/posts/_uploads_articles_d9xwgx9uatfq8psjcefy.png)
+![Required checks pane of branch protection settings in a GitHub repository](https://www.nickyt.co/images/posts/_uploads_articles_d9xwgx9uatfq8psjcefy.png)
 
 ## Automating an Auto-Merge PR
 

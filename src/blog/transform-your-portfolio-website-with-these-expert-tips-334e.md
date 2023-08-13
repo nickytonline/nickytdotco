@@ -9,7 +9,7 @@
     "portfolio",
     "frontend"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--mgPMEmM4--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_55c1umcrwwox207gat3i.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--mgPMEmM4--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_55c1umcrwwox207gat3i.png",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/transform-your-portfolio-website-with-these-expert-tips-334e/",
   "reading_time_minutes": 3,
   "template": "post"

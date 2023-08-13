@@ -9,7 +9,7 @@
     "texteditor",
     "vscode"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--GzTj3t37--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_6e271uy3v8ia1h0e1c7q.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--GzTj3t37--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_6e271uy3v8ia1h0e1c7q.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/",
   "reading_time_minutes": 6,
   "template": "post"
@@ -116,7 +116,7 @@ Language extensions like Go and Python (see below) when installed get all the pr
 
 TLDR; check out https://gist.github.com/nickytonline/8086319bf5836797ee3dea802a77000d. (maybe another gist to blog post? 😉). And the end result is this. Not sure if I like the cursive in code yet, but maybe it'll grow on me.
 
-![](https://www.iamdeveloper.com/images/posts/_i_hnlbb6v5eorv1u8mb70k.png)
+![](https://www.nickyt.co/images/posts/_i_hnlbb6v5eorv1u8mb70k.png)
 
 
 ### Miscellaneous
@@ -137,11 +137,11 @@ TLDR; check out https://gist.github.com/nickytonline/8086319bf5836797ee3dea802a7
 
 I'm currently taking the [Cobalt 2](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) theme for a spin with the Fish Shell Fisherman Agnoster theme.
 
-![Cobalt 2 Theme with Fisherman Agnoster Theme](https://www.iamdeveloper.com/images/posts/_nickytonline_3d5ffeab871a6662d7a3f89bb0bed0f8_raw_c00e3c60587414e788f62f89a503bc5a9b220bd0_cobalt2_agnoster_theme.jpg)
+![Cobalt 2 Theme with Fisherman Agnoster Theme](https://www.nickyt.co/images/posts/_nickytonline_3d5ffeab871a6662d7a3f89bb0bed0f8_raw_c00e3c60587414e788f62f89a503bc5a9b220bd0_cobalt2_agnoster_theme.jpg)
 
 I still love using the [Dracula theme](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula) with the Fish Shell Fisherman Joker theme, but thought I'd switch it up for a bit.
 
-![Dracula Theme with Fisherman Joker Theme](https://www.iamdeveloper.com/images/posts/_nickytonline_3d5ffeab871a6662d7a3f89bb0bed0f8_raw_c00e3c60587414e788f62f89a503bc5a9b220bd0_dracula_joker_theme.jpg)
+![Dracula Theme with Fisherman Joker Theme](https://www.nickyt.co/images/posts/_nickytonline_3d5ffeab871a6662d7a3f89bb0bed0f8_raw_c00e3c60587414e788f62f89a503bc5a9b220bd0_dracula_joker_theme.jpg)
 
 I've also used [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme), and [Material theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme) which are great as well.
 
@@ -153,7 +153,7 @@ I use [Fish Shell](https://fishshell.com) and [Fisherman](https://github.com/fis
 
 I use [Fira Code](https://github.com/tonsky/FiraCode) in VS Code. Once you've [installed](https://github.com/tonsky/FiraCode/wiki#installing-font) Fira Code, the setup in Code is quite easy.
 
-![Fira Font](https://www.iamdeveloper.com/images/posts/_3a8948f34284f378ead7af5846aa432035c687ad_687474703a2f2f732e746f6e736b792e6d652f696d67732f666972615f636f64655f6c6f676f2e737667)
+![Fira Font](https://www.nickyt.co/images/posts/_3a8948f34284f378ead7af5846aa432035c687ad_687474703a2f2f732e746f6e736b792e6d652f696d67732f666972615f636f64655f6c6f676f2e737667)
 
 Open your user settings and add the following:
 

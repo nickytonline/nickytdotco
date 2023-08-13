@@ -9,7 +9,7 @@
     "career",
     "opensource"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--QZ53kjKB--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_w9ynhhbmy7bvh3e4nxnx.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--QZ53kjKB--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_w9ynhhbmy7bvh3e4nxnx.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/ecosystem-and-frameworks-my-role-at-netlify-306b",
   "reading_time_minutes": 2,
   "template": "post"

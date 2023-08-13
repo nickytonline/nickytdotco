@@ -7,7 +7,7 @@
     "opensource",
     "beginners"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--pRLxa_Fm--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_lmjxhciohzyiwthkn986.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--pRLxa_Fm--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_lmjxhciohzyiwthkn986.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/contributing-to-open-source-and-how-open-sauced-can-help-5d97/",
   "reading_time_minutes": 58,
   "template": "post"

@@ -7,7 +7,7 @@
     "officesetup",
     "productreview"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--HCfPX3h5--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_j9r7mpudfofan0lf6s0u.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--HCfPX3h5--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_j9r7mpudfofan0lf6s0u.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/benq-screenbar-halo-monitor-light-review-54ej/",
   "reading_time_minutes": 4,
   "template": "post"
@@ -20,11 +20,11 @@
 
 The [BenQ ScreenBar Halo Monitor Light](https://pse.is/4mt8u9) light comes in an aesthetically pleasing matte grey box. 
 
-![BenQ ScreenBar Halo Monitor Light in the box it shipped in](https://www.iamdeveloper.com/images/posts/_uploads_articles_vgri3vc1mo0gz59l3sk6.jpeg)
+![BenQ ScreenBar Halo Monitor Light in the box it shipped in](https://www.nickyt.co/images/posts/_uploads_articles_vgri3vc1mo0gz59l3sk6.jpeg)
 
 The presentation of the light when you open the box is really well done. It's not Apple-level, but still pretty on point. I like the bit of fun they have on the open lid where it says, "Hello! This is Halo!"
 
-![BenQ ScreenBar Halo Monitor Light in the box it shipped in with the box open displaying the pieces](https://www.iamdeveloper.com/images/posts/_uploads_articles_qqk6lh1nc1oz5y16oyun.jpeg)
+![BenQ ScreenBar Halo Monitor Light in the box it shipped in with the box open displaying the pieces](https://www.nickyt.co/images/posts/_uploads_articles_qqk6lh1nc1oz5y16oyun.jpeg)
 
 Everything was packaged well, but removing the plastic wrapping around the light was tricky. I used scissors to cut the tape, but I was still worried about damaging the lamp. It could be easier if the plastic covering each part of the light bar could slide off.
 
@@ -40,17 +40,17 @@ For some context, I'm in an office that is 8 x 10 feet (2.44 x meters 3 m) with 
 
 Turning the front light on gave me enough light to see everything in front of my monitor, but I also preferred it with the rear light on.
 
-![BenQ Halo Screenbar light on top of my monitor with the front and rear lighting on](https://www.iamdeveloper.com/images/posts/_uploads_articles_48b9vungz96wetxq3hir.jpeg)
+![BenQ Halo Screenbar light on top of my monitor with the front and rear lighting on](https://www.nickyt.co/images/posts/_uploads_articles_48b9vungz96wetxq3hir.jpeg)
 
 In the evenings, I prefer less light, so I tried it with just the backlight, and surprisingly, I had a perfect amount of light to work in the evenings.
 
-![BenQ Halo Screenbar light on top of my monitor with only the rear light on](https://www.iamdeveloper.com/images/posts/_uploads_articles_7ln0hj1b79n02p1vpwl6.jpeg)
+![BenQ Halo Screenbar light on top of my monitor with only the rear light on](https://www.nickyt.co/images/posts/_uploads_articles_7ln0hj1b79n02p1vpwl6.jpeg)
 
 ### Remote
 
 The remote sits nicely on my desk, arm's length away. It looks really nice just sitting on the desk.
 
-![Halo remote](https://www.iamdeveloper.com/images/posts/_uploads_articles_6zmh4g0j8qvaogb75cmo.jpeg)
+![Halo remote](https://www.nickyt.co/images/posts/_uploads_articles_6zmh4g0j8qvaogb75cmo.jpeg)
 
 In the photo, you'll notice it's very reflective. I can see the back of my phone on it that took the picture. It also surfaces smudges and fingerprints. This doesn't bother me, but maybe some folks would constantly be wiping it down.
 
@@ -64,12 +64,12 @@ I have yet to speak to the battery life of the remote, as I've only been using t
 
 I checked their site when BenQ contacted me about trying out the light. I realized just sending me the light wouldn't work because I have a webcam that I mount in the middle on top of my monitor. I discovered they had a [webcam accessory](https://www.benq.com/en-us/lighting/accessory/webcam-accessory.html), so I asked if they could send that along with the light.
 
-![Side view behind my monitor of with my webcam on top of the Halo using the webcam accessory](https://www.iamdeveloper.com/images/posts/_uploads_articles_klowfvnbqkgp6g3ajq5i.jpeg)
+![Side view behind my monitor of with my webcam on top of the Halo using the webcam accessory](https://www.nickyt.co/images/posts/_uploads_articles_klowfvnbqkgp6g3ajq5i.jpeg)
 
 The webcam accessory is L shaped and comes with a magnet that you stick on top of the Halo. This was quick to set up and works well. Since the camera is a little higher because of the light, I had to change the angle of the camera slightly.
 
 
-![Front view of my monitor with my webcam on top of the Halo using the webcam accessory](https://www.iamdeveloper.com/images/posts/_uploads_articles_322p308tf6svh9kcn3po.jpeg)
+![Front view of my monitor with my webcam on top of the Halo using the webcam accessory](https://www.nickyt.co/images/posts/_uploads_articles_322p308tf6svh9kcn3po.jpeg)
 
 If you have a webcam set up like me, you need the webcam accessory.
 

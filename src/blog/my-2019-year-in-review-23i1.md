@@ -6,7 +6,7 @@
   "tags": [
     "yearinreview"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--2NiTSnuS--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_z8awferjpkro7ig0ciey.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--2NiTSnuS--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_z8awferjpkro7ig0ciey.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/my-2019-year-in-review-23i1/",
   "reading_time_minutes": 17,
   "template": "post"
@@ -99,7 +99,7 @@ I passed the initial phone screen and then prepped for my first interview that w
 
 I moved on to the second interview, and once again did well. I got the phone call from Facebook that they wanted to move to the final step, an interview in Menlo Park. They flew me down for the weekend and then I was to interview on Monday. I had never been to California, so I was very excited to go.
 
-![Facebook badge](https://www.iamdeveloper.com/images/posts/_i_547t4w3um93ilrhlbq2g.png)
+![Facebook badge](https://www.nickyt.co/images/posts/_i_547t4w3um93ilrhlbq2g.png)
 
 One of my cousins lives in California, so I also took the opportunity to visit some family. Aside from that, I contacted [Brian Vaughn](https://twitter.com/brian_d_vaughn), one of the core React team members just to see if he wanted to grab a bite to eat/coffee with a random Canadian. I’ll be honest, I generally do not ask strangers to meet up, but he seemed like such a nice person on Twitter and GitHub, that I just went for it. We grabbed some sushi and a coffee on Sunday and just chit-chatted. It was really nice of him to do that while I was there.
 
@@ -356,7 +356,7 @@ Refined GitHub is not frontend specific, but a lot of us use GitHub for work. It
 
 There are too many features to mention, but my favourites are automatically deleting a branch after it is merged, and prompting you to create a PR if you're on GitHub and just pushed a branch or made changes to a branch that currently does not have a PR open.
 
-![Screen shot of Refined GitHub prompting a user to create a PR](https://www.iamdeveloper.com/images/posts/_i_qo9qd11owzquv5j3zywa.png)
+![Screen shot of Refined GitHub prompting a user to create a PR](https://www.nickyt.co/images/posts/_i_qo9qd11owzquv5j3zywa.png)
 
 The extension integrates so well, I no longer know what is a new GitHub feature or a Refined GitHub feature.
 
@@ -400,13 +400,13 @@ As mentioned above, I purchased [Every Layout](https://every-layout.dev/checkout
 
 There are browser extensions that do part of what xScope does, but a few years ago, a co-worker introduced me to [xScope](https://xscope.app). The only downside to this tool is that it is only available for Mac. If you are on a Mac though, I highly recommend it.
 
-![Screenshot of xScope in action](https://www.iamdeveloper.com/images/posts/_i_z9ib0s1cc88dwa7qvv5n.png) 
+![Screenshot of xScope in action](https://www.nickyt.co/images/posts/_i_z9ib0s1cc88dwa7qvv5n.png) 
 
 ### Sizzy
 
 [Sizzy](https://sizzy.app/) is a new one in my toolbelt, but so far I am loving it. I snagged it at a great price during Boxing Day week. In a nutshell, it allows you to work on a site or application and see how it appears in different devices. It has more to it than that, but I am still new to it, so I probably haven't unleashed all its awesomeness yet. Kudos to @thekitze for building this awesomeness.
 
-![Screenshot of Sizzy in action](https://www.iamdeveloper.com/images/posts/_i_cqu87zz9l97zk55ng3p5.png)
+![Screenshot of Sizzy in action](https://www.nickyt.co/images/posts/_i_cqu87zz9l97zk55ng3p5.png)
 
 ### Learning through Video
 

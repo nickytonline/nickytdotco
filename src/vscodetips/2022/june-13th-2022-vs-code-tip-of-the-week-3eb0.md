@@ -8,7 +8,7 @@
     "git",
     "vscodetips"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--dHJ0T4me--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_9816ipfrohvyragw2g50.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--dHJ0T4me--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_9816ipfrohvyragw2g50.png",
   "canonicalUrl": "https://community.vscodetips.com/nickytonline/june-13th-2022-vs-code-tip-of-the-week-3lnd",
   "reading_time_minutes": 1,
   "template": "post"
@@ -25,15 +25,15 @@ Press <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (<kbd>CMD</kbd> + <kbd>S
 
 Type in `Add gitignore` in the command palette.
 
-![Add gitignore typed into VS Code's command palette](https://www.iamdeveloper.com/images/posts/_uploads_articles_x7gjbm2otlkr0thrm3th.png)
+![Add gitignore typed into VS Code's command palette](https://www.nickyt.co/images/posts/_uploads_articles_x7gjbm2otlkr0thrm3th.png)
  
 
 You'll be presented with a language to generate the gitignore file for.
 
-![The Add gitignore command in VS Code's command palette prompting the user to select a language to generate the gitignore for](https://www.iamdeveloper.com/images/posts/_uploads_articles_bcsd2lb7996wve6zyvzf.png)
+![The Add gitignore command in VS Code's command palette prompting the user to select a language to generate the gitignore for](https://www.nickyt.co/images/posts/_uploads_articles_bcsd2lb7996wve6zyvzf.png)
 
 And there you go! You have a fresh gitgnore file in your repository now!
 
-![gitignore file for node.js generated from the Add gitignore command in VS Code](https://www.iamdeveloper.com/images/posts/_uploads_articles_nbecy8qw8gl4vzh9j35b.png)
+![gitignore file for node.js generated from the Add gitignore command in VS Code](https://www.nickyt.co/images/posts/_uploads_articles_nbecy8qw8gl4vzh9j35b.png)
  
 Happy VS Coding!

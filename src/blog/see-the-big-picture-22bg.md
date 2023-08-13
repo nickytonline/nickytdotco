@@ -7,7 +7,7 @@
     "career",
     "beginners"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--RuCk74km--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_6qeji3ozp4ypayd0h8au.JPG",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--RuCk74km--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_6qeji3ozp4ypayd0h8au.JPG",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/see-the-big-picture-22bg/",
   "reading_time_minutes": 2,
   "template": "post"
@@ -20,7 +20,7 @@ Typically (not always) folks with less experience do not grasp this. This is not
 
 I'll tell you a funny story that relates to my profile picture. I use this as my profile picture on DEV, GitHub and all social media.
 
-![My profile picture on DEV and social media](https://www.iamdeveloper.com/images/posts/_i_bfqdjky9qbahxaxseb29.jpeg)
+![My profile picture on DEV and social media](https://www.nickyt.co/images/posts/_i_bfqdjky9qbahxaxseb29.jpeg)
 
 I'm sporting my DEV shirt looking up slightly into the sky as if I'm trying to look tough or looking at some imaginary DEV flag that I should be saluting to. What you don't see in this picture is that I am in extreme pain. My feet are killing me and I have blisters on several toes on each foot.
 
@@ -36,7 +36,7 @@ WAIT FOR IT...
 
 Here is the original uncropped photo. You probably now know why my feet were in the state they were that day.
 
-![Me on my deck in high heel shoes after doing the Walk a Mile in Her Shoes fundraiser](https://www.iamdeveloper.com/images/posts/_i_213g7cp65ube3nkam9gn.JPG)
+![Me on my deck in high heel shoes after doing the Walk a Mile in Her Shoes fundraiser](https://www.nickyt.co/images/posts/_i_213g7cp65ube3nkam9gn.JPG)
 
 I participated in a great local fundraiser for a women's shelter called "Walk a Mile in Her Shoes" in which you literally walk a mile in high heel shoes. So what does this all have to do with software?
 

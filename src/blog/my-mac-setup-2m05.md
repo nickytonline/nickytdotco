@@ -8,7 +8,7 @@
     "developertools",
     "webdev"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--C6fxx9Ly--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_qkwvsk3lp64lvchg69tm.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--C6fxx9Ly--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_qkwvsk3lp64lvchg69tm.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/my-mac-setup-2m05/",
   "reading_time_minutes": 9,
   "template": "post"
@@ -33,7 +33,7 @@ I participated in this week’s [#devdiscuss about tooling](https://twitter.com/
 
 Alfred is so awesome, it deserves it’s own section in this post. It’s basically Spotlight on steroids and a bag of chips. It’s more than an application launcher. It allows you to create workflows for repetitive tasks you do everyday and there is also a huge array of existing [workflows](https://www.alfredapp.com/workflows/) for it available. I even decided to make some of my own, [nickytonline/alfred-workflows: Hopefully useful workflows for Alfred](https://github.com/nickytonline/alfred-workflows).
 {% twitter "950915346596327424" %}
-![](https://www.iamdeveloper.com/images/posts/_i_3a5uy98t5v0dskpk36nu.png)
+![](https://www.nickyt.co/images/posts/_i_3a5uy98t5v0dskpk36nu.png)
 
 I never used Alfred until this past summer. Why did I not use it sooner?!
 
@@ -43,11 +43,11 @@ The Syntax FM podcast has a great episode on tooling, including Alfred, [Our fav
 
 Along with workflows, you can also install themes. I like [Wes Bos](https://dev.to/wesbos)’ Cobalt 2 theme for other things and I guess since Wes is a huge fan of Alfred, he decided to make the theme for Alfred as well. Download the [raw Cobalt 2 theme file](https://raw.githubusercontent.com/wesbos/Cobalt2-Alfred-Theme/master/Cobalt2-alfred3.x.alfredappearance) from the [github.com/wesbos/Cobalt2-Alfred-Theme](https://github.com/wesbos/Cobalt2-Alfred-Theme) repository. Once downloaded, open the file and it will ask you if you want to import the theme into Alfred.
 
-![](https://www.iamdeveloper.com/images/posts/_i_56k68zpta3vkfbx8ybif.png)
+![](https://www.nickyt.co/images/posts/_i_56k68zpta3vkfbx8ybif.png)
 
 Click the import button and Alfred has been Cobalted.
 
-![](https://www.iamdeveloper.com/images/posts/_i_2djw6ar9a2iqmvsdipyz.png)
+![](https://www.nickyt.co/images/posts/_i_2djw6ar9a2iqmvsdipyz.png)
 
 At the time of this writing, here’s all the workflows that I currently have installed:
 
@@ -70,7 +70,7 @@ If you use Alfred and have some workflows that are not listed here, please menti
 
 You can also launch the terminal from Alfred, by typing `>` in the Alfred search bar followed by the command you wish to run. Since I use iTerm, I want that to open instead of the default Terminal app. Since [Alfred 2.7.2](https://www.alfredapp.com/blog/tips-and-tricks/better-iterm-integration-in-alfred), you can run a custom Applescript to launch another terminal application. Open the Alfred preferences window and click on the Features button in the top of the preferences window then click on the Terminal / Shell button at the bottom. In the Application drop down menu, select Custom and paste in [this script](https://raw.githubusercontent.com/stuartcryan/custom-iterm-applescripts-for-alfred/master/custom_iterm_script_iterm_2.9.applescript) from the [Custom iTerm Applescripts for Alfred](https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred) repository.
 
-![](https://www.iamdeveloper.com/images/posts/_i_30almlm8iljcxrzcqlk4.png)
+![](https://www.nickyt.co/images/posts/_i_30almlm8iljcxrzcqlk4.png)
 
 You're all good to go. To test it out launch Alfred and in the search bar type `> ls` and press ENTER. iTerm should open up with a listing of the current directory.
 

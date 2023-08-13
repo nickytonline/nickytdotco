@@ -8,7 +8,7 @@
     "streaming",
     "learninpublic"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--xsTcdKf---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7lzygyai23v4nhw3bl81.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--xsTcdKf---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7lzygyai23v4nhw3bl81.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/my-twitch-stream-setup-2m0c/",
   "reading_time_minutes": 2,
   "template": "post"
@@ -27,11 +27,11 @@ I've been streaming for about a year now, so I've tweaked things as I've gone al
 
 Here was how my stream looked liked about a year ago.
 
-![Nick Taylor's Twitch stream about a year ago with a very basic layout. Just a screenshare and a webcam](https://www.iamdeveloper.com/images/posts/_uploads_articles_nzgad8wb78yytjs0de3n.png)
+![Nick Taylor's Twitch stream about a year ago with a very basic layout. Just a screenshare and a webcam](https://www.nickyt.co/images/posts/_uploads_articles_nzgad8wb78yytjs0de3n.png)
 
 Here is what it looks like now as of yesterday. 
 
-![Nick Taylor's Twitch stream improved with integrated chat, and more assets to make things look better](https://www.iamdeveloper.com/images/posts/_uploads_articles_56s9mufap1oia35udov1.png)
+![Nick Taylor's Twitch stream improved with integrated chat, and more assets to make things look better](https://www.nickyt.co/images/posts/_uploads_articles_56s9mufap1oia35udov1.png)
 
 I thought to get back in the swing of things with my stream, that it made sense to go through my setup. The video is still up on Twitch, but I'm going to link to the YouTube as the Twitch recording disappears in two weeks.
 

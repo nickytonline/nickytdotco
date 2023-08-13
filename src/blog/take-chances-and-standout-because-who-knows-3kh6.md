@@ -8,7 +8,7 @@
     "interview",
     "motivation"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--gMX84Q9b--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_fgimfk93vbdn6v0csx5e.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--gMX84Q9b--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_fgimfk93vbdn6v0csx5e.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/take-chances-and-standout-because-who-knows-3kh6/",
   "reading_time_minutes": 5,
   "template": "post"
@@ -43,7 +43,7 @@ I wasn't expecting to hear back from them, but eventually I did. I initially cor
 
 Here's a screen capture of my PR in action
 
-![tota11y browser extension screen capture](https://www.iamdeveloper.com/images/posts/_uploads_articles_yui7xuac32hvlun83g71.gif)
+![tota11y browser extension screen capture](https://www.nickyt.co/images/posts/_uploads_articles_yui7xuac32hvlun83g71.gif)
 
 I was lucky enough to get a second interview, with none other than [John Resig](https://johnresig.com), the creator of [jQuery](https://jquery.com). I did not know that he was working at Khan, so I was a little nervous but excited at the same time. I got to speak with John for a solid hour about front-end. It was amazing.
 

@@ -7,7 +7,7 @@
     "socialmedia",
     "mastodon"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--UVOLc_dh--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_5i81ao7g5t81jr8i99lq.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--UVOLc_dh--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_5i81ao7g5t81jr8i99lq.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/have-you-moved-from-twitter-to-mastodon-for-social-media-4a37",
   "reading_time_minutes": 2,
   "template": "post"

@@ -8,7 +8,7 @@
     "preact",
     "webpack"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--EtbkTn3s--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_6k8d3qedhotdzvk8qesq.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--EtbkTn3s--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_6k8d3qedhotdzvk8qesq.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/dev-to-s-frontend-a-brain-dump-in-one-act-7mg/",
   "reading_time_minutes": 8,
   "template": "post"
@@ -220,7 +220,7 @@ I was not a part of this initiative, but I know it uses CSS variables heavily fo
 
 So all that is themeable always applies the CSS variables with whatever their current value is (unless all you have is the fallback because your browser doesn’t support CSS variables).
 
-![CSS code snapshot](https://www.iamdeveloper.com/images/posts/_i_mbpdyjirntq3aoefp2m3.png)
+![CSS code snapshot](https://www.nickyt.co/images/posts/_i_mbpdyjirntq3aoefp2m3.png)
 
 The magic of theme toggling can be seen in action in the user configuration. Here we can see some style being applied if it’s the night theme or if it’s the pink theme.
 

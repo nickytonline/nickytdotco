@@ -7,7 +7,7 @@
     "react",
     "cli"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--yzFlGYUf--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_ewrl8i5l3v9avgxpocjc.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--yzFlGYUf--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_ewrl8i5l3v9avgxpocjc.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/ink-react-for-clis-2l3b/",
   "reading_time_minutes": 1,
   "template": "post"

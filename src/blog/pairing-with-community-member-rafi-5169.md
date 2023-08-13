@@ -9,7 +9,7 @@
     "css",
     "html"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--BvMbIlsm--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_j4m63b3wupg2r2lpctc7.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--BvMbIlsm--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_j4m63b3wupg2r2lpctc7.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/pairing-with-community-member-rafi-5169/",
   "reading_time_minutes": 2,
   "template": "post"

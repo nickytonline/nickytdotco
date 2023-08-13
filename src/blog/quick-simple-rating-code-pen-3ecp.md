@@ -7,7 +7,7 @@
     "css",
     "codepen"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--l5Yv15Ln--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c2.staticflickr.com_4_3864_15120161855_a640e93573_b.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--l5Yv15Ln--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c2.staticflickr.com_4_3864_15120161855_a640e93573_b.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/quick-simple-rating-code-pen-3ecp/",
   "reading_time_minutes": 1,
   "template": "post"

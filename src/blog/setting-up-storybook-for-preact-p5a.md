@@ -9,7 +9,7 @@
     "javascript",
     "ui"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--AMjsJsC0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_9zm6yatidby4ls11xzeg.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--AMjsJsC0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_9zm6yatidby4ls11xzeg.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/setting-up-storybook-for-preact-p5a/",
   "reading_time_minutes": 3,
   "template": "post"
@@ -51,7 +51,7 @@ Note that this is a super bare bones webpack configuration. You can add anything
 2. Open this file and remove the React reference and replace it with `import { h } from "preact";`
 3. All that’s left to do is run `npm run storybook` and navigate to Storybook in a browser.
 
-![Storybook in action](https://www.iamdeveloper.com/images/posts/_uploads_articles_wfth0zitsjm9fv9g5vlu.gif)
+![Storybook in action](https://www.nickyt.co/images/posts/_uploads_articles_wfth0zitsjm9fv9g5vlu.gif)
  
 ## Extras
 

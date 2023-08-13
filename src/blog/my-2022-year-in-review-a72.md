@@ -6,7 +6,7 @@
   "tags": [
     "yearinreview"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--DWXYRl4---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_549dl9ckop73uweqprka.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--DWXYRl4---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_549dl9ckop73uweqprka.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/my-2022-year-in-review-a72",
   "reading_time_minutes": 6,
   "template": "post"
@@ -31,7 +31,7 @@ My first day at Netlify was April 4th, and it's been fun and challenging ever si
 
 It's not why I joined Netlify, but I won't lie; having an offsite in Hawaii was pretty sweet!
 
-![Me diving down snorkling in Honolua Bay, Hawaii](https://www.iamdeveloper.com/images/posts/_uploads_articles_tsz15cvt28nnb1n2cs1n.png)
+![Me diving down snorkling in Honolua Bay, Hawaii](https://www.nickyt.co/images/posts/_uploads_articles_tsz15cvt28nnb1n2cs1n.png)
 
 I got to meet all my co-workers and enjoy some downtime. I was floating in the Pacific with my entire team at one point. I highly recommend meetings in the ocean.
 
@@ -75,7 +75,7 @@ I re-kickstarted my own stream and was happy with how it turned out. From a numb
 
 And lastly, a big thank you to all the guests! 👇🏻
 
-![Scrolling through all the highlight videos for 2022 for my Twitch stream](https://www.iamdeveloper.com/images/posts/_uploads_articles_tw678pxflyadcdrph828.gif)
+![Scrolling through all the highlight videos for 2022 for my Twitch stream](https://www.nickyt.co/images/posts/_uploads_articles_tw678pxflyadcdrph828.gif)
 
 If you want to check out all the streaming I do, check out my [streaming page](https://www.iamdeveloper.com/pages/streaming/). 
 

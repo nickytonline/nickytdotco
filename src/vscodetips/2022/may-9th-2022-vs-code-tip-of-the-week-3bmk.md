@@ -7,7 +7,7 @@
     "vscode",
     "vscodetips"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--JZ9MOln1--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_n2gv6n0tzbk02bsuf41w.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--JZ9MOln1--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_n2gv6n0tzbk02bsuf41w.png",
   "canonicalUrl": "https://community.vscodetips.com/nickytonline/may-9th-2022-vs-code-tip-of-the-week-3dga",
   "reading_time_minutes": 1,
   "template": "post"
@@ -18,7 +18,7 @@ This week's tip of the week is care of my old co-worker @citizen428. He mentione
 
 This is really cool, and as I was looking into this, I realized you can set all kinds of settings for a particular language. Looking into my own settings, I had already done this for certain things.
 
-![VS Code settings file open showing different formatters for different languages](https://www.iamdeveloper.com/images/posts/_uploads_articles_xkslmrl4yytaym146ja6.png)
+![VS Code settings file open showing different formatters for different languages](https://www.nickyt.co/images/posts/_uploads_articles_xkslmrl4yytaym146ja6.png)
 
 Check out the [Language-specific editor settings](https://code.visualstudio.com/docs/getstarted/settings#_languagespecific-editor-settings).
 

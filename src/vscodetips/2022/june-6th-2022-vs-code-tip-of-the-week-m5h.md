@@ -8,7 +8,7 @@
     "vscodetips",
     "vscodeextension"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--7_frz8py--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_hpcporzgaefiuzx2bl2w.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--7_frz8py--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_hpcporzgaefiuzx2bl2w.png",
   "canonicalUrl": "https://community.vscodetips.com/nickytonline/june-6th-2022-vs-code-tip-of-the-week-pf0",
   "reading_time_minutes": 1,
   "template": "post"
@@ -23,7 +23,7 @@ You can read more about the [new Tailwind CSS language mode for VS Code](https:/
 
 Since that then, the Tailwind team has released [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
-![Tailwind CSS Intellisense extension missing on one side showing lint errors and on the other side the Tailwind CSS Intellisense extension enabled with no errors](https://www.iamdeveloper.com/images/posts/__next_static_media_tailwindcss-language-mode.743db867cce5edbd2a3d15d503609a45.png)
+![Tailwind CSS Intellisense extension missing on one side showing lint errors and on the other side the Tailwind CSS Intellisense extension enabled with no errors](https://www.nickyt.co/images/posts/__next_static_media_tailwindcss-language-mode.743db867cce5edbd2a3d15d503609a45.png)
 
 Once you have the extension installed, if you want to try it out choose “Tailwind CSS” as the language mode for your CSS files.
 

@@ -7,7 +7,7 @@
     "meta",
     "writing"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--KXXVNcwN--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_8wht3l5dg5s5wh5pzqtc.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--KXXVNcwN--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_8wht3l5dg5s5wh5pzqtc.jpeg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/more-engagement-through-series-on-devto-6hb/",
   "reading_time_minutes": 1,
   "template": "post"
@@ -26,7 +26,7 @@ This week’s post came out
 
 and as expected, folks were liking previous posts from the series.
 
-![My dev.to notifications where people are bookmarking and liking previous posts from series of mine](https://www.iamdeveloper.com/images/posts/_uploads_articles_n97rfjp41oejm2cimabg.png)
+![My dev.to notifications where people are bookmarking and liking previous posts from series of mine](https://www.nickyt.co/images/posts/_uploads_articles_n97rfjp41oejm2cimabg.png)
 
 If you haven’t already, try out the series feature!
 

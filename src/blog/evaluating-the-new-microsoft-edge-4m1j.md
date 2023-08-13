@@ -1,12 +1,12 @@
 ---json
 {
   "title": "Evaluating the new Microsoft Edge",
-  "excerpt": "About a month ago I Tweeted that I was going to take the new MS Edge browser for a tour.             ...",
+  "excerpt": "About a month ago I Tweeted that I was going to take the new MS Edge browser for a...",
   "date": "2019-11-23T02:25:44.000Z",
   "tags": [
     "browsers"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--ORlH7LDT--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_tz6e8mu5mw2o2rx66egy.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--ORlH7LDT--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_tz6e8mu5mw2o2rx66egy.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/evaluating-the-new-microsoft-edge-4m1j/",
   "reading_time_minutes": 3,
   "template": "post"
@@ -29,25 +29,25 @@ After a month of usage, I can say that it pretty much behaves as I would expect 
 
 For mobile, it was pretty easy to find and install in the Apple App Store. I have not tried it on an Android device, but I imagine it's just as easily available from the Google Play Store.
 
-![Install MS Edge for iOS](https://www.iamdeveloper.com/images/posts/_uploads_articles_a4vqpx41s7x2m4r795hu.png)
+![Install MS Edge for iOS](https://www.nickyt.co/images/posts/_uploads_articles_a4vqpx41s7x2m4r795hu.png)
 
 I started to use it daily on my phone. Overall, I did not notice any issues except for one on GitHub. It does not seem able to load contributor graphs or the GitHub feed. I have no idea why and did not take the time to investigate. I am sure this will get sorted, but it is worth a mention. Perhaps other sites have similar issues, but for the life of a software developer, this appeared to be the only site that I experienced this.
 
-![MS Edge on iOS not loading GitHub feed](https://www.iamdeveloper.com/images/posts/_uploads_articles_66dzckutdat8wcld24ev.png)
+![MS Edge on iOS not loading GitHub feed](https://www.nickyt.co/images/posts/_uploads_articles_66dzckutdat8wcld24ev.png)
  
 Another odd thing that I experienced on Github was that it was reporting Edge as an outdated version of Safari. Maybe this is a user agent thing. I am not sure.
 
-![MS Edge on iOS warning about being an old version of Safari on GitHub site](https://www.iamdeveloper.com/images/posts/_uploads_articles_7cnnkab5a6a8wadwgxve.png)
+![MS Edge on iOS warning about being an old version of Safari on GitHub site](https://www.nickyt.co/images/posts/_uploads_articles_7cnnkab5a6a8wadwgxve.png)
  
 The one thing that I do not understand is why they provide a continue browsing later feature if it is not supported on macOS and Linux, since the feature clearly states to have the latest version of Windows installed on your PC. Once again, the browser is currently in BETA, so I imagine, this will get sorted out.
 
-![MS Edge Browse Later Screen on iOS](https://www.iamdeveloper.com/images/posts/_uploads_articles_k9letjw1cttmb9spn1r5.png) 
+![MS Edge Browse Later Screen on iOS](https://www.nickyt.co/images/posts/_uploads_articles_k9letjw1cttmb9spn1r5.png) 
 
-![MS Edge Browse Later Help Page for iOS](https://www.iamdeveloper.com/images/posts/_uploads_articles_ym4t4cutum7ddjkyezmy.png)
+![MS Edge Browse Later Help Page for iOS](https://www.nickyt.co/images/posts/_uploads_articles_ym4t4cutum7ddjkyezmy.png)
 
 Those things are somewhat minor, but the big one for me was about a week or two ago, I started getting warning messages about legitimate sites I browse every day being considered as unsafe, i.e. [https://dev.to](https://dev.to), [https://netlify.com](https://netlify.com) to name a couple.
 
-![MS Edge on iOS reporting legitimate site as unsafe](https://www.iamdeveloper.com/images/posts/_uploads_articles_5v7xgaeqot2qemt4gwkk.png)
+![MS Edge on iOS reporting legitimate site as unsafe](https://www.nickyt.co/images/posts/_uploads_articles_5v7xgaeqot2qemt4gwkk.png)
 
 In the end, I found this too annoying and reverted back to using Brave browser on my mobile.
 

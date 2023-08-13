@@ -7,7 +7,7 @@
     "rust",
     "webassembly"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--Ty7xK65M--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_rawwnuemdznz7320zmkp.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--Ty7xK65M--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_rawwnuemdznz7320zmkp.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/cool-rust-and-webassembly-resource-33j6/",
   "reading_time_minutes": 1,
   "template": "post"

@@ -6,7 +6,7 @@
   "tags": [
     "community"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--vECNB8No--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_b4sttely6muy169brptk.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--vECNB8No--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_b4sttely6muy169brptk.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/where-do-you-find-community-458p/",
   "reading_time_minutes": 4,
   "template": "post"
@@ -25,7 +25,7 @@ I'm active on Twitter and Mastodon, but if you want to connect on more than a Tw
 
 I first joined Virtual Coffee sometime in April 2020.
 
-![A snippet of a Twitter DM conversation between Bekah and me where I ask if I can come to Virtual Coffee](https://www.iamdeveloper.com/images/posts/_uploads_articles_eyvzniuvnikuyaxk75er.jpeg)
+![A snippet of a Twitter DM conversation between Bekah and me where I ask if I can come to Virtual Coffee](https://www.nickyt.co/images/posts/_uploads_articles_eyvzniuvnikuyaxk75er.jpeg)
 
 It's my favourite community. It was created by one of my now good friends, Bekah Hawrot Weigel (@bekahhw).
 

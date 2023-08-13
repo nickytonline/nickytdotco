@@ -6,7 +6,7 @@
   "tags": [
     "hacktoberfest"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--UWW67K9v--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_p2th95jqhkylbvffrrz0.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--UWW67K9v--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_p2th95jqhkylbvffrrz0.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/my-hacktoberfest-2019-32i2/",
   "reading_time_minutes": 1,
   "template": "post"

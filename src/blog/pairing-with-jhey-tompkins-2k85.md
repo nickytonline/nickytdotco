@@ -9,7 +9,7 @@
     "greensock",
     "javascript"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--8lWRVbUC--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_e4ekxgolwzakw0ntuny9.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--8lWRVbUC--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_e4ekxgolwzakw0ntuny9.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/pairing-with-jhey-tompkins-2k85/",
   "reading_time_minutes": 1,
   "template": "post"
@@ -18,7 +18,7 @@
 
 On <time datetime="2021-04-28">April 28th</time>, DEV Community member Jhey Tompkins joined @coffeecraftcode and I on the pairing stream to have some fun and help us build out a Twitch overlay using our mascot, Sloan!
 
-![dev.to's mascot Sloan](https://www.iamdeveloper.com/images/posts/_uploads_articles_urutyzau41a6gfovx9ze.png)
+![dev.to's mascot Sloan](https://www.nickyt.co/images/posts/_uploads_articles_urutyzau41a6gfovx9ze.png)
 
 Watch the pairing session with Jhey below to catch up on what you missed:
 

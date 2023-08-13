@@ -8,7 +8,7 @@
     "javascript",
     "browserextension"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--KQEdO3mC--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_ir0wzbkqn1rw9vu67irj.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--KQEdO3mC--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_ir0wzbkqn1rw9vu67irj.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/an-a11y-extension-coming-to-a-browser-near-you-1mg2/",
   "reading_time_minutes": 2,
   "template": "post"
@@ -31,7 +31,7 @@ I’ll be up front, I’m not an a11y expert, so this tool was actually really g
 
 One of the coolest features is the screen reader wand (Khan's work, not mine).
 
-![tota11y screen reader wand in action](https://www.iamdeveloper.com/images/posts/_uploads_articles_69eecgpq40a25yed3u0z.jpeg)
+![tota11y screen reader wand in action](https://www.nickyt.co/images/posts/_uploads_articles_69eecgpq40a25yed3u0z.jpeg)
 
 The PR isn’t merged yet, but will hopefully be in the next month or so. Regardless, you can try it out today as an unpacked extension in Chrome, FireFox, Brave or any browser that lets you load Chrome Webstore extensions. All you need to do is [clone my branch](https://github.com/nickytonline/tota11y/tree/poc/tota11y-as-chrome-extension) and build it locally. See the [README](https://github.com/nickytonline/tota11y/tree/poc/tota11y-as-chrome-extension#loading-tota11y-as-an-unpacked-chrome-extension) for instructions for loading it as an unpacked extension.
 

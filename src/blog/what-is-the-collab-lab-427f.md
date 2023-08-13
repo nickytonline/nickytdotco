@@ -9,7 +9,7 @@
     "webdev",
     "react"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--V_p9UoQH--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_tkrykaml6ubzcuocre47.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--V_p9UoQH--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_tkrykaml6ubzcuocre47.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/what-is-the-collab-lab-427f",
   "reading_time_minutes": 1,
   "template": "post"

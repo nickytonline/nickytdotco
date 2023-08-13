@@ -8,7 +8,7 @@
     "css",
     "ui"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--UPQWL4-u--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_fzgrjq82fzh5gtm4jur5.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--UPQWL4-u--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_fzgrjq82fzh5gtm4jur5.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/css-mask-property-2d42/",
   "reading_time_minutes": 2,
   "template": "post"
@@ -19,7 +19,7 @@ Say you have a background that you want a certain colour, but you only want to s
 
 Have you ever had an icon you liked and wanted to put on your site, but were like, "It would look so much better if I could integrate it with the colours in my site"? CSS `mask` property to the rescue. As you can see, if you interact with the [codepen](https://codepen.io) below, as you change the colour via the colour picker, the colour of the logo, [dev.to](https://dev.to "dev.to website") in this example, will only apply the background colour to the parts of the SVG that are filled. Shout out to [simpleicons.org](https://simpleicons.org "simpleicons.org website") for the dev.to icon!
 
-![Image description](https://www.iamdeveloper.com/images/posts/_uploads_articles_bsulgiwvihhizv0jr5bd.gif) 
+![Image description](https://www.nickyt.co/images/posts/_uploads_articles_bsulgiwvihhizv0jr5bd.gif) 
 
 If you want to see it in action, take a look at the icons in the menu of my website, [iamdeveloper.com](https://www.iamdeveloper.com).
 

@@ -7,7 +7,7 @@
     "git",
     "webdev"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--aq5cDtoo--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_olzaevg5khtiad835vke.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--aq5cDtoo--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_olzaevg5khtiad835vke.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/stuff-i-always-set-up-for-frontend-work-56h2/",
   "reading_time_minutes": 5,
   "template": "post"
@@ -20,13 +20,13 @@ There's a few things I always set up when working on a frontend project: ESLint,
 
 [ESLint](https://eslint.org) for linting frontend files: JavaScript, JSX and TypeScript (if the project uses [TypeScript](https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3)). There are all kinds of [rules](https://eslint.org/docs/rules/) and [plugins](https://eslint.org/docs/developer-guide/working-with-plugins) for this, but the gist of using a linter is to keep your code adhering to a project's standards/styles.
 
-![A screen shot of a lint error](https://www.iamdeveloper.com/images/posts/_i_nyu8r5kj3mu5arl37mns.png)
+![A screen shot of a lint error](https://www.nickyt.co/images/posts/_i_nyu8r5kj3mu5arl37mns.png)
 
 ## Prettier
 
 [Prettier](https://prettier.io) is for formatting your code. It is opinionated and offers some configuration but it is minimal, for example single quotes vs. double quotes.
 
-![prettier code formatting tool in action formatting some code](https://www.iamdeveloper.com/images/posts/_i_1b5cv01xqxhzn9w0jdhi.gif)
+![prettier code formatting tool in action formatting some code](https://www.nickyt.co/images/posts/_i_1b5cv01xqxhzn9w0jdhi.gif)
 
 ## stylelint
 
@@ -56,7 +56,7 @@ Here is a sample configuration.
 
 When a file is being committed to the repository, the above configuration will run `echo 'hi'` before the file is committed.
 
-![A Git pre-commit hook running in a terminal before a commit](https://www.iamdeveloper.com/images/posts/_i_x64xahqayl7uj5xiqapb.png)  
+![A Git pre-commit hook running in a terminal before a commit](https://www.nickyt.co/images/posts/_i_x64xahqayl7uj5xiqapb.png)  
 
 ## lint-staged
 
@@ -86,7 +86,7 @@ If we commit a file, the Git pre-commit hook will run lint-staged, but nothing w
 
 Now if we commit a file, the pre-commit hook will run and if any JavaScript files are being committed, the pre-commit hook, thanks to lint-staged will run prettier on the file and update the file with any formatting changes and then commit the file.
 
-![A Git pre-commit hook running lint-staged tasks](https://www.iamdeveloper.com/images/posts/_i_27q7nzts52vzyym5pmpg.png)
+![A Git pre-commit hook running lint-staged tasks](https://www.nickyt.co/images/posts/_i_27q7nzts52vzyym5pmpg.png)
 
 ## Putting it All Together
 

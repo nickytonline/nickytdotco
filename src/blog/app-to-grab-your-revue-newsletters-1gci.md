@@ -9,7 +9,7 @@
     "html",
     "typescript"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--mINhBz4F--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_vhn3sri34nx84esgy3ii.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--mINhBz4F--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_vhn3sri34nx84esgy3ii.png",
   "canonicalUrl": "https://www.iamdeveloper.com/blog/app-to-grab-your-revue-newsletters-1gci",
   "reading_time_minutes": 1,
   "template": "post"
@@ -22,7 +22,7 @@ So I wrote about how Twitter is scrapping Revue.
 
 I was able to pull down all my subscribers, as you can export them.
 
-![Drop down on the Revue Subscribers page with an option to export all subscribers](https://www.iamdeveloper.com/images/posts/_uploads_articles_rmqf3723msiuv81ykoun.png)
+![Drop down on the Revue Subscribers page with an option to export all subscribers](https://www.nickyt.co/images/posts/_uploads_articles_rmqf3723msiuv81ykoun.png)
 
 That is important, but I also wanted all my past newsletter issues. Revue has an API, so [I wrote a Deno script to save them](https://gist.github.com/nickytonline/102bb45e625db6b9ae0157e293cfb0a3).
 

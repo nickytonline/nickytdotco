@@ -9,7 +9,7 @@
     "svelte",
     "vue"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--iLw4lL5a--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_lg2kt0vfm90g2a3ljlbm.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--iLw4lL5a--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_lg2kt0vfm90g2a3ljlbm.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/build-framework-agnostic-components-with-mitosis-4c4k",
   "reading_time_minutes": 4,
   "template": "post"

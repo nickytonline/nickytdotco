@@ -9,7 +9,7 @@
     "node",
     "webdev"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--foEy2Mck--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_2x523d97n7fem0pci10s.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--foEy2Mck--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_2x523d97n7fem0pci10s.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/my-eleventy-meetup-talk-3b2p/",
   "reading_time_minutes": 6,
   "template": "post"
@@ -74,7 +74,7 @@ There are some other manipulations I do to the markdown that I'm probably forget
 
 On all my blog posts, you'll notice that they have a Boost on DEV link, and some also have a Boost on [Hashnode](https://hashnode.com) link. I got this idea from [Stephanie Eckles](https://twitter.com/5t3ph), giving credit where credit is due.
 
-![Boost links for DEV and Hashnode for a blog post of mine](https://www.iamdeveloper.com/images/posts/_uploads_articles_6rajggtd3owzd4q8d1ub.png)
+![Boost links for DEV and Hashnode for a blog post of mine](https://www.nickyt.co/images/posts/_uploads_articles_6rajggtd3owzd4q8d1ub.png)
  
 
 These links are generated in the markdown by the `boostLink` shortcode

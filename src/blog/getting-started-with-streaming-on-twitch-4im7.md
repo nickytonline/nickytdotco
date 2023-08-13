@@ -8,7 +8,7 @@
     "beginners",
     "streaming"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--xrj9uU0f--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_fm42fqy3ziu3r1zyahel.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--xrj9uU0f--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_fm42fqy3ziu3r1zyahel.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/getting-started-with-streaming-on-twitch-4im7/",
   "reading_time_minutes": 5,
   "template": "post"
@@ -85,7 +85,7 @@ Here are some streaming tips that I've found useful
 
 - If you plan on uploading your streams to YouTube or want to create clips later, ensure that you have Store past broadcasts on in your [stream settings](https://dashboard.twitch.tv/u/nickytonline/settings/stream)
 
-![Store past broadcast setting in Twitch stream VOD settings](https://www.iamdeveloper.com/images/posts/_uploads_articles_qxhxkf7zpa0cvxuyup2c.png) 
+![Store past broadcast setting in Twitch stream VOD settings](https://www.nickyt.co/images/posts/_uploads_articles_qxhxkf7zpa0cvxuyup2c.png) 
 
 ## Having Guests on Your Stream
 

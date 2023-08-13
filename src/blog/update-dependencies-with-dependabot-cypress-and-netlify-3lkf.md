@@ -9,7 +9,7 @@
     "cypress",
     "netlify"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--Q7k4S3jr--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_jivsyirs8gft16kuji62.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--Q7k4S3jr--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_jivsyirs8gft16kuji62.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/update-dependencies-with-dependabot-cypress-and-netlify-3lkf/",
   "reading_time_minutes": 6,
   "template": "post"
@@ -36,7 +36,7 @@ My site is hosted on [GitHub](https://github.com), so we'll go through the setti
 
 From your repository main page, click on the Settings tab. From there click the Branches section to create a branch protection rule.
 
-![Branch Protection Rule](https://www.iamdeveloper.com/images/posts/_uploads_articles_h5f02iehfz4jlu2p1dg3.png)
+![Branch Protection Rule](https://www.nickyt.co/images/posts/_uploads_articles_h5f02iehfz4jlu2p1dg3.png)
 
 In my case, since I use Netlify and [Snyk](https://snyk.io), I want both those status checks to pass before merging. Click on the _Save Changes_ button.
 
@@ -83,17 +83,17 @@ Save the file. Since we’re in the context of a Gatsby site, let’s start up t
 
 Let’s start up the task runner again by running, `npm run e2e:dev` from the command line. In the task runner, the `smoke.spec.js`should be in the list of test files now. Click on it to start running the tests.
 
-![Cypress Test Selection](https://www.iamdeveloper.com/images/posts/_uploads_articles_o2mkg284xtj32alrj0ge.png)
+![Cypress Test Selection](https://www.nickyt.co/images/posts/_uploads_articles_o2mkg284xtj32alrj0ge.png)
 
 If you’re Gatsby site is running the test should pass.
 
-![Cypress Test Runner with a Test Passing](https://www.iamdeveloper.com/images/posts/_uploads_articles_5dasrrtove90dbw90718.png)
+![Cypress Test Runner with a Test Passing](https://www.nickyt.co/images/posts/_uploads_articles_5dasrrtove90dbw90718.png)
 
 Congrats, you are awesome. At this point you would right more tests to the point that you are confident that if these all pass, you are good to ship.
 
 At this point we’re ready to revisit our Dependabot configuration for our repository. Let’s change the settings to allow for automatic PR merging of all our dependencies (or configure it to the level you prefer.
 
-![Dependabot Automatic PR merging settings](https://www.iamdeveloper.com/images/posts/_uploads_articles_y41agaxm0dim2c45ba8h.png)
+![Dependabot Automatic PR merging settings](https://www.nickyt.co/images/posts/_uploads_articles_y41agaxm0dim2c45ba8h.png)
 
 Alright, let’s go through the extra setup to have Cypress run as part of our CI/CD pipeline. The `prebuild` script is required because, at least on Netlify, you cannot cache binaries. See this article, [Test on Netlify | Gatsby + Netlify + Cypress.io](https://gatsby-blog-0a5be4.netlify.com/test-on-netlify/), for more information.
 
@@ -121,7 +121,7 @@ The `build` script is what I used to build my site. It’s included just to expl
 
 For our `postbuild` script, we want to run our Gatsby site in the container. The [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli) has a bunch of great commands, including `gatsby serve` which starts your site on port 9000 (default). While the server starts, we also want to start up the e2e tests. This is where our `e2e` script comes in. Once the tests finish running in the container (hopefully successfully 😉), we want to gracefully stop the site. This is where the fkill CLI comes in handy. Now since this is a post build step, things will continue along in Netlify deployment land and eventually the site will go live. In the case of a PR for dependency updates, this check will pass and because Dependabot is configured to merge PRs automatically, we’ve reached full automation of our dependency updates.
 
-![Dependabot Merged PR](https://www.iamdeveloper.com/images/posts/_uploads_articles_eot199766u7m1zmipwq4.png)
+![Dependabot Merged PR](https://www.nickyt.co/images/posts/_uploads_articles_eot199766u7m1zmipwq4.png)
 
 If you’d like to see the whole setup of this on my site, check out my repository on GitHub.
 

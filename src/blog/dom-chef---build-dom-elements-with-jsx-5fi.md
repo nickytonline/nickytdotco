@@ -7,7 +7,7 @@
     "webdev",
     "javascript"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--zP7lTySV--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_pkajv39sn98rgfgdeotf.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--zP7lTySV--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_pkajv39sn98rgfgdeotf.jpg",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/dom-chef---build-dom-elements-with-jsx-5fi/",
   "reading_time_minutes": 1,
   "template": "post"

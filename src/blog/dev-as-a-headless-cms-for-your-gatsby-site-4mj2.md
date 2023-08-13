@@ -8,7 +8,7 @@
     "headlesscms",
     "gatsby"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--txUc6TTd--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_6nx4xj3l7dk99em1bdww.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--txUc6TTd--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_6nx4xj3l7dk99em1bdww.png",
   "canonicalUrl": "https://www.iamdeveloper.com/posts/dev-as-a-headless-cms-for-your-gatsby-site-4mj2/",
   "reading_time_minutes": 3,
   "template": "post"
@@ -25,13 +25,13 @@ To get set up, you can follow [these instructions](https://dev.to/connecting-wit
 
 The only difference nowadays is the initial instruction. You can start the process of creating your site from the Settings/Integrations section on DEV for your account.
 
-![Screenshot of Integration settings on DEV](https://www.iamdeveloper.com/images/posts/_i_v2aefqt8eny6nd4nkrbe.png)
+![Screenshot of Integration settings on DEV](https://www.nickyt.co/images/posts/_i_v2aefqt8eny6nd4nkrbe.png)
 
 Since my previous site was a Gatsby site, I decided to generate a Gatsby site using Stackbit and went with the Fresh theme.
 
-![Stackbit site creation step two. Select a site platform](https://www.iamdeveloper.com/images/posts/_i_sa7ktos8omggvvducvp2.png)
+![Stackbit site creation step two. Select a site platform](https://www.nickyt.co/images/posts/_i_sa7ktos8omggvvducvp2.png)
 
-![Stackbit site creation step one. Select a theme](https://www.iamdeveloper.com/images/posts/_i_0hdv0ev9tlvkjno28mwo.png)
+![Stackbit site creation step one. Select a theme](https://www.nickyt.co/images/posts/_i_0hdv0ev9tlvkjno28mwo.png)
 
 And then within about a minute, I had my new site, built and deployed to Netlify at https://robust-petunia-478cc.netlify.com. 
 

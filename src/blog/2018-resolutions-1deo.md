@@ -8,7 +8,7 @@
     "books",
     "personaldevelopment"
   ],
-  "cover_image": "https://www.iamdeveloper.com/images/posts/_practicaldev_image_fetch_s--NhdhmKvN--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_el9zpvhbtnwrdmeel3rz.PNG",
+  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--NhdhmKvN--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_el9zpvhbtnwrdmeel3rz.PNG",
   "canonicalUrl": "https://www.iamdeveloper.com/2018-resolutions/",
   "reading_time_minutes": 0,
   "template": "post"
