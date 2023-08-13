@@ -20,7 +20,7 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href="https://iamdeveloper.com/lightning2020">slide deck</a>
+                  <a href="/lightning2020">slide deck</a>
                 </li>
               
 

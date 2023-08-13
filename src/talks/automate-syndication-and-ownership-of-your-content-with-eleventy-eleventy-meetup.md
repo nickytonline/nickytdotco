@@ -22,13 +22,13 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href="https://www.iamdeveloper.com/11tyMeetupMay2022">slide deck</a>
+                  <a href="/11tyMeetupMay2022">slide deck</a>
                 </li>
               
 
               
                     <li>
-                      <a href="https://www.iamdeveloper.com/posts/my-eleventy-meetup-talk-3b2p/">Automate syndication of your content with Eleventy, dev.to, and GitHub Actions</a>
+                      <a href="/posts/my-eleventy-meetup-talk-3b2p/">Automate syndication of your content with Eleventy, dev.to, and GitHub Actions</a>
                     </li>
                   
             </ul>

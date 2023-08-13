@@ -20,7 +20,7 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href="https://iamdeveloper.com/cypress2023">slide deck</a>
+                  <a href="/cypress2023">slide deck</a>
                 </li>
               <li>
                   <a href="https://github.com/nickytonline/tcl-meetup-cypress">source code</a>

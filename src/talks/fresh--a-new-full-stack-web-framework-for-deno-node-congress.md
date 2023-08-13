@@ -18,7 +18,7 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href="https://iamdeveloper.com/fresh">slide deck</a>
+                  <a href="/fresh">slide deck</a>
                 </li>
               <li>
                   <a href="https://github.com/nickytonline/fresh-talk-demo">source code</a>

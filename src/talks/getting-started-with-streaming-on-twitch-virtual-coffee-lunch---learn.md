@@ -21,13 +21,13 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href="https://iamdeveloper.com/stream2021">slide deck</a>
+                  <a href="/stream2021">slide deck</a>
                 </li>
               
 
               
                     <li>
-                      <a href="https://www.iamdeveloper.com/blog/getting-started-with-streaming-on-twitch-4im7">Getting Started with Streaming on Twitch</a>
+                      <a href="/blog/getting-started-with-streaming-on-twitch-4im7">Getting Started with Streaming on Twitch</a>
                     </li>
                   
             </ul>

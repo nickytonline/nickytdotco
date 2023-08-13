@@ -20,7 +20,7 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href="https://iamdeveloper.com/ChicagoFresh">slide deck</a>
+                  <a href="/ChicagoFresh">slide deck</a>
                 </li>
               <li>
                   <a href="https://github.com/nickytonline/chicago-js-dec-2022-fresh-demo">source code</a>

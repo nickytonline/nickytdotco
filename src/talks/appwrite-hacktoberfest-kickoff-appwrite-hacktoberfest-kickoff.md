@@ -20,7 +20,7 @@
       <p class="weight-bold">Links:</p>
             <ul>
               <li>
-                  <a href="https://iamdeveloper.com/hacktoberfest2021">slide deck</a>
+                  <a href="/hacktoberfest2021">slide deck</a>
                 </li>
               
 
