@@ -34,7 +34,7 @@ export default async (request: Request, context: Context) => {
   const response = await context.next();
 
   // Cache the response for 2 hours
-  response.headers.set("Cache-Control", "public, max-age=7200, s-maxage=7200");
+  response.headers.set("Cache-Control", "public, max-age=43200, s-maxage=43200");
   response.headers.set("x-timezone", timezone);
   response.headers.set("Vary", "Accept-Language, x-timezone");
 
