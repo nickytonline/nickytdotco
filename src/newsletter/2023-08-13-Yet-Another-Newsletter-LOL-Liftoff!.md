@@ -17,7 +17,7 @@
 <p>Another week, another newsletter. Let's get to it!</p>
 <h2>Around the Web</h2>
 <ul>
-<li>[Lifting Off with Astro] (https://remotesynthesis.com/blog/lifting-off-with-astro/) — I’m a fan of Astro and Brian Rinaldi gives a great breakdown of the framework.</li>
+<li><a href="https://remotesynthesis.com/blog/lifting-off-with-astro/? utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-liftoff">Lifting Off with Astro</a> — I’m a fan of Astro and Brian Rinaldi gives a great breakdown of the framework.</li>
 <li>There's currently no official devtools for React Server Components (RSCs). This <a href="https://www.alvar.dev/blog/creating-devtools-for-react-server-components?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-liftoff" target="_blank">browser extension by Alvar</a> though looks compelling.</li>
 <li>The <a href="https://github.com/microsoft/TypeChat?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-liftoff" target="_blank">TypeChat</a> project looks super interesting. I heard about it on the <a href="https://hanselminutes.com/905/introducing-typechat-with-anders-hejlsberg?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-liftoff" target="_blank">Hanselminutes podcast this week</a>. TLDR; TypeScript lending a hand to improve prompt engineering, reduce AI hallucinations, etc.</li>
 </ul>
