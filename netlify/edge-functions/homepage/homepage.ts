@@ -53,7 +53,7 @@ export default async (request: Request, context: Context) => {
 };
 
 export const config = {
-  cache: "manual",
+  // cache: "manual",
   path: "/",
   onError: "bypass",
 };
