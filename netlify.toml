@@ -104,6 +104,18 @@ status = 301
 force = true
 
 [[redirects]]
+from = "https://pod.nickyt.co/2065897/*"
+to = "https://pod.nickyt.co/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://pod.nickyt.co/*"
+to = "https://nickscuts.buzzsprout.com/2065897/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://live.iamdeveloper.com/*"
 to = "https://youtube.com/@nickytlive/:splat"
 status = 301
