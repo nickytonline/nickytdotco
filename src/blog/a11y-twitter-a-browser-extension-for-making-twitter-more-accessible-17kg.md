@@ -5,12 +5,12 @@
   "date": "2022-07-02T12:58:14.679Z",
   "tags": [
     "a11y",
-    "browserextension",
     "javascript",
-    "twitter"
+    "twitter",
+    "extensions"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--RiTF1_s0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_b49xiiod8cv4ldudb2l0.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/a11y-twitter-a-browser-extension-for-making-twitter-more-accessible-17kg",
+  "canonicalUrl": "https://www.nickyt.co/posts/a11y-twitter-a-browser-extension-for-making-twitter-more-accessible-17kg",
   "reading_time_minutes": 4,
   "template": "post"
 }

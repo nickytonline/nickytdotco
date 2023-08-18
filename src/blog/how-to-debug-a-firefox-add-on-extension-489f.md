@@ -4,13 +4,13 @@
   "excerpt": "Before we get started   Firefox supports browser extensions like Chromium-based browsers...",
   "date": "2023-08-17T00:31:41.803Z",
   "tags": [
-    "firefox",
     "webdev",
     "extensions",
-    "browser"
+    "browser",
+    "javascript"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--u9xbBK_Q--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_j7chuu52qfs62xbyeopo.png",
-  "canonicalUrl": "https://dev.to/nickytonline/how-to-debug-a-firefox-add-on-extension-489f",
+  "canonicalUrl": "https://www.nickyt.co/blog/how-to-debug-a-firefox-add-on-extension-489f/",
   "reading_time_minutes": 2,
   "template": "post"
 }
@@ -60,11 +60,13 @@ The following instructions work for [Firefox](https://www.mozilla.org/firefox/ne
 
     ![CleanShot 2023-08-07 at 22 15 24](https://www.nickyt.co/images/posts/_open-sauced_ai_assets_833231_6c681751-ec7d-44e5-90ec-3f6cee39edfa)
 
-1. Navigate to a GitHub page where you want to start debugging the remaining issues with the Firefox add-on
+1. Navigate to a page where you’re using your extension.
 
 1. If you want to debug or inspect the extension, click the _Inspect_ button from the Temporary Extensions section where the extension was just loaded.
 
     ![CleanShot 2023-08-07 at 22 16 54](https://www.nickyt.co/images/posts/_open-sauced_ai_assets_833231_05b10da1-4a33-4090-8f30-88ca08d15bcc)
+
+1. You now have access to all the same browser dev tools you’re used to for debugging a web site, i.e. Inspect Element, CSS styles inspector, JavaScript debugger, etc.
 
 And that’s it!
 
