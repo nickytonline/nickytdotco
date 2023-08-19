@@ -34,7 +34,7 @@ The following instructions work for [Firefox](https://www.mozilla.org/firefox/ne
 
 1. Scroll down to the Advanced Settings section and ensure _Enable browser chrome and add-on debugging toolboxes_ is checked.
 
-    ![CleanShot 2023-08-07 at 22 08 32](https://www.nickyt.co/images/posts/_open-sauced_ai_assets_833231_6d36acd7-43ad-4a5e-a468-76a7da498051)
+    ![CleanShot 2023-08-07 at 22 08 32](https://www.nickyt.co/images/posts/_uploads_articles_jqzi6ldp2t3ns7dnzc6i.png)
 
 1. Load the add-on by clicking on the puzzle icon in the top right of Firefox or via the application menu, _Tools -> Add-ons and Themes_
 
