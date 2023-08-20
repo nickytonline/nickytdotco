@@ -96,7 +96,7 @@ Here are some additional resources to get you up and running.
   * Marius Schulz ([@mariusschulz](https://twitter.com/mariusschulz))
   * Basarat Ali Syed ([@basarat](https://twitter.com/basarat))
   * James Henry ([@mrjameshenry](https://twitter.com/mrjameshenry))
-  * If I missed one that you think should be on this list, let me know (nick at iamdeveloper dot com).
+  * If I missed one that you think should be on this list, let me know (nick at nickyt dot co).
 
 To summarize, TypeScript is a great option if you're looking to scale a team up quickly on a codebase (Intellisense, refactoring) as well as catching silly errors via type checking.
 
