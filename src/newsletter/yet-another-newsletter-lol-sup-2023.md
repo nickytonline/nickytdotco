@@ -11,7 +11,7 @@
 ---
 
 <p>Hey folks! It&rsquo;s 2023 and I&rsquo;m back from PTO. I had a great time chilling in Costa Rica recharging and enjoying warm weather. With that, another week, another newsletter. Let’s get to it!</p>
-<p>Before we go through the usual sections, I was curious if folks are enjoying the content of the newsletter. I have had folks reach out to me to tell me they do, but at the same time, I&rsquo;m still working on making it better. If you have any feedback, <a href="mailto:nick@iamdeveloper.com" target="_blank">feel free to let me know</a>.</p>
+<p>Before we go through the usual sections, I was curious if folks are enjoying the content of the newsletter. I have had folks reach out to me to tell me they do, but at the same time, I&rsquo;m still working on making it better. If you have any feedback, <a href="mailto:nick@nickyt.co" target="_blank">feel free to let me know</a>.</p>
 <h2>Around the Web</h2>
 <ul>
 <li>

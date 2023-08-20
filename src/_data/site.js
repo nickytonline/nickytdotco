@@ -1,9 +1,9 @@
 const getSiteUrl = (context = process.env.CONTEXT) => {
   console.log("context", context);
   return "https://www.nickyt.co";
-//  return context === "production"
-//    ? process.env.URL
-//    : process.env.DEPLOY_PRIME_URL ?? "http://localhost:8080";
+  //  return context === "production"
+  //    ? process.env.URL
+  //    : process.env.DEPLOY_PRIME_URL ?? "http://localhost:8080";
 };
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
   name: "Just Some Dev",
   shortDesc: "Welcome to Nick Taylor's personal website.",
   url: getSiteUrl(),
-  authorEmail: "nick@iamdeveloper.com",
+  authorEmail: "nick@nickyt.co",
   twitterHandle: "@nickytonline",
   mastodonHandle: "@nickytonline@toot.cafe",
   authorName: "Nick Taylor",

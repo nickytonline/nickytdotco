@@ -73,7 +73,7 @@ In order to protect volunteers from abuse and burnout, we reserve the right to r
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-nick@iamdeveloper.com.
+nick@nickyt.co.
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
