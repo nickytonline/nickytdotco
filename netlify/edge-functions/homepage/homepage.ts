@@ -12,12 +12,6 @@ if (!AIRTABLE_API_KEY || !AIRTABLE_STREAM_GUEST_BASE_ID) {
 }
 
 export default async (request: Request, context: Context) => {
-  const url = new URL(request.url);
-
-  if (!url.host.startsWith('www.nickyt.co')) {
-    return
-  }
-
   // Locale is the first language in the Accept-Language header or 'en-US' if not present
   const locale =
     request.headers.get("Accept-Language")?.split(",")[0] ||
