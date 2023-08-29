@@ -34,7 +34,7 @@ module.exports = function (config) {
   config.addFilter("markdownFilter", markdownFilter);
   config.addFilter("w3DateFilter", w3DateFilter);
   config.addFilter("htmlDateString", (dateObj) =>
-    DateTime.fromJSDate(dateObj).toFormat("yyyy-LL-dd")
+    DateTime.fromJSDate(dateObj).toFormat("yyyy-LL-dd"),
   );
 
   // Layout aliases
@@ -96,7 +96,19 @@ module.exports = function (config) {
   });
 
   config.addCollection("newsletters", (collection) => {
-    return collection.getFilteredByGlob("./src/newsletter/*.md").reverse();
+    debugger;
+    return collection
+      .getFilteredByGlob("./src/newsletter/*.md")
+      .reverse()
+      .map((item) => {
+        if (!item.data["canonical_url"]) {
+          return item;
+        }
+
+        item.data["canonicalText"] = new URL(item.data["canonical_url"]).host;
+
+        return item;
+      });
   });
 
   config.addCollection("latestNewsletter", (collection) => {

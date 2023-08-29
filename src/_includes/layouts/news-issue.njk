@@ -1,7 +1,8 @@
 {% extends 'layouts/base.njk' %}
 {# Intro content #}
 {% set introHeading = title %}
-{% set canonicalUrl = canonicalUrl %}
+{% set canonicalUrl = canonical_url %}
+{% set canonicalText = canonicalText %}
 {% set introSummary %}
 <p class="[ intro__meta ] [ text-500 leading-tight ]">
   {% if date %}
@@ -27,6 +28,9 @@
       </aside>
       <div class="[ post__body ] [ inner-wrapper ] [ leading-loose pad-top-100 {{ 'pad-bottom-900' if not
           site.enableThirdPartyComments }} text-500 ] [ sf-flow ] [ e-content ]">
+          {% if canonicalUrl %}
+          <span>Originally published at <a href="{{ canonicalUrl }}">{{ canonicalText }}</a></span>
+          {% endif %}
         {{ content | safe }}
       </div>
       {% if tags %}
