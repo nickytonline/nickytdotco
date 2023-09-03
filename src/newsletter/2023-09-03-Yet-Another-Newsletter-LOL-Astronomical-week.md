@@ -4,7 +4,7 @@
   "excerpt": "It’s the extra long weekend for me, so I’m looking forward to recharging. With that, another week, another newsletter. Let's get to it!\nAround the Web\nEver wonder how Node.js is able to perform non-blocking I/O operations? Colin from the Node.js core team has got you covered in Developer Initiates I/O Operation. You Won't Believe What Happens Next. It’s a blog post from 2017, but it came on my radar because of this Tweet.\nI got to hang with Daniel Roe from the Nuxt core team recently on my Twitch stream, and we briefly discussed server components in Nuxt. Here’s a full write-up on Nuxt server components for anyone interested.\nCongrats Astro team on your launch week, which included launching Astro 3.0 and Astro Studio!\nFun Stuff\nI met some alpacas this weekend.\nWords of Wisdom for the Week\nAI is not a business model.\nKishau Smith Rogers on threads\nShameless Plugs\nI was a guest on the Hadith tech podcast this week! I discussed my career and open source. Thanks again for having me on, Abdurrahman!\n\n\nJobs\nFor anyone interested in open source, there are a couple of roles open at Amazon:\nOpen Source Engineer, Amazon Software Builder Experience (ASBX)\nOpen Source Engineering Manager, OSPO\nI post jobs in the iamdeveloper.com community, plus all other kinds of content, as do others. If you're looking for another friendly nook of the internet, head to discord.iamdeveloper.com.",
   "date": "2023-09-03T13:00:00.000Z",
   "tags": [
-    "newsletter"
+    "astro", "node", "javascript", "opensource"
   ],
   "canonical_url": "https://buttondown.email/nickytonline/archive/yet-another-newsletter-lol-astronomical-week/",
   "template": "newsletter"
