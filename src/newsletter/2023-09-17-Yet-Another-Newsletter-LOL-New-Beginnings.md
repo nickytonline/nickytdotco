@@ -14,7 +14,7 @@
 }
 ---
 
-<p>Before we get started, some news. Friday was my last day at Netlify. I’ve decided to join a startup as a founding engineer! I’m nervous and excited at the same time. Check my socials for the announcement tomorrow. 👀</p>
+<p>Before we get started, some news. Friday was my <a href="https://x.com/nickytonline/status/1702797217478709696">last day at Netlify</a>. I’ve decided to join a startup as a founding engineer! I’m nervous and excited at the same time. Check my socials for the announcement tomorrow. 👀</p>
 <p>And with that, another week, another newsletter. Let's get to it!</p>
 <h2>Around the Web</h2>
 <ul>
