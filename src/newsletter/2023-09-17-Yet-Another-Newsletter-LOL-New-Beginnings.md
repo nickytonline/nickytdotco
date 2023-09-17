@@ -24,7 +24,7 @@
 <li>Partykit releases their new API <a href="https://blog.partykit.io/posts/partyserver-api?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-new-beginnings-8323" target="_blank">Party.Server</a> to make it even easier to create multi-player digital experiences.</li>
 </ul>
 <h2>Fun Stuff</h2>
-<p>I’m came across this in my feed this week. <a href="https://x.com/cassidoo/status/1701615851827319018?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-new-beginnings-8323" target="_blank">Cassidy Williams</a> made a fun game called <a href="https://thirteen-potions.netlify.app/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-new-beginnings-8323" target="_blank">13 potions</a>! Check it out!</p>
+<p>I came across this in my feed this week. <a href="https://x.com/cassidoo/status/1701615851827319018?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-new-beginnings-8323" target="_blank">Cassidy Williams</a> made a fun game called <a href="https://thirteen-potions.netlify.app/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-new-beginnings-8323" target="_blank">13 potions</a>! Check it out!</p>
 <h2>Words of Wisdom for the Week</h2>
 <blockquote>
 <p>Do good things for others, for no reason at all. It makes life more fun.</p>
