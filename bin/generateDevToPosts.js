@@ -15,15 +15,15 @@ const POSTS_IMAGES_PUBLIC_DIRECTORY = "/images/posts";
 const POSTS_IMAGES_DIRECTORY = path.join(
   __dirname,
   "../src",
-  POSTS_IMAGES_PUBLIC_DIRECTORY
+  POSTS_IMAGES_PUBLIC_DIRECTORY,
 );
 const EMBEDDED_POSTS_MARKUP_FILE = path.join(
   __dirname,
-  "../src/_data/embeddedPostsMarkup.json"
+  "../src/_data/embeddedPostsMarkup.json",
 );
 const TWITTER_EMBEDS_FILE = path.join(
   __dirname,
-  "../src/_data/twitterEmbeds.json"
+  "../src/_data/twitterEmbeds.json",
 );
 const currentBlogPostEmbeds = require("../src/_data/embeddedPostsMarkup.json");
 const blogPostEmbeds = new Map(Object.entries(currentBlogPostEmbeds));
@@ -34,7 +34,7 @@ const DOM = new JSDOM(
   `<!DOCTYPE html><html><head></head><body></body></html>`,
   {
     resources: "usable",
-  }
+  },
 );
 
 const { document } = DOM.window;
@@ -67,13 +67,13 @@ function sanitizeMarkdownEmbeds(markdown) {
   const sanitizedMarkdown = markdown
     .replaceAll(
       /{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
-      '{% $1 "$2" %}'
+      '{% $1 "$2" %}',
     )
     // Fixes a liquid JS issues when {{ code }} is used in a markdown code block
     // see https://github.com/11ty/eleventy/issues/2273
     .replaceAll(
       /```(?<language>.*)\n(?<code>(.|\n)+?)\n```/g,
-      "```$1\n{% raw %}\n$2\n{% endraw %}\n```"
+      "```$1\n{% raw %}\n$2\n{% endraw %}\n```",
     )
     // We need to add raw shortcodes to prevent shortcodes within code blocks from rendering.
     // For now, this only supports single-line code blocks.
@@ -143,7 +143,7 @@ async function getDevPosts() {
       headers: {
         "api-key": DEV_API_KEY,
       },
-    }
+    },
   );
   const posts = await response.json();
 
@@ -226,13 +226,13 @@ async function createPostFile(post) {
   const markdown = `---json\n${JSON.stringify(
     jsonFrontmatter,
     null,
-    2
+    2,
   )}\n---\n\n${sanitizeMarkdownEmbeds(markdownBody).trim()}\n`;
 
   const basePath = tags.includes("vscodetips")
     ? path.join(
         VSCODE_TIPS_POSTS_DIRECTORY,
-        new Date(date).getFullYear().toString()
+        new Date(date).getFullYear().toString(),
       )
     : POSTS_DIRECTORY;
   const postFile = path.join(basePath, `${slug}.md`);
@@ -240,7 +240,7 @@ async function createPostFile(post) {
 
   // Checking for a backtick before the Twitter embed so that we're not pulling in a code example of an embed.
   const twitterEmbedMatches = markdown.matchAll(
-    /(?:[^`]{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/(?:www\.)?twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g
+    /(?:[^`]{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/(?:www\.)?twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g,
   );
 
   for (const {
@@ -252,12 +252,12 @@ async function createPostFile(post) {
       // It doesn't matter who the user is. It's the Tweet ID that matters.
       const response = await fetch(
         `https://publish.twitter.com/oembed?url=${encodeURIComponent(
-          `https://twitter.com/anyone/status/${tweetId}`
-        )}`
+          `https://twitter.com/anyone/status/${tweetId}`,
+        )}`,
       );
 
       console.log(
-        `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`
+        `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`,
       );
 
       const { html } = await response.json();
@@ -281,7 +281,7 @@ async function saveImageUrl(imageUrl, imageFilePath) {
   const buffer = Buffer(await response.arrayBuffer());
 
   await fs.writeFile(imageFilePath, buffer, () =>
-    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`)
+    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`),
   );
 }
 
@@ -294,7 +294,7 @@ async function saveImageUrl(imageUrl, imageFilePath) {
 function generateNewImageUrl(imageUrl) {
   const imagefilename = imageUrl.pathname.replaceAll("/", "_");
   const newImageUrl = new URL(
-    siteUrl + path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename)
+    siteUrl + path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename),
   ).toString();
 
   return newImageUrl;
@@ -315,7 +315,7 @@ async function saveMarkdownImageUrl(markdownImageUrl = null) {
     const imagefilename = imageUrl.pathname.replaceAll("/", "_");
     const localCoverImagePath = path.join(
       POSTS_IMAGES_DIRECTORY,
-      imagefilename
+      imagefilename,
     );
 
     newMarkdownImageUrl = generateNewImageUrl(imageUrl);
@@ -373,7 +373,7 @@ async function updateMarkdownImageUrls(markdown) {
 async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
   // Checking for a backtick before the embed so that we're not pulling in a code example of an embed.
   const matches = markdown.matchAll(
-    /[^`]{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g
+    /[^`]{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g,
   );
 
   for (const match of matches) {
@@ -433,7 +433,7 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
   const data = JSON.stringify(blogPostEmbedsMarkup, null, 2);
 
   await fs.writeFile(filePaths, data, () =>
-    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`)
+    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`),
   );
 }
 
@@ -443,7 +443,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
   const data = JSON.stringify(tweetEmbeds, null, 2);
 
   await fs.writeFile(filepath, data, () =>
-    console.log(`Saved Twitter embeds markup to ${filepath}!`)
+    console.log(`Saved Twitter embeds markup to ${filepath}!`),
   );
 }
 
@@ -456,21 +456,23 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
     fs.mkdir(
       path.join(
         VSCODE_TIPS_POSTS_DIRECTORY,
-        new Date().getFullYear().toString()
+        new Date().getFullYear().toString(),
       ),
       {
         recursive: true,
-      }
+      },
     ),
     fs.mkdir(POSTS_IMAGES_DIRECTORY, { recursive: true }),
   ]);
 
   const posts = await getDevPosts();
 
-  // Only publish posts that are not under the vscodetips dev.to organization.
+  // Only publish posts that are not under the orgs I'm a part of on dev.to organization.
   for (const post of posts.filter((post) => {
     return (
-      !["vscodetips", "virtualcoffee"].includes(post.organization?.username) ||
+      !["vscodetips", "virtualcoffee", "opensauced"].includes(
+        post.organization?.username,
+      ) ||
       (post.organization?.username === "vscodetips" &&
         post.tag_list.includes("vscodetips"))
     );
@@ -482,7 +484,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
     }
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const { markdown, imagesToSave } = await updateMarkdownImageUrls(
-      post.body_markdown
+      post.body_markdown,
     );
 
     await Promise.all([
@@ -499,7 +501,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
 
     if (status !== "success") {
       console.error(
-        `Failed to create post file for ${JSON.stringify(post, null, 2)}`
+        `Failed to create post file for ${JSON.stringify(post, null, 2)}`,
       );
 
       throw new Error(`Unabled to generate markdown file: status ${status}`);
