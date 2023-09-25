@@ -8,7 +8,7 @@
     "opensource"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--aSixo2An--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_4fxn0z7bv03dvgcezqmt.jpg",
-  "canonicalUrl": "https://dev.to/nickytonline/getting-saucy-i-joined-opensauced-2ici",
+  "canonicalUrl": "https://www.nickyt.co/blog/getting-saucy-i-joined-opensauced-2ici/",
   "reading_time_minutes": 2,
   "template": "post"
 }
