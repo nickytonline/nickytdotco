@@ -10,5 +10,4 @@ export interface StreamGuestInfo {
   twitch?: string;
   github?: string;
   website?: string;
-  polywork?: string;
 }

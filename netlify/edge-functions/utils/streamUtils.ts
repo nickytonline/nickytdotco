@@ -12,7 +12,6 @@ const GUEST_FIELDS = [
   "GitHub Handle",
   "YouTube Channel",
   "Website",
-  "Polywork URL",
 ] as const;
 
 export async function getStreamSchedule({
@@ -64,7 +63,6 @@ export async function getStreamSchedule({
       "GitHub Handle": github,
       "YouTube Channel": youtube,
       Website: website,
-      "Polywork URL": polywork,
     } = fields;
 
     return {
@@ -79,7 +77,6 @@ export async function getStreamSchedule({
       github,
       youtube,
       website,
-      polywork,
     };
   });
 
