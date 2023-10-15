@@ -47,7 +47,6 @@ export default async (request: Request, context: Context) => {
 };
 
 export const config = {
-  // cache: "manual",
-  path: "/",
-  onError: "bypass",
+  cache: "manual",
+  path: "/"
 };

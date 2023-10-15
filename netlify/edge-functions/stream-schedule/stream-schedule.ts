@@ -41,7 +41,6 @@ export default async (request: Request, context: Context) => {
 };
 
 export const config = {
-  // cache: "manual",
+  cache: "manual",
   path: "/pages/stream-schedule/",
-  onError: "bypass",
 };
