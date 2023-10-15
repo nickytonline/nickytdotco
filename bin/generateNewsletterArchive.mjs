@@ -1,6 +1,3 @@
-import * as url from "url";
-import { promises as fs, mkdirSync, existsSync } from "fs";
-import path from "path";
 import Parser from "rss-parser";
 import site from "../src/_data/site.js";
 import { socialImage } from "../src/shortCodes/index.js";
@@ -14,17 +11,13 @@ if (isDevMode) {
   dotenv.config();
 }
 
-const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
-const NEWSLETTER_DIRECTORY = path.join(__dirname, "..", "src", "newsletter");
 const parser = new Parser();
 const feed = await parser.parseURL(site.newsletterRss);
 const { DEV_API_KEY } = process.env;
 const DEV_TO_API_URL = "https://dev.to/api";
 
-function generateEmbed(url, forDevTo = false, devToEmbedType = "embed") {
-  return forDevTo
-    ? `{% ${devToEmbedType} ${url} %}\n`
-    : `{% embed "${url}" %}\n`;
+function generateEmbed(url, devToEmbedType = "embed") {
+  return `{% ${devToEmbedType} ${url} %}\n`;
 }
 
 const twitterEmbedMatcher =
@@ -148,16 +141,6 @@ async function generateNewsletterPost(feedItem) {
     2
   )}\n---\n\n${sanitizeContent(content)}\n`;
 
-  const newsIssuePath = path.join(NEWSLETTER_DIRECTORY, `${filename}.md`);
-  const publishedToDevTo = existsSync(newsIssuePath);
-
-  await fs.writeFile(newsIssuePath, markdown);
-
-  if (publishedToDevTo && !isDevMode) {
-    console.log(`Newsletter ${filename} already published to dev.to`);
-    return;
-  }
-
   try {
     // dev.to doesn't support webp for cover images so explicitly render as png
     const main_image = socialImage(title, contentSnippet).replace(
@@ -171,7 +154,7 @@ async function generateNewsletterPost(feedItem) {
         body_markdown: `<!-- ${main_image} -->\n${sanitizeContent(
           content,
           true
-        )}\nIf you liked this newsletter, you can [subscribe](https://www.nickyt.co/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://www.nickyt.co/newsletter.rss).<!-- my newsletter -->`,
+        )}\nIf you liked this newsletter, you can [subscribe](https://www.nickyt.co/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://buttondown.email/nickytonline/rss).\n<!-- my newsletter -->`,
         tags,
         series: "Yet Another Newsletter LOL",
         canonical_url: canonicalUrl,
@@ -197,10 +180,6 @@ async function generateNewsletterPost(feedItem) {
   }
 }
 
-if (!existsSync(NEWSLETTER_DIRECTORY)) {
-  mkdirSync(NEWSLETTER_DIRECTORY);
-}
-
 // Only create/update the latest newsletter issue as this runs the day a newsletter is published
 const latestNewsletter = feed.items.find(
   (issue) =>
@@ -209,4 +188,4 @@ const latestNewsletter = feed.items.find(
 
 await generateNewsletterPost(latestNewsletter);
 
-console.log("Finished generating newsletter archives");
+console.log("Finished publishing newsletter to dev.to");
