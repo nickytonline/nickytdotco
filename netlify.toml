@@ -238,7 +238,7 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/news/*"
-to = "/pages/newsletter/:splat"
+from = "/pages/newsletter-archives/*"
+to = "https://buttondown.email/nickytonline/archive/"
 status = 301
 force = true
