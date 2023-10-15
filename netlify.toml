@@ -242,9 +242,3 @@ from = "/pages/newsletter-archives/*"
 to = "https://buttondown.email/nickytonline/archive/"
 status = 301
 force = true
-
-[[redirects]]
-from = "/pages/newsletter/*"
-to = "https://buttondown.email/nickytonline/archive/"
-status = 301
-force = true
