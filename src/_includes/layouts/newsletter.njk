@@ -3,11 +3,8 @@
 {% set introHeading = title %}
 {% set introSummary %}{{ content | safe }}{% endset %}
 {# Post list content #}
-{% set postListHeading = 'Archives' %}
-{% set postListItems = collections.newsletters %}
 {% block content %}
   <main id="main-content" tabindex="-1">
     {% include "partials/components/intro.njk" %}
-    {% include "partials/components/news-issues-list.njk" %}
   </main>
 {% endblock %}

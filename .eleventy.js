@@ -95,26 +95,6 @@ module.exports = function (config) {
       .slice(0, site.maxPostsPerPage);
   });
 
-  config.addCollection("newsletters", (collection) => {
-    debugger;
-    return collection
-      .getFilteredByGlob("./src/newsletter/*.md")
-      .reverse()
-      .map((item) => {
-        if (!item.data["canonical_url"]) {
-          return item;
-        }
-
-        item.data["canonicalText"] = new URL(item.data["canonical_url"]).host;
-
-        return item;
-      });
-  });
-
-  config.addCollection("latestNewsletter", (collection) => {
-    return collection.getFilteredByGlob("./src/newsletter/*.md").reverse()[0];
-  });
-
   config.addCollection("talks", (collection) => {
     return collection.getFilteredByGlob("./src/talks/*.md").reverse();
   });
