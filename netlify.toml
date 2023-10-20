@@ -242,3 +242,9 @@ from = "/pages/newsletter-archives/*"
 to = "https://buttondown.email/nickytonline/archive/"
 status = 301
 force = true
+
+[[redirects]]
+from = "/hack-for-la-2023/"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vTby0GBEWTN0uPPvDlZ5QZKEMnvuKLm-HrqybOiAarJfPWIlMDMOgoqj3vYnS0RA4EuIw7sZAKb23G0/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
