@@ -2,7 +2,7 @@ name: Get latest newsletter archives
 on:
   schedule:
     # 14:15 UTC on Sunday
-    - cron: '15 14 * * SUN'
+    - cron: "15 14 * * SUN"
   workflow_dispatch:
 
 jobs:
@@ -20,12 +20,3 @@ jobs:
         run: |
           npm install
           node bin/generateNewsletterArchive.mjs
-      - name: Setup git config
-        run: |
-          git config user.name 'token-generator-app[bot]'
-          git config user.email '82042599+token-generator-app[bot]@users.noreply.github.com'
-      - name: PR for Newsletter Archive Updates
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ./bin/pr-news-archives.sh

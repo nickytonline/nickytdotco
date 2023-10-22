@@ -16,12 +16,10 @@ const feed = await parser.parseURL(site.newsletterRss);
 const { DEV_API_KEY } = process.env;
 const DEV_TO_API_URL = "https://dev.to/api";
 
-function generateEmbed(url, devToEmbedType = "embed") {
-  return `{% ${devToEmbedType} ${url} %}\n`;
+function generateEmbed(url, embedType = "embed") {
+  return `{% ${embedType} ${url} %}\n`;
 }
 
-const twitterEmbedMatcher =
-  /(<p><html>.+?href="(?<twitterUrl>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw">.+?<\/html><\/p>)|(<html><body>.+?href="(?<twitterUrl2>https:\/\/twitter.com\/[^\/]+?\/status\/\d+)\?ref_src=twsrc%5Etfw[^"]*">.+?<\/body><\/html>)/gms;
 const youtubeEmbedMatcher =
   /\n<a (?:class="video"\s+)?href="(?<YouTubeUrl>https:\/\/(youtu.be|(www\.)?youtube.com)[^"@]+?)">.+?<\/a>/gms;
 const twitchEmbedMatcher =
@@ -32,23 +30,13 @@ const codepenEmbedMatcher =
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
-function sanitizeContent(rawContent, forDevTo = false) {
+function sanitizeContent(rawContent) {
   let updatedContent = rawContent.trim();
 
   // Get rid of HTML comment that holds tags. The tags are used in the frontmatter
   updatedContent = updatedContent
     .replace(tagsMatcher, "")
     .replace("\n\n$", "\n");
-
-  const twitterEmbeds = updatedContent.matchAll(twitterEmbedMatcher);
-
-  for (const twitterEmbed of twitterEmbeds) {
-    const { twitterUrl, twitterUrl2 } = twitterEmbed.groups;
-    updatedContent = updatedContent.replace(
-      twitterEmbed[0],
-      generateEmbed(twitterUrl ?? twitterUrl2, forDevTo, "twitter")
-    );
-  }
 
   // Replace YouTube embeds with embed shortcodes
   const youtubeEmbeds = updatedContent.matchAll(youtubeEmbedMatcher);
@@ -57,7 +45,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
     const { YouTubeUrl } = youtubeEmbed.groups;
     updatedContent = updatedContent.replace(
       youtubeEmbed[0],
-      generateEmbed(YouTubeUrl, forDevTo)
+      generateEmbed(YouTubeUrl)
     );
   }
 
@@ -68,7 +56,7 @@ function sanitizeContent(rawContent, forDevTo = false) {
     const { TwitchUrl } = twitchEmbed.groups;
     updatedContent = updatedContent.replace(
       twitchEmbed[0],
-      generateEmbed(TwitchUrl, forDevTo)
+      generateEmbed(TwitchUrl)
     );
   }
 
@@ -79,12 +67,12 @@ function sanitizeContent(rawContent, forDevTo = false) {
     const { url } = codepenEmbed.groups;
     updatedContent = updatedContent.replace(
       codepenEmbed[0],
-      generateEmbed(url, forDevTo, "codepen")
+      generateEmbed(url, "codepen")
     );
   }
 
   updatedContent = updatedContent
-    .replaceAll(devToEmbedsMatcher, `\n{% embed ${forDevTo ? "$1" : '"$1"'} %}`)
+    .replaceAll(devToEmbedsMatcher, `\n{% embed ${"$1"} %}`)
     .replaceAll(/<h2\s+[^>]+>/gi, "<h2>")
 
     // begin replacing inline styles from social cards in newsletter
@@ -121,26 +109,6 @@ async function generateNewsletterPost(feedItem) {
     ?.groups.tags.split(",")
     .map((tag) => tag.trim()) ?? ["newsletter"];
 
-  const jsonFrontmatter = {
-    title,
-    excerpt: contentSnippet,
-    date: isoDate,
-    tags,
-    canonical_url: canonicalUrl,
-    template: "newsletter",
-  };
-
-  const filename = slugify(
-    `${isoDate.split("T")[0]} ${title.replace(/:/g, " ")}`
-  );
-  console.log(`Saving newsletter ${filename}`);
-
-  const markdown = `---json\n${JSON.stringify(
-    jsonFrontmatter,
-    null,
-    2
-  )}\n---\n\n${sanitizeContent(content)}\n`;
-
   try {
     // dev.to doesn't support webp for cover images so explicitly render as png
     const main_image = socialImage(title, contentSnippet).replace(
@@ -152,8 +120,7 @@ async function generateNewsletterPost(feedItem) {
         title,
         published: true,
         body_markdown: `<!-- ${main_image} -->\n${sanitizeContent(
-          content,
-          true
+          content
         )}\nIf you liked this newsletter, you can [subscribe](https://www.nickyt.co/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://buttondown.email/nickytonline/rss).\n<!-- my newsletter -->`,
         tags,
         series: "Yet Another Newsletter LOL",
