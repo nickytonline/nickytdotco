@@ -203,6 +203,7 @@ async function createPostFile(post) {
     cover_image,
     slug,
     canonical_url: canonicalUrl,
+    organization,
   } = post;
   const jsonFrontmatter = {
     title,
@@ -215,6 +216,10 @@ async function createPostFile(post) {
     template: "post",
   };
   let markdownBody;
+
+  if (organization?.username === "opensauced" && !canonicalUrl) {
+    jsonFrontmatter.canonicalUrl = `https://dev.to/nickytonline/${slug}`;
+  }
 
   if (/^---(\r|\n)/.test(body_markdown)) {
     // v1 editor
@@ -470,9 +475,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
   // Only publish posts that are not under the orgs I'm a part of on dev.to organization.
   for (const post of posts.filter((post) => {
     return (
-      !["vscodetips", "virtualcoffee", "opensauced"].includes(
-        post.organization?.username,
-      ) ||
+      !["vscodetips", "virtualcoffee"].includes(post.organization?.username) ||
       (post.organization?.username === "vscodetips" &&
         post.tag_list.includes("vscodetips"))
     );
