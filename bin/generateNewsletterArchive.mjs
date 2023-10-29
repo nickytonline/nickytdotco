@@ -16,6 +16,10 @@ const feed = await parser.parseURL(site.newsletterRss);
 const { DEV_API_KEY } = process.env;
 const DEV_TO_API_URL = "https://dev.to/api";
 
+if (!DEV_API_KEY) {
+  console.error("No DEV_API_KEY environment variable set.");
+}
+
 function generateEmbed(url, embedType = "embed") {
   return `{% ${embedType} ${url} %}\n`;
 }
