@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Bye for now VSCodeTips community!",
-  "excerpt": "This short post mentions that community.vscodetips.com went offline on November 1st, 2022.           ...",
+  "excerpt": "This short post mentions that community.vscodetips.com went offline on November 1st, 2022.        I'm...",
   "date": "2022-11-01T13:17:32.096Z",
   "tags": [
     "vscodetips",
@@ -9,7 +9,7 @@
     "community"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--KndsdvCX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_fizcan7995mzusoml6k4.png",
-  "canonical_url": "https://www.iamdeveloper.com/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
+  "canonical_url": "https://www.nickyt.co/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
   "reading_time_minutes": 1,
   "template": "post"
 }

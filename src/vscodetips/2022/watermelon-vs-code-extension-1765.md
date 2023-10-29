@@ -9,7 +9,7 @@
     "vscodeextension"
   ],
   "cover_image": null,
-  "canonical_url": "https://www.iamdeveloper.com/vscodetips/2022/watermelon-vs-code-extension-1765/",
+  "canonical_url": "https://www.nickyt.co/vscodetips/2022/watermelon-vs-code-extension-1765/",
   "reading_time_minutes": 1,
   "template": "post"
 }

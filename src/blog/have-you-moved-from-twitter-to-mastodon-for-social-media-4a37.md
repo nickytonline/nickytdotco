@@ -1,14 +1,14 @@
 ---json
 {
   "title": "Have you moved from Twitter to Mastodon for social media?",
-  "excerpt": "I created a Mastodon account on toot.cafe back in 2017, but I only did a little with it.             ...",
+  "excerpt": "I created a Mastodon account on toot.cafe back in 2017, but I only did a little with it.        I...",
   "date": "2022-11-20T06:20:37.765Z",
   "tags": [
     "socialmedia",
     "mastodon"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--UVOLc_dh--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_5i81ao7g5t81jr8i99lq.jpeg",
-  "canonical_url": "https://www.iamdeveloper.com/blog/have-you-moved-from-twitter-to-mastodon-for-social-media-4a37",
+  "canonical_url": "https://www.nickyt.co/blog/have-you-moved-from-twitter-to-mastodon-for-social-media-4a37/",
   "reading_time_minutes": 2,
   "template": "post"
 }
