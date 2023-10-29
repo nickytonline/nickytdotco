@@ -217,10 +217,6 @@ async function createPostFile(post) {
   };
   let markdownBody;
 
-  if (organization?.username === "opensauced" && !canonicalUrl) {
-    jsonFrontmatter.canonicalUrl = `https://dev.to/nickytonline/${slug}`;
-  }
-
   if (/^---(\r|\n)/.test(body_markdown)) {
     // v1 editor
     markdownBody = body_markdown.replace(/^---(\r|\n)(.|\r|\n)*?---\n*/, "");
