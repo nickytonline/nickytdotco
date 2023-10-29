@@ -81,8 +81,14 @@ force = true
 
 [[redirects]]
 from = "https://newsletter.iamdeveloper.com"
-to = "https://news.iamdeveloper.com"
+to = "/news"
 status = 301
+force = true
+
+[[redirects]]
+from = "/news"
+to = "/pages/newsletter/"
+status = 302
 force = true
 
 [[redirects]]
