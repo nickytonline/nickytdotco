@@ -24,7 +24,7 @@ const youtubeEmbedMatcher =
   /\n<a (?:class="video"\s+)?href="(?<YouTubeUrl>https:\/\/(youtu.be|(www\.)?youtube.com)[^"@]+?)">.+?<\/a>/gms;
 const twitchEmbedMatcher =
   /\n<a\s+href="(?<TwitchUrl>https:\/\/(?:www\.)?twitch.tv\/[^"]+)">.+?<\/a>/gms;
-const tagsMatcher = /<!-- tags:\s+(?<tags>.+?)\s+-->/s;
+const tagsMatcher = /<!-- tags:(?<tags>.+?)-->/s;
 const codepenEmbedMatcher =
   /<a\s+href="(?<url>[^?"]+)(?:\?[^"]+)?">.+?<\/a>/gms;
 
