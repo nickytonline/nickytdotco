@@ -9,7 +9,7 @@
     "ruby"
   ],
   "cover_image": null,
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/pairing-with-community-member-rachael-wright-munn-5bol/",
+  "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-rachael-wright-munn-5bol/",
   "reading_time_minutes": 1,
   "template": "post"
 }

@@ -9,7 +9,7 @@
     "git"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--bpzJ3l21--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_hurs5x435k11rkd4nbnt.jpeg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/npx-gitignore-5087/",
+  "canonical_url": "https://www.nickyt.co/blog/npx-gitignore-5087/",
   "reading_time_minutes": 1,
   "template": "post"
 }

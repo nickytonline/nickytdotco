@@ -10,7 +10,7 @@
     "javascript"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--u9xbBK_Q--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_j7chuu52qfs62xbyeopo.png",
-  "canonicalUrl": "https://www.nickyt.co/blog/how-to-debug-a-firefox-add-on-extension-489f/",
+  "canonical_url": "https://www.nickyt.co/blog/how-to-debug-a-firefox-add-on-extension-489f/",
   "reading_time_minutes": 2,
   "template": "post"
 }

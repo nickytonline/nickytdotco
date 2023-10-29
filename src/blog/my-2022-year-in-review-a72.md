@@ -7,7 +7,7 @@
     "yearinreview"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--DWXYRl4---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_549dl9ckop73uweqprka.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/blog/my-2022-year-in-review-a72",
+  "canonical_url": "https://www.iamdeveloper.com/blog/my-2022-year-in-review-a72",
   "reading_time_minutes": 6,
   "template": "post"
 }

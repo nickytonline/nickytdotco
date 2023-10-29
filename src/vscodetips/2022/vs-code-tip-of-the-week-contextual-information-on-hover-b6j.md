@@ -9,7 +9,7 @@
     "vscodetips"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--TjkHxFcO--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_x39larn618z4lem36lse.jpeg",
-  "canonicalUrl": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-contextual-information-on-hover-f9f",
+  "canonical_url": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-contextual-information-on-hover-f9f",
   "reading_time_minutes": 1,
   "template": "post"
 }

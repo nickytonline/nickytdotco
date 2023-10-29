@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--8Dc9k6Ml--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_2h3puantbcb0a0sfusny.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/any-contribution-to-open-source-is-valuable-57d3/",
+  "canonical_url": "https://www.nickyt.co/blog/any-contribution-to-open-source-is-valuable-57d3/",
   "reading_time_minutes": 2,
   "template": "post"
 }

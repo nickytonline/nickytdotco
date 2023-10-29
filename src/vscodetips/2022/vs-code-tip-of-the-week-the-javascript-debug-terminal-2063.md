@@ -9,7 +9,7 @@
     "node"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--uMMGKugW--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_5uhh2kbhn8jky3yuck8d.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-javascript-debug-terminal-2063/",
+  "canonical_url": "https://www.iamdeveloper.com/vscodetips/2022/vs-code-tip-of-the-week-the-javascript-debug-terminal-2063/",
   "reading_time_minutes": 1,
   "template": "post"
 }

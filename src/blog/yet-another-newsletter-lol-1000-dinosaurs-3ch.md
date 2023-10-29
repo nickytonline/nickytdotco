@@ -10,7 +10,7 @@
     "a11y"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s---Uzd0oHa--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_cd9ys9h1hq2nhj05scyl.png",
-  "canonicalUrl": "https://buttondown.email/nickytonline/archive/yet-another-newsletter-lol-5670/",
+  "canonical_url": "https://buttondown.email/nickytonline/archive/yet-another-newsletter-lol-5670/",
   "reading_time_minutes": 3,
   "template": "post"
 }

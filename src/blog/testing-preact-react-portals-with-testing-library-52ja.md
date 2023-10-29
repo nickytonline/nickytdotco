@@ -10,7 +10,7 @@
     "webdev"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--CS11Dyqa--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_zi8jv3lu5ewdh5oim3rl.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/testing-preact-react-portals-with-testing-library-52ja/",
+  "canonical_url": "https://www.nickyt.co/blog/testing-preact-react-portals-with-testing-library-52ja/",
   "reading_time_minutes": 9,
   "template": "post"
 }

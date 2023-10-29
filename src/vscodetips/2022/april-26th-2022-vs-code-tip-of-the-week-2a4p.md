@@ -8,7 +8,7 @@
     "vscodetips"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--i-TNe1Wl--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7wqyvu7u9u8a33es0kyx.png",
-  "canonicalUrl": "https://community.vscodetips.com/nickytonline/april-26th-2022-vs-code-tip-of-the-week-327c",
+  "canonical_url": "https://community.vscodetips.com/nickytonline/april-26th-2022-vs-code-tip-of-the-week-327c",
   "reading_time_minutes": 1,
   "template": "post"
 }

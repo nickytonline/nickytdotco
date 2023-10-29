@@ -7,7 +7,7 @@
     "git"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--8_BptPUw--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_ulidmgllcwzax0a6g4yl.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/git-history-20nh/",
+  "canonical_url": "https://www.nickyt.co/blog/git-history-20nh/",
   "reading_time_minutes": 1,
   "template": "post"
 }

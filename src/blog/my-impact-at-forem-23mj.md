@@ -7,7 +7,7 @@
     "career"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--1kVhnhTE--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_i0wmq5dpcg6r0b9ym1bv.jpeg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/my-impact-at-forem-23mj/",
+  "canonical_url": "https://www.nickyt.co/blog/my-impact-at-forem-23mj/",
   "reading_time_minutes": 4,
   "template": "post"
 }

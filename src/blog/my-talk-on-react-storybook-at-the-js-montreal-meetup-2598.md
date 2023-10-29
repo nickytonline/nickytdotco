@@ -9,7 +9,7 @@
     "talks"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--5M9qqV-W--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_7ss87wh6suac1t8n4gz6.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/my-talk-on-react-storybook-at-the-js-montreal-meetup-2598/",
+  "canonical_url": "https://www.nickyt.co/blog/my-talk-on-react-storybook-at-the-js-montreal-meetup-2598/",
   "reading_time_minutes": 1,
   "template": "post"
 }

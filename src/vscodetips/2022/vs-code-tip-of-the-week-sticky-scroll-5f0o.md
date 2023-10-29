@@ -8,7 +8,7 @@
     "vscodetips"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--4mXgQi5D--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_5hqinn8cyqf2eqkgir5v.png",
-  "canonicalUrl": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-sticky-scroll-2e5",
+  "canonical_url": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-sticky-scroll-2e5",
   "reading_time_minutes": 1,
   "template": "post"
 }

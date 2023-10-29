@@ -9,7 +9,7 @@
     "discuss"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--fMw98OdG--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_80fbckbd7x40jzcwqlbf.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/funding-in-open-source-4i6k/",
+  "canonical_url": "https://www.nickyt.co/blog/funding-in-open-source-4i6k/",
   "reading_time_minutes": 5,
   "template": "post"
 }

@@ -10,7 +10,7 @@
     "security"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--her-e-8S--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_mb76rkwxnwmvnfi8labd.png",
-  "canonicalUrl": "https://dev.to/opensauced/supercharge-your-repository-with-code-owners-4clg",
+  "canonical_url": "https://dev.to/opensauced/supercharge-your-repository-with-code-owners-4clg",
   "reading_time_minutes": 3,
   "template": "post"
 }

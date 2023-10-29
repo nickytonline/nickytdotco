@@ -9,7 +9,7 @@
     "javascript"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--YB4J_ik4--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_z4v5ldpkdcyphu9m07w4.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/getting-started-with-regular-expressions-11dg/",
+  "canonical_url": "https://www.nickyt.co/blog/getting-started-with-regular-expressions-11dg/",
   "reading_time_minutes": 4,
   "template": "post"
 }

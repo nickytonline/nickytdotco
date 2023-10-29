@@ -7,7 +7,7 @@
     "browsers"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--ORlH7LDT--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_tz6e8mu5mw2o2rx66egy.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/evaluating-the-new-microsoft-edge-4m1j/",
+  "canonical_url": "https://www.nickyt.co/blog/evaluating-the-new-microsoft-edge-4m1j/",
   "reading_time_minutes": 3,
   "template": "post"
 }

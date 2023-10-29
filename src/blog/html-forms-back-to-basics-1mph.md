@@ -10,7 +10,7 @@
     "beginners"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--t9c1XIrR--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_tdhxw07gd7gwo6ctib50.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/html-forms-back-to-basics-1mph/",
+  "canonical_url": "https://www.nickyt.co/blog/html-forms-back-to-basics-1mph/",
   "reading_time_minutes": 3,
   "template": "post"
 }

@@ -9,7 +9,7 @@
     "streaming"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--xrj9uU0f--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_fm42fqy3ziu3r1zyahel.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/getting-started-with-streaming-on-twitch-4im7/",
+  "canonical_url": "https://www.nickyt.co/blog/getting-started-with-streaming-on-twitch-4im7/",
   "reading_time_minutes": 5,
   "template": "post"
 }

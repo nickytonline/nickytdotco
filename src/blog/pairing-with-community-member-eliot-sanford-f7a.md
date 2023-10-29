@@ -9,7 +9,7 @@
     "javascript"
   ],
   "cover_image": null,
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/pairing-with-community-member-eliot-sanford-f7a/",
+  "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-eliot-sanford-f7a/",
   "reading_time_minutes": 1,
   "template": "post"
 }

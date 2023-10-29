@@ -10,7 +10,7 @@
     "jamstack"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--2CkRqNCp--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_epig0488nwfmsdm59t48.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/showcase-your-gatsby-site-266/",
+  "canonical_url": "https://www.nickyt.co/blog/showcase-your-gatsby-site-266/",
   "reading_time_minutes": 1,
   "template": "post"
 }

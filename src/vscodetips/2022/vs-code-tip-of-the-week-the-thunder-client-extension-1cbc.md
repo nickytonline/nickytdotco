@@ -10,7 +10,7 @@
     "vscodetips"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--UuAd6xhj--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_xb7x118t57bx4xnr45ob.png",
-  "canonicalUrl": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-the-thunder-client-extension-1k3p",
+  "canonical_url": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-the-thunder-client-extension-1k3p",
   "reading_time_minutes": 2,
   "template": "post"
 }

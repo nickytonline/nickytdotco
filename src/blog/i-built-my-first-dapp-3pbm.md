@@ -9,7 +9,7 @@
     "react"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--0MpNYl1t--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_vi2yi9st53f151flz189.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/i-built-my-first-dapp-3pbm/",
+  "canonical_url": "https://www.nickyt.co/blog/i-built-my-first-dapp-3pbm/",
   "reading_time_minutes": 2,
   "template": "post"
 }

@@ -10,7 +10,7 @@
     "ui"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--AMjsJsC0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_9zm6yatidby4ls11xzeg.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/getting-started-with-react-storybook-9jh/",
+  "canonical_url": "https://www.nickyt.co/blog/getting-started-with-react-storybook-9jh/",
   "reading_time_minutes": 3,
   "template": "post"
 }

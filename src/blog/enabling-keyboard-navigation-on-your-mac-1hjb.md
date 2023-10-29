@@ -9,7 +9,7 @@
     "macos"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--5dgW_UV9--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7n6dsveguxcnv8fyfid9.jpeg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/enabling-keyboard-navigation-on-your-mac-1hjb/",
+  "canonical_url": "https://www.nickyt.co/blog/enabling-keyboard-navigation-on-your-mac-1hjb/",
   "reading_time_minutes": 1,
   "template": "post"
 }

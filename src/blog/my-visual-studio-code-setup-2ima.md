@@ -10,7 +10,7 @@
     "vscode"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--GzTj3t37--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_6e271uy3v8ia1h0e1c7q.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/",
+  "canonical_url": "https://www.nickyt.co/blog/my-visual-studio-code-setup-2ima/",
   "reading_time_minutes": 6,
   "template": "post"
 }

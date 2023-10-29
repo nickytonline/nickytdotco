@@ -10,7 +10,7 @@
     "javascript"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--8lWRVbUC--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_e4ekxgolwzakw0ntuny9.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/pairing-with-jhey-tompkins-2k85/",
+  "canonical_url": "https://www.nickyt.co/blog/pairing-with-jhey-tompkins-2k85/",
   "reading_time_minutes": 1,
   "template": "post"
 }

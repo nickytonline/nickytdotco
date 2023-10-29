@@ -9,7 +9,7 @@
     "ergonomics"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--HlKm0oYL--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_g7z1ueuhxcqrqlb11tbd.JPG",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/logitech-ergo-k860-wireless-keyboard-nef",
+  "canonical_url": "https://www.nickyt.co/blog/logitech-ergo-k860-wireless-keyboard-nef",
   "reading_time_minutes": 3,
   "template": "post"
 }

@@ -10,7 +10,7 @@
     "ui"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--AMjsJsC0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_9zm6yatidby4ls11xzeg.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/setting-up-storybook-for-preact-p5a/",
+  "canonical_url": "https://www.nickyt.co/blog/setting-up-storybook-for-preact-p5a/",
   "reading_time_minutes": 3,
   "template": "post"
 }

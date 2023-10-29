@@ -8,7 +8,7 @@
     "discuss"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--u2MsVIGf--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_h7ccqiujz5b8rg23rgcl.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/blog/revue-being-phased-out-by-twitter-4kle",
+  "canonical_url": "https://www.iamdeveloper.com/blog/revue-being-phased-out-by-twitter-4kle",
   "reading_time_minutes": 1,
   "template": "post"
 }

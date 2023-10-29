@@ -9,7 +9,7 @@
     "learninpublic"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--xsTcdKf---_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7lzygyai23v4nhw3bl81.jpeg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/my-twitch-stream-setup-2m0c/",
+  "canonical_url": "https://www.nickyt.co/blog/my-twitch-stream-setup-2m0c/",
   "reading_time_minutes": 2,
   "template": "post"
 }

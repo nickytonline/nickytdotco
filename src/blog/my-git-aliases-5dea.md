@@ -9,7 +9,7 @@
     "developertools"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--Bsq7n131--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_c31gesmnfndo89bh4673.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/my-git-aliases-5dea/",
+  "canonical_url": "https://www.nickyt.co/blog/my-git-aliases-5dea/",
   "reading_time_minutes": 4,
   "template": "post"
 }

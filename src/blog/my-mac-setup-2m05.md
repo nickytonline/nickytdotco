@@ -9,7 +9,7 @@
     "webdev"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--C6fxx9Ly--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_qkwvsk3lp64lvchg69tm.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/my-mac-setup-2m05/",
+  "canonical_url": "https://www.nickyt.co/blog/my-mac-setup-2m05/",
   "reading_time_minutes": 9,
   "template": "post"
 }

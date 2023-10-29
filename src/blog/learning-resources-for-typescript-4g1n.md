@@ -7,7 +7,7 @@
     "typescript"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--TDptlE7a--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_o0css5hj2le5dyrzmj7l.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/learning-resources-for-typescript-4g1n/",
+  "canonical_url": "https://www.nickyt.co/blog/learning-resources-for-typescript-4g1n/",
   "reading_time_minutes": 2,
   "template": "post"
 }

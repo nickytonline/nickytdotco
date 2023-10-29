@@ -10,7 +10,7 @@
     "jamstack"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--6sR4EG05--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_e8fnjv5l9je77p01qq0z.jpg",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/jamstack-and-serverless-with-jason-lengstorf-3jdl/",
+  "canonical_url": "https://www.nickyt.co/blog/jamstack-and-serverless-with-jason-lengstorf-3jdl/",
   "reading_time_minutes": 2,
   "template": "post"
 }

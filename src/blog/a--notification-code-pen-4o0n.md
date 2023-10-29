@@ -8,7 +8,7 @@
     "codepen"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--WvDL10qV--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_nmx6enjnka59n8c5jwc6.png",
-  "canonicalUrl": "https://www.iamdeveloper.com/posts/a--notification-code-pen-4o0n/",
+  "canonical_url": "https://www.nickyt.co/blog/a--notification-code-pen-4o0n/",
   "reading_time_minutes": 1,
   "template": "post"
 }
