@@ -203,7 +203,6 @@ async function createPostFile(post) {
     cover_image,
     slug,
     canonical_url: canonicalUrl,
-    organization,
   } = post;
   const jsonFrontmatter = {
     title,
