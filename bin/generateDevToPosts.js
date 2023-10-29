@@ -475,6 +475,12 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
         post.tag_list.includes("vscodetips"))
     );
   })) {
+    if (post.canonical_url.startsWith("https://www.iamdeveloper.com/posts/")) {
+      post.canonical_url = post.canonical_url.replace(
+        "https://www.iamdeveloper.com/posts/",
+        "https://www.nickyt.co/blog/",
+      );
+    }
     // Newsletter posts are not published to the blog. The blog publishes the newsletter to DEV.
     if (/<!-- my newsletter -->\s*$/.test(post.body_markdown)) {
       console.warn(`Skipping newsletter post ${post.title}`);
