@@ -8,14 +8,14 @@ const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
 const site = require(`../_data/site`);
 const TWITTER_EMBEDS_FILE_PATH = path.join(
   __dirname,
-  "../_data/twitterEmbeds.json"
+  "../_data/twitterEmbeds.json",
 );
 
 async function updateTwitterEmbeds(twitterEmbeds, filepath) {
   const data = JSON.stringify(twitterEmbeds, null, 2);
 
   await fs.writeFile(filepath, data, () =>
-    console.log(`Saved Twitter embeds markup to ${filepath}!`)
+    console.log(`Saved Twitter embeds markup to ${filepath}!`),
   );
 }
 
@@ -45,15 +45,15 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
   }
 
   const intentToTweet = `<a class="boost-link" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    `${title} by ${site.twitterHandle} ${site.url}${url}`
+    `${title} by ${site.twitterHandle} ${site.url}${url}`,
   )}">Tweet It!</a>`;
 
   const intentToLinkedIn = `<a class="boost-link" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-    site.url + url
+    site.url + url,
   )}">Share on LinkedIn</a>`;
 
   const intentToToot = `<a class="boost-link" href="https://toot.kytta.dev/?text=${encodeURIComponent(
-    `${title} by ${site.mastodonHandle} ${site.url}${url}`
+    `${title} by ${site.mastodonHandle} ${site.url}${url}`,
   )}">Toot it!</a>`;
 
   let foremBoostLink = "";
@@ -85,7 +85,7 @@ async function youtubeEmbed(videoUrl) {
   const timeQueryParameter = time ? `?start=${time}` : "";
   const url = `https://www.youtube.com/embed/${videoId}${timeQueryParameter}`;
   const response = await fetch(
-    `https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v%3D${videoId}&format=json`
+    `https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v%3D${videoId}&format=json`,
   );
 
   if (response.status === 404) {
@@ -137,11 +137,11 @@ function socialImage(title, excerpt = "") {
 
     // If it's not UTF-8, things go boom
     encodedExcerpt = encodeURIComponent(
-      encodeURIComponent(Buffer.from(truncatedExcerpt, "utf-8").toString())
+      encodeURIComponent(Buffer.from(truncatedExcerpt, "utf-8").toString()),
     );
   }
   const encodedAuthor = encodeURIComponent(
-    encodeURIComponent(`${site.authorName} ${site.twitterHandle}`)
+    encodeURIComponent(`${site.authorName} ${site.twitterHandle}`),
   );
   const textColor = "333333";
 
@@ -178,14 +178,14 @@ function embedEmbed(rawUrl) {
 
   if (url.hostname.includes(`twitter.com`)) {
     const { tweetId } = rawUrl.match(
-      /twitter\.com\/[^\/]+\/status\/(?<tweetId>[^\/]+)/
+      /twitter\.com\/[^\/]+\/status\/(?<tweetId>[^\/]+)/,
     ).groups;
     return twitterEmbed(tweetId);
   }
 
   if (url.hostname.includes(`twitch.tv`)) {
     const { videoId } = url.pathname.match(
-      /\/videos\/(?<videoId>[^\/]+)/
+      /\/videos\/(?<videoId>[^\/]+)/,
     ).groups;
 
     return twitchEmbed(videoId);
@@ -193,7 +193,7 @@ function embedEmbed(rawUrl) {
 
   if (url.hostname.includes(`dev.to`)) {
     const { username, slug } = rawUrl.match(
-      /dev\.to\/(?<username>[^\/]+)\/(?<slug>[^\/]+)/
+      /dev\.to\/(?<username>[^\/]+)\/(?<slug>[^\/]+)/,
     ).groups;
 
     if (slug) {
@@ -243,12 +243,12 @@ async function twitterEmbed(tweetId) {
     // It doesn't matter who the user is. It's the Tweet ID that matters.
     const response = await fetch(
       `https://publish.twitter.com/oembed?url=${encodeURIComponent(
-        `https://twitter.com/anyone/status/${tweetId}`
-      )}`
+        `https://twitter.com/anyone/status/${tweetId}`,
+      )}`,
     );
 
     console.log(
-      `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`
+      `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`,
     );
 
     if (response.status === 404) {
@@ -356,7 +356,7 @@ function instagramEmbed(postId) {
       style="background: white; max-width: 658px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"
     ></iframe>`;
   return `<iframe title="Instagram post at ${url}" class="liquidTag" src="https://dev.to/embed/instagram?args=${encodeURIComponent(
-    url
+    url,
   )}" style="border: 0; width: 100%;"></iframe>`;
 }
 

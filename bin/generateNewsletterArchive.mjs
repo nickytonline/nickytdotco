@@ -99,7 +99,7 @@ function sanitizeContent(rawContent) {
 async function generateNewsletterPost(feedItem) {
   const {
     title,
-    link: canonicalUrl,
+    link: canonical_url,
     content,
     contentSnippet,
     isoDate,
@@ -124,7 +124,7 @@ async function generateNewsletterPost(feedItem) {
         )}\nIf you liked this newsletter, you can [subscribe](https://www.nickyt.co/pages/newsletter/) or if RSS is your jam, you can also [subscribe via RSS](https://buttondown.email/nickytonline/rss).\n<!-- my newsletter -->`,
         tags,
         series: "Yet Another Newsletter LOL",
-        canonical_url: canonicalUrl,
+        canonical_url,
       },
     };
 
