@@ -10,7 +10,7 @@
     "webdev"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--8AI1-ouh--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_wgr46tn6thqblgdxmbna.jpg",
-  "canonical_url": "https://dev.to/nickytonline/typescript-and-react-enforcing-props-for-accessibility-2h49",
+  "canonical_url": "https://www.nickyt.co/blog/typescript-and-react-enforcing-props-for-accessibility-2h49/",
   "reading_time_minutes": 5,
   "template": "post"
 }
@@ -73,11 +73,11 @@ This will be used when the toggle button is announced for assistive technologies
 {% endraw %}
 ```
 
-This will be used when the toggle button is announced for assistive technologies as well. The main difference is the text contents of the element with the id `mak-public-container` will be used instead.
+This will be used when the toggle button is announced for assistive technologies as well. The main difference is the text contents of the element with the id `make-public-container` will be used instead.
 
 In our case, I opted for the aria attributes represented by the `ariaLabel` and `ariaLabelledBy` props in the component.
 
-The TLDR;
+## The TLDR;
 
 If you want to get to the solution right away, take a peek at [these lines of code in the PR](https://github.com/open-sauced/app/pull/2035/files#diff-7ba8ff168f19cb385c73134b5856401c472fc7d00002d9ec00f6ef6166c24049R10).
 
@@ -138,7 +138,7 @@ type ToggleSwitchProps = {
 
 I'm aware of the [never type](https://www.typescriptlang.org/docs/handbook/basic-types.html#never), but to the best of my knowledge, I've never used it explicitly. It's always been an inferred type for me, e.g. an error being thrown.
 
-By assigning the 'never' type to the prop that should not be included in each type of the union, I was able to enforce the exclusivity of the props. This meant that the component could only have either the `ariaLabelledBy`  prop or the `ariaLabel` prop, but not both.
+By assigning the `never` type to the prop that should not be included in each type of the union, I was able to enforce the exclusivity of the props. This meant that the component could only have either the `ariaLabelledBy`  prop or the `ariaLabel` prop, but not both.
 
 ```typescript
 {% raw %}
@@ -158,7 +158,7 @@ And boom! I now had what I wanted. Check out the [TypeScript Playground example]
 
 ## Conclusion
 
-The use of the 'never' type solved the prop exclusivity issue and had a positive impact on the component’s accessibility. Now, the component requires a label, ensured by either the `ariaLabel` prop or the `areaLabelledBy` prop, enforcing accessibility.
+The use of the `never` type solved the prop exclusivity issue and had a positive impact on the component’s accessibility. Now, the component requires a label, ensured by either the `ariaLabel` prop or the `areaLabelledBy` prop, enforcing accessibility.
 
 Never say `never`. 😜
 
