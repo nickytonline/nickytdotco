@@ -40,13 +40,11 @@ interface ToggleSwitchProps {
 {% endraw %}
 ```
 
-Past screenshot of app with rendered markup without a label
-
 Typically, a button will have text associated to it, but in this case, there was no text for the button which was causing the accessibility issue. When no text is present, you have a few options.
 
--  You can have text that is only visible to screen readers and other assistive technologies. To accomplish this you can create a CSS class, e.g. `sr-only` to move the text off the screen for sighted users, but since it's still visible in the document object mode l (DOM), assistive technologies can pick it up.
+-  You can have text that is only visible to screen readers and other assistive technologies. To accomplish this you can create a CSS class, e.g. `sr-only` to move the text off the screen for sighted users, but since it's still visible in the document object model (DOM), assistive technologies can pick it up.
 
-Note: Tailwind is pretty popular these days, so if you go with this option, you can use the [sr-only](https://tailwindcss.com/docs/screen-readers) CSS class that they provide out of the box.
+Note: [Tailwind](https://tailwindcss.com/) is pretty popular these days, so if you go with this option, you can use the [sr-only](https://tailwindcss.com/docs/screen-readers) CSS class that they provide out of the box.
 
 - You can use the [aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) to provide the necessary label text, e.g.
 
