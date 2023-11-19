@@ -358,16 +358,3 @@
     align-items: center;
   }
 }
-
-.pill {
-  background-color: var(--color-theme-highlight-block);
-  color: var(--color-theme-feature-text);
-  padding: 0.25rem;
-  border-radius: 0.55rem;
-  font-size: 50%;
-}
-
-.post-list__item .pill {
-  margin-right: 0.25rem;
-  text-transform: lowercase;
-}
