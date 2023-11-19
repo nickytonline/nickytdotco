@@ -30,7 +30,7 @@ const twitchEmbedMatcher =
   /\n<a\s+href="(?<TwitchUrl>https:\/\/(?:www\.)?twitch.tv\/[^"]+)">.+?<\/a>/gms;
 const tagsMatcher = /<!-- tags:(?<tags>.+?)-->/s;
 const codepenEmbedMatcher =
-  /<a\s+href="(?<url>[^?"]+)(?:\?[^"]+)?">.+?<\/a>/gms;
+  /\n<a\s+href="(?<url>https:\/\/(?:www\.)?codepen.io\/[^"]+)">.+?<\/a>/gms;
 
 const devToEmbedsMatcher = /\n(https:\/\/dev.to\/.+?)\n/gms;
 
@@ -142,12 +142,12 @@ async function generateNewsletterPost(feedItem) {
     });
 
     if (response.status !== 201) {
-      console.error(
+      throw new Error(
         `Couldn't create article on dev.to: ${response.statusText}`
       );
     }
   } catch (error) {
-    console.error("Couldn't create article on dev.to", error);
+    throw new Error("Couldn't create article on dev.to", error);
   }
 }
 
