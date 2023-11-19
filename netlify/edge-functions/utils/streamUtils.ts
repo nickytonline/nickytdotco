@@ -83,7 +83,7 @@ export async function getStreamSchedule({
   return schedule;
 }
 
-export async function getLatestGuest({
+export async function getLatestGuests({
   apiKey,
   baseId,
 }: {
@@ -92,5 +92,5 @@ export async function getLatestGuest({
 }) {
   const schedule = await getStreamSchedule({ apiKey, baseId });
 
-  return schedule[0];
+  return schedule.slice(0, 2);
 }

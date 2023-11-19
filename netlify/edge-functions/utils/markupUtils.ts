@@ -195,7 +195,7 @@ export function getScheduleMarkup({
       <h2 id="${headingId}">${streamTitle} ${buildHeadingAnchor(headingId)}</h2>
       <time datetime="${date}">${guestDate}</time>
       <div>
-        <div>Guest: ${name}${title ? `, ${title}` : ""}</div>
+        ${github === "nickytonline" ? "" : `<div>Guest: ${name}${title ? `, ${title}` : ""}</div>`}
         <nav class="nav" aria-label="Links for live stream guest ${name}">
           <ul>
           ${buildWebsiteLink({ name, website })}
@@ -221,29 +221,30 @@ export function getScheduleMarkup({
 }
 
 export function getLatestGuestMarkup({
-  guest,
+  guests,
   locale,
   timezone,
 }: {
-  guest: StreamGuestInfo;
+  guests: StreamGuestInfo[];
   locale: string;
   timezone: string;
 }) {
-  if (!guest) {
+  if (!guests) {
     return ``;
   }
 
-  const { date, streamTitle, name } = guest;
-  const headingId = getHeadingId(name, streamTitle);
-  const guestDate = getLocalizedDate({
-    date,
-    locale,
-    timezone,
-    showTime: true,
-  });
+  return guests.reduce((acc, guest) => {
 
-  return `
-    <h2 class="post-list__heading text-700 md:text-800">Upcoming Live Stream</h2>
+    const { date, streamTitle, name } = guest;
+    const headingId = getHeadingId(name, streamTitle);
+    const guestDate = getLocalizedDate({
+      date,
+      locale,
+      timezone,
+      showTime: true,
+    });
+
+    return acc + `
     <ol class="post-list__items sf-flow pad-top-300" reversed>
       <li class="post-list__item">
         <h3 class="font-base leading-tight text-600 weight-mid">
@@ -253,4 +254,6 @@ export function getLatestGuestMarkup({
       </li>
     </ol>
     `;
+  }
+    , '<h2 class="post-list__heading text-700 md:text-800">Upcoming Live Streams</h2>');
 }

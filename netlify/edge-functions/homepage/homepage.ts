@@ -1,6 +1,6 @@
 import { Context } from "https://edge.netlify.com";
 import { getLatestGuestMarkup } from "../utils/markupUtils.ts";
-import { getLatestGuest } from "../utils/streamUtils.ts";
+import { getLatestGuests } from "../utils/streamUtils.ts";
 
 const AIRTABLE_API_KEY = Deno.env.get("AIRTABLE_API_KEY");
 const AIRTABLE_STREAM_GUEST_BASE_ID = Deno.env.get(
@@ -19,13 +19,13 @@ export default async (request: Request, context: Context) => {
     "en-US";
   const { timezone = "" } = context.geo;
 
-  const latestGuest = await getLatestGuest({
+  const latestGuests = await getLatestGuests({
     apiKey: AIRTABLE_API_KEY,
     baseId: AIRTABLE_STREAM_GUEST_BASE_ID,
   });
-  const scheduleMarkup = latestGuest
+  const scheduleMarkup = latestGuests
     ? getLatestGuestMarkup({
-      guest: latestGuest,
+      guests: latestGuests,
       locale,
       timezone,
     })
