@@ -9,7 +9,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--QH2UibfW--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_lijgw6h1zjd18tliwifs.png",
   "canonical_url": "https://www.nickyt.co/blog/infer-types-to-avoid-explicit-types-1pnn",
-  "reading_time_minutes": 3,
+  "reading_time_minutes": 4,
   "template": "post"
 }
 ---
@@ -80,6 +80,12 @@ let lotteryNumbers: Array<number> = [1, 34, 65, 43, 89, 56]
 
 But once again, it's unnecessary. Take it for a spin in the [TypeScript playground](https://www.typescriptlang.org/play?#code/PTAEEsDsDMFMCd6wCagC4E8AOsIGdQBDSIxQjUAe2lEgFcBbAIwTwCgAbWNUDytNAgwA5Ri3gEAvKADaARgA0oAMwAWJQDYArEtXKlADgCcSrRoC6bNiFCwAHlg7gAxuDQcKmHEQLFS8cioaemZWTm4qNAALBAAZfkF4ETFWAC5QAEEyDAAeEPEAPlBpGXUVACZNHQrDU3MgA) to see for yourself.
 
+## The Changes
+
+Here's the PR I put up.
+
+{% embed "https://github.com/open-sauced/app/pull/2192" %}
+
 I did some other refactoring in the pull request, but the big chunk of it was this diff.
 
 ```diff
@@ -144,9 +150,11 @@ Aside from the type being inferred, the type is now data-driven. If we want to a
 
 ![TypeScript complaining that property 'svelte' is missing in type '{ react: any; rust: any; javascript: any; ai: any; ml: any; python: any; typescript: any; csharp: any; cpp: any; php: any; c: any; ruby: any; java: any; golang: any; vue: any; kubernetes: any; hacktoberfest: any; clojure: any; }' but required in type 'Record<"javascript" | "python" | "java" | "typescript" | "csharp" | "cpp" | "php" | "c" | "ruby" | "ai" | "ml" | "react" | "golang" | "rust" | "svelte" | "vue" | "kubernetes" | "hacktoberfest" | "clojure", StaticImageData>'.](https://www.nickyt.co/images/posts/_uploads_articles_wub4v6h58nxn41l60te0.png)
 
-Here's the PR you want to dif into all the changes.
+In fact, a new issue was opened today because an SVG for Svelte was missing in another part of the application.
 
-{% embed "https://github.com/open-sauced/app/pull/2192" %}
+{% embed "https://github.com/open-sauced/app/issues/2195" %}
+
+If the `InterestType` has been used everywhere that error would have been caught by TypeScript just like in the screenshot above.
 
 ## Typing Function Return Types
 
