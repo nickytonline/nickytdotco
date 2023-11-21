@@ -140,11 +140,11 @@ export type InterestType = (typeof interests)[number];
 {% endraw %}
 ```
 
-Aside from the type being inferred, the type is now data-driven. If we want to add a new language to the `interests` array, all places where the `InterestType` now have that new language so, for example, if there is some code that requires all the values in that union type to be used, TypeScript will complain.
+Aside from the type being inferred, the type is now data-driven. If we want to add a new language to the `interests` array, all places where the `InterestType` are used now have that new language available. If there is some code that requires all the values in that union type to be used, TypeScript will complain.
 
 ![TypeScript complaining that property 'svelte' is missing in type '{ react: any; rust: any; javascript: any; ai: any; ml: any; python: any; typescript: any; csharp: any; cpp: any; php: any; c: any; ruby: any; java: any; golang: any; vue: any; kubernetes: any; hacktoberfest: any; clojure: any; }' but required in type 'Record<"javascript" | "python" | "java" | "typescript" | "csharp" | "cpp" | "php" | "c" | "ruby" | "ai" | "ml" | "react" | "golang" | "rust" | "svelte" | "vue" | "kubernetes" | "hacktoberfest" | "clojure", StaticImageData>'.](https://www.nickyt.co/images/posts/_uploads_articles_wub4v6h58nxn41l60te0.png)
 
-Here's the PR you want to did into all the changes
+Here's the PR you want to dif into all the changes.
 
 {% embed "https://github.com/open-sauced/app/pull/2192" %}
 
