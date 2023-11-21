@@ -24,7 +24,7 @@ My friend Brittney Postma (@brittneypostma) who is a huge Svelte fan, wanted to 
 
 She made some changes which worked while running the dev server, but TypeScript was complaining, causing the build to fail.
 
-```
+```bash
 {% raw %}
 4:49:27 PM: ./lib/utils/recommendations.ts:3:7
 4:49:27 PM: Type error: Property "svelte" is missing in type "{ react: string[]; javascript:
