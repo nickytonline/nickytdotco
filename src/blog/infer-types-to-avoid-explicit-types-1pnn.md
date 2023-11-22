@@ -1,11 +1,12 @@
 ---json
 {
-  "title": "Infer Types to Avoid Explicit Types",
+  "title": "TypeScript: Infer Types to Avoid Explicit Types",
   "excerpt": "The idea for this post came about while I was reviewing this pull request (PR) for OpenSauced.       ...",
   "date": "2023-11-21T04:59:47.514Z",
   "tags": [
     "typescript",
-    "beginners"
+    "beginners",
+    "react"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--QH2UibfW--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_lijgw6h1zjd18tliwifs.png",
   "canonical_url": "https://www.nickyt.co/blog/infer-types-to-avoid-explicit-types-1pnn",
@@ -49,7 +50,7 @@ I mentioned adding 'svelte' to the `topic` prop's union type in the [LanguagePil
 
 Having to add `'svelte'` to the `topic` props type fixed the issue, but it was extra work. Typically, you want to **infer types as much as possible**.
 
-Just a note. This is not criticizing Brittney’s pull request (PR). It’s a discussion about a potential refactoring I noticed while reviewing her PR.
+**Just a note.** This is not criticizing Brittney’s pull request (PR). This post is about a potential refactoring I noticed while reviewing her PR which could improve the types maintenance in the project.
 
 ## Examples of Type Inference
 
