@@ -10,7 +10,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--QH2UibfW--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_lijgw6h1zjd18tliwifs.png",
   "canonical_url": "https://www.nickyt.co/blog/infer-types-to-avoid-explicit-types-1pnn",
-  "reading_time_minutes": 4,
+  "reading_time_minutes": 5,
   "template": "post"
 }
 ---
@@ -48,9 +48,9 @@ stringIl; }" but required in type "Record<"ruby" | "javascript" | "python" | "ja
 
 I mentioned adding 'svelte' to the `topic` prop's union type in the [LanguagePillProps](https://github.com/open-sauced/app/blob/00486f7b45c7e185208030422f675718724c1d4a/components/atoms/LanguagePill/LanguagePill.tsx#L24-L47) interface in our `LanguagePill` component should resolve the issue. Narrator, it did.
 
-Having to add `'svelte'` to the `topic` props type fixed the issue, but it was extra work. Typically, you want to **infer types as much as possible**.
+Having to add `'svelte'` to the `topic` props type resolved the issue, but it was extra work. Typically, you want to **infer types as much as possible**.
 
-**Just a note.** This is not criticizing Brittney’s pull request (PR). This post is about a potential refactoring I noticed while reviewing her PR which could improve the types maintenance in the project.
+**Just a note.** This is not criticizing Brittney’s pull request (PR). This post is about a potential refactoring I noticed while reviewing her PR which could improve the types' maintenance in the project.
 
 ## Examples of Type Inference
 
@@ -82,6 +82,18 @@ let lotteryNumbers: Array<number> = [1, 34, 65, 43, 89, 56]
 ```
 
 But once again, it's unnecessary. Take it for a spin in the [TypeScript playground](https://www.typescriptlang.org/play?#code/PTAEEsDsDMFMCd6wCagC4E8AOsIGdQBDSIxQjUAe2lEgFcBbAIwTwCgAbWNUDytNAgwA5Ri3gEAvKADaARgA0oAMwAWJQDYArEtXKlADgCcSrRoC6bNiFCwAHlg7gAxuDQcKmHEQLFS8cioaemZWTm4qNAALBAAZfkF4ETFWAC5QAEEyDAAeEPEAPlBpGXUVACZNHQrDU3MgA) to see for yourself.
+
+Let’s look at a React example, since plenty of folks are using React. It’s pretty common to use `useState` in React. If we have a counter that resides in `useState`, it’ll get set up something like this.
+
+```typescript
+{% raw %}
+const [counter, setCounter] = useState<number>(0);
+{% endraw %}
+```
+
+Once again, though, we don’t need to add an explicit type. Let TypeScript infer the type. `useState` is a [generic function](https://www.typescriptlang.org/docs/handbook/2/generics.html), so the type looks like this `useState<T>(initialValue: T)`
+
+Since our initial value was 0, T is of type `number`, so `useState` in the context of TypeScript can infer that `useState` is `useState<number>`.
 
 ## The Changes
 
@@ -151,13 +163,42 @@ export type InterestType = (typeof interests)[number];
 
 Aside from the type being inferred, the type is now data-driven. If we want to add a new language to the `interests` array, all places where the `InterestType` are used now have that new language available. If there is some code that requires all the values in that union type to be used, TypeScript will complain.
 
-![TypeScript complaining that property 'svelte' is missing in type '{ react: any; rust: any; javascript: any; ai: any; ml: any; python: any; typescript: any; csharp: any; cpp: any; php: any; c: any; ruby: any; java: any; golang: any; vue: any; kubernetes: any; hacktoberfest: any; clojure: any; }' but required in type 'Record<"javascript" | "python" | "java" | "typescript" | "csharp" | "cpp" | "php" | "c" | "ruby" | "ai" | "ml" | "react" | "golang" | "rust" | "svelte" | "vue" | "kubernetes" | "hacktoberfest" | "clojure", StaticImageData>'.](https://www.nickyt.co/images/posts/_uploads_articles_wub4v6h58nxn41l60te0.png)
+![TypeScript complaining that the property 'svelte' is missing in type '{ react: any; rust: any; javascript: any; ai: any; ml: any; python: any; typescript: any; csharp: any; cpp: any; php: any; c: any; ruby: any; java: any; golang: any; vue: any; kubernetes: any; hacktoberfest: any; clojure: any; }' but required in type 'Record<"javascript" | "python" | "java" | "typescript" | "csharp" | "cpp" | "php" | "c" | "ruby" | "ai" | "ml" | "react" | "golang" | "rust" | "svelte" | "vue" | "kubernetes" | "hacktoberfest" | "clojure", StaticImageData>'.](https://www.nickyt.co/images/posts/_uploads_articles_wub4v6h58nxn41l60te0.png)
 
 In fact, a new issue was opened today because an SVG for Svelte was missing in another part of the application.
 
 {% embed "https://github.com/open-sauced/app/issues/2195" %}
 
-If the `InterestType` has been used everywhere that error would have been caught by TypeScript just like in the screenshot above
+If the `InterestType` has been used everywhere, that error would have been caught by TypeScript, just like in the screenshot above.
+
+## Counter Example: Explicit Types Required
+
+Let’s look at another React example.
+
+```typescript
+{% raw %}
+const [name, setName] = useState();
+{% endraw %}
+```
+
+We’re on the infer types hype and set up a new piece of state in our React application. We’re going to have a name that can get updated. Somewhere in the application, we call `setName(someNameVariable)` and all of a sudden, TypeScript is like nope! What happened? The type that gets inferred for
+
+```typescript
+{% raw %}
+const [name, setName] = useState();
+{% endraw %}
+```
+
+is `undefined`, so we can’t set a name to a `string` type. This is where an explicit type is practical.
+
+```typescript
+{% raw %}
+const [name, setName] = useState<string | undefined>();
+{% endraw %}
+```
+
+If the `string | undefined`, I recommend reading about [union types in TypeScript](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html#union-types).
+
 ## Typing Function Return Types
 
 For return types in functions, there are definitely two camps. Some think that return types should always be explicitly typed even if they can be inferred, and others not so much. I tend to lean towards inference for function return types, but agree with Matt Pocock's take that if you have branching in your function, e.g. `if`/`else`, `switch`, an explicit return type is preferred. More on that in Matt's video.
