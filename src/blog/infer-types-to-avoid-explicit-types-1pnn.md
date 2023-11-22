@@ -49,6 +49,8 @@ I mentioned adding 'svelte' to the `topic` prop's union type in the [LanguagePil
 
 Having to add `'svelte'` to the `topic` props type fixed the issue, but it was extra work. Typically, you want to **infer types as much as possible**.
 
+Just a note. This is not criticizing Brittney’s pull request (PR). It’s a discussion about a potential refactoring I noticed while reviewing her PR.
+
 ## Examples of Type Inference
 
 You might already be inferring types without realizing it. Here are some examples of types being inferred.
@@ -154,8 +156,7 @@ In fact, a new issue was opened today because an SVG for Svelte was missing in a
 
 {% embed "https://github.com/open-sauced/app/issues/2195" %}
 
-If the `InterestType` has been used everywhere that error would have been caught by TypeScript just like in the screenshot above.
-
+If the `InterestType` has been used everywhere that error would have been caught by TypeScript just like in the screenshot above
 ## Typing Function Return Types
 
 For return types in functions, there are definitely two camps. Some think that return types should always be explicitly typed even if they can be inferred, and others not so much. I tend to lean towards inference for function return types, but agree with Matt Pocock's take that if you have branching in your function, e.g. `if`/`else`, `switch`, an explicit return type is preferred. More on that in Matt's video.
