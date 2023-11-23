@@ -97,7 +97,11 @@ Since our initial value was 0, T is of type `number`, so `useState` in the conte
 
 ## The Changes
 
-Here's the PR I put up.
+I discussed the types refactor on my [live stream](https://nickyt.live) for anyone interested in a highlight from that stream.
+
+{% embed "https://www.twitch.tv/videos/1984891921" %}
+
+And here's the PR I put up.
 
 {% embed "https://github.com/open-sauced/app/pull/2192" %}
 
