@@ -205,6 +205,14 @@ For return types in functions, there are definitely two camps. Some think that r
 
 {% embed "https://www.youtube.com/watch?v=nwSe95uFN8E" %}
 
+As mentioned, inferred types are the way to go for most cases, but Kyle Shevlin (@kyleshevlin) messaged me after this blog post went out with another use case to explicitly type the return type.
+
+If a function returns a tuple, you need to explicitly type the return type. Otherwise, the inferred return type will be an array whose items have the union type of all the array items returned.
+
+![A TypeScript function returning a tuple even though the inferred type is not a tuple](https://www.nickyt.co/images/posts/_uploads_articles_uhql5ip1rr8657kj46cy.png)
+
+You can see this in action in a [TypeScript playground](https://www.typescriptlang.org/play?#code/PTAEDkHtQUwDwA4BsCWBjFAXUmCeCZQBbGAQwDsBnUAd0LQoHJtMYkkcALFan0UnAFdkhGlk6gAJjABmKcjEk58MSgCgQoAJLYATjEyDdVfuX67dpXLXFc+KIsnRZlBADSgAFOUFEARjC6oAA+Xp4AlKAAvAB8oABukCiS4eEA2gC6ajKC5GiYKJBm+obGAIIAKsJIMABiufmF5FCYAOqQugDW8gDmEaAA3mqgoCVGZmkADB79sYMAvhmgavNqGmBlZvBOGHoG466EPYKkluSsqvxCIqABvaP7xorrNpgSb-Qd+vmHlB5pPn8gRmkTmiWSWRyeQKRQepXIlWqdQaMPIEQAXKAAb4AroQdE4uDJEshiMxsYsdMvKC4gNFst5kA) I made. 
+
 ## Wrap it up!
 
 Types are great, and so is TypeScript, but that doesn't mean you need to type everything. Whenever possible, lean on type inference, and explicitly type when necessary.
