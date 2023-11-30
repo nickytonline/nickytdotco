@@ -6,11 +6,10 @@
   "tags": [
     "html",
     "javascript",
-    "webdev",
-    "beginners"
+    "webdev"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--V-lk-62a--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_t75ycfq41xj3y82ihzjs.png",
-  "canonical_url": "https://dev.to/nickytonline/html-data-attributes-one-of-the-original-state-management-libraries-8bf",
+  "canonical_url": "https://www.nickyt.co/blog/html-data-attributes-one-of-the-original-state-management-libraries-8bf/",
   "reading_time_minutes": 3,
   "template": "post"
 }
@@ -60,7 +59,7 @@ If you have a lot of these bespoke attributes, you'll always have to use `.getAt
 
 Insert "There must be a better way" GIF here. 🤣
 
-There is a better standard way to go about this, data attributes. Data attributes are a standard part of HTML. All you need to do is have them begin with `data-` and if the reset of the attribute is more than one word, separate them with hyphens.
+There is a better standard way to go about this, data attributes. Data attributes are a standard part of HTML. All you need to do is have them begin with `data-` and if the rest of the attribute is more than one word, separate them with hyphens.
 
 For example, our `productId` would now become `data-product-id`. That looks like many extra characters, and we're still using `.getAttribute`.
 
