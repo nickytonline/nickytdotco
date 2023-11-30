@@ -94,7 +94,6 @@
     }
 
     code {
-      font-size: 1.2em;
       color: var(--color-theme-primary);
       font-weight: 600;
       margin-left: 0.01ch;
@@ -102,6 +101,7 @@
     }
 
     pre > code {
+      font-size: 1.2em;
       margin-right: 0;
       border: 1px solid rgba(255, 255, 255, 0.1);
       overflow-x: auto;
