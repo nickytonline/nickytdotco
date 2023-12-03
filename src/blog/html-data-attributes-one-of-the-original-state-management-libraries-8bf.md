@@ -86,7 +86,7 @@ DEV is a [Rails](https://rubyonrails.org/) monolith, which uses [Preact](https:/
 
 If you use the browser tools to inspect the home page of DEV, you'll see that the `body` HTML element is jam packed with data attributes.
 
-![some of the markup from the dev.to homepage showing data attributes in use on DEV](https://www.nickyt.co/images/posts/_uploads_articles_ppbpv1wanraxu1e3rknx.png)
+![some of the markup from the dev.to homepage showing data attributes in use on DEV](https://www.nickyt.co/images/posts/_uploads_articles_3z5fetfxrdl8awwrp8jk.png)
 
 State management libraries are definitely useful in certain contexts, but sometimes leveraging what the platform gives you, like data attributes, can be beneficial for your use case.
 
