@@ -120,8 +120,9 @@ function buildHeadingAnchor(headingId: string) {
   `;
 }
 
-function getHeadingId(name: string, title: string) {
-  return `${name} ${title}`.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase();
+function getHeadingId(name: string, dateTime: string) {
+  const [date] = dateTime.split("T");
+  return `${date}-${encodeURIComponent(name)}`.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase();
 }
 
 export function getLocalizedDate({
@@ -188,7 +189,7 @@ export function getScheduleMarkup({
           timezone,
           showTime: true,
         });
-        const headingId = getHeadingId(name, streamTitle);
+        const headingId = getHeadingId(name, date);
 
         return `
     <li class="post-list__item">
