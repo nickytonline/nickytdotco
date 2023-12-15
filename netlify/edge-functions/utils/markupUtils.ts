@@ -122,7 +122,7 @@ function buildHeadingAnchor(headingId: string) {
 
 function getHeadingId(name: string, dateTime: string) {
   const [date] = dateTime.split("T");
-  return `${date}-${encodeURIComponent(name)}`.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase();
+  return `${date}-${encodeURIComponent(name.replace(/\s+/, "-"))}`.toLowerCase();
 }
 
 export function getLocalizedDate({
