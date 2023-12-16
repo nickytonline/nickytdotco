@@ -6,8 +6,8 @@
   "tags": [
     "testing",
     "react",
-    "webdev",
-    "vitest"
+    "vitest",
+    "typescript"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--rc1nHfZl--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_9sw5ndr7n4igncjp3y53.png",
   "canonical_url": "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
@@ -205,4 +205,4 @@ npm uninstall jest jest-environment-jsdom -D
 {% endraw %}
 ```
 
-And that's it! You're done! Happy testing and stay saucy!
+And that's it! You're done! Happy testing and stay saucy friends!
