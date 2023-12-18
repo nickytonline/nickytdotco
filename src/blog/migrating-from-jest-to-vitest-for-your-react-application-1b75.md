@@ -191,7 +191,7 @@ To run tests using Vitest, you can run `vitest`. By default, it will go into wat
 
 If your project is a TypeScript project, you probably have the types for Jest in your project. If you do, run the following to remove the Jest TypeScript types.
 
-```
+```bash
 {% raw %}
 npm uninstall -D @types/jest
 {% endraw %}
@@ -199,7 +199,7 @@ npm uninstall -D @types/jest
 
 Uninstall Jest itself.
 
-```
+```bash
 {% raw %}
 npm uninstall jest jest-environment-jsdom -D
 {% endraw %}
