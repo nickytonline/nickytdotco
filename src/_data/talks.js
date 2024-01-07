@@ -241,6 +241,21 @@ Contributing to open source should be fun and rewarding! Whether you are a begin
     slideDeck: "/hacktoberfest2020",
     tags: ["open source", "hacktoberfest"],
   },
+  {
+    title:
+      "Expert Panel—Future of Testing: How AI Can Accelerate Release Pipelines | Front-End Test Fest 2023",
+    date: new Date("2023-06-07T12:00:00.000Z"),
+    video: {
+      type: "youtube",
+      url: "https://youtube.com/watch?v=dlw_g3RoeEY",
+    },
+    venue: {
+      name: `Applitools & Netlify Present FRONT-END <TEST>{FEST}`,
+      url: "https://applitools.com/resources/events/fetf2023-panel-future-of-testing-how-ai-can-accelerate-release-pipelines/",
+    },
+    summary: `2023 has been a big year for AI. Joe Colantonio moderates a discussion exploring ways that front-end developers and testers can leverage generative AI and other AI-based tools in their delivery pipelines.`,
+    tags: ["testing"],
+  },
 ];
 
 const talks = new Map(
@@ -249,7 +264,7 @@ const talks = new Map(
       .toLowerCase()
       .replace(/[^a-z0-9]/g, "-");
     return [id, talk];
-  })
+  }),
 );
 
 module.exports = { talks };
