@@ -9,8 +9,8 @@
     "yearinreview"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--rG2N5o1d--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_bbk01eogj9gi8wfxp3hr.jpg",
-  "canonical_url": "https://dev.to/nickytonline/my-2023-year-in-review-33ep",
-  "reading_time_minutes": 6,
+  "canonical_url": "https://www.nickyt.co/blog/my-2023-year-in-review-33ep/",
+  "reading_time_minutes": 7,
   "template": "post"
 }
 ---
@@ -103,11 +103,13 @@ Here's one of the episodes if you want to get a feel for the live stream.
 
 [My own podcast](https://www.nickyt.co/pages/podcast/) went to the wayside in 2023. I've got to get that back up and running in 2023. 😅
 
-I still managed to make it on a few as a guest, though.
+I still managed to make it on a bunch as a guest, though.
 
 [![JavaScript Jam Podcast: Open Source Framework Maintenance with Nick Taylor from Netlify](https://www.nickyt.co/images/posts/_uploads_articles_43u1nk53i8is1952eiaj.png)](https://jsjam.transistor.fm/48)
 
 [![Hadith tech with Nick Taylor](https://www.nickyt.co/images/posts/_uploads_articles_uqu7ctvbtg55tg1bipfl.png)](https://www.youtube.com/watch?v=lxrhk1-kJys)
+
+[![Virtual Coffee Podcast, Season Seven Finale - Live with Nick Taylor](https://www.nickyt.co/images/posts/_uploads_articles_ynkzed3qshxm7yfb2hna.png)](https://virtualcoffee.io/podcast/season-seven-finale-live-with-nick-taylor)
 
 {% embed "https://www.youtube.com/watch?v=FN29LOTWh2Q" %}
 
@@ -118,6 +120,12 @@ I still managed to make it on a few as a guest, though.
 I gave some more talks at meetups and lunch and learns, but this year was the first time I gave a conference talk. Unfortunately, it wasn't in person, but it still felt good to give my first conference talk.
 
 [![Nick Taylor's Node Congress 2023 Talk, Fresh: a New Full Stack Web Framework for Deno](https://www.nickyt.co/images/posts/_uploads_articles_bhyrafgdmcfh9jc3n8yb.png)](https://www.nickyt.co/talks/fresh--a-new-full-stack-web-framework-for-deno-node-congress/)
+
+Once again, I was a part of the [front-end test fest expoert panel](https://applitools.com/resources/events/fetf2023-panel-future-of-testing-how-ai-can-accelerate-release-pipelines/). It was great hanging with Colby and Christina and Joe.
+
+{% embed "https://youtu.be/dlw_g3RoeEY" %}
+
+Here's [all my talks](https://www.nickyt.co/pages/talks/) if you want to check them out.
 
 ## Conferences
 
