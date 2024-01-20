@@ -8,7 +8,7 @@
     "writing",
     "learninpublic"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--aM9IE2Yl--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_i_g6zipfc343b56kfou7pw.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fg6zipfc343b56kfou7pw.png",
   "canonical_url": "https://www.nickyt.co/blog/not-captain-obvious-1boj/",
   "reading_time_minutes": 2,
   "template": "post"

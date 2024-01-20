@@ -8,7 +8,7 @@
     "git",
     "vscodetips"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--8f8u_ueS--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_h6nt5epp7li0sxvp3qto.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh6nt5epp7li0sxvp3qto.jpeg",
   "canonical_url": "https://community.vscodetips.com/nickytonline/may-24th-2022-vs-code-tip-of-the-week-cgi",
   "reading_time_minutes": 1,
   "template": "post"

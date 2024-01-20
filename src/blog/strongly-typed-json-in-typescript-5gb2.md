@@ -6,7 +6,7 @@
   "tags": [
     "typescript"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--kzB8DJTv--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7sjay11pqa91it8euj0l.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F7sjay11pqa91it8euj0l.png",
   "canonical_url": "https://www.nickyt.co/blog/strongly-typed-json-in-typescript-5gb2/",
   "reading_time_minutes": 2,
   "template": "post"

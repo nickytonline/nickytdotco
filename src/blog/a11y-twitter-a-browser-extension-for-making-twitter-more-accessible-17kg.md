@@ -9,7 +9,7 @@
     "twitter",
     "extensions"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--RiTF1_s0--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_b49xiiod8cv4ldudb2l0.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb49xiiod8cv4ldudb2l0.png",
   "canonical_url": "https://www.nickyt.co/posts/a11y-twitter-a-browser-extension-for-making-twitter-more-accessible-17kg",
   "reading_time_minutes": 4,
   "template": "post"

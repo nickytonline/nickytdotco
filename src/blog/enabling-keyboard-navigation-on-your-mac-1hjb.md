@@ -8,7 +8,7 @@
     "productivity",
     "macos"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--5dgW_UV9--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_7n6dsveguxcnv8fyfid9.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F7n6dsveguxcnv8fyfid9.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/enabling-keyboard-navigation-on-your-mac-1hjb/",
   "reading_time_minutes": 1,
   "template": "post"

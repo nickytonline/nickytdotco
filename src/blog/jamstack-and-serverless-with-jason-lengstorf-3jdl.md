@@ -9,7 +9,7 @@
     "serverless",
     "jamstack"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--6sR4EG05--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_e8fnjv5l9je77p01qq0z.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fe8fnjv5l9je77p01qq0z.jpg",
   "canonical_url": "https://www.nickyt.co/blog/jamstack-and-serverless-with-jason-lengstorf-3jdl/",
   "reading_time_minutes": 2,
   "template": "post"

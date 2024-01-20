@@ -8,7 +8,7 @@
     "vscodetips",
     "vscodeextension"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--7_frz8py--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__dev-to-uploads.s3.amazonaws.com_uploads_articles_hpcporzgaefiuzx2bl2w.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhpcporzgaefiuzx2bl2w.png",
   "canonical_url": "https://community.vscodetips.com/nickytonline/june-6th-2022-vs-code-tip-of-the-week-pf0",
   "reading_time_minutes": 1,
   "template": "post"
