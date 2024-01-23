@@ -82,13 +82,7 @@ body {
   @include apply-utility("font", "base");
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include apply-utility("font", "sans-serif");
+:is(h1, h2, h3, h4, .text-balance) {
   letter-spacing: -0.025em;
   text-wrap: balance;
 }
@@ -117,4 +111,12 @@ h3 {
   h3 {
     font-size: get-size(700);
   }
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a:not([class]) {
+  text-underline-offset: 0.25em;
 }
