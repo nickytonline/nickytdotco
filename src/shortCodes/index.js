@@ -275,7 +275,14 @@ async function twitterEmbed(tweetId) {
  * @returns {string} Markup for the Codepen embed.
  */
 function codepenEmbed(url) {
-  return `<iframe height="300" style="width: 100%;" scrolling="no" title="Codepen from ${url}" src="${url}?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>`;
+  const { pathname } = new URL(url);
+  const [, user, , codepenId] = pathname.split("/");
+
+  return `<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="Mamboleoo" data-slug-hash="${codepenId}" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="${codepenId} by @${user}">
+  <span>See the Pen <a href="${url}">${url}</a> by ${user} (<a href="https://codepen.io/${user}">@${user}</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>`;
 }
 
 /**
