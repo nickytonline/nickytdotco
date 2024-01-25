@@ -44,7 +44,7 @@ _Note that you'll need to [view this CodePen in full view](https://codepen.io/ni
 
 Not only do you get focus trapping, you also get modal close functionality that people have come to expect via the Escape key.
 
-All of that is already amazing, but another common thing people were doing in user land was adding a background to block out users from interacting with the page. With the <dialog /> element, we can add a `::backdrop` pseudo-element that does this for you. All you need to do is style it. In the CodePen above, uncomment out this code in the CSS panel to see this in action.
+All of that is already amazing, but another common thing people were doing in user land was adding a background to block out users from interacting with the page. With the `<dialog />` element, we can add a `::backdrop` pseudo-element that does this for you. All you need to do is style it. In the CodePen above, uncomment out this code in the CSS panel to see this in action.
 
 ```css
 {% raw %}
