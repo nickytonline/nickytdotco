@@ -12,7 +12,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@erquhart/rollup-plugin-node-builtins": "^2.1.5",
     "@tbranyen/jsdom": "^13.0.0",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.1",
     "html-minifier": "^4.0.0",
     "json-to-scss": "^1.6.2",
     "luxon": "^3.4.4",
