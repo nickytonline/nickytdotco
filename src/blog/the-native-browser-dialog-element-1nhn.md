@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Unlocking the Power of HTML's Native Browser Dialog Element",
-  "excerpt": "All the major browsers now support the &lt;dialog /&gt; element. Why add this HTML element? User land...",
+  "excerpt": "All the major browsers now support the &lt;dialog &gt; element. Why add this HTML element? User land...",
   "date": "2024-01-23T15:32:20.475Z",
   "tags": [
     "html",
@@ -16,7 +16,7 @@
 }
 ---
 
-All the major browsers now support the `<dialog />` element. Why add this HTML element? User land code, code that developers write to fill in gaps of the browser, was doing similar things repeatedly, especially around focus trapping, and browser engines responded by adding this functionality directly in the browser.
+All the major browsers now support the `<dialog >` element. Why add this HTML element? User land code, code that developers write to fill in gaps of the browser, was doing similar things repeatedly, especially around focus trapping, and browser engines responded by adding this functionality directly in the browser.
 
 ## Focus Trapping
 
@@ -28,7 +28,7 @@ If they reach the last focusable element in the modal, without focus trapping, t
 
 In user land, popular packages like [focus-trap](https://www.npmjs.com/package/focus-trap) have enabled developers to incorporate focus trapping.
 
-## &lt;dialog /&gt; for Modal Dialogs
+## &lt;dialog&gt; for Modal Dialogs
 
 With the dialog element, you get this for free, although there is a gotcha. If you add a dialog element to the page with the [open](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#open) attribute set, the dialog element will become visible on the page; however, focus trapping will not work as you'd expect in a modal.
 
@@ -44,7 +44,7 @@ _Note that you'll need to [view this CodePen in full view](https://codepen.io/ni
 
 Not only do you get focus trapping, you also get modal close functionality that people have come to expect via the Escape key.
 
-All of that is already amazing, but another common thing people were doing in user land was adding a background to block out users from interacting with the page. With the `<dialog />` element, we can add a `::backdrop` pseudo-element that does this for you. All you need to do is style it. In the CodePen above, uncomment out this code in the CSS panel to see this in action.
+All of that is already amazing, but another common thing people were doing in user land was adding a background to block out users from interacting with the page. With the `<dialog>` element, we can add a `::backdrop` pseudo-element that does this for you. All you need to do is style it. In the CodePen above, uncomment out this code in the CSS panel to see this in action.
 
 ```css
 {% raw %}
@@ -56,7 +56,7 @@ dialog::backdrop {
 {% endraw %}
 ```
 
-## &lt;dialog /&gt; for Non-Modal Dialogs
+## &lt;dialog&gt; for Non-Modal Dialogs
 
 The structure of a non-modal dialog element is the same as a modal dialog. The main difference is to show a non-modal dialog, you need to call the [HTMLDialogElement show method](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/show).
 
