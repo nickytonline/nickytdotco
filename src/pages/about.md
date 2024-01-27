@@ -10,3 +10,7 @@ metaDesc: Nick Taylor, a sofware engineer with a focus on the front-end.
 Hello! My name is Nick Taylor. I'm a Senior Software Engineer at [OpenSauced](https://opensauced.pizza). I'm a fan of Open Source and have a growing interest in serverless and edge computing. I'm not a big fan of spiders, but I know they're doing good work eating bugs. I also [stream on Twitch](https://nickyt.live).
 
 I am a <em>big</em> fan of TypeScript, JavaScript, Node, and all things frontend. Aside from programming, I enjoy contributing to open source, hitting the gym, snowboarding, and rugby a long time ago.
+
+<center>
+<iframe src="https://github.com/sponsors/nickytonline/card" title="Sponsor nickytonline" height="270" width="600" style="border: 0;"></iframe>
+</center>
