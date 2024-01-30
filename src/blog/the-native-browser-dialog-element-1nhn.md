@@ -6,8 +6,8 @@
   "tags": [
     "html",
     "javascript",
-    "beginners",
-    "a11y"
+    "a11y",
+    "css"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F1fy48qlmq4k5ls340il1.jpg",
   "canonical_url": "https://dev.to/opensauced/the-native-browser-dialog-element-1nhn",
