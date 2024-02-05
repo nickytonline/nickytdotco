@@ -100,18 +100,6 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 - [Quartet Glass Desktop Computer Pad, 18 inch x 6 inch](https://www.amazon.ca/gp/product/B01M2DADUX), a handy desk whiteboard. Thanks for the suggestion [Jhey](https://jhey.dev)!
 - [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/), my working at home shoes
 
-<figure>
-<img sizes="(min-width: 30em) 28em, 100vw"
-  srcset="https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_256/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 256w,
-          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_512/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 512w,
-          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_768/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 768w,
-          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_1024/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 1024w,
-          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_1280/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg 1280w"
-src="https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_512/v1654355125/my%20website/office/back-of-office_hxqm2k.jpg"
-alt="My office's back wall has a whiteboard on it. There are erasable markers, an eraser, and a small flat plastic cute cat throwing up a rainbow. To the right is my bookshelf." />
-<figcaption>My office's back wall has a whiteboard on it. There are erasable markers, an eraser, and a small flat plastic cute cat throwing up a rainbow. To the right is my bookshelf.</figcaption>
-</figure>
-
 ## Travel Gear
 
 - [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237)
