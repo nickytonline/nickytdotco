@@ -1,7 +1,6 @@
 import { StreamGuestInfo } from "./StreamGuestInfo.ts";
 
 const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
-const YOUTUBE_STREAM_URL = "https://www.youtube.com/@iamdeveloperdotcom/live";
 
 function buildWebsiteLink({
   name,
