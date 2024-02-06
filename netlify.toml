@@ -28,61 +28,25 @@ force = true
 [[redirects]]
 from = "/talks"
 to = "/pages/talks"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/uses"
 to = "/pages/uses"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "https://nickyt.tube/*"
 to = "https://youtube.com/@nickytonline/:splat"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "https://www.nickyt.tube/*"
 to = "https://youtube.com/@nickytonline/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://youtube.iamdeveloper.com/*"
-to = "https://youtube.com/@nickytonline/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "/learn-rust/*"
-to = "https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAFF1MYfuoGa6FeksKcMz-O"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://livecoding.ca/*"
-to = "https://youtube.com/@nickytonline/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://www.livecoding.ca/*"
-to = "https://youtube.com/@nickytonline/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://javascripthours.com/*"
-to = "https://youtube.com/@nickytonline/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://newsletter.iamdeveloper.com"
-to = "/news"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
@@ -92,21 +56,15 @@ status = 302
 force = true
 
 [[redirects]]
-from = "https://news.iamdeveloper.com/*"
-to = "/pages/newsletter/:splat"
-status = 301
-force = true
-
-[[redirects]]
 from = "https://pod.iamdeveloper.com/2065897/*"
 to = "https://pod.iamdeveloper.com/:splat"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "https://pod.iamdeveloper.com/*"
 to = "https://nickscuts.buzzsprout.com/2065897/:splat"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
@@ -118,23 +76,11 @@ force = true
 [[redirects]]
 from = "https://pod.nickyt.co/*"
 to = "https://nickscuts.buzzsprout.com/2065897/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://live.iamdeveloper.com/*"
-to = "https://youtube.com/@nickytonline/:splat"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "https://vscodetips.com/"
-to = "/pages/vscode-tips/"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://community.vscodetips.com/"
 to = "/pages/vscode-tips/"
 status = 301
 force = true
@@ -166,7 +112,7 @@ force = true
 [[redirects]]
 from = "/newsletter.rss"
 to = "https://buttondown.email/nickytonline/rss"
-status = 301
+status = 302
 force = true
 
 # talks
@@ -174,89 +120,89 @@ force = true
 [[redirects]]
 from = "/storybook2021/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vRVZS5fW795LoPUioxbpIO0k0gaUA7g-J9je8bCaoHKGl678_NgbpNXdsiw3HIrt5BHTLr_l2MmvaNU/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/debug2021/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vSPMh7JIhImdVWJxUJQOICyib6uETKfpXZ9PDpO-6p-qxn3gW2QxKJHj2ofMxi_s31gAhnwl0nWugOQ/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/hacktoberfest2020/"
 to = "https://www.digitalocean.com/community/tech_talks/getting-the-most-out-of-open-source"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/lightning2020/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vRHfnRD5-ZTiPbBZsT3fNtsB4KcKiemJCLhUxPjtGE5nR2JxmtbtK3_iLSeYbg3ctgVAJEiqPSnAVUQ/pub?start=false&loop=false&delayms=3000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/stream2021/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vR0cBGMDt11jQ3tP-Z8UPf6BFYXLWX8XzsmfCb26RAYd5gX_ct662YJQrk-fCVp0MOv9tUW4mvBgam8/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/hacktoberfest2021/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vTUIycMPdV3wRo_nLOhfpiYiUYeML5Bvu4aA1W692VOsvA5p3XIQEC-Y5fPEGWk4uGkpP_z2QNJkJGR/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/codementor2022/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vQWw0j07xs3gzh8QOUQH6V5kdtX6xPCMmdnSWBfcniNUgqPTYDeMm2CB3BzdiTG0LOKKKg-Ky8r21ko/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/11tyMeetupMay2022/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vSSj2W1UDxVH2nNBhH0O_5CNia76ri2C0fx8jygK1ZDE6EXs6_CFUZQp64-zyciFaV7xhJWFSYoLsb7/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/ChicagoFresh/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vQaaGHPbIdb7FPrzbK_1zI1VDhsrEkGJdmwwjRVLoxVz8USPwnw7Jc0kAfDau9gDw22jr2pvd3CB87c/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/fresh/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vRr2ClzHyIfhamV8rRh92UN5XLDDJKY4E5322hvy_vp6X0cKp3YSayfaSxE6jYG1C8brP3DgZqw6M6u/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/fresh-demo/"
 to = "https://fresh-talk-demo.deno.dev/"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/cypress2023/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vSrKxG3lMKiBXTGH5oDRa4Xn2a23ibQ0jn4iw0UK9VJaoLIF7Fl5GVAEJ5enQ6oEA93huBSBxX2lUdi/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/pages/newsletter-archives/*"
 to = "https://buttondown.email/nickytonline/archive/"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/hack-for-la-2023/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vTby0GBEWTN0uPPvDlZ5QZKEMnvuKLm-HrqybOiAarJfPWIlMDMOgoqj3vYnS0RA4EuIw7sZAKb23G0/pub?start=false&loop=false&delayms=5000"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
 from = "/pages/subscription-confirmed"
 to = "/pages/subscribed"
-status = 301
+status = 302
 force = true
