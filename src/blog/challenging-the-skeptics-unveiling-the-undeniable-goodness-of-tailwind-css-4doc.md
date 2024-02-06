@@ -144,7 +144,7 @@ If you want to see an example of this in production grade code, check out a rece
 
 {% embed "https://github.com/open-sauced/app/pull/2552" %}
 
-### Animations
+## Animations
 
 If you're looking to add animations, [Tailwind ships with plenty of useful animations](https://tailwindcss.com/docs/animation) and CSS classes to leverage them.
 
@@ -161,6 +161,8 @@ You've got all these cool animations, but what if someone has specified [prefers
 ```
 
 There's other useful Tailwind classes for accessibility, like [sr-only](https://tailwindcss.com/docs/screen-readers#screen-reader-only-elements), which will remain in the page, but only be visible to screen readers.
+
+I think something that would be interesting to add to the Tailwind a11y story is using Tatiana Mac's (@tatianamac) approach of [taking a no-motion-first approach to animations](https://www.tatianamac.com/posts/prefers-reduced-motion).
 
 ## Define some base styles
 
