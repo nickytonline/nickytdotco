@@ -39,19 +39,19 @@ force = true
 
 [[redirects]]
 from = "https://nickyt.tube/*"
-to = "https://youtube.com/@nickytlive/:splat"
+to = "https://youtube.com/@nickytonline/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://www.nickyt.tube/*"
-to = "https://youtube.com/@nickytlive/:splat"
+to = "https://youtube.com/@nickytonline/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://youtube.iamdeveloper.com/*"
-to = "https://youtube.com/@nickytlive/:splat"
+to = "https://youtube.com/@nickytonline/:splat"
 status = 301
 force = true
 
@@ -63,19 +63,19 @@ force = true
 
 [[redirects]]
 from = "https://livecoding.ca/*"
-to = "https://youtube.com/@nickytlive/:splat"
+to = "https://youtube.com/@nickytonline/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://www.livecoding.ca/*"
-to = "https://youtube.com/@nickytlive/:splat"
+to = "https://youtube.com/@nickytonline/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://javascripthours.com/*"
-to = "https://youtube.com/@nickytlive/:splat"
+to = "https://youtube.com/@nickytonline/:splat"
 status = 301
 force = true
 
@@ -123,7 +123,7 @@ force = true
 
 [[redirects]]
 from = "https://live.iamdeveloper.com/*"
-to = "https://youtube.com/@nickytlive/:splat"
+to = "https://youtube.com/@nickytonline/:splat"
 status = 301
 force = true
 
