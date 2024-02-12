@@ -38,18 +38,6 @@ status = 302
 force = true
 
 [[redirects]]
-from = "https://nickyt.tube/*"
-to = "https://youtube.com/@nickytonline/:splat"
-status = 302
-force = true
-
-[[redirects]]
-from = "https://www.nickyt.tube/*"
-to = "https://youtube.com/@nickytonline/:splat"
-status = 302
-force = true
-
-[[redirects]]
 from = "/news"
 to = "/pages/newsletter/"
 status = 302
