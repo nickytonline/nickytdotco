@@ -196,13 +196,13 @@ status = 302
 force = true
 
 [[redirects]]
-from = "/fresh-confoo/"
+from = "/slides/fresh/"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vTMFTFQnsUf3XDe-j-Av-ZcMB6YYXXqyOGQIsj0yHvBbRE5mXdfVmb4gpG-qnPWcDYDbZp21pEu32LI/pub?start=false&loop=false&delayms=5000"
 status = 302
 force = true
 
 [[redirects]]
-from = "/fresh-confoo-demo/"
-to = "https://fresh-confoo-demo.deno.dev/"
+from = "/demos/fresh/"
+to = "https://so-fresh-demo.deno.dev/"
 status = 302
 force = true
