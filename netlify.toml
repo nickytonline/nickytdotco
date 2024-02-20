@@ -206,3 +206,9 @@ from = "/demos/fresh/"
 to = "https://so-fresh-demo.deno.dev/"
 status = 302
 force = true
+
+[[redirects]]
+from = "/slides/ext-e2e"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vQtuydI6RpHZ0lrdXrerx_jf8-KvFZRs9fS0QOuPkMv6svIon5I1JWGfJEDqD91XK434sfseStbHPZQ/pub?start=false&loop=false&delayms=5000"
+status = 302
+force = true
