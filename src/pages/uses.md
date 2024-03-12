@@ -30,6 +30,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 
 ## Desktop Apps
 
+- [Arc Browser](https://arc.net/gift/93e342bc)
 - [Bartender](https://www.macbartender.com) - For managing your menu bar. I used to use [Vanilla](https://matthewpalmer.net/vanilla/), but with the notch in newer MacBook Pros, Bartender made the menubar more usable when dealing with lots of menubar icons.
 - [Rocket](https://matthewpalmer.net/rocket/) - Emojis, emojis
 - [Raycast](https://raycast.com) - Workflows, snippets, macOS spotlight on steroids. I previously used [Alfred](https://www.alfredapp.com/), another amazing Spotlight alternative.
