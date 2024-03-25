@@ -7,7 +7,7 @@ metaDesc: 'Live Coding and other streaming projects that Nick Taylor does.'
   <a href="https://twitch.tv/nickytonline">My Twitch channel</a> | <a href="https://www.youtube.com/@nickytonline">My YouTube channel</a>
 </nav>
 
-<p class="weight-bold">Check out my <a href="/pages/stream-schedule">streaming schedule</a> to <em>see when I'm live</em>!</p>
+<p class="weight-bold">Check out my <a href="https://nickyt.live/schedule">streaming schedule</a> to <em>see when I'm live</em>!</p>
 
 I
 [started live coding on Twitch](https://www.iamdeveloper.com/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn)

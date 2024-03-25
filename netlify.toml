@@ -218,3 +218,9 @@ from = "/slides/confoo-fresh"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vQsCDGiQMZYh-y90ojCTrWdnjbvYaS4iFH9lDnZcLl0lTH5IpTQnSlfloXDSvWuk9PqNYnJnnlY0UXc/pub?start=false&loop=false&delayms=5000"
 status = 302
 force = true
+
+[[redirects]]
+from = "/pages/stream-schedule/*"
+to = "https://nickyt.live/schedule/:splat"
+status = 301
+force = true
