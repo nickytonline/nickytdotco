@@ -224,3 +224,9 @@ from = "/pages/stream-schedule/*"
 to = "https://nickyt.live/schedule/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "/pages/streaming/*"
+to = "https://nickyt.live/:splat"
+status = 301
+force = true
