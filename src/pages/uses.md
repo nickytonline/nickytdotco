@@ -54,6 +54,7 @@ I use a Mac, so most tools are macOS specific, but there are some OS-agnostic on
 - [Loopback](https://rogueamoeba.com/loopback/) - Great for virtual audio sources
 - [CleanMyMac X](https://macpaw.com/cleanmymac) - A suite of utilities for keeping your Mac in tip top shape.
 - [Camo](https://reincubate.com/camo/) - Use your mobile devices as cameras for your OS.
+- [Polypane](https://polypane.app/) - A browser for helping develop responsive, more accessible and more performant websites.
 
 ## CLIs
 
@@ -92,19 +93,22 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 - [LG 34WN80C-B UltraWide Monitor 34” 21:9 Curved WQHD (3440 x 1440) IPS Display](https://www.amazon.ca/gp/product/B07YGZ7C1K)
 - [Lamicall Gooseneck Phone Holder Bed](https://www.amazon.ca/gp/product/B0B9N41MCS) - I use this to hold my iPhone when I use it for a camera while live streaming or recording video.
 - [Anker USB C Hub, 5-In-1 USB C Adapter](https://www.amazon.ca/gp/product/B071G83L1J)
-- [Anker Premium 60W 5-Port Desktop Charger](https://www.amazon.ca/gp/product/B072K5ZJXF)
+- [Powered USB 3.0 Hub, WENTER 11-Port USB Data Hub](https://www.amazon.ca/dp/B095Y5R8HD)
 - [Logitech Litra Glow Premium LED Streaming Light with TrueSoft](https://www.amazon.ca/Logitech-Litra-Premium-Streaming-TrueSoft/dp/B097QZGRCQ/) - Lighting for live streaming and recording video.
 - [Seagate Portable 5TB External Hard Drive HDD](https://www.amazon.ca/gp/product/B07VS8QCXC)
 - [Topo Comfort Mat by Ergodriven](https://www.amazon.ca/gp/product/B00V3TO9HW/) standing desk mat
 - [LEVOIT Air Purifier Core 300](https://www.amazon.ca/gp/product/B07S3D4MRJ/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
 - [Elgato Streamd Deck XL](https://www.elgato.com/en/stream-deck-xl)
 - [Quartet Glass Desktop Computer Pad, 18 inch x 6 inch](https://www.amazon.ca/gp/product/B01M2DADUX), a handy desk whiteboard. Thanks for the suggestion [Jhey](https://jhey.dev)!
-- [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/), my working at home shoes
 
 ## Travel Gear
 
 - [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237)
 - [Anker USB-C to HDMI Adapter](http://amazon.ca/gp/product/B01MYUCWOK) and other dongles
 - [Jelly Comb Ultra Slim Folding Bluetooth Keyboard](https://www.amazon.ca/gp/product/B07YYTHMCG)
-- [Anker PowerCore Essential 20000 Power Bank](https://www.amazon.ca/gp/product/B07S829LBX)
+- [Anker Magnetic Battery, 10,000 mAh Foldable Wireless Portable Charger](https://www.amazon.ca/dp/B09NRG4GK3)
 - [Apple Magic Trackpad (White)](https://www.apple.com/ca/shop/product/MMMP3AM/A/magic-trackpad-black-multi-touch-surface)
+
+## Other
+
+- [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/), my working at home shoes
