@@ -195,3 +195,5 @@ I encourage you to give Tailwind a go. They have outstanding [documentation](htt
 If you give it a go and say it's not for me, that's OK. Use what makes you the most productive. 
 
 Stay saucy peeps!
+
+If you want to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).

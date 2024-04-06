@@ -237,4 +237,6 @@ There is a [whole other set of commands](https://cli.github.com/manual/) availab
 
 I realize not everyone is comfortable with the command line, but I think that if you give the GitHub CLI a chance, you may grow to love it. As always, though, use the tools that make you the most productive.
 
-And with that, stay saucy friends!
+Stay saucy peeps!
+
+If you want to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).

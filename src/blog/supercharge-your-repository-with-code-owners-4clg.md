@@ -61,4 +61,6 @@ A nice feature of adding or making changes to a CODEOWNERS file in a pull reques
 
 If you don’t already have a [CODEOWNERS file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) file in your repository, I encourage you to add one. Let us know if you have any questions about this or other maintainer-related issues.
 
-Stay saucy friends!
+Stay saucy peeps!
+
+If you want to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).

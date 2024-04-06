@@ -109,4 +109,6 @@ These are just examples of tasks you can automate, and if you’re using GitHub,
 
 What are some GitHub actions that you’ve leveraged in your projects? Share them in the comments.
 
-Stay saucy friends!
+Stay saucy peeps!
+
+If you want to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).

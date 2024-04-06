@@ -205,4 +205,8 @@ npm uninstall jest jest-environment-jsdom -D
 {% endraw %}
 ```
 
-And that's it! You're done! Happy testing and stay saucy friends!
+And that's it! Happy testing!
+
+Stay saucy peeps!
+
+If you want to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).
