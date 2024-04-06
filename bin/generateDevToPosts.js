@@ -512,6 +512,10 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
     }
   }
 
-  await updateTwitterEmbeds(twitterEmbeds, TWITTER_EMBEDS_FILE);
-  await updateBlogPostEmbeds(blogPostEmbeds, EMBEDDED_POSTS_MARKUP_FILE);
+  try {
+    await updateTwitterEmbeds(twitterEmbeds, TWITTER_EMBEDS_FILE);
+    await updateBlogPostEmbeds(blogPostEmbeds, EMBEDDED_POSTS_MARKUP_FILE);
+  } catch (error) {
+    console.error("unable to update Twitter or DEV embeds", error);
+  }
 })();
