@@ -220,6 +220,12 @@ status = 302
 force = true
 
 [[redirects]]
+from = "/slides/ts-generics"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vSQbVQf2G2-lWHloR_3jx16iCVI4xGyAXkhM11zFhqnMgGEp_Dc5LPeqkydnU9JcE-NvorMcZH_iwim/pub?start=false&loop=false&delayms=5000"
+status = 302
+force = true
+
+[[redirects]]
 from = "/pages/stream-schedule/*"
 to = "https://nickyt.live/schedule/:splat"
 status = 301
