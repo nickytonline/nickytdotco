@@ -1,5 +1,49 @@
 const rawTalks = [
   {
+    title: "Fresh: A Full Stack Web Framework for Deno",
+    date: new Date("2024-02-21T12:00:00.000Z"),
+    venue: {
+      name: "Global Summit for Node.js '24",
+      url: "https://events.geekle.us/nodejs24",
+    },
+    summary: `Fresh takes inspiration from existing frameworks to provide features like file-based routing, Islands architecture, server-side rendering and Typescript. We'll cover what makes Fresh possible, i.e. Deno and Preact, then dive into what Fresh is (a metaframework).`,
+    slideDeck: "/slides/fresh",
+    sourceCode:
+      "https://www.google.com/url?q=https://github.com/nickytonline/fresh-demo&sa=D&source=editors&ust=1714400126354907&usg=AOvVaw3I6ffBd2E7TZQUzQNnb80D",
+    tags: ["frameworks", "typescript", "deno"],
+  },
+  {
+    title: "Fresh: A Full Stack Web Framework for Deno",
+    date: new Date("2024-02-23T12:00:00.000Z"),
+    venue: {
+      name: "Confoo 2024",
+      url: "https://confoo.ca/en/2024/session/fresh-a-full-stack-web-framework-for-deno",
+    },
+    slideDeck: "/slides/confoo-fresh",
+    summary: `Fresh is a web framework based on Web standards built to run on the edge anywhere you can run Deno.
+
+Fresh takes inspiration from existing frameworks to provide features like file-based routing, Islands architecture, server-side rendering and Typescript.
+
+We’ll go through the features and architecture so that you can get up and running with Fresh today.`,
+    sourceCode:
+      "https://www.google.com/url?q=https://github.com/nickytonline/fresh-demo&sa=D&source=editors&ust=1714400126354907&usg=AOvVaw3I6ffBd2E7TZQUzQNnb80D",
+    tags: ["frameworks", "typescript", "deno"],
+  },
+
+  {
+    title: "End to End Testing for Browser Extensions",
+    date: new Date("2024-02-21T12:00:00.000Z"),
+    venue: {
+      name: "Confoo 2024",
+      url: "https://confoo.ca/en/2024/session/end-to-end-testing-for-browser-extensions",
+    },
+    summary: `We discuss the fundamentals of browser extensions (Chromium browsers & Firefox), explore the current options available for end-to-end testing, and dive in to some live coding to see it in action.
+
+By the end of this presentation, you'll have the knowledge and skills to implement end-to-end testing for your own browser extension.`,
+    slideDeck: "/slides/ext-e2e",
+    tags: ["e2etesting"],
+  },
+  {
     title: "Career Lab Q2 2023: Watch Your Mentors Interview Each Other",
     date: new Date("2023-06-05T12:00:00.000Z"),
     video: {

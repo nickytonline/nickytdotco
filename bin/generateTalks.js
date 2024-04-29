@@ -56,9 +56,13 @@ async function createTalkFile(talk) {
         video && video.type === "custom"
           ? `<a href="${video.url}" title="${title}"><img src="${video.image.url}" width="${video.image.width}" height="${video.image.height}" /></a>`
           : ""
+      }${
+        !video
+          ? `<p class="weight-bold">There is no video available for this talk</p>`
+          : ""
       }<p><span class="weight-bold">Venue:</span> <a href="${venue.url}">${
-    venue.name
-  }</a></p>
+        venue.name
+      }</a></p>
       ${
         summary
           ? `<span class="weight-bold">Summary:</span> ${summary}</p>`
@@ -104,7 +108,7 @@ async function createTalkFile(talk) {
   const markdown = `---json\n${JSON.stringify(
     jsonFrontmatter,
     null,
-    2
+    2,
   )}\n---\n\n${sanitizeMarkdownEmbeds(markdownBody).trim()}\n`;
 
   const talkFile = path.join(TALKS_DIRECTORY, `${slug}.md`);
@@ -125,13 +129,13 @@ function sanitizeMarkdownEmbeds(markdown) {
   const sanitizedMarkdown = markdown
     .replaceAll(
       /{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
-      '{% $1 "$2" %}'
+      '{% $1 "$2" %}',
     )
     // Fixes a liquid JS issues when {{ code }} is used in a markdown code block
     // see https://github.com/11ty/eleventy/issues/2273
     .replaceAll(
       /```(?<language>.*)\n(?<code>(.|\n)+?)\n```/g,
-      "```$1\n{% raw %}\n$2\n{% endraw %}\n```"
+      "```$1\n{% raw %}\n$2\n{% endraw %}\n```",
     )
     // We need to add raw shortcodes to prevent shortcodes within code blocks from rendering.
     // For now, this only supports single-line code blocks.
@@ -153,7 +157,7 @@ function sanitizeMarkdownEmbeds(markdown) {
 
     if (status !== "success") {
       console.error(
-        `Failed to create post file for ${JSON.stringify(talk, null, 2)}`
+        `Failed to create post file for ${JSON.stringify(talk, null, 2)}`,
       );
 
       throw new Error(`Unabled to generate markdown file: status ${status}`);
