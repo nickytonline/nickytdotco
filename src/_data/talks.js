@@ -1,5 +1,17 @@
 const rawTalks = [
   {
+    title: "Getting the Most out of Open Source",
+    date: new Date("2023-10-19T12:00:00.000Z"),
+    slideDeck: "/hack-for-la-2023",
+    venue: {
+      name: "Hack for LA",
+      url: "https://hackforla.org",
+    },
+    summary:
+      "Nick Taylor discusses his journey in open source, including his experiences at dev.to, Netlify, and now OpenSauced. Nick shaers insights on how to get the most out of open source as a contributor and maintainer.",
+    tags: ["opensource"],
+  },
+  {
     title: "Fresh: A Full Stack Web Framework for Deno",
     date: new Date("2024-02-21T12:00:00.000Z"),
     venue: {
