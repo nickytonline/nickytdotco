@@ -17,7 +17,7 @@ const rawTalks = [
       type: "custom",
     },
     summary:
-      "Nick Taylor discusses his journey in open source, including his experiences at dev.to, Netlify, and now OpenSauced. Nick shaers insights on how to get the most out of open source as a contributor and maintainer.",
+      "Nick Taylor discusses his journey in open source, including his experiences at dev.to, Netlify, and now OpenSauced. Nick shares insights on how to get the most out of open source as a contributor and maintainer.",
     tags: ["opensource"],
   },
   {
