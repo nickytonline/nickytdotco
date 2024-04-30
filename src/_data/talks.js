@@ -7,6 +7,15 @@ const rawTalks = [
       name: "Hack for LA",
       url: "https://hackforla.org",
     },
+    video: {
+      url: "https://drive.google.com/file/d/1HPdzQrFP5QwXDnvx7jCFhaWatKTmh-3u/view?usp=sharing",
+      image: {
+        url: "/images/talks/hack-for-la-open-source-talk.png",
+        width: 1200,
+        height: 628,
+      },
+      type: "custom",
+    },
     summary:
       "Nick Taylor discusses his journey in open source, including his experiences at dev.to, Netlify, and now OpenSauced. Nick shaers insights on how to get the most out of open source as a contributor and maintainer.",
     tags: ["opensource"],
