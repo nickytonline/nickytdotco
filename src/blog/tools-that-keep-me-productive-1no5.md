@@ -128,9 +128,9 @@ TPGi's [Color Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/) i
 
 I'm sure there are streamers with bigger audiences that have a better setup, but this is how I roll.
 
-[OBS](https://obsproject.com/download) for streaming because I have custom overlays and some other customizations.
-
 [Restream.io](https://restream.io/join/zZ8Wr) is what I use to stream to multiple platforms, currently Twitch, YouTube, X/Twitter, and LinkedIn.
+
+[OBS](https://obsproject.com/download) is used by many including myself. It'sa great piece of software. I use it for streaming instead of Restream Studio or similar tools like Streamyard because I have custom overlays and some other customizations.
 
 [Krisp](https://krisp.ai/) is outstanding for filtering out unwanted noise on calls and streams. Say goodbye to fire engines in the background while you stream. 🤣
 
