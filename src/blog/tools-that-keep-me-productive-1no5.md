@@ -9,7 +9,7 @@
     "vscode"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffp8ih049mqfs4032ior5.png",
-  "canonical_url": "https://dev.to/nickytonline/tools-that-keep-me-productive-1no5",
+  "canonical_url": "https://www.nickyt.co/blog/tools-that-keep-me-productive-1no5/",
   "reading_time_minutes": 7,
   "template": "post"
 }
@@ -19,7 +19,9 @@ This page details mostly all I use as a developer. I use a Mac, so a bunch of to
 
 One thing to mention before we get started is that these are the tools that make me productive. Maybe they won't make you productive like the way they do for me. I always say, <em>use the tools that make you the most productive</em>.
 
-_Note: That I've put some referral links in here. Just want to be upfront about that is all._
+Some of these tools are free but some are paid. I personally think the paid ones are worth it, but I leave that up to you and your wallet.
+
+_Note: I've put some referral links in here. Just want to be upfront about that is all._
 
 ## Editor
 
@@ -54,6 +56,10 @@ Another setting that I find super handy is `terminal.integrated.autoReplies`. I 
   },
 {% endraw %}
 ```
+
+### Maybe Zed Soon?
+
+I do want to give a shout out to the [Zed](https://zed.dev/) editor. I use it occasionally and it’s super fast, but it hasn’t become my main editor yet. I think once the extension ecosystem blows up a little more is when I move to this. Maybe in the next year. We’ll see. 😎
 
 ## Browser Extensions
 
@@ -100,6 +106,8 @@ I do most of my "git"ing on the command line, but sometimes I need a graphical u
 
 ![Cassidy demonstrating squash, rebase and merge](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3hscnE3bjlucm93aDJ2YjF1cjNkemQzNWcwc28yY2g4eG8yZjA1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zQOmyYc8TXzSBfrTFb/giphy.gif)
 
+Shoutout to Cassidy (@cassidoo) for the awesome GIF!
+
 If you're using Git, which I imagine most of you are, [signing your commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits) is super important. [GPG Suite](https://gpgtools.org/) makes this easy to set up.
 
 ### Frontend Tooling
@@ -110,11 +118,11 @@ I do a lot of work building user interfaces (UIs) and these are some indispensab
 
 [Figma](https://www.figma.com/) is where I live when I need to coordinate with our designer, look at designs, or pull some assets.
 
-I had heard about [Polypane](https://polypane.app/) before and I think I may have tried it a few years ago, but nowadays, It's a must for frontend. It helps you build out responsive, accessible apps with all kinds of goodies. Curious about it? I hung out with the creator of Polypane on a live stream earlier this year.
+I had heard about [Polypane](https://polypane.app/) before and I think I may have tried it a few years ago, but nowadays, It's a must for frontend. It helps you build out responsive, accessible apps with all kinds of goodies. Curious about it? I hung out with the creator of Polypane, Kilian Valkhof (@kilianvalkhof), on a live stream earlier this year.
 
 {% embed "https://www.youtube.com/watch?v=fsIhghVlHJE" %}
 
-TPGi's [Color Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/) is really great for checking for color contrast issues.
+For color contrast issues, TPGi's [Color Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/) is top tier. I can't recommend it enough. Thanks to Todd Libby (@colabottles) for recommending this to me last year.
 
 
 ### Other Desktop Apps I Use
@@ -130,7 +138,9 @@ I'm sure there are streamers with bigger audiences that have a better setup, but
 
 [Restream.io](https://restream.io/join/zZ8Wr) is what I use to stream to multiple platforms, currently Twitch, YouTube, X/Twitter, and LinkedIn.
 
-[OBS](https://obsproject.com/download) is used by many including myself. It'sa great piece of software. I use it for streaming instead of Restream Studio or similar tools like Streamyard because I have custom overlays and some other customizations.
+[OBS](https://obsproject.com/download) is used by many including myself. It's a great piece of open source software. I use it for streaming instead of Restream Studio or similar tools like Streamyard because I have custom overlays and some other customizations.
+
+{% embed "https://github.com/obsproject/obs-studio" %}
 
 [Krisp](https://krisp.ai/) is outstanding for filtering out unwanted noise on calls and streams. Say goodbye to fire engines in the background while you stream. 🤣
 
