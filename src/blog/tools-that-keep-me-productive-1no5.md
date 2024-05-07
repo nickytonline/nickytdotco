@@ -31,6 +31,9 @@ I was a big fan of the Dank Mono for the longest time, but GitHub released a bun
 
 For the theme, it varies. I've been on the default light modern recently as I find it's better for [my live streaming](https://nickyt.live), but I'm also a fan of the [Houston](https://marketplace.visualstudio.com/items?itemName=astro-build.houston) and [Fortnite](https://marketplace.visualstudio.com/items?itemName=sdras.fortnite-vscode-theme) themes.
 
+
+[![Me when I tell them I use a dark theme in my editor.](https://www.nickyt.co/images/posts/_uploads_articles_52lbfjxugvqsj017c5e5.png)](https://x.com/nickytonline/status/1787621116636221727)
+
 Although I have [iTerm](https://iterm2.com/) installed, a great terminal for macOS, I honestly live in the VS Code terminal 99.999% of the time.
 
 ### Editor Settings
