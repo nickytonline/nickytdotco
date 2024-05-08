@@ -29,7 +29,7 @@ It all starts with the editor. [Visual Studio Code](https://code.visualstudio.co
 
 I was a big fan of the Dank Mono for the longest time, but GitHub released a bunch of monospaced fonts this year and I've been loving [Monaspace Krypton](https://monaspace.githubnext.com/).
 
-For the theme, it varies. I've been on the default light modern recently as I find it's better for [my live streaming](https://nickyt.live), but I'm also a fan of the [Houston](https://marketplace.visualstudio.com/items?itemName=astro-build.houston) and [Fortnite](https://marketplace.visualstudio.com/items?itemName=sdras.fortnite-vscode-theme) themes.
+For the theme, it varies. I've been on the light modern default theme recently as I find it's better for [my live streaming](https://nickyt.live), but I'm also a fan of the [Houston](https://marketplace.visualstudio.com/items?itemName=astro-build.houston) and [Fortnite](https://marketplace.visualstudio.com/items?itemName=sdras.fortnite-vscode-theme) themes.
 
 
 [![Me when I tell them I use a dark theme in my editor.](https://www.nickyt.co/images/posts/_uploads_articles_52lbfjxugvqsj017c5e5.png)](https://x.com/nickytonline/status/1787621116636221727)
