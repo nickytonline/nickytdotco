@@ -6,7 +6,8 @@
   "tags": [
     "productivity",
     "webdev",
-    "vscode"
+    "vscode",
+    "tooling"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffp8ih049mqfs4032ior5.png",
   "canonical_url": "https://www.nickyt.co/blog/tools-that-keep-me-productive-1no5/",
