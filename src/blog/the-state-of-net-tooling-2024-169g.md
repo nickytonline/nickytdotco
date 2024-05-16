@@ -5,10 +5,12 @@
   "date": "2024-05-14T18:44:54.647Z",
   "tags": [
     "dotnet",
-    "dotnetmaui"
+    "dotnetmaui",
+    "dotnetcore",
+    "dotnetframework"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbgnxmxal9v9vcdu9m9cf.png",
-  "canonical_url": "https://dev.to/nickytonline/the-state-of-net-tooling-2024-169g",
+  "canonical_url": "https://www.nickyt.co/blog/the-state-of-net-tooling-2024-169g/",
   "reading_time_minutes": 5,
   "template": "post"
 }
