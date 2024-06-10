@@ -83,4 +83,4 @@ Also, this is a perfect example of why <em>using [semantic HTML](https://develop
 
 Stay saucy peeps!
 
-If you would like to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).
+If you would like to know more about my work in open source, [follow me on OpenSauced](https://oss.fyi/nickytonline).

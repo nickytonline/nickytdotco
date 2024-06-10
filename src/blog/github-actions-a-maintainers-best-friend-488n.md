@@ -111,4 +111,4 @@ What are some GitHub actions that you’ve leveraged in your projects? Share the
 
 Stay saucy peeps!
 
-If you want to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).
+If you would like to know more about my work in open source, [follow me on OpenSauced](https://oss.fyi/nickytonline).

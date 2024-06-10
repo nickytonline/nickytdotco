@@ -250,4 +250,4 @@ What use cases have you used middleware for? Please let me know in the comments.
 
 Stay saucy peeps!
 
-If you want to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).
+If you would like to know more about my work in open source, [follow me on OpenSauced](https://oss.fyi/nickytonline).

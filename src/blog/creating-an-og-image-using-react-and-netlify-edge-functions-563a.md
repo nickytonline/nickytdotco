@@ -37,8 +37,6 @@ All the sections denoted by green outlined squares are dynamic.
 
 This dynamic info gets pulled in for the most part from the OpenSauced API.
 
-{% embed "https://github.com/open-sauced/api" %}
-
 Other parts are pulled in from the URL, like `30` for the day range, and the description comes from the query string in the OG image URL.
 
 ![browser dev tools view of the metadata section of the <head> with OG image URLs outlined by green squares](https://www.nickyt.co/images/posts/_uploads_articles_f059m9we4gkmb8ixx39v.png)
@@ -118,4 +116,4 @@ Now go out and build your own OG images! 🖼️
 
 Stay saucy peeps!
 
-If you would like to know more about my work in open source, [follow me on OpenSauced](https://app.opensauced.pizza/user/nickytonline).
+If you would like to know more about my work in open source, [follow me on OpenSauced](https://oss.fyi/nickytonline).
