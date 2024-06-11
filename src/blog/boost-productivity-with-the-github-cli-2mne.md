@@ -10,7 +10,7 @@
     "productivity"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9arpr3kib5ci5pmgmda5.jpeg",
-  "canonical_url": "https://dev.to/opensauced/boost-productivity-with-the-github-cli-2mne",
+  "canonical_url": "https://opensauced.pizza/docs/community-resources/boost-productivity-with-the-github-cli/",
   "reading_time_minutes": 10,
   "template": "post"
 }
