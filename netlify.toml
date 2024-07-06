@@ -39,7 +39,13 @@ force = true
 
 [[redirects]]
 from = "/news"
-to = "/pages/newsletter/"
+to = "https://OneTipAWeek.com"
+status = 302
+force = true
+
+[[redirects]]
+from = "/pages/newsletter/*"
+to = "https://OneTipAWeek.com"
 status = 302
 force = true
 
