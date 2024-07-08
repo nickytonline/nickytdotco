@@ -293,6 +293,12 @@ function codepenEmbed(url) {
  * @returns {string} Markup for the dev.to link embed.
  */
 function devLinkEmbed(blogPostUrl) {
+  const embedInfo = blogPostEmbeds[blogPostUrl];
+
+  if (!embedInfo) {
+    return `<a href="${blogPostUrl}">View ${blogPostUrl}</a> on dev.to`;
+  }
+
   const {
     url: devToUrl,
     title,
@@ -301,7 +307,7 @@ function devLinkEmbed(blogPostUrl) {
     tags,
     canonical_url,
     user: { name, username, profile_image },
-  } = blogPostEmbeds[blogPostUrl];
+  } = embedInfo;
 
   const url = canonical_url ?? devToUrl;
   const publishDate = DateTime.fromJSDate(new Date(published_timestamp))
