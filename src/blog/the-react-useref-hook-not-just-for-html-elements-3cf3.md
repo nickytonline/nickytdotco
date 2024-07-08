@@ -63,7 +63,7 @@ export const SomeComponent = () => {
 
 Recently, I was working on Open Sauced's [StarSearch](https://opensauced.pizza/blog/open-source-insights-with-starsearch), a Copilot for git history feature we released at the end of May 2024. You can read more about StarSearch in the blog post below.
 
-{% embed "https://dev.to/opensauced/introducing-starsearch-unlock-the-copilot-for-git-history-5ddb" %}
+{% embed "https://dev.to/bekahhw/introducing-starsearch-unlock-the-copilot-for-git-history-5ddb" %}
 
 The ask was to be able to start a new StarSearch conversation. To do so, I had to stop the current conversation. If you've worked with the [OpenAI](https://openai.com/index/openai-api/) API or similar APIs, they typically return a [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) as a response.
 
