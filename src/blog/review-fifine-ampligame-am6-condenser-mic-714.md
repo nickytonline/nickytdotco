@@ -10,7 +10,7 @@
     "contentcreation"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6dlmk2lkx6s9hzrraq0y.jpg",
-  "canonical_url": "https://dev.to/nickytonline/review-fifine-ampligame-am6-condenser-mic-714",
+  "canonical_url": "https://www.nickyt.co/blog/review-fifine-ampligame-am6-condenser-mic-714/",
   "reading_time_minutes": 3,
   "template": "post"
 }
@@ -58,7 +58,7 @@ I love the aesthetic of the pop filter and the fact that it lights up, and you c
 
 ## Sound
 
-I'm not an audio file, but this mic is a condenser mic which is typically better than a dynamic mic from what I've understood especially for something like what I do, coding on live streams and interviewing people.
+I'm not an audiophile, but this mic is a condenser mic which is typically better than a dynamic mic from what I've understood especially for something like what I do, coding on live streams and interviewing people.
 
 You can hear in this clip from a recent livestream of mine. Someone asked if the gain was at different levels between the Blue Yeti and the Fifine AM6, but they were both cranked to the max so I honestly think the AM6 sounds better.
 
