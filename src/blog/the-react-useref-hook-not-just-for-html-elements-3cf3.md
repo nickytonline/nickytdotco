@@ -1,7 +1,7 @@
 ---json
 {
   "title": "The React useRef Hook: Not Just for DOM Elements",
-  "excerpt": "In this post, we'll cover what the useRef hook is, some examples of how it can be used, and when you...",
+  "excerpt": "In this post, we'll cover what the useRef hook is, some examples of how it can be used, and when it...",
   "date": "2024-07-08T04:38:17.388Z",
   "tags": [
     "react",
@@ -9,13 +9,13 @@
     "webdev"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxllbi42t0tt7qanarqac.png",
-  "canonical_url": "https://dev.to/opensauced/the-react-useref-hook-not-just-for-html-elements-3cf3",
+  "canonical_url": "https://opensauced.pizza/docs/community-resources/the-react-useref-hook-not-just-for-html-elements/",
   "reading_time_minutes": 3,
   "template": "post"
 }
 ---
 
-In this post, we'll cover what the `useRef` hook is, some examples of how it can be used, and when you shouldn't use it.
+In this post, we'll cover what the `useRef` hook is, some examples of how it can be used, and when it shouldn't be used.
 
 ## What is useRef?
 
