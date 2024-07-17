@@ -77,7 +77,10 @@ function sanitizeMarkdownEmbeds(markdown) {
     )
     // We need to add raw shortcodes to prevent shortcodes within code blocks from rendering.
     // For now, this only supports single-line code blocks.
-    .replaceAll(/(`{%[^%]+%}`)/g, "{% raw %}$1{% endraw %}");
+    .replaceAll(/(`{%[^%]+%}`)/g, "{% raw %}$1{% endraw %}")
+
+    // get rid of promo links that are a new line followed by <!-- places to follow me --> and content
+    .replaceAll(/\n<!-- places to follow me -->\n(.|\n)*$/g, "");
 
   return sanitizedMarkdown;
 }
@@ -482,7 +485,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
       );
     }
     // Newsletter posts are not published to the blog. The blog publishes the newsletter to DEV.
-    if (/<!-- my newsletter -->\s*$/.test(post.body_markdown)) {
+    if (/<!-- my newsletter -->/.test(post.body_markdown)) {
       console.warn(`Skipping newsletter post ${post.title}`);
       continue;
     }
