@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fj7chuu52qfs62xbyeopo.png",
   "canonical_url": "https://www.nickyt.co/blog/how-to-debug-a-firefox-add-on-extension-489f/",
-  "reading_time_minutes": 2,
+  "reading_time_minutes": 3,
   "template": "post"
 }
 ---
