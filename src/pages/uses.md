@@ -6,6 +6,8 @@ metaDesc: 'This page details pretty much all I use as a developer.'
 This page details pretty much all I use as a developer. If you decide to make your own, consider adding it to [Wes Bos](https://twitter.com/wesbos)' [uses.tech](https://uses.tech).
 I use a Mac, so most tools are macOS specific, but there are some OS-agnostic ones in the list. You might also be interested in [My Mac Setup](https://www.iamdeveloper.com/posts/my-mac-setup-2m05/) post, although it is a little outdated.
 
+Note: This page contains affiliate links. I may earn a commission for purchases made through these links at no additional cost to you.
+
 ## Editor
 
 - [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/)
@@ -78,37 +80,37 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 <figcaption>My desk setup. My Mac is on a stand on the left, a wide screen monitor in the middle, a microphone and boom on the right, and a keyboard, mouse, desk whiteboard, and Stream deck in the front. There are also ring lights around the desk for streaming.</figcaption>
 </figure>
 
-- [Benq ScreenBar Halo](https://pse.is/4mt8u9) with [Webcam accessory](https://www.benq.com/en-us/lighting/accessory/webcam-accessory.html)
+- [Benq ScreenBar Halo](https://amzn.to/3AabbB3) with [Webcam accessory](https://amzn.to/4dqmhAb) - A great light for your desk that sits on top of your monitor.
 - [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141) - I snagged it at a great price. It appears to go on sale often.
 - Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with many new parts for just under a third of the price.
-- [Rollerblade style caster wheels](https://www.amazon.ca/gp/product/B06Y4BJ66G) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
+- [Rollerblade style caster wheels](https://amzn.to/3WzPZf4) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
 - MacBook Pro 14" (2022)
-- [Logitech MX Master 3 mouse](https://www.logitech.com/en-ca/products/mice/mx-master-3.910-005647.html)
-- [Logitech ERGO K860 wireless split keyboard](https://www.logitech.com/en-ca/products/keyboards/k860-split-ergonomic.920-009166.html)
-- [Sony WH-1000XM3](https://www.sony.ca/en/electronics/headband-headphones/wh-1000xm3) headphones - I snagged them during Boxing Day week.
-- [Blue Designs Yeti](https://www.bluedesigns.com/products/yeti/) microphone
-- [RODE PSA1 Swivel Mount Studio Microphone Boom Arm](https://www.amazon.ca/gp/product/B001D7UYBO)
-- [Rain mStand 360](https://www.raindesigninc.com/mstand360.html) laptop stand
-- [Logitech C922x Pro Stream](https://www.amazon.ca/gp/product/B01LXCDPPK/) webcam with [webcam cover](https://www.amazon.ca/gp/product/B0748FZX99/)
-- [LG 34WN80C-B UltraWide Monitor 34” 21:9 Curved WQHD (3440 x 1440) IPS Display](https://www.amazon.ca/gp/product/B07YGZ7C1K)
-- [Lamicall Gooseneck Phone Holder Bed](https://www.amazon.ca/gp/product/B0B9N41MCS) - I use this to hold my iPhone when I use it for a camera while live streaming or recording video.
-- [Anker USB C Hub, 5-In-1 USB C Adapter](https://www.amazon.ca/gp/product/B071G83L1J)
-- [Powered USB 3.0 Hub, WENTER 11-Port USB Data Hub](https://www.amazon.ca/dp/B095Y5R8HD)
-- [Logitech Litra Glow Premium LED Streaming Light with TrueSoft](https://www.amazon.ca/Logitech-Litra-Premium-Streaming-TrueSoft/dp/B097QZGRCQ/) - Lighting for live streaming and recording video.
-- [Seagate Portable 5TB External Hard Drive HDD](https://www.amazon.ca/gp/product/B07VS8QCXC)
-- [Topo Comfort Mat by Ergodriven](https://www.amazon.ca/gp/product/B00V3TO9HW/) standing desk mat
-- [LEVOIT Air Purifier Core 300](https://www.amazon.ca/gp/product/B07S3D4MRJ/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)
-- [Elgato Streamd Deck XL](https://www.elgato.com/en/stream-deck-xl)
-- [Quartet Glass Desktop Computer Pad, 18 inch x 6 inch](https://www.amazon.ca/gp/product/B01M2DADUX), a handy desk whiteboard. Thanks for the suggestion [Jhey](https://jhey.dev)!
+- [Logitech MX Master 3 mouse](https://amzn.to/3yqPvA4)
+- [Logitech ERGO K860 wireless split keyboard](https://amzn.to/3SzSNba)
+- [Sony WH-1000XM3](https://amzn.to/4ftsjBT) headphones - I snagged them during Boxing Day week.
+- [FIFINE AmpliGame AM6 Condenser Mic](https://amzn.to/46zYhrW) with Game/Chat Mix, Noise Suppression, Monitoring, I/O Level & RGB Controls
+- [RODE PSA1 Swivel Mount Studio Microphone Boom Arm](https://amzn.to/3WNsYqx)
+- [Rain Design mStand360 Laptop Stand with Swivel Base](https://amzn.to/3yqdpvt)
+- [Logitech C922x Pro Stream](https://amzn.to/3AkVzun) webcam with [webcam cover](https://amzn.to/3WzD5he)
+- [LG 34WN80C-B UltraWide Monitor 34” 21:9 Curved WQHD (3440 x 1440) IPS Display](https://amzn.to/4duC9lm)
+- [Lamicall Gooseneck Phone Holder Bed](https://amzn.to/3Ac5XVt) - I use this to hold my iPhone when I use it for a camera while live streaming or recording video.
+- [Anker USB C Hub, 5-In-1 USB C Adapter](https://amzn.to/4dacHSa)
+- [Powered USB 3.0 Hub, WENTER 11-Port USB Data Hub](https://amzn.to/3WQvQCQ)
+- [Logitech Litra Glow Premium LED Streaming Light with TrueSoft](https://amzn.to/3WOt1Ck) - Lighting for live streaming and recording video. I have two of these and they're awesome.
+- [Seagate Portable 5TB External Hard Drive HDD](https://amzn.to/3yguEj0)
+- [Topo Comfort Mat by Ergodriven](https://amzn.to/3YyiUTw) standing desk mat
+- [LEVOIT Air Purifier Core 300](https://amzn.to/3YrjjXZ)
+- [Elgato Streamd Deck XL](https://amzn.to/3YuyMq2) - Great for controlling scenes in OBS, dropping links and messages in chat, but I also use it for other apps like Spotify and Zoom.
+- [Quartet Glass Desktop Computer Pad, 18 inch x 6 inch](https://amzn.to/3ysolsC), a handy desk whiteboard. Thanks for the suggestion [Jhey](https://jhey.dev)!
 
 ## Travel Gear
 
-- [Roost Laptop Stand](https://www.therooststand.com/collections/roost-laptop-stand/products/roost-laptop-stand?variant=31619419570237)
-- [Anker USB-C to HDMI Adapter](http://amazon.ca/gp/product/B01MYUCWOK) and other dongles
+- [Roost Laptop Stand](https://amzn.to/3LRrEfT)
+- [Anker USB-C to HDMI Adapter](https://amzn.to/3SB8Yom)
 - [Jelly Comb Ultra Slim Folding Bluetooth Keyboard](https://www.amazon.ca/gp/product/B07YYTHMCG)
-- [Anker Magnetic Battery, 10,000 mAh Foldable Wireless Portable Charger](https://www.amazon.ca/dp/B09NRG4GK3)
-- [Apple Magic Trackpad (White)](https://www.apple.com/ca/shop/product/MMMP3AM/A/magic-trackpad-black-multi-touch-surface)
+- [Anker Magnetic Battery, 10,000 mAh Foldable Wireless Portable Charger](https://amzn.to/3A5W4bE)
+- [Apple Magic Trackpad (White)](https://amzn.to/3yB2dMB)
 
 ## Other
 
-- [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://www.amazon.ca/gp/product/B07HKTJN5F/), my working at home shoes
+- [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://amzn.to/3WQ3dG0)), my working at home shoes
