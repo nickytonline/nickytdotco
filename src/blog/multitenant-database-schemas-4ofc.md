@@ -44,7 +44,7 @@ The first time you run the Turso CLI, you'll be asked to log in.
 
 ![Running command `turso db list` and receiving the error Error: user not logged in, please login with turso auth login](https://www.nickyt.co/images/posts/_uploads_articles_vc0qi1kzn9vm14taffkd.png)
 
-The process of setting up a multitenant database schema with Turso involves several steps:
+The process of setting up a multitenant database schema with Turso involves the following steps:
 
 1. **Create a Group**: This essentially creates a machine to host the database.
 
