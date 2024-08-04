@@ -133,7 +133,7 @@ CREATE TABLE users ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
 
 13. Go back to the shell of the `parent-db`. Run `turso db shell parent-db`.
 
-14. Add another field, `emai`
+14. Add another field, `email`
 
 15. Run `.schema` from the shell to view the updated schema.
 
