@@ -9,7 +9,7 @@
     "turso"
   ],
   "cover_image": null,
-  "canonical_url": "https://dev.to/nickytonline/multitenant-database-schemas-4ofc",
+  "canonical_url": "https://www.nickyt.co/blog/multitenant-database-schemas-4ofc/",
   "reading_time_minutes": 4,
   "template": "post"
 }
