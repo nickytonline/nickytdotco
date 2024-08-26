@@ -352,7 +352,9 @@ async function saveMarkdownImages(imagesToSave) {
 async function updateMarkdownImageUrls(markdown) {
   let updatedMarkdown = markdown;
   const imagesToSave = [];
-  const matches = markdown.matchAll(/!\[.*?\]\((?<oldImageUrl>.*?)\)/g);
+  const matches = markdown.matchAll(
+    /!\[.*?\]\((?<oldImageUrl>(?!\.\/)[^)]+)\)/g,
+  );
 
   for (const match of matches) {
     const { oldImageUrl } = match.groups;
