@@ -1675,8 +1675,8 @@
       "github_username": "whitep4nth3r",
       "user_id": 492757,
       "website_url": "https://whitep4nth3r.com/",
-      "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2F6440ce47-9fbc-4865-a283-8aab7ea11580.png",
-      "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2F6440ce47-9fbc-4865-a283-8aab7ea11580.png"
+      "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png",
+      "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png"
     }
   },
   "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404": {
@@ -2384,6 +2384,48 @@
       "opensource",
       "git",
       "ai"
+    ],
+    "user": {
+      "name": "BekahHW",
+      "username": "bekahhw",
+      "twitter_username": "BekahHW",
+      "github_username": "BekahHW",
+      "user_id": 345658,
+      "website_url": "https://bekahhw.com/",
+      "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
+      "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
+    },
+    "organization": {
+      "name": "OpenSauced",
+      "username": "opensauced",
+      "slug": "opensauced",
+      "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+    }
+  },
+  "https://dev.to/BekahHW/introducing-the-oscr-celebrating-open-source-stars-2eo7": {
+    "type_of": "article",
+    "id": 1957908,
+    "title": "Introducing the OSCR: Celebrating Open Source Stars",
+    "description": "Introducing OSCR: The new standard for measuring open source contributions. Explore how this new metric goes beyond code commits to measure true impact in the open source ecosystem.",
+    "readable_publish_date": "Aug 13",
+    "slug": "introducing-the-oscr-celebrating-open-source-stars-2eo7",
+    "path": "/opensauced/introducing-the-oscr-celebrating-open-source-stars-2eo7",
+    "url": "https://dev.to/opensauced/introducing-the-oscr-celebrating-open-source-stars-2eo7",
+    "collection_id": null,
+    "published_timestamp": "2024-08-13T14:16:02Z",
+    "cover_image": "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxm5y4umea40zu4d4c4z0.png",
+    "social_image": "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxm5y4umea40zu4d4c4z0.png",
+    "canonical_url": "https://opensauced.pizza/blog/introducing-OSCR",
+    "created_at": "2024-08-13T14:16:02Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2024-08-13T14:16:02Z",
+    "last_comment_at": "2024-08-13T14:16:02Z",
+    "reading_time_minutes": 6,
+    "tag_list": "opensource",
+    "tags": [
+      "opensource"
     ],
     "user": {
       "name": "BekahHW",
