@@ -232,6 +232,12 @@ status = 302
 force = true
 
 [[redirects]]
+from = "/slides/compose-24"
+to = "https://docs.google.com/presentation/d/1-YBGThyLLuFHPhgQ7_0xAHJGlLPPHPR6p4Gwgt5nWfI/pub?start=false&loop=false&delayms=5000"
+status = 302
+force = true
+
+[[redirects]]
 from = "/pages/stream-schedule/*"
 to = "https://nickyt.live/schedule/:splat"
 status = 301
