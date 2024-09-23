@@ -308,21 +308,14 @@ function devLinkEmbed(blogPostUrl) {
     .setLocale("en-CA")
     .toLocaleString(DateTime.DATE_FULL);
 
-  return `<article class="ltag__link box-flex align-center flex-wrap space-center md:flex-nowrap md:space-after" title="${title}">
-      <a rel="author" href="https://dev.to/${username}" class="ltag__link__link">
-        <div class="ltag__link__pic">
-          <img src="${profile_image}" alt="${`Author ${name}'s profile on dev.to`}">
-        </div>
-      </a>
-      <a href="${url}">
-        <div class="ltag__link__content">
-          <h1 class="ltag__link__title">${title}</h1>
-          <div><span aria-hidden="true">${name}</span> ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ <span class="reading-time">${reading_time_minutes} min read</span></div>
-          <ul class="ltag__link__taglist">
+  return `<article class="ltag__link grid w-fit" title="${title}">
+        <div class="grid">
+          <h1><a href="${url}">${title}</a></h1>
+          <div class="flex items-center"><a rel="author" href="https://dev.to/${username}">${name}</a> ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ <span class="reading-time">${reading_time_minutes} min read</span></div>
+          <ul class="flex gap-base">
             ${tags.map((tag) => `<li>#${tag}</li>`).join(``)}
           </ul>
         </div>
-      </a>
     </article>`;
 }
 

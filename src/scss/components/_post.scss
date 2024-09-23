@@ -81,18 +81,6 @@
       }
     }
 
-    .ltag__link a:not([class]) {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: none;
-
-        h2 {
-          text-decoration: underline;
-        }
-      }
-    }
-
     code {
       color: var(--color-theme-primary);
       font-weight: 600;
@@ -316,7 +304,7 @@
 
       a {
         padding-right: 0.9em;
-        text-decoration: none;
+        text-decoration: underline;
 
         &:focus,
         &:hover {
@@ -357,4 +345,8 @@
   @media (min-width: 768px) {
     align-items: center;
   }
+}
+
+.w-fit {
+  width: fit-content;
 }
