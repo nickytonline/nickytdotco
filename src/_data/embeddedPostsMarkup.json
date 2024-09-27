@@ -135,7 +135,7 @@
     "edited_at": "2022-08-12T13:10:34Z",
     "crossposted_at": null,
     "published_at": "2021-07-28T03:22:00Z",
-    "last_comment_at": "2024-09-15T20:28:15Z",
+    "last_comment_at": "2024-09-23T19:21:36Z",
     "reading_time_minutes": 5,
     "tag_list": "twitch, beginners, streaming",
     "tags": [
@@ -2463,7 +2463,7 @@
     "edited_at": null,
     "crossposted_at": null,
     "published_at": "2024-09-16T15:13:37Z",
-    "last_comment_at": "2024-09-17T12:14:40Z",
+    "last_comment_at": "2024-09-25T10:51:12Z",
     "reading_time_minutes": 5,
     "tag_list": "opensource, codeowners, cli",
     "tags": [
@@ -2487,6 +2487,44 @@
       "slug": "opensauced",
       "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
       "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+    }
+  },
+  "https://dev.to/pelikhan/unlocking-the-power-of-prompts-a-gentle-introduction-to-genaiscript-34nn": {
+    "type_of": "article",
+    "id": 1966820,
+    "title": "Unlocking the Power of Prompts - A Gentle Introduction to GenAIScript 🚀",
+    "description": "Ever wondered how to leverage the power of AI and Large Language Models (LLMs) in your projects? Look...",
+    "readable_publish_date": "Aug 20",
+    "slug": "unlocking-the-power-of-prompts-a-gentle-introduction-to-genaiscript-34nn",
+    "path": "/pelikhan/unlocking-the-power-of-prompts-a-gentle-introduction-to-genaiscript-34nn",
+    "url": "https://dev.to/pelikhan/unlocking-the-power-of-prompts-a-gentle-introduction-to-genaiscript-34nn",
+    "collection_id": 28513,
+    "published_timestamp": "2024-08-20T16:20:58Z",
+    "cover_image": "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyg85fmt2qokjdnuhowja.png",
+    "social_image": "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyg85fmt2qokjdnuhowja.png",
+    "canonical_url": "https://microsoft.github.io/genaiscript/blog/gentle-introduction-to-genaiscript/",
+    "created_at": "2024-08-20T15:54:52Z",
+    "edited_at": "2024-08-22T12:31:41Z",
+    "crossposted_at": null,
+    "published_at": "2024-08-20T16:20:58Z",
+    "last_comment_at": "2024-08-20T16:20:58Z",
+    "reading_time_minutes": 2,
+    "tag_list": "javascript, ai, promptengineering, genaiscript",
+    "tags": [
+      "javascript",
+      "ai",
+      "promptengineering",
+      "genaiscript"
+    ],
+    "user": {
+      "name": "Peli de Halleux",
+      "username": "pelikhan",
+      "twitter_username": null,
+      "github_username": "pelikhan",
+      "user_id": 439100,
+      "website_url": "https://github.com/pelikhan",
+      "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F439100%2Fff69f19d-1ba4-4f60-878c-afe74aaa2245.jpeg",
+      "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F439100%2Fff69f19d-1ba4-4f60-878c-afe74aaa2245.jpeg"
     }
   }
 }
