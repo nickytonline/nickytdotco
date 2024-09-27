@@ -20,7 +20,7 @@ I recently got to hang with Peli de Halleux (@pelikhan) to discuss the GenAIScri
 
 {% embed "https://dev.to/pelikhan/unlocking-the-power-of-prompts-a-gentle-introduction-to-genaiscript-34nn" %}
 
-Here’s a transcript of an excerpt from our conversation.
+Here’s a transcript of an excerpt from our conversation. The entire conversation on YouTube is at the end if you want to jump straight to that.
 
 ## Transcript
 
@@ -48,6 +48,8 @@ Nick Taylor: Okay.
 
 Peli: Around using LLMs as a first class citizen.
 
-You can also catch the full conversation 👇
+## On YouTube
+
+You can also catch the full conversation on YouTube. Thanks again for hanging Peli!
 
 {% embed "https://www.youtube.com/watch?v=aeXQ2MJ0Ye0" %}
