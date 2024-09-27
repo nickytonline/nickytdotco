@@ -10,7 +10,7 @@
     "productivity"
   ],
   "cover_image": null,
-  "canonical_url": "https://dev.to/nickytonline/what-is-genaiscript-1mf2",
+  "canonical_url": "https://www.nickyt.co/blog/what-is-genaiscript-1mf2/",
   "reading_time_minutes": 2,
   "template": "post"
 }
@@ -20,7 +20,7 @@ I recently got to hang with Peli de Halleux (@pelikhan) to discuss the GenAIScri
 
 {% embed "https://dev.to/pelikhan/unlocking-the-power-of-prompts-a-gentle-introduction-to-genaiscript-34nn" %}
 
-Feel free to watch the video up top, or if you prefer to read, here's the transcript.
+Here’s a transcript of an excerpt from our conversation.
 
 ## Transcript
 
