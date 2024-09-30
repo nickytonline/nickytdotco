@@ -248,3 +248,9 @@ from = "/pages/streaming/*"
 to = "https://nickyt.live/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "/copilot-extension-guide/*"
+to = "/blog/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0/:splat"
+staus = 301
+force = true
