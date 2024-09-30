@@ -243,9 +243,15 @@ It won't respond to your specific question as that functionality has not been im
 
 ## A Real-World Example
 
-I've created a proof-of-concept (POC) Copilot extension that demonstrates these principles in action. This extension utilizes [OpenSauced's StarSearch](https://opensauced.pizza/blog/open-source-insights-with-starsearch) feature to provide open-source insights directly within Copilot. This was a POC I did for OpenSauced, where I work. You can check out the OpenSauced Copilot extension proof of concept on GitHub:
+I've created a proof-of-concept (POC) Copilot extension for OpenSauced, where I work, that demonstrates these principles in action.
 
 {% embed "https://github.com/nickytonline/open-sauced-copilot-ext-poc" %}
+
+This extension utilizes [OpenSauced's StarSearch](https://opensauced.pizza/blog/open-source-insights-with-starsearch) feature to provide open-source insights directly within Copilot.
+
+Curious about StarSearch? 👇
+
+{% embed "https://dev.to/bekahhw/creating-open-source-connections-1ai2" %}
 
 This example showcases how you can leverage external APIs and services to create powerful, context-aware extensions that enhance the Copilot experience.
 

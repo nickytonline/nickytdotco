@@ -2526,5 +2526,55 @@
       "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F439100%2Fff69f19d-1ba4-4f60-878c-afe74aaa2245.jpeg",
       "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F439100%2Fff69f19d-1ba4-4f60-878c-afe74aaa2245.jpeg"
     }
+  },
+  "https://dev.to/bekahhw/creating-open-source-connections-1ai2": {
+    "type_of": "article",
+    "id": 1862702,
+    "title": "Creating Open Source Connections",
+    "description": "Explore how StarSearch revolutionizes open source collaboration by connecting projects with top talent using AI-driven insights into GitHub events and contributor activities.",
+    "readable_publish_date": "May 23",
+    "slug": "creating-open-source-connections-1ai2",
+    "path": "/opensauced/creating-open-source-connections-1ai2",
+    "url": "https://dev.to/opensauced/creating-open-source-connections-1ai2",
+    "collection_id": null,
+    "published_timestamp": "2024-05-23T10:17:39Z",
+    "cover_image": "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fifvsdgm6y0y0r0pkmmu8.png",
+    "social_image": "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fifvsdgm6y0y0r0pkmmu8.png",
+    "canonical_url": "https://opensauced.pizza/blog/open-source-insights-with-starsearch",
+    "created_at": "2024-05-23T10:17:39Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2024-05-23T10:17:39Z",
+    "last_comment_at": "2024-05-24T13:11:12Z",
+    "reading_time_minutes": 3,
+    "tag_list": "opensource, ai, community, showdev",
+    "tags": [
+      "opensource",
+      "ai",
+      "community",
+      "showdev"
+    ],
+    "user": {
+      "name": "BekahHW",
+      "username": "bekahhw",
+      "twitter_username": "BekahHW",
+      "github_username": "BekahHW",
+      "user_id": 345658,
+      "website_url": "https://bekahhw.com/",
+      "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
+      "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
+    },
+    "organization": {
+      "name": "OpenSauced",
+      "username": "opensauced",
+      "slug": "opensauced",
+      "profile_image": "https://media.dev.to/cdn-cgi/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+    },
+    "flare_tag": {
+      "name": "showdev",
+      "bg_color_hex": "#091b47",
+      "text_color_hex": "#b2ffe1"
+    }
   }
 }
