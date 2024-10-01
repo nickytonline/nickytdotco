@@ -6,11 +6,11 @@
   "tags": [
     "github",
     "githubcopilot",
-    "ai",
-    "genai"
+    "genai",
+    "typescript"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhkxr62oih47ls0qrzx3i.jpeg",
-  "canonical_url": "https://dev.to/nickytonline/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0",
+  "canonical_url": "https://www.nickyt.co/blog/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0/",
   "reading_time_minutes": 8,
   "template": "post"
 }
@@ -251,9 +251,9 @@ This extension utilizes [OpenSauced's StarSearch](https://opensauced.pizza/blog/
 
 Curious about StarSearch? 👇
 
-{% embed "https://dev.to/bekahhw/creating-open-source-connections-1ai2" %}
+{% embed "https://opensauced.pizza/blog/open-source-insights-with-starsearch" %}
 
-This example showcases how you can leverage external APIs and services to create powerful, context-aware extensions that enhance the Copilot experience.
+This POC showcases how you can leverage external APIs and services to create powerful, context-aware extensions that enhance the Copilot experience.
 
 {% embed "https://www.youtube.com/watch?v=3HdFMLmNN64" %}
 
