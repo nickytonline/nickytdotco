@@ -172,10 +172,6 @@ function embedEmbed(rawUrl) {
     return youtubeEmbed(videoId);
   }
 
-  if (url.hostname.includes(`github.com`)) {
-    return githubEmbed(url);
-  }
-
   if (url.hostname.includes(`twitter.com`)) {
     const { tweetId } = rawUrl.match(
       /twitter\.com\/[^\/]+\/status\/(?<tweetId>[^\/]+)/,
@@ -218,7 +214,7 @@ function embedEmbed(rawUrl) {
     return vimeoEmbed(videoId);
   }
 
-  throw new Error(`unsupported embed for ${url}`);
+  return genericEmbed(url);
 }
 
 /**
@@ -326,7 +322,7 @@ function devLinkEmbed(blogPostUrl) {
  *
  * @returns {string} Markup for the GitHub embed.
  */
-function githubEmbed(url) {
+function genericEmbed(url) {
   const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
 
   return `<a href="${url}">
@@ -417,7 +413,7 @@ module.exports = {
   twitterEmbed,
   codepenEmbed,
   devLinkEmbed,
-  githubEmbed,
+  genericEmbed,
   instagramEmbed,
   codeSandboxEmbed,
 };

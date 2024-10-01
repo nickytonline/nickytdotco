@@ -17,7 +17,7 @@ const {
   codepenEmbed,
   devLinkEmbed,
   devCommentEmbed,
-  githubEmbed,
+  genericEmbed,
   instagramEmbed,
   codeSandboxEmbed,
 } = require("./src/shortCodes");
@@ -59,7 +59,7 @@ module.exports = function (config) {
   config.addShortcode("codepen", codepenEmbed);
   config.addShortcode("link", devLinkEmbed);
   config.addShortcode("devcomment", devCommentEmbed);
-  config.addShortcode("github", githubEmbed);
+  config.addShortcode("github", genericEmbed);
   config.addShortcode("instagram", instagramEmbed);
   config.addShortcode("codesandbox", codeSandboxEmbed);
 
