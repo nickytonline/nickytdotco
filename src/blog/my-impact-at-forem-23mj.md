@@ -6,7 +6,7 @@
   "tags": [
     "career"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/my-impact-at-forem-23mj/",
   "reading_time_minutes": 4,
   "template": "post"

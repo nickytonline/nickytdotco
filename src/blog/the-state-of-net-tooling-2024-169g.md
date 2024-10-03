@@ -9,7 +9,7 @@
     "dotnetcore",
     "dotnetframework"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbgnxmxal9v9vcdu9m9cf.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbgnxmxal9v9vcdu9m9cf.png",
   "canonical_url": "https://www.nickyt.co/blog/the-state-of-net-tooling-2024-169g/",
   "reading_time_minutes": 6,
   "template": "post"

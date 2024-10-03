@@ -9,7 +9,7 @@
     "webdev",
     "vscodetips"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxb7x118t57bx4xnr45ob.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxb7x118t57bx4xnr45ob.png",
   "canonical_url": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-the-thunder-client-extension-1k3p",
   "reading_time_minutes": 2,
   "template": "post"

@@ -9,7 +9,7 @@
     "greensock",
     "javascript"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fe4ekxgolwzakw0ntuny9.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fe4ekxgolwzakw0ntuny9.jpg",
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-jhey-tompkins-2k85/",
   "reading_time_minutes": 1,
   "template": "post"

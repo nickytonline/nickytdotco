@@ -6,7 +6,7 @@
   "tags": [
     "yearinreview"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F549dl9ckop73uweqprka.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F549dl9ckop73uweqprka.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-2022-year-in-review-a72/",
   "reading_time_minutes": 6,
   "template": "post"

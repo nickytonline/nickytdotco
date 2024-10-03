@@ -8,7 +8,7 @@
     "vscode",
     "community"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
   "canonical_url": "https://www.nickyt.co/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
   "reading_time_minutes": 1,
   "template": "post"

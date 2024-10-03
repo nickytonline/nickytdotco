@@ -9,7 +9,7 @@
     "githubactions",
     "github"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fr5lksfacbj6jsab38lxq.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fr5lksfacbj6jsab38lxq.png",
   "canonical_url": "https://opensauced.pizza/docs/community-resources/supercharge-your-github-profile/",
   "reading_time_minutes": 4,
   "template": "post"

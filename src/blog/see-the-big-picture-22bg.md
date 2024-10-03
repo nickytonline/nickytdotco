@@ -7,7 +7,7 @@
     "career",
     "beginners"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F6qeji3ozp4ypayd0h8au.JPG",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F6qeji3ozp4ypayd0h8au.JPG",
   "canonical_url": "https://www.nickyt.co/blog/see-the-big-picture-22bg/",
   "reading_time_minutes": 2,
   "template": "post"

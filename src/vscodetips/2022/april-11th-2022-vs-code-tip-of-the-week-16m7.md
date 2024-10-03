@@ -7,7 +7,7 @@
     "vscode",
     "vscodetips"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fywyzmhsczz6j0p8j7gyq.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fywyzmhsczz6j0p8j7gyq.png",
   "canonical_url": "https://www.nickyt.co/vscodetips/2022/april-11th-2022-vs-code-tip-of-the-week-16m7/",
   "reading_time_minutes": 1,
   "template": "post"

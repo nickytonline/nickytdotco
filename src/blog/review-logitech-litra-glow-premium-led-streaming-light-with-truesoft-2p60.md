@@ -8,7 +8,7 @@
     "streaming",
     "lighting"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_cdn-cgi_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwqenc79moc5h6ohdr8nd.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwqenc79moc5h6ohdr8nd.png",
   "canonical_url": "https://dev.to/nickytonline/review-logitech-litra-glow-premium-led-streaming-light-with-truesoft-2p60",
   "reading_time_minutes": 3,
   "template": "post"
