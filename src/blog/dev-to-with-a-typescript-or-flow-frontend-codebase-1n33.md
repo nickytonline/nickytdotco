@@ -8,7 +8,7 @@
     "typescript",
     "flow"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--WEWF7NVH--_c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_8d2nn4w6f0smjm9ca4yf.gif",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F8d2nn4w6f0smjm9ca4yf.gif",
   "canonical_url": "https://www.nickyt.co/blog/dev-to-with-a-typescript-or-flow-frontend-codebase-1n33/",
   "reading_time_minutes": 2,
   "template": "post"

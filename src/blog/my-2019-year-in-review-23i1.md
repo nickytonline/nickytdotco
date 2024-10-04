@@ -6,7 +6,7 @@
   "tags": [
     "yearinreview"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--2NiTSnuS--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_z8awferjpkro7ig0ciey.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fz8awferjpkro7ig0ciey.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-2019-year-in-review-23i1/",
   "reading_time_minutes": 17,
   "template": "post"

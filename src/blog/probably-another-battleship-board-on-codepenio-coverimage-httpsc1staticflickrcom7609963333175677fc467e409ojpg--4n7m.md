@@ -7,7 +7,7 @@
     "css",
     "codepen"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--MCAKzX1f--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c2.staticflickr.com_6_5184_5639332304_9f91e58360_b.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fc2.staticflickr.com%2F6%2F5184%2F5639332304_9f91e58360_b.jpg",
   "canonical_url": "https://www.nickyt.co/blog/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m/",
   "reading_time_minutes": 1,
   "template": "post"

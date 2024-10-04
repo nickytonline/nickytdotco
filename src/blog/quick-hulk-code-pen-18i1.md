@@ -7,7 +7,7 @@
     "css",
     "codepen"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--_l7DUBNK--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c1.staticflickr.com_3_2825_34089505692_6d6cb68560_h.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
   "canonical_url": "https://www.nickyt.co/blog/quick-hulk-code-pen-18i1/",
   "reading_time_minutes": 1,
   "template": "post"

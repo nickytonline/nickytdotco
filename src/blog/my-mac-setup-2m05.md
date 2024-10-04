@@ -8,7 +8,7 @@
     "developertools",
     "webdev"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--C6fxx9Ly--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_qkwvsk3lp64lvchg69tm.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fqkwvsk3lp64lvchg69tm.png",
   "canonical_url": "https://www.nickyt.co/blog/my-mac-setup-2m05/",
   "reading_time_minutes": 9,
   "template": "post"

@@ -9,7 +9,7 @@
     "html",
     "a11y"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--1j9Z4MyX--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_d0slehzp7b26buouwz33.png",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fd0slehzp7b26buouwz33.png",
   "canonical_url": "https://www.nickyt.co/blog/frontend-developer-resources-246j/",
   "reading_time_minutes": 11,
   "template": "post"

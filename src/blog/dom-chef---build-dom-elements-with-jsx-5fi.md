@@ -7,7 +7,7 @@
     "webdev",
     "javascript"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--zP7lTySV--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__thepracticaldev.s3.amazonaws.com_i_pkajv39sn98rgfgdeotf.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fpkajv39sn98rgfgdeotf.jpg",
   "canonical_url": "https://www.nickyt.co/blog/dom-chef---build-dom-elements-with-jsx-5fi/",
   "reading_time_minutes": 1,
   "template": "post"

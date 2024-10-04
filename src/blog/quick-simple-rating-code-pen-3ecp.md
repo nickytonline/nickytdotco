@@ -7,7 +7,7 @@
     "css",
     "codepen"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--l5Yv15Ln--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c2.staticflickr.com_4_3864_15120161855_a640e93573_b.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fc2.staticflickr.com%2F4%2F3864%2F15120161855_a640e93573_b.jpg",
   "canonical_url": "https://www.nickyt.co/blog/quick-simple-rating-code-pen-3ecp/",
   "reading_time_minutes": 1,
   "template": "post"

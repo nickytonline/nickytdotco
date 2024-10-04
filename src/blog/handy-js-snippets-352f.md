@@ -7,7 +7,7 @@
     "javascript",
     "showdev"
   ],
-  "cover_image": "https://www.nickyt.co/images/posts/_practicaldev_image_fetch_s--8TPM73BB--_c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000_https:__c2.staticflickr.com_8_7282_8995095069_9e88b3bba5_b.jpg",
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fc2.staticflickr.com%2F8%2F7282%2F8995095069_9e88b3bba5_b.jpg",
   "canonical_url": "https://www.nickyt.co/blog/handy-js-snippets-352f/",
   "reading_time_minutes": 2,
   "template": "post"
