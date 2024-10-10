@@ -1,0 +1,6 @@
+# Content license
+src/blog/* linguist-documentation
+src/blog/CONTENT_LICENSE.txt linguist-language=Text
+
+# Main site license
+LICENSE.txt linguist-language=Text
