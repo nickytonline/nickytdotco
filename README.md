@@ -42,7 +42,7 @@ This project contains two separate licenses:
 
 2. **Code License**: The website's source code, including the template and any custom modifications, is licensed under the [Insert Your Code License Here, e.g., MIT License].
 
-   - For full details, see the [LICENSE](./LICENSE) file in the root directory of this project.
+   - For full details, see the [LICENSE.txt](./LICENSE.txt) file in the root directory of this project.
 
 Please note that this licensing arrangement applies to all content and code in this repository, regardless of when it was committed.
 
@@ -57,6 +57,6 @@ If you wish to use, share, or adapt any content from this blog:
 
 Example attribution: "This work is based on [Article Title] by [Your Name], originally published at [Your Blog URL], licensed under CC BY 4.0."
 
-For any use of the website's code, please refer to the terms specified in the [LICENSE](./LICENSE) file.
+For any use of the website's code, please refer to the terms specified in the [LICENSE.txt](./LICENSE.txt) file.
 
 If you have any questions about licensing or usage, please open an issue in this repository.
