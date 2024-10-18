@@ -41,8 +41,6 @@ Regardless of whether or not you start with a library or framework, at some poin
 
 * [patterns.dev](https://www.patterns.dev)
 
-{% twitter "1472833175923478531" %}
-
 * [Philip Roberts](https://twitter.com/philip_roberts) talk at JSConf EU "What the heck is the event loop anyway?" is an excellent explanation of the event loop.
 
 {% youtube "8aGhZQkoFbQ" %}

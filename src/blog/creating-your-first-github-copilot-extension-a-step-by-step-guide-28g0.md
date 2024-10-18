@@ -26,7 +26,11 @@ A Copilot extension is essentially a GitHub app with a specific endpoint. Let's 
 
 ### Setting Up Your Project
 
-In this guide, we're using [Hono.js](https://hono.dev/) as our web framework, but you can use any web framework or web server of your choice. The core concepts will remain the same regardless of the framework you choose. The only thing to be aware of about the SDK is, for the moment, the only languages supported are TypeScript and JavaScript.
+In this guide, we're using [Hono.js](https://hono.dev/) as our web framework, but you can use any web framework or web server of your choice.
+
+{% embed "https://blog.cloudflare.com/the-story-of-web-framework-hono-from-the-creator-of-hono" %}
+
+The core concepts will remain the same regardless of the framework you choose. The only thing to be aware of about the SDK is, for the moment, the only languages supported are TypeScript and JavaScript.
 
 1. Create a new Hono project using the Hono CLI:
 
@@ -49,6 +53,7 @@ In this guide, we're using [Hono.js](https://hono.dev/) as our web framework, bu
 
     ```typescript
     import { Hono } from 'hono'
+    import { serve } from '@hono/node-server';
     import { Octokit } from "@octokit/core";
     import {
       createAckEvent,
@@ -77,6 +82,8 @@ Now, let's implement the endpoint that will handle requests from GitHub Copilot:
 2. When a message comes in, you need to verify the request and parse the payload:
 
     ```typescript
+    // Identify the user, using the GitHub API token provided in the request headers.
+    const tokenForUser = c.req.header("X-GitHub-Token") ?? "";
     const body = await c.req.text();
     const signature = c.req.header("github-public-key-signature") ?? "";
     const keyID = c.req.header("github-public-key-identifier") ?? "";
