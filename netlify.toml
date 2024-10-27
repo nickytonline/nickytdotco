@@ -238,6 +238,12 @@ status = 302
 force = true
 
 [[redirects]]
+from = "/slides/ato24"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vSQtlWFl3LA9mSC9iqML5GItoqwYLLRtvW4WJEyX4cA-jxsiTyh3eckd7P-hklBF1k0N9SVx0SoyVT_/pub?start=false&loop=false&delayms=5000"
+status = 302
+force = true
+
+[[redirects]]
 from = "/pages/stream-schedule/*"
 to = "https://nickyt.live/schedule/:splat"
 status = 301
