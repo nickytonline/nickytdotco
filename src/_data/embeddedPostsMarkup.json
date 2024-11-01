@@ -10,8 +10,8 @@
     "url": "https://dev.to/nickytonline/stuff-i-always-set-up-for-frontend-work-56h2",
     "collection_id": 4083,
     "published_timestamp": "2020-10-18T04:20:19Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Folzaevg5khtiad835vke.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Folzaevg5khtiad835vke.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Folzaevg5khtiad835vke.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Folzaevg5khtiad835vke.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/stuff-i-always-set-up-for-frontend-work-56h2/",
     "created_at": "2020-10-18T03:17:00Z",
     "edited_at": "2022-04-28T01:28:39Z",
@@ -27,12 +27,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/devteam/changelog-frontend-edition-30l7": {
@@ -46,8 +46,8 @@
     "url": "https://dev.to/devteam/changelog-frontend-edition-30l7",
     "collection_id": null,
     "published_timestamp": "2020-06-24T19:09:12Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Ftaavig1ker0pmxi35grk.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Ftaavig1ker0pmxi35grk.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Ftaavig1ker0pmxi35grk.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Ftaavig1ker0pmxi35grk.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/changelog-frontend-edition-30l7/",
     "created_at": "2020-06-24T18:54:07Z",
     "edited_at": "2022-04-21T18:22:16Z",
@@ -64,19 +64,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "The DEV Team",
       "username": "devteam",
       "slug": "devteam",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
   "https://dev.to/nickytonline/storybook-talk-live-coding-klp": {
@@ -90,8 +90,8 @@
     "url": "https://dev.to/nickytonline/storybook-talk-live-coding-klp",
     "collection_id": null,
     "published_timestamp": "2021-03-16T03:43:46Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F436wuamj05szgisfdtrm.jpeg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F436wuamj05szgisfdtrm.jpeg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F436wuamj05szgisfdtrm.jpeg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F436wuamj05szgisfdtrm.jpeg",
     "canonical_url": "https://www.iamdeveloper.com/posts/storybook-talk-live-coding-klp/",
     "created_at": "2021-03-16T03:41:56Z",
     "edited_at": "2022-04-06T02:50:01Z",
@@ -109,12 +109,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/getting-started-with-streaming-on-twitch-4im7": {
@@ -128,8 +128,8 @@
     "url": "https://dev.to/nickytonline/getting-started-with-streaming-on-twitch-4im7",
     "collection_id": 12666,
     "published_timestamp": "2021-07-28T03:22:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffm42fqy3ziu3r1zyahel.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffm42fqy3ziu3r1zyahel.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffm42fqy3ziu3r1zyahel.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffm42fqy3ziu3r1zyahel.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/getting-started-with-streaming-on-twitch-4im7/",
     "created_at": "2021-07-28T02:51:21Z",
     "edited_at": "2022-08-12T13:10:34Z",
@@ -146,12 +146,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/why-i-created-the-vscodetips-community-2bl": {
@@ -165,8 +165,8 @@
     "url": "https://dev.to/vscodetips/why-i-created-the-vscodetips-community-2bl",
     "collection_id": null,
     "published_timestamp": "2021-08-28T04:49:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/why-i-created-the-vscodetips-community-2bl/",
     "created_at": "2021-08-28T04:49:00Z",
     "edited_at": "2022-04-06T02:44:54Z",
@@ -182,19 +182,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "VS Code Tips",
       "username": "vscodetips",
       "slug": "vscodetips",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
   "https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo": {
@@ -208,8 +208,8 @@
     "url": "https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo",
     "collection_id": null,
     "published_timestamp": "2021-03-30T11:24:05Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F072x5emh514qr1ya58b0.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F072x5emh514qr1ya58b0.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F072x5emh514qr1ya58b0.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F072x5emh514qr1ya58b0.jpg",
     "canonical_url": "https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo",
     "created_at": "2021-03-30T10:28:20Z",
     "edited_at": null,
@@ -230,8 +230,8 @@
       "github_username": "aitchiss",
       "user_id": 197075,
       "website_url": "https://www.upyoura11y.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F197075%2Fac841cbd-abbb-4760-be69-6909cef48656.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F197075%2Fac841cbd-abbb-4760-be69-6909cef48656.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F197075%2Fac841cbd-abbb-4760-be69-6909cef48656.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F197075%2Fac841cbd-abbb-4760-be69-6909cef48656.jpg"
     }
   },
   "https://dev.to/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj": {
@@ -245,8 +245,8 @@
     "url": "https://dev.to/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj",
     "collection_id": null,
     "published_timestamp": "2021-12-27T16:08:03Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fscfrt4xkdifplcapuuw5.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fscfrt4xkdifplcapuuw5.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fscfrt4xkdifplcapuuw5.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fscfrt4xkdifplcapuuw5.png",
     "canonical_url": "https://www.swyx.io/turborepo-why",
     "created_at": "2021-12-27T15:32:37Z",
     "edited_at": "2022-05-31T21:26:02Z",
@@ -267,8 +267,8 @@
       "github_username": "swyxio",
       "user_id": 47766,
       "website_url": "http://swyx.io",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg"
     }
   },
   "https://dev.to/nickytonline/learning-rust-1h2n": {
@@ -282,8 +282,8 @@
     "url": "https://dev.to/nickytonline/learning-rust-1h2n",
     "collection_id": 12297,
     "published_timestamp": "2021-04-18T19:47:05Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F4xq8xpxzzghjhh1nli1g.jpeg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F4xq8xpxzzghjhh1nli1g.jpeg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F4xq8xpxzzghjhh1nli1g.jpeg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F4xq8xpxzzghjhh1nli1g.jpeg",
     "canonical_url": "https://www.iamdeveloper.com/posts/learning-rust-1h2n/",
     "created_at": "2021-04-18T19:47:05Z",
     "edited_at": "2022-09-05T03:51:48Z",
@@ -300,12 +300,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/i-ve-started-to-live-code-on-twitch-for-dev-13cn": {
@@ -319,14 +319,14 @@
     "url": "https://dev.to/nickytonline/i-ve-started-to-live-code-on-twitch-for-dev-13cn",
     "collection_id": 12666,
     "published_timestamp": "2020-04-01T12:54:42Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F4or5dqsjdsqzf3jfsr7t.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F4or5dqsjdsqzf3jfsr7t.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F4or5dqsjdsqzf3jfsr7t.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F4or5dqsjdsqzf3jfsr7t.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/i-ve-started-to-live-code-on-twitch-for-dev-13cn/",
     "created_at": "2020-03-31T22:41:48Z",
     "edited_at": "2021-05-11T11:23:20Z",
     "crossposted_at": null,
     "published_at": "2020-04-01T12:54:42Z",
-    "last_comment_at": "2022-12-30T19:59:48Z",
+    "last_comment_at": "2024-10-30T16:43:08Z",
     "reading_time_minutes": 2,
     "tag_list": "twitch, streaming, livecoding",
     "tags": [
@@ -337,12 +337,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he": {
@@ -356,8 +356,8 @@
     "url": "https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he",
     "collection_id": 7957,
     "published_timestamp": "2020-07-14T14:10:13Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fnqqvyinfbwzjb4fhemff.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fnqqvyinfbwzjb4fhemff.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fnqqvyinfbwzjb4fhemff.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fnqqvyinfbwzjb4fhemff.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/let-s-pair-during-a-live-coding-session-8he/",
     "created_at": "2020-07-13T20:13:20Z",
     "edited_at": "2022-04-21T18:21:58Z",
@@ -374,19 +374,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "The DEV Team",
       "username": "devteam",
       "slug": "devteam",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
   "https://dev.to/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0": {
@@ -400,8 +400,8 @@
     "url": "https://dev.to/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
     "collection_id": 4084,
     "published_timestamp": "2020-01-21T18:09:58Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0/",
     "created_at": "2020-01-14T04:16:09Z",
     "edited_at": "2022-05-12T12:37:24Z",
@@ -416,12 +416,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/devteam/welcoming-three-new-team-members-38hp": {
@@ -435,8 +435,8 @@
     "url": "https://dev.to/devteam/welcoming-three-new-team-members-38hp",
     "collection_id": null,
     "published_timestamp": "2020-01-21T18:11:54Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F97a2sge9bgapcn6szuep.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F97a2sge9bgapcn6szuep.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F97a2sge9bgapcn6szuep.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F97a2sge9bgapcn6szuep.png",
     "canonical_url": "https://dev.to/devteam/welcoming-three-new-team-members-38hp",
     "created_at": "2020-01-21T17:30:52Z",
     "edited_at": "2020-01-21T18:16:48Z",
@@ -455,15 +455,15 @@
       "github_username": "jessleenyc",
       "user_id": 264,
       "website_url": null,
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg"
     },
     "organization": {
       "name": "The DEV Team",
       "username": "devteam",
       "slug": "devteam",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
   "https://dev.to/swyx/launching-the-coding-career-handbook-3f43": {
@@ -497,8 +497,8 @@
       "github_username": "swyxio",
       "user_id": 47766,
       "website_url": "http://swyx.io",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg"
     }
   },
   "https://dev.to/ben/nothing-in-software-development-is-obvious--5hmm": {
@@ -512,8 +512,8 @@
     "url": "https://dev.to/ben/nothing-in-software-development-is-obvious--5hmm",
     "collection_id": null,
     "published_timestamp": "2018-02-22T16:04:51Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcl.ly%2F1x2s1J053E3R%2FImage%25202018-02-22%2520at%252011.13.13%2520AM.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcl.ly%2F1x2s1J053E3R%2FImage%25202018-02-22%2520at%252011.13.13%2520AM.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcl.ly%2F1x2s1J053E3R%2FImage%25202018-02-22%2520at%252011.13.13%2520AM.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcl.ly%2F1x2s1J053E3R%2FImage%25202018-02-22%2520at%252011.13.13%2520AM.png",
     "canonical_url": "https://dev.to/ben/nothing-in-software-development-is-obvious--5hmm",
     "created_at": "2018-02-22T15:40:05Z",
     "edited_at": "2018-02-22T16:13:31Z",
@@ -530,8 +530,8 @@
       "github_username": "benhalpern",
       "user_id": 1,
       "website_url": "http://benhalpern.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
     }
   },
   "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko": {
@@ -545,8 +545,8 @@
     "url": "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
     "collection_id": 619,
     "published_timestamp": "2019-03-16T22:34:47Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fquotation.io%2Fquotes%2Fwant-go-fast-go-alone-want-go-far-go-together.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fquotation.io%2Fquotes%2Fwant-go-fast-go-alone-want-go-far-go-together.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fquotation.io%2Fquotes%2Fwant-go-fast-go-alone-want-go-far-go-together.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fquotation.io%2Fquotes%2Fwant-go-fast-go-alone-want-go-far-go-together.jpg",
     "canonical_url": "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
     "created_at": "2019-03-10T21:06:20Z",
     "edited_at": "2020-08-02T17:58:52Z",
@@ -568,8 +568,8 @@
       "github_username": "lostintangent",
       "user_id": 82833,
       "website_url": null,
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F82833%2F8f5c1c7e-eea0-49cc-9632-25ef8a2c9410.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F82833%2F8f5c1c7e-eea0-49cc-9632-25ef8a2c9410.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F82833%2F8f5c1c7e-eea0-49cc-9632-25ef8a2c9410.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F82833%2F8f5c1c7e-eea0-49cc-9632-25ef8a2c9410.jpeg"
     }
   },
   "https://dev.to/devteam/changelog-dev-has-some-stories-for-you-15kn": {
@@ -583,8 +583,8 @@
     "url": "https://dev.to/devteam/changelog-dev-has-some-stories-for-you-15kn",
     "collection_id": null,
     "published_timestamp": "2020-05-22T13:46:37Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fln7awag96agh8pxsjsui.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fln7awag96agh8pxsjsui.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fln7awag96agh8pxsjsui.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fln7awag96agh8pxsjsui.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/changelog-dev-has-some-stories-for-you-15kn/",
     "created_at": "2020-05-21T21:49:03Z",
     "edited_at": "2022-04-21T18:22:53Z",
@@ -602,19 +602,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "The DEV Team",
       "username": "devteam",
       "slug": "devteam",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
   "https://dev.to/nickytonline/getting-started-with-react-storybook-9jh": {
@@ -628,8 +628,8 @@
     "url": "https://dev.to/nickytonline/getting-started-with-react-storybook-9jh",
     "collection_id": 4085,
     "published_timestamp": "2018-03-27T04:16:30Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/getting-started-with-react-storybook-9jh/",
     "created_at": "2018-03-27T04:10:33Z",
     "edited_at": "2020-06-17T03:11:40Z",
@@ -647,12 +647,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5": {
@@ -666,8 +666,8 @@
     "url": "https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5",
     "collection_id": null,
     "published_timestamp": "2019-09-26T11:56:08Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9x9f1q8zar8gsxdx6bzh.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9x9f1q8zar8gsxdx6bzh.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9x9f1q8zar8gsxdx6bzh.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9x9f1q8zar8gsxdx6bzh.png",
     "canonical_url": "https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5",
     "created_at": "2019-09-26T10:18:20Z",
     "edited_at": "2019-09-26T12:40:36Z",
@@ -689,15 +689,15 @@
       "github_username": "benhalpern",
       "user_id": 1,
       "website_url": "http://benhalpern.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
     },
     "organization": {
       "name": "The DEV Team",
       "username": "devteam",
       "slug": "devteam",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
   "https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6": {
@@ -711,8 +711,8 @@
     "url": "https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6",
     "collection_id": 4084,
     "published_timestamp": "2019-01-07T05:07:51Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffgimfk93vbdn6v0csx5e.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffgimfk93vbdn6v0csx5e.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffgimfk93vbdn6v0csx5e.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffgimfk93vbdn6v0csx5e.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/take-chances-and-standout-because-who-knows-3kh6/",
     "created_at": "2019-01-07T03:39:58Z",
     "edited_at": "2022-05-02T11:49:27Z",
@@ -729,12 +729,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/jess/dev-monthly-report--march-2018-579p": {
@@ -748,8 +748,8 @@
     "url": "https://dev.to/jess/dev-monthly-report--march-2018-579p",
     "collection_id": null,
     "published_timestamp": "2018-04-02T19:09:08Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffn26afgw5i3hjbmnhawv.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffn26afgw5i3hjbmnhawv.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffn26afgw5i3hjbmnhawv.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffn26afgw5i3hjbmnhawv.png",
     "canonical_url": "https://dev.to/jess/dev-monthly-report--march-2018-579p",
     "created_at": "2018-04-02T18:53:18Z",
     "edited_at": null,
@@ -768,8 +768,8 @@
       "github_username": "jessleenyc",
       "user_id": 264,
       "website_url": null,
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg"
     }
   },
   "https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf": {
@@ -783,8 +783,8 @@
     "url": "https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf",
     "collection_id": null,
     "published_timestamp": "2019-08-16T04:05:50Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjivsyirs8gft16kuji62.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjivsyirs8gft16kuji62.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjivsyirs8gft16kuji62.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjivsyirs8gft16kuji62.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/update-dependencies-with-dependabot-cypress-and-netlify-3lkf/",
     "created_at": "2019-08-16T03:23:34Z",
     "edited_at": "2022-05-02T11:35:43Z",
@@ -802,12 +802,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2": {
@@ -821,8 +821,8 @@
     "url": "https://dev.to/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2",
     "collection_id": null,
     "published_timestamp": "2019-04-01T04:27:37Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fir0wzbkqn1rw9vu67irj.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fir0wzbkqn1rw9vu67irj.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fir0wzbkqn1rw9vu67irj.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fir0wzbkqn1rw9vu67irj.png",
     "canonical_url": "https://www.nickyt.co/posts/an-a11y-extension-coming-to-a-browser-near-you-1mg2/",
     "created_at": "2019-04-01T01:14:49Z",
     "edited_at": "2023-08-17T02:44:37Z",
@@ -839,12 +839,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3": {
@@ -858,8 +858,8 @@
     "url": "https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3",
     "collection_id": 3255,
     "published_timestamp": "2017-10-08T14:35:45Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/why-you-might-want-to-consider-using-typescript-6j3/",
     "created_at": "2017-10-08T13:46:29Z",
     "edited_at": "2022-04-14T00:23:00Z",
@@ -874,12 +874,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/liyasthomas/postwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0": {
@@ -893,8 +893,8 @@
     "url": "https://dev.to/liyasthomas/postwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0",
     "collection_id": null,
     "published_timestamp": "2019-11-05T05:30:06Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fxlhp955dl62ns017d568.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fxlhp955dl62ns017d568.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fxlhp955dl62ns017d568.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fxlhp955dl62ns017d568.jpg",
     "canonical_url": "https://dev.to/liyasthomas/postwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0",
     "created_at": "2019-11-05T01:08:24Z",
     "edited_at": "2023-05-28T16:54:32Z",
@@ -916,8 +916,8 @@
       "github_username": "liyasthomas",
       "user_id": 89864,
       "website_url": "https://liyasthomas.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F89864%2Fcd0d2f13-df2e-41c5-85a5-c4f1a31ed66d.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F89864%2Fcd0d2f13-df2e-41c5-85a5-c4f1a31ed66d.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F89864%2Fcd0d2f13-df2e-41c5-85a5-c4f1a31ed66d.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F89864%2Fcd0d2f13-df2e-41c5-85a5-c4f1a31ed66d.jpg"
     },
     "flare_tag": {
       "name": "showdev",
@@ -936,8 +936,8 @@
     "url": "https://dev.to/ananyaneogi/html-can-do-that-c0n",
     "collection_id": null,
     "published_timestamp": "2019-06-25T21:38:30Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjnx66b92lqma40xrary8.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjnx66b92lqma40xrary8.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjnx66b92lqma40xrary8.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjnx66b92lqma40xrary8.png",
     "canonical_url": "https://dev.to/ananyaneogi/html-can-do-that-c0n",
     "created_at": "2019-06-25T16:47:56Z",
     "edited_at": "2019-06-26T06:18:21Z",
@@ -957,8 +957,8 @@
       "github_username": "ananyaneogi",
       "user_id": 106991,
       "website_url": "https://ananyaneogi.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F106991%2Fb487674a-45f7-4116-b695-a2607893e0ac.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F106991%2Fb487674a-45f7-4116-b695-a2607893e0ac.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F106991%2Fb487674a-45f7-4116-b695-a2607893e0ac.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F106991%2Fb487674a-45f7-4116-b695-a2607893e0ac.jpg"
     }
   },
   "https://dev.to/chantastic/learn-react-in-25-short-lessons-react-holiday-2019-24np": {
@@ -993,8 +993,8 @@
       "github_username": "chantastic",
       "user_id": 50756,
       "website_url": "https://chan.dev",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F50756%2F245a8d36-6fd8-437b-bf34-6637f0f3d79b.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F50756%2F245a8d36-6fd8-437b-bf34-6637f0f3d79b.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F50756%2F245a8d36-6fd8-437b-bf34-6637f0f3d79b.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F50756%2F245a8d36-6fd8-437b-bf34-6637f0f3d79b.png"
     }
   },
   "https://dev.to/nickytonline/my-visual-studio-code-setup-2ima": {
@@ -1008,8 +1008,8 @@
     "url": "https://dev.to/nickytonline/my-visual-studio-code-setup-2ima",
     "collection_id": 4083,
     "published_timestamp": "2017-12-23T14:11:11Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6e271uy3v8ia1h0e1c7q.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6e271uy3v8ia1h0e1c7q.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6e271uy3v8ia1h0e1c7q.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6e271uy3v8ia1h0e1c7q.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/",
     "created_at": "2017-12-22T16:45:26Z",
     "edited_at": "2020-06-17T03:20:54Z",
@@ -1027,12 +1027,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/any-contribution-to-open-source-is-valuable-57d3": {
@@ -1046,8 +1046,8 @@
     "url": "https://dev.to/nickytonline/any-contribution-to-open-source-is-valuable-57d3",
     "collection_id": null,
     "published_timestamp": "2019-01-22T04:02:06Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F2h3puantbcb0a0sfusny.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F2h3puantbcb0a0sfusny.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F2h3puantbcb0a0sfusny.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F2h3puantbcb0a0sfusny.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/any-contribution-to-open-source-is-valuable-57d3/",
     "created_at": "2019-01-22T03:54:33Z",
     "edited_at": "2022-05-12T22:37:18Z",
@@ -1063,12 +1063,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/showcase-your-gatsby-site-266": {
@@ -1082,8 +1082,8 @@
     "url": "https://dev.to/nickytonline/showcase-your-gatsby-site-266",
     "collection_id": null,
     "published_timestamp": "2019-02-28T22:02:28Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fepig0488nwfmsdm59t48.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fepig0488nwfmsdm59t48.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fepig0488nwfmsdm59t48.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fepig0488nwfmsdm59t48.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/showcase-your-gatsby-site-266/",
     "created_at": "2019-02-28T22:02:28Z",
     "edited_at": "2020-06-17T02:52:08Z",
@@ -1101,12 +1101,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/my-hacktoberfest-2019-32i2": {
@@ -1120,8 +1120,8 @@
     "url": "https://dev.to/nickytonline/my-hacktoberfest-2019-32i2",
     "collection_id": null,
     "published_timestamp": "2019-10-15T01:00:22Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fp2th95jqhkylbvffrrz0.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fp2th95jqhkylbvffrrz0.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fp2th95jqhkylbvffrrz0.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fp2th95jqhkylbvffrrz0.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/my-hacktoberfest-2019-32i2/",
     "created_at": "2019-10-15T00:51:48Z",
     "edited_at": "2020-06-17T02:44:33Z",
@@ -1136,12 +1136,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/my-git-aliases-5dea": {
@@ -1155,8 +1155,8 @@
     "url": "https://dev.to/nickytonline/my-git-aliases-5dea",
     "collection_id": 4083,
     "published_timestamp": "2018-08-25T12:55:27Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fc31gesmnfndo89bh4673.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fc31gesmnfndo89bh4673.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fc31gesmnfndo89bh4673.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fc31gesmnfndo89bh4673.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/my-git-aliases-5dea/",
     "created_at": "2018-08-25T12:49:44Z",
     "edited_at": "2022-04-08T18:24:17Z",
@@ -1173,12 +1173,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/devteam/contributors-wanted-night-mode-themes-on-dev-i8n": {
@@ -1193,7 +1193,7 @@
     "collection_id": null,
     "published_timestamp": "2019-03-29T17:27:55Z",
     "cover_image": null,
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8g4l22izmn81orlvfax3.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8g4l22izmn81orlvfax3.png",
     "canonical_url": "https://dev.to/devteam/contributors-wanted-night-mode-themes-on-dev-i8n",
     "created_at": "2019-03-29T15:30:27Z",
     "edited_at": null,
@@ -1215,15 +1215,15 @@
       "github_username": "benhalpern",
       "user_id": 1,
       "website_url": "http://benhalpern.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
     },
     "organization": {
       "name": "The DEV Team",
       "username": "devteam",
       "slug": "devteam",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
   "https://dev.to/iampeekay/why-use-static-types-in-javascript-part-1": {
@@ -1237,8 +1237,8 @@
     "url": "https://dev.to/iampeekay/why-use-static-types-in-javascript-part-1",
     "collection_id": null,
     "published_timestamp": "2016-12-08T18:36:48Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/http%3A%2F%2Fi.imgur.com%2FWPQOAPu.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/http%3A%2F%2Fi.imgur.com%2FWPQOAPu.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/http%3A%2F%2Fi.imgur.com%2FWPQOAPu.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/http%3A%2F%2Fi.imgur.com%2FWPQOAPu.png",
     "canonical_url": "https://dev.to/iampeekay/why-use-static-types-in-javascript-part-1",
     "created_at": "2016-12-08T18:36:48Z",
     "edited_at": null,
@@ -1259,8 +1259,8 @@
       "github_username": "iam-peekay",
       "user_id": 684,
       "website_url": null,
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F684%2F5421194.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F684%2F5421194.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F684%2F5421194.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F684%2F5421194.jpeg"
     }
   },
   "https://dev.to/nickytonline/is-2019-the-year-of-typescript-18p2": {
@@ -1274,8 +1274,8 @@
     "url": "https://dev.to/nickytonline/is-2019-the-year-of-typescript-18p2",
     "collection_id": 3255,
     "published_timestamp": "2019-01-16T23:59:04Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Feoz2gg948ys22w1ir00h.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Feoz2gg948ys22w1ir00h.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Feoz2gg948ys22w1ir00h.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Feoz2gg948ys22w1ir00h.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/is-2019-the-year-of-typescript-18p2/",
     "created_at": "2019-01-16T23:59:04Z",
     "edited_at": "2022-07-10T03:36:23Z",
@@ -1293,12 +1293,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "flare_tag": {
       "name": "discuss",
@@ -1317,8 +1317,8 @@
     "url": "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6",
     "collection_id": 3255,
     "published_timestamp": "2019-02-26T04:20:42Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/an-enhanced-typescript-playground-49j6/",
     "created_at": "2019-02-26T04:16:02Z",
     "edited_at": "2022-07-10T03:41:57Z",
@@ -1333,12 +1333,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/2018-resolutions-1deo": {
@@ -1352,8 +1352,8 @@
     "url": "https://dev.to/nickytonline/2018-resolutions-1deo",
     "collection_id": null,
     "published_timestamp": "2018-01-04T04:58:18Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fel9zpvhbtnwrdmeel3rz.PNG",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fel9zpvhbtnwrdmeel3rz.PNG",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fel9zpvhbtnwrdmeel3rz.PNG",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fel9zpvhbtnwrdmeel3rz.PNG",
     "canonical_url": "https://www.iamdeveloper.com/2018-resolutions/",
     "created_at": "2018-01-04T04:42:02Z",
     "edited_at": "2018-01-04T05:07:37Z",
@@ -1370,12 +1370,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/my-mac-setup-2m05": {
@@ -1389,8 +1389,8 @@
     "url": "https://dev.to/nickytonline/my-mac-setup-2m05",
     "collection_id": null,
     "published_timestamp": "2018-01-12T05:15:04Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fqkwvsk3lp64lvchg69tm.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fqkwvsk3lp64lvchg69tm.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fqkwvsk3lp64lvchg69tm.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fqkwvsk3lp64lvchg69tm.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/my-mac-setup-2m05/",
     "created_at": "2018-01-12T05:07:48Z",
     "edited_at": "2022-05-30T02:13:19Z",
@@ -1407,12 +1407,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/thepracticaldev/the-7-most-popular-dev-posts-from-the-past-week-4pno": {
@@ -1426,8 +1426,8 @@
     "url": "https://dev.to/thepracticaldev/the-7-most-popular-dev-posts-from-the-past-week-4pno",
     "collection_id": null,
     "published_timestamp": "2018-01-15T15:08:56Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fxsr1z6iqv0pd7p3s6ns3.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fxsr1z6iqv0pd7p3s6ns3.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fxsr1z6iqv0pd7p3s6ns3.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fxsr1z6iqv0pd7p3s6ns3.png",
     "canonical_url": "https://dev.to/thepracticaldev/the-7-most-popular-dev-posts-from-the-past-week-4pno",
     "created_at": "2018-01-15T15:07:48Z",
     "edited_at": null,
@@ -1446,8 +1446,8 @@
       "github_username": null,
       "user_id": 3,
       "website_url": "https://dev.to",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F3%2F13d3b32a-d381-4549-b95e-ec665768ce8f.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F3%2F13d3b32a-d381-4549-b95e-ec665768ce8f.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F3%2F13d3b32a-d381-4549-b95e-ec665768ce8f.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F3%2F13d3b32a-d381-4549-b95e-ec665768ce8f.png"
     }
   },
   "https://dev.to/nickytonline/quick-hulk-code-pen-18i1": {
@@ -1461,8 +1461,8 @@
     "url": "https://dev.to/nickytonline/quick-hulk-code-pen-18i1",
     "collection_id": 3248,
     "published_timestamp": "2018-01-13T04:37:21Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/quick-hulk-code-pen-18i1/",
     "created_at": "2018-01-13T04:37:21Z",
     "edited_at": "2020-06-17T03:17:33Z",
@@ -1478,12 +1478,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/quick-simple-rating-code-pen-3ecp": {
@@ -1497,8 +1497,8 @@
     "url": "https://dev.to/nickytonline/quick-simple-rating-code-pen-3ecp",
     "collection_id": 3248,
     "published_timestamp": "2018-01-19T04:12:02Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F4%2F3864%2F15120161855_a640e93573_b.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F4%2F3864%2F15120161855_a640e93573_b.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F4%2F3864%2F15120161855_a640e93573_b.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F4%2F3864%2F15120161855_a640e93573_b.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/quick-simple-rating-code-pen-3ecp/",
     "created_at": "2018-01-19T04:12:02Z",
     "edited_at": "2020-06-17T03:16:53Z",
@@ -1514,12 +1514,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m": {
@@ -1533,8 +1533,8 @@
     "url": "https://dev.to/nickytonline/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m",
     "collection_id": 3248,
     "published_timestamp": "2018-02-09T05:01:39Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F6%2F5184%2F5639332304_9f91e58360_b.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F6%2F5184%2F5639332304_9f91e58360_b.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F6%2F5184%2F5639332304_9f91e58360_b.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F6%2F5184%2F5639332304_9f91e58360_b.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m/",
     "created_at": "2018-02-09T04:59:10Z",
     "edited_at": "2020-06-17T03:14:16Z",
@@ -1550,12 +1550,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/a--notification-code-pen-4o0n": {
@@ -1569,8 +1569,8 @@
     "url": "https://dev.to/nickytonline/a--notification-code-pen-4o0n",
     "collection_id": 3248,
     "published_timestamp": "2018-01-27T07:33:25Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fnmx6enjnka59n8c5jwc6.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fnmx6enjnka59n8c5jwc6.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fnmx6enjnka59n8c5jwc6.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fnmx6enjnka59n8c5jwc6.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/a--notification-code-pen-4o0n/",
     "created_at": "2018-01-27T07:12:34Z",
     "edited_at": "2020-06-17T03:15:32Z",
@@ -1586,12 +1586,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/typescript/type-treat-2021-day-1-6an": {
@@ -1605,8 +1605,8 @@
     "url": "https://dev.to/typescript/type-treat-2021-day-1-6an",
     "collection_id": 15226,
     "published_timestamp": "2021-10-26T07:09:21Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdevblogs.microsoft.com%2Ftypescript%2Fwp-content%2Fuploads%2Fsites%2F11%2F2021%2F10%2Ftype-or-treat-2021.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdevblogs.microsoft.com%2Ftypescript%2Fwp-content%2Fuploads%2Fsites%2F11%2F2021%2F10%2Ftype-or-treat-2021.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdevblogs.microsoft.com%2Ftypescript%2Fwp-content%2Fuploads%2Fsites%2F11%2F2021%2F10%2Ftype-or-treat-2021.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdevblogs.microsoft.com%2Ftypescript%2Fwp-content%2Fuploads%2Fsites%2F11%2F2021%2F10%2Ftype-or-treat-2021.png",
     "canonical_url": "https://dev.to/typescript/type-treat-2021-day-1-6an",
     "created_at": "2021-10-26T07:09:06Z",
     "edited_at": "2021-10-28T19:16:35Z",
@@ -1626,15 +1626,15 @@
       "github_username": "orta",
       "user_id": 163069,
       "website_url": null,
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F163069%2F32c648a3-b634-4322-bc58-95e645296b35.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F163069%2F32c648a3-b634-4322-bc58-95e645296b35.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F163069%2F32c648a3-b634-4322-bc58-95e645296b35.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F163069%2F32c648a3-b634-4322-bc58-95e645296b35.png"
     },
     "organization": {
       "name": "typescript",
       "username": "typescript",
       "slug": "typescript",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2560%2Fa664849a-eb4e-411e-a928-c96a0af9868b.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2560%2Fa664849a-eb4e-411e-a928-c96a0af9868b.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2560%2Fa664849a-eb4e-411e-a928-c96a0af9868b.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2560%2Fa664849a-eb4e-411e-a928-c96a0af9868b.png"
     },
     "flare_tag": {
       "name": "challenge",
@@ -1653,8 +1653,8 @@
     "url": "https://dev.to/whitep4nth3r/were-all-living-on-it-but-what-exactly-is-the-edge-4n5l",
     "collection_id": null,
     "published_timestamp": "2022-04-27T14:52:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3af3in6ynwcfjox4c98d.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3af3in6ynwcfjox4c98d.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3af3in6ynwcfjox4c98d.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3af3in6ynwcfjox4c98d.png",
     "canonical_url": "https://whitep4nth3r.com/blog/what-is-the-edge-serverless-functions/",
     "created_at": "2022-04-27T14:52:17Z",
     "edited_at": "2022-07-28T12:30:09Z",
@@ -1675,8 +1675,8 @@
       "github_username": "whitep4nth3r",
       "user_id": 492757,
       "website_url": "https://whitep4nth3r.com/",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png"
     }
   },
   "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404": {
@@ -1690,8 +1690,8 @@
     "url": "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
     "collection_id": null,
     "published_timestamp": "2022-06-21T15:34:24Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fres.cloudinary.com%2Fdeepgram%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Cw_auto%2Cc_fit%2Fv1655815938%2Fblog%2F2022%2F06%2Fhow-to-add-speech-recognition-to-your-react-project%2FHow-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fres.cloudinary.com%2Fdeepgram%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Cw_auto%2Cc_fit%2Fv1655815938%2Fblog%2F2022%2F06%2Fhow-to-add-speech-recognition-to-your-react-project%2FHow-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fres.cloudinary.com%2Fdeepgram%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Cw_auto%2Cc_fit%2Fv1655815938%2Fblog%2F2022%2F06%2Fhow-to-add-speech-recognition-to-your-react-project%2FHow-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fres.cloudinary.com%2Fdeepgram%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Cw_auto%2Cc_fit%2Fv1655815938%2Fblog%2F2022%2F06%2Fhow-to-add-speech-recognition-to-your-react-project%2FHow-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
     "canonical_url": "https://developers.deepgram.com/blog/2022/06/how-to-add-speech-recognition-to-your-react-project/",
     "created_at": "2022-06-21T15:34:14Z",
     "edited_at": null,
@@ -1712,15 +1712,15 @@
       "github_username": "BekahHW",
       "user_id": 345658,
       "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
     },
     "organization": {
       "name": "Deepgram",
       "username": "deepgram",
       "slug": "deepgram",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4019%2Fb921b72d-3c60-425e-a223-189a5fce8839.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4019%2Fb921b72d-3c60-425e-a223-189a5fce8839.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4019%2Fb921b72d-3c60-425e-a223-189a5fce8839.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4019%2Fb921b72d-3c60-425e-a223-189a5fce8839.jpg"
     }
   },
   "https://dev.to/nickytonline/learning-resources-for-typescript-4g1n": {
@@ -1734,8 +1734,8 @@
     "url": "https://dev.to/nickytonline/learning-resources-for-typescript-4g1n",
     "collection_id": 3255,
     "published_timestamp": "2022-07-10T04:16:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo0css5hj2le5dyrzmj7l.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo0css5hj2le5dyrzmj7l.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo0css5hj2le5dyrzmj7l.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo0css5hj2le5dyrzmj7l.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/learning-resources-for-typescript-4g1n/",
     "created_at": "2022-07-10T04:16:34Z",
     "edited_at": "2022-09-06T01:49:25Z",
@@ -1750,12 +1750,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc": {
@@ -1769,8 +1769,8 @@
     "url": "https://dev.to/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc",
     "collection_id": 17419,
     "published_timestamp": "2022-09-07T04:21:56Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
     "canonical_url": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-vscodedev-mpf",
     "created_at": "2022-09-07T04:21:57Z",
     "edited_at": "2022-09-07T04:24:48Z",
@@ -1786,19 +1786,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "VS Code Tips",
       "username": "vscodetips",
       "slug": "vscodetips",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
   "https://dev.to/ben/changelog-create-series-of-posts-4o63": {
@@ -1813,7 +1813,7 @@
     "collection_id": null,
     "published_timestamp": "2018-10-29T21:54:57Z",
     "cover_image": null,
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyt5vg6lyqfz3grfmqpfz.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyt5vg6lyqfz3grfmqpfz.png",
     "canonical_url": "https://dev.to/ben/changelog-create-series-of-posts-4o63",
     "created_at": "2018-10-29T21:44:25Z",
     "edited_at": "2019-08-28T12:48:48Z",
@@ -1833,8 +1833,8 @@
       "github_username": "benhalpern",
       "user_id": 1,
       "website_url": "http://benhalpern.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
     }
   },
   "https://dev.to/nickytonline/what-is-deno-13he": {
@@ -1848,14 +1848,14 @@
     "url": "https://dev.to/nickytonline/what-is-deno-13he",
     "collection_id": null,
     "published_timestamp": "2022-07-14T03:41:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
     "canonical_url": "https://www.iamdeveloper.com/posts/what-is-deno-13he/",
     "created_at": "2022-07-14T03:41:52Z",
     "edited_at": "2022-08-02T23:50:16Z",
     "crossposted_at": null,
     "published_at": "2022-07-14T03:41:00Z",
-    "last_comment_at": "2023-04-15T19:55:58Z",
+    "last_comment_at": "2024-10-30T16:47:28Z",
     "reading_time_minutes": 8,
     "tag_list": "deno, typescript, rust, javascript",
     "tags": [
@@ -1867,12 +1867,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p": {
@@ -1886,8 +1886,8 @@
     "url": "https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p",
     "collection_id": null,
     "published_timestamp": "2022-05-26T17:12:32Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2x523d97n7fem0pci10s.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2x523d97n7fem0pci10s.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2x523d97n7fem0pci10s.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2x523d97n7fem0pci10s.png",
     "canonical_url": "https://www.nickyt.co/blog/my-eleventy-meetup-talk-3b2p/",
     "created_at": "2022-05-26T17:12:32Z",
     "edited_at": "2023-11-01T02:46:18Z",
@@ -1905,12 +1905,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/revue-being-phased-out-by-twitter-4kle": {
@@ -1924,8 +1924,8 @@
     "url": "https://dev.to/nickytonline/revue-being-phased-out-by-twitter-4kle",
     "collection_id": null,
     "published_timestamp": "2022-11-10T13:40:01Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7ccqiujz5b8rg23rgcl.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7ccqiujz5b8rg23rgcl.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7ccqiujz5b8rg23rgcl.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7ccqiujz5b8rg23rgcl.jpg",
     "canonical_url": "https://www.nickyt.co/blog/revue-being-phased-out-by-twitter-4kle/",
     "created_at": "2022-11-10T13:40:02Z",
     "edited_at": "2023-10-29T04:19:17Z",
@@ -1941,12 +1941,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "flare_tag": {
       "name": "news",
@@ -1965,8 +1965,8 @@
     "url": "https://dev.to/nickytonline/my-impact-at-forem-23mj",
     "collection_id": 4084,
     "published_timestamp": "2022-03-24T03:47:23Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
     "canonical_url": "https://www.iamdeveloper.com/posts/my-impact-at-forem-23mj/",
     "created_at": "2022-03-24T03:47:23Z",
     "edited_at": "2022-06-26T02:52:50Z",
@@ -1981,12 +1981,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/repurposing-content-for-content-creation-3l4d": {
@@ -2000,8 +2000,8 @@
     "url": "https://dev.to/nickytonline/repurposing-content-for-content-creation-3l4d",
     "collection_id": null,
     "published_timestamp": "2022-10-16T15:27:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fovd3nhk3ukuqpfpxagw4.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fovd3nhk3ukuqpfpxagw4.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fovd3nhk3ukuqpfpxagw4.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fovd3nhk3ukuqpfpxagw4.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/repurposing-content-for-content-creation-3l4d/",
     "created_at": "2022-10-16T15:27:01Z",
     "edited_at": "2024-07-20T14:32:59Z",
@@ -2018,12 +2018,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj": {
@@ -2037,8 +2037,8 @@
     "url": "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj",
     "collection_id": null,
     "published_timestamp": "2022-11-01T13:17:32Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
     "canonical_url": "https://www.nickyt.co/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
     "created_at": "2022-11-01T13:17:32Z",
     "edited_at": "2023-10-29T04:22:44Z",
@@ -2055,19 +2055,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "VS Code Tips",
       "username": "vscodetips",
       "slug": "vscodetips",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
   "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2": {
@@ -2081,8 +2081,8 @@
     "url": "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2",
     "collection_id": 16050,
     "published_timestamp": "2021-12-28T04:16:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxlvhwaqhlebll79nx1jt.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxlvhwaqhlebll79nx1jt.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxlvhwaqhlebll79nx1jt.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxlvhwaqhlebll79nx1jt.png",
     "canonical_url": "https://www.nickyt.co/blog/frontend-developer-resources-2022-4cp2/",
     "created_at": "2021-12-28T02:55:12Z",
     "edited_at": "2024-10-18T02:22:16Z",
@@ -2100,12 +2100,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6": {
@@ -2119,8 +2119,8 @@
     "url": "https://dev.to/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
     "collection_id": null,
     "published_timestamp": "2022-11-06T01:32:09Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
     "canonical_url": "https://www.iamdeveloper.com/posts/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
     "created_at": "2022-11-06T01:01:37Z",
     "edited_at": "2024-07-20T14:32:06Z",
@@ -2138,12 +2138,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/where-do-you-find-community-458p": {
@@ -2157,8 +2157,8 @@
     "url": "https://dev.to/nickytonline/where-do-you-find-community-458p",
     "collection_id": null,
     "published_timestamp": "2023-02-19T14:52:22Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb4sttely6muy169brptk.jpg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb4sttely6muy169brptk.jpg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb4sttely6muy169brptk.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb4sttely6muy169brptk.jpg",
     "canonical_url": "https://www.nickyt.co/blog/where-do-you-find-community-458p/",
     "created_at": "2023-02-19T14:21:44Z",
     "edited_at": "2023-10-29T04:20:25Z",
@@ -2173,12 +2173,12 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/opensauced/supercharge-your-repository-with-code-owners-4clg": {
@@ -2192,8 +2192,8 @@
     "url": "https://dev.to/opensauced/supercharge-your-repository-with-code-owners-4clg",
     "collection_id": 24726,
     "published_timestamp": "2023-09-21T15:51:24Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmb76rkwxnwmvnfi8labd.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmb76rkwxnwmvnfi8labd.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmb76rkwxnwmvnfi8labd.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmb76rkwxnwmvnfi8labd.png",
     "canonical_url": "https://opensauced.pizza/docs/community-resources/supercharge-your-repository-with-code-owners/",
     "created_at": "2023-09-19T13:57:43Z",
     "edited_at": "2024-06-10T21:29:38Z",
@@ -2211,19 +2211,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "OpenSauced",
       "username": "opensauced",
       "slug": "opensauced",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
     }
   },
   "https://dev.to/opensauced/boost-productivity-with-the-github-cli-2mne": {
@@ -2237,8 +2237,8 @@
     "url": "https://dev.to/opensauced/boost-productivity-with-the-github-cli-2mne",
     "collection_id": 24726,
     "published_timestamp": "2023-11-14T15:00:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9arpr3kib5ci5pmgmda5.jpeg",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9arpr3kib5ci5pmgmda5.jpeg",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9arpr3kib5ci5pmgmda5.jpeg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9arpr3kib5ci5pmgmda5.jpeg",
     "canonical_url": "https://opensauced.pizza/docs/community-resources/boost-productivity-with-the-github-cli/",
     "created_at": "2023-11-12T13:13:34Z",
     "edited_at": "2024-06-10T21:25:42Z",
@@ -2256,19 +2256,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "OpenSauced",
       "username": "opensauced",
       "slug": "opensauced",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
     }
   },
   "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75": {
@@ -2282,8 +2282,8 @@
     "url": "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
     "collection_id": 26157,
     "published_timestamp": "2023-12-14T08:00:00Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
     "canonical_url": "https://opensauced.pizza/docs/community-resources/migrating-from-jest-to-vitest-for-your-react-application/",
     "created_at": "2023-12-12T03:21:58Z",
     "edited_at": "2024-06-10T21:24:57Z",
@@ -2301,19 +2301,19 @@
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
-      "twitter_username": "nickytonline",
+      "twitter_username": null,
       "github_username": "nickytonline",
       "user_id": 9597,
       "website_url": "https://youtube.com/@nickytonline",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     },
     "organization": {
       "name": "OpenSauced",
       "username": "opensauced",
       "slug": "opensauced",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
     }
   },
   "https://dev.to/opensauced/navigating-the-challenges-of-scaling-open-source-projects-11h2": {
@@ -2327,8 +2327,8 @@
     "url": "https://dev.to/opensauced/navigating-the-challenges-of-scaling-open-source-projects-11h2",
     "collection_id": null,
     "published_timestamp": "2024-03-12T17:28:39Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftbtx0fg356gp7e8g5i3r.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftbtx0fg356gp7e8g5i3r.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftbtx0fg356gp7e8g5i3r.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftbtx0fg356gp7e8g5i3r.png",
     "canonical_url": "https://opensauced.pizza/blog/scaling-oss-projects",
     "created_at": "2024-03-12T17:28:40Z",
     "edited_at": "2024-04-03T22:18:36Z",
@@ -2348,15 +2348,15 @@
       "github_username": "BekahHW",
       "user_id": 345658,
       "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
     },
     "organization": {
       "name": "OpenSauced",
       "username": "opensauced",
       "slug": "opensauced",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
     }
   },
   "https://dev.to/bekahhw/introducing-starsearch-unlock-the-copilot-for-git-history-5ddb": {
@@ -2370,8 +2370,8 @@
     "url": "https://dev.to/opensauced/introducing-starsearch-unlock-the-copilot-for-git-history-5ddb",
     "collection_id": null,
     "published_timestamp": "2024-05-02T15:33:42Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2nw5n484of207szk3tmp.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2nw5n484of207szk3tmp.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2nw5n484of207szk3tmp.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2nw5n484of207szk3tmp.png",
     "canonical_url": "https://news.opensauced.pizza/unlock-the-copilot-for-git-history/",
     "created_at": "2024-05-02T15:33:44Z",
     "edited_at": "2024-05-09T17:59:22Z",
@@ -2392,15 +2392,15 @@
       "github_username": "BekahHW",
       "user_id": 345658,
       "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
     },
     "organization": {
       "name": "OpenSauced",
       "username": "opensauced",
       "slug": "opensauced",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
     }
   },
   "https://dev.to/BekahHW/introducing-the-oscr-celebrating-open-source-stars-2eo7": {
@@ -2414,8 +2414,8 @@
     "url": "https://dev.to/opensauced/introducing-the-oscr-celebrating-open-source-stars-2eo7",
     "collection_id": null,
     "published_timestamp": "2024-08-13T14:16:02Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxm5y4umea40zu4d4c4z0.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxm5y4umea40zu4d4c4z0.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxm5y4umea40zu4d4c4z0.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxm5y4umea40zu4d4c4z0.png",
     "canonical_url": "https://opensauced.pizza/blog/introducing-OSCR",
     "created_at": "2024-08-13T14:16:02Z",
     "edited_at": null,
@@ -2434,15 +2434,15 @@
       "github_username": "BekahHW",
       "user_id": 345658,
       "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
     },
     "organization": {
       "name": "OpenSauced",
       "username": "opensauced",
       "slug": "opensauced",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
     }
   },
   "https://dev.to/jpmcb/introducing-the-pizza-cli-1g6f": {
@@ -2456,8 +2456,8 @@
     "url": "https://dev.to/opensauced/introducing-the-pizza-cli-1g6f",
     "collection_id": null,
     "published_timestamp": "2024-09-16T15:13:37Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5pdlcwvjr6zp8gv4nlck.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5pdlcwvjr6zp8gv4nlck.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5pdlcwvjr6zp8gv4nlck.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5pdlcwvjr6zp8gv4nlck.png",
     "canonical_url": "https://opensauced.pizza/blog/introducing-the-pizza-cli",
     "created_at": "2024-09-16T15:13:38Z",
     "edited_at": null,
@@ -2478,15 +2478,15 @@
       "github_username": "jpmcb",
       "user_id": 1105969,
       "website_url": "https://johncodes.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1105969%2F5af7806f-98cb-4f2f-b32a-7b650a4e8fd7.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1105969%2F5af7806f-98cb-4f2f-b32a-7b650a4e8fd7.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1105969%2F5af7806f-98cb-4f2f-b32a-7b650a4e8fd7.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1105969%2F5af7806f-98cb-4f2f-b32a-7b650a4e8fd7.jpeg"
     },
     "organization": {
       "name": "OpenSauced",
       "username": "opensauced",
       "slug": "opensauced",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
     }
   },
   "https://dev.to/pelikhan/unlocking-the-power-of-prompts-a-gentle-introduction-to-genaiscript-34nn": {
@@ -2500,8 +2500,8 @@
     "url": "https://dev.to/pelikhan/unlocking-the-power-of-prompts-a-gentle-introduction-to-genaiscript-34nn",
     "collection_id": 28513,
     "published_timestamp": "2024-08-20T16:20:58Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyg85fmt2qokjdnuhowja.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyg85fmt2qokjdnuhowja.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyg85fmt2qokjdnuhowja.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyg85fmt2qokjdnuhowja.png",
     "canonical_url": "https://microsoft.github.io/genaiscript/blog/gentle-introduction-to-genaiscript/",
     "created_at": "2024-08-20T15:54:52Z",
     "edited_at": "2024-08-22T12:31:41Z",
@@ -2523,8 +2523,8 @@
       "github_username": "pelikhan",
       "user_id": 439100,
       "website_url": "https://github.com/pelikhan",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F439100%2Fff69f19d-1ba4-4f60-878c-afe74aaa2245.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F439100%2Fff69f19d-1ba4-4f60-878c-afe74aaa2245.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F439100%2Fff69f19d-1ba4-4f60-878c-afe74aaa2245.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F439100%2Fff69f19d-1ba4-4f60-878c-afe74aaa2245.jpeg"
     }
   },
   "https://dev.to/bekahhw/creating-open-source-connections-1ai2": {
@@ -2538,8 +2538,8 @@
     "url": "https://dev.to/opensauced/creating-open-source-connections-1ai2",
     "collection_id": null,
     "published_timestamp": "2024-05-23T10:17:39Z",
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fifvsdgm6y0y0r0pkmmu8.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fifvsdgm6y0y0r0pkmmu8.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fifvsdgm6y0y0r0pkmmu8.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fifvsdgm6y0y0r0pkmmu8.png",
     "canonical_url": "https://opensauced.pizza/blog/open-source-insights-with-starsearch",
     "created_at": "2024-05-23T10:17:39Z",
     "edited_at": null,
@@ -2561,15 +2561,15 @@
       "github_username": "BekahHW",
       "user_id": 345658,
       "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
     },
     "organization": {
       "name": "OpenSauced",
       "username": "opensauced",
       "slug": "opensauced",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
     },
     "flare_tag": {
       "name": "showdev",
