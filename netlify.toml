@@ -272,3 +272,9 @@ from = "/ato-fresh/"
 to = "https://ato-fresh.deno.dev/"
 status = 302
 force = true
+
+[[redirects]]
+from = "https://nickyt.online/*"
+to = "https://bsky.app/profile/nickyt.online/:splat"
+staus = 301
+force = true
