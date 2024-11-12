@@ -19,7 +19,7 @@ We’ll go through the features and architecture so that you can get up and runn
     title: "Why HTML Forms Still Rule the Web",
     date: new Date("2024-10-03T09:00:00.000Z"),
     slideDeck: "/slides/compose-24",
-    sourceCode: "https://github.com/nickytonline/ato-fresh",
+    sourceCode: "https://github.com/nickytonline/formfun.dev",
     venue: {
       name: "Netlify Compose 2024",
       url: "https://www.netlify.com/compose/",
