@@ -50,11 +50,15 @@ async function createTalkFile(talk) {
   };
 
   const markdownBody = `
-      ${video && video.type === "youtube" ? `{% embed "${video.url}" %}` : ""}
-      ${video && video.type === "vimeo" ? `{% embed "${video.url}" %}` : ""}
+      ${video?.type === "youtube" ? `{% embed "${video.url}" %}` : ""}
+      ${video?.type === "vimeo" ? `{% embed "${video.url}" %}` : ""}
       ${
-        video && video.type === "custom"
+        video?.type === "custom"
           ? `<a href="${video.url}" title="${title}"><img src="${video.image.url}" width="${video.image.width}" height="${video.image.height}" /></a>`
+          : ""
+      }${
+        video?.pending
+          ? `<p class="weight-bold">Video will be available soon</p>`
           : ""
       }${
         !video
