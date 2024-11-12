@@ -1,5 +1,22 @@
 const rawTalks = [
   {
+    title: "End to End Testing for Browser Extensions",
+    date: new Date("2024-11-12T12:00:00.000Z"),
+    video: {
+      pending: true,
+    },
+    venue: {
+      name: "Xtreme.js 2024",
+      url: "https://xtremejs.dev/2024",
+    },
+    summary: `We discuss the fundamentals of browser extensions (Chromium browsers & Firefox), explore the current options available for end-to-end testing, and dive in to some live coding to see it in action.
+
+By the end of this presentation, you'll have the knowledge and skills to implement end-to-end testing for your own browser extension.`,
+    slideDeck: "/slides/xtreme24",
+    sourceCode: "https://github.com/nickytonline/xtremejs-2024-demo",
+    tags: ["e2etesting"],
+  },
+  {
     title: "Fresh: A Full Stack Web Framework for Deno",
     date: new Date("2024-10-29T12:00:00.000Z"),
     venue: {
