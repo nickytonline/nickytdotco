@@ -3,7 +3,8 @@ const rawTalks = [
     title: "End to End Testing for Browser Extensions",
     date: new Date("2024-11-12T12:00:00.000Z"),
     video: {
-      pending: true,
+      url: "https://www.youtube.com/watch?v=QUkYtRYdXk4",
+      type: "youtube",
     },
     venue: {
       name: "Xtreme.js 2024",
