@@ -21,6 +21,11 @@
       "external": false
     },
     {
+      "text": "Socials",
+      "url": "https://nickyt.online",
+      "external": true
+    },
+    {
       "text": "VS Code Tips",
       "url": "/pages/vscode-tips",
       "external": false

@@ -17,21 +17,6 @@
         {% endfor %}
       </ul>
     </nav>
-    <nav aria-label="Social links">
-      <ul>
-        {% for item in socials.items %}
-          {% set currentAttribute = '' %}
-          {% if page.url == item.url %}
-            {% set currentAttribute = ' aria-current="page"' %}
-          {% endif %}
-          <li class="nav__item">
-            <a href="{{ item.url }}" rel="me" {{ currentAttribute | safe }} title="{{ item.text }}">
-              <span class="visually-hidden">{{ item.text }}</span>
-              {{ item.icon | safe }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
     <theme-toggle></theme-toggle>
   </div>
 {% endif %}
