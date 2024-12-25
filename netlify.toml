@@ -94,7 +94,7 @@ force = true
 # Thanks two Phils! https://www.hawksworx.com/blog/alias-your-mastodon-username-to-your-domain-with-one-netlify-config-setting/
 [[redirects]]
 from = "/.well-known/webfinger"
-to = "https://toot.cafe/.well-known/webfinger?resource=acct:nickytonline@toot.cafe"
+to = "https://hachyderm.io/.well-known/webfinger?resource=acct:nickytonline@hachyderm.io"
 status = 200
 
 [[redirects]]
