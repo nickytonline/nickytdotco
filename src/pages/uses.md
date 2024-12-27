@@ -1,6 +1,6 @@
 ---
 title: Uses
-metaDesc: 'This page details pretty much all I use as a developer.'
+metaDesc: "This page details pretty much all I use as a developer."
 ---
 
 This page details pretty much all I use as a developer. If you decide to make your own, consider adding it to [Wes Bos](https://twitter.com/wesbos)' [uses.tech](https://uses.tech).
@@ -10,9 +10,9 @@ Note: This page contains affiliate links. I may earn a commission for purchases 
 
 ## Editor
 
-- [VS Code Insider’s Edition](https://code.visualstudio.com/insiders/)
-- Theme: [Houston](https://marketplace.visualstudio.com/items?itemName=astro-build.houston)
-- Font: [Monaspace Krypton](https://monaspace.githubnext.com/)
+- [VS Code](https://code.visualstudio.com) with GitHub Copilot and [Cursor](https://www.cursor.com)
+- Themes: [Houston](https://marketplace.visualstudio.com/items?itemName=astro-build.houston) and the Default Light Modern theme.
+- Font: [Dank Mono](https://philpl.gumroad.com/l/dank-mono) - A font I paid for, but I love it.
 
 ### Chrome/Edge/Firefox Browser Extensions
 
@@ -27,12 +27,10 @@ Note: This page contains affiliate links. I may earn a commission for purchases 
 - [LanguageTool](https://languagetool.org) - A grammar and spell checking tool
 - [Pocket](https://getpocket.com/) - For bookmarking stuff to read
 - [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) - A prettified view of JSON payloads
-- [Tweak New Twitter](https://github.com/insin/tweak-new-twitter/) - Gets rid of a lot of noise in the Twitter UI
-- [a11y Twitter](https://github.com/nickytonline/a11y-twitter) - Small changes to how you use Twitter to promote Tweeting in an accessible manner.
 
 ## Desktop Apps
 
-- [Arc Browser](https://arc.net/gift/93e342bc)
+- [Microsoft Edge](https://www.microsoft.com/en-us/edge) - My main browser for my day to day work and personal stuff.
 - [Bartender](https://www.macbartender.com) - For managing your menu bar. I used to use [Vanilla](https://matthewpalmer.net/vanilla/), but with the notch in newer MacBook Pros, Bartender made the menubar more usable when dealing with lots of menubar icons.
 - [Rocket](https://matthewpalmer.net/rocket/) - Emojis, emojis
 - [Raycast](https://raycast.com) - Workflows, snippets, macOS spotlight on steroids. I previously used [Alfred](https://www.alfredapp.com/), another amazing Spotlight alternative.
@@ -41,15 +39,12 @@ Note: This page contains affiliate links. I may earn a commission for purchases 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) - Because Docker
 - [xScope](https://xscope.app) - Awesome toolset for frontend development. Rulers, guides etc.
 - [Dato](https://sindresorhus.com/dato) - A better date app for macOS. It's great for having multiple time zones in the address bar. I have my local time as well as UTC. I also use it for upcoming meetings and events. Previously I was using [Meeter](https://trymeeter.com) which is great for this, but it's one less app I need now.
-- [iTerm](https://iterm2.com/) - A better terminal for macOS
+- [Ghostty](https://ghostty.org) - A a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
 - [Starship](https://starship.rs/) - A cross shell prompt
 - [Spotify](https://www.spotify.com/us/download/) - Because music.
 - [OBS](https://obsproject.com/download) - For streaming on Twitch
-- [Descript](https://www.descript.com/) - For editing and publishing my Twitch streams to YouTube.
-- [Recut](https://getrecut.com/) - For video editing
 - [Cleanshot X](https://cleanshot.com/) - For better screenshots and screen recordings
 - [Cloudflare Warp](https://blog.cloudflare.com/1111-warp-better-vpn/) - Faster Internet and some VPN goodness
-- [Plash](https://apps.apple.com/us/app/plash/id1494023538) - An interactive desktop background (one or more web pages) for your Mac
 - [Krisp](https://krisp.ai/) - Filter out unwanted noise on calls and streams
 - [GPG Suite](https://gpgtools.org/) - For all things GPG
 - [Figma](https://www.figma.com/) - Design collaboratively on the web
@@ -64,7 +59,6 @@ Note: This page contains affiliate links. I may earn a commission for purchases 
 - [GitHub CLI](https://github.com/cli/cli) - GitHub on the command line. Great for creating PRs, etc.
 - [nvm](https://github.com/nvm-sh/nvm) - Node version manager
 - [cloudflared](https://github.com/cloudflare/cloudflared) - Exposes local servers to the public internet over secure tunnels
-- [mcfly](https://github.com/cantino/mcfly) - An enhance search for your shell history. Super charged <kbd>CTRL</kbd> + <kbd>R</kbd>!
 
 ## Office Setup
 
@@ -91,7 +85,7 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 - [FIFINE AmpliGame AM6 Condenser Mic](https://amzn.to/46zYhrW) with Game/Chat Mix, Noise Suppression, Monitoring, I/O Level & RGB Controls
 - [RODE PSA1 Swivel Mount Studio Microphone Boom Arm](https://amzn.to/3WNsYqx)
 - [Rain Design mStand360 Laptop Stand with Swivel Base](https://amzn.to/3yqdpvt)
-- [Logitech C922x Pro Stream](https://amzn.to/3AkVzun) webcam with [webcam cover](https://amzn.to/3WzD5he)
+- iPhone 13 camera for streaming and recording video
 - [LG 34WN80C-B UltraWide Monitor 34” 21:9 Curved WQHD (3440 x 1440) IPS Display](https://amzn.to/4duC9lm)
 - [Lamicall Gooseneck Phone Holder Bed](https://amzn.to/3Ac5XVt) - I use this to hold my iPhone when I use it for a camera while live streaming or recording video.
 - [Anker USB C Hub, 5-In-1 USB C Adapter](https://amzn.to/4dacHSa)
