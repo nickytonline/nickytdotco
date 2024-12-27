@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhkxr62oih47ls0qrzx3i.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0/",
-  "reading_time_minutes": 8,
+  "reading_time_minutes": 9,
   "template": "post"
 }
 ---
@@ -109,20 +109,47 @@ Now, let's implement the endpoint that will handle requests from GitHub Copilot:
 3. After verifying the request, process the message and create a response. Here's a simple example that greets the user:
 
     ```typescript
-    const octokit = new Octokit({ auth: tokenForUser });
-    const user = await octokit.request("GET /user");
-    const prompt = getUserMessage(payload);
+    c.header("Content-Type", "text/html");
+    c.header("X-Content-Type-Options", "nosniff");
 
-    return c.text(
-      createAckEvent() +
-        createTextEvent(
-          `Welcome ${user.data.login}! It looks like you asked the following question, "${prompt}". This is a GitHub Copilot extension template, so it's up to you to decide what you want to implement to answer prompts.`
-        ) +
-        createDoneEvent()
-    );
+    return stream(c, async (stream) => {
+      try {
+        // Let GitHub Copilot know we are doing something
+        await stream.write(createAckEvent());
+
+        const octokit = new Octokit({ auth: tokenForUser });
+        const user = await octokit.request("GET /user");
+        const prompt = getUserMessage(payload);
+
+        await stream.write(
+          createTextEvent(
+            `Welcome ${user.data.login}! It looks like you asked the following question, "${prompt}". `
+          )
+        );
+
+        await stream.write(
+          createTextEvent(
+            "This is a GitHub Copilot extension template, so it's up to you to decide what you want to implement to answer prompts."
+          )
+        );
+
+        await stream.write(createDoneEvent());
+      } catch (error) {
+        await stream.write(
+          createErrorsEvent([
+            {
+              type: "agent",
+              message: error instanceof Error ? error.message : "Unknown error",
+              code: "PROCESSING_ERROR",
+              identifier: "processing_error",
+            },
+          ])
+        );
+      }
+    });
     ```
 
-This example uses the GitHub Octokit package to get the user's login name and greets them. The `createTextEvent` function is used to create the response that GitHub Copilot will display.
+This example uses the GitHub Octokit package to get the user's login name and greets them. The `createTextEvent` function is used to create the response that GitHub Copilot will display. Note as well, we are streaming the response in so that we can send a signal to GitHub Copilot that something is happening, i.e. `createAckEvent()`. Acknowledging the event will updated the Copilot user interface to a spinning indicator that something is happening.
 
 ## Exposing Your Extension
 
