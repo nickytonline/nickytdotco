@@ -4,11 +4,13 @@
   "excerpt": "Not gonna lie, 2024 was a wild ride.           OpenSauced   Starting 2024 was my fourth month at...",
   "date": "2024-12-27T15:32:49.481Z",
   "tags": [
-    "yearinreview"
+    "yearinreview",
+    "career",
+    "devimpact2024"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6hff5ikirnjolzbkj1ew.jpg",
-  "canonical_url": "https://dev.to/nickytonline/2024-year-in-review-1p7p",
-  "reading_time_minutes": 5,
+  "canonical_url": "https://www.nickyt.co/blog/2024-year-in-review-1p7p/",
+  "reading_time_minutes": 6,
   "template": "post"
 }
 ---
@@ -122,6 +124,20 @@ That led to creating a template repo and even getting invited to GitHub's Open S
 
 If you're interested, you can check out all my video based guest appearances on [my Guest Appearances playlist](https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU).
 
+### Live Streaming
+
+It was another year of great guests on [nickyt.live](https://nickyt.live). Thanks to everyone that tuned in and thanks so much to all my guests.
+
+Here's the latest episode if you want a taste of what my live streams are like.
+
+{% embed "https://www.youtube.com/watch?v=N4mIg7Rt9D4" %}
+
+Also, big ups to @remotesynth for letting me ramble on my [2 Full 2 Stack show](https://cfe.dev/talkshow/2full2stack) on the Certified Fresh Events YouTube channel.
+
+Catch the latest episode if you haven't seen any of these before.
+
+{% embed "https://www.youtube.com/watch?v=apHBo976CR4" %}
+
 ## Wrapping Up
 
 Plenty of achievements that I'm proud of this year.
@@ -133,7 +149,13 @@ Plenty of achievements that I'm proud of this year.
 * Joined Cloudinary as an ambassador
 * Went past 100K followers on the dev.to community 🚀
 * Delivered talks at Global Summit for Node.js '24, XtremeJS, All Things Open Conference, ConFoo.ca, and Netlify Compose 2024
+* Another successful year of the 2 Full 2 Stack show
 * Got to hang with a tonne of amazing guests on my live stream [nickyt.live](https://nickyt.live)
+
+
+[![2024 Linkedin Rewind Get yours at https://coauthor.studio Nick Taylor in 2024 2024 Vibe Ambassador Engineer Creator Superpower Building bridges between code and community 300+ posts 2,389 reactions 413 comments 192 reposts & 2,187 followers Top Quote I make teams better. I have a knack for getting people to work well together... I turn a group into a team.](https://www.nickyt.co/images/posts/_uploads_articles_lhqwnn2calxm2mnc7r5p.png)](https://www.linkedin.com/feed/update/urn:li:activity:7278007012569886720/)
+
+
 
 ## Looking Forward
 
