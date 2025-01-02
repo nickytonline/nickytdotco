@@ -23,15 +23,13 @@ Starting 2024 was my fourth month at [OpenSauced](https://opensauced.pizza/). We
 
 ![The OpenSauced crew scheming](https://www.nickyt.co/images/posts/_uploads_articles_8y9oo3atn3eq9g47cpvp.png)
 
-In April, we had our offsite in Miami which was awesome, and my CEO @bdougieyo was giving a talk at the conference, so we all got to hang at React Miami as well. Lots of fun and it was so great hanging with the team for the week.
+In April, we had our offsite in Miami which was awesome, and my CEO @bdougieyo was giving a talk at React Miami, so we all got to hang at React Miami as well. Lots of fun and it was so great hanging with the team for the week.
 
 Here are a few pics from React Miami. What a great conference.
 
 ![Hanging with my peeps and React Miami emcees Dom Clark and Will Johnson](https://www.nickyt.co/images/posts/_uploads_articles_f10d7lmfjnfxzn5gtv33.png)
 
-
 ![Some of my crew: Rizèl Scarlett, Brandon Roberts and Sylwia Vargas](https://www.nickyt.co/images/posts/_uploads_articles_nkns482q6qr7o26lndup.png)
-
 
 ![Some of my crew: Angie Jones, Will Johson, BekahHW and me](https://www.nickyt.co/images/posts/_uploads_articles_rhs7ogarqvi0j34jrdqu.png)
 
@@ -47,7 +45,6 @@ I'm also really proud of all the things I shipped, and I still love this stat. I
 
 [![My github.com/open-sauced/app contributions: 926 commits with 67,043 lines of code added and 69,043 removed](https://www.nickyt.co/images/posts/_uploads_articles_yjd3rgo0pkzda8rc0ciz.png)
 ](https://github.com/open-sauced/app/graphs/contributors)
-
 
 ## Conference Speaking
 
@@ -106,7 +103,7 @@ That led to creating a template repo and even getting invited to GitHub's Open S
 
 ### Guest Appearances
 
-* Was on an episode of Jason Lengstorf ‘s 4 Web Devs, 1 App Idea
+* Was on an episode of @jlengstorf‘s 4 Web Devs, 1 App Idea
 
 {% embed "https://www.youtube.com/watch?v=DbaBeLDU-oY" %}
 
@@ -155,8 +152,8 @@ Plenty of achievements that I'm proud of this year.
 
 [![2024 Linkedin Rewind Get yours at https://coauthor.studio Nick Taylor in 2024 2024 Vibe Ambassador Engineer Creator Superpower Building bridges between code and community 300+ posts 2,389 reactions 413 comments 192 reposts & 2,187 followers Top Quote I make teams better. I have a knack for getting people to work well together... I turn a group into a team.](https://www.nickyt.co/images/posts/_uploads_articles_lhqwnn2calxm2mnc7r5p.png)](https://www.linkedin.com/feed/update/urn:li:activity:7278007012569886720/)
 
-
-
 ## Looking Forward
 
 Looking back, 2024 definitely didn't go exactly as planned, but nothing is certain these days. The tech world keeps changing and you just gotta roll with it. Excited to see what 2025 brings - I've got a feeling it's gonna be good.​​​​​​​​​​​​​​​​
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online)
