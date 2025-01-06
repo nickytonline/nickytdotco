@@ -305,10 +305,12 @@ function devLinkEmbed(blogPostUrl) {
 
   const url = canonical_url ?? devToUrl;
 
-  return `<article class="embed--dev grid w-fit" title="${title}">
+  return `<article class="grid w-fit" style="gap: 4px;" title="${title}">
       ${cover_image ? genericEmbed(url) : ""}
       <header><a href="${url}">${title}</a>
-      <div class="flex items-center">${username !== "nickytonline" ? `<a rel="author" href="https://dev.to/${username}">${name}</a>` : name} ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ <span class="reading-time">${reading_time_minutes} min read</span></div>
+      <div class="flex items-center flex-wrap" style="gap: 4px;">
+      <span>${username !== "nickytonline" ? `<a rel="author" href="https://dev.to/${username}">${name}</a>` : name} ・</span>
+      <span class="flex items-center flex-wrap" style="gap: 4px;"><time datetime="${published_timestamp}">${publishDate}</time><span>・</span><span class="reading-time">${reading_time_minutes} min read</span></div>
       </header>
     </article>`;
 }

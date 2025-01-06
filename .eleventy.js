@@ -65,11 +65,13 @@ module.exports = function (config) {
 
   config.addShortcode("embed", embedEmbed);
 
-  const now = new Date();
-
   // Custom collections
   config.addCollection("posts", (collection) => {
-    return collection.getFilteredByGlob("./src/blog/*.md").reverse();
+    const collections = collection
+      .getFilteredByGlob("./src/blog/*.md")
+      .reverse();
+
+    return collections;
   });
 
   config.addCollection("postFeed", (collection) => {
@@ -82,17 +84,6 @@ module.exports = function (config) {
   config.addCollection("sitemapPages", function (collection) {
     // get unsorted items
     return collection.getAll();
-  });
-
-  config.addCollection("vscodeTipsPosts", (collection) => {
-    return collection.getFilteredByGlob("./src/vscodetips/**/*.md").reverse();
-  });
-
-  config.addCollection("vscodeTipsPostFeed", (collection) => {
-    return collection
-      .getFilteredByGlob("./src/vscodetips/**/*.md")
-      .reverse()
-      .slice(0, site.maxPostsPerPage);
   });
 
   config.addCollection("talks", (collection) => {
