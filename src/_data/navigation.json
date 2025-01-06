@@ -6,6 +6,16 @@
       "external": false
     },
     {
+      "text": "Blog",
+      "url": "/archive",
+      "external": false
+    },
+    {
+      "text": "Talks",
+      "url": "/pages/talks",
+      "external": false
+    },
+    {
       "text": "Streaming",
       "url": "https://nickyt.live",
       "external": true
@@ -16,28 +26,13 @@
       "external": true
     },
     {
-      "text": "Talks",
-      "url": "/pages/talks",
-      "external": false
-    },
-    {
       "text": "Socials",
       "url": "https://nickyt.online",
       "external": true
     },
     {
-      "text": "VS Code Tips",
-      "url": "/pages/vscode-tips",
-      "external": false
-    },
-    {
       "text": "Uses",
       "url": "/pages/uses",
-      "external": false
-    },
-    {
-      "text": "Thanks",
-      "url": "/pages/thanks",
       "external": false
     },
     {
