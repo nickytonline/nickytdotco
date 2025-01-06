@@ -19,14 +19,17 @@ module.exports = async function (value, outputPath) {
 
   const document = DOM.window.document;
   const articleImages = document.querySelectorAll(
-    "main article img, .intro img"
+    "main article img, .intro img",
   );
   const articleHeadings = document.querySelectorAll(
-    "main article h2, main article h3"
+    "main article h2, main article h3",
   );
 
   for (const image of articleImages) {
-    image.setAttribute("loading", "lazy");
+    if (!image.hasAttribute("data-not-lazy")) {
+      image.setAttribute("loading", "lazy");
+      image.removeAttribute("data-not-lazy");
+    }
 
     // If an image has a title it means that the user added a caption
     // so replace the image with a figure containing that image and a caption

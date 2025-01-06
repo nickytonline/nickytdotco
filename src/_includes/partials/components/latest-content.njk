@@ -5,7 +5,7 @@
       {% for item in postListItems %}
         {% if item.date.getTime() <= global.now %}
           <li class="blog post-list__item flex items-center gap-300">
-            <img src="{{ item.data.cover_image }}" alt=""/>
+            <img src="{{ item.data.cover_image }}" alt="" data-not-lazy />
             <span>
             <h3 class="font-base leading-tight text-600 weight-mid">
               <a href="{{ item.url }}" class="post-list__link" rel="bookmark" style="word-break: break-word;">{{ item.data.title }}</a>
