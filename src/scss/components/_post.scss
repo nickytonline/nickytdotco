@@ -226,6 +226,15 @@
 
 .post-list__item {
   position: relative;
+
+  img {
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    width: 30%;
+    height: 30%;
+  }
 }
 
 .post-list__item h3 {
