@@ -75,10 +75,19 @@ module.exports = function (config) {
   });
 
   config.addCollection("postFeed", (collection) => {
-    return collection
+    const col = collection
       .getFilteredByGlob("./src/blog/*.md")
       .reverse()
-      .slice(0, site.maxPostsPerPage);
+      .slice(0, site.maxPostsPerPage)
+      .map((post) => {
+        post.data.cover_image ??= socialImage(
+          post.data.title,
+          post.data.excerpt,
+        );
+        return post;
+      });
+
+    return col;
   });
 
   config.addCollection("sitemapPages", function (collection) {
