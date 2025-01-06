@@ -294,24 +294,22 @@ function devLinkEmbed(blogPostUrl) {
     title,
     published_timestamp,
     reading_time_minutes,
-    tags,
     canonical_url,
+    cover_image,
     user: { name, username, profile_image },
   } = blogPostEmbeds[blogPostUrl];
 
-  const url = canonical_url ?? devToUrl;
   const publishDate = DateTime.fromJSDate(new Date(published_timestamp))
     .setLocale("en-CA")
     .toLocaleString(DateTime.DATE_FULL);
 
-  return `<article class="ltag__link grid w-fit" title="${title}">
-        <div class="grid">
-          <h1><a href="${url}">${title}</a></h1>
-          <div class="flex items-center"><a rel="author" href="https://dev.to/${username}">${name}</a> ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ <span class="reading-time">${reading_time_minutes} min read</span></div>
-          <ul class="flex gap-base">
-            ${tags.map((tag) => `<li>#${tag}</li>`).join(``)}
-          </ul>
-        </div>
+  const url = canonical_url ?? devToUrl;
+
+  return `<article class="embed--dev grid w-fit" title="${title}">
+      ${cover_image ? genericEmbed(url) : ""}
+      <header><a href="${url}">${title}</a>
+      <div class="flex items-center">${username !== "nickytonline" ? `<a rel="author" href="https://dev.to/${username}">${name}</a>` : name} ・ <time datetime="${published_timestamp}">${publishDate}</time> ・ <span class="reading-time">${reading_time_minutes} min read</span></div>
+      </header>
     </article>`;
 }
 
