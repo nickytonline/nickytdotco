@@ -103,7 +103,7 @@ module.exports = function (config) {
     const latestTalks = collection
       .getFilteredByGlob("./src/talks/*.md")
       .reverse()
-      .slice(0, 2);
+      .slice(0, 4);
 
     return latestTalks;
   });
