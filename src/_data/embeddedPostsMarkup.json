@@ -2178,46 +2178,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
-  "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2": {
-    "type_of": "article",
-    "id": 938030,
-    "title": "Frontend Developer Resources 2022",
-    "description": "I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got...",
-    "readable_publish_date": "Dec 28 '21",
-    "slug": "frontend-developer-resources-2022-4cp2",
-    "path": "/nickytonline/frontend-developer-resources-2022-4cp2",
-    "url": "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2",
-    "collection_id": 16050,
-    "published_timestamp": "2021-12-28T04:16:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxlvhwaqhlebll79nx1jt.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxlvhwaqhlebll79nx1jt.png",
-    "canonical_url": "https://www.nickyt.co/blog/frontend-developer-resources-2022-4cp2/",
-    "created_at": "2021-12-28T02:55:12Z",
-    "edited_at": "2024-10-18T02:22:16Z",
-    "crossposted_at": null,
-    "published_at": "2021-12-28T04:16:00Z",
-    "last_comment_at": "2024-09-10T03:03:29Z",
-    "reading_time_minutes": 8,
-    "tag_list": "javascript, html, css, typescript",
-    "tags": [
-      "javascript",
-      "html",
-      "css",
-      "typescript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6": {
     "type_of": "article",
     "id": 1245107,
@@ -2370,53 +2330,6 @@
       "cli",
       "git",
       "productivity"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "OpenSauced",
-      "username": "opensauced",
-      "slug": "opensauced",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
-    }
-  },
-  "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75": {
-    "type_of": "article",
-    "id": 1694953,
-    "title": "Migrating from Jest to Vitest for your React Application",
-    "description": "Are you looking to migrate from Jest to Vitest for your React application? Look no further.  I...",
-    "readable_publish_date": "Dec 14 '23",
-    "slug": "migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "path": "/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "url": "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "collection_id": 26157,
-    "published_timestamp": "2023-12-14T08:00:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "canonical_url": "https://opensauced.pizza/docs/community-resources/migrating-from-jest-to-vitest-for-your-react-application/",
-    "created_at": "2023-12-12T03:21:58Z",
-    "edited_at": "2024-06-10T21:24:57Z",
-    "crossposted_at": null,
-    "published_at": "2023-12-14T08:00:00Z",
-    "last_comment_at": "2023-12-20T21:28:49Z",
-    "reading_time_minutes": 4,
-    "tag_list": "testing, react, vitest, typescript",
-    "tags": [
-      "testing",
-      "react",
-      "vitest",
-      "typescript"
     ],
     "user": {
       "name": "Nick Taylor",
