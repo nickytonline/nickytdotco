@@ -27,7 +27,7 @@ The goal of the PR was, aside from standing out, was to make it an extension wit
 
 I’ll be up front, I’m not an a11y expert, so this tool was actually really good for me to learn a few things. Here’s a shot of it in action.
 
-{% twitter "1040818193911173120" %}
+{% embed "https://twitter.com/nickytonline/status/1040772425179385856" %}
 
 One of the coolest features is the screen reader wand (Khan's work, not mine).
 
