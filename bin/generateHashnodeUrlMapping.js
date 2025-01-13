@@ -4,10 +4,10 @@ const Parser = require("rss-parser");
 const fs = require("fs/promises");
 const path = require("path");
 
-const HASHNODE_RSS_FEED_URL = "https://nickyt.online/rss.xml";
+const HASHNODE_RSS_FEED_URL = "https://nickytonline.hashnode.dev/rss.xml";
 const hashnodeUrlsFilePath = path.resolve(
   __dirname,
-  "../src/_data/hashnodeUrls.json"
+  "../src/_data/hashnodeUrls.json",
 );
 
 /**
