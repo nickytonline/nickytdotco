@@ -284,12 +284,20 @@ async function createPostFile(post) {
  *
  */
 async function saveImageUrl(imageUrl, imageFilePath) {
-  const response = await fetch(imageUrl);
-  const buffer = Buffer(await response.arrayBuffer());
+  try {
+    const response = await fetch(imageUrl);
+    if (!response.ok) {
+      console.warn(`Failed to fetch image ${imageUrl}: ${response.status}`);
+      return;
+    }
+    const buffer = Buffer(await response.arrayBuffer());
 
-  await fs.writeFile(imageFilePath, buffer, () =>
-    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`),
-  );
+    await fs.writeFile(imageFilePath, buffer, () =>
+      console.log(`Saved image ${imageUrl} to ${imageFilePath}!`),
+    );
+  } catch (error) {
+    console.warn(`Error saving image ${imageUrl}:`, error.message);
+  }
 }
 
 /**
@@ -380,7 +388,6 @@ async function updateMarkdownImageUrls(markdown) {
 }
 
 async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
-  // Checking for a backtick before the embed so that we're not pulling in a code example of an embed.
   const matches = markdown.matchAll(
     /[^`]{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g,
   );
@@ -403,10 +410,18 @@ async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
       embedType !== "podcast" &&
       embedType !== "tag"
     ) {
-      const respones = await fetch(embedUrl);
-      const markup = await respones.text();
-
-      embeds.set(embedUrl, markup);
+      try {
+        const response = await fetch(embedUrl);
+        if (!response.ok) {
+          console.warn(`Failed to fetch embed ${embedUrl}: ${response.status}`);
+          continue;
+        }
+        const markup = await response.text();
+        embeds.set(embedUrl, markup);
+      } catch (error) {
+        console.warn(`Error fetching embed ${embedUrl}:`, error.message);
+        continue;
+      }
     }
   }
 }
