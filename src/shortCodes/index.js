@@ -425,16 +425,16 @@ function vimeoEmbed(videoId) {
  * @returns {string} Markup for the Spotify embed.
  */
 function spotifyEmbed(type, id) {
-  return `<iframe
-    style="border-radius:12px"
-    src="https://open.spotify.com/embed/${type}/${id}/video?utm_source=generator"
-    width="624"
-    height="351"
-    frameBorder="0"
-    allowfullscreen=""
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>`;
+  return `<div style="position: relative; padding-top: 56.25%; /* 16:9 aspect ratio */">
+    <iframe
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"
+      src="https://open.spotify.com/embed/${type}/${id}/video?utm_source=generator"
+      frameBorder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>`;
 }
 
 module.exports = {
