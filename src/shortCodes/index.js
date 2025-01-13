@@ -56,13 +56,17 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
     `${title} by ${site.mastodonHandle} ${site.url}${url}`,
   )}">Toot it!</a>`;
 
+  const intentToBluesky = `<a class="boost-link" href="https://bsky.app/intent/compose?text=${encodeURIComponent(
+    `${title} ${site.url}${url}`,
+  )}">Share on Bluesky</a>`;
+
   let foremBoostLink = "";
 
   if (!isNewsletter) {
     foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
   }
 
-  return `${foremBoostLink}${hashnodeBoosterLink}${intentToToot}${intentToTweet}${intentToLinkedIn}`;
+  return `${foremBoostLink}${hashnodeBoosterLink}${intentToToot}${intentToBluesky}${intentToTweet}${intentToLinkedIn}`;
 }
 
 /**
