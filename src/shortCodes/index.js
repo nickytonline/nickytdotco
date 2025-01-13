@@ -177,11 +177,17 @@ function embedEmbed(rawUrl) {
     return youtubeEmbed(videoId);
   }
 
-  if (url.hostname.includes(`twitter.com`)) {
-    const { tweetId } = rawUrl.match(
-      /twitter\.com\/[^\/]+\/status\/(?<tweetId>[^\/]+)/,
-    ).groups;
-    return twitterEmbed(tweetId);
+  if (url.hostname.includes(`twitter.com`) || url.hostname.includes(`x.com`)) {
+    try {
+      const { tweetId } = rawUrl.match(
+        /(?:twitter\.com|x\.com)\/[^\/]+\/status\/(?<tweetId>[^\/]+)/,
+      ).groups;
+      return twitterEmbed(tweetId);
+    } catch (error) {
+      // If parsing fails, return a simple link with the x.com domain
+      const xUrl = rawUrl.replace("twitter.com", "x.com");
+      return `<a href="${xUrl}" style="margin-top: 10px;margin-bottom: 10px;">${xUrl}</a>`;
+    }
   }
 
   if (url.hostname.includes(`twitch.tv`)) {

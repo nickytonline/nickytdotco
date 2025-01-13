@@ -171,8 +171,13 @@ async function getDevPost(blogPostId) {
     },
   });
 
-  let post;
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch post: ${response.status} ${response.statusText}`,
+    );
+  }
 
+  let post;
   try {
     post = await response.json();
   } catch (error) {
@@ -181,10 +186,9 @@ async function getDevPost(blogPostId) {
       throw error;
     }
 
-    console.log(`Retry attemps ${retries} for ${getArticleUrl}`);
+    console.log(`Retry attempt ${retries} for ${getArticleUrl}`);
     retries++;
-
-    await getDevPost(blogPostId);
+    return await getDevPost(blogPostId);
   }
 
   return post;
@@ -411,35 +415,57 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
   let blogPostEmbedsMarkup = {};
 
   for (const [url] of embeds) {
-    // You can't use the dev.to API to grab an article by slug, so we need to use the URL instead
-    // to fetch the markup of the article page to extract the article ID.
-    // This is only an issue for article embeds.
-    const response = await fetch(url);
-    const html = await response.text();
-    const match = html.match(/data-article-id="(?<blogPostId>.+?)"/);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.warn(
+          `Skipping embed for ${url} - received status ${response.status}`,
+        );
+        continue;
+      }
 
-    if (match) {
-      const { blogPostId } = match.groups;
-      const {
-        body_html,
-        body_markdown,
-        comments_count,
-        public_reactions_count,
-        positive_reactions_count,
-        ...data
-      } = await getDevPost(blogPostId);
+      const html = await response.text();
+      const match = html.match(/data-article-id="(?<blogPostId>.+?)"/);
 
-      blogPostEmbedsMarkup[url] = data;
-    } else {
-      throw new Error(`Could not find blog post at ${url}`);
+      if (match) {
+        const { blogPostId } = match.groups;
+        try {
+          const post = await getDevPost(blogPostId);
+          const {
+            body_html,
+            body_markdown,
+            comments_count,
+            public_reactions_count,
+            positive_reactions_count,
+            ...data
+          } = post;
+
+          blogPostEmbedsMarkup[url] = data;
+        } catch (error) {
+          console.warn(`Failed to fetch blog post for ${url}:`, error.message);
+          continue;
+        }
+      } else {
+        console.warn(`Could not find blog post ID at ${url}`);
+        continue;
+      }
+    } catch (error) {
+      console.warn(`Failed to process embed ${url}:`, error.message);
+      continue;
     }
   }
 
-  const data = JSON.stringify(blogPostEmbedsMarkup, null, 2);
-
-  await fs.writeFile(filePaths, data, () =>
-    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`),
-  );
+  try {
+    const data = JSON.stringify(blogPostEmbedsMarkup, null, 2);
+    await fs.writeFile(filePaths, data);
+    console.log(`Successfully saved blog post embeds to ${filePaths}`);
+  } catch (error) {
+    console.error(
+      `Failed to write embeds file to ${filePaths}:`,
+      error.message,
+    );
+    throw error;
+  }
 }
 
 async function updateTwitterEmbeds(twitterEmbeds, filepath) {
