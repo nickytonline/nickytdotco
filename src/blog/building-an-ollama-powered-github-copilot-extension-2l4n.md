@@ -16,49 +16,241 @@
 }
 ---
 
-New year, new role!
+A few months ago, I wrote about creating your first GitHub Copilot extension, and later discussed this topic on the GitHub Open Source Friday live stream.
 
-Today is a couple of firsts. It's my first day at [Pomerium](https://pomerium.com) and I'm also their first Developer Advocate!
+{% embed "https://dev.to/nickytonline/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0" %}
 
-Working with the developer community is one of my favourite things to do, and I'll be able to continue to do that in my new role.
+{% embed "https://www.youtube.com/watch?v=zE-O-3CGcEc" %}
 
-## Why Pomerium?
+Building off the [Copilot extension template](https://github.com/nickytonline/copilot-extension-template) I made based on that initial blog post, I decided to take a crack at an Ollama-powered GitHub Copilot extension that brings local AI capabilities directly into your development workflow.
 
-I'll be honest, I hadn't heard of Pomerium before interviewing with them. As their first Developer Advocate, part of my role will be to change that and put Pomerium on the map in the developer community.
+## What is Ollama?
 
-What drew me to Pomerium was their innovative approach to [Zero Trust access control](https://www.pomerium.com/zero-trust). Their access proxy implements true Zero Trust principles, where every request is authenticated (authn) and authorized (authz) based on identity and context (device identity, device posture etc.) - regardless of where users or applications are located.
+Before diving into the extension, let's briefly talk about [Ollama](https://ollama.com/). It's a fantastic tool that lets you run large language models locally on your machine. Think of it as having your own personal AI assistant that runs completely on your hardware – no cloud services required. This means better privacy, lower latency, and the ability to work offline.
 
-![Eric Andre Meme - Let me in](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmd3czE1eTE5aHg1Mjl3Y2Q0ZzR4MnQ1NHRocjFkeWd4dTU1Y2ppdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yx400dIdkwWdsCgWYp/giphy.gif)
+That said, you're running off your own machine, which means you don't need to pay for Ollama.
 
-As a fan of open source, I love that they have an open core model which makes enterprise-grade Zero Trust access control available to everyone - from hobbyists all the way to enterprises.
+## Introducing the Ollama Copilot Extension
 
-{% embed "https://github.com/pomerium/pomerium" %}
+The [Ollama Copilot extension](https://github.com/nickytonline/ollama-copilot-extension) demonstrates the potential of combining local AI processing with GitHub Copilot chat. While still under development, it showcases several powerful features:
 
-The Pomerium team has been super welcoming, and I'm joining at an exciting time. Last summer, they launched [Pomerium Zero](https://www.pomerium.com/blog/introducing-pomerium-zero), their NextGen Access Platform for secure clientless connections, and [raised a $13.75M Series A](https://www.businesswire.com/news/home/20240620782474/en/Pomerium-Announces-13.75M-Series-A-led-by-Benchmark-and-Launches-Pomerium-Zero) led by Benchmark.
+Key Features:
 
-{% embed "https://www.pomerium.com/blog/introducing-pomerium-zero" %}
+- **Local AI Processing**: All AI operations run on your local machine through Ollama (for the Copilot extension, not Copilot Chat overall)
+- **CodeLlama Integration**: Leverages the [CodeLlama model](https://github.com/Meta-Llama/codellama), which is specifically trained for programming tasks
+- **Low Latency**: Direct communication with a local AI model means faster response times and no cost to you. This is true, but only in the context of running this Copilot extension in development mode.
 
-If you want to hear a bit about the origins of Pomerium and all the cool stuff we’re building, check out this interview with our CEO, [Bobby DeSimone](https://www.linkedin.com/in/bobby-desimone/).
+While Ollama enhances privacy by running locally, it's important to note that GitHub Copilot still uses cloud-based models, so complete privacy isn't guaranteed in this context.
 
-{% embed "https://open.spotify.com/episode/6owA3AMN50GhbOIQwernwG?si=gKLOpTdXREKBBPHwa_n2bg&t=1060&context=spotify%3Aplaylist%3A37i9dQZF1FgnTBfUlzkeKt" %}
+### Core Extension Structure
+
+The extension is built using Hono.js, a lightweight web framework. To get things running, you can configure a couple of environment variables or go with the defaults.
+
+```typescript
+{% raw %}
+export const config = {
+  ollama: {
+    baseUrl: process.env.OLLAMA_API_BASE_URL ?? "http://localhost:11434",
+    model: process.env.OLLAMA_MODEL ?? "codellama",
+  },
+  server: {
+    port: Number(process.env.PORT ?? 3000),
+  },
+};
+{% endraw %}
+```
+
+The main endpoint handles incoming requests from GitHub Copilot, verifies them, and streams responses from Ollama:
+
+```typescript
+{% raw %}
+app.post("/", async (c) => {
+  // validation logic
+  
+  // ...
+
+  return stream(c, async (stream) => {
+    try {
+      stream.write(createAckEvent());
+
+      // TODO: detect file selection in question and use it as context instead of the whole file
+      const userPrompt = getUserMessageWithContext({ payload, type: "file" });
+
+      const ollamaResponse = await fetch(
+        `${config.ollama.baseUrl}/api/generate`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: config.ollama.model,
+            prompt: userPrompt,
+            stream: true,
+          }),
+        }
+      );
+
+      if (!ollamaResponse.ok) {
+        stream.write(
+          createErrorsEvent([
+            {
+              type: "agent",
+              message: `Ollama request failed: ${ollamaResponse.statusText}`,
+              code: "OLLAMA_REQUEST_FAILED",
+              identifier: "ollama_request_failed",
+            },
+          ])
+        );
+      }
+
+      for await (const chunk of getOllamaResponse(ollamaResponse)) {
+        stream.write(createTextEvent(chunk));
+      }
+
+      stream.write(createDoneEvent());
+    } catch (error) {
+      console.error("Error:", error);
+      stream.write(
+        createErrorsEvent([
+          {
+            type: "agent",
+            message: error instanceof Error ? error.message : "Unknown error",
+            code: "PROCESSING_ERROR",
+            identifier: "processing_error",
+          },
+        ])
+      );
+    }
+  });
+});
+{% endraw %}
+```
+
+### Smart Context Handling
+
+The extension leverages [GitHub Copilot's context-passing capabilities](https://docs.github.com/en/copilot/using-github-copilot/using-extensions-to-integrate-external-tools-with-copilot-chat#about-context-passing-in-github-copilot-extensions) to access file contents and other contextual information. Here's how it works:
+
+```typescript
+{% raw %}
+export function getUserMessageWithContext({
+  payload,
+  type,
+}: {
+  payload: CopilotRequestPayload;
+  type: FileContext;
+}): string {
+  const [firstMessage] = payload.messages;
+  const relevantReferences = firstMessage?.copilot_references?.filter(
+    (ref) => ref.type === `client.${type}`
+  );
+
+  // Format context into markdown for Ollama
+  const contextMarkdown = relevantReferences
+    .map((ref) => {
+      return `File: ${ref.id}\n${ref.data.language}\`\`\`\n${ref.data.content}\n\`\`\``;
+    })
+    .join("\n\n");
+
+  return `${firstMessage.content}\n\n${
+    contextMarkdown ? `${FILES_PREAMBLE}\n\n${contextMarkdown}` : ""
+  }`;
+}
+{% endraw %}
+```
+
+## Setting Up Your Development Environment
+
+### Prerequisites
+
+1. Install and run Ollama locally
+2. Install the CodeLlama model:
+   ```bash
+   ollama pull codellama
+   ```
+3. Set up the extension:
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+### Exposing Your Extension
+
+To test the extension, make the web app's port publicly accessible using one of these methods:
+
+* [VS Code port forwarding](https://code.visualstudio.com/docs/editor/port-forwarding) and set the port visibility to public; it's private by default.
+* [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel/)
+* [ngrok](https://ngrok.com/)
+
+### Creating a GitHub App
+
+#### General Settings
+
+- Navigate to [GitHub Developer Settings](https://github.com/settings/apps)
+- [Create a new GitHub App](https://github.com/settings/apps/new) with basic information
+- Set appropriate URLs and callback endpoints
+
+#### Permissions & Events
+
+- Configure Account permissions
+- Set Copilot Chat and Editor Context to Read-only
+- Save changes
+
+#### Copilot Settings
+
+- Set App Type to Agent
+- Configure public URL
+- Save settings
+
+### Installation Steps
+
+1. Navigate to GitHub Apps settings
+2. Install the app for your account
+3. Confirm installation
+
+For the in depth instructions on how to do all of this, check out the [Ollama Copilot extension's development guide](https://github.com/nickytonline/ollama-copilot-extension/blob/main/docs/DEVELOPMENT_SETUP.md).
+
+## Using the Extension
+
+I've called my extension `ollamacopilot` but you can call yours whatever you want when running in development mode. When using a GitHub Copilot extension in Copilot chat, the prompt must always start with `@` followed by the name of your extension and then your prompt, e.g. `@ollamacopilot how would you improve this code?`. Otherwise, Copilot chat will not call your extension.
+
+![Ollama Copilot extension in action suggesting a refactor](https://www.nickyt.co/images/posts/_uploads_articles_9c7gja4ff35cdutymrds.gif)
+
+## Current Limitations
+
+- Works only in local development environment at the moment
+- Requires local Ollama installation
+- Needs public Ollama API access for deployment
+
+### Future Possibilities
+
+- Multiple AI model support
+- Context-aware coding suggestions
+- Specialized development commands via slash commands
+- expose Ollama securely on my local network so that I can use it anywhere
+
+If I end up securing Ollama remotely, I'm probably going to use [Pomerium](https://pomerium.com) for this on my local network. While Pomerium is known for its enterprise features, it's also perfect for hobbyists and self-hosters who want to secure their personal projects. There are other options, but that's what I'm going to go with.
+
+One thing that this experiment has got me thinking is it'd be great if local Copilot extensions were a thing or if GitHub Copilot supported running local models. This wouldn’t work on GitHub.com or Codespaces, but would be viable for local development environments and still be valuable. I don't think this would ever happen, but you never know.
+
+## Contributing
+
+Contributions are welcome! Feel free to [open an issue](https://github.com/nickytonline/ollama-copilot-extension/issues/new/choose) to:
+
+- Suggest new features & enhancements
+- Improve documentation
+- Report bugs
 
 ## Wrapping Up
 
-One last thing. I want to give big props to my network for reaching out, making intros etc. while I was looking for my next role. It was much appreciated, so thanks to all of you. You know who you are. 😎
+I'm hoping to get this to a place where people can deploy the GitHub app for production, but at the moment, it is still super useful running it in development mode.
 
-And also a big shoutout to Angie Jones, @techgirl1908, for taking time out of her super busy schedule to chat with me about Dev Rel and if it was a potentially good move for me. 💜
+Get started by checking out the project on GitHub, and don't forget to star it and the template it's based on if you find it useful!
 
-If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+{% embed "https://github.com/nickytonline/ollama-copilot-extension" %}
 
-To learn more about Pomerium, you can find us at:
+{% embed "https://github.com/nickytonline/copilot-extension-template" %}
 
-* [pomerium.com](https://pomerium.com)
-* [Pomerium on LinkedIn](https://www.linkedin.com/company/pomerium-inc/)
-* [Pomerium on X/Twitter](https://x.com/pomerium_io)
-* [Pomerium YouTube channel](https://www.youtube.com/@pomerium37)
+Until the next one peeps!
 
-To quote the wise Wolverine, "Let’s F***ing Go!"
-
-![Wolverine pumped for Nick's new role](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGxlaTBmcXY0cXlpNWExdGFlNGc2azNrNzEyZTY0bzFnYXVoMjd3bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jTZMPc5aE4AKlt5OVW/giphy.gif)
-
-Photo by <a href="https://unsplash.com/@kutanural?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kutan Ural</a> on <a href="https://unsplash.com/photos/royal-guard-guarding-the-buckingham-palace-MZPwImQUDM0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online)
