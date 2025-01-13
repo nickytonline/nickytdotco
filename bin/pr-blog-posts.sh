@@ -11,8 +11,15 @@ git add .
 if [[ -n "$(git status --porcelain)" ]]; then
   echo "Creating PR \"$PR_TITLE\" for branch $BRANCH_NAME"
   git commit -m "$PR_TITLE"
-  git push origin $BRANCH_NAME
-  gh pr create --title "$PR_TITLE" --body "This is an automated PR to update blog posts"
+
+  # Push and verify it succeeded
+  if ! git push origin $BRANCH_NAME; then
+    echo "Failed to push branch"
+    exit 1
+  fi
+
+  # Use --head flag to explicitly specify the branch
+  gh pr create --head "$BRANCH_NAME" --title "$PR_TITLE" --body "This is an automated PR to update blog posts"
   gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
 else
   # Shouldn't end up here, but log that there was nothing to sync
