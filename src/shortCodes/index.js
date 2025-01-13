@@ -162,6 +162,11 @@ function embedEmbed(rawUrl) {
     return codepenEmbed(url);
   }
 
+  if (url.hostname.includes("spotify.com")) {
+    const [, type, id] = url.pathname.split("/");
+    return spotifyEmbed(type, id);
+  }
+
   // This is based off the generic dev.to embed liquid tag.
   if (
     url.hostname.includes(`youtube.com`) ||
@@ -405,6 +410,27 @@ function vimeoEmbed(videoId) {
   return `<iframe src="https://player.vimeo.com/video/${videoId}" width="640" height="360" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>`;
 }
 
+/**
+ * Generates a Spotify embed for the given type and ID.
+ *
+ * @param {string} type The type of Spotify content (episode, track, playlist, etc.)
+ * @param {string} id The Spotify content ID
+ *
+ * @returns {string} Markup for the Spotify embed.
+ */
+function spotifyEmbed(type, id) {
+  return `<iframe
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/${type}/${id}/video?utm_source=generator"
+    width="624"
+    height="351"
+    frameBorder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>`;
+}
+
 module.exports = {
   boostLink,
   youtubeEmbed,
@@ -416,4 +442,5 @@ module.exports = {
   genericEmbed,
   instagramEmbed,
   codeSandboxEmbed,
+  spotifyEmbed,
 };
