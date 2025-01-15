@@ -52,7 +52,7 @@ To learn more about Pomerium, you can find us at:
 * [pomerium.com](https://pomerium.com)
 * [Pomerium on LinkedIn](https://www.linkedin.com/company/pomerium-inc/)
 * [Pomerium on X/Twitter](https://x.com/pomerium_io)
-* [Pomerium YouTube channel](https://www.youtube.com/@pomerium37)
+* [Pomerium YouTube channel](https://www.youtube.com/@pomerium_io)
 
 To quote the wise Wolverine, "Let’s F***ing Go!"
 
