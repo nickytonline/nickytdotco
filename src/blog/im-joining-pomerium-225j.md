@@ -1,7 +1,7 @@
 ---json
 {
   "title": "I’m joining Pomerium!",
-  "excerpt": "New year, new role!  Today is a couple of firsts. It's my first day at Pomerium and I'm also their...",
+  "excerpt": "New year, new role!  Today is my first day at Pomerium. I'm joining the team as their Developer...",
   "date": "2025-01-13T05:01:00.000Z",
   "tags": [
     "career",
@@ -17,7 +17,7 @@
 
 New year, new role!
 
-Today is a couple of firsts. It's my first day at [Pomerium](https://pomerium.com) and I'm also their first Developer Advocate!
+Today is my first day at [Pomerium](https://pomerium.com). I'm joining the team as their Developer Advocate!
 
 Working with the developer community is one of my favourite things to do, and I'll be able to continue to do that in my new role.
 
