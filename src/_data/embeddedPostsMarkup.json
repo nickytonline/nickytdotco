@@ -891,43 +891,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3": {
-    "type_of": "article",
-    "id": 9457,
-    "title": "Consider Using TypeScript",
-    "description": "A small write up on the benefits of using TypeScript.",
-    "readable_publish_date": "Oct 8 '17",
-    "slug": "why-you-might-want-to-consider-using-typescript-6j3",
-    "path": "/nickytonline/why-you-might-want-to-consider-using-typescript-6j3",
-    "url": "https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3",
-    "collection_id": 3255,
-    "published_timestamp": "2017-10-08T14:35:45Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/why-you-might-want-to-consider-using-typescript-6j3/",
-    "created_at": "2017-10-08T13:46:29Z",
-    "edited_at": "2022-04-14T00:23:00Z",
-    "crossposted_at": null,
-    "published_at": "2017-10-08T14:35:45Z",
-    "last_comment_at": "2022-05-22T17:58:50Z",
-    "reading_time_minutes": 5,
-    "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/liyasthomas/postwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0": {
     "type_of": "article",
     "id": 200601,
@@ -1327,88 +1290,6 @@
       "website_url": null,
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F684%2F5421194.jpeg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F684%2F5421194.jpeg"
-    }
-  },
-  "https://dev.to/nickytonline/is-2019-the-year-of-typescript-18p2": {
-    "type_of": "article",
-    "id": 75995,
-    "title": "Is 2019 the year of TypeScript?",
-    "description": "This comment in the Jest repository,...",
-    "readable_publish_date": "Jan 16 '19",
-    "slug": "is-2019-the-year-of-typescript-18p2",
-    "path": "/nickytonline/is-2019-the-year-of-typescript-18p2",
-    "url": "https://dev.to/nickytonline/is-2019-the-year-of-typescript-18p2",
-    "collection_id": 3255,
-    "published_timestamp": "2019-01-16T23:59:04Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Feoz2gg948ys22w1ir00h.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Feoz2gg948ys22w1ir00h.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/is-2019-the-year-of-typescript-18p2/",
-    "created_at": "2019-01-16T23:59:04Z",
-    "edited_at": "2022-07-10T03:36:23Z",
-    "crossposted_at": null,
-    "published_at": "2019-01-16T23:59:04Z",
-    "last_comment_at": "2024-02-26T03:10:15Z",
-    "reading_time_minutes": 1,
-    "tag_list": "discuss, typescript, javascript, flow",
-    "tags": [
-      "discuss",
-      "typescript",
-      "javascript",
-      "flow"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "flare_tag": {
-      "name": "discuss",
-      "bg_color_hex": "#71EA8B",
-      "text_color_hex": "#FFFFFF"
-    }
-  },
-  "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6": {
-    "type_of": "article",
-    "id": 86459,
-    "title": "An Enhanced TypeScript Playground",
-    "description": "The TypeScript playground with enhancements",
-    "readable_publish_date": "Feb 26 '19",
-    "slug": "an-enhanced-typescript-playground-49j6",
-    "path": "/nickytonline/an-enhanced-typescript-playground-49j6",
-    "url": "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6",
-    "collection_id": 3255,
-    "published_timestamp": "2019-02-26T04:20:42Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/an-enhanced-typescript-playground-49j6/",
-    "created_at": "2019-02-26T04:16:02Z",
-    "edited_at": "2022-07-10T03:41:57Z",
-    "crossposted_at": "2019-02-26T04:20:42Z",
-    "published_at": "2019-02-26T03:58:04Z",
-    "last_comment_at": "2020-05-10T04:52:47Z",
-    "reading_time_minutes": 1,
-    "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/2018-resolutions-1deo": {
@@ -2013,49 +1894,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/nickytonline/revue-being-phased-out-by-twitter-4kle": {
-    "type_of": "article",
-    "id": 1251234,
-    "title": "Revue being phased out by Twitter",
-    "description": "If you're like me, you may have jumped on the let me integrate Revue with my Twitter to better...",
-    "readable_publish_date": "Nov 10 '22",
-    "slug": "revue-being-phased-out-by-twitter-4kle",
-    "path": "/nickytonline/revue-being-phased-out-by-twitter-4kle",
-    "url": "https://dev.to/nickytonline/revue-being-phased-out-by-twitter-4kle",
-    "collection_id": null,
-    "published_timestamp": "2022-11-10T13:40:01Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7ccqiujz5b8rg23rgcl.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7ccqiujz5b8rg23rgcl.jpg",
-    "canonical_url": "https://www.nickyt.co/blog/revue-being-phased-out-by-twitter-4kle/",
-    "created_at": "2022-11-10T13:40:02Z",
-    "edited_at": "2023-10-29T04:19:17Z",
-    "crossposted_at": null,
-    "published_at": "2022-11-10T13:40:01Z",
-    "last_comment_at": "2023-01-05T23:11:56Z",
-    "reading_time_minutes": 1,
-    "tag_list": "news, discuss",
-    "tags": [
-      "news",
-      "discuss"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "flare_tag": {
-      "name": "news",
-      "bg_color_hex": "#111111",
-      "text_color_hex": "#fff9ac"
-    }
-  },
   "https://dev.to/nickytonline/my-impact-at-forem-23mj": {
     "type_of": "article",
     "id": 1032669,
@@ -2176,86 +2014,6 @@
       "slug": "vscodetips",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
-    }
-  },
-  "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2": {
-    "type_of": "article",
-    "id": 938030,
-    "title": "Frontend Developer Resources 2022",
-    "description": "I don't know if I'll keep doing this every year, but I did one of these in 2020, and that post got...",
-    "readable_publish_date": "Dec 28 '21",
-    "slug": "frontend-developer-resources-2022-4cp2",
-    "path": "/nickytonline/frontend-developer-resources-2022-4cp2",
-    "url": "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2",
-    "collection_id": 16050,
-    "published_timestamp": "2021-12-28T04:16:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxlvhwaqhlebll79nx1jt.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxlvhwaqhlebll79nx1jt.png",
-    "canonical_url": "https://www.nickyt.co/blog/frontend-developer-resources-2022-4cp2/",
-    "created_at": "2021-12-28T02:55:12Z",
-    "edited_at": "2024-10-18T02:22:16Z",
-    "crossposted_at": null,
-    "published_at": "2021-12-28T04:16:00Z",
-    "last_comment_at": "2024-09-10T03:03:29Z",
-    "reading_time_minutes": 8,
-    "tag_list": "javascript, html, css, typescript",
-    "tags": [
-      "javascript",
-      "html",
-      "css",
-      "typescript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6": {
-    "type_of": "article",
-    "id": 1245107,
-    "title": "Automate and Auto-Merge Pull Requests using GitHub Actions and the GitHub CLI",
-    "description": "So I've written about how I automated content updates for my blog before. I even gave a talk on...",
-    "readable_publish_date": "Nov 6 '22",
-    "slug": "automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-    "path": "/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-    "url": "https://dev.to/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-    "collection_id": null,
-    "published_timestamp": "2022-11-06T01:32:09Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-    "created_at": "2022-11-06T01:01:37Z",
-    "edited_at": "2024-07-20T14:32:06Z",
-    "crossposted_at": null,
-    "published_at": "2022-11-06T01:32:09Z",
-    "last_comment_at": "2022-11-06T01:32:09Z",
-    "reading_time_minutes": 5,
-    "tag_list": "github, githubcli, githubactions, git",
-    "tags": [
-      "github",
-      "githubcli",
-      "githubactions",
-      "git"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/where-do-you-find-community-458p": {
