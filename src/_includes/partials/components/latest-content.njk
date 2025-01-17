@@ -4,15 +4,17 @@
     <ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]" reversed>
       {% for item in postListItems %}
         {% if item.date.getTime() <= global.now %}
-          <li class="blog post-list__item flex items-center gap-300">
-            <img src="{{ item.data.cover_image }}" alt="" data-not-lazy />
-            <span>
-            <h3 class="font-base leading-tight text-600 weight-mid">
-              <a href="{{ item.url }}" class="post-list__link" rel="bookmark" style="word-break: break-word;">{{ item.data.title }}</a>
-            </h3>
-            <p class="text-500 gap-top-300 weight-mid">
-              <time datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time>
-            </p>
+          <li class="blog flex items-center gap-300">
+            <a href="{{ item.url }}" style="width: 150px;aspect-ratio: auto;" aria-hidden="true">
+              <img src="{{ item.data.cover_image }}" alt="" class="w-full h-auto object-cover aspect-[3/2]" data-not-lazy />
+            </a>
+            <span class="flex-grow min-w-0">
+              <h3 class="font-base leading-tight text-600 weight-mid">
+                <a href="{{ item.url }}" class="post-list__link" rel="bookmark" style="word-break: break-word;">{{ item.data.title }}</a>
+              </h3>
+              <p class="text-500 gap-top-300 weight-mid">
+                <time datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time>
+              </p>
             </span>
           </li>
         {% endif %}
