@@ -7,8 +7,10 @@ metaDesc: Nick Taylor, a sofware engineer with a focus on the front-end.
 
 <img class="headshot" src="/images/colour-headshot-500x500.jpg" alt="Headshot of Nick Taylor" />
 
-Hello! My name is Nick Taylor. I'm a Senior Software Engineer at [OpenSauced](https://opensauced.pizza). I'm a fan of Open Source and have a growing interest in serverless and edge computing. I'm not a big fan of spiders, but I know they're doing good work eating bugs. I also [stream on Twitch](https://nickyt.live).
+Hi! My name is Nick Taylor.
 
-I am a <em>big</em> fan of TypeScript, JavaScript, Node, and all things frontend. Aside from programming, I enjoy contributing to open source, hitting the gym, snowboarding, and rugby a long time ago.
+I'm a developer advocate at [Pomerium](https://pomerium.com), a zero trust, identity-aware proxy platform that enables secure, clientless connections to web applications and services without a corporate VPN.
 
-I'm happy where I work with my awesome team, but I'm always open to hearing about new opportunities. If you're interested in working with me, please feel free to <a href="https://calendly.com/nickytonline/new-opportunities">grab a slot on my Calendly</a>. And why me? I have the tech skills, but that's not all. I make teams better. I have a knack for getting people to work well together. Almost everyone I've worked with says the same thing - I turn a group into a team. Can't really put numbers on it, but you'll feel the difference.
+i have over a decade of open source contributions and five years of professional open source experience at companies like OpenSauced, dev.to, and Netlify. You’ll often find me live streaming tech content, either solo or with friends from the community.
+
+Although I'm a huge fan of open source, I'm not a big fan of spiders.
