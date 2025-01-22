@@ -2056,43 +2056,6 @@
       "text_color_hex": "#fff9ac"
     }
   },
-  "https://dev.to/nickytonline/my-impact-at-forem-23mj": {
-    "type_of": "article",
-    "id": 1032669,
-    "title": "My Impact at Forem",
-    "description": "This is my first post about impact. What do I mean by impact?  How did you influence the place where...",
-    "readable_publish_date": "Mar 24 '22",
-    "slug": "my-impact-at-forem-23mj",
-    "path": "/nickytonline/my-impact-at-forem-23mj",
-    "url": "https://dev.to/nickytonline/my-impact-at-forem-23mj",
-    "collection_id": 4084,
-    "published_timestamp": "2022-03-24T03:47:23Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-impact-at-forem-23mj/",
-    "created_at": "2022-03-24T03:47:23Z",
-    "edited_at": "2022-06-26T02:52:50Z",
-    "crossposted_at": null,
-    "published_at": "2022-03-24T03:47:23Z",
-    "last_comment_at": "2022-03-29T18:26:29Z",
-    "reading_time_minutes": 4,
-    "tag_list": "career",
-    "tags": [
-      "career"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/repurposing-content-for-content-creation-3l4d": {
     "type_of": "article",
     "id": 1221395,
@@ -2370,53 +2333,6 @@
       "cli",
       "git",
       "productivity"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "OpenSauced",
-      "username": "opensauced",
-      "slug": "opensauced",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
-    }
-  },
-  "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75": {
-    "type_of": "article",
-    "id": 1694953,
-    "title": "Migrating from Jest to Vitest for your React Application",
-    "description": "Are you looking to migrate from Jest to Vitest for your React application? Look no further.  I...",
-    "readable_publish_date": "Dec 14 '23",
-    "slug": "migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "path": "/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "url": "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "collection_id": 26157,
-    "published_timestamp": "2023-12-14T08:00:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "canonical_url": "https://opensauced.pizza/docs/community-resources/migrating-from-jest-to-vitest-for-your-react-application/",
-    "created_at": "2023-12-12T03:21:58Z",
-    "edited_at": "2024-06-10T21:24:57Z",
-    "crossposted_at": null,
-    "published_at": "2023-12-14T08:00:00Z",
-    "last_comment_at": "2023-12-20T21:28:49Z",
-    "reading_time_minutes": 4,
-    "tag_list": "testing, react, vitest, typescript",
-    "tags": [
-      "testing",
-      "react",
-      "vitest",
-      "typescript"
     ],
     "user": {
       "name": "Nick Taylor",
