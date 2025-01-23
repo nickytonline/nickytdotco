@@ -756,7 +756,7 @@
     "edited_at": "2022-05-02T11:49:27Z",
     "crossposted_at": "2019-01-07T05:07:51Z",
     "published_at": "2019-01-05T18:40:00Z",
-    "last_comment_at": "2020-09-26T03:45:58Z",
+    "last_comment_at": "2025-01-22T03:02:51Z",
     "reading_time_minutes": 5,
     "tag_list": "career, interview, motivation",
     "tags": [
@@ -1450,45 +1450,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/nickytonline/my-mac-setup-2m05": {
-    "type_of": "article",
-    "id": 16734,
-    "title": "My Mac Setup",
-    "description": "Maybe I should start a series called “Not just a Gist”, as I’m slowly converting gists of mine to...",
-    "readable_publish_date": "Jan 12 '18",
-    "slug": "my-mac-setup-2m05",
-    "path": "/nickytonline/my-mac-setup-2m05",
-    "url": "https://dev.to/nickytonline/my-mac-setup-2m05",
-    "collection_id": null,
-    "published_timestamp": "2018-01-12T05:15:04Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fqkwvsk3lp64lvchg69tm.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fqkwvsk3lp64lvchg69tm.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-mac-setup-2m05/",
-    "created_at": "2018-01-12T05:07:48Z",
-    "edited_at": "2022-05-30T02:13:19Z",
-    "crossposted_at": "2018-01-12T05:15:04Z",
-    "published_at": "2018-01-12T10:00:00Z",
-    "last_comment_at": "2021-05-01T05:37:32Z",
-    "reading_time_minutes": 9,
-    "tag_list": "productivity, developertools, webdev",
-    "tags": [
-      "productivity",
-      "developertools",
-      "webdev"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/thepracticaldev/the-7-most-popular-dev-posts-from-the-past-week-4pno": {
     "type_of": "article",
     "id": 16962,
@@ -1933,46 +1894,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
     }
   },
-  "https://dev.to/nickytonline/what-is-deno-13he": {
-    "type_of": "article",
-    "id": 1139940,
-    "title": "What is Deno?",
-    "description": "I got to hang with Deno core team member Luca Casonato a couple of weeks ago to discuss a framework...",
-    "readable_publish_date": "Jul 14 '22",
-    "slug": "what-is-deno-13he",
-    "path": "/nickytonline/what-is-deno-13he",
-    "url": "https://dev.to/nickytonline/what-is-deno-13he",
-    "collection_id": null,
-    "published_timestamp": "2022-07-14T03:41:00Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/what-is-deno-13he/",
-    "created_at": "2022-07-14T03:41:52Z",
-    "edited_at": "2022-08-02T23:50:16Z",
-    "crossposted_at": null,
-    "published_at": "2022-07-14T03:41:00Z",
-    "last_comment_at": "2024-10-30T16:47:28Z",
-    "reading_time_minutes": 8,
-    "tag_list": "deno, typescript, rust, javascript",
-    "tags": [
-      "deno",
-      "typescript",
-      "rust",
-      "javascript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p": {
     "type_of": "article",
     "id": 1096879,
@@ -2206,46 +2127,6 @@
       "html",
       "css",
       "typescript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6": {
-    "type_of": "article",
-    "id": 1245107,
-    "title": "Automate and Auto-Merge Pull Requests using GitHub Actions and the GitHub CLI",
-    "description": "So I've written about how I automated content updates for my blog before. I even gave a talk on...",
-    "readable_publish_date": "Nov 6 '22",
-    "slug": "automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-    "path": "/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-    "url": "https://dev.to/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-    "collection_id": null,
-    "published_timestamp": "2022-11-06T01:32:09Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-    "created_at": "2022-11-06T01:01:37Z",
-    "edited_at": "2024-07-20T14:32:06Z",
-    "crossposted_at": null,
-    "published_at": "2022-11-06T01:32:09Z",
-    "last_comment_at": "2022-11-06T01:32:09Z",
-    "reading_time_minutes": 5,
-    "tag_list": "github, githubcli, githubactions, git",
-    "tags": [
-      "github",
-      "githubcli",
-      "githubactions",
-      "git"
     ],
     "user": {
       "name": "Nick Taylor",
