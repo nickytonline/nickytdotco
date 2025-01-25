@@ -51,7 +51,7 @@ force = true
 
 [[redirects]]
 from = "https://pod.iamdeveloper.com/2065897/*"
-to = "https://pod.iamdeveloper.com/:splat"
+to = "https://nickyt.co"
 status = 302
 force = true
 
@@ -63,19 +63,19 @@ force = true
 
 [[redirects]]
 from = "https://pod.nickyt.co/2065897/*"
-to = "https://pod.nickyt.co/:splat"
+to = "https://nickyt.co"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://pod.nickyt.co/*"
-to = "https://nickscuts.buzzsprout.com/2065897/:splat"
+to = "https://nickyt.co"
 status = 302
 force = true
 
 [[redirects]]
 from = "https://vscodetips.com/"
-to = "/pages/vscode-tips/"
+to = "https://nickyt.co"
 status = 301
 force = true
 
