@@ -246,45 +246,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F197075%2Fac841cbd-abbb-4760-be69-6909cef48656.jpg"
     }
   },
-  "https://dev.to/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj": {
-    "type_of": "article",
-    "id": 937703,
-    "title": "Why TurboRepo Will Be The First Big Trend of 2022",
-    "description": "TurboRepo is a big deal for the JS community because it addresses the monorepo problem head on, bringing 85% faster build speeds and great architecture/docs/marketing.",
-    "readable_publish_date": "Dec 27 '21",
-    "slug": "why-turborepo-will-be-the-first-big-trend-of-2022-4gfj",
-    "path": "/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj",
-    "url": "https://dev.to/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj",
-    "collection_id": null,
-    "published_timestamp": "2021-12-27T16:08:03Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fscfrt4xkdifplcapuuw5.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fscfrt4xkdifplcapuuw5.png",
-    "canonical_url": "https://www.swyx.io/turborepo-why",
-    "created_at": "2021-12-27T15:32:37Z",
-    "edited_at": "2022-05-31T21:26:02Z",
-    "crossposted_at": null,
-    "published_at": "2021-12-27T16:08:03Z",
-    "last_comment_at": "2024-07-10T21:14:01Z",
-    "reading_time_minutes": 6,
-    "tag_list": "devtools, summaries, javascript",
-    "tags": [
-      "devtools",
-      "summaries",
-      "javascript"
-    ],
-    "user": {
-      "name": "swyx",
-      "username": "swyx",
-      "twitter_username": "swyx",
-      "github_username": "swyxio",
-      "user_id": 47766,
-      "website_url": "http://swyx.io",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F47766%2F26fbd2bf-c352-447c-9b4f-f66652dc4899.jpg"
-    }
-  },
   "https://dev.to/nickytonline/learning-rust-1h2n": {
     "type_of": "article",
     "id": 670756,
@@ -562,46 +523,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
     }
   },
-  "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko": {
-    "type_of": "article",
-    "id": 89947,
-    "title": "In Pursuit of Enjoyable Developer Collaboration",
-    "description": "Collaboration is critical for any successful development team. That's a fairly uncontroversial...",
-    "readable_publish_date": "Mar 16 '19",
-    "slug": "visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
-    "path": "/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
-    "url": "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
-    "collection_id": 619,
-    "published_timestamp": "2019-03-16T22:34:47Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fquotation.io%2Fquotes%2Fwant-go-fast-go-alone-want-go-far-go-together.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fquotation.io%2Fquotes%2Fwant-go-fast-go-alone-want-go-far-go-together.jpg",
-    "canonical_url": "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
-    "created_at": "2019-03-10T21:06:20Z",
-    "edited_at": "2020-08-02T17:58:52Z",
-    "crossposted_at": null,
-    "published_at": "2019-03-16T22:34:47Z",
-    "last_comment_at": "2024-02-22T04:09:23Z",
-    "reading_time_minutes": 8,
-    "tag_list": "productivity, vscode, collaboration, webdev",
-    "tags": [
-      "productivity",
-      "vscode",
-      "collaboration",
-      "webdev"
-    ],
-    "user": {
-      "name": "Jonathan Carter",
-      "username": "lostintangent",
-      "twitter_username": "LostInTangent",
-      "github_username": "lostintangent",
-      "user_id": 82833,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F82833%2F8f5c1c7e-eea0-49cc-9632-25ef8a2c9410.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F82833%2F8f5c1c7e-eea0-49cc-9632-25ef8a2c9410.jpeg"
-    }
-  },
   "https://dev.to/devteam/changelog-dev-has-some-stories-for-you-15kn": {
     "type_of": "article",
     "id": 341307,
@@ -773,43 +694,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/jess/dev-monthly-report--march-2018-579p": {
-    "type_of": "article",
-    "id": 25059,
-    "title": "DEV Monthly Report — March 2018",
-    "description": "Our monthly report to the dev.to community ❤️",
-    "readable_publish_date": "Apr 2 '18",
-    "slug": "dev-monthly-report--march-2018-579p",
-    "path": "/jess/dev-monthly-report--march-2018-579p",
-    "url": "https://dev.to/jess/dev-monthly-report--march-2018-579p",
-    "collection_id": null,
-    "published_timestamp": "2018-04-02T19:09:08Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffn26afgw5i3hjbmnhawv.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffn26afgw5i3hjbmnhawv.png",
-    "canonical_url": "https://dev.to/jess/dev-monthly-report--march-2018-579p",
-    "created_at": "2018-04-02T18:53:18Z",
-    "edited_at": null,
-    "crossposted_at": null,
-    "published_at": "2018-04-02T19:09:08Z",
-    "last_comment_at": "2018-04-03T22:09:08Z",
-    "reading_time_minutes": 2,
-    "tag_list": "meta",
-    "tags": [
-      "meta"
-    ],
-    "user": {
-      "name": "Jess Lee",
-      "username": "jess",
-      "twitter_username": "jessleenyc",
-      "github_username": "jessleenyc",
-      "user_id": 264,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg"
     }
   },
   "https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf": {
@@ -2370,53 +2254,6 @@
       "cli",
       "git",
       "productivity"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "OpenSauced",
-      "username": "opensauced",
-      "slug": "opensauced",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
-    }
-  },
-  "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75": {
-    "type_of": "article",
-    "id": 1694953,
-    "title": "Migrating from Jest to Vitest for your React Application",
-    "description": "Are you looking to migrate from Jest to Vitest for your React application? Look no further.  I...",
-    "readable_publish_date": "Dec 14 '23",
-    "slug": "migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "path": "/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "url": "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "collection_id": 26157,
-    "published_timestamp": "2023-12-14T08:00:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "canonical_url": "https://opensauced.pizza/docs/community-resources/migrating-from-jest-to-vitest-for-your-react-application/",
-    "created_at": "2023-12-12T03:21:58Z",
-    "edited_at": "2024-06-10T21:24:57Z",
-    "crossposted_at": null,
-    "published_at": "2023-12-14T08:00:00Z",
-    "last_comment_at": "2023-12-20T21:28:49Z",
-    "reading_time_minutes": 4,
-    "tag_list": "testing, react, vitest, typescript",
-    "tags": [
-      "testing",
-      "react",
-      "vitest",
-      "typescript"
     ],
     "user": {
       "name": "Nick Taylor",
