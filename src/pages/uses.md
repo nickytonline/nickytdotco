@@ -104,6 +104,7 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 - [Jelly Comb Ultra Slim Folding Bluetooth Keyboard](https://www.amazon.ca/gp/product/B07YYTHMCG)
 - [Anker Magnetic Battery, 10,000 mAh Foldable Wireless Portable Charger](https://amzn.to/3A5W4bE)
 - [Apple Magic Trackpad (White)](https://amzn.to/3yB2dMB)
+- [Airalo](https://www.airalo.com/) eSIMs for travel. A must have when travelling outside of your home country. Use the referral code `NICK1387` to get a discount off your first eSIM.
 
 ## Other
 
