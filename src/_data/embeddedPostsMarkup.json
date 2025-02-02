@@ -689,53 +689,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5": {
-    "type_of": "article",
-    "id": 176777,
-    "title": "You can now generate self-hostable static blogs right from your DEV content via Stackbit",
-    "description": "We shipped a new feature which allows you to automatically generate and maintain a statically-hosted...",
-    "readable_publish_date": "Sep 26 '19",
-    "slug": "you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5",
-    "path": "/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5",
-    "url": "https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5",
-    "collection_id": null,
-    "published_timestamp": "2019-09-26T11:56:08Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9x9f1q8zar8gsxdx6bzh.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9x9f1q8zar8gsxdx6bzh.png",
-    "canonical_url": "https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5",
-    "created_at": "2019-09-26T10:18:20Z",
-    "edited_at": "2019-09-26T12:40:36Z",
-    "crossposted_at": null,
-    "published_at": "2019-09-26T11:56:08Z",
-    "last_comment_at": "2023-11-14T08:56:40Z",
-    "reading_time_minutes": 4,
-    "tag_list": "meta, projectbenatar, webdev, changelog",
-    "tags": [
-      "meta",
-      "projectbenatar",
-      "webdev",
-      "changelog"
-    ],
-    "user": {
-      "name": "Ben Halpern",
-      "username": "ben",
-      "twitter_username": "bendhalpern",
-      "github_username": "benhalpern",
-      "user_id": 1,
-      "website_url": "http://benhalpern.com",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
-    },
-    "organization": {
-      "name": "The DEV Team",
-      "username": "devteam",
-      "slug": "devteam",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
-    }
-  },
   "https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6": {
     "type_of": "article",
     "id": 73494,
@@ -1564,44 +1517,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/nickytonline/quick-simple-rating-code-pen-3ecp": {
-    "type_of": "article",
-    "id": 17258,
-    "title": "A Simple ⭐ Rating Code Pen",
-    "description": "Cover image care of Flickr user sparkyloe.  Continuing along with my 2018 Resolutions to make Code...",
-    "readable_publish_date": "Jan 19 '18",
-    "slug": "quick-simple-rating-code-pen-3ecp",
-    "path": "/nickytonline/quick-simple-rating-code-pen-3ecp",
-    "url": "https://dev.to/nickytonline/quick-simple-rating-code-pen-3ecp",
-    "collection_id": 3248,
-    "published_timestamp": "2018-01-19T04:12:02Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F4%2F3864%2F15120161855_a640e93573_b.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc2.staticflickr.com%2F4%2F3864%2F15120161855_a640e93573_b.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/quick-simple-rating-code-pen-3ecp/",
-    "created_at": "2018-01-19T04:12:02Z",
-    "edited_at": "2020-06-17T03:16:53Z",
-    "crossposted_at": null,
-    "published_at": "2018-01-19T04:12:02Z",
-    "last_comment_at": "2018-03-05T04:45:52Z",
-    "reading_time_minutes": 1,
-    "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m": {
     "type_of": "article",
     "id": 19227,
@@ -1765,52 +1680,6 @@
       "website_url": "https://whitep4nth3r.com/",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png"
-    }
-  },
-  "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404": {
-    "type_of": "article",
-    "id": 1120451,
-    "title": "How to Add Speech Recognition to Your React and Node.js Project",
-    "description": "Do you have a React project that could use speech-to-text? This tutorial will go through the steps to upgrade your React project with Deepgram transcriptions.",
-    "readable_publish_date": "Jun 21 '22",
-    "slug": "how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
-    "path": "/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
-    "url": "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
-    "collection_id": null,
-    "published_timestamp": "2022-06-21T15:34:24Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fres.cloudinary.com%2Fdeepgram%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Cw_auto%2Cc_fit%2Fv1655815938%2Fblog%2F2022%2F06%2Fhow-to-add-speech-recognition-to-your-react-project%2FHow-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fres.cloudinary.com%2Fdeepgram%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Cw_auto%2Cc_fit%2Fv1655815938%2Fblog%2F2022%2F06%2Fhow-to-add-speech-recognition-to-your-react-project%2FHow-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
-    "canonical_url": "https://developers.deepgram.com/blog/2022/06/how-to-add-speech-recognition-to-your-react-project/",
-    "created_at": "2022-06-21T15:34:14Z",
-    "edited_at": null,
-    "crossposted_at": null,
-    "published_at": "2022-06-21T15:34:24Z",
-    "last_comment_at": "2022-06-22T16:35:35Z",
-    "reading_time_minutes": 6,
-    "tag_list": "react, webdev, node",
-    "tags": [
-      "react",
-      "webdev",
-      "node"
-    ],
-    "user": {
-      "name": "BekahHW",
-      "username": "bekahhw",
-      "twitter_username": "BekahHW",
-      "github_username": "BekahHW",
-      "user_id": 345658,
-      "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
-    },
-    "organization": {
-      "name": "Deepgram",
-      "username": "deepgram",
-      "slug": "deepgram",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4019%2Fb921b72d-3c60-425e-a223-189a5fce8839.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4019%2Fb921b72d-3c60-425e-a223-189a5fce8839.jpg"
     }
   },
   "https://dev.to/nickytonline/learning-resources-for-typescript-4g1n": {
@@ -2747,6 +2616,46 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
+    }
+  },
+  "https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-super-charge": {
+    "type_of": "article",
+    "id": 1272886,
+    "title": "Super Charging Fine-Grained Reactive Performance",
+    "description": "Update (2024): Dev.to recently broke their svg renderer, so I've hosted a copy of this on...",
+    "readable_publish_date": "Dec 1 '22",
+    "slug": "super-charging-fine-grained-reactive-performance-47ph",
+    "path": "/milomg/super-charging-fine-grained-reactive-performance-47ph",
+    "url": "https://dev.to/milomg/super-charging-fine-grained-reactive-performance-47ph",
+    "collection_id": null,
+    "published_timestamp": "2022-12-01T22:14:36Z",
+    "language": "en",
+    "subforem_id": null,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F94hz25r8sedkegrv8j91.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F94hz25r8sedkegrv8j91.png",
+    "canonical_url": "https://dev.to/milomg/super-charging-fine-grained-reactive-performance-47ph",
+    "created_at": "2022-11-25T23:34:48Z",
+    "edited_at": "2024-12-17T18:27:30Z",
+    "crossposted_at": null,
+    "published_at": "2022-12-01T22:14:36Z",
+    "last_comment_at": "2024-08-28T03:05:40Z",
+    "reading_time_minutes": 10,
+    "tag_list": "solidjs, webdev, reactivity, performance",
+    "tags": [
+      "solidjs",
+      "webdev",
+      "reactivity",
+      "performance"
+    ],
+    "user": {
+      "name": "Milo",
+      "username": "milomg",
+      "twitter_username": null,
+      "github_username": "modderme123",
+      "user_id": 614573,
+      "website_url": null,
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F614573%2F3202834d-372d-4685-8d14-aeebe5e3c50c.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F614573%2F3202834d-372d-4685-8d14-aeebe5e3c50c.png"
     }
   }
 }
