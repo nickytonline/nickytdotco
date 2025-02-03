@@ -2748,5 +2748,45 @@
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
+  },
+  "https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-super-charge": {
+    "type_of": "article",
+    "id": 1272886,
+    "title": "Super Charging Fine-Grained Reactive Performance",
+    "description": "Update (2024): Dev.to recently broke their svg renderer, so I've hosted a copy of this on...",
+    "readable_publish_date": "Dec 1 '22",
+    "slug": "super-charging-fine-grained-reactive-performance-47ph",
+    "path": "/milomg/super-charging-fine-grained-reactive-performance-47ph",
+    "url": "https://dev.to/milomg/super-charging-fine-grained-reactive-performance-47ph",
+    "collection_id": null,
+    "published_timestamp": "2022-12-01T22:14:36Z",
+    "language": "en",
+    "subforem_id": null,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F94hz25r8sedkegrv8j91.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F94hz25r8sedkegrv8j91.png",
+    "canonical_url": "https://dev.to/milomg/super-charging-fine-grained-reactive-performance-47ph",
+    "created_at": "2022-11-25T23:34:48Z",
+    "edited_at": "2024-12-17T18:27:30Z",
+    "crossposted_at": null,
+    "published_at": "2022-12-01T22:14:36Z",
+    "last_comment_at": "2024-08-28T03:05:40Z",
+    "reading_time_minutes": 10,
+    "tag_list": "solidjs, webdev, reactivity, performance",
+    "tags": [
+      "solidjs",
+      "webdev",
+      "reactivity",
+      "performance"
+    ],
+    "user": {
+      "name": "Milo",
+      "username": "milomg",
+      "twitter_username": null,
+      "github_username": "modderme123",
+      "user_id": 614573,
+      "website_url": null,
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F614573%2F3202834d-372d-4685-8d14-aeebe5e3c50c.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F614573%2F3202834d-372d-4685-8d14-aeebe5e3c50c.png"
+    }
   }
 }
