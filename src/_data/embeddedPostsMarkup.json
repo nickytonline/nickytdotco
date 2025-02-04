@@ -1526,44 +1526,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F3%2F13d3b32a-d381-4549-b95e-ec665768ce8f.png"
     }
   },
-  "https://dev.to/nickytonline/quick-hulk-code-pen-18i1": {
-    "type_of": "article",
-    "id": 16823,
-    "title": "Quick Hulk Code Pen",
-    "description": "I give you \"Hulk table rage\"",
-    "readable_publish_date": "Jan 13 '18",
-    "slug": "quick-hulk-code-pen-18i1",
-    "path": "/nickytonline/quick-hulk-code-pen-18i1",
-    "url": "https://dev.to/nickytonline/quick-hulk-code-pen-18i1",
-    "collection_id": 3248,
-    "published_timestamp": "2018-01-13T04:37:21Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/quick-hulk-code-pen-18i1/",
-    "created_at": "2018-01-13T04:37:21Z",
-    "edited_at": "2020-06-17T03:17:33Z",
-    "crossposted_at": null,
-    "published_at": "2018-01-13T04:37:21Z",
-    "last_comment_at": "2018-03-05T04:44:22Z",
-    "reading_time_minutes": 1,
-    "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/quick-simple-rating-code-pen-3ecp": {
     "type_of": "article",
     "id": 17258,
