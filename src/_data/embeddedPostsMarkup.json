@@ -736,45 +736,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
-  "https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6": {
-    "type_of": "article",
-    "id": 73494,
-    "title": "Take chances and stand out",
-    "description": "This is my first time writing a post about career advice. This kind of advice is definitely not a one...",
-    "readable_publish_date": "Jan 7 '19",
-    "slug": "take-chances-and-standout-because-who-knows-3kh6",
-    "path": "/nickytonline/take-chances-and-standout-because-who-knows-3kh6",
-    "url": "https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6",
-    "collection_id": 4084,
-    "published_timestamp": "2019-01-07T05:07:51Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffgimfk93vbdn6v0csx5e.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffgimfk93vbdn6v0csx5e.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/take-chances-and-standout-because-who-knows-3kh6/",
-    "created_at": "2019-01-07T03:39:58Z",
-    "edited_at": "2022-05-02T11:49:27Z",
-    "crossposted_at": "2019-01-07T05:07:51Z",
-    "published_at": "2019-01-05T18:40:00Z",
-    "last_comment_at": "2025-01-22T03:02:51Z",
-    "reading_time_minutes": 5,
-    "tag_list": "career, interview, motivation",
-    "tags": [
-      "career",
-      "interview",
-      "motivation"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/jess/dev-monthly-report--march-2018-579p": {
     "type_of": "article",
     "id": 25059,
@@ -1290,45 +1251,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
-  "https://dev.to/iampeekay/why-use-static-types-in-javascript-part-1": {
-    "type_of": "article",
-    "id": 367,
-    "title": "Why use static types in JavaScript? (Part 1)",
-    "description": "Types are bound to improve your JavaScript, if you're willing to spend some time looking at their advantages.",
-    "readable_publish_date": "Dec 8 '16",
-    "slug": "why-use-static-types-in-javascript-part-1",
-    "path": "/iampeekay/why-use-static-types-in-javascript-part-1",
-    "url": "https://dev.to/iampeekay/why-use-static-types-in-javascript-part-1",
-    "collection_id": null,
-    "published_timestamp": "2016-12-08T18:36:48Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/http%3A%2F%2Fi.imgur.com%2FWPQOAPu.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/http%3A%2F%2Fi.imgur.com%2FWPQOAPu.png",
-    "canonical_url": "https://dev.to/iampeekay/why-use-static-types-in-javascript-part-1",
-    "created_at": "2016-12-08T18:36:48Z",
-    "edited_at": null,
-    "crossposted_at": null,
-    "published_at": "2016-12-08T18:36:48Z",
-    "last_comment_at": "2021-04-13T23:52:13Z",
-    "reading_time_minutes": 10,
-    "tag_list": "javascript, types, flow",
-    "tags": [
-      "javascript",
-      "types",
-      "flow"
-    ],
-    "user": {
-      "name": "Preethi Kasireddy",
-      "username": "iampeekay",
-      "twitter_username": null,
-      "github_username": "iam-peekay",
-      "user_id": 684,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F684%2F5421194.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F684%2F5421194.jpeg"
-    }
-  },
   "https://dev.to/nickytonline/is-2019-the-year-of-typescript-18p2": {
     "type_of": "article",
     "id": 75995,
@@ -1372,43 +1294,6 @@
       "name": "discuss",
       "bg_color_hex": "#71EA8B",
       "text_color_hex": "#FFFFFF"
-    }
-  },
-  "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6": {
-    "type_of": "article",
-    "id": 86459,
-    "title": "An Enhanced TypeScript Playground",
-    "description": "The TypeScript playground with enhancements",
-    "readable_publish_date": "Feb 26 '19",
-    "slug": "an-enhanced-typescript-playground-49j6",
-    "path": "/nickytonline/an-enhanced-typescript-playground-49j6",
-    "url": "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6",
-    "collection_id": 3255,
-    "published_timestamp": "2019-02-26T04:20:42Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/an-enhanced-typescript-playground-49j6/",
-    "created_at": "2019-02-26T04:16:02Z",
-    "edited_at": "2022-07-10T03:41:57Z",
-    "crossposted_at": "2019-02-26T04:20:42Z",
-    "published_at": "2019-02-26T03:58:04Z",
-    "last_comment_at": "2020-05-10T04:52:47Z",
-    "reading_time_minutes": 1,
-    "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/2018-resolutions-1deo": {
@@ -2747,46 +2632,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-super-charge": {
-    "type_of": "article",
-    "id": 1272886,
-    "title": "Super Charging Fine-Grained Reactive Performance",
-    "description": "Update (2024): Dev.to recently broke their svg renderer, so I've hosted a copy of this on...",
-    "readable_publish_date": "Dec 1 '22",
-    "slug": "super-charging-fine-grained-reactive-performance-47ph",
-    "path": "/milomg/super-charging-fine-grained-reactive-performance-47ph",
-    "url": "https://dev.to/milomg/super-charging-fine-grained-reactive-performance-47ph",
-    "collection_id": null,
-    "published_timestamp": "2022-12-01T22:14:36Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F94hz25r8sedkegrv8j91.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F94hz25r8sedkegrv8j91.png",
-    "canonical_url": "https://dev.to/milomg/super-charging-fine-grained-reactive-performance-47ph",
-    "created_at": "2022-11-25T23:34:48Z",
-    "edited_at": "2024-12-17T18:27:30Z",
-    "crossposted_at": null,
-    "published_at": "2022-12-01T22:14:36Z",
-    "last_comment_at": "2024-08-28T03:05:40Z",
-    "reading_time_minutes": 10,
-    "tag_list": "solidjs, webdev, reactivity, performance",
-    "tags": [
-      "solidjs",
-      "webdev",
-      "reactivity",
-      "performance"
-    ],
-    "user": {
-      "name": "Milo",
-      "username": "milomg",
-      "twitter_username": null,
-      "github_username": "modderme123",
-      "user_id": 614573,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F614573%2F3202834d-372d-4685-8d14-aeebe5e3c50c.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F614573%2F3202834d-372d-4685-8d14-aeebe5e3c50c.png"
     }
   }
 }
