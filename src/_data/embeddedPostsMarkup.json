@@ -562,46 +562,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
     }
   },
-  "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko": {
-    "type_of": "article",
-    "id": 89947,
-    "title": "In Pursuit of Enjoyable Developer Collaboration",
-    "description": "Collaboration is critical for any successful development team. That's a fairly uncontroversial...",
-    "readable_publish_date": "Mar 16 '19",
-    "slug": "visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
-    "path": "/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
-    "url": "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
-    "collection_id": 619,
-    "published_timestamp": "2019-03-16T22:34:47Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fquotation.io%2Fquotes%2Fwant-go-fast-go-alone-want-go-far-go-together.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fquotation.io%2Fquotes%2Fwant-go-fast-go-alone-want-go-far-go-together.jpg",
-    "canonical_url": "https://dev.to/lostintangent/visual-studio-live-share-in-pursuit-of-enjoyable-developer-collaboration-2nko",
-    "created_at": "2019-03-10T21:06:20Z",
-    "edited_at": "2020-08-02T17:58:52Z",
-    "crossposted_at": null,
-    "published_at": "2019-03-16T22:34:47Z",
-    "last_comment_at": "2024-02-22T04:09:23Z",
-    "reading_time_minutes": 8,
-    "tag_list": "productivity, vscode, collaboration, webdev",
-    "tags": [
-      "productivity",
-      "vscode",
-      "collaboration",
-      "webdev"
-    ],
-    "user": {
-      "name": "Jonathan Carter",
-      "username": "lostintangent",
-      "twitter_username": "LostInTangent",
-      "github_username": "lostintangent",
-      "user_id": 82833,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F82833%2F8f5c1c7e-eea0-49cc-9632-25ef8a2c9410.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F82833%2F8f5c1c7e-eea0-49cc-9632-25ef8a2c9410.jpeg"
-    }
-  },
   "https://dev.to/devteam/changelog-dev-has-some-stories-for-you-15kn": {
     "type_of": "article",
     "id": 341307,
@@ -973,82 +933,6 @@
       "text_color_hex": "#b2ffe1"
     }
   },
-  "https://dev.to/ananyaneogi/html-can-do-that-c0n": {
-    "type_of": "article",
-    "id": 128505,
-    "title": "HTML can do that?",
-    "description": "List of awesome things you can do with just HTML.",
-    "readable_publish_date": "Jun 25 '19",
-    "slug": "html-can-do-that-c0n",
-    "path": "/ananyaneogi/html-can-do-that-c0n",
-    "url": "https://dev.to/ananyaneogi/html-can-do-that-c0n",
-    "collection_id": null,
-    "published_timestamp": "2019-06-25T21:38:30Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjnx66b92lqma40xrary8.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjnx66b92lqma40xrary8.png",
-    "canonical_url": "https://dev.to/ananyaneogi/html-can-do-that-c0n",
-    "created_at": "2019-06-25T16:47:56Z",
-    "edited_at": "2019-06-26T06:18:21Z",
-    "crossposted_at": null,
-    "published_at": "2019-06-25T21:38:30Z",
-    "last_comment_at": "2025-01-14T03:06:30Z",
-    "reading_time_minutes": 2,
-    "tag_list": "webdev, html",
-    "tags": [
-      "webdev",
-      "html"
-    ],
-    "user": {
-      "name": "Ananya Neogi",
-      "username": "ananyaneogi",
-      "twitter_username": "_ananyaneogi",
-      "github_username": "ananyaneogi",
-      "user_id": 106991,
-      "website_url": "https://ananyaneogi.com",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F106991%2Fb487674a-45f7-4116-b695-a2607893e0ac.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F106991%2Fb487674a-45f7-4116-b695-a2607893e0ac.jpg"
-    }
-  },
-  "https://dev.to/chantastic/learn-react-in-25-short-lessons-react-holiday-2019-24np": {
-    "type_of": "article",
-    "id": 214267,
-    "title": "Learn React in 25 Short Lessons — React Holiday 2019 ⚛️🎄",
-    "description": "Hey React Friends,  I'm firing up the third season of React Holiday.  This year, I'm bringing it to d...",
-    "readable_publish_date": "Dec 2 '19",
-    "slug": "learn-react-in-25-short-lessons-react-holiday-2019-24np",
-    "path": "/chantastic/learn-react-in-25-short-lessons-react-holiday-2019-24np",
-    "url": "https://dev.to/chantastic/learn-react-in-25-short-lessons-react-holiday-2019-24np",
-    "collection_id": 3579,
-    "published_timestamp": "2019-12-02T23:58:01Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": null,
-    "social_image": "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg",
-    "canonical_url": "https://dev.to/chantastic/learn-react-in-25-short-lessons-react-holiday-2019-24np",
-    "created_at": "2019-12-02T23:22:33Z",
-    "edited_at": "2019-12-02T23:58:29Z",
-    "crossposted_at": null,
-    "published_at": "2019-12-02T23:58:01Z",
-    "last_comment_at": "2019-12-02T23:58:01Z",
-    "reading_time_minutes": 1,
-    "tag_list": "react, beginners",
-    "tags": [
-      "react",
-      "beginners"
-    ],
-    "user": {
-      "name": "chantastic",
-      "username": "chantastic",
-      "twitter_username": "chantastic",
-      "github_username": "chantastic",
-      "user_id": 50756,
-      "website_url": "https://chan.dev",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F50756%2F245a8d36-6fd8-437b-bf34-6637f0f3d79b.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F50756%2F245a8d36-6fd8-437b-bf34-6637f0f3d79b.png"
-    }
-  },
   "https://dev.to/nickytonline/my-visual-studio-code-setup-2ima": {
     "type_of": "article",
     "id": 14960,
@@ -1374,43 +1258,6 @@
       "text_color_hex": "#FFFFFF"
     }
   },
-  "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6": {
-    "type_of": "article",
-    "id": 86459,
-    "title": "An Enhanced TypeScript Playground",
-    "description": "The TypeScript playground with enhancements",
-    "readable_publish_date": "Feb 26 '19",
-    "slug": "an-enhanced-typescript-playground-49j6",
-    "path": "/nickytonline/an-enhanced-typescript-playground-49j6",
-    "url": "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6",
-    "collection_id": 3255,
-    "published_timestamp": "2019-02-26T04:20:42Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5rrpk58vqffc396paebe.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/an-enhanced-typescript-playground-49j6/",
-    "created_at": "2019-02-26T04:16:02Z",
-    "edited_at": "2022-07-10T03:41:57Z",
-    "crossposted_at": "2019-02-26T04:20:42Z",
-    "published_at": "2019-02-26T03:58:04Z",
-    "last_comment_at": "2020-05-10T04:52:47Z",
-    "reading_time_minutes": 1,
-    "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/2018-resolutions-1deo": {
     "type_of": "article",
     "id": 15972,
@@ -1526,44 +1373,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F3%2F13d3b32a-d381-4549-b95e-ec665768ce8f.png"
     }
   },
-  "https://dev.to/nickytonline/quick-hulk-code-pen-18i1": {
-    "type_of": "article",
-    "id": 16823,
-    "title": "Quick Hulk Code Pen",
-    "description": "I give you \"Hulk table rage\"",
-    "readable_publish_date": "Jan 13 '18",
-    "slug": "quick-hulk-code-pen-18i1",
-    "path": "/nickytonline/quick-hulk-code-pen-18i1",
-    "url": "https://dev.to/nickytonline/quick-hulk-code-pen-18i1",
-    "collection_id": 3248,
-    "published_timestamp": "2018-01-13T04:37:21Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fc1.staticflickr.com%2F3%2F2825%2F34089505692_6d6cb68560_h.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/quick-hulk-code-pen-18i1/",
-    "created_at": "2018-01-13T04:37:21Z",
-    "edited_at": "2020-06-17T03:17:33Z",
-    "crossposted_at": null,
-    "published_at": "2018-01-13T04:37:21Z",
-    "last_comment_at": "2018-03-05T04:44:22Z",
-    "reading_time_minutes": 1,
-    "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/quick-simple-rating-code-pen-3ecp": {
     "type_of": "article",
     "id": 17258,
@@ -1676,56 +1485,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/typescript/type-treat-2021-day-1-6an": {
-    "type_of": "article",
-    "id": 876343,
-    "title": "Type | Treat 2021 - Day 1",
-    "description": "The TypeScript Team challenges",
-    "readable_publish_date": "Oct 26 '21",
-    "slug": "type-treat-2021-day-1-6an",
-    "path": "/typescript/type-treat-2021-day-1-6an",
-    "url": "https://dev.to/typescript/type-treat-2021-day-1-6an",
-    "collection_id": 15226,
-    "published_timestamp": "2021-10-26T07:09:21Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdevblogs.microsoft.com%2Ftypescript%2Fwp-content%2Fuploads%2Fsites%2F11%2F2021%2F10%2Ftype-or-treat-2021.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdevblogs.microsoft.com%2Ftypescript%2Fwp-content%2Fuploads%2Fsites%2F11%2F2021%2F10%2Ftype-or-treat-2021.png",
-    "canonical_url": "https://dev.to/typescript/type-treat-2021-day-1-6an",
-    "created_at": "2021-10-26T07:09:06Z",
-    "edited_at": "2021-10-28T19:16:35Z",
-    "crossposted_at": null,
-    "published_at": "2021-10-26T07:09:21Z",
-    "last_comment_at": "2023-10-24T06:39:15Z",
-    "reading_time_minutes": 2,
-    "tag_list": "typescript, challenge",
-    "tags": [
-      "typescript",
-      "challenge"
-    ],
-    "user": {
-      "name": "Orta",
-      "username": "orta",
-      "twitter_username": "orta",
-      "github_username": "orta",
-      "user_id": 163069,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F163069%2F32c648a3-b634-4322-bc58-95e645296b35.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F163069%2F32c648a3-b634-4322-bc58-95e645296b35.png"
-    },
-    "organization": {
-      "name": "typescript",
-      "username": "typescript",
-      "slug": "typescript",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2560%2Fa664849a-eb4e-411e-a928-c96a0af9868b.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2560%2Fa664849a-eb4e-411e-a928-c96a0af9868b.png"
-    },
-    "flare_tag": {
-      "name": "challenge",
-      "bg_color_hex": "#bf1942",
-      "text_color_hex": "#ffffff"
     }
   },
   "https://dev.to/whitep4nth3r/were-all-living-on-it-but-what-exactly-is-the-edge-4n5l": {
@@ -1933,46 +1692,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
     }
   },
-  "https://dev.to/nickytonline/what-is-deno-13he": {
-    "type_of": "article",
-    "id": 1139940,
-    "title": "What is Deno?",
-    "description": "I got to hang with Deno core team member Luca Casonato a couple of weeks ago to discuss a framework...",
-    "readable_publish_date": "Jul 14 '22",
-    "slug": "what-is-deno-13he",
-    "path": "/nickytonline/what-is-deno-13he",
-    "url": "https://dev.to/nickytonline/what-is-deno-13he",
-    "collection_id": null,
-    "published_timestamp": "2022-07-14T03:41:00Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/what-is-deno-13he/",
-    "created_at": "2022-07-14T03:41:52Z",
-    "edited_at": "2022-08-02T23:50:16Z",
-    "crossposted_at": null,
-    "published_at": "2022-07-14T03:41:00Z",
-    "last_comment_at": "2024-10-30T16:47:28Z",
-    "reading_time_minutes": 8,
-    "tag_list": "deno, typescript, rust, javascript",
-    "tags": [
-      "deno",
-      "typescript",
-      "rust",
-      "javascript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p": {
     "type_of": "article",
     "id": 1096879,
@@ -2081,45 +1800,6 @@
     "tag_list": "career",
     "tags": [
       "career"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/nickytonline/repurposing-content-for-content-creation-3l4d": {
-    "type_of": "article",
-    "id": 1221395,
-    "title": "Repurposing Content for Content Creation",
-    "description": "So I've been streaming on Twitch since July 2020, blogging, and given some talks. To keep on with the...",
-    "readable_publish_date": "Oct 16 '22",
-    "slug": "repurposing-content-for-content-creation-3l4d",
-    "path": "/nickytonline/repurposing-content-for-content-creation-3l4d",
-    "url": "https://dev.to/nickytonline/repurposing-content-for-content-creation-3l4d",
-    "collection_id": null,
-    "published_timestamp": "2022-10-16T15:27:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fovd3nhk3ukuqpfpxagw4.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fovd3nhk3ukuqpfpxagw4.jpg",
-    "canonical_url": "https://www.iamdeveloper.com/posts/repurposing-content-for-content-creation-3l4d/",
-    "created_at": "2022-10-16T15:27:01Z",
-    "edited_at": "2024-07-20T14:32:59Z",
-    "crossposted_at": null,
-    "published_at": "2022-10-16T15:27:00Z",
-    "last_comment_at": "2024-03-14T03:11:53Z",
-    "reading_time_minutes": 2,
-    "tag_list": "learninpublic, podcast, contentcreation",
-    "tags": [
-      "learninpublic",
-      "podcast",
-      "contentcreation"
     ],
     "user": {
       "name": "Nick Taylor",
