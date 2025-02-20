@@ -162,51 +162,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/nickytonline/why-i-created-the-vscodetips-community-2bl": {
-    "type_of": "article",
-    "id": 805930,
-    "title": "Why I created the VSCodeTips community",
-    "description": "I'm a big fan of Visual Studio Code. I was an early adopter. I started using VS Code in 2015. I was...",
-    "readable_publish_date": "Aug 28 '21",
-    "slug": "why-i-created-the-vscodetips-community-2bl",
-    "path": "/vscodetips/why-i-created-the-vscodetips-community-2bl",
-    "url": "https://dev.to/vscodetips/why-i-created-the-vscodetips-community-2bl",
-    "collection_id": null,
-    "published_timestamp": "2021-08-28T04:49:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/why-i-created-the-vscodetips-community-2bl/",
-    "created_at": "2021-08-28T04:49:00Z",
-    "edited_at": "2022-04-06T02:44:54Z",
-    "crossposted_at": null,
-    "published_at": "2021-08-28T04:49:00Z",
-    "last_comment_at": "2024-02-22T04:10:28Z",
-    "reading_time_minutes": 2,
-    "tag_list": "vscode, community",
-    "tags": [
-      "vscode",
-      "community"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
-    }
-  },
   "https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo": {
     "type_of": "article",
     "id": 649846,
@@ -1850,51 +1805,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc": {
-    "type_of": "article",
-    "id": 1186684,
-    "title": "VS Code Tip of the week: vscode.dev",
-    "description": "This came out a while ago, but I wanted to bring it up again because it's a great collaboration tool...",
-    "readable_publish_date": "Sep 7 '22",
-    "slug": "vs-code-tip-of-the-week-vscodedev-2gcc",
-    "path": "/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc",
-    "url": "https://dev.to/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc",
-    "collection_id": 17419,
-    "published_timestamp": "2022-09-07T04:21:56Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
-    "canonical_url": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-vscodedev-mpf",
-    "created_at": "2022-09-07T04:21:57Z",
-    "edited_at": "2022-09-07T04:24:48Z",
-    "crossposted_at": null,
-    "published_at": "2022-09-07T04:21:56Z",
-    "last_comment_at": "2024-05-17T03:01:38Z",
-    "reading_time_minutes": 1,
-    "tag_list": "vscode, vscodetips",
-    "tags": [
-      "vscode",
-      "vscodetips"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
-    }
-  },
   "https://dev.to/ben/changelog-create-series-of-posts-4o63": {
     "type_of": "article",
     "id": 58162,
@@ -2130,52 +2040,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj": {
-    "type_of": "article",
-    "id": 1238663,
-    "title": "Bye for now VSCodeTips community!",
-    "description": "This short post mentions that community.vscodetips.com went offline on November 1st, 2022.        I'm...",
-    "readable_publish_date": "Nov 1 '22",
-    "slug": "bye-for-now-vscodetips-community-3jkj",
-    "path": "/vscodetips/bye-for-now-vscodetips-community-3jkj",
-    "url": "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj",
-    "collection_id": null,
-    "published_timestamp": "2022-11-01T13:17:32Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
-    "canonical_url": "https://www.nickyt.co/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
-    "created_at": "2022-11-01T13:17:32Z",
-    "edited_at": "2023-10-29T04:22:44Z",
-    "crossposted_at": null,
-    "published_at": "2022-11-01T13:17:32Z",
-    "last_comment_at": "2024-09-04T01:03:31Z",
-    "reading_time_minutes": 1,
-    "tag_list": "vscodetips, vscode, community",
-    "tags": [
-      "vscodetips",
-      "vscode",
-      "community"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
   "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2": {
