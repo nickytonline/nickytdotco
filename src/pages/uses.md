@@ -109,3 +109,9 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 ## Other
 
 - [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://amzn.to/3WQ3dG0)), my working at home shoes
+
+## Health and Training
+
+- For my Canadian peeps. I've been ordering from [Farm 2 Fork](https://farm2fork.refr.cc/default/u/taylor?s=pppw&t=tw) and it's been really great and high quality. Here's a [referral link](https://farm2fork.refr.cc/default/u/taylor?s=pppw&t=tw) if you want to give it a go and get a discount!
+- [Creatine Monohydrate from Nutratology](https://www.nutratology.com/products/creatine-monohydrate). Use the discount code `NICK_10` when purchasing.
+- Kettlebells from [Matsura](https://matsuru.ca)
