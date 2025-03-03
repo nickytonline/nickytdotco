@@ -16,7 +16,7 @@
     "html-minifier": "^4.0.0",
     "json-to-scss": "^1.6.2",
     "luxon": "^3.5.0",
-    "prettier": "^3.3.3",
+    "prettier": "^3.5.3",
     "rss-parser": "^3.13.0",
     "sass": "^1.80.6",
     "slugify": "^1.6.6",
