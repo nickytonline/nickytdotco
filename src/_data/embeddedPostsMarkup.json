@@ -162,51 +162,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/nickytonline/why-i-created-the-vscodetips-community-2bl": {
-    "type_of": "article",
-    "id": 805930,
-    "title": "Why I created the VSCodeTips community",
-    "description": "I'm a big fan of Visual Studio Code. I was an early adopter. I started using VS Code in 2015. I was...",
-    "readable_publish_date": "Aug 28 '21",
-    "slug": "why-i-created-the-vscodetips-community-2bl",
-    "path": "/vscodetips/why-i-created-the-vscodetips-community-2bl",
-    "url": "https://dev.to/vscodetips/why-i-created-the-vscodetips-community-2bl",
-    "collection_id": null,
-    "published_timestamp": "2021-08-28T04:49:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/why-i-created-the-vscodetips-community-2bl/",
-    "created_at": "2021-08-28T04:49:00Z",
-    "edited_at": "2022-04-06T02:44:54Z",
-    "crossposted_at": null,
-    "published_at": "2021-08-28T04:49:00Z",
-    "last_comment_at": "2024-02-22T04:10:28Z",
-    "reading_time_minutes": 2,
-    "tag_list": "vscode, community",
-    "tags": [
-      "vscode",
-      "community"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
-    }
-  },
   "https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo": {
     "type_of": "article",
     "id": 649846,
@@ -444,50 +399,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/devteam/welcoming-three-new-team-members-38hp": {
-    "type_of": "article",
-    "id": 245863,
-    "title": "Welcoming Three New Team Members 🎉",
-    "description": "We are so thrilled to welcome Vaidehi, Nick, and Josh to the DEV Team.   We've been big fans of...",
-    "readable_publish_date": "Jan 21 '20",
-    "slug": "welcoming-three-new-team-members-38hp",
-    "path": "/devteam/welcoming-three-new-team-members-38hp",
-    "url": "https://dev.to/devteam/welcoming-three-new-team-members-38hp",
-    "collection_id": null,
-    "published_timestamp": "2020-01-21T18:11:54Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F97a2sge9bgapcn6szuep.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F97a2sge9bgapcn6szuep.png",
-    "canonical_url": "https://dev.to/devteam/welcoming-three-new-team-members-38hp",
-    "created_at": "2020-01-21T17:30:52Z",
-    "edited_at": "2020-01-21T18:16:48Z",
-    "crossposted_at": null,
-    "published_at": "2020-01-21T18:11:54Z",
-    "last_comment_at": "2024-02-20T03:21:22Z",
-    "reading_time_minutes": 2,
-    "tag_list": "meta",
-    "tags": [
-      "meta"
-    ],
-    "user": {
-      "name": "Jess Lee",
-      "username": "jess",
-      "twitter_username": "jessleenyc",
-      "github_username": "jessleenyc",
-      "user_id": 264,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg"
-    },
-    "organization": {
-      "name": "The DEV Team",
-      "username": "devteam",
-      "slug": "devteam",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
   "https://dev.to/swyx/launching-the-coding-career-handbook-3f43": {
@@ -812,46 +723,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg"
     }
   },
-  "https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf": {
-    "type_of": "article",
-    "id": 157403,
-    "title": "Update Dependencies with Dependabot, Cypress and Netlify",
-    "description": "To preface things, this post is in the context of a JavaScript project, specifically, my blog...",
-    "readable_publish_date": "Aug 16 '19",
-    "slug": "update-dependencies-with-dependabot-cypress-and-netlify-3lkf",
-    "path": "/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf",
-    "url": "https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf",
-    "collection_id": null,
-    "published_timestamp": "2019-08-16T04:05:50Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjivsyirs8gft16kuji62.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjivsyirs8gft16kuji62.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/update-dependencies-with-dependabot-cypress-and-netlify-3lkf/",
-    "created_at": "2019-08-16T03:23:34Z",
-    "edited_at": "2022-05-02T11:35:43Z",
-    "crossposted_at": "2019-08-16T04:05:50Z",
-    "published_at": "2019-08-16T02:11:34Z",
-    "last_comment_at": "2019-08-20T23:39:06Z",
-    "reading_time_minutes": 6,
-    "tag_list": "testing, automation, cypress, netlify",
-    "tags": [
-      "testing",
-      "automation",
-      "cypress",
-      "netlify"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2": {
     "type_of": "article",
     "id": 96044,
@@ -1047,46 +918,6 @@
       "website_url": "https://chan.dev",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F50756%2F245a8d36-6fd8-437b-bf34-6637f0f3d79b.png",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F50756%2F245a8d36-6fd8-437b-bf34-6637f0f3d79b.png"
-    }
-  },
-  "https://dev.to/nickytonline/my-visual-studio-code-setup-2ima": {
-    "type_of": "article",
-    "id": 14960,
-    "title": "My Visual Studio Code Setup",
-    "description": "A small write up on my Visual Studio Code setup",
-    "readable_publish_date": "Dec 23 '17",
-    "slug": "my-visual-studio-code-setup-2ima",
-    "path": "/nickytonline/my-visual-studio-code-setup-2ima",
-    "url": "https://dev.to/nickytonline/my-visual-studio-code-setup-2ima",
-    "collection_id": 4083,
-    "published_timestamp": "2017-12-23T14:11:11Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6e271uy3v8ia1h0e1c7q.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6e271uy3v8ia1h0e1c7q.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-visual-studio-code-setup-2ima/",
-    "created_at": "2017-12-22T16:45:26Z",
-    "edited_at": "2020-06-17T03:20:54Z",
-    "crossposted_at": null,
-    "published_at": "2017-12-23T14:11:11Z",
-    "last_comment_at": "2020-09-04T11:40:44Z",
-    "reading_time_minutes": 6,
-    "tag_list": "visualstudiocode, developertools, texteditor, vscode",
-    "tags": [
-      "visualstudiocode",
-      "developertools",
-      "texteditor",
-      "vscode"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
   "https://dev.to/nickytonline/any-contribution-to-open-source-is-valuable-57d3": {
@@ -1763,8 +1594,8 @@
       "github_username": "whitep4nth3r",
       "user_id": 492757,
       "website_url": "https://whitep4nth3r.com/",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fee38a892-7497-4b03-a465-1ddea4eb4678.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fee38a892-7497-4b03-a465-1ddea4eb4678.png"
     }
   },
   "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404": {
@@ -1848,51 +1679,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc": {
-    "type_of": "article",
-    "id": 1186684,
-    "title": "VS Code Tip of the week: vscode.dev",
-    "description": "This came out a while ago, but I wanted to bring it up again because it's a great collaboration tool...",
-    "readable_publish_date": "Sep 7 '22",
-    "slug": "vs-code-tip-of-the-week-vscodedev-2gcc",
-    "path": "/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc",
-    "url": "https://dev.to/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc",
-    "collection_id": 17419,
-    "published_timestamp": "2022-09-07T04:21:56Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
-    "canonical_url": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-vscodedev-mpf",
-    "created_at": "2022-09-07T04:21:57Z",
-    "edited_at": "2022-09-07T04:24:48Z",
-    "crossposted_at": null,
-    "published_at": "2022-09-07T04:21:56Z",
-    "last_comment_at": "2024-05-17T03:01:38Z",
-    "reading_time_minutes": 1,
-    "tag_list": "vscode, vscodetips",
-    "tags": [
-      "vscode",
-      "vscodetips"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
   "https://dev.to/ben/changelog-create-series-of-posts-4o63": {
@@ -2130,52 +1916,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj": {
-    "type_of": "article",
-    "id": 1238663,
-    "title": "Bye for now VSCodeTips community!",
-    "description": "This short post mentions that community.vscodetips.com went offline on November 1st, 2022.        I'm...",
-    "readable_publish_date": "Nov 1 '22",
-    "slug": "bye-for-now-vscodetips-community-3jkj",
-    "path": "/vscodetips/bye-for-now-vscodetips-community-3jkj",
-    "url": "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj",
-    "collection_id": null,
-    "published_timestamp": "2022-11-01T13:17:32Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
-    "canonical_url": "https://www.nickyt.co/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
-    "created_at": "2022-11-01T13:17:32Z",
-    "edited_at": "2023-10-29T04:22:44Z",
-    "crossposted_at": null,
-    "published_at": "2022-11-01T13:17:32Z",
-    "last_comment_at": "2024-09-04T01:03:31Z",
-    "reading_time_minutes": 1,
-    "tag_list": "vscodetips, vscode, community",
-    "tags": [
-      "vscodetips",
-      "vscode",
-      "community"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
   "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2": {
@@ -2427,51 +2167,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "OpenSauced",
-      "username": "opensauced",
-      "slug": "opensauced",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
-    }
-  },
-  "https://dev.to/opensauced/navigating-the-challenges-of-scaling-open-source-projects-11h2": {
-    "type_of": "article",
-    "id": 1788284,
-    "title": "Scaling Open Source Projects: Navigating Challenges",
-    "description": "Gain insights into the challenges of scaling open source projects, with solutions for comprehensive understanding, collaboration, and sustainable project development.",
-    "readable_publish_date": "Mar 12 '24",
-    "slug": "navigating-the-challenges-of-scaling-open-source-projects-11h2",
-    "path": "/opensauced/navigating-the-challenges-of-scaling-open-source-projects-11h2",
-    "url": "https://dev.to/opensauced/navigating-the-challenges-of-scaling-open-source-projects-11h2",
-    "collection_id": null,
-    "published_timestamp": "2024-03-12T17:28:39Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftbtx0fg356gp7e8g5i3r.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftbtx0fg356gp7e8g5i3r.png",
-    "canonical_url": "https://opensauced.pizza/blog/scaling-oss-projects",
-    "created_at": "2024-03-12T17:28:40Z",
-    "edited_at": "2024-04-03T22:18:36Z",
-    "crossposted_at": null,
-    "published_at": "2024-03-12T17:28:39Z",
-    "last_comment_at": "2024-03-12T17:28:39Z",
-    "reading_time_minutes": 7,
-    "tag_list": "opensource, productivity",
-    "tags": [
-      "opensource",
-      "productivity"
-    ],
-    "user": {
-      "name": "BekahHW",
-      "username": "bekahhw",
-      "twitter_username": "BekahHW",
-      "github_username": "BekahHW",
-      "user_id": 345658,
-      "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
     },
     "organization": {
       "name": "OpenSauced",
@@ -2747,46 +2442,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-super-charge": {
-    "type_of": "article",
-    "id": 1272886,
-    "title": "Super Charging Fine-Grained Reactive Performance",
-    "description": "Update (2024): Dev.to recently broke their svg renderer, so I've hosted a copy of this on...",
-    "readable_publish_date": "Dec 1 '22",
-    "slug": "super-charging-fine-grained-reactive-performance-47ph",
-    "path": "/milomg/super-charging-fine-grained-reactive-performance-47ph",
-    "url": "https://dev.to/milomg/super-charging-fine-grained-reactive-performance-47ph",
-    "collection_id": null,
-    "published_timestamp": "2022-12-01T22:14:36Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F94hz25r8sedkegrv8j91.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F94hz25r8sedkegrv8j91.png",
-    "canonical_url": "https://dev.to/milomg/super-charging-fine-grained-reactive-performance-47ph",
-    "created_at": "2022-11-25T23:34:48Z",
-    "edited_at": "2024-12-17T18:27:30Z",
-    "crossposted_at": null,
-    "published_at": "2022-12-01T22:14:36Z",
-    "last_comment_at": "2024-08-28T03:05:40Z",
-    "reading_time_minutes": 10,
-    "tag_list": "solidjs, webdev, reactivity, performance",
-    "tags": [
-      "solidjs",
-      "webdev",
-      "reactivity",
-      "performance"
-    ],
-    "user": {
-      "name": "Milo",
-      "username": "milomg",
-      "twitter_username": null,
-      "github_username": "modderme123",
-      "user_id": 614573,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F614573%2F3202834d-372d-4685-8d14-aeebe5e3c50c.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F614573%2F3202834d-372d-4685-8d14-aeebe5e3c50c.png"
     }
   }
 }
