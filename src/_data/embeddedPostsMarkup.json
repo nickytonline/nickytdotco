@@ -162,51 +162,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/nickytonline/why-i-created-the-vscodetips-community-2bl": {
-    "type_of": "article",
-    "id": 805930,
-    "title": "Why I created the VSCodeTips community",
-    "description": "I'm a big fan of Visual Studio Code. I was an early adopter. I started using VS Code in 2015. I was...",
-    "readable_publish_date": "Aug 28 '21",
-    "slug": "why-i-created-the-vscodetips-community-2bl",
-    "path": "/vscodetips/why-i-created-the-vscodetips-community-2bl",
-    "url": "https://dev.to/vscodetips/why-i-created-the-vscodetips-community-2bl",
-    "collection_id": null,
-    "published_timestamp": "2021-08-28T04:49:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F07jhp9p39ti9bisymp6a.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/why-i-created-the-vscodetips-community-2bl/",
-    "created_at": "2021-08-28T04:49:00Z",
-    "edited_at": "2022-04-06T02:44:54Z",
-    "crossposted_at": null,
-    "published_at": "2021-08-28T04:49:00Z",
-    "last_comment_at": "2024-02-22T04:10:28Z",
-    "reading_time_minutes": 2,
-    "tag_list": "vscode, community",
-    "tags": [
-      "vscode",
-      "community"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
-    }
-  },
   "https://dev.to/s_aitchison/5-things-i-m-thinking-about-when-i-check-a-pull-request-for-accessibility-3gmo": {
     "type_of": "article",
     "id": 649846,
@@ -400,87 +355,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "The DEV Team",
-      "username": "devteam",
-      "slug": "devteam",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
-    }
-  },
-  "https://dev.to/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0": {
-    "type_of": "article",
-    "id": 237725,
-    "title": "A New Year, a New Start: I'm Joining the DEV Team!",
-    "description": "I can't believe I'm saying this. I'M JOINING THE DEV TEAM!!!    For those of you that don't know me,...",
-    "readable_publish_date": "Jan 21 '20",
-    "slug": "a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
-    "path": "/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
-    "url": "https://dev.to/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
-    "collection_id": 4084,
-    "published_timestamp": "2020-01-21T18:09:58Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0/",
-    "created_at": "2020-01-14T04:16:09Z",
-    "edited_at": "2022-05-12T12:37:24Z",
-    "crossposted_at": null,
-    "published_at": "2020-01-21T18:09:58Z",
-    "last_comment_at": "2024-08-07T03:02:58Z",
-    "reading_time_minutes": 2,
-    "tag_list": "career",
-    "tags": [
-      "career"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/devteam/welcoming-three-new-team-members-38hp": {
-    "type_of": "article",
-    "id": 245863,
-    "title": "Welcoming Three New Team Members 🎉",
-    "description": "We are so thrilled to welcome Vaidehi, Nick, and Josh to the DEV Team.   We've been big fans of...",
-    "readable_publish_date": "Jan 21 '20",
-    "slug": "welcoming-three-new-team-members-38hp",
-    "path": "/devteam/welcoming-three-new-team-members-38hp",
-    "url": "https://dev.to/devteam/welcoming-three-new-team-members-38hp",
-    "collection_id": null,
-    "published_timestamp": "2020-01-21T18:11:54Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F97a2sge9bgapcn6szuep.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F97a2sge9bgapcn6szuep.png",
-    "canonical_url": "https://dev.to/devteam/welcoming-three-new-team-members-38hp",
-    "created_at": "2020-01-21T17:30:52Z",
-    "edited_at": "2020-01-21T18:16:48Z",
-    "crossposted_at": null,
-    "published_at": "2020-01-21T18:11:54Z",
-    "last_comment_at": "2024-02-20T03:21:22Z",
-    "reading_time_minutes": 2,
-    "tag_list": "meta",
-    "tags": [
-      "meta"
-    ],
-    "user": {
-      "name": "Jess Lee",
-      "username": "jess",
-      "twitter_username": "jessleenyc",
-      "github_username": "jessleenyc",
-      "user_id": 264,
-      "website_url": null,
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F264%2F40d89fb9-4de0-414d-8a06-f52ddda0bc75.jpg"
     },
     "organization": {
       "name": "The DEV Team",
@@ -1489,43 +1363,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/thepracticaldev/the-7-most-popular-dev-posts-from-the-past-week-4pno": {
-    "type_of": "article",
-    "id": 16962,
-    "title": "The 7 Most Popular DEV Posts from the Past Week",
-    "description": "A round up of the most-read and most-loved contributions from the community this past week.",
-    "readable_publish_date": "Jan 15 '18",
-    "slug": "the-7-most-popular-dev-posts-from-the-past-week-4pno",
-    "path": "/thepracticaldev/the-7-most-popular-dev-posts-from-the-past-week-4pno",
-    "url": "https://dev.to/thepracticaldev/the-7-most-popular-dev-posts-from-the-past-week-4pno",
-    "collection_id": null,
-    "published_timestamp": "2018-01-15T15:08:56Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fxsr1z6iqv0pd7p3s6ns3.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fxsr1z6iqv0pd7p3s6ns3.png",
-    "canonical_url": "https://dev.to/thepracticaldev/the-7-most-popular-dev-posts-from-the-past-week-4pno",
-    "created_at": "2018-01-15T15:07:48Z",
-    "edited_at": null,
-    "crossposted_at": null,
-    "published_at": "2018-01-15T15:08:56Z",
-    "last_comment_at": "2024-01-24T03:05:16Z",
-    "reading_time_minutes": 2,
-    "tag_list": "top7",
-    "tags": [
-      "top7"
-    ],
-    "user": {
-      "name": "dev.to staff",
-      "username": "thepracticaldev",
-      "twitter_username": "ThePracticalDev",
-      "github_username": null,
-      "user_id": 3,
-      "website_url": "https://dev.to",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F3%2F13d3b32a-d381-4549-b95e-ec665768ce8f.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F3%2F13d3b32a-d381-4549-b95e-ec665768ce8f.png"
-    }
-  },
   "https://dev.to/nickytonline/quick-hulk-code-pen-18i1": {
     "type_of": "article",
     "id": 16823,
@@ -1763,54 +1600,8 @@
       "github_username": "whitep4nth3r",
       "user_id": 492757,
       "website_url": "https://whitep4nth3r.com/",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fc31e9460-d3f1-4fb2-8016-bb03155c42fa.png"
-    }
-  },
-  "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404": {
-    "type_of": "article",
-    "id": 1120451,
-    "title": "How to Add Speech Recognition to Your React and Node.js Project",
-    "description": "Do you have a React project that could use speech-to-text? This tutorial will go through the steps to upgrade your React project with Deepgram transcriptions.",
-    "readable_publish_date": "Jun 21 '22",
-    "slug": "how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
-    "path": "/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
-    "url": "https://dev.to/deepgram/how-to-add-speech-recognition-to-your-react-and-nodejs-project-4404",
-    "collection_id": null,
-    "published_timestamp": "2022-06-21T15:34:24Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fres.cloudinary.com%2Fdeepgram%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Cw_auto%2Cc_fit%2Fv1655815938%2Fblog%2F2022%2F06%2Fhow-to-add-speech-recognition-to-your-react-project%2FHow-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fres.cloudinary.com%2Fdeepgram%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Cw_auto%2Cc_fit%2Fv1655815938%2Fblog%2F2022%2F06%2Fhow-to-add-speech-recognition-to-your-react-project%2FHow-to-Add-Speech-Recognition-to-Your-React-Project-blog.png",
-    "canonical_url": "https://developers.deepgram.com/blog/2022/06/how-to-add-speech-recognition-to-your-react-project/",
-    "created_at": "2022-06-21T15:34:14Z",
-    "edited_at": null,
-    "crossposted_at": null,
-    "published_at": "2022-06-21T15:34:24Z",
-    "last_comment_at": "2022-06-22T16:35:35Z",
-    "reading_time_minutes": 6,
-    "tag_list": "react, webdev, node",
-    "tags": [
-      "react",
-      "webdev",
-      "node"
-    ],
-    "user": {
-      "name": "BekahHW",
-      "username": "bekahhw",
-      "twitter_username": "BekahHW",
-      "github_username": "BekahHW",
-      "user_id": 345658,
-      "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
-    },
-    "organization": {
-      "name": "Deepgram",
-      "username": "deepgram",
-      "slug": "deepgram",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4019%2Fb921b72d-3c60-425e-a223-189a5fce8839.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4019%2Fb921b72d-3c60-425e-a223-189a5fce8839.jpg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fee38a892-7497-4b03-a465-1ddea4eb4678.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F492757%2Fee38a892-7497-4b03-a465-1ddea4eb4678.png"
     }
   },
   "https://dev.to/nickytonline/learning-resources-for-typescript-4g1n": {
@@ -1848,51 +1639,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc": {
-    "type_of": "article",
-    "id": 1186684,
-    "title": "VS Code Tip of the week: vscode.dev",
-    "description": "This came out a while ago, but I wanted to bring it up again because it's a great collaboration tool...",
-    "readable_publish_date": "Sep 7 '22",
-    "slug": "vs-code-tip-of-the-week-vscodedev-2gcc",
-    "path": "/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc",
-    "url": "https://dev.to/vscodetips/vs-code-tip-of-the-week-vscodedev-2gcc",
-    "collection_id": 17419,
-    "published_timestamp": "2022-09-07T04:21:56Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F958trxh9d6zr08do82l7.png",
-    "canonical_url": "https://community.vscodetips.com/nickytonline/vs-code-tip-of-the-week-vscodedev-mpf",
-    "created_at": "2022-09-07T04:21:57Z",
-    "edited_at": "2022-09-07T04:24:48Z",
-    "crossposted_at": null,
-    "published_at": "2022-09-07T04:21:56Z",
-    "last_comment_at": "2024-05-17T03:01:38Z",
-    "reading_time_minutes": 1,
-    "tag_list": "vscode, vscodetips",
-    "tags": [
-      "vscode",
-      "vscodetips"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
   "https://dev.to/ben/changelog-create-series-of-posts-4o63": {
@@ -2130,52 +1876,6 @@
       "website_url": "https://nickyt.online",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj": {
-    "type_of": "article",
-    "id": 1238663,
-    "title": "Bye for now VSCodeTips community!",
-    "description": "This short post mentions that community.vscodetips.com went offline on November 1st, 2022.        I'm...",
-    "readable_publish_date": "Nov 1 '22",
-    "slug": "bye-for-now-vscodetips-community-3jkj",
-    "path": "/vscodetips/bye-for-now-vscodetips-community-3jkj",
-    "url": "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj",
-    "collection_id": null,
-    "published_timestamp": "2022-11-01T13:17:32Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffizcan7995mzusoml6k4.png",
-    "canonical_url": "https://www.nickyt.co/vscodetips/2022/bye-for-now-vscodetips-community-3jkj/",
-    "created_at": "2022-11-01T13:17:32Z",
-    "edited_at": "2023-10-29T04:22:44Z",
-    "crossposted_at": null,
-    "published_at": "2022-11-01T13:17:32Z",
-    "last_comment_at": "2024-09-04T01:03:31Z",
-    "reading_time_minutes": 1,
-    "tag_list": "vscodetips, vscode, community",
-    "tags": [
-      "vscodetips",
-      "vscode",
-      "community"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "VS Code Tips",
-      "username": "vscodetips",
-      "slug": "vscodetips",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F458%2Fc8ba7869-bfe1-4ba0-af1b-a4e04cc8716b.jpeg"
     }
   },
   "https://dev.to/nickytonline/frontend-developer-resources-2022-4cp2": {
@@ -2508,50 +2208,6 @@
       "opensource",
       "git",
       "ai"
-    ],
-    "user": {
-      "name": "BekahHW",
-      "username": "bekahhw",
-      "twitter_username": "BekahHW",
-      "github_username": "BekahHW",
-      "user_id": 345658,
-      "website_url": "https://bekahhw.com/",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F345658%2Fa72b6b8b-b954-47fb-8919-ab380905f26b.jpg"
-    },
-    "organization": {
-      "name": "OpenSauced",
-      "username": "opensauced",
-      "slug": "opensauced",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
-    }
-  },
-  "https://dev.to/BekahHW/introducing-the-oscr-celebrating-open-source-stars-2eo7": {
-    "type_of": "article",
-    "id": 1957908,
-    "title": "Introducing the OSCR: Celebrating Open Source Stars",
-    "description": "Introducing OSCR: The new standard for measuring open source contributions. Explore how this new metric goes beyond code commits to measure true impact in the open source ecosystem.",
-    "readable_publish_date": "Aug 13 '24",
-    "slug": "introducing-the-oscr-celebrating-open-source-stars-2eo7",
-    "path": "/opensauced/introducing-the-oscr-celebrating-open-source-stars-2eo7",
-    "url": "https://dev.to/opensauced/introducing-the-oscr-celebrating-open-source-stars-2eo7",
-    "collection_id": null,
-    "published_timestamp": "2024-08-13T14:16:02Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxm5y4umea40zu4d4c4z0.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxm5y4umea40zu4d4c4z0.png",
-    "canonical_url": "https://opensauced.pizza/blog/introducing-OSCR",
-    "created_at": "2024-08-13T14:16:02Z",
-    "edited_at": null,
-    "crossposted_at": null,
-    "published_at": "2024-08-13T14:16:02Z",
-    "last_comment_at": "2024-08-13T14:16:02Z",
-    "reading_time_minutes": 6,
-    "tag_list": "opensource",
-    "tags": [
-      "opensource"
     ],
     "user": {
       "name": "BekahHW",
