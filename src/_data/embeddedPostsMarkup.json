@@ -1243,53 +1243,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/devteam/contributors-wanted-night-mode-themes-on-dev-i8n": {
-    "type_of": "article",
-    "id": 95454,
-    "title": "Contributors Wanted: Night Mode/Themes on DEV",
-    "description": "\n\nWe recently made night mode an option for the dev.to interface. You can change ...",
-    "readable_publish_date": "Mar 29 '19",
-    "slug": "contributors-wanted-night-mode-themes-on-dev-i8n",
-    "path": "/devteam/contributors-wanted-night-mode-themes-on-dev-i8n",
-    "url": "https://dev.to/devteam/contributors-wanted-night-mode-themes-on-dev-i8n",
-    "collection_id": null,
-    "published_timestamp": "2019-03-29T17:27:55Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": null,
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8g4l22izmn81orlvfax3.png",
-    "canonical_url": "https://dev.to/devteam/contributors-wanted-night-mode-themes-on-dev-i8n",
-    "created_at": "2019-03-29T15:30:27Z",
-    "edited_at": null,
-    "crossposted_at": null,
-    "published_at": "2019-03-29T17:27:55Z",
-    "last_comment_at": "2019-03-31T18:32:54Z",
-    "reading_time_minutes": 2,
-    "tag_list": "contributorswanted, opensource, meta, css",
-    "tags": [
-      "contributorswanted",
-      "opensource",
-      "meta",
-      "css"
-    ],
-    "user": {
-      "name": "Ben Halpern",
-      "username": "ben",
-      "twitter_username": "bendhalpern",
-      "github_username": "benhalpern",
-      "user_id": 1,
-      "website_url": "http://benhalpern.com",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1%2Ff451a206-11c8-4e3d-8936-143d0a7e65bb.png"
-    },
-    "organization": {
-      "name": "The DEV Team",
-      "username": "devteam",
-      "slug": "devteam",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
-    }
-  },
   "https://dev.to/iampeekay/why-use-static-types-in-javascript-part-1": {
     "type_of": "article",
     "id": 367,
@@ -2370,53 +2323,6 @@
       "cli",
       "git",
       "productivity"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    },
-    "organization": {
-      "name": "OpenSauced",
-      "username": "opensauced",
-      "slug": "opensauced",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F2498%2Fa16cc27c-33f9-40b6-92a8-4a43f70a96ef.png"
-    }
-  },
-  "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75": {
-    "type_of": "article",
-    "id": 1694953,
-    "title": "Migrating from Jest to Vitest for your React Application",
-    "description": "Are you looking to migrate from Jest to Vitest for your React application? Look no further.  I...",
-    "readable_publish_date": "Dec 14 '23",
-    "slug": "migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "path": "/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "url": "https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75",
-    "collection_id": 26157,
-    "published_timestamp": "2023-12-14T08:00:00Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-    "canonical_url": "https://opensauced.pizza/docs/community-resources/migrating-from-jest-to-vitest-for-your-react-application/",
-    "created_at": "2023-12-12T03:21:58Z",
-    "edited_at": "2024-06-10T21:24:57Z",
-    "crossposted_at": null,
-    "published_at": "2023-12-14T08:00:00Z",
-    "last_comment_at": "2023-12-20T21:28:49Z",
-    "reading_time_minutes": 4,
-    "tag_list": "testing, react, vitest, typescript",
-    "tags": [
-      "testing",
-      "react",
-      "vitest",
-      "typescript"
     ],
     "user": {
       "name": "Nick Taylor",
