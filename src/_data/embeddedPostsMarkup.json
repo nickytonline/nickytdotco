@@ -409,43 +409,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F1%2Fd908a186-5651-4a5a-9f76-15200bc6801f.jpg"
     }
   },
-  "https://dev.to/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0": {
-    "type_of": "article",
-    "id": 237725,
-    "title": "A New Year, a New Start: I'm Joining the DEV Team!",
-    "description": "I can't believe I'm saying this. I'M JOINING THE DEV TEAM!!!    For those of you that don't know me,...",
-    "readable_publish_date": "Jan 21 '20",
-    "slug": "a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
-    "path": "/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
-    "url": "https://dev.to/nickytonline/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0",
-    "collection_id": 4084,
-    "published_timestamp": "2020-01-21T18:09:58Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0/",
-    "created_at": "2020-01-14T04:16:09Z",
-    "edited_at": "2022-05-12T12:37:24Z",
-    "crossposted_at": null,
-    "published_at": "2020-01-21T18:09:58Z",
-    "last_comment_at": "2024-08-07T03:02:58Z",
-    "reading_time_minutes": 2,
-    "tag_list": "career",
-    "tags": [
-      "career"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/devteam/welcoming-three-new-team-members-38hp": {
     "type_of": "article",
     "id": 245863,
@@ -852,82 +815,6 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
     }
   },
-  "https://dev.to/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2": {
-    "type_of": "article",
-    "id": 96044,
-    "title": "An a11y extension coming to a browser near you",
-    "description": "Last year when I was looking to take on a new role somewhere, one of the places I interviewed at was...",
-    "readable_publish_date": "Apr 1 '19",
-    "slug": "an-a11y-extension-coming-to-a-browser-near-you-1mg2",
-    "path": "/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2",
-    "url": "https://dev.to/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2",
-    "collection_id": null,
-    "published_timestamp": "2019-04-01T04:27:37Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fir0wzbkqn1rw9vu67irj.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fir0wzbkqn1rw9vu67irj.png",
-    "canonical_url": "https://www.nickyt.co/posts/an-a11y-extension-coming-to-a-browser-near-you-1mg2/",
-    "created_at": "2019-04-01T01:14:49Z",
-    "edited_at": "2025-01-13T04:21:25Z",
-    "crossposted_at": "2019-04-01T04:27:37Z",
-    "published_at": "2019-04-01T01:02:21Z",
-    "last_comment_at": "2024-02-19T03:11:36Z",
-    "reading_time_minutes": 2,
-    "tag_list": "a11y, javascript, extensions",
-    "tags": [
-      "a11y",
-      "javascript",
-      "extensions"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3": {
-    "type_of": "article",
-    "id": 9457,
-    "title": "Consider Using TypeScript",
-    "description": "A small write up on the benefits of using TypeScript.",
-    "readable_publish_date": "Oct 8 '17",
-    "slug": "why-you-might-want-to-consider-using-typescript-6j3",
-    "path": "/nickytonline/why-you-might-want-to-consider-using-typescript-6j3",
-    "url": "https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3",
-    "collection_id": 3255,
-    "published_timestamp": "2017-10-08T14:35:45Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/why-you-might-want-to-consider-using-typescript-6j3/",
-    "created_at": "2017-10-08T13:46:29Z",
-    "edited_at": "2022-04-14T00:23:00Z",
-    "crossposted_at": null,
-    "published_at": "2017-10-08T14:35:45Z",
-    "last_comment_at": "2022-05-22T17:58:50Z",
-    "reading_time_minutes": 5,
-    "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
   "https://dev.to/liyasthomas/postwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0": {
     "type_of": "article",
     "id": 200601,
@@ -1155,43 +1042,6 @@
       "opensource",
       "typescript",
       "jamstack"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/nickytonline/my-hacktoberfest-2019-32i2": {
-    "type_of": "article",
-    "id": 189176,
-    "title": "My Hacktoberfest 2019",
-    "description": "Originally published at iamdeveloper.com  Like many of you, I am participating in Hacktoberfest as we...",
-    "readable_publish_date": "Oct 15 '19",
-    "slug": "my-hacktoberfest-2019-32i2",
-    "path": "/nickytonline/my-hacktoberfest-2019-32i2",
-    "url": "https://dev.to/nickytonline/my-hacktoberfest-2019-32i2",
-    "collection_id": null,
-    "published_timestamp": "2019-10-15T01:00:22Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fp2th95jqhkylbvffrrz0.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fp2th95jqhkylbvffrrz0.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/my-hacktoberfest-2019-32i2/",
-    "created_at": "2019-10-15T00:51:48Z",
-    "edited_at": "2020-06-17T02:44:33Z",
-    "crossposted_at": null,
-    "published_at": "2019-10-15T01:00:22Z",
-    "last_comment_at": "2019-10-15T13:40:52Z",
-    "reading_time_minutes": 1,
-    "tag_list": "hacktoberfest",
-    "tags": [
-      "hacktoberfest"
     ],
     "user": {
       "name": "Nick Taylor",
@@ -1623,44 +1473,6 @@
     "crossposted_at": null,
     "published_at": "2018-02-09T05:01:39Z",
     "last_comment_at": "2018-03-13T20:24:03Z",
-    "reading_time_minutes": 1,
-    "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/nickytonline/a--notification-code-pen-4o0n": {
-    "type_of": "article",
-    "id": 17986,
-    "title": "A 💩 Notification Code Pen",
-    "description": "A fun notification component.",
-    "readable_publish_date": "Jan 27 '18",
-    "slug": "a--notification-code-pen-4o0n",
-    "path": "/nickytonline/a--notification-code-pen-4o0n",
-    "url": "https://dev.to/nickytonline/a--notification-code-pen-4o0n",
-    "collection_id": 3248,
-    "published_timestamp": "2018-01-27T07:33:25Z",
-    "language": null,
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fnmx6enjnka59n8c5jwc6.png",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fnmx6enjnka59n8c5jwc6.png",
-    "canonical_url": "https://www.iamdeveloper.com/posts/a--notification-code-pen-4o0n/",
-    "created_at": "2018-01-27T07:12:34Z",
-    "edited_at": "2020-06-17T03:15:32Z",
-    "crossposted_at": null,
-    "published_at": "2018-01-27T07:33:25Z",
-    "last_comment_at": "2018-03-05T04:48:11Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
     "tags": [
@@ -2246,43 +2058,6 @@
       "githubcli",
       "githubactions",
       "git"
-    ],
-    "user": {
-      "name": "Nick Taylor",
-      "username": "nickytonline",
-      "twitter_username": null,
-      "github_username": "nickytonline",
-      "user_id": 9597,
-      "website_url": "https://nickyt.online",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F2629be65-f045-4612-a7e9-28cd9e48bd49.jpg"
-    }
-  },
-  "https://dev.to/nickytonline/where-do-you-find-community-458p": {
-    "type_of": "article",
-    "id": 1371598,
-    "title": "Where do you find community?",
-    "description": "When I think of community, I think of safe spaces for everyone with diverse folks who I can learn...",
-    "readable_publish_date": "Feb 19 '23",
-    "slug": "where-do-you-find-community-458p",
-    "path": "/nickytonline/where-do-you-find-community-458p",
-    "url": "https://dev.to/nickytonline/where-do-you-find-community-458p",
-    "collection_id": null,
-    "published_timestamp": "2023-02-19T14:52:22Z",
-    "language": "en",
-    "subforem_id": null,
-    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb4sttely6muy169brptk.jpg",
-    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb4sttely6muy169brptk.jpg",
-    "canonical_url": "https://www.nickyt.co/blog/where-do-you-find-community-458p/",
-    "created_at": "2023-02-19T14:21:44Z",
-    "edited_at": "2023-10-29T04:20:25Z",
-    "crossposted_at": null,
-    "published_at": "2023-02-19T14:52:22Z",
-    "last_comment_at": "2023-02-19T14:52:22Z",
-    "reading_time_minutes": 4,
-    "tag_list": "community",
-    "tags": [
-      "community"
     ],
     "user": {
       "name": "Nick Taylor",
