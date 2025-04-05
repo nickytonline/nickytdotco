@@ -394,6 +394,39 @@ By the end, we'll have a working Copilot extension that the audience can try out
       "https://www.slideshare.net/slideshow/let-s-create-a-github-copilot-extension-nick-taylor-pomerium/277208003",
     tags: ["github copilot", "ai", "github copilot extensions"],
   },
+  {
+    title: "Let's Create a GitHub Copilot Extension",
+    date: new Date("2025-02-26T12:00:00.000Z"),
+    venue: {
+      name: "Confoo 2025",
+      url: "https://confoo.ca/en/2025",
+    },
+    slideDeck:
+      "https://docs.google.com/presentation/d/e/2PACX-1vSpG5KEWSVJuXK55F_XNnILVnZ3-9nITE32-yX6l8wn9DQIHQEin9slf6GRe4qTYTLi6JJa6Qu_634g/pub?start=false&loop=false&delayms=3000",
+    summary: `GitHub Copilot is everywhere. It's on GitHub.com, in Visual Studio, Visual Studio Code, GitHub Codespaces and more. Did you know you can extend Copilot?
+
+In this hands on talk, you'll learn:
+- the architecture of a Copilot extension
+- how to leverage the Copilot extension preview SDK to build GitHub Copilot extensions
+- how to build out your first Copilot extension
+
+We'll wrap things up by taking a peek at a real world example.`,
+    tags: ["github copilot", "ai", "github copilot extensions"],
+  },
+  {
+    title: "Back to Basics: Why HTML Forms Still Rule the Web",
+    date: new Date("2025-02-26T12:00:00.000Z"),
+    venue: {
+      name: "Confoo 2025",
+      url: "https://confoo.ca/en/2025",
+    },
+    slideDeck:
+      "https://docs.google.com/presentation/d/e/2PACX-1vRZJIyjyP9r3JDSiEFjuV5CFCf1KH7RuYYvE-zHKYpRZy-nyoVmfYfUUWeWBVWtQBQhCIhb1U46v-21/pub?start=false&loop=false&delayms=3000",
+    summary: `We've strayed too far from the simplicity and power of HTML forms. It's time to undo the damage. Once relegated to basic data collection, forms offer a surprising depth of functionality that's being rediscovered by developers and embraced by modern frameworks like Astro, Fresh, Remix, and Next.js.
+
+Let's rediscover the power of HTML forms and how they should be leveraged in modern web application development.`,
+    tags: ["html", "forms", "web development"],
+  },
 ];
 
 const talks = new Map(
