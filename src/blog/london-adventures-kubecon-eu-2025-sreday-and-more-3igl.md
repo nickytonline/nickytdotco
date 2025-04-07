@@ -34,9 +34,9 @@ My first stop in London was for SREday London 2025. I gave a talk titled "Unders
 
 [![My promo for my talk,Understanding Zero Trust: From Physical Security to Identity-Aware Proxies, for SREday London](https://www.nickyt.co/images/posts/_uploads_articles_fuu5hv0r1il054m3l0dr.jpeg)](https://sreday.com/2025-london-q1/)
 
-Lots of great talks including Daniel Alfonso's about Chaos Engineering. I also got to meet Daniel for the first time irl!
+Lots of great talks including [Daniel Afonso](https://www.linkedin.com/in/danieljcafonso)'s about Chaos Engineering. I also got to meet Daniel for the first time irl!
 
-[![Me and Daniel Alfonso hanging at SREday London 2025](https://www.nickyt.co/images/posts/_uploads_articles_0xqhoh3qnscd302ajxmn.png)](https://bsky.app/profile/nickyt.online/post/3lldxsjxo4c2e)
+[![Me and Daniel Afonso hanging at SREday London 2025](https://www.nickyt.co/images/posts/_uploads_articles_0xqhoh3qnscd302ajxmn.png)](https://bsky.app/profile/nickyt.online/post/3lldxsjxo4c2e)
 
 ## The Main Event: KubeCon EU 2025
 
@@ -66,13 +66,13 @@ Next up, I got to meet Hazel Weekly and learnt that there is a [CNCF Deaf & Hard
 
 Later on, I ran into Jeremy Meiss (@jerdog) where we chatted about all things DevRel.
 
-![Me and Jeremy Weiss hanging at KubeCon EU 2025](https://www.nickyt.co/images/posts/_uploads_articles_98dbog0ys9kzegahdmi0.jpg)
+![Me and Jeremy Meiss hanging at KubeCon EU 2025](https://www.nickyt.co/images/posts/_uploads_articles_98dbog0ys9kzegahdmi0.jpg)
 
 During the Pomerium happy hour, I also got to meet the creator of YAML. That was pretty cool.
 
 [![Me and the creator of YAML](https://www.nickyt.co/images/posts/_uploads_articles_06sd89dp8psclf8j194q.jpg)](https://bsky.app/profile/nickyt.online/post/3llu5i37zss2e)
 
-I made some more new friends near the end of the week. Shivay, who I met at [All Things Open AI](https://allthingsopen.ai/) a couple weeks early was at KubeCon too, so we caught up and my coworker Sveta and me befriended [Omolade Akinwumi](https://www.linkedin.com/in/omolade-akinwumi/) who me met on the train to day 2 of KubeCon.
+I made some more new friends near the end of the week. [Shivay Lamba](https://www.linkedin.com/in/shivaylamba), who I met at [All Things Open AI](https://allthingsopen.ai/) a couple weeks early was at KubeCon too, so we caught up and my coworker Sveta and me befriended [Omolade Akinwumi](https://www.linkedin.com/in/omolade-akinwumi/) who me met on the train to day 2 of KubeCon.
 
 ![My coworker Sveta, me, Shivay and Omolade hanging at KubeCon EU 2025](https://www.nickyt.co/images/posts/_uploads_articles_camnq1yl4n7dslfkfpes.jpg)
 
