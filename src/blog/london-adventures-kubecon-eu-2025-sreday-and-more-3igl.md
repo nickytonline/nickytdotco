@@ -1,7 +1,7 @@
 ---json
 {
   "title": "London Adventures: KubeCon EU 2025, SREday and More!",
-  "excerpt": "Not gonna lie, my recent trip to London was packed with stuff!  We had a release at work recently, so...",
+  "excerpt": "Not gonna lie, my recent trip to London was packed with stuff! It was mainly work related for...",
   "date": "2025-04-06T23:35:48.906Z",
   "tags": [
     "kubecon",
@@ -10,19 +10,13 @@
     "react"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F0lvu4z43mpsi3y0jf9dw.jpg",
-  "canonical_url": "https://dev.to/nickytonline/london-adventures-kubecon-eu-2025-sreday-and-more-3igl",
+  "canonical_url": "https://www.nickyt.co/blog/london-adventures-kubecon-eu-2025-sreday-and-more-3igl/",
   "reading_time_minutes": 5,
   "template": "post"
 }
 ---
 
-Not gonna lie, my recent trip to London was packed with stuff!
-
-We had a release at work recently, so we talked about all the new things at KubeCon along with some new stuff coming down the pipe.
-
-{% embed "https://dev.to/pomerium/pomerium-0290-is-here-2km4" %}
-
-It was mainly work related for [Pomerium](https://pomerium.com), but I was glad I was able to snag some time with friends too.
+Not gonna lie, my recent trip to London was packed with stuff! It was mainly work related for [Pomerium](https://pomerium.com), but I was glad I was able to snag some time with friends too.
 
 ## Take Off!
 
@@ -55,6 +49,10 @@ This was my first time attending KubeCon, and wow - when people said it was big,
 Me and the Pomerium crew repped the company at booth N580. It was awesome to meet my coworkers in person for the first time, and we had lots of great conversations with existing and potential clients.
 
 ![The Pomerium booth at KubeCon EU with lots of people coming by to chat](https://www.nickyt.co/images/posts/_uploads_articles_z9yt4dlh200d96itt7pp.png)
+
+We had a release at work recently, so we talked about all the new things at KubeCon along with some new stuff coming down the pipe.
+
+{% embed "https://dev.to/pomerium/pomerium-0290-is-here-2km4" %}
 
 During the week I met a bunch of folks.
 
