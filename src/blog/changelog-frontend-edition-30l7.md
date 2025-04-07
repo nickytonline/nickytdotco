@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Changelog: Frontend Edition",
-  "excerpt": "I Tweeted this out last week that we moved to Preact X and Testing Library.                         ...",
+  "excerpt": "I Tweeted this out last week that we moved to Preact X and Testing Library.        Let’s dig in to...",
   "date": "2020-06-24T19:09:12.079Z",
   "tags": [
     "changelog",
@@ -17,7 +17,7 @@
 
 I Tweeted this out last week that we moved to Preact X and Testing Library.
 
-{% twitter "1273706469096140802" %}
+{% embed "https://x.com/nickytonline/status/1273706469096140802" %}
 
 Let’s dig in to all the improvements we’ve been making in the frontend.
 

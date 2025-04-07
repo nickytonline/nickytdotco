@@ -115,8 +115,6 @@ I dipped my toes into the world of podcasting. I started repurposing content fro
 
 The podcast is still pretty new, but I've had a lot of fun pulling out what I think are great conversations from my Twitch stream and putting them in podcast format. Here's the latest episode with [chantastic](https://chan.dev/). Loved this conversation with Chan!
 
-{% embed "https://nickscuts.buzzsprout.com/2065897/11881708-pandemic-life-storybook-chromatic-remote-work-and-so-much-more-with-chantastic" %}
-
 ### Podcast Guest
 
 I was also a podcast guest on a couple of podcasts. Thanks again for having me Eddie and Candost!
@@ -155,8 +153,6 @@ There's still more to do, but I'm really happy with this setup at the moment.
 ### VS Code Tips Community
 
 I started a community over a year ago for VS Code, as I'm a fan. Ultimately, I needed more time to grow the community, which I didn't have, so I decided to shut down the community.
-
-{% embed "https://dev.to/vscodetips/bye-for-now-vscodetips-community-3jkj" %}
 
 Thanks to everyone that joined!
 

@@ -15,7 +15,7 @@
 
 Like last year, 2021 has been quite the year. Despite the pandemic, I stayed healthy and managed to have a pretty good year.
 
-{% twitter "1474400617271599105" %}
+{% embed "https://x.com/nickytonline/status/1474400617271599105" %}
 
 This reply to Nader Dabit's Tweet sums up a lot of my year, but let's break it down.
 
@@ -25,33 +25,33 @@ I gave four talks. Were these conference talks? Most were lunch and learns, but 
 
 The first talk of the year was for [The Collab Lab](https://the-collab-lab.codes/). I went over what Storybook is and how you can use it in your application. I even did a live coding session demonstrating its use in one of The Collab Lab cohort's projects.
 
-{% youtube "ypsD-9qQzYg" %}
+{% embed "https://youtu.be/ypsD-9qQzYg" %}
 
 Here's the accompanying [slide deck](https://www.iamdeveloper.com/storybook2021) and blog post for the talk.
 
-{% link "https://dev.to/nickytonline/storybook-talk-live-coding-klp" %}
+{% embed "https://dev.to/nickytonline/storybook-talk-live-coding-klp" %}
 
 The Collab Lab was looking for more mentors recently, so I offered to mentor. I'm looking forward to meeting my cohort in Q2! Let's go!
 
-{% twitter "1472684903460487168" %}
+{% embed "https://x.com/nickytonline/status/1472684903460487168" %}
 
 My second talk of the year was a lunch and learn for my favourite community, [Virtual Coffee](https://virtualcoffee.io)! It was all about debugging JavaScript. From console.log to debugger.
 
-{% youtube "I9A0Pifn0Uw" %}
+{% embed "https://youtu.be/I9A0Pifn0Uw" %}
 
 Here's the accompanying [slide deck](https://iamdeveloper.com/debug2021).
 
 Next up was another lunch and learn for Virtual Coffee, "Getting Started with Streaming on Twitch". Many folks were interested in streaming and learning in public, so I shared what I had learnt after one year of streaming on Twitch.
 
-{% youtube "aDofyI6E2t4" %}
+{% embed "https://youtu.be/aDofyI6E2t4" %}
 
 Here's the accompanying [slide deck](https://iamdeveloper.com/stream2021) and blog post for the talk. Check out the blog post, as there was stuff I didn't have time to mention or forgot.
 
-{% link "https://dev.to/nickytonline/getting-started-with-streaming-on-twitch-4im7" %}
+{% embed "https://dev.to/nickytonline/getting-started-with-streaming-on-twitch-4im7" %}
 
 My last talk of the year was for Hacktoberfest. The AppWrite team approached me to talk about open source, and I was happy to oblige.
 
-{% youtube "cyJAz-c1OWs" %}
+{% embed "https://youtu.be/cyJAz-c1OWs" %}
 
 [I appear at this point in the video](https://www.youtube.com/watch?v=cyJAz-c1OWs&t=3653s).
 
@@ -119,10 +119,6 @@ And to round off the year of podcasts, I got to hang with my co-workers Ben Halp
 ## Created a New Community
 
 With Forem, you can now self-host your own community! I'd been running a Twitter handle called [vscodetips](https://twitter.com/vscodetips) for a few years now, so I took this opportunity to create [vscodetips.com](https://vscodetips.com)!
-
-{% link "https://dev.to/nickytonline/why-i-created-the-vscodetips-community-2bl" %}
-
-We're also on Product Hunt!
 
 {% twitter "1437497275786440705" %}
 
