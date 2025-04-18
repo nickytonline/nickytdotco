@@ -62,19 +62,7 @@ Note: This page contains affiliate links. I may earn a commission for purchases 
 
 ## Office Setup
 
-<figure>
-<img sizes="(min-width: 30em) 28em, 100vw"
-  srcset="https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_256/v1654355126/my%20website/office/desk-setup_deurmi.jpg 256w,
-          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_512/v1654355126/my%20website/office/desk-setup_deurmi.jpg 512w,
-          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_768/v1654355126/my%20website/office/desk-setup_deurmi.jpg 768w,
-          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_1024/v1654355126/my%20website/office/desk-setup_deurmi.jpg 1024w,
-          https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_1280/v1654355126/my%20website/office/desk-setup_deurmi.jpg 1280w"
-src="https://res.cloudinary.com/nickytonline/image/upload/f_auto,q_70,w_512/v1654355126/my%20website/office/desk-setup_deurmi.jpg"
-alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in the middle, a microphone and boom on the right, and a keyboard, mouse, desk whiteboard, and Stream deck in the front. There are also ring lights around the desk for streaming." />
-<figcaption>My desk setup. My Mac is on a stand on the left, a wide screen monitor in the middle, a microphone and boom on the right, and a keyboard, mouse, desk whiteboard, and Stream deck in the front. There are also ring lights around the desk for streaming.</figcaption>
-</figure>
-
-- [Benq ScreenBar Halo](https://amzn.to/3AabbB3) with [Webcam accessory](https://amzn.to/4dqmhAb) - A great light for your desk that sits on top of your monitor.
+- 2 x [BenQ RD280U 28" 4K monitor](https://benqurl.biz/4kZ3mRx). One is on a stand and the other is on a swivel arm.
 - [MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer Office Standing Desk](https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141) - I snagged it at a great price. It appears to go on sale often.
 - Herman Miller Aeron office chair. These are pricey, so look out for one on online classifieds. I snagged one with many new parts for just under a third of the price.
 - [Rollerblade style caster wheels](https://amzn.to/3WzPZf4) (for office chair). Thanks for the suggestion [ErgoSesh](https://www.ergosesh.com/)!
@@ -82,11 +70,10 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 - [Logitech MX Master 3 mouse](https://amzn.to/3yqPvA4)
 - [Logitech ERGO K860 wireless split keyboard](https://amzn.to/3SzSNba)
 - [Sony WH-1000XM3](https://amzn.to/4ftsjBT) headphones - I snagged them during Boxing Day week.
-- [FIFINE AmpliGame AM6 Condenser Mic](https://amzn.to/46zYhrW) with Game/Chat Mix, Noise Suppression, Monitoring, I/O Level & RGB Controls
+- [Shure MV7+ Microphone](https://www.shure.com/en-US/products/microphones/mv7?variant=MV7%252B-K) - I use this for all my live streams and recordings. It's a great mic and I love the built in USB-C port. You can also use it with XLR if you want to go that route, but I don't atm. I opted for white to contrast with my black boom arm.
 - [RODE PSA1 Swivel Mount Studio Microphone Boom Arm](https://amzn.to/3WNsYqx)
 - [Rain Design mStand360 Laptop Stand with Swivel Base](https://amzn.to/3yqdpvt)
-- iPhone 13 camera for streaming and recording video
-- [LG 34WN80C-B UltraWide Monitor 34” 21:9 Curved WQHD (3440 x 1440) IPS Display](https://amzn.to/4duC9lm)
+- iPhone 14 camera for streaming and recording video
 - [Lamicall Gooseneck Phone Holder Bed](https://amzn.to/3Ac5XVt) - I use this to hold my iPhone when I use it for a camera while live streaming or recording video.
 - [Anker USB C Hub, 5-In-1 USB C Adapter](https://amzn.to/4dacHSa)
 - [Powered USB 3.0 Hub, WENTER 11-Port USB Data Hub](https://amzn.to/3WQvQCQ)
@@ -108,7 +95,7 @@ alt="My desk setup. My Mac is on a stand on the left, a wide screen monitor in t
 
 ## Other
 
-- [Under Armour Mens Charged Commit 2.0 Cross Trainer Cross Trainer](https://amzn.to/3WQ3dG0)), my working at home shoes
+- WISE for banking. I use it for my business. It's a great way to send money internationally without the crazy fees. Use this referral code to get started, [wise.com/invite/dic/nicholast1738](https://wise.com/invite/dic/nicholast1738)
 
 ## Health and Training
 
