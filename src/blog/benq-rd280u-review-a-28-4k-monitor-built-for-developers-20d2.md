@@ -8,7 +8,7 @@
     "review"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzgzfxqtvii1g0mbjixqs.png",
-  "canonical_url": "https://dev.to/nickytonline/benq-rd280u-review-a-28-4k-monitor-built-for-developers-20d2",
+  "canonical_url": "https://www.nickyt.co/blog/benq-rd280u-review-a-28-4k-monitor-built-for-developers-20d2/",
   "reading_time_minutes": 4,
   "template": "post"
 }
