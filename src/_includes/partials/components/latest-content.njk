@@ -5,7 +5,7 @@
       {% for item in postListItems %}
         {% if item.date.getTime() <= global.now %}
           <li class="blog flex items-center gap-300">
-            <a href="{{ item.url }}" style="width: 150px;aspect-ratio: auto;" aria-hidden="true">
+            <a href="{{ item.url }}" class="hidden md-block" style="width: 150px; aspect-ratio: auto;" aria-hidden="true">
               <img src="{{ item.data.cover_image }}" alt="" class="w-full h-auto object-cover aspect-[3/2]" data-not-lazy />
             </a>
             <span class="flex-grow min-w-0">
