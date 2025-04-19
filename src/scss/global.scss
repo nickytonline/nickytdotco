@@ -128,3 +128,13 @@ img {
 .flex-col {
   flex-direction: column;
 }
+
+.hidden {
+  display: none;
+}
+
+.md-block {
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
