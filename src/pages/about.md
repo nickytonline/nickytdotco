@@ -9,8 +9,12 @@ metaDesc: Nick Taylor, a sofware engineer with a focus on the front-end.
 
 Hi! My name is Nick Taylor.
 
-I'm a developer advocate at [Pomerium](https://pomerium.com), a zero trust, identity-aware proxy platform that enables secure, clientless connections to web applications and services without a corporate VPN.
+I'm a Developer Advocate who’s still very much an engineer at heart. I focus on empowering developers by building real solutions, sharing practical insights, and creating spaces where people can grow and succeed.
 
-i have over a decade of open source contributions and five years of professional open source experience at companies like OpenSauced, dev.to, and Netlify. You’ll often find me live streaming tech content, either solo or with friends from the community.
+At [Pomerium](https://pomerium.com), I'm expanding into infrastructure and security, working hands-on with Zero Trust access, authentication, authorization policies, and cloud-native networking. I believe great DevRel starts by staying close to the code and grounded in real-world workflows.
 
-Although I'm a huge fan of open source, I'm not a big fan of spiders.
+[I contribute to open source](https://github.com/nickytonline), build technical demos, write deep-dive posts, [give talks](/talks), and surface developer feedback — all to make developers more effective.
+
+I'm passionate about growing inclusive communities, amplifying developer voices, and making complex technologies more accessible.
+
+Areas of interest: infrastructure, security, open source, developer tooling, frontend ecosystems (especially React/JavaScript), and improving developer workflows.
