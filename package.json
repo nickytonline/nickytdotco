@@ -15,7 +15,7 @@
     "dotenv": "^16.5.0",
     "html-minifier": "^4.0.0",
     "json-to-scss": "^1.6.2",
-    "luxon": "^3.5.0",
+    "luxon": "^3.6.1",
     "prettier": "^3.3.3",
     "rss-parser": "^3.13.0",
     "sass": "^1.87.0",
