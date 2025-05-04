@@ -94,7 +94,12 @@ function sanitizeMarkdownEmbeds(markdown) {
  * @returns {boolean} True if the post is valid for publishing, otherwise false.
  */
 function isValidPost(post) {
-  const { tag_list: tags = [], slug } = post;
+  const { tag_list: tags = [], slug, organization } = post;
+
+  // Exclude posts from pomerium org
+  if (organization && organization.username === "pomerium") {
+    return false;
+  }
 
   return (
     (!tags.includes("jokes") &&
