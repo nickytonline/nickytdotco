@@ -134,22 +134,53 @@ Sample post format:
 
 */
 
+async function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Helper function to fetch with retry/backoff on 429 errors.
+ */
+async function fetchWithRetry(url, options = {}, maxRetries = 5, initialDelay = 2000) {
+  let attempt = 0;
+  let delay = initialDelay;
+  while (attempt <= maxRetries) {
+    const response = await fetch(url, options);
+    if (response.status !== 429) {
+      return response;
+    }
+    // Rate limited
+    attempt++;
+    if (attempt > maxRetries) {
+      throw new Error(`Failed after ${maxRetries} retries due to rate limiting (429)`);
+    }
+    const retryAfter = response.headers.get('Retry-After');
+    const waitTime = retryAfter ? parseInt(retryAfter, 10) * 1000 : delay;
+    console.warn(`Rate limited (429) on ${url}. Retrying in ${waitTime / 1000}s (attempt ${attempt}/${maxRetries})...`);
+    await sleep(waitTime);
+    delay *= 2; // Exponential backoff
+  }
+  throw new Error('Unreachable code in fetchWithRetry');
+}
+
 /**
  * Retrieves the latest blog posts from dev.to.
  *
  * @returns {Promise<object[]>} A promise that resolves to an array of blog posts.
  */
 async function getDevPosts() {
-  const response = await fetch(
+  const response = await fetchWithRetry(
     DEV_TO_API_URL + "/articles/me/published?per_page=1000",
     {
       headers: {
         "api-key": DEV_API_KEY,
       },
-    },
+    }
   );
+  if (!response.ok) {
+    throw new Error(`Failed to fetch posts: ${response.status} ${response.statusText}`);
+  }
   const posts = await response.json();
-
   return posts.filter(isValidPost);
 }
 
@@ -158,13 +189,13 @@ let retries = 0;
 /**
  * Retrieves the blog post for the given blog post ID.
  *
- * @param {string} id The ID of the blog post to retrieve.
+ * @param {string} blogPostId The ID of the blog post to retrieve.
  *
- * @returns {Promise<object>} A promise that resolves to a blog posts.
+ * @returns {Promise<object>} A promise that resolves to a blog post.
  */
 async function getDevPost(blogPostId) {
   const getArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
-  const response = await fetch(getArticleUrl, {
+  const response = await fetchWithRetry(getArticleUrl, {
     headers: {
       "api-key": DEV_API_KEY,
       "Content-Type": "application/json",
@@ -181,16 +212,8 @@ async function getDevPost(blogPostId) {
   try {
     post = await response.json();
   } catch (error) {
-    if (retries > 3) {
-      retries = 0;
-      throw error;
-    }
-
-    console.log(`Retry attempt ${retries} for ${getArticleUrl}`);
-    retries++;
-    return await getDevPost(blogPostId);
+    throw new Error(`Failed to parse post JSON for ${getArticleUrl}: ${error.message}`);
   }
-
   return post;
 }
 
