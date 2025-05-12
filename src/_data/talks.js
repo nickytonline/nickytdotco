@@ -1,5 +1,53 @@
 const rawTalks = [
   {
+    title: "Zero Trust: From Airports to Identity-Aware Proxies",
+    date: new Date("2025-03-27T00:00:00.000Z"),
+    video: {
+      url: "https://www.youtube.com/watch?v=g126UIGo2t4",
+      type: "youtube",
+    },
+    venue: {
+      name: "SREday London 2025 Q1",
+      url: "https://sreday.com/2025-london-q1",
+    },
+    summary: `Nick Taylor presents a practical introduction to Zero Trust, drawing analogies from airport security to modern identity-aware proxies. Delivered at SREday London 2025 Q1.`,
+    tags: ["security", "zerotrust", "sre"],
+    slideDeck:
+      "https://docs.google.com/presentation/d/e/2PACX-1vQjO55qjKAN1SgNQMg1WcecU3w0_dVm7eQpUoBoUSrMwPzTYDvVfqsmB9OL1XMDdEoSwWpO-IMKLMTH/pub?start=false&loop=false&delayms=5000&slide=id.p",
+  },
+  {
+    title: "Zero Trust: From Airports to Identity-Aware Proxies",
+    date: new Date("2025-04-11T00:00:00.000Z"),
+    video: {
+      url: "https://www.youtube.com/watch?v=NFn2kxVsAfE",
+      type: "youtube",
+    },
+    venue: {
+      name: "SREday San Francisco 2025 Q2",
+      url: "https://sreday.com/2025-san-francisco-q2/",
+    },
+    summary: `Nick Taylor presents a practical introduction to Zero Trust, drawing analogies from airport security to modern identity-aware proxies. Delivered at SREday San Francisco 2025 Q2.`,
+    tags: ["security", "zerotrust", "sre"],
+    slideDeck:
+      "https://docs.google.com/presentation/d/e/2PACX-1vQjO55qjKAN1SgNQMg1WcecU3w0_dVm7eQpUoBoUSrMwPzTYDvVfqsmB9OL1XMDdEoSwWpO-IMKLMTH/pub?start=false&loop=false&delayms=5000&slide=id.p",
+  },
+  {
+    title: "Zero Trust: From Airports to Identity-Aware Proxies",
+    date: new Date("2025-04-14T00:00:00.000Z"),
+    video: {
+      url: "https://www.youtube.com/watch?v=t7C0EUtmrj8",
+      type: "youtube",
+    },
+    venue: {
+      name: "SREday Redmond 2025 Q2",
+      url: "https://sreday.com/2025-redmond-q2/",
+    },
+    summary: `Nick Taylor presents a practical introduction to Zero Trust, drawing analogies from airport security to modern identity-aware proxies. Delivered at SREday Redmond 2025 Q2.`,
+    tags: ["security", "zerotrust", "sre"],
+    slideDeck:
+      "https://docs.google.com/presentation/d/e/2PACX-1vQjO55qjKAN1SgNQMg1WcecU3w0_dVm7eQpUoBoUSrMwPzTYDvVfqsmB9OL1XMDdEoSwWpO-IMKLMTH/pub?start=false&loop=false&delayms=5000&slide=id.p",
+  },
+  {
     title: "End to End Testing for Browser Extensions",
     date: new Date("2024-11-12T12:00:00.000Z"),
     video: {
