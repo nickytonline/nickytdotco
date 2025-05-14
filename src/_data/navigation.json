@@ -11,7 +11,7 @@
       "external": false
     },
     {
-      "text": "Streaming",
+      "text": "Watch",
       "url": "https://nickyt.live",
       "external": true
     },
@@ -33,11 +33,6 @@
     {
       "text": "About",
       "url": "/pages/about",
-      "external": false
-    },
-    {
-      "text": "Contact",
-      "url": "/pages/contact",
       "external": false
     }
   ]

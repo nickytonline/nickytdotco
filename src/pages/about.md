@@ -18,3 +18,5 @@ At [Pomerium](https://pomerium.com), I'm expanding into infrastructure and secur
 I'm passionate about growing inclusive communities, amplifying developer voices, and making complex technologies more accessible.
 
 Areas of interest: infrastructure, security, open source, developer tooling, frontend ecosystems (especially React/JavaScript), and improving developer workflows.
+
+Wanna get in touch? Drop me an e-mail at nick at nickyt dot co.
