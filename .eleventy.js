@@ -99,15 +99,6 @@ module.exports = function (config) {
     return collection.getFilteredByGlob("./src/talks/*.md").reverse();
   });
 
-  config.addCollection("latestTalks", (collection) => {
-    const latestTalks = collection
-      .getFilteredByGlob("./src/talks/*.md")
-      .reverse()
-      .slice(0, 4);
-
-    return latestTalks;
-  });
-
   config.addCollection("rssFeed", (collection) => {
     return collection.getFilteredByGlob("./src/{blog,talks}/*.md").reverse();
   });
