@@ -290,3 +290,173 @@ from = "https://nickyt.online/*"
 to = "https://bsky.app/profile/nickyt.online/:splat"
 staus = 301
 force = true
+
+## talk redirects to nickyt.live
+
+[[redirects]]
+from = "/pages/talks/appwrite-hacktoberfest-kickoff-2021"
+to = "https://nickyt.live/talks/appwrite-hacktoberfest-kickoff-2021"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/asking-coding-questions-virtual-coffee-lunch-and-learn-2022"
+to = "https://nickyt.live/talks/asking-coding-questions-virtual-coffee-lunch-and-learn-2022"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/automate-syndication-and-ownership-of-your-content-with-eleventy-eleventy-meetup-2022"
+to = "https://nickyt.live/talks/automate-syndication-and-ownership-of-your-content-with-eleventy-eleventy-meetup-2022"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/back-to-basics-why-html-forms-still-rule-the-web-confoo-2025"
+to = "https://nickyt.live/talks/back-to-basics-why-html-forms-still-rule-the-web-confoo-2025"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/career-lab-q2-2023-watch-your-mentors-interview-each-other"
+to = "https://nickyt.live/talks/career-lab-q2-2023-watch-your-mentors-interview-each-other"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/debugging-javascript-virtual-coffee-lunch-and-learn"
+to = "https://nickyt.live/talks/debugging-javascript-virtual-coffee-lunch-and-learn"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/end-to-end-testing-for-browser-extensions-confoo-2024"
+to = "https://nickyt.live/talks/end-to-end-testing-for-browser-extensions-confoo-2024"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/end-to-end-testing-for-browser-extensions-xtremejs-2024"
+to = "https://nickyt.live/talks/end-to-end-testing-for-browser-extensions-xtremejs-2024"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/end-to-end-testing-with-cypress-the-collab-lab-tech-talks"
+to = "https://nickyt.live/talks/end-to-end-testing-with-cypress-the-collab-lab-tech-talks"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/expert-panel--future-of-testing-front-end-test-fest-2023"
+to = "https://nickyt.live/talks/expert-panel--future-of-testing-front-end-test-fest-2023"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/expert-panel--trending-tools-and-frameworks-front-end-test-fest-2022"
+to = "https://nickyt.live/talks/expert-panel--trending-tools-and-frameworks-front-end-test-fest-2022"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/fresh--a-full-stack-web-framework-for-deno-all-things-open-2024"
+to = "https://nickyt.live/talks/fresh--a-full-stack-web-framework-for-deno-all-things-open-2024"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/fresh--a-full-stack-web-framework-for-deno-confoo-2024"
+to = "https://nickyt.live/talks/fresh--a-full-stack-web-framework-for-deno-confoo-2024"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/fresh--a-full-stack-web-framework-for-deno-global-summit-for-nodejs-24"
+to = "https://nickyt.live/talks/fresh--a-full-stack-web-framework-for-deno-global-summit-for-nodejs-24"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/fresh--a-new-full-stack-web-framework-for-deno-chicagojs-2022"
+to = "https://nickyt.live/talks/fresh--a-new-full-stack-web-framework-for-deno-chicagojs-2022"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/fresh--a-new-full-stack-web-framework-for-deno-node-congress"
+to = "https://nickyt.live/talks/fresh--a-new-full-stack-web-framework-for-deno-node-congress"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/getting-started-with-streaming-on-twitch-virtual-coffee-lunch-and-learn-2021"
+to = "https://nickyt.live/talks/getting-started-with-streaming-on-twitch-virtual-coffee-lunch-and-learn-2021"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/getting-the-most-out-of-open-source-digitalocean-tech-talk-2020"
+to = "https://nickyt.live/talks/getting-the-most-out-of-open-source-digitalocean-tech-talk-2020"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/getting-the-most-out-of-open-source-hack-for-la-2023"
+to = "https://nickyt.live/talks/getting-the-most-out-of-open-source-hack-for-la-2023"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/lets-create-a-github-copilot-extension-all-things-open-ai-2025"
+to = "https://nickyt.live/talks/lets-create-a-github-copilot-extension-all-things-open-ai-2025"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/lets-create-a-github-copilot-extension-confoo-2025"
+to = "https://nickyt.live/talks/lets-create-a-github-copilot-extension-confoo-2025"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/storybook-2021-the-collab-lab-tech-talks"
+to = "https://nickyt.live/talks/storybook-2021-the-collab-lab-tech-talks"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/tools-for-web-developers-live-coding-and-debugging-codementor-2022"
+to = "https://nickyt.live/talks/tools-for-web-developers-live-coding-and-debugging-codementor-2022"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/why-html-forms-still-rule-the-web-netlify-compose-2024"
+to = "https://nickyt.live/talks/why-html-forms-still-rule-the-web-netlify-compose-2024"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/words-matter-conventional-comments-virtual-coffee-lightning-talks-2020"
+to = "https://nickyt.live/talks/words-matter-conventional-comments-virtual-coffee-lightning-talks-2020"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/zero-trust--from-airports-to-identity-aware-proxies-sreday-london-2025-q1"
+to = "https://nickyt.live/talks/zero-trust--from-airports-to-identity-aware-proxies-sreday-london-2025-q1"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/zero-trust--from-airports-to-identity-aware-proxies-sreday-redmond-2025-q2"
+to = "https://nickyt.live/talks/zero-trust--from-airports-to-identity-aware-proxies-sreday-redmond-2025-q2"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/talks/zero-trust--from-airports-to-identity-aware-proxies-sreday-san-francisco-2025-q2"
+to = "https://nickyt.live/talks/zero-trust--from-airports-to-identity-aware-proxies-sreday-san-francisco-2025-q2"
+status = 301
+force = true
