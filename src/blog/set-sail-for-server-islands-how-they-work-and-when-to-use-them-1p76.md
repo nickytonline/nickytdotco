@@ -113,7 +113,7 @@ And it makes sense if you think about it. Astro renders the Server Island as pla
 
 * Server islands only work with `.astro` components, not React, Vue, Svelte, Solid, etc.
 
-* You can't place a server island directly inside a client component—but you *can* pass it as a child.
+* You can't place a server island directly inside a client component, but you *can* pass it as a child.
 
 * You must set [`output: "server"`](https://docs.astro.build/en/reference/configuration-reference/#output) in your Astro config.
 
