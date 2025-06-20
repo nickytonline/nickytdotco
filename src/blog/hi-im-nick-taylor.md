@@ -4,7 +4,7 @@
   "excerpt": "My introduction post",
   "date": "2017-03-12T20:22:41.310Z",
   "tags": [
-    "introductions"
+    "introduction"
   ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/hi-im-nick-taylor/",
