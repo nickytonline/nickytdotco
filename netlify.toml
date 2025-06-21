@@ -488,3 +488,9 @@ from = "/talks/zero-trust--from-airports-to-identity-aware-proxies-sreday-san-fr
 to = "https://nickyt.live/talks/zero-trust--from-airports-to-identity-aware-proxies-sreday-san-francisco-2025-q2"
 status = 301
 force = true
+
+[[redirects]]
+from = "/feed.xml"
+to = "/feed"
+status = 301
+force = true
