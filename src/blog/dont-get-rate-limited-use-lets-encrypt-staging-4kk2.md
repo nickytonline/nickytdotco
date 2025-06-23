@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Don't Get Rate-Limited: Use Let's Encrypt Staging",
-  "excerpt": "While getting Pomerium Core set up this week, I ran into Let's Encrypt rate limits — here’s how using...",
+  "excerpt": "While getting Pomerium Core set up this week for a demo, I ran into Let's Encrypt rate limits. Here’s...",
   "date": "2025-06-16T05:00:00.000Z",
   "tags": [
     "letsencrypt",
@@ -16,7 +16,7 @@
 }
 ---
 
-While getting [Pomerium Core](https://github.com/pomerium/pomerium) set up this week, I ran into Let's Encrypt rate limits — here’s how using Let's Encrypt staging can save you time when setting up auto-provisioned certificates.
+While getting [Pomerium Core](https://github.com/pomerium/pomerium) set up this week for a demo, I ran into Let's Encrypt rate limits. Here’s how using Let's Encrypt staging can save you time when setting up auto-provisioned certificates.
 
 For context, I work at [Pomerium](https://www.pomerium.com/). This was part of a local demo stack I was building with Docker Compose. Pomerium is an identity-aware proxy (think of it as an application gateway) that secures access to your apps with built-in policy enforcement, SSO, microsegmentation etc. All the Zero Trust security goodies.
 
