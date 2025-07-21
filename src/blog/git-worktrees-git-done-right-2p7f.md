@@ -9,7 +9,7 @@
     "github"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6c5lwmvy9p1enw57jyuj.jpg",
-  "canonical_url": "https://dev.to/nickytonline/git-worktrees-git-done-right-2p7f",
+  "canonical_url": "https://www.nickyt.co/blog/git-worktrees-git-done-right-2p7f/",
   "reading_time_minutes": 4,
   "template": "post"
 }
@@ -74,8 +74,6 @@ Less keystrokes, same git worktree goodness.
 ## Shell Alias for Checking Out Pull Requests
 
 I'm a huge fan of the [GitHub CLI](https://cli.github.com/), especially for pull requests. I typically run `gh co 123` to pull down pull request 123. The CLI is so good.
-
-{% embed "https://dev.to/opensauced/boost-productivity-with-the-github-cli-2mne" %}
 
 Unfortunately, `gh co` doesn't support a `--worktree` flag at the moment, so I created a shell alias that combines the power of GitHub CLI with git worktrees:
 
