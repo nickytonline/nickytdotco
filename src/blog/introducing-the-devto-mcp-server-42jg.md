@@ -127,7 +127,7 @@ The MCP server leverages the MCP TypeScript SDK and Vite for a clean, modern dev
 
 This is meant to be for the dev.to public API server. You have access to additional endpoints with a dev.to API key as well, but for the initial release, I omitted that to keep things simple.
 
-It'd be neat if you could register an OAuth app to avoid API keys altogether. That way, it could be deployed with the additional user-specific endpoints without requiring an API key.
+It'd be neat if you could register an OAuth app to avoid API keys altogether. That way, it could be deployed with the additional user-specific endpoints without requiring an API key which is only works for the editable content of the owner of the API key if accessing the additional endpoints.
 
 @ben, if you want to host it officially, I think that'd be awesome, and I'd also be happy to move it to the forem org if there's interest.
 
