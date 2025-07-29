@@ -128,4 +128,6 @@ If you haven't tried git worktrees yet, I highly encourage you to give them a sh
 
 The combination of git worktrees, the GitHub CLI, and a few well-crafted aliases has supercharged my productivity. Give it a try. You won't regret it.
 
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
 Photo by <a href="https://unsplash.com/@szmigieldesign?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Lukasz Szmigiel</a> on <a href="https://unsplash.com/photos/forest-trees-jFCViYFYcus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
