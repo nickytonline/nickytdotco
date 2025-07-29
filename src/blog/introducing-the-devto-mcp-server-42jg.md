@@ -119,15 +119,15 @@ However you run it, remember that the URL when you register it in an MCP client 
 
 ## Under the Hood
 
-The MCP server leverages the MCP TypeScript SDK and Vite for a clean, modern development experience.
+The MCP server leverages the MCP TypeScript SDK and Vite for a clean, modern development experience and leverages the [dev.to API](https://developers.forem.com/api) for dev.to content.
 
 {% embed "https://github.com/modelcontextprotocol/typescript-sdk" %}
 
 ## What's Next
 
-This is meant to be the dev.to public API server. You obviously have access to additional API calls with a dev.to API key as well, but for the initial release, I omitted that to keep things simple.
+This is meant to be for the dev.to public API server. You have access to additional endpoints with a dev.to API key as well, but for the initial release, I omitted that to keep things simple.
 
-It'd be neat if you could register an OAuth app to avoid API keys altogether. That way, it could be deployed with the additional user-specific endpoints without exposing keys.
+It'd be neat if you could register an OAuth app to avoid API keys altogether. That way, it could be deployed with the additional user-specific endpoints without requiring an API key.
 
 @ben, if you want to host it officially, I think that'd be awesome, and I'd also be happy to move it to the forem org if there's interest.
 
