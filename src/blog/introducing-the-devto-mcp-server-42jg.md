@@ -62,7 +62,7 @@ In the [Pomerium MCP app demo](https://github.com/pomerium/mcp-app-demo).
 
 ![dev.to MCP server running in the Pomerium MCP app demo](https://www.nickyt.co/images/posts/_uploads_articles_ws6g3hy499m5glc9zxgz.png)
 
-In Goose:
+In [Goose](https://github.com/block/goose):
 
 ![dev.to MCP server running in Goose](https://www.nickyt.co/images/posts/_uploads_articles_ulwvcfxq2rvtxw9ymvjb.gif)
 
@@ -133,7 +133,7 @@ It'd be neat if you could register an OAuth app to avoid API keys altogether. Th
 
 For those interested in trying it out if you don't feel like deploying it yourself, it's available at https://devto.mcp.maisonlab.dev. If you try to use it, you'll be denied, so if you're OK with sending me your email address, I can add you to the [Pomerium policy](https://www.pomerium.com/docs/reference/routes/policy) to give you access.
 
-That's it! Check out the repo and give it a star if you find it useful. 😎
+That's it! Check out the repo and [give it a star](https://github.com/nickytonline/dev-to-mcp) if you find it useful. 😎
 
 If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
 
