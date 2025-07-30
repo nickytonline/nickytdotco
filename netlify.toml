@@ -490,6 +490,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/slides/apollo-mcp-july-2025"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vRt3EHmvKqC5QM3V9yjWk-IlExgeVx1JlRWBrBNX0XjXrheOieGNz9-R4Nq8vL1iinFtFnn0xI7JjoY/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
+
+[[redirects]]
 from = "/feed.xml"
 to = "/feed"
 status = 301
