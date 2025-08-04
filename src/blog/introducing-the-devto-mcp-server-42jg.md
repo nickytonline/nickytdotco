@@ -16,7 +16,7 @@
 }
 ---
 
-If you've been wondering how to get your AI tools talking to dev.to's content without building yet another custom integration, I've got something that might interest you. I recently built an MCP server for dev.to that makes this whole thing a lot more straightforward.
+If you've been wondering how to get your AI tools talking to dev.to's content without building yet another custom integration, I've got something that might interest you. I recently built a remote [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) (MCP) server for dev.to that makes this whole thing a lot more straightforward.
 
 {% embed "https://github.com/nickytonline/dev-to-mcp" %}
 
@@ -110,12 +110,7 @@ docker run -p 3000:3000 dev-to-mcp
 However you run it, remember that the URL when you register it in an MCP client like VS Code will be e.g. `http://localhost:3000/mcp`
 
 
-!['"dev.to MCP": {
-	"url": "http://localhost:3000/mcp",
-	"type": "http"
-},'](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rnybtg68ehrogk7q01oq.png)
-
-
+!["dev MCP server settings in VS Code"](https://www.nickyt.co/images/posts/_uploads_articles_rnybtg68ehrogk7q01oq.png)
 
 ## Under the Hood
 
