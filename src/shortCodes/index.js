@@ -96,6 +96,10 @@ async function youtubeEmbed(videoUrl) {
     return `<div class="video-player"><p>Video is no longer available.</p></div>`;
   }
 
+  if (response.status === 400) {
+    return `<div class="video-player"><p>Video has either been removed or made private.</p></div>`;
+  }
+
   const { title } = await response.json();
 
   return `<div class="video-player">
