@@ -111,9 +111,9 @@ That led to creating a template repo and even getting invited to GitHub's Open S
 
 {% embed "https://www.youtube.com/watch?v=Gs5RQckoMeg" %}
 
-* Was a guest on This Dot‘s Modern Web Podcast discussing TypeScript and Open Source
+* Was a guest on This Dot‘s Modern Web Podcast discussing TypeScript and Open Source. Catch the [whole episode on their podcast channel](https://open.spotify.com/episode/6IarSxaz6BisIGSinuswdu).
 
-{% embed "https://www.youtube.com/watch?v=2SpCOhL_jJk" %}
+{% embed "https://www.youtube.com/watch?v=Slwqcu7zG78" %}
 
 * Was a guest on the GitHub OpenSource Friday live stream to showcase my Copilot Extension template
 
