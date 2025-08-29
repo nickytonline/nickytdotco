@@ -45,7 +45,7 @@ force = true
 
 [[redirects]]
 from = "/pages/newsletter/*"
-to = "https://OneTipAWeek.com"
+to = "https://OneTipAWeek.com?utm_source=nickytco&utm_medium=social"
 status = 302
 force = true
 
