@@ -284,20 +284,31 @@ async function createPostFile(post) {
     const tweetId = id ?? id2;
 
     if (!twitterEmbeds.has(tweetId)) {
-      // It doesn't matter who the user is. It's the Tweet ID that matters.
-      const response = await fetch(
-        `https://publish.twitter.com/oembed?url=${encodeURIComponent(
-          `https://twitter.com/anyone/status/${tweetId}`,
-        )}`,
-      );
+      try {
+        // It doesn't matter who the user is. It's the Tweet ID that matters.
+        const response = await fetchWithRetry(
+          `https://publish.twitter.com/oembed?url=${encodeURIComponent(
+            `https://twitter.com/anyone/status/${tweetId}`,
+          )}`,
+        );
 
-      console.log(
-        `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`,
-      );
+        if (!response.ok) {
+          console.warn(`Failed to fetch Twitter embed for ${tweetId}: ${response.status}`);
+          continue;
+        }
 
-      const { html } = await response.json();
+        console.log(
+          `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`,
+        );
 
-      twitterEmbeds.set(tweetId, html);
+        const data = await response.json();
+        const { html } = data;
+
+        twitterEmbeds.set(tweetId, html);
+      } catch (error) {
+        console.warn(`Error fetching Twitter embed for ${tweetId}:`, error.message);
+        continue;
+      }
     }
   }
 
