@@ -50,6 +50,12 @@ status = 302
 force = true
 
 [[redirects]]
+from = "/p/one-tip-a-week-log-points"
+to = "https://one-tip-a-week.beehiiv.com/p/one-tip-a-week-log-points"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://pod.iamdeveloper.com/2065897/*"
 to = "https://nickyt.co"
 status = 302
