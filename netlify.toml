@@ -496,6 +496,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/fresh-demo"
+to = "https://fresh-demo.nickytonline.deno.net/"
+status = 301
+force = true
+
+[[redirects]]
 from = "/feed.xml"
 to = "/feed"
 status = 301
