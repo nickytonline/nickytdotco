@@ -57,6 +57,6 @@ Want to check out the dev.to MCP server? 👇 Also, don't forget to give it a st
 
 Until the next one peeps!
 
-If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online). Like dev tips. Check out [OneTipAWeek.com](https://OneTipAWeek.com)!
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online). Like dev tips? Check out [OneTipAWeek.com](https://OneTipAWeek.com)!
 
 Photo by <a href="https://unsplash.com/@tonchik?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Anton Savinov</a> on <a href="https://unsplash.com/photos/a-bunch-of-tools-hanging-up-on-a-wall-2Qlj2Gaft7w?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
