@@ -512,3 +512,9 @@ from = "/feed.xml"
 to = "/feed"
 status = 301
 force = true
+
+[[redirects]]
+from = "/bsides2025"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vTbLPEshdJJvFgmnmvqlsQDbYmgqgSnK4BTOEPrubl5zF9NGSib_6ltEsHfPhNvmAfwct-erWA3hO7o/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
