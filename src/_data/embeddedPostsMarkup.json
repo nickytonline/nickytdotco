@@ -2744,5 +2744,45 @@
       "bg_color_hex": "#71EA8B",
       "text_color_hex": "#FFFFFF"
     }
+  },
+  "https://dev.to/nickytonline/introducing-the-devto-mcp-server-42jg": {
+    "type_of": "article",
+    "id": 2729716,
+    "title": "Introducing the dev.to MCP server",
+    "description": "If you've been wondering how to get your AI tools talking to dev.to's content without building yet...",
+    "readable_publish_date": "Jul 29",
+    "slug": "introducing-the-devto-mcp-server-42jg",
+    "path": "/nickytonline/introducing-the-devto-mcp-server-42jg",
+    "url": "https://dev.to/nickytonline/introducing-the-devto-mcp-server-42jg",
+    "collection_id": 33658,
+    "published_timestamp": "2025-07-29T03:55:35Z",
+    "language": "en",
+    "subforem_id": 1,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpuvgni3pd332f3uqdwhi.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpuvgni3pd332f3uqdwhi.jpg",
+    "canonical_url": "https://www.nickyt.co/blog/introducing-the-devto-mcp-server-42jg/",
+    "created_at": "2025-07-29T03:44:45Z",
+    "edited_at": "2025-10-07T04:32:41Z",
+    "crossposted_at": null,
+    "published_at": "2025-07-29T03:55:35Z",
+    "last_comment_at": "2025-08-28T15:19:38Z",
+    "reading_time_minutes": 4,
+    "tag_list": "mcp, agenticai, devto, ai",
+    "tags": [
+      "mcp",
+      "agenticai",
+      "devto",
+      "ai"
+    ],
+    "user": {
+      "name": "Nick Taylor",
+      "username": "nickytonline",
+      "twitter_username": null,
+      "github_username": "nickytonline",
+      "user_id": 9597,
+      "website_url": "https://OneTipAWeek.com",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
+    }
   }
 }
