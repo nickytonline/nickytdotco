@@ -49,7 +49,7 @@ This template comes loaded with everything you need for modern MCP server develo
 - Full TypeScript support with sensible defaults
 
 **Quality Tools:**
-- Vitest for testing (with an interactive runner that actually makes testing enjoyable)
+- Vitest for testing
 - ESLint and Prettier configured and ready to go with sensible defaults
 - [Zod](https://zod.dev/) for runtime validation of environment variables and tool inputs
 
