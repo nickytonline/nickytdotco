@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqix8wncv76im46bvrhxp.jpg",
   "canonical_url": "https://www.nickyt.co/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f/",
-  "reading_time_minutes": 7,
+  "reading_time_minutes": 6,
   "template": "post"
 }
 ---
@@ -130,10 +130,8 @@ First `pyenv` call takes ~150ms to initialize, then it's direct execution foreve
 {% raw %}
 gcloud() {
   unset -f gcloud gsutil bq
-  [ -f '/Users/yolo/.local/google-cloud-sdk/path.zsh.inc' ] && \
-    . '/Users/yolo/.local/google-cloud-sdk/path.zsh.inc'
-  [ -f '/Users/yolo/.local/google-cloud-sdk/completion.zsh.inc' ] && \
-    . '/Users/yolo/.local/google-cloud-sdk/completion.zsh.inc'
+  [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ] && . "$HOME/.local/google-cloud-sdk/path.zsh.inc"
+  [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ] && . "$HOME/.local/google-cloud-sdk/completion.zsh.inc"
   gcloud "$@"
 }
 gsutil() { gcloud; gsutil "$@"; }
@@ -271,15 +269,11 @@ Here's my updated shell with all the performance tweaks.
 export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPATH=$HOME/go
 export PYENV_ROOT="$HOME/.pyenv"
-# fnm (Fast Node Manager)
 export POMERIUM_CLI_USER_DATA_DIRECTORY=$HOME/.local/share/pomerium
 export STARSHIP_CONFIG=~/.config/starship.toml
 export GPG_TTY=$(tty)
 export HISTORY_IGNORE="(g\src|g\sra|g\sa|g\srhh|ls|cd|cd ..|pwd|clear|exit|logout|history|alias|unalias|set|unset|env|whoami|date|uptime|tree|code|code \.|vim|nvim|nano|trash|security)( .*)?"
-
 export PATH="$HOME/.bun/bin:$HOME/.antigravity/antigravity/bin:$HOME/.config/herd-lite/bin:$HOME/.codeium/windsurf/bin:$HOME/.console-ninja/.bin:/opt/homebrew/anaconda3/bin:$GOPATH/bin:$PYENV_ROOT/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-
-export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
 openai_key() {
   export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
@@ -304,11 +298,6 @@ eval "$(starship init zsh)"
 
 # === fnm ===
 eval "$(fnm env --use-on-cd --shell zsh)"
-
-npm() {
-  [ -z "$OPENAI_API_KEY" ] && export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
-  command npm "$@"
-}
 
 # === Lazy-load pyenv ===
 pyenv() {
