@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqix8wncv76im46bvrhxp.jpg",
   "canonical_url": "https://www.nickyt.co/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f/",
-  "reading_time_minutes": 4,
+  "reading_time_minutes": 5,
   "template": "post"
 }
 ---
@@ -102,6 +102,8 @@ npx() { nvm use default --silent; unfunction node npm npx; npx "$@"; }
 {% endraw %}
 ```
 
+**Update 2025-11-28: I scrapped [nvm](https://github.com/nvm-sh/nvm) in favour of [fnm](https://github.com/Schniz/fnm), so I've since removed the `nvm`, `node`, `npm` and `npx` wrapper functions. If you do use `nvm`, keep them.**
+
 The `unset -f` and `unfunction` commands remove the wrapper after first use. After that, it's like the tools were loaded normally.
 
 ### pyenv Gets the Same Treatment
@@ -177,6 +179,17 @@ npm() {
   [ -z "$OPENAI_API_KEY" ] && \
     export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
   npm "$@"
+}
+{% endraw %}
+```
+
+Update 2025-11-28: as mentioned above, I switched to [fnm](https://github.com/Schniz/fnm), so I changed this up since I removed the npm wrapper function. Now for my OpenAI API key, I just call a function whenever I need it instead:
+
+```bash
+{% raw %}
+# === Lazy-load OPENAI_API_KEY ===
+openai_key() {
+  export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
 }
 {% endraw %}
 ```
