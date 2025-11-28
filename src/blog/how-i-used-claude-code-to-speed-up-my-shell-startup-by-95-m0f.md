@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqix8wncv76im46bvrhxp.jpg",
   "canonical_url": "https://www.nickyt.co/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f/",
-  "reading_time_minutes": 5,
+  "reading_time_minutes": 7,
   "template": "post"
 }
 ---
@@ -260,6 +260,134 @@ zprof
 ```
 
 This breaks down which specific commands are eating up your startup time.
+
+## My Updated Shell Configuration File
+
+Here's my updated shell with all the performance tweaks.
+
+```bash
+{% raw %}
+# === Early exports (no subshells) ===
+export HOMEBREW_NO_AUTO_UPDATE=1
+export GOPATH=$HOME/go
+export PYENV_ROOT="$HOME/.pyenv"
+# fnm (Fast Node Manager)
+export POMERIUM_CLI_USER_DATA_DIRECTORY=$HOME/.local/share/pomerium
+export STARSHIP_CONFIG=~/.config/starship.toml
+export GPG_TTY=$(tty)
+export HISTORY_IGNORE="(g\src|g\sra|g\sa|g\srhh|ls|cd|cd ..|pwd|clear|exit|logout|history|alias|unalias|set|unset|env|whoami|date|uptime|tree|code|code \.|vim|nvim|nano|trash|security)( .*)?"
+
+export PATH="$HOME/.bun/bin:$HOME/.antigravity/antigravity/bin:$HOME/.config/herd-lite/bin:$HOME/.codeium/windsurf/bin:$HOME/.console-ninja/.bin:/opt/homebrew/anaconda3/bin:$GOPATH/bin:$PYENV_ROOT/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
+export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+openai_key() {
+  export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
+}
+
+# === Cache brew shellenv ===
+if [[ ! -f ~/.zsh_brew_cache || ~/.zsh_brew_cache -ot /opt/homebrew/bin/brew ]]; then
+  /opt/homebrew/bin/brew shellenv > ~/.zsh_brew_cache
+fi
+source ~/.zsh_brew_cache
+
+# === Zsh options ===
+setopt autocd
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
+
+# === Prompt ===
+eval "$(starship init zsh)"
+
+# === fnm ===
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+npm() {
+  [ -z "$OPENAI_API_KEY" ] && export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
+  command npm "$@"
+}
+
+# === Lazy-load pyenv ===
+pyenv() {
+  unset -f pyenv
+  eval "$(command pyenv init -)"
+  pyenv "$@"
+}
+
+# === Rust ===
+source "$HOME/.cargo/env"
+
+# === Plugins ===
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# === Atuin ===
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh --disable-up-arrow)"
+
+# === Lazy-load gcloud ===
+gcloud() {
+  unset -f gcloud gsutil bq
+  [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ] && . "$HOME/.local/google-cloud-sdk/path.zsh.inc"
+  [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ] && . "$HOME/.local/google-cloud-sdk/completion.zsh.inc"
+  gcloud "$@"
+}
+gsutil() { gcloud; gsutil "$@"; }
+bq() { gcloud; bq "$@"; }
+
+# === Aliases ===
+alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias zshconfig='less ~/.zshrc'
+alias nr='npm run'
+alias ni='npm i'
+alias '$'=''
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias dotfiles='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias g='git'
+alias code='code-insiders'
+alias c='cursor -r'
+alias p='pnpm'
+alias pi='pnpm i'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias mermaid='mmdc'
+alias sniffly='uvx sniffly init'
+
+# === Functions ===
+# checkout a pull request in a git worktree
+cpr() {
+  pr="$1"
+  remote="${2:-origin}"
+  branch=$(gh pr view "$pr" --json headRefName -q .headRefName)
+  git fetch "$remote" "$branch"
+  git worktree add "../$branch" "$branch"
+  cd "../$branch" || return
+  echo "Switched to new worktree for PR #$pr: $branch"
+}
+
+rmmerged() {
+  git branch --merged | grep -v "*" | grep -v \"master\" | xargs -n 1 git branch -d && git remote prune origin
+}
+
+nb() {
+  branch="$1";
+  git remote -v | grep -q git@github.com:pomerium/ && git checkout -b "nickytonline/$branch" || git checkout -b $branch;
+}
+
+db() {
+  branch="$1";
+  git remote -v | grep -q git@github.com:pomerium && git branch -D "nickytonline/$branch" || git branch -D $branch;
+}
+
+glog() {
+  git log --oneline --decorate --graph --color | less -R
+}
+{% endraw %}
+```
+
 
 ## Wrapping Up
 
