@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqix8wncv76im46bvrhxp.jpg",
   "canonical_url": "https://www.nickyt.co/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f/",
-  "reading_time_minutes": 6,
+  "reading_time_minutes": 7,
   "template": "post"
 }
 ---
@@ -306,8 +306,22 @@ pyenv() {
   pyenv "$@"
 }
 
-# === Rust ===
-source "$HOME/.cargo/env"
+# Lazy load Cargo - defers initialization until first use
+cargo() {
+  unset -f cargo rustc rustup
+  source $HOME/.cargo/env
+  cargo "$@"
+}
+rustc() {
+  unset -f cargo rustc rustup
+  source $HOME/.cargo/env
+  rustc "$@"
+}
+rustup() {
+  unset -f cargo rustc rustup
+  source $HOME/.cargo/env
+  rustup "$@"
+}
 
 # === Plugins ===
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
