@@ -26,7 +26,7 @@ My GitHub profile at [github.com/nickytonline](https://github.com/nickytonline) 
 
 ## The GitHub Special Repository
 
-First, the basics. GitHub has this neat feature where if you create a public repository with the same name as your username (in my case, [nickytonline/nickytonline](https://github.com/nickytonline/nickytonline)). It becomes a special profile repository where the README.md in the repo displays directly on your profile page.
+First, the basics. GitHub has this neat feature where if you create a public repository with the same name as your username, e.g. [nickytonline/nickytonline](https://github.com/nickytonline/nickytonline), it becomes a special profile repository where the README.md in the repo displays directly on your profile page.
 
 You can follow [GitHub's official guide](https://docs.github.com/en/get-started/start-your-journey/setting-up-your-profile#adding-a-profile-readme) to set this up, but the basic steps are:
 
