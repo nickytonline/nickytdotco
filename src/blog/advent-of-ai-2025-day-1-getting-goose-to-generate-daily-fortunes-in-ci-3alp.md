@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Advent of AI 2025 - Day 1: Getting Goose to Generate Daily Fortunes in CI",
-  "excerpt": "For Day 1 of the Advent of AI challenge, I built a GitHub Action that uses the Goose CLI to generate...",
+  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
   "date": "2025-12-02T06:52:43.724Z",
   "tags": [
     "goose",
@@ -15,6 +15,8 @@
   "template": "post"
 }
 ---
+
+I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 For [Day 1 of the Advent of AI challenge](https://adventofai.dev/challenges/1), I built a GitHub Action that uses the [Goose](https://github.com/block/goose) CLI to generate a daily fortune with ASCII art. I hadn't run Goose in CI before, so I got to level up there.
 
