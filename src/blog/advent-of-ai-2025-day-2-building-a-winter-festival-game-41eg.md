@@ -9,7 +9,7 @@
     "adventofai"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Famqldnu25g4s3gf35vbq.jpg",
-  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-2025-day-2-building-a-winter-festival-game-41eg",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-2-building-a-winter-festival-game-41eg/",
   "reading_time_minutes": 3,
   "template": "post"
 }
