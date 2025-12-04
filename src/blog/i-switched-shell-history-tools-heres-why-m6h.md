@@ -9,7 +9,7 @@
     "tooling"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fkjfs09ax3ol5b0nu4yoi.jpg",
-  "canonical_url": "https://dev.to/nickytonline/i-switched-shell-history-tools-heres-why-m6h",
+  "canonical_url": "https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-why-m6h",
   "reading_time_minutes": 6,
   "template": "post"
 }
@@ -123,7 +123,9 @@ You get structured data for powerful searching plus your text-based history as a
 
 ## Performance Considerations
 
-Shell startup time matters. I recently [sped up my shell startup by 95%](https://dev.to/nickytonline/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f) by lazy-loading tools that were slowing me down.
+Shell startup time matters. I recently sped up my shell startup by 95% by lazy-loading tools that were slowing me down.
+
+{% embed "https://dev.to/nickytonline/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f" %}
 
 Both McFly and Atuin add some initialization time, but it's minimal compared to tools like nvm or pyenv. We're talking single-digit milliseconds.
 

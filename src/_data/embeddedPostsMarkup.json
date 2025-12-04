@@ -2784,5 +2784,45 @@
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
     }
+  },
+  "https://dev.to/nickytonline/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f": {
+    "type_of": "article",
+    "id": 3065660,
+    "title": "How I Used Claude Code to Speed Up My Shell Startup by 95%",
+    "description": "My terminal was sluggish. Every time I opened a new tab, there was this annoying delay before I could...",
+    "readable_publish_date": "Nov 27",
+    "slug": "how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f",
+    "path": "/nickytonline/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f",
+    "url": "https://dev.to/nickytonline/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f",
+    "collection_id": null,
+    "published_timestamp": "2025-11-27T21:22:59Z",
+    "language": "en",
+    "subforem_id": 1,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqix8wncv76im46bvrhxp.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqix8wncv76im46bvrhxp.jpg",
+    "canonical_url": "https://www.nickyt.co/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f/",
+    "created_at": "2025-11-27T21:20:58Z",
+    "edited_at": "2025-11-30T01:41:03Z",
+    "crossposted_at": null,
+    "published_at": "2025-11-27T21:22:59Z",
+    "last_comment_at": "2025-12-03T14:01:33Z",
+    "reading_time_minutes": 7,
+    "tag_list": "ai, zsh, bash, productivity",
+    "tags": [
+      "ai",
+      "zsh",
+      "bash",
+      "productivity"
+    ],
+    "user": {
+      "name": "Nick Taylor",
+      "username": "nickytonline",
+      "twitter_username": null,
+      "github_username": "nickytonline",
+      "user_id": 9597,
+      "website_url": "https://OneTipAWeek.com",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
+    }
   }
 }
