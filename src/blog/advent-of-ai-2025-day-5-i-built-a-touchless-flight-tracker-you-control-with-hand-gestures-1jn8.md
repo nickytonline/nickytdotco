@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhmcc2rf9ggfnm5ypp3zf.jpg",
   "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-5-i-built-a-touchless-flight-tracker-you-control-with-hand-gestures-1jn8/",
-  "reading_time_minutes": 8,
+  "reading_time_minutes": 9,
   "template": "post"
 }
 ---
@@ -19,6 +19,8 @@
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 For Goose's [Day 5 of Advent of AI](https://adventofai.dev/challenges/5), the challenge was to build "The Homecoming Board." It's a gesture-controlled flight arrival display where people wearing gloves and mittens can navigate using hand gestures. No touching screens in the freezing cold. The challenge needed at least two distinct gestures for navigation, real flight data, and audio feedback for gesture recognition was a nice to have.
+
+TLDR; if you’re impatient, I built a cool thing and you can find it at, [flightboard.nickyt.co](https://flightboard.nickyt.co/)
 
 ## The Tech Stack
 
@@ -218,13 +220,11 @@ Custom hooks are pretty common for a React app, and I'm pretty happy with the on
 
 ## What I Learned
 
-Gestures need real-world testing and adaptive thresholds. My fixed thresholds worked in one lighting condition but failed in others. 
+As previously mentioned, this is the first time I createa computer vision app, so a couple learnings:
 
-Caching is critical with rate-limited APIs. TanStack Query's configuration made the difference between constant errors and smooth auto-refresh.
+- Gestures need real-world testing and adaptive thresholds. My fixed thresholds worked in one lighting condition but failed in others. Even with the gesture training, I think there's still some tweaks to be had
 
-Audio feedback turns gesture recognition from "is this working?" to "yes, I felt that."
-
-Window focus detection saves battery. MediaPipe kept running even when I switched tabs, draining CPU. Pausing the camera when the window loses focus fixed that.
+- Window focus detection saves battery. MediaPipe kept running even when I switched tabs, draining CPU. Pausing the camera when the window loses focus fixed that. This hadn't occurred to me initially but aside from saving battery, it also prevents hand gestures from being detected when you're not using the app. Discovered that by seeing it in action while I was in another app.
 
 ## What's Next
 
