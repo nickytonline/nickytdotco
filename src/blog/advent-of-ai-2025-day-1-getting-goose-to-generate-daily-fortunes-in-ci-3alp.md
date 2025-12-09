@@ -18,6 +18,10 @@
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
+The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
+
 For [Day 1 of the Advent of AI challenge](https://adventofai.dev/challenges/1), I built a GitHub Action that uses the [Goose](https://github.com/block/goose) CLI to generate a daily fortune with ASCII art. I hadn't run Goose in CI before, so I got to level up there.
 
 ## What I Built

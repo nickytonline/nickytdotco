@@ -17,6 +17,10 @@
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
+The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
+
 For Day 2 of the Advent of AI challenge, I built an entire winter-themed choose-your-own-adventure game as per the guidelines of [Day 2 of Advent of AI](https://adventofai.dev/challenges/2).
 
 ## What I Built
