@@ -10,7 +10,7 @@
     "ai"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyb0sw1vn5zz0e0uxuerm.jpg",
-  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-2025-day-6-automating-github-issue-triage-with-goose-1pn5",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-6-automating-github-issue-triage-with-goose-1pn5/",
   "reading_time_minutes": 4,
   "template": "post"
 }
@@ -18,7 +18,9 @@
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
-# Advent of AI 2025 - Day 6: Automating GitHub Issue Triage with Goose
+The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
 
 I built an automated GitHub issue triage system using Goose for [Advent of AI 2025 Day 6](https://adventofai.dev/challenges/6). The system categorizes festival feedback, assigns priorities, and welcomes first-time contributors. It runs in GitHub Actions and handles everything from label creation to posting helpful comments.
 

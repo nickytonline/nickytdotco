@@ -17,6 +17,10 @@
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
+The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
+
 For [Day 4 of Advent of AI](https://adventofai.dev/challenges/4), I built a winter festival website and deployed it to Netlify all thanks to Goose, Claude Sonnet 4.5 and some built-in and external extensions in Goose.
 
 **Live Site:** https://winter-festival-nickyt.netlify.app

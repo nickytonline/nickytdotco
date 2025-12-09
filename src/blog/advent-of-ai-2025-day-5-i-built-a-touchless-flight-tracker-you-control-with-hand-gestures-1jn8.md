@@ -18,6 +18,10 @@
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
+The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
+
 For Goose's [Day 5 of Advent of AI](https://adventofai.dev/challenges/5), the challenge was to build "The Homecoming Board." It's a gesture-controlled flight arrival display where people wearing gloves and mittens can navigate using hand gestures. No touching screens in the freezing cold. The challenge needed at least two distinct gestures for navigation, real flight data, and audio feedback for gesture recognition was a nice to have.
 
 TLDR; if you’re impatient, I built a cool thing and you can find it at, [flightboard.nickyt.co](https://flightboard.nickyt.co/)
