@@ -50,15 +50,15 @@ So here's what I got working:
 
 ## Starting with a PRD
 
-I started by generating a Porduct Requirements Document (PRD) to map out the work. This has become my go-to for these challenges. They provide all the info for the challenge, but then I can take that and apply how I think it should be implemented.
+I started by generating a Product Requirements Document (PRD) to map out the work. This has become my go-to for these challenges. They provide all the info for the challenge, but then I can take that and apply how I think it should be implemented.
 
 ## Hand Tracking with MediaPipe
 
-Getting MediaPipe running in the browser was a bit clunky for me initially. I was new to media pipe and was trying to follow the basic setup, but fumbled for some reason so I tried the TensorFlow.js which worked, but then I eventually got MediaPipe.
+Getting MediaPipe running in the browser was a bit clunky for me initially. I was new to MediaPipe and was trying to follow the basic setup, but fumbled for some reason so I tried the TensorFlow.js which worked, but then I eventually got MediaPipe working.
 
 ![Gesture training](https://www.nickyt.co/images/posts/_uploads_articles_ueqwrgt56vj8pmq06rc9.png)
 
-Eventually I went with the MediaPipe WASM version specifically because I wanted to deploy this to Netlify. The WASM runtime is pure client-side, which meant I could host it on any PaaS without worrying about server-side dependencies or Python runtimes.
+I decided on the MediaPipe WASM version specifically because I wanted to deploy this to Netlify. The WASM runtime is running in-browser, which meant I could host it on any PaaS without worrying about Python. That said, I know [Vercel supports Python](https://vercel.com/docs/functions/runtimes/python) now.
 
 ```typescript
 {% raw %}
@@ -78,7 +78,7 @@ hands.setOptions({
 
 The hand tracking runs at 30-60 FPS with landmark visualization. I mirror both the video feed and the landmarks so it feels natural when you move your hand.
 
-One quirk I ran into: the green skeleton overlay (the hand landmarks visualization) was appearing on my head along with my hands. MediaPipe was detecting facial features as hand-like shapes. I fixed this by only rendering the skeleton if at least one hand was actually detected.
+One quirk I ran into: the green skeleton overlay (the hand landmarks visualization) was appearing on my head along with my hands. MediaPipe was detecting facial features as hand-like shapes. Not really a quirk probably, but I fixed my logic by only rendering the skeleton if at least one hand was actually detected.
 
 I also went the extra mile beyond the challenge requirements. The challenge asked for at least two gestures, but I implemented four: closed fist, open palm, thumbs up, and thumbs down. I also made it detect both hands independently, so each hand can make different gestures simultaneously.
 
