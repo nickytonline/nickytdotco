@@ -845,7 +845,7 @@ I tested the recipe with three datasets of increasing complexity:
 Input: Messy text with duplicates
 
 {% endraw %}
-```
+```markdown
 blue scarf, ice rink, 2pm
 Blue Scarf, ice skating area, 2:15pm
 iPhone 13 Pro, storytelling tent, 3pm - URGENT
@@ -947,9 +947,7 @@ If you're thinking about building your own Goose recipes, here's what stood out 
 
 ## Real-World Impact
 
-This recipe isn't just a challenge solution. It's a production-ready tool that event coordinators can use at festivals and conferences, schools can deploy for their lost and found departments, and venues can customize for their specific locations.
-
-The pattern extends beyond lost and found too. You could adapt this for vendor inventory management, volunteer scheduling, feedback analysis, or event planning. Build the expertise once, share it, use it forever.
+Obviously this was a fun advent of AI challenge, but hopefully you can see how you can leverage [Goose recipes](https://block.github.io/goose/docs/guides/recipes/) to automate some of your workflows.
 
 ## Wrapping Up
 
