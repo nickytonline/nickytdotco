@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Advent of AI 2025 - Day 7: Goose Recipes",
-  "excerpt": "Advent of AI 2025 - Day 7: Building a Lost &amp; Found Data Detective with Goose...",
+  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
   "date": "2025-12-10T03:39:24.465Z",
   "tags": [
     "adventofai",
@@ -15,8 +15,6 @@
   "template": "post"
 }
 ---
-
-# Advent of AI 2025 - Day 7: Building a Lost & Found Data Detective with Goose Recipes
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
@@ -46,7 +44,7 @@ A well-crafted recipe:
 
 Picture this advent of ai crisis: Maria runs the Lost & Found booth at the Winter Festival. By the end of each day, she has a mountain of sticky notes, scraps of paper, and hastily scribbled entries:
 
-```
+```markdown
 {% raw %}
 blue scarf, found near ice rink, 2pm
 BLUE SCARF - ice skating area - 2:15pm
@@ -108,7 +106,7 @@ The conversation followed a structured flow:
 
 Here's what my prompting, ultrathink and Claude Sonnet 4.5 came up with:
 
-````
+``````markdown
 {% raw %}
 You are a specialized Lost & Found Data Detective AI agent with deep expertise in managing lost and found operations at events, festivals, conferences, and venues. Your purpose is to transform messy, unorganized lost and found data into a clean, organized, and actionable web application that helps event coordinators reunite people with their belongings quickly and efficiently.
 
@@ -686,7 +684,7 @@ You are an expert. You don't need to ask for clarification on standard lost & fo
 Your goal: Turn chaos into clarity. Help reunite people with their belongings efficiently.
 
 **Be thorough. Be consistent. Be excellent.**
-````
+``````
 {% raw %}
 
 ## The Recipe Structure
