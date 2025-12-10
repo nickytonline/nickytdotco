@@ -10,7 +10,7 @@
     "ai"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxpymoir5schcm17s1mxx.jpg",
-  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-7-goose-recipes-5d1c/",
   "reading_time_minutes": 18,
   "template": "post"
 }
@@ -26,6 +26,8 @@ The [advent of AI](https://adventofai.dev) series leverages Goose, an open sourc
 
 For [Advent of AI Day 7](https://adventofai.dev/challenges/7), I built a reusable Goose recipe that transforms messy lost and found data into organized web applications. The challenge this time was different: instead of solving a one-off problem, I needed to create something anyone could use.
 
+Here's [my submission](https://github.com/block/goose/discussions/6026#discussioncomment-15214964).
+
 ## What's a Goose Recipe?
 
 Before jumping into what I built, let me explain what [recipes](https://block.github.io/goose/docs/guides/recipes/) are because this was only my second time creating one.
@@ -39,8 +41,6 @@ A well-crafted recipe:
 * Can be run manually or on a schedule
 
 ![Goose recipe in Goose UI](https://www.nickyt.co/images/posts/_uploads_articles_ngbavxbgla6hob4exubl.png)
-
-This was my first time building a shareable recipe, and I wanted to get it right.
 
 ## The Problem
 
