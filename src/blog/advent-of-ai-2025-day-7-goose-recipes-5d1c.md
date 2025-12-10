@@ -38,6 +38,8 @@ A well-crafted recipe:
 * Works independently when you give it data
 * Can be run manually or on a schedule
 
+![Goose recipe in Goose UI](https://www.nickyt.co/images/posts/_uploads_articles_ngbavxbgla6hob4exubl.png)
+
 This was my first time building a shareable recipe, and I wanted to get it right.
 
 ## The Problem
