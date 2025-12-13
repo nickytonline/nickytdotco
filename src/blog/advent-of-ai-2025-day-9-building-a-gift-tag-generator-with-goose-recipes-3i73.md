@@ -10,7 +10,7 @@
     "automation"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fw1wpshh1bnx2yrm1dpdd.jpg",
-  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-2025-day-9-building-a-gift-tag-generator-with-goose-recipes-3i73",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-9-building-a-gift-tag-generator-with-goose-recipes-3i73/",
   "reading_time_minutes": 5,
   "template": "post"
 }
@@ -112,6 +112,8 @@ Each style has its own character:
 - Minimalist: Clean sans-serif, monochromatic plus one accent color, geometric precision
 - Festive: Bold celebratory fonts, traditional holiday colors, seasonal motifs
 
+The gift cards didn't end up looking as good as I wanted to. 😅 I don't think it crawled their codepens. I'm thinking I should have curated this better by pulling exact urls to some of their work. Examples and direct URLs definitely would have faired better.
+
 ## What I Learned
 
 Working with fixed print dimensions requires explicit constraints. "Make it fit" isn't enough. You need to spell out exactly what "fit" means: nothing cut off, content must be visible, reduce sizes if necessary.
@@ -138,7 +140,7 @@ Everything's in my [repo's day-9 folder](https://github.com/nickytonline/advent-
 - `README.md` - Full documentation and examples
 - Example HTML tags in different styles
 
-## GitHub logo [nickytonline](https://github.com/nickytonline) / [advent-of-ai-2025](https://github.com/nickytonline/advent-of-ai-2025)
+{% embed "https://github.com/nickytonline/advent-of-ai-2025" %}
 
 ### Advent of AI 2025 for nickytonline
 
