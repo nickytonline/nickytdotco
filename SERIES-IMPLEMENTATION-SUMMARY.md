@@ -242,11 +242,13 @@ Before merging to main:
 
 ## 🔮 Future Enhancements
 
-### Phase 6 (Optional): Collapse Functionality
+### ~~Phase 6 (Optional): Collapse Functionality~~ ✅ COMPLETED
 For series with 5+ posts, show:
 - First 2 posts
 - "X more parts..." (collapsed)
 - Last 2 posts
+
+**Implementation:** Added in commit `e4f1e53` - The series navigation now collapses long series (5+ posts) to show only the first 2 and last 2 posts, with a "... N more parts ..." message in between, matching dev.to's UX.
 
 ### Additional Ideas
 1. Series landing pages (`/series/advent-of-ai-2025`)
@@ -254,7 +256,7 @@ For series with 5+ posts, show:
 3. Series progress tracking
 4. Series-specific RSS feeds
 5. Series completion badges
-6. Auto-update SERIES_NAMES from API
+6. ~~Auto-update SERIES_NAMES from API~~ ✅ COMPLETED - Series names are now auto-fetched from dev.to and persisted to `bin/series-names.js`
 
 ---
 
@@ -270,13 +272,12 @@ None! 🎉
 
 When you create a new series on dev.to:
 
-1. **Option A: Let title parsing work**
-   - If your titles follow pattern "Series Name - Day X: Title"
-   - The `getSeriesName()` function will auto-detect
+**Automatic (recommended):** Just run `node bin/generateDevToPosts.js` - the script will automatically:
+1. Detect new `collection_id` values from the dev.to API
+2. Fetch the series name from the dev.to series page
+3. Persist the mapping to `bin/series-names.js`
 
-2. **Option B: Add to mapping** (recommended)
-   - Add the series ID and name to `SERIES_NAMES`
-   - Re-run `node bin/generateDevToPosts.js`
+No manual intervention needed!
 
 ### Troubleshooting
 
