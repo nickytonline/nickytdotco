@@ -78,6 +78,24 @@
   }
 }
 
+// Collapsed state for long series (shows "... N more parts ...")
+.series-item--collapsed {
+  color: var(--color-text-muted, #6b7280);
+  font-style: italic;
+}
+
+.series-badge--collapsed {
+  background-color: transparent;
+  color: var(--color-text-muted, #6b7280);
+  font-size: get-size(500);
+}
+
+.series-collapsed-text {
+  font-size: get-size(300);
+  color: var(--color-text-muted, #6b7280);
+  padding-top: 0.35rem;
+}
+
 .series-nav {
   display: flex;
   justify-content: space-between;
