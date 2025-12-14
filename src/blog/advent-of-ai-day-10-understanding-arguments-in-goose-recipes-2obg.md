@@ -10,24 +10,24 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyiep87c899gtgoh8jxmh.jpg",
   "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg/",
-  "reading_time_minutes": 6,
+  "reading_time_minutes": 7,
   "template": "post"
 }
 ---
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post.
 
-For [Advent of AI Day 10](https://adventofai.dev/challenges/10), I built a festival poster generator using Goose recipes. But this post isn't really about making posters. It's about understanding how recipe arguments and conditional logic turn static prompts into reusable AI workflows.
+The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
+
+For [Advent of AI Day 10](https://adventofai.dev/challenges/10), I built a festival poster generator using Goose recipes. [Here’s my submission](https://github.com/block/goose/discussions/6092#discussioncomment-15249695). But this post isn't really about making posters. It's about understanding how recipe arguments and conditional logic turn static prompts into reusable AI workflows.
 
 Up until now in the Advent of AI challenges, I'd been using recipes pretty simply. Pass in some parameters, get output.
 
 {% embed "https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c" %}
 
-But Day 10 made me dig deeper into what's actually happening under the hood with arguments and Jinja templating.
-
-The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
-
-{% embed "https://github.com/block/goose" %}
+But Day 10 made me dig deeper into what's actually happening under the hood with arguments and I discovered you can leverage [Jinja templating](https://jinja.palletsprojects.com/en/stable/templates/) with recipe arguments (args).
 
 ## The Problem I Was Solving
 
@@ -271,10 +271,12 @@ The [Recipe Parameters docs](https://block.github.io/goose/docs/recipes/paramete
 
 Everything here is documented officially:
 
-- [Recipe Guide](https://block.github.io/goose/docs/recipes/) - Overview of how recipes work
-- [Recipe Reference](https://block.github.io/goose/docs/recipes/reference) - Complete spec
-- [Recipe Parameters](https://block.github.io/goose/docs/recipes/parameters) - All parameter types
-- [Jinja2 Docs](https://jinja.palletsprojects.com/) - Full templating syntax
+* [Goose Recipe Reference](https://block.github.io/goose/docs/guides/recipes/recipe-reference)  
+* [Goose Recipe Parameters](https://block.github.io/goose/docs/guides/recipes/recipe-reference#parameters)  
+* [Goose Recipes Tutorial](https://block.github.io/goose/docs/tutorials/recipes-tutorial)  
+* [Running Goose Recipes](https://block.github.io/goose/docs/guides/goose-cli-commands#run)  
+* [Goose Community Recipes](https://block.github.io/goose/recipes)  
+* [Jinja2 Templating](https://jinja.palletsprojects.com/en/stable/templates/)
 
 I referenced these docs a lot while building the poster recipe.
 
@@ -284,9 +286,9 @@ Parameters and conditional logic turn recipes from one-off tools into reusable w
 
 Instead of "make me a poster", it becomes "here's a poster recipe that adapts based on what you need". Run it once, run it a hundred times, same quality every time.
 
-The Day 10 challenge is a good intro to these concepts. You get to see how the same recipe generates five completely different poster themes just by changing one parameter. But the real learning is recognizing when you could apply this pattern to your own work.
+The [Advent of AI Day 10 challenge](https://adventofai.dev/challenges/10) is a good intro to these concepts. You get to see how the same recipe generates five completely different poster themes just by changing one parameter. But the real learning is recognizing when you could apply this pattern to your own work.
 
-What repetitive tasks are you doing with AI right now? What parts change each time? Those changing parts are your parameters. The logic that decides what to do with those parameters? That's your Jinja conditionals.
+What repetitive tasks are you doing with AI right now? Recipes are probably a good candidate for those kinds of tasks/workflows.
 
 Check out the [Day 10 challenge](https://adventofai.dev/challenges/10) if you want to try building one yourself.
 
