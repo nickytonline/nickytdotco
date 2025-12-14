@@ -70,7 +70,9 @@ async function getOrFetchSeriesName(collectionId, fallbackTitle, username = "nic
 
     // Remove any nested HTML tags from title
     if (title) {
-      title = title.replace(/<[^>]+>/g, "").trim();
+      // Use JSDOM to strip HTML tags safely
+      const dom = new JSDOM(`<body>${title}</body>`);
+      title = dom.window.document.body.textContent.trim();
     }
 
     // Decode HTML entities
