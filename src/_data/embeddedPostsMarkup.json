@@ -2903,5 +2903,45 @@
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
     }
+  },
+  "https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c": {
+    "type_of": "article",
+    "id": 3096284,
+    "title": "Advent of AI 2025 - Day 7: Goose Recipes",
+    "description": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
+    "readable_publish_date": "Dec 10",
+    "slug": "advent-of-ai-2025-day-7-goose-recipes-5d1c",
+    "path": "/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c",
+    "url": "https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c",
+    "collection_id": 34295,
+    "published_timestamp": "2025-12-10T03:39:24Z",
+    "language": "en",
+    "subforem_id": 1,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxpymoir5schcm17s1mxx.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxpymoir5schcm17s1mxx.jpg",
+    "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-7-goose-recipes-5d1c/",
+    "created_at": "2025-12-10T03:35:11Z",
+    "edited_at": "2025-12-11T02:35:40Z",
+    "crossposted_at": null,
+    "published_at": "2025-12-10T03:39:24Z",
+    "last_comment_at": "2025-12-10T13:13:21Z",
+    "reading_time_minutes": 18,
+    "tag_list": "adventofai, goose, automation, ai",
+    "tags": [
+      "adventofai",
+      "goose",
+      "automation",
+      "ai"
+    ],
+    "user": {
+      "name": "Nick Taylor",
+      "username": "nickytonline",
+      "twitter_username": null,
+      "github_username": "nickytonline",
+      "user_id": 9597,
+      "website_url": "https://OneTipAWeek.com",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
+    }
   }
 }

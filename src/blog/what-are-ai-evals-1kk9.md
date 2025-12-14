@@ -15,11 +15,7 @@
 }
 ---
 
-I did a livestream with Jim Bennett (@jimbobbennett) from [Galileo](https://galileo.ai/) recently where we [talked about evals and testing AI systems](https://www.youtube.com/watch?v=4cqR3gMDVP0). If you're building with AI and have been wondering how you're supposed to test something that gives you different answers every time, this will help.
-
-Prefer video? Here you go. Otherwise, read on.
-
-{% embed "https://www.youtube.com/watch?v=4cqR3gMDVP0" %}
+I did a livestream with Jim Bennett (@jimbobbennett) from [Galileo](https://galileo.ai/) recently where we [talked about evals and testing AI systems](https://www.youtube.com/watch?v=4cqR3gMDVP0). If you're building with AI and have been wondering how you're supposed to test something that gives you different answers every time, you've come to the right place.
 
 ## What Are AI Evals?
 
