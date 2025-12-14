@@ -2,16 +2,16 @@
 {
   "title": "My Git Aliases",
   "excerpt": "I’m going to provide my list of git aliases and explain what each alias does",
-  "date": "2018-08-26T00:00:00.000Z",
-  "tags": [
-    "git",
-    "productivity",
-    "developertools"
-  ],
+  "date": "2018-08-26T00:00:00Z",
+  "tags": "git, productivity, developertools",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fc31gesmnfndo89bh4673.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-git-aliases-5dea/",
   "reading_time_minutes": 4,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Stuff in My Toolbelt",
+    "collection_id": 4083
+  }
 }
 ---
 

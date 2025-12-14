@@ -2,12 +2,8 @@
 {
   "title": "dev.to with a TypeScript or Flow frontend codebase?",
   "excerpt": "Consider moving dev.to frontend codebase to TypeScript or Flow?",
-  "date": "2019-04-07T03:37:54.000Z",
-  "tags": [
-    "javascript",
-    "typescript",
-    "flow"
-  ],
+  "date": "2019-04-07T03:37:54Z",
+  "tags": "javascript, typescript, flow",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F8d2nn4w6f0smjm9ca4yf.gif",
   "canonical_url": "https://www.nickyt.co/blog/dev-to-with-a-typescript-or-flow-frontend-codebase-1n33/",
   "reading_time_minutes": 2,

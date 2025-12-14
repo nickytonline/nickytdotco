@@ -9,7 +9,7 @@
   "reading_time_minutes": 7,
   "template": "post",
   "series": {
-    "name": "Year in Review Series&#39; Articles",
+    "name": "Year in Review",
     "collection_id": 3993
   }
 }

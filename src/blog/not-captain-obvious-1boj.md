@@ -2,16 +2,16 @@
 {
   "title": "Not Captain Obvious",
   "excerpt": "I've been reading @swyx's book \"The Career Coding Handbook\". It launched on July 1st. Although I am...",
-  "date": "2020-08-03T03:37:54.196Z",
-  "tags": [
-    "career",
-    "writing",
-    "learninpublic"
-  ],
+  "date": "2020-08-03T03:37:54Z",
+  "tags": "career, writing, learninpublic",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fg6zipfc343b56kfou7pw.png",
   "canonical_url": "https://www.nickyt.co/blog/not-captain-obvious-1boj/",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Learn in Public",
+    "collection_id": 8114
+  }
 }
 ---
 

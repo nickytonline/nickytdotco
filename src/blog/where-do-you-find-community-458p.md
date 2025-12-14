@@ -2,10 +2,8 @@
 {
   "title": "Where do you find community?",
   "excerpt": "When I think of community, I think of safe spaces for everyone with diverse folks who I can learn...",
-  "date": "2023-02-19T14:52:22.921Z",
-  "tags": [
-    "community"
-  ],
+  "date": "2023-02-19T14:52:22Z",
+  "tags": "community",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb4sttely6muy169brptk.jpg",
   "canonical_url": "https://www.nickyt.co/blog/where-do-you-find-community-458p/",
   "reading_time_minutes": 4,

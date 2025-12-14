@@ -9,7 +9,7 @@
   "reading_time_minutes": 4,
   "template": "post",
   "series": {
-    "name": "Fullstack Learnings Series&#39; Articles",
+    "name": "Fullstack Learnings",
     "collection_id": 26157
   }
 }

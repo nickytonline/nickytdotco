@@ -2,13 +2,8 @@
 {
   "title": "Update Dependencies with Dependabot, Cypress and Netlify",
   "excerpt": "To preface things, this post is in the context of a JavaScript project, specifically, my blog...",
-  "date": "2019-08-16T02:11:34.000Z",
-  "tags": [
-    "testing",
-    "automation",
-    "cypress",
-    "netlify"
-  ],
+  "date": "2019-08-16T02:11:34Z",
+  "tags": "testing, automation, cypress, netlify",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fjivsyirs8gft16kuji62.png",
   "canonical_url": "https://www.nickyt.co/blog/update-dependencies-with-dependabot-cypress-and-netlify-3lkf/",
   "reading_time_minutes": 6,

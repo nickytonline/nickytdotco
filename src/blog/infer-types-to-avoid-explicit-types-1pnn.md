@@ -9,7 +9,7 @@
   "reading_time_minutes": 5,
   "template": "post",
   "series": {
-    "name": "typescript Series&#39; Articles",
+    "name": "typescript",
     "collection_id": 3255
   }
 }

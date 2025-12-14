@@ -2,12 +2,8 @@
 {
   "title": "Changelog: Frontend Edition",
   "excerpt": "I Tweeted this out last week that we moved to Preact X and Testing Library.        Let’s dig in to...",
-  "date": "2020-06-24T19:09:12.079Z",
-  "tags": [
-    "changelog",
-    "javascript",
-    "testing"
-  ],
+  "date": "2020-06-24T19:09:12Z",
+  "tags": "changelog, javascript, testing",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Ftaavig1ker0pmxi35grk.png",
   "canonical_url": "https://www.nickyt.co/blog/changelog-frontend-edition-30l7/",
   "reading_time_minutes": 5,

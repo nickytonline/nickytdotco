@@ -2,13 +2,8 @@
 {
   "title": "App to grab your Revue newsletters",
   "excerpt": "So I wrote about how Twitter is scrapping Revue.                                         Revue being...",
-  "date": "2022-11-13T14:44:58.537Z",
-  "tags": [
-    "webdev",
-    "serverless",
-    "html",
-    "typescript"
-  ],
+  "date": "2022-11-13T14:44:58Z",
+  "tags": "webdev, serverless, html, typescript",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvhn3sri34nx84esgy3ii.png",
   "canonical_url": "https://www.nickyt.co/blog/app-to-grab-your-revue-newsletters-1gci/",
   "reading_time_minutes": 1,

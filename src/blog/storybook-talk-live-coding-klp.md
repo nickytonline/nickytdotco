@@ -2,13 +2,8 @@
 {
   "title": "Storybook Talk / Live Coding",
   "excerpt": "Last week, I gave a talk on Storybook at a The Collab Lab meetup.                                  ...",
-  "date": "2021-03-16T03:43:46.574Z",
-  "tags": [
-    "javascript",
-    "react",
-    "storybook",
-    "ux"
-  ],
+  "date": "2021-03-16T03:43:46Z",
+  "tags": "javascript, react, storybook, ux",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F436wuamj05szgisfdtrm.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/storybook-talk-live-coding-klp/",
   "reading_time_minutes": 2,

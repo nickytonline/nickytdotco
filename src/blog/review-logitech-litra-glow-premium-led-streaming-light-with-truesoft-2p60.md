@@ -9,7 +9,7 @@
   "reading_time_minutes": 3,
   "template": "post",
   "series": {
-    "name": "Product Reviews Series&#39; Articles",
+    "name": "Product Reviews",
     "collection_id": 28027
   }
 }

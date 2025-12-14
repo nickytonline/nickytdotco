@@ -9,7 +9,7 @@
   "reading_time_minutes": 10,
   "template": "post",
   "series": {
-    "name": "Maintainer Toolkit Series&#39; Articles",
+    "name": "Maintainer Toolkit",
     "collection_id": 24726
   }
 }

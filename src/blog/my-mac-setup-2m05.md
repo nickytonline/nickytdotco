@@ -2,12 +2,8 @@
 {
   "title": "My Mac Setup",
   "excerpt": "Maybe I should start a series called “Not just a Gist”, as I’m slowly converting gists of mine to...",
-  "date": "2018-01-12T10:00:00.000Z",
-  "tags": [
-    "productivity",
-    "developertools",
-    "webdev"
-  ],
+  "date": "2018-01-12T10:00:00Z",
+  "tags": "productivity, developertools, webdev",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fqkwvsk3lp64lvchg69tm.png",
   "canonical_url": "https://www.nickyt.co/blog/my-mac-setup-2m05/",
   "reading_time_minutes": 9,
