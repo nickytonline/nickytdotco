@@ -2,12 +2,8 @@
 {
   "title": "Multitenant Database Schemas",
   "excerpt": "I recently got to hang with Jamie Barton (@notrab) from the Turso team. We discussed Multitenant...",
-  "date": "2024-07-29T05:14:00.000Z",
-  "tags": [
-    "sqlite",
-    "database",
-    "turso"
-  ],
+  "date": "2024-07-29T05:14:00Z",
+  "tags": "sqlite, database, turso",
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/multitenant-database-schemas-4ofc/",
   "reading_time_minutes": 4,

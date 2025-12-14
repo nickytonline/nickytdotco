@@ -2,17 +2,16 @@
 {
   "title": "Frontend Developer Resources 2020",
   "excerpt": "It’s 2020, post year in review, so let’s start off with some 2020 content.                         ...",
-  "date": "2020-01-06T05:00:06.851Z",
-  "tags": [
-    "javascript",
-    "css",
-    "html",
-    "a11y"
-  ],
+  "date": "2020-01-06T05:00:06Z",
+  "tags": "javascript, css, html, a11y",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fd0slehzp7b26buouwz33.png",
   "canonical_url": "https://www.nickyt.co/blog/frontend-developer-resources-246j/",
   "reading_time_minutes": 11,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Frontend Developer Resources",
+    "collection_id": 16050
+  }
 }
 ---
 

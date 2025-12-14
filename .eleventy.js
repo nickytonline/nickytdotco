@@ -37,6 +37,41 @@ module.exports = function (config) {
     DateTime.fromJSDate(dateObj).toFormat("yyyy-LL-dd"),
   );
 
+  // Series Filters
+  config.addFilter("seriesFilter", function(collection, series) {
+    if (!series) return [];
+    
+    // Normalize series identifier
+    const seriesId = typeof series === "string" 
+      ? series 
+      : (series.collection_id ? String(series.collection_id) : series.name);
+    
+    return collection.filter(post => {
+      const postSeries = post.data.series;
+      if (!postSeries) return false;
+      
+      const postSeriesId = typeof postSeries === "string"
+        ? postSeries
+        : (postSeries.collection_id ? String(postSeries.collection_id) : postSeries.name);
+      
+      return postSeriesId === seriesId;
+    });
+  });
+
+  config.addFilter("seriesName", function(series) {
+    if (!series) return "";
+    return typeof series === "string" ? series : series.name;
+  });
+
+  config.addFilter("truncate", function(str, length = 100) {
+    if (!str || str.length <= length) return str;
+    return str.substring(0, length) + "...";
+  });
+
+  config.addFilter("findIndex", function(array, url) {
+    return array.findIndex(item => item.url === url);
+  });
+
   // Layout aliases
   config.addLayoutAlias("home", "layouts/home.njk");
 

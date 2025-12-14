@@ -2,16 +2,16 @@
 {
   "title": "Challenging the Skeptics: Unveiling the Undeniable Goodness of Tailwind CSS",
   "excerpt": "People definitely have opinions about Tailwind. There are staunch supporters and staunch haters, but...",
-  "date": "2024-02-06T05:00:00.000Z",
-  "tags": [
-    "css",
-    "tailwindcss",
-    "webdev"
-  ],
+  "date": "2024-02-06T05:00:00Z",
+  "tags": "css, tailwindcss, webdev",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbkhml1iuah7nt4is2wwr.jpeg",
   "canonical_url": "https://opensauced.pizza/docs/community-resources/challenging-the-skeptics-unveiling-the-undeniable-goodness-of-tailwind-css/",
   "reading_time_minutes": 5,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Fullstack Learnings",
+    "collection_id": 26157
+  }
 }
 ---
 

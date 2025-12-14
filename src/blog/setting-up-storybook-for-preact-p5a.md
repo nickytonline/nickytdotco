@@ -2,17 +2,16 @@
 {
   "title": "Setting up Storybook for Preact",
   "excerpt": "Update 2019/06/30: Storybook now has an option via the CLI to install for Preact. For more info see...",
-  "date": "2018-09-02T00:00:00.000Z",
-  "tags": [
-    "preact",
-    "storybook",
-    "javascript",
-    "ui"
-  ],
+  "date": "2018-09-02T00:00:00Z",
+  "tags": "preact, storybook, javascript, ui",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png",
   "canonical_url": "https://www.nickyt.co/blog/setting-up-storybook-for-preact-p5a/",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Storybook",
+    "collection_id": 4085
+  }
 }
 ---
 

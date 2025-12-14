@@ -2,12 +2,8 @@
 {
   "title": "DEV as a Headless CMS for your Gatsby Site",
   "excerpt": "Near the end of September 2019, @ben  posted this article.                                         Yo...",
-  "date": "2020-04-15T13:09:54.295Z",
-  "tags": [
-    "stackbit",
-    "headlesscms",
-    "gatsby"
-  ],
+  "date": "2020-04-15T13:09:54Z",
+  "tags": "stackbit, headlesscms, gatsby",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F6nx4xj3l7dk99em1bdww.png",
   "canonical_url": "https://www.nickyt.co/blog/dev-as-a-headless-cms-for-your-gatsby-site-4mj2/",
   "reading_time_minutes": 3,

@@ -2,17 +2,16 @@
 {
   "title": "Quick Fix: My MCP Tools Were Showing as Write Tools in ChatGPT Dev Mode",
   "excerpt": "I recently enabled ChatGPT developer mode and noticed something weird: all my dev.to MCP server tools...",
-  "date": "2025-09-11T02:17:14.309Z",
-  "tags": [
-    "chatgpt",
-    "mcp",
-    "typescript",
-    "ai"
-  ],
+  "date": "2025-09-11T02:17:14Z",
+  "tags": "chatgpt, mcp, typescript, ai",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fohri44xa5yin75q1l594.jpg",
   "canonical_url": "https://www.nickyt.co/blog/quick-fix-my-mcp-tools-were-showing-as-write-tools-in-chatgpt-dev-mode-3id9/",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "MCP",
+    "collection_id": 33658
+  }
 }
 ---
 

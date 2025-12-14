@@ -2,13 +2,8 @@
 {
   "title": "Changelog: DEV upgraded to Webpacker 4/Babel 7",
   "excerpt": "This week brought a major upgrade to the frontend infrastructure for DEV. We've been on webpacker 3.x...",
-  "date": "2020-03-20T11:51:52.851Z",
-  "tags": [
-    "rails",
-    "webpack",
-    "javascript",
-    "changelog"
-  ],
+  "date": "2020-03-20T11:51:52Z",
+  "tags": "rails, webpack, javascript, changelog",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fcc61ssp14pyl9of3i37y.jpg",
   "canonical_url": "https://www.nickyt.co/blog/changelog-dev-upgraded-to-webpacker-4-babel-7-1mm4/",
   "reading_time_minutes": 2,

@@ -2,17 +2,16 @@
 {
   "title": "Supercharge your Repository with Code Owners",
   "excerpt": "As a maintainer of a repository, it’s in your best interest to automate processes as much as...",
-  "date": "2023-09-21T15:51:24.836Z",
-  "tags": [
-    "github",
-    "opensource",
-    "productivity",
-    "security"
-  ],
+  "date": "2023-09-21T15:51:24Z",
+  "tags": "github, opensource, productivity, security",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmb76rkwxnwmvnfi8labd.png",
   "canonical_url": "https://opensauced.pizza/docs/community-resources/supercharge-your-repository-with-code-owners/",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Maintainer Toolkit",
+    "collection_id": 24726
+  }
 }
 ---
 

@@ -2,17 +2,16 @@
 {
   "title": "Advent of AI 2025 - Day 7: Goose Recipes",
   "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-10T03:39:24.465Z",
-  "tags": [
-    "adventofai",
-    "goose",
-    "automation",
-    "ai"
-  ],
+  "date": "2025-12-10T03:39:24Z",
+  "tags": "adventofai, goose, automation, ai",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxpymoir5schcm17s1mxx.jpg",
   "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-7-goose-recipes-5d1c/",
   "reading_time_minutes": 18,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Advent of AI 2025",
+    "collection_id": 34295
+  }
 }
 ---
 

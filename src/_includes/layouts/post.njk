@@ -47,6 +47,14 @@
   <main id="main-content" tabindex="-1">
     <article class="[ post ] [ h-entry ]">
       {% include "partials/components/post-intro.njk" %}
+      
+      {# Series Navigation #}
+      {% if series %}
+        <div class="inner-wrapper">
+          {% include "partials/components/series-navigation.njk" %}
+        </div>
+      {% endif %}
+      
       <div class="[ post__body ] [ inner-wrapper ] [ leading-loose text-500 ] [ sf-flow ] [ e-content ]">
         {{ content | safe }}
       </div>

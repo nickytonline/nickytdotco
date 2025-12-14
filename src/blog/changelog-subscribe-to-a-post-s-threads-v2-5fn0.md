@@ -2,10 +2,8 @@
 {
   "title": "Changelog: Subscribe to a Post’s Threads v2",
   "excerpt": "You could already subscribe to a post's comments on DEV, but the problem was many community members...",
-  "date": "2020-05-06T09:45:02.025Z",
-  "tags": [
-    "changelog"
-  ],
+  "date": "2020-05-06T09:45:02Z",
+  "tags": "changelog",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F3h4jxtefrd7uaq1c5gos.png",
   "canonical_url": "https://www.nickyt.co/blog/changelog-subscribe-to-a-post-s-threads-v2-5fn0/",
   "reading_time_minutes": 1,

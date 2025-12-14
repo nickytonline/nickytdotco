@@ -2,16 +2,16 @@
 {
   "title": "My 2023 Year in Review",
   "excerpt": "Another year, another year in review. Let's get to it!           Work   2022 ended with layoffs at...",
-  "date": "2024-01-07T00:21:09.797Z",
-  "tags": [
-    "devimpact2023",
-    "career",
-    "yearinreview"
-  ],
+  "date": "2024-01-07T00:21:09Z",
+  "tags": "devimpact2023, career, yearinreview",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbbk01eogj9gi8wfxp3hr.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-2023-year-in-review-33ep/",
   "reading_time_minutes": 7,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Year in Review",
+    "collection_id": 3993
+  }
 }
 ---
 
