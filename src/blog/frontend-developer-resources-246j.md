@@ -12,7 +12,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fd0slehzp7b26buouwz33.png",
   "canonical_url": "https://www.nickyt.co/blog/frontend-developer-resources-246j/",
   "reading_time_minutes": 11,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Series 16050",
+    "collection_id": 16050
+  }
 }
 ---
 

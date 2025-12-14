@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqk9desvu661fsof3htv6.jpg",
   "canonical_url": "https://www.nickyt.co/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template-3k3f/",
   "reading_time_minutes": 6,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Series 33658",
+    "collection_id": 33658
+  }
 }
 ---
 

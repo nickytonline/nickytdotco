@@ -9,7 +9,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
   "canonical_url": "https://www.nickyt.co/blog/why-you-might-want-to-consider-using-typescript-6j3/",
   "reading_time_minutes": 5,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Series 3255",
+    "collection_id": 3255
+  }
 }
 ---
 

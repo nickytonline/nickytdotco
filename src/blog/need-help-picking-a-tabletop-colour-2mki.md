@@ -9,7 +9,11 @@
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/need-help-picking-a-tabletop-colour-2mki/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Series 3242",
+    "collection_id": 3242
+  }
 }
 ---
 

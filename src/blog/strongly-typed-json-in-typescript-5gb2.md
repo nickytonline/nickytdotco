@@ -9,7 +9,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F7sjay11pqa91it8euj0l.png",
   "canonical_url": "https://www.nickyt.co/blog/strongly-typed-json-in-typescript-5gb2/",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Series 3255",
+    "collection_id": 3255
+  }
 }
 ---
 

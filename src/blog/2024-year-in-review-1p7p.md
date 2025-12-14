@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6hff5ikirnjolzbkj1ew.jpg",
   "canonical_url": "https://www.nickyt.co/blog/2024-year-in-review-1p7p/",
   "reading_time_minutes": 6,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Series 3993",
+    "collection_id": 3993
+  }
 }
 ---
 

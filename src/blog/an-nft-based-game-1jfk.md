@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fiezxljfb8pspnqkmea00.jpg",
   "canonical_url": "https://www.nickyt.co/blog/an-nft-based-game-1jfk/",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Series 15087",
+    "collection_id": 15087
+  }
 }
 ---
 
