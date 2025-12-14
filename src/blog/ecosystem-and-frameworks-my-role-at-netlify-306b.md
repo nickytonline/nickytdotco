@@ -2,17 +2,16 @@
 {
   "title": "Ecosystem and Frameworks: My Role at Netlify",
   "excerpt": "I'm curious what frontend frameworks you're all interested in these days? Powerful meta frameworks...",
-  "date": "2022-05-12T03:29:20.000Z",
-  "tags": [
-    "frontend",
-    "javascript",
-    "career",
-    "opensource"
-  ],
+  "date": "2022-05-12T03:29:20Z",
+  "tags": "frontend, javascript, career, opensource",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fw9ynhhbmy7bvh3e4nxnx.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/ecosystem-and-frameworks-my-role-at-netlify-306b",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Career",
+    "collection_id": 4084
+  }
 }
 ---
 

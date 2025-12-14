@@ -2,16 +2,16 @@
 {
   "title": "Pairing with Community Member Jono Yeong",
   "excerpt": "On February 17th, DEV Community member Jono Yeong joined Christina and I on the pairing stream to...",
-  "date": "2021-02-19T19:38:48.199Z",
-  "tags": [
-    "devstream",
-    "pairprogramming",
-    "javascript"
-  ],
+  "date": "2021-02-19T19:38:48Z",
+  "tags": "devstream, pairprogramming, javascript",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8qpteiqv2kmku8wnd5xz.jpg",
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-jono-yeong-3knk/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Live Coding Pairing",
+    "collection_id": 7957
+  }
 }
 ---
 

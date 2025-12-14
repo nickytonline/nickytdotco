@@ -2,13 +2,8 @@
 {
   "title": "HTML Forms: Back to Basics",
   "excerpt": "Let's forget frameworks and libraries for a moment. Today we’re just going to talk about the &lt;form...",
-  "date": "2019-03-28T04:48:20.000Z",
-  "tags": [
-    "dom",
-    "javascript",
-    "html",
-    "beginners"
-  ],
+  "date": "2019-03-28T04:48:20Z",
+  "tags": "dom, javascript, html, beginners",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ftdhxw07gd7gwo6ctib50.png",
   "canonical_url": "https://www.nickyt.co/blog/html-forms-back-to-basics-1mph/",
   "reading_time_minutes": 3,

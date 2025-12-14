@@ -2,16 +2,16 @@
 {
   "title": "I've Started to Live Code on Twitch for DEV",
   "excerpt": "Yesterday, I did my first official live coding on Twitch. If you're interested in following me on Twi...",
-  "date": "2020-04-01T12:54:42.333Z",
-  "tags": [
-    "twitch",
-    "streaming",
-    "livecoding"
-  ],
+  "date": "2020-04-01T12:54:42Z",
+  "tags": "twitch, streaming, livecoding",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F4or5dqsjdsqzf3jfsr7t.png",
   "canonical_url": "https://www.nickyt.co/blog/i-ve-started-to-live-code-on-twitch-for-dev-13cn/",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Streaming",
+    "collection_id": 12666
+  }
 }
 ---
 

@@ -2,17 +2,16 @@
 {
   "title": "Review: Fifine Ampligame AM6 Condenser Mic",
   "excerpt": "Before we get started, please note that Fifine sent me a microphone for this review.          ...",
-  "date": "2024-07-12T03:43:26.660Z",
-  "tags": [
-    "productreview",
-    "microphone",
-    "livestreaming",
-    "contentcreation"
-  ],
+  "date": "2024-07-12T03:43:26Z",
+  "tags": "productreview, microphone, livestreaming, contentcreation",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6dlmk2lkx6s9hzrraq0y.jpg",
   "canonical_url": "https://www.nickyt.co/blog/review-fifine-ampligame-am6-condenser-mic-714/",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Product Reviews",
+    "collection_id": 28027
+  }
 }
 ---
 

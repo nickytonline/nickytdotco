@@ -2,10 +2,8 @@
 {
   "title": "My Hacktoberfest 2019",
   "excerpt": "Originally published at iamdeveloper.com  Like many of you, I am participating in Hacktoberfest as we...",
-  "date": "2019-10-15T01:00:22.650Z",
-  "tags": [
-    "hacktoberfest"
-  ],
+  "date": "2019-10-15T01:00:22Z",
+  "tags": "hacktoberfest",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fp2th95jqhkylbvffrrz0.png",
   "canonical_url": "https://www.nickyt.co/blog/my-hacktoberfest-2019-32i2/",
   "reading_time_minutes": 1,

@@ -2,11 +2,8 @@
 {
   "title": "Ink: React for CLIs",
   "excerpt": "This one is short and sweet.  Are you familiar with React? Then you know Ink. I haven't tried this...",
-  "date": "2019-03-09T21:34:54.000Z",
-  "tags": [
-    "react",
-    "cli"
-  ],
+  "date": "2019-03-09T21:34:54Z",
+  "tags": "react, cli",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fewrl8i5l3v9avgxpocjc.jpg",
   "canonical_url": "https://www.nickyt.co/blog/ink-react-for-clis-2l3b/",
   "reading_time_minutes": 1,

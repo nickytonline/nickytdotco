@@ -2,11 +2,8 @@
 {
   "title": "I started a newsletter!",
   "excerpt": "I've decided to start a newsletter!  Yes, I know. Many folks do newsletters already, but I post a...",
-  "date": "2021-06-12T05:03:32.821Z",
-  "tags": [
-    "news",
-    "webdev"
-  ],
+  "date": "2021-06-12T05:03:32Z",
+  "tags": "news, webdev",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3wu8ld8pjl64goxmb6ay.jpg",
   "canonical_url": "https://www.nickyt.co/blog/i-started-a-newsletter-3g8d/",
   "reading_time_minutes": 1,

@@ -2,11 +2,8 @@
 {
   "title": "Have a Handy JS Snippet You Want to Share?",
   "excerpt": "Quick ES5/ES6 snippets for doing awesome things in Javascript.",
-  "date": "2018-01-23T01:07:14.326Z",
-  "tags": [
-    "javascript",
-    "showdev"
-  ],
+  "date": "2018-01-23T01:07:14Z",
+  "tags": "javascript, showdev",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fc2.staticflickr.com%2F8%2F7282%2F8995095069_9e88b3bba5_b.jpg",
   "canonical_url": "https://www.nickyt.co/blog/handy-js-snippets-352f/",
   "reading_time_minutes": 2,

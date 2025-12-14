@@ -2,17 +2,16 @@
 {
   "title": "Pairing with Community Manager Christina Gorton",
   "excerpt": "On March 14th, DEV Community manager Christina joined me on the pairing stream to talk about Cypress...",
-  "date": "2021-04-21T16:34:31.210Z",
-  "tags": [
-    "devstream",
-    "pairprogramming",
-    "testing",
-    "javascript"
-  ],
+  "date": "2021-04-21T16:34:31Z",
+  "tags": "devstream, pairprogramming, testing, javascript",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs5r46f0hchn0bwqb6da9.jpg",
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-manager-christina-gorton-4537/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Live Coding Pairing",
+    "collection_id": 7957
+  }
 }
 ---
 

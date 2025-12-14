@@ -2,16 +2,16 @@
 {
   "title": "TypeScript Tips Part II: Declaration Merging",
   "excerpt": "Declaration merging has been around for a while now in TypeScript. In a nutshell it lets you merge...",
-  "date": "2019-02-12T02:45:09.000Z",
-  "tags": [
-    "typescript",
-    "webdev",
-    "frontend"
-  ],
+  "date": "2019-02-12T02:45:09Z",
+  "tags": "typescript, webdev, frontend",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ftx8rjo1ef8rdzwwfmhqe.jpg",
   "canonical_url": "https://www.nickyt.co/blog/typescript-tips-part-ii-declaration-merging-5gba/",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "typescript",
+    "collection_id": 3255
+  }
 }
 ---
 

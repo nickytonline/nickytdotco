@@ -2,16 +2,16 @@
 {
   "title": "My Talk on React Storybook at the js-montreal Meetup",
   "excerpt": "My talk at the June 13th, 2017 js-montreal meetup slides are available at...",
-  "date": "2017-06-27T03:00:00.000Z",
-  "tags": [
-    "storybook",
-    "react",
-    "talks"
-  ],
+  "date": "2017-06-27T03:00:00Z",
+  "tags": "storybook, react, talks",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F7ss87wh6suac1t8n4gz6.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-talk-on-react-storybook-at-the-js-montreal-meetup-2598/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Storybook",
+    "collection_id": 4085
+  }
 }
 ---
 

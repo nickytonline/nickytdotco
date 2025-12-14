@@ -2,17 +2,16 @@
 {
   "title": "Unlocking the Power of HTML's Native Browser Dialog Element",
   "excerpt": "All the major browsers now support the &lt;dialog &gt; element. Why add this HTML element? User land...",
-  "date": "2024-01-23T15:32:20.475Z",
-  "tags": [
-    "html",
-    "javascript",
-    "a11y",
-    "css"
-  ],
+  "date": "2024-01-23T15:32:20Z",
+  "tags": "html, javascript, a11y, css",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F1fy48qlmq4k5ls340il1.jpg",
   "canonical_url": "https://opensauced.pizza/docs/community-resources/the-native-browser-dialog-element/",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Fullstack Learnings",
+    "collection_id": 26157
+  }
 }
 ---
 

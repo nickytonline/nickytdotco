@@ -2,16 +2,16 @@
 {
   "title": "TypeScript: Infer Types to Avoid Explicit Types",
   "excerpt": "The idea for this post came about while I was reviewing this pull request (PR) for OpenSauced.       ...",
-  "date": "2023-11-21T04:59:47.514Z",
-  "tags": [
-    "typescript",
-    "beginners",
-    "react"
-  ],
+  "date": "2023-11-21T04:59:47Z",
+  "tags": "typescript, beginners, react",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Flijgw6h1zjd18tliwifs.png",
   "canonical_url": "https://www.nickyt.co/blog/infer-types-to-avoid-explicit-types-1pnn",
   "reading_time_minutes": 5,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "typescript",
+    "collection_id": 3255
+  }
 }
 ---
 

@@ -2,17 +2,16 @@
 {
   "title": "Migrating from Jest to Vitest for your React Application",
   "excerpt": "Are you looking to migrate from Jest to Vitest for your React application? Look no further.  I...",
-  "date": "2023-12-14T08:00:00.000Z",
-  "tags": [
-    "testing",
-    "react",
-    "vitest",
-    "typescript"
-  ],
+  "date": "2023-12-14T08:00:00Z",
+  "tags": "testing, react, vitest, typescript",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
   "canonical_url": "https://opensauced.pizza/docs/community-resources/migrating-from-jest-to-vitest-for-your-react-application/",
   "reading_time_minutes": 4,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Fullstack Learnings",
+    "collection_id": 26157
+  }
 }
 ---
 

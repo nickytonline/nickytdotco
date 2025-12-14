@@ -2,14 +2,16 @@
 {
   "title": "My 2020 Year in Review",
   "excerpt": "2020, it’s been a year. It’s been tough on a lot of folks. I’m a pretty upbeat person, but even I...",
-  "date": "2020-12-31T13:50:55.432Z",
-  "tags": [
-    "yearinreview"
-  ],
+  "date": "2020-12-31T13:50:55Z",
+  "tags": "yearinreview",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F1a5umajlfyh8j9g4ngms.png",
   "canonical_url": "https://www.nickyt.co/blog/my-2020-year-in-review-1p17/",
   "reading_time_minutes": 6,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Year in Review",
+    "collection_id": 3993
+  }
 }
 ---
 

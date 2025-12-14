@@ -2,12 +2,8 @@
 {
   "title": "I Switched Shell History Tools. Here's Why",
   "excerpt": "Your shell's history search is probably slowing you down more than you realize. Whether you're...",
-  "date": "2025-12-04T13:19:35.297Z",
-  "tags": [
-    "cli",
-    "productivity",
-    "tooling"
-  ],
+  "date": "2025-12-04T13:19:35Z",
+  "tags": "cli, productivity, tooling",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fkjfs09ax3ol5b0nu4yoi.jpg",
   "canonical_url": "https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-why-m6h",
   "reading_time_minutes": 6,

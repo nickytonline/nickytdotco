@@ -2,16 +2,16 @@
 {
   "title": "I’m joining Pomerium!",
   "excerpt": "New year, new role!  Today is my first day at Pomerium. I'm joining the team as their Developer...",
-  "date": "2025-01-13T05:01:00.000Z",
-  "tags": [
-    "career",
-    "zerotrust",
-    "devrel"
-  ],
+  "date": "2025-01-13T05:01:00Z",
+  "tags": "career, zerotrust, devrel",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ft06a4y9aqo40lv0bpl0z.png",
   "canonical_url": "https://www.nickyt.co/blog/im-joining-pomerium-225j/",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Career",
+    "collection_id": 4084
+  }
 }
 ---
 
