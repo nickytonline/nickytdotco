@@ -78,12 +78,6 @@
   }
 }
 
-// Collapsed state for long series (shows "... N more parts ...")
-.series-item--collapsed {
-  color: var(--color-text-muted, #6b7280);
-  font-style: italic;
-}
-
 .series-badge--collapsed {
   background-color: transparent;
   color: var(--color-text-muted, #6b7280);
