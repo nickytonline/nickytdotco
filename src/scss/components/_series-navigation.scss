@@ -2,27 +2,18 @@
 // Displays series information and navigation matching dev.to style
 
 .series-navigation {
-  background-color: get-color('light');
-  border: 1px solid get-color('mid');
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-stroke);
   border-radius: get-size(300);
   padding: get-size(700);
   margin: get-size(900) 0;
-
-  @include apply-utility('dark-mode') {
-    background-color: get-color('dark-glare');
-    border-color: get-color('dark');
-  }
 }
 
 .series-header {
   font-size: get-size(600);
   font-weight: 700;
-  color: get-color('theme-primary');
+  color: var(--color-theme-primary);
   margin: 0 0 get-size(700) 0;
-
-  @include apply-utility('dark-mode') {
-    color: get-color('theme-primary-glare');
-  }
 }
 
 .series-list {
@@ -50,23 +41,13 @@
   justify-content: center;
   font-size: get-size(300);
   font-weight: 600;
-  background-color: get-color('mid');
-  color: get-color('dark');
-
-  @include apply-utility('dark-mode') {
-    background-color: get-color('dark');
-    color: get-color('light');
-  }
+  background-color: var(--color-stroke);
+  color: var(--color-text);
 }
 
 .series-badge--current {
-  background-color: get-color('theme-primary');
+  background-color: var(--color-theme-primary);
   color: white;
-
-  @include apply-utility('dark-mode') {
-    background-color: get-color('theme-primary-glare');
-    color: get-color('dark');
-  }
 }
 
 .series-content {
@@ -82,31 +63,18 @@
 }
 
 .series-title--current {
-  color: get-color('theme-primary');
+  color: var(--color-theme-primary);
   font-weight: 600;
-
-  @include apply-utility('dark-mode') {
-    color: get-color('theme-primary-glare');
-  }
 }
 
 .series-title--link {
-  color: get-color('text');
+  color: var(--color-text);
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: get-color('theme-primary');
+    color: var(--color-theme-primary);
     text-decoration: underline;
-  }
-
-  @include apply-utility('dark-mode') {
-    color: get-color('light');
-
-    &:hover,
-    &:focus {
-      color: get-color('theme-primary-glare');
-    }
   }
 }
 
@@ -115,15 +83,11 @@
   justify-content: space-between;
   margin-top: get-size(700);
   padding-top: get-size(700);
-  border-top: 1px solid get-color('mid');
-
-  @include apply-utility('dark-mode') {
-    border-color: get-color('dark');
-  }
+  border-top: 1px solid var(--color-stroke);
 }
 
 .series-nav-link {
-  color: get-color('theme-primary');
+  color: var(--color-theme-primary);
   text-decoration: none;
   font-weight: 500;
   font-size: get-size(300);
@@ -131,10 +95,6 @@
   &:hover,
   &:focus {
     text-decoration: underline;
-  }
-
-  @include apply-utility('dark-mode') {
-    color: get-color('theme-primary-glare');
   }
 }
 
