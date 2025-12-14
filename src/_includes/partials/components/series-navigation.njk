@@ -1,0 +1,63 @@
+{# Series Navigation Component
+   Displays all posts in a series with current post highlighted
+   Matches dev.to visual style
+#}
+
+{% if series %}
+  {# Get all posts in this series, sorted by date #}
+  {% set seriesPosts = collections.posts | seriesFilter(series) | sort(attribute='date') %}
+  
+  {% if seriesPosts.length > 1 %}
+    <nav class="series-navigation" aria-label="Series navigation" role="navigation">
+      <h2 class="series-header">
+        {{ series | seriesName }} ({{ seriesPosts.length }} Part Series)
+      </h2>
+      
+      <ol class="series-list" role="list">
+        {% for post in seriesPosts %}
+          {% set postIndex = loop.index %}
+          {% set isCurrent = (post.url == page.url) %}
+          
+          <li class="series-item {% if isCurrent %}series-item--current{% endif %}" role="listitem">
+            <span class="series-badge {% if isCurrent %}series-badge--current{% endif %}" aria-hidden="true">
+              {{ postIndex }}
+            </span>
+            
+            <div class="series-content">
+              {% if isCurrent %}
+                <span class="series-title series-title--current">
+                  {{ post.data.title }}
+                </span>
+                <span class="sr-only">(current post)</span>
+              {% else %}
+                <a href="{{ post.url }}" class="series-title series-title--link">
+                  {{ post.data.title | truncate(80) }}
+                </a>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+      
+      {# Optional: Previous/Next navigation #}
+      {% set currentIndex = seriesPosts | findIndex(page.url) %}
+      {% if currentIndex > 0 or currentIndex < seriesPosts.length - 1 %}
+        <div class="series-nav">
+          {% if currentIndex > 0 %}
+            {% set prevPost = seriesPosts[currentIndex - 1] %}
+            <a href="{{ prevPost.url }}" class="series-nav-link series-nav-link--prev">
+              ← Previous in series
+            </a>
+          {% endif %}
+          
+          {% if currentIndex < seriesPosts.length - 1 %}
+            {% set nextPost = seriesPosts[currentIndex + 1] %}
+            <a href="{{ nextPost.url }}" class="series-nav-link series-nav-link--next">
+              Next in series →
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </nav>
+  {% endif %}
+{% endif %}

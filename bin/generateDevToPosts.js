@@ -11,9 +11,13 @@ const SLUG_INCLUSION_LIST = require("./slugInclusionList.json");
 const DEV_TO_API_URL = "https://dev.to/api";
 
 // Series ID to Name mapping (manual curation for known series)
+// To find your series:
+// 1. Visit https://dev.to/nickytonline/series
+// 2. Click on a series to see its URL: https://dev.to/nickytonline/series/XXXXX
+// 3. Add the series ID (XXXXX) and name below
 const SERIES_NAMES = {
   34295: "Advent of AI 2025",
-  // Add more as discovered
+  // Add more as you discover them
 };
 const POSTS_DIRECTORY = path.join(__dirname, "../src/blog");
 const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, "../src/vscodetips");
