@@ -1,100 +1,181 @@
 {# Series Navigation Component
    Displays all posts in a series with current post highlighted
-   Matches dev.to visual style
 #}
 
 {% if series %}
-  {# Get all posts in this series, sorted by date #}
   {% set seriesPosts = collections.posts | seriesFilter(series) | sort(attribute='date') %}
 
   {% if seriesPosts.length > 1 %}
-    <nav class="series-navigation" aria-label="Series navigation" role="navigation">
-      <h2>
-        {{ series | seriesName }}
-      </h2>
+    {# Build a reliable array #}
+    {% set seriesPostsArr = [] %}
+    {% for p in seriesPosts %}
+      {% set _ = seriesPostsArr.push(p) %}
+    {% endfor %}
 
-<ol class="series-list" role="list">
-  {% set seriesPostsArr = [] %}
-  {% for p in seriesPosts %}
-    {% set _ = seriesPostsArr.push(p) %}
-  {% endfor %}
-  {% if seriesPostsArr.length > 4 %}
-    {# First 2 #}
-    {% for post in seriesPostsArr.slice(0, 2) %}
-      {% set i = loop.index0 %}
-      {% set isCurrent = (post.url == page.url) %}
-      <li class="series-item {% if isCurrent %}series-item--current{% endif %}" role="listitem">
-        <span class="series-badge {% if isCurrent %}series-badge--current{% endif %}" aria-hidden="true">{{ i + 1 }}</span>
-        <div class="series-content">
-        {% if isCurrent %}
-          <span class="series-title series-title--current">{{ post.data.title }}</span>
-          <span class="sr-only">(current post)</span>
-        {% else %}
-          <a href="{{ post.url }}" class="series-title series-title--link">{{ post.data.title | truncate(80) }}</a>
-        {% endif %}
-        </div>
-      </li>
-    {% endfor %}
-    <li class="series-item" role="listitem" aria-hidden="true">
-      <span class="series-badge series-badge--collapsed">…</span>
-      <span class="series-collapsed-text">
-        {{ seriesPostsArr.length - 4 }} more parts
-      </span>
-    </li>
-    {# Last 2 #}
-    {% for post in seriesPostsArr.slice(-2) %}
-      {% set i = seriesPostsArr.length - 2 + loop.index0 %}
-      {% set isCurrent = (post.url == page.url) %}
-      <li class="series-item {% if isCurrent %}series-item--current{% endif %}" role="listitem">
-        <span class="series-badge {% if isCurrent %}series-badge--current{% endif %}" aria-hidden="true">{{ i + 1 }}</span>
-        <div class="series-content">
-        {% if isCurrent %}
-          <span class="series-title series-title--current">{{ post.data.title }}</span>
-          <span class="sr-only">(current post)</span>
-        {% else %}
-          <a href="{{ post.url }}" class="series-title series-title--link">{{ post.data.title | truncate(80) }}</a>
-        {% endif %}
-        </div>
-      </li>
-    {% endfor %}
-  {% else %}
+    {# Find current index #}
+    {% set currentIndex = -1 %}
     {% for post in seriesPostsArr %}
-      {% set i = loop.index0 %}
-      {% set isCurrent = (post.url == page.url) %}
-      <li class="series-item {% if isCurrent %}series-item--current{% endif %}" role="listitem">
-        <span class="series-badge {% if isCurrent %}series-badge--current{% endif %}" aria-hidden="true">{{ i + 1 }}</span>
-        <div class="series-content">
-        {% if isCurrent %}
-          <span class="series-title series-title--current">{{ post.data.title }}</span>
-          <span class="sr-only">(current post)</span>
-        {% else %}
-          <a href="{{ post.url }}" class="series-title series-title--link">{{ post.data.title | truncate(80) }}</a>
-        {% endif %}
-        </div>
-      </li>
-    {% endfor %}
-  {% endif %}
-</ol>
-
-      {# Optional: Previous/Next navigation #}
-      {% set currentIndex = seriesPosts | findIndex(page.url) %}
-      {% if currentIndex > 0 or currentIndex < seriesPosts.length - 1 %}
-        <div class="series-nav">
-          {% if currentIndex > 0 %}
-            {% set prevPost = seriesPosts[currentIndex - 1] %}
-            <a href="{{ prevPost.url }}" class="series-nav-link series-nav-link--prev">
-              ← Previous in series
-            </a>
-          {% endif %}
-
-          {% if currentIndex < seriesPosts.length - 1 %}
-            {% set nextPost = seriesPosts[currentIndex + 1] %}
-            <a href="{{ nextPost.url }}" class="series-nav-link series-nav-link--next">
-              Next in series →
-            </a>
-          {% endif %}
-        </div>
+      {% if post.url == page.url %}
+        {% set currentIndex = loop.index0 %}
       {% endif %}
-    </nav>
+    {% endfor %}
+
+    {% set hasMiddle = seriesPostsArr.length > 4 %}
+    {% set shouldStartExpanded =
+      hasMiddle and
+      currentIndex >= 2 and
+      currentIndex <= seriesPostsArr.length - 3
+    %}
+
+    <aside class="series-navigation">
+      <nav aria-label="Series navigation" role="navigation">
+        <h2>{{ series | seriesName }}</h2>
+
+        <ol
+          id="series-list-{{ series | slug }}"
+          class="series-list{% if shouldStartExpanded %} is-expanded{% endif %}"
+          role="list"
+          data-series-list
+        >
+          {% if hasMiddle %}
+
+            {# First 2 items #}
+            {% for post in seriesPostsArr.slice(0, 2) %}
+              {% set i = loop.index0 %}
+              {% set isCurrent = (post.url == page.url) %}
+              <li class="series-item{% if isCurrent %} series-item--current{% endif %}" role="listitem">
+                <span class="series-badge{% if isCurrent %} series-badge--current{% endif %}" aria-hidden="true">
+                  {{ i + 1 }}
+                </span>
+                <div class="series-content">
+                  {% if isCurrent %}
+                    <span class="series-title series-title--current">{{ post.data.title }}</span>
+                    <span class="sr-only">(current post)</span>
+                  {% else %}
+                    <a href="{{ post.url }}" class="series-title series-title--link">
+                      {{ post.data.title | truncate(80) }}
+                    </a>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+
+            {# Expand toggle #}
+            {% set middleCount = seriesPostsArr.length - 4 %}
+            <li class="series-item series-item--toggle" role="listitem">
+              <span class="series-badge series-badge--collapsed" aria-hidden="true">…</span>
+              <button
+                type="button"
+                class="series-toggle"
+                aria-expanded="{% if shouldStartExpanded %}true{% else %}false{% endif %}"
+                aria-controls="series-list-{{ series | slug }}"
+                data-series-toggle
+              >
+                {{ middleCount }} more parts…
+              </button>
+            </li>
+
+            {# Middle items #}
+            {% for post in seriesPostsArr.slice(2, -2) %}
+              {% set i = 2 + loop.index0 %}
+              {% set isCurrent = (post.url == page.url) %}
+              <li class="series-item series-item--middle{% if isCurrent %} series-item--current{% endif %}" role="listitem">
+                <span class="series-badge{% if isCurrent %} series-badge--current{% endif %}" aria-hidden="true">
+                  {{ i + 1 }}
+                </span>
+                <div class="series-content">
+                  {% if isCurrent %}
+                    <span class="series-title series-title--current">{{ post.data.title }}</span>
+                    <span class="sr-only">(current post)</span>
+                  {% else %}
+                    <a href="{{ post.url }}" class="series-title series-title--link">
+                      {{ post.data.title | truncate(80) }}
+                    </a>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+
+            {# Last 2 items #}
+            {% for post in seriesPostsArr.slice(-2) %}
+              {% set i = seriesPostsArr.length - 2 + loop.index0 %}
+              {% set isCurrent = (post.url == page.url) %}
+              <li class="series-item{% if isCurrent %} series-item--current{% endif %}" role="listitem">
+                <span class="series-badge{% if isCurrent %} series-badge--current{% endif %}" aria-hidden="true">
+                  {{ i + 1 }}
+                </span>
+                <div class="series-content">
+                  {% if isCurrent %}
+                    <span class="series-title series-title--current">{{ post.data.title }}</span>
+                    <span class="sr-only">(current post)</span>
+                  {% else %}
+                    <a href="{{ post.url }}" class="series-title series-title--link">
+                      {{ post.data.title | truncate(80) }}
+                    </a>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+
+          {% else %}
+
+            {# 4 or fewer items #}
+            {% for post in seriesPostsArr %}
+              {% set i = loop.index0 %}
+              {% set isCurrent = (post.url == page.url) %}
+              <li class="series-item{% if isCurrent %} series-item--current{% endif %}" role="listitem">
+                <span class="series-badge{% if isCurrent %} series-badge--current{% endif %}" aria-hidden="true">
+                  {{ i + 1 }}
+                </span>
+                <div class="series-content">
+                  {% if isCurrent %}
+                    <span class="series-title series-title--current">{{ post.data.title }}</span>
+                    <span class="sr-only">(current post)</span>
+                  {% else %}
+                    <a href="{{ post.url }}" class="series-title series-title--link">
+                      {{ post.data.title | truncate(80) }}
+                    </a>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+
+          {% endif %}
+        </ol>
+
+        {# Prev / Next links #}
+        {% if currentIndex > 0 or currentIndex < seriesPostsArr.length - 1 %}
+          <div class="series-nav">
+            {% if currentIndex > 0 %}
+              <a href="{{ seriesPostsArr[currentIndex - 1].url }}" class="series-nav-link series-nav-link--prev">
+                ← Previous in series
+              </a>
+            {% endif %}
+
+            {% if currentIndex < seriesPostsArr.length - 1 %}
+              <a href="{{ seriesPostsArr[currentIndex + 1].url }}" class="series-nav-link series-nav-link--next">
+                Next in series →
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </nav>
+    </aside>
+
+    <script>
+      (function () {
+        document.addEventListener("click", function (e) {
+          var btn = e.target.closest("[data-series-toggle]");
+          if (!btn) return;
+
+          var list = btn.closest("[data-series-list]");
+          if (!list) return;
+
+          var expanded = list.classList.toggle("is-expanded");
+          btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+        });
+      })();
+    </script>
+
   {% endif %}
 {% endif %}
