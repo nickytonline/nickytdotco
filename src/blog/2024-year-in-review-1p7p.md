@@ -2,18 +2,14 @@
 {
   "title": "My 2024 Year in Review",
   "excerpt": "Not gonna lie, 2024 was a wild ride.           OpenSauced   Starting 2024 was my fourth month at...",
-  "date": "2024-12-27T15:32:49.481Z",
-  "tags": [
-    "yearinreview",
-    "career",
-    "devimpact2024"
-  ],
+  "date": "2024-12-27T15:32:49Z",
+  "tags": "yearinreview, career, devimpact2024",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6hff5ikirnjolzbkj1ew.jpg",
   "canonical_url": "https://www.nickyt.co/blog/2024-year-in-review-1p7p/",
   "reading_time_minutes": 6,
   "template": "post",
   "series": {
-    "name": "Series 3993",
+    "name": "Year in Review",
     "collection_id": 3993
   }
 }

@@ -2,12 +2,8 @@
 {
   "title": "Advent of AI 2025 - Day 2: Building a Winter Festival Game",
   "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-03T05:26:22.899Z",
-  "tags": [
-    "goose",
-    "ai",
-    "adventofai"
-  ],
+  "date": "2025-12-03T05:26:22Z",
+  "tags": "goose, ai, adventofai",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Famqldnu25g4s3gf35vbq.jpg",
   "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-2-building-a-winter-festival-game-41eg/",
   "reading_time_minutes": 3,

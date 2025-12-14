@@ -2,17 +2,14 @@
 {
   "title": "BenQ RD280U Review: A 28\" 4K Monitor Built for Developers",
   "excerpt": "BenQ sent me this monitor for review, but these are my honest thoughts after a few weeks of...",
-  "date": "2025-04-13T18:02:52.478Z",
-  "tags": [
-    "productivity",
-    "review"
-  ],
+  "date": "2025-04-13T18:02:52Z",
+  "tags": "productivity, review",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzgzfxqtvii1g0mbjixqs.png",
   "canonical_url": "https://www.nickyt.co/blog/benq-rd280u-review-a-28-4k-monitor-built-for-developers-20d2/",
   "reading_time_minutes": 4,
   "template": "post",
   "series": {
-    "name": "Series 28027",
+    "name": "Product Reviews",
     "collection_id": 28027
   }
 }

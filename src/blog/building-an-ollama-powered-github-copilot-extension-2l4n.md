@@ -2,19 +2,14 @@
 {
   "title": "Building an Ollama-Powered GitHub Copilot Extension",
   "excerpt": "A few months ago, I wrote about creating your first GitHub Copilot extension, and later discussed...",
-  "date": "2025-01-06T06:00:00.000Z",
-  "tags": [
-    "github",
-    "githubcopilot",
-    "ai",
-    "ollama"
-  ],
+  "date": "2025-01-06T06:00:00Z",
+  "tags": "github, githubcopilot, ai, ollama",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbqqfkgfvu6dluc214l1h.jpg",
   "canonical_url": "https://www.nickyt.co/blog/building-an-ollama-powered-github-copilot-extension-2l4n/",
   "reading_time_minutes": 5,
   "template": "post",
   "series": {
-    "name": "Series 29975",
+    "name": "GitHub Copilot",
     "collection_id": 29975
   }
 }

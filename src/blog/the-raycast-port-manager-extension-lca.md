@@ -2,12 +2,8 @@
 {
   "title": "The RayCast Port Manager Extension",
   "excerpt": "If you aren’t a Raycast user, definitely check it out. I was a fan of Alfred for years, but moved to...",
-  "date": "2025-02-06T22:08:30.132Z",
-  "tags": [
-    "raycast",
-    "productivity",
-    "tooling"
-  ],
+  "date": "2025-02-06T22:08:30Z",
+  "tags": "raycast, productivity, tooling",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbm89rrn9i2ut38zkzm0r.jpg",
   "canonical_url": "https://one-tip-a-week.beehiiv.com/p/one-tip-a-week-the-raycast-port-manager-extension",
   "reading_time_minutes": 2,

@@ -11,11 +11,7 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjmo1ghh4bvxzuuog6w8p.jpg",
   "canonical_url": "https://www.nickyt.co/blog/i-started-a-javascript-stream-on-twitch-4f3g/",
   "reading_time_minutes": 1,
-  "template": "post",
-  "series": {
-    "name": "Series 12666",
-    "collection_id": 12666
-  }
+  "template": "post"
 }
 ---
 

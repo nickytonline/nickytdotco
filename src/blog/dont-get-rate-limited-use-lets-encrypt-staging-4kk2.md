@@ -2,13 +2,8 @@
 {
   "title": "Don't Get Rate-Limited: Use Let's Encrypt Staging",
   "excerpt": "While getting Pomerium Core set up this week for a demo, I ran into Let's Encrypt rate limits. Here’s...",
-  "date": "2025-06-16T05:00:00.000Z",
-  "tags": [
-    "letsencrypt",
-    "security",
-    "tls",
-    "devops"
-  ],
+  "date": "2025-06-16T05:00:00Z",
+  "tags": "letsencrypt, security, tls, devops",
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzrt2ye5wwpszvceepugs.jpg",
   "canonical_url": "https://www.nickyt.co/blog/dont-get-rate-limited-use-lets-encrypt-staging-4kk2",
   "reading_time_minutes": 3,

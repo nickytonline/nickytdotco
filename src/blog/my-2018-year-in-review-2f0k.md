@@ -9,11 +9,7 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ftu12q4khv30zeubo2jw7.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-2018-year-in-review-2f0k/",
   "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Series 3993",
-    "collection_id": 3993
-  }
+  "template": "post"
 }
 ---
 

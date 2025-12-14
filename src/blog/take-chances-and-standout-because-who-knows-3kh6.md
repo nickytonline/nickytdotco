@@ -11,11 +11,7 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffgimfk93vbdn6v0csx5e.jpg",
   "canonical_url": "https://www.nickyt.co/blog/take-chances-and-standout-because-who-knows-3kh6/",
   "reading_time_minutes": 5,
-  "template": "post",
-  "series": {
-    "name": "Series 4084",
-    "collection_id": 4084
-  }
+  "template": "post"
 }
 ---
 

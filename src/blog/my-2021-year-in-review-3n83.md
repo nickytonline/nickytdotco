@@ -9,11 +9,7 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F1fgj6dfj33nd55i17c9c.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/my-2021-year-in-review-3n83/",
   "reading_time_minutes": 5,
-  "template": "post",
-  "series": {
-    "name": "Series 3993",
-    "collection_id": 3993
-  }
+  "template": "post"
 }
 ---
 
