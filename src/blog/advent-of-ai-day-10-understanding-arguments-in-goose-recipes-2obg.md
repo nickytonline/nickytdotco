@@ -9,7 +9,7 @@
     "goose"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyiep87c899gtgoh8jxmh.jpg",
-  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg/",
   "reading_time_minutes": 6,
   "template": "post"
 }
@@ -296,12 +296,10 @@ Until the next one!
 
 ---
 
-**Resources:**
+Resources:
 - [Advent of AI - Day 10 Challenge](https://adventofai.dev/challenges/10)
 - [Goose Recipe Guide](https://block.github.io/goose/docs/recipes/)
 - [Recipe Parameters Documentation](https://block.github.io/goose/docs/recipes/parameters)
 - [Jinja2 Templating](https://jinja.palletsprojects.com/)
-
-Photo by [David Pisnoy](https://unsplash.com/@davidpisnoy) on [Unsplash](https://unsplash.com)
 
 Photo by <a href="https://unsplash.com/@sxoxm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sven Mieke</a> on <a href="https://unsplash.com/photos/brown-pencil-on-white-printing-paper-fteR0e2BzKo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
