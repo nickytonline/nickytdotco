@@ -10,15 +10,97 @@ const SLUG_INCLUSION_LIST = require("./slugInclusionList.json");
 
 const DEV_TO_API_URL = "https://dev.to/api";
 
-// Series ID to Name mapping (manual curation for known series)
-// To find your series:
-// 1. Visit https://dev.to/nickytonline/series
-// 2. Click on a series to see its URL: https://dev.to/nickytonline/series/XXXXX
-// 3. Add the series ID (XXXXX) and name below
-const SERIES_NAMES = {
-  34295: "Advent of AI 2025",
-  // Add more as you discover them
-};
+// Auto-generated series name mapping, persisted in series-names.js
+// This object is updated at runtime and written to disk when new series are discovered.
+const SERIES_MAP_PATH = path.join(__dirname, "series-names.js");
+
+// Load existing series names from the persisted file
+let SERIES_NAMES = {};
+try {
+  SERIES_NAMES = require(SERIES_MAP_PATH);
+} catch (_e) {
+  // File doesn't exist yet or is empty; start with empty object
+  SERIES_NAMES = {};
+}
+
+/**
+ * Decodes HTML entities in a string.
+ * @param {string} text - Text with HTML entities
+ * @returns {string} Decoded text
+ */
+function decodeHtmlEntities(text) {
+  return text
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(dec))
+    .replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'");
+}
+
+/**
+ * Fetches series name from dev.to series page and persists the mapping.
+ * Uses native Node.js fetch (v18+).
+ *
+ * @param {number} collectionId - The dev.to collection ID
+ * @param {string} fallbackTitle - Fallback title (e.g., article title) if fetch fails
+ * @param {string} username - dev.to username
+ * @returns {Promise<string>} Series name
+ */
+async function getOrFetchSeriesName(collectionId, fallbackTitle, username = "nickytonline") {
+  // Return cached/mapped value if available
+  if (SERIES_NAMES[collectionId]) {
+    return SERIES_NAMES[collectionId];
+  }
+
+  // Fetch the series page from dev.to
+  const url = `https://dev.to/${username}/series/${collectionId}`;
+  try {
+    const resp = await fetchWithRetry(url);
+    if (!resp.ok) {
+      console.warn(`  ⚠️  Could not fetch series page for ID ${collectionId} (status ${resp.status}).`);
+      return fallbackTitle || `Series ${collectionId}`;
+    }
+    const html = await resp.text();
+    // Parse the <h1> which contains the series name
+    const match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    let title = match ? match[1].trim() : null;
+
+    // Remove any nested HTML tags from title
+    if (title) {
+      title = title.replace(/<[^>]+>/g, "").trim();
+    }
+
+    // Decode HTML entities
+    if (title) {
+      title = decodeHtmlEntities(title);
+    }
+
+    // Remove " Series' Articles" suffix that dev.to adds to the page title
+    if (title) {
+      title = title.replace(/\s*Series['']s?\s*Articles$/i, "").trim();
+    }
+
+    if (!title) {
+      title = fallbackTitle || `Series ${collectionId}`;
+    }
+
+    // Update in-memory mapping
+    SERIES_NAMES[collectionId] = title;
+
+    // Persist to file
+    const data = `// Auto-generated. Do not edit manually!\nmodule.exports = ${JSON.stringify(SERIES_NAMES, null, 2)};\n`;
+    await fs.writeFile(SERIES_MAP_PATH, data);
+    console.log(`  ✏️  Discovered new series: ${collectionId} = "${title}"`);
+
+    return title;
+  } catch (error) {
+    console.warn(`  ⚠️  Error fetching series ${collectionId}: ${error.message}`);
+    return fallbackTitle || `Series ${collectionId}`;
+  }
+}
 const POSTS_DIRECTORY = path.join(__dirname, "../src/blog");
 const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, "../src/vscodetips");
 const POSTS_IMAGES_PUBLIC_DIRECTORY = "/images/posts";
@@ -127,36 +209,7 @@ function isValidPost(post) {
   );
 }
 
-/**
- * Gets the series name from collection_id or infers from title
- * @param {number} collection_id - The dev.to collection ID
- * @param {string} title - The article title
- * @returns {string} Series name
- */
-function getSeriesName(collection_id, title) {
-  // Check manual mapping first
-  if (SERIES_NAMES[collection_id]) {
-    return SERIES_NAMES[collection_id];
-  }
-  
-  // Try to extract from title pattern: "Series Name - Part/Day/Episode X: ..."
-  const patterns = [
-    /^(.+?)\s*-\s*(?:Part|Day|Episode)\s*\d+/i,
-    /^(.+?)\s*\(Part\s*\d+\)/i,
-    /^(.+?)\s*#\d+/i,
-  ];
-  
-  for (const pattern of patterns) {
-    const match = title.match(pattern);
-    if (match) {
-      return match[1].trim();
-    }
-  }
-  
-  // Fallback: use collection ID
-  console.warn(`Could not infer series name for collection ${collection_id}, title: "${title}"`);
-  return `Series ${collection_id}`;
-}
+
 
 /*
 
@@ -187,7 +240,12 @@ async function sleep(ms) {
 /**
  * Helper function to fetch with retry/backoff on 429 errors.
  */
-async function fetchWithRetry(url, options = {}, maxRetries = 5, initialDelay = 2000) {
+async function fetchWithRetry(
+  url,
+  options = {},
+  maxRetries = 5,
+  initialDelay = 2000,
+) {
   let attempt = 0;
   let delay = initialDelay;
   while (attempt <= maxRetries) {
@@ -198,15 +256,19 @@ async function fetchWithRetry(url, options = {}, maxRetries = 5, initialDelay = 
     // Rate limited
     attempt++;
     if (attempt > maxRetries) {
-      throw new Error(`Failed after ${maxRetries} retries due to rate limiting (429)`);
+      throw new Error(
+        `Failed after ${maxRetries} retries due to rate limiting (429)`,
+      );
     }
-    const retryAfter = response.headers.get('Retry-After');
+    const retryAfter = response.headers.get("Retry-After");
     const waitTime = retryAfter ? parseInt(retryAfter, 10) * 1000 : delay;
-    console.warn(`Rate limited (429) on ${url}. Retrying in ${waitTime / 1000}s (attempt ${attempt}/${maxRetries})...`);
+    console.warn(
+      `Rate limited (429) on ${url}. Retrying in ${waitTime / 1000}s (attempt ${attempt}/${maxRetries})...`,
+    );
     await sleep(waitTime);
     delay *= 2; // Exponential backoff
   }
-  throw new Error('Unreachable code in fetchWithRetry');
+  throw new Error("Unreachable code in fetchWithRetry");
 }
 
 /**
@@ -221,10 +283,12 @@ async function getDevPosts() {
       headers: {
         "api-key": DEV_API_KEY,
       },
-    }
+    },
   );
   if (!response.ok) {
-    throw new Error(`Failed to fetch posts: ${response.status} ${response.statusText}`);
+    throw new Error(
+      `Failed to fetch posts: ${response.status} ${response.statusText}`,
+    );
   }
   const posts = await response.json();
   return posts.filter(isValidPost);
@@ -258,7 +322,9 @@ async function getDevPost(blogPostId) {
   try {
     post = await response.json();
   } catch (error) {
-    throw new Error(`Failed to parse post JSON for ${getArticleUrl}: ${error.message}`);
+    throw new Error(
+      `Failed to parse post JSON for ${getArticleUrl}: ${error.message}`,
+    );
   }
   return post;
 }
@@ -290,18 +356,20 @@ async function createPostFile(post) {
     reading_time_minutes,
     template: "post",
   };
-  
+
   // Add series data if post is part of a collection
   if (post.collection_id) {
-    const seriesName = getSeriesName(post.collection_id, title);
+    const seriesName = await getOrFetchSeriesName(post.collection_id, title);
     jsonFrontmatter.series = {
       name: seriesName,
-      collection_id: post.collection_id
+      collection_id: post.collection_id,
     };
-    
-    console.log(`  📚 Added to series: "${seriesName}" (ID: ${post.collection_id})`);
+
+    console.log(
+      `  📚 Added to series: "${seriesName}" (ID: ${post.collection_id})`,
+    );
   }
-  
+
   let markdownBody;
 
   if (/^---(\r|\n)/.test(body_markdown)) {
@@ -346,7 +414,9 @@ async function createPostFile(post) {
         );
 
         if (!response.ok) {
-          console.warn(`Failed to fetch Twitter embed for ${tweetId}: ${response.status}`);
+          console.warn(
+            `Failed to fetch Twitter embed for ${tweetId}: ${response.status}`,
+          );
           continue;
         }
 
@@ -359,7 +429,10 @@ async function createPostFile(post) {
 
         twitterEmbeds.set(tweetId, html);
       } catch (error) {
-        console.warn(`Error fetching Twitter embed for ${tweetId}:`, error.message);
+        console.warn(
+          `Error fetching Twitter embed for ${tweetId}:`,
+          error.message,
+        );
         continue;
       }
     }
@@ -606,13 +679,20 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
   const posts = await getDevPosts();
 
   // Only publish posts that are not under the orgs I'm a part of on dev.to organization.
-  for (const post of posts.filter((post) => {
+  const filteredPosts = posts.filter((post) => {
     return (
       !["vscodetips", "virtualcoffee"].includes(post.organization?.username) ||
       (post.organization?.username === "vscodetips" &&
         post.tag_list.includes("vscodetips"))
     );
-  })) {
+  });
+
+  console.log(`Processing ${filteredPosts.length} posts...`);
+
+  for (const postSummary of filteredPosts) {
+    // Fetch full article to get collection_id (not available in list API)
+    const post = await getDevPost(postSummary.id);
+
     if (post.canonical_url.startsWith("https://www.iamdeveloper.com/posts/")) {
       post.canonical_url = post.canonical_url.replace(
         "https://www.iamdeveloper.com/posts/",
