@@ -9,6 +9,12 @@ const { DEV_API_KEY } = process.env;
 const SLUG_INCLUSION_LIST = require("./slugInclusionList.json");
 
 const DEV_TO_API_URL = "https://dev.to/api";
+
+// Series ID to Name mapping (manual curation for known series)
+const SERIES_NAMES = {
+  34295: "Advent of AI 2025",
+  // Add more as discovered
+};
 const POSTS_DIRECTORY = path.join(__dirname, "../src/blog");
 const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, "../src/vscodetips");
 const POSTS_IMAGES_PUBLIC_DIRECTORY = "/images/posts";
@@ -115,6 +121,37 @@ function isValidPost(post) {
       !tags.includes("newsletter")) ||
     SLUG_INCLUSION_LIST.includes(slug)
   );
+}
+
+/**
+ * Gets the series name from collection_id or infers from title
+ * @param {number} collection_id - The dev.to collection ID
+ * @param {string} title - The article title
+ * @returns {string} Series name
+ */
+function getSeriesName(collection_id, title) {
+  // Check manual mapping first
+  if (SERIES_NAMES[collection_id]) {
+    return SERIES_NAMES[collection_id];
+  }
+  
+  // Try to extract from title pattern: "Series Name - Part/Day/Episode X: ..."
+  const patterns = [
+    /^(.+?)\s*-\s*(?:Part|Day|Episode)\s*\d+/i,
+    /^(.+?)\s*\(Part\s*\d+\)/i,
+    /^(.+?)\s*#\d+/i,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = title.match(pattern);
+    if (match) {
+      return match[1].trim();
+    }
+  }
+  
+  // Fallback: use collection ID
+  console.warn(`Could not infer series name for collection ${collection_id}, title: "${title}"`);
+  return `Series ${collection_id}`;
 }
 
 /*
@@ -249,6 +286,18 @@ async function createPostFile(post) {
     reading_time_minutes,
     template: "post",
   };
+  
+  // Add series data if post is part of a collection
+  if (post.collection_id) {
+    const seriesName = getSeriesName(post.collection_id, title);
+    jsonFrontmatter.series = {
+      name: seriesName,
+      collection_id: post.collection_id
+    };
+    
+    console.log(`  📚 Added to series: "${seriesName}" (ID: ${post.collection_id})`);
+  }
+  
   let markdownBody;
 
   if (/^---(\r|\n)/.test(body_markdown)) {
