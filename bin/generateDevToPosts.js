@@ -32,12 +32,12 @@ function decodeHtmlEntities(text) {
   return text
     .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(dec))
     .replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
-    .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'");
+    .replace(/&apos;/g, "'")
+    .replace(/&amp;/g, "&");
 }
 
 /**
