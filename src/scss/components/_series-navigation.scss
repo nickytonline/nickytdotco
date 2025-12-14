@@ -126,3 +126,19 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+/* collapsed by default */
+.series-item--middle {
+  display: none;
+}
+
+.series-list.is-expanded .series-item--middle {
+  display: flex;
+  align-items: flex-start;
+  gap: get-size(500);
+}
+
+/* optional: hide the toggle row after expanding */
+.series-list.is-expanded .series-item--toggle {
+  display: none;
+}
