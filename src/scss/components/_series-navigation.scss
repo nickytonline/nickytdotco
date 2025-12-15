@@ -41,6 +41,7 @@
   justify-content: center;
   font-size: get-size(300);
   font-weight: 600;
+  line-height: 1;
   background-color: var(--color-stroke);
   color: var(--color-text);
 }
@@ -82,6 +83,10 @@
   background-color: transparent;
   color: var(--color-text-muted, #6b7280);
   font-size: get-size(500);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  letter-spacing: -0.05em;
 }
 
 .series-collapsed-text {
@@ -141,4 +146,19 @@
 /* optional: hide the toggle row after expanding */
 .series-list.is-expanded .series-item--toggle {
   display: none;
+}
+
+.series-item--toggle {
+  display: flex;
+  align-items: center;
+}
+
+[data-series-toggle] {
+  background: none;
+  border: none;
+  color: var(--color-theme-primary);
+  font-size: get-size(300);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
 }
