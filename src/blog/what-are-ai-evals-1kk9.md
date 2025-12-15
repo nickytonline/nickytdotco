@@ -22,11 +22,13 @@ If that sounds vague, good. It's supposed to be. AI systems aren't
 deterministic, so testing them requires a different mindset than
 traditional software testing.
 
-I'll use Galileo examples throughout this post, but these concepts apply to any eval framework.
+I'll use Galileo examples throughout this post, but these concepts should apply to any eval framework.
 
 ## The Testing Problem
 
 When you build a regular app, testing is straightforward. Write a unit test, arrange/act/assert, done. The function returns the same thing every time. Integration tests pass or fail. End-to-end tests are flaky but still pretty deterministic.
+
+![frontend tests passing](https://www.nickyt.co/images/posts/_uploads_articles_bzlijghz2zkx61nyob85.png)
 
 AI breaks all of this.
 
