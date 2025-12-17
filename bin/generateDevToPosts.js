@@ -31,7 +31,9 @@ try {
 function decodeHtmlEntities(text) {
   return text
     .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(dec))
-    .replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+    .replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) =>
+      String.fromCharCode(parseInt(hex, 16)),
+    )
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
@@ -49,7 +51,11 @@ function decodeHtmlEntities(text) {
  * @param {string} username - dev.to username
  * @returns {Promise<string>} Series name
  */
-async function getOrFetchSeriesName(collectionId, fallbackTitle, username = "nickytonline") {
+async function getOrFetchSeriesName(
+  collectionId,
+  fallbackTitle,
+  username = "nickytonline",
+) {
   // Return cached/mapped value if available
   if (SERIES_NAMES[collectionId]) {
     return SERIES_NAMES[collectionId];
@@ -60,7 +66,9 @@ async function getOrFetchSeriesName(collectionId, fallbackTitle, username = "nic
   try {
     const resp = await fetchWithRetry(url);
     if (!resp.ok) {
-      console.warn(`  ⚠️  Could not fetch series page for ID ${collectionId} (status ${resp.status}).`);
+      console.warn(
+        `  ⚠️  Could not fetch series page for ID ${collectionId} (status ${resp.status}).`,
+      );
       return fallbackTitle || `Series ${collectionId}`;
     }
     const html = await resp.text();
@@ -99,7 +107,9 @@ async function getOrFetchSeriesName(collectionId, fallbackTitle, username = "nic
 
     return title;
   } catch (error) {
-    console.warn(`  ⚠️  Error fetching series ${collectionId}: ${error.message}`);
+    console.warn(
+      `  ⚠️  Error fetching series ${collectionId}: ${error.message}`,
+    );
     return fallbackTitle || `Series ${collectionId}`;
   }
 }
@@ -210,8 +220,6 @@ function isValidPost(post) {
     SLUG_INCLUSION_LIST.includes(slug)
   );
 }
-
-
 
 /*
 
@@ -352,7 +360,7 @@ async function createPostFile(post) {
     title,
     excerpt,
     date,
-    tags,
+    tags: tags.split(",").map((tag) => tag.trim()),
     cover_image,
     canonical_url,
     reading_time_minutes,
