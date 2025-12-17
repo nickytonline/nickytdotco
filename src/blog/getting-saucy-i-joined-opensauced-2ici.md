@@ -3,7 +3,10 @@
   "title": "Getting Saucy: I Joined OpenSauced!",
   "excerpt": "It's fall and the leaves are starting to change here in Montreal, which allows me to use that analogy...",
   "date": "2023-09-23T18:17:40Z",
-  "tags": "career, opensource",
+  "tags": [
+    "career",
+    "opensource"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F4fxn0z7bv03dvgcezqmt.jpg",
   "canonical_url": "https://www.nickyt.co/blog/getting-saucy-i-joined-opensauced-2ici/",
   "reading_time_minutes": 2,

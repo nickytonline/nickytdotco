@@ -3,7 +3,10 @@
   "title": "dom-chef - Build DOM Elements with JSX",
   "excerpt": "dom-chef-  Build DOM Elements with JSX",
   "date": "2019-02-02T23:45:45Z",
-  "tags": "webdev, javascript",
+  "tags": [
+    "webdev",
+    "javascript"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fpkajv39sn98rgfgdeotf.jpg",
   "canonical_url": "https://www.nickyt.co/blog/dom-chef---build-dom-elements-with-jsx-5fi/",
   "reading_time_minutes": 1,

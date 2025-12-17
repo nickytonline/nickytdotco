@@ -3,7 +3,12 @@
   "title": "Advent of AI 2025 - Day 3: Building Data Visualizations with Goose",
   "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
   "date": "2025-12-04T02:36:01Z",
-  "tags": "goose, adventofai, dataviz, ai",
+  "tags": [
+    "goose",
+    "adventofai",
+    "dataviz",
+    "ai"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fncqhhxwcpzzny4944438.jpg",
   "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-1-building-data-visualizations-with-goose-g7f",
   "reading_time_minutes": 4,

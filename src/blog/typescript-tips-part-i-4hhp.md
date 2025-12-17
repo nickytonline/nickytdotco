@@ -3,7 +3,11 @@
   "title": "TypeScript Tips Part I",
   "excerpt": "We'll start off with the usual shameless plug of another blog post. If you haven't read it yet, check...",
   "date": "2019-01-25T02:13:23Z",
-  "tags": "typescript, javascript, react",
+  "tags": [
+    "typescript",
+    "javascript",
+    "react"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ftb6vvhqlpheuuns86mli.png",
   "canonical_url": "https://www.nickyt.co/blog/typescript-tips-part-i-4hhp/",
   "reading_time_minutes": 3,

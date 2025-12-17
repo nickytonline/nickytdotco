@@ -3,7 +3,10 @@
   "title": "Productivity Tools I Use",
   "excerpt": "Here is a short list of some great tools I've discovered over the past year.           macOS Only    ...",
   "date": "2022-03-29T20:47:12Z",
-  "tags": "tooling, productivity",
+  "tags": [
+    "tooling",
+    "productivity"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6o3ie5mp1y2ki6xpra6q.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/productivity-tools-i-use-4gm3/",
   "reading_time_minutes": 2,

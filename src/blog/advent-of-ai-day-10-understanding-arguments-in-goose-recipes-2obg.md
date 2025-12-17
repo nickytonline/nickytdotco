@@ -3,7 +3,11 @@
   "title": "Advent of AI - Day 10: Understanding Arguments in Goose Recipes",
   "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
   "date": "2025-12-14T05:56:41Z",
-  "tags": "automation, ai, goose",
+  "tags": [
+    "automation",
+    "ai",
+    "goose"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyiep87c899gtgoh8jxmh.jpg",
   "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg/",
   "reading_time_minutes": 7,

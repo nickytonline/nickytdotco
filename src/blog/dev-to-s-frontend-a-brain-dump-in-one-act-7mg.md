@@ -3,7 +3,11 @@
   "title": "dev.to’s Frontend: a brain dump in one act",
   "excerpt": "An explanation to the best of my knowledge on all things front-end in the dev.to codebase",
   "date": "2019-04-23T04:27:39Z",
-  "tags": "javascript, preact, webpack",
+  "tags": [
+    "javascript",
+    "preact",
+    "webpack"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6k8d3qedhotdzvk8qesq.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/dev-to-s-frontend-a-brain-dump-in-one-act-7mg/",
   "reading_time_minutes": 8,

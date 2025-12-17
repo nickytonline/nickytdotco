@@ -3,7 +3,9 @@
   "title": "Learning Resources for TypeScript",
   "excerpt": "I've had folks ask me for Typescript resources a few times over the past couple of months, so I might...",
   "date": "2022-07-10T04:16:00Z",
-  "tags": "typescript",
+  "tags": [
+    "typescript"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo0css5hj2le5dyrzmj7l.png",
   "canonical_url": "https://www.nickyt.co/blog/learning-resources-for-typescript-4g1n/",
   "reading_time_minutes": 2,

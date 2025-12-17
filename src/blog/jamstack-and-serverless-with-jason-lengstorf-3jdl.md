@@ -3,7 +3,12 @@
   "title": "Jamstack and Serverless with Jason Lengstorf",
   "excerpt": "On April 21st, Jason Lengstorf (VP of Developer Experience at Netlify and DEV Community member)...",
   "date": "2021-05-07T03:21:25Z",
-  "tags": "devstream, pairprogramming, serverless, jamstack",
+  "tags": [
+    "devstream",
+    "pairprogramming",
+    "serverless",
+    "jamstack"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fe8fnjv5l9je77p01qq0z.jpg",
   "canonical_url": "https://www.nickyt.co/blog/jamstack-and-serverless-with-jason-lengstorf-3jdl/",
   "reading_time_minutes": 2,

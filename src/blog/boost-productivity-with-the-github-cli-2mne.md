@@ -3,7 +3,12 @@
   "title": "Boost productivity with the GitHub CLI",
   "excerpt": "The GitHub CLI is an indispensable tool as a project maintainer or contributor on GitHub. It can...",
   "date": "2023-11-14T15:00:00Z",
-  "tags": "github, cli, git, productivity",
+  "tags": [
+    "github",
+    "cli",
+    "git",
+    "productivity"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9arpr3kib5ci5pmgmda5.jpeg",
   "canonical_url": "https://opensauced.pizza/docs/community-resources/boost-productivity-with-the-github-cli/",
   "reading_time_minutes": 10,

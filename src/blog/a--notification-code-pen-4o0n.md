@@ -3,7 +3,10 @@
   "title": "A 💩 Notification Code Pen",
   "excerpt": "A fun notification component.",
   "date": "2018-01-27T07:33:25Z",
-  "tags": "css, codepen",
+  "tags": [
+    "css",
+    "codepen"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fnmx6enjnka59n8c5jwc6.png",
   "canonical_url": "https://www.nickyt.co/blog/a--notification-code-pen-4o0n/",
   "reading_time_minutes": 1,

@@ -3,7 +3,12 @@
   "title": "Pairing with Community Member Rafi",
   "excerpt": "On January 21st, DEV Community member Rafi joined Christina and I on the pairing stream to work on...",
   "date": "2021-01-22T21:36:29Z",
-  "tags": "devstream, pairprogramming, css, html",
+  "tags": [
+    "devstream",
+    "pairprogramming",
+    "css",
+    "html"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fj4m63b3wupg2r2lpctc7.png",
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-rafi-5169/",
   "reading_time_minutes": 2,

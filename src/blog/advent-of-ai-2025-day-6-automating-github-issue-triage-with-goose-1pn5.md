@@ -3,7 +3,12 @@
   "title": "Advent of AI 2025 - Day 6: Automating GitHub Issue Triage with Goose",
   "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
   "date": "2025-12-09T04:32:06Z",
-  "tags": "adventofai, goose, githubactions, ai",
+  "tags": [
+    "adventofai",
+    "goose",
+    "githubactions",
+    "ai"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyb0sw1vn5zz0e0uxuerm.jpg",
   "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-6-automating-github-issue-triage-with-goose-1pn5/",
   "reading_time_minutes": 4,

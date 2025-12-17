@@ -3,7 +3,11 @@
   "title": "npx gitignore",
   "excerpt": "I've done this a few times on a live stream and there is always someone unaware of this so I wanted...",
   "date": "2022-03-26T01:04:06Z",
-  "tags": "tooling, npm, git",
+  "tags": [
+    "tooling",
+    "npm",
+    "git"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhurs5x435k11rkd4nbnt.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/npx-gitignore-5087/",
   "reading_time_minutes": 1,

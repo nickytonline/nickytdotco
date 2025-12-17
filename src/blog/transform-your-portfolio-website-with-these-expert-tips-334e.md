@@ -3,7 +3,12 @@
   "title": "Transform Your Portfolio Website with These Expert Tips",
   "excerpt": "Yes that title sounds a bit clickbaity, but I assure you this post is not all fluff. Buckle up!  I...",
   "date": "2023-03-12T14:12:11Z",
-  "tags": "beginners, webdev, portfolio, frontend",
+  "tags": [
+    "beginners",
+    "webdev",
+    "portfolio",
+    "frontend"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F55c1umcrwwox207gat3i.png",
   "canonical_url": "https://www.nickyt.co/blog/transform-your-portfolio-website-with-these-expert-tips-334e/",
   "reading_time_minutes": 3,

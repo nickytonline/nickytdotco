@@ -3,7 +3,12 @@
   "title": "What is GenAIScript?",
   "excerpt": "I recently got to hang with Peli de Halleux (@pelikhan) to discuss the GenAIScript project.          ...",
   "date": "2024-09-27T04:01:00Z",
-  "tags": "genai, typescript, javascript, productivity",
+  "tags": [
+    "genai",
+    "typescript",
+    "javascript",
+    "productivity"
+  ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/what-is-genaiscript-1mf2/",
   "reading_time_minutes": 2,

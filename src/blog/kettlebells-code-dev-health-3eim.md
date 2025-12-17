@@ -3,7 +3,11 @@
   "title": "Kettlebells & Code: Dev Health",
   "excerpt": "As tech workers, we sit down quite a bit during the day. I have a standing desk that helps me stretch...",
   "date": "2023-08-09T03:51:14Z",
-  "tags": "healthydebate, devhealth, career",
+  "tags": [
+    "healthydebate",
+    "devhealth",
+    "career"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjdgt8dxh3k26dlpwmhhb.jpg",
   "canonical_url": "https://dev.to/nickytonline/kettlebells-code-dev-health-3eim",
   "reading_time_minutes": 2,

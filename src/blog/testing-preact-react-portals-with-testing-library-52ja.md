@@ -3,7 +3,12 @@
   "title": "Testing Preact/React Portals with Testing Library",
   "excerpt": "This post was going to be about troubles I ran into testing Portals, but in the end after writing...",
   "date": "2020-11-30T20:30:08Z",
-  "tags": "preact, react, testing, webdev",
+  "tags": [
+    "preact",
+    "react",
+    "testing",
+    "webdev"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fzi8jv3lu5ewdh5oim3rl.png",
   "canonical_url": "https://www.nickyt.co/blog/testing-preact-react-portals-with-testing-library-52ja/",
   "reading_time_minutes": 9,

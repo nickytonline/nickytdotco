@@ -3,7 +3,12 @@
   "title": "a11y-twitter: a browser extension for making Tweets more accessible",
   "excerpt": "Just over a year ago, I made a post on Twitter, and I realized that I had forgotten to add alternate...",
   "date": "2022-07-02T12:58:14Z",
-  "tags": "a11y, javascript, twitter, extensions",
+  "tags": [
+    "a11y",
+    "javascript",
+    "twitter",
+    "extensions"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb49xiiod8cv4ldudb2l0.png",
   "canonical_url": "https://www.nickyt.co/posts/a11y-twitter-a-browser-extension-for-making-twitter-more-accessible-17kg",
   "reading_time_minutes": 4,

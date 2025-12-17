@@ -3,7 +3,12 @@
   "title": "Pairing with Community Member Marie Antons",
   "excerpt": "On October 22nd, DEV Community member Marie Antons joined Christina and I on the pairing stream to...",
   "date": "2020-11-02T14:11:10Z",
-  "tags": "livecoding, devstream, pairprogramming, ruby",
+  "tags": [
+    "livecoding",
+    "devstream",
+    "pairprogramming",
+    "ruby"
+  ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-marie-antons-3doi/",
   "reading_time_minutes": 1,

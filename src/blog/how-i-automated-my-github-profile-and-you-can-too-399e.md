@@ -3,7 +3,12 @@
   "title": "How I Automated My GitHub Profile (And You Can Too)",
   "excerpt": "Keeping a GitHub profile updated is tedious. New blog post? Update the profile. New newsletter issue?...",
   "date": "2025-11-30T04:48:34Z",
-  "tags": "github, career, contentwriting, devrel",
+  "tags": [
+    "github",
+    "career",
+    "contentwriting",
+    "devrel"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn2j00xnisaior2jfr684.jpg",
   "canonical_url": "https://www.nickyt.co/blog/how-i-automated-my-github-profile-and-you-can-too-399e/",
   "reading_time_minutes": 5,

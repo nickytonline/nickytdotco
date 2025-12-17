@@ -3,7 +3,9 @@
   "title": "My 2019 Year in Review",
   "excerpt": "The Intro   2019 was great. Lot’s of interesting stuff happened. Let’s dig in. But first, I...",
   "date": "2020-01-02T03:50:01Z",
-  "tags": "yearinreview",
+  "tags": [
+    "yearinreview"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fz8awferjpkro7ig0ciey.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-2019-year-in-review-23i1/",
   "reading_time_minutes": 17,

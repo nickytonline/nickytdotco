@@ -3,7 +3,11 @@
   "title": "My Newsletter: Growth, Fun, Slow & Steady",
   "excerpt": "Beehiiv just dropped their 2025 rewind stats for my newsletter, One Tip a Week, and honestly, I’m...",
   "date": "2025-12-15T01:56:04Z",
-  "tags": "contentcreation, devtips, webdev",
+  "tags": [
+    "contentcreation",
+    "devtips",
+    "webdev"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb2e28lpapdr2u0rsmp41.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-newsletter-growth-fun-slow-steady-4fpd/",
   "reading_time_minutes": 3,
