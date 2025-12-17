@@ -3,7 +3,10 @@
   "title": "See the big picture",
   "excerpt": "Depending on where you are at in your career, you may have heard of the term get the big picture or...",
   "date": "2020-08-30T03:55:25Z",
-  "tags": "career, beginners",
+  "tags": [
+    "career",
+    "beginners"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F6qeji3ozp4ypayd0h8au.JPG",
   "canonical_url": "https://www.nickyt.co/blog/see-the-big-picture-22bg/",
   "reading_time_minutes": 2,

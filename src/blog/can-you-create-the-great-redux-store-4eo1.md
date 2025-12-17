@@ -3,7 +3,11 @@
   "title": "Can you create the great Redux store?",
   "excerpt": "Photo courtesy of Flickr user Sarah Gilbert  There's a great free video course on Redux from Dan...",
   "date": "2018-09-08T03:46:46Z",
-  "tags": "challenge, redux, javascript",
+  "tags": [
+    "challenge",
+    "redux",
+    "javascript"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fusmlgnkwhg89ihcajy8f.jpg",
   "canonical_url": "https://www.nickyt.co/blog/can-you-create-the-great-redux-store-4eo1/",
   "reading_time_minutes": 1,

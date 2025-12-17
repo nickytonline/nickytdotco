@@ -3,7 +3,12 @@
   "title": "What is Deno?",
   "excerpt": "I got to hang with Deno core team member Luca Casonato a couple of weeks ago to discuss a framework...",
   "date": "2022-07-14T03:41:00Z",
-  "tags": "deno, typescript, rust, javascript",
+  "tags": [
+    "deno",
+    "typescript",
+    "rust",
+    "javascript"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fs4rykg32xnqkbo8155be.png",
   "canonical_url": "https://www.nickyt.co/blog/what-is-deno-13he/",
   "reading_time_minutes": 8,

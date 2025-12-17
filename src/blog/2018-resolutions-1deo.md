@@ -3,7 +3,11 @@
   "title": "2018 Resolutions",
   "excerpt": "\n\nSo like many, I too will make resolutions for 2018. I made myself accountable b...",
   "date": "2018-01-03T00:00:00Z",
-  "tags": "newyear, books, personaldevelopment",
+  "tags": [
+    "newyear",
+    "books",
+    "personaldevelopment"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fel9zpvhbtnwrdmeel3rz.PNG",
   "canonical_url": "https://www.iamdeveloper.com/2018-resolutions/",
   "reading_time_minutes": 0,

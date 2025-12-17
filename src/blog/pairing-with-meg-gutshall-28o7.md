@@ -3,7 +3,12 @@
   "title": "Pairing with Meg Gutshall",
   "excerpt": "On May 26th, DEV Community member Meg Gutshall joined @coffeecraftcode and me on the pairing stream...",
   "date": "2021-06-10T05:26:35Z",
-  "tags": "devstream, pairprogramming, rails, ruby",
+  "tags": [
+    "devstream",
+    "pairprogramming",
+    "rails",
+    "ruby"
+  ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-meg-gutshall-28o7/",
   "reading_time_minutes": 1,

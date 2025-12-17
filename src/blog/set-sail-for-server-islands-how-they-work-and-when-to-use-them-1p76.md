@@ -3,7 +3,11 @@
   "title": "Astro Server Islands: How They Work and When to Use Them",
   "excerpt": "Astro introduced a powerful new pattern called Server Islands last year. If you're building with...",
   "date": "2025-05-19T04:01:00Z",
-  "tags": "astro, webdev, javascript",
+  "tags": [
+    "astro",
+    "webdev",
+    "javascript"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxgcw745lfbuvqxp6w3hy.jpg",
   "canonical_url": "https://www.nickyt.co/blog/set-sail-for-server-islands-how-they-work-and-when-to-use-them-1p76/",
   "reading_time_minutes": 4,

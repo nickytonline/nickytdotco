@@ -3,7 +3,10 @@
   "title": "Pock an awesome utility for the Mac Touchbar",
   "excerpt": "I'm on a Mac and I honestly have no use for the Dock. I actually hide it for an eternity so it never...",
   "date": "2020-01-21T02:51:30Z",
-  "tags": "productivity, macos",
+  "tags": [
+    "productivity",
+    "macos"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F1lnsa2cfa2m4oogcas4f.jpg",
   "canonical_url": "https://www.nickyt.co/blog/pock-an-awesome-utility-for-the-mac-touchbar-11ia/",
   "reading_time_minutes": 1,

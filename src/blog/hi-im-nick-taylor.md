@@ -3,7 +3,9 @@
   "title": "Hi, I'm Nick Taylor",
   "excerpt": "My introduction post",
   "date": "2017-03-12T20:22:41Z",
-  "tags": "introduction",
+  "tags": [
+    "introduction"
+  ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/hi-im-nick-taylor/",
   "reading_time_minutes": 1,

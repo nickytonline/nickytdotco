@@ -3,7 +3,11 @@
   "title": "Funding in Open Source: A Conversation with Chad Whitacre",
   "excerpt": "“Open source isn’t a market economy. It’s a gift economy.” — Chad Whitacre, Head of Open Source at...",
   "date": "2025-05-13T09:25:00Z",
-  "tags": "opensource, opensourcefunding, devcommunity",
+  "tags": [
+    "opensource",
+    "opensourcefunding",
+    "devcommunity"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fx6ra3dssotyobvioiiez.jpg",
   "canonical_url": "https://www.nickyt.co/blog/funding-in-open-source-a-conversation-with-chad-whitacre-4264/",
   "reading_time_minutes": 4,

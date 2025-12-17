@@ -3,7 +3,12 @@
   "title": "Creating a GitHub Copilot Extension: A Step-by-Step Guide",
   "excerpt": "GitHub Copilot, the AI-powered coding assistant, has recently introduced Copilot Extensions to...",
   "date": "2024-09-30T05:00:00Z",
-  "tags": "github, githubcopilot, genai, typescript",
+  "tags": [
+    "github",
+    "githubcopilot",
+    "genai",
+    "typescript"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhkxr62oih47ls0qrzx3i.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0/",
   "reading_time_minutes": 9,

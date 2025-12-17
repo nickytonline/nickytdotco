@@ -3,7 +3,10 @@
   "title": "More engagement through series on dev.to",
   "excerpt": "I’ve tweeted about this before, but one way I’ve been able to get engagement on old posts is to...",
   "date": "2022-09-11T03:41:38Z",
-  "tags": "meta, writing",
+  "tags": [
+    "meta",
+    "writing"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8wht3l5dg5s5wh5pzqtc.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/more-engagement-through-series-on-devto-6hb/",
   "reading_time_minutes": 1,

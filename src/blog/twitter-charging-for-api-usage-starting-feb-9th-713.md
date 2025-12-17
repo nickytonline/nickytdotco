@@ -3,7 +3,12 @@
   "title": "Twitter charging for API usage starting Feb. 9th",
   "excerpt": "Twitter as of February 9th will start charging developers to use their API.                         ...",
   "date": "2023-02-02T13:59:09Z",
-  "tags": "blockchain, cryptocurrency, offers, web3",
+  "tags": [
+    "blockchain",
+    "cryptocurrency",
+    "offers",
+    "web3"
+  ],
   "cover_image": null,
   "canonical_url": "https://dev.to/nickytonline/twitter-charging-for-api-usage-starting-feb-9th-713",
   "reading_time_minutes": 1,

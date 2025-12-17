@@ -3,7 +3,11 @@
   "title": "Enabling keyboard navigation on your Mac",
   "excerpt": "I'm starting a new role soon, and they shipped me a brand new Macbook Pro.  I got everything set up...",
   "date": "2022-04-02T21:29:36Z",
-  "tags": "a11y, productivity, macos",
+  "tags": [
+    "a11y",
+    "productivity",
+    "macos"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F7n6dsveguxcnv8fyfid9.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/enabling-keyboard-navigation-on-your-mac-1hjb/",
   "reading_time_minutes": 1,

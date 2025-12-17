@@ -3,7 +3,11 @@
   "title": "My Shell Aliases",
   "excerpt": "Everyone has their favourite aliases for git and the shell. I have written about my git aliases...",
   "date": "2019-10-11T01:45:17Z",
-  "tags": "zsh, cli, shell",
+  "tags": [
+    "zsh",
+    "cli",
+    "shell"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F5vnflnscj2k2amsyzwkg.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-shell-aliases-1obk/",
   "reading_time_minutes": 1,

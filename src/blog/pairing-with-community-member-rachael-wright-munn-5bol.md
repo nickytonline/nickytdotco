@@ -3,7 +3,11 @@
   "title": "Pairing with Community Member Rachael Wright-Munn",
   "excerpt": "On October 15th, DEV Community member Rachael Wright-Munn joined Christina and I on the pairing...",
   "date": "2020-10-27T16:46:39Z",
-  "tags": "devstream, pairprogramming, ruby",
+  "tags": [
+    "devstream",
+    "pairprogramming",
+    "ruby"
+  ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-rachael-wright-munn-5bol/",
   "reading_time_minutes": 1,

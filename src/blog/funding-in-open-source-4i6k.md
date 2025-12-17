@@ -3,7 +3,11 @@
   "title": "Funding in open source",
   "excerpt": "Recently, @joshuakgoldberg joined me on my stream to discuss TypeScript, TypeScript ESLint, open...",
   "date": "2022-10-09T01:57:00Z",
-  "tags": "opensource, career, discuss",
+  "tags": [
+    "opensource",
+    "career",
+    "discuss"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F80fbckbd7x40jzcwqlbf.jpg",
   "canonical_url": "https://www.nickyt.co/blog/funding-in-open-source-4i6k/",
   "reading_time_minutes": 6,

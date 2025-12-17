@@ -3,7 +3,11 @@
   "title": "scoped-style",
   "excerpt": "a tiny CSS in JS library",
   "date": "2018-12-30T23:12:39Z",
-  "tags": "javascript, css, cssinjs",
+  "tags": [
+    "javascript",
+    "css",
+    "cssinjs"
+  ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/scoped-style--36n3/",
   "reading_time_minutes": 1,

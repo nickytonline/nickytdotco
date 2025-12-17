@@ -3,7 +3,9 @@
   "title": "My Impact at Forem",
   "excerpt": "This is my first post about impact. What do I mean by impact?  How did you influence the place where...",
   "date": "2022-03-24T03:47:23Z",
-  "tags": "career",
+  "tags": [
+    "career"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/my-impact-at-forem-23mj/",
   "reading_time_minutes": 4,

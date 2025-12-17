@@ -3,7 +3,10 @@
   "title": "A Simple ⭐ Rating Code Pen",
   "excerpt": "Cover image care of Flickr user sparkyloe.  Continuing along with my 2018 Resolutions to make Code...",
   "date": "2018-01-19T04:12:02Z",
-  "tags": "css, codepen",
+  "tags": [
+    "css",
+    "codepen"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fc2.staticflickr.com%2F4%2F3864%2F15120161855_a640e93573_b.jpg",
   "canonical_url": "https://www.nickyt.co/blog/quick-simple-rating-code-pen-3ecp/",
   "reading_time_minutes": 1,

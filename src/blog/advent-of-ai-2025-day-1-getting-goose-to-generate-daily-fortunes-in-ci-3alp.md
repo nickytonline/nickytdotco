@@ -3,7 +3,12 @@
   "title": "Advent of AI 2025 - Day 1: Getting Goose to Generate Daily Fortunes in CI",
   "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
   "date": "2025-12-02T06:52:43Z",
-  "tags": "goose, cli, githubactions, adventofai",
+  "tags": [
+    "goose",
+    "cli",
+    "githubactions",
+    "adventofai"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3ucfgm92swzgfrlj2zr5.jpg",
   "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-1-getting-goose-to-generate-daily-fortunes-in-ci-3alp/",
   "reading_time_minutes": 3,

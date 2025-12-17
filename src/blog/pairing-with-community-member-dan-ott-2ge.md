@@ -3,7 +3,12 @@
   "title": "Pairing with Community Member Dan Ott",
   "excerpt": "On February 3rd, DEV Community member Dan Ott joined Christina and I on the pairing stream to work on...",
   "date": "2021-02-03T22:50:55Z",
-  "tags": "devstream, pairprogramming, css, html",
+  "tags": [
+    "devstream",
+    "pairprogramming",
+    "css",
+    "html"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F2le4kbbcn38tvhrnidd2.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-dan-ott-2ge/",
   "reading_time_minutes": 2,

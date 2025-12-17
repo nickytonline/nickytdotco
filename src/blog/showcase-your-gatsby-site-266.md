@@ -3,7 +3,12 @@
   "title": "Showcase your Gatsby Site",
   "excerpt": "Have you created a Gatsby site that you're proud of? It could be for a client or just your personal s...",
   "date": "2019-02-28T22:02:28Z",
-  "tags": "gatsby, opensource, typescript, jamstack",
+  "tags": [
+    "gatsby",
+    "opensource",
+    "typescript",
+    "jamstack"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fepig0488nwfmsdm59t48.png",
   "canonical_url": "https://www.nickyt.co/blog/showcase-your-gatsby-site-266/",
   "reading_time_minutes": 1,

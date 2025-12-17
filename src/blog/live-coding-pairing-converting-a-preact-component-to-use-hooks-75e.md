@@ -3,7 +3,12 @@
   "title": "Converting a Preact Component to use hooks with Sophia Li",
   "excerpt": "A few weeks ago, I wrote a post asking DEV community members if they wanted to potentially pair...",
   "date": "2020-07-27T04:01:08Z",
-  "tags": "learninpublic, pairprogramming, javascript, react",
+  "tags": [
+    "learninpublic",
+    "pairprogramming",
+    "javascript",
+    "react"
+  ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e/",
   "reading_time_minutes": 1,

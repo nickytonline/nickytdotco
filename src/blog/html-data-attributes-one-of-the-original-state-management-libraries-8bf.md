@@ -3,7 +3,11 @@
   "title": "HTML Data Attributes: One of the Original State Management Libraries",
   "excerpt": "I was streaming recently and discussed how I implemented part of a graph I was building out.      The...",
   "date": "2023-11-30T04:43:12Z",
-  "tags": "html, javascript, webdev",
+  "tags": [
+    "html",
+    "javascript",
+    "webdev"
+  ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ft75ycfq41xj3y82ihzjs.png",
   "canonical_url": "https://www.nickyt.co/blog/html-data-attributes-one-of-the-original-state-management-libraries-8bf/",
   "reading_time_minutes": 4,
