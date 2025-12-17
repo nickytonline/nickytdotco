@@ -2884,7 +2884,7 @@
     "edited_at": "2025-12-09T13:21:35Z",
     "crossposted_at": null,
     "published_at": "2025-12-04T02:36:01Z",
-    "last_comment_at": "2025-12-08T12:13:05Z",
+    "last_comment_at": "2025-12-16T02:40:32Z",
     "reading_time_minutes": 4,
     "tag_list": "goose, adventofai, dataviz, ai",
     "tags": [
@@ -2942,6 +2942,51 @@
       "website_url": "https://OneTipAWeek.com",
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
+    }
+  },
+  "https://dev.to/blockopensource/mcp-sampling-when-your-tools-need-to-think-2d2c": {
+    "type_of": "article",
+    "id": 3096015,
+    "title": "MCP Sampling: When Your Tools Need to Think",
+    "description": "Learn how MCP Sampling lets your tools call the AI instead of the other way around.",
+    "readable_publish_date": "Dec 9",
+    "slug": "mcp-sampling-when-your-tools-need-to-think-2d2c",
+    "path": "/blockopensource/mcp-sampling-when-your-tools-need-to-think-2d2c",
+    "url": "https://dev.to/blockopensource/mcp-sampling-when-your-tools-need-to-think-2d2c",
+    "collection_id": null,
+    "published_timestamp": "2025-12-09T23:11:30Z",
+    "language": "en",
+    "subforem_id": 1,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvf2o7ceo07ssb1m6oyyc.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvf2o7ceo07ssb1m6oyyc.png",
+    "canonical_url": "https://block.github.io/goose/blog/2025/12/04/mcp-sampling",
+    "created_at": "2025-12-09T23:11:30Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2025-12-09T23:11:30Z",
+    "last_comment_at": "2025-12-09T23:11:30Z",
+    "reading_time_minutes": 5,
+    "tag_list": "mcp, ai",
+    "tags": [
+      "mcp",
+      "ai"
+    ],
+    "user": {
+      "name": "Angie Jones",
+      "username": "techgirl1908",
+      "twitter_username": "techgirl1908",
+      "github_username": "angiejones",
+      "user_id": 18472,
+      "website_url": "http://angiejones.tech",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F18472%2F274a10e2-6b72-4dbb-9f3d-35335669c706.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F18472%2F274a10e2-6b72-4dbb-9f3d-35335669c706.jpg"
+    },
+    "organization": {
+      "name": "Block Open Source",
+      "username": "blockopensource",
+      "slug": "blockopensource",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2Fe5719f2a-7005-46bf-a23b-2cd37317dd75.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2Fe5719f2a-7005-46bf-a23b-2cd37317dd75.jpg"
     }
   }
 }
