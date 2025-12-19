@@ -2988,5 +2988,44 @@
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2Fe5719f2a-7005-46bf-a23b-2cd37317dd75.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2Fe5719f2a-7005-46bf-a23b-2cd37317dd75.jpg"
     }
+  },
+  "https://dev.to/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg": {
+    "type_of": "article",
+    "id": 3104259,
+    "title": "Advent of AI - Day 10: Understanding Arguments in Goose Recipes",
+    "description": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
+    "readable_publish_date": "Dec 14",
+    "slug": "advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg",
+    "path": "/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg",
+    "url": "https://dev.to/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg",
+    "collection_id": 34295,
+    "published_timestamp": "2025-12-14T05:56:41Z",
+    "language": "en",
+    "subforem_id": 1,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyiep87c899gtgoh8jxmh.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyiep87c899gtgoh8jxmh.jpg",
+    "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg/",
+    "created_at": "2025-12-14T05:56:25Z",
+    "edited_at": "2025-12-14T13:55:39Z",
+    "crossposted_at": null,
+    "published_at": "2025-12-14T05:56:41Z",
+    "last_comment_at": "2025-12-18T13:31:16Z",
+    "reading_time_minutes": 7,
+    "tag_list": "automation, ai, goose",
+    "tags": [
+      "automation",
+      "ai",
+      "goose"
+    ],
+    "user": {
+      "name": "Nick Taylor",
+      "username": "nickytonline",
+      "twitter_username": null,
+      "github_username": "nickytonline",
+      "user_id": 9597,
+      "website_url": "https://OneTipAWeek.com",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
+    }
   }
 }
