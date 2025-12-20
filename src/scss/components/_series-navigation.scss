@@ -72,10 +72,21 @@
   color: var(--color-text);
   text-decoration: none;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: var(--color-theme-primary);
     text-decoration: underline;
+  }
+
+  // Only show focus ring for keyboard navigation
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    color: var(--color-theme-primary);
+    text-decoration: underline;
+    outline: 2px solid var(--color-theme-primary);
+    outline-offset: 2px;
   }
 }
 
@@ -109,9 +120,20 @@
   font-weight: 500;
   font-size: get-size(300);
 
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: underline;
+  }
+
+  // Only show focus ring for keyboard navigation
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    text-decoration: underline;
+    outline: 2px solid var(--color-theme-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 
@@ -132,25 +154,15 @@
   border-width: 0;
 }
 
-/* collapsed by default */
-.series-item--middle {
-  display: none;
-}
-
-.series-list.is-expanded .series-item--middle {
-  display: flex;
-  align-items: flex-start;
-  gap: get-size(500);
-}
-
-/* optional: hide the toggle row after expanding */
-.series-list.is-expanded .series-item--toggle {
+/* Adaptive single-ellipsis pattern styles */
+.series-item--hidden {
   display: none;
 }
 
 .series-item--toggle {
   display: flex;
   align-items: center;
+  gap: get-size(500);
 }
 
 [data-series-toggle] {
@@ -161,4 +173,21 @@
   font-weight: 500;
   cursor: pointer;
   padding: 0;
+  text-align: left;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  // Only show focus ring for keyboard navigation
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    text-decoration: underline;
+    outline: 2px solid var(--color-theme-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 }
