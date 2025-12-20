@@ -120,43 +120,6 @@ async function youtubeEmbed(videoUrl) {
 }
 
 /**
- * Generates a social image for the given title and excerpt of a page.
- *
- * @param {string} title
- * @param {string} excerpt
- *
- * @returns {string} An URL in string format representing a social image for a page.
- */
-function socialImage(title, excerpt = "") {
-  const innerWhitespaceTrimmedExcerpt = excerpt.replace(/\s+/g, " ");
-  const truncatedExcerpt =
-    innerWhitespaceTrimmedExcerpt.length > 101
-      ? innerWhitespaceTrimmedExcerpt.substr(0, 101) + "..."
-      : innerWhitespaceTrimmedExcerpt;
-  const encodedTitle = encodeURIComponent(encodeURIComponent(title));
-
-  let encodedExcerpt;
-  try {
-    encodedExcerpt = encodeURIComponent(encodeURIComponent(truncatedExcerpt));
-  } catch (e) {
-    if (!(e instanceof URIError)) {
-      throw e;
-    }
-
-    // If it's not UTF-8, things go boom
-    encodedExcerpt = encodeURIComponent(
-      encodeURIComponent(Buffer.from(truncatedExcerpt, "utf-8").toString()),
-    );
-  }
-  const encodedAuthor = encodeURIComponent(
-    encodeURIComponent(`${site.authorName} ${site.twitterHandle}`),
-  );
-  const textColor = "333333";
-
-  return `https://res.cloudinary.com/nickytonline/w_1280,h_669,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:${textColor},g_south_west,x_370,y_380,l_text:roboto_64_bold:${encodedTitle}/w_860,c_fit,co_rgb:${textColor},g_north_west,x_370,y_320,l_text:arial_42:${encodedExcerpt}/w_860,c_fit,co_rgb:${textColor},g_north_west,x_820,y_600,l_text:arial_36:${encodedAuthor}/twitter-blog-post-social-card_bqhgzt`;
-}
-
-/**
  * Generates an embed based on the given URL.
  *
  * @param {string} rawUrl URL to embed.
@@ -443,7 +406,6 @@ function spotifyEmbed(type, id) {
 module.exports = {
   boostLink,
   youtubeEmbed,
-  socialImage,
   embedEmbed,
   twitterEmbed,
   codepenEmbed,
