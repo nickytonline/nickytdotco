@@ -311,26 +311,21 @@ function devLinkEmbed(blogPostUrl) {
   const {
     url: devToUrl,
     title,
-    published_timestamp,
-    reading_time_minutes,
     canonical_url,
     cover_image,
-    user: { name, username, profile_image },
   } = blogPostEmbeds[blogPostUrl];
 
-  const publishDate = DateTime.fromJSDate(new Date(published_timestamp))
-    .setLocale("en-CA")
-    .toLocaleString(DateTime.DATE_FULL);
-
   const url = canonical_url ?? devToUrl;
+  const { hostname } = new URL(url);
 
-  return `<article class="grid w-fit" style="gap: 4px;" title="${title}">
-      ${cover_image ? genericEmbed(url) : ""}
-      <header><a href="${url}">${title}</a>
-      <div class="flex items-center flex-wrap" style="gap: 4px;">
-      <span>${username !== "nickytonline" ? `<a rel="author" href="https://dev.to/${username}">${name}</a>` : name} ・</span>
-      <span class="flex items-center flex-wrap" style="gap: 4px;"><time datetime="${published_timestamp}">${publishDate}</time><span>・</span><span class="reading-time">${reading_time_minutes} min read</span></div>
-      </header>
+  return `<article style="border-radius: 4px; overflow: hidden; max-width: 650px;">
+      <a href="${url}" style="position: relative;display: block;text-decoration: none; color: inherit;">
+        ${cover_image ? `<img src="${cover_image}" alt="" aria-hidden="true" style="width: 100%; height: auto; display: block;" loading="lazy" />` : ""}
+        <span style="position: absolute; bottom: 0; left: 0; padding: 4px;padding-left: 6px; background: rgba(0,0,0,0.6);color: #ffffff; margin: 0; font-size: 0.75rem;font-weight: normal;border-radius: 0 0 0 4px;" data-ignore-permalink="true">
+          ${title}
+        </span>
+      </a>
+      <div aria-hidden="" class="flex space-before" style="font-size: 0.75rem;"><span>from ${hostname}</span></div>
     </article>`;
 }
 

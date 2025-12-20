@@ -50,6 +50,10 @@ module.exports = async function (value, outputPath) {
 
   // Loop each heading and add a little anchor and an ID to each one
   for (heading of articleHeadings) {
+    if (heading.dataset.ignorePermalink === "true") {
+      continue;
+    }
+
     const headingSlug = slugify(heading.textContent.toLowerCase());
     const anchor = document.createElement("a");
 
