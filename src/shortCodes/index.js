@@ -2,7 +2,6 @@
 const path = require("path");
 const fs = require("fs").promises;
 const { DateTime } = require("luxon");
-const hashnodeData = require(`../_data/hashnodeUrls.json`);
 const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
 const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
 const site = require(`../_data/site`);
@@ -25,7 +24,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
  * @param {string} fileSlug A pages file slug.
  * @param {string} url A pages URL.
  *
- * @returns {string} Markup for a boost links on DEV and Hashnode.
+ * @returns {string} Markup for boost links on DEV and social media.
  */
 function boostLink(title, fileSlug, url, canonicalUrl) {
   const isVsCodeTips = url.startsWith("/vscodetips/");
@@ -33,15 +32,6 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
 
   if (!url.startsWith("/blog/") && !isNewsletter && !isVsCodeTips) {
     return "";
-  }
-
-  let hashnodeBoosterLink = "";
-  const hashnodeUrl = hashnodeData[fileSlug];
-
-  if (hashnodeUrl) {
-    hashnodeBoosterLink =
-      `<a href="${hashnodeUrl}" class="boost-link">Boost on Hashnode</a>` +
-      hashnodeBoosterLink;
   }
 
   const intentToTweet = `<a class="boost-link" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -66,7 +56,7 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
     foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
   }
 
-  return `${foremBoostLink}${hashnodeBoosterLink}${intentToToot}${intentToBluesky}${intentToTweet}${intentToLinkedIn}`;
+  return `${foremBoostLink}${intentToToot}${intentToBluesky}${intentToTweet}${intentToLinkedIn}`;
 }
 
 /**
