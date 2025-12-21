@@ -20,7 +20,6 @@ jobs:
         run: |
           npm install
           node bin/generateDevToPosts.js
-          node bin/generateHashnodeUrlMapping.js
       - name: Setup git config
         run: |
           git config user.name 'token-generator-app[bot]'
