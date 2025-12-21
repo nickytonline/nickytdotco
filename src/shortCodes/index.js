@@ -2,7 +2,6 @@
 const path = require("path");
 const fs = require("fs").promises;
 const { DateTime } = require("luxon");
-const hashnodeData = require(`../_data/hashnodeUrls.json`);
 const blogPostEmbeds = require(`../_data/embeddedPostsMarkup.json`);
 const twitterEmbeds = require(`../_data/twitterEmbeds.json`);
 const site = require(`../_data/site`);
@@ -25,7 +24,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
  * @param {string} fileSlug A pages file slug.
  * @param {string} url A pages URL.
  *
- * @returns {string} Markup for a boost links on DEV and Hashnode.
+ * @returns {string} Markup for boost links on DEV and social media.
  */
 function boostLink(title, fileSlug, url, canonicalUrl) {
   const isVsCodeTips = url.startsWith("/vscodetips/");
@@ -33,15 +32,6 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
 
   if (!url.startsWith("/blog/") && !isNewsletter && !isVsCodeTips) {
     return "";
-  }
-
-  let hashnodeBoosterLink = "";
-  const hashnodeUrl = hashnodeData[fileSlug];
-
-  if (hashnodeUrl) {
-    hashnodeBoosterLink =
-      `<a href="${hashnodeUrl}" class="boost-link">Boost on Hashnode</a>` +
-      hashnodeBoosterLink;
   }
 
   const intentToTweet = `<a class="boost-link" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -66,7 +56,7 @@ function boostLink(title, fileSlug, url, canonicalUrl) {
     foremBoostLink = `<a href="https://dev.to/nickytonline/${fileSlug}" class="boost-link">Boost on DEV</a>`;
   }
 
-  return `${foremBoostLink}${hashnodeBoosterLink}${intentToToot}${intentToBluesky}${intentToTweet}${intentToLinkedIn}`;
+  return `${foremBoostLink}${intentToToot}${intentToBluesky}${intentToTweet}${intentToLinkedIn}`;
 }
 
 /**
@@ -96,6 +86,10 @@ async function youtubeEmbed(videoUrl) {
     return `<div class="video-player"><p>Video is no longer available.</p></div>`;
   }
 
+  if (response.status === 400) {
+    return `<div class="video-player"><p>Video has either been removed or made private.</p></div>`;
+  }
+
   const { title } = await response.json();
 
   return `<div class="video-player">
@@ -113,43 +107,6 @@ async function youtubeEmbed(videoUrl) {
         allowfullscreen
       ></iframe>
     </div>`;
-}
-
-/**
- * Generates a social image for the given title and excerpt of a page.
- *
- * @param {string} title
- * @param {string} excerpt
- *
- * @returns {string} An URL in string format representing a social image for a page.
- */
-function socialImage(title, excerpt = "") {
-  const innerWhitespaceTrimmedExcerpt = excerpt.replace(/\s+/g, " ");
-  const truncatedExcerpt =
-    innerWhitespaceTrimmedExcerpt.length > 101
-      ? innerWhitespaceTrimmedExcerpt.substr(0, 101) + "..."
-      : innerWhitespaceTrimmedExcerpt;
-  const encodedTitle = encodeURIComponent(encodeURIComponent(title));
-
-  let encodedExcerpt;
-  try {
-    encodedExcerpt = encodeURIComponent(encodeURIComponent(truncatedExcerpt));
-  } catch (e) {
-    if (!(e instanceof URIError)) {
-      throw e;
-    }
-
-    // If it's not UTF-8, things go boom
-    encodedExcerpt = encodeURIComponent(
-      encodeURIComponent(Buffer.from(truncatedExcerpt, "utf-8").toString()),
-    );
-  }
-  const encodedAuthor = encodeURIComponent(
-    encodeURIComponent(`${site.authorName} ${site.twitterHandle}`),
-  );
-  const textColor = "333333";
-
-  return `https://res.cloudinary.com/nickytonline/w_1280,h_669,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:${textColor},g_south_west,x_370,y_380,l_text:roboto_64_bold:${encodedTitle}/w_860,c_fit,co_rgb:${textColor},g_north_west,x_370,y_320,l_text:arial_42:${encodedExcerpt}/w_860,c_fit,co_rgb:${textColor},g_north_west,x_820,y_600,l_text:arial_36:${encodedAuthor}/twitter-blog-post-social-card_bqhgzt`;
 }
 
 /**
@@ -307,26 +264,21 @@ function devLinkEmbed(blogPostUrl) {
   const {
     url: devToUrl,
     title,
-    published_timestamp,
-    reading_time_minutes,
     canonical_url,
     cover_image,
-    user: { name, username, profile_image },
   } = blogPostEmbeds[blogPostUrl];
 
-  const publishDate = DateTime.fromJSDate(new Date(published_timestamp))
-    .setLocale("en-CA")
-    .toLocaleString(DateTime.DATE_FULL);
-
   const url = canonical_url ?? devToUrl;
+  const { hostname } = new URL(url);
 
-  return `<article class="grid w-fit" style="gap: 4px;" title="${title}">
-      ${cover_image ? genericEmbed(url) : ""}
-      <header><a href="${url}">${title}</a>
-      <div class="flex items-center flex-wrap" style="gap: 4px;">
-      <span>${username !== "nickytonline" ? `<a rel="author" href="https://dev.to/${username}">${name}</a>` : name} ・</span>
-      <span class="flex items-center flex-wrap" style="gap: 4px;"><time datetime="${published_timestamp}">${publishDate}</time><span>・</span><span class="reading-time">${reading_time_minutes} min read</span></div>
-      </header>
+  return `<article style="border-radius: 4px; overflow: hidden; max-width: 650px;">
+      <a href="${url}" style="position: relative;display: block;text-decoration: none; color: inherit;">
+        ${cover_image ? `<img src="${cover_image}" alt="" aria-hidden="true" style="width: 100%; height: auto; display: block;" loading="lazy" />` : ""}
+        <span style="position: absolute; bottom: 0; left: 0; padding: 4px;padding-left: 6px; background: rgba(0,0,0,0.6);color: #ffffff; margin: 0; font-size: 0.75rem;font-weight: normal;border-radius: 0 0 0 4px;" data-ignore-permalink="true">
+          ${title}
+        </span>
+      </a>
+      <div aria-hidden="" class="flex space-before" style="font-size: 0.75rem;"><span>from ${hostname}</span></div>
     </article>`;
 }
 
@@ -444,7 +396,6 @@ function spotifyEmbed(type, id) {
 module.exports = {
   boostLink,
   youtubeEmbed,
-  socialImage,
   embedEmbed,
   twitterEmbed,
   codepenEmbed,

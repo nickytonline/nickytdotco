@@ -2,7 +2,7 @@
 {
   "title": "Can you create the great Redux store?",
   "excerpt": "Photo courtesy of Flickr user Sarah Gilbert  There's a great free video course on Redux from Dan...",
-  "date": "2018-09-08T03:46:46.954Z",
+  "date": "2018-09-08T03:46:46Z",
   "tags": [
     "challenge",
     "redux",

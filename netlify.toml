@@ -45,8 +45,14 @@ force = true
 
 [[redirects]]
 from = "/pages/newsletter/*"
-to = "https://OneTipAWeek.com"
+to = "https://OneTipAWeek.com?utm_source=nickytco&utm_medium=social"
 status = 302
+force = true
+
+[[redirects]]
+from = "/p/one-tip-a-week-log-points"
+to = "https://one-tip-a-week.beehiiv.com/p/one-tip-a-week-log-points"
+status = 301
 force = true
 
 [[redirects]]
@@ -496,7 +502,25 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/fresh-demo"
+to = "https://fresh-demo.nickytonline.deno.net/"
+status = 301
+force = true
+
+[[redirects]]
 from = "/feed.xml"
 to = "/feed"
+status = 301
+force = true
+
+[[redirects]]
+from = "/bsides2025"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vTbLPEshdJJvFgmnmvqlsQDbYmgqgSnK4BTOEPrubl5zF9NGSib_6ltEsHfPhNvmAfwct-erWA3hO7o/pub?start=false&loop=false&delayms=5000"
+status = 301
+force = true
+
+[[redirects]]
+from = "/cyc2025"
+to = "https://docs.google.com/presentation/d/e/2PACX-1vSxw2QZXhKQ-tjmbm5RYSDfB28pXvLx-x_TW-e6Ucy2MrGqK2IvQ_O3ChJbK33TPisV0D4NvVJ8A9-9/pub?start=false&loop=false&delayms=5000"
 status = 301
 force = true

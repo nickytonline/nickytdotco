@@ -2,7 +2,7 @@
 {
   "title": "Changelog: DEV has Some Stories for You",
   "excerpt": "My first PR to the DEV repository was when I added Storybook to the project. In fact, this was in...",
-  "date": "2020-05-22T13:46:37.866Z",
+  "date": "2020-05-22T13:46:37Z",
   "tags": [
     "html",
     "css",

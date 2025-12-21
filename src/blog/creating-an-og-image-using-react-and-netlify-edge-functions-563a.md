@@ -2,7 +2,7 @@
 {
   "title": "Creating an OG image using React and Netlify Edge Functions",
   "excerpt": "Open Graph (OG) images are a must if you're sharing content on the Internet. From sites like...",
-  "date": "2024-04-16T07:00:00.000Z",
+  "date": "2024-04-16T07:00:00Z",
   "tags": [
     "netlify",
     "typescript",
@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8lwq8cpfabmtoh589glh.jpeg",
   "canonical_url": "https://opensauced.pizza/docs/community-resources/creating-an-og-image-using-react-and-netlify-edge-functions/",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Fullstack Learnings",
+    "collection_id": 26157
+  }
 }
 ---
 

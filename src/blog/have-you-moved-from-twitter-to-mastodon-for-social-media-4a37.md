@@ -2,7 +2,7 @@
 {
   "title": "Have you moved from Twitter to Mastodon for social media?",
   "excerpt": "I created a Mastodon account on toot.cafe back in 2017, but I only did a little with it.        I...",
-  "date": "2022-11-20T06:20:37.765Z",
+  "date": "2022-11-20T06:20:37Z",
   "tags": [
     "socialmedia",
     "mastodon"

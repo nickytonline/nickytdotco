@@ -2,7 +2,7 @@
 {
   "title": "Update Dependencies with Dependabot, Cypress and Netlify",
   "excerpt": "To preface things, this post is in the context of a JavaScript project, specifically, my blog...",
-  "date": "2019-08-16T02:11:34.000Z",
+  "date": "2019-08-16T02:11:34Z",
   "tags": [
     "testing",
     "automation",

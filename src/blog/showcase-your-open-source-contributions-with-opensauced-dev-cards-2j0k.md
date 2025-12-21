@@ -2,7 +2,7 @@
 {
   "title": "Supercharge Your GitHub Profile: Showcase Your Open Source Contributions",
   "excerpt": "Last week, we launched our brand new Dev Cards with the OSCR (Open Source Contributor Rating)...",
-  "date": "2024-08-19T15:01:09.120Z",
+  "date": "2024-08-19T15:01:09Z",
   "tags": [
     "opensource",
     "career",

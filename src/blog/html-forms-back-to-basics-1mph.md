@@ -2,7 +2,7 @@
 {
   "title": "HTML Forms: Back to Basics",
   "excerpt": "Let's forget frameworks and libraries for a moment. Today we’re just going to talk about the &lt;form...",
-  "date": "2019-03-28T04:48:20.000Z",
+  "date": "2019-03-28T04:48:20Z",
   "tags": [
     "dom",
     "javascript",

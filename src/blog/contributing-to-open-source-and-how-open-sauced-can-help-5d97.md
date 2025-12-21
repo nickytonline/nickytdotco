@@ -2,7 +2,7 @@
 {
   "title": "Contributing to Open Source and how Open Sauced can help",
   "excerpt": "Last week I got to hang with Brian Douglas on my Twitch stream. We discussed contributing to open...",
-  "date": "2022-08-02T19:41:00.000Z",
+  "date": "2022-08-02T19:41:00Z",
   "tags": [
     "opensource",
     "beginners"

@@ -2,7 +2,7 @@
 {
   "title": "git-history",
   "excerpt": "Quickly browse the history of a git repository ",
-  "date": "2019-02-13T05:05:26.412Z",
+  "date": "2019-02-13T05:05:26Z",
   "tags": [
     "git"
   ],

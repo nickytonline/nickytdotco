@@ -2,14 +2,18 @@
 {
   "title": "A New Year, a New Start: I'm Joining the DEV Team!",
   "excerpt": "I can't believe I'm saying this. I'M JOINING THE DEV TEAM!!!    For those of you that don't know me,...",
-  "date": "2020-01-21T18:09:58.642Z",
+  "date": "2020-01-21T18:09:58Z",
   "tags": [
     "career"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6v67gbppb6cqqj3pqrp3.png",
   "canonical_url": "https://www.nickyt.co/blog/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0/",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Career",
+    "collection_id": 4084
+  }
 }
 ---
 

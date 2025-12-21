@@ -2,7 +2,7 @@
 {
   "title": "dev.to’s Frontend: a brain dump in one act",
   "excerpt": "An explanation to the best of my knowledge on all things front-end in the dev.to codebase",
-  "date": "2019-04-23T04:27:39.487Z",
+  "date": "2019-04-23T04:27:39Z",
   "tags": [
     "javascript",
     "preact",

@@ -2,7 +2,7 @@
 {
   "title": "Non-tech Reading Recommendations?",
   "excerpt": "Like the Tweet and toots say, I'm looking for some reading recommendations. What's a great book...",
-  "date": "2022-12-26T06:07:49.101Z",
+  "date": "2022-12-26T06:07:49Z",
   "tags": [
     "terraform",
     "azure"

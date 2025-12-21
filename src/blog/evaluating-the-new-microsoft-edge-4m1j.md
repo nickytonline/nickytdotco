@@ -2,14 +2,18 @@
 {
   "title": "Evaluating the new Microsoft Edge",
   "excerpt": "About a month ago I Tweeted that I was going to take the new MS Edge browser for a...",
-  "date": "2019-11-23T02:25:44.000Z",
+  "date": "2019-11-23T02:25:44Z",
   "tags": [
     "browsers"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ftz6e8mu5mw2o2rx66egy.png",
   "canonical_url": "https://www.nickyt.co/blog/evaluating-the-new-microsoft-edge-4m1j/",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "The Browser Wars 2.0",
+    "collection_id": 3396
+  }
 }
 ---
 

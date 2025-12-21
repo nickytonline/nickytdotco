@@ -2,7 +2,7 @@
 {
   "title": "Go's singleflight package and why it's awesome for concurrent requests",
   "excerpt": "Concurrency in Go is fun… until duplicate work starts hammering your backend.  I’m still pretty new...",
-  "date": "2025-05-05T12:40:01.518Z",
+  "date": "2025-05-05T12:40:01Z",
   "tags": [
     "go",
     "identity",
@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjtxu5px6vlg5psrslcu9.webp",
   "canonical_url": "https://www.nickyt.co/blog/gos-singleflight-package-and-why-its-awesome-for-concurrent-requests-4122/",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Go",
+    "collection_id": 31534
+  }
 }
 ---
 

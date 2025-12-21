@@ -2,7 +2,7 @@
 {
   "title": "GitHub Actions: A Maintainer's Best Friend",
   "excerpt": "As developers, it’s in our best interest to automate things. The less we have to do in a manual way,...",
-  "date": "2023-10-31T14:06:46.736Z",
+  "date": "2023-10-31T14:06:46Z",
   "tags": [
     "githubactions",
     "automation",
@@ -12,7 +12,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fescjy67qg8keb9i45wmw.png",
   "canonical_url": "https://opensauced.pizza/docs/community-resources/github-actions-a-maintainers-best-friend/",
   "reading_time_minutes": 4,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Maintainer Toolkit",
+    "collection_id": 24726
+  }
 }
 ---
 

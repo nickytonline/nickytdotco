@@ -2,7 +2,7 @@
 {
   "title": "App to grab your Revue newsletters",
   "excerpt": "So I wrote about how Twitter is scrapping Revue.                                         Revue being...",
-  "date": "2022-11-13T14:44:58.537Z",
+  "date": "2022-11-13T14:44:58Z",
   "tags": [
     "webdev",
     "serverless",

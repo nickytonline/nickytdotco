@@ -2,7 +2,7 @@
 {
   "title": "Revue being phased out by Twitter",
   "excerpt": "If you're like me, you may have jumped on the let me integrate Revue with my Twitter to better...",
-  "date": "2022-11-10T13:40:01.653Z",
+  "date": "2022-11-10T13:40:01Z",
   "tags": [
     "news",
     "discuss"

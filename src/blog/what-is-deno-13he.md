@@ -2,7 +2,7 @@
 {
   "title": "What is Deno?",
   "excerpt": "I got to hang with Deno core team member Luca Casonato a couple of weeks ago to discuss a framework...",
-  "date": "2022-07-14T03:41:00.000Z",
+  "date": "2022-07-14T03:41:00Z",
   "tags": [
     "deno",
     "typescript",

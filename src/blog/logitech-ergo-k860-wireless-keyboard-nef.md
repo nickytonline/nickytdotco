@@ -2,7 +2,7 @@
 {
   "title": "Review: Logitech ERGO K860 Wireless Keyboard",
   "excerpt": "I started a new role at the beginning of April, and they ship you equipment, including a new keyboard...",
-  "date": "2022-05-06T03:55:58.655Z",
+  "date": "2022-05-06T03:55:58Z",
   "tags": [
     "keyboards",
     "reviews",

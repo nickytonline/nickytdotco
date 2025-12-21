@@ -2,7 +2,7 @@
 {
   "title": "First impressions of Polywork as a software engineer",
   "excerpt": "This post was sponsored by Polywork, but it is my own authentic review  Polywork is a new...",
-  "date": "2021-08-18T19:58:35.304Z",
+  "date": "2021-08-18T19:58:35Z",
   "tags": [
     "review",
     "career",

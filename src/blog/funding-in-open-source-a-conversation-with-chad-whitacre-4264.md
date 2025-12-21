@@ -2,7 +2,7 @@
 {
   "title": "Funding in Open Source: A Conversation with Chad Whitacre",
   "excerpt": "“Open source isn’t a market economy. It’s a gift economy.” — Chad Whitacre, Head of Open Source at...",
-  "date": "2025-05-13T09:25:00.000Z",
+  "date": "2025-05-13T09:25:00Z",
   "tags": [
     "opensource",
     "opensourcefunding",

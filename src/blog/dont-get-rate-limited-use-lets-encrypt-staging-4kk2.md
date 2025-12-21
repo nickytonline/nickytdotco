@@ -2,7 +2,7 @@
 {
   "title": "Don't Get Rate-Limited: Use Let's Encrypt Staging",
   "excerpt": "While getting Pomerium Core set up this week for a demo, I ran into Let's Encrypt rate limits. Here’s...",
-  "date": "2025-06-16T05:00:00.000Z",
+  "date": "2025-06-16T05:00:00Z",
   "tags": [
     "letsencrypt",
     "security",

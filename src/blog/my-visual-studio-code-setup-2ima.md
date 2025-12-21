@@ -2,7 +2,7 @@
 {
   "title": "My Visual Studio Code Setup",
   "excerpt": "A small write up on my Visual Studio Code setup",
-  "date": "2017-12-23T14:11:11.594Z",
+  "date": "2017-12-23T14:11:11Z",
   "tags": [
     "visualstudiocode",
     "developertools",
@@ -12,7 +12,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F6e271uy3v8ia1h0e1c7q.png",
   "canonical_url": "https://www.nickyt.co/blog/my-visual-studio-code-setup-2ima/",
   "reading_time_minutes": 6,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Stuff in My Toolbelt",
+    "collection_id": 4083
+  }
 }
 ---
 

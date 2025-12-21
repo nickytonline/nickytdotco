@@ -2,7 +2,7 @@
 {
   "title": "Kettlebells & Code: Dev Health",
   "excerpt": "As tech workers, we sit down quite a bit during the day. I have a standing desk that helps me stretch...",
-  "date": "2023-08-09T03:51:14.299Z",
+  "date": "2023-08-09T03:51:14Z",
   "tags": [
     "healthydebate",
     "devhealth",

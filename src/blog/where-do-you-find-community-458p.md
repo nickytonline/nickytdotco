@@ -2,7 +2,7 @@
 {
   "title": "Where do you find community?",
   "excerpt": "When I think of community, I think of safe spaces for everyone with diverse folks who I can learn...",
-  "date": "2023-02-19T14:52:22.921Z",
+  "date": "2023-02-19T14:52:22Z",
   "tags": [
     "community"
   ],

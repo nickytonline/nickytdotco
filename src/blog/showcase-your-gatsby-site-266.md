@@ -2,7 +2,7 @@
 {
   "title": "Showcase your Gatsby Site",
   "excerpt": "Have you created a Gatsby site that you're proud of? It could be for a client or just your personal s...",
-  "date": "2019-02-28T22:02:28.275Z",
+  "date": "2019-02-28T22:02:28Z",
   "tags": [
     "gatsby",
     "opensource",

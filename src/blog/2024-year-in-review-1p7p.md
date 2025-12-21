@@ -2,7 +2,7 @@
 {
   "title": "My 2024 Year in Review",
   "excerpt": "Not gonna lie, 2024 was a wild ride.           OpenSauced   Starting 2024 was my fourth month at...",
-  "date": "2024-12-27T15:32:49.481Z",
+  "date": "2024-12-27T15:32:49Z",
   "tags": [
     "yearinreview",
     "career",
@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6hff5ikirnjolzbkj1ew.jpg",
   "canonical_url": "https://www.nickyt.co/blog/2024-year-in-review-1p7p/",
   "reading_time_minutes": 6,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Year in Review",
+    "collection_id": 3993
+  }
 }
 ---
 
@@ -111,9 +115,9 @@ That led to creating a template repo and even getting invited to GitHub's Open S
 
 {% embed "https://www.youtube.com/watch?v=Gs5RQckoMeg" %}
 
-* Was a guest on This Dot‘s Modern Web Podcast discussing TypeScript and Open Source
+* Was a guest on This Dot‘s Modern Web Podcast discussing TypeScript and Open Source. Catch the [whole episode on their podcast channel](https://open.spotify.com/episode/6IarSxaz6BisIGSinuswdu).
 
-{% embed "https://www.youtube.com/watch?v=2SpCOhL_jJk" %}
+{% embed "https://www.youtube.com/watch?v=Slwqcu7zG78" %}
 
 * Was a guest on the GitHub OpenSource Friday live stream to showcase my Copilot Extension template
 

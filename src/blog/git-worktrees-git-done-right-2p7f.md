@@ -2,7 +2,7 @@
 {
   "title": "Git Worktrees: Git Done Right",
   "excerpt": "I recently discovered Git worktrees, and they've completely changed how I work with Git. I'd heard...",
-  "date": "2025-07-21T18:17:54.112Z",
+  "date": "2025-07-21T18:17:54Z",
   "tags": [
     "git",
     "productivity",

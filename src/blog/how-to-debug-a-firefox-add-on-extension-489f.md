@@ -2,7 +2,7 @@
 {
   "title": "How to debug a Firefox add-on (extension)",
   "excerpt": "Before we get started   Firefox supports browser extensions like Chromium-based browsers...",
-  "date": "2023-08-17T00:31:41.803Z",
+  "date": "2023-08-17T00:31:41Z",
   "tags": [
     "webdev",
     "extensions",

@@ -2,7 +2,7 @@
 {
   "title": "Building out the Go Playground Liquid Tag for DEV with Chuck Smith",
   "excerpt": "At then end of July, I had a chance to pair with awesome community member Chuck Smith.  They...",
-  "date": "2020-09-15T21:40:01.223Z",
+  "date": "2020-09-15T21:40:01Z",
   "tags": [
     "devstream",
     "pairprogramming",
@@ -11,7 +11,11 @@
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Live Coding Pairing",
+    "collection_id": 7957
+  }
 }
 ---
 

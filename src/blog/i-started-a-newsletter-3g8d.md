@@ -2,7 +2,7 @@
 {
   "title": "I started a newsletter!",
   "excerpt": "I've decided to start a newsletter!  Yes, I know. Many folks do newsletters already, but I post a...",
-  "date": "2021-06-12T05:03:32.821Z",
+  "date": "2021-06-12T05:03:32Z",
   "tags": [
     "news",
     "webdev"

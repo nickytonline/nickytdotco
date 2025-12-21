@@ -2,7 +2,7 @@
 {
   "title": "You do not need to use the classnames package",
   "excerpt": "Do not get me wrong, the classnames package is really handy. It is also quite popular with just over...",
-  "date": "2019-10-23T18:27:07.000Z",
+  "date": "2019-10-23T18:27:07Z",
   "tags": [
     "javascript",
     "react"

@@ -2,7 +2,7 @@
 {
   "title": "Enabling keyboard navigation on your Mac",
   "excerpt": "I'm starting a new role soon, and they shipped me a brand new Macbook Pro.  I got everything set up...",
-  "date": "2022-04-02T21:29:36.747Z",
+  "date": "2022-04-02T21:29:36Z",
   "tags": [
     "a11y",
     "productivity",

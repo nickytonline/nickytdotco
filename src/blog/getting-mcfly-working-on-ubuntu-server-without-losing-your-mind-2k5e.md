@@ -2,7 +2,7 @@
 {
   "title": "Getting McFly Working on Ubuntu Server",
   "excerpt": "McFly is a slick, Rust-powered shell history tool that supercharges your reverse search (Ctrl+R) with...",
-  "date": "2025-05-26T10:00:00.000Z",
+  "date": "2025-05-26T10:00:00Z",
   "tags": [
     "linux",
     "ubuntu",

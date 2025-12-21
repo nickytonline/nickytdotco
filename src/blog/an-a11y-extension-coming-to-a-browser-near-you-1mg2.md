@@ -2,7 +2,7 @@
 {
   "title": "An a11y extension coming to a browser near you",
   "excerpt": "Last year when I was looking to take on a new role somewhere, one of the places I interviewed at was...",
-  "date": "2019-04-01T01:02:21.000Z",
+  "date": "2019-04-01T01:02:21Z",
   "tags": [
     "a11y",
     "javascript",

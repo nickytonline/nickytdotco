@@ -2,7 +2,7 @@
 {
   "title": "Productivity Tools I Use",
   "excerpt": "Here is a short list of some great tools I've discovered over the past year.           macOS Only    ...",
-  "date": "2022-03-29T20:47:12.971Z",
+  "date": "2022-03-29T20:47:12Z",
   "tags": [
     "tooling",
     "productivity"

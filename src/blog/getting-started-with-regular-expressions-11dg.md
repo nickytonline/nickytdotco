@@ -2,7 +2,7 @@
 {
   "title": "Getting Started with Regular Expressions",
   "excerpt": "Regular expressions (regex) are one of those things that folks seem to make fun of most of the time...",
-  "date": "2021-07-18T04:17:00.531Z",
+  "date": "2021-07-18T04:17:00Z",
   "tags": [
     "regex",
     "beginners",

@@ -1,0 +1,193 @@
+// Series Navigation Component
+// Displays series information and navigation matching dev.to style
+
+.series-navigation {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-stroke);
+  border-radius: get-size(300);
+  padding: get-size(700);
+  margin: get-size(900) 0;
+}
+
+.series-header {
+  font-size: get-size(600);
+  font-weight: 700;
+  color: var(--color-theme-primary);
+  margin: 0 0 get-size(700) 0;
+}
+
+.series-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: get-size(500);
+}
+
+.series-item {
+  display: flex;
+  align-items: flex-start;
+  gap: get-size(500);
+}
+
+.series-badge {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: get-size(300);
+  font-weight: 600;
+  line-height: 1;
+  background-color: var(--color-stroke);
+  color: var(--color-text);
+}
+
+.series-badge--current {
+  background-color: var(--color-theme-primary);
+  color: white;
+}
+
+.series-content {
+  flex: 1;
+  padding-top: 0.25rem;
+  min-width: 0; // Allow text truncation
+}
+
+.series-title {
+  font-size: get-size(400);
+  line-height: 1.5;
+  display: block;
+}
+
+.series-title--current {
+  color: var(--color-theme-primary);
+  font-weight: 600;
+}
+
+.series-title--link {
+  color: var(--color-text);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-theme-primary);
+    text-decoration: underline;
+  }
+
+  // Only show focus ring for keyboard navigation
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    color: var(--color-theme-primary);
+    text-decoration: underline;
+    outline: 2px solid var(--color-theme-primary);
+    outline-offset: 2px;
+  }
+}
+
+.series-badge--collapsed {
+  background-color: transparent;
+  color: var(--color-text-muted, #6b7280);
+  font-size: get-size(500);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  letter-spacing: -0.05em;
+}
+
+.series-collapsed-text {
+  font-size: get-size(300);
+  color: var(--color-text-muted, #6b7280);
+  padding-top: 0.35rem;
+}
+
+.series-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: get-size(700);
+  padding-top: get-size(700);
+  border-top: 1px solid var(--color-stroke);
+}
+
+.series-nav-link {
+  color: var(--color-theme-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: get-size(300);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  // Only show focus ring for keyboard navigation
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    text-decoration: underline;
+    outline: 2px solid var(--color-theme-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+.series-nav-link--next {
+  margin-left: auto;
+}
+
+// Screen reader only utility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Adaptive single-ellipsis pattern styles */
+.series-item--hidden {
+  display: none;
+}
+
+.series-item--toggle {
+  display: flex;
+  align-items: center;
+  gap: get-size(500);
+}
+
+[data-series-toggle] {
+  background: none;
+  border: none;
+  color: var(--color-theme-primary);
+  font-size: get-size(300);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  // Only show focus ring for keyboard navigation
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    text-decoration: underline;
+    outline: 2px solid var(--color-theme-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}

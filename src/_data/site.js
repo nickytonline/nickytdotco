@@ -16,7 +16,7 @@ module.exports = {
   mastodonHandle: "@nickytonline@toot.cafe",
   authorName: "Nick Taylor",
   enableThirdPartyComments: false,
-  maxPostsPerPage: 4,
+  maxPostsPerPage: 10,
   paymentPointer: "$ilp.uphold.com/MZMhAWA7bkGa",
   faviconPath: "/images/favicon.png",
   newsletterName: "Yet Another Newsletter LOL",

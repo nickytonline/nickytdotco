@@ -2,7 +2,7 @@
 {
   "title": "Have questions about ESLint?",
   "excerpt": "I'm going to be hanging with @joshuakgoldberg on their stream this Tuesday. We're going to be...",
-  "date": "2023-04-02T23:42:34.315Z",
+  "date": "2023-04-02T23:42:34Z",
   "tags": [
     "discuss",
     "javascript",

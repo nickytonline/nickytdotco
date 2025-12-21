@@ -2,7 +2,7 @@
 {
   "title": "My Hacktoberfest 2019",
   "excerpt": "Originally published at iamdeveloper.com  Like many of you, I am participating in Hacktoberfest as we...",
-  "date": "2019-10-15T01:00:22.650Z",
+  "date": "2019-10-15T01:00:22Z",
   "tags": [
     "hacktoberfest"
   ],

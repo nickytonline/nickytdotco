@@ -2,7 +2,7 @@
 {
   "title": "Testing Preact/React Portals with Testing Library",
   "excerpt": "This post was going to be about troubles I ran into testing Portals, but in the end after writing...",
-  "date": "2020-11-30T20:30:08.253Z",
+  "date": "2020-11-30T20:30:08Z",
   "tags": [
     "preact",
     "react",

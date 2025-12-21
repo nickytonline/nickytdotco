@@ -2,7 +2,7 @@
 {
   "title": "Multitenant Database Schemas",
   "excerpt": "I recently got to hang with Jamie Barton (@notrab) from the Turso team. We discussed Multitenant...",
-  "date": "2024-07-29T05:14:00.000Z",
+  "date": "2024-07-29T05:14:00Z",
   "tags": [
     "sqlite",
     "database",

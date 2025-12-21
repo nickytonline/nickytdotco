@@ -2,7 +2,7 @@
 {
   "title": "Transform Your Portfolio Website with These Expert Tips",
   "excerpt": "Yes that title sounds a bit clickbaity, but I assure you this post is not all fluff. Buckle up!  I...",
-  "date": "2023-03-12T14:12:11.189Z",
+  "date": "2023-03-12T14:12:11Z",
   "tags": [
     "beginners",
     "webdev",

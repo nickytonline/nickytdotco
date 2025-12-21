@@ -2,7 +2,7 @@
 {
   "title": "📦 webpack secrets",
   "excerpt": "Things you can do 🔨 with webpack 📦 that you might not be aware of.",
-  "date": "2019-01-01T14:05:58.023Z",
+  "date": "2019-01-01T14:05:58Z",
   "tags": [
     "webpack",
     "webdev",

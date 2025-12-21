@@ -2,7 +2,7 @@
 {
   "title": "Have a Handy JS Snippet You Want to Share?",
   "excerpt": "Quick ES5/ES6 snippets for doing awesome things in Javascript.",
-  "date": "2018-01-23T01:07:14.326Z",
+  "date": "2018-01-23T01:07:14Z",
   "tags": [
     "javascript",
     "showdev"

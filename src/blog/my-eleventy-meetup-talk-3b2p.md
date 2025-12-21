@@ -2,7 +2,7 @@
 {
   "title": "Automate syndication of your content with Eleventy, dev.to, and GitHub Actions",
   "excerpt": "This started off as a test post for my talk I gave this past week at the Eleventy Meetup.      Here’s...",
-  "date": "2022-05-26T17:12:32.116Z",
+  "date": "2022-05-26T17:12:32Z",
   "tags": [
     "eleventy",
     "githubactions",

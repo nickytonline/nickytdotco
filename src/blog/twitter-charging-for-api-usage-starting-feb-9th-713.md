@@ -2,7 +2,7 @@
 {
   "title": "Twitter charging for API usage starting Feb. 9th",
   "excerpt": "Twitter as of February 9th will start charging developers to use their API.                         ...",
-  "date": "2023-02-02T13:59:09.203Z",
+  "date": "2023-02-02T13:59:09Z",
   "tags": [
     "blockchain",
     "cryptocurrency",

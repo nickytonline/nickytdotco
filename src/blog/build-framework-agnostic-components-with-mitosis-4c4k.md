@@ -2,7 +2,7 @@
 {
   "title": "Build framework-agnostic components with Mitosis",
   "excerpt": "Sami Jaber, Software Engineer @ Builder.io joined me recently to discuss Mitosis, a tool for building...",
-  "date": "2022-10-18T00:35:07.253Z",
+  "date": "2022-10-18T00:35:07Z",
   "tags": [
     "react",
     "javascript",

@@ -2,7 +2,7 @@
 {
   "title": "The State of .NET Tooling in 2024",
   "excerpt": "This is a transcript from a great conversation I had with Brandon Minnick recently. We discuss the...",
-  "date": "2024-05-14T18:44:54.647Z",
+  "date": "2024-05-14T18:44:54Z",
   "tags": [
     "dotnet",
     "dotnetmaui",
@@ -12,7 +12,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbgnxmxal9v9vcdu9m9cf.png",
   "canonical_url": "https://www.nickyt.co/blog/the-state-of-net-tooling-2024-169g/",
   "reading_time_minutes": 6,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": ".NET Explorations",
+    "collection_id": 27362
+  }
 }
 ---
 

@@ -2,7 +2,7 @@
 {
   "title": "I Started a JavaScript Stream on Twitch!",
   "excerpt": "The title says it all. I started a JavaScript (JS) Twitch stream!  As some of you know, I co-host the...",
-  "date": "2021-05-30T03:58:33.269Z",
+  "date": "2021-05-30T03:58:33Z",
   "tags": [
     "javascript",
     "learninpublic",
@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjmo1ghh4bvxzuuog6w8p.jpg",
   "canonical_url": "https://www.nickyt.co/blog/i-started-a-javascript-stream-on-twitch-4f3g/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Streaming",
+    "collection_id": 12666
+  }
 }
 ---
 

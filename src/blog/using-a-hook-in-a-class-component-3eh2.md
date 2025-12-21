@@ -2,7 +2,7 @@
 {
   "title": "How to Use a React Hook in a Class Component",
   "excerpt": "Did you know that you can use hooks in class components?   OK, I'm lying, kind of. You can't use a...",
-  "date": "2022-03-28T19:03:10.011Z",
+  "date": "2022-03-28T19:03:10Z",
   "tags": [
     "react",
     "javascript"

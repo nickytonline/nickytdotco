@@ -2,7 +2,7 @@
 {
   "title": "See the big picture",
   "excerpt": "Depending on where you are at in your career, you may have heard of the term get the big picture or...",
-  "date": "2020-08-30T03:55:25.642Z",
+  "date": "2020-08-30T03:55:25Z",
   "tags": [
     "career",
     "beginners"

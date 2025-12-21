@@ -2,7 +2,7 @@
 {
   "title": "Speech-to-text with Deepgram",
   "excerpt": "Bekah Hawrot Weigel (@bekahhw) joined me on my stream today to show how you can transcribe text using...",
-  "date": "2022-06-22T22:00:16.434Z",
+  "date": "2022-06-22T22:00:16Z",
   "tags": [
     "node",
     "speechtotext",

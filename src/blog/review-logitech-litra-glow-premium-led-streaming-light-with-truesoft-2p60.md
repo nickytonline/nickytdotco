@@ -2,7 +2,7 @@
 {
   "title": "Review: Logitech Litra Glow Premium LED Streaming Light with TrueSoft",
   "excerpt": "So I live stream on Twitch mainly, although I have started to stream to my YouTube channel as...",
-  "date": "2024-02-01T11:32:28.969Z",
+  "date": "2024-02-01T11:32:28Z",
   "tags": [
     "productreview",
     "streaming",
@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwqenc79moc5h6ohdr8nd.png",
   "canonical_url": "https://dev.to/nickytonline/review-logitech-litra-glow-premium-led-streaming-light-with-truesoft-2p60",
   "reading_time_minutes": 3,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Product Reviews",
+    "collection_id": 28027
+  }
 }
 ---
 

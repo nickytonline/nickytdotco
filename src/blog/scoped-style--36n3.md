@@ -2,7 +2,7 @@
 {
   "title": "scoped-style",
   "excerpt": "a tiny CSS in JS library",
-  "date": "2018-12-30T23:12:39.460Z",
+  "date": "2018-12-30T23:12:39Z",
   "tags": [
     "javascript",
     "css",

@@ -2,7 +2,7 @@
 {
   "title": "What is The Collab Lab?",
   "excerpt": "Curious about what The Collab Lab is?  Here's the TL;DR   The Collab Lab increases access to web...",
-  "date": "2022-10-26T01:17:00.075Z",
+  "date": "2022-10-26T01:17:00Z",
   "tags": [
     "career",
     "beginners",

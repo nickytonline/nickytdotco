@@ -2,7 +2,7 @@
 {
   "title": "2018 Resolutions",
   "excerpt": "\n\nSo like many, I too will make resolutions for 2018. I made myself accountable b...",
-  "date": "2018-01-03T00:00:00.000Z",
+  "date": "2018-01-03T00:00:00Z",
   "tags": [
     "newyear",
     "books",

@@ -2,7 +2,7 @@
 {
   "title": "Repurposing Content for Content Creation",
   "excerpt": "So I've been streaming on Twitch since July 2020, blogging, and given some talks. To keep on with the...",
-  "date": "2022-10-16T15:27:00.656Z",
+  "date": "2022-10-16T15:27:00Z",
   "tags": [
     "learninpublic",
     "podcast",

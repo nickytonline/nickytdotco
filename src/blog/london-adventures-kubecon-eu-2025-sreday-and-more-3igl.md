@@ -2,7 +2,7 @@
 {
   "title": "London Adventures: KubeCon EU 2025, SREday and More!",
   "excerpt": "Not gonna lie, my recent trip to London was packed with stuff! It was mainly work related for...",
-  "date": "2025-04-06T23:35:48.906Z",
+  "date": "2025-04-06T23:35:48Z",
   "tags": [
     "kubecon",
     "kubernetes",

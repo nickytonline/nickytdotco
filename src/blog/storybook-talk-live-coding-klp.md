@@ -2,7 +2,7 @@
 {
   "title": "Storybook Talk / Live Coding",
   "excerpt": "Last week, I gave a talk on Storybook at a The Collab Lab meetup.                                  ...",
-  "date": "2021-03-16T03:43:46.574Z",
+  "date": "2021-03-16T03:43:46Z",
   "tags": [
     "javascript",
     "react",

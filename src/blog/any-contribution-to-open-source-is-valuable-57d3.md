@@ -2,7 +2,7 @@
 {
   "title": "Any contribution to Open Source is valuable",
   "excerpt": "We hear people say it all the time, but I would like to reiterate it. Any contribution you make to...",
-  "date": "2019-01-22T03:24:42.000Z",
+  "date": "2019-01-22T03:24:42Z",
   "tags": [
     "opensource",
     "gatsby"

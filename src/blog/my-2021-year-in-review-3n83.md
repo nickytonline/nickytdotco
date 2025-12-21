@@ -2,14 +2,18 @@
 {
   "title": "My 2021 Year in Review",
   "excerpt": "Like last year, 2021 has been quite the year. Despite the pandemic, I stayed healthy and managed to...",
-  "date": "2021-12-31T04:32:21.833Z",
+  "date": "2021-12-31T04:32:21Z",
   "tags": [
     "yearinreview"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F1fgj6dfj33nd55i17c9c.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/my-2021-year-in-review-3n83/",
   "reading_time_minutes": 5,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Year in Review",
+    "collection_id": 3993
+  }
 }
 ---
 

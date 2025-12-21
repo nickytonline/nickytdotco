@@ -2,7 +2,7 @@
 {
   "title": "dev.to with a TypeScript or Flow frontend codebase?",
   "excerpt": "Consider moving dev.to frontend codebase to TypeScript or Flow?",
-  "date": "2019-04-07T03:37:54.000Z",
+  "date": "2019-04-07T03:37:54Z",
   "tags": [
     "javascript",
     "typescript",

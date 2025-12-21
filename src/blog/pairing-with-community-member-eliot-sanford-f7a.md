@@ -2,7 +2,7 @@
 {
   "title": "Pairing with Community Member Eliot Sanford",
   "excerpt": "On October 8th, DEV Community member Eliot Sanford joined Christina and I on the pairing stream to...",
-  "date": "2020-10-19T20:40:03.850Z",
+  "date": "2020-10-19T20:40:03Z",
   "tags": [
     "devstream",
     "pairprogramming",
@@ -11,7 +11,11 @@
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-eliot-sanford-f7a/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Live Coding Pairing",
+    "collection_id": 7957
+  }
 }
 ---
 

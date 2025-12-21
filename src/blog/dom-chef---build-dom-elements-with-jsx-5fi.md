@@ -2,7 +2,7 @@
 {
   "title": "dom-chef - Build DOM Elements with JSX",
   "excerpt": "dom-chef-  Build DOM Elements with JSX",
-  "date": "2019-02-02T23:45:45.270Z",
+  "date": "2019-02-02T23:45:45Z",
   "tags": [
     "webdev",
     "javascript"

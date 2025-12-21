@@ -2,7 +2,7 @@
 {
   "title": "The RayCast Port Manager Extension",
   "excerpt": "If you aren’t a Raycast user, definitely check it out. I was a fan of Alfred for years, but moved to...",
-  "date": "2025-02-06T22:08:30.132Z",
+  "date": "2025-02-06T22:08:30Z",
   "tags": [
     "raycast",
     "productivity",

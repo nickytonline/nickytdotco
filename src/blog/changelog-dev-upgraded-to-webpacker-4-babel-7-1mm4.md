@@ -2,7 +2,7 @@
 {
   "title": "Changelog: DEV upgraded to Webpacker 4/Babel 7",
   "excerpt": "This week brought a major upgrade to the frontend infrastructure for DEV. We've been on webpacker 3.x...",
-  "date": "2020-03-20T11:51:52.851Z",
+  "date": "2020-03-20T11:51:52Z",
   "tags": [
     "rails",
     "webpack",

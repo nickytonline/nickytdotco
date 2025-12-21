@@ -2,7 +2,7 @@
 {
   "title": "Ink: React for CLIs",
   "excerpt": "This one is short and sweet.  Are you familiar with React? Then you know Ink. I haven't tried this...",
-  "date": "2019-03-09T21:34:54.000Z",
+  "date": "2019-03-09T21:34:54Z",
   "tags": [
     "react",
     "cli"

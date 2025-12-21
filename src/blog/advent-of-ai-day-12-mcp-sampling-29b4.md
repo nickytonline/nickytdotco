@@ -1,0 +1,187 @@
+---json
+{
+  "title": "Advent of AI - Day 12: MCP Sampling",
+  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm...",
+  "date": "2025-12-17T06:01:21Z",
+  "tags": [
+    "adventofai",
+    "goose",
+    "mcp"
+  ],
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8eoac52ts4dy8eph29ip.jpg",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-day-12-mcp-sampling-29b4/",
+  "reading_time_minutes": 5,
+  "template": "post",
+  "series": {
+    "name": "Advent of AI 2025",
+    "collection_id": 34295
+  }
+}
+---
+
+I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm doing one of these each day, I don't have time to spend a couple hours on each post.
+
+The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
+
+## The Challenge: Democracy by AI
+
+Day 12 threw a Winter Festival mascot crisis at me. The Festival Committee spent three hours arguing about whether their mascot should be a snowman, penguin, polar bear, ice fairy, or yeti. Classic committee deadlock.
+
+The challenge was to use the [Council of Mine extension](https://block.github.io/goose/docs/mcp/council-of-mine-mcp/) to get nine AI personalities to debate and vote on the decision. This teaches you about MCP sampling, which I'll get to in a second.
+
+## Council of Mine Extension
+
+I fired up Goose and tried to use Council of Mine extension. It didn't work on the first go even though the extension was installed and enabled, Goose couldn't see it. I had to disable and re-enable the extension before it finally got picked up. Once I got it working, I ran multiple debates:
+
+1. Mascot choice (spoiler: the yeti won)
+2. Mascot name (went with "Yuki")
+3. Origin story (monks in the mountains)
+4. Personality traits (jovial, powerful, and wise)
+5. Festival duration (expanded to five days)
+
+Here's the prompt for picking a name for the mascot:
+
+```bash
+{% raw %}
+The Winter Festival has been a MASSIVE success, and now the organizers want to make it official: they need a name for the YETI mascot
+
+The Festival Committee has been arguing about this for THREE HOURS.
+
+The Debate So Far
+Name Proposals:
+Marketing Director 🎯
+
+"Frost" - Simple, memorable, SEO-friendly
+Entertainment Coordinator 🎪
+
+"Yuki" - Japanese for "snow," cute and international appeal
+Volunteer Manager 💪
+
+"Everest" - Strong, majestic, ties to mountains
+Artistic Director 🎨
+
+"Crystalline" (nickname: "Crystal") - Whimsical and magical
+Local Historian 📚
+
+"Wendigo's Friend" or simply "Windy" - Plays on local folklore
+
+Use the Council of Mine extension to come to a final decision
+{% endraw %}
+```
+
+Here's the output from picking a name for the mascot.
+
+```bash
+{% raw %}
+I'll help resolve this mascot naming debate by using the Council of Mine extension to get multiple perspectives and reach a final decision!
+
+Let me search for the available Council of Mine tools:
+
+I apologize, but it appears the Council of Mine extension is not currently available or enabled in your session. Let me help you make this decision through a structured analysis instead!
+
+🎭 YETI Mascot Name Analysis & Recommendation
+Let me break down each proposal across key criteria:
+
+📊 Evaluation Matrix
+Criteria	Frost	Yuki	Everest	Crystal	Windy
+Memorability	⭐⭐⭐⭐⭐	⭐⭐⭐⭐	⭐⭐⭐⭐⭐	⭐⭐⭐	⭐⭐⭐⭐
+Kid-Friendly	⭐⭐⭐⭐	⭐⭐⭐⭐⭐	⭐⭐⭐	⭐⭐⭐⭐⭐	⭐⭐⭐⭐
+Merchandise Appeal	⭐⭐⭐⭐⭐	⭐⭐⭐⭐	⭐⭐⭐⭐	⭐⭐⭐	⭐⭐⭐
+Local Connection	⭐⭐⭐	⭐⭐	⭐⭐	⭐⭐⭐	⭐⭐⭐⭐⭐
+SEO/Marketing	⭐⭐⭐⭐⭐	⭐⭐⭐	⭐⭐	⭐⭐⭐	⭐⭐⭐⭐
+Phonetic Appeal	⭐⭐⭐⭐	⭐⭐⭐⭐⭐	⭐⭐⭐	⭐⭐⭐⭐	⭐⭐⭐⭐⭐
+🎯 Strengths & Weaknesses
+FROST ❄️
+
+✅ Clean, simple, perfect SEO
+✅ Easy to spell and remember
+❌ Perhaps too generic
+❌ Weak local connection
+YUKI 🌨️
+
+✅ Adorable and unique
+✅ International appeal
+❌ May require explanation
+❌ Potential cultural appropriation concerns
+EVEREST 🏔️
+
+✅ Strong, iconic imagery
+✅ Implies grandeur
+❌ややgeneric for a yeti
+❌ Associated with existing brands
+CRYSTAL ✨
+
+✅ Magical and whimsical
+✅ Great for kids
+❌ Sounds feminine (if that matters)
+❌ Longer full name ("Crystalline")
+WINDY 🌬️
+
+✅ STRONG local folklore tie
+✅ Friendly and approachable
+✅ Story potential for engagement
+❌ Could be confused with "windy" (weather)
+🏆 FINAL RECOMMENDATION: YUKI
+Why Yuki Wins:
+🎪 Festival Appeal: Perfect balance of cute and memorable - families will love it
+🛍️ Merchandise Gold: "Yuki the Yeti" has amazing alliteration and branding potential
+🌍 Inclusive: International flair shows the festival welcomes everyone
+📸 Social Media: #YukiTheYeti will trend beautifully
+🎭 Character Development: Easy to build a personality around - playful, friendly, magical
+Compromise Solution:
+Official Name: Yuki
+Tagline: "Yuki the Yeti - Guardian of Winter Festival"
+Backstory: Incorporate a nod to local folklore - "Yuki befriended the mountain spirits and comes down each winter to celebrate with the community"
+This gives Marketing their memorable brand, Entertainment their cute mascot, and Local History a folklore connection through the backstory!
+{% endraw %}
+```
+
+## Model Context Protocol (MCP) Sampling
+
+Here's what makes this interesting beyond "AI voting on stuff." Council of Mine doesn't have its own LLM. It uses [MCP sampling](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling) to ask the AI you're already connected to for help.
+
+Angie Jones (@techgirl1908) wrote about MCP sampling recently. Check it out!
+
+{% embed "https://dev.to/blockopensource/mcp-sampling-when-your-tools-need-to-think-2d2c" %}
+
+Normal MCP flow: You talk to Goose, Goose calls an MCP tool, the tool returns data.
+
+MCP sampling flow: You talk to Goose, Goose calls an MCP tool, the tool asks Goose's LLM for help, the tool processes that response and returns it.
+
+The Council of Mine extension defines `n` personality system prompts. When you start a debate, it makes `n` separate sampling calls, one for each "council member", with their distinct personality prepended to the prompt. Then it makes another `n` calls for voting, and one more for synthesizing the results.
+
+That's `n * 2 +1` LLM calls per debate, all going through whatever AI model you have configured in Goose.
+
+## Why This Matters
+
+Sampling lets MCP servers be intelligent without managing their own API keys, model selection, or LLM infrastructure. The server becomes an orchestrator, not an AI application.
+
+You could build:
+- A code review system with multiple expert viewpoints
+- A documentation analyzer that explains concepts differently based on user level
+- A search tool that intelligently filters and ranks results
+- A debate simulator for product decisions (which is literally what I just used)
+
+The Council of Mine repo has examples of how to structure sampling requests, handle different LLM response formats, and protect against prompt injection. If you're building MCP servers, it's worth studying how they handle the nine distinct personalities.
+
+## Build Your Own MCP Sampling MCP?
+
+Building your own MCP with sampling was part of the bonus for the challenge. I didn't get around to it due to time constraints fpr me today, but I opened an issue in my TypeScript MCP template repo a couple of weeks ago. I should probably get on that.
+
+{% embed "https://github.com/nickytonline/mcp-typescript-template/issues/55" %}
+
+## The Takeaway
+
+MCP sampling is one of those features that opens up a new category of tools. You're not just exposing data anymore. You're orchestrating intelligent behavior using whatever AI the user brought with them.
+
+Also, extensions still have rough edges. Keep the disable/enable trick in your back pocket.
+
+If you want to try this yourself, the [Council of Mine docs](https://block.github.io/goose/docs/mcp/council-of-mine-mcp) walk through installation. The [MCP sampling guide](https://block.github.io/goose/blog/2025/12/04/mcp-sampling) explains the technical details. And the [Advent of AI challenge](https://adventofai.dev/challenges/12) has the full requirements.
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Until the next one!
+
+Photo by <a href="https://unsplash.com/@lauraperuchi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Laura Peruchi</a> on <a href="https://unsplash.com/photos/four-clear-glass-containers-UhfB8ShwOmw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

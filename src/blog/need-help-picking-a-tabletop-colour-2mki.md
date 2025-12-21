@@ -2,14 +2,18 @@
 {
   "title": "Need Help Picking a Tabletop Colour",
   "excerpt": "Hey peeps, I'm gonna buy a motorized standing desk with some award points I got from work. Which colo...",
-  "date": "2019-10-28T01:02:36.753Z",
+  "date": "2019-10-28T01:02:36Z",
   "tags": [
     "homeoffice"
   ],
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/need-help-picking-a-tabletop-colour-2mki/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "home office setup",
+    "collection_id": 3242
+  }
 }
 ---
 

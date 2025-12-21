@@ -2,7 +2,7 @@
 {
   "title": "a11y-twitter: a browser extension for making Tweets more accessible",
   "excerpt": "Just over a year ago, I made a post on Twitter, and I realized that I had forgotten to add alternate...",
-  "date": "2022-07-02T12:58:14.679Z",
+  "date": "2022-07-02T12:58:14Z",
   "tags": [
     "a11y",
     "javascript",

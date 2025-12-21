@@ -2,7 +2,7 @@
 {
   "title": "How I Do Code Reviews",
   "excerpt": "Someone in my Virtual Coffee community asked about getting better at reviewing pull requests (PR)...",
-  "date": "2021-12-09T00:57:44.993Z",
+  "date": "2021-12-09T00:57:44Z",
   "tags": [
     "career",
     "programming",

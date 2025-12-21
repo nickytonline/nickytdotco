@@ -2,7 +2,7 @@
 {
   "title": "DEV as a Headless CMS for your Gatsby Site",
   "excerpt": "Near the end of September 2019, @ben  posted this article.                                         Yo...",
-  "date": "2020-04-15T13:09:54.295Z",
+  "date": "2020-04-15T13:09:54Z",
   "tags": [
     "stackbit",
     "headlesscms",

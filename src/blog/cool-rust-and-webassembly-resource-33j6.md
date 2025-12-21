@@ -2,7 +2,7 @@
 {
   "title": "Cool Rust and WebAssembly Resource",
   "excerpt": "I still haven’t really dug into Rust and WebAssembly (WASM) yet, but this project looks really...",
-  "date": "2019-12-07T12:56:29.000Z",
+  "date": "2019-12-07T12:56:29Z",
   "tags": [
     "rust",
     "webassembly"

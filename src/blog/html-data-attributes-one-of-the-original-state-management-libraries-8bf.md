@@ -2,7 +2,7 @@
 {
   "title": "HTML Data Attributes: One of the Original State Management Libraries",
   "excerpt": "I was streaming recently and discussed how I implemented part of a graph I was building out.      The...",
-  "date": "2023-11-30T04:43:12.514Z",
+  "date": "2023-11-30T04:43:12Z",
   "tags": [
     "html",
     "javascript",

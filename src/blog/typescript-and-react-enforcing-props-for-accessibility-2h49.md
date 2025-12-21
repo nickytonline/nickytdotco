@@ -2,7 +2,7 @@
 {
   "title": "TypeScript and React: Enforcing Props for Accessibility",
   "excerpt": "Recently, I added a small accessibility win to our code base.                                  fix:...",
-  "date": "2023-11-06T10:32:57.828Z",
+  "date": "2023-11-06T10:32:57Z",
   "tags": [
     "a11y",
     "typescript",
@@ -12,7 +12,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwgr46tn6thqblgdxmbna.jpg",
   "canonical_url": "https://www.nickyt.co/blog/typescript-and-react-enforcing-props-for-accessibility-2h49/",
   "reading_time_minutes": 5,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "typescript",
+    "collection_id": 3255
+  }
 }
 ---
 

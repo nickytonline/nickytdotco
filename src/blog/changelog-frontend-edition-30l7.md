@@ -2,7 +2,7 @@
 {
   "title": "Changelog: Frontend Edition",
   "excerpt": "I Tweeted this out last week that we moved to Preact X and Testing Library.        Let’s dig in to...",
-  "date": "2020-06-24T19:09:12.079Z",
+  "date": "2020-06-24T19:09:12Z",
   "tags": [
     "changelog",
     "javascript",

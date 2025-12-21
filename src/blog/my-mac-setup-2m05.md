@@ -2,7 +2,7 @@
 {
   "title": "My Mac Setup",
   "excerpt": "Maybe I should start a series called “Not just a Gist”, as I’m slowly converting gists of mine to...",
-  "date": "2018-01-12T10:00:00.000Z",
+  "date": "2018-01-12T10:00:00Z",
   "tags": [
     "productivity",
     "developertools",

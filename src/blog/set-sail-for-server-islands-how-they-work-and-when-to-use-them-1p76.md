@@ -2,7 +2,7 @@
 {
   "title": "Astro Server Islands: How They Work and When to Use Them",
   "excerpt": "Astro introduced a powerful new pattern called Server Islands last year. If you're building with...",
-  "date": "2025-05-19T04:01:00.000Z",
+  "date": "2025-05-19T04:01:00Z",
   "tags": [
     "astro",
     "webdev",

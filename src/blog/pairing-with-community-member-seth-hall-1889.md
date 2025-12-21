@@ -2,7 +2,7 @@
 {
   "title": "Pairing with Community Member Seth Hall",
   "excerpt": "On March 17th, DEV Community member Seth Hall joined Christina and I on the pairing stream to work on...",
-  "date": "2021-03-18T17:32:01.703Z",
+  "date": "2021-03-18T17:32:01Z",
   "tags": [
     "devstream",
     "pairprogramming",
@@ -12,7 +12,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F1cp6w4lj5inz3iz0x3mz.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-community-member-seth-hall-1889/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Live Coding Pairing",
+    "collection_id": 7957
+  }
 }
 ---
 

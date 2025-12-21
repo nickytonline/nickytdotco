@@ -2,7 +2,7 @@
 {
   "title": "Funding in open source",
   "excerpt": "Recently, @joshuakgoldberg joined me on my stream to discuss TypeScript, TypeScript ESLint, open...",
-  "date": "2022-10-09T01:57:00.519Z",
+  "date": "2022-10-09T01:57:00Z",
   "tags": [
     "opensource",
     "career",

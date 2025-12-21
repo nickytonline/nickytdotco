@@ -2,7 +2,7 @@
 {
   "title": "Pairing with Taniyah Jackson on Pinning Comments to Articles",
   "excerpt": "I had a lot of fun with Taniyah Jackson on the pairing today. She's brand new to Ruby and Ruby on...",
-  "date": "2020-09-21T21:44:45.486Z",
+  "date": "2020-09-21T21:44:45Z",
   "tags": [
     "devstream",
     "pairprogramming",
@@ -11,7 +11,11 @@
   "cover_image": null,
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Live Coding Pairing",
+    "collection_id": 7957
+  }
 }
 ---
 

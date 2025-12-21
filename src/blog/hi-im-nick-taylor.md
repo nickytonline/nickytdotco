@@ -2,7 +2,7 @@
 {
   "title": "Hi, I'm Nick Taylor",
   "excerpt": "My introduction post",
-  "date": "2017-03-12T20:22:41.310Z",
+  "date": "2017-03-12T20:22:41Z",
   "tags": [
     "introduction"
   ],

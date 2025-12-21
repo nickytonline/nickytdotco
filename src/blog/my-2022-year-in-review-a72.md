@@ -2,14 +2,18 @@
 {
   "title": "My 2022 Year in Review",
   "excerpt": "Well, it's been a year! And you know what that means. Time for my year in review.           Work     ...",
-  "date": "2022-12-24T05:21:37.787Z",
+  "date": "2022-12-24T05:21:37Z",
   "tags": [
     "yearinreview"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F549dl9ckop73uweqprka.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-2022-year-in-review-a72/",
   "reading_time_minutes": 6,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Year in Review",
+    "collection_id": 3993
+  }
 }
 ---
 

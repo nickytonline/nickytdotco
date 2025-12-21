@@ -2,7 +2,7 @@
 {
   "title": "Let's Pair during a Live Coding Session!",
   "excerpt": "I started live streaming a couple of months ago.                                         I've Started...",
-  "date": "2020-07-14T14:10:13.517Z",
+  "date": "2020-07-14T14:10:13Z",
   "tags": [
     "webdev",
     "pairprogramming",
@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fnqqvyinfbwzjb4fhemff.jpg",
   "canonical_url": "https://www.nickyt.co/blog/let-s-pair-during-a-live-coding-session-8he/",
   "reading_time_minutes": 2,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Live Coding Pairing",
+    "collection_id": 7957
+  }
 }
 ---
 

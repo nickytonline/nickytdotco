@@ -2,7 +2,7 @@
 {
   "title": "Pairing with Jhey Tompkins",
   "excerpt": "On April 28th, DEV Community member Jhey Tompkins joined @coffeecraftcode and I on the pairing stream...",
-  "date": "2021-05-12T18:38:25.697Z",
+  "date": "2021-05-12T18:38:25Z",
   "tags": [
     "devstream",
     "pairprogramming",
@@ -12,7 +12,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fe4ekxgolwzakw0ntuny9.jpg",
   "canonical_url": "https://www.nickyt.co/blog/pairing-with-jhey-tompkins-2k85/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Live Coding Pairing",
+    "collection_id": 7957
+  }
 }
 ---
 

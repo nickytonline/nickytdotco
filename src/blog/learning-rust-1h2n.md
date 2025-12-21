@@ -2,7 +2,7 @@
 {
   "title": "Learning Rust",
   "excerpt": "My awesome coworker @citizen428 dropped a new resource for learning the Rust language care of...",
-  "date": "2021-04-18T19:47:05.587Z",
+  "date": "2021-04-18T19:47:05Z",
   "tags": [
     "rust",
     "learninpublic",
@@ -11,7 +11,11 @@
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F4xq8xpxzzghjhh1nli1g.jpeg",
   "canonical_url": "https://www.nickyt.co/blog/learning-rust-1h2n/",
   "reading_time_minutes": 1,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Learning Rust",
+    "collection_id": 12297
+  }
 }
 ---
 
