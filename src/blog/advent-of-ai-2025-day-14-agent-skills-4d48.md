@@ -34,7 +34,7 @@ Agent Skills are basically folders with instructions that AI agents can load whe
 
 The format was originally developed by Anthropic for Claude, but they released it as an open standard. Now tools like Goose, Claude Code, Cursor, and others are adopting it. Even OpenAI quietly adopted the same structure in ChatGPT and Codex CLI.
 
-**Skills in Goose**
+## Skills in Goose
 
 Goose has built-in support for skills through a platform extension. It's enabled by default and automatically discovers skills at startup from `~/.config/goose/skills/` (or `~/.claude/skills/` if you want to share with Claude Desktop).
 
@@ -44,11 +44,12 @@ This is different from recipes. Recipes are for specific parameterized tasks you
 
 {% embed "https://dev.to/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg" %}
 
-**What I built**
+## What I built
 
 For Day 14, I built a complete festival operations skill system. Started with one monolithic skill covering customer experience, security, vendor management, lost & found, and marketing. Then broke it into four specialized skills that reference each other.
 
 The skills I created:
+
 - `customer-experience`: Madame Zelda's expertise on handling difficult customers, queue management, VIP service
 - `security-vendor-management`: Marcus's protocols for emergency codes, vendor relations, safety
 - `lost-and-found`: Maria's system for item tracking, fraud prevention, pattern recognition
@@ -56,11 +57,11 @@ The skills I created:
 
 Each skill has its own SKILL.md file with specific expertise, plus templates and checklists in a resources folder. The customer experience skill has decision trees for complaint resolution and personality types. Security has emergency code protocols (Code Yellow for lost children, Code Blue for medical, etc.). Lost & found has a four-step intake process with fraud prevention steps.
 
-**Cross-skill references**
+### Cross-skill references
 
 Skills reference each other using `[See: skill-name]` notation. When a customer issue requires security, the customer experience skill points to security-vendor-management. When a lost child situation happens, security references lost-and-found. This creates a network of expertise rather than isolated documents.
 
-**The structure**
+### The structure
 
 Here's what a basic skill looks like:
 
@@ -96,9 +97,10 @@ If someone has been waiting 20+ minutes:
 
 The description is what the agent uses to decide if it needs the skill. Be specific. "Expert customer service guidance for managing guest interactions, queue flow, and creating memorable festival experiences" tells the agent exactly when to load it.
 
-**Executable scripts**
+### Executable scripts
 
 I added four Node.js scripts for automation:
+
 - Incident report generator (interactive prompts, auto-generates report numbers)
 - Lost item logger (fast intake, auto-priority assignment, storage recommendations)
 - Vendor checklist validator (compliance checking, pass/fail determination)
@@ -106,7 +108,7 @@ I added four Node.js scripts for automation:
 
 The scripts live in `scripts/` directories within each skill folder. The agent can reference them in the SKILL.md instructions or run them directly.
 
-**Skill development tools**
+### Skill development tools
 
 Built three meta-tools in `_skill-tools/`:
 
@@ -116,9 +118,10 @@ Built three meta-tools in `_skill-tools/`:
 
 `architecture.md` documents the technical design. Design principles, architecture layers, directory structure standards, cross-skill referencing patterns, script integration guidelines, testing strategies, deployment procedures.
 
-**Where skills live**
+### Where skills live
 
 In Goose and Claude Code, skills go in:
+
 - `~/.config/goose/skills/` for Goose
 - `~/.claude/skills/` for Claude Desktop
 
@@ -126,15 +129,24 @@ The agent automatically discovers anything in those directories. You can also us
 
 Skills are compatible between Goose and Claude Desktop because they both use the same open standard format.
 
-**Why this matters**
+## Why this matters
 
 Before skills, you had to write elaborate prompts every time. With skills, you package knowledge once and the agent loads it automatically when relevant.
 
 The open standard is the interesting part. Write a skill once, use it across multiple AI tools. No vendor lock-in. Skills can be shared through version control.
 
-**Testing the system**
+## Do Skills Kill MCPs?
+
+TLDR; no. Skills teach agents how to work; MCPs give them the power to actually do it.
+
+Read more about this from Angie Jones (@techgirl1908) great article on it.
+
+{% embed "https://block.github.io/goose/blog/2025/12/22/agent-skills-vs-mcp/" %}
+
+## Testing the system
 
 Test scenarios:
+
 - "A child is lost at the festival" triggers Code Yellow protocol from security
 - "How do I handle a vendor payment dispute?" pulls vendor management protocols
 - "I need to announce a weather delay" uses emergency communication template
