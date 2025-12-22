@@ -57,7 +57,7 @@ The main recipe's job is coordination. It defines the workflow, passes the right
 
 The main recipe's `sub_recipes` section maps values from the main parameters to each sub-recipe's expected parameters.
 
-```yaml
+``````yaml
 {% raw %}
 version: 1.0.0
 title: Social Media Campaign Generator
@@ -184,7 +184,7 @@ parameters:
     requirement: required
     description: What you want people to do
 {% endraw %}
-```
+``````
 
 ## The Result
 
