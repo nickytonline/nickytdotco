@@ -125,32 +125,53 @@
                   {% set hiddenCount = currentIndex - 1 %}
                 {% endif %}
 
-                <li class="series-item series-item--toggle" role="listitem">
-                  <span class="series-badge series-badge--collapsed" aria-hidden="true">···</span>
-                  <button type="button" class="series-toggle" aria-expanded="false" data-series-toggle="before">
-                    {{ hiddenCount }} more parts…
-                  </button>
-                </li>
-
-                {# Hidden items before current #}
-                {% if isSecondToLast or isLast %}
-                  {% for hiddenPost in seriesPostsArr.slice(1, totalPosts - 3) %}
-                    <li class="series-item series-item--hidden" data-series-section="before" role="listitem">
-                      <span class="series-badge" aria-hidden="true">{{ loop.index + 1 }}</span>
+                {% if hiddenCount == 1 %}
+                  {# Just render the single hidden item #}
+                  {% if isSecondToLast or isLast %}
+                    {% set hiddenPost = seriesPostsArr[1] %}
+                    <li class="series-item" role="listitem">
+                      <span class="series-badge" aria-hidden="true">2</span>
                       <div class="series-content">
                         <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
                       </div>
                     </li>
-                  {% endfor %}
+                  {% else %}
+                    {% set hiddenPost = seriesPostsArr[currentIndex - 1] %}
+                    <li class="series-item" role="listitem">
+                      <span class="series-badge" aria-hidden="true">{{ currentIndex }}</span>
+                      <div class="series-content">
+                        <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
+                      </div>
+                    </li>
+                  {% endif %}
                 {% else %}
-                  {% for hiddenPost in seriesPostsArr.slice(1, currentIndex) %}
-                    <li class="series-item series-item--hidden" data-series-section="before" role="listitem">
-                      <span class="series-badge" aria-hidden="true">{{ loop.index + 1 }}</span>
-                      <div class="series-content">
-                        <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
-                      </div>
-                    </li>
-                  {% endfor %}
+                  <li class="series-item series-item--toggle" role="listitem">
+                    <span class="series-badge series-badge--collapsed" aria-hidden="true">···</span>
+                    <button type="button" class="series-toggle" aria-expanded="false" data-series-toggle="before">
+                      {{ hiddenCount }} more parts…
+                    </button>
+                  </li>
+
+                  {# Hidden items before current #}
+                  {% if isSecondToLast or isLast %}
+                    {% for hiddenPost in seriesPostsArr.slice(1, totalPosts - 3) %}
+                      <li class="series-item series-item--hidden" data-series-section="before" role="listitem">
+                        <span class="series-badge" aria-hidden="true">{{ loop.index + 1 }}</span>
+                        <div class="series-content">
+                          <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
+                        </div>
+                      </li>
+                    {% endfor %}
+                  {% else %}
+                    {% for hiddenPost in seriesPostsArr.slice(1, currentIndex) %}
+                      <li class="series-item series-item--hidden" data-series-section="before" role="listitem">
+                        <span class="series-badge" aria-hidden="true">{{ loop.index + 1 }}</span>
+                        <div class="series-content">
+                          <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
+                        </div>
+                      </li>
+                    {% endfor %}
+                  {% endif %}
                 {% endif %}
               {% endif %}
 
@@ -163,32 +184,53 @@
                   {% set hiddenCount = totalPosts - currentIndex - 2 %}
                 {% endif %}
 
-                <li class="series-item series-item--toggle" role="listitem">
-                  <span class="series-badge series-badge--collapsed" aria-hidden="true">···</span>
-                  <button type="button" class="series-toggle" aria-expanded="false" data-series-toggle="after">
-                    {{ hiddenCount }} more parts…
-                  </button>
-                </li>
-
-                {# Hidden items after current #}
-                {% if isFirst or isSecond %}
-                  {% for hiddenPost in seriesPostsArr.slice(3, totalPosts - 1) %}
-                    <li class="series-item series-item--hidden" data-series-section="after" role="listitem">
-                      <span class="series-badge" aria-hidden="true">{{ loop.index + 3 }}</span>
+                {% if hiddenCount == 1 %}
+                  {# Just render the single hidden item #}
+                  {% if isFirst or isSecond %}
+                    {% set hiddenPost = seriesPostsArr[3] %}
+                    <li class="series-item" role="listitem">
+                      <span class="series-badge" aria-hidden="true">4</span>
                       <div class="series-content">
                         <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
                       </div>
                     </li>
-                  {% endfor %}
+                  {% else %}
+                    {% set hiddenPost = seriesPostsArr[currentIndex + 1] %}
+                    <li class="series-item" role="listitem">
+                      <span class="series-badge" aria-hidden="true">{{ currentIndex + 2 }}</span>
+                      <div class="series-content">
+                        <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
+                      </div>
+                    </li>
+                  {% endif %}
                 {% else %}
-                  {% for hiddenPost in seriesPostsArr.slice(currentIndex + 1, totalPosts - 1) %}
-                    <li class="series-item series-item--hidden" data-series-section="after" role="listitem">
-                      <span class="series-badge" aria-hidden="true">{{ loop.index + currentIndex + 1 }}</span>
-                      <div class="series-content">
-                        <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
-                      </div>
-                    </li>
-                  {% endfor %}
+                  <li class="series-item series-item--toggle" role="listitem">
+                    <span class="series-badge series-badge--collapsed" aria-hidden="true">···</span>
+                    <button type="button" class="series-toggle" aria-expanded="false" data-series-toggle="after">
+                      {{ hiddenCount }} more parts…
+                    </button>
+                  </li>
+
+                  {# Hidden items after current #}
+                  {% if isFirst or isSecond %}
+                    {% for hiddenPost in seriesPostsArr.slice(3, totalPosts - 1) %}
+                      <li class="series-item series-item--hidden" data-series-section="after" role="listitem">
+                        <span class="series-badge" aria-hidden="true">{{ loop.index + 3 }}</span>
+                        <div class="series-content">
+                          <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
+                        </div>
+                      </li>
+                    {% endfor %}
+                  {% else %}
+                    {% for hiddenPost in seriesPostsArr.slice(currentIndex + 1, totalPosts - 1) %}
+                      <li class="series-item series-item--hidden" data-series-section="after" role="listitem">
+                        <span class="series-badge" aria-hidden="true">{{ loop.index + currentIndex + 1 }}</span>
+                        <div class="series-content">
+                          <a href="{{ hiddenPost.url }}" class="series-title series-title--link">{{ hiddenPost.data.title | truncate(80) }}</a>
+                        </div>
+                      </li>
+                    {% endfor %}
+                  {% endif %}
                 {% endif %}
               {% endif %}
 
