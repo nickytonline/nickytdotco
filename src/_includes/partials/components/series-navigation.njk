@@ -217,23 +217,6 @@
             {% endfor %}
           {% endif %}
         </ol>
-
-        {# Prev / Next links #}
-        {% if currentIndex > 0 or currentIndex < seriesPostsArr.length - 1 %}
-          <div class="series-nav">
-            {% if currentIndex > 0 %}
-              <a href="{{ seriesPostsArr[currentIndex - 1].url }}" class="series-nav-link series-nav-link--prev">
-                ← Previous in series
-              </a>
-            {% endif %}
-
-            {% if currentIndex < seriesPostsArr.length - 1 %}
-              <a href="{{ seriesPostsArr[currentIndex + 1].url }}" class="series-nav-link series-nav-link--next">
-                Next in series →
-              </a>
-            {% endif %}
-          </div>
-        {% endif %}
       </nav>
     </aside>
 
