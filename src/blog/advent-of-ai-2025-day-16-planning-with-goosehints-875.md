@@ -9,9 +9,13 @@
     "ai"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2aa2d831d20yxs3q0pes.jpg",
-  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-2025-day-16-planning-with-goosehints-875",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-16-planning-with-goosehints-875/",
   "reading_time_minutes": 5,
-  "template": "post"
+  "template": "post",
+  "series": {
+    "name": "Advent of AI 2025",
+    "collection_id": 34295
+  }
 }
 ---
 
