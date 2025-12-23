@@ -1,0 +1,123 @@
+---json
+{
+  "title": "Advent of AI 2025 - Day 16: Planning With .goosehints",
+  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
+  "date": "2025-12-23T15:52:23Z",
+  "tags": [
+    "adventofai",
+    "goose",
+    "ai"
+  ],
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2aa2d831d20yxs3q0pes.jpg",
+  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-2025-day-16-planning-with-goosehints-875",
+  "reading_time_minutes": 5,
+  "template": "post"
+}
+---
+
+I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. If I'm doing them correctly, they should take me between 30 minutes to 1 hour max to write.
+
+The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
+
+[Advent of AI day 16](https://adventofai.dev/challenges/16) is about structuring projects before building them using the [.goosehints file](https://block.github.io/goose/docs/guides/context-engineering/using-goosehints/).
+
+Here's [my day 16 submission](https://github.com/nickytonline/advent-of-ai-2025/tree/main/day-16).
+
+## The Challenge
+
+Up until now, the Advent of AI challenges were pretty open-ended. You'd chat with Goose and build things organically. Day 16 changes that. You're supposed to structure the project first using two components:
+
+1. `.goosehints` - tells Goose HOW to work (tech stack, conventions, file structure)  
+2. A planning approach - tells Goose WHAT to build
+
+The actual task is building a festival countdown app that shows days/hours/minutes/seconds until next year's festival, has rotating fun facts, an email signup form, and a winter theme. Mobile responsive.
+
+## What's .goosehints?
+
+A `.goosehints` file is project context for Goose. Tech stack choices, coding conventions, file organization, style preferences. It lives in the project root (or subdirectories) and Goose automatically reads it when starting a session.
+
+Quick note on `.goosehints` vs `AGENTS.md`: Goose actually supports both, but with different scopes. `AGENTS.md` is repository-wide context that works across multiple AI tools (Claude, Cursor, Windsurf). You can learn more about the `AGENTS.md` format at [agents.md](https://agents.md/). `.goosehints` is directory-scoped and Goose-specific. For most projects, `AGENTS.md` is sufficient since the entire project context fits in one file and you get cross-tool compatibility. But for Day 16, I used `.goosehints` since that's what the challenge specifically called for.
+
+Looking at the [Goose repo's own .goosehints file](https://github.com/block/goose/blob/main/.goosehints), you see patterns like:
+
+Tech Stack:  
+- Language: Rust  
+- Framework: tokio for async  
+- Testing: Standard Rust test framework
+
+For my countdown app, I kept mine simple. HTML/CSS/JavaScript, mobile-first responsive design, vanilla JavaScript (no frameworks), Playfair Display and Poppins fonts to match the festival website from Day 4.
+
+The key is being specific. Not just "use good practices" but actual constraints like "use CSS custom properties for theming" or "create separate files for countdown logic, facts rotation, and form handling."
+
+## Planning With TODO Extension
+
+Goose has three planning approaches you can use. I went with the TODO extension because I wanted to see the full breakdown upfront and track progress as Goose worked.
+
+The TODO extension is an MCP server that maintains a task list for your project. You can read and write to it. Goose updates it as it completes tasks.
+
+I started by asking Goose to create a PRD (Product Requirements Document) and break it into stages. Goose generated eight stages with specific tasks for each:
+
+1. Planning & Setup (create .goosehints, directory structure, initialize TODO)  
+2. Core Countdown Functionality (HTML structure, JavaScript logic, handle edge cases)  
+3. Fun Facts Rotation (data structure, rotation logic, CSS transitions)  
+4. Email Signup Form (validation, localStorage, success/error feedback)  
+5. Winter Theme & Styling (color palette, typography, visual elements)  
+6. Responsive Design (mobile-first breakpoints, touch targets)  
+7. Testing & Polish (accessibility, performance, SEO)  
+8. Documentation & Deployment (deployment guide, README)
+
+The TODO list had checkboxes for every task. As Goose completed each one, it marked it done. You could see exactly what was finished and what was left.
+
+## Actually Building It
+
+Once the plan was set, I told Goose to start executing. It went through each stage systematically.
+
+Stage 2, it built the countdown. Created `js/countdown.js` with logic to calculate time difference to December 1, 2026 at 10:00 AM. Updates every second. Handles timezone properly.
+
+Stage 3, it added facts rotation. Created `js/facts.js` with an array of facts and rotation logic. Fades out the current fact, waits, fades in the next one. Six second intervals.
+
+Stage 4, it built the email form. Created `js/form.js` with validation and localStorage. Doesn't actually send emails (that would be a bonus feature), but validates and stores them locally.
+
+The styling was interesting. Goose pulled the color palette and fonts from my Day 4 festival website. Blues, whites, purples. Gradient backgrounds. It created separate CSS files for base styles, animations, and responsive breakpoints.
+
+For responsive design, it implemented mobile-first with breakpoints at 768px (tablet) and 1024px (desktop). Adjusted font sizes, spacing, and layout for each screen size.
+
+## The Bonus Features
+
+After finishing the core requirements, I tackled four bonus features. Each one got its own conventional commit.
+
+**Snowfall animation** - Added 20 snowflakes falling at different speeds with left/right drift. Different sizes and delays for a natural effect. Respects `prefers-reduced-motion`.
+
+**Dark mode toggle** - Moon/sun icon in the top-right corner. Persists preference in localStorage. Respects system preference on first visit. Smooth CSS variable transitions between themes.
+
+**Extended fun facts** - Expanded from 5 facts to 16\. Added stats about vendors, donations, activities, toy drive, parade, music, skating, lights, maze, Santa photos.
+
+**Sound effects toggle** - Speaker/mute icon below dark mode. Festive beep sounds on button clicks using Web Audio API. Starts muted by default for accessibility.
+
+![website i built](https://www.nickyt.co/images/posts/_uploads_articles_nwxhg2wt0qksb66z9x07.gif)
+
+## .goosehints vs AGENTS.md
+
+I use [AGENTS.md](https://agents.md/) (a new standard) in projects now and this is actually the better choice for most projects. It works across multiple AI tools (Claude, Cursor, Windsurf, Goose etc.) and provides repository-wide context. Check out [agents.md](https://agents.md/) for the format details.
+
+From what I can tell, `.goosehints` is more useful when you need directory-scoped context that differs from your repo-wide guidelines. For something like my MCP servers where the entire project context fits in one file, `AGENTS.md` would be the way to go.
+
+But for this challenge, `.goosehints` was specifically required, so that's what I used.
+
+## The Final Result
+
+The app has all the core requirements working. Real-time countdown to December 1, 2026 at 10:00 AM. Fun facts rotating every 6 seconds with smooth fade transitions. Email signup form with validation and localStorage. Winter-themed design with blues, whites, and purples. Fully responsive on mobile and desktop.
+
+The four bonus features add nice polish. Snowfall animation in the background. Dark mode toggle that persists. 16 fun facts instead of 5. Sound effects you can toggle on and off.
+
+Total files: 14 (6 JavaScript, 3 CSS, HTML, README, deployment guide, etc.) Lines of code: 1,200+ Core features: 6 completed Bonus features: 4 completed
+
+You can check out the complete project in my repo: https://github.com/nickytonline/advent-of-ai-2025/tree/main/day-16
+
+More about `.goosehints`: https://block.github.io/goose/docs/guides/context-engineering/using-goosehints/
+
+If you want to stay in touch, all my socials are on nickyt.online. Until the next one!
+
+Photo by <a href="https://unsplash.com/@mediamodifier?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mediamodifier</a> on <a href="https://unsplash.com/photos/black-magnifying-glass-on-white-paper-yx17UuZw1Ck?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
