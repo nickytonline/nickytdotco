@@ -41,7 +41,21 @@ server.registerTool("get_articles", {
 {% endraw %}
 ```
 
-Here's the PR
+## Understanding MCP Tool Annotations
+
+MCP provides several [tool annotations](https://modelcontextprotocol.io/legacy/concepts/tools) that help clients understand tool behavior:
+
+- **`readOnlyHint`**: Indicates the tool doesn't modify its environment (read operations)
+- **`destructiveHint`**: Signals the tool may perform destructive updates (delete operations)
+- **`idempotentHint`**: Shows repeated calls with same arguments have no additional effect (useful for update operations)
+- **`openWorldHint`**: Indicates the tool interacts with external entities like APIs or the web
+
+These hints essentially map to CRUD operations:
+- **Create/Update** tools: `readOnlyHint: false`, with `idempotentHint: true` for updates
+- **Read** tools: `readOnlyHint: true`
+- **Delete** tools: `destructiveHint: true`
+
+Here's the PR:
 
 {% embed "https://github.com/nickytonline/dev-to-mcp/pull/4" %}
 
@@ -53,7 +67,7 @@ Now my tools properly show up as read-only in ChatGPT dev mode instead of being 
 
 Thanks to my coworker [@wasaga](https://github.com/wasaga) for pointing me toward that part of the MCP docs!
 
-If you're building MCP servers, check out the [available tool annotations](https://modelcontextprotocol.io/docs/concepts/tools#available-tool-annotations) to make sure your tools are properly labeled.
+If you're building MCP servers, check out the [available tool annotations](https://modelcontextprotocol.io/legacy/concepts/tools) to make sure your tools are properly labeled.
 
 Want to check out the dev.to MCP server? 👇 Also, don't forget to give it a star!
 
