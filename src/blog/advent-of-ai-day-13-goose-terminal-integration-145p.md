@@ -117,6 +117,27 @@ Here's where this model really makes sense. I've run into this problem a bunch w
 4. Go back to the agent
 5. Tell it you're done and it should continue
 
+```bash
+{% raw %}
+● The images built successfully! Now I need to import them into K3s containerd with sudo:
+
+● Bash(docker save homelab-everything-mcp:latest | sudo k3s ctr images import -) timeout: 5m 0s
+  ⎿  Error: Exit code 1
+     sudo: a terminal is required to read the password; either use the -S option to read from
+     standard input or configure an askpass helper
+     sudo: a password is required
+
+● I see the issue - sudo is requiring a password. Let me try saving the images to temporary files first, then importing them:
+
+● Bash(docker save homelab-everything-mcp:latest -o                                timeout: 5m
+      /tmp/homelab-everything-mcp.tar && docker save homelab-wishlist-mcp:latest   0s
+      -o /tmp/homelab-wishlist-mcp.tar)
+  ⎿  Interrupted · What should Claude do instead?
+
+> I can do it, what's the command?
+{% endraw %}
+```
+
 With terminal integration:
 
 ```bash
