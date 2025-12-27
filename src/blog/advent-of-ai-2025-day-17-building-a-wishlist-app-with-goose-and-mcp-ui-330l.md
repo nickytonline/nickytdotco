@@ -10,7 +10,7 @@
     "devchallenge"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyp4t7qe0vcocyompd92u.jpg",
-  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-2025-day-17-building-a-wishlist-app-with-goose-and-mcp-ui-330l",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-17-building-a-wishlist-app-with-goose-and-mcp-ui-330l/",
   "reading_time_minutes": 3,
   "template": "post",
   "series": {
@@ -63,7 +63,7 @@ The main issue I ran into was iframe sizing. In ChatGPT apps, the iframe sizing 
 
 Initially I thought I was doing something silly because all my iframes weren't sizing to my content. There's additional metadata you can add to the UI resource, but that didn't change anything. I even noticed while debugging that my iframe was inside another iframe, which seemed odd.
 
-Then [rizel on GitHub discuss](https://github.com/block/goose/discussions/6249#discussioncomment-15338156) came through with the solution. You need to use a ResizeObserver on your content container and post messages to the parent frame:
+Then [Rizel in a GitHub discussion](https://github.com/block/goose/discussions/6249#discussioncomment-15338156) came through with the solution. You need to use a ResizeObserver on your content container and post messages to the parent frame for Goose:
 
 ```javascript
 {% raw %}
@@ -93,9 +93,7 @@ That fixed it completely.
 
 ## Key Learnings
 
-MCP UI is powerful for creating visual interfaces right in your AI chat. The pattern of using ResizeObserver to communicate with the parent frame is essential for proper rendering in Goose.
-
-Having a solid template to start from made a huge difference. If you're building MCP servers, especially UI-based ones, starting with a good foundation saves a ton of time.
+MCP UI is powerful for creating visual interfaces right in your AI chat. Having a solid template to start from made a huge difference. If you're building MCP servers, especially UI-based ones, starting with a good foundation saves a ton of time.
 
 Even if you missed earlier days, it's not too late to join even if it's over! Head over to [AdventOfAI.dev](https://AdventOfAI.dev) and jump in.
 
