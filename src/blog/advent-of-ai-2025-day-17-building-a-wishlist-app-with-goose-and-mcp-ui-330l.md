@@ -63,7 +63,7 @@ The main issue I ran into was iframe sizing. In ChatGPT apps, the iframe sizing 
 
 Initially I thought I was doing something silly because all my iframes weren't sizing to my content. There's additional metadata you can add to the UI resource, but that didn't change anything. I even noticed while debugging that my iframe was inside another iframe, which seemed odd.
 
-Then [Rizel in a GitHub discussion](https://github.com/block/goose/discussions/6249#discussioncomment-15338156) came through with the solution. You need to use a ResizeObserver on your content container and post messages to the parent frame for Goose:
+Then [Rizel in a GitHub discussion](https://github.com/block/goose/discussions/6249#discussioncomment-15338156) (@blackgirlbytes) came through with the solution. You need to use a ResizeObserver on your content container and post messages to the parent frame for Goose:
 
 ```javascript
 {% raw %}
@@ -93,9 +93,9 @@ That fixed it completely.
 
 ## Key Learnings
 
-MCP UI is powerful for creating visual interfaces right in your AI chat. Having a solid template to start from made a huge difference. If you're building MCP servers, especially UI-based ones, starting with a good foundation saves a ton of time.
+MCP-UI is powerful for creating visual interfaces right in your AI chat. Having a solid template to start from made a huge difference. If you're building MCP servers, especially UI-based ones, starting with a good foundation saves a ton of time.
 
-Even if you missed earlier days, it's not too late to join even if it's over! Head over to [AdventOfAI.dev](https://AdventOfAI.dev) and jump in.
+Even if you missed the Advent of AI this year I encourage you to head over to [AdventOfAI.dev](https://AdventOfAI.dev) and jump in.
 
 If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
 
