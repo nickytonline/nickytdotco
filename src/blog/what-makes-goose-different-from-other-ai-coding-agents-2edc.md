@@ -385,13 +385,13 @@ This is infrastructure for integrating AI assistance into your existing workflow
 
 ## When to Use What
 
-If you want the best inline autocomplete go with Cursor or GitHub Copilot in VS Code (their multi-line suggestions and context awareness are excellent)
+* If you want the best inline autocomplete go with Cursor or GitHub Copilot in VS Code (their multi-line suggestions and context awareness are excellent)
 
-If you need tight VS Code integration go with GitHub Copilot (native extension with deep editor hooks)
+* If you need tight VS Code integration go with GitHub Copilot (native extension with deep editor hooks)
 
-If you want a polished terminal interface, Claude Code or OpenCode are excellent choices
+* If you want a polished terminal interface, Claude Code or OpenCode are excellent choices
 
-If you want infrastructure for repeatable workflows, Goose has your back.
+* If you want infrastructure for repeatable workflows, Goose has your back
 
 ![Geese infra](https://www.nickyt.co/images/posts/_uploads_articles_7h5envbtewzeublll2v9.png)
 
@@ -463,6 +463,10 @@ If you want infrastructure for building repeatable workflows, Goose provides:
 3. Terminal integration for ambient assistance
 
 These are infrastructure capabilities, not model capabilities. The model executes the workflow. Goose provides the execution environment.
+
+Is it perfect? No. Recipe YAML validation needs work. Auto-visualizer had bugs. Terminal integration has a learning curve.
+
+But after 19 days of using it daily, I keep coming back to it. The infrastructure matters.
 
 ## Getting Started
 
