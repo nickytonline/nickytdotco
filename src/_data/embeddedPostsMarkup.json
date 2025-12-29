@@ -2951,8 +2951,8 @@
     "description": "Learn how MCP Sampling lets your tools call the AI instead of the other way around.",
     "readable_publish_date": "Dec 9",
     "slug": "mcp-sampling-when-your-tools-need-to-think-2d2c",
-    "path": "/blockopensource/mcp-sampling-when-your-tools-need-to-think-2d2c",
-    "url": "https://dev.to/blockopensource/mcp-sampling-when-your-tools-need-to-think-2d2c",
+    "path": "/goose_oss/mcp-sampling-when-your-tools-need-to-think-2d2c",
+    "url": "https://dev.to/goose_oss/mcp-sampling-when-your-tools-need-to-think-2d2c",
     "collection_id": null,
     "published_timestamp": "2025-12-09T23:11:30Z",
     "language": "en",
@@ -2982,11 +2982,11 @@
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F18472%2F274a10e2-6b72-4dbb-9f3d-35335669c706.jpg"
     },
     "organization": {
-      "name": "Block Open Source",
-      "username": "blockopensource",
-      "slug": "blockopensource",
-      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2Fe5719f2a-7005-46bf-a23b-2cd37317dd75.jpg",
-      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2Fe5719f2a-7005-46bf-a23b-2cd37317dd75.jpg"
+      "name": "goose",
+      "username": "goose_oss",
+      "slug": "goose_oss",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2F7146ed0b-90b1-41b2-ac8b-4b10b2f7d805.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2F7146ed0b-90b1-41b2-ac8b-4b10b2f7d805.png"
     }
   },
   "https://dev.to/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg": {
