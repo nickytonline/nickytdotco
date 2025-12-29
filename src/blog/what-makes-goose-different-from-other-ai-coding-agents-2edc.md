@@ -10,7 +10,7 @@
     "cli"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6yvhgeh5smo5its2ryjl.png",
-  "canonical_url": "https://dev.to/nickytonline/what-makes-goose-different-from-other-ai-coding-agents-2edc",
+  "canonical_url": "https://www.nickyt.co/blog/what-makes-goose-different-from-other-ai-coding-agents-2edc/",
   "reading_time_minutes": 12,
   "template": "post"
 }
@@ -332,8 +332,6 @@ Compare this to slash commands in other tools. Those are saved prompts with plac
 Most MCP client implementations render tool responses as text. Goose's GUI can also render [MCP-UI](https://mcpui.dev/) components as actual interactive widgets.
 
 On Day 17 of Advent of AI, I [built a wishlist MCP server](https://www.nickyt.co/blog/advent-of-ai-2025-day-17-building-a-wishlist-app-with-goose-and-mcp-ui-330l/) that returns UI components.
-
-{% embed "https://dev.to/nickytonline/advent-of-ai-2025-day-17-building-a-wishlist-app-with-goose-and-mcp-ui-330l" %}
 
 In Goose, it showed up as an interactive widget. In other MCP clients without UI support, it would just be text.
 
