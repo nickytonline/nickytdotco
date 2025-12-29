@@ -3027,5 +3027,52 @@
       "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
       "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
     }
+  },
+  "https://dev.to/goose_oss/did-skills-kill-mcp-3lk1": {
+    "type_of": "article",
+    "id": 3132290,
+    "title": "Did Skills Kill MCP?",
+    "description": "An overview of Agent Skills vs MCP",
+    "readable_publish_date": "Dec 28",
+    "slug": "did-skills-kill-mcp-3lk1",
+    "path": "/goose_oss/did-skills-kill-mcp-3lk1",
+    "url": "https://dev.to/goose_oss/did-skills-kill-mcp-3lk1",
+    "collection_id": null,
+    "published_timestamp": "2025-12-28T23:09:32Z",
+    "language": "en",
+    "subforem_id": 1,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblock.github.io%2Fgoose%2Fassets%2Fimages%2Fskills-vs-mcp-f2d83cbf65b3ddb4f9294470ab653355.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblock.github.io%2Fgoose%2Fassets%2Fimages%2Fskills-vs-mcp-f2d83cbf65b3ddb4f9294470ab653355.png",
+    "canonical_url": "https://block.github.io/goose/blog/2025/12/22/agent-skills-vs-mcp",
+    "created_at": "2025-12-28T23:09:32Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2025-12-28T23:09:32Z",
+    "last_comment_at": "2025-12-28T23:09:32Z",
+    "reading_time_minutes": 3,
+    "tag_list": "mcp, agents, skills, ai",
+    "tags": [
+      "mcp",
+      "agents",
+      "skills",
+      "ai"
+    ],
+    "user": {
+      "name": "Angie Jones",
+      "username": "techgirl1908",
+      "twitter_username": "techgirl1908",
+      "github_username": "angiejones",
+      "user_id": 18472,
+      "website_url": "http://angiejones.tech",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F18472%2F274a10e2-6b72-4dbb-9f3d-35335669c706.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F18472%2F274a10e2-6b72-4dbb-9f3d-35335669c706.jpg"
+    },
+    "organization": {
+      "name": "goose",
+      "username": "goose_oss",
+      "slug": "goose_oss",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2F7146ed0b-90b1-41b2-ac8b-4b10b2f7d805.png",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F10342%2F7146ed0b-90b1-41b2-ac8b-4b10b2f7d805.png"
+    }
   }
 }
