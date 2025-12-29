@@ -389,7 +389,7 @@ If you want the best inline autocomplete go with Cursor or GitHub Copilot in VS 
 
 If you need tight VS Code integration go with GitHub Copilot (native extension with deep editor hooks)
 
-If you want the simplest possible UX go with Claude Code, it's really good.
+If you want a polished terminal interface, Claude Code or OpenCode are excellent choices
 
 If you want infrastructure for repeatable workflows, Goose has your back.
 
@@ -463,10 +463,6 @@ If you want infrastructure for building repeatable workflows, Goose provides:
 3. Terminal integration for ambient assistance
 
 These are infrastructure capabilities, not model capabilities. The model executes the workflow. Goose provides the execution environment.
-
-Is it perfect? No. Recipe YAML validation needs work. Auto-visualizer had bugs. Terminal integration has a learning curve.
-
-But after 19 days of using it daily, I keep coming back to it. The infrastructure matters.
 
 ## Getting Started
 
