@@ -141,7 +141,7 @@ TLDR; no. Skills teach agents how to work; MCPs give them the power to actually 
 
 Read more about this from Angie Jones (@techgirl1908) great article on it.
 
-{% embed "https://block.github.io/goose/blog/2025/12/22/agent-skills-vs-mcp/" %}
+{% embed "https://dev.to/goose_oss/did-skills-kill-mcp-3lk1" %}
 
 ## Testing the system
 
