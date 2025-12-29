@@ -20,7 +20,7 @@ I just finished Goose's [Advent of AI](https://adventofai.dev/). Everything from
 
 ![Me testing out my hand gesture project](https://www.nickyt.co/images/posts/_uploads_articles_mpc0zvsraivv3qvkf4xu.png)
 
-I built almost all of these challenges in Goose - mostly in the GUI at first, shifting to the CLI as I learned more. Occasionally I'd jump to Claude to finish something, but Goose was my primary development environment. My workflow: convert the challenge to a PRD (sometimes with an evaluation rubric for complex projects), then implement it.
+I built almost all of these challenges in Goose. Mostly in the GUI at first, shifting to the CLI as I learned more. Occasionally I'd jump to Claude to finish something, but Goose was my primary development environment. My workflow: convert the challenge to a [product requirements document](https://en.wikipedia.org/wiki/Product_requirements_document) (PRD) and sometimes I'd compliment it with an evaluation rubric if the project was more complex, then implement it.
 
 After building with it daily for over two weeks, I can tell you what makes Goose different. But first, the baseline.
 
@@ -383,24 +383,6 @@ Close your terminal, come back tomorrow, run the same command, you're back in th
 
 This is infrastructure for integrating AI assistance into your existing workflow, not replacing it.
 
-## When to Use What
-
-* If you want the best inline autocomplete go with Cursor or GitHub Copilot in VS Code (their multi-line suggestions and context awareness are excellent)
-
-* If you need tight VS Code integration go with GitHub Copilot (native extension with deep editor hooks)
-
-* If you want a polished terminal interface, Claude Code or OpenCode are excellent choices
-
-* If you want infrastructure for repeatable workflows, Goose has your back
-
-![Geese infra](https://www.nickyt.co/images/posts/_uploads_articles_7h5envbtewzeublll2v9.png)
-
-Goose makes sense if you:
-- Build the same type of project repeatedly (recipes save you from re-prompting)
-- Want AI assistance without leaving your terminal (ambient mode)
-- Work with teams that need reproducible workflows (YAML in git)
-- Build tools that need interactive UIs (MCP-UI rendering)
-
 ## When It Works (And When It Doesn't)
 
 Terminal integration confused me at first. I expected a chat session. It's not that. It's one-shot execution that can reference session history, but once I had the aha moment, this is a great flow.
@@ -449,18 +431,31 @@ Here's what a session export looks like:
 
 Compare this to "export all your data" bulk downloads that most cloud models offer. With per-session exports, you can track workflow costs, analyze token usage patterns, and reproduce exact execution environments.
 
+Onboarding: New team members run `/release-candidate` instead of hunting down the 17-step checklist your senior engineer keeps in a Google Doc.
+
+Consistency: When everyone runs the same recipe with the same pinned extensions, you get fewer "works on my machine" agent outcomes.
+
+Separation of concerns: Recipe authors encode expertise once. Anyone on the team can execute workflows without needing to understand every implementation detail.
+
 Prompts are individual knowledge. Recipes can be institutional knowledge.
 
-## So why Goose?
+## When to Use What
 
-Goose isn't trying to be the best at autocomplete. It's infrastructure for repeatable workflows.
+If you want the best inline autocomplete, go with Cursor or GitHub Copilot in VS Code (their multi-line suggestions and context awareness are excellent).
 
-If you want better code completion, use whatever. Cursor, Copilot, Claude Code are all good.
+If you need tight VS Code integration, go with GitHub Copilot (native extension with deep editor hooks).
 
-If you want infrastructure for building repeatable workflows, Goose provides:
-1. Recipe system for composable, versioned workflow definitions
-2. MCP-UI rendering for interactive components
-3. Terminal integration for ambient assistance
+If you want a polished terminal interface, Claude Code or OpenCode are excellent choices.
+
+If you want infrastructure for repeatable workflows, Goose has your back.
+
+![Geese infra](https://www.nickyt.co/images/posts/_uploads_articles_7h5envbtewzeublll2v9.png)
+
+Goose makes sense if you:
+- Build the same type of project repeatedly (recipes save you from re-prompting)
+- Want AI assistance without leaving your terminal (ambient mode)
+- Work with teams that need reproducible workflows (YAML in git)
+- Build tools that need interactive UIs (MCP-UI rendering)
 
 These are infrastructure capabilities, not model capabilities. The model executes the workflow. Goose provides the execution environment.
 
@@ -486,9 +481,7 @@ Further reading:
 - [RPI pattern](https://block.github.io/goose/docs/tutorials/rpi/) (Research → Plan → Implement)
 - [Security detection workflow](https://block.github.io/goose/blog/2025/07/28/streamlining-detection-development-with-goose-recipes/) (real team usage)
 - [Code Execution mode](https://block.github.io/goose/blog/2025/12/15/code-mode-mcp/) (experimental, more efficient MCP)
-- [Steve Yegge on agent orchestration](https://open.spotify.com/episode/20iTChEyuXaXryZOVAJoSi) (where this is all heading)
-
-{% embed "https://open.spotify.com/episode/20iTChEyuXaXryZOVAJoSi" %}
+- [Steve Yegge on the Latent Space podcast](https://open.spotify.com/episode/20iTChEyuXaXryZOVAJoSi) discussing vibe coding and agent orchestration (where this is all heading)
 
 If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
 
