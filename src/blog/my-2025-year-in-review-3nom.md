@@ -1,7 +1,7 @@
 ---json
 {
   "title": "My 2025 Year in Review",
-  "excerpt": "My 2025 Year in Review   2025 was wild. I wrapped up 2024 with OpenSauced getting acquired...",
+  "excerpt": "2025 was wild. I wrapped up 2024 with OpenSauced getting acquired by the Linux Foundation, which...",
   "date": "2025-12-30T18:21:13Z",
   "tags": [
     "yearinreview",
@@ -9,7 +9,7 @@
     "career"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3007zwyd3kc4annzmf81.jpg",
-  "canonical_url": "https://dev.to/nickytonline/my-2025-year-in-review-3nom",
+  "canonical_url": "https://www.nickyt.co/blog/my-2025-year-in-review-3nom/",
   "reading_time_minutes": 7,
   "template": "post",
   "series": {
@@ -18,8 +18,6 @@
   }
 }
 ---
-
-# My 2025 Year in Review
 
 2025 was wild. I wrapped up 2024 with OpenSauced getting acquired by the Linux Foundation, which meant I was job hunting in late fall/early winter. My network came through for me and I landed at Pomerium in January.
 
