@@ -78,6 +78,7 @@ Again it was great hanging with some awesome people.
 
 ![me and Marlene](https://www.nickyt.co/images/posts/_uploads_articles_przz7u8iu8hiaasm5eb5.jpeg)
 
+![Me and Rachel grabbing tea](https://www.nickyt.co/images/posts/_uploads_articles_rt4ycr74gambxbrk1fkh.png)
 
 People always say this, but it's 100% true. Getting to meet people in person at all these conferences is the real motivation. Obviously there's speaking obligations, but it's a cheat code to hang with friends as well as people you may have never had the chance to chat with irl.
 
