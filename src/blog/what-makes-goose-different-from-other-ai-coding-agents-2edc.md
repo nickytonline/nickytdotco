@@ -408,6 +408,8 @@ This architecture lets you hand off tasks the agent can’t do:
 
 No need to open a separate terminal to do the thing the agent can’t do and then come back to where you left off in your REPL session. Stay in your flow in your current terminal session.
 
+Terminal integration confused me initially, but once but once I had the aha moment thanks to a similar issue I run into with `sudo` all the time with AI, I realized this is a great flow.
+
 There’s also named sessions which persist across terminal closes:
 
 ```bash
@@ -422,19 +424,17 @@ This is infrastructure for integrating AI assistance into your existing workflow
 
 ## When It Works (And When It Doesn’t)
 
-Terminal integration confused me at first. I expected a chat session. It’s not that. It’s one-shot execution that can reference session history, but once I had the aha moment, this is a great flow.
-
 The GUI is better for longer back-and-forth or even the CLI in REPL mode. Terminal integration is better for quick tasks or continuing work.
 
-Like other AI coding agents, Goose supports subagents for parallel task execution. Each subagent runs in its own isolated session. If one fails, you only get results from successful ones.
+As mentioned, Goose supports subagents for parallel task execution. Each subagent runs in its own isolated session. If one fails, you only get results from successful ones.
 
-The subagent infrastructure is solid. Whether it works depends on if your model understands how to use it. GPT-4.1 didn’t spawn subagents when I tried it. Claude Sonnet 4 did.
+The subagent infrastructure is solid. The only thing I ran into was with GPT-4.1 (switched to it when my tokens were low). Goose wasn't able to spawn subagents with GPT-4.1. Not sure why. Anthropic's Sonnet 4.x and Opus models worked perfectly with subagents.
 
-Recipe YAML validation could be better. When I asked the model to generate recipes during Day 9, it got the format wrong multiple times. I’d included https://block.github.io/goose/llms.txt as reference, so I’m not sure why the model struggled with it. Once I understood the structure myself, writing recipes manually was fine.
+Recipe YAML validation could be better. When I asked the model to generate recipes during Day 9, it got the format wrong multiple times. I’d included https://block.github.io/goose/llms.txt as reference, so I’m not sure why the model struggled with it. Not necessarily a direct Goose issue, but I'm surprised with access to Goose's llms.txt, the model couldn't generate a valid Goose recipe YAML file.
 
 ## What I Still Use Claude.ai For
 
-If I’m being honest, I still write my blog posts in Claude.ai, not Goose. Not because Goose is bad at it, but because I already have Claude Projects set up with my DevRel system prompts, evaluation rubrics, and content templates. I’m just used to that workflow.
+If I’m being honest, I still write my blog posts on Claude.ai, not Goose. Not because Goose is bad at it, but because I already have Claude Projects set up with my DevRel system prompts, evaluation rubrics, and content templates. I’m just used to that workflow.
 
 Maybe that’ll change as I use Goose more. Right now, Goose is where I automate things like weekly status updates. Claude.ai is where I write about them. Different tools for different jobs.
 
@@ -448,9 +448,7 @@ If you need tight VS Code integration, go with GitHub Copilot (native extension 
 
 If you want a polished terminal interface, Claude Code or OpenCode are excellent choices.
 
-If you want infrastructure for repeatable workflows, Goose has your back.
-
-![Geese infra](https://www.nickyt.co/images/posts/_uploads_articles_7h5envbtewzeublll2v9.png)
+If you want infrastructure for repeatable workflows, go with Goose.
 
 Goose makes sense if you:
 
@@ -459,9 +457,9 @@ Goose makes sense if you:
 - Work with teams that need reproducible workflows (YAML in git)
 - Build tools that need interactive UIs (MCP-UI rendering)
 
-These are infrastructure capabilities, not model capabilities. The model executes the workflow. Goose provides the execution environment.
+![Geese infra](https://www.nickyt.co/images/posts/_uploads_articles_7h5envbtewzeublll2v9.png)
 
-And of course it has all the table stakes features you expect in an AI agent which also makes it Goose a solid choice.
+And of course it has all the table stakes features you expect in an AI agent which also makes Goose a solid choice.
 
 ## Getting Started
 
