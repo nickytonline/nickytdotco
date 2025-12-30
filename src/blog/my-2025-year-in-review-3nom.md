@@ -33,7 +33,7 @@ I'd talked to some people who said getting into security was a solid move right 
 
 Then in May, everything shifted. I had heard about the Model Context Protocol (MCP) and then I saw Angie Jones mention on LinkedIn that she was speaking at the inaugural MCP Dev Summit in San Francisco. I brought it up internally, saying we should probably attend and I even submitted a talk as the CFP was still open. That conversation kicked off everything that came after.
 
-I think my CEO had also brought up MCPs and then all of a sudden we were securing MCPs as well. For a TLDR: an IAP operates at layer seven in the network stack, commonly known as the application layer, and for the most part that is HTTP. There were too many talks they wanted to do so they split over onto The Context (the MCP Dev Summit's online stream) which is where I gave my talk.
+I think my CEO had also brought up MCPs and then all of a sudden we were securing MCPs as well. For a TLDR: an IAP operates at layer seven in the network stack, commonly known as the application layer, and for the most part that is HTTP, where remote MCP servers live. There were too many talks they wanted to do so they spilt over onto The Context (the MCP Dev Summit's online stream) which is where I gave my talk.
 
 {% embed "https://www.youtube.com/watch?v=KY1kCZkqUh0" %}
 
@@ -45,14 +45,16 @@ And of course it was great to see old co-workers and friends.
 
 ![More AI world fair friends](https://www.nickyt.co/images/posts/_uploads_articles_ulz7terbhj3hcxo8hb6e.jpeg)
 
-
 ![Even more AI world fair friends](https://www.nickyt.co/images/posts/_uploads_articles_jmpt53kbj59v39jgj8xa.jpeg)
 
 ## Conference Circuit
 
-2025 was my biggest year for talks. I gave somewhere between 15 and 20 talks across different conferences. BlackHat USA was cool as I'd never been to Vegas before. I was a little stressed before my talk as the venue was massive and I was having trouble finding the location for my talk, but in the end, I made it. Maybe a bit sweaty lol.
+2025 was my biggest year for talks. I gave [somewhere between 15 and 20 talks](https://nickyt.live/talks/) across different conferences. BlackHat USA was cool as I'd never been to Vegas before. I was a little stressed before my talk as the venue was massive and I was having trouble finding the location for my talk, but in the end, I made it. Maybe a bit sweaty lol.
 
 I also got to meet a friend of mine, Carmen, irl finally!
+
+![me and Carmen in Vegas](https://www.nickyt.co/images/posts/_uploads_articles_a2drkqnv70sfp9kpy1ae.jpeg)
+
 
 I had multiple appearances at SREday, wrapping it up at the Microsoft Reactor campus where I think I gave my best version of that talk.
 
