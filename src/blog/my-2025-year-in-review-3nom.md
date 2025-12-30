@@ -39,15 +39,18 @@ I think my CEO had also brought up MCPs and then all of a sudden we were securin
 
 I also suggested we attend the AI World Fair, so we ended up grabbing a booth there and met all kinds of people interested in AI including MCP. I also got to attend a couple workshops including one from the WorkOS people (Nick and Zack), where we dove into Mastra.
 
-[TODO: add pictures]
-
 And of course it was great to see old co-workers and friends.
+
+![AI world fair friends](https://www.nickyt.co/images/posts/_uploads_articles_cu6aqyci1py0sugw0k6p.jpeg)
+
+![More AI world fair friends](https://www.nickyt.co/images/posts/_uploads_articles_ulz7terbhj3hcxo8hb6e.jpeg)
+
+
+![Even more AI world fair friends](https://www.nickyt.co/images/posts/_uploads_articles_jmpt53kbj59v39jgj8xa.jpeg)
 
 ## Conference Circuit
 
 2025 was my biggest year for talks. I gave somewhere between 15 and 20 talks across different conferences. BlackHat USA was cool as I'd never been to Vegas before. I was a little stressed before my talk as the venue was massive and I was having trouble finding the location for my talk, but in the end, I made it. Maybe a bit sweaty lol.
-
-[TODO: picture speaking at BlackHat]
 
 I also got to meet a friend of mine, Carmen, irl finally!
 
@@ -71,6 +74,9 @@ Again it was great hanging with some awesome people.
 
 ![In London at the MCP Dev Summit with friends at the wrap up social](https://www.nickyt.co/images/posts/_uploads_articles_rvmspmd095mg1vwwbhv6.png)
 
+![me and Marlene](https://www.nickyt.co/images/posts/_uploads_articles_przz7u8iu8hiaasm5eb5.jpeg)
+
+
 People always say this, but it's 100% true. Getting to meet people in person at all these conferences is the real motivation. Obviously there's speaking obligations, but it's a cheat code to hang with friends as well as people you may have never had the chance to chat with irl.
 
 ![Me, bdougie, Tyler and Mark at ATO 2025](https://www.nickyt.co/images/posts/_uploads_articles_zks5jznriozy2ibtfr22.png)
@@ -80,6 +86,8 @@ People always say this, but it's 100% true. Getting to meet people in person at 
 ![Me and Shruti at ATO 2025](https://www.nickyt.co/images/posts/_uploads_articles_yykaudf5twkafmnlko74.png)
 
 ![Me and friends at a social at ATO 2025](https://www.nickyt.co/images/posts/_uploads_articles_afsu1w2p93q7lmsk3jyw.png)
+
+![the Commit Your Code crew](https://www.nickyt.co/images/posts/_uploads_articles_2kmie83fmilcab860x5l.jpeg)
 
 ## Community Recognition
 
