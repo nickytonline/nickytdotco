@@ -3048,7 +3048,7 @@
     "edited_at": null,
     "crossposted_at": null,
     "published_at": "2025-12-28T23:09:32Z",
-    "last_comment_at": "2025-12-28T23:09:32Z",
+    "last_comment_at": "2025-12-30T06:13:41Z",
     "reading_time_minutes": 3,
     "tag_list": "mcp, agents, skills, ai",
     "tags": [
@@ -3118,6 +3118,45 @@
       "name": "showdev",
       "bg_color_hex": "#091b47",
       "text_color_hex": "#b2ffe1"
+    }
+  },
+  "https://dev.to/nickytonline/my-newsletter-growth-fun-slow-steady-4fpd": {
+    "type_of": "article",
+    "id": 3105510,
+    "title": "My Newsletter: Growth, Fun, Slow & Steady",
+    "description": "Beehiiv just dropped their 2025 rewind stats for my newsletter, One Tip a Week, and honestly, I’m...",
+    "readable_publish_date": "Dec 15",
+    "slug": "my-newsletter-growth-fun-slow-steady-4fpd",
+    "path": "/nickytonline/my-newsletter-growth-fun-slow-steady-4fpd",
+    "url": "https://dev.to/nickytonline/my-newsletter-growth-fun-slow-steady-4fpd",
+    "collection_id": null,
+    "published_timestamp": "2025-12-15T01:56:04Z",
+    "language": "en",
+    "subforem_id": 1,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb2e28lpapdr2u0rsmp41.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb2e28lpapdr2u0rsmp41.jpg",
+    "canonical_url": "https://www.nickyt.co/blog/my-newsletter-growth-fun-slow-steady-4fpd/",
+    "created_at": "2025-12-15T01:56:04Z",
+    "edited_at": "2025-12-15T02:00:57Z",
+    "crossposted_at": null,
+    "published_at": "2025-12-15T01:56:04Z",
+    "last_comment_at": "2025-12-20T03:19:52Z",
+    "reading_time_minutes": 3,
+    "tag_list": "contentcreation, devtips, webdev",
+    "tags": [
+      "contentcreation",
+      "devtips",
+      "webdev"
+    ],
+    "user": {
+      "name": "Nick Taylor",
+      "username": "nickytonline",
+      "twitter_username": null,
+      "github_username": "nickytonline",
+      "user_id": 9597,
+      "website_url": "https://OneTipAWeek.com",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F9597%2F8f1ed696-3e87-4bd4-809a-0ee9bb905c3c.jpg"
     }
   }
 }
