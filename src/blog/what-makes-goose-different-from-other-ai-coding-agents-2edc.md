@@ -1,7 +1,7 @@
 ---json
 {
   "title": "What Makes Goose Different From Other AI Coding Agents",
-  "excerpt": "What Makes Goose Different From Other AI Coding Agents   I just finished Goose’s Advent of...",
+  "excerpt": "I just finished Goose’s Advent of AI. Everything from CI automation to hand-gesture controlled apps...",
   "date": "2025-12-29T05:43:03Z",
   "tags": [
     "goose",
@@ -15,8 +15,6 @@
   "template": "post"
 }
 ---
-
-# What Makes Goose Different From Other AI Coding Agents
 
 I just finished Goose’s [Advent of AI](https://adventofai.dev/). Everything from CI automation to hand-gesture controlled apps to model context protocol (MCP) servers with UI.
 
@@ -463,7 +461,7 @@ Goose makes sense if you:
 
 These are infrastructure capabilities, not model capabilities. The model executes the workflow. Goose provides the execution environment.
 
-And of course it has all the table stakes features you expect in an AI agent which also makes it a solid choice.
+And of course it has all the table stakes features you expect in an AI agent which also makes it Goose a solid choice.
 
 ## Getting Started
 
