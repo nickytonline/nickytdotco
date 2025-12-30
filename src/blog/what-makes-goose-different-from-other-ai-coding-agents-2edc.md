@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6yvhgeh5smo5its2ryjl.png",
   "canonical_url": "https://www.nickyt.co/blog/what-makes-goose-different-from-other-ai-coding-agents-2edc/",
-  "reading_time_minutes": 13,
+  "reading_time_minutes": 12,
   "template": "post"
 }
 ---
@@ -146,91 +146,7 @@ When you run this recipe, Goose executes each sub-recipe with the same parameter
 
 You can also pin which MCP extensions a recipe should use. This is currently only available in YAML (not the UI), but it’s powerful for reproducible workflows. This guarantees the recipe runs with specific tools, regardless of what’s in your global config.
 
-Here’s a more typical engineering workflow. Generating weekly status updates by querying Linear, GitHub, and Notion:
-
-```yaml
-{% raw %}
-version: '1'
-title: Weekly Status Update
-description: Generate a weekly engineering status update
-instructions: |
-  You are an expert at generating concise and informative weekly status updates for software engineers based on their actual work activity.
-  Generate a weekly status update for Nick Taylor covering work from last week and plans for next week.
-
-  **Time Windows (Eastern Time):**
-  - Last week: Previous Monday-Friday relative to today (Thursday)
-  - Next week: Coming Friday + following Monday-Friday
-
-  **Required Data Sources:**
-
-  - **Linear**: Search issues created/updated by Nick in the time window
-  - **GitHub**: Search PRs, commits, issues by Nick in the time window
-  - **Notion** (if available): Search pages created/updated by Nick
-
-  **Critical Requirements:**
-
-  1. Each "What I did last week" bullet MUST reference a specific artifact (PR, issue, commit, page)
-  2. If no tool data available, state: [No MCP tool available]
-  3. If tool returns nothing, state: [No activity found]
-  4. Include direct links to all artifacts
-
-  **Output Format:**
-
-  - What I did last week
-    - [Specific accomplishment with link]
-
-  - What it impacted
-    - [Concrete outcome]
-
-  - What I plan to do next week
-    - [Specific planned work]
-
-  - Where I need support
-    - [Blockers or dependencies, or "None"]
-
-  **Rules:**
-  - No clarifying questions
-  - No preambles or commentary
-  - Only show Nick's work (individual or collaborative)
-  - Be concrete and specific
-  - Light weeks are okay - don't pad content
-prompt: |
-  get my weekly status update
-extensions:
-- type: streamable_http
-  name: linear
-  description: Linear issue tracking
-  uri: https://mcp.linear.app/mcp
-  envs: {}
-  env_keys: []
-  headers: {}
-  timeout: 60
-  bundled: null
-  available_tools: []
-- type: streamable_http
-  name: notion
-  description: Notion workspace
-  uri: https://mcp.notion.com/mcp
-  envs: {}
-  env_keys: []
-  headers: {}
-  timeout: 60
-  bundled: null
-  available_tools: []
-- type: streamable_http
-  name: github
-  description: GitHub mcp
-  uri: https://api.githubcopilot.com/mcp/
-  envs: {}
-  env_keys: []
-  headers: {}
-  timeout: 60
-  bundled: null
-  available_tools: []
-activities: []
-parameters: []
-{% endraw %}
-```
+A more typical engineering workflow would be generating weekly status updates by querying Linear, GitHub, and Notion. Check out this [gist for the recipe](https://gist.github.com/nickytonline/9e6702893ed2ca6ad9a62e2337583ba9).
 
 You can also make a recipe a slash command.
 
@@ -258,7 +174,7 @@ Compare this to slash commands in other tools. Those are saved prompts with plac
 
 #### Recipes + Subagents: Parallel Workflows
 
-[Subagents](https://block.github.io/goose/docs/guides/subagents/) are table stakes (other tools have them), but recipes give you infrastructure to orchestrate them effectively. Here’s a video processing recipe that spawns 4 parallel subagents:
+With [Subagents](https://block.github.io/goose/docs/guides/subagents/), recipes give you infrastructure to orchestrate them effectively. Here’s a video processing recipe that spawns 4 parallel subagents:
 
 ```yaml
 {% raw %}
