@@ -3,6 +3,9 @@ const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const fs = require("fs");
 
+// Import search plugin
+const searchPlugin = require("./src/utils/eleventy-search-plugin.js");
+
 // Import filters
 const dateFilter = require("./src/filters/date-filter.js");
 const markdownFilter = require("./src/filters/markdown-filter.js");
@@ -138,6 +141,7 @@ module.exports = function (config) {
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
+  config.addPlugin(searchPlugin);
 
   // 404
   config.setBrowserSyncConfig({
