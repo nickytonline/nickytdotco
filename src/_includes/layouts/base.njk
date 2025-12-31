@@ -24,10 +24,12 @@
   </head>
   <body>
     {% include "partials/global/site-head.njk" %}
+    {% include "partials/search-box.njk" %}
     {% block content %}{% endblock content %}
     {% include "partials/global/site-foot.njk" %}
     {% block foot %}{% endblock %}
     <script type="module" src="/js/components/theme-toggle.js" async="async" defer="defer"></script>
+    <script src="/js/search.js" defer></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
