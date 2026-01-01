@@ -11,7 +11,7 @@
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3007zwyd3kc4annzmf81.jpg",
   "canonical_url": "https://www.nickyt.co/blog/my-2025-year-in-review-3nom/",
-  "reading_time_minutes": 7,
+  "reading_time_minutes": 8,
   "template": "post",
   "series": {
     "name": "Year in Review",
@@ -93,7 +93,7 @@ People always say this, but it's 100% true. Getting to meet people in person at 
 
 ![the Commit Your Code crew](https://www.nickyt.co/images/posts/_uploads_articles_2kmie83fmilcab860x5l.jpeg)
 
-## Community Recognition
+## Community
 
 In early June, I became a GitHub Star. The community nominates people for this, and honestly, I didn't realize how few there were. As of writing this, there are only 88 stars on the planet. Pretty cool.
 
@@ -111,6 +111,10 @@ One of the best perks? GitHub flew me out to GitHub Universe in October. I got t
 
 I also became a Microsoft MVP, which was really cool. It definitely feels great to be recognized.
 
+Aside from that I became a mentor in the [Let's Get Technical community](https://discord.gg/aAzCA7fT) where I'm one of the mentors for people new to the tech industry working through a real world project. We wrapped up our Secret Santa Exchange. Great work team!
+
+{% embed "https://github.com/LetsGetTechnical/elecretanta" %}
+
 ## Writing and Building
 
 I published 42 articles in 2025. December alone was 19 articles as I did the Advent of AI 2025 challenge, documenting my daily experiences with Goose.
@@ -119,8 +123,8 @@ Here's some of the stuff I built:
 * [dev.to MCP server](https://github.com/nickytonline/dev-to-mcp)
 * [Pimp My Ride MCP server](https://github.com/nickytonline/pimp-my-ride-mcp)
 * Pomerium's [MCP app demo](https://github.com/pomerium/mcp-app-demo) which is essentially an MCP client and it's not really a demo anymore since we use it internally. 
-* [TypeScript MCP template](https://github.com/nickytonline/mcp-typescript-template) to help others spin up their own MCP servers faster
-* [ChatGPT apps template](https://github.com/pomerium/chatgpt-app-typescript-template)
+* [TypeScript MCP template](https://github.com/nickytonline/mcp-typescript-template) - A TypeScript template for building remote Model Context Protocol (MCP) servers with modern tooling and best practices while leveraging the MCP TypeScript SDK.
+* [ChatGPT apps template](https://github.com/pomerium/chatgpt-app-typescript-template) - A well-architected starter template demonstrating best practices for building ChatGPT apps using the Model Context Protocol (MCP) with React widgets. It leverages TypeScript, Tailwind CSS v4, Pino logging, Storybook, and Vitest for a robust development experience.
 
 ## Guest Spots and Streaming
 
