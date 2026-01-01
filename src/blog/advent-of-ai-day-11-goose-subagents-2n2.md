@@ -116,7 +116,7 @@ I also tried GPT-4.1, and it couldn't execute the subagents properly. Instead of
 
 I also enabled prompt injection detection in Goose for the first time:
 
-```
+```bash
 {% raw %}
 🔒 Security Alert: This tool call has been flagged as potentially dangerous. 
 Confidence: 95.0% 
