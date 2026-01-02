@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import Post from "../../layouts/Post.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog", ({ data }) => {
@@ -17,28 +18,6 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{entry.data.title}</title>
-  </head>
-  <body>
-    <article>
-      <h1>{entry.data.title}</h1>
-      {entry.data.date && (
-        <time datetime={entry.data.date.toISOString()}>
-          {entry.data.date.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </time>
-      )}
-      <Content />
-    </article>
-  </body>
-</html>
+<Post entry={entry} />
