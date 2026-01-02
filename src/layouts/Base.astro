@@ -70,13 +70,14 @@ const currentPath = Astro.url.pathname;
   </head>
   <body>
     <SiteHead currentPath={currentPath} />
-    <SearchBox />
+    <!-- SearchBox temporarily disabled - will be implemented in Phase 2 -->
+    <!-- <SearchBox /> -->
     <slot />
     <SiteFoot />
     <slot name="foot" />
 
     <script type="module" src="/js/components/theme-toggle.js" async defer></script>
-    <script src="/js/search.js" defer></script>
+    <!-- <script src="/js/search.js" defer></script> -->
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
