@@ -1,0 +1,21 @@
+---
+import { site } from '../data/site';
+import Nav from './Nav.astro';
+
+export interface Props {
+  currentPath?: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header role="banner" class="site-head pad-top-700">
+  <div class="wrapper">
+    <a href="/" class="[ site-head__site-name ] [ leading-tight ]">
+      <span class="visually-hidden">{site.name} - Home</span>
+      <span class="[ site-head__site-name ] [ text-600 ]" aria-hidden="true">{site.name}</span>
+    </a>
+    <Nav ariaLabel="navigation" currentPath={currentPath} />
+  </div>
+</header>

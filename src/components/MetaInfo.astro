@@ -1,0 +1,80 @@
+---
+import { site } from '../data/site';
+
+export interface Props {
+  title: string;
+  metaTitle?: string;
+  metaDesc?: string;
+  excerpt?: string;
+  canonical_url?: string;
+  cover_image?: string;
+  reading_time_minutes?: number;
+  url: string;
+}
+
+const {
+  title,
+  metaTitle,
+  metaDesc,
+  excerpt,
+  canonical_url,
+  cover_image,
+  reading_time_minutes,
+  url
+} = Astro.props;
+
+// Compute page metadata
+const pageTitle = metaTitle || `${title} - ${site.name}`;
+const pageDesc = metaDesc || excerpt || '';
+const siteTitle = site.name;
+const currentUrl = `${site.url}${url}`;
+const canonicalUrl = canonical_url || currentUrl;
+
+// Clean twitter handle
+const twitterHandle = site.twitterHandle.replace('@', '');
+---
+
+<title>{pageTitle}</title>
+<link rel="canonical" href={canonicalUrl} />
+<meta property="og:site_name" content={siteTitle} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={currentUrl} />
+
+{site.twitterHandle && (
+  <meta name="twitter:creator" content={`@${twitterHandle}`} />
+)}
+
+{pageDesc && (
+  <>
+    <meta name="description" content={pageDesc} />
+    <meta name="twitter:description" content={pageDesc} />
+    <meta property="og:description" content={pageDesc} />
+  </>
+)}
+
+{cover_image && (
+  <>
+    <meta property="og:image" content={cover_image} />
+    <meta name="twitter:image" content={cover_image} />
+    <meta property="og:image:alt" content={`Page image for the page ${title}`} />
+    <meta name="twitter:image:alt" content={`Page image for the page ${title}`} />
+  </>
+)}
+
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Extra metadata for Slack unfurls -->
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content={site.authorName} />
+
+{reading_time_minutes && (
+  <>
+    <meta name="twitter:label2" content="Reading time" />
+    <meta name="twitter:data2" content={`${reading_time_minutes} minute read`} />
+  </>
+)}
+
+{site.paymentPointer && (
+  <meta name="monetization" content={site.paymentPointer} />
+)}
