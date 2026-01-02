@@ -1,0 +1,214 @@
+---json
+{
+  "title": "Advent of AI 2025 - Day 15: Goose Sub-Recipes",
+  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
+  "date": "2025-12-21T17:44:42Z",
+  "tags": [
+    "adventofai",
+    "goose",
+    "ai",
+    "automation"
+  ],
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn0ks3d6lxds8jonx3mi7.jpg",
+  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-15-goose-sub-recipes-3mnd/",
+  "reading_time_minutes": 4,
+  "template": "post",
+  "series": {
+    "name": "Advent of AI 2025",
+    "collection_id": 34295
+  }
+}
+---
+
+I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. If I'm doing them correctly, they should take me between 30 minutes to 1 hour max to write.
+
+The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
+
+{% embed "https://github.com/block/goose" %}
+
+[Day 15's challenge](https://adventofai.dev/challenges/15) was all about [sub-recipes](https://block.github.io/goose/docs/guides/recipes/subrecipes). If you've been following along, you know recipes are Goose's way of automating workflows.
+
+{% embed "https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c" %}
+
+Sub-recipes take this further by letting you compose smaller recipes into larger ones.
+
+## The Challenge
+
+The scenario: Zara, a social media coordinator, needs to create content for three different platforms for the Grand Ice Sculpture Unveiling event. Each platform needs completely different content styles.
+
+Instagram wants visual captions with hashtags. Twitter/X needs a concise thread. Facebook needs detailed event descriptions. Manually customizing content for each platform is tedious and time-consuming.
+
+The goal: create one main recipe that orchestrates three sub-recipes, one for each platform.
+
+I created four recipe files:
+
+1. [instagram-post.yaml](https://github.com/nickytonline/advent-of-ai-2025/blob/main/day-15/instagram-post.yaml) for Instagram content  
+2. [twitter-thread.yaml](https://github.com/nickytonline/advent-of-ai-2025/blob/main/day-15/twitter-thread.yaml) for Twitter/X threads  
+3. [facebook-event.yaml](https://github.com/nickytonline/advent-of-ai-2025/blob/main/day-15/facebook-event.yaml) for Facebook event posts  
+4. [social-campaign.yaml](https://github.com/nickytonline/advent-of-ai-2025/blob/main/day-15/social-campaign.yaml) as the main orchestrator
+
+All recipes accept the same core parameters: event name, date, description, target audience, and call to action. The main recipe passes these values to each sub-recipe.
+
+## What I Learned
+
+Sub-recipes are powerful for composability. Instead of one massive recipe trying to do everything, you break it into focused pieces. Each sub-recipe has one job and does it well.
+
+The main recipe's job is coordination. It defines the workflow, passes the right data to each sub-recipe, and presents the results in a useful format.
+
+The main recipe's `sub_recipes` section maps values from the main parameters to each sub-recipe's expected parameters.
+
+``````yaml
+{% raw %}
+version: 1.0.0
+title: Social Media Campaign Generator
+description: Generate complete cross-platform social media campaign using sub-recipes
+instructions: |
+
+  You are a social media campaign coordinator creating a comprehensive multi-platform campaign.
+
+  Generate a complete social media campaign for the following event:
+  - event_name: {{event_name}}
+  - event_date: {{event_date}}
+  - event_description: {{event_description}}
+  - target_audience: {{target_audience}}
+  - call_to_action: {{call_to_action}}
+
+  **Campaign Strategy:**
+  Execute the following sub-recipes to create platform-specific content:
+
+  1. **Instagram Content**: Run the instagram-post.yaml recipe
+  2. **Twitter/X Thread**: Run the twitter-thread.yaml recipe
+  3. **Facebook Event**: Run the facebook-event.yaml recipe
+
+  **Output Format:**
+  Present the complete campaign organized by platform:
+
+  ```
+  # 📱 SOCIAL MEDIA CAMPAIGN: {{event_name}}
+
+  ---
+
+  ## 📷 INSTAGRAM POST
+
+  [Output from instagram-post.yaml recipe]
+
+  ---
+
+  ## 🐦 TWITTER/X THREAD
+
+  [Output from twitter-thread.yaml recipe]
+
+  ---
+
+  ## 👥 FACEBOOK EVENT
+
+  [Output from facebook-event.yaml recipe]
+
+  ---
+
+  ## 📊 CAMPAIGN SUMMARY
+  ✅ Instagram: Ready to post
+  ✅ Twitter/X: Thread ready (3-5 tweets)
+  ✅ Facebook: Event description ready
+
+  **Posting Strategy:**
+  - Post to Facebook first (most details, drives event RSVPs)
+  - Post to Instagram 2-4 hours later (visual engagement)
+  - Post Twitter thread 1-2 hours after Instagram (conversation starter)
+
+  **Engagement Tips:**
+  - Monitor comments in first 2 hours for maximum reach
+  - Respond to questions quickly
+  - Share user-generated content
+  - Cross-promote between platforms
+  ```
+
+  **Execution Instructions:**
+  1. Call each sub-recipe with the provided parameters
+  2. Collect all outputs
+  3. Format as shown above
+  4. Provide strategic posting guidance
+
+  **Rules:**
+  - Execute all three sub-recipes
+  - Present output in a clear, organized format
+  - Include campaign summary and strategy
+  - Make it ready for immediate deployment
+prompt: Generate complete social media campaign for {{event_name}}
+extensions: []
+sub_recipes:
+  - name: "instagram_content"
+    path: "./instagram-post.yaml"
+    values:
+      event_name: "{{event_name}}"
+      event_date: "{{event_date}}"
+      event_description: "{{event_description}}"
+      target_audience: "{{target_audience}}"
+      call_to_action: "{{call_to_action}}"
+  - name: "twitter_content"
+    path: "./twitter-thread.yaml"
+    values:
+      event_name: "{{event_name}}"
+      event_date: "{{event_date}}"
+      event_description: "{{event_description}}"
+      target_audience: "{{target_audience}}"
+      call_to_action: "{{call_to_action}}"
+  - name: "facebook_content"
+    path: "./facebook-event.yaml"
+    values:
+      event_name: "{{event_name}}"
+      event_date: "{{event_date}}"
+      event_description: "{{event_description}}"
+      target_audience: "{{target_audience}}"
+      call_to_action: "{{call_to_action}}"
+activities: []
+parameters:
+  - key: event_name
+    input_type: string
+    requirement: required
+    description: Name of the festival event
+  - key: event_date
+    input_type: string
+    requirement: required
+    description: When the event is happening
+  - key: event_description
+    input_type: string
+    requirement: required
+    description: What the event is about
+  - key: target_audience
+    input_type: string
+    requirement: required
+    description: Who should attend
+  - key: call_to_action
+    input_type: string
+    requirement: required
+    description: What you want people to do
+{% endraw %}
+``````
+
+## The Result
+
+Running the campaign generator with event details produces ready-to-post content for all three platforms. Instagram gets its caption with strategic hashtags. Twitter/X gets a 4-tweet thread. Facebook gets a complete event description.
+
+The output even includes posting strategy and engagement tips, which I didn't explicitly ask for but the recipe generated based on the instructions.
+
+## Resources
+
+If you want to dive deeper into sub-recipes:
+
+* [Recipe Reference - Sub-recipes](https://block.github.io/goose/docs/guides/recipes/recipe-reference)  
+* [Recipes Guide](https://block.github.io/goose/docs/guides/recipes/)
+
+My full solution is on GitHub: [Advent of AI 2025 - Day 15](https://github.com/block/goose/discussions/6195#discussioncomment-15311588)
+
+The original challenge is here: [Day 15: The Social Media Blitz](https://adventofai.dev/challenges/15)
+
+That's it for Day 15. Quick post, but sub-recipes are a solid pattern for building reusable workflows.
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Until the next one!
+
+Find me on the web at [nickyt.online](https://nickyt.online/)
+
+Photo by <a href="https://unsplash.com/@hybridnighthawk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">hybridnighthawk</a> on <a href="https://unsplash.com/photos/a-couple-of-chefs-working-in-a-kitchen-u0NElYxby4c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

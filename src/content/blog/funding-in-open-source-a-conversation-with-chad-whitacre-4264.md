@@ -1,0 +1,66 @@
+---json
+{
+  "title": "Funding in Open Source: A Conversation with Chad Whitacre",
+  "excerpt": "“Open source isn’t a market economy. It’s a gift economy.” — Chad Whitacre, Head of Open Source at...",
+  "date": "2025-05-13T09:25:00Z",
+  "tags": [
+    "opensource",
+    "opensourcefunding",
+    "devcommunity"
+  ],
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fx6ra3dssotyobvioiiez.jpg",
+  "canonical_url": "https://www.nickyt.co/blog/funding-in-open-source-a-conversation-with-chad-whitacre-4264/",
+  "reading_time_minutes": 4,
+  "template": "post"
+}
+---
+
+> “Open source isn’t a market economy. It’s a gift economy.”  
+> — Chad Whitacre, Head of Open Source at Sentry
+
+Recently on the [Pomerium livestream](https://www.youtube.com/@pomerium_io), I caught up with Chad Whitacre to talk about open source funding, what sustainability actually means, and why the usual market lens doesn’t always apply. Chad’s been part of the open source world for decades. His experience spans both community-driven projects and the practical realities of building support structures inside companies.
+
+The full conversation runs a little over an hour and covers a lot of ground, including burnout, corporate responsibility, and how to make open source support more than a feel-good side project. If you want to catch the full thing, you can watch it on YouTube. If you’re just looking for the main takeaways, keep reading.
+
+{% embed "https://www.youtube.com/watch?v=aOT3dl57dlA" %}
+
+## Open source is built on relationships
+
+One of the main points Chad brought up is that open source doesn't fit into the typical buyer-seller model. When someone publishes a library or framework, they’re not selling you a product. They’re offering a gift. And when you use that software, you’ve received something—whether or not you ever contribute back.
+
+Chad prefers the word "invitation" over "obligation." There’s no contract forcing you to participate, but there’s an open door if you want to. This framing creates space for gratitude and reciprocity, without guilt or pressure. It also better reflects how open source communities actually work.
+
+## Burnout and funding go hand in hand
+
+We talked about how burnout often stems from the gap between usage and support. A maintainer might create something that gets millions of downloads, but still struggle to justify spending time on it. When people praise the work but don't back it with tangible support, that disconnect wears folks down.
+
+Chad defined sustainability as the ability for someone to create a widely used project and get paid fairly for it—without having to hustle or go viral. That’s where funding comes in. Not just individual donations, but structured, consistent support from the organizations that benefit most.
+
+## The Open Source Pledge
+
+Chad has been leading the [Open Source Pledge](https://opensourcepledge.com/), a simple framework to get companies to fund the projects they rely on. The idea is straightforward: for every developer your company employs, allocate $2,000 per year to open source. Distribute those funds however you want—[GitHub Sponsors](https://github.com/sponsors), [Open Collective](https://opencollective.com/), [Thanks.dev](https://thanks.dev), direct payments, etc. The only other ask is to publish a blog post showing what you did.
+
+The pledge doesn’t collect money or take a cut. It exists to normalize the idea that companies should give back in a meaningful, visible way. This creates public accountability and makes open source support something you can point to on your careers page or investor pitch—not just something you do quietly in the background.
+
+## Support isn't just about money
+
+We also touched on the argument that open source sometimes gets treated as free labor. Chad's response was that good open source empowers users to fix their own problems without needing to stay involved long-term. That’s not exploitation, that’s freedom.
+
+The problem isn’t that people contribute for free. The problem is when companies extract value without giving anything in return. A simple pull request that fixes your bug is great. But if you’re building on top of open source every day, it makes sense to support the people maintaining that foundation.
+
+## Shifting the culture
+
+Near the end of the conversation, Chad talked about the longer-term vision. He’s not just trying to get a few companies to sign a pledge. He’s trying to change the culture around open source funding. That means telling better stories, highlighting what works, and building new norms.
+
+He’s also launching a new show on the Syntax YouTube channel that follows his mission to grow the pledge from 32 companies to 1,000. The series is part documentary, part reality experiment, and part open source rally cry. If you’re curious what it looks like to scale a community-driven funding model, keep an eye out.
+
+{% embed "https://www.youtube.com/watch?v=g3DwMGwalrU" %}
+
+- Watch the [full conversation with Chad on YouTube](https://www.youtube.com/watch?v=aOT3dl57dlA)  
+- Visit [opensourcepledge.com](https://opensourcepledge.com) to learn more or get involved  
+- Follow [Syntax on YouTube](https://www.youtube.com/@syntaxfm) to catch Chad’s upcoming series
+- Follow [Pomerium on YouTube](https://www.youtube.com/@pomerium_io) for more great conversations with people in the developer community
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+The cover image for this blog post is from the register.com's article [San Francisco billboards call out tech firms for not paying for open source](https://www.theregister.com/2024/10/25/open_source_funding_ads/).
