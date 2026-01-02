@@ -1,24 +1,33 @@
-# Agent Guidelines for www.nickyt.co
+# Repository Guidelines
 
-## Build Commands
-- `npm start` - Development server with Sass watch and Eleventy serve
-- `npm run serve` - Eleventy development server only
-- `npm run production` - Production build
-- `npm run sass:process` - Compile Sass to CSS
+## Project Structure & Module Organization
+- `src/` holds the Astro site source. Key areas: `src/pages/` for routes, `src/layouts/` for page shells, `src/components/` for UI components, `src/content/` and `src/blog/` for markdown content, `src/scss/` and `src/styles/` for styling, and `src/_data/` for shared data.
+- `public/` contains static assets copied as-is at build time.
+- `dist/` is the build output (generated).
+- Root config includes `astro.config.mjs`, `tsconfig.json`, and `netlify.toml`.
 
-## Code Style
-- **Formatting**: Uses Prettier with default config (empty .prettierrc)
-- **Imports**: CommonJS modules (`require`/`module.exports`)
-- **Functions**: Use function declarations for exports, arrow functions for inline
-- **Naming**: camelCase for variables/functions, kebab-case for files
-- **Strings**: Double quotes preferred, template literals for interpolation
-- **Comments**: JSDoc for function documentation, inline comments sparingly
-- **Error Handling**: Try-catch blocks for async operations, graceful fallbacks
+## Build, Test, and Development Commands
+- `npm run dev` or `npm start`: run the Astro dev server.
+- `npm run build`: run `astro check` then build to `dist/`.
+- `npm run preview`: serve the production build locally.
+- `npm run sass:process`: compile Sass (`src/scss/global.scss` -> `src/styles/global.css`).
+- `npm run sass:tokens`: generate Sass tokens from `src/_data/tokens.json`.
 
-## Architecture
-- **Static Site**: Eleventy (11ty) with Nunjucks templates
-- **Styling**: Sass compilation to CSS
-- **Content**: Markdown blog posts in `src/blog/`
-- **Data**: JSON files in `src/_data/`
-- **Shortcodes**: Custom embeds in `src/shortCodes/`
-- **Filters**: Date/content filters in `src/filters/`
+## Coding Style & Naming Conventions
+- Formatting: Prettier default config (`.prettierrc` is empty).
+- Modules: ESM (`"type": "module"` in `package.json`).
+- Naming: camelCase for JS/TS, kebab-case for filenames (e.g., `post-card.astro`).
+- Strings: prefer double quotes; use template literals for interpolation.
+
+## Testing Guidelines
+- No dedicated test runner or test directory is configured. Use `npm run build` to validate type checks and builds before PRs.
+
+## Commit & Pull Request Guidelines
+- Commit messages follow Conventional Commits patterns (e.g., `feat:`, `fix:`, `chore:`, `docs:`; scoped variants like `feat(search):`).
+- Before opening a PR, discuss the change with maintainers via issue or email.
+- Ensure build or install artifacts are not committed, and verify changes are tested to the best of your ability.
+- PRs should include a clear description, any relevant links, and obtain maintainer sign-off before merge.
+
+## Configuration & Environment Notes
+- Node.js version requirement: `>=18.13.0`.
+- Deployment is set up for Netlify via `netlify.toml`.
