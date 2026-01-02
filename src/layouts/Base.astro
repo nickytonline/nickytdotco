@@ -1,9 +1,8 @@
 ---
-import { site } from '../data/site';
-import MetaInfo from '../components/MetaInfo.astro';
-import SiteHead from '../components/SiteHead.astro';
-import SearchBox from '../components/SearchBox.astro';
-import SiteFoot from '../components/SiteFoot.astro';
+import { site } from "../data/site";
+import MetaInfo from "../components/MetaInfo.astro";
+import SiteHead from "../components/SiteHead.astro";
+import SiteFoot from "../components/SiteFoot.astro";
 
 export interface Props {
   title: string;
@@ -22,20 +21,25 @@ const {
   excerpt,
   canonical_url,
   cover_image,
-  reading_time_minutes
+  reading_time_minutes,
 } = Astro.props;
 
 // Get current URL path
 const currentPath = Astro.url.pathname;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="alternate" type="application/rss+xml" title={site.name} href={`${site.url}/feed.xml`} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={site.name}
+      href={`${site.url}/feed.xml`}
+    />
     <link rel="icon" href={site.faviconPath} type="image/png" />
 
     <MetaInfo
@@ -50,9 +54,12 @@ const currentPath = Astro.url.pathname;
     />
 
     <script is:inline>
-      const {documentElement} = document;
-      documentElement.classList.remove('no-js');
-      documentElement.setAttribute('data-user-color-scheme', localStorage.getItem('user-color-scheme') ?? 'light');
+      const { documentElement } = document;
+      documentElement.classList.remove("no-js");
+      documentElement.setAttribute(
+        "data-user-color-scheme",
+        localStorage.getItem("user-color-scheme") ?? "light"
+      );
     </script>
 
     <script
@@ -61,8 +68,7 @@ const currentPath = Astro.url.pathname;
       crossOrigin="anonymous"
       data-app-id="aa6100ac700b56ab0a4145ec736508387b817e362389a60879aa3e20d273ba80"
       src="https://client.proofybubble.com/assets/embed.js"
-      is:inline
-    ></script>
+      is:inline></script>
 
     <link rel="stylesheet" href="/styles/global.css" />
 
@@ -70,18 +76,16 @@ const currentPath = Astro.url.pathname;
   </head>
   <body>
     <SiteHead currentPath={currentPath} />
-    <!-- SearchBox temporarily disabled - will be implemented in Phase 2 -->
-    <!-- <SearchBox /> -->
     <slot />
     <SiteFoot />
     <slot name="foot" />
 
-    <script type="module" src="/js/components/theme-toggle.js" async defer></script>
-    <!-- <script src="/js/search.js" defer></script> -->
+    <script type="module" src="/js/components/theme-toggle.js" async defer
+    ></script>
     <script is:inline>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js');
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
         });
       }
     </script>
