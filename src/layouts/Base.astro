@@ -64,9 +64,7 @@ const currentPath = Astro.url.pathname;
       is:inline
     ></script>
 
-    <style is:global>
-      @import '../scss/global.scss';
-    </style>
+    <link rel="stylesheet" href="/styles/global.css" />
 
     <slot name="head" />
   </head>
