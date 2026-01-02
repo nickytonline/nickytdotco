@@ -95,3 +95,6 @@ yarn.lock
 .netlify
 
 src/blog/.christmas-tunes-55i1.md
+
+# Astro specific build artifacts
+.astro/
