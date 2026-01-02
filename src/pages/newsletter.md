@@ -1,4 +1,5 @@
 ---
+layout: ../layouts/Base.astro
 title: Newsletter
 metaDesc: "Nick Taylor's newsletter Yet Another Newsletter LOL subscribe page"
 ---
