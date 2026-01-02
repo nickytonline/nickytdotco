@@ -1,0 +1,145 @@
+---json
+{
+  "title": "What are AI Evals?",
+  "excerpt": "I did a livestream with Jim Bennett (@jimbobbennett) from Galileo recently where we talked about...",
+  "date": "2025-12-13T14:03:29Z",
+  "tags": [
+    "ai",
+    "testing",
+    "machinelearning"
+  ],
+  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbzfbc9vb8todj1ngcg1q.jpg",
+  "canonical_url": "https://www.nickyt.co/blog/what-are-ai-evals-1kk9/",
+  "reading_time_minutes": 5,
+  "template": "post"
+}
+---
+
+I did a livestream with Jim Bennett (@jimbobbennett) from [Galileo](https://galileo.ai/) recently where we [talked about evals and testing AI systems](https://www.youtube.com/watch?v=4cqR3gMDVP0). If you're building with AI and have been wondering how you're supposed to test something that gives you different answers every time, you've come to the right place.
+
+## What Are AI Evals?
+
+AI evals are automated checks that score AI outputs against
+expectations instead of asserting exact outputs.
+
+If that sounds vague, good. It's supposed to be. AI systems aren't
+deterministic, so testing them requires a different mindset than
+traditional software testing.
+
+I'll use Galileo examples throughout this post, but these concepts should apply to any eval framework.
+
+## The Testing Problem
+
+When you build a regular app, testing is straightforward. Write a unit test, arrange/act/assert, done. The function returns the same thing every time. Integration tests pass or fail. End-to-end tests are flaky but still pretty deterministic.
+
+![frontend tests passing](https://www.nickyt.co/images/posts/_uploads_articles_bzlijghz2zkx61nyob85.png)
+
+AI breaks all of this.
+
+The outputs are non-deterministic because there's actual randomness in these models. But the inputs are non-deterministic too. With a chatbot, users don't fill in a nice form field labeled "first name." They can say "My name is Nick" or "I'm Nick" or "Nick here" or whatever. There's no standard input format.
+
+So how do you test it?
+
+## Use AI to Test AI
+
+This sounds weird but it works. You use another Large Language Model (LLM) to evaluate your AI's output.
+
+![The Californians can't believe you use AI to test AI](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGpoN3V1Nmp4aTJjdGNsOTdva2dxNW1sejd1d3Zocm4zYTcxcXcxOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/52FIoKwgrQhezqXxCB/giphy.gif)
+
+Say you built a Human Resources (HR) chatbot. You want to know if it's hallucinating. You can't write a traditional unit test because you don't know what the exact output will be. Instead, you create an eval using another LLM that looks at your AI's response and checks if it's valid.
+
+Here's an example. An HR assistant is supposed to tell users how many vacation days they have. But it has no data to work with. So it makes stuff up. Sometimes 28 days, sometimes 25, sometimes "please refer to your employment contract" (which is actually correct since there's no data).
+
+You run an eval that checks context adherence. Does the output match the input context? With no context provided, it scores 0%.
+
+[![context adherence 0% score](https://www.nickyt.co/images/posts/_uploads_articles_ust2paerz2eiisvlyswa.png)](https://youtu.be/4cqR3gMDVP0?t=1207)
+
+Add the actual employment contract data and it scores 100%.
+
+[![context adherence 100% score](https://www.nickyt.co/images/posts/_uploads_articles_ggs3bn8jr1dexmnuord9.png)](https://youtu.be/4cqR3gMDVP0?t=1387)
+
+## Lower Your Pass Rate Expectations
+
+With regular unit tests, you expect 100% pass rate. All tests pass or the build fails.
+
+With AI evals, you accept lower pass rates.
+
+![time to lower your expectations](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG16bjh3cjh4cWVsMGcwbnZncTllOGF0YWl4cnQxbGF4dWd2N2x6bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aPGXiLAvYei92ta2wb/giphy.gif)
+
+How much lower depends on your use case. Banking chatbot giving financial advice? You want 99% because regulations. Game chatbot for fun? Maybe 80% is fine.
+
+This is about knowing your domain and what matters.
+
+## Context Adherence and Other Metrics
+
+Galileo has metrics like context adherence built in. It checks if the AI's answer is actually supported by the information it was given. Basically, did the AI stick to the facts it was provided or did it make stuff up? Super useful for catching hallucinations.
+
+Run an HR chatbot without data and context adherence hits zero. That's your alert that something broke. Maybe your Retrieval Augmented Generation (RAG) system failed or the database connection dropped.
+
+LLMs are "helpful" to a fault. If a RAG call fails, the LLM might just make something up instead of throwing an error. You won't know unless you're watching these metrics.
+
+## Build Your Test Data Set
+
+You need test cases just like regular unit tests. Start with synthetic data when you launch. Generate questions with ChatGPT about what users might ask. Once real users hit your system, swap in actual queries.
+
+This never stops. People get better at prompting over time. Your application changes. You're constantly adding new cases, removing duplicates, managing costs. Running 20,000 eval rows gets expensive.
+
+## Model Selection and Cost Optimization
+
+This is where evals get really useful. If GPT-6 drops tomorrow, should you switch to it?
+
+Run your test data set against both models. If GPT-5 gives you 95% success and GPT-6 gives you 85%, don't switch. If it gives you 96%, switch.
+
+Same with cost. Can you use a cheaper model? Run the evals. If the cheaper model maintains your quality threshold, use it. No guessing.
+
+## Guardrails Run Evals in Real-Time
+
+Everything above is testing after the fact. Observability, optimization, CI/CD. But you can also run evals inline as guardrails.
+
+A guardrail is an eval that runs in real-time and changes your app's behavior based on the result.
+
+Healthcare chatbot example. User gets frustrated and starts being toxic. The guardrail detects it and routes them to a human instead of continuing with the AI. Same for prompt injection, PII, inappropriate tone.
+
+The tradeoff is latency. These evals take time. You're adding seconds to your response time. Galileo built a small language model specifically for fast guardrails, but you need to consider the speed impact.
+
+## Put Guardrails Anywhere
+
+Guardrails aren't just for checking user input. You can put them anywhere in your application.
+
+Got a complex flow with multiple agents, LLM calls, and tool calls? Add guardrails at any point. Check RAG output before it goes to the LLM. Verify response tone before it goes to the user. Make sure no Personally Identifiable Information (PII) ends up in the logs.
+
+You just need to understand your domain well enough to know where the risks are.
+
+## Governance with Central Stages
+
+If for example, you're a bank building AI apps, your governance team creates a set of required guardrails. They publish it as a core set of guardrails.
+
+As a developer, you just use them in your app. Done. The governance team can update rules and add checks whenever they want. Every application gets the changes without redeployment.
+
+Makes total sense. Engineering teams don't constantly check for new compliance requirements and governance teams don't coordinate deploys across a thousand apps.
+
+## Non-AI Applications Too
+
+You can use these tools even if you're not building AI apps.
+
+A simple feedback form on your website can run a guardrail to check for PII before saving to the database. No AI in the actual application. You're just using AI to validate input.
+
+## Wrapping Up
+
+Testing AI systems requires a different mindset. It still sounds weird in the context of testing, but you accept non-determinism and use AI to test AI. Pass rates will be lower than traditional tests. Know your domain to set the right thresholds. Build your test data set from real user queries over time. Use evals for model selection, prompt optimization, and cost management. Guardrails protect you in real-time but add latency. Think about governance early.
+
+If you're building with AI and not doing evals, you don't know if your system works. You don't know when it breaks. You can't prove it's reliable.
+
+Interested in learning more?
+
+Check out:
+* [Galileo](https://galileo.ai/)  
+* [Galileo's YouTube channel](https://www.youtube.com/@rungalileo)  
+* [Galileo's Eval Engineering course](https://www.youtube.com/watch?v=HnDnMFUTj2Y)  
+* [Watch the full livestream](https://www.youtube.com/watch?v=4cqR3gMDVP0)
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Until the next one!
+
+Photo by <a href="https://unsplash.com/@vedranafilipovic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vedrana Filipović</a> on <a href="https://unsplash.com/photos/a-wooden-shelf-filled-with-different-colored-liquids-1Al0dsuyRs4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
