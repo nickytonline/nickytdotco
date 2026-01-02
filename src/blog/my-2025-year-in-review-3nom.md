@@ -115,6 +115,8 @@ Aside from that I became a mentor in the [Let's Get Technical community](https:/
 
 {% embed "https://github.com/LetsGetTechnical/elecretanta" %}
 
+I don't usually monitor follower counts, but they've all been on the rise including hitting 125K followers on dev.to in early December which I think is pretty cool.
+
 ## Writing and Building
 
 I published 42 articles in 2025. December alone was 19 articles as I did the Advent of AI 2025 challenge, documenting my daily experiences with Goose.
@@ -155,10 +157,6 @@ My newsletter [One Tip a Week](https://onetipaweek.com) had a great year. I star
 The key was keeping it simple. One tip per week, building up a backlog so there's no weekly pressure. The backlog of issues was key as it doesn't feel like a chore (like my old newsletter did).
 
 {% embed "https://dev.to/nickytonline/my-newsletter-growth-fun-slow-steady-4fpd" %}
-
-## Community Growth
-
-I don't usually monitor follower counts, but they've all been on the rise including hitting 125K followers on dev.to in early December which I think is pretty cool.
 
 ## Looking Back
 
