@@ -1,4 +1,5 @@
 ---
+layout: ../layouts/Base.astro
 title: Code of Conduct
 metaDesc: Code of Conduct for iamdeveloper.com and the associated community.
 ---

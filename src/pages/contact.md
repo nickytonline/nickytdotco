@@ -1,4 +1,5 @@
 ---
+layout: ../layouts/Base.astro
 title: 'Contact'
 metaDesc: 'Contact Nick Taylor, a sofware engineer with a focus on the front-end.'
 ---

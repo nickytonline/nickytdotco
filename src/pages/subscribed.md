@@ -1,4 +1,5 @@
 ---
+layout: ../layouts/Base.astro
 title: Subscription Successful
 metaDesc: 'Success page for subscription to my newsletter'
 ---

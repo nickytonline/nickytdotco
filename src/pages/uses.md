@@ -1,4 +1,5 @@
 ---
+layout: ../layouts/Base.astro
 title: Uses
 metaDesc: "This page details pretty much all I use as a developer."
 ---
