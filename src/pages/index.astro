@@ -1,6 +1,8 @@
 ---
+import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
 import { site } from "../data/site";
+import { dateFilter, w3DateFilter } from "../utils/filters";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -12,42 +14,70 @@ const sortedPosts = allPosts.sort((a, b) => {
 });
 
 const recentPosts = sortedPosts.slice(0, site.maxPostsPerPage);
+
+const introHeading = "Well, hello there!";
+const introContent = `<em>Hi!</em> I'm Nick. I'm not a big fan of spiders, I'm a big fan of open source and I'm so glad you stopped by. Here's some of my latest content.`;
+
+// Boost links
+const currentUrl = "/";
+const intentToTweet = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${site.name} by ${site.twitterHandle} ${site.url}`)}`;
+const intentToLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(site.url)}`;
+const intentToToot = `https://toot.kytta.dev/?text=${encodeURIComponent(`${site.name} by ${site.mastodonHandle} ${site.url}`)}`;
+const intentToBluesky = `https://bsky.app/intent/compose?text=${encodeURIComponent(`${site.name} ${site.url}`)}`;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.name}</title>
-    <meta name="description" content={site.shortDesc} />
-  </head>
-  <body>
-    <main>
-      <h1>{site.name}</h1>
-      <p>{site.shortDesc}</p>
+<Base
+  title={introHeading}
+  metaDesc="Welcome to Nick Taylor's Web Site. Nick is a Staff Software Engineer focusing on front-end technologies and tooling."
+>
+  <main id="main-content" tabindex="-1">
+    <header>
+      <div class="[ inner-wrapper ] [ sf-flow ]">
+        <h1 class="[ intro__heading intro__heading--compact ] [ text-800 md:text-900 leading-tight ] [ p-name ]">
+          {introHeading}
+        </h1>
+        <div class="box-flex gap-base flex-wrap">
+          <a href={intentToToot} class="boost-link">Toot it!</a>
+          <a href={intentToBluesky} class="boost-link">Share on Bluesky</a>
+          <a href={intentToTweet} class="boost-link">Tweet It!</a>
+          <a href={intentToLinkedIn} class="boost-link">Share on LinkedIn</a>
+        </div>
+        <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]" set:html={introContent} />
+      </div>
+    </header>
 
-      <section>
-        <h2>Recent Posts</h2>
-        <ul>
-          {
-            recentPosts.map((post) => (
-              <li>
-                <a href={`/blog/${post.slug}`}>
-                  <h3>{post.data.title}</h3>
-                  {post.data.excerpt && <p>{post.data.excerpt}</p>}
-                  <time datetime={post.data.date.toISOString()}>
-                    {post.data.date.toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </time>
+    <section class="post-list pad-top-300">
+      <div class="[ inner-wrapper ] [ sf-flow ]">
+        <h2 class="[ post-list__heading ] [ text-700 md:text-800 ]">Latest Blog Posts</h2>
+        <ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]" reversed>
+          {recentPosts.map((post) => (
+            <li class="blog flex items-start gap-300">
+              {post.data.cover_image && (
+                <a href={`/blog/${post.slug}`} class="hidden md-block" style="width: 150px; flex-shrink: 0;" aria-hidden="true">
+                  <img src={post.data.cover_image} alt="" style="width: 100%; height: auto;" data-not-lazy />
                 </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+              )}
+              <span class="flex-grow min-w-0" style="margin-top: -0.25em;">
+                <h3 class="font-base leading-tight text-600 weight-mid">
+                  <a href={`/blog/${post.slug}`} class="post-list__link" rel="bookmark" style="word-break: break-word;">
+                    {post.data.title}
+                  </a>
+                </h3>
+                <p class="text-300 weight-mid italic">
+                  <time datetime={w3DateFilter(post.data.date)}>
+                    {dateFilter(post.data.date)}
+                  </time>
+                </p>
+              </span>
+            </li>
+          ))}
+          <li class="blog post-list__item">
+            <h3 class="font-base leading-tight text-600 weight-mid">
+              <a href="/archive" class="post-list__link" rel="bookmark">More blog posts...</a>
+            </h3>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+</Base>
