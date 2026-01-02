@@ -1,0 +1,90 @@
+---
+import { site } from '../data/site';
+import MetaInfo from '../components/MetaInfo.astro';
+import SiteHead from '../components/SiteHead.astro';
+import SearchBox from '../components/SearchBox.astro';
+import SiteFoot from '../components/SiteFoot.astro';
+
+export interface Props {
+  title: string;
+  metaTitle?: string;
+  metaDesc?: string;
+  excerpt?: string;
+  canonical_url?: string;
+  cover_image?: string;
+  reading_time_minutes?: number;
+}
+
+const {
+  title,
+  metaTitle,
+  metaDesc,
+  excerpt,
+  canonical_url,
+  cover_image,
+  reading_time_minutes
+} = Astro.props;
+
+// Get current URL path
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="alternate" type="application/rss+xml" title={site.name} href={`${site.url}/feed.xml`} />
+    <link rel="icon" href={site.faviconPath} type="image/png" />
+
+    <MetaInfo
+      title={title}
+      metaTitle={metaTitle}
+      metaDesc={metaDesc}
+      excerpt={excerpt}
+      canonical_url={canonical_url}
+      cover_image={cover_image}
+      reading_time_minutes={reading_time_minutes}
+      url={currentPath}
+    />
+
+    <script is:inline>
+      const {documentElement} = document;
+      documentElement.classList.remove('no-js');
+      documentElement.setAttribute('data-user-color-scheme', localStorage.getItem('user-color-scheme') ?? 'light');
+    </script>
+
+    <script
+      id="credibility-client-98765"
+      type="module"
+      crossOrigin="anonymous"
+      data-app-id="aa6100ac700b56ab0a4145ec736508387b817e362389a60879aa3e20d273ba80"
+      src="https://client.proofybubble.com/assets/embed.js"
+      is:inline
+    ></script>
+
+    <style is:global>
+      @import '../scss/global.scss';
+    </style>
+
+    <slot name="head" />
+  </head>
+  <body>
+    <SiteHead currentPath={currentPath} />
+    <SearchBox />
+    <slot />
+    <SiteFoot />
+    <slot name="foot" />
+
+    <script type="module" src="/js/components/theme-toggle.js" async defer></script>
+    <script src="/js/search.js" defer></script>
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>

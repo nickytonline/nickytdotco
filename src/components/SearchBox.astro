@@ -1,0 +1,118 @@
+---
+/**
+ * Search Box Component
+ *
+ * A reusable, accessible search component with results container.
+ *
+ * Keyboard Shortcuts:
+ * - Cmd+K (Mac) or Ctrl+K (Windows/Linux): Focus search input
+ * - Escape: Clear search and close results
+ * - Arrow Up/Down: Navigate results
+ * - Enter: Select result
+ */
+---
+
+<div class="search-box" role="search" aria-label="Site search">
+  <!-- Search Input Section -->
+  <div class="search-box__input-wrapper">
+    <label for="search-input" class="search-box__label">
+      <span class="sr-only">Search the site</span>
+    </label>
+
+    <div class="search-box__field-wrapper">
+      <svg
+        class="search-box__icon"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+
+      <input
+        type="text"
+        id="search-input"
+        class="search-box__input"
+        data-search-input
+        placeholder="Search articles..."
+        aria-autocomplete="list"
+        aria-controls="search-results"
+        aria-expanded="false"
+      />
+
+      <button
+        type="button"
+        class="search-box__clear"
+        data-search-clear
+        aria-label="Clear search"
+        hidden
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div
+    class="search-box__loading"
+    data-search-loading
+    hidden
+    aria-live="polite"
+    aria-label="Loading search results"
+  >
+    <span class="search-box__spinner"></span>
+    <span class="sr-only">Searching...</span>
+  </div>
+
+  <!-- Results Container -->
+  <div
+    id="search-results"
+    class="search-box__results"
+    data-search-results
+    role="listbox"
+  >
+    <!-- Results will be populated by JavaScript -->
+  </div>
+
+  <!-- Error State -->
+  <div
+    class="search-box__error"
+    data-search-error
+    hidden
+    role="alert"
+    aria-live="assertive"
+  >
+    <p class="search-box__error-message">
+      Unable to complete search. Please try again.
+    </p>
+  </div>
+
+  <!-- No Results State -->
+  <div
+    class="search-box__no-results"
+    data-search-no-results
+    hidden
+    role="status"
+    aria-live="polite"
+  >
+    <p class="search-box__no-results-message">
+      No results found for your search.
+    </p>
+  </div>
+
+  <!-- No JavaScript Fallback -->
+  <noscript>
+    <div class="search-box__noscript" role="note">
+      <p>
+        <strong>JavaScript is disabled.</strong>
+        This site search requires JavaScript to be enabled.
+        Please enable JavaScript in your browser settings.
+      </p>
+    </div>
+  </noscript>
+</div>

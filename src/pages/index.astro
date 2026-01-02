@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import { site } from "../data/site";
+
+const allPosts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+
+// Sort by date descending
+const sortedPosts = allPosts.sort((a, b) => {
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+
+const recentPosts = sortedPosts.slice(0, site.maxPostsPerPage);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.name}</title>
+    <meta name="description" content={site.shortDesc} />
+  </head>
+  <body>
+    <main>
+      <h1>{site.name}</h1>
+      <p>{site.shortDesc}</p>
+
+      <section>
+        <h2>Recent Posts</h2>
+        <ul>
+          {
+            recentPosts.map((post) => (
+              <li>
+                <a href={`/blog/${post.slug}`}>
+                  <h3>{post.data.title}</h3>
+                  {post.data.excerpt && <p>{post.data.excerpt}</p>}
+                  <time datetime={post.data.date.toISOString()}>
+                    {post.data.date.toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
