@@ -10,7 +10,7 @@
     "devtools"
   ],
   "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9esx0urbnewl0q29fraz.jpg",
-  "canonical_url": "https://dev.to/nickytonline/from-fresh-mac-to-productive-in-30-minutes-21db",
+  "canonical_url": "https://www.nickyt.co/blog/from-fresh-mac-to-productive-in-30-minutes-21db/",
   "reading_time_minutes": 6,
   "template": "post"
 }
@@ -32,7 +32,7 @@ A dotfiles repository is not macOS specific, but I wanted to go further, my whol
 
 Here's what I ended up with:
 
-```
+```bash
 {% raw %}
 ~/dotfiles/
 ├── Brewfile              # Every app I use
@@ -288,8 +288,6 @@ Your future self (and your next Mac) will thank you.
 Check out [my dotfiles repo](https://github.com/nickytonline/dotfiles) if you want to see the full setup or steal parts of it. If you've got your own dotfiles setup or discovered other tools that make Mac automation easier, I'd love to hear about it.
 
 If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
-
----
 
 Photo by <a href="https://unsplash.com/@alesnesetril?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ales Nesetril</a> on <a href="https://unsplash.com/photos/gray-and-black-laptop-computer-on-surface-Im7lZjxeLhg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
