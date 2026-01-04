@@ -1,0 +1,32 @@
+---
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
+---
+
+<a href={url}>
+  <span class="visually-hidden">GitHub link: {url}</span>
+  <picture>
+    <source
+      type="image/webp"
+      srcset={`https://v1.opengraph.11ty.dev/${encodedUrl}/small/webp/ 375w, https://v1.opengraph.11ty.dev/${encodedUrl}/medium/webp/ 650w`}
+      sizes="100vw"
+    />
+    <source
+      type="image/jpeg"
+      srcset={`https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/ 375w, https://v1.opengraph.11ty.dev/${encodedUrl}/medium/jpeg/ 650w`}
+      sizes="100vw"
+    />
+    <img
+      alt={`OpenGraph preview for ${url}`}
+      loading="lazy"
+      decoding="async"
+      src={`https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/`}
+      width="650"
+      height="341"
+    />
+  </picture>
+</a>
