@@ -1,13 +1,23 @@
 #!/usr/bin/env node
-require("dotenv").config();
+import "dotenv/config";
 
-const jsdom = require("@tbranyen/jsdom");
+import jsdom from "@tbranyen/jsdom";
 const { JSDOM } = jsdom;
-const path = require("path");
-const fs = require("fs").promises;
-const { DEV_API_KEY } = process.env;
-const SLUG_INCLUSION_LIST = require("./slugInclusionList.json");
+import path from "path";
+import { fileURLToPath } from "url";
+import fs from "fs/promises";
+import { readFileSync } from "fs";
+import siteData from "../src/_data/site.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const { DEV_API_KEY } = process.env;
+const SLUG_INCLUSION_LIST = JSON.parse(
+  readFileSync(path.join(__dirname, "slugInclusionList.json"), "utf-8"),
+);
+
+const { url: siteUrl } = siteData;
 const DEV_TO_API_URL = "https://dev.to/api";
 
 // Auto-generated series name mapping, persisted in series-names.js
@@ -17,10 +27,267 @@ const SERIES_MAP_PATH = path.join(__dirname, "series-names.js");
 // Load existing series names from the persisted file
 let SERIES_NAMES = {};
 try {
-  SERIES_NAMES = require(SERIES_MAP_PATH);
+  const seriesModule = await import(SERIES_MAP_PATH);
+  SERIES_NAMES = seriesModule.default || {};
 } catch (_e) {
   // File doesn't exist yet or is empty; start with empty object
   SERIES_NAMES = {};
+}
+
+/**
+ * Convert DEV.to liquid tags to Astro component syntax
+ */
+function convertLiquidTagsToAstroComponents(content) {
+  let newContent = content;
+  const imports = new Set();
+
+  // YouTube: {% youtube "videoId" %} or {% youtube videoId %} or {% youtube "videoId", "startTime" %}
+  newContent = newContent.replace(
+    /{%\s*youtube\s+"?([^"\s,]+)"?(?:,\s+"?([^"\s]+)"?)?\s*%}/g,
+    (match, videoId, startTime) => {
+      imports.add(
+        'import YouTubeEmbed from "@/components/YouTubeEmbed.astro";',
+      );
+      return startTime
+        ? `<YouTubeEmbed videoId="${videoId}" startTime="${startTime}" />`
+        : `<YouTubeEmbed videoId="${videoId}" />`;
+    },
+  );
+
+  // Twitter/X: {% twitter "tweetId" %} or {% twitter tweetId %} or {% x "tweetId" %} or {% x tweetId %}
+  newContent = newContent.replace(
+    /{%\s*(twitter|x)\s+"?([^"\s]+)"?\s*%}/g,
+    (match, type, tweetId) => {
+      imports.add(
+        'import TwitterEmbed from "@/components/TwitterEmbed.astro";',
+      );
+      return `<TwitterEmbed tweetId="${tweetId}" />`;
+    },
+  );
+
+  // CodePen: {% codepen "url" %} or {% codepen url %}
+  newContent = newContent.replace(
+    /{%\s*codepen\s+"?([^"\s]+)"?\s*%}/g,
+    (match, url) => {
+      imports.add(
+        'import CodePenEmbed from "@/components/CodePenEmbed.astro";',
+      );
+      return `<CodePenEmbed url="${url}" />`;
+    },
+  );
+
+  // GitHub: {% github "url" %} or {% github url %}
+  newContent = newContent.replace(
+    /{%\s*github\s+"?([^"\s]+)"?\s*%}/g,
+    (match, url) => {
+      imports.add('import GitHubEmbed from "@/components/GitHubEmbed.astro";');
+      return `<GitHubEmbed url="${url}" />`;
+    },
+  );
+
+  // Generic embed: {% embed "url" %} or {% embed url %}
+  newContent = newContent.replace(
+    /{%\s*embed\s+"?([^"\s]+)"?\s*%}/g,
+    (match, url) => {
+      imports.add('import Embed from "@/components/Embed.astro";');
+      return `<Embed url="${url}" />`;
+    },
+  );
+
+  // Dev.to link: {% link "url" %} or {% link url %}
+  newContent = newContent.replace(
+    /{%\s*link\s+"?([^"\s]+)"?\s*%}/g,
+    (match, url) => {
+      imports.add('import DevToEmbed from "@/components/DevToEmbed.astro";');
+      return `<DevToEmbed url="${url}" />`;
+    },
+  );
+
+  // Twitch: {% twitch "videoId" %} or {% twitch videoId %}
+  newContent = newContent.replace(
+    /{%\s*twitch\s+"?([^"\s]+)"?\s*%}/g,
+    (match, videoId) => {
+      imports.add('import TwitchEmbed from "@/components/TwitchEmbed.astro";');
+      return `<TwitchEmbed videoId="${videoId}" />`;
+    },
+  );
+
+  // Vimeo: {% vimeo "videoId" %} or {% vimeo videoId %}
+  newContent = newContent.replace(
+    /{%\s*vimeo\s+"?([^"\s]+)"?\s*%}/g,
+    (match, videoId) => {
+      imports.add('import VimeoEmbed from "@/components/VimeoEmbed.astro";');
+      return `<VimeoEmbed videoId="${videoId}" />`;
+    },
+  );
+
+  // Spotify: {% spotify "uri" %} or {% spotify uri %}
+  newContent = newContent.replace(
+    /{%\s*spotify\s+"?([^"\s]+)"?\s*%}/g,
+    (match, uri) => {
+      imports.add(
+        'import SpotifyEmbed from "@/components/SpotifyEmbed.astro";',
+      );
+      return `<SpotifyEmbed uri="${uri}" />`;
+    },
+  );
+
+  // Buzzsprout: {% buzzsprout "episodeId" %} or {% buzzsprout episodeId %}
+  newContent = newContent.replace(
+    /{%\s*buzzsprout\s+"?([^"\s]+)"?\s*%}/g,
+    (match, episodeId) => {
+      imports.add(
+        'import BuzzsproutEmbed from "@/components/BuzzsproutEmbed.astro";',
+      );
+      return `<BuzzsproutEmbed episodeId="${episodeId}" />`;
+    },
+  );
+
+  // CodeSandbox: {% codesandbox "sandboxId" %} or {% codesandbox sandboxId %}
+  newContent = newContent.replace(
+    /{%\s*codesandbox\s+"?([^"\s]+)"?\s*%}/g,
+    (match, sandboxId) => {
+      imports.add(
+        'import CodeSandboxEmbed from "@/components/CodeSandboxEmbed.astro";',
+      );
+      return `<CodeSandboxEmbed sandboxId="${sandboxId}" />`;
+    },
+  );
+
+  // Instagram: {% instagram "url" %} or {% instagram url %}
+  newContent = newContent.replace(
+    /{%\s*instagram\s+"?([^"\s]+)"?\s*%}/g,
+    (match, url) => {
+      imports.add(
+        'import InstagramEmbed from "@/components/InstagramEmbed.astro";',
+      );
+      return `<InstagramEmbed url="${url}" />`;
+    },
+  );
+
+  // Convert existing directive syntax to components
+  // ::youtube{videoId="..." startTime="..."}
+  newContent = newContent.replace(
+    /::youtube\{videoId="([^"]+)"(?:\s+startTime="([^"]+)")?\}/g,
+    (match, videoId, startTime) => {
+      imports.add(
+        'import YouTubeEmbed from "@/components/YouTubeEmbed.astro";',
+      );
+      return startTime
+        ? `<YouTubeEmbed videoId="${videoId}" startTime="${startTime}" />`
+        : `<YouTubeEmbed videoId="${videoId}" />`;
+    },
+  );
+
+  // ::twitter{tweetId="..."} or ::x{tweetId="..."}
+  newContent = newContent.replace(
+    /::(twitter|x)\{tweetId="([^"]+)"\}/g,
+    (match, type, tweetId) => {
+      imports.add(
+        'import TwitterEmbed from "@/components/TwitterEmbed.astro";',
+      );
+      return `<TwitterEmbed tweetId="${tweetId}" />`;
+    },
+  );
+
+  // ::codepen{url="..."}
+  newContent = newContent.replace(
+    /::codepen\{url="([^"]+)"\}/g,
+    (match, url) => {
+      imports.add(
+        'import CodePenEmbed from "@/components/CodePenEmbed.astro";',
+      );
+      return `<CodePenEmbed url="${url}" />`;
+    },
+  );
+
+  // ::github{url="..."}
+  newContent = newContent.replace(
+    /::github\{url="([^"]+)"\}/g,
+    (match, url) => {
+      imports.add('import GitHubEmbed from "@/components/GitHubEmbed.astro";');
+      return `<GitHubEmbed url="${url}" />`;
+    },
+  );
+
+  // ::embed{url="..."}
+  newContent = newContent.replace(/::embed\{url="([^"]+)"\}/g, (match, url) => {
+    imports.add('import Embed from "@/components/Embed.astro";');
+    return `<Embed url="${url}" />`;
+  });
+
+  // ::link{url="..."}
+  newContent = newContent.replace(/::link\{url="([^"]+)"\}/g, (match, url) => {
+    imports.add('import DevToEmbed from "@/components/DevToEmbed.astro";');
+    return `<DevToEmbed url="${url}" />`;
+  });
+
+  // ::twitch{videoId="..."}
+  newContent = newContent.replace(
+    /::twitch\{videoId="([^"]+)"\}/g,
+    (match, videoId) => {
+      imports.add('import TwitchEmbed from "@/components/TwitchEmbed.astro";');
+      return `<TwitchEmbed videoId="${videoId}" />`;
+    },
+  );
+
+  // ::vimeo{videoId="..."}
+  newContent = newContent.replace(
+    /::vimeo\{videoId="([^"]+)"\}/g,
+    (match, videoId) => {
+      imports.add('import VimeoEmbed from "@/components/VimeoEmbed.astro";');
+      return `<VimeoEmbed videoId="${videoId}" />`;
+    },
+  );
+
+  // ::spotify{uri="..."}
+  newContent = newContent.replace(
+    /::spotify\{uri="([^"]+)"\}/g,
+    (match, uri) => {
+      imports.add(
+        'import SpotifyEmbed from "@/components/SpotifyEmbed.astro";',
+      );
+      return `<SpotifyEmbed uri="${uri}" />`;
+    },
+  );
+
+  // ::buzzsprout{episodeId="..."}
+  newContent = newContent.replace(
+    /::buzzsprout\{episodeId="([^"]+)"\}/g,
+    (match, episodeId) => {
+      imports.add(
+        'import BuzzsproutEmbed from "@/components/BuzzsproutEmbed.astro";',
+      );
+      return `<BuzzsproutEmbed episodeId="${episodeId}" />`;
+    },
+  );
+
+  // ::codesandbox{sandboxId="..."}
+  newContent = newContent.replace(
+    /::codesandbox\{sandboxId="([^"]+)"\}/g,
+    (match, sandboxId) => {
+      imports.add(
+        'import CodeSandboxEmbed from "@/components/CodeSandboxEmbed.astro";',
+      );
+      return `<CodeSandboxEmbed sandboxId="${sandboxId}" />`;
+    },
+  );
+
+  // ::instagram{url="..."}
+  newContent = newContent.replace(
+    /::instagram\{url="([^"]+)"\}/g,
+    (match, url) => {
+      imports.add(
+        'import InstagramEmbed from "@/components/InstagramEmbed.astro";',
+      );
+      return `<InstagramEmbed url="${url}" />`;
+    },
+  );
+
+  return {
+    content: newContent,
+    imports: Array.from(imports),
+  };
 }
 
 /**
@@ -100,8 +367,8 @@ async function getOrFetchSeriesName(
     // Update in-memory mapping
     SERIES_NAMES[collectionId] = title;
 
-    // Persist to file
-    const data = `// Auto-generated. Do not edit manually!\nmodule.exports = ${JSON.stringify(SERIES_NAMES, null, 2)};\n`;
+    // Persist to file using ESM export default format
+    const data = `// Auto-generated. Do not edit manually!\nexport default ${JSON.stringify(SERIES_NAMES, null, 2)};\n`;
     await fs.writeFile(SERIES_MAP_PATH, data);
     console.log(`  ✏️  Discovered new series: ${collectionId} = "${title}"`);
 
@@ -113,6 +380,7 @@ async function getOrFetchSeriesName(
     return fallbackTitle || `Series ${collectionId}`;
   }
 }
+
 const POSTS_DIRECTORY = path.join(__dirname, "../src/blog");
 const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, "../src/vscodetips");
 const POSTS_IMAGES_PUBLIC_DIRECTORY = "/images/posts";
@@ -129,64 +397,41 @@ const TWITTER_EMBEDS_FILE = path.join(
   __dirname,
   "../src/_data/twitterEmbeds.json",
 );
-const currentBlogPostEmbeds = require("../src/_data/embeddedPostsMarkup.json");
+
+const currentBlogPostEmbeds = JSON.parse(
+  readFileSync(EMBEDDED_POSTS_MARKUP_FILE, "utf-8"),
+);
 const blogPostEmbeds = new Map(Object.entries(currentBlogPostEmbeds));
 
-const currentTwitterEmbeds = require("../src/_data/twitterEmbeds.json");
-const twitterEmbeds = new Map(Object.entries(currentTwitterEmbeds));
-const DOM = new JSDOM(
-  `<!DOCTYPE html><html><head></head><body></body></html>`,
-  {
-    resources: "usable",
-  },
-);
-
-const { document } = DOM.window;
-let { url: siteUrl } = require("../src/_data/site");
-
-if (!DEV_API_KEY) {
-  throw new Error("Missing DEV_API_KEY environment variable");
-}
-
 /**
- * Determine whether or not a file exists.
- *
- * @param {string} path
- *
- * @returns True if the file exists, otherwise false.
+ * Checks if a file exists
+ * @param {string} path - File path to check
+ * @returns {Promise<boolean>} True if file exists, false otherwise
  */
 async function fileExists(path) {
   return !!(await fs.stat(path).catch((_error) => false));
 }
 
 /**
+ * Sanitizes the body markdown.
  * Ensures that embeds coming from dev.to that are strings are in quotes in the markdown.
  * Otherwise Eleventy misinterprets and tries to parse them as a number.
  *
  * @param {string} markdown
  *
- * @returns sanitized markdown
+ * @returns {object} Object with content and imports array
  */
 function sanitizeMarkdownEmbeds(markdown) {
   const sanitizedMarkdown = markdown
     .replaceAll(
-      /{%\s*?(?<shortcode>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
+      /{%\s*?(?<liquidTag>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
       '{% $1 "$2" %}',
     )
-    // Fixes a liquid JS issues when {{ code }} is used in a markdown code block
-    // see https://github.com/11ty/eleventy/issues/2273
-    .replaceAll(
-      /```(?<language>.*)\n(?<code>(.|\n)+?)\n```/g,
-      "```$1\n{% raw %}\n$2\n{% endraw %}\n```",
-    )
-    // We need to add raw shortcodes to prevent shortcodes within code blocks from rendering.
-    // For now, this only supports single-line code blocks.
-    .replaceAll(/(`{%[^%]+%}`)/g, "{% raw %}$1{% endraw %}")
-
     // get rid of promo links that are a new line followed by <!-- places to follow me --> and content
     .replaceAll(/\n<!-- places to follow me -->\n(.|\n)*$/g, "");
 
-  return sanitizedMarkdown;
+  // Convert all liquid tags to Astro component syntax
+  return convertLiquidTagsToAstroComponents(sanitizedMarkdown);
 }
 
 /**
@@ -389,11 +634,16 @@ async function createPostFile(post) {
     markdownBody = body_markdown;
   }
 
+  const { content: sanitizedContent, imports } =
+    sanitizeMarkdownEmbeds(markdownBody);
+
+  // Build the markdown file with imports between frontmatter and content
+  const importsSection = imports.length > 0 ? `${imports.join("\n")}\n\n` : "";
   const markdown = `---json\n${JSON.stringify(
     jsonFrontmatter,
     null,
     2,
-  )}\n---\n\n${sanitizeMarkdownEmbeds(markdownBody).trim()}\n`;
+  )}\n---\n${importsSection}${sanitizedContent.trim()}\n`;
 
   const basePath = tags.includes("vscodetips")
     ? path.join(
@@ -401,7 +651,7 @@ async function createPostFile(post) {
         new Date(date).getFullYear().toString(),
       )
     : POSTS_DIRECTORY;
-  const postFile = path.join(basePath, `${slug}.md`);
+  const postFile = path.join(basePath, `${slug}.mdx`);
   await fs.writeFile(postFile, markdown);
 
   // Checking for a backtick before the Twitter embed so that we're not pulling in a code example of an embed.
