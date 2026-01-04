@@ -1,0 +1,170 @@
+---
+import YouTubeEmbed from "./embeds/YouTubeEmbed.astro";
+import TwitterEmbed from "./embeds/TwitterEmbed.astro";
+import GenericEmbed from "./embeds/GenericEmbed.astro";
+import CodePenEmbed from "./embeds/CodePenEmbed.astro";
+import DevLinkEmbed from "./embeds/DevLinkEmbed.astro";
+import TwitchEmbed from "./embeds/TwitchEmbed.astro";
+import VimeoEmbed from "./embeds/VimeoEmbed.astro";
+import SpotifyEmbed from "./embeds/SpotifyEmbed.astro";
+import BuzzsproutEmbed from "./embeds/BuzzsproutEmbed.astro";
+import CodeSandboxEmbed from "./embeds/CodeSandboxEmbed.astro";
+import InstagramEmbed from "./embeds/InstagramEmbed.astro";
+
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+
+// Parse the URL to determine the embed type
+let embedType: string;
+let embedProps: Record<string, any> = { url };
+
+try {
+  const urlObj = new URL(url);
+  const hostname = urlObj.hostname.toLowerCase().replace(/^www\./, "");
+
+  // YouTube detection and parameter extraction
+  if (hostname === "youtube.com" || hostname === "youtu.be") {
+    embedType = "youtube";
+    let videoId = "";
+    let startTime: string | undefined;
+
+    if (hostname === "youtu.be") {
+      // Format: youtu.be/VIDEO_ID or youtu.be/VIDEO_ID?t=123
+      videoId = urlObj.pathname.slice(1).split("?")[0];
+      const tParam = urlObj.searchParams.get("t");
+      if (tParam) {
+        // Convert time formats like "1m30s" or "90" to seconds
+        startTime = tParam.replace(/[ms]/g, "");
+      }
+    } else {
+      // Format: youtube.com/watch?v=VIDEO_ID
+      videoId = urlObj.searchParams.get("v") || "";
+      // Check for various time parameters
+      const tParam = urlObj.searchParams.get("t");
+      const startParam = urlObj.searchParams.get("start");
+      if (tParam) {
+        startTime = tParam.replace(/[ms]/g, "");
+      } else if (startParam) {
+        startTime = startParam;
+      }
+    }
+
+    embedProps = { videoId, startTime };
+  }
+  // Twitter/X detection
+  else if (hostname === "twitter.com" || hostname === "x.com") {
+    embedType = "twitter";
+    // Extract tweet ID from URL like twitter.com/user/status/1234567890
+    const pathParts = urlObj.pathname.split("/");
+    const statusIndex = pathParts.indexOf("status");
+    if (statusIndex !== -1 && pathParts[statusIndex + 1]) {
+      embedProps = { tweetId: pathParts[statusIndex + 1] };
+    }
+  }
+  // GitHub detection
+  else if (hostname === "github.com") {
+    embedType = "generic";
+  }
+  // CodePen detection
+  else if (hostname === "codepen.io") {
+    embedType = "codepen";
+  }
+  // Dev.to detection
+  else if (hostname === "dev.to") {
+    embedType = "devlink";
+  }
+  // Twitch detection
+  else if (hostname === "twitch.tv") {
+    embedType = "twitch";
+    // Extract video ID from URL like twitch.tv/videos/1234567
+    const pathParts = urlObj.pathname.split("/");
+    const videosIndex = pathParts.indexOf("videos");
+    if (videosIndex !== -1 && pathParts[videosIndex + 1]) {
+      embedProps = { videoId: pathParts[videosIndex + 1] };
+    }
+  }
+  // Vimeo detection
+  else if (hostname === "vimeo.com") {
+    embedType = "vimeo";
+    // Extract video ID from URL like vimeo.com/1234567
+    const videoId = urlObj.pathname.split("/")[1];
+    if (videoId) {
+      embedProps = { videoId };
+    }
+  }
+  // Spotify detection
+  else if (hostname === "spotify.com" || hostname.endsWith(".spotify.com")) {
+    embedType = "spotify";
+    // Extract URI from URL like open.spotify.com/episode/1234567 or open.spotify.com/track/1234567
+    // The uri for SpotifyEmbed should be like "episode/1234567"
+    const pathMatch = urlObj.pathname.match(/\/(episode|track|playlist|album)\/([^/?]+)/);
+    if (pathMatch) {
+      embedProps = { uri: `${pathMatch[1]}/${pathMatch[2]}` };
+    }
+  }
+  // Buzzsprout detection
+  else if (hostname === "buzzsprout.com" || hostname.endsWith(".buzzsprout.com")) {
+    embedType = "buzzsprout";
+    // Extract episode ID from URLs like nickscuts.buzzsprout.com/2065897/11507005-title
+    const pathParts = urlObj.pathname.split("/").filter(p => p);
+    if (pathParts.length >= 2) {
+      // Format is usually /podcast-id/episode-id-title
+      embedProps = { episodeId: `${pathParts[0]}/${pathParts[1].split('-')[0]}` };
+    }
+  }
+  // CodeSandbox detection
+  else if (hostname === "codesandbox.io") {
+    embedType = "codesandbox";
+    // Extract sandbox ID from URL like codesandbox.io/s/sandbox-id
+    const pathMatch = urlObj.pathname.match(/\/s\/([^/?]+)/);
+    if (pathMatch) {
+      embedProps = { sandboxId: pathMatch[1] };
+    }
+  }
+  // Instagram detection
+  else if (hostname === "instagram.com") {
+    embedType = "instagram";
+    // Instagram uses the full URL
+    embedProps = { url };
+  }
+  // Generic fallback
+  else {
+    embedType = "generic";
+  }
+} catch (error) {
+  // If URL parsing fails, fall back to generic embed
+  embedType = "generic";
+  embedProps = { url };
+  console.error("Failed to parse embed URL:", url, error);
+}
+
+---
+
+{
+  embedType === "youtube" && "videoId" in embedProps ? (
+    <YouTubeEmbed videoId={embedProps.videoId} startTime={embedProps.startTime} />
+  ) : embedType === "twitter" && "tweetId" in embedProps ? (
+    <TwitterEmbed tweetId={embedProps.tweetId} />
+  ) : embedType === "codepen" ? (
+    <CodePenEmbed url={url} />
+  ) : embedType === "devlink" ? (
+    <DevLinkEmbed url={url} />
+  ) : embedType === "twitch" && "videoId" in embedProps ? (
+    <TwitchEmbed videoId={embedProps.videoId} />
+  ) : embedType === "vimeo" && "videoId" in embedProps ? (
+    <VimeoEmbed videoId={embedProps.videoId} />
+  ) : embedType === "spotify" && "uri" in embedProps ? (
+    <SpotifyEmbed uri={embedProps.uri} />
+  ) : embedType === "buzzsprout" && "episodeId" in embedProps ? (
+    <BuzzsproutEmbed episodeId={embedProps.episodeId} />
+  ) : embedType === "codesandbox" && "sandboxId" in embedProps ? (
+    <CodeSandboxEmbed sandboxId={embedProps.sandboxId} />
+  ) : embedType === "instagram" ? (
+    <InstagramEmbed url={url} />
+  ) : (
+    <GenericEmbed url={url} />
+  )
+}

@@ -1,0 +1,22 @@
+---
+interface Props {
+  videoId: string;
+  channel?: string;
+  autoplay?: boolean;
+}
+
+const { videoId, channel, autoplay = false } = Astro.props;
+
+const channelParam = channel ? `&channel=${channel}` : "";
+const autoplayParam = autoplay ? "&autoplay=true" : "";
+const src = `https://player.twitch.tv/?video=${videoId}${channelParam}${autoplayParam}&parent=${new URL(Astro.url).hostname}`;
+---
+
+<iframe
+  src={src}
+  height="360"
+  width="640"
+  allowfullscreen="true"
+  frameborder="0"
+  loading="lazy"
+  title={`Twitch video ${videoId}`}></iframe>

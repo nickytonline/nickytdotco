@@ -1,0 +1,17 @@
+---
+interface Props {
+  episodeId: string;
+}
+
+const { episodeId } = Astro.props;
+const src = `https://www.buzzsprout.com/${episodeId}?client_source=small_player&iframe=true&referrer=${Astro.url.href}`;
+---
+
+<iframe
+  src={src}
+  loading="lazy"
+  width="100%"
+  height="200"
+  frameborder="0"
+  scrolling="no"
+  title={`Buzzsprout episode ${episodeId}`}></iframe>

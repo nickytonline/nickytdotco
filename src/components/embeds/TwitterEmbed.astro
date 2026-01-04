@@ -1,0 +1,29 @@
+---
+interface Props {
+  tweetId: string;
+}
+
+const { tweetId } = Astro.props;
+
+// Try to fetch the tweet embed HTML
+let tweetHtml = "";
+try {
+  const response = await fetch(
+    `https://publish.twitter.com/oembed?url=${encodeURIComponent(
+      `https://twitter.com/anyone/status/${tweetId}`
+    )}`
+  );
+
+  if (response.ok) {
+    const data = await response.json();
+    tweetHtml = data.html;
+  } else if (response.status === 404) {
+    tweetHtml = "<p>The Tweet has been deleted.</p>";
+  }
+} catch (error) {
+  const xUrl = `https://x.com/anyone/status/${tweetId}`;
+  tweetHtml = `<a href="${xUrl}" style="margin-top: 10px;margin-bottom: 10px;">${xUrl}</a>`;
+}
+---
+
+<Fragment set:html={tweetHtml} />
