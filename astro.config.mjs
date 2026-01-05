@@ -13,4 +13,11 @@ export default defineConfig({
       theme: "github-dark",
     },
   },
+  vite: {
+    resolve: {
+      alias: {
+        "@": "/src",
+      },
+    },
+  },
 });
