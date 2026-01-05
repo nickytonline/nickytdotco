@@ -44,7 +44,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // YouTube: {% youtube "videoId" %} or {% youtube videoId %} or {% youtube "videoId", "startTime" %}
   newContent = newContent.replace(
     /{%\s*youtube\s+"?([^"\s,]+)"?(?:,\s+"?([^"\s]+)"?)?\s*%}/g,
-    (match, videoId, startTime) => {
+    (_match, videoId, startTime) => {
       imports.add(
         'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";',
       );
@@ -57,7 +57,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // Twitter/X: {% twitter "tweetId" %} or {% twitter tweetId %} or {% x "tweetId" %} or {% x tweetId %}
   newContent = newContent.replace(
     /{%\s*(twitter|x)\s+"?([^"\s]+)"?\s*%}/g,
-    (match, type, tweetId) => {
+    (_match, _type, tweetId) => {
       imports.add(
         'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";',
       );
@@ -68,7 +68,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // CodePen: {% codepen "url" %} or {% codepen url %}
   newContent = newContent.replace(
     /{%\s*codepen\s+"?([^"\s]+)"?\s*%}/g,
-    (match, url) => {
+    (_match, url) => {
       imports.add(
         'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";',
       );
@@ -79,7 +79,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // GitHub: {% github "url" %} or {% github url %}
   newContent = newContent.replace(
     /{%\s*github\s+"?([^"\s]+)"?\s*%}/g,
-    (match, url) => {
+    (_match, url) => {
       imports.add(
         'import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";',
       );
@@ -90,7 +90,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // Generic embed: {% embed "url" %} or {% embed url %}
   newContent = newContent.replace(
     /{%\s*embed\s+"?([^"\s]+)"?\s*%}/g,
-    (match, url) => {
+    (_match, url) => {
       imports.add(
         'import GenericEmbed from "@/components/embeds/GenericEmbed.astro";',
       );
@@ -101,7 +101,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // Dev.to link: {% link "url" %} or {% link url %}
   newContent = newContent.replace(
     /{%\s*link\s+"?([^"\s]+)"?\s*%}/g,
-    (match, url) => {
+    (_match, url) => {
       imports.add(
         'import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";',
       );
@@ -112,7 +112,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // Twitch: {% twitch "videoId" %} or {% twitch videoId %}
   newContent = newContent.replace(
     /{%\s*twitch\s+"?([^"\s]+)"?\s*%}/g,
-    (match, videoId) => {
+    (_match, videoId) => {
       imports.add(
         'import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";',
       );
@@ -123,7 +123,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // Vimeo: {% vimeo "videoId" %} or {% vimeo videoId %}
   newContent = newContent.replace(
     /{%\s*vimeo\s+"?([^"\s]+)"?\s*%}/g,
-    (match, videoId) => {
+    (_match, videoId) => {
       imports.add(
         'import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";',
       );
@@ -134,7 +134,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // Spotify: {% spotify "uri" %} or {% spotify uri %}
   newContent = newContent.replace(
     /{%\s*spotify\s+"?([^"\s]+)"?\s*%}/g,
-    (match, uri) => {
+    (_match, uri) => {
       imports.add(
         'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";',
       );
@@ -145,7 +145,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // CodeSandbox: {% codesandbox "sandboxId" %} or {% codesandbox sandboxId %}
   newContent = newContent.replace(
     /{%\s*codesandbox\s+"?([^"\s]+)"?\s*%}/g,
-    (match, sandboxId) => {
+    (_match, sandboxId) => {
       imports.add(
         'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";',
       );
@@ -156,7 +156,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // Instagram: {% instagram "url" %} or {% instagram url %}
   newContent = newContent.replace(
     /{%\s*instagram\s+"?([^"\s]+)"?\s*%}/g,
-    (match, url) => {
+    (_match, url) => {
       imports.add(
         'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";',
       );
@@ -168,7 +168,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::youtube{videoId="..." startTime="..."}
   newContent = newContent.replace(
     /::youtube\{videoId="([^"]+)"(?:\s+startTime="([^"]+)")?\}/g,
-    (match, videoId, startTime) => {
+    (_match, videoId, startTime) => {
       imports.add(
         'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";',
       );
@@ -181,7 +181,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::twitter{tweetId="..."} or ::x{tweetId="..."}
   newContent = newContent.replace(
     /::(twitter|x)\{tweetId="([^"]+)"\}/g,
-    (match, type, tweetId) => {
+    (_match, _type, tweetId) => {
       imports.add(
         'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";',
       );
@@ -192,7 +192,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::codepen{url="..."}
   newContent = newContent.replace(
     /::codepen\{url="([^"]+)"\}/g,
-    (match, url) => {
+    (_match, url) => {
       imports.add(
         'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";',
       );
@@ -203,7 +203,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::github{url="..."}
   newContent = newContent.replace(
     /::github\{url="([^"]+)"\}/g,
-    (match, url) => {
+    (_match, url) => {
       imports.add(
         'import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";',
       );
@@ -212,15 +212,18 @@ function convertLiquidTagsToAstroComponents(content) {
   );
 
   // ::embed{url="..."}
-  newContent = newContent.replace(/::embed\{url="([^"]+)"\}/g, (match, url) => {
-    imports.add(
-      'import GenericEmbed from "@/components/embeds/GenericEmbed.astro";',
-    );
-    return `<GenericEmbed url="${url}" />`;
-  });
+  newContent = newContent.replace(
+    /::embed\{url="([^"]+)"\}/g,
+    (_match, url) => {
+      imports.add(
+        'import GenericEmbed from "@/components/embeds/GenericEmbed.astro";',
+      );
+      return `<GenericEmbed url="${url}" />`;
+    },
+  );
 
   // ::link{url="..."}
-  newContent = newContent.replace(/::link\{url="([^"]+)"\}/g, (match, url) => {
+  newContent = newContent.replace(/::link\{url="([^"]+)"\}/g, (_match, url) => {
     imports.add(
       'import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";',
     );
@@ -230,7 +233,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::twitch{videoId="..."}
   newContent = newContent.replace(
     /::twitch\{videoId="([^"]+)"\}/g,
-    (match, videoId) => {
+    (_match, videoId) => {
       imports.add(
         'import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";',
       );
@@ -241,7 +244,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::vimeo{videoId="..."}
   newContent = newContent.replace(
     /::vimeo\{videoId="([^"]+)"\}/g,
-    (match, videoId) => {
+    (_match, videoId) => {
       imports.add(
         'import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";',
       );
@@ -252,7 +255,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::spotify{uri="..."}
   newContent = newContent.replace(
     /::spotify\{uri="([^"]+)"\}/g,
-    (match, uri) => {
+    (_match, uri) => {
       imports.add(
         'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";',
       );
@@ -263,7 +266,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::codesandbox{sandboxId="..."}
   newContent = newContent.replace(
     /::codesandbox\{sandboxId="([^"]+)"\}/g,
-    (match, sandboxId) => {
+    (_match, sandboxId) => {
       imports.add(
         'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";',
       );
@@ -274,7 +277,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // ::instagram{url="..."}
   newContent = newContent.replace(
     /::instagram\{url="([^"]+)"\}/g,
-    (match, url) => {
+    (_match, url) => {
       imports.add(
         'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";',
       );
@@ -444,12 +447,10 @@ function sanitizeMarkdownEmbeds(markdown) {
   // Escape HTML tags in image alt text to prevent MDX parsing errors
   sanitizedMarkdown = sanitizedMarkdown.replace(
     /!\[([^\]]+)\]/g,
-    (match, altText) => {
-      const escapedAlt = altText
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
+    (_match, altText) => {
+      const escapedAlt = altText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
       return `![${escapedAlt}]`;
-    }
+    },
   );
 
   // Convert all liquid tags to Astro component syntax
@@ -570,8 +571,6 @@ async function getDevPosts() {
   const posts = await response.json();
   return posts.filter(isValidPost);
 }
-
-let retries = 0;
 
 /**
  * Retrieves the blog post for the given blog post ID.
@@ -762,9 +761,8 @@ async function saveImageUrl(imageUrl, imageFilePath) {
     }
     const buffer = Buffer(await response.arrayBuffer());
 
-    await fs.writeFile(imageFilePath, buffer, () =>
-      console.log(`Saved image ${imageUrl} to ${imageFilePath}!`),
-    );
+    await fs.writeFile(imageFilePath, buffer);
+    console.log(`Saved image ${imageUrl} to ${imageFilePath}!`);
   } catch (error) {
     console.warn(`Error saving image ${imageUrl}:`, error.message);
   }
@@ -958,9 +956,8 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
 
   const data = JSON.stringify(tweetEmbeds, null, 2);
 
-  await fs.writeFile(filepath, data, () =>
-    console.log(`Saved Twitter embeds markup to ${filepath}!`),
-  );
+  await fs.writeFile(filepath, data);
+  console.log(`Saved Twitter embeds markup to ${filepath}!`);
 }
 
 (async () => {
