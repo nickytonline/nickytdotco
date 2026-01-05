@@ -7,7 +7,6 @@ import DevLinkEmbed from "./embeds/DevLinkEmbed.astro";
 import TwitchEmbed from "./embeds/TwitchEmbed.astro";
 import VimeoEmbed from "./embeds/VimeoEmbed.astro";
 import SpotifyEmbed from "./embeds/SpotifyEmbed.astro";
-import BuzzsproutEmbed from "./embeds/BuzzsproutEmbed.astro";
 import CodeSandboxEmbed from "./embeds/CodeSandboxEmbed.astro";
 import InstagramEmbed from "./embeds/InstagramEmbed.astro";
 
@@ -100,19 +99,11 @@ try {
     embedType = "spotify";
     // Extract URI from URL like open.spotify.com/episode/1234567 or open.spotify.com/track/1234567
     // The uri for SpotifyEmbed should be like "episode/1234567"
-    const pathMatch = urlObj.pathname.match(/\/(episode|track|playlist|album)\/([^/?]+)/);
+    const pathMatch = urlObj.pathname.match(
+      /\/(episode|track|playlist|album)\/([^/?]+)/
+    );
     if (pathMatch) {
       embedProps = { uri: `${pathMatch[1]}/${pathMatch[2]}` };
-    }
-  }
-  // Buzzsprout detection
-  else if (hostname === "buzzsprout.com" || hostname.endsWith(".buzzsprout.com")) {
-    embedType = "buzzsprout";
-    // Extract episode ID from URLs like nickscuts.buzzsprout.com/2065897/11507005-title
-    const pathParts = urlObj.pathname.split("/").filter(p => p);
-    if (pathParts.length >= 2) {
-      // Format is usually /podcast-id/episode-id-title
-      embedProps = { episodeId: `${pathParts[0]}/${pathParts[1].split('-')[0]}` };
     }
   }
   // CodeSandbox detection
@@ -140,12 +131,14 @@ try {
   embedProps = { url };
   console.error("Failed to parse embed URL:", url, error);
 }
-
 ---
 
 {
   embedType === "youtube" && "videoId" in embedProps ? (
-    <YouTubeEmbed videoId={embedProps.videoId} startTime={embedProps.startTime} />
+    <YouTubeEmbed
+      videoId={embedProps.videoId}
+      startTime={embedProps.startTime}
+    />
   ) : embedType === "twitter" && "tweetId" in embedProps ? (
     <TwitterEmbed tweetId={embedProps.tweetId} />
   ) : embedType === "codepen" ? (
@@ -158,8 +151,6 @@ try {
     <VimeoEmbed videoId={embedProps.videoId} />
   ) : embedType === "spotify" && "uri" in embedProps ? (
     <SpotifyEmbed uri={embedProps.uri} />
-  ) : embedType === "buzzsprout" && "episodeId" in embedProps ? (
-    <BuzzsproutEmbed episodeId={embedProps.episodeId} />
   ) : embedType === "codesandbox" && "sandboxId" in embedProps ? (
     <CodeSandboxEmbed sandboxId={embedProps.sandboxId} />
   ) : embedType === "instagram" ? (
