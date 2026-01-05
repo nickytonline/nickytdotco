@@ -188,7 +188,7 @@ A lot of devs showcase their dotfiles as a public repository on GitHub, so do no
 * SSH private keys
 * `.npmrc` files with auth tokens
 * Work-related hostnames or company names
-* Personal email addresses
+* Personal email addresses (if you care about that)
 * etc.
 
 To prevent this, use your `.gitignore` file to prevent certain files from being committed to the repository:
@@ -209,20 +209,12 @@ To prevent this, use your `.gitignore` file to prevent certain files from being 
 
 ## Git Setup
 
-My install script prompts for git user info instead of committing it:
-
-```bash
-{% raw %}
-read -p "Enter your name for git commits: " git_name
-read -p "Enter your email for git commits: " git_email
-git config --global user.name "$git_name"
-git config --global user.email "$git_email"
-{% endraw %}
-```
+My install script creates a symlink for my Git config, and from there I just need to set up my signing key and access key
+If not already configured.
 
 ### Modern Git Signing with SSH
 
-While setting this up, I learned you can [sign git commits with SSH keys](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification) instead of GPG, which is what I was previously doing. So the SSH key you use for getting git access via SSH can also be used for signing your commits. No more dealing with GPG key expiration or complex setup:
+While setting this up, I learned you can [sign git commits with SSH keys](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification) instead of GPG, which is [what I was previously doing](https://dev.to/nickytonline/anyone-can-commit-code-as-you-on-github-heres-how-to-stop-them-2in7). So the SSH key you use for getting git access via SSH can also be used for signing your commits. No more dealing with GPG key expiration or complex setup:
 
 ```bash
 {% raw %}
