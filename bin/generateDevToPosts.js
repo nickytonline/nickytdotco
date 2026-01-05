@@ -659,12 +659,18 @@ async function createPostFile(post) {
         return `${key}:\n${value.map(item => `  - ${item}`).join('\n')}`;
       } else if (typeof value === 'object' && value !== null) {
         const nested = Object.entries(value)
-          .map(([k, v]) => `  ${k}: ${typeof v === 'string' ? `"${v.replace(/"/g, '\\"')}"` : v}`)
+          .map(([k, v]) => {
+            if (typeof v === 'string') {
+              const escaped = v.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+              return `  ${k}: "${escaped}"`;
+            }
+            return `  ${k}: ${v}`;
+          })
           .join('\n');
         return `${key}:\n${nested}`;
       } else if (typeof value === 'string') {
-        // Escape quotes and use quotes if string contains special chars or colons
-        const escaped = value.replace(/"/g, '\\"');
+        // Escape backslashes and quotes and use quotes if string contains special chars or colons
+        const escaped = value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
         return `${key}: "${escaped}"`;
       } else {
         return `${key}: ${value}`;
