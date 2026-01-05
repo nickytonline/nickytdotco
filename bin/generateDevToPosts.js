@@ -7,6 +7,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs/promises";
 import { readFileSync } from "fs";
+import yaml from "js-yaml";
 import siteData from "../src/_data/site.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -661,33 +662,10 @@ async function createPostFile(post) {
   // Build the markdown file with imports between frontmatter and content
   const importsSection = imports.length > 0 ? `${imports.join("\n")}\n\n` : "";
 
-  // Convert to YAML frontmatter
-  const yamlFrontmatter = Object.entries(jsonFrontmatter)
-    .map(([key, value]) => {
-      if (Array.isArray(value)) {
-        return `${key}:\n${value.map((item) => `  - ${item}`).join("\n")}`;
-      } else if (typeof value === "object" && value !== null) {
-        const nested = Object.entries(value)
-          .map(([k, v]) => {
-            if (typeof v === "string") {
-              const escaped = v.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-              return `  ${k}: "${escaped}"`;
-            }
-            return `  ${k}: ${v}`;
-          })
-          .join("\n");
-        return `${key}:\n${nested}`;
-      } else if (typeof value === "string") {
-        // Escape backslashes and quotes and use quotes if string contains special chars or colons
-        const escaped = value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-        return `${key}: "${escaped}"`;
-      } else {
-        return `${key}: ${value}`;
-      }
-    })
-    .join("\n");
+  // Convert to YAML frontmatter using js-yaml
+  const yamlFrontmatter = yaml.dump(jsonFrontmatter);
 
-  const markdown = `---\n${yamlFrontmatter}\n---\n${importsSection}${sanitizedContent.trim()}\n`;
+  const markdown = `---\n${yamlFrontmatter}---\n${importsSection}${sanitizedContent.trim()}\n`;
 
   const basePath = tags.includes("vscodetips")
     ? path.join(
