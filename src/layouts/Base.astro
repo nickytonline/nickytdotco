@@ -82,5 +82,11 @@ const currentPath = Astro.url.pathname;
 
     <script type="module" src="/js/components/theme-toggle.js" async defer
     ></script>
+
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js');
+      }
+    </script>
   </body>
 </html>
