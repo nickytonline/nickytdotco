@@ -1,6 +1,6 @@
-const tokens = require("./tokens.json");
+import tokens from "./tokens.json" assert { type: "json" };
 
-module.exports = {
+export default {
   colors() {
     let response = [];
 

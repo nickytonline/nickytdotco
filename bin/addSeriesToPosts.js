@@ -3,11 +3,15 @@
  * One-time script to add series data to all existing posts
  * This fetches ALL posts from dev.to and updates their frontmatter with series information
  */
-require("dotenv").config();
+import "dotenv/config";
+import path from "path";
+import { promises as fs } from "fs";
+import { fileURLToPath } from "url";
 
-const path = require("path");
-const fs = require("fs").promises;
 const { DEV_API_KEY } = process.env;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const DEV_TO_API_URL = "https://dev.to/api";
 const POSTS_DIRECTORY = path.join(__dirname, "../src/blog");

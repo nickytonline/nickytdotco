@@ -786,9 +786,9 @@ function generateNewImageUrl(imageUrl) {
 /**
  * Saves a markdown image URL to a local file and returns the new image URL.
  * TODO: Fix mixing two concerns.
- * @param {string} markdownImageUrl
+ * @param {string|null} markdownImageUrl
  *
- * @returns {string} Returns the new image URL.
+ * @returns {Promise<string|null>} Returns a promise that resolves to the new image URL.
  */
 async function saveMarkdownImageUrl(markdownImageUrl = null) {
   let newMarkdownImageUrl = null;
