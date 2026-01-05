@@ -433,13 +433,24 @@ async function fileExists(path) {
  * @returns {object} Object with content and imports array
  */
 function sanitizeMarkdownEmbeds(markdown) {
-  const sanitizedMarkdown = markdown
+  let sanitizedMarkdown = markdown
     .replaceAll(
       /{%\s*?(?<liquidTag>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
       '{% $1 "$2" %}',
     )
     // get rid of promo links that are a new line followed by <!-- places to follow me --> and content
     .replaceAll(/\n<!-- places to follow me -->\n(.|\n)*$/g, "");
+
+  // Escape HTML tags in image alt text to prevent MDX parsing errors
+  sanitizedMarkdown = sanitizedMarkdown.replace(
+    /!\[([^\]]+)\]/g,
+    (match, altText) => {
+      const escapedAlt = altText
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+      return `![${escapedAlt}]`;
+    }
+  );
 
   // Convert all liquid tags to Astro component syntax
   return convertLiquidTagsToAstroComponents(sanitizedMarkdown);
