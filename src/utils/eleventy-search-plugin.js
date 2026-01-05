@@ -35,9 +35,10 @@ module.exports = function(eleventyConfig) {
    * @returns {string} Trimmed excerpt without HTML
    */
   function extractExcerpt(content, length = 160) {
-    // Remove HTML tags and markdown syntax
+    // Remove HTML tags, angle brackets, and markdown syntax
     let text = content
       .replace(/<[^>]*>/g, "")
+      .replace(/[<>]/g, "")
       .replace(/[#*`\[\]()]/g, "")
       .trim();
 
