@@ -46,7 +46,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /{%\s*youtube\s+"?([^"\s,]+)"?(?:,\s+"?([^"\s]+)"?)?\s*%}/g,
     (match, videoId, startTime) => {
       imports.add(
-        'import YouTubeEmbed from "@/components/YouTubeEmbed.astro";',
+        'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";',
       );
       return startTime
         ? `<YouTubeEmbed videoId="${videoId}" startTime="${startTime}" />`
@@ -59,7 +59,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /{%\s*(twitter|x)\s+"?([^"\s]+)"?\s*%}/g,
     (match, type, tweetId) => {
       imports.add(
-        'import TwitterEmbed from "@/components/TwitterEmbed.astro";',
+        'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";',
       );
       return `<TwitterEmbed tweetId="${tweetId}" />`;
     },
@@ -70,7 +70,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /{%\s*codepen\s+"?([^"\s]+)"?\s*%}/g,
     (match, url) => {
       imports.add(
-        'import CodePenEmbed from "@/components/CodePenEmbed.astro";',
+        'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";',
       );
       return `<CodePenEmbed url="${url}" />`;
     },
@@ -80,7 +80,7 @@ function convertLiquidTagsToAstroComponents(content) {
   newContent = newContent.replace(
     /{%\s*github\s+"?([^"\s]+)"?\s*%}/g,
     (match, url) => {
-      imports.add('import GitHubEmbed from "@/components/GitHubEmbed.astro";');
+      imports.add('import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";');
       return `<GitHubEmbed url="${url}" />`;
     },
   );
@@ -89,8 +89,8 @@ function convertLiquidTagsToAstroComponents(content) {
   newContent = newContent.replace(
     /{%\s*embed\s+"?([^"\s]+)"?\s*%}/g,
     (match, url) => {
-      imports.add('import Embed from "@/components/Embed.astro";');
-      return `<Embed url="${url}" />`;
+      imports.add('import GenericEmbed from "@/components/embeds/GenericEmbed.astro";');
+      return `<GenericEmbed url="${url}" />`;
     },
   );
 
@@ -98,8 +98,8 @@ function convertLiquidTagsToAstroComponents(content) {
   newContent = newContent.replace(
     /{%\s*link\s+"?([^"\s]+)"?\s*%}/g,
     (match, url) => {
-      imports.add('import DevToEmbed from "@/components/DevToEmbed.astro";');
-      return `<DevToEmbed url="${url}" />`;
+      imports.add('import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";');
+      return `<DevLinkEmbed url="${url}" />`;
     },
   );
 
@@ -107,7 +107,7 @@ function convertLiquidTagsToAstroComponents(content) {
   newContent = newContent.replace(
     /{%\s*twitch\s+"?([^"\s]+)"?\s*%}/g,
     (match, videoId) => {
-      imports.add('import TwitchEmbed from "@/components/TwitchEmbed.astro";');
+      imports.add('import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";');
       return `<TwitchEmbed videoId="${videoId}" />`;
     },
   );
@@ -116,7 +116,7 @@ function convertLiquidTagsToAstroComponents(content) {
   newContent = newContent.replace(
     /{%\s*vimeo\s+"?([^"\s]+)"?\s*%}/g,
     (match, videoId) => {
-      imports.add('import VimeoEmbed from "@/components/VimeoEmbed.astro";');
+      imports.add('import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";');
       return `<VimeoEmbed videoId="${videoId}" />`;
     },
   );
@@ -126,7 +126,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /{%\s*spotify\s+"?([^"\s]+)"?\s*%}/g,
     (match, uri) => {
       imports.add(
-        'import SpotifyEmbed from "@/components/SpotifyEmbed.astro";',
+        'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";',
       );
       return `<SpotifyEmbed uri="${uri}" />`;
     },
@@ -137,7 +137,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /{%\s*buzzsprout\s+"?([^"\s]+)"?\s*%}/g,
     (match, episodeId) => {
       imports.add(
-        'import BuzzsproutEmbed from "@/components/BuzzsproutEmbed.astro";',
+        'import BuzzsproutEmbed from "@/components/embeds/BuzzsproutEmbed.astro";',
       );
       return `<BuzzsproutEmbed episodeId="${episodeId}" />`;
     },
@@ -148,7 +148,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /{%\s*codesandbox\s+"?([^"\s]+)"?\s*%}/g,
     (match, sandboxId) => {
       imports.add(
-        'import CodeSandboxEmbed from "@/components/CodeSandboxEmbed.astro";',
+        'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";',
       );
       return `<CodeSandboxEmbed sandboxId="${sandboxId}" />`;
     },
@@ -159,7 +159,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /{%\s*instagram\s+"?([^"\s]+)"?\s*%}/g,
     (match, url) => {
       imports.add(
-        'import InstagramEmbed from "@/components/InstagramEmbed.astro";',
+        'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";',
       );
       return `<InstagramEmbed url="${url}" />`;
     },
@@ -171,7 +171,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /::youtube\{videoId="([^"]+)"(?:\s+startTime="([^"]+)")?\}/g,
     (match, videoId, startTime) => {
       imports.add(
-        'import YouTubeEmbed from "@/components/YouTubeEmbed.astro";',
+        'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";',
       );
       return startTime
         ? `<YouTubeEmbed videoId="${videoId}" startTime="${startTime}" />`
@@ -184,7 +184,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /::(twitter|x)\{tweetId="([^"]+)"\}/g,
     (match, type, tweetId) => {
       imports.add(
-        'import TwitterEmbed from "@/components/TwitterEmbed.astro";',
+        'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";',
       );
       return `<TwitterEmbed tweetId="${tweetId}" />`;
     },
@@ -195,7 +195,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /::codepen\{url="([^"]+)"\}/g,
     (match, url) => {
       imports.add(
-        'import CodePenEmbed from "@/components/CodePenEmbed.astro";',
+        'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";',
       );
       return `<CodePenEmbed url="${url}" />`;
     },
@@ -205,28 +205,28 @@ function convertLiquidTagsToAstroComponents(content) {
   newContent = newContent.replace(
     /::github\{url="([^"]+)"\}/g,
     (match, url) => {
-      imports.add('import GitHubEmbed from "@/components/GitHubEmbed.astro";');
+      imports.add('import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";');
       return `<GitHubEmbed url="${url}" />`;
     },
   );
 
   // ::embed{url="..."}
   newContent = newContent.replace(/::embed\{url="([^"]+)"\}/g, (match, url) => {
-    imports.add('import Embed from "@/components/Embed.astro";');
-    return `<Embed url="${url}" />`;
+    imports.add('import GenericEmbed from "@/components/embeds/GenericEmbed.astro";');
+    return `<GenericEmbed url="${url}" />`;
   });
 
   // ::link{url="..."}
   newContent = newContent.replace(/::link\{url="([^"]+)"\}/g, (match, url) => {
-    imports.add('import DevToEmbed from "@/components/DevToEmbed.astro";');
-    return `<DevToEmbed url="${url}" />`;
+    imports.add('import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";');
+    return `<DevLinkEmbed url="${url}" />`;
   });
 
   // ::twitch{videoId="..."}
   newContent = newContent.replace(
     /::twitch\{videoId="([^"]+)"\}/g,
     (match, videoId) => {
-      imports.add('import TwitchEmbed from "@/components/TwitchEmbed.astro";');
+      imports.add('import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";');
       return `<TwitchEmbed videoId="${videoId}" />`;
     },
   );
@@ -235,7 +235,7 @@ function convertLiquidTagsToAstroComponents(content) {
   newContent = newContent.replace(
     /::vimeo\{videoId="([^"]+)"\}/g,
     (match, videoId) => {
-      imports.add('import VimeoEmbed from "@/components/VimeoEmbed.astro";');
+      imports.add('import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";');
       return `<VimeoEmbed videoId="${videoId}" />`;
     },
   );
@@ -245,7 +245,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /::spotify\{uri="([^"]+)"\}/g,
     (match, uri) => {
       imports.add(
-        'import SpotifyEmbed from "@/components/SpotifyEmbed.astro";',
+        'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";',
       );
       return `<SpotifyEmbed uri="${uri}" />`;
     },
@@ -256,7 +256,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /::buzzsprout\{episodeId="([^"]+)"\}/g,
     (match, episodeId) => {
       imports.add(
-        'import BuzzsproutEmbed from "@/components/BuzzsproutEmbed.astro";',
+        'import BuzzsproutEmbed from "@/components/embeds/BuzzsproutEmbed.astro";',
       );
       return `<BuzzsproutEmbed episodeId="${episodeId}" />`;
     },
@@ -267,7 +267,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /::codesandbox\{sandboxId="([^"]+)"\}/g,
     (match, sandboxId) => {
       imports.add(
-        'import CodeSandboxEmbed from "@/components/CodeSandboxEmbed.astro";',
+        'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";',
       );
       return `<CodeSandboxEmbed sandboxId="${sandboxId}" />`;
     },
@@ -278,7 +278,7 @@ function convertLiquidTagsToAstroComponents(content) {
     /::instagram\{url="([^"]+)"\}/g,
     (match, url) => {
       imports.add(
-        'import InstagramEmbed from "@/components/InstagramEmbed.astro";',
+        'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";',
       );
       return `<InstagramEmbed url="${url}" />`;
     },
@@ -381,8 +381,8 @@ async function getOrFetchSeriesName(
   }
 }
 
-const POSTS_DIRECTORY = path.join(__dirname, "../src/blog");
-const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, "../src/vscodetips");
+const POSTS_DIRECTORY = path.join(__dirname, "../src/content/blog");
+const VSCODE_TIPS_POSTS_DIRECTORY = path.join(__dirname, "../src/content/vscodetips");
 const POSTS_IMAGES_PUBLIC_DIRECTORY = "/images/posts";
 const POSTS_IMAGES_DIRECTORY = path.join(
   __dirname,
@@ -402,6 +402,18 @@ const currentBlogPostEmbeds = JSON.parse(
   readFileSync(EMBEDDED_POSTS_MARKUP_FILE, "utf-8"),
 );
 const blogPostEmbeds = new Map(Object.entries(currentBlogPostEmbeds));
+
+// Load existing Twitter embeds or initialize empty object
+let currentTwitterEmbeds = {};
+try {
+  currentTwitterEmbeds = JSON.parse(
+    readFileSync(TWITTER_EMBEDS_FILE, "utf-8"),
+  );
+} catch (error) {
+  // File doesn't exist yet, will be created
+  currentTwitterEmbeds = {};
+}
+const twitterEmbeds = new Map(Object.entries(currentTwitterEmbeds));
 
 /**
  * Checks if a file exists
@@ -639,11 +651,28 @@ async function createPostFile(post) {
 
   // Build the markdown file with imports between frontmatter and content
   const importsSection = imports.length > 0 ? `${imports.join("\n")}\n\n` : "";
-  const markdown = `---json\n${JSON.stringify(
-    jsonFrontmatter,
-    null,
-    2,
-  )}\n---\n${importsSection}${sanitizedContent.trim()}\n`;
+
+  // Convert to YAML frontmatter
+  const yamlFrontmatter = Object.entries(jsonFrontmatter)
+    .map(([key, value]) => {
+      if (Array.isArray(value)) {
+        return `${key}:\n${value.map(item => `  - ${item}`).join('\n')}`;
+      } else if (typeof value === 'object' && value !== null) {
+        const nested = Object.entries(value)
+          .map(([k, v]) => `  ${k}: ${typeof v === 'string' ? `"${v.replace(/"/g, '\\"')}"` : v}`)
+          .join('\n');
+        return `${key}:\n${nested}`;
+      } else if (typeof value === 'string') {
+        // Escape quotes and use quotes if string contains special chars or colons
+        const escaped = value.replace(/"/g, '\\"');
+        return `${key}: "${escaped}"`;
+      } else {
+        return `${key}: ${value}`;
+      }
+    })
+    .join('\n');
+
+  const markdown = `---\n${yamlFrontmatter}\n---\n${importsSection}${sanitizedContent.trim()}\n`;
 
   const basePath = tags.includes("vscodetips")
     ? path.join(
