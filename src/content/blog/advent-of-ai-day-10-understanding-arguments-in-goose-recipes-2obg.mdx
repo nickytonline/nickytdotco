@@ -1,35 +1,32 @@
----json
-{
-  "title": "Advent of AI - Day 10: Understanding Arguments in Goose Recipes",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-14T05:56:41Z",
-  "tags": [
-    "automation",
-    "ai",
-    "goose"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyiep87c899gtgoh8jxmh.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg/",
-  "reading_time_minutes": 7,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI - Day 10: Understanding Arguments in Goose Recipes"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI...."
+date: "2025-12-14T05:56:41Z"
+tags:
+  - automation
+  - ai
+  - goose
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyiep87c899gtgoh8jxmh.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg/"
+reading_time_minutes: 7
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post.
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 For [Advent of AI Day 10](https://adventofai.dev/challenges/10), I built a festival poster generator using Goose recipes. [Here’s my submission](https://github.com/block/goose/discussions/6092#discussioncomment-15249695). But this post isn't really about making posters. It's about understanding how recipe arguments and conditional logic turn static prompts into reusable AI workflows.
 
 Up until now in the Advent of AI challenges, I'd been using recipes pretty simply. Pass in some parameters, get output.
 
-{% embed "https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c" %}
+<GenericEmbed url="https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c" />
 
 But Day 10 made me dig deeper into what's actually happening under the hood with arguments and I discovered you can leverage [Jinja templating](https://jinja.palletsprojects.com/en/stable/templates/) with recipe arguments (args).
 
@@ -46,7 +43,6 @@ Goose recipes let you define inputs just like function parameters. You specify w
 Here's the basic setup:
 
 ```yaml
-{% raw %}
 version: 1.0.0
 title: Festival Poster Generator
 description: Generate themed HTML posters with conditional styling
@@ -73,7 +69,6 @@ parameters:
     requirement: optional
     description: Optional tagline or subtitle
     default: ""
-{% endraw %}
 ```
 
 ### Required vs Optional
@@ -89,7 +84,6 @@ This is where it gets really good. The instructions section of a recipe supports
 For the poster generator, the entire styling instructions change based on `event_type`:
 
 ```yaml
-{% raw %}
 instructions: |
   You are a festival poster generator.
   
@@ -114,7 +108,6 @@ instructions: |
   - Typography: Playful, bold, easy-to-read fonts
   - Mood: Fun, energetic, joyful
   {%  "endif" %}
-{% endraw %}
 ```
 
 ![Hot Cocoa Tasting poster](https://www.nickyt.co/images/posts/_uploads_articles_6onpd9nhbtxztimgcjbh.png)
@@ -136,18 +129,15 @@ The AI doesn't see both sets of instructions. It only sees the one that matches 
 The basic `{{ variable_name }}` syntax injects parameter values:
 
 ```yaml
-{% raw %}
 instructions: |
   Create a poster for {{ event_name }} on {{ event_datetime }}.
-{% endraw %}
 ```
 
 ### Conditional Blocks
 
-{% raw %}`{% if "condition" %}`{% endraw %} lets you include or skip entire sections:
+`{% if "condition" %}` lets you include or skip entire sections:
 
 ```yaml
-{% raw %}
 {% if "tagline" %}
 Make the tagline prominent: {{ tagline }}
 {%  "endif" %}
@@ -155,7 +145,6 @@ Make the tagline prominent: {{ tagline }}
 {% if not description %}
 Since no description was provided, create a brief one.
 {%  "endif" %}
-{% endraw %}
 ```
 
 I used this a lot for optional parameters. If someone provides a tagline, include it. If not, skip that section entirely.
@@ -165,9 +154,7 @@ I used this a lot for optional parameters. If someone provides a tagline, includ
 Jinja filters let you transform values on the fly:
 
 ```yaml
-{% raw %}
 Save to: poster_{{ event_type }}_{{ event_name | lower | replace(" ", "_") }}.html
-{% endraw %}
 ```
 
 This converts "Hot Cocoa Tasting" to "hot_cocoa_tasting" automatically. Super useful for file names.
@@ -177,13 +164,11 @@ This converts "Hot Cocoa Tasting" to "hot_cocoa_tasting" automatically. Super us
 You can get fancy with multiple conditions:
 
 ```yaml
-{% raw %}
 {% if event_type == "performance" and ticket_info %}
 Display ticket info with elegant styling: {{ ticket_info }}
 {% elif event_type == "kids" and not ticket_info %}
 Add "Free admission - all families welcome!"
 {%  "endif" %}
-{% endraw %}
 ```
 
 ## Why This Matters
@@ -193,26 +178,22 @@ With parameters and conditional logic, you write once and reuse forever.
 For the Day 10 challenge, I can generate posters for all the different festival events just by changing the parameters:
 
 ```bash
-{% raw %}
 # CLI
 goose run festival-poster-generator \
   --event_name "Hot Cocoa Tasting" \
   --event_datetime "December 15, 2pm–4pm" \
   --location "Main Plaza" \
   --event_type food
-{% endraw %}
 ```
 
 Want a kids event? Same recipe, different parameters:
 
 ```bash
-{% raw %}
 goose run festival-poster-generator \
   --event_name "Storytelling Hour" \
   --event_datetime "December 17, 3pm–4pm" \
   --location "Story Tent" \
   --event_type kids
-{% endraw %}
 ```
 
 In Goose Desktop, you get a form UI with dropdowns for the event type and text inputs for everything else. Way nicer than typing command-line args.
@@ -247,7 +228,6 @@ For the event type, I used `input_type: select` instead of a freeform string. Th
 For optional parameters, think about what makes sense when nothing is provided:
 
 ```yaml
-{% raw %}
 - key: output_format
   input_type: select
   requirement: optional
@@ -255,7 +235,6 @@ For optional parameters, think about what makes sense when nothing is provided:
   options:
     - html
     - markdown
-{% endraw %}
 ```
 
 Most people probably want HTML, so default to that.

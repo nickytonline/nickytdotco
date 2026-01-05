@@ -1,34 +1,31 @@
----json
-{
-  "title": "Advent of AI 2025 - Day 15: Goose Sub-Recipes",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-21T17:44:42Z",
-  "tags": [
-    "adventofai",
-    "goose",
-    "ai",
-    "automation"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn0ks3d6lxds8jonx3mi7.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-15-goose-sub-recipes-3mnd/",
-  "reading_time_minutes": 4,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI 2025 - Day 15: Goose Sub-Recipes"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI...."
+date: "2025-12-21T17:44:42Z"
+tags:
+  - adventofai
+  - goose
+  - ai
+  - automation
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn0ks3d6lxds8jonx3mi7.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-2025-day-15-goose-sub-recipes-3mnd/"
+reading_time_minutes: 4
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. If I'm doing them correctly, they should take me between 30 minutes to 1 hour max to write.
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 [Day 15's challenge](https://adventofai.dev/challenges/15) was all about [sub-recipes](https://block.github.io/goose/docs/guides/recipes/subrecipes). If you've been following along, you know recipes are Goose's way of automating workflows.
 
-{% embed "https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c" %}
+<GenericEmbed url="https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c" />
 
 Sub-recipes take this further by letting you compose smaller recipes into larger ones.
 
@@ -58,7 +55,6 @@ The main recipe's job is coordination. It defines the workflow, passes the right
 The main recipe's `sub_recipes` section maps values from the main parameters to each sub-recipe's expected parameters.
 
 ``````yaml
-{% raw %}
 version: 1.0.0
 title: Social Media Campaign Generator
 description: Generate complete cross-platform social media campaign using sub-recipes
@@ -183,7 +179,6 @@ parameters:
     input_type: string
     requirement: required
     description: What you want people to do
-{% endraw %}
 ``````
 
 ## The Result

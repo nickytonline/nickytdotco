@@ -1,30 +1,27 @@
----json
-{
-  "title": "Advent of AI 2025 - Day 6: Automating GitHub Issue Triage with Goose",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-09T04:32:06Z",
-  "tags": [
-    "adventofai",
-    "goose",
-    "githubactions",
-    "ai"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyb0sw1vn5zz0e0uxuerm.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-6-automating-github-issue-triage-with-goose-1pn5/",
-  "reading_time_minutes": 4,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI 2025 - Day 6: Automating GitHub Issue Triage with Goose"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI...."
+date: "2025-12-09T04:32:06Z"
+tags:
+  - adventofai
+  - goose
+  - githubactions
+  - ai
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyb0sw1vn5zz0e0uxuerm.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-2025-day-6-automating-github-issue-triage-with-goose-1pn5/"
+reading_time_minutes: 4
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 I built an automated GitHub issue triage system using Goose for [Advent of AI 2025 Day 6](https://adventofai.dev/challenges/6). The system categorizes festival feedback, assigns priorities, and welcomes first-time contributors. It runs in GitHub Actions and handles everything from label creation to posting helpful comments.
 
@@ -86,28 +83,22 @@ I created three test issues to verify everything worked:
 
 **Issue #1: Heating System Failing**
 ```
-{% raw %}
 Title: Heating system failing in the Main Tent
 Body: The heaters stopped working tonight. Very cold, several booths reported no heat. Needs immediate attention.
-{% endraw %}
 ```
 Labels: `urgent`, `priority:high`, `sentiment:negative`
 
 **Issue #2: Photo Booth Feature Request**
 ```
-{% raw %}
 Title: Photo booth should print festival-themed frames  
 Body: Suggestion: Add printed frames with festival graphics so people can take physical souvenirs.
-{% endraw %}
 ```
 Labels: `feature`, `priority:low`, `sentiment:positive`
 
 **Issue #3: Lost and Found Question**
 ```
-{% raw %}
 Title: Where is the lost & found located?
 Body: Visitor found a jacket and wants to return it. Where should they go?
-{% endraw %}
 ```
 Labels: `question`, `priority:low`, `sentiment:neutral`
 
@@ -141,7 +132,7 @@ The system triages issues in under 2 minutes. It's running live on the repo and 
 
 Check out the repo if you want to see the full implementation or steal the setup for your own projects.
 
-{% embed "https://github.com/nickytonline/advent-of-ai-2025-day-6-triager" %}
+<GenericEmbed url="https://github.com/nickytonline/advent-of-ai-2025-day-6-triager" />
 
 Try submitting an issue and let me know how it goes!
 

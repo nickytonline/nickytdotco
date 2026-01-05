@@ -1,23 +1,22 @@
----json
-{
-  "title": "DEV as a Headless CMS for your Gatsby Site",
-  "excerpt": "Near the end of September 2019, @ben  posted this article.                                         Yo...",
-  "date": "2020-04-15T13:09:54Z",
-  "tags": [
-    "stackbit",
-    "headlesscms",
-    "gatsby"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F6nx4xj3l7dk99em1bdww.png",
-  "canonical_url": "https://www.nickyt.co/blog/dev-as-a-headless-cms-for-your-gatsby-site-4mj2/",
-  "reading_time_minutes": 3,
-  "template": "post"
-}
 ---
+title: "DEV as a Headless CMS for your Gatsby Site"
+excerpt: "Near the end of September 2019, @ben  posted this article.                                         Yo..."
+date: "2020-04-15T13:09:54Z"
+tags:
+  - stackbit
+  - headlesscms
+  - gatsby
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F6nx4xj3l7dk99em1bdww.png"
+canonical_url: "https://www.nickyt.co/blog/dev-as-a-headless-cms-for-your-gatsby-site-4mj2/"
+reading_time_minutes: 3
+template: "post"
+---
+import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";
+import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";
 
 Near the end of September 2019, @ben posted this article.
 
-{% link "https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5" %}
+<DevLinkEmbed url="https://dev.to/devteam/you-can-now-generate-self-hostable-static-blogs-right-from-your-dev-content-via-stackbit-7a5" />
 
 I won't go into all the details as they are already mentioned in the article, but the TLDR is, by creating a site via Stackbit, you can use DEV as a headless CMS for your self-hosted site.
 
@@ -35,7 +34,7 @@ Since my previous site was a Gatsby site, I decided to generate a Gatsby site us
 
 And then within about a minute, I had my new site, built and deployed to Netlify at https://robust-petunia-478cc.netlify.com. 
 
-{% github "https://github.com/nickytonline/robust-petunia" %}
+<GitHubEmbed url="https://github.com/nickytonline/robust-petunia" />
 
 My actual website is https://iamdeveloper.com, so at that point, I just configured my site in Netlify to point to iamdeveloper.com.
 

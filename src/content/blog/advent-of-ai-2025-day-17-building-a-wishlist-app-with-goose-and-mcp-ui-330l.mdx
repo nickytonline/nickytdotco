@@ -1,30 +1,27 @@
----json
-{
-  "title": "Advent of AI 2025 - Day 17: Building a Wishlist App with Goose and MCP-UI",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-27T15:33:49Z",
-  "tags": [
-    "ai",
-    "showdev",
-    "agents",
-    "devchallenge"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyp4t7qe0vcocyompd92u.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-17-building-a-wishlist-app-with-goose-and-mcp-ui-330l/",
-  "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI 2025 - Day 17: Building a Wishlist App with Goose and MCP-UI"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI...."
+date: "2025-12-27T15:33:49Z"
+tags:
+  - ai
+  - showdev
+  - agents
+  - devchallenge
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyp4t7qe0vcocyompd92u.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-2025-day-17-building-a-wishlist-app-with-goose-and-mcp-ui-330l/"
+reading_time_minutes: 3
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 For [Day 17 of the Advent of AI challenge](https://adventofai.dev/challenges/17), I built a Winter Wishlist app using [MCP-UI](https://mcpui.dev/).
 
@@ -41,7 +38,7 @@ A wishlist MCP server that renders a visual UI directly in Goose. Users can:
 
 Check out the repo:
 
-{% embed "https://github.com/nickytonline/wishlist-mcp" %}
+<GenericEmbed url="https://github.com/nickytonline/wishlist-mcp" />
 
 The implementation stores wishes in memory based on MCP session ID. Obviously something more robust would make sense for production, but for this challenge it works great.
 
@@ -49,7 +46,7 @@ The implementation stores wishes in memory based on MCP session ID. Obviously so
 
 I based this on a [ChatGPT app TypeScript template](https://github.com/pomerium/chatgpt-app-typescript-template) I had created for work just before the holiday. Having that foundation made spinning up the wishlist server much faster.
 
-{% embed "https://github.com/pomerium/chatgpt-app-typescript-template" %}
+<GenericEmbed url="https://github.com/pomerium/chatgpt-app-typescript-template" />
 
 One of the best parts of this setup is the development workflow. You can build out your components in Storybook, make live edits to widgets, and see them update in Goose in real-time. This makes iterating on the UI super fast.
 
@@ -66,7 +63,6 @@ Initially I thought I was doing something silly because all my iframes weren't s
 Then [Rizel in a GitHub discussion](https://github.com/block/goose/discussions/6249#discussioncomment-15338156) (@blackgirlbytes) came through with the solution. You need to use a ResizeObserver on your content container and post messages to the parent frame for Goose:
 
 ```javascript
-{% raw %}
 // Auto-resize the iframe to fit content - observe only the container
 const container = document.querySelector('.container');
 if (container) {
@@ -86,7 +82,6 @@ if (container) {
     });
   }).observe(container);
 }
-{% endraw %}
 ```
 
 That fixed it completely.

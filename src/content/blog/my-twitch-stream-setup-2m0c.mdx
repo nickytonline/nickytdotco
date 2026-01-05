@@ -1,31 +1,29 @@
----json
-{
-  "title": "My Twitch Stream Setup",
-  "excerpt": "So I started streaming on Twitch last year.                                         I've Started to...",
-  "date": "2021-04-17T19:27:33Z",
-  "tags": [
-    "twitch",
-    "streaming",
-    "learninpublic"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F7lzygyai23v4nhw3bl81.jpeg",
-  "canonical_url": "https://www.nickyt.co/blog/my-twitch-stream-setup-2m0c/",
-  "reading_time_minutes": 2,
-  "template": "post",
-  "series": {
-    "name": "Streaming",
-    "collection_id": 12666
-  }
-}
 ---
+title: "My Twitch Stream Setup"
+excerpt: "So I started streaming on Twitch last year.                                         I've Started to..."
+date: "2021-04-17T19:27:33Z"
+tags:
+  - twitch
+  - streaming
+  - learninpublic
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F7lzygyai23v4nhw3bl81.jpeg"
+canonical_url: "https://www.nickyt.co/blog/my-twitch-stream-setup-2m0c/"
+reading_time_minutes: 2
+template: "post"
+series:
+  name: "Streaming"
+  collection_id: 12666
+---
+import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";
+import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";
 
 So I started streaming on Twitch last year.
 
-{% link "https://dev.to/nickytonline/i-ve-started-to-live-code-on-twitch-for-dev-13cn" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/i-ve-started-to-live-code-on-twitch-for-dev-13cn" />
 
 Most of my streaming efforts have been dedicated to the DEV Twitch stream, but I'm finally getting back into streaming regularly on my own stream as well.
 
-{% link "https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he" %}
+<DevLinkEmbed url="https://dev.to/devteam/let-s-pair-during-a-live-coding-session-8he" />
 
 I've been streaming for about a year now, so I've tweaked things as I've gone along and have learnt some things from fellow streamers.
 
@@ -39,7 +37,7 @@ Here is what it looks like now as of yesterday.
 
 I thought to get back in the swing of things with my stream, that it made sense to go through my setup. The video is still up on Twitch, but I'm going to link to the YouTube as the Twitch recording disappears in two weeks.
 
-{% youtube "H7HGYV2dT-w" %}
+<YouTubeEmbed videoId="H7HGYV2dT-w" />
 
 Things that I cover are how I made the layout, what I use for video/screen sharing and **how to provide and enable closed captioning** for viewers.
 

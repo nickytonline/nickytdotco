@@ -1,20 +1,18 @@
----json
-{
-  "title": "Supercharge Your GitHub Profile: Showcase Your Open Source Contributions",
-  "excerpt": "Last week, we launched our brand new Dev Cards with the OSCR (Open Source Contributor Rating)...",
-  "date": "2024-08-19T15:01:09Z",
-  "tags": [
-    "opensource",
-    "career",
-    "githubactions",
-    "github"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fr5lksfacbj6jsab38lxq.png",
-  "canonical_url": "https://opensauced.pizza/docs/community-resources/supercharge-your-github-profile/",
-  "reading_time_minutes": 4,
-  "template": "post"
-}
 ---
+title: "Supercharge Your GitHub Profile: Showcase Your Open Source Contributions"
+excerpt: "Last week, we launched our brand new Dev Cards with the OSCR (Open Source Contributor Rating)..."
+date: "2024-08-19T15:01:09Z"
+tags:
+  - opensource
+  - career
+  - githubactions
+  - github
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fr5lksfacbj6jsab38lxq.png"
+canonical_url: "https://opensauced.pizza/docs/community-resources/supercharge-your-github-profile/"
+reading_time_minutes: 4
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 Last week, we launched our brand new Dev Cards with the OSCR (Open Source Contributor Rating) highlighted on the front to make it easier for you to showcase your impact in open source. To make it even easier, I've cooked up a little GitHub Action that'll automatically update your Dev Card on your GitHub profile. 
 
@@ -26,7 +24,7 @@ At OpenSauced, we created [dev cards to showcase your open source stats](https:/
 
 We also recently introduced the OSCR score which appears prominently on dev cards now.
 
-{% embed "https://dev.to/BekahHW/introducing-the-oscr-celebrating-open-source-stars-2eo7" %}
+<GenericEmbed url="https://dev.to/BekahHW/introducing-the-oscr-celebrating-open-source-stars-2eo7" />
 
 If you head on over to your OpenSauced profile page, you can see your dev card now. Here's [my OpenSauced profile](https://oss.fyi/nickytonline). There's a little pizza card button you can press to see it.
 
@@ -40,7 +38,7 @@ The card is interactive and can be flipped.
 
 To make it easier to showcase your contributions, I've developed a GitHub Action that automates the process of fetching your OpenSauced dev card (static version) and updating it in your GitHub profile README.
 
-{% embed "https://github.com/nickytonline/open-sauced-dev-card-action" %}
+<GenericEmbed url="https://github.com/nickytonline/open-sauced-dev-card-action" />
 
 This means you can have an always up-to-date representation of your open source contributions from OpenSauced stats right on your GitHub profile.
 

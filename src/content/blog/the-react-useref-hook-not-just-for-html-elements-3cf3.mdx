@@ -1,23 +1,20 @@
----json
-{
-  "title": "The React useRef Hook: Not Just for DOM Elements",
-  "excerpt": "In this post, we'll cover what the useRef hook is, some examples of how it can be used, and when it...",
-  "date": "2024-07-08T04:38:17Z",
-  "tags": [
-    "react",
-    "javascript",
-    "webdev"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxllbi42t0tt7qanarqac.png",
-  "canonical_url": "https://opensauced.pizza/docs/community-resources/the-react-useref-hook-not-just-for-html-elements/",
-  "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Fullstack Learnings",
-    "collection_id": 26157
-  }
-}
 ---
+title: "The React useRef Hook: Not Just for DOM Elements"
+excerpt: "In this post, we'll cover what the useRef hook is, some examples of how it can be used, and when it..."
+date: "2024-07-08T04:38:17Z"
+tags:
+  - react
+  - javascript
+  - webdev
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxllbi42t0tt7qanarqac.png"
+canonical_url: "https://opensauced.pizza/docs/community-resources/the-react-useref-hook-not-just-for-html-elements/"
+reading_time_minutes: 3
+template: "post"
+series:
+  name: "Fullstack Learnings"
+  collection_id: 26157
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 In this post, we'll cover what the `useRef` hook is, some examples of how it can be used, and when it shouldn't be used.
 
@@ -34,7 +31,6 @@ In React, state manages data that can trigger re-renders. But what if you need a
 Typically, you'd do something like this.
 
 ```typescript
-{% raw %}
 import { useEffect, useRef } from "react";
 
 export const SomeComponent = () => {
@@ -56,7 +52,6 @@ export const SomeComponent = () => {
     </form>
   );
 }
-{% endraw %}
 ```
 
 1. We create a variable named `firstNameInputRef` using `useRef` to reference the DOM element (initially null) and use `useEffect` to focus the input element on the initial render.
@@ -66,7 +61,7 @@ export const SomeComponent = () => {
 
 Recently, I was working on Open Sauced's [StarSearch](https://opensauced.pizza/blog/open-source-insights-with-starsearch), a Copilot for git history feature we released at the end of May 2024. You can read more about StarSearch in the blog post below.
 
-{% embed "https://dev.to/bekahhw/introducing-starsearch-unlock-the-copilot-for-git-history-5ddb" %}
+<GenericEmbed url="https://dev.to/bekahhw/introducing-starsearch-unlock-the-copilot-for-git-history-5ddb" />
 
 The ask was to be able to start a new StarSearch conversation. To do so, I had to stop the current conversation. If you've worked with the [OpenAI](https://openai.com/index/openai-api/) API or similar APIs, they typically return a [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) as a response.
 
@@ -74,12 +69,11 @@ A ReadableStream is a web API that allows data to be read in chunks as it become
 
 I initially had this feature working, but ran into issues if the response started to stream. The solution, create a reference to the readable stream via the `useRef` hook and when a new conversation is started, cancel the one in progress. You can see these changes in the pull request (PR) below
 
-{% embed "https://github.com/open-sauced/app/pull/3637" %}
+<GenericEmbed url="https://github.com/open-sauced/app/pull/3637" />
 
 So now, if someone presses the _Create a New Conversation_ button, I cancel the current streaming response from StarSearch, e.g.
 
 ```typescript
-{% raw %}
   const streamRef = useRef<ReadableStreamDefaultReader<string>>();
 
   // for plain JavaScript change the above line to
@@ -93,7 +87,6 @@ So now, if someone presses the _Create a New Conversation_ button, I cancel the 
 
 ...
     
-{% endraw %}
 ```
 
 1. We create a variable named `streamRef` using `useRef` to hold a reference to the current [ReadableStreamDefaultReader](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader). 

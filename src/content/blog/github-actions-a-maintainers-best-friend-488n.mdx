@@ -1,24 +1,21 @@
----json
-{
-  "title": "GitHub Actions: A Maintainer's Best Friend",
-  "excerpt": "As developers, it’s in our best interest to automate things. The less we have to do in a manual way,...",
-  "date": "2023-10-31T14:06:46Z",
-  "tags": [
-    "githubactions",
-    "automation",
-    "opensource",
-    "productivity"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fescjy67qg8keb9i45wmw.png",
-  "canonical_url": "https://opensauced.pizza/docs/community-resources/github-actions-a-maintainers-best-friend/",
-  "reading_time_minutes": 4,
-  "template": "post",
-  "series": {
-    "name": "Maintainer Toolkit",
-    "collection_id": 24726
-  }
-}
 ---
+title: "GitHub Actions: A Maintainer's Best Friend"
+excerpt: "As developers, it’s in our best interest to automate things. The less we have to do in a manual way,..."
+date: "2023-10-31T14:06:46Z"
+tags:
+  - githubactions
+  - automation
+  - opensource
+  - productivity
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fescjy67qg8keb9i45wmw.png"
+canonical_url: "https://opensauced.pizza/docs/community-resources/github-actions-a-maintainers-best-friend/"
+reading_time_minutes: 4
+template: "post"
+series:
+  name: "Maintainer Toolkit"
+  collection_id: 24726
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 As developers, it’s in our best interest to automate things. The less we have to do in a manual way, the better. As soon as manual intervention is required, there is potential for failure or a mishap. Aside from that, it’s your time as a maintainer that could be spent elsewhere.
 
@@ -68,7 +65,6 @@ Don’t see a GitHub action for what you need? Create your own. You can even bui
 I'm using some GitHub Actions, a custom script that leverages the [GitHub CLI](https://cli.github.com/) and magic.
 
 ```yaml
-{% raw %}
 name: Get latest videos
 on:
   schedule:
@@ -98,14 +94,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ./bin/pr-videos.sh
-{% endraw %}
 ```
 
 You can see the results on the [streaming page of my site](https://www.nickyt.co/pages/streaming/).
 
 The post is a bit out of date, but I discuss more in depth the automations for my website in
 
-{% embed "https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p" %}
+<GenericEmbed url="https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p" />
 
 ## Conclusion
 

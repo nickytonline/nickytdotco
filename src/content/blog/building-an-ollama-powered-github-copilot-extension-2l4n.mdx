@@ -1,30 +1,27 @@
----json
-{
-  "title": "Building an Ollama-Powered GitHub Copilot Extension",
-  "excerpt": "A few months ago, I wrote about creating your first GitHub Copilot extension, and later discussed...",
-  "date": "2025-01-06T06:00:00Z",
-  "tags": [
-    "github",
-    "githubcopilot",
-    "ai",
-    "ollama"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbqqfkgfvu6dluc214l1h.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/building-an-ollama-powered-github-copilot-extension-2l4n/",
-  "reading_time_minutes": 5,
-  "template": "post",
-  "series": {
-    "name": "GitHub Copilot",
-    "collection_id": 29975
-  }
-}
 ---
+title: "Building an Ollama-Powered GitHub Copilot Extension"
+excerpt: "A few months ago, I wrote about creating your first GitHub Copilot extension, and later discussed..."
+date: "2025-01-06T06:00:00Z"
+tags:
+  - github
+  - githubcopilot
+  - ai
+  - ollama
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbqqfkgfvu6dluc214l1h.jpg"
+canonical_url: "https://www.nickyt.co/blog/building-an-ollama-powered-github-copilot-extension-2l4n/"
+reading_time_minutes: 5
+template: "post"
+series:
+  name: "GitHub Copilot"
+  collection_id: 29975
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 A few months ago, I wrote about creating your first GitHub Copilot extension, and later discussed this topic on the GitHub Open Source Friday live stream.
 
-{% embed "https://dev.to/nickytonline/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0" %}
+<GenericEmbed url="https://dev.to/nickytonline/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0" />
 
-{% embed "https://www.youtube.com/watch?v=zE-O-3CGcEc" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=zE-O-3CGcEc" />
 
 Building off the [Copilot extension template](https://github.com/nickytonline/copilot-extension-template) I made based on that initial blog post, I decided to take a crack at an Ollama-powered GitHub Copilot extension that brings local AI capabilities directly into your development workflow.
 
@@ -51,7 +48,6 @@ While Ollama enhances privacy by running locally, it's important to note that Gi
 The extension is built using Hono.js, a lightweight web framework. To get things running, you can configure a couple of environment variables or go with the defaults.
 
 ```typescript
-{% raw %}
 export const config = {
   ollama: {
     baseUrl: process.env.OLLAMA_API_BASE_URL ?? "http://localhost:11434",
@@ -61,13 +57,11 @@ export const config = {
     port: Number(process.env.PORT ?? 3000),
   },
 };
-{% endraw %}
 ```
 
 The main endpoint handles incoming requests from GitHub Copilot, verifies them, and streams responses from Ollama:
 
 ```typescript
-{% raw %}
 app.post("/", async (c) => {
   // validation logic
   
@@ -128,7 +122,6 @@ app.post("/", async (c) => {
     }
   });
 });
-{% endraw %}
 ```
 
 ### Smart Context Handling
@@ -136,7 +129,6 @@ app.post("/", async (c) => {
 The extension leverages [GitHub Copilot's context-passing capabilities](https://docs.github.com/en/copilot/using-github-copilot/using-extensions-to-integrate-external-tools-with-copilot-chat#about-context-passing-in-github-copilot-extensions) to access file contents and other contextual information. Here's how it works:
 
 ```typescript
-{% raw %}
 export function getUserMessageWithContext({
   payload,
   type,
@@ -160,7 +152,6 @@ export function getUserMessageWithContext({
     contextMarkdown ? `${FILES_PREAMBLE}\n\n${contextMarkdown}` : ""
   }`;
 }
-{% endraw %}
 ```
 
 ## Setting Up Your Development Environment
@@ -251,9 +242,9 @@ I'm hoping to get this to a place where people can deploy the GitHub app for pro
 
 Get started by checking out the project on GitHub, and don't forget to star it and the template it's based on if you find it useful!
 
-{% embed "https://github.com/nickytonline/ollama-copilot-extension" %}
+<GenericEmbed url="https://github.com/nickytonline/ollama-copilot-extension" />
 
-{% embed "https://github.com/nickytonline/copilot-extension-template" %}
+<GenericEmbed url="https://github.com/nickytonline/copilot-extension-template" />
 
 Until the next one peeps!
 

@@ -1,30 +1,27 @@
----json
-{
-  "title": "Advent of AI 2025 - Day 14: Agent Skills",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-19T12:49:52Z",
-  "tags": [
-    "adventofai",
-    "ai",
-    "opensource",
-    "goose"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fymd4a4yqwmhyppj2xgsp.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-14-agent-skills-4d48/",
-  "reading_time_minutes": 5,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI 2025 - Day 14: Agent Skills"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI...."
+date: "2025-12-19T12:49:52Z"
+tags:
+  - adventofai
+  - ai
+  - opensource
+  - goose
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fymd4a4yqwmhyppj2xgsp.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-2025-day-14-agent-skills-4d48/"
+reading_time_minutes: 5
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post.
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 [Advent of AI day 14](https://adventofai.dev/challenges/14) is about agent skills. Goose now supports the [open standard for agent skills](https://agentskills.io).
 
@@ -42,7 +39,7 @@ When you ask Goose to do something, it checks if any skills match your request b
 
 This is different from recipes. Recipes are for specific parameterized tasks you trigger explicitly. Skills are contextual expertise that Goose loads automatically when relevant.
 
-{% embed "https://dev.to/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg" %}
+<GenericEmbed url="https://dev.to/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg" />
 
 ## What I built
 
@@ -66,7 +63,6 @@ Skills reference each other using `[See: skill-name]` notation. When a customer 
 Here's what a basic skill looks like:
 
 ```markdown
-{% raw %}
 ---
 name: customer-experience
 description: Expert customer service guidance for managing guest interactions, queue flow, and creating memorable festival experiences
@@ -92,7 +88,6 @@ If someone has been waiting 20+ minutes:
 - Acknowledge the wait explicitly
 - Add extra value
 - Create a memorable moment
-{% endraw %}
 ```
 
 The description is what the agent uses to decide if it needs the skill. Be specific. "Expert customer service guidance for managing guest interactions, queue flow, and creating memorable festival experiences" tells the agent exactly when to load it.
@@ -141,7 +136,7 @@ TLDR; no. Skills teach agents how to work; MCPs give them the power to actually 
 
 Read more about this from Angie Jones (@techgirl1908) great article on it.
 
-{% embed "https://dev.to/goose_oss/did-skills-kill-mcp-3lk1" %}
+<GenericEmbed url="https://dev.to/goose_oss/did-skills-kill-mcp-3lk1" />
 
 ## Testing the system
 

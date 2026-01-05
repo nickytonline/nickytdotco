@@ -1,21 +1,18 @@
----json
-{
-  "title": "My Impact at Forem",
-  "excerpt": "This is my first post about impact. What do I mean by impact?  How did you influence the place where...",
-  "date": "2022-03-24T03:47:23Z",
-  "tags": [
-    "career"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg",
-  "canonical_url": "https://www.nickyt.co/blog/my-impact-at-forem-23mj/",
-  "reading_time_minutes": 4,
-  "template": "post",
-  "series": {
-    "name": "Career",
-    "collection_id": 4084
-  }
-}
 ---
+title: "My Impact at Forem"
+excerpt: "This is my first post about impact. What do I mean by impact?  How did you influence the place where..."
+date: "2022-03-24T03:47:23Z"
+tags:
+  - career
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0wmq5dpcg6r0b9ym1bv.jpeg"
+canonical_url: "https://www.nickyt.co/blog/my-impact-at-forem-23mj/"
+reading_time_minutes: 4
+template: "post"
+series:
+  name: "Career"
+  collection_id: 4084
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 This is my first post about impact. What do I mean by impact?
 
@@ -29,7 +26,7 @@ I'm proud of all the work I did while at Forem, and I wanted to take note of it 
 
 My work focused mainly on the frontend, and I put pre-commit hooks that ran stuff like prettier, eslint and jest. It expanded to more than that, for example, running rubocop on Ruby files. Check out my post on pre-commit hooks if you're curious about all that.
 
-{% embed "https://dev.to/nickytonline/stuff-i-always-set-up-for-frontend-work-56h2" %}
+<GenericEmbed url="https://dev.to/nickytonline/stuff-i-always-set-up-for-frontend-work-56h2" />
 
 Pre-commit hooks, linting, etc., were super important to me because I was the only frontend on the project for a long time. Hence, code maintenance was always on the brain and still is. 😎
 
@@ -39,7 +36,7 @@ We were running an older version of Preact. The older version was blocking us fr
 
 Around this time, React Testing Library ([Preact Testing Library](https://preactjs.com/guide/v10/preact-testing-library/) in our case) had started gaining traction. It clicked with me how this library tested components. So, another significant change came with the migration to Preact X. You can read more about that in the referenced changelog post.
 
-{% embed "https://dev.to/devteam/changelog-frontend-edition-30l7" %}
+<GenericEmbed url="https://dev.to/devteam/changelog-frontend-edition-30l7" />
 
 I mention this in the changelog post, but a big shoutout to my co-worker Ridhwana Khan (@ridhwana) for helping me migrate all the tests to preact-testing-library.
 

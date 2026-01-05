@@ -1,26 +1,24 @@
----json
-{
-  "title": "Changelog: DEV upgraded to Webpacker 4/Babel 7",
-  "excerpt": "This week brought a major upgrade to the frontend infrastructure for DEV. We've been on webpacker 3.x...",
-  "date": "2020-03-20T11:51:52Z",
-  "tags": [
-    "rails",
-    "webpack",
-    "javascript",
-    "changelog"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fcc61ssp14pyl9of3i37y.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/changelog-dev-upgraded-to-webpacker-4-babel-7-1mm4/",
-  "reading_time_minutes": 2,
-  "template": "post"
-}
 ---
+title: "Changelog: DEV upgraded to Webpacker 4/Babel 7"
+excerpt: "This week brought a major upgrade to the frontend infrastructure for DEV. We've been on webpacker 3.x..."
+date: "2020-03-20T11:51:52Z"
+tags:
+  - rails
+  - webpack
+  - javascript
+  - changelog
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fcc61ssp14pyl9of3i37y.jpg"
+canonical_url: "https://www.nickyt.co/blog/changelog-dev-upgraded-to-webpacker-4-babel-7-1mm4/"
+reading_time_minutes: 2
+template: "post"
+---
+import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";
 
 This week brought a major upgrade to the frontend infrastructure for DEV. We've been on webpacker 3.x and Babel 6.x for quite a while now. There were several attempts, including a couple of my own prior to working at DEV that were unsuccessful. However, this week during the last week of our cool-down period before we start our next cycle of development, I had time to perform the upgrade successfully. We are now using webpacker 4.22 and Babel 7.x.
 
 If you're not familiar with webpacker, I encourage you to check out the project. The TLDR though is that it's a Ruby gem that makes integrating webpack bundles into a Rails app very easy.
 
-{% github "https://github.com/rails/webpacker" %}
+<GitHubEmbed url="https://github.com/rails/webpacker" />
 
 The upgrade opens up a lot of things that were being held back by the webpacker 4 upgrade. With the upgrade, we can now do the following:
 

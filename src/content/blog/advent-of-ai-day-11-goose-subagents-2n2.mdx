@@ -1,29 +1,26 @@
----json
-{
-  "title": "Advent of AI - Day 11: Goose Subagents",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm...",
-  "date": "2025-12-17T05:15:32Z",
-  "tags": [
-    "adventofai",
-    "goose",
-    "subagents"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwatye6fj0j4oy9l75cmb.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-day-11-goose-subagents-2n2/",
-  "reading_time_minutes": 5,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI - Day 11: Goose Subagents"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm..."
+date: "2025-12-17T05:15:32Z"
+tags:
+  - adventofai
+  - goose
+  - subagents
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwatye6fj0j4oy9l75cmb.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-day-11-goose-subagents-2n2/"
+reading_time_minutes: 5
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm doing one of these each day, I don't have time to spend a couple hours on each post.
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 For [Day 11 of Advent of AI](https://adventofai.dev/challenges/11), the challenge was building a social media photo booth app. Here's [my submission](https://github.com/block/goose/discussions/6120#discussioncomment-15269927). Getting the filters working wasn't really the goal for me though. I wanted to dig into how Goose subagents actually work under the hood.
 
@@ -76,7 +73,6 @@ Subagents run in completely separate sessions. The subagent has its own full con
 Here's what the tool output looks like:
 
 ```json
-{% raw %}
 {  
   "execution_summary": {  
     "total_tasks": 2,  
@@ -97,7 +93,6 @@ Here's what the tool output looks like:
     }  
   ]  
 }
-{% endraw %}
 ```
 
 You can control how much information comes back using natural language. "Create a subagent to debug this issue, I want to see the full investigation process" gives you everything. "Use a subagent to research this topic and summarize the key findings" keeps your conversation clean with just the final result.
@@ -116,15 +111,13 @@ I also tried GPT-4.1, and it couldn't execute the subagents properly. Instead of
 
 I also enabled prompt injection detection in Goose for the first time:
 
-```
-{% raw %}
+```bash
 🔒 Security Alert: This tool call has been flagged as potentially dangerous. 
 Confidence: 95.0% 
 Explanation: Detected 1 security threat: 
 1. Recursive file deletion with rm -rf (Risk: Critical) 
    - Found: 'rm -rf dist && rm -rf node_modules/' 
 Finding ID: SEC-4e366562751c40989b553e4f5f5df5e3
-{% endraw %}
 ```
 
 I allowed it since I knew it was just cleaning build artifacts. But it's good to see the security layer working.

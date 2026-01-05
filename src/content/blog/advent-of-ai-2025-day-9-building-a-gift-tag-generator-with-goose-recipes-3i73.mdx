@@ -1,24 +1,21 @@
----json
-{
-  "title": "Advent of AI 2025 - Day 9: Building a Gift Tag Generator with Goose Recipes",
-  "excerpt": "Advent of AI 2025 - Day 9: Building a Gift Tag Generator with Goose Recipes   I've edited...",
-  "date": "2025-12-12T11:24:21Z",
-  "tags": [
-    "adventofai",
-    "ai",
-    "goose",
-    "automation"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fw1wpshh1bnx2yrm1dpdd.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-9-building-a-gift-tag-generator-with-goose-recipes-3i73/",
-  "reading_time_minutes": 5,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI 2025 - Day 9: Building a Gift Tag Generator with Goose Recipes"
+excerpt: "Advent of AI 2025 - Day 9: Building a Gift Tag Generator with Goose Recipes   I've edited..."
+date: "2025-12-12T11:24:21Z"
+tags:
+  - adventofai
+  - ai
+  - goose
+  - automation
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fw1wpshh1bnx2yrm1dpdd.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-2025-day-9-building-a-gift-tag-generator-with-goose-recipes-3i73/"
+reading_time_minutes: 5
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 # Advent of AI 2025 - Day 9: Building a Gift Tag Generator with Goose Recipes
 
@@ -26,7 +23,7 @@ I've edited this post, but AI helped. These are meant to be quick posts related 
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 ## Day 9: Print-Ready Gift Tags
 
@@ -45,11 +42,9 @@ When I first tried generating tags, the content would overflow or fonts would be
 The breakthrough came from adding explicit constraints to the recipe:
 
 ```yaml
-{% raw %}
 - all content must fit and be visible with these exact dimensions
 - reduce font size if necessary to fit all content
 - use the developer extension to validate that no content is cut off visually
-{% endraw %}
 ```
 
 Once these constraints were in the instructions, Goose started generating tags that actually respected the print boundaries. Font sizes adapted based on content length, margins were calculated correctly, and nothing got cut off.
@@ -88,12 +83,10 @@ What would have saved time? Passing a link to the Goose recipe docs. That would 
 Once the recipe was working, using it was straightforward. You can say something like:
 
 ```
-{% raw %}
 Generate a playful gift tag for Marcus Rodriguez, 
 professional microphone, large size, include a poem,
 QR code to https://example.com/thank-you, 
 Spanish language, purple color
-{% endraw %}
 ```
 
 Goose generates a complete HTML file with:
@@ -144,7 +137,7 @@ Everything's in my [repo's day-9 folder](https://github.com/nickytonline/advent-
 - `README.md` - Full documentation and examples
 - Example HTML tags in different styles
 
-{% embed "https://github.com/nickytonline/advent-of-ai-2025" %}
+<GenericEmbed url="https://github.com/nickytonline/advent-of-ai-2025" />
 
 ### Advent of AI 2025 for nickytonline
 

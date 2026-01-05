@@ -1,30 +1,27 @@
----json
-{
-  "title": "Advent of AI - Day 13: Goose Terminal Integration",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm...",
-  "date": "2025-12-19T00:56:22Z",
-  "tags": [
-    "adventofai",
-    "goose",
-    "cli",
-    "ai"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgk5r9iufjd71d6b6m7fn.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-day-13-goose-terminal-integration-145p/",
-  "reading_time_minutes": 5,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI - Day 13: Goose Terminal Integration"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm..."
+date: "2025-12-19T00:56:22Z"
+tags:
+  - adventofai
+  - goose
+  - cli
+  - ai
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgk5r9iufjd71d6b6m7fn.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-day-13-goose-terminal-integration-145p/"
+reading_time_minutes: 5
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm doing one of these each day, I don't have time to spend a couple hours on each post.
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 ## The Challenge: Terminal Integration
 
@@ -67,10 +64,8 @@ You don't have to commit to "I'm working with an AI now." You just work normally
 The setup is straightforward. Add this to your shell config:
 
 ```bash
-{% raw %}
 # For zsh (add to ~/.zshrc)
 eval "$(goose term init zsh)"
-{% endraw %}
 ```
 
 Note: The assumption is you've installed the goose CLI. If you haven't, run `curl -fsSL https://github.com/block/goose/releases/download/stable/download_cli.sh | bash`
@@ -86,7 +81,6 @@ Each terminal window gets its own Goose session that lasts until you close that 
 Here's a real example from today. I was working on Day 13's Festival Staff Scheduling project and needed to continue implementing a PRD:
 
 ```bash
-{% raw %}
 ❯ @goose "continue with the PRD. We were at data organization. Continue implementing the beginner phase, /Users/nicktaylor/dev/advent-of-ai-2025/day-13/PRD-Festival-Staff-Scheduling.md"
 
 ─── text_editor | developer ──────────────────────────
@@ -102,7 +96,6 @@ path: ~/dev/advent-of-ai-2025/day-13/staff_data.json
 command: view
 
 Great! I can see you've already completed the data organization step. The staff data has been structured into a comprehensive JSON format. Now let's continue with **Section 1.3: Basic Website (HTML/CSS)** from the Beginner Phase.
-{% endraw %}
 ```
 
 Goose opened the PRD, checked what was already done, and told me the next step. All from one command. No session management, no explaining context.
@@ -118,7 +111,6 @@ Here's where this model really makes sense. I've run into this problem a bunch w
 5. Tell it you're done and it should continue
 
 ```bash
-{% raw %}
 ● The images built successfully! Now I need to import them into K3s containerd with sudo:
 
 ● Bash(docker save homelab-everything-mcp:latest | sudo k3s ctr images import -) timeout: 5m 0s
@@ -135,20 +127,17 @@ Here's where this model really makes sense. I've run into this problem a bunch w
   ⎿  Interrupted · What should Claude do instead?
 
 > I can do it, what's the command?
-{% endraw %}
 ```
 
 With terminal integration:
 
 ```bash
-{% raw %}
 ❯ @goose "install this package globally"
 # Goose: "You need to run: sudo npm install -g whatever"
 ❯ sudo npm install -g whatever
 # You run it with your privileges
 ❯ @goose "okay continue"
 # Goose sees you ran the command, knows it succeeded, continues
-{% endraw %}
 ```
 
 Everything stays in one terminal. Goose sees what you did. No context loss, no explaining what happened.
@@ -164,17 +153,13 @@ This works for any scenario where you need to do something the agent can't:
 You can add context indicators to your shell prompt to see how full your session is:
 
 ```bash
-{% raw %}
 # Add to ~/.zshrc
 PROMPT='$(goose term info) %~ $ '
-{% endraw %}
 ```
 
 Your prompt will show something like:
 ```bash
-{% raw %}
 ●●○○○ sonnet ~/projects $
-{% endraw %}
 ```
 
 The dots show context usage (five dots total), and you see which model is active. When you hit `●●●●●`, responses slow down and you should start a fresh session with `eval "$(goose term init zsh)"`.
@@ -184,9 +169,7 @@ The dots show context usage (five dots total), and you see which model is active
 By default, each terminal gets its own session that disappears when you close it. If you're working on something over multiple days or want to pick up where you left off after closing your terminal, use a named session:
 
 ```bash
-{% raw %}
 eval "$(goose term init zsh --name my-project)"
-{% endraw %}
 ```
 
 Named sessions stick around. Close your terminal, come back tomorrow, run the same command, and you're right back in the conversation.

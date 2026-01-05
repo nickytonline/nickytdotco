@@ -1,24 +1,21 @@
----json
-{
-  "title": "Valibot: A New Approach to Data Validation in JavaScript",
-  "excerpt": "I recently got to hang with the creator of Valibot, Fabian Hiller on a live stream. We discussed its...",
-  "date": "2024-06-17T04:54:14Z",
-  "tags": [
-    "javascript",
-    "typescript",
-    "webdev",
-    "opensource"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F0lhzb2gblctyuwwfriif.png",
-  "canonical_url": "https://opensauced.pizza/docs/community-resources/valibot-a-new-approach-to-data-validation-in-javascript/",
-  "reading_time_minutes": 4,
-  "template": "post",
-  "series": {
-    "name": "Fullstack Learnings",
-    "collection_id": 26157
-  }
-}
 ---
+title: "Valibot: A New Approach to Data Validation in JavaScript"
+excerpt: "I recently got to hang with the creator of Valibot, Fabian Hiller on a live stream. We discussed its..."
+date: "2024-06-17T04:54:14Z"
+tags:
+  - javascript
+  - typescript
+  - webdev
+  - opensource
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F0lhzb2gblctyuwwfriif.png"
+canonical_url: "https://opensauced.pizza/docs/community-resources/valibot-a-new-approach-to-data-validation-in-javascript/"
+reading_time_minutes: 4
+template: "post"
+series:
+  name: "Fullstack Learnings"
+  collection_id: 26157
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I recently got to hang with the creator of [Valibot](https://valibot.dev/), [Fabian Hiller](https://megalink.io/fabian) on a live stream. We discussed its history of the project and did some live coding with Valibot. Let’s dig in.
 
@@ -26,7 +23,7 @@ I recently got to hang with the creator of [Valibot](https://valibot.dev/), [Fab
 
 If video is your jam, check out this highlight from the live stream that summarizes the history of Valibot.
 
-{% embed "https://www.twitch.tv/videos/2172124000" %}
+<GenericEmbed url="https://www.twitch.tv/videos/2172124000" />
 
 During [his thesis work](https://valibot.dev/thesis.pdf), developer Fabian Hiller found himself with dedicated time to pursue an idea he'd been mulling over - creating a new modular data validation library for JavaScript. This led to the birth of Valibot.
 
@@ -51,7 +48,6 @@ Also, [version 0.31.0 was recently released](https://valibot.dev/blog/valibot-v0
 Let's start of simple. We want to create an e-mail validator. Valibot makes this pretty easy for us.
 
 ```typescript
-{% raw %}
 import * as v from 'valibot';
 
 const EmailSchema = v.pipe(v.string(), v.email());
@@ -59,7 +55,6 @@ const EmailSchema = v.pipe(v.string(), v.email());
 const validEmail = v.safeParse(EmailSchema, 'jane@example.com');
 
 console.log(validEmail);
-{% endraw %}
 ```
 
 First, we import the Valibot package. Next, we create a schema for a valid email, `const EmailSchema = v.pipe(v.string(), v.email());`
@@ -69,14 +64,12 @@ First, we import the Valibot package. Next, we create a schema for a valid email
 If you run this in the playground, you'll get the following output.
 
 ```bash
-{% raw %}
 [LOG]: {
   typed: true,
   success: true,
   output: "jane@example.com",
   issues: undefined
 }
-{% endraw %}
 ```
 
 You can view the following example in [this Valibot playground](https://valibot.dev/playground/?code=JYWwDg9gTgLgBAKjgQwM5wG5wGZQiOAcg2QBtgAjCGQgbgCh6BjCAO1XgFERlhSBlJgAsApjzgBeTADowwMCIAUGaRyjBWAc0UBKADQyxvUrp0NmbDpjLAAJt2OSZqZNhEAFZFFRKHfQaI8BoQAVsisIgACIgAeyOCkItIsIIRmjCzsEInSpBDaJOT2PHzpQA).
@@ -84,7 +77,6 @@ You can view the following example in [this Valibot playground](https://valibot.
 Let's see what happens when we have an invalid email.
 
 ```typescript
-{% raw %}
 import * as v from 'valibot';
 
 const EmailSchema = v.pipe(v.string(), v.email());
@@ -92,13 +84,11 @@ const EmailSchema = v.pipe(v.string(), v.email());
 const validEmail = v.safeParse(EmailSchema, 'janeexample.com');
 
 console.log(validEmail);
-{% endraw %}
 ```
 
 If we run the updated playground, it will now output the following:
 
 ```bash
-{% raw %}
 [LOG]: {
   typed: true,
   success: false,
@@ -120,7 +110,6 @@ If we run the updated playground, it will now output the following:
     }
   ]
 }
-{% endraw %}
 ```
 
 You can view the updated example in [this Valibot playground](https://valibot.dev/playground/?code=JYWwDg9gTgLgBAKjgQwM5wG5wGZQiOAcg2QBtgAjCGQgbgCh6BjCAO1XgFERlhSBlJgAsApjzgBeTADowwMCIAUGaRyjBWAc0UBKADQyxvUrp0NmbDpjLAAJt2OSZqZNhEAFZFFRKHfQaI8BoQAVsisIiIAHsjgpCLSLCCEZows7BDx0qQQ2iTk9jx8qUA).
@@ -128,7 +117,6 @@ You can view the updated example in [this Valibot playground](https://valibot.de
 You can see an example of valibot in action in a recent pull request of mine.
 
 ```typescript
-{% raw %}
   if (context.query.id) {
     try {
       sharedChatId = parseSchema(UuidSchema, context.query.id);
@@ -138,10 +126,9 @@ You can see an example of valibot in action in a recent pull request of mine.
       throw new Error("Invalid shared Chat ID");
     }
   }
-{% endraw %}
 ```
 
-{% embed "https://github.com/open-sauced/app/pull/3563" %}
+<GenericEmbed url="https://github.com/open-sauced/app/pull/3563" />
 
 ## Contributing to Valibot
 

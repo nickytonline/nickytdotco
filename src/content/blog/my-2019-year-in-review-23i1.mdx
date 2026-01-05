@@ -1,21 +1,22 @@
----json
-{
-  "title": "My 2019 Year in Review",
-  "excerpt": "The Intro   2019 was great. Lot’s of interesting stuff happened. Let’s dig in. But first, I...",
-  "date": "2020-01-02T03:50:01Z",
-  "tags": [
-    "yearinreview"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fz8awferjpkro7ig0ciey.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/my-2019-year-in-review-23i1/",
-  "reading_time_minutes": 17,
-  "template": "post",
-  "series": {
-    "name": "Year in Review",
-    "collection_id": 3993
-  }
-}
 ---
+title: "My 2019 Year in Review"
+excerpt: "The Intro   2019 was great. Lot’s of interesting stuff happened. Let’s dig in. But first, I..."
+date: "2020-01-02T03:50:01Z"
+tags:
+  - yearinreview
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fz8awferjpkro7ig0ciey.jpg"
+canonical_url: "https://www.nickyt.co/blog/my-2019-year-in-review-23i1/"
+reading_time_minutes: 17
+template: "post"
+series:
+  name: "Year in Review"
+  collection_id: 3993
+---
+import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";
+import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";
+import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";
+import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";
+import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";
 
 ## The Intro
 
@@ -31,17 +32,17 @@ I enjoyed another great year in open source and also contributed to some new pro
 
 My site which is pretty much just a blog at the moment uses Gatsby. One interesting plugin I came across was from [@raee](https://dev.to/raae) called gatsby-remark-oembed. It allows you to embed resources as widgets that support oembed, e.g. Twitter.
 
-{% github "https://github.com/raae/gatsby-remark-oembed" %}
+<GitHubEmbed url="https://github.com/raae/gatsby-remark-oembed" />
 
 I got it all installed but ran into issues. In the end, the documentation for setting up the plugin needed to be updated. I [put up a PR](https://github.com/raae/gatsby-remark-oembed/pull/35) to update the documentation, so others wouldn't stumble on the issue I ran into. And of course I wrote about it. 
 
-{% link "https://dev.to/nickytonline/any-contribution-to-open-source-is-valuable-57d3" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/any-contribution-to-open-source-is-valuable-57d3" />
 
 ### Project: Gatsby
 
 This was a big contribution LOL. I added my site to the list of showcased sites. As a thank you for my first PR, I got myself some Gatsby socks. I also wrote a short post about this.
 
-{% link "https://dev.to/nickytonline/showcase-your-gatsby-site-266" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/showcase-your-gatsby-site-266" />
 
 ### Project: Refined GitHub
 
@@ -51,19 +52,19 @@ For this project, I helped migrate the Refined GitHub extension to TypeScript. T
 
 This was a contribution to the TypeScript repository but in the form of filing an issue. While working on the Refined GitHub extension refactor to TypeScript, I discovered an issue with the NamedNodeMap interface in the core types that ships with TypeScript. The issue got labelled as a bug so it is in their backlog now.
 
-{% github "https://github.com/Microsoft/TypeScript/issues/30928" %}
+<GitHubEmbed url="https://github.com/Microsoft/TypeScript/issues/30928" />
 
 ### Project: dev.to codebase
 
 I [continued to contribute](https://github.com/thepracticaldev/dev.to/commits?author=nickytonline) to my favourite open source project, DEV.
 
-{% github "https://github.com/thepracticaldev/dev.to" %}
+<GitHubEmbed url="https://github.com/thepracticaldev/dev.to" />
 
 ### Hacktoberfest
 
 This year was my first year participating in Hacktoberfest. It was a fun endeavour which included contributions to DEV as well as adding some automation for properly formatting markdown files for the [learnstorybook.com](https://learnstorybook.com) project.
 
-{% link "https://dev.to/nickytonline/my-hacktoberfest-2019-32i2" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/my-hacktoberfest-2019-32i2" />
 
 ### Open Source in 2020
 
@@ -73,11 +74,11 @@ I will definitely continue to contribute to open source in 2020. What about you?
 
 I’ve been athletic pretty much since elementary school, but in recent years, I’ve had a few setbacks with injuries. Last fall, I joined the corporate soccer team and a few practices in, I ended up tearing one of my calves. While I was recovering from my injury, I ended up putting on quite a few pounds, so end of April this year, I hit the tipping point and began my journey to getting back in shape.
 
-{% instagram "B0ClFBSJ4Hu" %}
+<InstagramEmbed url="B0ClFBSJ4Hu" />
 
 Initially, it was quite tough, because even though I had completed my physiotherapy for my torn calf, I was nowhere near being in any kind of running shape. I ended up joining an Orange Theory and the rest was history. I busted my butt and got back into pretty awesome shape, dropping literally 35-40lbs of fat.
 
-{% instagram "B1xaOVvp820" %}
+<InstagramEmbed url="B1xaOVvp820" />
 
 I put a couple back on as it’s the Christmas holidays, but will be getting back into the swing of things post-holidays.
 
@@ -89,7 +90,7 @@ I have probably already saved a good 50 hours this year not updating and testing
 
 And yes, I wrote a post about it.
 
-{% link "https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf" />
 
 ## Page Load Time Improvements for Shotgun
 
@@ -107,11 +108,11 @@ I moved on to the second interview, and once again did well. I got the phone cal
 
 One of my cousins lives in California, so I also took the opportunity to visit some family. Aside from that, I contacted [Brian Vaughn](https://twitter.com/brian_d_vaughn), one of the core React team members just to see if he wanted to grab a bite to eat/coffee with a random Canadian. I’ll be honest, I generally do not ask strangers to meet up, but he seemed like such a nice person on Twitter and GitHub, that I just went for it. We grabbed some sushi and a coffee on Sunday and just chit-chatted. It was really nice of him to do that while I was there.
 
-{% instagram "B3Aii_CpCP0" %}
+<InstagramEmbed url="B3Aii_CpCP0" />
 
 Thanks Brian and I am definitely hooked on Philz coffee now! Philz Coffee… please come to Canada, specifically Montreal. 😆
 
-{% instagram "B3AjS5kpdh5" %}
+<InstagramEmbed url="B3AjS5kpdh5" />
 
 On Monday, I had an intense day of interviewing at Facebook, but there was a lunch break. At lunchtime, none other than [Andrew Clark](https://twitter.com/acdlite) from the React core team joined me for lunch. It was awesome. We spent an hour together at lunch talking about all kinds of things including React. Thanks for lunch Andrew! Andrew is super nice BTW.
 
@@ -121,7 +122,7 @@ I finished my day at Facebook exhausted and headed back on a redeye to Montreal.
 
 And yes, I have a post about that.
 
-{% link "https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/take-chances-and-standout-because-who-knows-3kh6" />
 
 ## Building a Course
 
@@ -135,7 +136,7 @@ I created the [@vscodetips](https://twitter.com/vscodetips) Twitter account back
 
 [VS Code tips is also on DEV](It’s 2020, post [year in review](https://dev.to/nickytonline/my-2019-year-in-review-23i1), so let’s start off with some 2020 content.
 
-{% twitter "1213657972322324482" %}
+<TwitterEmbed tweetId="1213657972322324482" />
 
 I was updating my personal site the other day and thought, why don’t I write about some of the tech I’ve been using, some tools I use in my day-to-day as well as other resources that I use, even if they aren't everyday "go-to"s in regards to frontend. I've also popped in some resources that I think will just be helpful.
 
@@ -149,7 +150,7 @@ I use [Netlify](https://www.netlify.com/) on the free tier to host my site. They
 
 I wrote about automating my deployments to Netlify here. 👇
 
-{% link "https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/update-dependencies-with-dependabot-cypress-and-netlify-3lkf" />
 
 Note: [Zeit](https://zeit.co/) is amazing as well. I just happen to be using Netlify.
 
@@ -157,7 +158,7 @@ Note: [Zeit](https://zeit.co/) is amazing as well. I just happen to be using Net
 
 I have not used this on a project yet, just the Lighthouse audit tools in the browser, but Lighthouse CI looks pretty amazing. Integrate Lighthouse audits into your continuous integration (CI).
 
-{% github "https://github.com/GoogleChrome/lighthouse-ci" %}
+<GitHubEmbed url="https://github.com/GoogleChrome/lighthouse-ci" />
 
 ### undraw.co
 
@@ -171,11 +172,11 @@ I am not an accessibility expert (so many things in the frontend! 😆), so tool
 
 This is a great accessibility visualization toolkit that was started by [Jordan Scales](https://twitter.com/jdan) while he was working at Khan Academy.
 
-{% github "https://github.com/Khan/tota11y" %}
+<GitHubEmbed url="https://github.com/Khan/tota11y" />
 
 Fun fact, I converted it to a Chrome/Firefox extension for those interested.
 
-{% link "https://dev.to/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/an-a11y-extension-coming-to-a-browser-near-you-1mg2" />
 
 #### axe
 
@@ -238,7 +239,7 @@ This one, I will admit, is probably overkill for my personal site which is curre
 
 Having said that, I've worked on several large projects using TypeScript and can 100% say, it allows for quicker refactorings, discoverability and avoiding silly errors. I have a mini-series on TypeScript for those interested.
 
-{% link "https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/why-you-might-want-to-consider-using-typescript-6j3" />
 
 If you've been on the fence about TypeScript, consider giving it a try in 2020. There is a huge ecosystem of types now and a lot of the popular frameworks either provide out of the box support or pretty easy setups to get going with TypoScript:
 
@@ -251,7 +252,7 @@ If you've been on the fence about TypeScript, consider giving it a try in 2020. 
 
 There is also TSDX, which is some fantastic work by Jared Palmer (@jaredpalmer). It's a great bootstrapping tool for TypeScript for different types of projects and it's officially endorsed by the TypeScript team.
 
-{% github "https://github.com/jaredpalmer/tsdx" %}
+<GitHubEmbed url="https://github.com/jaredpalmer/tsdx" />
 
 And you know what? If you're still not a fan of types, that's OK. 😺
 
@@ -259,13 +260,13 @@ And you know what? If you're still not a fan of types, that's OK. 😺
 
 [Philip Roberts](https://twitter.com/philip_roberts) talk at JSConf EU "What the heck is the event loop anyway?" is a great explanation of the event loop.
 
-{% youtube "8aGhZQkoFbQ" %}
+<YouTubeEmbed videoId="8aGhZQkoFbQ" />
 
 ### Some JavaScript Knowledge Nuggets care of Jake Archibald
 
 This is definitely a great watch for those looking to understand JavaScript's event loop building off of Philip Robert's talk above.
 
-{% youtube "cCOL7MC4Pl0" %}
+<YouTubeEmbed videoId="cCOL7MC4Pl0" />
 
 Jake also has a great blog post about [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/).
 
@@ -277,7 +278,7 @@ Storybook is such a great tool for building components and design systems. It st
 
 I will be the first to admit that I have not done a lot of work with animations, so I tend to Google stuff a lot when it comes to this space. Two gentleman that are experts in animation though have a great podcast and YouTube channel where they rebuild animations. The Keyframers is an awesome collaboration by @davidkpiano and @shshaw.
 
-{% twitter "1211998464692891648" %}
+<TwitterEmbed tweetId="1211998464692891648" />
 
 I still have many episodes to watch and to learn from.
 
@@ -287,11 +288,11 @@ A newer frontend tool out there that looks really interesting is [VisBug](https:
 
 This is the handy work of [Adam Argyle](https://www.twitter.com/argyleink).
 
-{% youtube "lc9PZxX6mIQ" %}
+<YouTubeEmbed videoId="lc9PZxX6mIQ" />
 
 **Update January 8th 2020:** Adam Tweeted back to me that you can launch tota11y from VisBug. Cool stuff. Thanks Adam!
 
-{% twitter "1215052867716804608" %}
+<TwitterEmbed tweetId="1215052867716804608" />
 
 Note: This browser extension is currently only available for Chrome.
 
@@ -308,13 +309,13 @@ What's going on with your web requests? Looks like there is a traffic jam. These
 * [Fiddler](https://www.telerik.com/download/fiddler) (cross-platform, but at the moment, it's only decent on a Windows machine.) Fiddler was my go-to for anything network related when I was on a Windows machine. Replaying requests, modifying payloads, proxying through it to capture traffic from the site/application you're working on.
 * [Postman](https://www.getpostman.com/)
 * [Postwoman](https://postwoman.io/)
-{% link "https://dev.to/liyasthomas/postwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0" %}
+<DevLinkEmbed url="https://dev.to/liyasthomas/postwoman-v1-0-a-free-fast-beautiful-alternative-to-postman-mn0" />
 
 ### Josh Comeau's Picks
 
 Josh Comeau is a talented frontend who currently works for Gatsby. He Tweeted during the holidays some other great open-source/free resources that I suggest you check out. Here's the Tweet thread. He's also a great follow.
 
-{% twitter "1212416797254832130" %}
+<TwitterEmbed tweetId="1212416797254832130" />
 
 ### JavaScript January
 
@@ -324,15 +325,15 @@ Emily Freeman (@editingemily) started this in I believe 2017. Lots of great arti
 
 DEV has so many great posts from people from all over the globe in regards to frontend. I'll share some that I love, but definitely navigate around. So many great ones.
 
-{% link "https://dev.to/ananyaneogi/html-can-do-that-c0n" %}
+<DevLinkEmbed url="https://dev.to/ananyaneogi/html-can-do-that-c0n" />
 
 Lydia Hallie's (@lydiahallie) posts on JavaScript
 
-{% twitter "1213135686502699008" %}
+<TwitterEmbed tweetId="1213135686502699008" />
 
 Michael Chan's React Holiday Series
 
-{% link "https://dev.to/chantastic/learn-react-in-25-short-lessons-react-holiday-2019-24np" %}
+<DevLinkEmbed url="https://dev.to/chantastic/learn-react-in-25-short-lessons-react-holiday-2019-24np" />
 
 ### Visual Studio Code
 
@@ -342,11 +343,11 @@ This has been my go-to editor for work-related stuff since believe it or not 201
 
 A great addition to the ecosystem has been the [Live Share extension pack](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack). This is such a great way to do [pair programming](https://en.wikipedia.org/wiki/Pair_programming). 🍐
 
-{% twitter "1075155769870307329" %}
+<TwitterEmbed tweetId="1075155769870307329" />
 
 If you're interested, it is a little outdated, but here is my VS Code setup. These days, I roll with Sarah Edo's [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) theme and the wonderful font, [Dank Mono](https://dank.sh) (yes I paid for it, but it's nowhere near the price of Operator Mono).
 
-{% link "https://dev.to/nickytonline/my-visual-studio-code-setup-2ima" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/my-visual-studio-code-setup-2ima" />
 
 ### VS Code Tips
 
@@ -364,7 +365,7 @@ There are too many features to mention, but my favourites are automatically dele
 
 The extension integrates so well, I no longer know what is a new GitHub feature or a Refined GitHub feature.
 
-{% github "https://github.com/sindresorhus/refined-github" %}
+<GitHubEmbed url="https://github.com/sindresorhus/refined-github" />
 
 ### Online Editors/Playgrounds
 
@@ -392,7 +393,7 @@ I purchased the [Refactoring UI](https://refactoringui.com/book/) book last year
 
 There is also a YouTube channel that you can subscribe to or just search for Refactoring UI on YouTube.
 
-{% youtube "5gdYHlYAKDY" %}
+<YouTubeEmbed videoId="5gdYHlYAKDY" />
 
 Also, Steve Schoger ([@steveschoger](https://www.twitter.com/steveschoger) on Twitter), one of the authors of the book, Tweets a lot too about Refactoring UI. A great follow.
 

@@ -1,23 +1,20 @@
----json
-{
-  "title": "Go's singleflight package and why it's awesome for concurrent requests",
-  "excerpt": "Concurrency in Go is fun… until duplicate work starts hammering your backend.  I’m still pretty new...",
-  "date": "2025-05-05T12:40:01Z",
-  "tags": [
-    "go",
-    "identity",
-    "zerotrust"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjtxu5px6vlg5psrslcu9.webp",
-  "canonical_url": "https://www.nickyt.co/blog/gos-singleflight-package-and-why-its-awesome-for-concurrent-requests-4122/",
-  "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Go",
-    "collection_id": 31534
-  }
-}
 ---
+title: "Go's singleflight package and why it's awesome for concurrent requests"
+excerpt: "Concurrency in Go is fun… until duplicate work starts hammering your backend.  I’m still pretty new..."
+date: "2025-05-05T12:40:01Z"
+tags:
+  - go
+  - identity
+  - zerotrust
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjtxu5px6vlg5psrslcu9.webp"
+canonical_url: "https://www.nickyt.co/blog/gos-singleflight-package-and-why-its-awesome-for-concurrent-requests-4122/"
+reading_time_minutes: 3
+template: "post"
+series:
+  name: "Go"
+  collection_id: 31534
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 Concurrency in Go is fun… until duplicate work starts hammering your backend.
 
@@ -25,7 +22,7 @@ I’m still pretty new to Go, but thanks to my awesome crew at [Pomerium](https:
 
 One recent pull request (PR) from my teammate Caleb really made this click. He introduced me to `singleflight`, a super handy tool for avoiding redundant work in concurrent code.
 
-{% embed "https://github.com/pomerium/pomerium/pull/5491" %}
+<GenericEmbed url="https://github.com/pomerium/pomerium/pull/5491" />
 
 Imagine a burst of requests with the same [Identity Provider](https://en.wikipedia.org/wiki/Identity_provider) (IdP) token. Without coordination, each request would separately validate and create a session — wasting resources and hitting downstream systems hard.
 
@@ -56,7 +53,6 @@ It’s perfect when you want to:
 In Caleb's PR, `singleflight` makes sure only one session gets created when a lot of requests hit at once with the same token.
 
 ```go  
-{% raw %}
 res, err, _ := c.singleflight.Do(sessionID, func() (any, error) {
     // Try to get existing session
     s, err := c.getSession(ctx, sessionID)
@@ -76,7 +72,6 @@ res, err, _ := c.singleflight.Do(sessionID, func() (any, error) {
 
     return s, nil
 })
-{% endraw %}
 ```
 
 No matter how many concurrent requests hit, only one runs the logic.

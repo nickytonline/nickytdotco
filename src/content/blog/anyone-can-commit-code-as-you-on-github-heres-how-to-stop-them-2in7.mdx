@@ -1,21 +1,17 @@
----json
-{
-  "title": "Anyone Can Commit Code as You on GitHub (Here's How to Stop Them)",
-  "excerpt": "I've been signing my Git commits since 2020, and it's one of those security practices that seems...",
-  "date": "2025-10-26T12:31:59Z",
-  "tags": [
-    "security",
-    "git",
-    "github",
-    "gpg"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdcv3tipmz6cohbh8xc5x.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/anyone-can-commit-code-as-you-on-github-heres-how-to-stop-them-2in7/",
-  "reading_time_minutes": 7,
-  "template": "post"
-}
 ---
-
+title: "Anyone Can Commit Code as You on GitHub (Here's How to Stop Them)"
+excerpt: "I've been signing my Git commits since 2020, and it's one of those security practices that seems..."
+date: "2025-10-26T12:31:59Z"
+tags:
+  - security
+  - git
+  - github
+  - gpg
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdcv3tipmz6cohbh8xc5x.jpg"
+canonical_url: "https://www.nickyt.co/blog/anyone-can-commit-code-as-you-on-github-heres-how-to-stop-them-2in7/"
+reading_time_minutes: 7
+template: "post"
+---
 I've been signing my Git commits since 2020, and it's one of those security practices that seems optional until you realize how easy it is for someone to impersonate you. GitHub commit signing uses [GPG (GNU Privacy Guard)](https://www.gnupg.org/) to cryptographically prove that you, and only you, made a commit.
 
 Anyone can set their git config to use your name and email, push commits, and they'll show up on GitHub as if you wrote them. For real. The only difference? There's no "Verified" badge.
@@ -110,13 +106,11 @@ Ensure that "Include secret key in exported file" is **not** checked and save it
 Open that file in a text editor. It'll look something like this:
 
 ```bash
-{% raw %}
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 [bunch of random-looking characters]
 
 -----END PGP PUBLIC KEY BLOCK-----
-{% endraw %}
 ```
 
 Copy that entire block.
@@ -139,17 +133,13 @@ Open Terminal and run these commands:
 First, get your key ID:
 
 ```bash
-{% raw %}
 gpg --list-secret-keys --keyid-format=long
-{% endraw %}
 ```
 
 You'll see output like:
 
 ```
-{% raw %}
 sec   rsa4096/ABC123DEF456 2022-01-15 [SC] [expires: 2026-01-15]
-{% endraw %}
 ```
 
 That `ABC123DEF456` part is your key ID.
@@ -157,7 +147,6 @@ That `ABC123DEF456` part is your key ID.
 Now configure git:
 
 ```bash
-{% raw %}
 # Tell git which key to use (replace with your actual key ID)
 git config --global user.signingkey ABC123DEF456
 
@@ -166,25 +155,20 @@ git config --global commit.gpgsign true
 
 # Tell git where GPG is located (for macOS)
 git config --global gpg.program /usr/local/bin/gpg
-{% endraw %}
 ```
 
 If you want to verify your config:
 
 ```bash
-{% raw %}
 git config --global --list | grep gpg
 git config --global --list | grep signingkey
-{% endraw %}
 ```
 
 You should see:
 ```bash
-{% raw %}
 commit.gpgsign=true
 user.signingkey=ABC123DEF456
 gpg.program=/usr/local/bin/gpg
-{% endraw %}
 ```
 
 ## Step 6: Test It
@@ -192,10 +176,8 @@ gpg.program=/usr/local/bin/gpg
 Create a test commit:
 
 ```bash
-{% raw %}
 git commit --allow-empty -m "Testing GPG signing"
 git log --show-signature -1
-{% endraw %}
 ```
 
 You should see "Good signature" in the output. If you push this to GitHub, you'll see that sweet "Verified" badge next to your commit.
@@ -238,9 +220,7 @@ On macOS, if you installed via GPG Tools, the path should be `/usr/local/bin/gpg
 This means git is looking for a key that doesn't exist. Run:
 
 ```bash
-{% raw %}
 gpg --list-secret-keys
-{% endraw %}
 ```
 
 Make sure the key ID in your git config matches one of the keys listed.

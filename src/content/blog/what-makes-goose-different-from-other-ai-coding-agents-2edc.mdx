@@ -1,20 +1,18 @@
----json
-{
-  "title": "What Makes Goose Different From Other AI Coding Agents",
-  "excerpt": "I just finished Goose’s Advent of AI. Everything from CI automation to hand-gesture controlled apps...",
-  "date": "2025-12-29T05:43:03Z",
-  "tags": [
-    "goose",
-    "ai",
-    "agents",
-    "cli"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6yvhgeh5smo5its2ryjl.png",
-  "canonical_url": "https://www.nickyt.co/blog/what-makes-goose-different-from-other-ai-coding-agents-2edc/",
-  "reading_time_minutes": 12,
-  "template": "post"
-}
 ---
+title: "What Makes Goose Different From Other AI Coding Agents"
+excerpt: "I just finished Goose’s Advent of AI. Everything from CI automation to hand-gesture controlled apps..."
+date: "2025-12-29T05:43:03Z"
+tags:
+  - goose
+  - ai
+  - agents
+  - cli
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6yvhgeh5smo5its2ryjl.png"
+canonical_url: "https://www.nickyt.co/blog/what-makes-goose-different-from-other-ai-coding-agents-2edc/"
+reading_time_minutes: 12
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I just finished Goose’s [Advent of AI](https://adventofai.dev/). Everything from CI automation to hand-gesture controlled apps to model context protocol (MCP) servers with UI.
 
@@ -34,7 +32,7 @@ Goose does all the things you expect an AI agent to do. A GUI with a chat UI, a 
 
 It also has first class support for MCPs, chat history, named sessions, [subagents for parallel task execution](https://block.github.io/goose/docs/guides/subagents/), [skills for custom context](https://block.github.io/goose/docs/guides/context-engineering/using-skills/), and like a lot of great software, it’s open source.
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 Most of these features aren’t unique. OpenCode (also open source), Cursor, Copilot, Claude Code, and Windsurf all have most of these capabilities too.
 
@@ -67,7 +65,6 @@ Here’s what this looks like using the social media campaign recipe ([Advent of
 The full YAML structure:
 
 ```yaml
-{% raw %}
 version: 1.0.0
 title: Social Media Campaign Generator
 description: Generate complete cross-platform social media campaign using sub-recipes
@@ -139,7 +136,6 @@ parameters:
     input_type: string
     requirement: required
     description: What you want people to do
-{% endraw %}
 ```
 
 When you run this recipe, Goose executes each sub-recipe with the same parameters. Each sub-recipe handles its platform’s specifics. The parent recipe just coordinates.
@@ -177,7 +173,6 @@ Compare this to slash commands in other tools. Those are saved prompts with plac
 With [Subagents](https://block.github.io/goose/docs/guides/subagents/), recipes give you infrastructure to orchestrate them effectively. Here’s a video processing recipe that spawns 4 parallel subagents:
 
 ```yaml
-{% raw %}
 version: 1.0.0
 title: Video Tools
 description: A set of tools for processing videos
@@ -228,7 +223,6 @@ parameters:
     input_type: string
     requirement: required
     description: The video file to optimize
-{% endraw %}
 ```
 
 Want to try this directly in Goose?
@@ -256,7 +250,6 @@ Auditability: Goose sessions can be exported as JSON with full metadata: token u
 Here’s what a session export looks like:
 
 ```json
-{% raw %}
 {
   "id": "20251228_72",
   "working_dir": "/Users/nicktaylor/dev/oss/wishlist-mcp",
@@ -272,7 +265,6 @@ Here’s what a session export looks like:
   },
   "conversation": [...]
 }
-{% endraw %}
 ```
 
 Compare this to “export all your data” bulk downloads that most cloud models offer. With per-session exports, you can track workflow costs, analyze token usage patterns, and reproduce exact execution environments.
@@ -312,9 +304,7 @@ Goose has two modes: the full REPL (chat back and forth) like other CLIs, and te
 Example from Day 13:
 
 ```bash
-{% raw %}
 ❯ @goose "continue with the PRD, we were at data organization"
-{% endraw %}
 ```
 
 Goose reads the PRD, checks what’s already done in the project, tells you the next step. All from one command. No session management.
@@ -322,12 +312,10 @@ Goose reads the PRD, checks what’s already done in the project, tells you the 
 This architecture lets you hand off tasks the agent can’t do:
 
 ```bash
-{% raw %}
 ❯ @goose "install this package globally"
 # Goose: "You need to run: sudo npm install -g whatever"
 ❯ sudo npm install -g whatever  # You run it with your privileges
 ❯ @goose "okay continue"  # Goose sees you ran it, continues
-{% endraw %}
 ```
 
 No need to open a separate terminal to do the thing the agent can’t do and then come back to where you left off in your REPL session. Stay in your flow in your current terminal session.
@@ -337,9 +325,7 @@ Terminal integration confused me initially, but once but once I had the aha mome
 There’s also named sessions which persist across terminal closes:
 
 ```bash
-{% raw %}
 eval "$(goose term init zsh --session my-project)"
-{% endraw %}
 ```
 
 Close your terminal, come back tomorrow, run the same command, you’re back in the conversation.

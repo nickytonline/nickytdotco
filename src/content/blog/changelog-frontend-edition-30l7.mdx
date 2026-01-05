@@ -1,23 +1,22 @@
----json
-{
-  "title": "Changelog: Frontend Edition",
-  "excerpt": "I Tweeted this out last week that we moved to Preact X and Testing Library.        Let’s dig in to...",
-  "date": "2020-06-24T19:09:12Z",
-  "tags": [
-    "changelog",
-    "javascript",
-    "testing"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Ftaavig1ker0pmxi35grk.png",
-  "canonical_url": "https://www.nickyt.co/blog/changelog-frontend-edition-30l7/",
-  "reading_time_minutes": 5,
-  "template": "post"
-}
 ---
+title: "Changelog: Frontend Edition"
+excerpt: "I Tweeted this out last week that we moved to Preact X and Testing Library.        Let’s dig in to..."
+date: "2020-06-24T19:09:12Z"
+tags:
+  - changelog
+  - javascript
+  - testing
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Ftaavig1ker0pmxi35grk.png"
+canonical_url: "https://www.nickyt.co/blog/changelog-frontend-edition-30l7/"
+reading_time_minutes: 5
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";
 
 I Tweeted this out last week that we moved to Preact X and Testing Library.
 
-{% embed "https://x.com/nickytonline/status/1273706469096140802" %}
+<GenericEmbed url="https://x.com/nickytonline/status/1273706469096140802" />
 
 Let’s dig in to all the improvements we’ve been making in the frontend.
 
@@ -40,7 +39,6 @@ When jest-axe is used in conjunction with preact-testing-library, we get notifie
 A typical a11y test in a component test file looks like this.
 
 ```javascript
-{% raw %}
   it('should have no a11y violations', async () => {
     const { container } = render(
       <MyComponent />,
@@ -49,13 +47,11 @@ A typical a11y test in a component test file looks like this.
 
     expect(results).toHaveNoViolations();
   });
-{% endraw %}
 ```
 
 And when this test fails, you are presented with readable errors to fix the a11y issues.
 
 ```bash
-{% raw %}
 expect(received).toHaveNoViolations(expected)
 
     Expected the HTML found at $('.crayons-btn--icon') to have no violations:
@@ -76,7 +72,6 @@ expect(received).toHaveNoViolations(expected)
 
     You can find more information on this issue here: 
     https://dequeuniversity.com/rules/axe/3.5/button-name?application=axeAPI
-{% endraw %}
 ```
 
 ## More Frontend Updates!
@@ -84,7 +79,7 @@ expect(received).toHaveNoViolations(expected)
 
 In May, I wrote an update about our usage of Storybook.
 
-{% link "https://dev.to/devteam/changelog-dev-has-some-stories-for-you-15kn" %}
+<DevLinkEmbed url="https://dev.to/devteam/changelog-dev-has-some-stories-for-you-15kn" />
 
 Since then, we’ve continued to use Storybook to build out design system components and some critical application components. Moving to Preact X has allowed us to finally start using some more powerful Storybook addons. I mentioned a11y testing above, so to complement this, we added the [Storybook a11y addon](https://github.com/storybookjs/storybook/tree/master/addons/a11y).
 
@@ -101,7 +96,6 @@ You can view DEV's work in progress Storybook [here](https://storybook.forem.com
 There are no big changes to our Jest setup, just a few tweaks. First off, as we have been testing more in the frontend, our code coverage has been increasing. So as coverage goes up, we want to avoid any drop in coverage, so we added coverage thresholds to our Jest configuration.
 
 ```javascript
-{% raw %}
 module.exports = {
   ...
   coverageThreshold: {
@@ -113,7 +107,6 @@ module.exports = {
     },
   },
 ...
-{% endraw %}
 ```
 
 Another super handy addition is in jest watch mode. You can now filter by a test’s name or filename.

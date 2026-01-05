@@ -1,21 +1,20 @@
----json
-{
-  "title": "Consider Using TypeScript",
-  "excerpt": "A small write up on the benefits of using TypeScript.",
-  "date": "2017-10-08T14:35:45Z",
-  "tags": [
-    "typescript"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png",
-  "canonical_url": "https://www.nickyt.co/blog/why-you-might-want-to-consider-using-typescript-6j3/",
-  "reading_time_minutes": 5,
-  "template": "post",
-  "series": {
-    "name": "typescript",
-    "collection_id": 3255
-  }
-}
 ---
+title: "Consider Using TypeScript"
+excerpt: "A small write up on the benefits of using TypeScript."
+date: "2017-10-08T14:35:45Z"
+tags:
+  - typescript
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fk8pe37firnq0uhi5546a.png"
+canonical_url: "https://www.nickyt.co/blog/why-you-might-want-to-consider-using-typescript-6j3/"
+reading_time_minutes: 5
+template: "post"
+series:
+  name: "typescript"
+  collection_id: 3255
+---
+import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";
 
 I'm not going to be one of those that tells you have to use TypeScript (or Flow for that matter). I'm also not going to go into the whole [TS vs. Flow](https://www.google.ca/search?q=flow+vs.+typescript&rlz=1C5CHFA_enCA763CA763&oq=flow+vs.+typescript&aqs=chrome.0.0l4.3590j0j4&sourceid=chrome&ie=UTF-8) debate. There are plenty of people already doing that. All I want to do is present some good reasons why you might want to consider using TypeScript. After that, I leave it up to you.
 
@@ -39,7 +38,7 @@ So let's get to it. If you've never used a statically typed language like Java o
   * Did I miss one?
 * Intellisense when using npm packages that have TypeScript declaration files even if your project isn't written in TypeScript (As far as I know this only applies to VS Code. Please chime in if this is not the case.)
 
-{% twitter "910937405267509249" %}
+<TwitterEmbed tweetId="910937405267509249" />
 
 Great, looks awesome, but what about consuming npm packages from projects that don't use TypeScript? As mentioned briefly above, Visual Studio Code can grab the declaration files even if your project doesn't use TypeScript. So where are these declaration files coming from?
 
@@ -57,7 +56,7 @@ The hard (smart) work and love that has gone into TypeScript has not gone unnoti
 
 Note: I update this list from time to time.
 
-{% twitter "913242699255488512" %}
+<TwitterEmbed tweetId="913242699255488512" />
 
 * Fun fact, [Visual Studio Code](https://github.com/Microsoft/vscode) is written in TypeScript!
 * Angular adopted TypeScript in version 2 (related [Dart, Typescript and official languages at Google](news.dartlang.org/2017/04/dart-typescript-and-official-languages.html))
@@ -83,7 +82,7 @@ Here are some additional resources to get you up and running.
 * [TypeScript Playground](https://www.typescriptlang.org/play)
 * Unofficial TypeScript Playground (update May 2019)
 
-{% link "https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6" %}
+<DevLinkEmbed url="https://dev.to/nickytonline/an-enhanced-typescript-playground-49j6" />
 
 * [TypeScript Deep Dive](https://www.gitbook.com/book/basarat/typescript)
 * [TypeScript Fundamentals](https://typescriptcourses.com/typescript-fundamentals) (Great free course)
@@ -91,7 +90,7 @@ Here are some additional resources to get you up and running.
 * [Quokka.js](https://quokkajs.com) (live scratchpad for JS with TypeScript support)
 * The TypeScript team’s Type | Treat series on DEV
 
-{% embed "https://dev.to/typescript/type-treat-2021-day-1-6an" %}
+<GenericEmbed url="https://dev.to/typescript/type-treat-2021-day-1-6an" />
 
 * Accounts to follow on Twitter:
   * The Offical TypeScript account ([@typescriptlang](https://twitter.com/typescriptlang))

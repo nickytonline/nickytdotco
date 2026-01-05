@@ -1,21 +1,19 @@
----json
-{
-  "title": "scoped-style",
-  "excerpt": "a tiny CSS in JS library",
-  "date": "2018-12-30T23:12:39Z",
-  "tags": [
-    "javascript",
-    "css",
-    "cssinjs"
-  ],
-  "cover_image": null,
-  "canonical_url": "https://www.nickyt.co/blog/scoped-style--36n3/",
-  "reading_time_minutes": 1,
-  "template": "post"
-}
 ---
+title: "scoped-style"
+excerpt: "a tiny CSS in JS library"
+date: "2018-12-30T23:12:39Z"
+tags:
+  - javascript
+  - css
+  - cssinjs
+cover_image: null
+canonical_url: "https://www.nickyt.co/blog/scoped-style--36n3/"
+reading_time_minutes: 1
+template: "post"
+---
+import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";
 
-{% github "https://github.com/sadick254/scoped-style" %}
+<GitHubEmbed url="https://github.com/sadick254/scoped-style" />
 
 A new kid on the CSS in JS block.
 
@@ -24,7 +22,6 @@ Plays nicely with Preact, React, Hyperapp and InfernoJS.
 An example from the readme for React:
 
 ```
-{% raw %}
 import React from "react"
 import scoped from "scoped-style"
 
@@ -62,5 +59,4 @@ const App = () => (
 
 // Your rendering code
 
-{% endraw %}
 ```

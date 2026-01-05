@@ -1,21 +1,17 @@
----json
-{
-  "title": "Don't Get Rate-Limited: Use Let's Encrypt Staging",
-  "excerpt": "While getting Pomerium Core set up this week for a demo, I ran into Let's Encrypt rate limits. Here’s...",
-  "date": "2025-06-16T05:00:00Z",
-  "tags": [
-    "letsencrypt",
-    "security",
-    "tls",
-    "devops"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzrt2ye5wwpszvceepugs.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/dont-get-rate-limited-use-lets-encrypt-staging-4kk2",
-  "reading_time_minutes": 3,
-  "template": "post"
-}
 ---
-
+title: "Don't Get Rate-Limited: Use Let's Encrypt Staging"
+excerpt: "While getting Pomerium Core set up this week for a demo, I ran into Let's Encrypt rate limits. Here’s..."
+date: "2025-06-16T05:00:00Z"
+tags:
+  - letsencrypt
+  - security
+  - tls
+  - devops
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzrt2ye5wwpszvceepugs.jpg"
+canonical_url: "https://www.nickyt.co/blog/dont-get-rate-limited-use-lets-encrypt-staging-4kk2"
+reading_time_minutes: 3
+template: "post"
+---
 While getting [Pomerium Core](https://github.com/pomerium/pomerium) set up this week for a demo, I ran into Let's Encrypt rate limits. Here’s how using Let's Encrypt staging can save you time when setting up auto-provisioned certificates.
 
 For context, I work at [Pomerium](https://www.pomerium.com/). This was part of a local demo stack I was building with Docker Compose. Pomerium is an identity-aware proxy (think of it as an application gateway) that secures access to your apps with built-in policy enforcement, SSO, microsegmentation etc. All the Zero Trust security goodies.
@@ -23,9 +19,7 @@ For context, I work at [Pomerium](https://www.pomerium.com/). This was part of a
 I had [autocert](https://www.pomerium.com/docs/get-started/fundamentals/core/production-certificates#how-autocert-works-with-pomerium) enabled for Pomerium in my config.yaml:
 
 ```yaml
-{% raw %}
 autocert: true
-{% endraw %}
 ```
 
 ### What is autocert?
@@ -42,9 +36,7 @@ I was adding a few test routes (`verify.demo.maisonlab.dev`, `authenticate.demo.
 Then this showed up in the logs:
 
 ```json
-{% raw %}
 HTTP 429 urn:ietf:params:acme:error:rateLimited - too many certificates (5) already issued for this exact set of domains in the last 168h0m0s
-{% endraw %}
 ```
 
 **Rate limited.** No more certs for `verify.demo.maisonlab.dev` for 7 days.
@@ -54,7 +46,6 @@ HTTP 429 urn:ietf:params:acme:error:rateLimited - too many certificates (5) alre
 First, I had the wrong volume path for the autocert cache:
 
 ```diff
-{% raw %}
 services:
   pomerium:
     image: pomerium:mcp
@@ -70,7 +61,6 @@ services:
       - pom-network
 
 # ...
-{% endraw %}
 ```
 
 Without the correct cache volume, Pomerium wasn’t persisting issued certs between Docker compose restarts. Each time I restarted the Pomerium container, it tried to re-request a new cert and Let’s Encrypt counted every attempt.
@@ -86,11 +76,9 @@ Second, even *failed* attempts count toward Let’s Encrypt’s certificate prov
 If you’re working on a new Pomerium setup, use Let’s Encrypt’s **staging environment** while testing certificate provisioning:
 
 ```yaml
-{% raw %}
 autocert: true
 # autocert_ca defaults to https://acme-v02.api.letsencrypt.org/directory
 autocert_ca: https://acme-staging-v02.api.letsencrypt.org/directory
-{% endraw %}
 ```
 
 See the [autocert_ca](https://www.pomerium.com/docs/reference/autocert#autocert-ca) docs. When you point Pomerium at the staging certificate authority (CA):
@@ -105,9 +93,7 @@ Once your config is good and your cert cache is persisting properly, flip back t
 If you see:
 
 ```json
-{% raw %}
 HTTP 429 urn:ietf:params:acme:error:rateLimited
-{% endraw %}
 ```
 
 You’re in rate-limit jail for 7 days.

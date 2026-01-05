@@ -1,24 +1,22 @@
----json
-{
-  "title": "Automate and Auto-Merge Pull Requests using GitHub Actions and the GitHub CLI",
-  "excerpt": "So I've written about how I automated content updates for my blog before. I even gave a talk on...",
-  "date": "2022-11-06T01:32:09Z",
-  "tags": [
-    "github",
-    "githubcli",
-    "githubactions",
-    "git"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6",
-  "reading_time_minutes": 5,
-  "template": "post"
-}
 ---
+title: "Automate and Auto-Merge Pull Requests using GitHub Actions and the GitHub CLI"
+excerpt: "So I've written about how I automated content updates for my blog before. I even gave a talk on..."
+date: "2022-11-06T01:32:09Z"
+tags:
+  - github
+  - githubcli
+  - githubactions
+  - git
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn5zbeeuatd9c42b1etvc.jpg"
+canonical_url: "https://www.nickyt.co/blog/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6"
+reading_time_minutes: 5
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 So I've written about how I automated content updates for my blog before. I even gave a talk on it.
 
-{% embed "https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p" %}
+<GenericEmbed url="https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p" />
 
 This post builds off of that. I recently improved how I automate content updates for my blog. This is a recap in case you haven't read my post above.
 
@@ -38,7 +36,7 @@ This has been working fine, but it has some shortcomings:
 
 So I decided to automate creating pull requests (PR) for content updates and auto-merge them as long as all my checks pass.
 
-{% embed "https://github.com/nickytonline/iamdeveloper.com/pull/61" %}
+<GenericEmbed url="https://github.com/nickytonline/iamdeveloper.com/pull/61" />
 
 Having a PR brings all the things that were lacking:
 
@@ -80,7 +78,6 @@ For the auto-merge PR use case, we'll add the following branch protection for th
 I already had a GitHub action in place to update content. They run once a day. For example, here is how the update blog posts action looks like
 
 ```yaml
-{% raw %}
 name: Get latest blog posts
 on:
   schedule:
@@ -117,17 +114,14 @@ jobs:
             git commit -m "chore (automated): update blog posts"
             git push origin main
           fi
-{% endraw %}
 ```
 
 The main things happening here are I'm getting the latest code from the `main` branch, and then I run
 
 ```bash
-{% raw %}
 npm install
 node --experimental-fetch bin/generateDevToPosts.js
 node bin/generateHashnodeUrlMapping.js
-{% endraw %}
 ```
 
 If you're wondering why I'm using `--experimental-fetch`, it's because I'm using [native fetch in Node.js 16](https://nodejs.org/fa/blog/release/v16.15.0/#add-fetch-api).
@@ -135,7 +129,6 @@ If you're wondering why I'm using `--experimental-fetch`, it's because I'm using
 The scripts above generate changes if any. If there are changes, they're committed and merged into the main branch.
 
 ```bash
-{% raw %}
 git config user.name "GitHub Actions Bot"
 git config user.email "<>"
 git pull origin main
@@ -144,13 +137,11 @@ if [[ -n "$(git status --porcelain)" ]]; then
   git commit -m "chore (automated): update blog posts"
   git push origin main
 fi
-{% endraw %}
 ```
 
 To use a PR instead, I went with the following, in this case, for updating blog posts.
 
 ```bash
-{% raw %}
 PR_TITLE="chore (automated): update blog posts"
 BRANCH_NAME="chore_automated_update_blog_posts_$(date +%s)"
 
@@ -171,7 +162,6 @@ else
   # Shouldn't end up here, but log that there was nothing to sync
   echo "Looks like there was nothing to update."
 fi
-{% endraw %}
 ```
 
 So like before, the GitHub action has already gotten the latest code from the main branch, and we've run our Node.js scripts to get the latest blog posts.
@@ -179,24 +169,20 @@ So like before, the GitHub action has already gotten the latest code from the ma
 Instead of committing straight to the main branch, we now create a PR via the [GitHub CLI](https://cli.github.com/).
 
 ```bash
-{% raw %}
 gh pr create --title "$PR_TITLE" --body "This is an automated PR to update blog posts"
-{% endraw %}
 ```
 
 Once the pull request is created, the following GitHub CLI command sets up the PR to auto-merge if all the checks pass.
 
 ```bash
-{% raw %}
 gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
-{% endraw %}
 ```
 
 ## The Result
 
 After publishing this post, I [ran the GitHub action](https://github.com/nickytonline/iamdeveloper.com/actions/runs/3402455746), and this is the PR it generated and auto-merged.
 
-{% embed "https://github.com/nickytonline/iamdeveloper.com/pull/64" %}
+<GenericEmbed url="https://github.com/nickytonline/iamdeveloper.com/pull/64" />
 
 And that's it. I love automated work, and GitHub Actions and the GitHub CLI facilitate this.
 

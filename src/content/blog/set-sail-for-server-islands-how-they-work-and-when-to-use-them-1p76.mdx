@@ -1,19 +1,17 @@
----json
-{
-  "title": "Astro Server Islands: How They Work and When to Use Them",
-  "excerpt": "Astro introduced a powerful new pattern called Server Islands last year. If you're building with...",
-  "date": "2025-05-19T04:01:00Z",
-  "tags": [
-    "astro",
-    "webdev",
-    "javascript"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxgcw745lfbuvqxp6w3hy.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/set-sail-for-server-islands-how-they-work-and-when-to-use-them-1p76/",
-  "reading_time_minutes": 4,
-  "template": "post"
-}
 ---
+title: "Astro Server Islands: How They Work and When to Use Them"
+excerpt: "Astro introduced a powerful new pattern called Server Islands last year. If you're building with..."
+date: "2025-05-19T04:01:00Z"
+tags:
+  - astro
+  - webdev
+  - javascript
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxgcw745lfbuvqxp6w3hy.jpg"
+canonical_url: "https://www.nickyt.co/blog/set-sail-for-server-islands-how-they-work-and-when-to-use-them-1p76/"
+reading_time_minutes: 4
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 Astro introduced a powerful new pattern called [Server Islands](https://docs.astro.build/en/guides/server-islands/) last year. If you're building with Astro, it's worth understanding what they are, how they work, and where they shine (and where they don’t). Their documentation explains server islands really well, but I wanted to dig a little deeper on the technical side of things.
 
@@ -41,19 +39,15 @@ The API is simple: you use the `server:defer` directive on an Astro component.
 Example:
 
 ```astro
-{% raw %}
 <SomeServerIsland server:defer />
-{% endraw %}
 ```
 
 This tells Astro to replace that component with a placeholder and fetch the real HTML immediately from the server after the page loads. You can also provide a fallback UI that renders in the initial page load server-side while the island is being fetched:
 
 ```astro
-{% raw %}
 <SomeServerIsland server:defer>
   <div slot="fallback">Loading some server island...</div>
 </SomeServerIsland>
-{% endraw %}
 ```
 
 What actually happens under the hood:
@@ -62,14 +56,12 @@ At build time, [Astro replaces the island with a small script](https://docs.astr
 Here's an expanded view:
 
 ```html
-{% raw %}
 <!--[if astro]>server-island-start<![endif]-->
 <h1>Hello
   World</h1>
 <link rel="preload" as="fetch" href="/_server-islands/SomeServerIsland?e=default&p=&s=%7B%7D" crossorigin="anonymous">
 <script type="module" data-astro-rerun data-island-id="137eec60-035b-4630-b4af-365acd683b97">let response = await fetch('/_server-islands/SomeServerIsland?e=default&p=&s=%7B%7D');
   replaceServerIsland('137eec60-035b-4630-b4af-365acd683b97', response);</script>
-{% endraw %}
 ```
 
 The script fetches the HTML for that component from a special server endpoint (e.g. `/_server-islands/SomeServerIsland?e=default&p=&s=%7B%7D`) and replaces the node which may or may not have fallback markup with the rendered HTML once the response is ready.
@@ -77,7 +69,6 @@ The script fetches the HTML for that component from a special server endpoint (e
 Here’s the client-side function that makes that swap happen:
 
 ```typescript
-{% raw %}
 async function replaceServerIsland(id, r) {
   let s = document.querySelector(\`script[data-island-id="\${id}"]\`);
 
@@ -98,7 +89,6 @@ async function replaceServerIsland(id, r) {
   // Remove the script. Prior to v5.4.2, this was the trick to force rerun of scripts.  Keeping it to minimize change to the existing behavior.
   s.remove();
 }
-{% endraw %}
 ```
 
 ### A Fun Discovery
@@ -152,7 +142,7 @@ All you need is `server:defer`, and you’re off to the islands. 🏝️ Learn m
 ---
 
 Watch the full walkthrough:
-{% embed "https://www.youtube.com/watch?v=YOjFpR3vrEQ" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=YOjFpR3vrEQ" />
 
 Want to connect? 
 All my socials are at [nickyt.online](https://nickyt.online)

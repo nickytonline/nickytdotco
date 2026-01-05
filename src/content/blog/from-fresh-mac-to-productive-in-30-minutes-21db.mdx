@@ -1,0 +1,266 @@
+---
+title: "From Fresh Mac to Productive in 30 Minutes"
+excerpt: "I've been hearing developers talk about their dotfiles for years. \"Oh yeah, I just clone my dotfiles..."
+date: "2026-01-03T16:20:20Z"
+tags:
+  - macos
+  - productivity
+  - automation
+  - devtools
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9esx0urbnewl0q29fraz.jpg"
+canonical_url: "https://www.nickyt.co/blog/from-fresh-mac-to-productive-in-30-minutes-21db/"
+reading_time_minutes: 6
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+
+I've been hearing developers talk about their dotfiles for years. "Oh yeah, I just clone my dotfiles repo and I'm set up in minutes." I had some [semblance of a setup script](https://gist.github.com/nickytonline/729fc106a0146345c0b90f3356a41e4d) at one point, but I kinda just went with manual mode for fresh Mac setups.
+
+Even if I had most apps installed with a script, weeks later when I needed a tool, I realized I forgot to install it. Also, macOS settings that I had are missing and I forget where to find them. One big hot mess of a fresh install.
+
+I recently decided to wipe my Mac for a clean slate. I didn't want to spend days piecing my setup back together app by app, so I finally committed to creating a proper dotfiles repo. With a dash of AI, I was on my way to making a great install setup.
+
+<GenericEmbed url="https://github.com/nickytonline/dotfiles" />
+
+## Dotfiles to the Rescue
+
+The concept is simple. All those configuration files that start with a dot (`.zshrc`, `.gitconfig`, etc.) can be version controlled and shared across machines.
+
+A dotfiles repository is not macOS specific, but I wanted to go further, my whole Mac setup or most of it.
+
+Here's what I ended up with:
+
+```bash
+~/dotfiles/
+├── Brewfile              # Every app I use
+├── install.sh            # One script to rule them all
+├── macos-defaults.sh     # macOS system preferences
+├── shell/                # Shell configs (.zshrc, etc.)
+├── git/                  # Git configuration
+├── ssh/                  # SSH config (no keys!)
+└── config/               # App configs (starship, gh, atuin, etc.)
+```
+
+## Brewfile's Got Your Apps' Backs
+
+If you're on macOS and not using [Homebrew](https://brew.sh), you're missing out. It's basically `apt` or `yum` for macOS.
+
+What I didn't fully appreciate until this project was Homebrew's Brewfile feature. I knew it existed but never bothered to create one. If you already have Homebrew installed, you can generate a Brewfile from everything you currently have installed:
+
+```bash
+brew bundle dump
+```
+
+This creates a `Brewfile` in your current directory with all your brew packages, casks, Mac App Store apps. 
+
+Instead of running `brew install` commands one by one, you declare everything in a single file:
+
+```bash
+# CLI tools
+brew "git"
+brew "ripgrep"
+brew "fnm"  # Node version manager - https://github.com/Schniz/fnm
+brew "starship"  # Beautiful shell prompt - https://starship.rs
+# ...
+
+# Desktop apps (casks)
+cask "visual-studio-code@insiders"
+cask "raycast"
+cask "1password"
+# ...
+
+# Rust crates
+cargo "oha"
+# ...
+```
+
+Once you have your Brewfile, you can use it to install all your apps:
+
+```bash
+brew bundle --file=Brewfile
+```
+
+Here's [my Brewfile](https://github.com/nickytonline/dotfiles/blob/main/Brewfile) if you wanna check it out.
+
+## Look mas!
+
+I always thought Mac App Store apps couldn't be automated. Turns out, there's a tool called [mas](https://github.com/mas-cli/mas) (Mac App Store CLI) that allows you to automate installation of Mac App Store apps.
+
+```bash
+# In your Brewfile
+brew "mas"
+
+# Then add Mac App Store apps
+mas "Dato", id: 1470584107
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "TestFlight", id: 899247664
+# ...
+```
+
+When you run `brew bundle`, it installs `mas` first, then uses it to download and install Mac App Store apps automatically.
+
+To find app IDs, just search on the Mac App Store website and grab the ID from the URL, e.g. `1470584107` is the app ID for [Dato](https://onetipaweek..com/p/one-tip-a-week-dato), https://apps.apple.com/us/app/dato/1470584107.
+
+Or just run `mas list` to see all the apps you currently have installed and snatch the app IDs from there.
+
+## My Install Script
+
+Here's my [install.sh](https://github.com/nickytonline/dotfiles/blob/main/install.sh) that I orchestrates the whole setup. The script is idempotent and prompts for each major step.
+
+```bash
+#!/usr/bin/env bash
+
+# Install Xcode Command Line Tools first
+if ! xcode-select -p &> /dev/null; then
+    xcode-select --install
+    read -n 1 -s -r  # Wait for completion
+fi
+
+# Install Homebrew
+if ! command -v brew &> /dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Symlink all dotfiles
+create_symlink "$DOTFILES_DIR/shell/.zshrc" "$HOME/.zshrc"
+create_symlink "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
+# ... and more
+
+# Install Rust (before brew bundle, so cargo packages work)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+# Install everything from Brewfile
+brew bundle --file="$DOTFILES_DIR/Brewfile"
+
+# Install Node.js LTS via fnm
+fnm install --lts
+npm install -g @openai/codex
+
+# Apply macOS system preferences
+./macos-defaults.sh
+```
+
+## Automating macOS Preferences
+
+Like I mentioned in the beginnging, this is more than a dotfiles repository. It also covers macOS settings like Dock position and size, Finder settings, keyboard repeat rate, menu bar clock settings etc.
+
+All of these can be automated with `defaults write` commands:
+
+```bash
+# Position Dock on the right
+defaults write com.apple.dock orientation -string "right"
+
+# Show hidden files in Finder
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Fast keyboard repeat
+defaults write NSGlobalDomain KeyRepeat -int 2
+
+# Show analog clock with day of week
+defaults write com.apple.menuextra.clock IsAnalog -bool true
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
+```
+
+Here's [my macOS settings](https://github.com/nickytonline/dotfiles/blob/main/macos-defaults.sh) with both recommended defaults for devs and my personal preferences, commented so I can pick and choose.
+
+## What Not to Commit to Your Dotfiles Repo
+
+A lot of devs showcase their dotfiles as a public repository on GitHub, so do not add:
+
+* API tokens or credentials
+* SSH private keys
+* `.npmrc` files with auth tokens
+* Work-related hostnames or company names
+* Personal email addresses (if you care about that)
+* etc.
+
+To prevent this, use your `.gitignore` file to prevent certain files from being committed to the repository:
+
+```bash
+.npmrc
+**/*_token
+**/*_key
+*.local
+.ssh/config_local
+.env
+.env.*
+*.env
+.env.*.local
+```
+
+## Git Setup
+
+My install script creates a symlink for my Git config, and from there I just need to set up my signing key and access key
+If not already configured.
+
+### Modern Git Signing with SSH
+
+While setting this up, I learned you can [sign git commits with SSH keys](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification) instead of GPG, which is [what I was previously doing](https://dev.to/nickytonline/anyone-can-commit-code-as-you-on-github-heres-how-to-stop-them-2in7). So the SSH key you use for getting git access via SSH can also be used for signing your commits. No more dealing with GPG key expiration or complex setup:
+
+```bash
+# Tell git to use SSH for signing
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+
+# Add your SSH key as a "Signing Key" on GitHub
+# (not just an authentication key!)
+```
+
+GitHub shows commits as "Verified" just like with GPG, but it's way simpler.
+
+## Productive in 30 Minutes
+
+Now when I get a new Mac, the process is:
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/nickytonline/dotfiles.git ~/dotfiles
+   cd ~/dotfiles
+   ```
+
+2. Run the install script:
+
+   ```bash
+   ./install.sh
+   ```
+
+3. Say "yes" to the prompts and watch the magic happen:
+
+   * Xcode Command Line Tools install
+   * Homebrew installs
+   * My apps download and install automatically
+   * All dotfiles symlink
+   * Rust, Node.js, and CLI tools set up
+   * macOS preferences apply
+
+4. 5 minutes of manual work:
+
+   * Generate/restore SSH keys
+   * Sign into 1Password
+   * Run `gh auth login`
+   * Sign into a few apps (Slack, Raycast, etc.)
+
+Boom! All set up.
+
+## Try It Yourself
+
+Setting up dotfiles is easier than you think. Start small:
+
+1. Create a `~/dotfiles` directory
+2. Move your `.zshrc` there and symlink it: `ln -s ~/dotfiles/.zshrc ~/.zshrc`
+3. Initialize a git repo: `git init`
+4. Create a Brewfile: `brew bundle dump`
+5. Build from there
+
+Your future self (and your next Mac) will thank you.
+
+Check out [my dotfiles repo](https://github.com/nickytonline/dotfiles) if you want to see the full setup or steal parts of it. If you've got your own dotfiles setup or discovered other tools that make Mac automation easier, I'd love to hear about it.
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Photo by <a href="https://unsplash.com/@alesnesetril?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ales Nesetril</a> on <a href="https://unsplash.com/photos/gray-and-black-laptop-computer-on-surface-Im7lZjxeLhg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+*This post was written with AI assistance.*

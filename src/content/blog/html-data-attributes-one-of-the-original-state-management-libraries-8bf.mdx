@@ -1,23 +1,21 @@
----json
-{
-  "title": "HTML Data Attributes: One of the Original State Management Libraries",
-  "excerpt": "I was streaming recently and discussed how I implemented part of a graph I was building out.      The...",
-  "date": "2023-11-30T04:43:12Z",
-  "tags": [
-    "html",
-    "javascript",
-    "webdev"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ft75ycfq41xj3y82ihzjs.png",
-  "canonical_url": "https://www.nickyt.co/blog/html-data-attributes-one-of-the-original-state-management-libraries-8bf/",
-  "reading_time_minutes": 4,
-  "template": "post"
-}
 ---
+title: "HTML Data Attributes: One of the Original State Management Libraries"
+excerpt: "I was streaming recently and discussed how I implemented part of a graph I was building out.      The..."
+date: "2023-11-30T04:43:12Z"
+tags:
+  - html
+  - javascript
+  - webdev
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ft75ycfq41xj3y82ihzjs.png"
+canonical_url: "https://www.nickyt.co/blog/html-data-attributes-one-of-the-original-state-management-libraries-8bf/"
+reading_time_minutes: 4
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I was [streaming recently](https://nickyt.live) and discussed how I implemented part of a graph I was building out.
 
-{% embed "https://www.youtube.com/watch?v=eSpkar-hNzU" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=eSpkar-hNzU" />
 
 The graph is interactive, where you can navigate with the keyboard or hover over parts of the graph and a list item is bolded.
 
@@ -25,7 +23,7 @@ The graph is interactive, where you can navigate with the keyboard or hover over
 
 Here's the pull request.
 
-{% embed "https://github.com/open-sauced/app/pull/2158" %}
+<GenericEmbed url="https://github.com/open-sauced/app/pull/2158" />
 
 So what's this have to do with [HTML data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)? Well, before we get into that, what is an HTML data attribute? And what is an HTML attribute?
 
@@ -36,9 +34,7 @@ For example, a text input, is an input HTML element that has a `type` equal to `
 Another one you are likely familiar with is `class`. This is the attribute you use to add one or more CSS classes to an HTML tag.
 
 ```html
-{% raw %}
 <a href="/awesome-product" class="funky-link">Awesome Product</a>
-{% endraw %}
 ```
 
 _Note: If you've worked mainly with [React](https://react.dev/), the `className` prop on a component generates an HTML `class` attribute when your component renders._
@@ -46,13 +42,11 @@ _Note: If you've worked mainly with [React](https://react.dev/), the `className`
 You can create non-standard attributes, like `item` or `productId` that will work, but if you want to access them, you would have to access them via the attribute getter, e.g.
 
 ```javascript
-{% raw %}
 // Get the awesome product HTML element.
 const someElement = document.querySelector('#awesome-product');
 
 // get attribute returns the value or if there is none, it returns null
 const productId = someElement.getAttribute('productId');
-{% endraw %}
 ```
 
 If you have a lot of these bespoke attributes, you'll always have to use `.getAttribute()`.
@@ -68,12 +62,10 @@ Although, `.getAttribute` works, it's not necessary. HTML elements, when accesse
 So for example, if I wanted to get the value of the `data-product-id` attribute, I can do the following:
 
 ```javascript
-{% raw %}
 // Get the awesome product HTML element.
 const someElement = document.querySelector('#awesome-product');
 
 const productId = someElement.dataset.productId
-{% endraw %}
 ```
 
 So a few things are happening under the hood. All the data attributes when accessed via the `dataset` property no longer have `data-` in their names, and when the attribute has more than one word in it like `data-product-id`, it gets converted to camel case, `productId`.

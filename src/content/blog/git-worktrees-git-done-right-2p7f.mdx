@@ -1,29 +1,27 @@
----json
-{
-  "title": "Git Worktrees: Git Done Right",
-  "excerpt": "I recently discovered Git worktrees, and they've completely changed how I work with Git. I'd heard...",
-  "date": "2025-07-21T18:17:54Z",
-  "tags": [
-    "git",
-    "productivity",
-    "github"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6c5lwmvy9p1enw57jyuj.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/git-worktrees-git-done-right-2p7f/",
-  "reading_time_minutes": 4,
-  "template": "post"
-}
 ---
+title: "Git Worktrees: Git Done Right"
+excerpt: "I recently discovered Git worktrees, and they've completely changed how I work with Git. I'd heard..."
+date: "2025-07-21T18:17:54Z"
+tags:
+  - git
+  - productivity
+  - github
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6c5lwmvy9p1enw57jyuj.jpg"
+canonical_url: "https://www.nickyt.co/blog/git-worktrees-git-done-right-2p7f/"
+reading_time_minutes: 4
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I recently discovered Git worktrees, and they've completely changed how I work with Git. I'd heard about them before but never really understood what they were or why I'd need them. Now? I've been using them every single day for the past couple of weeks, and they've become a key part of my workflow.
 
 They're so good, that I shared it as a One Tip of the Week:
 
-{% embed "https://one-tip-a-week.beehiiv.com/p/one-tip-a-week-git-worktrees" %}
+<GenericEmbed url="https://one-tip-a-week.beehiiv.com/p/one-tip-a-week-git-worktrees" />
 
 Big thanks to bashbunni for introducing me to git worktrees through her excellent intro video:
 
-{% embed "https://www.youtube.com/watch?v=8vsRb2mTBA8" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=8vsRb2mTBA8" />
 
 ## What Are Git Worktrees?
 
@@ -47,7 +45,6 @@ With worktrees, I can have both branches available simultaneously. Bye bye stash
 The basic worktree commands aren't too complex. You can run something like `git worktree add -b my-branch ../my-branch`, but I'm lazy and wanted something even simpler. So I created some git aliases:
 
 ```bash
-{% raw %}
 # List worktrees
 git wtl
 
@@ -56,17 +53,14 @@ git wta name-of-my-worktree
 
 # Remove a worktree
 git wtr name-of-my-worktree
-{% endraw %}
 ```
 
 Run these commands in your shell to add these git aliases:
 
 ```bash
-{% raw %}
 git config --global alias.wta '!f() { git worktree add -b "$1" "../$1"; }; f'
 git config --global alias.wtr '!f() { git worktree remove "../$1"; }; f'
 git config --global alias.wtl '!f() { git worktree list; }; f'
-{% endraw %}
 ```
 
 Less keystrokes, same git worktree goodness.
@@ -78,7 +72,6 @@ I'm a huge fan of the [GitHub CLI](https://cli.github.com/), especially for pull
 Unfortunately, `gh co` doesn't support a `--worktree` flag at the moment, so I created a shell alias that combines the power of GitHub CLI with git worktrees:
 
 ```bash
-{% raw %}
 # cpr - create a git worktree for a pull request
 # Usage: cpr <PR_NUMBER> [<REMOTE>]
 # Example: cpr 1234 origin
@@ -95,7 +88,6 @@ cpr() {
   cd "../$branch" || return
   echo "Switched to new worktree for PR #$pr: $branch"
 }
-{% endraw %}
 ```
 
 Now I can run `cpr 123` and immediately have that pull request ready to review in its own dedicated workspace. No more switching contexts, no more losing my place.

@@ -1,30 +1,27 @@
----json
-{
-  "title": "Migrating from Jest to Vitest for your React Application",
-  "excerpt": "Are you looking to migrate from Jest to Vitest for your React application? Look no further.  I...",
-  "date": "2023-12-14T08:00:00Z",
-  "tags": [
-    "testing",
-    "react",
-    "vitest",
-    "typescript"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png",
-  "canonical_url": "https://opensauced.pizza/docs/community-resources/migrating-from-jest-to-vitest-for-your-react-application/",
-  "reading_time_minutes": 4,
-  "template": "post",
-  "series": {
-    "name": "Fullstack Learnings",
-    "collection_id": 26157
-  }
-}
 ---
+title: "Migrating from Jest to Vitest for your React Application"
+excerpt: "Are you looking to migrate from Jest to Vitest for your React application? Look no further.  I..."
+date: "2023-12-14T08:00:00Z"
+tags:
+  - testing
+  - react
+  - vitest
+  - typescript
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9sw5ndr7n4igncjp3y53.png"
+canonical_url: "https://opensauced.pizza/docs/community-resources/migrating-from-jest-to-vitest-for-your-react-application/"
+reading_time_minutes: 4
+template: "post"
+series:
+  name: "Fullstack Learnings"
+  collection_id: 26157
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 Are you looking to migrate from [Jest](https://jestjs.io) to [Vitest](https://vitest.dev) for your React application? Look no further.
 
 I recently migrated the OpenSauced app repository to Vitest. Here's the pull request if you're interested.
 
-{% embed "https://github.com/open-sauced/app/pull/2296" %}
+<GenericEmbed url="https://github.com/open-sauced/app/pull/2296" />
 
 ## Why move from Jest to Vitest?
 
@@ -52,7 +49,7 @@ Some other niceties are a default watch mode care of Vite instant Hot Module Rel
 
 The first thing you want to do is install Vitest.
 
-{% embed "https://github.com/vitest-dev/vitest" %}
+<GenericEmbed url="https://github.com/vitest-dev/vitest" />
 
 Run `npm install vitest -D` in the terminal to install Vitest as a dev dependency.
 
@@ -61,7 +58,6 @@ Next up, create a `vitest.config.ts` file in the root of your project. Even if y
 In that file, add the following code and save it.
 
 ```javascript
-{% raw %}
 import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
@@ -71,13 +67,11 @@ export default defineConfig({
     include: ["./**/*.test.ts", "./**/*.test.tsx"],
   },
 });
-{% endraw %}
 ```
 
 You can explicitly import `describe`, `it`/`test`, `expect` or you can have it work like in Jest where they're all globals. All you need to do is set `globals` to `true` in the Vitest configuration.
 
 ```diff
-{% raw %}
  import { defineConfig } from "vite";
 
  // https://vitejs.dev/config/
@@ -87,7 +81,6 @@ You can explicitly import `describe`, `it`/`test`, `expect` or you can have it w
 +    globals: true,
    },
  });
-{% endraw %}
 ```
 
 ## Using Vitest with React
@@ -101,7 +94,6 @@ Run `npm install @vitejs/plugin-react -D` to install the plugin as a dev depende
 Update the Vitest configuration to add the React plugin.
 
 ```diff
-{% raw %}
  import { defineConfig } from "vite";
  import react from "@vitejs/plugin-react";
 
@@ -113,7 +105,6 @@ Update the Vitest configuration to add the React plugin.
      globals: true,
    },
  });
-{% endraw %}
 ```
 
 ## React Testing Library
@@ -123,7 +114,6 @@ If you happen to be using [React Testing Library](https://testing-library.com/do
 Next, add `jsdom` to your Vitest configuration.
 
 ```diff
-{% raw %}
  import { defineConfig } from "vite";
  import react from "@vitejs/plugin-react";
 
@@ -136,7 +126,6 @@ Next, add `jsdom` to your Vitest configuration.
 +    environment: "jsdom",
    },
  });
-{% endraw %}
 ```
 
 ## Aliases
@@ -148,7 +137,6 @@ If you need to [support aliases](https://vitest.dev/config/#alias), Vitest has y
 Here's an example of supporting the above-mentioned aliases.
 
 ```diff
-{% raw %}
  export default defineConfig({
    plugins: [react()],
 +  resolve: {
@@ -164,7 +152,6 @@ Here's an example of supporting the above-mentioned aliases.
      environment: "jsdom",
    },
  });
-{% endraw %}
 ```
 
 ## TypeScript Types
@@ -174,7 +161,6 @@ If you're using TypeScript, you can add the types for Vitest to the project.
 In your tsconfig.json file, add the types in the compiler options section of the TypeScript configuration file.
 
 ```json
-{% raw %}
  {
    "compilerOptions": {
      // . .. other compiler options in your project
@@ -184,7 +170,6 @@ In your tsconfig.json file, add the types in the compiler options section of the
    // . .. other TypeScript configuration options in your project
  }
 
-{% endraw %}
 ```
 
 ## Running Tests
@@ -196,17 +181,13 @@ To run tests using Vitest, you can run `vitest`. By default, it will go into wat
 If your project is a TypeScript project, you probably have the types for Jest in your project. If you do, run the following to remove the Jest TypeScript types.
 
 ```bash
-{% raw %}
 npm uninstall -D @types/jest
-{% endraw %}
 ```
 
 Uninstall Jest itself.
 
 ```bash
-{% raw %}
 npm uninstall jest jest-environment-jsdom -D
-{% endraw %}
 ```
 
 And that's it! Happy testing!

@@ -1,23 +1,20 @@
----json
-{
-  "title": "Creating an OG image using React and Netlify Edge Functions",
-  "excerpt": "Open Graph (OG) images are a must if you're sharing content on the Internet. From sites like...",
-  "date": "2024-04-16T07:00:00Z",
-  "tags": [
-    "netlify",
-    "typescript",
-    "react"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8lwq8cpfabmtoh589glh.jpeg",
-  "canonical_url": "https://opensauced.pizza/docs/community-resources/creating-an-og-image-using-react-and-netlify-edge-functions/",
-  "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Fullstack Learnings",
-    "collection_id": 26157
-  }
-}
 ---
+title: "Creating an OG image using React and Netlify Edge Functions"
+excerpt: "Open Graph (OG) images are a must if you're sharing content on the Internet. From sites like..."
+date: "2024-04-16T07:00:00Z"
+tags:
+  - netlify
+  - typescript
+  - react
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8lwq8cpfabmtoh589glh.jpeg"
+canonical_url: "https://opensauced.pizza/docs/community-resources/creating-an-og-image-using-react-and-netlify-edge-functions/"
+reading_time_minutes: 3
+template: "post"
+series:
+  name: "Fullstack Learnings"
+  collection_id: 26157
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 [Open Graph](url) (OG) images are a must if you're sharing content on the Internet. From sites like X/Twitter, to Slack or Discord, a great OG image makes your link share pop.
 
@@ -51,18 +48,17 @@ So, how do we use React to generate an image?
 
 We're using og_edge from my old co-worker Matt Kane (@ascorbic), but og_edge is a direct port of [@vercel/og](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images) that works on Deno and Netlify Edge Functions which run on Deno.
 
-{% embed "https://github.com/ascorbic/og-edge" %}
+<GenericEmbed url="https://github.com/ascorbic/og-edge" />
 
 Under the hood, og_edge and @vercel/og use the Satori library.
 
 > Satori: Enlightened library to convert HTML and CSS to SVG.
 
-{% embed "https://github.com/vercel/satori" %}
+<GenericEmbed url="https://github.com/vercel/satori" />
 
 The API for the `og_edge` module is pretty straightforward. It exposes an `ImageResponse` constructor with the following options and that's it.
 
 ```typescript
-{% raw %}
 new ImageResponse(
   element: ReactElement,
   options: {
@@ -83,7 +79,6 @@ new ImageResponse(
     headers?: Record<string, string>
   },
 )
-{% endraw %}
 ```
 
 _Code snippet above care of the official [og_edge API reference](https://github.com/ascorbic/og-edge#api-reference)._
@@ -95,22 +90,20 @@ As far as I know, `og_edge` does not support Tailwind like `@vercel/og` does. No
 One other thing we do is set cache headers as these are dynamic images where the data changes over time. Having said that, some social networks cache OG images very aggressively.
 
 ```typescript
-{% raw %}
       headers: {
         // cache for 2 hours
         "cache-control": "public, s-maxage=7200",
         "content-type": "image/png",
       },
-{% endraw %}
 ```
 
 ## Show me the code
 
 Here's the pull requests for the initial work on these two OG images.
 
-{% embed "https://github.com/open-sauced/app/pull/2939" %}
+<GenericEmbed url="https://github.com/open-sauced/app/pull/2939" />
 
-{% embed "https://github.com/open-sauced/app/pull/3117" %}
+<GenericEmbed url="https://github.com/open-sauced/app/pull/3117" />
 
 ## Wrapping up
 

@@ -1,29 +1,26 @@
----json
-{
-  "title": "Advent of AI 2025 - Day 4: Building a Winter Festival Website with Goose",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-05T05:30:02Z",
-  "tags": [
-    "adventofai",
-    "goose",
-    "ai"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F81dfycogxlmcwn052wra.jpg",
-  "canonical_url": "https://dev.to/nickytonline/advent-of-ai-2025-day-4-building-a-winter-festival-website-with-goose-3oac",
-  "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI 2025 - Day 4: Building a Winter Festival Website with Goose"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI...."
+date: "2025-12-05T05:30:02Z"
+tags:
+  - adventofai
+  - goose
+  - ai
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F81dfycogxlmcwn052wra.jpg"
+canonical_url: "https://dev.to/nickytonline/advent-of-ai-2025-day-4-building-a-winter-festival-website-with-goose-3oac"
+reading_time_minutes: 3
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 For [Day 4 of Advent of AI](https://adventofai.dev/challenges/4), I built a winter festival website and deployed it to Netlify all thanks to Goose, Claude Sonnet 4.5 and some built-in and external extensions in Goose.
 
@@ -43,7 +40,7 @@ A single-page winter festival site with:
 
 This built on Day 3's work.
 
-{% embed "https://dev.to/nickytonline/advent-of-ai-2025-day-1-building-data-visualizations-with-goose-g7f" %}
+<GenericEmbed url="https://dev.to/nickytonline/advent-of-ai-2025-day-1-building-data-visualizations-with-goose-g7f" />
 
 I had the basic structure, but needed to fix the light/dark mode. Both themes looked too similar initially, just different shades of dark backgrounds.
 
@@ -53,7 +50,6 @@ I implemented a complete theme system using CSS custom properties:
 
 **Light Mode:**
 ```css
-{% raw %}
 :root {
     --bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 50%, #e1f5fe 100%);
     --text-primary: #1a1a2e;  /* Dark navy */
@@ -61,12 +57,10 @@ I implemented a complete theme system using CSS custom properties:
     --text-light: #616161;     /* Medium gray */
     /* ... more variables */
 }
-{% endraw %}
 ```
 
 **Dark Mode:**
 ```css
-{% raw %}
 body.dark-mode {
     --bg-primary: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2d1b3d 100%);
     --text-primary: #ffffff;   /* Pure white */
@@ -74,7 +68,6 @@ body.dark-mode {
     --text-light: #b0b0b0;     /* Medium light gray */
     /* ... more variables */
 }
-{% endraw %}
 ```
 
 This ensured WCAG AAA compliance (7:1+ contrast ratios), true visual distinction between themes, and smooth transitions.

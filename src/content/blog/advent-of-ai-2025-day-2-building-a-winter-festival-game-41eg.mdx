@@ -1,29 +1,26 @@
----json
-{
-  "title": "Advent of AI 2025 - Day 2: Building a Winter Festival Game",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-03T05:26:22Z",
-  "tags": [
-    "goose",
-    "ai",
-    "adventofai"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Famqldnu25g4s3gf35vbq.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-2-building-a-winter-festival-game-41eg/",
-  "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI 2025 - Day 2: Building a Winter Festival Game"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI...."
+date: "2025-12-03T05:26:22Z"
+tags:
+  - goose
+  - ai
+  - adventofai
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Famqldnu25g4s3gf35vbq.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-2025-day-2-building-a-winter-festival-game-41eg/"
+reading_time_minutes: 3
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 For Day 2 of the Advent of AI challenge, I built an entire winter-themed choose-your-own-adventure game as per the guidelines of [Day 2 of Advent of AI](https://adventofai.dev/challenges/2).
 
@@ -42,7 +39,7 @@ A browser game featuring:
 
 Check out the [repo](https://github.com/nickytonline/advent-of-ai-2025) to see the game and full PRD.
 
-{% embed "https://github.com/nickytonline/advent-of-ai-2025" %}
+<GenericEmbed url="https://github.com/nickytonline/advent-of-ai-2025" />
 
 ## The Build Process
 
@@ -57,10 +54,8 @@ The first version tried using Phaser's ESM imports. Didn't work. We switched to 
 At one point, pressing SPACE near a portal would freeze the entire game. Turns out it was a context issue with `this.scene` in the update loop. The fix was simple but not obvious:
 
 ```javascript
-{% raw %}
 // Added explicit scene reference
 const scene = this;
-{% endraw %}
 ```
 
 Now portal navigation works perfectly.
@@ -70,9 +65,7 @@ Now portal navigation works perfectly.
 The elf character kept appearing behind the portals, which looked terrible. Fixed it by setting the depth explicitly:
 
 ```javascript
-{% raw %}
 player.setDepth(1000);
-{% endraw %}
 ```
 
 All these issues were solved just chatting with the models in Goose.

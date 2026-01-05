@@ -1,30 +1,27 @@
----json
-{
-  "title": "Advent of AI 2025 - Day 5: I Built a Touchless Flight Tracker You Control With Hand Gestures",
-  "excerpt": "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI....",
-  "date": "2025-12-08T05:45:57Z",
-  "tags": [
-    "computervision",
-    "ai",
-    "adventofai",
-    "goose"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhmcc2rf9ggfnm5ypp3zf.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/advent-of-ai-2025-day-5-i-built-a-touchless-flight-tracker-you-control-with-hand-gestures-1jn8/",
-  "reading_time_minutes": 9,
-  "template": "post",
-  "series": {
-    "name": "Advent of AI 2025",
-    "collection_id": 34295
-  }
-}
 ---
+title: "Advent of AI 2025 - Day 5: I Built a Touchless Flight Tracker You Control With Hand Gestures"
+excerpt: "I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI...."
+date: "2025-12-08T05:45:57Z"
+tags:
+  - computervision
+  - ai
+  - adventofai
+  - goose
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhmcc2rf9ggfnm5ypp3zf.jpg"
+canonical_url: "https://www.nickyt.co/blog/advent-of-ai-2025-day-5-i-built-a-touchless-flight-tracker-you-control-with-hand-gestures-1jn8/"
+reading_time_minutes: 9
+template: "post"
+series:
+  name: "Advent of AI 2025"
+  collection_id: 34295
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
 
-{% embed "https://github.com/block/goose" %}
+<GenericEmbed url="https://github.com/block/goose" />
 
 For Goose's [Day 5 of Advent of AI](https://adventofai.dev/challenges/5), the challenge was to build "The Homecoming Board." It's a gesture-controlled flight arrival display where people wearing gloves and mittens can navigate using hand gestures. No touching screens in the freezing cold. The challenge needed at least two distinct gestures for navigation, real flight data, and audio feedback for gesture recognition was a nice to have.
 
@@ -36,11 +33,11 @@ I built this with TanStack Start (React + TypeScript with SSR), [MediaPipe](http
 
 To be honest, this is the first time I build an app with computer vision, so definitely got nerd sniped to do as much of this Advent of AI day as possible. It's wild how accessible it is to leverage something like computer vision. It was a bit of a throwback to an awesome live stream I did with Gant Laborde about AI and Tensorflow.js.
 
-{% embed "https://www.youtube.com/watch?v=wS5N5R61Z5w" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=wS5N5R61Z5w" />
 
 I went with TanStack Start because I'd already used it for a significant project, the Pomerium MCP app demo.
 
-{% embed "https://github.com/pomerium/mcp-app-demo" %}
+<GenericEmbed url="https://github.com/pomerium/mcp-app-demo" />
 
 Having API endpoints available is a classic way to avoid CORS issues with third-party APIs. In this case, I could proxy requests to the OpenSky API through my own server function.
 
@@ -69,7 +66,6 @@ Getting MediaPipe running in the browser was a bit clunky for me initially. I wa
 I decided on the MediaPipe WASM version specifically because I wanted to deploy this to Netlify. The WASM runtime is running in-browser, which meant I could host it on any PaaS without worrying about Python. That said, I know [Vercel supports Python](https://vercel.com/docs/functions/runtimes/python) now.
 
 ```typescript
-{% raw %}
 // useMediaPipe.ts - Custom hook for MediaPipe integration
 const hands = new Hands({
   locateFile: (file) => `/mediapipe/${file}`,
@@ -81,7 +77,6 @@ hands.setOptions({
   minDetectionConfidence: 0.7,
   minTrackingConfidence: 0.5,
 });
-{% endraw %}
 ```
 
 The hand tracking runs at 30-60 FPS with landmark visualization. I mirror both the video feed and the landmarks so it feels natural when you move your hand.
@@ -95,7 +90,6 @@ I also went the extra mile beyond the challenge requirements. The challenge aske
 Detecting gestures turned out to be trickier than I expected. My initial approach used fixed thresholds based on finger curl ratios. The math is simple: measure the distance from each fingertip to the wrist, divide by the distance from the knuckle to the wrist, and you get a curl ratio. Values below a threshold mean the finger is curled.
 
 ```typescript
-{% raw %}
 // Finger curl ratio: distance(tip, wrist) / distance(knuckle, wrist)
 const fingerCurl = (finger: FingerLandmarks) => {
   const tipDist = distance(finger.tip, wrist);
@@ -106,7 +100,6 @@ const fingerCurl = (finger: FingerLandmarks) => {
 // Gesture classification
 const isClosedFist = fingersCurled >= 4 && avgCurl > fistThreshold;
 const isOpenPalm = fingersExtended >= 4 && avgCurl < palmThreshold;
-{% endraw %}
 ```
 
 This worked great during my initial development. But when I tested it in different lighting conditions and at different distances from the camera, the gestures barely registered. Different hand positions and lighting conditions completely threw off my fixed thresholds.
@@ -124,7 +117,6 @@ For flight data, I used [OpenSky Network's free API](https://opensky-network.org
 TanStack Query handles all the caching and auto-refresh logic:
 
 ```typescript
-{% raw %}
 // useFlightData.ts
 const { data: flights, isLoading, error } = useQuery({
   queryKey: ['flights', 'arrivals'],
@@ -136,7 +128,6 @@ const { data: flights, isLoading, error } = useQuery({
   refetchInterval: 30_000,   // Auto-refresh every 30s
   retry: 3,                  // Exponential backoff
 });
-{% endraw %}
 ```
 
 ![Flight data](https://www.nickyt.co/images/posts/_uploads_articles_sd1u7yjcky6fpj4d4bal.png)
@@ -152,7 +143,6 @@ The challenge required audio feedback for gesture recognition, which turned out 
 The sounds are pre-cached and only play when the gesture changes, not on every frame:
 
 ```typescript
-{% raw %}
 // gestureAudio.ts - Audio caching and playback
 const audioCache = new Map<GestureType, HTMLAudioElement>();
 
@@ -168,7 +158,6 @@ export const playGestureSound = (gesture: GestureType) => {
   audio.currentTime = 0; // Reset for quick replay
   audio.play().catch(() => {}); // Ignore autoplay errors
 };
-{% endraw %}
 ```
 
 You can toggle the sound on and off in the settings, which is essential when you're testing the same gestures over and over.
@@ -182,14 +171,12 @@ Selecting a flight with a thumbs up gesture opens a detailed modal with all the 
 For the modal UI, I pulled in ShadCN components, specifically the Dialog and Drawer. I've used these before in this scenario. The Dialog handles the desktop modal experience, and the Drawer gives you that nice slide-up-from-bottom interaction on mobile. Both come with proper accessibility baked in, which is always a win.
 
 ```typescript
-{% raw %}
 <div className="fixed inset-0 z-50">
   <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-0" /> {/* Backdrop */}
   <div className="relative z-10"> {/* Content on top */}
     {/* Modal content */}
   </div>
 </div>
-{% endraw %}
 ```
 
 On mobile, I swap the modal for a drawer component that slides up from the bottom. Checking window width determines which component to render.
@@ -198,7 +185,7 @@ On mobile, I swap the modal for a drawer component that slides up from the botto
 
 I built light and dark winter themes to something very similar to day 4.
 
-{% embed "https://dev.to/nickytonline/advent-of-ai-2025-day-4-building-a-winter-festival-website-with-goose-3oac" %}
+<GenericEmbed url="https://dev.to/nickytonline/advent-of-ai-2025-day-4-building-a-winter-festival-website-with-goose-3oac" />
 
 The light mode has pure white backgrounds with deep ice blue primary colors and a 13:1 contrast ratio for WCAG AAA compliance. The dark mode uses a deep blue-purple night sky with bright glowing blues.
 
@@ -238,7 +225,7 @@ As previously mentioned, this is the first time I createa computer vision app, s
 
 The app is deployed and working at [flightboard.nickyt.co](https://flightboard.nickyt.co/). Go have some fun and play around with it! You can train your own gestures and navigate flights with hand movements. The code is in my Advent of AI 2025 repo if you want to check it out.
 
-{% embed "https://github.com/nickytonline/advent-of-ai-2025" %}
+<GenericEmbed url="https://github.com/nickytonline/advent-of-ai-2025" />
 
 There's still polish to do. The gesture detection could be more robust, the UI could use some refinement, and there are edge cases I haven't handled. But this is Advent of AI, which means it's time to move on to the next challenge.
 

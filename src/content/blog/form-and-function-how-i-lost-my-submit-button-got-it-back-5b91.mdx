@@ -1,23 +1,22 @@
----json
-{
-  "title": "Form and Function: How I Lost My Submit Button & Got It Back",
-  "excerpt": "As web developers, we know that most of the create, read update, and delete (CRUD) actions we perform...",
-  "date": "2024-04-02T11:43:34Z",
-  "tags": [
-    "html",
-    "webdev",
-    "beginners"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fkot81kxbgvcpnsr043bn.png",
-  "canonical_url": "https://opensauced.pizza/docs/community-resources/form-and-function-how-i-lost-my-submit-button-got-it-back/",
-  "reading_time_minutes": 4,
-  "template": "post",
-  "series": {
-    "name": "Fullstack Learnings",
-    "collection_id": 26157
-  }
-}
 ---
+title: "Form and Function: How I Lost My Submit Button & Got It Back"
+excerpt: "As web developers, we know that most of the create, read update, and delete (CRUD) actions we perform..."
+date: "2024-04-02T11:43:34Z"
+tags:
+  - html
+  - webdev
+  - beginners
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fkot81kxbgvcpnsr043bn.png"
+canonical_url: "https://opensauced.pizza/docs/community-resources/form-and-function-how-i-lost-my-submit-button-got-it-back/"
+reading_time_minutes: 4
+template: "post"
+series:
+  name: "Fullstack Learnings"
+  collection_id: 26157
+---
+import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";
+import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 As web developers, we know that most of the create, read update, and delete (CRUD) actions we perform on the web are typically (hopefully?) done using an [HTML form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form).
 
@@ -29,7 +28,7 @@ For example, they have native form validation and access to all the inputs in a 
 
 Here is a simple form to exhibit this.
 
-{% codepen "https://codepen.io/nickytonline/pen/JjVOarX" %}
+<CodePenEmbed url="https://codepen.io/nickytonline/pen/JjVOarX" />
 
 If you fill out the form and click submit, the form will submit and add a paragraph with dark green text client-side that says, "Form submitted".
 
@@ -51,7 +50,7 @@ Here's our beautiful workspaces settings page that I implemented.
 
 Recently, there were styling changes, which is what you see above.
 
-{% embed "https://github.com/open-sauced/app/pull/2982" %}
+<GenericEmbed url="https://github.com/open-sauced/app/pull/2982" />
 
 Everything looked great, and I had tested it.
  
@@ -71,13 +70,13 @@ For some context, the OpenSauced application is a Next.js site, so React, but I 
 
 Here's another simple form demonstrating a simplified version of my fix.
 
-{% codepen "https://codepen.io/nickytonline/pen/XWQzPOX" %}
+<CodePenEmbed url="https://codepen.io/nickytonline/pen/XWQzPOX" />
 
 I encourage you to remove the `form` attribute from the button in the above CodePen to see the issue I caused.
 
 Here's the fix I rolled out to production.
 
-{% github "https://github.com/open-sauced/app/pull/3003" %}
+<GitHubEmbed url="https://github.com/open-sauced/app/pull/3003" />
 
 ## Wrapping Up
 

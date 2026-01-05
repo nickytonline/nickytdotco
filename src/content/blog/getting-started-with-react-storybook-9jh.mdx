@@ -1,25 +1,20 @@
----json
-{
-  "title": "Getting Started with Storybook for React",
-  "excerpt": "UPDATE: A lot has changed in Storybook land since this was written. If you are adding Storybook to...",
-  "date": "2018-03-26T05:00:00Z",
-  "tags": [
-    "react",
-    "beginners",
-    "storybook",
-    "ui"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png",
-  "canonical_url": "https://www.nickyt.co/blog/getting-started-with-react-storybook-9jh/",
-  "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Storybook",
-    "collection_id": 4085
-  }
-}
 ---
-
+title: "Getting Started with Storybook for React"
+excerpt: "UPDATE: A lot has changed in Storybook land since this was written. If you are adding Storybook to..."
+date: "2018-03-26T05:00:00Z"
+tags:
+  - react
+  - beginners
+  - storybook
+  - ui
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png"
+canonical_url: "https://www.nickyt.co/blog/getting-started-with-react-storybook-9jh/"
+reading_time_minutes: 3
+template: "post"
+series:
+  name: "Storybook"
+  collection_id: 4085
+---
 **UPDATE: A lot has changed in Storybook land since this was written. If you are adding Storybook to your project, check out the [tutorial](https://www.learnstorybook.com/intro-to-storybook/) on the Storybook site on how to use their CLI to get up and running with Storybook**
 
 ## Story what?
@@ -35,21 +30,17 @@ We’ll assume you already have a React project created.
 - From the command line, run. `getstorybook`. Because you have React installed as a dependency, `getstorybook` will know to install the necessary packages for Storybook for React as dev dependencies.
 
 ```bash
-{% raw %}
 "@storybook/addon-actions": "3.3.15",
 "@storybook/addon-links": "3.3.15",
 "@storybook/addons": "3.3.15",
 "@storybook/react": "3.3.15",
-{% endraw %}
 ```
 
 - If you look in your `package.json` file, you’ll have two new scripts.
 
 ```bash
-{% raw %}
 "storybook": "start-storybook -p 6006",
 "build-storybook": "build-storybook"
-{% endraw %}
 ```
 
 - From the command line, run `npm run storybook`.
@@ -67,7 +58,6 @@ Now that you’ve got Storybook running in your project, you probably took a loo
 Let’s break down what’s going on in one of the sample stories.
 
 ```javascript
-{% raw %}
 // We need the storiesOf function to write our stories.
 import { storiesOf } from '@storybook/react';
 
@@ -87,7 +77,6 @@ storiesOf('Button', module)
 
   // A second story to show what the button looks like with emojis.
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
-{% endraw %}
 ```
 
 That’s pretty much all there is to writing stories. It’s really easy to use and such a great tool. In my next post, we’ll dig into some of the cool features of Storybook.

@@ -1,25 +1,20 @@
----json
-{
-  "title": "Setting up Storybook for Preact",
-  "excerpt": "Update 2019/06/30: Storybook now has an option via the CLI to install for Preact. For more info see...",
-  "date": "2018-09-02T00:00:00Z",
-  "tags": [
-    "preact",
-    "storybook",
-    "javascript",
-    "ui"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png",
-  "canonical_url": "https://www.nickyt.co/blog/setting-up-storybook-for-preact-p5a/",
-  "reading_time_minutes": 3,
-  "template": "post",
-  "series": {
-    "name": "Storybook",
-    "collection_id": 4085
-  }
-}
 ---
-
+title: "Setting up Storybook for Preact"
+excerpt: "Update 2019/06/30: Storybook now has an option via the CLI to install for Preact. For more info see..."
+date: "2018-09-02T00:00:00Z"
+tags:
+  - preact
+  - storybook
+  - javascript
+  - ui
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F9zm6yatidby4ls11xzeg.png"
+canonical_url: "https://www.nickyt.co/blog/setting-up-storybook-for-preact-p5a/"
+reading_time_minutes: 3
+template: "post"
+series:
+  name: "Storybook"
+  collection_id: 4085
+---
 Update 2019/06/30: Storybook now has an option via the CLI to install for Preact. For more info see [Preact for Storybook](https://storybook.js.org/docs/guides/guide-preact).TLDR `npx -p @storybook/cli sb init --type preact`.
 
 In my last Storybook post, [Getting Started with Storybook for React](https://dev.to/nickytonline/getting-started-with-react-storybook-9jh), I showed you how to install Storybook for React and gave a quick breakdown of what all the pieces were. I suggest giving that a quick read before continuing here.
@@ -36,7 +31,6 @@ In this post, I’ll show you how to get React Storybook up and running with Pre
 8. The last thing we need to do is tell [webpack](https://webpack.js.org) (what Storybook uses under the hood), to use preact-compat. To do this, we need to create a custom webpack configuration file for Storybook. Lucky for us, Storybook supports this out of the box. In the root folder where your package.json file is, there will be a new folder called `.storybook`. In there it contains files related to Storybook configuration. Create a new file in there called `webpack.config.js` and paste the following contents and save the file.
 
 ```javascript
-{% raw %}
 module.exports = {
   resolve: {
     extensions: [".js", "jsx"],
@@ -46,7 +40,6 @@ module.exports = {
     }
   }
 };
-{% endraw %}
 ```
 
 Note that this is a super bare bones webpack configuration. You can add anything else here you may need just like a regular webpack configuration file.

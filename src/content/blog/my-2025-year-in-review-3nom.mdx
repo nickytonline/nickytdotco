@@ -1,23 +1,21 @@
----json
-{
-  "title": "My 2025 Year in Review",
-  "excerpt": "2025 was wild. I wrapped up 2024 with OpenSauced getting acquired by the Linux Foundation, which...",
-  "date": "2025-12-30T18:21:13Z",
-  "tags": [
-    "yearinreview",
-    "mcp",
-    "career"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3007zwyd3kc4annzmf81.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/my-2025-year-in-review-3nom/",
-  "reading_time_minutes": 7,
-  "template": "post",
-  "series": {
-    "name": "Year in Review",
-    "collection_id": 3993
-  }
-}
 ---
+title: "My 2025 Year in Review"
+excerpt: "2025 was wild. I wrapped up 2024 with OpenSauced getting acquired by the Linux Foundation, which..."
+date: "2025-12-30T18:21:13Z"
+tags:
+  - yearinreview
+  - mcp
+  - career
+  - devwrapped
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3007zwyd3kc4annzmf81.jpg"
+canonical_url: "https://www.nickyt.co/blog/my-2025-year-in-review-3nom/"
+reading_time_minutes: 8
+template: "post"
+series:
+  name: "Year in Review"
+  collection_id: 3993
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 2025 was wild. I wrapped up 2024 with OpenSauced getting acquired by the Linux Foundation, which meant I was job hunting in late fall/early winter. My network came through for me and I landed at Pomerium in January.
 
@@ -35,7 +33,7 @@ Then in May, everything shifted. I had heard about the Model Context Protocol (M
 
 I think my CEO had also brought up MCPs and then all of a sudden we were securing MCPs as well. For a TLDR: an IAP operates at layer seven in the network stack, commonly known as the application layer, and for the most part that is HTTP, where remote MCP servers live. There were too many talks they wanted to do so they spilt over onto The Context (the MCP Dev Summit's online stream) which is where I gave my talk.
 
-{% embed "https://www.youtube.com/watch?v=KY1kCZkqUh0" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=KY1kCZkqUh0" />
 
 I also suggested we attend the AI World Fair, so we ended up grabbing a booth there and met all kinds of people interested in AI including MCP. I also got to attend a couple workshops including one from the WorkOS people (Nick and Zack), where we dove into Mastra.
 
@@ -70,7 +68,7 @@ The talk ended up going really well and I asked some of the audience if I explai
 
 There's no point going through the whole list of talks, but my last in-person talk was the MCP Dev Summit in London which was really cool. Part of my demo didn't work but I think I recovered gracefully. You be the judge.
 
-{% embed "https://www.youtube.com/watch?v=_wtJzDf068w" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=_wtJzDf068w" />
 
 Again it was great hanging with some awesome people.
 
@@ -92,7 +90,7 @@ People always say this, but it's 100% true. Getting to meet people in person at 
 
 ![the Commit Your Code crew](https://www.nickyt.co/images/posts/_uploads_articles_2kmie83fmilcab860x5l.jpeg)
 
-## Community Recognition
+## Community
 
 In early June, I became a GitHub Star. The community nominates people for this, and honestly, I didn't realize how few there were. As of writing this, there are only 88 stars on the planet. Pretty cool.
 
@@ -110,6 +108,12 @@ One of the best perks? GitHub flew me out to GitHub Universe in October. I got t
 
 I also became a Microsoft MVP, which was really cool. It definitely feels great to be recognized.
 
+Aside from that I became a mentor in the [Let's Get Technical community](https://discord.gg/aAzCA7fT) where I'm one of the mentors for people new to the tech industry working through a real world project. We wrapped up our Secret Santa Exchange. Great work team!
+
+<GenericEmbed url="https://github.com/LetsGetTechnical/elecretanta" />
+
+I don't usually monitor follower counts, but they've all been on the rise including hitting 125K followers on dev.to in early December which I think is pretty cool.
+
 ## Writing and Building
 
 I published 42 articles in 2025. December alone was 19 articles as I did the Advent of AI 2025 challenge, documenting my daily experiences with Goose.
@@ -118,30 +122,30 @@ Here's some of the stuff I built:
 * [dev.to MCP server](https://github.com/nickytonline/dev-to-mcp)
 * [Pimp My Ride MCP server](https://github.com/nickytonline/pimp-my-ride-mcp)
 * Pomerium's [MCP app demo](https://github.com/pomerium/mcp-app-demo) which is essentially an MCP client and it's not really a demo anymore since we use it internally. 
-* [TypeScript MCP template](https://github.com/nickytonline/mcp-typescript-template) to help others spin up their own MCP servers faster
-* [ChatGPT apps template](https://github.com/pomerium/chatgpt-app-typescript-template)
+* [TypeScript MCP template](https://github.com/nickytonline/mcp-typescript-template) - A TypeScript template for building remote Model Context Protocol (MCP) servers with modern tooling and best practices while leveraging the MCP TypeScript SDK.
+* [ChatGPT apps template](https://github.com/pomerium/chatgpt-app-typescript-template) - A well-architected starter template demonstrating best practices for building ChatGPT apps using the Model Context Protocol (MCP) with React widgets. It leverages TypeScript, Tailwind CSS v4, Pino logging, Storybook, and Vitest for a robust development experience.
 
 ## Guest Spots and Streaming
 
 I was a guest on some podcasts this year, including the freeCodeCamp podcast where I talked about turning open source into a job.
 
-{% embed "https://www.youtube.com/watch?v=m7nkioXNiik" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=m7nkioXNiik" />
 
 I also was on [CodeTV's](https://codetv.dev/) Web Dev Challenge with my partner in crime Shashi Lo!
 
-{% embed "https://www.youtube.com/watch?v=ftYmXoH0V5I" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=ftYmXoH0V5I" />
 
 It was another great year of live streaming at [nickyt.live](https://nickyt.live). I'm honestly always surprised how I land quality guests.
 
-{% embed "https://www.youtube.com/watch?v=evOvNWTxDPE" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=evOvNWTxDPE" />
 
 I also started the [Pomerium live stream](https://www.youtube.com/@pomerium_io)! This interview with Den (an old co-worker) was one of my favourites.
 
-{% embed "https://www.youtube.com/watch?v=U9rSRnjis7c" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=U9rSRnjis7c" />
 
 I also continued doing the 2 Full 2 Stack live stream on the Certified Fresh Events YouTube channel. Brian Rinaldi (@remotesynth) had invited me to do the live stream there a couple years ago, and it was always a blast. Sponsors dried up though, and I think it became less and less fun for Brian as the sponsorships disappeared. It was the right decision, but still sad to see it end.
 
-{% embed "https://www.youtube.com/watch?v=YOjFpR3vrEQ&list=PLZDPKYkCEQk07B0HWWOKH3bqpqOUQuOOk" %}
+<GenericEmbed url="https://www.youtube.com/watch?v=YOjFpR3vrEQ&list=PLZDPKYkCEQk07B0HWWOKH3bqpqOUQuOOk" />
 
 ## My Newsletter
 
@@ -149,11 +153,7 @@ My newsletter [One Tip a Week](https://onetipaweek.com) had a great year. I star
 
 The key was keeping it simple. One tip per week, building up a backlog so there's no weekly pressure. The backlog of issues was key as it doesn't feel like a chore (like my old newsletter did).
 
-{% embed "https://dev.to/nickytonline/my-newsletter-growth-fun-slow-steady-4fpd" %}
-
-## Community Growth
-
-I don't usually monitor follower counts, but they've all been on the rise including hitting 125K followers on dev.to in early December which I think is pretty cool.
+<GenericEmbed url="https://dev.to/nickytonline/my-newsletter-growth-fun-slow-steady-4fpd" />
 
 ## Looking Back
 

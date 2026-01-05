@@ -1,23 +1,20 @@
----json
-{
-  "title": "I built my first dApp!",
-  "excerpt": "This past weekend I completed a web3 project from the awesome folks at buildspace.  The project was...",
-  "date": "2021-10-19T20:00:48Z",
-  "tags": [
-    "dapp",
-    "web3",
-    "react"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvi2yi9st53f151flz189.png",
-  "canonical_url": "https://www.nickyt.co/blog/i-built-my-first-dapp-3pbm/",
-  "reading_time_minutes": 2,
-  "template": "post",
-  "series": {
-    "name": "web3 adventures",
-    "collection_id": 15087
-  }
-}
 ---
+title: "I built my first dApp!"
+excerpt: "This past weekend I completed a web3 project from the awesome folks at buildspace.  The project was..."
+date: "2021-10-19T20:00:48Z"
+tags:
+  - dapp
+  - web3
+  - react
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvi2yi9st53f151flz189.png"
+canonical_url: "https://www.nickyt.co/blog/i-built-my-first-dapp-3pbm/"
+reading_time_minutes: 2
+template: "post"
+series:
+  name: "web3 adventures"
+  collection_id: 15087
+---
+import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";
 
 This past weekend I completed a [web3](https://www.freecodecamp.org/news/what-is-web3/) project from the awesome folks at [buildspace](https://buildspace.so).
 
@@ -25,7 +22,7 @@ The project was building out a [dapp](https://ethereum.org/en/developers/docs/da
 
 The buildspace projects have really straightforward instructions. I did go a bit rogue though. I recently created a web3 starter, and decided to use that as the base for my first foray into dapp development.
 
-{% github "https://github.com/nickytonline/web3-starter" %}
+<GitHubEmbed url="https://github.com/nickytonline/web3-starter" />
 
 I also decided to make the project my own and made some modifications. For one, I added another field for the message in the smart contract for storing a URL. I was doing this quickly, so just opted to use images from a funny site I love, [http.cat](https://http.cat).
 
@@ -37,7 +34,7 @@ If you're into TypeScript, there's a couple examples of declaration merging [lik
 
 The dapp is live running the contract off the [Rinkeby network](https://www.rinkeby.io/). Feel free to check out the dapp's source code.
 
-{% github "https://github.com/nickytonline/picture-portal" %}
+<GitHubEmbed url="https://github.com/nickytonline/picture-portal" />
 
 And while you're here, check out the live dapp at [pics.iamdeveloper.com](https://pics.iamdeveloper.com)!
 

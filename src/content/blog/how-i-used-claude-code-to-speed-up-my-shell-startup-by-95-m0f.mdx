@@ -1,20 +1,18 @@
----json
-{
-  "title": "How I Used Claude Code to Speed Up My Shell Startup by 95%",
-  "excerpt": "My terminal was sluggish. Every time I opened a new tab, there was this annoying delay before I could...",
-  "date": "2025-11-27T21:22:59Z",
-  "tags": [
-    "ai",
-    "zsh",
-    "bash",
-    "productivity"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqix8wncv76im46bvrhxp.jpg",
-  "canonical_url": "https://www.nickyt.co/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f/",
-  "reading_time_minutes": 7,
-  "template": "post"
-}
 ---
+title: "How I Used Claude Code to Speed Up My Shell Startup by 95%"
+excerpt: "My terminal was sluggish. Every time I opened a new tab, there was this annoying delay before I could..."
+date: "2025-11-27T21:22:59Z"
+tags:
+  - ai
+  - zsh
+  - bash
+  - productivity
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqix8wncv76im46bvrhxp.jpg"
+canonical_url: "https://www.nickyt.co/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f/"
+reading_time_minutes: 7
+template: "post"
+---
+import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
 
 My terminal was sluggish. Every time I opened a new tab, there was this annoying delay before I could start typing. I decided to dig into it, and with Claude Code's help, I went from a **770ms startup time to just 40ms**. That's a 19x improvement.
 
@@ -22,28 +20,24 @@ My terminal was sluggish. Every time I opened a new tab, there was this annoying
 
 It wasn't that I accumulated too much tooling. Most things I have in my .zshrc, I needed, but each thing I tacked on added to my shell startup time. I honestly hadn't looked into this and just lived with it. Then, John Lindquist posted this the other day so I figured, let Claude Code speed it up for me.
 
-{% embed "https://x.com/johnlindquist/status/1993037322984866168" %}
+<GenericEmbed url="https://x.com/johnlindquist/status/1993037322984866168" />
 
 ## Measuring the Baseline
 
 First thing I needed to know how bad it actually was:
 
 ```bash
-{% raw %}
 for i in 1 2 3 4 5; do /usr/bin/time zsh -i -c exit 2>&1; done
-{% endraw %}
 ```
 
 Yikes:
 
 ```bash
-{% raw %}
 0.94 real
 0.71 real
 0.74 real
 0.73 real
 0.72 real
-{% endraw %}
 ```
 
 **Average: ~770ms per shell startup.** Almost a full second just to open a terminal. Not good.
@@ -78,17 +72,14 @@ You only pay the cost once per session.
 Instead of this slow startup code:
 
 ```bash
-{% raw %}
 # Before: runs every shell startup (~400ms)
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 nvm use default --silent
-{% endraw %}
 ```
 
 now, I use wrapper functions:
 
 ```bash
-{% raw %}
 # After: only runs when you actually need node/npm/npx
 nvm() {
   unset -f nvm node npm npx
@@ -99,7 +90,6 @@ nvm() {
 node() { nvm use default --silent; unfunction node npm npx; node "$@"; }
 npm() { nvm use default --silent; unfunction node npm npx; npm "$@"; }
 npx() { nvm use default --silent; unfunction node npm npx; npx "$@"; }
-{% endraw %}
 ```
 
 **Update 2025-11-28: I scrapped [nvm](https://github.com/nvm-sh/nvm) in favour of [fnm](https://github.com/Schniz/fnm), so I've since removed the `nvm`, `node`, `npm` and `npx` wrapper functions. If you do use `nvm`, keep them.**
@@ -109,7 +99,6 @@ The `unset -f` and `unfunction` commands remove the wrapper after first use. Aft
 ### pyenv Gets the Same Treatment
 
 ```bash
-{% raw %}
 # Before
 eval "$(pyenv init -)"
 
@@ -119,7 +108,6 @@ pyenv() {
   eval "$(command pyenv init -)"
   pyenv "$@"
 }
-{% endraw %}
 ```
 
 First `pyenv` call takes ~150ms to initialize, then it's direct execution forever.
@@ -127,7 +115,6 @@ First `pyenv` call takes ~150ms to initialize, then it's direct execution foreve
 ### Google Cloud SDK
 
 ```bash
-{% raw %}
 gcloud() {
   unset -f gcloud gsutil bq
   [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ] && . "$HOME/.local/google-cloud-sdk/path.zsh.inc"
@@ -136,7 +123,6 @@ gcloud() {
 }
 gsutil() { gcloud; gsutil "$@"; }
 bq() { gcloud; bq "$@"; }
-{% endraw %}
 ```
 
 ### Homebrew Caching
@@ -144,7 +130,6 @@ bq() { gcloud; bq "$@"; }
 Homebrew's environment doesn't change often, so just cache it:
 
 ```bash
-{% raw %}
 # Before: subshell every time
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -153,7 +138,6 @@ if [[ ! -f ~/.zsh_brew_cache || ~/.zsh_brew_cache -ot /opt/homebrew/bin/brew ]];
   /opt/homebrew/bin/brew shellenv > ~/.zsh_brew_cache
 fi
 source ~/.zsh_brew_cache
-{% endraw %}
 ```
 
 ### API Key Laziness
@@ -161,16 +145,13 @@ source ~/.zsh_brew_cache
 I was hitting the macOS Keychain on every shell startup:
 
 ```bash
-{% raw %}
 # Before: slow keychain lookup every time
 export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
-{% endraw %}
 ```
 
 Since I only need this for npm stuff, I moved it into the npm wrapper:
 
 ```bash
-{% raw %}
 npm() {
   nvm use default --silent
   unfunction node npm npx
@@ -178,18 +159,15 @@ npm() {
     export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
   npm "$@"
 }
-{% endraw %}
 ```
 
 Update 2025-11-28: as mentioned above, I switched to [fnm](https://github.com/Schniz/fnm), so I changed this up since I removed the npm wrapper function. Now for my OpenAI API key, I just call a function whenever I need it instead:
 
 ```bash
-{% raw %}
 # === Lazy-load OPENAI_API_KEY ===
 openai_key() {
   export OPENAI_API_KEY=$(security find-generic-password -a $USER -s openai_api_key -w)
 }
-{% endraw %}
 ```
 
 More on the [macOS Keychain tip in my newsletter](https://one-tip-a-week.beehiiv.com/p/one-tip-a-week-securely-load-secrets-from-your-keychain).
@@ -206,19 +184,15 @@ I also cleaned up some basic stuff:
 After all the changes:
 
 ```bash
-{% raw %}
 for i in 1 2 3 4 5; do /usr/bin/time zsh -i -c exit 2>&1; done
-{% endraw %}
 ```
 
 ```bash
-{% raw %}
 0.06 real
 0.04 real
 0.04 real
 0.03 real
 0.04 real
-{% endraw %}
 ```
 
 **Average: ~40ms**
@@ -240,21 +214,17 @@ But it's once per terminal session and honestly barely noticeable compared to wh
 
 If your shell is slow, first measure the total startup time:
 ```bash
-{% raw %}
 time zsh -i -c exit
-{% endraw %}
 ```
 
 If it's over 200ms, you've got room to improve. To see exactly what's slow, profile your .zshrc or whatever shell you're using:
 
 ```bash
-{% raw %}
 # Add to top of .zshrc
 zmodload zsh/zprof
 
 # Add to bottom
 zprof
-{% endraw %}
 ```
 
 This breaks down which specific commands are eating up your startup time.
@@ -264,7 +234,6 @@ This breaks down which specific commands are eating up your startup time.
 Here's my updated shell with all the performance tweaks.
 
 ```bash
-{% raw %}
 # === Early exports (no subshells) ===
 export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPATH=$HOME/go
@@ -388,7 +357,6 @@ db() {
 glog() {
   git log --oneline --decorate --graph --color | less -R
 }
-{% endraw %}
 ```
 
 

@@ -1,23 +1,22 @@
----json
-{
-  "title": "dev.to’s Frontend: a brain dump in one act",
-  "excerpt": "An explanation to the best of my knowledge on all things front-end in the dev.to codebase",
-  "date": "2019-04-23T04:27:39Z",
-  "tags": [
-    "javascript",
-    "preact",
-    "webpack"
-  ],
-  "cover_image": "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6k8d3qedhotdzvk8qesq.jpeg",
-  "canonical_url": "https://www.nickyt.co/blog/dev-to-s-frontend-a-brain-dump-in-one-act-7mg/",
-  "reading_time_minutes": 8,
-  "template": "post"
-}
 ---
+title: "dev.to’s Frontend: a brain dump in one act"
+excerpt: "An explanation to the best of my knowledge on all things front-end in the dev.to codebase"
+date: "2019-04-23T04:27:39Z"
+tags:
+  - javascript
+  - preact
+  - webpack
+cover_image: "https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6k8d3qedhotdzvk8qesq.jpeg"
+canonical_url: "https://www.nickyt.co/blog/dev-to-s-frontend-a-brain-dump-in-one-act-7mg/"
+reading_time_minutes: 8
+template: "post"
+---
+import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";
+import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";
 
 There is currently an issue open to improve the frontend documentation (see [Frontend · DEV Docs](https://docs.dev.to/frontend/)) to get people onboarded quicker in the frontend. Big shout out to @rhymes for opening this issue!
 
-{% github "https://github.com/thepracticaldev/dev.to/issues/2507" %}
+<GitHubEmbed url="https://github.com/thepracticaldev/dev.to/issues/2507" />
 
 I decided to write this post because I’ll be contributing to this documentation issue and thought it would be beneficial for everyone, including myself. I’m hoping people will ask questions in the comments and/or fill in missing gaps in the post.
 
@@ -36,13 +35,11 @@ Scripts for webpack entry points are added to Ruby ERB templates, but they use t
 [dev.to/webpacker.yml at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/config/webpacker.yml)
 
 ``` yaml
-{% raw %}
 ...
 default: &default
   source_path: app/javascript
   source_entry_path: packs
 ...
-{% endraw %}
 ```
 
 Looking at the configuration above, this part of the frontend code base can be found in the `app/javascript` folder with webpack entry points found in the `app/javascript/packs` folder.
@@ -52,7 +49,6 @@ This represents the base configuration for webpack. If additional configuration 
 [dev.to/development.js at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/config/webpack/development.js)
 
 ``` javascript
-{% raw %}
 const environment = require('./environment');
 const config = environment.toWebpackConfig();
 
@@ -60,12 +56,11 @@ const config = environment.toWebpackConfig();
 config.devtool = 'eval-source-map';
 
 module.exports = config;
-{% endraw %}
 ```
 
 As the project continues to move forward, expect to see some more things client side becoming preactitized (I just made that up, boom!).
 
-{% github "https://github.com/thepracticaldev/dev.to/issues/354" %}
+<GitHubEmbed url="https://github.com/thepracticaldev/dev.to/issues/354" />
 
 ### An example of how Preact works in the frontend codebase
 
@@ -74,7 +69,6 @@ As the project continues to move forward, expect to see some more things client 
 [dev.to/application.html.erb at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/views/layouts/application.html.erb#L38)
 
 ``` html
-{% raw %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,7 +87,6 @@ As the project continues to move forward, expect to see some more things client 
       ...
       <%= javascript_pack_tag "Search", defer: true %>
 ...
-{% endraw %}
 ```
 
 2. The search bar is rendered server-side as well on initial page load. This is what I currently call ghetto server-side rendering (SSR) for Preact. I know that @ben wanted to add preact SSR at some point, but it wasn't that high a priority at the time. Maybe now it will rank higher as more components are created with preact.
@@ -101,7 +94,6 @@ As the project continues to move forward, expect to see some more things client 
 [dev.to/_top_bar.html.erb at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/views/layouts/_top_bar.html.erb#L12)
 
 ``` html
-{% raw %}
 ...
     <div id="nav-search-form-root">
       <div class="nav-search-form">
@@ -111,7 +103,6 @@ As the project continues to move forward, expect to see some more things client 
       </div>
     </div>
 ...
-{% endraw %}
 ```
 
 3. On the client-side once the DOM content has loaded, Preact takes over.
@@ -119,7 +110,6 @@ As the project continues to move forward, expect to see some more things client 
 [dev.to/Search.jsx at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/javascript/packs/Search.jsx#L5)
 
 ``` javascript
-{% raw %}
 import { h, render } from ‘preact’;
 import { Search } from ‘../src/components/Search’;
 
@@ -128,7 +118,6 @@ document.addEventListener(‘DOMContentLoaded’, () => {
 
   render(<Search />, root, root.firstElementChild);
 });
-{% endraw %}
 ```
 
 4. From there on in, all interactions with the Search box are client-side.
@@ -141,13 +130,11 @@ Aside from prefetching pages, InstantClick also allows you to customize what hap
 [dev.to/githubRepos.jsx at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/javascript/packs/githubRepos.jsx#L11)
 
 ``` javascript
-{% raw %}
 ...
 window.InstantClick.on('change', () => {
   loadElement();
 });
 ...
-{% endraw %}
 ```
 
 You can also decide whether or not to reevaluate a script in an InstantClick loaded page via the `data-no-instant` attribute. I don’t believe there are any examples in the code base that blacklist script reevaluation. You can also blacklist a link. Here is an example from the codebase.
@@ -155,7 +142,6 @@ You can also decide whether or not to reevaluate a script in an InstantClick loa
 [dev.to/buildCommentHTML.js.erb at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/assets/javascripts/utilities/buildCommentHTML.js.erb#L80)
 
 ``` html
-{% raw %}
 ...
 
 function actions(comment) {
@@ -169,7 +155,6 @@ function actions(comment) {
             </div>';
   } else {
 ...
-{% endraw %}
 ```
 
 For more information on this, see the [Events and script re-evaluation in InstantClick](http://instantclick.io/scripts) documentation.
@@ -182,7 +167,6 @@ The project uses eslint with the Prettier plugin. This means that all eslint rul
 As well, as mentioned above, there are some objects that live in the global scope, e.g. `Pusher`. We need to tell eslint that it is defined otherwise it will complain that it is not defined. This is where the eslint `globals` section comes in handy.
 
 ``` javascript
-{% raw %}
 ...
   globals: {
     InstantClick: false,
@@ -191,7 +175,6 @@ As well, as mentioned above, there are some objects that live in the global scop
     algoliasearch: false,
   }
 ...
-{% endraw %}
 ```
 
 
@@ -209,12 +192,12 @@ The Storybook documentation is quite good, but if you're looking for some exampl
 
 This is currently not deployed to Netlify, but there is an issue open for it.
 
-{% github "https://github.com/thepracticaldev/dev.to/issues/338" %}
+<GitHubEmbed url="https://github.com/thepracticaldev/dev.to/issues/338" />
 
 This part of the code base probably needs some love. There is probably a lot of low hanging fruit in here for frontends interested in contributing as I believe there are several components that are not in Storybook.
 
 # Theming
-{% link "https://dev.to/devteam/contributors-wanted-night-mode-themes-on-dev-i8n" %}
+<DevLinkEmbed url="https://dev.to/devteam/contributors-wanted-night-mode-themes-on-dev-i8n" />
 
 I was not a part of this initiative, but I know it uses CSS variables heavily for theming, with fallbacks. A great way to do modern theming.
 
@@ -227,7 +210,6 @@ The magic of theme toggling can be seen in action in the user configuration. Her
 [dev.to/_user_config.html.erb at master · thepracticaldev/dev.to · GitHub](https://github.com/thepracticaldev/dev.to/blob/master/app/views/layouts/_user_config.html.erb#L8)
 
 ``` php
-{% raw %}
 <script>
   try {
     var bodyClass = localStorage.getItem('config_body_class');
@@ -253,7 +235,6 @@ The magic of theme toggling can be seen in action in the user configuration. Her
       console.log(e)
   }
 </script>
-{% endraw %}
 ```
 
 So if you’re contributing to anything CSS related in the project, keep in the back of your head if you need theming applied to what you’re working on. Don't be shy, just ask if it's not obvious in the issue. @venarius has worked a lot on this, so he’s probably a good person to talk to about theming.
