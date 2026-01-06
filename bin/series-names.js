@@ -1,5 +1,5 @@
 // Auto-generated. Do not edit manually!
-module.exports = {
+export default {
   3242: "home office setup",
   3248: "my codepens",
   3255: "typescript",
