@@ -68,7 +68,6 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-src/data
 .env.local
 
 # eleventy specific
