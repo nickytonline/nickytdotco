@@ -32,12 +32,6 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/uses"
-to = "/pages/uses"
-status = 302
-force = true
-
-[[redirects]]
 from = "/news"
 to = "https://OneTipAWeek.com"
 status = 302
