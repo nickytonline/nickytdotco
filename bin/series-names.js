@@ -24,5 +24,6 @@ module.exports = {
   "29975": "GitHub Copilot",
   "31534": "Go",
   "33658": "MCP",
-  "34295": "Advent of AI 2025"
+  "34295": "Advent of AI 2025",
+  "34910": "Fullstack Learnings"
 };
