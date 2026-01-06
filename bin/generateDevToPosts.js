@@ -391,7 +391,7 @@ const VSCODE_TIPS_POSTS_DIRECTORY = path.join(
 const POSTS_IMAGES_PUBLIC_DIRECTORY = "/images/posts";
 const POSTS_IMAGES_DIRECTORY = path.join(
   __dirname,
-  "../src",
+  "../public",
   POSTS_IMAGES_PUBLIC_DIRECTORY,
 );
 const EMBEDDED_POSTS_MARKUP_FILE = path.join(
