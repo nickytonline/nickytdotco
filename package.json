@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.0",
-    "@astrojs/mdx": "^3.1.9",
-    "@astrojs/netlify": "^5.5.0",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/netlify": "^6.6.3",
     "@astrojs/rss": "^4.0.14",
-    "astro": "^4.16.0",
+    "astro": "^5.16.6",
     "luxon": "^3.7.2",
     "marked": "^12.0.1",
     "remark-directive": "^4.0.0",
