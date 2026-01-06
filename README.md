@@ -12,23 +12,22 @@ This is the source code for the website of Nick Taylor, built using <a href="htt
 npm install
 ```
 
-### Serve the site locally in watch mode
+### Run in dev mode
 
 ```bash
-npm start
+npm run dev
 ```
 
 ### Build a production version of the site
 
 ```bash
-npm run production
+npm run build
 ```
 
 #### Test the production site locally
 
 ```bash
-cd dist
-npx serve
+npm run preview
 ```
 
 ## Licensing
