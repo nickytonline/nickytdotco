@@ -27,7 +27,7 @@ My other focus was the dev.to repository.
 
 {% github "https://github.com/thepracticaldev/dev.to" %}
 
-I was accepted as an early contributor before the [project went open source](https://dev.to/ben/devto-is-now-open-source-5n1) and continued to contribute after it went public. It felt really good to be the [first contributor outside of the core team](https://dev.to/jess/dev-monthly-report--march-2018-579p) to have a PR merged.</p>
+I was accepted as an early contributor before the [project went open source](https://dev.to/ben/devto-is-now-open-source-5n1) and continued to contribute after it went public. It felt really good to be the [first contributor outside of the core team](https://dev.to/jess/dev-monthly-report--march-2018-579p) to have a PR merged.
 
 {% link "https://dev.to/jess/dev-monthly-report--march-2018-579p" %}
 Although I didn’t contribute to TypeScript or VS Code, I’m still very happy with this year’s contributions.

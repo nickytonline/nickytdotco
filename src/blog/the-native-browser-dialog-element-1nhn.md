@@ -1,7 +1,7 @@
 ---json
 {
   "title": "Unlocking the Power of HTML's Native Browser Dialog Element",
-  "excerpt": "All the major browsers now support the &lt;dialog &gt; element. Why add this HTML element? User land...",
+  "excerpt": "All the major browsers now support the &lt;dialog /&gt; element. Why add this HTML element? User land...",
   "date": "2024-01-23T15:32:20Z",
   "tags": [
     "html",
@@ -15,12 +15,12 @@
   "template": "post",
   "series": {
     "name": "Fullstack Learnings",
-    "collection_id": 26157
+    "collection_id": 34910
   }
 }
 ---
 
-All the major browsers now support the `<dialog >` element. Why add this HTML element? User land code, code that developers write to fill in gaps of the browser, was doing similar things repeatedly, especially around focus trapping, and browser engines responded by adding this functionality directly in the browser.
+All the major browsers now support the `<dialog />` element. Why add this HTML element? User land code, code that developers write to fill in gaps of the browser, was doing similar things repeatedly, especially around focus trapping, and browser engines responded by adding this functionality directly in the browser.
 
 ## Focus Trapping
 
@@ -48,7 +48,7 @@ _Note that you'll need to [view this CodePen in full view](https://codepen.io/ni
 
 Not only do you get focus trapping, you also get modal close functionality that people have come to expect via the Escape key.
 
-All of that is already amazing, but another common thing people were doing in user land was adding a background to block out users from interacting with the page. With the `<dialog>` element, we can add a `::backdrop` pseudo-element that does this for you. All you need to do is style it. In the CodePen above, uncomment out this code in the CSS panel to see this in action.
+All of that is already amazing, but another common thing people were doing in user land was adding a background to block out users from interacting with the page. With the `<dialog />` element, we can add a `::backdrop` pseudo-element that does this for you. All you need to do is style it. In the CodePen above, uncomment out this code in the CSS panel to see this in action.
 
 ```css
 {% raw %}
@@ -91,7 +91,7 @@ The web platform keeps getting better. It's great to see pain points in user lan
 
 - [Using JavaScript to trap focus in an element](https://hidde.blog/using-javascript-to-trap-focus-in-an-element/)
 - [MDN - &lt;dialog&gt;: The Dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
-- GitHub issue [<dialog> element should trap focus](https://github.com/w3c/html/issues/1514) from the _w3c/html_ repository.
+- GitHub issue [<dialog /> element should trap focus](https://github.com/w3c/html/issues/1514) from the _w3c/html_ repository.
 - [Dialog - web.dev](https://web.dev/learn/html/dialog)
 
 Stay saucy peeps!
