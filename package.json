@@ -7,13 +7,14 @@
     "node": ">=18.13.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "dev": "npm run sass:process && npm run sass:watch & astro dev",
+    "start": "npm run sass:process && astro dev",
+    "build": "npm run sass:process && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "sass:tokens": "json-to-scss src/_data/tokens.json src/scss/_tokens.scss",
-    "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/styles/global.css --style=compressed"
+    "sass:process": "npm run sass:tokens && sass src/scss/global.scss public/styles/global.css --style=compressed",
+    "sass:watch": "sass src/scss/global.scss public/styles/global.css --style=compressed --watch"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.0",
