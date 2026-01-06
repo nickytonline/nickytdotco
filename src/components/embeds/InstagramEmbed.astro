@@ -4,11 +4,19 @@ interface Props {
 }
 
 const { url } = Astro.props;
+
+let instagramUrl: URL;
+
+if (url.startsWith("http")) {
+  instagramUrl = new URL(url);
+} else {
+  instagramUrl = new URL(url, "https://www.instagram.com/p/");
+}
 ---
 
 <blockquote
   class="instagram-media"
-  data-instgrm-permalink={url}
+  data-instgrm-permalink={instagramUrl.toString()}
   data-instgrm-version="14"
 >
   <a href={url}>View this post on Instagram</a>
