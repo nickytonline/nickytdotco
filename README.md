@@ -2,7 +2,7 @@
 
 # Welcome
 
-This is the source code for the web site of Nick Taylor built using the [Eleventy](https://www.11ty.dev/) static site generator. It uses [Andy Bell](https://piccalil.li/)'s [Hylia template](https://github.com/hankchizljaw/hylia). I've made tweaks to it and will probably make more over time, but just wanted to give Andy a shout out for his awesome template.
+This is the source code for the website of Nick Taylor, built using <a href="https://astro.build/">Astro</a>, a modern web framework for building fast, content-focused websites. The codebase was migrated from Eleventy (11ty) and now leverages Astro's hybrid rendering capabilities (static, server, and Islands/SPA) and <a href="https://docs.astro.build/en/guides/integrations-guide/mdx/">MDX</a> for content.
 
 ## Terminal commands
 
