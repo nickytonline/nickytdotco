@@ -21,4 +21,15 @@ if (url.startsWith("http")) {
 >
   <a href={url}>View this post on Instagram</a>
 </blockquote>
-<script is:inline async src="//www.instagram.com/embed.js"></script>
+<script>
+  const scriptSrc = "//www.instagram.com/embed.js";
+  if (!document.querySelector(`script[src*="instagram.com/embed.js"]`)) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = scriptSrc;
+    document.head.appendChild(script);
+  } else if ((window as any).instgrm) {
+    // Re-process embeds if script already loaded
+    (window as any).instgrm.Embeds.process();
+  }
+</script>

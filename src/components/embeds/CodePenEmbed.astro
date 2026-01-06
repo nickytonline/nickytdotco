@@ -25,4 +25,15 @@ const [, user, , codepenId] = pathname.split("/");
     >) on <a href="https://codepen.io">CodePen</a>.
   </span>
 </p>
-<script is:inline async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<script>
+  const scriptSrc = "https://static.codepen.io/assets/embed/ei.js";
+  if (!document.querySelector(`script[src*="codepen.io/assets/embed"]`)) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = scriptSrc;
+    document.head.appendChild(script);
+  } else if ((window as any).__CPEmbed) {
+    // Re-process embeds if script already loaded
+    (window as any).__CPEmbed();
+  }
+</script>
