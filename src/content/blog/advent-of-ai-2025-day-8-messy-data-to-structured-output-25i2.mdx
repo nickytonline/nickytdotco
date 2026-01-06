@@ -1,0 +1,156 @@
+---
+title: 'Advent of AI 2025 - Day 8: Messy Data to Structured Output'
+excerpt: >-
+  I've edited this post, but AI helped. These are meant to be quick posts
+  related to the Advent of AI....
+date: '2025-12-11T03:45:27Z'
+tags:
+  - adventofai
+  - netlify
+  - mcp
+  - ai
+cover_image: >-
+  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fq3msvefjqmvvkif49x2m.jpg
+canonical_url: >-
+  https://dev.to/nickytonline/advent-of-ai-2025-day-8-messy-data-to-structured-output-25i2
+reading_time_minutes: 4
+template: post
+series:
+  name: Advent of AI 2025
+  collection_id: 34295
+---
+import Embed from "@/components/Embed.astro";
+
+I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
+
+The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
+
+<Embed url="https://github.com/block/goose" />
+
+## Day 8: Structured Data is All About Examples
+
+For Day 8 of Advent of AI, I tackled the classic "messy napkin notes" problem. Don't know if it's classic but it's definitely classic Advent of Ai 2025 classic. The festival coordinator Dmitri had a vendor list scribbled on a coffee-stained napkin, and I needed to turn it into structured JSON, then a fully styled HTML site.
+
+This challenge was easier than some of the previous days, but it highlighted an important lesson: when working with AI to generate structured data, good examples are everything.
+
+## The Messy Vendor List
+
+Here's what I was working with:
+
+```
+╔═══════════════════════════════════════════════════════════╗
+║          DMITRI'S NAPKIN NOTES (with stains!)            ║
+╠═══════════════════════════════════════════════════════════╣
+║  Joes hot cocoa - main plaza - hot drinks & pastries     ║
+║  TACO TRUCK DEL FUEGO!!! north entrance mexican food     ║
+║  sweet treats bakery, near the ice rink... cookies       ║
+║  Pierogi Palace - east side - polish food                ║
+║  Waffle Wonderland next to storytelling tent WAFFLES     ║
+║  mamas meatballs - food court area - italian             ║
+║  The Pretzel Pretender - west plaza - pretzels           ║
+║  Curry in a Hurry mobile cart roams around               ║
+║  Sushi on Ice - near skating rink - sushi                ║
+║  PIZZA PALACE - main stage area - pizza slices           ║
+╚═══════════════════════════════════════════════════════════╝
+```
+
+All caps, inconsistent capitalization, coffee stains, and wildly varying formatting. Perfect.
+
+## The Key: Show, Don't Tell
+
+Instead of trying to explain in words how I wanted the JSON structured, I gave Goose one solid example:
+
+```json
+{
+  "vendors": [
+    {
+      "name": "Joe's Hot Cocoa",
+      "location": "Main Plaza",
+      "cuisine": "Hot drinks & pastries"
+    }
+  ]
+}
+```
+
+That single example showed Goose exactly what I wanted:
+- Proper name capitalization (title case with apostrophes handled correctly)
+- Location formatting (major words capitalized, "the" stays lowercase)
+- When to include cuisine vs when to omit it
+
+The result? Goose nailed the structured data on the first try. All ten vendors properly formatted, with "Curry in a Hurry" correctly having no cuisine field since it wasn't in the napkin notes.
+
+## From Console to Beautiful Website
+
+Once I had the structured JSON, I asked Goose to update the TypeScript script to generate an HTML page with light and dark theme support. I pointed it to the styling from my Day 4 winter festival site as reference.
+
+Goose created a complete page with:
+- Light/dark theme toggle that persists in localStorage
+- Animated snowflakes with wind drift
+- Responsive vendor cards with cuisine-specific emoji
+- Structured data (Schema.org JSON-LD) for SEO
+- Scroll progress bar and smooth animations
+
+Everything styled with the same winter festival aesthetic from Day 4.
+
+![deployed site](https://www.nickyt.co/images/posts/_uploads_articles_g42uhsx7bf5aqf38349b.gif)
+
+## The Netlify MCP Deploy
+
+Here's where it got really smooth. Instead of manually deploying, I used the [Netlify MCP server](https://docs.netlify.com/build/build-with-ai/netlify-mcp-server/) in Goose. One prompt to deploy and live!
+
+The site is available at [https://winter-festival-nickyt.netlify.app](https://winter-festival-nickyt.netlify.app) within seconds.
+
+Note this works really well with the [Vercel MCP server](https://vercel.com/docs/mcp/vercel-mcp) as well.
+
+## Why This Worked So Well
+
+Three things made Day 8 surprisingly smooth:
+
+**1. Concrete examples beat abstract descriptions every time.** Instead of explaining "capitalize proper nouns but leave articles lowercase," I just showed one formatted entry and let Goose figure out the pattern.
+
+**2. Reference existing work when possible.** Pointing Goose to my Day 4 styling meant I didn't need to describe what "winter festival themed" meant. It could see it.
+
+**3. MCP servers are useful.** The Netlify MCP integration turned a multi-step deploy process into a single command. No leaving the terminal, no manual uploads, just "deploy this."
+
+## The Full Flow
+
+Here's what the actual workflow looked like:
+
+```bash
+# Initial structured data generation
+User: Take this messy vendor list and structure it as JSON...
+Goose: *creates vendors.json with proper formatting*
+
+# Refinement
+User: If there's no cuisine, omit the property entirely
+Goose: *updates JSON to skip empty fields*
+
+# HTML generation and deploy
+User: Update the script to generate an HTML page with theme toggle. 
+      Look at ../day-4/index.html for styling. Deploy with Netlify MCP.
+Goose: *generates full HTML, uploads to Netlify*
+```
+
+The whole thing took maybe 15 minutes.
+
+## What I Shipped
+
+Everything's in my [repo's day-8 folder](https://github.com/nickytonline/advent-of-ai-2025/tree/main/day-8):
+- `vendors.json` - Clean structured data
+- `parse-vendors.ts` - TypeScript that generates the HTML
+- `index.html` - The generated site
+- Live site: [https://winter-festival-nickyt.netlify.app](https://winter-festival-nickyt.netlify.app)
+
+<Embed url="https://github.com/nickytonline/advent-of-ai-2025" />
+
+## Wrapping Up
+
+When you need AI to generate structured data, skip the long-winded explanations. Give it one or more good examples that shows exactly what you want. The pattern recognition in modern LLMs is really good at "oh, I see what you want" when you show rather than tell.
+
+And if you're using Goose, definitely explore the MCP ecosystem. Having tools like Netlify available directly in your agent makes workflows way smoother than jumping between tools.
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Until the next one!
+
+Photo by <a href="https://unsplash.com/@martijnbaudoin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martijn Baudoin</a> on <a href="https://unsplash.com/photos/audio-mixer-set-4h0HqC3K4-c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

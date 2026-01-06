@@ -1,6 +1,6 @@
 [build]
 publish = "dist"
-command = "npm run production"
+command = "npm run build"
 
 [[headers]]
 for = "/*"

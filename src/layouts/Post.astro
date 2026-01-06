@@ -1,0 +1,74 @@
+---
+import Base from "./Base.astro";
+import PostIntro from "../components/PostIntro.astro";
+import SeriesNavigation from "../components/SeriesNavigation.astro";
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const currentUrl = `/blog/${entry.slug}`;
+---
+
+<Base
+  title={entry.data.title}
+  metaDesc={entry.data.excerpt || entry.data.description}
+  excerpt={entry.data.excerpt}
+  canonical_url={entry.data.canonical_url}
+  cover_image={entry.data.cover_image || undefined}
+  reading_time_minutes={entry.data.reading_time_minutes}
+>
+  <main id="main-content" tabindex="-1">
+    <article class="[ post ] [ h-entry ]">
+      <PostIntro
+        title={entry.data.title}
+        cover_image={entry.data.cover_image}
+        date={entry.data.date}
+        reading_time_minutes={entry.data.reading_time_minutes}
+        fileSlug={entry.slug}
+        url={currentUrl}
+        canonical_url={entry.data.canonical_url}
+      />
+
+      {
+        entry.data.series && (
+          <div class="inner-wrapper">
+            <SeriesNavigation
+              series={entry.data.series}
+              currentUrl={currentUrl}
+            />
+          </div>
+        )
+      }
+
+      <div
+        class="[ post__body ] [ inner-wrapper ] [ leading-loose text-500 ] [ sf-flow ] [ e-content ]"
+      >
+        <Content />
+      </div>
+
+      {
+        entry.data.tags && entry.data.tags.length > 0 && (
+          <footer class="[ post__footer ] [ pad-top-500 pad-bottom-500 ]">
+            <div class="inner-wrapper">
+              <div class="[ nav ] [ box-flex align-center flex-wrap ]">
+                <h2 class="font-base text-600 weight-mid">tags</h2>
+                <ul class="[ nav__list ] [ box-flex align-center pad-left-400 flex-wrap ] [ p-category ]">
+                  {entry.data.tags.map((tag) => (
+                    <li class="nav__item tag">
+                      <a href={`/tags/${tag}`}>{tag}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </footer>
+        )
+      }
+    </article>
+  </main>
+</Base>

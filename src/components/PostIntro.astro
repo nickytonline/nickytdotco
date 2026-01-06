@@ -1,0 +1,109 @@
+---
+import { site } from '../data/site';
+import { dateFilter, w3DateFilter } from '../utils/filters';
+
+export interface Props {
+  title: string;
+  cover_image?: string | null;
+  date?: Date;
+  reading_time_minutes?: number;
+  fileSlug: string;
+  url: string;
+  canonical_url?: string;
+}
+
+const {
+  title,
+  cover_image,
+  date,
+  reading_time_minutes,
+  fileSlug,
+  url
+} = Astro.props;
+
+// Generate boost links
+const intentToTweet = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  `${title} by ${site.twitterHandle} ${site.url}${url}`
+)}`;
+
+const intentToLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+  site.url + url
+)}`;
+
+const intentToToot = `https://toot.kytta.dev/?text=${encodeURIComponent(
+  `${title} by ${site.mastodonHandle} ${site.url}${url}`
+)}`;
+
+const intentToBluesky = `https://bsky.app/intent/compose?text=${encodeURIComponent(
+  `${title} ${site.url}${url}`
+)}`;
+
+const foremBoostLink = `https://dev.to/nickytonline/${fileSlug}`;
+---
+
+<header>
+  <div class="[ inner-wrapper ] [ sf-flow ]">
+    {cover_image && (
+      <img
+        src={cover_image}
+        alt={title}
+        class="[ intro__image ] [ w-full ]"
+        data-not-lazy
+      />
+    )}
+    <h1 class="[ intro__heading text-800 md:text-900 leading-tight p-name ]">{title}</h1>
+
+    <div class="box-flex gap-base flex-wrap">
+      <a href={foremBoostLink} class="boost-link">Boost on DEV</a>
+      <a href={intentToToot} class="boost-link">Toot it!</a>
+      <a href={intentToBluesky} class="boost-link">Share on Bluesky</a>
+      <a href={intentToTweet} class="boost-link">Tweet It!</a>
+      <a href={intentToLinkedIn} class="boost-link">Share on LinkedIn</a>
+    </div>
+
+    <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]">
+      <p class="intro__meta text-500 leading-tight">
+        {date && (
+          <span class="box-flex gap-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-calendar">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <time datetime={w3DateFilter(date)} class="dt-published">{dateFilter(date)}</time>
+          </span>
+        )}
+        {reading_time_minutes && (
+          <span class="box-flex gap-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-clock">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            {reading_time_minutes} minute read
+          </span>
+        )}
+      </p>
+    </div>
+  </div>
+</header>

@@ -3,11 +3,16 @@
  * One-time script to add series data to all existing posts
  * This fetches ALL posts from dev.to and updates their frontmatter with series information
  */
-require("dotenv").config();
+import "dotenv/config";
+import path from "path";
+import { promises as fs } from "fs";
+import { fileURLToPath } from "url";
+import yaml from "js-yaml";
 
-const path = require("path");
-const fs = require("fs").promises;
 const { DEV_API_KEY } = process.env;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const DEV_TO_API_URL = "https://dev.to/api";
 const POSTS_DIRECTORY = path.join(__dirname, "../src/blog");
@@ -100,24 +105,24 @@ function parseDevToUrl(canonicalUrl) {
  */
 async function updatePostWithSeries(filePath, seriesData) {
   const content = await fs.readFile(filePath, 'utf-8');
-  
+
   // Extract frontmatter and body
-  const match = content.match(/^---json\n([\s\S]+?)\n---\n([\s\S]*)$/);
+  const match = content.match(/^---\n([\s\S]+?)\n---\n([\s\S]*)$/);
   if (!match) {
     console.warn(`Could not parse frontmatter in ${filePath}`);
     return false;
   }
-  
-  const frontmatter = JSON.parse(match[1]);
+
+  const frontmatter = yaml.load(match[1]);
   const body = match[2];
-  
+
   // Add series data
   frontmatter.series = seriesData;
-  
+
   // Write back
-  const updatedContent = `---json\n${JSON.stringify(frontmatter, null, 2)}\n---\n${body}`;
+  const updatedContent = `---\n${yaml.dump(frontmatter)}---\n${body}`;
   await fs.writeFile(filePath, updatedContent);
-  
+
   return true;
 }
 
@@ -142,15 +147,15 @@ async function syncAllPostsWithSeries() {
     try {
       // Read the frontmatter
       const content = await fs.readFile(filePath, 'utf-8');
-      const match = content.match(/^---json\n([\s\S]+?)\n---/);
-      
+      const match = content.match(/^---\n([\s\S]+?)\n---/);
+
       if (!match) {
         console.log(`${processed}/${mdFiles.length} ⚠️  ${file}: No frontmatter found`);
         skipped++;
         continue;
       }
-      
-      const frontmatter = JSON.parse(match[1]);
+
+      const frontmatter = yaml.load(match[1]);
       
       // Skip if already has series with collection_id
       if (frontmatter.series && frontmatter.series.collection_id) {
