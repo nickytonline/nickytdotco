@@ -1,0 +1,162 @@
+---
+title: 'Advent of AI 2025 - Day 14: Agent Skills'
+excerpt: >-
+  I've edited this post, but AI helped. These are meant to be quick posts
+  related to the Advent of AI....
+date: '2025-12-19T12:49:52Z'
+tags:
+  - adventofai
+  - ai
+  - opensource
+  - goose
+cover_image: >-
+  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fymd4a4yqwmhyppj2xgsp.jpg
+canonical_url: https://www.nickyt.co/blog/advent-of-ai-2025-day-14-agent-skills-4d48/
+reading_time_minutes: 5
+template: post
+series:
+  name: Advent of AI 2025
+  collection_id: 34295
+---
+import Embed from "@/components/Embed.astro";
+
+I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post.
+
+The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
+
+<Embed url="https://github.com/block/goose" />
+
+[Advent of AI day 14](https://adventofai.dev/challenges/14) is about agent skills. Goose now supports the [open standard for agent skills](https://agentskills.io).
+
+Here's [my day 14 submission](https://github.com/nickytonline/advent-of-ai-2025/tree/main/day-14).
+
+Agent Skills are basically folders with instructions that AI agents can load when they need them. The core is a SKILL.md file with YAML frontmatter that has a name and description. The agent scans those fields at startup to decide if a skill is relevant, then loads the full instructions when it needs them.
+
+The format was originally developed by Anthropic for Claude, but they released it as an open standard. Now tools like Goose, Claude Code, Cursor, and others are adopting it. Even OpenAI quietly adopted the same structure in ChatGPT and Codex CLI.
+
+## Skills in Goose
+
+Goose has built-in support for skills through a platform extension. It's enabled by default and automatically discovers skills at startup from `~/.config/goose/skills/` (or `~/.claude/skills/` if you want to share with Claude Desktop).
+
+When you ask Goose to do something, it checks if any skills match your request based on the description field. If one matches, Goose loads the full SKILL.md file and follows those instructions. The skills docs show an example of a production deployment skill that enforces a pre-deployment checklist before running any deployment commands.
+
+This is different from recipes. Recipes are for specific parameterized tasks you trigger explicitly. Skills are contextual expertise that Goose loads automatically when relevant.
+
+<Embed url="https://dev.to/nickytonline/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg" />
+
+## What I built
+
+For Day 14, I built a complete festival operations skill system. Started with one monolithic skill covering customer experience, security, vendor management, lost & found, and marketing. Then broke it into four specialized skills that reference each other.
+
+The skills I created:
+
+- `customer-experience`: Madame Zelda's expertise on handling difficult customers, queue management, VIP service
+- `security-vendor-management`: Marcus's protocols for emergency codes, vendor relations, safety
+- `lost-and-found`: Maria's system for item tracking, fraud prevention, pattern recognition
+- `festival-marketing`: Elena's communications protocols and emergency response
+
+Each skill has its own SKILL.md file with specific expertise, plus templates and checklists in a resources folder. The customer experience skill has decision trees for complaint resolution and personality types. Security has emergency code protocols (Code Yellow for lost children, Code Blue for medical, etc.). Lost & found has a four-step intake process with fraud prevention steps.
+
+### Cross-skill references
+
+Skills reference each other using `[See: skill-name]` notation. When a customer issue requires security, the customer experience skill points to security-vendor-management. When a lost child situation happens, security references lost-and-found. This creates a network of expertise rather than isolated documents.
+
+### The structure
+
+Here's what a basic skill looks like:
+
+```markdown
+---
+name: customer-experience
+description: Expert customer service guidance for managing guest interactions, queue flow, and creating memorable festival experiences
+---
+
+# Customer Experience Expertise
+
+**Expert:** Madame Zelda  
+**Specialty:** Guest Relations, Queue Management, VIP Service
+
+## Handling Difficult Customers
+
+### The Three-Step Approach
+
+1. **Acknowledge First** - Validate feelings before proposing solutions
+2. **Never Say 'No' - Offer Alternatives**  
+3. **Turn Complaints into Compliments**
+
+### Wait Time Recovery Protocol
+
+If someone has been waiting 20+ minutes:
+- Immediately offer "VIP reading" to bump them ahead
+- Acknowledge the wait explicitly
+- Add extra value
+- Create a memorable moment
+```
+
+The description is what the agent uses to decide if it needs the skill. Be specific. "Expert customer service guidance for managing guest interactions, queue flow, and creating memorable festival experiences" tells the agent exactly when to load it.
+
+### Executable scripts
+
+I added four Node.js scripts for automation:
+
+- Incident report generator (interactive prompts, auto-generates report numbers)
+- Lost item logger (fast intake, auto-priority assignment, storage recommendations)
+- Vendor checklist validator (compliance checking, pass/fail determination)
+- Emergency notifier (mock simulation of multi-channel alerts)
+
+The scripts live in `scripts/` directories within each skill folder. The agent can reference them in the SKILL.md instructions or run them directly.
+
+### Skill development tools
+
+Built three meta-tools in `_skill-tools/`:
+
+`skill-generator-guide.md` is a meta-skill for creating new skills. It walks through interviewing an expert, extracting knowledge, and generating the SKILL.md file. You ask Goose "Help me create a skill for [domain]" and it uses this guide to interview you.
+
+`skill-testing-checklist.md` is a quality validation framework. Eight assessment categories: completeness, actionability, format consistency, cross-skill integration, scenario coverage, technical validation, user experience, and maintenance. Total score out of 102 points. 75+ is good quality, 90+ is production ready.
+
+`architecture.md` documents the technical design. Design principles, architecture layers, directory structure standards, cross-skill referencing patterns, script integration guidelines, testing strategies, deployment procedures.
+
+### Where skills live
+
+In Goose and Claude Code, skills go in:
+
+- `~/.config/goose/skills/` for Goose
+- `~/.claude/skills/` for Claude Desktop
+
+The agent automatically discovers anything in those directories. You can also use `.claude/skills/` in a project directory for project-specific skills.
+
+Skills are compatible between Goose and Claude Desktop because they both use the same open standard format.
+
+## Why this matters
+
+Before skills, you had to write elaborate prompts every time. With skills, you package knowledge once and the agent loads it automatically when relevant.
+
+The open standard is the interesting part. Write a skill once, use it across multiple AI tools. No vendor lock-in. Skills can be shared through version control.
+
+## Do Skills Kill MCPs?
+
+TLDR; no. Skills teach agents how to work; MCPs give them the power to actually do it.
+
+Read more about this from Angie Jones (@techgirl1908) great article on it.
+
+<Embed url="https://dev.to/goose_oss/did-skills-kill-mcp-3lk1" />
+
+## Testing the system
+
+Test scenarios:
+
+- "A child is lost at the festival" triggers Code Yellow protocol from security
+- "How do I handle a vendor payment dispute?" pulls vendor management protocols
+- "I need to announce a weather delay" uses emergency communication template
+- "A customer has been waiting 25 minutes and is upset" applies wait time recovery protocol
+- "Someone claims they lost their phone" triggers verification protocol from lost & found
+
+The cross-references work. Security knows to reference lost & found for lost children. Customer experience knows to reference security for safety issues. Marketing references security for emergency communications.
+
+You can check out the complete skill system in my repo: https://github.com/nickytonline/advent-of-ai-2025/tree/main/day-14
+
+More about Goose skills: https://block.github.io/goose/docs/mcp/skills-mcp/
+
+If you want to stay in touch, all my socials are on nickyt.online. Until the next one!
+
+Photo by <a href="https://unsplash.com/@vxs1on?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K C</a> on <a href="https://unsplash.com/photos/white-swan-in-tilt-shift-lens-v5H3_wIeoqU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

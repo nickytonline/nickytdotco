@@ -1,0 +1,196 @@
+---
+title: 'Advent of AI - Day 13: Goose Terminal Integration'
+excerpt: >-
+  I've edited this post, but AI helped. These are meant to be quick posts for
+  the Advent of AI. If I'm...
+date: '2025-12-19T00:56:22Z'
+tags:
+  - adventofai
+  - goose
+  - cli
+  - ai
+cover_image: >-
+  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgk5r9iufjd71d6b6m7fn.jpg
+canonical_url: >-
+  https://www.nickyt.co/blog/advent-of-ai-day-13-goose-terminal-integration-145p/
+reading_time_minutes: 5
+template: post
+series:
+  name: Advent of AI 2025
+  collection_id: 34295
+---
+import Embed from "@/components/Embed.astro";
+
+I've edited this post, but AI helped. These are meant to be quick posts for the Advent of AI. If I'm doing one of these each day, I don't have time to spend a couple hours on each post.
+
+The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
+
+<Embed url="https://github.com/block/goose" />
+
+## The Challenge: Terminal Integration
+
+[Advent of AI day 13](https://adventofai.dev/challenges/13) is about integrating Goose directly into your terminal. I tried it for the first time today, and honestly, it confused me at first. I'm used to agent CLIs like Codex CLI, Claude Code, or Goose's own REPL where you enter a session, have a back-and-forth conversation, and then exit when you're done.
+
+Terminal integration with `@goose` works differently. It took me a bit to understand what it's actually for.
+
+## What I Expected vs What I Got
+
+When I first ran `@goose "help me with this"`, I expected it to drop me into a conversational session. Instead, it answered my question and... that was it. Back to my normal terminal prompt. No active session indicator, no "you are now talking to Goose" feedback.
+
+I thought "okay, so it's just a fancy way to ask one-off questions?" That seemed useful but not revolutionary. The [terminal integration docs](https://block.github.io/goose/docs/guides/terminal-integration/) mentioned persistent sessions, but it wasn't obvious how that worked in practice.
+
+## The Difference: Ambient vs Active
+
+Here's what I figured out. Terminal integration is a fundamentally different model than traditional agent CLIs:
+
+**Traditional Agent CLIs (Aider, Claude Code, Goose REPL)**
+- You enter a session
+- Back-and-forth conversation
+- Blocking - you're "in it" until you exit
+- When you're done, you exit
+- Session ends
+
+**Terminal Integration (`@goose`)**
+- No explicit session entry/exit
+- You work normally in your terminal
+- Call `@goose` when you need it
+- It responds, then you continue your normal work
+- Session persists in the background
+- Call it again whenever - could be 5 seconds later, could be 5 minutes later
+- Has full context from the session when you do
+
+What clicked for me: **it's ambient assistance rather than active pairing.**
+
+You don't have to commit to "I'm working with an AI now." You just work normally, and when you need help, it's there. No context switch, no blocking conversation, no "am I done with this session?" decision.
+
+## Setting It Up
+
+The setup is straightforward. Add this to your shell config:
+
+```bash
+# For zsh (add to ~/.zshrc)
+eval "$(goose term init zsh)"
+```
+
+Note: The assumption is you've installed the goose CLI. If you haven't, run `curl -fsSL https://github.com/block/goose/releases/download/stable/download_cli.sh | bash`
+
+Restart your terminal or source the config, and you're done. The docs cover bash, fish, and PowerShell too.
+
+I'm using Ghostty on macOS, but this works with any terminal emulator.
+
+## How It Actually Works
+
+Each terminal window gets its own Goose session that lasts until you close that window. When you run `@goose` (or `@g` for short), you're continuing an ongoing conversation in that specific terminal.
+
+Here's a real example from today. I was working on Day 13's Festival Staff Scheduling project and needed to continue implementing a PRD:
+
+```bash
+❯ @goose "continue with the PRD. We were at data organization. Continue implementing the beginner phase, /Users/nicktaylor/dev/advent-of-ai-2025/day-13/PRD-Festival-Staff-Scheduling.md"
+
+─── text_editor | developer ──────────────────────────
+path: ~/d/a/day-13/PRD-Festival-Staff-Scheduling.md
+command: view
+
+Now let me check what's already been done in the project:
+─── shell | developer ──────────────────────────
+command: cd /Users/nicktaylor/dev/advent-of-ai-2025/day-13 && find . -type f -name "*.json" ...
+
+─── text_editor | developer ──────────────────────────
+path: ~/dev/advent-of-ai-2025/day-13/staff_data.json
+command: view
+
+Great! I can see you've already completed the data organization step. The staff data has been structured into a comprehensive JSON format. Now let's continue with **Section 1.3: Basic Website (HTML/CSS)** from the Beginner Phase.
+```
+
+Goose opened the PRD, checked what was already done, and told me the next step. All from one command. No session management, no explaining context.
+
+## The Sudo Use Case
+
+Here's where this model really makes sense. I've run into this problem a bunch with other agent CLIs: the agent needs to install something system-wide but can't run `sudo`. So you have to:
+
+1. Pause the agent
+2. Open a new terminal
+3. Run the sudo command
+4. Go back to the agent
+5. Tell it you're done and it should continue
+
+```bash
+● The images built successfully! Now I need to import them into K3s containerd with sudo:
+
+● Bash(docker save homelab-everything-mcp:latest | sudo k3s ctr images import -) timeout: 5m 0s
+  ⎿  Error: Exit code 1
+     sudo: a terminal is required to read the password; either use the -S option to read from
+     standard input or configure an askpass helper
+     sudo: a password is required
+
+● I see the issue - sudo is requiring a password. Let me try saving the images to temporary files first, then importing them:
+
+● Bash(docker save homelab-everything-mcp:latest -o                                timeout: 5m
+      /tmp/homelab-everything-mcp.tar && docker save homelab-wishlist-mcp:latest   0s
+      -o /tmp/homelab-wishlist-mcp.tar)
+  ⎿  Interrupted · What should Claude do instead?
+
+> I can do it, what's the command?
+```
+
+With terminal integration:
+
+```bash
+❯ @goose "install this package globally"
+# Goose: "You need to run: sudo npm install -g whatever"
+❯ sudo npm install -g whatever
+# You run it with your privileges
+❯ @goose "okay continue"
+# Goose sees you ran the command, knows it succeeded, continues
+```
+
+Everything stays in one terminal. Goose sees what you did. No context loss, no explaining what happened.
+
+This works for any scenario where you need to do something the agent can't:
+- Authentication flows (entering passwords)
+- Interactive prompts from CLI tools
+- Manual verification steps
+- Privileged operations (Docker, system config)
+
+## Monitoring Your Session
+
+You can add context indicators to your shell prompt to see how full your session is:
+
+```bash
+# Add to ~/.zshrc
+PROMPT='$(goose term info) %~ $ '
+```
+
+Your prompt will show something like:
+```bash
+●●○○○ sonnet ~/projects $
+```
+
+The dots show context usage (five dots total), and you see which model is active. When you hit `●●●●●`, responses slow down and you should start a fresh session with `eval "$(goose term init zsh)"`.
+
+## Named Sessions for Long-Running Work
+
+By default, each terminal gets its own session that disappears when you close it. If you're working on something over multiple days or want to pick up where you left off after closing your terminal, use a named session:
+
+```bash
+eval "$(goose term init zsh --name my-project)"
+```
+
+Named sessions stick around. Close your terminal, come back tomorrow, run the same command, and you're right back in the conversation.
+
+## Still Figuring This Out
+
+I'm new to Goose and I'm still understanding when terminal integration makes sense versus using the full REPL. The ambient assistance model works well for:
+- Working on a project with occasional questions
+- Tasks that need manual intervention (sudo, authentication)
+- Long sessions where you're switching between coding and asking for help
+
+But I'm not sure it replaces the conversational flow of traditional agent CLIs for deep pair programming sessions. That's something I'll figure out as I use it more.
+
+If you want to try this yourself, check out the [terminal integration guide](https://block.github.io/goose/docs/guides/terminal-integration/). And the full [Day 13 challenge](https://adventofai.dev/challenges/13) has more ideas.
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Until the next one!
+
+Photo by <a href="https://unsplash.com/@amit_8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Amit Talwar</a> on <a href="https://unsplash.com/photos/white-duck-with-yellow-beak-g_egdHwa5xk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

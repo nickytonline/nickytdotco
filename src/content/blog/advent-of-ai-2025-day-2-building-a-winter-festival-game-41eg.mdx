@@ -1,0 +1,101 @@
+---
+title: 'Advent of AI 2025 - Day 2: Building a Winter Festival Game'
+excerpt: >-
+  I've edited this post, but AI helped. These are meant to be quick posts
+  related to the Advent of AI....
+date: '2025-12-03T05:26:22Z'
+tags:
+  - goose
+  - ai
+  - adventofai
+cover_image: >-
+  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Famqldnu25g4s3gf35vbq.jpg
+canonical_url: >-
+  https://www.nickyt.co/blog/advent-of-ai-2025-day-2-building-a-winter-festival-game-41eg/
+reading_time_minutes: 3
+template: post
+series:
+  name: Advent of AI 2025
+  collection_id: 34295
+---
+import Embed from "@/components/Embed.astro";
+
+I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
+
+The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
+
+<Embed url="https://github.com/block/goose" />
+
+For Day 2 of the Advent of AI challenge, I built an entire winter-themed choose-your-own-adventure game as per the guidelines of [Day 2 of Advent of AI](https://adventofai.dev/challenges/2).
+
+## What I Built
+
+A browser game featuring:
+- Christmas elf character you can move around with arrow keys
+- Three magical portals leading to different story paths
+- Six unique endings based on your choices
+- Falling snow effects
+- Background music MIDI style that plays "Jingle Bells"
+- All in a single HTML file with esm imports using script tags with type attribute module
+- Game autosaves and you can restart where you left off
+
+![Winter Festival Game](https://www.nickyt.co/images/posts/_uploads_articles_nzk0nxvt27l69ls0q9t8.gif)
+
+Check out the [repo](https://github.com/nickytonline/advent-of-ai-2025) to see the game and full PRD.
+
+<Embed url="https://github.com/nickytonline/advent-of-ai-2025" />
+
+## The Build Process
+
+I started by asking Goose to create a PRD from my rough ideas. I wanted an 8-bit Zelda-style game where you walk around and interact with portals to make story choices. It tooks some trial and error. I initially started with kaboom.js which the model suggested, and then we finally landed on phaser.js
+
+### Phaser.js Import Drama
+
+The first version tried using Phaser's ESM imports. Didn't work. We switched to the standard CDN version with the global Phaser object, which turned out to be way more stable for a single HTML file approach.
+
+### The Frozen Game Bug
+
+At one point, pressing SPACE near a portal would freeze the entire game. Turns out it was a context issue with `this.scene` in the update loop. The fix was simple but not obvious:
+
+```javascript
+// Added explicit scene reference
+const scene = this;
+```
+
+Now portal navigation works perfectly.
+
+### Sprite Layering Issues
+
+The elf character kept appearing behind the portals, which looked terrible. Fixed it by setting the depth explicitly:
+
+```javascript
+player.setDepth(1000);
+```
+
+All these issues were solved just chatting with the models in Goose.
+
+## Final Current Product
+
+**Programmatic Sprites**: No external assets needed. The elf, portals, and all visual elements are drawn with code. The elf has a red Santa hat, green tunic, and even rosy cheeks, all procedurally generated.
+
+**Web Audio API Music**: Instead of loading audio files, the game synthesizes "Jingle Bells" using the Web Audio API. It has proper ADSR envelopes and everything. You can toggle it with the M key or adjust volume in settings.
+
+**Settings Menu**: I added a collapsible settings panel with a gear icon. It slides down smoothly, shows your save info, and lets you control music. The glassmorphism effect looks pretty slick.
+
+**Save System**: The game auto-saves your progress on every scene transition. When you come back later, you get a dialog asking if you want to continue or start fresh. It even shows how long ago you saved.
+
+## Key Learnings
+
+This is the first time I really leverage Goose's developer extension. I didn't realize it could read the screen! I'm guessing Playwright in action but I didn't really dig into it.
+
+## What's Next
+
+Not sure how deep I'll get into Advent of AI, but Day 2 was fun so I'll try to keep at it. Building an entire game in a an hour with AI assistance would have taken way longer without Goose.
+
+Even if you missed the first two days, jump in now! Head over to [AdventOfAI.dev](https://AdventOfAI.dev) and see what you can build.
+
+You can follow along with my [Advent of AI 2025 repo](https://github.com/nickytonline/advent-of-ai-2025) or catch me on any of my socials at [nickyt.online](https://nickyt.online).
+
+Until the next one!
+
+Photo by <a href="https://unsplash.com/@themushroomphotographer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">🪷 🍄</a> on <a href="https://unsplash.com/photos/a-christmas-tree-with-an-elf-ornament-hanging-from-it-aI8ko94VGu8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

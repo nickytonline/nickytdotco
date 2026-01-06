@@ -128,7 +128,6 @@
     }
 
     figure,
-    pre > code,
     .video-player,
     video {
       width: 100vw;
@@ -141,8 +140,11 @@
     }
 
     figure img,
-    pre > code,
     .video-player {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    pre > code {
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
 

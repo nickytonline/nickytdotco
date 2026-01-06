@@ -6,7 +6,7 @@ const getSiteUrl = (context = process.env.CONTEXT) => {
   //    : process.env.DEPLOY_PRIME_URL ?? "http://localhost:8080";
 };
 
-module.exports = {
+export default {
   showThemeCredit: true,
   name: "Just Some Dev",
   shortDesc: "Welcome to Nick Taylor's personal website.",

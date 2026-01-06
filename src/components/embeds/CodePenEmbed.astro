@@ -1,0 +1,39 @@
+---
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+const urlObj = new URL(url);
+const { pathname } = urlObj;
+const [, user, , codepenId] = pathname.split("/");
+---
+
+<p
+  class="codepen"
+  data-height="265"
+  data-theme-id="dark"
+  data-default-tab="js,result"
+  data-user={user}
+  data-slug-hash={codepenId}
+  style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+  data-pen-title={`${codepenId} by @${user}`}
+>
+  <span>
+    See the Pen <a href={url}>{url}</a> by {user} (<a
+      href={`https://codepen.io/${user}`}>@{user}</a
+    >) on <a href="https://codepen.io">CodePen</a>.
+  </span>
+</p>
+<script>
+  const scriptSrc = "https://static.codepen.io/assets/embed/ei.js";
+  if (!document.querySelector(`script[src*="codepen.io/assets/embed"]`)) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = scriptSrc;
+    document.head.appendChild(script);
+  } else if ((window as any).__CPEmbed) {
+    // Re-process embeds if script already loaded
+    (window as any).__CPEmbed();
+  }
+</script>
