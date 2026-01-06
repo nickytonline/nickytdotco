@@ -16,11 +16,11 @@ canonical_url: >-
 reading_time_minutes: 5
 template: post
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 So I've written about how I automated content updates for my blog before. I even gave a talk on it.
 
-<GenericEmbed url="https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p" />
+<Embed url="https://dev.to/nickytonline/my-eleventy-meetup-talk-3b2p" />
 
 This post builds off of that. I recently improved how I automate content updates for my blog. This is a recap in case you haven't read my post above.
 
@@ -40,7 +40,7 @@ This has been working fine, but it has some shortcomings:
 
 So I decided to automate creating pull requests (PR) for content updates and auto-merge them as long as all my checks pass.
 
-<GenericEmbed url="https://github.com/nickytonline/iamdeveloper.com/pull/61" />
+<Embed url="https://github.com/nickytonline/iamdeveloper.com/pull/61" />
 
 Having a PR brings all the things that were lacking:
 
@@ -186,7 +186,7 @@ gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
 
 After publishing this post, I [ran the GitHub action](https://github.com/nickytonline/iamdeveloper.com/actions/runs/3402455746), and this is the PR it generated and auto-merged.
 
-<GenericEmbed url="https://github.com/nickytonline/iamdeveloper.com/pull/64" />
+<Embed url="https://github.com/nickytonline/iamdeveloper.com/pull/64" />
 
 And that's it. I love automated work, and GitHub Actions and the GitHub CLI facilitate this.
 

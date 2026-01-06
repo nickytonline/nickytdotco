@@ -19,7 +19,7 @@ series:
   name: Fullstack Learnings
   collection_id: 26157
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 Middleware exists in several frameworks like Next.js, Express, Hono and Fresh, and not just in JavaScript land. You can find it in frameworks like ASP.NET core in the .NET ecosystem, or Laravel in PHP. Since I mainly work in JavaScript and TypeScript these days, examples will be from frameworks in those ecosystems.
 
@@ -66,7 +66,7 @@ Cookies that are [HTTP only](https://owasp.org/www-community/HttpOnly) can be ac
 
 We recently shipped a new feature at OpenSauced, called [Workspaces](https://docs.opensauced.pizza/features/workspaces/). You can read all about it in this great post from my co-worker Bekah (@BekahHW).
 
-<GenericEmbed url="https://dev.to/opensauced/navigating-the-challenges-of-scaling-open-source-projects-11h2" />
+<Embed url="https://dev.to/opensauced/navigating-the-challenges-of-scaling-open-source-projects-11h2" />
 
 TLDR; a Workspace acts like a workspace in other software you may have used, like Notion. One thing required for this feature is when a user navigates to the `/workspaces` URL, it has to load the last accessed workspace. If a user has never accessed a workspace before, it should default to their personal workspace. This is a perfect use case to leverage using a cookie.
 

@@ -18,13 +18,13 @@ series:
   name: MCP
   collection_id: 33658
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 # Build Your First (or Next) MCP Server with the TypeScript MCP Template
 
 If you've been wanting to build your own Model Context Protocol (MCP) server but weren't sure where to start, I've got something that might save you a bunch of time. I recently extracted a TypeScript template from my real-world MCP projects that handles all the boilerplate and lets you focus on what actually matters: building your tools and resources.
 
-<GenericEmbed url="https://github.com/nickytonline/mcp-typescript-template" />
+<Embed url="https://github.com/nickytonline/mcp-typescript-template" />
 
 ## MCP Is Still Pretty New
 
@@ -32,7 +32,7 @@ Here's the thing: MCP is still pretty new, and people are just starting to explo
 
 After building the [dev.to MCP server](https://dev.to/nickytonline/introducing-the-devto-mcp-server-42jg), I realized I had a solid foundation that other folks could benefit from. So I extracted all the good parts (the TypeScript config, the MCP SDK integration, the Vite bundling setup, and Node.js's type-stripping development mode starting from v22.18.0) into a template anyone can use.
 
-<GenericEmbed url="https://dev.to/nickytonline/introducing-the-devto-mcp-server-42jg" />
+<Embed url="https://dev.to/nickytonline/introducing-the-devto-mcp-server-42jg" />
 
 Just yesterday, I used this template to spin up my new [Pimp My Ride MCP server](https://github.com/nickytonline/pimp-my-ride-mcp). I was able to vibe code with the template in about 30 minutes to build my new MCP server.
 
@@ -84,7 +84,7 @@ gh repo clone YOUR_USERNAME/your-mcp-server
 
 New to the GitHub CLI? Check out 👇
 
-<GenericEmbed url="https://dev.to/opensauced/boost-productivity-with-the-github-cli-2mne" />
+<Embed url="https://dev.to/opensauced/boost-productivity-with-the-github-cli-2mne" />
 
 ## The Project Structure
 
@@ -181,7 +181,7 @@ After building the dev.to MCP server and now pimp-my-ride-mcp with this setup, h
 
 I've got an [OAuth 2.0 PR in the works](https://github.com/nickytonline/mcp-typescript-template/pull/2) that streamlines authentication and adds coarse-grained authorization. Should be merged soon.
 
-<GenericEmbed url="https://github.com/nickytonline/mcp-typescript-template/pull/2" />
+<Embed url="https://github.com/nickytonline/mcp-typescript-template/pull/2" />
 
 Clone the template and start building your MCP server. Whether you're exposing an API (like I did with the [dev.to MCP server](https://github.com/nickytonline/dev-to-mcp)), wrapping a database, or creating custom tools for your AI workflow (like [pimp-my-ride-mcp](https://github.com/nickytonline/pimp-my-ride-mcp)), the template handles the boring parts so you can focus on the interesting problems.
 

@@ -18,7 +18,7 @@ series:
   name: Fullstack Learnings
   collection_id: 26157
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 In this post, we'll cover what the `useRef` hook is, some examples of how it can be used, and when it shouldn't be used.
 
@@ -65,7 +65,7 @@ export const SomeComponent = () => {
 
 Recently, I was working on Open Sauced's [StarSearch](https://opensauced.pizza/blog/open-source-insights-with-starsearch), a Copilot for git history feature we released at the end of May 2024. You can read more about StarSearch in the blog post below.
 
-<GenericEmbed url="https://dev.to/bekahhw/introducing-starsearch-unlock-the-copilot-for-git-history-5ddb" />
+<Embed url="https://dev.to/bekahhw/introducing-starsearch-unlock-the-copilot-for-git-history-5ddb" />
 
 The ask was to be able to start a new StarSearch conversation. To do so, I had to stop the current conversation. If you've worked with the [OpenAI](https://openai.com/index/openai-api/) API or similar APIs, they typically return a [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) as a response.
 
@@ -73,7 +73,7 @@ A ReadableStream is a web API that allows data to be read in chunks as it become
 
 I initially had this feature working, but ran into issues if the response started to stream. The solution, create a reference to the readable stream via the `useRef` hook and when a new conversation is started, cancel the one in progress. You can see these changes in the pull request (PR) below
 
-<GenericEmbed url="https://github.com/open-sauced/app/pull/3637" />
+<Embed url="https://github.com/open-sauced/app/pull/3637" />
 
 So now, if someone presses the _Create a New Conversation_ button, I cancel the current streaming response from StarSearch, e.g.
 

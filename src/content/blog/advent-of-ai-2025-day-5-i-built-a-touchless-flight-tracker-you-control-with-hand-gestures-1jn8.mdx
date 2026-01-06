@@ -21,13 +21,13 @@ series:
   name: Advent of AI 2025
   collection_id: 34295
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, and open source AI agent. If you've never heard of it, check it out!
 
-<GenericEmbed url="https://github.com/block/goose" />
+<Embed url="https://github.com/block/goose" />
 
 For Goose's [Day 5 of Advent of AI](https://adventofai.dev/challenges/5), the challenge was to build "The Homecoming Board." It's a gesture-controlled flight arrival display where people wearing gloves and mittens can navigate using hand gestures. No touching screens in the freezing cold. The challenge needed at least two distinct gestures for navigation, real flight data, and audio feedback for gesture recognition was a nice to have.
 
@@ -39,11 +39,11 @@ I built this with TanStack Start (React + TypeScript with SSR), [MediaPipe](http
 
 To be honest, this is the first time I build an app with computer vision, so definitely got nerd sniped to do as much of this Advent of AI day as possible. It's wild how accessible it is to leverage something like computer vision. It was a bit of a throwback to an awesome live stream I did with Gant Laborde about AI and Tensorflow.js.
 
-<GenericEmbed url="https://www.youtube.com/watch?v=wS5N5R61Z5w" />
+<Embed url="https://www.youtube.com/watch?v=wS5N5R61Z5w" />
 
 I went with TanStack Start because I'd already used it for a significant project, the Pomerium MCP app demo.
 
-<GenericEmbed url="https://github.com/pomerium/mcp-app-demo" />
+<Embed url="https://github.com/pomerium/mcp-app-demo" />
 
 Having API endpoints available is a classic way to avoid CORS issues with third-party APIs. In this case, I could proxy requests to the OpenSky API through my own server function.
 
@@ -191,7 +191,7 @@ On mobile, I swap the modal for a drawer component that slides up from the botto
 
 I built light and dark winter themes to something very similar to day 4.
 
-<GenericEmbed url="https://dev.to/nickytonline/advent-of-ai-2025-day-4-building-a-winter-festival-website-with-goose-3oac" />
+<Embed url="https://dev.to/nickytonline/advent-of-ai-2025-day-4-building-a-winter-festival-website-with-goose-3oac" />
 
 The light mode has pure white backgrounds with deep ice blue primary colors and a 13:1 contrast ratio for WCAG AAA compliance. The dark mode uses a deep blue-purple night sky with bright glowing blues.
 
@@ -231,7 +231,7 @@ As previously mentioned, this is the first time I createa computer vision app, s
 
 The app is deployed and working at [flightboard.nickyt.co](https://flightboard.nickyt.co/). Go have some fun and play around with it! You can train your own gestures and navigate flights with hand movements. The code is in my Advent of AI 2025 repo if you want to check it out.
 
-<GenericEmbed url="https://github.com/nickytonline/advent-of-ai-2025" />
+<Embed url="https://github.com/nickytonline/advent-of-ai-2025" />
 
 There's still polish to do. The gesture detection could be more robust, the UI could use some refinement, and there are edge cases I haven't handled. But this is Advent of AI, which means it's time to move on to the next challenge.
 

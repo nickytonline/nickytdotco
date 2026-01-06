@@ -17,11 +17,11 @@ template: post
 ---
 import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";
 import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 This started off as a test post for my talk I gave this past week at the [Eleventy Meetup](https://11tymeetup.dev/).
 
-<GenericEmbed url="https://youtu.be/Yy4eHUjLWAs" />
+<Embed url="https://youtu.be/Yy4eHUjLWAs" />
 
 Here’s the accompanying slide deck, [iamdeveloper.com/11tyMeetupMay2022](https://iamdeveloper.com/11tyMeetupMay2022).
 
@@ -61,11 +61,11 @@ The API does allow you to exclude tags instead of doing it once you’ve receive
 
 ### Manipulating the markdown and shortcodes
 
-DEV uses [liquid tags](https://shopify.github.io/liquid/basics/variations/) for embedding content in blog posts. For those interested, here is the [complete list of supported embeds](https://dev.to/p/editor_guide#liquidtags) via the DEV `<GenericEmbed url="url" />` liquid tag.
+DEV uses [liquid tags](https://shopify.github.io/liquid/basics/variations/) for embedding content in blog posts. For those interested, here is the [complete list of supported embeds](https://dev.to/p/editor_guide#liquidtags) via the DEV `<Embed url="url" />` liquid tag.
 
-I'm using [short codes](https://www.11ty.dev/docs/shortcodes/) in Eleventy which are the same syntax as liquid tags. In the past DEV had specific liquid tags for different embeds. For example, to embed a GitHub repository, you'd use the `<GitHubEmbed url="url" />` liquid tag. The liquid tag is still supported, but they now have a generic embed liquid tag, `<GenericEmbed url="url" />` which determines what type of embed based on the URL.
+I'm using [short codes](https://www.11ty.dev/docs/shortcodes/) in Eleventy which are the same syntax as liquid tags. In the past DEV had specific liquid tags for different embeds. For example, to embed a GitHub repository, you'd use the `<GitHubEmbed url="url" />` liquid tag. The liquid tag is still supported, but they now have a generic embed liquid tag, `<Embed url="url" />` which determines what type of embed based on the URL.
 
-In my project, I have shortcodes for specific embeds, e.g. `<GitHubEmbed url="url" />`, `<TwitterEmbed tweetId="url" />`, etc. I have older posts that use the old liquid tags of DEV, but newer posts use the `<GenericEmbed url="url" />` liquid tag. On my end I manipulate the markdown to convert e.g. `<GenericEmbed url="https://twitter.com/nickytonline/status/1521650477674471424" />` to `<TwitterEmbed tweetId="https://twitter.com/nickytonline/status/1521650477674471424" />`
+In my project, I have shortcodes for specific embeds, e.g. `<GitHubEmbed url="url" />`, `<TwitterEmbed tweetId="url" />`, etc. I have older posts that use the old liquid tags of DEV, but newer posts use the `<Embed url="url" />` liquid tag. On my end I manipulate the markdown to convert e.g. `<Embed url="https://twitter.com/nickytonline/status/1521650477674471424" />` to `<TwitterEmbed tweetId="https://twitter.com/nickytonline/status/1521650477674471424" />`
 
 I don't support all embeds at the moment. For example, comment and tag embeds. I had DEV comment embeds at one point, but it proved troublesome for comment embeds with Tweets or any embed. I used so few of them in blog posts that I made it a rule to create a hyperlink to the comment instead. For the tag embed, I barely used it, so I made another rule to not reference a tag on DEV or, if I did, to create a hyperlink instead.
 
@@ -195,7 +195,7 @@ With all the files committed to the repository, the deployment will kick off if 
 
 All the source code is open source, so feel free to copy my workflow. 😎
 
-<GenericEmbed url="https://github.com/nickytonline/iamdeveloper.com" />
+<Embed url="https://github.com/nickytonline/iamdeveloper.com" />
 
 ## Deployment
 

@@ -18,19 +18,19 @@ series:
   name: Advent of AI 2025
   collection_id: 34295
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post.
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-<GenericEmbed url="https://github.com/block/goose" />
+<Embed url="https://github.com/block/goose" />
 
 For [Advent of AI Day 10](https://adventofai.dev/challenges/10), I built a festival poster generator using Goose recipes. [Here’s my submission](https://github.com/block/goose/discussions/6092#discussioncomment-15249695). But this post isn't really about making posters. It's about understanding how recipe arguments and conditional logic turn static prompts into reusable AI workflows.
 
 Up until now in the Advent of AI challenges, I'd been using recipes pretty simply. Pass in some parameters, get output.
 
-<GenericEmbed url="https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c" />
+<Embed url="https://dev.to/nickytonline/advent-of-ai-2025-day-7-goose-recipes-5d1c" />
 
 But Day 10 made me dig deeper into what's actually happening under the hood with arguments and I discovered you can leverage [Jinja templating](https://jinja.palletsprojects.com/en/stable/templates/) with recipe arguments (args).
 

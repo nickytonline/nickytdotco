@@ -14,7 +14,7 @@ canonical_url: https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-w
 reading_time_minutes: 6
 template: post
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 Your shell's history search is probably slowing you down more than you realize. Whether you're hammering the up arrow 100 times or fumbling through `CTRL + R`, there's a better way.
 
@@ -124,7 +124,7 @@ You get structured data for powerful searching plus your text-based history as a
 
 Shell startup time matters. I recently sped up my shell startup by 95% by lazy-loading tools that were slowing me down.
 
-<GenericEmbed url="https://dev.to/nickytonline/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f" />
+<Embed url="https://dev.to/nickytonline/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f" />
 
 Both McFly and Atuin add some initialization time, but it's minimal compared to tools like nvm or pyenv. We're talking single-digit milliseconds.
 

@@ -93,9 +93,9 @@ function convertLiquidTagsToAstroComponents(content) {
     /{%\s*embed\s+"?([^"\s]+)"?\s*%}/g,
     (_match, url) => {
       imports.add(
-        'import GenericEmbed from "@/components/embeds/GenericEmbed.astro";',
+        'import Embed from "@/components/Embed.astro";',
       );
-      return `<GenericEmbed url="${url}" />`;
+      return `<Embed url="${url}" />`;
     },
   );
 

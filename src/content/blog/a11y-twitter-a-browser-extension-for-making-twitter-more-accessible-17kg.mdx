@@ -16,7 +16,7 @@ canonical_url: >-
 reading_time_minutes: 4
 template: post
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 Just over a year ago, I made a post on Twitter, and I realized that I had forgotten to add [alternate text](https://www.a11yproject.com/posts/alt-text/) (alt text) to the image. I did what I usually do. I quickly copied the Tweet, deleted it, rewrote it, and added the image back to the Tweet, along with the alt text, and Tweeted it out.
 
@@ -24,7 +24,7 @@ So first off, why does this matter? For folks who cannot view images, alternate 
 
 As someone familiar with browser extensions (I used to work on a password manager browser extension), I created a browser extension to avoid making this mistake again. I call it a11y-twitter.
 
-<GenericEmbed url="https://github.com/nickytonline/a11y-twitter" />
+<Embed url="https://github.com/nickytonline/a11y-twitter" />
 
 The extension doesn't do much, but it does one thing well. It checks if you've added alt text before Tweeting. In its current form, I decided to not bug the user too much, so it only prompts you to add alt text once during a Tweet. That may change in the future, but for now, I thought this made sense as it makes folks aware of alt text, but does not nag them.
 

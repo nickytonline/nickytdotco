@@ -19,13 +19,13 @@ series:
   name: Advent of AI 2025
   collection_id: 34295
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 I've edited this post, but AI helped. These are meant to be quick posts related to the Advent of AI. I don't have time if I'm doing one of these each day to spend a couple hours on a post. 😅
 
 The [advent of AI](https://adventofai.dev) series leverages Goose, an open source AI agent. If you've never heard of it, check it out!
 
-<GenericEmbed url="https://github.com/block/goose" />
+<Embed url="https://github.com/block/goose" />
 
 For [Day 17 of the Advent of AI challenge](https://adventofai.dev/challenges/17), I built a Winter Wishlist app using [MCP-UI](https://mcpui.dev/).
 
@@ -42,7 +42,7 @@ A wishlist MCP server that renders a visual UI directly in Goose. Users can:
 
 Check out the repo:
 
-<GenericEmbed url="https://github.com/nickytonline/wishlist-mcp" />
+<Embed url="https://github.com/nickytonline/wishlist-mcp" />
 
 The implementation stores wishes in memory based on MCP session ID. Obviously something more robust would make sense for production, but for this challenge it works great.
 
@@ -50,7 +50,7 @@ The implementation stores wishes in memory based on MCP session ID. Obviously so
 
 I based this on a [ChatGPT app TypeScript template](https://github.com/pomerium/chatgpt-app-typescript-template) I had created for work just before the holiday. Having that foundation made spinning up the wishlist server much faster.
 
-<GenericEmbed url="https://github.com/pomerium/chatgpt-app-typescript-template" />
+<Embed url="https://github.com/pomerium/chatgpt-app-typescript-template" />
 
 One of the best parts of this setup is the development workflow. You can build out your components in Storybook, make live edits to widgets, and see them update in Goose in real-time. This makes iterating on the UI super fast.
 

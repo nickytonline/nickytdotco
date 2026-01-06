@@ -18,7 +18,7 @@ series:
   name: Fullstack Learnings
   collection_id: 26157
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 [Open Graph](url) (OG) images are a must if you're sharing content on the Internet. From sites like X/Twitter, to Slack or Discord, a great OG image makes your link share pop.
 
@@ -52,13 +52,13 @@ So, how do we use React to generate an image?
 
 We're using og_edge from my old co-worker Matt Kane (@ascorbic), but og_edge is a direct port of [@vercel/og](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images) that works on Deno and Netlify Edge Functions which run on Deno.
 
-<GenericEmbed url="https://github.com/ascorbic/og-edge" />
+<Embed url="https://github.com/ascorbic/og-edge" />
 
 Under the hood, og_edge and @vercel/og use the Satori library.
 
 > Satori: Enlightened library to convert HTML and CSS to SVG.
 
-<GenericEmbed url="https://github.com/vercel/satori" />
+<Embed url="https://github.com/vercel/satori" />
 
 The API for the `og_edge` module is pretty straightforward. It exposes an `ImageResponse` constructor with the following options and that's it.
 
@@ -105,9 +105,9 @@ One other thing we do is set cache headers as these are dynamic images where the
 
 Here's the pull requests for the initial work on these two OG images.
 
-<GenericEmbed url="https://github.com/open-sauced/app/pull/2939" />
+<Embed url="https://github.com/open-sauced/app/pull/2939" />
 
-<GenericEmbed url="https://github.com/open-sauced/app/pull/3117" />
+<Embed url="https://github.com/open-sauced/app/pull/3117" />
 
 ## Wrapping up
 

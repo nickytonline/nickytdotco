@@ -15,11 +15,11 @@ canonical_url: https://www.nickyt.co/blog/app-to-grab-your-revue-newsletters-1gc
 reading_time_minutes: 1
 template: post
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 So I wrote about how Twitter is scrapping Revue.
 
-<GenericEmbed url="https://dev.to/nickytonline/revue-being-phased-out-by-twitter-4kle" />
+<Embed url="https://dev.to/nickytonline/revue-being-phased-out-by-twitter-4kle" />
 
 I was able to pull down all my subscribers, as you can export them.
 
@@ -31,10 +31,10 @@ This works great, but I was like, let's make this easier for folks who want to g
 
 It uses a [Netlify function](https://www.netlify.com/products/functions/) written in TypeScript to grab the newsletter issues and good old HTML with some inlined style and inlined JavaScript.
 
-<GenericEmbed url="https://twitter.com/nickytonline/status/1591627552128634880" />
+<Embed url="https://twitter.com/nickytonline/status/1591627552128634880" />
 
 Here's the source code if you're interested. It's all open source, MIT licensed.
 
-<GenericEmbed url="https://github.com/nickytonline/get-revue-newsletters" />
+<Embed url="https://github.com/nickytonline/get-revue-newsletters" />
 
 If you have a Revue newsletter, try it out at [revue.iamdeveloper.com](https://revue.iamdeveloper.com). All you need to do is get a Revue API key. To get one, go to [https://www.getrevue.co/app/integrations](https://www.getrevue.co/app/integrations) and request one. It should be at the bottom of the page. It takes around 24 hours to get your API key.

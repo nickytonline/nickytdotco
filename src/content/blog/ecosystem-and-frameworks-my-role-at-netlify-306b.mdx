@@ -18,7 +18,7 @@ series:
   name: Career
   collection_id: 4084
 ---
-import GenericEmbed from "@/components/embeds/GenericEmbed.astro";
+import Embed from "@/components/Embed.astro";
 
 I'm curious what frontend frameworks you're all interested in these days? Powerful meta frameworks have been built using libraries like Vue and React. [Next.js](https://nextjs.org/) comes to mind: [Remix](https://remix.run) is a new contender, and we have other notable projects like [SvelteKit](https://github.com/sveltejs/kit), [Astro](https://github.com/withastro/astro), [Eleventy](https://github.com/11ty/eleventy), etc.
 
@@ -28,17 +28,17 @@ I need to know/learn how all these frameworks work, which is exciting.
 
 For example, if you weren't aware, Netlify released their [Edge functions offering](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) a couple of weeks ago. My coworker Salma has a great post about them.
 
-<GenericEmbed url="https://dev.to/whitep4nth3r/were-all-living-on-it-but-what-exactly-is-the-edge-4n5l" />
+<Embed url="https://dev.to/whitep4nth3r/were-all-living-on-it-but-what-exactly-is-the-edge-4n5l" />
 
 My other awesome coworker Eduardo released a [deep dive article about Netlify Edge functions](https://www.netlify.com/blog/deep-dive-into-netlify-edge-functions/) if you want to check that out as well.
 
 I bring this up because I get to continue to work in open source in my role at Netlify. For some background, Edge functions use the amazing [Deno](https://deno.land/) project, a modern open-source runtime for JavaScript and Typescript. We're big fans of OSS at Netlify. ♥️
 
-<GenericEmbed url="https://github.com/denoland" />
+<Embed url="https://github.com/denoland" />
 
 I was [looking into an issue with Netlify Edge functions within the Remix framework](https://github.com/remix-run/remix/issues/3003).
 
-<GenericEmbed url="https://github.com/remix-run/remix" />
+<Embed url="https://github.com/remix-run/remix" />
 
 One of the core team members had issues getting Edge functions to work with Remix. After some fun detective work, I figured out the issue. TLDR; a polyfill wasn't web standards compliant, so the bug only occurred when Edge functions were enabled because Deno is compliant. In contrast, regular serverless functions use the non-web standards compliant polyfill in Node.js land.
 
