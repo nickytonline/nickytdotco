@@ -1,51 +1,111 @@
 #!/usr/bin/env node
 import "dotenv/config";
 
-import jsdom from "@tbranyen/jsdom";
-const { JSDOM } = jsdom;
+import { JSDOM } from "jsdom";
 import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs/promises";
 import { readFileSync } from "fs";
 import yaml from "js-yaml";
-import siteData from "../src/_data/site.js";
+import siteData from "../src/data/site.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/**
+ * Safely extracts error message from unknown error
+ */
+function getErrorMessage(error: unknown): string {
+  if (error instanceof Error) return error.message;
+  return String(error);
+}
+
+/**
+ * Type guard for series names object
+ */
+function isSeriesNamesObject(value: unknown): value is Record<number, string> {
+  if (!value || typeof value !== "object") return false;
+  return Object.entries(value).every(
+    ([key, val]) => !isNaN(Number(key)) && typeof val === "string"
+  );
+}
+
 const { DEV_API_KEY } = process.env;
-const SLUG_INCLUSION_LIST = JSON.parse(
+const SLUG_INCLUSION_LIST: string[] = JSON.parse(
   readFileSync(path.join(__dirname, "slugInclusionList.json"), "utf-8"),
 );
 
 const { url: siteUrl } = siteData;
 const DEV_TO_API_URL = "https://dev.to/api";
 
-// Auto-generated series name mapping, persisted in series-names.js
-// This object is updated at runtime and written to disk when new series are discovered.
 const SERIES_MAP_PATH = path.join(__dirname, "series-names.js");
 
-// Load existing series names from the persisted file
-let SERIES_NAMES = {};
+let SERIES_NAMES: Record<number, string> = {};
 try {
   const seriesModule = await import(SERIES_MAP_PATH);
-  SERIES_NAMES = seriesModule.default || {};
+  if (seriesModule?.default && isSeriesNamesObject(seriesModule.default)) {
+    SERIES_NAMES = seriesModule.default;
+  }
 } catch (_e) {
-  // File doesn't exist yet or is empty; start with empty object
   SERIES_NAMES = {};
+}
+
+interface ConversionResult {
+  content: string;
+  imports: string[];
+}
+
+interface DevToOrganization {
+  username: string;
+}
+
+interface DevToPost {
+  id: number;
+  title: string;
+  description: string;
+  published: boolean;
+  published_at: string;
+  slug: string;
+  published_timestamp: string;
+  body_markdown: string;
+  body_html?: string;
+  cover_image: string | null;
+  tag_list: string[] | string;
+  reading_time_minutes: number;
+  canonical_url: string;
+  collection_id?: number;
+  organization?: DevToOrganization;
+  comments_count?: number;
+  public_reactions_count?: number;
+  positive_reactions_count?: number;
+}
+
+interface PostFrontmatter {
+  title: string;
+  excerpt: string;
+  date: string;
+  tags: string[];
+  cover_image: string | null;
+  canonical_url: string;
+  reading_time_minutes: number;
+  template: string;
+  series?: {
+    name: string;
+    collection_id: number;
+  };
 }
 
 /**
  * Convert DEV.to liquid tags to Astro component syntax
  */
-function convertLiquidTagsToAstroComponents(content) {
+function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
   let newContent = content;
-  const imports = new Set();
+  const imports = new Set<string>();
 
   // YouTube: {% youtube "videoId" %} or {% youtube videoId %} or {% youtube "videoId", "startTime" %}
   newContent = newContent.replace(
     /{%\s*youtube\s+"?([^"\s,]+)"?(?:,\s+"?([^"\s]+)"?)?\s*%}/g,
-    (_match, videoId, startTime) => {
+    (_match, videoId: string, startTime?: string) => {
       imports.add(
         'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";',
       );
@@ -58,7 +118,7 @@ function convertLiquidTagsToAstroComponents(content) {
   // Twitter/X: {% twitter "tweetId" %} or {% twitter tweetId %} or {% x "tweetId" %} or {% x tweetId %}
   newContent = newContent.replace(
     /{%\s*(twitter|x)\s+"?([^"\s]+)"?\s*%}/g,
-    (_match, _type, tweetId) => {
+    (_match, _type: string, tweetId: string) => {
       imports.add(
         'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";',
       );
@@ -92,9 +152,7 @@ function convertLiquidTagsToAstroComponents(content) {
   newContent = newContent.replace(
     /{%\s*embed\s+"?([^"\s]+)"?\s*%}/g,
     (_match, url) => {
-      imports.add(
-        'import Embed from "@/components/Embed.astro";',
-      );
+      imports.add('import Embed from "@/components/Embed.astro";');
       return `<Embed url="${url}" />`;
     },
   );
@@ -165,7 +223,6 @@ function convertLiquidTagsToAstroComponents(content) {
     },
   );
 
-  // Convert existing directive syntax to components
   // ::youtube{videoId="..." startTime="..."}
   newContent = newContent.replace(
     /::youtube\{videoId="([^"]+)"(?:\s+startTime="([^"]+)")?\}/g,
@@ -294,12 +351,12 @@ function convertLiquidTagsToAstroComponents(content) {
 
 /**
  * Decodes HTML entities in a string.
- * @param {string} text - Text with HTML entities
- * @returns {string} Decoded text
+ * @param text - Text with HTML entities
+ * @returns Decoded text
  */
-function decodeHtmlEntities(text) {
+function decodeHtmlEntities(text: string): string {
   return text
-    .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(dec))
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(Number(dec)))
     .replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) =>
       String.fromCharCode(parseInt(hex, 16)),
     )
@@ -315,16 +372,16 @@ function decodeHtmlEntities(text) {
  * Fetches series name from dev.to series page and persists the mapping.
  * Uses native Node.js fetch (v18+).
  *
- * @param {number} collectionId - The dev.to collection ID
- * @param {string} fallbackTitle - Fallback title (e.g., article title) if fetch fails
- * @param {string} username - dev.to username
- * @returns {Promise<string>} Series name
+ * @param collectionId - The dev.to collection ID
+ * @param fallbackTitle - Fallback title (e.g., article title) if fetch fails
+ * @param username - dev.to username
+ * @returns Series name
  */
 async function getOrFetchSeriesName(
-  collectionId,
-  fallbackTitle,
+  collectionId: number,
+  fallbackTitle: string,
   username = "nickytonline",
-) {
+): Promise<string> {
   // Return cached/mapped value if available
   if (SERIES_NAMES[collectionId]) {
     return SERIES_NAMES[collectionId];
@@ -349,7 +406,7 @@ async function getOrFetchSeriesName(
     if (title) {
       // Use JSDOM to strip HTML tags safely
       const dom = new JSDOM(`<body>${title}</body>`);
-      title = dom.window.document.body.textContent.trim();
+      title = dom.window.document.body.textContent?.trim() || null;
     }
 
     // Decode HTML entities
@@ -357,7 +414,6 @@ async function getOrFetchSeriesName(
       title = decodeHtmlEntities(title);
     }
 
-    // Remove " Series' Articles" suffix that dev.to adds to the page title
     if (title) {
       title = title.replace(/\s*Series['']s?\s*Articles$/i, "").trim();
     }
@@ -369,7 +425,6 @@ async function getOrFetchSeriesName(
     // Update in-memory mapping
     SERIES_NAMES[collectionId] = title;
 
-    // Persist to file using ESM export default format
     const data = `// Auto-generated. Do not edit manually!\nexport default ${JSON.stringify(SERIES_NAMES, null, 2)};\n`;
     await fs.writeFile(SERIES_MAP_PATH, data);
     console.log(`  ✏️  Discovered new series: ${collectionId} = "${title}"`);
@@ -377,7 +432,7 @@ async function getOrFetchSeriesName(
     return title;
   } catch (error) {
     console.warn(
-      `  ⚠️  Error fetching series ${collectionId}: ${error.message}`,
+      `  ⚠️  Error fetching series ${collectionId}: ${getErrorMessage(error)}`,
     );
     return fallbackTitle || `Series ${collectionId}`;
   }
@@ -403,52 +458,41 @@ const TWITTER_EMBEDS_FILE = path.join(
   "../src/_data/twitterEmbeds.json",
 );
 
-const currentBlogPostEmbeds = JSON.parse(
+const currentBlogPostEmbeds: Record<string, unknown> = JSON.parse(
   readFileSync(EMBEDDED_POSTS_MARKUP_FILE, "utf-8"),
 );
-const blogPostEmbeds = new Map(Object.entries(currentBlogPostEmbeds));
+const blogPostEmbeds = new Map<string, unknown>(Object.entries(currentBlogPostEmbeds));
 
 // Load existing Twitter embeds or initialize empty object
-let currentTwitterEmbeds = {};
+let currentTwitterEmbeds: Record<string, string> = {};
 try {
   currentTwitterEmbeds = JSON.parse(readFileSync(TWITTER_EMBEDS_FILE, "utf-8"));
 } catch (error) {
   // File doesn't exist yet, will be created
   currentTwitterEmbeds = {};
 }
-const twitterEmbeds = new Map(Object.entries(currentTwitterEmbeds));
+const twitterEmbeds = new Map<string, string>(Object.entries(currentTwitterEmbeds));
 
 /**
  * Checks if a file exists
- * @param {string} path - File path to check
- * @returns {Promise<boolean>} True if file exists, false otherwise
+ * @param filePath - File path to check
+ * @returns True if file exists, false otherwise
  */
-async function fileExists(path) {
-  return !!(await fs.stat(path).catch((_error) => false));
+async function fileExists(filePath: string): Promise<boolean> {
+  return !!(await fs.stat(filePath).catch((_error) => false));
 }
 
-/**
- * Sanitizes the body markdown.
- * Ensures that embeds coming from dev.to that are strings are in quotes in the markdown.
- * Otherwise Eleventy misinterprets and tries to parse them as a number.
- *
- * @param {string} markdown
- *
- * @returns {object} Object with content and imports array
- */
-function sanitizeMarkdownEmbeds(markdown) {
+function sanitizeMarkdownEmbeds(markdown: string): ConversionResult {
   let sanitizedMarkdown = markdown
     .replaceAll(
       /{%\s*?(?<liquidTag>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
       '{% $1 "$2" %}',
     )
-    // get rid of promo links that are a new line followed by <!-- places to follow me --> and content
     .replaceAll(/\n<!-- places to follow me -->\n(.|\n)*$/g, "");
 
-  // Escape HTML tags in image alt text to prevent MDX parsing errors
   sanitizedMarkdown = sanitizedMarkdown.replace(
     /!\[([^\]]+)\]/g,
-    (_match, altText) => {
+    (_match, altText: string) => {
       const escapedAlt = altText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
       return `![${escapedAlt}]`;
     },
@@ -462,12 +506,15 @@ function sanitizeMarkdownEmbeds(markdown) {
  * Determines whethere or not a post coming from DEV (the CMS) is valid or not to publish
  * on this blog.
  *
- * @param {object} post The post to validate.
+ * @param post The post to validate.
  *
- * @returns {boolean} True if the post is valid for publishing, otherwise false.
+ * @returns True if the post is valid for publishing, otherwise false.
  */
-function isValidPost(post) {
+function isValidPost(post: DevToPost): boolean {
   const { tag_list: tags = [], slug, organization } = post;
+
+  // Ensure tags is an array
+  const tagArray = Array.isArray(tags) ? tags : tags.split(",").map((t) => t.trim());
 
   // Exclude posts from pomerium org
   if (organization && organization.username === "pomerium") {
@@ -475,17 +522,17 @@ function isValidPost(post) {
   }
 
   return (
-    (!tags.includes("jokes") &&
-      !tags.includes("weeklylearn") &&
-      !tags.includes("weeklyretro") &&
-      !tags.includes("watercooler") &&
-      !tags.includes("devhumor") &&
-      !tags.includes("discuss") &&
-      !tags.includes("vscodetip") &&
-      !tags.includes("explainlikeimfive") &&
-      !tags.includes("help") &&
+    (!tagArray.includes("jokes") &&
+      !tagArray.includes("weeklylearn") &&
+      !tagArray.includes("weeklyretro") &&
+      !tagArray.includes("watercooler") &&
+      !tagArray.includes("devhumor") &&
+      !tagArray.includes("discuss") &&
+      !tagArray.includes("vscodetip") &&
+      !tagArray.includes("explainlikeimfive") &&
+      !tagArray.includes("help") &&
       // omits my newsletter posts which are already published on my site
-      !tags.includes("newsletter")) ||
+      !tagArray.includes("newsletter")) ||
     SLUG_INCLUSION_LIST.includes(slug)
   );
 }
@@ -512,19 +559,16 @@ Sample post format:
 
 */
 
-async function sleep(ms) {
+async function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/**
- * Helper function to fetch with retry/backoff on 429 errors.
- */
 async function fetchWithRetry(
-  url,
-  options = {},
+  url: string,
+  options: RequestInit = {},
   maxRetries = 5,
   initialDelay = 2000,
-) {
+): Promise<Response> {
   let attempt = 0;
   let delay = initialDelay;
   while (attempt <= maxRetries) {
@@ -553,14 +597,14 @@ async function fetchWithRetry(
 /**
  * Retrieves the latest blog posts from dev.to.
  *
- * @returns {Promise<object[]>} A promise that resolves to an array of blog posts.
+ * @returns A promise that resolves to an array of blog posts.
  */
-async function getDevPosts() {
+async function getDevPosts(): Promise<DevToPost[]> {
   const response = await fetchWithRetry(
     DEV_TO_API_URL + "/articles/me/published?per_page=1000",
     {
       headers: {
-        "api-key": DEV_API_KEY,
+        "api-key": DEV_API_KEY!,
       },
     },
   );
@@ -569,22 +613,22 @@ async function getDevPosts() {
       `Failed to fetch posts: ${response.status} ${response.statusText}`,
     );
   }
-  const posts = await response.json();
+  const posts: DevToPost[] = await response.json();
   return posts.filter(isValidPost);
 }
 
 /**
  * Retrieves the blog post for the given blog post ID.
  *
- * @param {string} blogPostId The ID of the blog post to retrieve.
+ * @param blogPostId The ID of the blog post to retrieve.
  *
- * @returns {Promise<object>} A promise that resolves to a blog post.
+ * @returns A promise that resolves to a blog post.
  */
-async function getDevPost(blogPostId) {
+async function getDevPost(blogPostId: number): Promise<DevToPost> {
   const getArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
   const response = await fetchWithRetry(getArticleUrl, {
     headers: {
-      "api-key": DEV_API_KEY,
+      "api-key": DEV_API_KEY!,
       "Content-Type": "application/json",
     },
   });
@@ -595,23 +639,18 @@ async function getDevPost(blogPostId) {
     );
   }
 
-  let post;
+  let post: DevToPost;
   try {
     post = await response.json();
   } catch (error) {
     throw new Error(
-      `Failed to parse post JSON for ${getArticleUrl}: ${error.message}`,
+      `Failed to parse post JSON for ${getArticleUrl}: ${getErrorMessage(error)}`,
     );
   }
   return post;
 }
 
-/**
- * Generates a markdown file for the given blog post.
- *
- * @param {object} post The blog post to generate a markdown file for.
- */
-async function createPostFile(post) {
+async function createPostFile(post: DevToPost): Promise<{ status: string }> {
   const {
     body_markdown,
     title,
@@ -623,18 +662,20 @@ async function createPostFile(post) {
     slug,
     canonical_url,
   } = post;
-  const jsonFrontmatter = {
+
+  const tagArray = Array.isArray(tags) ? tags : tags.split(",").map((t) => t.trim());
+
+  const jsonFrontmatter: PostFrontmatter = {
     title,
     excerpt,
     date,
-    tags: tags.split(",").map((tag) => tag.trim()),
+    tags: tagArray,
     cover_image,
     canonical_url,
     reading_time_minutes,
     template: "post",
   };
 
-  // Add series data if post is part of a collection
   if (post.collection_id) {
     const seriesName = await getOrFetchSeriesName(post.collection_id, title);
     jsonFrontmatter.series = {
@@ -647,10 +688,9 @@ async function createPostFile(post) {
     );
   }
 
-  let markdownBody;
+  let markdownBody: string;
 
   if (/^---(\r|\n)/.test(body_markdown)) {
-    // v1 editor
     markdownBody = body_markdown.replace(/^---(\r|\n)(.|\r|\n)*?---\n*/, "");
   } else {
     markdownBody = body_markdown;
@@ -659,15 +699,11 @@ async function createPostFile(post) {
   const { content: sanitizedContent, imports } =
     sanitizeMarkdownEmbeds(markdownBody);
 
-  // Build the markdown file with imports between frontmatter and content
   const importsSection = imports.length > 0 ? `${imports.join("\n")}\n\n` : "";
-
-  // Convert to YAML frontmatter using js-yaml
   const yamlFrontmatter = yaml.dump(jsonFrontmatter);
-
   const markdown = `---\n${yamlFrontmatter}---\n${importsSection}${sanitizedContent.trim()}\n`;
 
-  const basePath = tags.includes("vscodetips")
+  const basePath = tagArray.includes("vscodetips")
     ? path.join(
         VSCODE_TIPS_POSTS_DIRECTORY,
         new Date(date).getFullYear().toString(),
@@ -676,19 +712,18 @@ async function createPostFile(post) {
   const postFile = path.join(basePath, `${slug}.mdx`);
   await fs.writeFile(postFile, markdown);
 
-  // Checking for a backtick before the Twitter embed so that we're not pulling in a code example of an embed.
   const twitterEmbedMatches = markdown.matchAll(
     /(?:[^`]{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/(?:www\.)?twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g,
   );
 
-  for (const {
-    groups: { id, id2 },
-  } of twitterEmbedMatches) {
+  for (const match of twitterEmbedMatches) {
+    const { id, id2 } = match.groups || {};
     const tweetId = id ?? id2;
 
-    if (!twitterEmbeds.has(tweetId)) {
+    if (!tweetId || twitterEmbeds.has(tweetId)) {
+      continue;
+    }
       try {
-        // It doesn't matter who the user is. It's the Tweet ID that matters.
         const response = await fetchWithRetry(
           `https://publish.twitter.com/oembed?url=${encodeURIComponent(
             `https://twitter.com/anyone/status/${tweetId}`,
@@ -706,53 +741,39 @@ async function createPostFile(post) {
           `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`,
         );
 
-        const data = await response.json();
+        const data: { html: string } = await response.json();
         const { html } = data;
 
         twitterEmbeds.set(tweetId, html);
       } catch (error) {
         console.warn(
           `Error fetching Twitter embed for ${tweetId}:`,
-          error.message,
+          getErrorMessage(error),
         );
         continue;
       }
-    }
   }
 
   return { status: "success" };
 }
 
-/**
- * Save an image URL to a local file.
- *
- * @param {string} imageUrl The URL of the image to save.
- * @param {string} imageFilePath The path to save the image to.
- *
- */
-async function saveImageUrl(imageUrl, imageFilePath) {
+async function saveImageUrl(imageUrl: string, imageFilePath: string): Promise<void> {
   try {
     const response = await fetch(imageUrl);
     if (!response.ok) {
       console.warn(`Failed to fetch image ${imageUrl}: ${response.status}`);
       return;
     }
-    const buffer = Buffer(await response.arrayBuffer());
+    const buffer = Buffer.from(await response.arrayBuffer());
 
     await fs.writeFile(imageFilePath, buffer);
     console.log(`Saved image ${imageUrl} to ${imageFilePath}!`);
   } catch (error) {
-    console.warn(`Error saving image ${imageUrl}:`, error.message);
+    console.warn(`Error saving image ${imageUrl}:`, getErrorMessage(error));
   }
 }
 
-/**
- * Generates an image URL hosted by the domain the blog is hosted on.
- *
- * @param {URL} imageUrl
- * @returns {string} The new image URL.
- */
-function generateNewImageUrl(imageUrl) {
+function generateNewImageUrl(imageUrl: URL): string {
   const imagefilename = imageUrl.pathname.replaceAll("/", "_");
   const newImageUrl = new URL(
     siteUrl + path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename),
@@ -761,14 +782,7 @@ function generateNewImageUrl(imageUrl) {
   return newImageUrl;
 }
 
-/**
- * Saves a markdown image URL to a local file and returns the new image URL.
- * TODO: Fix mixing two concerns.
- * @param {string|null} markdownImageUrl
- *
- * @returns {Promise<string|null>} Returns a promise that resolves to the new image URL.
- */
-async function saveMarkdownImageUrl(markdownImageUrl = null) {
+async function saveMarkdownImageUrl(markdownImageUrl: string | null = null): Promise<string | null> {
   let newMarkdownImageUrl = null;
 
   if (markdownImageUrl) {
@@ -790,32 +804,25 @@ async function saveMarkdownImageUrl(markdownImageUrl = null) {
   return newMarkdownImageUrl;
 }
 
-/**
- * Saves all markdown images to local files to be served by the blog.
- *
- * @param {string[]} imagesToSave
- */
-async function saveMarkdownImages(imagesToSave) {
+async function saveMarkdownImages(imagesToSave: string[]): Promise<void> {
   for (const imageToSave of imagesToSave) {
     await saveMarkdownImageUrl(imageToSave);
   }
 }
 
-/**
- * Updates all markdown image URLs with URLs hosted by the domain the blog is hosted on.
- * @param {string} markdown
- *
- * @returns The updated markdown.
- */
-async function updateMarkdownImageUrls(markdown) {
+async function updateMarkdownImageUrls(markdown: string): Promise<{
+  markdown: string;
+  imagesToSave: string[];
+}> {
   let updatedMarkdown = markdown;
-  const imagesToSave = [];
+  const imagesToSave: string[] = [];
   const matches = markdown.matchAll(
     /!\[.*?\]\((?<oldImageUrl>(?!\.\/)[^)]+)\)/g,
   );
 
   for (const match of matches) {
-    const { oldImageUrl } = match.groups;
+    const { oldImageUrl } = match.groups || {};
+    if (!oldImageUrl) continue;
 
     const imageUrl = new URL(oldImageUrl);
 
@@ -833,13 +840,14 @@ async function updateMarkdownImageUrls(markdown) {
   };
 }
 
-async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
+async function getDevBlogPostEmbedsMarkup(markdown: string, embeds: Map<string, unknown>): Promise<void> {
   const matches = markdown.matchAll(
     /[^`]{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g,
   );
 
   for (const match of matches) {
-    const { embedType, embedUrl } = match.groups;
+    const { embedType, embedUrl } = match.groups || {};
+    if (!embedType || !embedUrl) continue;
 
     let url = null;
 
@@ -865,15 +873,15 @@ async function getDevBlogPostEmbedsMarkup(markdown, embeds) {
         const markup = await response.text();
         embeds.set(embedUrl, markup);
       } catch (error) {
-        console.warn(`Error fetching embed ${embedUrl}:`, error.message);
+        console.warn(`Error fetching embed ${embedUrl}:`, getErrorMessage(error));
         continue;
       }
     }
   }
 }
 
-async function updateBlogPostEmbeds(embeds, filePaths) {
-  let blogPostEmbedsMarkup = {};
+async function updateBlogPostEmbeds(embeds: Map<string, unknown>, filePaths: string): Promise<void> {
+  const blogPostEmbedsMarkup: Record<string, unknown> = {};
 
   for (const [url] of embeds) {
     try {
@@ -889,9 +897,11 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
       const match = html.match(/data-article-id="(?<blogPostId>.+?)"/);
 
       if (match) {
-        const { blogPostId } = match.groups;
+        const { blogPostId } = match.groups || {};
+        if (!blogPostId) continue;
+
         try {
-          const post = await getDevPost(blogPostId);
+          const post = await getDevPost(Number(blogPostId));
           const {
             body_html,
             body_markdown,
@@ -903,7 +913,7 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
 
           blogPostEmbedsMarkup[url] = data;
         } catch (error) {
-          console.warn(`Failed to fetch blog post for ${url}:`, error.message);
+          console.warn(`Failed to fetch blog post for ${url}:`, getErrorMessage(error));
           continue;
         }
       } else {
@@ -911,7 +921,7 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
         continue;
       }
     } catch (error) {
-      console.warn(`Failed to process embed ${url}:`, error.message);
+      console.warn(`Failed to process embed ${url}:`, getErrorMessage(error));
       continue;
     }
   }
@@ -923,13 +933,13 @@ async function updateBlogPostEmbeds(embeds, filePaths) {
   } catch (error) {
     console.error(
       `Failed to write embeds file to ${filePaths}:`,
-      error.message,
+      getErrorMessage(error),
     );
     throw error;
   }
 }
 
-async function updateTwitterEmbeds(twitterEmbeds, filepath) {
+async function updateTwitterEmbeds(twitterEmbeds: Map<string, string>, filepath: string): Promise<void> {
   let tweetEmbeds = Object.fromEntries(twitterEmbeds);
 
   const data = JSON.stringify(tweetEmbeds, null, 2);
@@ -958,19 +968,21 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
 
   const posts = await getDevPosts();
 
-  // Only publish posts that are not under the orgs I'm a part of on dev.to organization.
   const filteredPosts = posts.filter((post) => {
+    const orgUsername = post.organization?.username || "";
+    const tagList = Array.isArray(post.tag_list)
+      ? post.tag_list
+      : post.tag_list.split(",").map((t) => t.trim());
+
     return (
-      !["vscodetips", "virtualcoffee"].includes(post.organization?.username) ||
-      (post.organization?.username === "vscodetips" &&
-        post.tag_list.includes("vscodetips"))
+      !["vscodetips", "virtualcoffee"].includes(orgUsername) ||
+      (orgUsername === "vscodetips" && tagList.includes("vscodetips"))
     );
   });
 
   console.log(`Processing ${filteredPosts.length} posts...`);
 
   for (const postSummary of filteredPosts) {
-    // Fetch full article to get collection_id (not available in list API)
     const post = await getDevPost(postSummary.id);
 
     if (post.canonical_url.startsWith("https://www.iamdeveloper.com/posts/")) {
@@ -979,7 +991,6 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
         "https://www.nickyt.co/blog/",
       );
     }
-    // Newsletter posts are not published to the blog. The blog publishes the newsletter to DEV.
     if (/<!-- my newsletter -->/.test(post.body_markdown)) {
       console.warn(`Skipping newsletter post ${post.title}`);
       continue;
@@ -994,7 +1005,7 @@ async function updateTwitterEmbeds(twitterEmbeds, filepath) {
       getDevBlogPostEmbedsMarkup(markdown, blogPostEmbeds),
     ]);
 
-    const updatedPost = {
+    const updatedPost: DevToPost = {
       ...post,
       cover_image: updatedCoverImage,
       body_markdown: markdown,
