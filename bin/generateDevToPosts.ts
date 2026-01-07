@@ -26,7 +26,7 @@ function getErrorMessage(error: unknown): string {
 function isSeriesNamesObject(value: unknown): value is Record<number, string> {
   if (!value || typeof value !== "object") return false;
   return Object.entries(value).every(
-    ([key, val]) => !isNaN(Number(key)) && typeof val === "string"
+    ([key, val]) => !isNaN(Number(key)) && typeof val === "string",
   );
 }
 
@@ -461,7 +461,9 @@ const TWITTER_EMBEDS_FILE = path.join(
 const currentBlogPostEmbeds: Record<string, unknown> = JSON.parse(
   readFileSync(EMBEDDED_POSTS_MARKUP_FILE, "utf-8"),
 );
-const blogPostEmbeds = new Map<string, unknown>(Object.entries(currentBlogPostEmbeds));
+const blogPostEmbeds = new Map<string, unknown>(
+  Object.entries(currentBlogPostEmbeds),
+);
 
 // Load existing Twitter embeds or initialize empty object
 let currentTwitterEmbeds: Record<string, string> = {};
@@ -471,7 +473,9 @@ try {
   // File doesn't exist yet, will be created
   currentTwitterEmbeds = {};
 }
-const twitterEmbeds = new Map<string, string>(Object.entries(currentTwitterEmbeds));
+const twitterEmbeds = new Map<string, string>(
+  Object.entries(currentTwitterEmbeds),
+);
 
 /**
  * Checks if a file exists
@@ -514,7 +518,9 @@ function isValidPost(post: DevToPost): boolean {
   const { tag_list: tags = [], slug, organization } = post;
 
   // Ensure tags is an array
-  const tagArray = Array.isArray(tags) ? tags : tags.split(",").map((t) => t.trim());
+  const tagArray = Array.isArray(tags)
+    ? tags
+    : tags.split(",").map((t) => t.trim());
 
   // Exclude posts from pomerium org
   if (organization && organization.username === "pomerium") {
@@ -663,7 +669,9 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     canonical_url,
   } = post;
 
-  const tagArray = Array.isArray(tags) ? tags : tags.split(",").map((t) => t.trim());
+  const tagArray = Array.isArray(tags)
+    ? tags
+    : tags.split(",").map((t) => t.trim());
 
   const jsonFrontmatter: PostFrontmatter = {
     title,
@@ -723,41 +731,44 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     if (!tweetId || twitterEmbeds.has(tweetId)) {
       continue;
     }
-      try {
-        const response = await fetchWithRetry(
-          `https://publish.twitter.com/oembed?url=${encodeURIComponent(
-            `https://twitter.com/anyone/status/${tweetId}`,
-          )}`,
-        );
+    try {
+      const response = await fetchWithRetry(
+        `https://publish.twitter.com/oembed?url=${encodeURIComponent(
+          `https://twitter.com/anyone/status/${tweetId}`,
+        )}`,
+      );
 
-        if (!response.ok) {
-          console.warn(
-            `Failed to fetch Twitter embed for ${tweetId}: ${response.status}`,
-          );
-          continue;
-        }
-
-        console.log(
-          `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`,
-        );
-
-        const data: { html: string } = await response.json();
-        const { html } = data;
-
-        twitterEmbeds.set(tweetId, html);
-      } catch (error) {
+      if (!response.ok) {
         console.warn(
-          `Error fetching Twitter embed for ${tweetId}:`,
-          getErrorMessage(error),
+          `Failed to fetch Twitter embed for ${tweetId}: ${response.status}`,
         );
         continue;
       }
+
+      console.log(
+        `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`,
+      );
+
+      const data: { html: string } = await response.json();
+      const { html } = data;
+
+      twitterEmbeds.set(tweetId, html);
+    } catch (error) {
+      console.warn(
+        `Error fetching Twitter embed for ${tweetId}:`,
+        getErrorMessage(error),
+      );
+      continue;
+    }
   }
 
   return { status: "success" };
 }
 
-async function saveImageUrl(imageUrl: string, imageFilePath: string): Promise<void> {
+async function saveImageUrl(
+  imageUrl: string,
+  imageFilePath: string,
+): Promise<void> {
   try {
     const response = await fetch(imageUrl);
     if (!response.ok) {
@@ -782,7 +793,9 @@ function generateNewImageUrl(imageUrl: URL): string {
   return newImageUrl;
 }
 
-async function saveMarkdownImageUrl(markdownImageUrl: string | null = null): Promise<string | null> {
+async function saveMarkdownImageUrl(
+  markdownImageUrl: string | null = null,
+): Promise<string | null> {
   let newMarkdownImageUrl = null;
 
   if (markdownImageUrl) {
@@ -840,7 +853,10 @@ async function updateMarkdownImageUrls(markdown: string): Promise<{
   };
 }
 
-async function getDevBlogPostEmbedsMarkup(markdown: string, embeds: Map<string, unknown>): Promise<void> {
+async function getDevBlogPostEmbedsMarkup(
+  markdown: string,
+  embeds: Map<string, unknown>,
+): Promise<void> {
   const matches = markdown.matchAll(
     /[^`]{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g,
   );
@@ -873,14 +889,20 @@ async function getDevBlogPostEmbedsMarkup(markdown: string, embeds: Map<string, 
         const markup = await response.text();
         embeds.set(embedUrl, markup);
       } catch (error) {
-        console.warn(`Error fetching embed ${embedUrl}:`, getErrorMessage(error));
+        console.warn(
+          `Error fetching embed ${embedUrl}:`,
+          getErrorMessage(error),
+        );
         continue;
       }
     }
   }
 }
 
-async function updateBlogPostEmbeds(embeds: Map<string, unknown>, filePaths: string): Promise<void> {
+async function updateBlogPostEmbeds(
+  embeds: Map<string, unknown>,
+  filePaths: string,
+): Promise<void> {
   const blogPostEmbedsMarkup: Record<string, unknown> = {};
 
   for (const [url] of embeds) {
@@ -913,7 +935,10 @@ async function updateBlogPostEmbeds(embeds: Map<string, unknown>, filePaths: str
 
           blogPostEmbedsMarkup[url] = data;
         } catch (error) {
-          console.warn(`Failed to fetch blog post for ${url}:`, getErrorMessage(error));
+          console.warn(
+            `Failed to fetch blog post for ${url}:`,
+            getErrorMessage(error),
+          );
           continue;
         }
       } else {
@@ -939,7 +964,10 @@ async function updateBlogPostEmbeds(embeds: Map<string, unknown>, filePaths: str
   }
 }
 
-async function updateTwitterEmbeds(twitterEmbeds: Map<string, string>, filepath: string): Promise<void> {
+async function updateTwitterEmbeds(
+  twitterEmbeds: Map<string, string>,
+  filepath: string,
+): Promise<void> {
   let tweetEmbeds = Object.fromEntries(twitterEmbeds);
 
   const data = JSON.stringify(tweetEmbeds, null, 2);
@@ -975,7 +1003,7 @@ async function updateTwitterEmbeds(twitterEmbeds: Map<string, string>, filepath:
       : post.tag_list.split(",").map((t) => t.trim());
 
     return (
-      !["vscodetips", "virtualcoffee"].includes(orgUsername) ||
+      !["vscodetips", "virtualcoffee", "pomerium"].includes(orgUsername) ||
       (orgUsername === "vscodetips" && tagList.includes("vscodetips"))
     );
   });
