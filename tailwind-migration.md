@@ -5,6 +5,7 @@ Move `public/styles/global.css` to Tailwind v4. Replace as many utility classes 
 
 ## Progress
 - Utility classes (layout, spacing, typography, colors, z-index, sr-only, w-fit, float-left) are now covered by Tailwind and removed from `src/styles/legacy.css`.
+- Migrated Astro templates to Tailwind utilities for layout, nav, post lists, search box, and series navigation; trimmed matching legacy CSS selectors.
 
 ## Plan
 1. **Inventory existing CSS**

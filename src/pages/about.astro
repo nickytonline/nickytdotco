@@ -9,20 +9,20 @@ import Base from "../layouts/Base.astro";
   <main id="main-content" tabindex="-1">
     <article class="[ post ] [ h-entry ]">
       <header>
-        <div class="[ inner-wrapper ] [ sf-flow ]">
+        <div class="mx-auto max-w-208 px-500 sf-flow">
           <h1
-            class="[ intro__heading ] [ text-800 md:text-900 leading-tight ] [ p-name ]"
+            class="max-w-[40ex] text-(--color-theme-feature-text) text-800 md:text-900 leading-tight p-name"
           >
             About
           </h1><div class="flex gap-base flex-wrap"></div>
         </div>
       </header><div
-        class="[ post__body ] [ inner-wrapper ] [ leading-loose text-500 ] [ sf-flow ] [ e-content ]"
+        class="post__body mx-auto max-w-208 px-500 leading-loose text-500 sf-flow e-content"
       >
         <h2 id="heading-who-is-this-guy">
           Who Is This Guy?<a
             href="#heading-who-is-this-guy"
-            class="heading-permalink"
+            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
           >
             <span class="sr-only"> permalink</span>
             <svg
@@ -40,7 +40,7 @@ import Base from "../layouts/Base.astro";
             </svg></a
           >
         </h2><img
-          class="headshot"
+          class="float-left mr-base mt-700 w-1/4 rounded-full [shape-outside:ellipse(50%_50%)]"
           src="/images/colour-headshot-500x500.jpg"
           alt="Headshot of Nick Taylor"
           loading="lazy"

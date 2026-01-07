@@ -30,7 +30,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 
 <Base title="Blog Posts - Archive" metaDesc="All blog posts by Nick Taylor">
   <main id="main-content" tabindex="-1">
-    <div class="inner-wrapper sf-flow">
+    <div class="mx-auto max-w-208 px-500 sf-flow">
       <h1>Blog Posts Archive</h1>
       <p>All {sortedPosts.length} blog posts, organized by year.</p>
 
@@ -42,8 +42,11 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
               {postsByYear[Number(year)].map((post) => (
                 <li>
                   <article>
-                    <h3 class="font-base leading-tight text-600 font-semibold">
-                      <a href={`/blog/${post.slug}`} class="archive-link">
+                    <h3 class="font-base leading-tight font-semibold text-300 lg:text-500">
+                      <a
+                        href={`/blog/${post.slug}`}
+                        class="wrap-break-word text-current no-underline hover:underline"
+                      >
                         {post.data.title}
                       </a>
                     </h3>
@@ -68,15 +71,3 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
     </div>
   </main>
 </Base>
-
-<style>
-  .archive-link {
-    color: inherit;
-    text-decoration: none;
-    overflow-wrap: break-word;
-  }
-
-  .archive-link:hover {
-    text-decoration: underline;
-  }
-</style>

@@ -66,13 +66,17 @@ function shouldShowItem(index: number): boolean {
 const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
 ---
 
-<aside class="series-navigation">
+<aside
+  class="my-900 rounded-xl border border-(--color-stroke) bg-(--color-bg) p-700"
+>
   <nav aria-label="Series navigation" role="navigation">
-    <h2>{seriesName(series)}</h2>
+    <h2 class="mb-700 text-600 font-bold text-(--color-theme-primary)">
+      {seriesName(series)}
+    </h2>
 
     <ol
       id={`series-list-${seriesSlug}`}
-      class="series-list"
+      class="m-0 flex list-none flex-col gap-500 p-0"
       role="list"
       data-series-list
     >
@@ -135,14 +139,17 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
                       const hiddenIndex =
                         isSecondToLast || isLast ? 1 : currentIndex - 1;
                       return (
-                        <li class="series-item" role="listitem">
-                          <span class="series-badge" aria-hidden="true">
+                        <li class="flex items-start gap-500" role="listitem">
+                          <span
+                            class="flex h-700 w-700 shrink-0 items-center justify-center rounded-full bg-(--color-stroke) text-300 font-semibold leading-none text-(--color-text)"
+                            aria-hidden="true"
+                          >
                             {hiddenIndex + 1}
                           </span>
-                          <div class="series-content">
+                          <div class="min-w-0 flex-1 pt-100">
                             <a
                               href={`/blog/${hiddenPost.slug}`}
-                              class="series-title series-title--link"
+                              class="block wrap-break-word leading-mid text-(--color-text) no-underline hover:text-(--color-theme-primary) hover:underline focus-visible:rounded-[2px] focus-visible:text-(--color-theme-primary) focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-(--color-theme-primary) focus-visible:outline-offset-2"
                             >
                               {truncate(hiddenPost.data.title, 80)}
                             </a>
@@ -152,19 +159,16 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
                     } else {
                       return (
                         <>
-                          <li
-                            class="series-item series-item--toggle"
-                            role="listitem"
-                          >
+                          <li class="flex items-center gap-500" role="listitem">
                             <span
-                              class="series-badge series-badge--collapsed"
+                              class="grid h-700 w-700 shrink-0 place-items-center rounded-full bg-transparent p-0 text-500 tracking-[-0.05em] text-(--color-text-muted,#6b7280)"
                               aria-hidden="true"
                             >
                               ···
                             </span>
                             <button
                               type="button"
-                              class="series-toggle"
+                              class="cursor-pointer border-0 bg-transparent p-0 text-left text-300 font-medium text-(--color-theme-primary) hover:underline focus-visible:rounded-[2px] focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-(--color-theme-primary) focus-visible:outline-offset-2"
                               aria-expanded="false"
                               data-series-toggle="before"
                             >
@@ -175,17 +179,20 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
                             .slice(hiddenStart, hiddenEnd)
                             .map((hiddenPost, hiddenIdx) => (
                               <li
-                                class="series-item series-item--hidden"
+                                class="hidden flex items-start gap-500"
                                 data-series-section="before"
                                 role="listitem"
                               >
-                                <span class="series-badge" aria-hidden="true">
+                                <span
+                                  class="flex h-700 w-700 shrink-0 items-center justify-center rounded-full bg-(--color-stroke) text-300 font-semibold leading-none text-(--color-text)"
+                                  aria-hidden="true"
+                                >
                                   {hiddenStart + hiddenIdx + 1}
                                 </span>
-                                <div class="series-content">
+                                <div class="min-w-0 flex-1 pt-100">
                                   <a
                                     href={`/blog/${hiddenPost.slug}`}
-                                    class="series-title series-title--link"
+                                    class="block wrap-break-word leading-mid text-(--color-text) no-underline hover:text-(--color-theme-primary) hover:underline focus-visible:rounded-[2px] focus-visible:text-(--color-theme-primary) focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-(--color-theme-primary) focus-visible:outline-offset-2"
                                   >
                                     {truncate(hiddenPost.data.title, 80)}
                                   </a>
@@ -200,26 +207,22 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
               )}
 
               {shouldShow && (
-                <li
-                  class:list={[
-                    "series-item",
-                    { "series-item--current": isCurrent },
-                  ]}
-                  role="listitem"
-                >
+                <li class="flex items-start gap-500" role="listitem">
                   <span
                     class:list={[
-                      "series-badge",
-                      { "series-badge--current": isCurrent },
+                      "flex h-700 w-700 shrink-0 items-center justify-center rounded-full text-300 font-semibold leading-none",
+                      isCurrent
+                        ? "bg-(--color-theme-primary) text-white"
+                        : "bg-(--color-stroke) text-(--color-text)",
                     ]}
                     aria-hidden="true"
                   >
                     {i + 1}
                   </span>
-                  <div class="series-content">
+                  <div class="min-w-0 flex-1 pt-100">
                     {isCurrent ? (
                       <>
-                        <span class="series-title series-title--current">
+                        <span class="block wrap-break-word leading-mid font-semibold text-(--color-theme-primary)">
                           {post.data.title}
                         </span>
                         <span class="sr-only">(current post)</span>
@@ -227,7 +230,7 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
                     ) : (
                       <a
                         href={`/blog/${post.slug}`}
-                        class="series-title series-title--link"
+                        class="block wrap-break-word leading-mid text-(--color-text) no-underline hover:text-(--color-theme-primary) hover:underline focus-visible:rounded-[2px] focus-visible:text-(--color-theme-primary) focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-(--color-theme-primary) focus-visible:outline-offset-2"
                       >
                         {truncate(post.data.title, 80)}
                       </a>
@@ -256,14 +259,17 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
                       const hiddenIndex =
                         isFirst || isSecond ? 3 : currentIndex + 1;
                       return (
-                        <li class="series-item" role="listitem">
-                          <span class="series-badge" aria-hidden="true">
+                        <li class="flex items-start gap-500" role="listitem">
+                          <span
+                            class="flex h-700 w-700 shrink-0 items-center justify-center rounded-full bg-(--color-stroke) text-300 font-semibold leading-none text-(--color-text)"
+                            aria-hidden="true"
+                          >
                             {hiddenIndex + 1}
                           </span>
-                          <div class="series-content">
+                          <div class="min-w-0 flex-1 pt-100">
                             <a
                               href={`/blog/${hiddenPost.slug}`}
-                              class="series-title series-title--link"
+                              class="block wrap-break-word leading-mid text-(--color-text) no-underline hover:text-(--color-theme-primary) hover:underline focus-visible:rounded-[2px] focus-visible:text-(--color-theme-primary) focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-(--color-theme-primary) focus-visible:outline-offset-2"
                             >
                               {truncate(hiddenPost.data.title, 80)}
                             </a>
@@ -273,19 +279,16 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
                     } else {
                       return (
                         <>
-                          <li
-                            class="series-item series-item--toggle"
-                            role="listitem"
-                          >
+                          <li class="flex items-center gap-500" role="listitem">
                             <span
-                              class="series-badge series-badge--collapsed"
+                              class="grid h-700 w-700 shrink-0 place-items-center rounded-full bg-transparent p-0 text-500 tracking-[-0.05em] text-(--color-text-muted,#6b7280)"
                               aria-hidden="true"
                             >
                               ···
                             </span>
                             <button
                               type="button"
-                              class="series-toggle"
+                              class="cursor-pointer border-0 bg-transparent p-0 text-left text-300 font-medium text-(--color-theme-primary) hover:underline focus-visible:rounded-[2px] focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-(--color-theme-primary) focus-visible:outline-offset-2"
                               aria-expanded="false"
                               data-series-toggle="after"
                             >
@@ -296,17 +299,20 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
                             .slice(hiddenStart, hiddenEnd)
                             .map((hiddenPost, hiddenIdx) => (
                               <li
-                                class="series-item series-item--hidden"
+                                class="hidden flex items-start gap-500"
                                 data-series-section="after"
                                 role="listitem"
                               >
-                                <span class="series-badge" aria-hidden="true">
+                                <span
+                                  class="flex h-700 w-700 shrink-0 items-center justify-center rounded-full bg-(--color-stroke) text-300 font-semibold leading-none text-(--color-text)"
+                                  aria-hidden="true"
+                                >
                                   {hiddenStart + hiddenIdx + 1}
                                 </span>
-                                <div class="series-content">
+                                <div class="min-w-0 flex-1 pt-100">
                                   <a
                                     href={`/blog/${hiddenPost.slug}`}
-                                    class="series-title series-title--link"
+                                    class="block wrap-break-word leading-mid text-(--color-text) no-underline hover:text-(--color-theme-primary) hover:underline focus-visible:rounded-[2px] focus-visible:text-(--color-theme-primary) focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-(--color-theme-primary) focus-visible:outline-offset-2"
                                   >
                                     {truncate(hiddenPost.data.title, 80)}
                                   </a>
@@ -342,7 +348,7 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
       // Find all items in this section
       const selector = section
         ? `[data-series-section="${section}"]`
-        : ".series-item--hidden";
+        : ".hidden";
       const hiddenItems = list.querySelectorAll(selector);
 
       // Toggle visibility
@@ -351,9 +357,9 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
 
       hiddenItems.forEach(function (item) {
         if (newState) {
-          item.classList.remove("series-item--hidden");
+          item.classList.remove("hidden");
         } else {
-          item.classList.add("series-item--hidden");
+          item.classList.add("hidden");
         }
       });
 

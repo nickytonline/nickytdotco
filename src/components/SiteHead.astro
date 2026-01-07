@@ -9,12 +9,17 @@ export interface Props {
 const { currentPath } = Astro.props;
 ---
 
-<a class="skip-link" href="#main-content">Skip to content</a>
-<header role="banner" class="site-head pt-700">
-  <div class="wrapper">
-    <a href="/" class="[ site-head__site-name ] [ leading-tight ]">
+<a
+  class="sr-only focus:not-sr-only focus:absolute focus:left-0 focus:top-0 focus:m-base focus:inline-block focus:bg-[var(--color-action-bg)] focus:text-[var(--color-action-text)] focus:font-bold focus:no-underline focus:leading-none focus:px-500 focus:pt-300 focus:pb-base"
+  href="#main-content"
+>
+  Skip to content
+</a>
+<header role="banner" class="pt-700">
+  <div class="mx-auto max-w-[58rem] px-500">
+    <a href="/" class="leading-tight font-bold text-(--color-text) no-underline">
       <span class="sr-only">{site.name} - Home</span>
-      <span class="[ site-head__site-name ] [ text-600 ]" aria-hidden="true">{site.name}</span>
+      <span class="text-600" aria-hidden="true">{site.name}</span>
     </a>
     <Nav ariaLabel="navigation" currentPath={currentPath} />
   </div>

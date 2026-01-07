@@ -36,26 +36,55 @@ const foremBoostLink = `https://dev.to/nickytonline/${fileSlug}`;
 ---
 
 <header>
-  <div class="inner-wrapper sf-flow flex-col">
+  <div class="mx-auto max-w-208 px-500 sf-flow flex-col">
     {
       cover_image && (
         <img src={cover_image} alt={title} class="w-full" data-not-lazy />
       )
     }
-    <h1 class="[ intro__heading text-800 md:text-900 leading-tight p-name ]">
+    <h1
+      class="max-w-[40ex] text-(--color-theme-feature-text) text-800 md:text-900 leading-tight p-name"
+    >
       {title}
     </h1>
 
     <div class="flex gap-base flex-wrap">
-      <a href={foremBoostLink} class="boost-link">Boost on DEV</a>
-      <a href={intentToToot} class="boost-link">Toot it!</a>
-      <a href={intentToBluesky} class="boost-link">Share on Bluesky</a>
-      <a href={intentToTweet} class="boost-link">Tweet It!</a>
-      <a href={intentToLinkedIn} class="boost-link">Share on LinkedIn</a>
+      <a
+        href={foremBoostLink}
+        class="inline-block wrap-break-word bg-(--color-dark) px-[0.4em] pt-[0.2em] pb-[0.3em] leading-tight text-(--color-theme-highlight) no-underline hover:underline"
+      >
+        Boost on DEV
+      </a>
+      <a
+        href={intentToToot}
+        class="inline-block wrap-break-word bg-(--color-dark) px-[0.4em] pt-[0.2em] pb-[0.3em] leading-tight text-(--color-theme-highlight) no-underline hover:underline"
+      >
+        Toot it!
+      </a>
+      <a
+        href={intentToBluesky}
+        class="inline-block wrap-break-word bg-(--color-dark) px-[0.4em] pt-[0.2em] pb-[0.3em] leading-tight text-(--color-theme-highlight) no-underline hover:underline"
+      >
+        Share on Bluesky
+      </a>
+      <a
+        href={intentToTweet}
+        class="inline-block wrap-break-word bg-(--color-dark) px-[0.4em] pt-[0.2em] pb-[0.3em] leading-tight text-(--color-theme-highlight) no-underline hover:underline"
+      >
+        Tweet It!
+      </a>
+      <a
+        href={intentToLinkedIn}
+        class="inline-block wrap-break-word bg-(--color-dark) px-[0.4em] pt-[0.2em] pb-[0.3em] leading-tight text-(--color-theme-highlight) no-underline hover:underline"
+      >
+        Share on LinkedIn
+      </a>
     </div>
 
-    <div class="[ intro__summary ] [ sf-flow ] [ leading-mid max-w-[60ch] ]">
-      <p class="intro__meta text-500 leading-tight">
+    <div
+      class="intro__summary sf-flow leading-mid max-w-[60ch] text-500 [--flow-space:1.25rem]"
+    >
+      <p class="flex flex-col gap-100 text-500 leading-tight">
         {
           date && (
             <span class="flex gap-100">

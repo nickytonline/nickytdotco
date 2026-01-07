@@ -25,50 +25,46 @@ const introContent = `<em>Hi!</em> I'm Nick. I'm not a big fan of spiders, I'm a
 >
   <main id="main-content" tabindex="-1">
     <header>
-      <div class="[ inner-wrapper ] [ sf-flow ]">
+      <div class="mx-auto max-w-208 px-500 sf-flow">
         <h1
-          class="[ intro__heading intro__heading--compact ] [ text-800 md:text-900 leading-tight ] [ p-name ]"
+          class="max-w-[20ex] text-(--color-theme-feature-text) text-800 md:text-900 leading-tight p-name"
         >
           {introHeading}
         </h1>
         <div
-          class="[ intro__summary ] [ sf-flow ] [ leading-mid max-w-[60ch] ]"
+          class="intro__summary sf-flow leading-mid max-w-[60ch] text-500 [--flow-space:1.25rem]"
           set:html={introContent}
         />
       </div>
     </header>
 
-    <section class="post-list pt-300">
-      <div class="[ inner-wrapper ] [ sf-flow ]">
-        <h2 class="[ post-list__heading ] [ text-700 md:text-800 ]">
-          Latest Blog Posts
-        </h2>
-        <ol class="[ post-list__items ] [ sf-flow ] [ pt-300 ]" reversed>
+    <section class="pt-300">
+      <div class="mx-auto max-w-208 px-500 sf-flow">
+        <h2 class="text-700 md:text-800">Latest Blog Posts</h2>
+        <ol class="sf-flow pt-300" reversed>
           {
             recentPosts.map((post) => (
-              <li class="blog flex items-start gap-300">
+              <li class="flex items-start gap-300">
                 {post.data.cover_image && (
                   <a
                     href={`/blog/${post.slug}`}
-                    class="hidden md:block"
-                    style="width: 150px; flex-shrink: 0;"
+                    class="hidden shrink-0 md:block w-[150px]"
                     aria-hidden="true"
                   >
                     <img
                       src={post.data.cover_image}
                       alt=""
-                      style="width: 100%; height: auto;"
+                      class="h-auto w-full"
                       data-not-lazy
                     />
                   </a>
                 )}
-                <span class="grow min-w-0" style="margin-top: -0.25em;">
-                  <h3 class="font-base leading-tight text-600 font-semibold">
+                <span class="grow min-w-0 -mt-[0.25em]">
+                  <h3 class="font-base leading-tight font-semibold text-300 lg:text-500">
                     <a
                       href={`/blog/${post.slug}`}
-                      class="post-list__link"
+                      class="wrap-break-word text-(--color-theme-primary) no-underline hover:underline"
                       rel="bookmark"
-                      style="word-break: break-word;"
                     >
                       {post.data.title}
                     </a>
@@ -82,10 +78,14 @@ const introContent = `<em>Hi!</em> I'm Nick. I'm not a big fan of spiders, I'm a
               </li>
             ))
           }
-          <li class="blog post-list__item">
-            <h3 class="font-base leading-tight text-600 font-semibold">
-              <a href="/archive" class="post-list__link" rel="bookmark"
-                >More blog posts...</a
+          <li>
+            <h3
+              class="font-base leading-tight font-semibold text-300 lg:text-500"
+            >
+              <a
+                href="/archive"
+                class="wrap-break-word text-(--color-theme-primary) no-underline hover:underline"
+                rel="bookmark">More blog posts...</a
               >
             </h3>
           </li>
