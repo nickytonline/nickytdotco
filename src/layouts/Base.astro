@@ -73,7 +73,7 @@ const currentPath = Astro.url.pathname;
 
     <slot name="head" />
   </head>
-  <body>
+  <body class="grid gap-4">
     <SiteHead currentPath={currentPath} />
     <slot />
     <SiteFoot />
