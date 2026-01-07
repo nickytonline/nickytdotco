@@ -80,11 +80,12 @@ const currentPath = Astro.url.pathname;
     <SiteFoot />
     <slot name="foot" />
 
-    <script is:inline type="module" src="/js/components/theme-toggle.js" async defer></script>
+    <script is:inline type="module" src="/js/theme-toggle.js" async defer
+    ></script>
 
     <script is:inline>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js');
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
       }
     </script>
   </body>
