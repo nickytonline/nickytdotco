@@ -3,6 +3,9 @@
 ## Goal
 Move `public/styles/global.css` to Tailwind v4. Replace as many utility classes as possible with Tailwind equivalents, while keeping bespoke CSS where Tailwind cannot express the styles yet.
 
+## Progress
+- Utility classes (layout, spacing, typography, colors, z-index, sr-only, w-fit, float-left) are now covered by Tailwind and removed from `src/styles/legacy.css`.
+
 ## Plan
 1. **Inventory existing CSS**
    - Categorize `public/styles/global.css` into:
