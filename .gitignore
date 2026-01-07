@@ -70,17 +70,12 @@ yarn-error.log
 .env.local
 
 # eleventy specific
-*.scssc
 .DS_Store
-.sass-cache
 dist
 
 # Specifics
 
-# Hide design tokens
-src/scss/_tokens.scss
-
-# Hide compiled CSS
+# Hide compiled CSS (old paths, kept for reference)
 src/_includes/assets/*
 src/styles/global.css
 src/styles/global.css.map
