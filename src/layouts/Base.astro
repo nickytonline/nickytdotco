@@ -3,6 +3,7 @@ import { site } from "../data/site";
 import MetaInfo from "../components/MetaInfo.astro";
 import SiteHead from "../components/SiteHead.astro";
 import SiteFoot from "../components/SiteFoot.astro";
+import "../styles/tailwind.css";
 
 export interface Props {
   title: string;
@@ -69,8 +70,6 @@ const currentPath = Astro.url.pathname;
       data-app-id="aa6100ac700b56ab0a4145ec736508387b817e362389a60879aa3e20d273ba80"
       src="https://client.proofybubble.com/assets/embed.js"
       is:inline></script>
-
-    <link rel="stylesheet" href="/styles/global.css" />
 
     <slot name="head" />
   </head>

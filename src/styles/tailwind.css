@@ -1,0 +1,11 @@
+@config "../../tailwind.config.cjs";
+@import "./legacy.css";
+@import "tailwindcss";
+
+.sf-flow {
+  --flow-space: 1em;
+}
+.sf-flow > * + * {
+  margin-top: 1em;
+  margin-top: var(--flow-space);
+}

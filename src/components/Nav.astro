@@ -19,9 +19,9 @@ const items = navigation.items as NavItem[];
 ---
 
 {items && items.length > 0 && (
-  <div class="box-flex flex-wrap gap-base">
+  <div class="flex flex-wrap gap-base">
     <nav class="nav" aria-label={ariaLabel}>
-      <ul class="nav__list box-flex flex-wrap">
+      <ul class="nav__list flex flex-wrap">
         {items.map((item) => {
           const isCurrent = currentPath === item.url;
           return (

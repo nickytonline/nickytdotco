@@ -26,41 +26,67 @@ const introContent = `<em>Hi!</em> I'm Nick. I'm not a big fan of spiders, I'm a
   <main id="main-content" tabindex="-1">
     <header>
       <div class="[ inner-wrapper ] [ sf-flow ]">
-        <h1 class="[ intro__heading intro__heading--compact ] [ text-800 md:text-900 leading-tight ] [ p-name ]">
+        <h1
+          class="[ intro__heading intro__heading--compact ] [ text-800 md:text-900 leading-tight ] [ p-name ]"
+        >
           {introHeading}
         </h1>
-        <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]" set:html={introContent} />
+        <div
+          class="[ intro__summary ] [ sf-flow ] [ leading-mid max-w-[60ch] ]"
+          set:html={introContent}
+        />
       </div>
     </header>
 
-    <section class="post-list pad-top-300">
+    <section class="post-list pt-300">
       <div class="[ inner-wrapper ] [ sf-flow ]">
-        <h2 class="[ post-list__heading ] [ text-700 md:text-800 ]">Latest Blog Posts</h2>
-        <ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]" reversed>
-          {recentPosts.map((post) => (
-            <li class="blog flex items-start gap-300">
-              {post.data.cover_image && (
-                <a href={`/blog/${post.slug}`} class="hidden md-block" style="width: 150px; flex-shrink: 0;" aria-hidden="true">
-                  <img src={post.data.cover_image} alt="" style="width: 100%; height: auto;" data-not-lazy />
-                </a>
-              )}
-              <span class="flex-grow min-w-0" style="margin-top: -0.25em;">
-                <h3 class="font-base leading-tight text-600 weight-mid">
-                  <a href={`/blog/${post.slug}`} class="post-list__link" rel="bookmark" style="word-break: break-word;">
-                    {post.data.title}
+        <h2 class="[ post-list__heading ] [ text-700 md:text-800 ]">
+          Latest Blog Posts
+        </h2>
+        <ol class="[ post-list__items ] [ sf-flow ] [ pt-300 ]" reversed>
+          {
+            recentPosts.map((post) => (
+              <li class="blog flex items-start gap-300">
+                {post.data.cover_image && (
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="hidden md:block"
+                    style="width: 150px; flex-shrink: 0;"
+                    aria-hidden="true"
+                  >
+                    <img
+                      src={post.data.cover_image}
+                      alt=""
+                      style="width: 100%; height: auto;"
+                      data-not-lazy
+                    />
                   </a>
-                </h3>
-                <p class="text-300 weight-mid italic">
-                  <time datetime={w3DateFilter(post.data.date)}>
-                    {dateFilter(post.data.date)}
-                  </time>
-                </p>
-              </span>
-            </li>
-          ))}
+                )}
+                <span class="grow min-w-0" style="margin-top: -0.25em;">
+                  <h3 class="font-base leading-tight text-600 font-semibold">
+                    <a
+                      href={`/blog/${post.slug}`}
+                      class="post-list__link"
+                      rel="bookmark"
+                      style="word-break: break-word;"
+                    >
+                      {post.data.title}
+                    </a>
+                  </h3>
+                  <p class="text-300 font-semibold italic">
+                    <time datetime={w3DateFilter(post.data.date)}>
+                      {dateFilter(post.data.date)}
+                    </time>
+                  </p>
+                </span>
+              </li>
+            ))
+          }
           <li class="blog post-list__item">
-            <h3 class="font-base leading-tight text-600 weight-mid">
-              <a href="/archive" class="post-list__link" rel="bookmark">More blog posts...</a>
+            <h3 class="font-base leading-tight text-600 font-semibold">
+              <a href="/archive" class="post-list__link" rel="bookmark"
+                >More blog posts...</a
+              >
             </h3>
           </li>
         </ol>

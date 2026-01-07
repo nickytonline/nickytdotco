@@ -42,7 +42,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
               {postsByYear[Number(year)].map((post) => (
                 <li>
                   <article>
-                    <h3 class="font-base leading-tight text-600 weight-mid">
+                    <h3 class="font-base leading-tight text-600 font-semibold">
                       <a href={`/blog/${post.slug}`} class="archive-link">
                         {post.data.title}
                       </a>

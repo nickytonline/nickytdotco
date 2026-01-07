@@ -30,6 +30,11 @@ npm run build
 npm run preview
 ```
 
+## Styling
+
+- Tailwind v4 is configured in `tailwind.config.cjs` and `postcss.config.cjs`.
+- Global styles are loaded from `src/styles/tailwind.css`, which imports `src/styles/legacy.css` for bespoke rules.
+
 ## Licensing
 
 This project contains two separate licenses:
