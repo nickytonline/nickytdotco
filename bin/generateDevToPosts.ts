@@ -985,12 +985,11 @@ async function updateTwitterEmbeds(twitterEmbeds: Map<string, string>, filepath:
   for (const postSummary of filteredPosts) {
     const post = await getDevPost(postSummary.id);
 
-    if (post.canonical_url.startsWith("https://www.iamdeveloper.com/posts/")) {
-      post.canonical_url = post.canonical_url.replace(
-        "https://www.iamdeveloper.com/posts/",
-        "https://www.nickyt.co/blog/",
-      );
-    }
+    post.canonical_url = new URL(
+      post.slug,
+      "https://www.nickyt.co/blog/",
+    ).toString();
+
     if (/<!-- my newsletter -->/.test(post.body_markdown)) {
       console.warn(`Skipping newsletter post ${post.title}`);
       continue;
