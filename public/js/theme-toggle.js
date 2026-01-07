@@ -17,7 +17,7 @@ class ThemeToggle extends HTMLElement {
 
   getCSSCustomProp(propKey) {
     let response = getComputedStyle(document.documentElement).getPropertyValue(
-      propKey
+      propKey,
     );
 
     // Tidy up the string if there’s something to work with
@@ -32,7 +32,7 @@ class ThemeToggle extends HTMLElement {
   applySetting(colorScheme) {
     document.documentElement.setAttribute(
       "data-user-color-scheme",
-      colorScheme
+      colorScheme,
     );
     this.setButtonLabelAndStatus(colorScheme);
   }
@@ -63,7 +63,7 @@ class ThemeToggle extends HTMLElement {
   setButtonLabelAndStatus(currentSetting) {
     this.modeToggleButton.setAttribute(
       "aria-label",
-      `${currentSetting === "dark" ? "Light" : "Dark"} theme`
+      `${currentSetting === "dark" ? "Light" : "Dark"} theme`,
     );
     this.modeToggleButton.innerHTML =
       currentSetting === "dark" ? lightModeIcon : darkModeIcon;
@@ -73,7 +73,7 @@ class ThemeToggle extends HTMLElement {
   render() {
     this.innerHTML = html`
       <div class="theme-toggle">
-        <div role="status" class="[ visually-hidden ][ js-mode-status ]"></div>
+        <div role="status" class="sr-only js-mode-status"></div>
         <button class="button js-mode-toggle">${darkModeIcon}</button>
       </div>
     `;
