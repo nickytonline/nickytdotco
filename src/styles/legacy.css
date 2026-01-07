@@ -291,7 +291,7 @@ img {
 }
 .skip-link:not(:focus),
 .post__footer h2 a,
-.visually-hidden {
+.sr-only {
   border: 0;
   clip: rect(0 0 0 0);
   height: auto;

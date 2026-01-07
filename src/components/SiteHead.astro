@@ -13,7 +13,7 @@ const { currentPath } = Astro.props;
 <header role="banner" class="site-head pt-700">
   <div class="wrapper">
     <a href="/" class="[ site-head__site-name ] [ leading-tight ]">
-      <span class="visually-hidden">{site.name} - Home</span>
+      <span class="sr-only">{site.name} - Home</span>
       <span class="[ site-head__site-name ] [ text-600 ]" aria-hidden="true">{site.name}</span>
     </a>
     <Nav ariaLabel="navigation" currentPath={currentPath} />
