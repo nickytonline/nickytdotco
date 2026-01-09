@@ -1,0 +1,73 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { dateFilter } from "../utils/filters";
+
+const allPosts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+
+// Sort by date descending
+const sortedPosts = allPosts.sort((a, b) => {
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+
+// Group posts by year
+const postsByYear = sortedPosts.reduce(
+  (acc, post) => {
+    const year = post.data.date.getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  },
+  {} as Record<number, typeof sortedPosts>
+);
+
+const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+---
+
+<Base title="Blog Posts - Archive" metaDesc="All blog posts by Nick Taylor">
+  <main id="main-content" tabindex="-1">
+    <div class="mx-auto max-w-208 px-500 sf-flow">
+      <h1>Blog Posts Archive</h1>
+      <p>All {sortedPosts.length} blog posts, organized by year.</p>
+
+      {
+        years.map((year) => (
+          <section class="sf-flow">
+            <h2>{year}</h2>
+            <ul class="sf-flow">
+              {postsByYear[Number(year)].map((post) => (
+                <li>
+                  <article>
+                    <h3 class="font-base leading-tight font-semibold text-300 lg:text-500">
+                      <a
+                        href={`/blog/${post.slug}`}
+                        class="wrap-break-word text-current no-underline hover:underline"
+                      >
+                        {post.data.title}
+                      </a>
+                    </h3>
+                    <p class="text-500">
+                      <time datetime={post.data.date.toISOString()}>
+                        {dateFilter(post.data.date)}
+                      </time>
+                      {post.data.reading_time_minutes && (
+                        <span>
+                          {" "}
+                          • {post.data.reading_time_minutes} min read
+                        </span>
+                      )}
+                    </p>
+                  </article>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </main>
+</Base>
