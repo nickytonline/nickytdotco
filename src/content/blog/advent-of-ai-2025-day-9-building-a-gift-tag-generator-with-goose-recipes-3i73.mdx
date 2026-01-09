@@ -10,7 +10,7 @@ tags:
   - goose
   - automation
 cover_image: >-
-  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fw1wpshh1bnx2yrm1dpdd.jpg
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fw1wpshh1bnx2yrm1dpdd.jpg
 canonical_url: >-
   https://www.nickyt.co/blog/advent-of-ai-2025-day-9-building-a-gift-tag-generator-with-goose-recipes-3i73
 reading_time_minutes: 5
@@ -39,9 +39,9 @@ This was my first time building a recipe that had to work with fixed dimensions.
 
 When I first tried generating tags, the content would overflow or fonts would be too big. Text would get cut off at the edges, or the QR code would hang off the bottom. Not great when you're actually trying to print these. Initially I noticed the CSS had set `overflow: hidden` on the cards which cropped the text/design.
 
-![gift tag cut off](https://www.nickyt.co/images/posts/_uploads_articles_nmjpubdfao7zg7rdcwug.png)
+![gift tag cut off](/assets/images/posts/_uploads_articles_nmjpubdfao7zg7rdcwug.png)
 
-![gift tag cut off](https://www.nickyt.co/images/posts/_uploads_articles_b3ehnxdg3h5udq60y7c7.png)
+![gift tag cut off](/assets/images/posts/_uploads_articles_b3ehnxdg3h5udq60y7c7.png)
 
 The breakthrough came from adding explicit constraints to the recipe:
 
@@ -53,10 +53,10 @@ The breakthrough came from adding explicit constraints to the recipe:
 
 Once these constraints were in the instructions, Goose started generating tags that actually respected the print boundaries. Font sizes adapted based on content length, margins were calculated correctly, and nothing got cut off.
 
-![gift tag no longer cut off](https://www.nickyt.co/images/posts/_uploads_articles_mj62au8wpn90ohfkizp2.png)
+![gift tag no longer cut off](/assets/images/posts/_uploads_articles_mj62au8wpn90ohfkizp2.png)
 
 
-![gift tag no longer cut off](https://www.nickyt.co/images/posts/_uploads_articles_h650cjjauk8frgqhj3gg.png)
+![gift tag no longer cut off](/assets/images/posts/_uploads_articles_h650cjjauk8frgqhj3gg.png)
 
 
 ## Starting with a PRD

@@ -443,7 +443,7 @@ const VSCODE_TIPS_POSTS_DIRECTORY = path.join(
   __dirname,
   "../src/content/vscodetips",
 );
-const POSTS_IMAGES_PUBLIC_DIRECTORY = "/images/posts";
+const POSTS_IMAGES_PUBLIC_DIRECTORY = "/assets/images/posts";
 const POSTS_IMAGES_DIRECTORY = path.join(
   __dirname,
   "../public",
@@ -787,8 +787,9 @@ async function saveImageUrl(
 function generateNewImageUrl(imageUrl: URL): string {
   const imagefilename = imageUrl.pathname.replaceAll("/", "_");
   const newImageUrl = new URL(
-    siteUrl + path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename),
-  ).toString();
+    path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename),
+    siteUrl,
+  ).pathname;
 
   return newImageUrl;
 }

@@ -9,7 +9,7 @@ tags:
   - testing
   - machinelearning
 cover_image: >-
-  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbzfbc9vb8todj1ngcg1q.jpg
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbzfbc9vb8todj1ngcg1q.jpg
 canonical_url: https://www.nickyt.co/blog/what-are-ai-evals-1kk9
 reading_time_minutes: 5
 template: post
@@ -31,7 +31,7 @@ I'll use Galileo examples throughout this post, but these concepts should apply 
 
 When you build a regular app, testing is straightforward. Write a unit test, arrange/act/assert, done. The function returns the same thing every time. Integration tests pass or fail. End-to-end tests are flaky but still pretty deterministic.
 
-![frontend tests passing](https://www.nickyt.co/images/posts/_uploads_articles_bzlijghz2zkx61nyob85.png)
+![frontend tests passing](/assets/images/posts/_uploads_articles_bzlijghz2zkx61nyob85.png)
 
 AI breaks all of this.
 
@@ -51,11 +51,11 @@ Here's an example. An HR assistant is supposed to tell users how many vacation d
 
 You run an eval that checks context adherence. Does the output match the input context? With no context provided, it scores 0%.
 
-[![context adherence 0% score](https://www.nickyt.co/images/posts/_uploads_articles_ust2paerz2eiisvlyswa.png)](https://youtu.be/4cqR3gMDVP0?t=1207)
+[![context adherence 0% score](/assets/images/posts/_uploads_articles_ust2paerz2eiisvlyswa.png)](https://youtu.be/4cqR3gMDVP0?t=1207)
 
 Add the actual employment contract data and it scores 100%.
 
-[![context adherence 100% score](https://www.nickyt.co/images/posts/_uploads_articles_ggs3bn8jr1dexmnuord9.png)](https://youtu.be/4cqR3gMDVP0?t=1387)
+[![context adherence 100% score](/assets/images/posts/_uploads_articles_ggs3bn8jr1dexmnuord9.png)](https://youtu.be/4cqR3gMDVP0?t=1387)
 
 ## Lower Your Pass Rate Expectations
 

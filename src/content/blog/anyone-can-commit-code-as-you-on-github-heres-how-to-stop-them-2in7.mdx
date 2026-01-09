@@ -10,7 +10,7 @@ tags:
   - github
   - gpg
 cover_image: >-
-  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdcv3tipmz6cohbh8xc5x.jpg
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdcv3tipmz6cohbh8xc5x.jpg
 canonical_url: >-
   https://www.nickyt.co/blog/anyone-can-commit-code-as-you-on-github-heres-how-to-stop-them-2in7
 reading_time_minutes: 7
@@ -20,7 +20,7 @@ I've been signing my Git commits since 2020, and it's one of those security prac
 
 Anyone can set their git config to use your name and email, push commits, and they'll show up on GitHub as if you wrote them. For real. The only difference? There's no "Verified" badge.
 
-[![Unverified commit on GitHib](https://www.nickyt.co/images/posts/_uploads_articles_ykq7ecaxcf0yl58ez01t.png)](https://github.com/forem/forem/commit/fbbda3ed822a3e7c7d718ad979998ab23ae2a607)
+[![Unverified commit on GitHib](/assets/images/posts/_uploads_articles_ykq7ecaxcf0yl58ez01t.png)](https://github.com/forem/forem/commit/fbbda3ed822a3e7c7d718ad979998ab23ae2a607)
 
 ## What is GPG?
 
@@ -41,7 +41,7 @@ Commit impersonation isn't just theoretical. Here are some scenarios where it ac
 
 The "Verified" badge isn't just decorative. It's proof that the commit actually came from the key holder, not just someone pretending to be them.
 
-[![A verified commit of mine](https://www.nickyt.co/images/posts/_uploads_articles_vyh3zv8o1r0x2pui3bic.png)](https://github.com/nickytonline/mcp-typescript-template/commit/76563e5c89aad52c3d8d5cc76662e519e388ca5f)
+[![A verified commit of mine](/assets/images/posts/_uploads_articles_vyh3zv8o1r0x2pui3bic.png)](https://github.com/nickytonline/mcp-typescript-template/commit/76563e5c89aad52c3d8d5cc76662e519e388ca5f)
 
 ## Does Anyone Actually Care?
 
@@ -72,7 +72,7 @@ Install it like any other Mac app.
 
 Open GPG Keychain and click "New" to create a key pair.
 
-![New keypair dialog](https://www.nickyt.co/images/posts/_uploads_articles_5m5s86ck9firk1zwlf5k.png)
+![New keypair dialog](/assets/images/posts/_uploads_articles_5m5s86ck9firk1zwlf5k.png)
 
 Fill in:
 - **Name**: Your real name (should match your GitHub account)
@@ -85,7 +85,7 @@ Fill in:
 
 Click "Generate key" and wait a few seconds.
 
-![GPG Keychain info](https://www.nickyt.co/images/posts/_uploads_articles_z7inudls4zar1v5f3bj7.png)
+![GPG Keychain info](/assets/images/posts/_uploads_articles_z7inudls4zar1v5f3bj7.png)
 
 > **⚠️ Back Up Your Private Key**
 > 
@@ -93,7 +93,7 @@ Click "Generate key" and wait a few seconds.
 >
 > **Good backup options:**
 > - Export your private key (`gpg --export-secret-keys --armor YOUR_KEY_ID > private-key.asc`) and store it in a password manager like 1Password or Bitwarden as a Secure Note. Note you'll most likely be asked to enter your passphrase.
-> ![Exporting private key](https://www.nickyt.co/images/posts/_uploads_articles_ahfj8ktx8ppwy12r99gi.png)
+> ![Exporting private key](/assets/images/posts/_uploads_articles_ahfj8ktx8ppwy12r99gi.png)
 > - Back up your entire `~/.gnupg` directory to encrypted cloud storage
 > - Keep an encrypted copy on a secure external drive
 >
@@ -105,7 +105,7 @@ In GPG Keychain, select your new key, then go to **Export** from the menu (or ri
 
 Ensure that "Include secret key in exported file" is **not** checked and save it somewhere.
 
-![Export key dialog](https://www.nickyt.co/images/posts/_uploads_articles_xxo36zi5j3lchtqnhi5q.png)
+![Export key dialog](/assets/images/posts/_uploads_articles_xxo36zi5j3lchtqnhi5q.png)
 
 Open that file in a text editor. It'll look something like this:
 
@@ -126,7 +126,7 @@ Copy that entire block.
 3. Paste in your public key
 4. Click "Add GPG key"
 
-![GitHub add GPG key screen](https://www.nickyt.co/images/posts/_uploads_articles_a8dz8shot24tp5rwpivr.png)
+![GitHub add GPG key screen](/assets/images/posts/_uploads_articles_a8dz8shot24tp5rwpivr.png)
 
 GitHub now knows your public key and can verify commits signed with your private key.
 
@@ -197,11 +197,11 @@ When your key approaches expiration, GPG Keychain makes renewal easy:
 3. Double-click to open key details
 4. Click the <kbd>Change...</kbd> button next to the expiration date
 
-![Change expiration dialog in gpg keychain](https://www.nickyt.co/images/posts/_uploads_articles_lvop470szki5lzhk158u.png)
+![Change expiration dialog in gpg keychain](/assets/images/posts/_uploads_articles_lvop470szki5lzhk158u.png)
 
 5. Choose a new expiration date (I typically extend by a few months)
 
-![Changing expiration date for GPG key](https://www.nickyt.co/images/posts/_uploads_articles_jwclmuw0ki0ljabqx4uv.png)
+![Changing expiration date for GPG key](/assets/images/posts/_uploads_articles_jwclmuw0ki0ljabqx4uv.png)
 
 6. Enter your passphrase to confirm
 

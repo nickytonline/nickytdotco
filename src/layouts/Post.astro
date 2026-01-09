@@ -3,6 +3,7 @@ import MainLayout from "./MainLayout.astro";
 import PostIntro from "../components/PostIntro.astro";
 import SeriesNavigation from "../components/SeriesNavigation.astro";
 import type { CollectionEntry } from "astro:content";
+import site from "../data/site";
 
 export interface Props {
   entry: CollectionEntry<"blog">;
@@ -17,7 +18,7 @@ const currentUrl = `/blog/${entry.slug}`;
 <MainLayout
   title={entry.data.title}
   metaDesc={entry.data.excerpt || entry.data.description}
-  socialImage={entry.data.cover_image}
+  socialImage={new URL(entry.data.cover_image!, site.url).toString()}
 >
   <main id="main" tabindex="-1">
     <article>
