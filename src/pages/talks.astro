@@ -1,0 +1,110 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/MainLayout.astro";
+import TagList from "../components/TagList.astro";
+import { getThumbnailUrl } from "../utils/video-utils";
+export const prerender = true;
+
+const talks = await getCollection("talks");
+const sortedTalks = talks.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const talksByYear = sortedTalks.reduce(
+  (acc, talk) => {
+    const year = talk.data.date.getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(talk);
+    return acc;
+  },
+  {} as Record<number, typeof sortedTalks>
+);
+
+const years = Object.keys(talksByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
+---
+
+<Layout title="Talks | Nick Taylor">
+  <main class="relative grid gap-8">
+    <div class="pt-4 md:pt-8 lg:pt-16 pb-4">
+      <div class="grid gap-4">
+        <h1>Talks</h1>
+        <a href="/tags">Browse talks by tag</a>
+        <nav aria-label="Jump to year">
+          <ul class="flex flex-wrap">
+            {
+              years.map((year, idx) => (
+                <li
+                  class={
+                    idx !== years.length - 1
+                      ? 'after:content-["|"] after:mx-1'
+                      : ""
+                  }
+                >
+                  <a href={`#year-${year}`}>{year}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    {
+      years.map((year) => (
+        <section id={`year-${year}`} class="scroll-mt-96">
+          <h2 class="text-3xl font-bold mb-6 pb-4">{year}</h2>
+          <ul class="grid gap-8">
+            {talksByYear[year].map((talk) => {
+              const slug = talk.id.replace(/^talks\//, "").replace(/\.md$/, "");
+              const thumbnailUrl = getThumbnailUrl(talk);
+              return (
+                <li>
+                  <a href={`/talks/${slug}`} class="block group">
+                    <article class="flex gap-4">
+                      <div class="hidden md:block flex-shrink-0 w-48 h-27">
+                        <img
+                          src={thumbnailUrl}
+                          alt=""
+                          aria-hidden="true"
+                          class="w-full h-full object-cover rounded"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div>
+                        <h3>
+                          <a href={`/talks/${slug}`}>{talk.data.title}</a>
+                        </h3>
+                        <div>
+                          <time datetime={talk.data.date.toISOString()}>
+                            {talk.data.date.toLocaleDateString("en-US", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            })}
+                          </time>
+                          {" \u2022 "}
+                          {talk.data.venue.name}
+                        </div>
+                        {talk.data.tags && talk.data.tags.length > 0 && (
+                          <div class="mt-2">
+                            <TagList tags={talk.data.tags} limit={3} />
+                          </div>
+                        )}
+                      </div>
+                    </article>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))
+    }
+
+    <a href="/tags">Browse talks by tag</a>
+  </main>
+</Layout>
