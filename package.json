@@ -20,6 +20,7 @@
     "@astrojs/rss": "^4.0.14",
     "@varlock/astro-integration": "^0.1.0",
     "astro": "^5.16.6",
+    "lucide-react": "^0.562.0",
     "luxon": "^3.7.2",
     "marked": "^12.0.2",
     "remark-directive": "^4.0.0",
