@@ -1,0 +1,194 @@
+---
+import type { StreamGuestInfo } from "../utils/schedule-utils";
+import { getHeadingId, getLocalizedDate } from "../utils/schedule-utils";
+import WebsiteLink from "./WebsiteLink.astro";
+import TwitterLink from "./TwitterLink.astro";
+import BlueskyLink from "./BlueskyLink.astro";
+import GitHubLink from "./GitHubLink.astro";
+import TwitchLink from "./TwitchLink.astro";
+import YouTubeLink from "./YouTubeLink.astro";
+import LinkedInLink from "./LinkedInLink.astro";
+import StreamLinks from "./StreamLinks.astro";
+import HeadingAnchor from "./HeadingAnchor.astro";
+import { getYouTubeId } from "../utils/youtube-utils";
+import EventCalendar from "./EventCalendar";
+
+const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
+
+interface Props {
+  locale: string;
+  timezone: string;
+  schedule: StreamGuestInfo[];
+}
+
+const { locale, timezone, schedule } = Astro.props;
+
+const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
+  return new Date(a.date).getTime() - new Date(b.date).getTime();
+});
+---
+
+<ul class="flex flex-col gap-16">
+  {
+    fullSchedule.map((scheduleItem) => {
+      console.dir(scheduleItem);
+      const { date, title, description } = scheduleItem;
+      const guestDate = getLocalizedDate({
+        date,
+        locale,
+        timezone,
+        showTime: true,
+      });
+
+      let youtubeStreamLink,
+        linkedinStreamLink,
+        guestName,
+        guestTitle,
+        twitter,
+        website,
+        twitch,
+        youtube,
+        github,
+        ogImage,
+        bluesky,
+        linkedin,
+        type;
+
+      if (
+        scheduleItem.type === "nickyt.live" ||
+        scheduleItem.type === "pomerium-live"
+      ) {
+        guestName = scheduleItem.guestName;
+        guestTitle = scheduleItem.guestTitle;
+        youtubeStreamLink = scheduleItem.youtubeStreamLink;
+        linkedinStreamLink = scheduleItem.linkedinStreamLink;
+        twitter = scheduleItem.twitter;
+        website = scheduleItem.website;
+        twitch = scheduleItem.twitch;
+        youtube = scheduleItem.youtube;
+        github = scheduleItem.github;
+        bluesky = scheduleItem.bluesky;
+        linkedin = scheduleItem.linkedin;
+        type = scheduleItem.type;
+      } else {
+        guestName = "2Full2Stack";
+        youtubeStreamLink = (scheduleItem as CfeScheduleItem).link;
+        ogImage = (scheduleItem as CfeScheduleItem).ogImage;
+      }
+
+      const headingId = getHeadingId(guestName, date);
+      const videoId = youtubeStreamLink
+        ? getYouTubeId(youtubeStreamLink)
+        : null;
+      const eventLocation = `${Astro.request.url}#${headingId}`;
+      const noGuest = github === "nickytonline" || guestName === "2Full2Stack";
+
+      return (
+        <li class="flex flex-col gap-4 [&_h2]:text-pink-600 [&_a:hover]:text-pink-600">
+          <div class="grid gap-4">
+            <div>
+              <h2 id={headingId} class="flex gap-2 items-center mb-2">
+                {title}
+                <HeadingAnchor {headingId} />
+              </h2>
+              <div class="flex flex-wrap items-start gap-4">
+                <div>
+                  <time datetime={date} class="italic">
+                    {guestDate}
+                  </time>
+                  <div>
+                    {noGuest ? null : (
+                      <div>
+                        Guest: {guestName}
+                        {guestTitle ? `, ${guestTitle}` : null}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                {title ? (
+                  <EventCalendar
+                    eventDate={date}
+                    eventName={
+                      guestName === "2Full2Stack"
+                        ? `2 Full 2 Stack - ${title}`
+                        : `nickyt.live - ${title}`
+                    }
+                    {description}
+                    duration={90}
+                    location={eventLocation}
+                    client:visible
+                  />
+                ) : null}
+              </div>
+            </div>
+            {videoId || ogImage ? (
+              <img
+                src={
+                  videoId
+                    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+                    : ogImage
+                }
+                alt=""
+                class={`my-2 rounded-md w-60 md:w-120 aspect-auto border${
+                  videoId ? " border-pink-300" : ""
+                }`}
+              />
+            ) : null}
+            {description ? (
+              <p set:html={description} class="prose max-w-prose" />
+            ) : null}
+          </div>
+          <nav
+            class="nav"
+            aria-label={`Links for live stream guest ${guestName}`}
+          >
+            <ul class="flex gap-2 items-center">
+              {website ? (
+                <li>
+                  <WebsiteLink name={guestName} url={website} />
+                </li>
+              ) : null}
+              {github ? (
+                <li>
+                  <GitHubLink name={guestName} url={github} />
+                </li>
+              ) : null}
+              {twitter ? (
+                <li>
+                  <TwitterLink name={guestName} url={twitter} />
+                </li>
+              ) : null}
+
+              {bluesky ? (
+                <li>
+                  <BlueskyLink name={guestName} url={bluesky} />
+                </li>
+              ) : null}
+
+              {twitch ? (
+                <li>
+                  <TwitchLink name={guestName} url={twitch} />
+                </li>
+              ) : null}
+              {youtube ? (
+                <li>
+                  <YouTubeLink name={guestName} url={youtube} />
+                </li>
+              ) : null}
+              {linkedin ? (
+                <li>
+                  <LinkedInLink name={guestName} url={linkedin} />
+                </li>
+              ) : null}
+            </ul>
+          </nav>
+          <StreamLinks
+            twitchUrl={type === "nickyt.live" ? TWITCH_STREAM_URL : undefined}
+            youtubeUrl={youtubeStreamLink}
+            linkedinUrl={linkedinStreamLink}
+          />
+        </li>
+      );
+    })
+  }
+</ul>

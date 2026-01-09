@@ -1,0 +1,14 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<a
+  href={`#${id}`}
+  class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-white text-black p-2 rounded-md focus:top-12 focus:z-50"
+>
+  Skip to main content
+</a>
