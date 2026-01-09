@@ -29,47 +29,50 @@ const currentPath = pathname.slice(1);
           </li>
           <li>
             <a
-              href="/archive"
-              aria-current={currentPath === "archive" ? "page" : "false"}
-              >Past Streams
+              href="/talks"
+              aria-current={currentPath === "talks" ? "page" : "false"}
+            >
+              Talks
             </a>
           </li>
           <li class="relative group">
-            <a href="#">Channels</a>
+            <a href="#">Watch</a>
             <div
               class="absolute invisible opacity-0 transition-all duration-300 transform -translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 right-0 md:right-auto md:left-0 z-20"
             >
               <ul
-                class="mt-4 p-4 grid gap-4 border border-black [&_a]:block [&_a]:w-full [&_a]:whitespace-nowrap bg-white min-w-[200px] shadow-lg z-30"
+                class="mt-4 p-4 grid gap-4 border border-black [&_a]:block [&_a]:w-full [&_a]:whitespace-nowrap bg-white min-w-50 shadow-lg z-30"
               >
                 <li>
-                  <a href="https://twitch.tv/nickytonline">Twitch</a>
+                  <a href="/video-archive">Past Streams </a>
                 </li>
                 <li>
-                  <a href="https://youtube.com/@nickytonline">YouTube</a>
+                  <a href="/guest-appearances">Guest Spots </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/nickytonline">LinkedIn</a
+                  <a href="https://twitch.tv/nickytonline" target="_blank"
+                    >Twitch</a
                   >
                 </li>
                 <li>
-                  <a href="/2full2stack">2 Full 2 Stack </a>
+                  <a href="https://youtube.com/@nickytonline" target="_blank"
+                    >YouTube</a
+                  >
                 </li>
                 <li>
-                  <a href="/pomerium-live">Pomerium Live </a>
+                  <a href="/2full2stack" target="_blank">2 Full 2 Stack </a>
+                </li>
+                <li>
+                  <a href="/pomerium-live" target="_blank">Pomerium Live </a>
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <a
-              href="/guest-appearances"
-              aria-current={currentPath === "2full2stack" ? "page" : "false"}
-              >Guest Spots
-            </a>
+            <a href="https://onetipaweek.com" target="_blank">Newsletter</a>
           </li>
           <li>
-            <a href="https://nickyt.online">Socials</a>
+            <a href="https://nickyt.online" target="_blank">Socials</a>
           </li>
           <li>
             <a

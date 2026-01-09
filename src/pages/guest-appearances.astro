@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/MainLayout.astro";
+import {
+  getVideos,
+  getYouTubeId,
+  GUEST_APPEARANCES_PLAYLIST_FEED_URL,
+  sanitizeVideoDescription,
+} from "../utils/youtube-utils";
+
+const videos = await getVideos({
+  videoFeedUrl: GUEST_APPEARANCES_PLAYLIST_FEED_URL,
+  numberOfVideos: 15,
+});
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=0, must-revalidate"
+);
+Astro.response.headers.set(
+  "Netlify-CDN-Cache-Control",
+  // Cache for 1 week
+  "public, max-age=604800, must-revalidate"
+);
+---
+
+<Layout title="Nick Taylor's live streaming homepage">
+  <main id="main" class="mt-4 md:mt-8 lg:mt-16 sm:text-basemd:text-3xl">
+    <div class="grid gap-8 lg:gap-12">
+      <h1>Guest Appearances</h1>
+      <p>
+        <a
+          href="https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU"
+          >View more guest appearances</a
+        >
+      </p>
+      {
+        videos.map((video) => {
+          const videoId = getYouTubeId(video.link);
+
+          return (
+            <article class="grid lg:grid-cols-[480px,1fr] gap-6 mb-6">
+              <a href={video.link}>
+                <img
+                  src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                  alt={video.title}
+                  class="my-2 rounded-md w-[240px] md:w-[480px] aspect-auto border"
+                />
+              </a>
+              <div class="flex flex-col gap-4 max-w-[65ch]">
+                <h2>{video.title}</h2>
+                <p
+                  class:list="prose max-w-prose"
+                  set:html={sanitizeVideoDescription(video.description)}
+                />
+                <a href={video.link}>Watch on YouTube</a>
+              </div>
+            </article>
+          );
+        })
+      }
+      <p>
+        <a
+          href="https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU"
+          >View more guest appearances</a
+        >
+      </p>
+    </div>
+  </main>
+</Layout>

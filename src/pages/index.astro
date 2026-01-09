@@ -1,5 +1,11 @@
 ---
-import Base from "../layouts/Base.astro";
+import StreamSchedule from "../components/StreamSchedule.astro";
+import Layout from "../layouts/MainLayout.astro";
+import {
+  getStreamSchedule,
+  type StreamGuestInfo,
+} from "../utils/schedule-utils";
+import { ENV } from "varlock/env";
 import { getCollection } from "astro:content";
 import { site } from "../data/site";
 import { dateFilter, w3DateFilter } from "../utils/filters";
@@ -15,40 +21,56 @@ const sortedPosts = allPosts.sort((a, b) => {
 
 const recentPosts = sortedPosts.slice(0, site.maxPostsPerPage);
 
-const introHeading = "Well, hello there!";
-const introContent = `<em>Hi!</em> I'm Nick. I'm not a big fan of spiders, I'm a big fan of open source and I'm so glad you stopped by. Here's some of my latest content.`;
+const locale =
+  Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
+  Astro.request.headers.get("Accept-Language") ||
+  "en-US";
+
+let errorMessage = "";
+let schedule: StreamGuestInfo[] = [];
+
+try {
+  schedule = await getStreamSchedule({
+    apiKey: ENV.AIRTABLE_API_KEY,
+    baseId: ENV.AIRTABLE_STREAM_GUEST_BASE_ID,
+  });
+} catch (e) {
+  console.error("Error fetching stream schedule:", e);
+  errorMessage = "Error fetching stream schedule.";
+}
+
+const { timezone = "" } = Astro.locals.netlify.context.geo;
+
+if (!errorMessage) {
+  Astro.response.headers.set(
+    "Cache-Control",
+    "public, max-age=0, must-revalidate"
+  );
+  Astro.response.headers.set(
+    "Netlify-CDN-Cache-Control",
+    "public, max-age=86400, must-revalidate"
+  );
+  Astro.response.headers.set("timezone", timezone);
+  Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
+}
+
+export const prerender = false;
 ---
 
-<Base
-  title={introHeading}
-  metaDesc="Welcome to Nick Taylor's Web Site. Nick is a Staff Software Engineer focusing on front-end technologies and tooling."
->
-  <main id="main-content" tabindex="-1">
-    <header>
-      <div class="mx-auto max-w-208 px-500 sf-flow">
-        <h1
-          class="max-w-[20ex] text-(--color-theme-feature-text) text-800 md:text-900 leading-tight p-name"
-        >
-          {introHeading}
-        </h1>
-        <div
-          class="intro__summary sf-flow leading-mid max-w-[60ch] text-500 [--flow-space:1.25rem]"
-          set:html={introContent}
-        />
-      </div>
-    </header>
-
-    <section class="pt-300">
-      <div class="mx-auto max-w-208 px-500 sf-flow">
-        <h2 class="text-700 md:text-800">Latest Blog Posts</h2>
-        <ol class="sf-flow pt-300" reversed>
+<Layout title="Nick Taylor's live streaming schedule">
+  <main id="main">
+    <h1>Latest Content</h1>
+    <div class="grid gap-8">
+      <section class="grid gap-6">
+        <h2 class="text-700 md:text-800">Blog Posts</h2>
+        <ol class="grid gap-4">
           {
             recentPosts.map((post) => (
-              <li class="flex items-start gap-300">
+              <li class="flex gap-4">
                 {post.data.cover_image && (
                   <a
                     href={`/blog/${post.slug}`}
-                    class="hidden shrink-0 md:block w-[150px]"
+                    class="hidden shrink-0 md:block w-37.5"
                     aria-hidden="true"
                   >
                     <img
@@ -90,7 +112,23 @@ const introContent = `<em>Hi!</em> I'm Nick. I'm not a big fan of spiders, I'm a
             </h3>
           </li>
         </ol>
-      </div>
-    </section>
+      </section>
+      <h2>Streaming Schedule</h2>
+      {errorMessage && <p class="text-red-600">{errorMessage}</p>}
+      {
+        !errorMessage && schedule.length === 0 ? (
+          <p>
+            No upcoming streams scheduled. Check out the{" "}
+            <a href="/archive">archives</a>!
+          </p>
+        ) : (
+          <StreamSchedule
+            schedule={schedule}
+            locale={locale}
+            timezone={timezone}
+          />
+        )
+      }
+    </div>
   </main>
-</Base>
+</Layout>

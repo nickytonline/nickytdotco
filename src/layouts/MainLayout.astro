@@ -1,0 +1,48 @@
+---
+import "../styles/tailwind.css";
+import OgMetaTags from "../components/OgMetaTags.astro";
+import Header from "../components/Header.astro";
+import SkipLink from "../components/SkipLink.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const { origin } = new URL(Astro.request.url);
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth lg:scroll-pt-96">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@400;500;600;700&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="The home of Nick Taylor's live streaming channels"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦙</text></svg>"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <OgMetaTags
+      title={title}
+      description="Links to Nick Taylor's live streaming channels and content"
+      socialImage={new URL("/assets/og-image.png", origin).href}
+    />
+    <title>{title}</title>
+  </head>
+  <body class="pb-32 font-inter">
+    <SkipLink id="main" />
+    <div>
+      <Header />
+      <slot />
+    </div>
+  </body>
+</html>
