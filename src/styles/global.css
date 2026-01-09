@@ -1,0 +1,94 @@
+/* The integration's default injected base.css file */
+@import "tailwindcss";
+
+/* CSS Custom Properties */
+:root {
+  --color-theme-feature-text: #fedb8b;
+  --flow-space: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-theme-feature-text: #fedb8b;
+  }
+}
+
+/* Flow utility for consistent vertical spacing */
+.sf-flow > * + * {
+  margin-top: var(--flow-space, 1.5rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply tracking-tight;
+  @apply font-semibold;
+  @apply text-balance;
+}
+
+h1 {
+  @apply text-4xl;
+  @apply lg:text-5xl;
+}
+
+h2 {
+  @apply text-2xl;
+  @apply lg:text-3xl;
+}
+
+/* Improve spacing and font size for Markdown content */
+.prose {
+  @apply text-base leading-relaxed;
+}
+
+.prose p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+}
+
+@screen lg {
+  .prose {
+    @apply text-lg;
+  }
+}
+
+body {
+  @apply m-6;
+  @apply font-normal;
+  @apply text-sm;
+  @apply lg:text-xl;
+  @apply bg-white;
+}
+
+a:not([class]) {
+  text-decoration: underline;
+  @apply decoration-pink-600;
+  @apply underline-offset-4;
+}
+
+nav a[aria-current="page"],
+a:not([class]):hover {
+  @apply decoration-pink-600;
+  @apply underline;
+  @apply decoration-4;
+}
+
+nav a:not([aria-current="page"]) {
+  @apply no-underline;
+}
+
+nav a:not([aria-current="page"]):hover {
+  @apply decoration-inherit;
+}

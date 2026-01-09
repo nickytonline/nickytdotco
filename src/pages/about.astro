@@ -1,23 +1,17 @@
 ---
-import Base from "../layouts/Base.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<Base
+<MainLayout
   title="About"
   metaDesc="About Nick Taylor - Microsoft MVP, GitHub Star, Software Developer, and Developer Advocate."
 >
   <main id="main-content" tabindex="-1">
     <article>
       <header>
-        <div class="mx-auto max-w-208 px-500 sf-flow">
-          <h1
-            class="max-w-[40ex] text-(--color-theme-feature-text) text-800 md:text-900 leading-tight p-name"
-          >
-            About
-          </h1>
-          <div
-            class="post__body mx-auto max-w-208 px-500 leading-loose text-500 sf-flow e-content"
-          >
+        <div>
+          <h1>About</h1>
+          <div>
             <img
               class="float-left w-1/4 rounded-full mr-2 mb-2"
               src="/images/colour-headshot-500x500.jpg"
@@ -36,10 +30,10 @@ import Base from "../layouts/Base.astro";
               streaming tech content, either solo or with friends from the
               community. Wanna get in touch? Drop me an e-mail at nick at nickyt
               dot co.
-            </p><p></p>
+            </p>
           </div>
         </div>
       </header>
     </article>
-  </main></Base
+  </main></MainLayout
 >

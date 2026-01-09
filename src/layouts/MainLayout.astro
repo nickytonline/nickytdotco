@@ -1,13 +1,19 @@
 ---
-import "../styles/tailwind.css";
+import "../styles/global.css";
 import OgMetaTags from "../components/OgMetaTags.astro";
 import Header from "../components/Header.astro";
 import SkipLink from "../components/SkipLink.astro";
 interface Props {
   title: string;
+  metaDesc?: string;
+  socialImage?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  metaDesc = "Links to Nick Taylor's live streaming channels and content",
+  socialImage = "/assets/og-image.png",
+} = Astro.props;
 const { origin } = new URL(Astro.request.url);
 ---
 
@@ -33,8 +39,8 @@ const { origin } = new URL(Astro.request.url);
     <meta name="generator" content={Astro.generator} />
     <OgMetaTags
       title={title}
-      description="Links to Nick Taylor's live streaming channels and content"
-      socialImage={new URL("/assets/og-image.png", origin).href}
+      description={metaDesc}
+      socialImage={new URL(socialImage, origin).href}
     />
     <title>{title}</title>
   </head>

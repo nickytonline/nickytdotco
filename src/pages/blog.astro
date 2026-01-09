@@ -1,5 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import { dateFilter } from "../utils/filters";
 
@@ -28,9 +28,12 @@ const postsByYear = sortedPosts.reduce(
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 ---
 
-<Base title="Blog Posts - Archive" metaDesc="All blog posts by Nick Taylor">
-  <main id="main-content" tabindex="-1">
-    <div class="mx-auto max-w-208 px-500 sf-flow">
+<MainLayout
+  title="Blog Posts - Archive"
+  metaDesc="All blog posts by Nick Taylor"
+>
+  <main id="main" tabindex="-1">
+    <div>
       <h1>Blog Posts Archive</h1>
       <p>All {sortedPosts.length} blog posts, organized by year.</p>
 
@@ -42,11 +45,8 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
               {postsByYear[Number(year)].map((post) => (
                 <li>
                   <article>
-                    <h3 class="font-base leading-tight font-semibold text-300 lg:text-500">
-                      <a
-                        href={`/blog/${post.slug}`}
-                        class="wrap-break-word text-current no-underline hover:underline"
-                      >
+                    <h3>
+                      <a href={`/blog/${post.slug}`} class="wrap-break-word">
                         {post.data.title}
                       </a>
                     </h3>
@@ -70,4 +70,4 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
       }
     </div>
   </main>
-</Base>
+</MainLayout>

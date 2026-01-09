@@ -1,5 +1,5 @@
 ---
-import Base from "./Base.astro";
+import MainLayout from "./MainLayout.astro";
 import PostIntro from "../components/PostIntro.astro";
 import SeriesNavigation from "../components/SeriesNavigation.astro";
 import type { CollectionEntry } from "astro:content";
@@ -14,16 +14,13 @@ const { Content } = await entry.render();
 const currentUrl = `/blog/${entry.slug}`;
 ---
 
-<Base
+<MainLayout
   title={entry.data.title}
   metaDesc={entry.data.excerpt || entry.data.description}
-  excerpt={entry.data.excerpt}
-  canonical_url={entry.data.canonical_url}
-  cover_image={entry.data.cover_image || undefined}
-  reading_time_minutes={entry.data.reading_time_minutes}
+  socialImage={entry.data.cover_image}
 >
-  <main id="main-content" tabindex="-1">
-    <article class="[ post ] [ h-entry ]">
+  <main id="main" tabindex="-1">
+    <article>
       <PostIntro
         title={entry.data.title}
         cover_image={entry.data.cover_image}
@@ -45,20 +42,16 @@ const currentUrl = `/blog/${entry.slug}`;
         )
       }
 
-      <div
-        class="post__body mx-auto max-w-208 px-500 leading-loose text-500 sf-flow e-content"
-      >
+      <div>
         <Content />
       </div>
 
       {
         entry.data.tags && entry.data.tags.length > 0 && (
-          <footer class="post__footer">
-            <div class="mx-auto max-w-208 px-500">
+          <footer>
+            <div>
               <div class="grid items-center flex-wrap">
-                <h2 class="shrink-0 mr-base font-base text-600 font-semibold text-(--color-dark)">
-                  tags
-                </h2>
+                <h2 class="shrink-0 mr-base font-base text-600">tags</h2>
                 <ul class="flex flex-wrap items-center gap-500 p-100 -m-100 pl-base p-category">
                   {entry.data.tags.map((tag) => (
                     <li>
@@ -78,4 +71,4 @@ const currentUrl = `/blog/${entry.slug}`;
       }
     </article>
   </main>
-</Base>
+</MainLayout>
