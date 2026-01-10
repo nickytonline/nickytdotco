@@ -136,7 +136,6 @@ h6:hover .heading-anchor {
 }
 
 body {
-  @apply m-6;
   @apply font-normal;
   @apply text-sm;
   @apply lg:text-xl;
