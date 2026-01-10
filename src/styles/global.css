@@ -82,6 +82,34 @@ h2 {
   @apply lg:text-3xl;
 }
 
+/* Heading anchor links */
+.heading-anchor {
+  @apply opacity-0 no-underline ml-2 text-pink-600 focus:opacity-100 focus:outline-none;
+}
+
+.heading-anchor:hover,
+.heading-anchor:focus {
+  @apply opacity-100;
+}
+
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+h5:hover .heading-anchor,
+h6:hover .heading-anchor {
+  @apply opacity-100;
+}
+
+/* Code blocks - Expressive Code */
+.expressive-code {
+  @apply my-6;
+}
+
+.expressive-code .copy button {
+  @apply bg-gray-800 hover:bg-pink-600 text-white;
+}
+
 /* Improve spacing and font size for Markdown content */
 .prose {
   @apply text-base leading-relaxed;

@@ -35,76 +35,74 @@ const intentToBluesky = `https://bsky.app/intent/compose?text=${encodeURICompone
 const foremBoostLink = `https://dev.to/nickytonline/${fileSlug}`;
 ---
 
-<header>
-  <div>
-    {
-      cover_image && (
-        <img src={cover_image} alt={title} class="w-full" data-not-lazy />
-      )
-    }
-    <h1>
+<header class="mb-12">
+  {
+    cover_image && (
+      <img
+        src={cover_image}
+        alt=""
+        class="w-full rounded-xl mb-8"
+        data-not-lazy
+      />
+    )
+  }
+
+  <div class="mb-6">
+    <h1 class="mb-4">
       {title}
     </h1>
 
-    <div>
-      <a href={foremBoostLink}> Boost on DEV </a>
-      <a href={intentToToot}> Toot it! </a>
-      <a href={intentToBluesky}> Share on Bluesky </a>
-      <a href={intentToTweet}> Tweet It! </a>
-      <a href={intentToLinkedIn}> Share on LinkedIn </a>
+    <div class="flex items-center gap-4 text-gray-600 mb-6">
+      {
+        date && (
+          <time datetime={w3DateFilter(date)} class="italic text-lg dt-published">
+            {dateFilter(date)}
+          </time>
+        )
+      }
+      {
+        reading_time_minutes && (
+          <>
+            <span class="text-pink-600 font-semibold">•</span>
+            <span class="text-lg font-semibold text-pink-600">
+              {reading_time_minutes} min read
+            </span>
+          </>
+        )
+      }
     </div>
+  </div>
 
-    <div>
-      <p>
-        {
-          date && (
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-calendar"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
-              <time datetime={w3DateFilter(date)} class="dt-published">
-                {dateFilter(date)}
-              </time>
-            </span>
-          )
-        }
-        {
-          reading_time_minutes && (
-            <span class="flex gap-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-clock"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              {reading_time_minutes} minute read
-            </span>
-          )
-        }
-      </p>
-    </div>
+  <div class="flex flex-wrap gap-3">
+    <a
+      href={foremBoostLink}
+      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+    >
+      Boost on DEV
+    </a>
+    <a
+      href={intentToBluesky}
+      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+    >
+      Share on Bluesky
+    </a>
+    <a
+      href={intentToToot}
+      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+    >
+      Toot it!
+    </a>
+    <a
+      href={intentToTweet}
+      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+    >
+      Tweet It!
+    </a>
+    <a
+      href={intentToLinkedIn}
+      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+    >
+      Share on LinkedIn
+    </a>
   </div>
 </header>
