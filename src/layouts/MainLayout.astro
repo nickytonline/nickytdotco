@@ -43,6 +43,19 @@ const { origin } = new URL(Astro.request.url);
     <div>
       <Header />
       <slot />
+      <footer class="pt-8 text-center">
+        <p class="text-lg text-gray-700">
+          Want to stay updated with tech tips? Check out my newsletter:
+          <a
+            href="https://onetipaweek.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+          >
+            OneTipAWeek.com
+          </a>
+        </p>
+      </footer>
     </div>
   </body>
 </html>
