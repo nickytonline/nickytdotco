@@ -1,5 +1,7 @@
 ---
 import StreamSchedule from "../components/StreamSchedule.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import BlogPostCard from "../components/BlogPostCard.astro";
 import Layout from "../layouts/MainLayout.astro";
 import {
   getStreamSchedule,
@@ -8,7 +10,7 @@ import {
 import { ENV } from "varlock/env";
 import { getCollection } from "astro:content";
 import { site } from "../data/site";
-import { dateFilter, w3DateFilter } from "../utils/filters";
+import { dateFilter } from "../utils/filters";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -58,77 +60,45 @@ export const prerender = false;
 ---
 
 <Layout title="Nick Taylor's live streaming schedule">
-  <main id="main">
-    <h1>Latest Content</h1>
-    <div class="grid gap-8">
-      <section class="grid gap-6">
-        <h2 class="text-700 md:text-800">Blog Posts</h2>
-        <ol class="grid gap-4">
+  <main id="main" class="max-w-5xl mx-auto px-6 py-12">
+    <div class="space-y-20">
+      <section>
+        <SectionHeader title="Latest Content" />
+        <div class="space-y-4 mb-8">
           {
             recentPosts.map((post) => (
-              <li class="flex gap-4">
-                {post.data.cover_image && (
-                  <a
-                    href={`/blog/${post.slug}`}
-                    class="hidden shrink-0 md:block w-37.5"
-                    aria-hidden="true"
-                  >
-                    <img
-                      src={post.data.cover_image}
-                      alt=""
-                      class="h-auto w-full"
-                      data-not-lazy
-                    />
-                  </a>
-                )}
-                <span class="grow min-w-0 -mt-[0.25em]">
-                  <h3 class="font-base leading-tight font-semibold text-300 lg:text-500">
-                    <a
-                      href={`/blog/${post.slug}`}
-                      class="wrap-break-word text-(--color-theme-primary) no-underline hover:underline"
-                      rel="bookmark"
-                    >
-                      {post.data.title}
-                    </a>
-                  </h3>
-                  <p class="text-300 font-semibold italic">
-                    <time datetime={w3DateFilter(post.data.date)}>
-                      {dateFilter(post.data.date)}
-                    </time>
-                  </p>
-                </span>
-              </li>
+              <BlogPostCard
+                title={post.data.title}
+                date={dateFilter(post.data.date)}
+                image={post.data.cover_image}
+                href={`/blog/${post.slug}`}
+              />
             ))
           }
-          <li>
-            <h3
-              class="font-base leading-tight font-semibold text-300 lg:text-500"
-            >
-              <a
-                href="/archive"
-                class="wrap-break-word text-(--color-theme-primary) no-underline hover:underline"
-                rel="bookmark">More blog posts...</a
-              >
-            </h3>
-          </li>
-        </ol>
+        </div>
+        <a href="/archive" class="inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600">
+          More blog posts<span class="text-2xl">→</span>
+        </a>
       </section>
-      <h2>Streaming Schedule</h2>
-      {errorMessage && <p class="text-red-600">{errorMessage}</p>}
-      {
-        !errorMessage && schedule.length === 0 ? (
-          <p>
-            No upcoming streams scheduled. Check out the{" "}
-            <a href="/archive">archives</a>!
-          </p>
-        ) : (
-          <StreamSchedule
-            schedule={schedule}
-            locale={locale}
-            timezone={timezone}
-          />
-        )
-      }
+
+      <section class="border-t-2 border-rose-100 pt-12">
+        <SectionHeader title="Upcoming Live Streams" />
+        {errorMessage && <p class="text-red-600">{errorMessage}</p>}
+        {
+          !errorMessage && schedule.length === 0 ? (
+            <p>
+              No upcoming streams scheduled. Check out the{" "}
+              <a href="/archive">archives</a>!
+            </p>
+          ) : (
+            <StreamSchedule
+              schedule={schedule}
+              locale={locale}
+              timezone={timezone}
+            />
+          )
+        }
+      </section>
     </div>
   </main>
 </Layout>
