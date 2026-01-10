@@ -20,7 +20,7 @@ const currentUrl = `/blog/${entry.slug}`;
   metaDesc={entry.data.excerpt || entry.data.description}
   socialImage={new URL(entry.data.cover_image!, site.url).toString()}
 >
-  <main id="main" tabindex="-1" class="max-w-3xl mx-auto px-6 py-12">
+  <main id="main" tabindex="-1" class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12">
     <article class="space-y-8">
       <PostIntro
         title={entry.data.title}
