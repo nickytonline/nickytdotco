@@ -1,0 +1,28 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SocialLinks from "../components/SocialLinks";
+---
+
+<MainLayout
+  title="Social Media - Nick Taylor"
+  metaDesc="Connect with Nick Taylor on social media - GitHub, YouTube, Twitch, LinkedIn, Bluesky, and more."
+>
+  <main id="main-content" tabindex="-1" class="max-w-7xl mx-auto px-6 py-12">
+    <article class="space-y-12">
+      <header class="space-y-6 text-center max-w-3xl mx-auto">
+        <h1 class="mb-4">Let's Connect</h1>
+        <p class="text-xl leading-relaxed text-gray-700">
+          Find me across the web! I'm most active on <strong
+            class="text-pink-600">GitHub</strong
+          >,
+          <strong class="text-pink-600">X</strong>, and <strong
+            class="text-pink-600">LinkedIn</strong
+          > where I share tech content, open source contributions, and connect with
+          the developer community.
+        </p>
+      </header>
+
+      <SocialLinks />
+    </article>
+  </main>
+</MainLayout>

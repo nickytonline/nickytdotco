@@ -72,7 +72,12 @@ const currentPath = pathname.slice(1);
             <a href="https://onetipaweek.com" target="_blank">Newsletter</a>
           </li>
           <li>
-            <a href="https://nickyt.online" target="_blank">Socials</a>
+            <a
+              href="/socials"
+              aria-current={currentPath === "socials" ? "page" : "false"}
+            >
+              Socials
+            </a>
           </li>
           <li>
             <a
