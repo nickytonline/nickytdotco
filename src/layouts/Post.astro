@@ -1,9 +1,11 @@
 ---
 import MainLayout from "./MainLayout.astro";
 import PostIntro from "../components/PostIntro.astro";
-import SeriesNavigation from "../components/SeriesNavigation.astro";
+import SeriesNavigation from "../components/SeriesNavigation.tsx";
 import type { CollectionEntry } from "astro:content";
 import site from "../data/site";
+import { seriesFilter } from "../utils/filters";
+import { getCollection } from "astro:content";
 
 export interface Props {
   entry: CollectionEntry<"blog">;
@@ -13,6 +15,16 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 
 const currentUrl = `/blog/${entry.slug}`;
+
+// Get series posts if this is part of a series
+let seriesPosts: CollectionEntry<"blog">[] = [];
+if (entry.data.series) {
+  const allPosts = await getCollection("blog");
+  seriesPosts = seriesFilter(
+    allPosts,
+    entry.data.series
+  ) as CollectionEntry<"blog">[];
+}
 ---
 
 <MainLayout
@@ -37,11 +49,13 @@ const currentUrl = `/blog/${entry.slug}`;
       />
 
       {
-        entry.data.series && (
+        entry.data.series && seriesPosts.length > 1 && (
           <div>
             <SeriesNavigation
+              client:load
               series={entry.data.series}
               currentUrl={currentUrl}
+              posts={seriesPosts}
             />
           </div>
         )
