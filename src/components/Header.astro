@@ -30,7 +30,7 @@ const currentPath = pathname.slice(1);
           <li>
             <a
               href="/talks"
-              aria-current={currentPath === "talks" ? "page" : "false"}
+              aria-current={currentPath.startsWith("talks") ? "page" : "false"}
             >
               Talks
             </a>
