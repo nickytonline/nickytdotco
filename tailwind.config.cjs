@@ -16,6 +16,7 @@ module.exports = {
       fontFamily: {
         base: stripOuterQuotes(tokens.fonts.base),
         sans: stripOuterQuotes(tokens.fonts["sans-serif"]),
+        heading: stripOuterQuotes(tokens.fonts.heading),
       },
       fontSize: {
         100: "0.5rem",

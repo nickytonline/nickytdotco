@@ -20,12 +20,6 @@ const { origin } = new URL(Astro.request.url);
 <!doctype html>
 <html lang="en" class="scroll-smooth lg:scroll-pt-96">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@400;500;600;700&family=Outfit:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <meta charset="UTF-8" />
     <meta
       name="description"
@@ -44,7 +38,7 @@ const { origin } = new URL(Astro.request.url);
     />
     <title>{title}</title>
   </head>
-  <body class="pb-32 font-inter">
+  <body class="pb-32 font-sans">
     <SkipLink id="main" />
     <div>
       <Header />

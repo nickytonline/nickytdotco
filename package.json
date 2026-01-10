@@ -19,6 +19,8 @@
     "@astrojs/netlify": "^6.6.3",
     "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.14",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@varlock/astro-integration": "^0.1.0",
