@@ -1,4 +1,5 @@
 ---
+import SectionHeader from "@/components/SectionHeader.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
@@ -6,10 +7,14 @@ import MainLayout from "../layouts/MainLayout.astro";
   title="About"
   metaDesc="About Nick Taylor - Microsoft MVP, GitHub Star, Software Developer, and Developer Advocate."
 >
-  <main id="main-content" tabindex="-1" class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12">
+  <main
+    id="main-content"
+    tabindex="-1"
+    class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12"
+  >
     <article class="space-y-12">
       <header class="space-y-8">
-        <h1 class="mb-8">About</h1>
+        <SectionHeader title="About" />
 
         <div class="flex flex-col md:flex-row gap-8 items-start">
           <img
@@ -21,13 +26,15 @@ import MainLayout from "../layouts/MainLayout.astro";
 
           <div class="flex-1 space-y-6">
             <p class="text-xl leading-relaxed">
-              Hi! My name is <strong class="text-pink-600">Nick Taylor</strong>. I am a Microsoft MVP, GitHub Star,
-              Software Developer, and Developer Advocate.
+              Hi! My name is <strong class="text-pink-600">Nick Taylor</strong>.
+              I am a Microsoft MVP, GitHub Star, Software Developer, and
+              Developer Advocate.
             </p>
 
             <p class="text-lg leading-relaxed text-gray-700">
-              With over two decades in technology and a decade of open source contributions, plus five
-              years of professional open source work at companies like <a
+              With over two decades in technology and a decade of open source
+              contributions, plus five years of professional open source work at
+              companies like <a
                 href="https://opensauced.pizza"
                 class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
                 >OpenSauced</a
@@ -47,13 +54,13 @@ import MainLayout from "../layouts/MainLayout.astro";
             </p>
 
             <p class="text-lg leading-relaxed text-gray-700">
-              You'll often find me live streaming tech content, either solo or with friends from the
-              community.
+              You'll often find me live streaming tech content, either solo or
+              with friends from the community.
             </p>
 
             <p class="text-lg leading-relaxed text-gray-700">
-              Wanna get in touch? Drop me an e-mail at <span class="font-semibold text-pink-600"
-                >nick at nickyt dot co</span
+              Wanna get in touch? Drop me an e-mail at <span
+                class="font-semibold text-pink-600">nick at nickyt dot co</span
               >.
             </p>
           </div>
