@@ -9,22 +9,24 @@ const { pathname } = urlObj;
 const [, user, , codepenId] = pathname.split("/");
 ---
 
-<p
-  class="codepen"
-  data-height="265"
-  data-theme-id="dark"
-  data-default-tab="js,result"
-  data-user={user}
-  data-slug-hash={codepenId}
-  style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
-  data-pen-title={`${codepenId} by @${user}`}
->
-  <span>
-    See the Pen <a href={url}>{url}</a> by {user} (<a
-      href={`https://codepen.io/${user}`}>@{user}</a
-    >) on <a href="https://codepen.io">CodePen</a>.
-  </span>
-</p>
+<div class="w-full max-w-4xl mx-auto">
+  <p
+    class="codepen flex items-center justify-center border-2 border-solid my-4 p-4"
+    data-height="500"
+    data-theme-id="dark"
+    data-default-tab="js,result"
+    data-user={user}
+    data-slug-hash={codepenId}
+    style="height: 500px; box-sizing: border-box;"
+    data-pen-title={`${codepenId} by @${user}`}
+  >
+    <span>
+      See the Pen <a href={url}>{url}</a> by {user} (<a
+        href={`https://codepen.io/${user}`}>@{user}</a
+      >) on <a href="https://codepen.io">CodePen</a>.
+    </span>
+  </p>
+</div>
 <script>
   const scriptSrc = "https://static.codepen.io/assets/embed/ei.js";
   if (!document.querySelector(`script[src*="codepen.io/assets/embed"]`)) {
@@ -32,8 +34,8 @@ const [, user, , codepenId] = pathname.split("/");
     script.async = true;
     script.src = scriptSrc;
     document.head.appendChild(script);
-  } else if ((window as any).__CPEmbed) {
+  } else if ((window as Window & { __CPEmbed?: () => void }).__CPEmbed) {
     // Re-process embeds if script already loaded
-    (window as any).__CPEmbed();
+    (window as Window & { __CPEmbed?: () => void }).__CPEmbed();
   }
 </script>

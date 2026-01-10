@@ -21,7 +21,7 @@ const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
       sizes="100vw"
     />
     <img
-      alt={`OpenGraph image for ${url}`}
+      alt={url}
       loading="lazy"
       decoding="async"
       src={`https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/`}
