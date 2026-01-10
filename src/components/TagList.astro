@@ -6,12 +6,11 @@ import Tag from "./Tag.astro";
  */
 export interface Props {
   tags: string[];
-  currentTag?: string;
   limit?: number;
   showMore?: boolean;
 }
 
-const { tags = [], currentTag = "", limit, showMore = true } = Astro.props;
+const { tags = [], limit, showMore = true } = Astro.props;
 
 const displayTags = limit ? tags.slice(0, limit) : tags;
 const hasMoreTags = showMore && limit && tags.length > limit;
