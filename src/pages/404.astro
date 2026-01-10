@@ -1,9 +1,13 @@
 ---
-import Base from "../layouts/Base.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<Base title="404 - not found">
-  <main id="main-content" tabindex="-1" class="inner-wrapper sf-flow">
+<MainLayout title="404 - not found">
+  <main
+    id="main-content"
+    tabindex="-1"
+    class="mx-auto max-w-208 px-500 sf-flow"
+  >
     <h1>404 - not found</h1>
     <p>Looks like that page can't be found.</p>
     <p>
@@ -11,4 +15,4 @@ import Base from "../layouts/Base.astro";
       <a href="https://onetipaweek.com">onetipaweek.com</a>.
     </p>
   </main>
-</Base>
+</MainLayout>

@@ -29,7 +29,7 @@ export const site: SiteConfig = {
   mastodonHandle: "@nickytonline@toot.cafe",
   authorName: "Nick Taylor",
   enableThirdPartyComments: false,
-  maxPostsPerPage: 10,
+  maxPostsPerPage: 5,
   paymentPointer: "$ilp.uphold.com/MZMhAWA7bkGa",
   faviconPath: "/images/favicon.png",
   newsletterName: "Yet Another Newsletter LOL",

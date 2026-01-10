@@ -1,0 +1,77 @@
+---
+import type { StreamGuestInfo } from "../utils/schedule-utils";
+import { getHeadingId, getLocalizedDate } from "../utils/schedule-utils";
+import { getYouTubeId } from "../utils/youtube-utils";
+import LiveStreamCard from "./LiveStreamCard.astro";
+
+const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
+
+interface Props {
+  locale: string;
+  timezone: string;
+  schedule: StreamGuestInfo[];
+}
+
+const { locale, timezone, schedule } = Astro.props;
+
+const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
+  return new Date(a.date).getTime() - new Date(b.date).getTime();
+});
+---
+
+<div class="flex flex-col gap-8">
+  {
+    fullSchedule.map((scheduleItem) => {
+      const { date, title, description, guestName, guestTitle, youtubeStreamLink, linkedinStreamLink, type, ogImageURL } = scheduleItem;
+
+      const guestDate = getLocalizedDate({
+        date,
+        locale,
+        timezone,
+        showTime: true,
+      });
+
+      const videoId = youtubeStreamLink ? getYouTubeId(youtubeStreamLink) : null;
+      const headingId = getHeadingId(guestName, date);
+      const eventLocation = `${Astro.request.url}#${headingId}`;
+      const noGuest = guestName === "nickytonline" || guestName === "2Full2Stack";
+
+      const image = videoId
+        ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+        : ogImageURL;
+
+      const platformsList = [];
+      if (type === "nickyt.live") {
+        platformsList.push({ name: 'Twitch', url: TWITCH_STREAM_URL });
+      }
+      if (youtubeStreamLink) {
+        platformsList.push({ name: 'YouTube', url: youtubeStreamLink });
+      }
+      if (linkedinStreamLink) {
+        platformsList.push({ name: 'LinkedIn', url: linkedinStreamLink });
+      }
+
+      const guestInfo = noGuest
+        ? ""
+        : `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ''}`;
+
+      const eventName = guestName === "2Full2Stack"
+        ? `2 Full 2 Stack - ${title}`
+        : `nickyt.live - ${title}`;
+
+      return (
+        <LiveStreamCard
+          title={title}
+          guest={guestInfo}
+          datetime={guestDate}
+          image={image}
+          platforms={platformsList}
+          eventDate={date}
+          eventName={eventName}
+          description={description}
+          location={eventLocation}
+        />
+      );
+    })
+  }
+</div>

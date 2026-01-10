@@ -1,12 +1,12 @@
 ---
-import navigation from '../data/navigation.json';
+import navigation from "../data/navigation.json";
 
 export interface Props {
   ariaLabel?: string;
   currentPath?: string;
 }
 
-const { ariaLabel = 'navigation', currentPath } = Astro.props;
+const { ariaLabel = "navigation", currentPath } = Astro.props;
 
 interface NavItem {
   text: string;
@@ -18,26 +18,28 @@ interface NavItem {
 const items = navigation.items as NavItem[];
 ---
 
-{items && items.length > 0 && (
-  <div class="box-flex flex-wrap gap-base">
-    <nav class="nav" aria-label={ariaLabel}>
-      <ul class="nav__list box-flex flex-wrap">
-        {items.map((item) => {
-          const isCurrent = currentPath === item.url;
-          return (
-            <li class="nav__item">
-              <a
-                href={item.url}
-                rel={item.rel}
-                aria-current={isCurrent ? 'page' : undefined}
-              >
-                {item.text}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-    <theme-toggle></theme-toggle>
-  </div>
-)}
+{
+  items && items.length > 0 && (
+    <div class="flex flex-wrap gap-base mt-4">
+      <nav aria-label={ariaLabel}>
+        <ul class="flex flex-wrap items-center gap-500 p-100 -m-100">
+          {items.map((item) => {
+            const isCurrent = currentPath === item.url;
+            return (
+              <li class="shrink-0 py-300">
+                <a
+                  href={item.url}
+                  rel={item.rel}
+                  class="font-semibold text-current no-underline hover:underline"
+                  aria-current={isCurrent ? "page" : undefined}
+                >
+                  {item.text}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
+  )
+}

@@ -1,0 +1,29 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SocialLinks from "../components/SocialLinks";
+import SectionHeader from "@/components/SectionHeader.astro";
+---
+
+<MainLayout
+  title="Social Media - Nick Taylor"
+  metaDesc="Connect with Nick Taylor on social media - GitHub, YouTube, Twitch, LinkedIn, Bluesky, and more."
+>
+  <main id="main-content" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
+    <article class="space-y-12">
+      <header class="space-y-8">
+        <SectionHeader title="Let's Connect" headingLevel={1} />
+        <p class="text-xl leading-relaxed text-muted-foreground">
+          Find me across the web! I'm most active on <strong
+            class="text-pink-600 dark:text-pink-400">GitHub</strong
+          >,
+          <strong class="text-pink-600 dark:text-pink-400">X</strong>, and <strong
+            class="text-pink-600 dark:text-pink-400">LinkedIn</strong
+          > where I share tech content, open source contributions, and connect with
+          the developer community.
+        </p>
+      </header>
+
+      <SocialLinks />
+    </article>
+  </main>
+</MainLayout>

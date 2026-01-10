@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  image?: string | null;
+  href: string;
+}
+
+const { title, date, image, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="blog-card group grid md:flex md:flex-row gap-6 rounded-xl p-6 no-underline outline-none transition-colors"
+>
+  {
+    image && (
+      <div class="relative shrink-0 w-full md:w-40 h-45 md:h-30 rounded-lg overflow-hidden bg-muted">
+        <img
+          src={image}
+          alt=""
+          class="w-full h-full object-cover"
+          data-not-lazy
+        />
+      </div>
+    )
+  }
+  <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
+    <h3
+      class="text-xl font-semibold leading-snug text-card-foreground group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400"
+    >
+      {title}
+    </h3>
+    <time class="italic text-base text-muted-foreground font-normal"
+      >{date}</time
+    >
+  </div>
+</a>

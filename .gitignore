@@ -69,16 +69,8 @@ yarn-error.log
 
 .env.local
 
-# eleventy specific
 .DS_Store
 dist
-
-# Specifics
-
-# Hide compiled CSS (old paths, kept for reference)
-src/_includes/assets/*
-src/styles/global.css
-src/styles/global.css.map
 
 # Do not include posts pulled from Stackbit from DEV
 src/pages/posts

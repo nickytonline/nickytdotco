@@ -1,0 +1,39 @@
+---
+interface Props {
+  youtubeUrl?: string;
+  linkedinUrl?: string;
+  twitchUrl?: string;
+}
+
+const { youtubeUrl, linkedinUrl, twitchUrl } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-2 items-center">
+  <p>Watch live on:</p>
+  {
+    (
+      <ul class="flex gap-4">
+        {twitchUrl ? (
+          <li>
+            <a href={twitchUrl}>Twitch</a>
+          </li>
+        ) : null}
+        {youtubeUrl ? (
+          <li>
+            <a href={youtubeUrl}>YouTube</a>
+          </li>
+        ) : null}
+        {linkedinUrl ? (
+          <li>
+            <a href={linkedinUrl}>LinkedIn</a>
+          </li>
+        ) : null}
+      </ul>
+    )
+  }
+</div>
+<style>
+  a:not(class) {
+    text-decoration: underline;
+  }
+</style>

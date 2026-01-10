@@ -1,8 +1,16 @@
 ---
-import Base from "../layouts/Base.astro";
+import StreamSchedule from "../components/StreamSchedule.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import BlogPostCard from "../components/BlogPostCard.astro";
+import Layout from "../layouts/MainLayout.astro";
+import {
+  getStreamSchedule,
+  type StreamGuestInfo,
+} from "../utils/schedule-utils";
+import { ENV } from "varlock/env";
 import { getCollection } from "astro:content";
 import { site } from "../data/site";
-import { dateFilter, w3DateFilter } from "../utils/filters";
+import { dateFilter } from "../utils/filters";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -15,56 +23,80 @@ const sortedPosts = allPosts.sort((a, b) => {
 
 const recentPosts = sortedPosts.slice(0, site.maxPostsPerPage);
 
-const introHeading = "Well, hello there!";
-const introContent = `<em>Hi!</em> I'm Nick. I'm not a big fan of spiders, I'm a big fan of open source and I'm so glad you stopped by. Here's some of my latest content.`;
+const locale =
+  Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
+  Astro.request.headers.get("Accept-Language") ||
+  "en-US";
+
+let errorMessage = "";
+let schedule: StreamGuestInfo[] = [];
+
+try {
+  schedule = await getStreamSchedule({
+    apiKey: ENV.AIRTABLE_API_KEY,
+    baseId: ENV.AIRTABLE_STREAM_GUEST_BASE_ID,
+  });
+} catch (e) {
+  console.error("Error fetching stream schedule:", e);
+  errorMessage = "Error fetching stream schedule.";
+}
+
+const { timezone = "" } = Astro.locals.netlify.context.geo;
+
+if (!errorMessage) {
+  Astro.response.headers.set(
+    "Cache-Control",
+    "public, max-age=0, must-revalidate"
+  );
+  Astro.response.headers.set(
+    "Netlify-CDN-Cache-Control",
+    "public, max-age=86400, must-revalidate"
+  );
+  Astro.response.headers.set("timezone", timezone);
+  Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
+}
+
+export const prerender = false;
 ---
 
-<Base
-  title={introHeading}
-  metaDesc="Welcome to Nick Taylor's Web Site. Nick is a Staff Software Engineer focusing on front-end technologies and tooling."
->
-  <main id="main-content" tabindex="-1">
-    <header>
-      <div class="[ inner-wrapper ] [ sf-flow ]">
-        <h1 class="[ intro__heading intro__heading--compact ] [ text-800 md:text-900 leading-tight ] [ p-name ]">
-          {introHeading}
-        </h1>
-        <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]" set:html={introContent} />
-      </div>
-    </header>
+<Layout title="Nick Taylor's live streaming schedule">
+  <main id="main" class="max-w-5xl mx-auto px-6 py-12">
+    <div class="space-y-20">
+      <section>
+        <SectionHeader title="Latest Content" headingLevel={1} />
+        <div class="grid gap-6 xl:gap-8">
+          {
+            recentPosts.map((post) => (
+              <BlogPostCard
+                title={post.data.title}
+                date={dateFilter(post.data.date)}
+                image={post.data.cover_image}
+                href={`/blog/${post.slug}`}
+              />
+            ))
+          }
+        </div>
+        <a
+          href="/archive"
+          class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600"
+        >
+          More blog posts<span class="text-2xl">→</span>
+        </a>
+      </section>
 
-    <section class="post-list pad-top-300">
-      <div class="[ inner-wrapper ] [ sf-flow ]">
-        <h2 class="[ post-list__heading ] [ text-700 md:text-800 ]">Latest Blog Posts</h2>
-        <ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]" reversed>
-          {recentPosts.map((post) => (
-            <li class="blog flex items-start gap-300">
-              {post.data.cover_image && (
-                <a href={`/blog/${post.slug}`} class="hidden md-block" style="width: 150px; flex-shrink: 0;" aria-hidden="true">
-                  <img src={post.data.cover_image} alt="" style="width: 100%; height: auto;" data-not-lazy />
-                </a>
-              )}
-              <span class="flex-grow min-w-0" style="margin-top: -0.25em;">
-                <h3 class="font-base leading-tight text-600 weight-mid">
-                  <a href={`/blog/${post.slug}`} class="post-list__link" rel="bookmark" style="word-break: break-word;">
-                    {post.data.title}
-                  </a>
-                </h3>
-                <p class="text-300 weight-mid italic">
-                  <time datetime={w3DateFilter(post.data.date)}>
-                    {dateFilter(post.data.date)}
-                  </time>
-                </p>
-              </span>
-            </li>
-          ))}
-          <li class="blog post-list__item">
-            <h3 class="font-base leading-tight text-600 weight-mid">
-              <a href="/archive" class="post-list__link" rel="bookmark">More blog posts...</a>
-            </h3>
-          </li>
-        </ol>
-      </div>
-    </section>
+      <section>
+        {errorMessage ? (<SectionHeader title="Upcoming Live Streams" /><p class="text-red-600">{errorMessage}</p>):null}
+        {
+          !errorMessage && schedule.length > 0 ? (
+            <SectionHeader title="Upcoming Live Streams" />
+            <StreamSchedule
+              schedule={schedule}
+              locale={locale}
+              timezone={timezone}
+            />
+          ) : null
+        }
+      </section>
+    </div>
   </main>
-</Base>
+</Layout>

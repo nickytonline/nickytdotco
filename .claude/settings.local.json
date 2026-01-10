@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git restore:*)",
+      "Bash(git -C /Users/nicktaylor/dev/oss/www.nickyt.co log --oneline --all)",
+      "Bash(grep:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm install:*)",
+      "WebFetch(domain:nickyt.online)"
     ]
   }
 }

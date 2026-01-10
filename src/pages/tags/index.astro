@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/MainLayout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+export const prerender = true;
+
+const talks = await getCollection("talks");
+
+// Extract all unique tags and count their occurrences
+const tagCounts = new Map<string, number>();
+const tagToOriginalCase = new Map<string, string>();
+
+talks.forEach((talk) => {
+  if (talk.data.tags) {
+    talk.data.tags.forEach((tag) => {
+      const normalizedTag = tag.toLowerCase().replace(/\s+/g, "");
+      tagCounts.set(normalizedTag, (tagCounts.get(normalizedTag) || 0) + 1);
+      tagToOriginalCase.set(normalizedTag, tag);
+    });
+  }
+});
+
+// Sort tags by frequency (most frequent first)
+const sortedTags = Array.from(tagCounts.entries()).sort((a, b) => b[1] - a[1]);
+
+// Create alphabetical list for alphabetical view
+const alphabeticalTags = [...sortedTags].sort((a, b) =>
+  a[0].localeCompare(b[0])
+);
+---
+
+<Layout title="Talk Tags | Nick Taylor">
+  <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
+    <div class="mb-12">
+      <SectionHeader title="Talk Tags" />
+      <p class="text-xl text-gray-600 mt-6">
+        Explore talks by topic — from web development and AI to developer
+        tooling and beyond.
+      </p>
+    </div>
+
+    <div class="space-y-16">
+      <section>
+        <div
+          class="mb-8 pb-3 border-l-4 border-pink-600 pl-6 bg-gradient-to-r from-rose-50 to-transparent"
+        >
+          <h2 class="text-3xl font-bold text-gray-900">Popular Tags</h2>
+          <p class="text-gray-600 mt-2">Most frequently used topics</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          {
+            sortedTags.slice(0, 10).map(([tag, count]) => (
+              <a
+                href={`/tags/${tag}`}
+                class="group inline-flex items-center gap-3 bg-white hover:bg-pink-50 border-2 border-gray-200 hover:border-pink-400 text-gray-900 rounded-lg px-5 py-3 transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                <span class="text-base font-semibold group-hover:text-pink-600">
+                  {tagToOriginalCase.get(tag) || tag}
+                </span>
+                <span class="inline-flex items-center justify-center min-w-[2rem] h-7 text-sm font-bold bg-pink-100 text-pink-700 group-hover:bg-pink-600 group-hover:text-white rounded-full px-2.5 transition-colors">
+                  {count}
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="mb-8 pb-3 border-l-4 border-pink-600 pl-6 bg-gradient-to-r from-rose-50 to-transparent"
+        >
+          <h2 class="text-3xl font-bold text-gray-900">All Tags</h2>
+          <p class="text-gray-600 mt-2">
+            {alphabeticalTags.length} topics in alphabetical order
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          {
+            alphabeticalTags.map(([tag, count]) => (
+              <a
+                href={`/tags/${tag}`}
+                class="group inline-flex items-center gap-3 bg-white hover:bg-pink-50 border-2 border-gray-200 hover:border-pink-400 text-gray-900 rounded-lg px-5 py-3 transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                <span class="text-base font-semibold group-hover:text-pink-600">
+                  {tagToOriginalCase.get(tag) || tag}
+                </span>
+                <span class="inline-flex items-center justify-center min-w-[2rem] h-7 text-sm font-bold bg-gray-100 text-gray-700 group-hover:bg-pink-600 group-hover:text-white rounded-full px-2.5 transition-colors">
+                  {count}
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      {
+        sortedTags.length === 0 && (
+          <div class="text-center py-12">
+            <p class="text-xl text-gray-500">No tags found.</p>
+          </div>
+        )
+      }
+    </div>
+  </main>
+</Layout>
