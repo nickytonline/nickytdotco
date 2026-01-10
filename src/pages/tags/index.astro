@@ -34,7 +34,7 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
   <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
     <div class="mb-12">
       <SectionHeader title="Talk Tags" />
-      <p class="text-xl text-gray-600 mt-6">
+      <p class="text-xl text-muted-foreground mt-6">
         Explore talks by topic — from web development and AI to developer
         tooling and beyond.
       </p>
@@ -43,31 +43,31 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
     <div class="space-y-16">
       <section>
         <div
-          class="mb-8 pb-1 border-l-4 border-pink-600 pl-6 bg-linear-to-r from-rose-50 to-transparent flex items-center"
+          class="mb-8 pb-1 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center"
         >
           <div>
-            <h2 class="text-3xl font-bold text-gray-900">Popular Tags</h2>
-            <p class="text-gray-600 mt-2">Most frequently used topics</p>
+            <h2 class="text-3xl font-bold text-foreground">Popular Tags</h2>
+            <p class="text-muted-foreground mt-2">
+              Most frequently used topics
+            </p>
           </div>
         </div>
         <div class="flex flex-wrap gap-3">
           {
             sortedTags
               .slice(0, 10)
-              .map(([tag, count]) => (
-                <Tag tag={tag} count={count} variant="muted" />
-              ))
+              .map(([tag, count]) => <Tag tag={tag} count={count} />)
           }
         </div>
       </section>
 
       <section>
         <div
-          class="mb-8 pb-1 border-l-4 border-pink-600 pl-6 bg-linear-to-r from-rose-50 to-transparent flex items-center"
+          class="mb-8 pb-1 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center"
         >
           <div>
-            <h2 class="text-3xl font-bold text-gray-900">All Tags</h2>
-            <p class="text-gray-600 mt-2">
+            <h2 class="text-3xl font-bold text-foreground">All Tags</h2>
+            <p class="text-muted-foreground mt-2">
               {alphabeticalTags.length} topics in alphabetical order
             </p>
           </div>
@@ -75,7 +75,7 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
         <div class="flex flex-wrap gap-3">
           {
             alphabeticalTags.map(([tag, count]) => (
-              <Tag tag={tag} count={count} variant="muted" />
+              <Tag tag={tag} count={count} />
             ))
           }
         </div>
