@@ -11,7 +11,7 @@ const { title, date, image, href } = Astro.props;
 
 <a
   href={href}
-  class="blog-card group flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white no-underline outline-none"
+  class="blog-card group grid md:flex md:flex-row gap-6 rounded-xl bg-white no-underline outline-none"
 >
   {
     image && (

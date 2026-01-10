@@ -64,7 +64,7 @@ export const prerender = false;
     <div class="space-y-20">
       <section>
         <SectionHeader title="Latest Content" />
-        <div class="space-y-4 mb-8">
+        <div class="grid gap-6 xl:gap-8">
           {
             recentPosts.map((post) => (
               <BlogPostCard
@@ -78,28 +78,23 @@ export const prerender = false;
         </div>
         <a
           href="/archive"
-          class="inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600"
+          class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600"
         >
           More blog posts<span class="text-2xl">→</span>
         </a>
       </section>
 
-      <section class="pt-12">
-        <SectionHeader title="Upcoming Live Streams" />
-        {errorMessage && <p class="text-red-600">{errorMessage}</p>}
+      <section>
+        {errorMessage ? (<SectionHeader title="Upcoming Live Streams" /><p class="text-red-600">{errorMessage}</p>):null}
         {
-          !errorMessage && schedule.length === 0 ? (
-            <p>
-              No upcoming streams scheduled. Check out the{" "}
-              <a href="/archive">archives</a>!
-            </p>
-          ) : (
+          !errorMessage && schedule.length > 0 ? (
+            <SectionHeader title="Upcoming Live Streams" />
             <StreamSchedule
               schedule={schedule}
               locale={locale}
               timezone={timezone}
             />
-          )
+          ) : null
         }
       </section>
     </div>
