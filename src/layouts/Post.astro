@@ -20,7 +20,11 @@ const currentUrl = `/blog/${entry.slug}`;
   metaDesc={entry.data.excerpt || entry.data.description}
   socialImage={new URL(entry.data.cover_image!, site.url).toString()}
 >
-  <main id="main" tabindex="-1" class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12">
+  <main
+    id="main"
+    tabindex="-1"
+    class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12"
+  >
     <article class="space-y-8">
       <PostIntro
         title={entry.data.title}
@@ -49,15 +53,15 @@ const currentUrl = `/blog/${entry.slug}`;
 
       {
         entry.data.tags && entry.data.tags.length > 0 && (
-          <footer class="pt-8 border-t-2 border-rose-100">
+          <footer class="pt-8 border-t-2 border-border dark:border-border">
             <div class="flex items-center gap-3 flex-wrap">
-              <h2 class="text-xl font-semibold text-gray-900">Tags:</h2>
+              <h2 class="text-xl font-semibold text-foreground">Tags:</h2>
               <ul class="flex flex-wrap gap-2">
                 {entry.data.tags.map((tag) => (
                   <li>
                     <a
                       href={`/tags/${tag}`}
-                      class="inline-block px-3 py-1 bg-rose-50 text-pink-600 rounded-full text-sm font-semibold hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white focus:outline-none"
+                      class="inline-block px-3 py-1 bg-rose-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-full text-sm font-semibold hover:bg-pink-600 hover:text-white dark:hover:bg-pink-500 dark:hover:text-white focus:bg-pink-600 focus:text-white focus:outline-none transition-colors"
                     >
                       {tag}
                     </a>

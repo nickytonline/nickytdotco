@@ -37,6 +37,28 @@ const { origin } = new URL(Astro.request.url);
       socialImage={new URL(socialImage, origin).href}
     />
     <title>{title}</title>
+    <!-- Prevent flash of unstyled content -->
+    <script is:inline>
+      // Check for saved theme preference or default to system preference
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body class="pb-32 font-sans">
     <SkipLink id="main" />
@@ -44,13 +66,13 @@ const { origin } = new URL(Astro.request.url);
       <Header />
       <slot />
       <footer class="pt-8 text-center">
-        <p class="text-lg text-gray-700">
+        <p class="text-lg text-muted-foreground">
           Want to stay updated with tech tips? Check out my newsletter:
           <a
             href="https://onetipaweek.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+            class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
           >
             OneTipAWeek.com
           </a>

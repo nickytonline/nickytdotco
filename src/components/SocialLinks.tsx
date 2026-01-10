@@ -98,14 +98,16 @@ const SocialLinks = () => {
             rel="noopener noreferrer"
             className="group flex items-start gap-4 p-6 rounded-lg transition-all duration-200 focus:outline-none"
           >
-            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 group-hover:bg-pink-600 group-focus:bg-pink-600 transition-colors duration-200">
-              <Icon className="w-6 h-6 text-gray-700 group-hover:text-white group-focus:text-white transition-colors duration-200" />
+            <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-secondary group-hover:bg-pink-600 group-focus:bg-pink-600 dark:group-hover:bg-pink-500 dark:group-focus:bg-pink-500 transition-colors duration-200">
+              <Icon className="w-6 h-6 text-secondary-foreground group-hover:text-white group-focus:text-white transition-colors duration-200" />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-foreground">
                 {social.name}
               </h3>
-              <p className="text-sm text-gray-600 mt-1">{social.description}</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                {social.description}
+              </p>
             </div>
           </a>
         );

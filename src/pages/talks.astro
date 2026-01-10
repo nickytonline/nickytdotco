@@ -31,14 +31,14 @@ const years = Object.keys(talksByYear)
   <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
     <div class="mb-12">
       <SectionHeader title="Talks" headingLevel={1} />
-      <p class="text-xl text-gray-600 mt-6">
+      <p class="text-xl text-muted-foreground mt-6">
         Conference talks, meetups, and presentations about web development, AI,
         and developer tooling.
       </p>
       <div class="mt-6">
         <a
           href="/tags"
-          class="inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600"
+          class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
         >
           Browse by tag<span class="text-2xl">→</span>
         </a>
@@ -49,8 +49,8 @@ const years = Object.keys(talksByYear)
       {
         years.map((year) => (
           <div id={`year-${year}`} class="scroll-mt-24">
-            <div class="mb-6 py-3 border-l-4 border-pink-600 pl-6 bg-gradient-to-r from-rose-50 to-transparent flex items-center">
-              <h2 class="text-4xl font-bold text-gray-900 leading-none">
+            <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-gradient-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
+              <h2 class="text-4xl font-bold text-foreground leading-none">
                 {year}
               </h2>
             </div>
@@ -65,17 +65,19 @@ const years = Object.keys(talksByYear)
                         <h3 class="text-xl font-bold">
                           <a
                             href={`/talks/${slug}`}
-                            class="text-gray-900 hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline focus:outline-none"
+                            class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
                           >
                             {talk.data.title}
                           </a>
                         </h3>
-                        <div class="flex items-center gap-4 text-gray-600 mt-2">
+                        <div class="flex items-center gap-4 text-muted-foreground mt-2">
                           <span class="italic text-base">
                             {dateFilter(talk.data.date)}
                           </span>
-                          <span class="text-pink-600 font-semibold">•</span>
-                          <span class="text-base font-semibold text-pink-600">
+                          <span class="text-pink-600 dark:text-pink-400 font-semibold">
+                            •
+                          </span>
+                          <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
                             {talk.data.venue.name}
                           </span>
                         </div>

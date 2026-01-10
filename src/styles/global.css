@@ -149,18 +149,22 @@ body {
   @apply font-normal;
   @apply text-sm;
   @apply lg:text-xl;
-  @apply bg-white;
+  @apply bg-background;
+  @apply text-foreground;
+  @apply transition-colors;
 }
 
 a:not([class]) {
   text-decoration: underline;
   @apply decoration-pink-600;
+  @apply dark:decoration-pink-400;
   @apply underline-offset-4;
 }
 
 nav a[aria-current="page"],
 a:not([class]):hover {
   @apply decoration-pink-600;
+  @apply dark:decoration-pink-400;
   @apply underline;
   @apply decoration-4;
 }
@@ -249,6 +253,12 @@ nav a:not([aria-current="page"]):hover {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --color-theme-feature-text: #ffc857;
+}
+
+/* Dark mode heading anchor improvements */
+.dark .heading-anchor {
+  @apply text-pink-400;
 }
 
 @layer base {

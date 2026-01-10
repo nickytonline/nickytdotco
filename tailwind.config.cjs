@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,ts,md,mdx}"],
+  darkMode: "class",
   corePlugins: {
     preflight: false,
   },

@@ -52,10 +52,13 @@ const foremBoostLink = `https://dev.to/nickytonline/${fileSlug}`;
       {title}
     </h1>
 
-    <div class="flex items-center gap-4 text-gray-600 mb-6">
+    <div class="flex items-center gap-4 text-muted-foreground mb-6">
       {
         date && (
-          <time datetime={w3DateFilter(date)} class="italic text-lg dt-published">
+          <time
+            datetime={w3DateFilter(date)}
+            class="italic text-lg dt-published"
+          >
             {dateFilter(date)}
           </time>
         )
@@ -63,8 +66,10 @@ const foremBoostLink = `https://dev.to/nickytonline/${fileSlug}`;
       {
         reading_time_minutes && (
           <>
-            <span class="text-pink-600 font-semibold">•</span>
-            <span class="text-lg font-semibold text-pink-600">
+            <span class="text-pink-600 dark:text-pink-400 font-semibold">
+              •
+            </span>
+            <span class="text-lg font-semibold text-pink-600 dark:text-pink-400">
               {reading_time_minutes} min read
             </span>
           </>
@@ -76,31 +81,31 @@ const foremBoostLink = `https://dev.to/nickytonline/${fileSlug}`;
   <div class="flex flex-wrap gap-3">
     <a
       href={foremBoostLink}
-      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-pink-600 focus:bg-pink-600 text-secondary-foreground hover:text-white focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 rounded-lg font-semibold focus:outline-none transition-colors"
     >
       Boost on DEV
     </a>
     <a
       href={intentToBluesky}
-      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-pink-600 focus:bg-pink-600 text-secondary-foreground hover:text-white focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 rounded-lg font-semibold focus:outline-none transition-colors"
     >
       Share on Bluesky
     </a>
     <a
       href={intentToToot}
-      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-pink-600 focus:bg-pink-600 text-secondary-foreground hover:text-white focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 rounded-lg font-semibold focus:outline-none transition-colors"
     >
       Toot it!
     </a>
     <a
       href={intentToTweet}
-      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-pink-600 focus:bg-pink-600 text-secondary-foreground hover:text-white focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 rounded-lg font-semibold focus:outline-none transition-colors"
     >
       Tweet It!
     </a>
     <a
       href={intentToLinkedIn}
-      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-pink-600 focus:bg-pink-600 text-gray-900 hover:text-white focus:text-white rounded-lg font-semibold focus:outline-none"
+      class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-pink-600 focus:bg-pink-600 text-secondary-foreground hover:text-white focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 rounded-lg font-semibold focus:outline-none transition-colors"
     >
       Share on LinkedIn
     </a>
