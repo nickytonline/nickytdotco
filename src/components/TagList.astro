@@ -1,4 +1,6 @@
 ---
+import Tag from "./Tag.astro";
+
 /**
  * A component for displaying talk tags with links to tag pages
  */
@@ -16,21 +18,7 @@ const hasMoreTags = showMore && limit && tags.length > limit;
 ---
 
 <div class="flex flex-wrap gap-2 items-center">
-  {
-    displayTags.map((tag) => (
-      <a
-        href={`/tags/${tag.toLowerCase().replace(/\s+/g, "")}`}
-        class={`rounded-full px-3 py-1 text-sm transition-colors ${
-          tag.toLowerCase().replace(/\s+/g, "") ===
-          currentTag?.toLowerCase().replace(/\s+/g, "")
-            ? "bg-blue-100 text-blue-800 hover:bg-blue-200"
-            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-        }`}
-      >
-        {tag}
-      </a>
-    ))
-  }
+  {displayTags.map((tag) => <Tag tag={tag} />)}
   {
     hasMoreTags && (
       <span class="text-sm text-gray-500">+{tags.length - limit} more</span>
