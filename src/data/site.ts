@@ -31,7 +31,7 @@ export const site: SiteConfig = {
   enableThirdPartyComments: false,
   maxPostsPerPage: 5,
   paymentPointer: "$ilp.uphold.com/MZMhAWA7bkGa",
-  faviconPath: "/images/favicon.png",
+  faviconPath: "/images/favicon.svg",
   newsletterName: "Yet Another Newsletter LOL",
   newsletterRss: "https://buttondown.email/nickytonline/rss",
 };
