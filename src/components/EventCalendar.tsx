@@ -69,13 +69,13 @@ const EventCalendar = ({
         <span>Add to Calendar</span>
       </a>
       <div
-        className={`absolute invisible opacity-0 transition-all duration-300 transform group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 z-50 ${
+        className={`absolute invisible opacity-0 scale-95 transition-all duration-200 ease-out transform group-hover:visible group-hover:opacity-100 group-hover:scale-100 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:scale-100 z-50 ${
           dropdownPosition === "above"
             ? "bottom-full mb-2 translate-y-1 group-hover:translate-y-0 group-focus-within:translate-y-0"
             : "mt-2 -translate-y-1 group-hover:translate-y-0 group-focus-within:translate-y-0"
         }`}
       >
-        <ul className="p-4 grid gap-4 border border-black [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-white">
+        <ul className="p-4 grid gap-4 border-2 border-pink-600 rounded-md [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-white shadow-lg">
           <li>
             <a
               href={generateGoogleCalendarUrl({

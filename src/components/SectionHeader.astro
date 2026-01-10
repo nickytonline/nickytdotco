@@ -1,12 +1,26 @@
 ---
 interface Props {
   title: string;
+  headingLevel?: 1 | 2;
 }
 
-const { title } = Astro.props;
+const { title, headingLevel = 2 } = Astro.props;
 ---
 
 <div class="mb-8">
-  <h2 class="text-5xl font-extrabold tracking-tight text-balance">{title}</h2>
-  <div class="w-20 h-1.5 bg-gradient-to-r from-pink-600 to-pink-400 rounded-full mt-3"></div>
+  {
+    headingLevel === 1 ? (
+      <h1 class="text-5xl font-extrabold tracking-tight text-balance">
+        {title}
+      </h1>
+    ) : (
+      <h2 class="text-5xl font-extrabold tracking-tight text-balance">
+        {title}
+      </h2>
+    )
+  }
+  <div
+    class="w-20 h-1.5 bg-linear-to-r from-pink-600 to-pink-400 rounded-full mt-3"
+  >
+  </div>
 </div>
