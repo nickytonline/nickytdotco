@@ -24,8 +24,8 @@ Astro.response.headers.set(
 ---
 
 <Layout title="Nick Taylor's live streaming homepage">
-  <main id="main" class="mt-4 md:mt-8 lg:mt-16 sm:text-basemd:text-3xl">
-    <div class="grid gap-8 lg:gap-12">
+  <main id="main" class="max-w-5xl mx-auto px-6 py-12">
+    <div class="space-y-8">
       <h1>Guest Appearances</h1>
       <p>
         <a
@@ -46,7 +46,7 @@ Astro.response.headers.set(
                   class="my-2 rounded-md w-[240px] md:w-[480px] aspect-auto border"
                 />
               </a>
-              <div class="flex flex-col gap-4 max-w-[65ch]">
+              <div class="flex flex-col gap-4">
                 <h2>{video.title}</h2>
                 <p
                   class:list="prose max-w-prose"

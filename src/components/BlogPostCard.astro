@@ -11,20 +11,24 @@ const { title, date, image, href } = Astro.props;
 
 <a
   href={href}
-  class="blog-card group flex flex-col md:flex-row gap-6 p-6 rounded-xl border-2 border-transparent bg-white hover:bg-gradient-to-r hover:from-rose-50 hover:to-white hover:border-pink-600 no-underline"
+  class="blog-card group flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white no-underline outline-none"
 >
-  {image && (
-    <div class="relative flex-shrink-0 w-full md:w-40 h-45 md:h-30 rounded-lg overflow-hidden bg-gray-100">
-      <img
-        src={image}
-        alt=""
-        class="w-full h-full object-cover"
-        data-not-lazy
-      />
-    </div>
-  )}
+  {
+    image && (
+      <div class="relative shrink-0 w-full md:w-40 h-45 md:h-30 rounded-lg overflow-hidden bg-gray-100">
+        <img
+          src={image}
+          alt=""
+          class="w-full h-full object-cover"
+          data-not-lazy
+        />
+      </div>
+    )
+  }
   <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
-    <h3 class="text-xl font-semibold leading-snug text-black group-hover:text-pink-600">
+    <h3
+      class="text-xl font-semibold leading-snug text-black group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline"
+    >
       {title}
     </h3>
     <time class="italic text-base text-gray-600 font-normal">{date}</time>

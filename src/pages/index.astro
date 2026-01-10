@@ -76,12 +76,15 @@ export const prerender = false;
             ))
           }
         </div>
-        <a href="/archive" class="inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600">
+        <a
+          href="/archive"
+          class="inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600"
+        >
           More blog posts<span class="text-2xl">→</span>
         </a>
       </section>
 
-      <section class="border-t-2 border-rose-100 pt-12">
+      <section class="pt-12">
         <SectionHeader title="Upcoming Live Streams" />
         {errorMessage && <p class="text-red-600">{errorMessage}</p>}
         {
