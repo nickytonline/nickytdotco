@@ -14,13 +14,15 @@ if (url.startsWith("http")) {
 }
 ---
 
-<blockquote
-  class="instagram-media"
-  data-instgrm-permalink={instagramUrl.toString()}
-  data-instgrm-version="14"
->
-  <a href={url}>View this post on Instagram</a>
-</blockquote>
+<div class="w-full max-w-4xl mx-auto">
+  <blockquote
+    class="instagram-media"
+    data-instgrm-permalink={instagramUrl.toString()}
+    data-instgrm-version="14"
+  >
+    <a href={url}>View this post on Instagram</a>
+  </blockquote>
+</div>
 <script>
   const scriptSrc = "//www.instagram.com/embed.js";
   if (!document.querySelector(`script[src*="instagram.com/embed.js"]`)) {
@@ -28,8 +30,8 @@ if (url.startsWith("http")) {
     script.async = true;
     script.src = scriptSrc;
     document.head.appendChild(script);
-  } else if ((window as any).instgrm) {
+  } else if ((window as Window & { instgrm?: { Embeds: { process: () => void } } }).instgrm) {
     // Re-process embeds if script already loaded
-    (window as any).instgrm.Embeds.process();
+    (window as Window & { instgrm?: { Embeds: { process: () => void } } }).instgrm.Embeds.process();
   }
 </script>

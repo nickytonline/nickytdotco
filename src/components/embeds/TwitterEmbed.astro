@@ -20,7 +20,7 @@ try {
   } else if (response.status === 404) {
     tweetHtml = "<p>The Tweet has been deleted.</p>";
   }
-} catch (error) {
+} catch (_error) {
   const xUrl = `https://x.com/anyone/status/${tweetId}`;
   tweetHtml = `<a href="${xUrl}" style="margin-top: 10px;margin-bottom: 10px;">${xUrl}</a>`;
 }

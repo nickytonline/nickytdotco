@@ -10,12 +10,13 @@ const { uri, height = "232", theme = "0" } = Astro.props;
 const src = `https://open.spotify.com/embed/${uri}?utm_source=generator&theme=${theme}`;
 ---
 
-<iframe
-  style={`border-radius:12px; border: 0`}
-  src={src}
-  width="100%"
-  height={height}
-  allowfullscreen=""
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  loading="lazy"
-  title={`Spotify embed ${uri}`}></iframe>
+<div class="w-full max-w-4xl mx-auto">
+  <iframe
+    class="w-full rounded-xl border-0"
+    src={src}
+    height={height}
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+    title={`Spotify embed ${uri}`}></iframe>
+</div>

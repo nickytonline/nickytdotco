@@ -18,7 +18,7 @@ const { url } = Astro.props;
 
 // Parse the URL to determine the embed type
 let embedType: string;
-let embedProps: Record<string, any> = { url };
+let embedProps: Record<string, unknown> = { url };
 
 try {
   const urlObj = new URL(url);

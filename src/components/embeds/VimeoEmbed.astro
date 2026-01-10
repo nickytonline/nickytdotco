@@ -20,12 +20,14 @@ const loopParam = loop ? 1 : 0;
 const src = `https://player.vimeo.com/video/${videoId}?autoplay=${autoplayParam}&controls=${controlsParam}&loop=${loopParam}`;
 ---
 
-<iframe
-  src={src}
-  width="640"
-  height="360"
-  style="border: 0"
-  allow="autoplay; fullscreen; picture-in-picture"
-  allowfullscreen
-  loading="lazy"
-  title={`Vimeo video ${videoId}`}></iframe>
+<div class="relative w-full max-w-4xl mx-auto aspect-video">
+  <iframe
+    src={src}
+    width="640"
+    height="360"
+    class="absolute inset-0 w-full h-full border-0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    loading="lazy"
+    title={`Vimeo video ${videoId}`}></iframe>
+</div>

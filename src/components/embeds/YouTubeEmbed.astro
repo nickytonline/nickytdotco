@@ -25,7 +25,7 @@ const timeQueryParameter = startTime ? `?start=${startTime}` : "";
 const url = `https://www.youtube.com/embed/${videoId}${timeQueryParameter}`;
 ---
 
-<div class="video-player">
+<div class="relative w-full max-w-4xl mx-auto aspect-video">
   <iframe
     title={title}
     loading="lazy"
@@ -33,7 +33,7 @@ const url = `https://www.youtube.com/embed/${videoId}${timeQueryParameter}`;
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
     referrerpolicy="strict-origin-when-cross-origin"
-    style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px"
+    class="absolute inset-0 w-full h-full"
     width="560"
     height="315"></iframe>
 </div>
