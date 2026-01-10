@@ -1,4 +1,4 @@
-import { DateTime } from 'luxon';
+import { DateTime } from "luxon";
 
 /**
  * Appends the appropriate ordinal suffix to a number (e.g., 1st, 2nd, 3rd, 4th).
@@ -73,8 +73,11 @@ export function htmlDateString(dateObj: Date): string {
  * @param length - Maximum length before truncation (default: 100)
  * @returns Truncated string with ellipsis if needed, or original string
  */
-export function truncate(str: string | null | undefined, length: number = 100): string {
-  if (!str || str.length <= length) return str || '';
+export function truncate(
+  str: string | null | undefined,
+  length: number = 100
+): string {
+  if (!str || str.length <= length) return str || "";
   return str.substring(0, length) + "...";
 }
 
@@ -115,14 +118,17 @@ interface Post {
  * @param series - The series identifier (string, object with collection_id, or object with name)
  * @returns Filtered array of posts belonging to the specified series
  */
-export function seriesFilter(collection: Post[], series: Series | null | undefined): Post[] {
+export function seriesFilter(
+  collection: Post[],
+  series: Series | null | undefined
+): Post[] {
   if (!series) return [];
 
   // Normalize series identifier
   const seriesId =
     typeof series === "string"
       ? series
-      : 'collection_id' in series && series.collection_id
+      : "collection_id" in series && series.collection_id
         ? String(series.collection_id)
         : series.name;
 
@@ -133,7 +139,7 @@ export function seriesFilter(collection: Post[], series: Series | null | undefin
     const postSeriesId =
       typeof postSeries === "string"
         ? postSeries
-        : 'collection_id' in postSeries && postSeries.collection_id
+        : "collection_id" in postSeries && postSeries.collection_id
           ? String(postSeries.collection_id)
           : postSeries.name;
 

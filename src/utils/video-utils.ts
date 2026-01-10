@@ -15,8 +15,8 @@ export function getThumbnailUrl(talk: CollectionEntry<"talks">) {
   if (talk.data.video?.type === "youtube") {
     const videoId = talk.data.video.url.match(
       new RegExp(
-        String.raw`(?:youtube\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})`,
-      ),
+        String.raw`(?:youtube\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})`
+      )
     )?.[1];
     if (videoId) {
       return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;

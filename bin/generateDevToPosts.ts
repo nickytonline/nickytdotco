@@ -26,13 +26,13 @@ function getErrorMessage(error: unknown): string {
 function isSeriesNamesObject(value: unknown): value is Record<number, string> {
   if (!value || typeof value !== "object") return false;
   return Object.entries(value).every(
-    ([key, val]) => !isNaN(Number(key)) && typeof val === "string",
+    ([key, val]) => !isNaN(Number(key)) && typeof val === "string"
   );
 }
 
 const { DEV_API_KEY } = process.env;
 const SLUG_INCLUSION_LIST: string[] = JSON.parse(
-  readFileSync(path.join(__dirname, "slugInclusionList.json"), "utf-8"),
+  readFileSync(path.join(__dirname, "slugInclusionList.json"), "utf-8")
 );
 
 const { url: siteUrl } = siteData;
@@ -107,12 +107,12 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*youtube\s+"?([^"\s,]+)"?(?:,\s+"?([^"\s]+)"?)?\s*%}/g,
     (_match, videoId: string, startTime?: string) => {
       imports.add(
-        'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";',
+        'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";'
       );
       return startTime
         ? `<YouTubeEmbed videoId="${videoId}" startTime="${startTime}" />`
         : `<YouTubeEmbed videoId="${videoId}" />`;
-    },
+    }
   );
 
   // Twitter/X: {% twitter "tweetId" %} or {% twitter tweetId %} or {% x "tweetId" %} or {% x tweetId %}
@@ -120,10 +120,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*(twitter|x)\s+"?([^"\s]+)"?\s*%}/g,
     (_match, _type: string, tweetId: string) => {
       imports.add(
-        'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";',
+        'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";'
       );
       return `<TwitterEmbed tweetId="${tweetId}" />`;
-    },
+    }
   );
 
   // CodePen: {% codepen "url" %} or {% codepen url %}
@@ -131,10 +131,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*codepen\s+"?([^"\s]+)"?\s*%}/g,
     (_match, url) => {
       imports.add(
-        'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";',
+        'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";'
       );
       return `<CodePenEmbed url="${url}" />`;
-    },
+    }
   );
 
   // GitHub: {% github "url" %} or {% github url %}
@@ -142,10 +142,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*github\s+"?([^"\s]+)"?\s*%}/g,
     (_match, url) => {
       imports.add(
-        'import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";',
+        'import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";'
       );
       return `<GitHubEmbed url="${url}" />`;
-    },
+    }
   );
 
   // Generic embed: {% embed "url" %} or {% embed url %}
@@ -154,7 +154,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     (_match, url) => {
       imports.add('import Embed from "@/components/Embed.astro";');
       return `<Embed url="${url}" />`;
-    },
+    }
   );
 
   // Dev.to link: {% link "url" %} or {% link url %}
@@ -162,10 +162,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*link\s+"?([^"\s]+)"?\s*%}/g,
     (_match, url) => {
       imports.add(
-        'import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";',
+        'import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";'
       );
       return `<DevLinkEmbed url="${url}" />`;
-    },
+    }
   );
 
   // Twitch: {% twitch "videoId" %} or {% twitch videoId %}
@@ -173,10 +173,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*twitch\s+"?([^"\s]+)"?\s*%}/g,
     (_match, videoId) => {
       imports.add(
-        'import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";',
+        'import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";'
       );
       return `<TwitchEmbed videoId="${videoId}" />`;
-    },
+    }
   );
 
   // Vimeo: {% vimeo "videoId" %} or {% vimeo videoId %}
@@ -184,10 +184,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*vimeo\s+"?([^"\s]+)"?\s*%}/g,
     (_match, videoId) => {
       imports.add(
-        'import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";',
+        'import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";'
       );
       return `<VimeoEmbed videoId="${videoId}" />`;
-    },
+    }
   );
 
   // Spotify: {% spotify "uri" %} or {% spotify uri %}
@@ -195,10 +195,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*spotify\s+"?([^"\s]+)"?\s*%}/g,
     (_match, uri) => {
       imports.add(
-        'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";',
+        'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";'
       );
       return `<SpotifyEmbed uri="${uri}" />`;
-    },
+    }
   );
 
   // CodeSandbox: {% codesandbox "sandboxId" %} or {% codesandbox sandboxId %}
@@ -206,10 +206,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*codesandbox\s+"?([^"\s]+)"?\s*%}/g,
     (_match, sandboxId) => {
       imports.add(
-        'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";',
+        'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";'
       );
       return `<CodeSandboxEmbed sandboxId="${sandboxId}" />`;
-    },
+    }
   );
 
   // Instagram: {% instagram "url" %} or {% instagram url %}
@@ -217,10 +217,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*instagram\s+"?([^"\s]+)"?\s*%}/g,
     (_match, url) => {
       imports.add(
-        'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";',
+        'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";'
       );
       return `<InstagramEmbed url="${url}" />`;
-    },
+    }
   );
 
   // ::youtube{videoId="..." startTime="..."}
@@ -228,12 +228,12 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::youtube\{videoId="([^"]+)"(?:\s+startTime="([^"]+)")?\}/g,
     (_match, videoId, startTime) => {
       imports.add(
-        'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";',
+        'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";'
       );
       return startTime
         ? `<YouTubeEmbed videoId="${videoId}" startTime="${startTime}" />`
         : `<YouTubeEmbed videoId="${videoId}" />`;
-    },
+    }
   );
 
   // ::twitter{tweetId="..."} or ::x{tweetId="..."}
@@ -241,10 +241,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::(twitter|x)\{tweetId="([^"]+)"\}/g,
     (_match, _type, tweetId) => {
       imports.add(
-        'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";',
+        'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";'
       );
       return `<TwitterEmbed tweetId="${tweetId}" />`;
-    },
+    }
   );
 
   // ::codepen{url="..."}
@@ -252,10 +252,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::codepen\{url="([^"]+)"\}/g,
     (_match, url) => {
       imports.add(
-        'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";',
+        'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";'
       );
       return `<CodePenEmbed url="${url}" />`;
-    },
+    }
   );
 
   // ::github{url="..."}
@@ -263,10 +263,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::github\{url="([^"]+)"\}/g,
     (_match, url) => {
       imports.add(
-        'import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";',
+        'import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";'
       );
       return `<GitHubEmbed url="${url}" />`;
-    },
+    }
   );
 
   // ::embed{url="..."}
@@ -274,16 +274,16 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::embed\{url="([^"]+)"\}/g,
     (_match, url) => {
       imports.add(
-        'import GenericEmbed from "@/components/embeds/GenericEmbed.astro";',
+        'import GenericEmbed from "@/components/embeds/GenericEmbed.astro";'
       );
       return `<GenericEmbed url="${url}" />`;
-    },
+    }
   );
 
   // ::link{url="..."}
   newContent = newContent.replace(/::link\{url="([^"]+)"\}/g, (_match, url) => {
     imports.add(
-      'import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";',
+      'import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";'
     );
     return `<DevLinkEmbed url="${url}" />`;
   });
@@ -293,10 +293,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::twitch\{videoId="([^"]+)"\}/g,
     (_match, videoId) => {
       imports.add(
-        'import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";',
+        'import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";'
       );
       return `<TwitchEmbed videoId="${videoId}" />`;
-    },
+    }
   );
 
   // ::vimeo{videoId="..."}
@@ -304,10 +304,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::vimeo\{videoId="([^"]+)"\}/g,
     (_match, videoId) => {
       imports.add(
-        'import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";',
+        'import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";'
       );
       return `<VimeoEmbed videoId="${videoId}" />`;
-    },
+    }
   );
 
   // ::spotify{uri="..."}
@@ -315,10 +315,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::spotify\{uri="([^"]+)"\}/g,
     (_match, uri) => {
       imports.add(
-        'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";',
+        'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";'
       );
       return `<SpotifyEmbed uri="${uri}" />`;
-    },
+    }
   );
 
   // ::codesandbox{sandboxId="..."}
@@ -326,10 +326,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::codesandbox\{sandboxId="([^"]+)"\}/g,
     (_match, sandboxId) => {
       imports.add(
-        'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";',
+        'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";'
       );
       return `<CodeSandboxEmbed sandboxId="${sandboxId}" />`;
-    },
+    }
   );
 
   // ::instagram{url="..."}
@@ -337,10 +337,10 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /::instagram\{url="([^"]+)"\}/g,
     (_match, url) => {
       imports.add(
-        'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";',
+        'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";'
       );
       return `<InstagramEmbed url="${url}" />`;
-    },
+    }
   );
 
   return {
@@ -358,7 +358,7 @@ function decodeHtmlEntities(text: string): string {
   return text
     .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(Number(dec)))
     .replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) =>
-      String.fromCharCode(parseInt(hex, 16)),
+      String.fromCharCode(parseInt(hex, 16))
     )
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
@@ -380,7 +380,7 @@ function decodeHtmlEntities(text: string): string {
 async function getOrFetchSeriesName(
   collectionId: number,
   fallbackTitle: string,
-  username = "nickytonline",
+  username = "nickytonline"
 ): Promise<string> {
   // Return cached/mapped value if available
   if (SERIES_NAMES[collectionId]) {
@@ -393,7 +393,7 @@ async function getOrFetchSeriesName(
     const resp = await fetchWithRetry(url);
     if (!resp.ok) {
       console.warn(
-        `  ⚠️  Could not fetch series page for ID ${collectionId} (status ${resp.status}).`,
+        `  ⚠️  Could not fetch series page for ID ${collectionId} (status ${resp.status}).`
       );
       return fallbackTitle || `Series ${collectionId}`;
     }
@@ -432,7 +432,7 @@ async function getOrFetchSeriesName(
     return title;
   } catch (error) {
     console.warn(
-      `  ⚠️  Error fetching series ${collectionId}: ${getErrorMessage(error)}`,
+      `  ⚠️  Error fetching series ${collectionId}: ${getErrorMessage(error)}`
     );
     return fallbackTitle || `Series ${collectionId}`;
   }
@@ -441,28 +441,28 @@ async function getOrFetchSeriesName(
 const POSTS_DIRECTORY = path.join(__dirname, "../src/content/blog");
 const VSCODE_TIPS_POSTS_DIRECTORY = path.join(
   __dirname,
-  "../src/content/vscodetips",
+  "../src/content/vscodetips"
 );
 const POSTS_IMAGES_PUBLIC_DIRECTORY = "/assets/images/posts";
 const POSTS_IMAGES_DIRECTORY = path.join(
   __dirname,
   "../public",
-  POSTS_IMAGES_PUBLIC_DIRECTORY,
+  POSTS_IMAGES_PUBLIC_DIRECTORY
 );
 const EMBEDDED_POSTS_MARKUP_FILE = path.join(
   __dirname,
-  "../src/_data/embeddedPostsMarkup.json",
+  "../src/_data/embeddedPostsMarkup.json"
 );
 const TWITTER_EMBEDS_FILE = path.join(
   __dirname,
-  "../src/_data/twitterEmbeds.json",
+  "../src/_data/twitterEmbeds.json"
 );
 
 const currentBlogPostEmbeds: Record<string, unknown> = JSON.parse(
-  readFileSync(EMBEDDED_POSTS_MARKUP_FILE, "utf-8"),
+  readFileSync(EMBEDDED_POSTS_MARKUP_FILE, "utf-8")
 );
 const blogPostEmbeds = new Map<string, unknown>(
-  Object.entries(currentBlogPostEmbeds),
+  Object.entries(currentBlogPostEmbeds)
 );
 
 // Load existing Twitter embeds or initialize empty object
@@ -474,7 +474,7 @@ try {
   currentTwitterEmbeds = {};
 }
 const twitterEmbeds = new Map<string, string>(
-  Object.entries(currentTwitterEmbeds),
+  Object.entries(currentTwitterEmbeds)
 );
 
 /**
@@ -490,7 +490,7 @@ function sanitizeMarkdownEmbeds(markdown: string): ConversionResult {
   let sanitizedMarkdown = markdown
     .replaceAll(
       /{%\s*?(?<liquidTag>[^\s+]*)\s+?(?<id>[^'"\s]+)\s*?%}/g,
-      '{% $1 "$2" %}',
+      '{% $1 "$2" %}'
     )
     .replaceAll(/\n<!-- places to follow me -->\n(.|\n)*$/g, "");
 
@@ -499,7 +499,7 @@ function sanitizeMarkdownEmbeds(markdown: string): ConversionResult {
     (_match, altText: string) => {
       const escapedAlt = altText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
       return `![${escapedAlt}]`;
-    },
+    }
   );
 
   // Convert all liquid tags to Astro component syntax
@@ -573,7 +573,7 @@ async function fetchWithRetry(
   url: string,
   options: RequestInit = {},
   maxRetries = 5,
-  initialDelay = 2000,
+  initialDelay = 2000
 ): Promise<Response> {
   let attempt = 0;
   let delay = initialDelay;
@@ -586,13 +586,13 @@ async function fetchWithRetry(
     attempt++;
     if (attempt > maxRetries) {
       throw new Error(
-        `Failed after ${maxRetries} retries due to rate limiting (429)`,
+        `Failed after ${maxRetries} retries due to rate limiting (429)`
       );
     }
     const retryAfter = response.headers.get("Retry-After");
     const waitTime = retryAfter ? parseInt(retryAfter, 10) * 1000 : delay;
     console.warn(
-      `Rate limited (429) on ${url}. Retrying in ${waitTime / 1000}s (attempt ${attempt}/${maxRetries})...`,
+      `Rate limited (429) on ${url}. Retrying in ${waitTime / 1000}s (attempt ${attempt}/${maxRetries})...`
     );
     await sleep(waitTime);
     delay *= 2; // Exponential backoff
@@ -612,11 +612,11 @@ async function getDevPosts(): Promise<DevToPost[]> {
       headers: {
         "api-key": DEV_API_KEY!,
       },
-    },
+    }
   );
   if (!response.ok) {
     throw new Error(
-      `Failed to fetch posts: ${response.status} ${response.statusText}`,
+      `Failed to fetch posts: ${response.status} ${response.statusText}`
     );
   }
   const posts: DevToPost[] = await response.json();
@@ -641,7 +641,7 @@ async function getDevPost(blogPostId: number): Promise<DevToPost> {
 
   if (!response.ok) {
     throw new Error(
-      `Failed to fetch post: ${response.status} ${response.statusText}`,
+      `Failed to fetch post: ${response.status} ${response.statusText}`
     );
   }
 
@@ -650,7 +650,7 @@ async function getDevPost(blogPostId: number): Promise<DevToPost> {
     post = await response.json();
   } catch (error) {
     throw new Error(
-      `Failed to parse post JSON for ${getArticleUrl}: ${getErrorMessage(error)}`,
+      `Failed to parse post JSON for ${getArticleUrl}: ${getErrorMessage(error)}`
     );
   }
   return post;
@@ -692,7 +692,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     };
 
     console.log(
-      `  📚 Added to series: "${seriesName}" (ID: ${post.collection_id})`,
+      `  📚 Added to series: "${seriesName}" (ID: ${post.collection_id})`
     );
   }
 
@@ -714,14 +714,14 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
   const basePath = tagArray.includes("vscodetips")
     ? path.join(
         VSCODE_TIPS_POSTS_DIRECTORY,
-        new Date(date).getFullYear().toString(),
+        new Date(date).getFullYear().toString()
       )
     : POSTS_DIRECTORY;
   const postFile = path.join(basePath, `${slug}.mdx`);
   await fs.writeFile(postFile, markdown);
 
   const twitterEmbedMatches = markdown.matchAll(
-    /(?:[^`]{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/(?:www\.)?twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g,
+    /(?:[^`]{%\stwitter\s"(?<id>[^"\s]+)"\s%})|(?:{%\sembed\s"https:\/\/(?:www\.)?twitter\.com\/[^/]+\/status\/(?<id2>[^"\s]+?)(?:\?.+)?"\s%})/g
   );
 
   for (const match of twitterEmbedMatches) {
@@ -734,19 +734,19 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     try {
       const response = await fetchWithRetry(
         `https://publish.twitter.com/oembed?url=${encodeURIComponent(
-          `https://twitter.com/anyone/status/${tweetId}`,
-        )}`,
+          `https://twitter.com/anyone/status/${tweetId}`
+        )}`
       );
 
       if (!response.ok) {
         console.warn(
-          `Failed to fetch Twitter embed for ${tweetId}: ${response.status}`,
+          `Failed to fetch Twitter embed for ${tweetId}: ${response.status}`
         );
         continue;
       }
 
       console.log(
-        `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`,
+        `Grabbing markup for Tweet https://twitter.com/anyone/status/${tweetId}`
       );
 
       const data: { html: string } = await response.json();
@@ -756,7 +756,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     } catch (error) {
       console.warn(
         `Error fetching Twitter embed for ${tweetId}:`,
-        getErrorMessage(error),
+        getErrorMessage(error)
       );
       continue;
     }
@@ -767,7 +767,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
 
 async function saveImageUrl(
   imageUrl: string,
-  imageFilePath: string,
+  imageFilePath: string
 ): Promise<void> {
   try {
     const response = await fetch(imageUrl);
@@ -788,14 +788,14 @@ function generateNewImageUrl(imageUrl: URL): string {
   const imagefilename = imageUrl.pathname.replaceAll("/", "_");
   const newImageUrl = new URL(
     path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename),
-    siteUrl,
+    siteUrl
   ).pathname;
 
   return newImageUrl;
 }
 
 async function saveMarkdownImageUrl(
-  markdownImageUrl: string | null = null,
+  markdownImageUrl: string | null = null
 ): Promise<string | null> {
   let newMarkdownImageUrl = null;
 
@@ -804,7 +804,7 @@ async function saveMarkdownImageUrl(
     const imagefilename = imageUrl.pathname.replaceAll("/", "_");
     const localCoverImagePath = path.join(
       POSTS_IMAGES_DIRECTORY,
-      imagefilename,
+      imagefilename
     );
 
     newMarkdownImageUrl = generateNewImageUrl(imageUrl);
@@ -831,7 +831,7 @@ async function updateMarkdownImageUrls(markdown: string): Promise<{
   let updatedMarkdown = markdown;
   const imagesToSave: string[] = [];
   const matches = markdown.matchAll(
-    /!\[.*?\]\((?<oldImageUrl>(?!\.\/)[^)]+)\)/g,
+    /!\[.*?\]\((?<oldImageUrl>(?!\.\/)[^)]+)\)/g
   );
 
   for (const match of matches) {
@@ -856,10 +856,10 @@ async function updateMarkdownImageUrls(markdown: string): Promise<{
 
 async function getDevBlogPostEmbedsMarkup(
   markdown: string,
-  embeds: Map<string, unknown>,
+  embeds: Map<string, unknown>
 ): Promise<void> {
   const matches = markdown.matchAll(
-    /[^`]{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g,
+    /[^`]{%\s*?(?<embedType>[^\s]+)\s+?(?<embedUrl>[^\s]+)/g
   );
 
   for (const match of matches) {
@@ -892,7 +892,7 @@ async function getDevBlogPostEmbedsMarkup(
       } catch (error) {
         console.warn(
           `Error fetching embed ${embedUrl}:`,
-          getErrorMessage(error),
+          getErrorMessage(error)
         );
         continue;
       }
@@ -902,7 +902,7 @@ async function getDevBlogPostEmbedsMarkup(
 
 async function updateBlogPostEmbeds(
   embeds: Map<string, unknown>,
-  filePaths: string,
+  filePaths: string
 ): Promise<void> {
   const blogPostEmbedsMarkup: Record<string, unknown> = {};
 
@@ -911,7 +911,7 @@ async function updateBlogPostEmbeds(
       const response = await fetch(url);
       if (!response.ok) {
         console.warn(
-          `Skipping embed for ${url} - received status ${response.status}`,
+          `Skipping embed for ${url} - received status ${response.status}`
         );
         continue;
       }
@@ -938,7 +938,7 @@ async function updateBlogPostEmbeds(
         } catch (error) {
           console.warn(
             `Failed to fetch blog post for ${url}:`,
-            getErrorMessage(error),
+            getErrorMessage(error)
           );
           continue;
         }
@@ -959,7 +959,7 @@ async function updateBlogPostEmbeds(
   } catch (error) {
     console.error(
       `Failed to write embeds file to ${filePaths}:`,
-      getErrorMessage(error),
+      getErrorMessage(error)
     );
     throw error;
   }
@@ -967,9 +967,9 @@ async function updateBlogPostEmbeds(
 
 async function updateTwitterEmbeds(
   twitterEmbeds: Map<string, string>,
-  filepath: string,
+  filepath: string
 ): Promise<void> {
-  let tweetEmbeds = Object.fromEntries(twitterEmbeds);
+  const tweetEmbeds = Object.fromEntries(twitterEmbeds);
 
   const data = JSON.stringify(tweetEmbeds, null, 2);
 
@@ -986,11 +986,11 @@ async function updateTwitterEmbeds(
     fs.mkdir(
       path.join(
         VSCODE_TIPS_POSTS_DIRECTORY,
-        new Date().getFullYear().toString(),
+        new Date().getFullYear().toString()
       ),
       {
         recursive: true,
-      },
+      }
     ),
     fs.mkdir(POSTS_IMAGES_DIRECTORY, { recursive: true }),
   ]);
@@ -1016,7 +1016,7 @@ async function updateTwitterEmbeds(
 
     post.canonical_url = new URL(
       post.slug,
-      "https://www.nickyt.co/blog/",
+      "https://www.nickyt.co/blog/"
     ).toString();
 
     if (/<!-- my newsletter -->/.test(post.body_markdown)) {
@@ -1025,7 +1025,7 @@ async function updateTwitterEmbeds(
     }
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const { markdown, imagesToSave } = await updateMarkdownImageUrls(
-      post.body_markdown,
+      post.body_markdown
     );
 
     await Promise.all([
@@ -1042,7 +1042,7 @@ async function updateTwitterEmbeds(
 
     if (status !== "success") {
       console.error(
-        `Failed to create post file for ${JSON.stringify(post, null, 2)}`,
+        `Failed to create post file for ${JSON.stringify(post, null, 2)}`
       );
 
       throw new Error(`Unabled to generate markdown file: status ${status}`);

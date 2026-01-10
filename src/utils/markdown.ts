@@ -1,4 +1,4 @@
-import { marked } from 'marked';
+import { marked } from "marked";
 
 /**
  * Configures the marked library with options matching the original markdown-it configuration.
@@ -9,8 +9,8 @@ import { marked } from 'marked';
  * but it automatically converts URLs to links by default.
  */
 marked.setOptions({
-  gfm: true,        // GitHub Flavored Markdown
-  breaks: true,     // Convert \n to <br>
+  gfm: true, // GitHub Flavored Markdown
+  breaks: true, // Convert \n to <br>
 });
 
 /**

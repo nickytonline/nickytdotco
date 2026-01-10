@@ -22,10 +22,7 @@
     "last_comment_at": "2020-12-01T15:22:00Z",
     "reading_time_minutes": 5,
     "tag_list": "git, webdev",
-    "tags": [
-      "git",
-      "webdev"
-    ],
+    "tags": ["git", "webdev"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -60,11 +57,7 @@
     "last_comment_at": "2020-06-27T12:56:35Z",
     "reading_time_minutes": 5,
     "tag_list": "changelog, javascript, testing",
-    "tags": [
-      "changelog",
-      "javascript",
-      "testing"
-    ],
+    "tags": ["changelog", "javascript", "testing"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -106,12 +99,7 @@
     "last_comment_at": "2021-05-12T20:57:13Z",
     "reading_time_minutes": 2,
     "tag_list": "javascript, react, storybook, ux",
-    "tags": [
-      "javascript",
-      "react",
-      "storybook",
-      "ux"
-    ],
+    "tags": ["javascript", "react", "storybook", "ux"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -146,11 +134,7 @@
     "last_comment_at": "2024-09-23T19:21:36Z",
     "reading_time_minutes": 5,
     "tag_list": "twitch, beginners, streaming",
-    "tags": [
-      "twitch",
-      "beginners",
-      "streaming"
-    ],
+    "tags": ["twitch", "beginners", "streaming"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -185,11 +169,7 @@
     "last_comment_at": "2022-01-21T03:02:14Z",
     "reading_time_minutes": 5,
     "tag_list": "a11y, webdev, javascript",
-    "tags": [
-      "a11y",
-      "webdev",
-      "javascript"
-    ],
+    "tags": ["a11y", "webdev", "javascript"],
     "user": {
       "name": "Suzanne Aitchison",
       "username": "s_aitchison",
@@ -224,11 +204,7 @@
     "last_comment_at": "2024-07-10T21:14:01Z",
     "reading_time_minutes": 6,
     "tag_list": "devtools, summaries, javascript",
-    "tags": [
-      "devtools",
-      "summaries",
-      "javascript"
-    ],
+    "tags": ["devtools", "summaries", "javascript"],
     "user": {
       "name": "swyx",
       "username": "swyx",
@@ -263,11 +239,7 @@
     "last_comment_at": "2021-04-28T11:10:41Z",
     "reading_time_minutes": 1,
     "tag_list": "rust, learninpublic, livecoding",
-    "tags": [
-      "rust",
-      "learninpublic",
-      "livecoding"
-    ],
+    "tags": ["rust", "learninpublic", "livecoding"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -302,11 +274,7 @@
     "last_comment_at": "2024-10-30T16:43:08Z",
     "reading_time_minutes": 2,
     "tag_list": "twitch, streaming, livecoding",
-    "tags": [
-      "twitch",
-      "streaming",
-      "livecoding"
-    ],
+    "tags": ["twitch", "streaming", "livecoding"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -341,11 +309,7 @@
     "last_comment_at": "2024-12-25T03:02:40Z",
     "reading_time_minutes": 2,
     "tag_list": "webdev, pairprogramming, devstream",
-    "tags": [
-      "webdev",
-      "pairprogramming",
-      "devstream"
-    ],
+    "tags": ["webdev", "pairprogramming", "devstream"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -387,9 +351,7 @@
     "last_comment_at": "2024-08-07T03:02:58Z",
     "reading_time_minutes": 2,
     "tag_list": "career",
-    "tags": [
-      "career"
-    ],
+    "tags": ["career"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -424,9 +386,7 @@
     "last_comment_at": "2024-02-20T03:21:22Z",
     "reading_time_minutes": 2,
     "tag_list": "meta",
-    "tags": [
-      "meta"
-    ],
+    "tags": ["meta"],
     "user": {
       "name": "Jess Lee",
       "username": "jess",
@@ -468,9 +428,7 @@
     "last_comment_at": "2020-07-01T13:08:37Z",
     "reading_time_minutes": 1,
     "tag_list": "advice",
-    "tags": [
-      "advice"
-    ],
+    "tags": ["advice"],
     "user": {
       "name": "swyx",
       "username": "swyx",
@@ -540,12 +498,7 @@
     "last_comment_at": "2024-02-22T04:09:23Z",
     "reading_time_minutes": 8,
     "tag_list": "productivity, vscode, collaboration, webdev",
-    "tags": [
-      "productivity",
-      "vscode",
-      "collaboration",
-      "webdev"
-    ],
+    "tags": ["productivity", "vscode", "collaboration", "webdev"],
     "user": {
       "name": "Jonathan Carter",
       "username": "lostintangent",
@@ -580,12 +533,7 @@
     "last_comment_at": "2018-03-26T05:00:00Z",
     "reading_time_minutes": 3,
     "tag_list": "react, beginners, storybook, ui",
-    "tags": [
-      "react",
-      "beginners",
-      "storybook",
-      "ui"
-    ],
+    "tags": ["react", "beginners", "storybook", "ui"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -620,12 +568,7 @@
     "last_comment_at": "2025-06-13T19:26:58Z",
     "reading_time_minutes": 4,
     "tag_list": "meta, projectbenatar, webdev, changelog",
-    "tags": [
-      "meta",
-      "projectbenatar",
-      "webdev",
-      "changelog"
-    ],
+    "tags": ["meta", "projectbenatar", "webdev", "changelog"],
     "user": {
       "name": "Ben Halpern",
       "username": "ben",
@@ -667,11 +610,7 @@
     "last_comment_at": "2025-01-22T03:02:51Z",
     "reading_time_minutes": 5,
     "tag_list": "career, interview, motivation",
-    "tags": [
-      "career",
-      "interview",
-      "motivation"
-    ],
+    "tags": ["career", "interview", "motivation"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -706,9 +645,7 @@
     "last_comment_at": "2025-12-30T19:07:29Z",
     "reading_time_minutes": 2,
     "tag_list": "meta",
-    "tags": [
-      "meta"
-    ],
+    "tags": ["meta"],
     "user": {
       "name": "Jess Lee",
       "username": "jess",
@@ -743,12 +680,7 @@
     "last_comment_at": "2019-08-20T23:39:06Z",
     "reading_time_minutes": 6,
     "tag_list": "testing, automation, cypress, netlify",
-    "tags": [
-      "testing",
-      "automation",
-      "cypress",
-      "netlify"
-    ],
+    "tags": ["testing", "automation", "cypress", "netlify"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -783,9 +715,7 @@
     "last_comment_at": "2022-05-22T17:58:50Z",
     "reading_time_minutes": 5,
     "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
+    "tags": ["typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -820,12 +750,7 @@
     "last_comment_at": "2024-04-15T03:01:40Z",
     "reading_time_minutes": 4,
     "tag_list": "githunt, showdev, javascript, productivity",
-    "tags": [
-      "githunt",
-      "showdev",
-      "javascript",
-      "productivity"
-    ],
+    "tags": ["githunt", "showdev", "javascript", "productivity"],
     "user": {
       "name": "Liyas Thomas",
       "username": "liyasthomas",
@@ -865,10 +790,7 @@
     "last_comment_at": "2025-01-14T03:06:30Z",
     "reading_time_minutes": 2,
     "tag_list": "webdev, html",
-    "tags": [
-      "webdev",
-      "html"
-    ],
+    "tags": ["webdev", "html"],
     "user": {
       "name": "Ananya Neogi",
       "username": "ananyaneogi",
@@ -903,10 +825,7 @@
     "last_comment_at": "2019-12-02T23:58:01Z",
     "reading_time_minutes": 1,
     "tag_list": "react, beginners",
-    "tags": [
-      "react",
-      "beginners"
-    ],
+    "tags": ["react", "beginners"],
     "user": {
       "name": "chantastic",
       "username": "chantastic",
@@ -941,12 +860,7 @@
     "last_comment_at": "2020-09-04T11:40:44Z",
     "reading_time_minutes": 6,
     "tag_list": "visualstudiocode, developertools, texteditor, vscode",
-    "tags": [
-      "visualstudiocode",
-      "developertools",
-      "texteditor",
-      "vscode"
-    ],
+    "tags": ["visualstudiocode", "developertools", "texteditor", "vscode"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -981,10 +895,7 @@
     "last_comment_at": "2021-06-18T12:50:00Z",
     "reading_time_minutes": 2,
     "tag_list": "opensource, gatsby",
-    "tags": [
-      "opensource",
-      "gatsby"
-    ],
+    "tags": ["opensource", "gatsby"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1019,12 +930,7 @@
     "last_comment_at": "2019-09-05T06:53:19Z",
     "reading_time_minutes": 1,
     "tag_list": "gatsby, opensource, typescript, jamstack",
-    "tags": [
-      "gatsby",
-      "opensource",
-      "typescript",
-      "jamstack"
-    ],
+    "tags": ["gatsby", "opensource", "typescript", "jamstack"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1059,11 +965,7 @@
     "last_comment_at": "2024-05-06T23:01:32Z",
     "reading_time_minutes": 4,
     "tag_list": "git, productivity, developertools",
-    "tags": [
-      "git",
-      "productivity",
-      "developertools"
-    ],
+    "tags": ["git", "productivity", "developertools"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1098,12 +1000,7 @@
     "last_comment_at": "2019-03-31T18:32:54Z",
     "reading_time_minutes": 2,
     "tag_list": "contributorswanted, opensource, meta, css",
-    "tags": [
-      "contributorswanted",
-      "opensource",
-      "meta",
-      "css"
-    ],
+    "tags": ["contributorswanted", "opensource", "meta", "css"],
     "user": {
       "name": "Ben Halpern",
       "username": "ben",
@@ -1145,11 +1042,7 @@
     "last_comment_at": "2018-03-13T20:14:57Z",
     "reading_time_minutes": 0,
     "tag_list": "newyear, books, personaldevelopment",
-    "tags": [
-      "newyear",
-      "books",
-      "personaldevelopment"
-    ],
+    "tags": ["newyear", "books", "personaldevelopment"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1184,11 +1077,7 @@
     "last_comment_at": "2025-06-13T19:27:09Z",
     "reading_time_minutes": 9,
     "tag_list": "productivity, developertools, webdev",
-    "tags": [
-      "productivity",
-      "developertools",
-      "webdev"
-    ],
+    "tags": ["productivity", "developertools", "webdev"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1223,9 +1112,7 @@
     "last_comment_at": "2024-01-24T03:05:16Z",
     "reading_time_minutes": 2,
     "tag_list": "top7",
-    "tags": [
-      "top7"
-    ],
+    "tags": ["top7"],
     "user": {
       "name": "dev.to staff",
       "username": "thepracticaldev",
@@ -1260,10 +1147,7 @@
     "last_comment_at": "2018-03-05T04:44:22Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
+    "tags": ["css", "codepen"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1298,10 +1182,7 @@
     "last_comment_at": "2018-03-05T04:45:52Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
+    "tags": ["css", "codepen"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1336,10 +1217,7 @@
     "last_comment_at": "2018-03-13T20:24:03Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
+    "tags": ["css", "codepen"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1374,10 +1252,7 @@
     "last_comment_at": "2018-03-05T04:48:11Z",
     "reading_time_minutes": 1,
     "tag_list": "css, codepen",
-    "tags": [
-      "css",
-      "codepen"
-    ],
+    "tags": ["css", "codepen"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1412,10 +1287,7 @@
     "last_comment_at": "2023-10-24T06:39:15Z",
     "reading_time_minutes": 2,
     "tag_list": "typescript, challenge",
-    "tags": [
-      "typescript",
-      "challenge"
-    ],
+    "tags": ["typescript", "challenge"],
     "user": {
       "name": "Orta",
       "username": "orta",
@@ -1462,11 +1334,7 @@
     "last_comment_at": "2022-06-02T14:21:30Z",
     "reading_time_minutes": 8,
     "tag_list": "serverless, javascript, jamstack",
-    "tags": [
-      "serverless",
-      "javascript",
-      "jamstack"
-    ],
+    "tags": ["serverless", "javascript", "jamstack"],
     "user": {
       "name": "Salma Alam-Naylor",
       "username": "whitep4nth3r",
@@ -1501,11 +1369,7 @@
     "last_comment_at": "2022-06-22T16:35:35Z",
     "reading_time_minutes": 6,
     "tag_list": "react, webdev, node",
-    "tags": [
-      "react",
-      "webdev",
-      "node"
-    ],
+    "tags": ["react", "webdev", "node"],
     "user": {
       "name": "BekahHW",
       "username": "bekahhw",
@@ -1547,9 +1411,7 @@
     "last_comment_at": "2024-04-01T03:02:17Z",
     "reading_time_minutes": 2,
     "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
+    "tags": ["typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1584,12 +1446,7 @@
     "last_comment_at": "2024-10-30T16:47:28Z",
     "reading_time_minutes": 8,
     "tag_list": "deno, typescript, rust, javascript",
-    "tags": [
-      "deno",
-      "typescript",
-      "rust",
-      "javascript"
-    ],
+    "tags": ["deno", "typescript", "rust", "javascript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1624,12 +1481,7 @@
     "last_comment_at": "2022-05-26T20:03:30Z",
     "reading_time_minutes": 6,
     "tag_list": "eleventy, githubactions, node, webdev",
-    "tags": [
-      "eleventy",
-      "githubactions",
-      "node",
-      "webdev"
-    ],
+    "tags": ["eleventy", "githubactions", "node", "webdev"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1664,10 +1516,7 @@
     "last_comment_at": "2023-01-05T23:11:56Z",
     "reading_time_minutes": 1,
     "tag_list": "news, discuss",
-    "tags": [
-      "news",
-      "discuss"
-    ],
+    "tags": ["news", "discuss"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1707,9 +1556,7 @@
     "last_comment_at": "2022-03-29T18:26:29Z",
     "reading_time_minutes": 4,
     "tag_list": "career",
-    "tags": [
-      "career"
-    ],
+    "tags": ["career"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1744,12 +1591,7 @@
     "last_comment_at": "2022-11-06T01:32:09Z",
     "reading_time_minutes": 5,
     "tag_list": "github, githubcli, githubactions, git",
-    "tags": [
-      "github",
-      "githubcli",
-      "githubactions",
-      "git"
-    ],
+    "tags": ["github", "githubcli", "githubactions", "git"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1784,9 +1626,7 @@
     "last_comment_at": "2023-02-19T14:52:22Z",
     "reading_time_minutes": 4,
     "tag_list": "community",
-    "tags": [
-      "community"
-    ],
+    "tags": ["community"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1821,12 +1661,7 @@
     "last_comment_at": "2025-11-20T19:24:55Z",
     "reading_time_minutes": 3,
     "tag_list": "github, opensource, productivity, security",
-    "tags": [
-      "github",
-      "opensource",
-      "productivity",
-      "security"
-    ],
+    "tags": ["github", "opensource", "productivity", "security"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1868,12 +1703,7 @@
     "last_comment_at": "2024-05-07T07:27:47Z",
     "reading_time_minutes": 10,
     "tag_list": "github, cli, git, productivity",
-    "tags": [
-      "github",
-      "cli",
-      "git",
-      "productivity"
-    ],
+    "tags": ["github", "cli", "git", "productivity"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1915,12 +1745,7 @@
     "last_comment_at": "2023-12-20T21:28:49Z",
     "reading_time_minutes": 4,
     "tag_list": "testing, react, vitest, typescript",
-    "tags": [
-      "testing",
-      "react",
-      "vitest",
-      "typescript"
-    ],
+    "tags": ["testing", "react", "vitest", "typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -1962,10 +1787,7 @@
     "last_comment_at": "2024-03-12T17:28:39Z",
     "reading_time_minutes": 7,
     "tag_list": "opensource, productivity",
-    "tags": [
-      "opensource",
-      "productivity"
-    ],
+    "tags": ["opensource", "productivity"],
     "user": {
       "name": "BekahHW",
       "username": "bekahhw",
@@ -2007,11 +1829,7 @@
     "last_comment_at": "2024-05-02T15:33:42Z",
     "reading_time_minutes": 1,
     "tag_list": "opensource, git, ai",
-    "tags": [
-      "opensource",
-      "git",
-      "ai"
-    ],
+    "tags": ["opensource", "git", "ai"],
     "user": {
       "name": "BekahHW",
       "username": "bekahhw",
@@ -2053,9 +1871,7 @@
     "last_comment_at": "2024-08-13T14:16:02Z",
     "reading_time_minutes": 6,
     "tag_list": "opensource",
-    "tags": [
-      "opensource"
-    ],
+    "tags": ["opensource"],
     "user": {
       "name": "BekahHW",
       "username": "bekahhw",
@@ -2097,11 +1913,7 @@
     "last_comment_at": "2024-09-25T10:51:12Z",
     "reading_time_minutes": 5,
     "tag_list": "opensource, codeowners, cli",
-    "tags": [
-      "opensource",
-      "codeowners",
-      "cli"
-    ],
+    "tags": ["opensource", "codeowners", "cli"],
     "user": {
       "name": "John McBride",
       "username": "jpmcb",
@@ -2143,12 +1955,7 @@
     "last_comment_at": "2024-08-20T16:20:58Z",
     "reading_time_minutes": 2,
     "tag_list": "javascript, ai, promptengineering, genaiscript",
-    "tags": [
-      "javascript",
-      "ai",
-      "promptengineering",
-      "genaiscript"
-    ],
+    "tags": ["javascript", "ai", "promptengineering", "genaiscript"],
     "user": {
       "name": "Peli de Halleux",
       "username": "pelikhan",
@@ -2183,12 +1990,7 @@
     "last_comment_at": "2024-05-24T13:11:12Z",
     "reading_time_minutes": 3,
     "tag_list": "opensource, ai, community, showdev",
-    "tags": [
-      "opensource",
-      "ai",
-      "community",
-      "showdev"
-    ],
+    "tags": ["opensource", "ai", "community", "showdev"],
     "user": {
       "name": "BekahHW",
       "username": "bekahhw",
@@ -2235,12 +2037,7 @@
     "last_comment_at": "2025-03-28T11:11:46Z",
     "reading_time_minutes": 1,
     "tag_list": "zerotrust, otel, terraform, devops",
-    "tags": [
-      "zerotrust",
-      "otel",
-      "terraform",
-      "devops"
-    ],
+    "tags": ["zerotrust", "otel", "terraform", "devops"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2282,11 +2079,7 @@
     "last_comment_at": "2024-03-14T03:11:53Z",
     "reading_time_minutes": 2,
     "tag_list": "learninpublic, podcast, contentcreation",
-    "tags": [
-      "learninpublic",
-      "podcast",
-      "contentcreation"
-    ],
+    "tags": ["learninpublic", "podcast", "contentcreation"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2321,12 +2114,7 @@
     "last_comment_at": "2025-11-20T19:24:48Z",
     "reading_time_minutes": 8,
     "tag_list": "javascript, html, css, typescript",
-    "tags": [
-      "javascript",
-      "html",
-      "css",
-      "typescript"
-    ],
+    "tags": ["javascript", "html", "css", "typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2361,12 +2149,7 @@
     "last_comment_at": "2020-05-24T16:45:46Z",
     "reading_time_minutes": 2,
     "tag_list": "html, css, javascript, storybook",
-    "tags": [
-      "html",
-      "css",
-      "javascript",
-      "storybook"
-    ],
+    "tags": ["html", "css", "javascript", "storybook"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2408,11 +2191,7 @@
     "last_comment_at": "2021-04-13T23:52:13Z",
     "reading_time_minutes": 10,
     "tag_list": "javascript, types, flow",
-    "tags": [
-      "javascript",
-      "types",
-      "flow"
-    ],
+    "tags": ["javascript", "types", "flow"],
     "user": {
       "name": "Preethi Kasireddy",
       "username": "iampeekay",
@@ -2447,9 +2226,7 @@
     "last_comment_at": "2020-05-10T04:52:47Z",
     "reading_time_minutes": 1,
     "tag_list": "typescript",
-    "tags": [
-      "typescript"
-    ],
+    "tags": ["typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2484,12 +2261,7 @@
     "last_comment_at": "2025-03-13T03:12:35Z",
     "reading_time_minutes": 5,
     "tag_list": "contributorswanted, community, opensource, discuss",
-    "tags": [
-      "contributorswanted",
-      "community",
-      "opensource",
-      "discuss"
-    ],
+    "tags": ["contributorswanted", "community", "opensource", "discuss"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2529,10 +2301,7 @@
     "last_comment_at": "2023-05-30T13:41:08Z",
     "reading_time_minutes": 2,
     "tag_list": "changelog, meta",
-    "tags": [
-      "changelog",
-      "meta"
-    ],
+    "tags": ["changelog", "meta"],
     "user": {
       "name": "Ben Halpern",
       "username": "ben",
@@ -2567,12 +2336,7 @@
     "last_comment_at": "2024-12-26T14:58:20Z",
     "reading_time_minutes": 9,
     "tag_list": "github, githubcopilot, genai, typescript",
-    "tags": [
-      "github",
-      "githubcopilot",
-      "genai",
-      "typescript"
-    ],
+    "tags": ["github", "githubcopilot", "genai", "typescript"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2607,12 +2371,7 @@
     "last_comment_at": "2025-07-20T12:31:21Z",
     "reading_time_minutes": 10,
     "tag_list": "solidjs, webdev, reactivity, performance",
-    "tags": [
-      "solidjs",
-      "webdev",
-      "reactivity",
-      "performance"
-    ],
+    "tags": ["solidjs", "webdev", "reactivity", "performance"],
     "user": {
       "name": "Milo",
       "username": "milomg",
@@ -2647,11 +2406,7 @@
     "last_comment_at": "2025-07-13T14:49:13Z",
     "reading_time_minutes": 2,
     "tag_list": "a11y, javascript, extensions",
-    "tags": [
-      "a11y",
-      "javascript",
-      "extensions"
-    ],
+    "tags": ["a11y", "javascript", "extensions"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2686,9 +2441,7 @@
     "last_comment_at": "2019-10-15T13:40:52Z",
     "reading_time_minutes": 1,
     "tag_list": "hacktoberfest",
-    "tags": [
-      "hacktoberfest"
-    ],
+    "tags": ["hacktoberfest"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2723,12 +2476,7 @@
     "last_comment_at": "2024-02-26T03:10:15Z",
     "reading_time_minutes": 1,
     "tag_list": "discuss, typescript, javascript, flow",
-    "tags": [
-      "discuss",
-      "typescript",
-      "javascript",
-      "flow"
-    ],
+    "tags": ["discuss", "typescript", "javascript", "flow"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2768,12 +2516,7 @@
     "last_comment_at": "2025-11-05T03:12:03Z",
     "reading_time_minutes": 4,
     "tag_list": "mcp, agenticai, devto, ai",
-    "tags": [
-      "mcp",
-      "agenticai",
-      "devto",
-      "ai"
-    ],
+    "tags": ["mcp", "agenticai", "devto", "ai"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2808,12 +2551,7 @@
     "last_comment_at": "2025-12-12T14:41:17Z",
     "reading_time_minutes": 7,
     "tag_list": "ai, zsh, bash, productivity",
-    "tags": [
-      "ai",
-      "zsh",
-      "bash",
-      "productivity"
-    ],
+    "tags": ["ai", "zsh", "bash", "productivity"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2848,11 +2586,7 @@
     "last_comment_at": "2025-12-05T05:30:02Z",
     "reading_time_minutes": 3,
     "tag_list": "adventofai, goose, ai",
-    "tags": [
-      "adventofai",
-      "goose",
-      "ai"
-    ],
+    "tags": ["adventofai", "goose", "ai"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2887,12 +2621,7 @@
     "last_comment_at": "2025-12-18T13:42:10Z",
     "reading_time_minutes": 4,
     "tag_list": "goose, adventofai, dataviz, ai",
-    "tags": [
-      "goose",
-      "adventofai",
-      "dataviz",
-      "ai"
-    ],
+    "tags": ["goose", "adventofai", "dataviz", "ai"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2927,12 +2656,7 @@
     "last_comment_at": "2025-12-10T13:13:21Z",
     "reading_time_minutes": 18,
     "tag_list": "adventofai, goose, automation, ai",
-    "tags": [
-      "adventofai",
-      "goose",
-      "automation",
-      "ai"
-    ],
+    "tags": ["adventofai", "goose", "automation", "ai"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -2967,10 +2691,7 @@
     "last_comment_at": "2025-12-09T23:11:30Z",
     "reading_time_minutes": 5,
     "tag_list": "mcp, ai",
-    "tags": [
-      "mcp",
-      "ai"
-    ],
+    "tags": ["mcp", "ai"],
     "user": {
       "name": "Angie Jones",
       "username": "techgirl1908",
@@ -3012,11 +2733,7 @@
     "last_comment_at": "2025-12-18T13:31:16Z",
     "reading_time_minutes": 7,
     "tag_list": "automation, ai, goose",
-    "tags": [
-      "automation",
-      "ai",
-      "goose"
-    ],
+    "tags": ["automation", "ai", "goose"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -3051,12 +2768,7 @@
     "last_comment_at": "2026-01-04T20:36:13Z",
     "reading_time_minutes": 3,
     "tag_list": "mcp, agents, skills, ai",
-    "tags": [
-      "mcp",
-      "agents",
-      "skills",
-      "ai"
-    ],
+    "tags": ["mcp", "agents", "skills", "ai"],
     "user": {
       "name": "Angie Jones",
       "username": "techgirl1908",
@@ -3098,12 +2810,7 @@
     "last_comment_at": "2025-12-27T15:33:49Z",
     "reading_time_minutes": 3,
     "tag_list": "ai, showdev, agents, devchallenge",
-    "tags": [
-      "ai",
-      "showdev",
-      "agents",
-      "devchallenge"
-    ],
+    "tags": ["ai", "showdev", "agents", "devchallenge"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",
@@ -3143,11 +2850,7 @@
     "last_comment_at": "2025-12-20T03:19:52Z",
     "reading_time_minutes": 3,
     "tag_list": "contentcreation, devtips, webdev",
-    "tags": [
-      "contentcreation",
-      "devtips",
-      "webdev"
-    ],
+    "tags": ["contentcreation", "devtips", "webdev"],
     "user": {
       "name": "Nick Taylor",
       "username": "nickytonline",

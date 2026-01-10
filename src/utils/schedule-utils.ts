@@ -202,7 +202,7 @@ async function getOgImage(url: string) {
     const response = await fetch(url);
     const html = await response.text();
     const match = html.match(
-      /<meta.+property=['"]og:image['"].+content=['"]([^"']+)['"]/,
+      /<meta.+property=['"]og:image['"].+content=['"]([^"']+)['"]/
     );
 
     return match?.[1] ?? "";
@@ -221,7 +221,7 @@ export async function get2Full2StackStreamSchedule() {
     .filter(
       (item) =>
         item.link?.startsWith("https://cfe.dev/talkshows/2full2stack") &&
-        new Date(item.pubDate!) > new Date(),
+        new Date(item.pubDate!) > new Date()
     )
     .map(async (m) => {
       return {
@@ -243,7 +243,7 @@ export async function getPomeriumLiveStreamSchedule() {
 
   // Option 1: Using channel's upcoming live streams playlist
   const feed = await parser.parseURL(
-    "https://www.youtube.com/feeds/videos.xml?channel_id=UCBJq3tmXb-1fOvv2bFc8l0A",
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCBJq3tmXb-1fOvv2bFc8l0A"
   );
 
   // Filter for only upcoming live streams
