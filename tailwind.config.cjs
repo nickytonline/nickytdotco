@@ -1,7 +1,3 @@
-const tokens = require("./src/_data/tokens.json");
-
-const stripOuterQuotes = (value) => value.replace(/^"|"$/g, "");
-
 module.exports = {
   content: ["./src/**/*.{astro,html,js,ts,md,mdx}"],
   corePlugins: {
@@ -9,14 +5,33 @@ module.exports = {
   },
   theme: {
     extend: {
-      colors: tokens.colors,
+      colors: {
+        primary: "#173854",
+        "primary-shade": "#102538",
+        "primary-glare": "#22547c",
+        highlight: "#fedb8b",
+        light: "#ffffff",
+        mid: "#cccccc",
+        dark: "#333333",
+        slate: "#404040",
+      },
       spacing: {
-        ...tokens["size-scale"],
+        base: "1rem",
+        100: "0.5rem",
+        208: "52rem",
+        300: "0.8rem",
+        500: "1.25rem",
+        600: "1.56rem",
+        700: "1.95rem",
+        800: "2.44rem",
+        900: "3.05rem",
+        max: "4rem",
       },
       fontFamily: {
-        base: stripOuterQuotes(tokens.fonts.base),
-        sans: stripOuterQuotes(tokens.fonts["sans-serif"]),
-        heading: stripOuterQuotes(tokens.fonts.heading),
+        base: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        sans: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        heading:
+          "'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
       },
       fontSize: {
         100: "0.5rem",
