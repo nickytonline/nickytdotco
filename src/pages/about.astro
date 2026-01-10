@@ -6,34 +6,59 @@ import MainLayout from "../layouts/MainLayout.astro";
   title="About"
   metaDesc="About Nick Taylor - Microsoft MVP, GitHub Star, Software Developer, and Developer Advocate."
 >
-  <main id="main-content" tabindex="-1">
-    <article>
-      <header>
-        <div>
-          <h1>About</h1>
-          <div>
-            <img
-              class="float-left w-1/4 rounded-full mr-2 mb-2"
-              src="/images/colour-headshot-500x500.jpg"
-              alt="Headshot of Nick Taylor"
-              loading="lazy"
-            /><p>
-              Hi! My name is Nick Taylor.I am a Microsoft MVP, GitHub Star,
-              Software Developer, and Developer Advocate. With over two decades
-              in technology and a decade of open source contributions, plus five
+  <main id="main-content" tabindex="-1" class="max-w-3xl mx-auto px-6 py-12">
+    <article class="space-y-12">
+      <header class="space-y-8">
+        <h1 class="mb-8">About</h1>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <img
+            class="w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover"
+            src="/assets/images/colour-headshot-500x500.jpg"
+            alt="Headshot of Nick Taylor"
+            loading="lazy"
+          />
+
+          <div class="flex-1 space-y-6">
+            <p class="text-xl leading-relaxed">
+              Hi! My name is <strong class="text-pink-600">Nick Taylor</strong>. I am a Microsoft MVP, GitHub Star,
+              Software Developer, and Developer Advocate.
+            </p>
+
+            <p class="text-lg leading-relaxed text-gray-700">
+              With over two decades in technology and a decade of open source contributions, plus five
               years of professional open source work at companies like <a
-                href="https://opensauced.pizza">OpenSauced</a
-              >, <a href="https://dev.to">dev.to</a>, and <a
-                href="https://www.netlify.com/">Netlify</a
-              >, and now <a href="https://pomerium.com">Pomerium</a>, I bring
-              deep community knowledge to my work. You'll often find me live
-              streaming tech content, either solo or with friends from the
-              community. Wanna get in touch? Drop me an e-mail at nick at nickyt
-              dot co.
+                href="https://opensauced.pizza"
+                class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+                >OpenSauced</a
+              >, <a
+                href="https://dev.to"
+                class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+                >dev.to</a
+              >, <a
+                href="https://www.netlify.com/"
+                class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+                >Netlify</a
+              >, and now <a
+                href="https://pomerium.com"
+                class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+                >Pomerium</a
+              >, I bring deep community knowledge to my work.
+            </p>
+
+            <p class="text-lg leading-relaxed text-gray-700">
+              You'll often find me live streaming tech content, either solo or with friends from the
+              community.
+            </p>
+
+            <p class="text-lg leading-relaxed text-gray-700">
+              Wanna get in touch? Drop me an e-mail at <span class="font-semibold text-pink-600"
+                >nick at nickyt dot co</span
+              >.
             </p>
           </div>
         </div>
       </header>
     </article>
-  </main></MainLayout
->
+  </main>
+</MainLayout>
