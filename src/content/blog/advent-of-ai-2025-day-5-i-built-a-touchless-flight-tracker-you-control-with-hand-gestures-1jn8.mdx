@@ -12,7 +12,7 @@ tags:
   - adventofai
   - goose
 cover_image: >-
-  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhmcc2rf9ggfnm5ypp3zf.jpg
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhmcc2rf9ggfnm5ypp3zf.jpg
 canonical_url: >-
   https://www.nickyt.co/blog/advent-of-ai-2025-day-5-i-built-a-touchless-flight-tracker-you-control-with-hand-gestures-1jn8
 reading_time_minutes: 9
@@ -67,7 +67,7 @@ I started by generating a Product Requirements Document (PRD) to map out the wor
 
 Getting MediaPipe running in the browser was a bit clunky for me initially. I was new to MediaPipe and was trying to follow the basic setup, but fumbled for some reason so I tried the TensorFlow.js which worked, but then I eventually got MediaPipe working.
 
-![Gesture training](https://www.nickyt.co/images/posts/_uploads_articles_ueqwrgt56vj8pmq06rc9.png)
+![Gesture training](/assets/images/posts/_uploads_articles_ueqwrgt56vj8pmq06rc9.png)
 
 I decided on the MediaPipe WASM version specifically because I wanted to deploy this to Netlify. The WASM runtime is running in-browser, which meant I could host it on any PaaS without worrying about Python. That said, I know [Vercel supports Python](https://vercel.com/docs/functions/runtimes/python) now.
 
@@ -136,7 +136,7 @@ const { data: flights, isLoading, error } = useQuery({
 });
 ```
 
-![Flight data](https://www.nickyt.co/images/posts/_uploads_articles_sd1u7yjcky6fpj4d4bal.png)
+![Flight data](/assets/images/posts/_uploads_articles_sd1u7yjcky6fpj4d4bal.png)
 
 OpenSky Network has strict rate limits (10 second minimum interval), and I got rate limited at one point during development. That's why I bumped the `staleTime` up to 5 minutes in dev mode. If you do get rate limited, you can use a VPN to get a new IP, which gives you more API time.
 

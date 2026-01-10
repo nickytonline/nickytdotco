@@ -10,7 +10,7 @@ tags:
   - genai
   - typescript
 cover_image: >-
-  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhkxr62oih47ls0qrzx3i.jpeg
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhkxr62oih47ls0qrzx3i.jpeg
 canonical_url: >-
   https://www.nickyt.co/blog/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0
 reading_time_minutes: 9
@@ -161,7 +161,7 @@ To test your Copilot extension, you need to make it publicly accessible:
 
 1. If using Visual Studio Code (VS Code), enable [port forwarding](https://code.visualstudio.com/docs/editor/port-forwarding). Note that the port is private by default, a good thing, but for our use case, we need to set it to public.
 
-    ![Port forwarding tab in the bottom dock of VS Code](https://www.nickyt.co/images/posts/_uploads_articles_qacy00wwwnnlp82gb3p1.png)
+    ![Port forwarding tab in the bottom dock of VS Code](/assets/images/posts/_uploads_articles_qacy00wwwnnlp82gb3p1.png)
 
 1. Alternatively, use tools like [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel/) or [ngrok](https://ngrok.com) to expose a public URL.
 
@@ -189,15 +189,15 @@ Create a new GitHub app on your personal account for testing purposes. Head to y
 1. Enter a URL for the homepage. This can be the same as the test URL for now.
 1. Set the Callback URL (currently required). This can be the same as the test URL for now. Even if you're not using OAuth you still need to put a URL here. I'm told in future this may no longer be required.
 
-    ![A new GitHub app's settings page](https://www.nickyt.co/images/posts/_uploads_articles_a0xtzyphncdddesh4aoj.png)
+    ![A new GitHub app's settings page](/assets/images/posts/_uploads_articles_a0xtzyphncdddesh4aoj.png)
 
 1. Disable webhooks if they're enabled.
 
-    ![Webhooks settings section](https://www.nickyt.co/images/posts/_uploads_articles_7lwy83g0ranuuwkhkwt5.png)
+    ![Webhooks settings section](/assets/images/posts/_uploads_articles_7lwy83g0ranuuwkhkwt5.png)
 
 1. Make sure the app is initially accessible only to you. You can enable it for everyone when you're ready to make your GitHub Copilot extension publicly available.
 
-    ![GitHub app visibility setting of just you or everyone](https://www.nickyt.co/images/posts/_uploads_articles_gs52bzu3wx6or4824tdv.png)
+    ![GitHub app visibility setting of just you or everyone](/assets/images/posts/_uploads_articles_gs52bzu3wx6or4824tdv.png)
 
 1. Click the **Create GitHub App** button to create the GitHub app.
 
@@ -205,28 +205,28 @@ Create a new GitHub app on your personal account for testing purposes. Head to y
 
 Next up, we'll need to configure permissions. We want to provide the bare minimum permissions for a Copilot extension to work.
 
-![Permissions settings for a GitHub app](https://www.nickyt.co/images/posts/_uploads_articles_pcve43shvpcf3f29nb8h.png)
+![Permissions settings for a GitHub app](/assets/images/posts/_uploads_articles_pcve43shvpcf3f29nb8h.png)
 
 1. Expand the **Account permissions** sections and set the **Copilot Chat** permission to _read-only_. The default is _No access_.
 
-    ![Account permissions section of a GitHub app](https://www.nickyt.co/images/posts/_uploads_articles_dy8k3t9hu2yeu1bhny0z.png)
+    ![Account permissions section of a GitHub app](/assets/images/posts/_uploads_articles_dy8k3t9hu2yeu1bhny0z.png)
 
 1. Click **Save changes**. Don't be alarmed by the _Are you sure you want to update permissions?_ message.
 
-    ![Save changes button](https://www.nickyt.co/images/posts/_uploads_articles_z84spjnhh0u8l793hgyx.png)
+    ![Save changes button](/assets/images/posts/_uploads_articles_z84spjnhh0u8l793hgyx.png)
 
 ### Copilot settings
 
 1. Set the **App Type** to _Agent_. It's set to _Disabled_ by default.
 1. Set the **URL** to the root of the public URL you exposed via tunneling/port forwarding.
 
-    ![A GitHub App's Copilot settings section](https://www.nickyt.co/images/posts/_uploads_articles_nsohzqzw3w6j8sjuv3ht.png)
+    ![A GitHub App's Copilot settings section](/assets/images/posts/_uploads_articles_nsohzqzw3w6j8sjuv3ht.png)
 
 1. Click Save.
 
 Congratulations! You've configured your first Copilot extension!
 
-![GitHub apps section of developer settings on GitHub](https://www.nickyt.co/images/posts/_uploads_articles_05qv1m77z54uupzvb4ca.png)
+![GitHub apps section of developer settings on GitHub](/assets/images/posts/_uploads_articles_05qv1m77z54uupzvb4ca.png)
 
 ## Install Your Copilot Extension
 
@@ -234,23 +234,23 @@ Before we can use the extension, it has to be installed.
 
 1. Navigate to your [GitHub apps in your developer settings](https://github.com/settings/apps).
 
-    ![The GitHub apps section of GitHub developer settings](https://www.nickyt.co/images/posts/_uploads_articles_kmuqlkjfeu45q94hdo9v.png)
+    ![The GitHub apps section of GitHub developer settings](/assets/images/posts/_uploads_articles_kmuqlkjfeu45q94hdo9v.png)
 
 1. Click the **Edit** button to edit the app.
 
 1. Go to the **Install App** section of the GitHub app's settings.
 
-    ![GitHub App's Install App settings panel](https://www.nickyt.co/images/posts/_uploads_articles_6er5kn46pgvm6g49aa3b.png)
+    ![GitHub App's Install App settings panel](/assets/images/posts/_uploads_articles_6er5kn46pgvm6g49aa3b.png)
 
 1. Click the **Install** button to install the application
 
 1. You're brought to an intermediary page to confirm the installation of the GitHub app. Click the **Install** button.
 
-    ![GitHub app installation confirmation step](https://www.nickyt.co/images/posts/_uploads_articles_jcm1daw29l1xuqjq4opu.png)
+    ![GitHub app installation confirmation step](/assets/images/posts/_uploads_articles_jcm1daw29l1xuqjq4opu.png)
 
 1. Your Copilot extension is installed for your GitHub account.
 
-    ![Post GitHub app installation screen showing the app installed](https://www.nickyt.co/images/posts/_uploads_articles_2b7en5u28wxg07unicgb.png)
+    ![Post GitHub app installation screen showing the app installed](/assets/images/posts/_uploads_articles_2b7en5u28wxg07unicgb.png)
 
 ## Testing Your Extension
 
@@ -266,15 +266,15 @@ For these environments, follow these steps:
 
 1. Your extension should appear as, e.g. "@my-copilot-extension".
 
-    ![Copilot chat on GitHub.com displaying the available Copilot extensions](https://www.nickyt.co/images/posts/_uploads_articles_jjya7he52fm0gjf12e21.png)
+    ![Copilot chat on GitHub.com displaying the available Copilot extensions](/assets/images/posts/_uploads_articles_jjya7he52fm0gjf12e21.png)
 
-    ![Copilot chat in Visual Studio Code displaying the available Copilot extensions](https://www.nickyt.co/images/posts/_uploads_articles_zgoskatjirgnercam1gk.png)
+    ![Copilot chat in Visual Studio Code displaying the available Copilot extensions](/assets/images/posts/_uploads_articles_zgoskatjirgnercam1gk.png)
 
 1. Select your extension and ask a question or perform an operation.
 
 1. The Copilot extension will return a response of _Welcome your_github_username! It looks like you asked the following question, "your_question". This is a GitHub Copilot extension template, so it's up to you to decide what you want to implement to answer prompts._
 
-    ![Copilot chat responding, "Welcome nickytonline! It looks like you asked the following question, "What is the most used programming language?". This is a GitHub Copilot extension template, so it's up to you to decide what you want to implement to answer prompts."](https://www.nickyt.co/images/posts/_uploads_articles_l5hcwm6zkx05iynjhp1x.png)
+    ![Copilot chat responding, "Welcome nickytonline! It looks like you asked the following question, "What is the most used programming language?". This is a GitHub Copilot extension template, so it's up to you to decide what you want to implement to answer prompts."](/assets/images/posts/_uploads_articles_l5hcwm6zkx05iynjhp1x.png)
 
 It won't respond to your specific question as that functionality has not been implemented. This is where you can explore the preview SDK or integrate with a third-party service to provide more meaningful responses.
 

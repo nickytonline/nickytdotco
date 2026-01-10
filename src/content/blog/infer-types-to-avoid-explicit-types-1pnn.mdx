@@ -9,7 +9,7 @@ tags:
   - beginners
   - react
 cover_image: >-
-  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Flijgw6h1zjd18tliwifs.png
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Flijgw6h1zjd18tliwifs.png
 canonical_url: https://www.nickyt.co/blog/infer-types-to-avoid-explicit-types-1pnn
 reading_time_minutes: 5
 template: post
@@ -25,7 +25,7 @@ The idea for this post came about while I was reviewing this pull request (PR) f
 
 My friend Brittney Postma (@brittneypostma) who is a huge Svelte fan, wanted to add Svelte to the list of available interests from our explore page.
 
-[![Image description](https://www.nickyt.co/images/posts/_uploads_articles_ua2d5toq5zw880dxdwlg.png)](https://app.opensauced.pizza/javascript/dashboard/filter/recent)
+[![Image description](/assets/images/posts/_uploads_articles_ua2d5toq5zw880dxdwlg.png)](https://app.opensauced.pizza/javascript/dashboard/filter/recent)
 
 She made some changes which worked while running the dev server, but TypeScript was complaining, causing the build to fail.
 
@@ -157,7 +157,7 @@ export type InterestType = (typeof interests)[number];
 
 Aside from the type being inferred, the type is now data-driven. If we want to add a new language to the `interests` array, all places where the `InterestType` are used now have that new language available. If there is some code that requires all the values in that union type to be used, TypeScript will complain.
 
-![TypeScript complaining that the property 'svelte' is missing in type](https://www.nickyt.co/images/posts/_uploads_articles_wub4v6h58nxn41l60te0.png)
+![TypeScript complaining that the property 'svelte' is missing in type](/assets/images/posts/_uploads_articles_wub4v6h58nxn41l60te0.png)
 
 In fact, a new issue was opened today because an SVG for Svelte was missing in another part of the application.
 
@@ -197,7 +197,7 @@ As mentioned, inferred types are the way to go for most cases, but Kyle Shevlin 
 
 If a function returns a tuple, you need to explicitly type the return type. Otherwise, the inferred return type will be an array whose items have the union type of all the array items returned.
 
-![A TypeScript function returning a tuple even though the inferred type is not a tuple](https://www.nickyt.co/images/posts/_uploads_articles_uhql5ip1rr8657kj46cy.png)
+![A TypeScript function returning a tuple even though the inferred type is not a tuple](/assets/images/posts/_uploads_articles_uhql5ip1rr8657kj46cy.png)
 
 You can see this in action in a [TypeScript playground](https://www.typescriptlang.org/play?#code/PTAEDkHtQUwDwA4BsCWBjFAXUmCeCZQBbGAQwDsBnUAd0LQoHJtMYkkcALFan0UnAFdkhGlk6gAJjABmKcjEk58MSgCgQoAJLYATjEyDdVfuX67dpXLXFc+KIsnRZlBADSgAFOUFEARjC6oAA+Xp4AlKAAvAB8oABukCiS4eEA2gC6ajKC5GiYKJBm+obGAIIAKsJIMABiufmF5FCYAOqQugDW8gDmEaAA3mqgoCVGZmkADB79sYMAvhmgavNqGmBlZvBOGHoG466EPYKkluSsqvxCIqABvaP7xorrNpgSb-Qd+vmHlB5pPn8gRmkTmiWSWRyeQKRQepXIlWqdQaMPIEQAXKAAb4AroQdE4uDJEshiMxsYsdMvKC4gNFst5kA) I made. 
 

@@ -10,7 +10,7 @@ tags:
   - agents
   - cli
 cover_image: >-
-  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6yvhgeh5smo5its2ryjl.png
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F6yvhgeh5smo5its2ryjl.png
 canonical_url: >-
   https://www.nickyt.co/blog/what-makes-goose-different-from-other-ai-coding-agents-2edc
 reading_time_minutes: 12
@@ -20,7 +20,7 @@ import Embed from "@/components/Embed.astro";
 
 I just finished Goose’s [Advent of AI](https://adventofai.dev/). Everything from CI automation to hand-gesture controlled apps to model context protocol (MCP) servers with UI.
 
-[![Me testing out my hand gesture project](https://www.nickyt.co/images/posts/_uploads_articles_mpc0zvsraivv3qvkf4xu.png)](https://flightboard.nickyt.co/)
+[![Me testing out my hand gesture project](/assets/images/posts/_uploads_articles_mpc0zvsraivv3qvkf4xu.png)](https://flightboard.nickyt.co/)
 
 I built almost all of these challenges in Goose. Mostly in the GUI at first, shifting to the CLI as I learned more. Occasionally I’d jump to Claude to finish something, but Goose was my primary development environment. My workflow: convert the challenge to a [product requirements document](https://en.wikipedia.org/wiki/Product_requirements_document) (PRD) and sometimes I’d compliment it with an evaluation rubric if the project was more complex, then implement it.
 
@@ -30,9 +30,9 @@ After building with it daily for over two weeks, I can tell you what makes Goose
 
 Goose does all the things you expect an AI agent to do. A GUI with a chat UI, a CLI, and like some other agents, it’s model-agnostic (works with any LLM provider including local models), and in the case of some CLIs useful in CI/CD too.
 
-![Goose chat UI](https://www.nickyt.co/images/posts/_uploads_articles_2j67b1zxr39c1f4gdcci.png)
+![Goose chat UI](/assets/images/posts/_uploads_articles_2j67b1zxr39c1f4gdcci.png)
 
-![Model modal](https://www.nickyt.co/images/posts/_uploads_articles_8jqapgv6kvetjuoxix4s.png)
+![Model modal](/assets/images/posts/_uploads_articles_8jqapgv6kvetjuoxix4s.png)
 
 It also has first class support for MCPs, chat history, named sessions, [subagents for parallel task execution](https://block.github.io/goose/docs/guides/subagents/), [skills for custom context](https://block.github.io/goose/docs/guides/context-engineering/using-skills/), and like a lot of great software, it’s open source.
 
@@ -64,7 +64,7 @@ Here’s what recipes actually give you:
 
 Here’s what this looks like using the social media campaign recipe ([Advent of AI day 15](https://www.nickyt.co/blog/advent-of-ai-2025-day-15-goose-sub-recipes-3mnd/)) that orchestrates three platform-specific sub-recipes:
 
-![Recipe UI showing parameters](https://www.nickyt.co/images/posts/_uploads_articles_gxi94yjbasoply9i5i00.png)
+![Recipe UI showing parameters](/assets/images/posts/_uploads_articles_gxi94yjbasoply9i5i00.png)
 
 The full YAML structure:
 
@@ -150,7 +150,7 @@ A more typical engineering workflow would be generating weekly status updates by
 
 You can also make a recipe a slash command.
 
-![Configuring a recipe as a slash command](https://www.nickyt.co/images/posts/_uploads_articles_jb8c6k5dc8f8czc5z640.png)
+![Configuring a recipe as a slash command](/assets/images/posts/_uploads_articles_jb8c6k5dc8f8czc5z640.png)
 
 With that set up, if I want to get my weekly status update, all I need to do is run `/weekly-status` in the GUI or REPL and get a formatted report with links to the issues, pull requests etc.
 
@@ -291,11 +291,11 @@ On Day 17 of Advent of AI, I [built a wishlist MCP server](https://www.nickyt.co
 
 In Goose, it showed up as an interactive widget. In other MCP clients without UI support, it would just be text.
 
-![Wishing to hang with Snoop and Martha](https://www.nickyt.co/images/posts/_uploads_articles_n8x9515ndgfeqb85jbos.png)
+![Wishing to hang with Snoop and Martha](/assets/images/posts/_uploads_articles_n8x9515ndgfeqb85jbos.png)
 
 The [auto-visualizer extension](https://block.github.io/goose/docs/mcp/autovisualiser-mcp/) leverages this too. Instead of text dumps of data, you get rendered visualizations you can interact with.
 
-![auto-visualizer extension in action](https://www.nickyt.co/images/posts/_uploads_articles_dxlv6tt4cy6o7th4q8g5.png)
+![auto-visualizer extension in action](/assets/images/posts/_uploads_articles_dxlv6tt4cy6o7th4q8g5.png)
 
 Right now, only three clients support MCP-UI properly: Goose, ChatGPT (via their Apps SDK), and LibreChat. Everyone else does text-based responses. Having a client that can also render UI components instead of just text is a better experience.
 
@@ -371,7 +371,7 @@ Goose makes sense if you:
 - Work with teams that need reproducible workflows (YAML in git)
 - Build tools that need interactive UIs (MCP-UI rendering)
 
-![Geese infra](https://www.nickyt.co/images/posts/_uploads_articles_7h5envbtewzeublll2v9.png)
+![Geese infra](/assets/images/posts/_uploads_articles_7h5envbtewzeublll2v9.png)
 
 And of course it has all the table stakes features you expect in an AI agent which also makes Goose a solid choice.
 

@@ -1,8 +1,9 @@
 ---
-import Base from "./Base.astro";
+import MainLayout from "./MainLayout.astro";
 import PostIntro from "../components/PostIntro.astro";
 import SeriesNavigation from "../components/SeriesNavigation.astro";
 import type { CollectionEntry } from "astro:content";
+import site from "../data/site";
 
 export interface Props {
   entry: CollectionEntry<"blog">;
@@ -14,16 +15,17 @@ const { Content } = await entry.render();
 const currentUrl = `/blog/${entry.slug}`;
 ---
 
-<Base
+<MainLayout
   title={entry.data.title}
   metaDesc={entry.data.excerpt || entry.data.description}
-  excerpt={entry.data.excerpt}
-  canonical_url={entry.data.canonical_url}
-  cover_image={entry.data.cover_image || undefined}
-  reading_time_minutes={entry.data.reading_time_minutes}
+  socialImage={new URL(entry.data.cover_image!, site.url).toString()}
 >
-  <main id="main-content" tabindex="-1">
-    <article class="[ post ] [ h-entry ]">
+  <main
+    id="main"
+    tabindex="-1"
+    class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12"
+  >
+    <article class="space-y-8">
       <PostIntro
         title={entry.data.title}
         cover_image={entry.data.cover_image}
@@ -36,7 +38,7 @@ const currentUrl = `/blog/${entry.slug}`;
 
       {
         entry.data.series && (
-          <div class="inner-wrapper">
+          <div>
             <SeriesNavigation
               series={entry.data.series}
               currentUrl={currentUrl}
@@ -45,30 +47,31 @@ const currentUrl = `/blog/${entry.slug}`;
         )
       }
 
-      <div
-        class="[ post__body ] [ inner-wrapper ] [ leading-loose text-500 ] [ sf-flow ] [ e-content ]"
-      >
+      <div class="prose prose-lg max-w-none">
         <Content />
       </div>
 
       {
         entry.data.tags && entry.data.tags.length > 0 && (
-          <footer class="[ post__footer ] [ pad-top-500 pad-bottom-500 ]">
-            <div class="inner-wrapper">
-              <div class="[ nav ] [ box-flex align-center flex-wrap ]">
-                <h2 class="font-base text-600 weight-mid">tags</h2>
-                <ul class="[ nav__list ] [ box-flex align-center pad-left-400 flex-wrap ] [ p-category ]">
-                  {entry.data.tags.map((tag) => (
-                    <li class="nav__item tag">
-                      <a href={`/tags/${tag}`}>{tag}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <footer class="pt-8 border-t-2 border-border dark:border-border">
+            <div class="flex items-center gap-3 flex-wrap">
+              <h2 class="text-xl font-semibold text-foreground">Tags:</h2>
+              <ul class="flex flex-wrap gap-2">
+                {entry.data.tags.map((tag) => (
+                  <li>
+                    <a
+                      href={`/tags/${tag}`}
+                      class="inline-block px-3 py-1 bg-rose-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-full text-sm font-semibold hover:bg-pink-600 hover:text-white dark:hover:bg-pink-500 dark:hover:text-white focus:bg-pink-600 focus:text-white focus:outline-none transition-colors"
+                    >
+                      {tag}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </footer>
         )
       }
     </article>
   </main>
-</Base>
+</MainLayout>

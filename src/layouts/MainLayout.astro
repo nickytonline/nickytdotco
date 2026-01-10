@@ -1,0 +1,83 @@
+---
+import "../styles/global.css";
+import OgMetaTags from "../components/OgMetaTags.astro";
+import Header from "../components/Header.astro";
+import SkipLink from "../components/SkipLink.astro";
+interface Props {
+  title: string;
+  metaDesc?: string;
+  socialImage?: string;
+}
+
+const {
+  title,
+  metaDesc = "Links to Nick Taylor's live streaming channels and content",
+  socialImage = "/assets/og-image.png",
+} = Astro.props;
+const { origin } = new URL(Astro.request.url);
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth lg:scroll-pt-96">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="The home of Nick Taylor's live streaming channels"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦙</text></svg>"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <OgMetaTags
+      title={title}
+      description={metaDesc}
+      socialImage={new URL(socialImage, origin).href}
+    />
+    <title>{title}</title>
+    <!-- Prevent flash of unstyled content -->
+    <script is:inline>
+      // Check for saved theme preference or default to system preference
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="pb-32 font-sans">
+    <SkipLink id="main" />
+    <div>
+      <Header />
+      <slot />
+      <footer class="pt-8 text-center">
+        <p class="text-lg text-muted-foreground">
+          Want to stay updated with tech tips? Check out my newsletter:
+          <a
+            href="https://onetipaweek.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+          >
+            OneTipAWeek.com
+          </a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

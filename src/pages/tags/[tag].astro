@@ -1,0 +1,121 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/MainLayout.astro";
+import TagList from "../../components/TagList.astro";
+import { getThumbnailUrl } from "../../utils/video-utils";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const talks = await getCollection("talks");
+  const allTags = new Set<string>();
+  const tagToOriginalCase = new Map<string, string>();
+
+  talks.forEach((talk) => {
+    talk.data.tags?.forEach((tag) => {
+      // Normalize tag by converting to lowercase and removing spaces
+      const normalizedTag = tag.toLowerCase().replace(/\s+/g, "");
+      allTags.add(normalizedTag);
+      tagToOriginalCase.set(normalizedTag, tag);
+    });
+  });
+
+  // Create a path for each tag
+  return Array.from(allTags).map((normalizedTag) => {
+    const taggedTalks = talks.filter(
+      (talk) =>
+        talk.data.tags &&
+        talk.data.tags.some(
+          (tag) => tag.toLowerCase().replace(/\s+/g, "") === normalizedTag
+        )
+    );
+
+    return {
+      params: { tag: normalizedTag },
+      props: {
+        talks: taggedTalks,
+        originalTagCase: tagToOriginalCase.get(normalizedTag) || normalizedTag,
+      },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { talks, originalTagCase } = Astro.props;
+
+// Sort talks by date (newest first)
+const sortedTalks =
+  talks && talks.length
+    ? talks.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    : [];
+
+const displayTag = originalTagCase || tag;
+---
+
+<Layout title={`Talks tagged with "${tag}" | Nick Taylor`}>
+  <main class="mt-4 md:mt-8 lg:mt-16 grid gap-8">
+    <header class="grid gap-8">
+      <h1>Talks tagged with "{displayTag}"</h1>
+      <a href="/tags">View all tags</a>
+      <p class="text-gray-600">
+        Found {sortedTalks.length} talks with this tag
+      </p>
+    </header>
+
+    <ul class="grid gap-8">
+      {
+        sortedTalks.map((talk) => {
+          const slug = talk.id.replace(/^talks\//, "").replace(/\.md$/, "");
+          const thumbnailUrl = getThumbnailUrl(talk);
+          return (
+            <li>
+              <a href={`/talks/${slug}`} class="block group">
+                <article class="flex gap-4">
+                  <div class="hidden md:block flex-shrink-0 w-48 h-27">
+                    <img
+                      src={thumbnailUrl}
+                      alt=""
+                      aria-hidden="true"
+                      class="w-full h-full object-cover rounded"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <h2>
+                      <a href={`/talks/${slug}`}>{talk.data.title}</a>
+                    </h2>
+                    <div>
+                      <time datetime={talk.data.date.toISOString()}>
+                        {talk.data.date.toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </time>
+                      {" \u2022 "}
+                      {talk.data.venue.name}
+                    </div>
+                    <div class="mt-2">
+                      <TagList
+                        tags={talk.data.tags || []}
+                        currentTag={tag}
+                        limit={5}
+                      />
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    {
+      sortedTalks.length === 0 && (
+        <p class="text-gray-600">No talks found with this tag.</p>
+      )
+    }
+    <a href="/tags">View all tags</a>
+  </main>
+</Layout>

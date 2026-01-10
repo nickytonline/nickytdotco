@@ -1,8 +1,19 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c2c08a6d-097d-49df-b32d-27fa3d7fc8f8/deploy-status)](https://app.netlify.com/sites/iamdeveloperdotcom/deploys)
 
-# Welcome
+# Nick Taylor's Personal Website
 
-This is the source code for the website of Nick Taylor, built using <a href="https://astro.build/">Astro</a>, a modern web framework for building fast, content-focused websites. It leverages markdown and <a href="https://docs.astro.build/en/guides/integrations-guide/mdx/">MDX</a> for content.
+This is the source code for [nickyt.co](https://www.nickyt.co), Nick Taylor's personal website and blog.
+
+## Tech Stack
+
+- **[Astro](https://astro.build/)** - Modern web framework for building fast, content-focused websites
+- **[React](https://react.dev/)** - For interactive UI components
+- **[MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)** - For blog posts and content with embedded components
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Expressive Code](https://expressive-code.com/)** - Syntax highlighting for code blocks
+- **[Netlify](https://netlify.com)** - Hosting and deployment platform
+- **Node.js 22+** - Runtime environment
 
 ## Terminal commands
 
@@ -29,6 +40,11 @@ npm run build
 ```bash
 npm run preview
 ```
+
+## Styling
+
+- Tailwind v4 is configured in `tailwind.config.cjs` and `postcss.config.cjs`.
+- Global styles are loaded from `src/styles/tailwind.css`, which imports `src/styles/legacy.css` for bespoke rules.
 
 ## Licensing
 

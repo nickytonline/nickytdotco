@@ -1,0 +1,59 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import BlogArchiveHeader from "../components/BlogArchiveHeader.astro";
+import BlogArchiveYear from "../components/BlogArchiveYear.astro";
+import { getCollection } from "astro:content";
+import { dateFilter } from "../utils/filters";
+
+const allPosts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+
+// Sort by date descending
+const sortedPosts = allPosts.sort((a, b) => {
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+
+// Group posts by year
+const postsByYear = sortedPosts.reduce(
+  (acc, post) => {
+    const year = post.data.date.getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  },
+  {} as Record<number, typeof sortedPosts>
+);
+
+const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+
+// Transform data for components
+const blogPostsByYear = years.map((year) => ({
+  year,
+  posts: postsByYear[Number(year)].map((post) => ({
+    title: post.data.title,
+    date: dateFilter(post.data.date),
+    readTime: post.data.reading_time_minutes
+      ? `${post.data.reading_time_minutes} min read`
+      : null,
+    url: `/blog/${post.slug}`,
+  })),
+}));
+---
+
+<MainLayout
+  title="Blog Posts - Archive"
+  metaDesc="All blog posts by Nick Taylor"
+>
+  <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
+    <BlogArchiveHeader totalPosts={sortedPosts.length} />
+
+    <div class="space-y-12">
+      {blogPostsByYear.map((yearGroup) => (
+        <BlogArchiveYear year={yearGroup.year} posts={yearGroup.posts} />
+      ))}
+    </div>
+  </main>
+</MainLayout>

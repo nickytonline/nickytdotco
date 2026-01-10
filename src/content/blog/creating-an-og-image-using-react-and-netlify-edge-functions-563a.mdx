@@ -9,7 +9,7 @@ tags:
   - typescript
   - react
 cover_image: >-
-  https://www.nickyt.co/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8lwq8cpfabmtoh589glh.jpeg
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8lwq8cpfabmtoh589glh.jpeg
 canonical_url: >-
   https://www.nickyt.co/blog/creating-an-og-image-using-react-and-netlify-edge-functions-563a
 reading_time_minutes: 3
@@ -28,23 +28,23 @@ I recently built out a couple of OG images for Open Sauced for a couple of featu
 
 For example, here's an OG image for a [workspace for jsr](https://app.opensauced.pizza/workspaces/760ea8ea-ebd3-4f9a-91ab-780384e3c102). [JSR](https://jsr.io) is the new JavaScript registry from the folks from Deno.
 
-[![OG image for the OpenSauced workspace for jsr](https://www.nickyt.co/images/posts/_uploads_articles_n9v3aq0eu0lsoxni8b3z.png)](https://app.opensauced.pizza/workspaces/760ea8ea-ebd3-4f9a-91ab-780384e3c102)
+[![OG image for the OpenSauced workspace for jsr](/assets/images/posts/_uploads_articles_n9v3aq0eu0lsoxni8b3z.png)](https://app.opensauced.pizza/workspaces/760ea8ea-ebd3-4f9a-91ab-780384e3c102)
 
 And here's the OG image for a repository page for [huggingface/transformers](https://app.opensauced.pizza/s/huggingface/transformers).
 
-[![OG image for the huggingface/transformers repository](https://www.nickyt.co/images/posts/_uploads_articles_7wrvyq2qqjwefpeklraf.png)](https://app.opensauced.pizza/s/huggingface/transformers)
+[![OG image for the huggingface/transformers repository](/assets/images/posts/_uploads_articles_7wrvyq2qqjwefpeklraf.png)](https://app.opensauced.pizza/s/huggingface/transformers)
 
 Looking at the image for the jsr workspace, there is a template for the image, but there are several dynamic portions to the image.
 
 All the sections denoted by green outlined squares are dynamic.
 
-![OG image for the OpenSauced workspace for jsr with sections outline in green squares denoting dynamic portions of the image](https://www.nickyt.co/images/posts/_uploads_articles_32npdvf35s50hjl9r9iv.png)
+![OG image for the OpenSauced workspace for jsr with sections outline in green squares denoting dynamic portions of the image](/assets/images/posts/_uploads_articles_32npdvf35s50hjl9r9iv.png)
 
 This dynamic info gets pulled in for the most part from the OpenSauced API.
 
 Other parts are pulled in from the URL, like `30` for the day range, and the description comes from the query string in the OG image URL.
 
-![browser dev tools view of the metadata section of the &lt;head&gt; with OG image URLs outlined by green squares](https://www.nickyt.co/images/posts/_uploads_articles_f059m9we4gkmb8ixx39v.png)
+![browser dev tools view of the metadata section of the &lt;head&gt; with OG image URLs outlined by green squares](/assets/images/posts/_uploads_articles_f059m9we4gkmb8ixx39v.png)
 
 ## React to generate an image
 
