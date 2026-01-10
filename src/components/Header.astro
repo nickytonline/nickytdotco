@@ -22,7 +22,7 @@ const currentPath = pathname.slice(1);
           <li>
             <a
               href="/blog"
-              aria-current={currentPath === "blog" ? "page" : "false"}
+              aria-current={currentPath.startsWith("blog") ? "page" : "false"}
             >
               Blog
             </a>
