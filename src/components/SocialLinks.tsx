@@ -73,7 +73,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     name: "Mastodon",
-    url: "https://toot.cafe/@nickytonline",
+    url: "https://hachyderm.io/@nickytonline",
     icon: MastodonIcon,
     description: "Find me on the Fediverse",
   },
