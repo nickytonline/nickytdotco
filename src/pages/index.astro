@@ -50,7 +50,7 @@ if (!errorMessage) {
   );
   Astro.response.headers.set(
     "Netlify-CDN-Cache-Control",
-    "public, max-age=86400, must-revalidate"
+    "public, max-age=259200, must-revalidate"
   );
   Astro.response.headers.set("timezone", timezone);
   Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
