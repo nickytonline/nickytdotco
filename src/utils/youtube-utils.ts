@@ -1,6 +1,14 @@
 import { marked } from "marked";
 import Parser from "rss-parser";
 
+export interface YouTubeVideo {
+  title: string;
+  link: string;
+  description: string;
+  thumbnail: string;
+  date: Date | string;
+}
+
 export const DEFAULT_YT_FEED_URL =
   "https://www.youtube.com/feeds/videos.xml?channel_id=UCBLlEq0co24VFJIMEHNcPOQ";
 export const NICKYT_LIVE_PLAYLIST_FEED_URL =

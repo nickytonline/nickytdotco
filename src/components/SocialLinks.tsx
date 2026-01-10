@@ -1,14 +1,13 @@
 import {
-  Github,
-  Linkedin,
-  Youtube,
-  Twitch,
-  Instagram,
-  Twitter,
+  GithubIcon,
+  LinkedinIcon,
+  YoutubeIcon,
+  TwitchIcon,
+  InstagramIcon,
+  TwitterIcon,
   Music2,
   Globe,
 } from "lucide-react";
-import type { ReactNode } from "react";
 
 // Custom Mastodon icon component
 const MastodonIcon = ({ className }: { className?: string }) => (
@@ -33,31 +32,31 @@ const socialLinks: SocialLink[] = [
   {
     name: "YouTube",
     url: "https://youtube.com/@nickytonline",
-    icon: Youtube,
+    icon: YoutubeIcon,
     description: "Subscribe for tech content and tutorials",
   },
   {
     name: "GitHub",
     url: "https://github.com/nickytonline",
-    icon: Github,
+    icon: GithubIcon,
     description: "Check out my open source projects",
   },
   {
     name: "X (Twitter)",
     url: "https://x.com/nickytonline",
-    icon: Twitter,
+    icon: TwitterIcon,
     description: "Follow me on X",
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/nickytonline",
-    icon: Linkedin,
+    icon: LinkedinIcon,
     description: "Connect with me professionally",
   },
   {
     name: "Twitch",
     url: "https://twitch.tv/nickytonline",
-    icon: Twitch,
+    icon: TwitchIcon,
     description: "Watch me code live",
   },
   {
@@ -69,7 +68,7 @@ const socialLinks: SocialLink[] = [
   {
     name: "Instagram",
     url: "https://instagram.com/nickytonline",
-    icon: Instagram,
+    icon: InstagramIcon,
     description: "Follow my tech journey",
   },
   {
