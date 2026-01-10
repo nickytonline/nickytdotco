@@ -8,3 +8,4 @@ yarn.lock
 src/pages/posts
 src/**/*.md
 *.mdx
+env.d.ts

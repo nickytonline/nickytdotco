@@ -925,14 +925,7 @@ async function updateBlogPostEmbeds(
 
         try {
           const post = await getDevPost(Number(blogPostId));
-          const {
-            body_html,
-            body_markdown,
-            comments_count,
-            public_reactions_count,
-            positive_reactions_count,
-            ...data
-          } = post;
+          const { ...data } = post;
 
           blogPostEmbedsMarkup[url] = data;
         } catch (error) {
