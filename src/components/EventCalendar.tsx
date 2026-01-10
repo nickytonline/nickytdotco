@@ -23,7 +23,7 @@ const EventCalendar = ({
 }: EventCalendarProps) => {
   console.log(location);
   const [dropdownPosition, setDropdownPosition] = useState<"below" | "above">(
-    "below",
+    "below"
   );
   const navRef = useRef<HTMLElement>(null);
 

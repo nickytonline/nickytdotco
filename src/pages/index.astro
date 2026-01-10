@@ -85,15 +85,24 @@ export const prerender = false;
       </section>
 
       <section>
-        {errorMessage ? (<SectionHeader title="Upcoming Live Streams" /><p class="text-red-600">{errorMessage}</p>):null}
+        {
+          errorMessage ? (
+            <>
+              <SectionHeader title="Upcoming Live Streams" />
+              <p class="text-red-600">{errorMessage}</p>
+            </>
+          ) : null
+        }
         {
           !errorMessage && schedule.length > 0 ? (
-            <SectionHeader title="Upcoming Live Streams" />
-            <StreamSchedule
-              schedule={schedule}
-              locale={locale}
-              timezone={timezone}
-            />
+            <>
+              <SectionHeader title="Upcoming Live Streams" />
+              <StreamSchedule
+                schedule={schedule}
+                locale={locale}
+                timezone={timezone}
+              />
+            </>
           ) : null
         }
       </section>

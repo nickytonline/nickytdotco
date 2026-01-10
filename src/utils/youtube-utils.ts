@@ -26,14 +26,14 @@ export function getYouTubeId(url: string) {
 
 export function injectSpecificVideo(
   videos: YouTubeVideo[],
-  videoToInject: YouTubeVideo,
+  videoToInject: YouTubeVideo
 ) {
   const injectedVideos = [...videos];
   const videoDate = new Date(videoToInject.date);
 
   // Find the correct position to insert the video based on date
   const insertIndex = injectedVideos.findIndex(
-    (video) => new Date(video.date) < videoDate,
+    (video) => new Date(video.date) < videoDate
   );
 
   if (insertIndex === -1) {
@@ -105,7 +105,7 @@ export function sanitizeVideoDescription(description: string) {
   return marked.parse(
     description
       .replace(/Links:?.+/is, "")
-      .replace(/Places to follow Nick.+/is, ""),
+      .replace(/Places to follow Nick.+/is, "")
   );
 }
 

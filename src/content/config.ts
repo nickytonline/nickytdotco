@@ -17,7 +17,7 @@ const urlOrRelative = z
     },
     {
       message: "Must be an absolute URL or relative path",
-    },
+    }
   );
 
 const blogCollection = defineCollection({
@@ -72,7 +72,7 @@ const talksCollection = defineCollection({
         z.object({
           title: z.string(),
           url: urlOrRelative,
-        }),
+        })
       )
       .optional(),
   }),

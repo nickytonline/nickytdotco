@@ -11,7 +11,7 @@ import type { CollectionEntry } from "astro:content";
 export function getRelatedTalks(
   currentTalk: CollectionEntry<"talks">,
   allTalks: CollectionEntry<"talks">[],
-  limit: number = 3,
+  limit: number = 3
 ): CollectionEntry<"talks">[] {
   const currentTags = currentTalk.data.tags || [];
   const currentSlug = currentTalk.id;
