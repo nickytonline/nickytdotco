@@ -1,4 +1,10 @@
+dist
+node_modules
+.astro
+public/service-worker.js
+package-lock.json
+pnpm-lock.yaml
 yarn.lock
 src/pages/posts
-dist
 src/**/*.md
+*.mdx
