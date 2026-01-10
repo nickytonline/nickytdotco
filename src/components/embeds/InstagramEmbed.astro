@@ -30,8 +30,13 @@ if (url.startsWith("http")) {
     script.async = true;
     script.src = scriptSrc;
     document.head.appendChild(script);
-  } else if ((window as Window & { instgrm?: { Embeds: { process: () => void } } }).instgrm) {
+  } else if (
+    (window as Window & { instgrm?: { Embeds: { process: () => void } } })
+      .instgrm
+  ) {
     // Re-process embeds if script already loaded
-    (window as Window & { instgrm?: { Embeds: { process: () => void } } }).instgrm.Embeds.process();
+    (
+      window as Window & { instgrm?: { Embeds: { process: () => void } } }
+    ).instgrm.Embeds.process();
   }
 </script>

@@ -14,6 +14,7 @@ export default [
       "dist/**",
       "node_modules/**",
       ".astro/**",
+      ".netlify/**",
       "public/**",
       "*.cjs",
       "postcss.config.cjs",
