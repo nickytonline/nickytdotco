@@ -19,6 +19,7 @@ export default [
       "*.cjs",
       "postcss.config.cjs",
       "tailwind.config.cjs",
+      "env.d.ts",
     ],
   },
   {
