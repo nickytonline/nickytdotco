@@ -191,7 +191,7 @@ const { Content } = await talk.render();
 
       {
         tags && tags.length > 0 && (
-          <footer class="pt-8 border-t-2 border-border">
+          <footer class="pt-8">
             <div class="flex items-center gap-3 flex-wrap">
               <h2 class="text-xl font-semibold text-foreground">Tags:</h2>
               <div class="flex flex-wrap gap-2">
@@ -204,43 +204,37 @@ const { Content } = await talk.render();
 
       {
         relatedTalks.length > 0 && (
-          <section class="mt-12 pt-8 border-t-2 border-border">
+          <section class="pt-8">
             <h2 class="text-2xl font-bold mb-6 text-foreground">
               Related Talks
             </h2>
-            <div class="space-y-4">
+            <div class="grid gap-6 xl:gap-8">
               {relatedTalks.map((relatedTalk) => {
                 const relatedSlug = relatedTalk.slug;
                 return (
                   <a
                     href={`/talks/${relatedSlug}`}
-                    class="block p-5 rounded-lg border-2 border-transparent hover:border-pink-600 dark:hover:border-pink-400 hover:bg-gradient-to-r hover:from-rose-50 dark:hover:from-pink-900/20 hover:to-transparent transition-all group"
+                    class="group grid gap-6 xl:gap-8 no-underline outline-none transition-colors"
                   >
-                    <article>
-                      <h3 class="text-lg font-semibold text-foreground group-hover:text-pink-600 dark:group-hover:text-pink-400 mb-2">
+                    <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
+                      <h3 class="text-xl font-semibold leading-snug text-card-foreground group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400">
                         {relatedTalk.data.title}
                       </h3>
-                      <div class="flex items-center gap-3 text-sm text-muted-foreground mb-3">
+                      <div class="flex items-center gap-3 text-base text-muted-foreground">
                         <time
                           datetime={relatedTalk.data.date.toISOString()}
-                          class="italic"
+                          class="italic font-normal"
                         >
                           {dateFilter(relatedTalk.data.date)}
                         </time>
                         <span class="text-pink-600 dark:text-pink-400 font-semibold">
                           •
                         </span>
-                        <span class="font-semibold text-pink-600 dark:text-pink-400">
+                        <span class="font-normal">
                           {relatedTalk.data.venue.name}
                         </span>
                       </div>
-                      {relatedTalk.data.tags &&
-                        relatedTalk.data.tags.length > 0 && (
-                          <div class="flex flex-wrap gap-2">
-                            <TagList tags={relatedTalk.data.tags} limit={3} />
-                          </div>
-                        )}
-                    </article>
+                    </div>
                   </a>
                 );
               })}

@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
+import Tag from "@/components/Tag.astro";
 export const prerender = true;
 
 const talks = await getCollection("talks");
@@ -42,53 +43,39 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
     <div class="space-y-16">
       <section>
         <div
-          class="mb-8 pb-3 border-l-4 border-pink-600 pl-6 bg-gradient-to-r from-rose-50 to-transparent"
+          class="mb-8 pb-1 border-l-4 border-pink-600 pl-6 bg-linear-to-r from-rose-50 to-transparent flex items-center"
         >
-          <h2 class="text-3xl font-bold text-gray-900">Popular Tags</h2>
-          <p class="text-gray-600 mt-2">Most frequently used topics</p>
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900">Popular Tags</h2>
+            <p class="text-gray-600 mt-2">Most frequently used topics</p>
+          </div>
         </div>
         <div class="flex flex-wrap gap-3">
           {
-            sortedTags.slice(0, 10).map(([tag, count]) => (
-              <a
-                href={`/tags/${tag}`}
-                class="group inline-flex items-center gap-3 bg-white hover:bg-pink-50 border-2 border-gray-200 hover:border-pink-400 text-gray-900 rounded-lg px-5 py-3 transition-all duration-200 shadow-sm hover:shadow-md"
-              >
-                <span class="text-base font-semibold group-hover:text-pink-600">
-                  {tagToOriginalCase.get(tag) || tag}
-                </span>
-                <span class="inline-flex items-center justify-center min-w-[2rem] h-7 text-sm font-bold bg-pink-100 text-pink-700 group-hover:bg-pink-600 group-hover:text-white rounded-full px-2.5 transition-colors">
-                  {count}
-                </span>
-              </a>
-            ))
+            sortedTags
+              .slice(0, 10)
+              .map(([tag, count]) => (
+                <Tag tag={tag} count={count} variant="muted" />
+              ))
           }
         </div>
       </section>
 
       <section>
         <div
-          class="mb-8 pb-3 border-l-4 border-pink-600 pl-6 bg-gradient-to-r from-rose-50 to-transparent"
+          class="mb-8 pb-1 border-l-4 border-pink-600 pl-6 bg-linear-to-r from-rose-50 to-transparent flex items-center"
         >
-          <h2 class="text-3xl font-bold text-gray-900">All Tags</h2>
-          <p class="text-gray-600 mt-2">
-            {alphabeticalTags.length} topics in alphabetical order
-          </p>
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900">All Tags</h2>
+            <p class="text-gray-600 mt-2">
+              {alphabeticalTags.length} topics in alphabetical order
+            </p>
+          </div>
         </div>
         <div class="flex flex-wrap gap-3">
           {
             alphabeticalTags.map(([tag, count]) => (
-              <a
-                href={`/tags/${tag}`}
-                class="group inline-flex items-center gap-3 bg-white hover:bg-pink-50 border-2 border-gray-200 hover:border-pink-400 text-gray-900 rounded-lg px-5 py-3 transition-all duration-200 shadow-sm hover:shadow-md"
-              >
-                <span class="text-base font-semibold group-hover:text-pink-600">
-                  {tagToOriginalCase.get(tag) || tag}
-                </span>
-                <span class="inline-flex items-center justify-center min-w-[2rem] h-7 text-sm font-bold bg-gray-100 text-gray-700 group-hover:bg-pink-600 group-hover:text-white rounded-full px-2.5 transition-colors">
-                  {count}
-                </span>
-              </a>
+              <Tag tag={tag} count={count} variant="muted" />
             ))
           }
         </div>
