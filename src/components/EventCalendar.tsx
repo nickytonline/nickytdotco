@@ -61,9 +61,7 @@ const EventCalendar = ({
 
   return (
     <nav ref={navRef} className="relative group w-fit">
-      <button
-        className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-4 py-2 hover:bg-white hover:text-pink-600 border-2 border-pink-600 hover:border-pink-600 transition-colors focus:outline-none"
-      >
+      <button className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-4 py-2 hover:bg-white hover:text-pink-600 border-2 border-pink-600 hover:border-pink-600 transition-colors focus:outline-none">
         <Plus className="w-4 h-4" />
         <span>Add to Calendar</span>
       </button>
