@@ -1,5 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import BlogArchiveHeader from "../components/BlogArchiveHeader.astro";
+import BlogArchiveYear from "../components/BlogArchiveYear.astro";
 import { getCollection } from "astro:content";
 import { dateFilter } from "../utils/filters";
 
@@ -26,48 +28,32 @@ const postsByYear = sortedPosts.reduce(
 );
 
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+
+// Transform data for components
+const blogPostsByYear = years.map((year) => ({
+  year,
+  posts: postsByYear[Number(year)].map((post) => ({
+    title: post.data.title,
+    date: dateFilter(post.data.date),
+    readTime: post.data.reading_time_minutes
+      ? `${post.data.reading_time_minutes} min read`
+      : null,
+    url: `/blog/${post.slug}`,
+  })),
+}));
 ---
 
 <MainLayout
   title="Blog Posts - Archive"
   metaDesc="All blog posts by Nick Taylor"
 >
-  <main id="main" tabindex="-1">
-    <div>
-      <h1>Blog Posts Archive</h1>
-      <p>All {sortedPosts.length} blog posts, organized by year.</p>
+  <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
+    <BlogArchiveHeader totalPosts={sortedPosts.length} />
 
-      {
-        years.map((year) => (
-          <section class="sf-flow">
-            <h2>{year}</h2>
-            <ul class="sf-flow">
-              {postsByYear[Number(year)].map((post) => (
-                <li>
-                  <article>
-                    <h3>
-                      <a href={`/blog/${post.slug}`} class="wrap-break-word">
-                        {post.data.title}
-                      </a>
-                    </h3>
-                    <p class="text-500">
-                      <time datetime={post.data.date.toISOString()}>
-                        {dateFilter(post.data.date)}
-                      </time>
-                      {post.data.reading_time_minutes && (
-                        <span>
-                          {" "}
-                          • {post.data.reading_time_minutes} min read
-                        </span>
-                      )}
-                    </p>
-                  </article>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))
-      }
+    <div class="space-y-12">
+      {blogPostsByYear.map((yearGroup) => (
+        <BlogArchiveYear year={yearGroup.year} posts={yearGroup.posts} />
+      ))}
     </div>
   </main>
 </MainLayout>
