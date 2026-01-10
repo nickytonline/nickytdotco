@@ -469,7 +469,7 @@ const blogPostEmbeds = new Map<string, unknown>(
 let currentTwitterEmbeds: Record<string, string> = {};
 try {
   currentTwitterEmbeds = JSON.parse(readFileSync(TWITTER_EMBEDS_FILE, "utf-8"));
-} catch (error) {
+} catch (_error) {
   // File doesn't exist yet, will be created
   currentTwitterEmbeds = {};
 }
@@ -870,7 +870,7 @@ async function getDevBlogPostEmbedsMarkup(
 
     try {
       url = new URL(embedUrl);
-    } catch (error) {
+    } catch (_error) {
       url = null;
     }
 
@@ -926,11 +926,11 @@ async function updateBlogPostEmbeds(
         try {
           const post = await getDevPost(Number(blogPostId));
           const {
-            body_html,
-            body_markdown,
-            comments_count,
-            public_reactions_count,
-            positive_reactions_count,
+            _body_html,
+            _body_markdown,
+            _comments_count,
+            _public_reactions_count,
+            _positive_reactions_count,
             ...data
           } = post;
 

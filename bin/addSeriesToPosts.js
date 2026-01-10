@@ -106,7 +106,7 @@ async function fetchArticleBySlug(username, slug) {
  * Parse dev.to URL to get username and slug
  */
 function parseDevToUrl(canonicalUrl) {
-  const match = canonicalUrl.match(/dev\.to\/([^\/]+)\/([^\/]+)/);
+  const match = canonicalUrl.match(/dev\.to\/([^/]+)\/([^/]+)/);
   if (!match) return null;
   return { username: match[1], slug: match[2] };
 }

@@ -183,7 +183,7 @@ export default function SeriesNavigation({ series, currentUrl, posts }: Props) {
 
     return (
       <>
-        <li className="flex items-center gap-2" role="listitem">
+        <li className="flex items-center gap-2">
           <span
             className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-transparent p-0 text-base tracking-tight text-gray-500 dark:text-gray-400"
             aria-hidden="true"
