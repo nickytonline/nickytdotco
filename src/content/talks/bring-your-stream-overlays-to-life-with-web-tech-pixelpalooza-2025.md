@@ -3,6 +3,7 @@ title: "Bring Your Stream Overlays to Life with Web Tech"
 date: 2025-12-05T12:00:00.000Z
 venue:
   name: "Pixelpalooza 2025"
+  url: "https://cfe.dev/events/pixelpalooza-2025/"
 tags: ["streaming", "web development", "twitch", "javascript", "overlays"]
 video:
   type: "youtube"
