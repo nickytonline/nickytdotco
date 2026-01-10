@@ -60,7 +60,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nickytonline/robust-petunia"
+    "url": "git+https://github.com/nickytonline/nickytdotco"
   },
   "keywords": [
     "astro",
@@ -70,7 +70,7 @@
   "author": "Nick Taylor",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nickytonline/robust-petunia"
+    "url": "https://github.com/nickytonline/nickytdotco/issues"
   },
   "homepage": "https://www.nickyt.co"
 }
