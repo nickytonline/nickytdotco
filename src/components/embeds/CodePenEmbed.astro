@@ -34,8 +34,11 @@ const [, user, , codepenId] = pathname.split("/");
     script.async = true;
     script.src = scriptSrc;
     document.head.appendChild(script);
-  } else if ((window as Window & { __CPEmbed?: () => void }).__CPEmbed) {
-    // Re-process embeds if script already loaded
-    (window as Window & { __CPEmbed?: () => void }).__CPEmbed();
+  } else {
+    const cpEmbed = (window as Window & { __CPEmbed?: () => void }).__CPEmbed;
+    if (cpEmbed) {
+      // Re-process embeds if script already loaded
+      cpEmbed();
+    }
   }
 </script>

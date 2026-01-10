@@ -926,11 +926,11 @@ async function updateBlogPostEmbeds(
         try {
           const post = await getDevPost(Number(blogPostId));
           const {
-            _body_html,
-            _body_markdown,
-            _comments_count,
-            _public_reactions_count,
-            _positive_reactions_count,
+            body_html,
+            body_markdown,
+            comments_count,
+            public_reactions_count,
+            positive_reactions_count,
             ...data
           } = post;
 
