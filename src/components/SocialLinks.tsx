@@ -8,6 +8,7 @@ import {
   Music2,
   Globe,
 } from "lucide-react";
+import type { ReactNode } from "react";
 
 // Custom Mastodon icon component
 const MastodonIcon = ({ className }: { className?: string }) => (
@@ -24,7 +25,7 @@ const MastodonIcon = ({ className }: { className?: string }) => (
 interface SocialLink {
   name: string;
   url: string;
-  icon: typeof Github | (() => JSX.Element);
+  icon: React.ComponentType<{ className?: string }>;
   description: string;
 }
 
