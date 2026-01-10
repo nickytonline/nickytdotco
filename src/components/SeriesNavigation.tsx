@@ -93,7 +93,7 @@ export default function SeriesNavigation({ series, currentUrl, posts }: Props) {
           <div className="min-w-0 flex-1 pt-0.5">
             <a
               href={`/blog/${hiddenPost.slug}`}
-              className="block text-sm leading-tight text-gray-700 dark:text-gray-300 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:text-pink-600 dark:focus-visible:text-pink-400 focus-visible:text-pink-600 dark:focus-visible:text-pink-400 focus-visible:underline focus-visible:outline-none"
+              className="block text-sm leading-tight text-gray-700 dark:text-gray-300 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:text-pink-600 dark:focus-visible:text-pink-400 focus-visible:underline focus-visible:outline-none"
             >
               {truncate(hiddenPost.data.title, 80)}
             </a>
@@ -225,13 +225,11 @@ export default function SeriesNavigation({ series, currentUrl, posts }: Props) {
   return (
     <aside className="my-8 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4">
       <nav aria-label="Series navigation" role="navigation">
-        <h2 className="mb-4 text-lg font-bold text-pink-600 dark:text-pink-400">
-          {seriesName(series)}
-        </h2>
+        <h2 className="mb-4">{seriesName(series)}</h2>
 
         <ol
           id={`series-list-${seriesSlug}`}
-          className="m-0 flex list-none flex-col gap-2 p-0"
+          className="m-0 flex list-none flex-col gap-4 p-0"
         >
           {sortedPosts.map((post, i) => {
             const isCurrent = i === currentIndex;
