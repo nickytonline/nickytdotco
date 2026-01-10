@@ -1,459 +1,435 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
 ---
 
 <MainLayout
   title="Uses"
   metaDesc="This page details pretty much all I use as a developer."
 >
-  <main id="main-content" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
-    <article class="space-y-8">
-      <header>
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight">Uses</h1>
+  <main
+    id="main-content"
+    tabindex="-1"
+    class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12"
+  >
+    <article class="space-y-12">
+      <header class="space-y-8">
+        <SectionHeader title="Uses" />
       </header>
-      <div class="prose prose-lg max-w-none">
-        <p>
+
+      <div class="space-y-8 text-lg leading-relaxed">
+        <p class="text-gray-700">
           This page details pretty much all I use as a developer. If you decide
           to make your own, consider adding it to <a
-            href="https://twitter.com/wesbos">Wes Bos</a
-          >' <a href="https://uses.tech">uses.tech</a>. I use a Mac, so most
-          tools are macOS specific, but there are some OS-agnostic ones in the
-          list. You might also be interested in <a
-            href="https://www.iamdeveloper.com/posts/my-mac-setup-2m05/"
+            href="https://twitter.com/wesbos"
+            class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+            >Wes Bos</a
+          >' <a
+            href="https://uses.tech"
+            class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+            >uses.tech</a
+          >. I use a Mac, so most tools are macOS specific, but there are some
+          OS-agnostic ones in the list. You might also be interested in <a
+            href="http://localhost:4321/blog/from-fresh-mac-to-productive-in-30-minutes-21db"
+            class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
             >My Mac Setup</a
           > post, although it is a little outdated.
-        </p><p>
+        </p>
+        <p class="text-gray-700">
           Note: This page contains affiliate links. I may earn a commission for
           purchases made through these links at no additional cost to you.
-        </p><h2 id="heading-editor">
-          Editor<a
-            href="#heading-editor"
-            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
+        </p>
+
+        <section class="space-y-4">
+          <h2 class="text-3xl font-bold text-gray-900" id="heading-editor">
+            Editor<a
+              href="#heading-editor"
+              class="heading-anchor"
+              aria-label="Link to this section">#</a
+            >
+          </h2>
+          <ul class="space-y-2 text-gray-700 list-disc pl-6">
+            <li>
+              <a
+                href="https://code.visualstudio.com"
+                class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+                >VS Code</a
+              > with GitHub Copilot and <a
+                href="https://www.cursor.com"
+                class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+                >Cursor</a
+              >
+            </li>
+            <li>
+              Themes: <a
+                href="https://marketplace.visualstudio.com/items?itemName=astro-build.houston"
+                class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+                >Houston</a
+              > and the Default Light Modern theme.
+            </li>
+            <li>
+              Font: <a
+                href="https://philpl.gumroad.com/l/dank-mono"
+                class="text-pink-600 font-semibold hover:underline focus:underline focus:outline-none"
+                >Dank Mono</a
+              > - A font I paid for, but I love it.
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h3
+            class="text-2xl font-bold text-gray-900"
+            id="heading-chromeedgefirefox-browser-extensions"
           >
-            <span class="sr-only"> permalink</span>
-            <svg
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+            Chrome/Edge/Firefox Browser Extensions<a
+              href="#heading-chromeedgefirefox-browser-extensions"
+              class="heading-anchor"
+              aria-label="Link to this section">#</a
             >
-              <path
-                d="M9.199 13.599a5.99 5.99 0 0 0 3.949 2.345 5.987 5.987 0 0 0 5.105-1.702l2.995-2.994a5.992 5.992 0 0 0 1.695-4.285 5.976 5.976 0 0 0-1.831-4.211 5.99 5.99 0 0 0-6.431-1.242 6.003 6.003 0 0 0-1.905 1.24l-1.731 1.721a.999.999 0 1 0 1.41 1.418l1.709-1.699a3.985 3.985 0 0 1 2.761-1.123 3.975 3.975 0 0 1 2.799 1.122 3.997 3.997 0 0 1 .111 5.644l-3.005 3.006a3.982 3.982 0 0 1-3.395 1.126 3.987 3.987 0 0 1-2.632-1.563A1 1 0 0 0 9.201 13.6zm5.602-3.198a5.99 5.99 0 0 0-3.949-2.345 5.987 5.987 0 0 0-5.105 1.702l-2.995 2.994a5.992 5.992 0 0 0-1.695 4.285 5.976 5.976 0 0 0 1.831 4.211 5.99 5.99 0 0 0 6.431 1.242 6.003 6.003 0 0 0 1.905-1.24l1.723-1.723a.999.999 0 1 0-1.414-1.414L9.836 19.81a3.985 3.985 0 0 1-2.761 1.123 3.975 3.975 0 0 1-2.799-1.122 3.997 3.997 0 0 1-.111-5.644l3.005-3.006a3.982 3.982 0 0 1 3.395-1.126 3.987 3.987 0 0 1 2.632 1.563 1 1 0 0 0 1.602-1.198z"
-              ></path>
-            </svg></a
+          </h3>
+          <ul class="space-y-2 text-gray-700 list-disc pl-6">
+            <li>
+              <a
+                href="https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf"
+                >Refined GitHub</a
+              > - GitHub on steroids
+            </li><li>
+              <a
+                href="https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc?hl=en"
+                >VisBug</a
+              > - An awesome tool for frontend (this one’s new for me) (only for Chromium
+              based browsers)
+            </li><li>
+              <a
+                href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en"
+                >React DevTools</a
+              > - Because React
+            </li><li>
+              <a href="https://preactjs.github.io/preact-devtools/"
+                >Preact DevTools</a
+              > - Because Preact
+            </li><li>
+              <a
+                href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd"
+                >Axe</a
+              > - For web accessibility testing
+            </li><li>
+              <a href="https://wave.webaim.org/extension/">WAVE</a> - For web accessibility
+              testing
+            </li><li>
+              <a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a
+              >
+            </li><li><a href="https://ublock.org/">uBlock</a></li><li>
+              <a href="https://languagetool.org">LanguageTool</a> - A grammar and
+              spell checking tool
+            </li><li>
+              <a href="https://getpocket.com/">Pocket</a> - For bookmarking stuff
+              to read
+            </li><li>
+              <a
+                href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc"
+                >JSONView</a
+              > - A prettified view of JSON payloads
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2
+            id="heading-desktop-apps"
+            class="text-3xl font-bold text-gray-900"
           >
-        </h2><ul>
-          <li>
-            <a href="https://code.visualstudio.com">VS Code</a> with GitHub Copilot
-            and <a href="https://www.cursor.com">Cursor</a>
-          </li><li>
-            Themes: <a
-              href="https://marketplace.visualstudio.com/items?itemName=astro-build.houston"
-              >Houston</a
-            > and the Default Light Modern theme.
-          </li><li>
-            Font: <a href="https://philpl.gumroad.com/l/dank-mono">Dank Mono</a> -
-            A font I paid for, but I love it.
-          </li>
-        </ul><h3 id="heading-chromeedgefirefox-browser-extensions">
-          Chrome/Edge/Firefox Browser Extensions<a
-            href="#heading-chromeedgefirefox-browser-extensions"
-            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
+            Desktop Apps<a
+              href="#heading-desktop-apps"
+              class="heading-anchor"
+              aria-label="Link to this section">#</a
+            >
+          </h2>
+          <ul class="space-y-2 text-gray-700 list-disc pl-6">
+            <li>
+              <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a> -
+              My main browser for my day to day work and personal stuff.
+            </li><li>
+              <a href="https://www.macbartender.com">Bartender</a> - For managing
+              your menu bar. I used to use <a
+                href="https://matthewpalmer.net/vanilla/">Vanilla</a
+              >, but with the notch in newer MacBook Pros, Bartender made the
+              menubar more usable when dealing with lots of menubar icons.
+            </li><li>
+              <a href="https://matthewpalmer.net/rocket/">Rocket</a> - Emojis, emojis
+            </li><li>
+              <a href="https://raycast.com">Raycast</a> - Workflows, snippets, macOS
+              spotlight on steroids. I previously used <a
+                href="https://www.alfredapp.com/">Alfred</a
+              >, another amazing Spotlight alternative.
+            </li><li>
+              <a href="https://justgetflux.com/">f.lux</a> - Be kind to your eyeballs
+            </li><li>
+              <a href="https://git-fork.com/">Fork</a> - A great git GUI
+            </li><li>
+              <a href="https://www.docker.com/products/docker-desktop"
+                >Docker Desktop</a
+              > - Because Docker
+            </li><li>
+              <a href="https://xscope.app">xScope</a> - Awesome toolset for frontend
+              development. Rulers, guides etc.
+            </li><li>
+              <a href="https://sindresorhus.com/dato">Dato</a> - A better date app
+              for macOS. It's great for having multiple time zones in the address
+              bar. I have my local time as well as UTC. I also use it for upcoming
+              meetings and events. Previously I was using <a
+                href="https://trymeeter.com">Meeter</a
+              > which is great for this, but it's one less app I need now.
+            </li><li>
+              <a href="https://ghostty.org">Ghostty</a> - A a fast, feature-rich,
+              and cross-platform terminal emulator that uses platform-native UI and
+              GPU acceleration.
+            </li><li>
+              <a href="https://starship.rs/">Starship</a> - A cross shell prompt
+            </li><li>
+              <a href="https://www.spotify.com/us/download/">Spotify</a> - Because
+              music.
+            </li><li>
+              <a href="https://obsproject.com/download">OBS</a> - For streaming on
+              Twitch
+            </li><li>
+              <a href="https://cleanshot.com/">Cleanshot X</a> - For better screenshots
+              and screen recordings
+            </li><li>
+              <a href="https://blog.cloudflare.com/1111-warp-better-vpn/"
+                >Cloudflare Warp</a
+              > - Faster Internet and some VPN goodness
+            </li><li>
+              <a href="https://krisp.ai/">Krisp</a> - Filter out unwanted noise on
+              calls and streams
+            </li><li>
+              <a href="https://gpgtools.org/">GPG Suite</a> - For all things GPG
+            </li><li>
+              <a href="https://www.figma.com/">Figma</a> - Design collaboratively
+              on the web
+            </li><li>
+              <a href="https://rogueamoeba.com/loopback/">Loopback</a> - Great for
+              virtual audio sources
+            </li><li>
+              <a href="https://macpaw.com/cleanmymac">CleanMyMac X</a> - A suite of
+              utilities for keeping your Mac in tip top shape.
+            </li><li>
+              <a href="https://reincubate.com/camo/">Camo</a> - Use your mobile devices
+              as cameras for your OS.
+            </li><li>
+              <a href="https://polypane.app/">Polypane</a> - A browser for helping
+              develop responsive, more accessible and more performant websites.
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 id="heading-clis" class="text-3xl font-bold text-gray-900">
+            CLIs<a
+              href="#heading-clis"
+              class="heading-anchor"
+              aria-label="Link to this section">#</a
+            >
+          </h2>
+          <ul class="space-y-2 text-gray-700 list-disc pl-6">
+            <li>
+              <a href="https://brew.sh">Homebrew</a> - The Missing Package Manager
+              for macOS (or Linux)
+            </li><li>
+              <a href="https://github.com/cli/cli">GitHub CLI</a> - GitHub on the
+              command line. Great for creating PRs, etc.
+            </li><li>
+              <a href="https://github.com/nvm-sh/nvm">nvm</a> - Node version manager
+            </li><li>
+              <a href="https://github.com/cloudflare/cloudflared">cloudflared</a
+              > - Exposes local servers to the public internet over secure tunnels
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2
+            id="heading-office-setup"
+            class="text-3xl font-bold text-gray-900"
           >
-            <span class="sr-only"> permalink</span>
-            <svg
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+            Office Setup<a
+              href="#heading-office-setup"
+              class="heading-anchor"
+              aria-label="Link to this section">#</a
             >
-              <path
-                d="M9.199 13.599a5.99 5.99 0 0 0 3.949 2.345 5.987 5.987 0 0 0 5.105-1.702l2.995-2.994a5.992 5.992 0 0 0 1.695-4.285 5.976 5.976 0 0 0-1.831-4.211 5.99 5.99 0 0 0-6.431-1.242 6.003 6.003 0 0 0-1.905 1.24l-1.731 1.721a.999.999 0 1 0 1.41 1.418l1.709-1.699a3.985 3.985 0 0 1 2.761-1.123 3.975 3.975 0 0 1 2.799 1.122 3.997 3.997 0 0 1 .111 5.644l-3.005 3.006a3.982 3.982 0 0 1-3.395 1.126 3.987 3.987 0 0 1-2.632-1.563A1 1 0 0 0 9.201 13.6zm5.602-3.198a5.99 5.99 0 0 0-3.949-2.345 5.987 5.987 0 0 0-5.105 1.702l-2.995 2.994a5.992 5.992 0 0 0-1.695 4.285 5.976 5.976 0 0 0 1.831 4.211 5.99 5.99 0 0 0 6.431 1.242 6.003 6.003 0 0 0 1.905-1.24l1.723-1.723a.999.999 0 1 0-1.414-1.414L9.836 19.81a3.985 3.985 0 0 1-2.761 1.123 3.975 3.975 0 0 1-2.799-1.122 3.997 3.997 0 0 1-.111-5.644l3.005-3.006a3.982 3.982 0 0 1 3.395-1.126 3.987 3.987 0 0 1 2.632 1.563 1 1 0 0 0 1.602-1.198z"
-              ></path>
-            </svg></a
+          </h2>
+          <ul class="space-y-2 text-gray-700 list-disc pl-6">
+            <li>
+              2 x <a href="https://benqurl.biz/4kZ3mRx"
+                >BenQ RD280U 28" 4K monitor</a
+              >. One is on a stand and the other is on a swivel arm.
+            </li><li>
+              <a
+                href="https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141"
+                >MotionGrey Adjustable Dual Motors Electric Sit to Stand
+                Computer Office Standing Desk</a
+              > - I snagged it at a great price. It appears to go on sale often.
+            </li><li>
+              Herman Miller Aeron office chair. These are pricey, so look out
+              for one on online classifieds. I snagged one with many new parts
+              for just under a third of the price.
+            </li><li>
+              <a href="https://amzn.to/3WzPZf4"
+                >Rollerblade style caster wheels</a
+              > (for office chair). Thanks for the suggestion <a
+                href="https://www.ergosesh.com/">ErgoSesh</a
+              >!
+            </li><li>MacBook Pro 14" (2022)</li><li>
+              <a href="https://amzn.to/3yqPvA4">Logitech MX Master 3 mouse</a>
+            </li><li>
+              <a href="https://amzn.to/3SzSNba"
+                >Logitech ERGO K860 wireless split keyboard</a
+              >
+            </li><li>
+              <a href="https://amzn.to/4ftsjBT">Sony WH-1000XM3</a> headphones - I
+              snagged them during Boxing Day week.
+            </li><li>
+              <a
+                href="https://www.shure.com/en-US/products/microphones/mv7?variant=MV7%252B-K"
+                >Shure MV7+ Microphone</a
+              > - I use this for all my live streams and recordings. It's a great
+              mic and I love the built in USB-C port. You can also use it with XLR
+              if you want to go that route, but I don't atm. I opted for white to
+              contrast with my black boom arm.
+            </li><li>
+              <a href="https://amzn.to/3WNsYqx"
+                >RODE PSA1 Swivel Mount Studio Microphone Boom Arm</a
+              >
+            </li><li>
+              <a href="https://amzn.to/3yqdpvt"
+                >Rain Design mStand360 Laptop Stand with Swivel Base</a
+              >
+            </li><li>iPhone 14 camera for streaming and recording video</li><li>
+              <a href="https://amzn.to/3Ac5XVt"
+                >Lamicall Gooseneck Phone Holder Bed</a
+              > - I use this to hold my iPhone when I use it for a camera while live
+              streaming or recording video.
+            </li><li>
+              <a href="https://amzn.to/4dacHSa"
+                >Anker USB C Hub, 5-In-1 USB C Adapter</a
+              >
+            </li><li>
+              <a href="https://amzn.to/3WQvQCQ"
+                >Powered USB 3.0 Hub, WENTER 11-Port USB Data Hub</a
+              >
+            </li><li>
+              <a href="https://amzn.to/3WOt1Ck"
+                >Logitech Litra Glow Premium LED Streaming Light with TrueSoft</a
+              > - Lighting for live streaming and recording video. I have two of these
+              and they're awesome.
+            </li><li>
+              <a href="https://amzn.to/3yguEj0"
+                >Seagate Portable 5TB External Hard Drive HDD</a
+              >
+            </li><li>
+              <a href="https://amzn.to/3YyiUTw"
+                >Topo Comfort Mat by Ergodriven</a
+              > standing desk mat
+            </li><li>
+              <a href="https://amzn.to/3YrjjXZ">LEVOIT Air Purifier Core 300</a>
+            </li><li>
+              <a href="https://amzn.to/3YuyMq2">Elgato Streamd Deck XL</a> - Great
+              for controlling scenes in OBS, dropping links and messages in chat,
+              but I also use it for other apps like Spotify and Zoom.
+            </li><li>
+              <a href="https://amzn.to/3ysolsC"
+                >Quartet Glass Desktop Computer Pad, 18 inch x 6 inch</a
+              >, a handy desk whiteboard. Thanks for the suggestion <a
+                href="https://jhey.dev">Jhey</a
+              >!
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 id="heading-travel-gear" class="text-3xl font-bold text-gray-900">
+            Travel Gear<a
+              href="#heading-travel-gear"
+              class="heading-anchor"
+              aria-label="Link to this section">#</a
+            >
+          </h2>
+          <ul class="space-y-2 text-gray-700 list-disc pl-6">
+            <li><a href="https://amzn.to/3LRrEfT">Roost Laptop Stand</a></li>
+            <li>
+              <a href="https://amzn.to/3SB8Yom">Anker USB-C to HDMI Adapter</a>
+            </li><li>
+              <a href="https://www.amazon.ca/gp/product/B07YYTHMCG"
+                >Jelly Comb Ultra Slim Folding Bluetooth Keyboard</a
+              >
+            </li><li>
+              <a href="https://amzn.to/3A5W4bE"
+                >Anker Magnetic Battery, 10,000 mAh Foldable Wireless Portable
+                Charger</a
+              >
+            </li><li>
+              <a href="https://amzn.to/3yB2dMB">Apple Magic Trackpad (White)</a>
+            </li><li>
+              <a href="https://www.airalo.com/">Airalo</a> eSIMs for travel outside
+              North America. A must have when travelling outside of your home country.
+              Use the referral code
+              <code>NICK1387</code> to get a discount off your first eSIM.
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 id="heading-other" class="text-3xl font-bold text-gray-900">
+            Other<a
+              href="#heading-other"
+              class="heading-anchor"
+              aria-label="Link to this section">#</a
+            >
+          </h2>
+          <ul class="space-y-2 text-gray-700 list-disc pl-6">
+            <li>
+              WISE for banking. I use it for my business. It's a great way to
+              send money internationally without the crazy fees. Use this
+              referral code to get started, <a
+                href="https://wise.com/invite/dic/nicholast1738"
+                >wise.com/invite/dic/nicholast1738</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2
+            id="heading-health-and-training"
+            class="text-3xl font-bold text-gray-900"
           >
-        </h3><ul>
-          <li>
-            <a
-              href="https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf"
-              >Refined GitHub</a
-            > - GitHub on steroids
-          </li><li>
-            <a
-              href="https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc?hl=en"
-              >VisBug</a
-            > - An awesome tool for frontend (this one’s new for me) (only for Chromium
-            based browsers)
-          </li><li>
-            <a
-              href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en"
-              >React DevTools</a
-            > - Because React
-          </li><li>
-            <a href="https://preactjs.github.io/preact-devtools/"
-              >Preact DevTools</a
-            > - Because Preact
-          </li><li>
-            <a
-              href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd"
-              >Axe</a
-            > - For web accessibility testing
-          </li><li>
-            <a href="https://wave.webaim.org/extension/">WAVE</a> - For web accessibility
-            testing
-          </li><li>
-            <a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a>
-          </li><li><a href="https://ublock.org/">uBlock</a></li><li>
-            <a href="https://languagetool.org">LanguageTool</a> - A grammar and spell
-            checking tool
-          </li><li>
-            <a href="https://getpocket.com/">Pocket</a> - For bookmarking stuff to
-            read
-          </li><li>
-            <a
-              href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc"
-              >JSONView</a
-            > - A prettified view of JSON payloads
-          </li>
-        </ul><h2 id="heading-desktop-apps">
-          Desktop Apps<a
-            href="#heading-desktop-apps"
-            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
-          >
-            <span class="sr-only"> permalink</span>
-            <svg
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+            Health and Training<a
+              href="#heading-health-and-training"
+              class="heading-anchor"
+              aria-label="Link to this section">#</a
             >
-              <path
-                d="M9.199 13.599a5.99 5.99 0 0 0 3.949 2.345 5.987 5.987 0 0 0 5.105-1.702l2.995-2.994a5.992 5.992 0 0 0 1.695-4.285 5.976 5.976 0 0 0-1.831-4.211 5.99 5.99 0 0 0-6.431-1.242 6.003 6.003 0 0 0-1.905 1.24l-1.731 1.721a.999.999 0 1 0 1.41 1.418l1.709-1.699a3.985 3.985 0 0 1 2.761-1.123 3.975 3.975 0 0 1 2.799 1.122 3.997 3.997 0 0 1 .111 5.644l-3.005 3.006a3.982 3.982 0 0 1-3.395 1.126 3.987 3.987 0 0 1-2.632-1.563A1 1 0 0 0 9.201 13.6zm5.602-3.198a5.99 5.99 0 0 0-3.949-2.345 5.987 5.987 0 0 0-5.105 1.702l-2.995 2.994a5.992 5.992 0 0 0-1.695 4.285 5.976 5.976 0 0 0 1.831 4.211 5.99 5.99 0 0 0 6.431 1.242 6.003 6.003 0 0 0 1.905-1.24l1.723-1.723a.999.999 0 1 0-1.414-1.414L9.836 19.81a3.985 3.985 0 0 1-2.761 1.123 3.975 3.975 0 0 1-2.799-1.122 3.997 3.997 0 0 1-.111-5.644l3.005-3.006a3.982 3.982 0 0 1 3.395-1.126 3.987 3.987 0 0 1 2.632 1.563 1 1 0 0 0 1.602-1.198z"
-              ></path>
-            </svg></a
-          >
-        </h2><ul>
-          <li>
-            <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a> - My
-            main browser for my day to day work and personal stuff.
-          </li><li>
-            <a href="https://www.macbartender.com">Bartender</a> - For managing your
-            menu bar. I used to use <a href="https://matthewpalmer.net/vanilla/"
-              >Vanilla</a
-            >, but with the notch in newer MacBook Pros, Bartender made the
-            menubar more usable when dealing with lots of menubar icons.
-          </li><li>
-            <a href="https://matthewpalmer.net/rocket/">Rocket</a> - Emojis, emojis
-          </li><li>
-            <a href="https://raycast.com">Raycast</a> - Workflows, snippets, macOS
-            spotlight on steroids. I previously used <a
-              href="https://www.alfredapp.com/">Alfred</a
-            >, another amazing Spotlight alternative.
-          </li><li>
-            <a href="https://justgetflux.com/">f.lux</a> - Be kind to your eyeballs
-          </li><li>
-            <a href="https://git-fork.com/">Fork</a> - A great git GUI
-          </li><li>
-            <a href="https://www.docker.com/products/docker-desktop"
-              >Docker Desktop</a
-            > - Because Docker
-          </li><li>
-            <a href="https://xscope.app">xScope</a> - Awesome toolset for frontend
-            development. Rulers, guides etc.
-          </li><li>
-            <a href="https://sindresorhus.com/dato">Dato</a> - A better date app for
-            macOS. It's great for having multiple time zones in the address bar. I
-            have my local time as well as UTC. I also use it for upcoming meetings
-            and events. Previously I was using <a href="https://trymeeter.com"
-              >Meeter</a
-            > which is great for this, but it's one less app I need now.
-          </li><li>
-            <a href="https://ghostty.org">Ghostty</a> - A a fast, feature-rich, and
-            cross-platform terminal emulator that uses platform-native UI and GPU
-            acceleration.
-          </li><li>
-            <a href="https://starship.rs/">Starship</a> - A cross shell prompt
-          </li><li>
-            <a href="https://www.spotify.com/us/download/">Spotify</a> - Because music.
-          </li><li>
-            <a href="https://obsproject.com/download">OBS</a> - For streaming on Twitch
-          </li><li>
-            <a href="https://cleanshot.com/">Cleanshot X</a> - For better screenshots
-            and screen recordings
-          </li><li>
-            <a href="https://blog.cloudflare.com/1111-warp-better-vpn/"
-              >Cloudflare Warp</a
-            > - Faster Internet and some VPN goodness
-          </li><li>
-            <a href="https://krisp.ai/">Krisp</a> - Filter out unwanted noise on calls
-            and streams
-          </li><li>
-            <a href="https://gpgtools.org/">GPG Suite</a> - For all things GPG
-          </li><li>
-            <a href="https://www.figma.com/">Figma</a> - Design collaboratively on
-            the web
-          </li><li>
-            <a href="https://rogueamoeba.com/loopback/">Loopback</a> - Great for virtual
-            audio sources
-          </li><li>
-            <a href="https://macpaw.com/cleanmymac">CleanMyMac X</a> - A suite of
-            utilities for keeping your Mac in tip top shape.
-          </li><li>
-            <a href="https://reincubate.com/camo/">Camo</a> - Use your mobile devices
-            as cameras for your OS.
-          </li><li>
-            <a href="https://polypane.app/">Polypane</a> - A browser for helping develop
-            responsive, more accessible and more performant websites.
-          </li>
-        </ul><h2 id="heading-clis">
-          CLIs<a
-            href="#heading-clis"
-            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
-          >
-            <span class="sr-only"> permalink</span>
-            <svg
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9.199 13.599a5.99 5.99 0 0 0 3.949 2.345 5.987 5.987 0 0 0 5.105-1.702l2.995-2.994a5.992 5.992 0 0 0 1.695-4.285 5.976 5.976 0 0 0-1.831-4.211 5.99 5.99 0 0 0-6.431-1.242 6.003 6.003 0 0 0-1.905 1.24l-1.731 1.721a.999.999 0 1 0 1.41 1.418l1.709-1.699a3.985 3.985 0 0 1 2.761-1.123 3.975 3.975 0 0 1 2.799 1.122 3.997 3.997 0 0 1 .111 5.644l-3.005 3.006a3.982 3.982 0 0 1-3.395 1.126 3.987 3.987 0 0 1-2.632-1.563A1 1 0 0 0 9.201 13.6zm5.602-3.198a5.99 5.99 0 0 0-3.949-2.345 5.987 5.987 0 0 0-5.105 1.702l-2.995 2.994a5.992 5.992 0 0 0-1.695 4.285 5.976 5.976 0 0 0 1.831 4.211 5.99 5.99 0 0 0 6.431 1.242 6.003 6.003 0 0 0 1.905-1.24l1.723-1.723a.999.999 0 1 0-1.414-1.414L9.836 19.81a3.985 3.985 0 0 1-2.761 1.123 3.975 3.975 0 0 1-2.799-1.122 3.997 3.997 0 0 1-.111-5.644l3.005-3.006a3.982 3.982 0 0 1 3.395-1.126 3.987 3.987 0 0 1 2.632 1.563 1 1 0 0 0 1.602-1.198z"
-              ></path>
-            </svg></a
-          >
-        </h2><ul>
-          <li>
-            <a href="https://brew.sh">Homebrew</a> - The Missing Package Manager for
-            macOS (or Linux)
-          </li><li>
-            <a href="https://github.com/cli/cli">GitHub CLI</a> - GitHub on the command
-            line. Great for creating PRs, etc.
-          </li><li>
-            <a href="https://github.com/nvm-sh/nvm">nvm</a> - Node version manager
-          </li><li>
-            <a href="https://github.com/cloudflare/cloudflared">cloudflared</a> -
-            Exposes local servers to the public internet over secure tunnels
-          </li>
-        </ul><h2 id="heading-office-setup">
-          Office Setup<a
-            href="#heading-office-setup"
-            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
-          >
-            <span class="sr-only"> permalink</span>
-            <svg
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9.199 13.599a5.99 5.99 0 0 0 3.949 2.345 5.987 5.987 0 0 0 5.105-1.702l2.995-2.994a5.992 5.992 0 0 0 1.695-4.285 5.976 5.976 0 0 0-1.831-4.211 5.99 5.99 0 0 0-6.431-1.242 6.003 6.003 0 0 0-1.905 1.24l-1.731 1.721a.999.999 0 1 0 1.41 1.418l1.709-1.699a3.985 3.985 0 0 1 2.761-1.123 3.975 3.975 0 0 1 2.799 1.122 3.997 3.997 0 0 1 .111 5.644l-3.005 3.006a3.982 3.982 0 0 1-3.395 1.126 3.987 3.987 0 0 1-2.632-1.563A1 1 0 0 0 9.201 13.6zm5.602-3.198a5.99 5.99 0 0 0-3.949-2.345 5.987 5.987 0 0 0-5.105 1.702l-2.995 2.994a5.992 5.992 0 0 0-1.695 4.285 5.976 5.976 0 0 0 1.831 4.211 5.99 5.99 0 0 0 6.431 1.242 6.003 6.003 0 0 0 1.905-1.24l1.723-1.723a.999.999 0 1 0-1.414-1.414L9.836 19.81a3.985 3.985 0 0 1-2.761 1.123 3.975 3.975 0 0 1-2.799-1.122 3.997 3.997 0 0 1-.111-5.644l3.005-3.006a3.982 3.982 0 0 1 3.395-1.126 3.987 3.987 0 0 1 2.632 1.563 1 1 0 0 0 1.602-1.198z"
-              ></path>
-            </svg></a
-          >
-        </h2><ul>
-          <li>
-            2 x <a href="https://benqurl.biz/4kZ3mRx"
-              >BenQ RD280U 28" 4K monitor</a
-            >. One is on a stand and the other is on a swivel arm.
-          </li><li>
-            <a
-              href="https://motiongrey.com/products/copy-of-motion-series-standing-desk-with-table-top?variant=39702825730141"
-              >MotionGrey Adjustable Dual Motors Electric Sit to Stand Computer
-              Office Standing Desk</a
-            > - I snagged it at a great price. It appears to go on sale often.
-          </li><li>
-            Herman Miller Aeron office chair. These are pricey, so look out for
-            one on online classifieds. I snagged one with many new parts for
-            just under a third of the price.
-          </li><li>
-            <a href="https://amzn.to/3WzPZf4">Rollerblade style caster wheels</a
-            > (for office chair). Thanks for the suggestion <a
-              href="https://www.ergosesh.com/">ErgoSesh</a
-            >!
-          </li><li>MacBook Pro 14" (2022)</li><li>
-            <a href="https://amzn.to/3yqPvA4">Logitech MX Master 3 mouse</a>
-          </li><li>
-            <a href="https://amzn.to/3SzSNba"
-              >Logitech ERGO K860 wireless split keyboard</a
-            >
-          </li><li>
-            <a href="https://amzn.to/4ftsjBT">Sony WH-1000XM3</a> headphones - I snagged
-            them during Boxing Day week.
-          </li><li>
-            <a
-              href="https://www.shure.com/en-US/products/microphones/mv7?variant=MV7%252B-K"
-              >Shure MV7+ Microphone</a
-            > - I use this for all my live streams and recordings. It's a great mic
-            and I love the built in USB-C port. You can also use it with XLR if you
-            want to go that route, but I don't atm. I opted for white to contrast
-            with my black boom arm.
-          </li><li>
-            <a href="https://amzn.to/3WNsYqx"
-              >RODE PSA1 Swivel Mount Studio Microphone Boom Arm</a
-            >
-          </li><li>
-            <a href="https://amzn.to/3yqdpvt"
-              >Rain Design mStand360 Laptop Stand with Swivel Base</a
-            >
-          </li><li>iPhone 14 camera for streaming and recording video</li><li>
-            <a href="https://amzn.to/3Ac5XVt"
-              >Lamicall Gooseneck Phone Holder Bed</a
-            > - I use this to hold my iPhone when I use it for a camera while live
-            streaming or recording video.
-          </li><li>
-            <a href="https://amzn.to/4dacHSa"
-              >Anker USB C Hub, 5-In-1 USB C Adapter</a
-            >
-          </li><li>
-            <a href="https://amzn.to/3WQvQCQ"
-              >Powered USB 3.0 Hub, WENTER 11-Port USB Data Hub</a
-            >
-          </li><li>
-            <a href="https://amzn.to/3WOt1Ck"
-              >Logitech Litra Glow Premium LED Streaming Light with TrueSoft</a
-            > - Lighting for live streaming and recording video. I have two of these
-            and they're awesome.
-          </li><li>
-            <a href="https://amzn.to/3yguEj0"
-              >Seagate Portable 5TB External Hard Drive HDD</a
-            >
-          </li><li>
-            <a href="https://amzn.to/3YyiUTw">Topo Comfort Mat by Ergodriven</a> standing
-            desk mat
-          </li><li>
-            <a href="https://amzn.to/3YrjjXZ">LEVOIT Air Purifier Core 300</a>
-          </li><li>
-            <a href="https://amzn.to/3YuyMq2">Elgato Streamd Deck XL</a> - Great for
-            controlling scenes in OBS, dropping links and messages in chat, but I
-            also use it for other apps like Spotify and Zoom.
-          </li><li>
-            <a href="https://amzn.to/3ysolsC"
-              >Quartet Glass Desktop Computer Pad, 18 inch x 6 inch</a
-            >, a handy desk whiteboard. Thanks for the suggestion <a
-              href="https://jhey.dev">Jhey</a
-            >!
-          </li>
-        </ul><h2 id="heading-travel-gear">
-          Travel Gear<a
-            href="#heading-travel-gear"
-            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
-          >
-            <span class="sr-only"> permalink</span>
-            <svg
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9.199 13.599a5.99 5.99 0 0 0 3.949 2.345 5.987 5.987 0 0 0 5.105-1.702l2.995-2.994a5.992 5.992 0 0 0 1.695-4.285 5.976 5.976 0 0 0-1.831-4.211 5.99 5.99 0 0 0-6.431-1.242 6.003 6.003 0 0 0-1.905 1.24l-1.731 1.721a.999.999 0 1 0 1.41 1.418l1.709-1.699a3.985 3.985 0 0 1 2.761-1.123 3.975 3.975 0 0 1 2.799 1.122 3.997 3.997 0 0 1 .111 5.644l-3.005 3.006a3.982 3.982 0 0 1-3.395 1.126 3.987 3.987 0 0 1-2.632-1.563A1 1 0 0 0 9.201 13.6zm5.602-3.198a5.99 5.99 0 0 0-3.949-2.345 5.987 5.987 0 0 0-5.105 1.702l-2.995 2.994a5.992 5.992 0 0 0-1.695 4.285 5.976 5.976 0 0 0 1.831 4.211 5.99 5.99 0 0 0 6.431 1.242 6.003 6.003 0 0 0 1.905-1.24l1.723-1.723a.999.999 0 1 0-1.414-1.414L9.836 19.81a3.985 3.985 0 0 1-2.761 1.123 3.975 3.975 0 0 1-2.799-1.122 3.997 3.997 0 0 1-.111-5.644l3.005-3.006a3.982 3.982 0 0 1 3.395-1.126 3.987 3.987 0 0 1 2.632 1.563 1 1 0 0 0 1.602-1.198z"
-              ></path>
-            </svg></a
-          >
-        </h2><ul>
-          <li><a href="https://amzn.to/3LRrEfT">Roost Laptop Stand</a></li><li>
-            <a href="https://amzn.to/3SB8Yom">Anker USB-C to HDMI Adapter</a>
-          </li><li>
-            <a href="https://www.amazon.ca/gp/product/B07YYTHMCG"
-              >Jelly Comb Ultra Slim Folding Bluetooth Keyboard</a
-            >
-          </li><li>
-            <a href="https://amzn.to/3A5W4bE"
-              >Anker Magnetic Battery, 10,000 mAh Foldable Wireless Portable
-              Charger</a
-            >
-          </li><li>
-            <a href="https://amzn.to/3yB2dMB">Apple Magic Trackpad (White)</a>
-          </li><li>
-            <a href="https://www.airalo.com/">Airalo</a> eSIMs for travel. A must
-            have when travelling outside of your home country. Use the referral code
-            <code>NICK1387</code> to get a discount off your first eSIM.
-          </li>
-        </ul><h2 id="heading-other">
-          Other<a
-            href="#heading-other"
-            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
-          >
-            <span class="sr-only"> permalink</span>
-            <svg
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9.199 13.599a5.99 5.99 0 0 0 3.949 2.345 5.987 5.987 0 0 0 5.105-1.702l2.995-2.994a5.992 5.992 0 0 0 1.695-4.285 5.976 5.976 0 0 0-1.831-4.211 5.99 5.99 0 0 0-6.431-1.242 6.003 6.003 0 0 0-1.905 1.24l-1.731 1.721a.999.999 0 1 0 1.41 1.418l1.709-1.699a3.985 3.985 0 0 1 2.761-1.123 3.975 3.975 0 0 1 2.799 1.122 3.997 3.997 0 0 1 .111 5.644l-3.005 3.006a3.982 3.982 0 0 1-3.395 1.126 3.987 3.987 0 0 1-2.632-1.563A1 1 0 0 0 9.201 13.6zm5.602-3.198a5.99 5.99 0 0 0-3.949-2.345 5.987 5.987 0 0 0-5.105 1.702l-2.995 2.994a5.992 5.992 0 0 0-1.695 4.285 5.976 5.976 0 0 0 1.831 4.211 5.99 5.99 0 0 0 6.431 1.242 6.003 6.003 0 0 0 1.905-1.24l1.723-1.723a.999.999 0 1 0-1.414-1.414L9.836 19.81a3.985 3.985 0 0 1-2.761 1.123 3.975 3.975 0 0 1-2.799-1.122 3.997 3.997 0 0 1-.111-5.644l3.005-3.006a3.982 3.982 0 0 1 3.395-1.126 3.987 3.987 0 0 1 2.632 1.563 1 1 0 0 0 1.602-1.198z"
-              ></path>
-            </svg></a
-          >
-        </h2><ul>
-          <li>
-            WISE for banking. I use it for my business. It's a great way to send
-            money internationally without the crazy fees. Use this referral code
-            to get started, <a href="https://wise.com/invite/dic/nicholast1738"
-              >wise.com/invite/dic/nicholast1738</a
-            >
-          </li>
-        </ul><h2 id="heading-health-and-training">
-          Health and Training<a
-            href="#heading-health-and-training"
-            class="inline-block text-(--color-theme-primary-glare) text-[0.8em] ml-[0.3em] mt-[0.2em] md:text-[0.6em] md:mt-[0.4em]"
-          >
-            <span class="sr-only"> permalink</span>
-            <svg
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9.199 13.599a5.99 5.99 0 0 0 3.949 2.345 5.987 5.987 0 0 0 5.105-1.702l2.995-2.994a5.992 5.992 0 0 0 1.695-4.285 5.976 5.976 0 0 0-1.831-4.211 5.99 5.99 0 0 0-6.431-1.242 6.003 6.003 0 0 0-1.905 1.24l-1.731 1.721a.999.999 0 1 0 1.41 1.418l1.709-1.699a3.985 3.985 0 0 1 2.761-1.123 3.975 3.975 0 0 1 2.799 1.122 3.997 3.997 0 0 1 .111 5.644l-3.005 3.006a3.982 3.982 0 0 1-3.395 1.126 3.987 3.987 0 0 1-2.632-1.563A1 1 0 0 0 9.201 13.6zm5.602-3.198a5.99 5.99 0 0 0-3.949-2.345 5.987 5.987 0 0 0-5.105 1.702l-2.995 2.994a5.992 5.992 0 0 0-1.695 4.285 5.976 5.976 0 0 0 1.831 4.211 5.99 5.99 0 0 0 6.431 1.242 6.003 6.003 0 0 0 1.905-1.24l1.723-1.723a.999.999 0 1 0-1.414-1.414L9.836 19.81a3.985 3.985 0 0 1-2.761 1.123 3.975 3.975 0 0 1-2.799-1.122 3.997 3.997 0 0 1-.111-5.644l3.005-3.006a3.982 3.982 0 0 1 3.395-1.126 3.987 3.987 0 0 1 2.632 1.563 1 1 0 0 0 1.602-1.198z"
-              ></path>
-            </svg></a
-          >
-        </h2><ul>
-          <li>
-            For my Canadian peeps. I've been ordering from <a
-              href="https://farm2fork.refr.cc/default/u/taylor?s=pppw&t=tw"
-              >Farm 2 Fork</a
-            > and it's been really great and high quality. Here's a <a
-              href="https://farm2fork.refr.cc/default/u/taylor?s=pppw&t=tw"
-              >referral link</a
-            > if you want to give it a go and get a discount!
-          </li><li>
-            <a href="https://www.nutratology.com/products/creatine-monohydrate"
-              >Creatine Monohydrate from Nutratology</a
-            >. Use the discount code <code>NICK_10</code> when purchasing.
-          </li><li>
-            Kettlebells from <a href="https://matsuru.ca">Matsura</a>
-          </li>
-        </ul>
+          </h2>
+          <ul class="space-y-2 text-gray-700 list-disc pl-6">
+            <li>
+              For my Canadian peeps. I've been ordering from <a
+                href="https://farm2fork.refr.cc/default/u/taylor?s=pppw&t=tw"
+                >Farm 2 Fork</a
+              > and it's been really great and high quality. Here's a <a
+                href="https://farm2fork.refr.cc/default/u/taylor?s=pppw&t=tw"
+                >referral link</a
+              > if you want to give it a go and get a discount!
+            </li><li>
+              <a
+                href="https://www.nutratology.com/products/creatine-monohydrate"
+                >Creatine Monohydrate from Nutratology</a
+              >. Use the discount code <code>NICK_10</code> when purchasing.
+            </li>
+            <li>
+              Kettlebells from <a href="https://matsuru.ca">Matsura</a>
+            </li>
+          </ul>
+        </section>
       </div>
     </article>
   </main>
