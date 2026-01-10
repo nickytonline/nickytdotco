@@ -13,7 +13,7 @@ const { year, posts } = Astro.props;
   <!-- Posts List -->
   <div class="space-y-1">
     {
-      posts.map((post: any) => (
+      posts.map((post: { url: string; title: string; date: string; readTime: string }) => (
         <div class="py-5 px-6">
           <div class="flex items-baseline justify-between gap-6">
             <div class="flex-1">

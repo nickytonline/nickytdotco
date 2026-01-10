@@ -7,7 +7,9 @@
       "Bash(grep:*)",
       "mcp__ide__getDiagnostics",
       "Bash(npm install:*)",
-      "WebFetch(domain:nickyt.online)"
+      "WebFetch(domain:nickyt.online)",
+      "Bash(rm:*)",
+      "Bash(npm run lint:*)"
     ]
   }
 }

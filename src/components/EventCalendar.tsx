@@ -61,13 +61,12 @@ const EventCalendar = ({
 
   return (
     <nav ref={navRef} className="relative group w-fit">
-      <a
-        href="#"
+      <button
         className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-4 py-2 hover:bg-white hover:text-pink-600 border-2 border-pink-600 hover:border-pink-600 transition-colors focus:outline-none"
       >
         <Plus className="w-4 h-4" />
         <span>Add to Calendar</span>
-      </a>
+      </button>
       <div
         className={`absolute invisible opacity-0 scale-95 transition-all duration-200 ease-out transform group-hover:visible group-hover:opacity-100 group-hover:scale-100 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:scale-100 z-50 ${
           dropdownPosition === "above"

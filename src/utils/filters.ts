@@ -107,7 +107,7 @@ interface Post {
   data: {
     series?: Series;
   };
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
