@@ -136,23 +136,23 @@ try {
 {
   embedType === "youtube" && "videoId" in embedProps ? (
     <YouTubeEmbed
-      videoId={embedProps.videoId}
-      startTime={embedProps.startTime}
+      videoId={embedProps.videoId as string}
+      startTime={embedProps.startTime as string | undefined}
     />
   ) : embedType === "twitter" && "tweetId" in embedProps ? (
-    <TwitterEmbed tweetId={embedProps.tweetId} />
+    <TwitterEmbed tweetId={embedProps.tweetId as string} />
   ) : embedType === "codepen" ? (
     <CodePenEmbed url={url} />
   ) : embedType === "devlink" ? (
     <DevLinkEmbed url={url} />
   ) : embedType === "twitch" && "videoId" in embedProps ? (
-    <TwitchEmbed videoId={embedProps.videoId} />
+    <TwitchEmbed videoId={embedProps.videoId as string} />
   ) : embedType === "vimeo" && "videoId" in embedProps ? (
-    <VimeoEmbed videoId={embedProps.videoId} />
+    <VimeoEmbed videoId={embedProps.videoId as string} />
   ) : embedType === "spotify" && "uri" in embedProps ? (
-    <SpotifyEmbed uri={embedProps.uri} />
+    <SpotifyEmbed uri={embedProps.uri as string} />
   ) : embedType === "codesandbox" && "sandboxId" in embedProps ? (
-    <CodeSandboxEmbed sandboxId={embedProps.sandboxId} />
+    <CodeSandboxEmbed sandboxId={embedProps.sandboxId as string} />
   ) : embedType === "instagram" ? (
     <InstagramEmbed url={url} />
   ) : (
