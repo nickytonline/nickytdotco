@@ -96,11 +96,7 @@ const displayTag = originalTagCase || tag;
                       {talk.data.venue.name}
                     </div>
                     <div class="mt-2">
-                      <TagList
-                        tags={talk.data.tags || []}
-                        currentTag={tag}
-                        limit={5}
-                      />
+                      <TagList tags={talk.data.tags || []} limit={5} />
                     </div>
                   </div>
                 </article>
