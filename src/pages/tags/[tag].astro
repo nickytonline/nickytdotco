@@ -86,193 +86,191 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
   title={`Content tagged with "${tag}" | Nick Taylor`}
   socialImage="/assets/images/tags.jpg"
 >
-  <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
-    <div class="mb-12">
-      <SectionHeader
-        title={`Content tagged with "${displayTag}"`}
-        headingLevel={1}
-      />
-      <p class="text-xl text-muted-foreground mt-6">
-        Found {totalCount}
-        {totalCount === 1 ? "item" : "items"} with this tag
-        {
-          sortedBlogPosts.length > 0 &&
-            sortedTalks.length > 0 &&
-            ` (${sortedBlogPosts.length} ${sortedBlogPosts.length === 1 ? "post" : "posts"}, ${sortedTalks.length} ${sortedTalks.length === 1 ? "talk" : "talks"})`
-        }
-      </p>
-
+  <div class="mb-12">
+    <SectionHeader
+      title={`Content tagged with "${displayTag}"`}
+      headingLevel={1}
+    />
+    <p class="text-xl text-muted-foreground mt-6">
+      Found {totalCount}
+      {totalCount === 1 ? "item" : "items"} with this tag
       {
-        sortedBlogPosts.length > 0 && sortedTalks.length > 0 && (
-          <div class="mt-6 flex flex-wrap items-center gap-4">
-            <a
-              href={`/tags/${tag}`}
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-pink-600 text-white dark:bg-pink-500 focus:outline-none"
-              aria-current="page"
-            >
-              All Content
-            </a>
-            <a
-              href={`/tags/${tag}/blog`}
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
-            >
-              Blog Posts
-            </a>
-            <a
-              href={`/tags/${tag}/talks`}
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
-            >
-              Talks
-            </a>
-          </div>
-        )
+        sortedBlogPosts.length > 0 &&
+          sortedTalks.length > 0 &&
+          ` (${sortedBlogPosts.length} ${sortedBlogPosts.length === 1 ? "post" : "posts"}, ${sortedTalks.length} ${sortedTalks.length === 1 ? "talk" : "talks"})`
       }
-
-      <div class="mt-6">
-        <a
-          href="/tags"
-          class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
-        >
-          View all tags<span class="text-2xl">→</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="space-y-12">
-      {
-        sortedBlogPosts.length > 0 && (
-          <section>
-            <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
-              <div>
-                <h2 class="text-3xl font-bold text-foreground leading-none">
-                  Blog Posts
-                </h2>
-                <p class="text-muted-foreground mt-2">
-                  {sortedBlogPosts.length}{" "}
-                  {sortedBlogPosts.length === 1 ? "post" : "posts"}
-                </p>
-              </div>
-            </div>
-            <div class="space-y-1">
-              {sortedBlogPosts.map((post) => {
-                const slug = post.slug;
-                const readTime = post.data.reading_time_minutes
-                  ? `${post.data.reading_time_minutes} min read`
-                  : null;
-                return (
-                  <div class="py-5 px-6">
-                    <div class="flex items-baseline justify-between gap-6">
-                      <div class="flex-1">
-                        <h3 class="text-xl font-bold">
-                          <a
-                            href={`/blog/${slug}`}
-                            class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
-                          >
-                            {post.data.title}
-                          </a>
-                        </h3>
-                        <div class="flex items-center gap-4 text-muted-foreground mt-2">
-                          <span class="italic text-base">
-                            {dateFilter(post.data.date)}
-                          </span>
-                          {readTime && (
-                            <>
-                              <span class="text-pink-600 dark:text-pink-400 font-semibold">
-                                •
-                              </span>
-                              <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
-                                {readTime}
-                              </span>
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        )
-      }
-
-      {
-        sortedTalks.length > 0 && (
-          <section>
-            <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
-              <div>
-                <h2 class="text-3xl font-bold text-foreground leading-none">
-                  Talks
-                </h2>
-                <p class="text-muted-foreground mt-2">
-                  {sortedTalks.length}{" "}
-                  {sortedTalks.length === 1 ? "talk" : "talks"}
-                </p>
-              </div>
-            </div>
-            <div class="space-y-1">
-              {sortedTalks.map((talk) => {
-                const slug = talk.slug;
-                return (
-                  <div class="py-5 px-6">
-                    <div class="flex items-baseline justify-between gap-6">
-                      <div class="flex-1">
-                        <h3 class="text-xl font-bold">
-                          <a
-                            href={`/talks/${slug}`}
-                            class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
-                          >
-                            {talk.data.title}
-                          </a>
-                        </h3>
-                        <div class="flex items-center gap-4 text-muted-foreground mt-2">
-                          <span class="italic text-base">
-                            {dateFilter(talk.data.date)}
-                          </span>
-                          <span class="text-pink-600 dark:text-pink-400 font-semibold">
-                            •
-                          </span>
-                          <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
-                            {talk.data.venue.name}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        )
-      }
-
-      {
-        totalCount === 0 && (
-          <div class="text-center py-12">
-            <p class="text-xl text-muted-foreground">
-              No content found with this tag.
-            </p>
-          </div>
-        )
-      }
-    </div>
-    <p class="text-center">
-      Photo by
-      <a
-        href="https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Angèle Kamp
-      </a>
-      on
-      <a
-        href="https://unsplash.com/photos/four-paper-card-tags-KaeaUITiWnc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Unsplash
-      </a>
     </p>
-  </main>
+
+    {
+      sortedBlogPosts.length > 0 && sortedTalks.length > 0 && (
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          <a
+            href={`/tags/${tag}`}
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-pink-600 text-white dark:bg-pink-500 focus:outline-none"
+            aria-current="page"
+          >
+            All Content
+          </a>
+          <a
+            href={`/tags/${tag}/blog`}
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
+          >
+            Blog Posts
+          </a>
+          <a
+            href={`/tags/${tag}/talks`}
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
+          >
+            Talks
+          </a>
+        </div>
+      )
+    }
+
+    <div class="mt-6">
+      <a
+        href="/tags"
+        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
+      >
+        View all tags<span class="text-2xl">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="space-y-12">
+    {
+      sortedBlogPosts.length > 0 && (
+        <section>
+          <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
+            <div>
+              <h2 class="text-3xl font-bold text-foreground leading-none">
+                Blog Posts
+              </h2>
+              <p class="text-muted-foreground mt-2">
+                {sortedBlogPosts.length}{" "}
+                {sortedBlogPosts.length === 1 ? "post" : "posts"}
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1">
+            {sortedBlogPosts.map((post) => {
+              const slug = post.slug;
+              const readTime = post.data.reading_time_minutes
+                ? `${post.data.reading_time_minutes} min read`
+                : null;
+              return (
+                <div class="py-5 px-6">
+                  <div class="flex items-baseline justify-between gap-6">
+                    <div class="flex-1">
+                      <h3 class="text-xl font-bold">
+                        <a
+                          href={`/blog/${slug}`}
+                          class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
+                        >
+                          {post.data.title}
+                        </a>
+                      </h3>
+                      <div class="flex items-center gap-4 text-muted-foreground mt-2">
+                        <span class="italic text-base">
+                          {dateFilter(post.data.date)}
+                        </span>
+                        {readTime && (
+                          <>
+                            <span class="text-pink-600 dark:text-pink-400 font-semibold">
+                              •
+                            </span>
+                            <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
+                              {readTime}
+                            </span>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      sortedTalks.length > 0 && (
+        <section>
+          <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
+            <div>
+              <h2 class="text-3xl font-bold text-foreground leading-none">
+                Talks
+              </h2>
+              <p class="text-muted-foreground mt-2">
+                {sortedTalks.length}{" "}
+                {sortedTalks.length === 1 ? "talk" : "talks"}
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1">
+            {sortedTalks.map((talk) => {
+              const slug = talk.slug;
+              return (
+                <div class="py-5 px-6">
+                  <div class="flex items-baseline justify-between gap-6">
+                    <div class="flex-1">
+                      <h3 class="text-xl font-bold">
+                        <a
+                          href={`/talks/${slug}`}
+                          class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
+                        >
+                          {talk.data.title}
+                        </a>
+                      </h3>
+                      <div class="flex items-center gap-4 text-muted-foreground mt-2">
+                        <span class="italic text-base">
+                          {dateFilter(talk.data.date)}
+                        </span>
+                        <span class="text-pink-600 dark:text-pink-400 font-semibold">
+                          •
+                        </span>
+                        <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
+                          {talk.data.venue.name}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      totalCount === 0 && (
+        <div class="text-center py-12">
+          <p class="text-xl text-muted-foreground">
+            No content found with this tag.
+          </p>
+        </div>
+      )
+    }
+  </div>
+  <p class="text-center">
+    Photo by
+    <a
+      href="https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Angèle Kamp
+    </a>
+    on
+    <a
+      href="https://unsplash.com/photos/four-paper-card-tags-KaeaUITiWnc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Unsplash
+    </a>
+  </p>
 </Layout>

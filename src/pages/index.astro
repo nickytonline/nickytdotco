@@ -62,52 +62,50 @@ export const prerender = false;
   title="Welcome to Nick Taylor's website"
   socialImage="/assets/talks/talks.jpg"
 >
-  <main id="main" class="max-w-5xl mx-auto px-6 py-12">
-    <div class="space-y-20">
-      <section>
-        <SectionHeader title="Latest Content" headingLevel={1} />
-        <div class="grid gap-6 xl:gap-8">
-          {
-            recentPosts.map((post) => (
-              <BlogPostCard
-                title={post.data.title}
-                date={dateFilter(post.data.date)}
-                image={post.data.cover_image}
-                href={`/blog/${post.slug}`}
-              />
-            ))
-          }
-        </div>
-        <a
-          href="/archive"
-          class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600"
-        >
-          More blog posts<span class="text-2xl">→</span>
-        </a>
-      </section>
+  <div class="space-y-20">
+    <section>
+      <SectionHeader title="Latest Content" headingLevel={1} />
+      <div class="grid gap-6 xl:gap-8">
+        {
+          recentPosts.map((post) => (
+            <BlogPostCard
+              title={post.data.title}
+              date={dateFilter(post.data.date)}
+              image={post.data.cover_image}
+              href={`/blog/${post.slug}`}
+            />
+          ))
+        }
+      </div>
+      <a
+        href="/archive"
+        class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black hover:text-pink-600"
+      >
+        More blog posts<span class="text-2xl">→</span>
+      </a>
+    </section>
 
-      <section>
-        {
-          errorMessage ? (
-            <>
-              <SectionHeader title="Upcoming Live Streams" />
-              <p class="text-red-600">{errorMessage}</p>
-            </>
-          ) : null
-        }
-        {
-          !errorMessage && schedule.length > 0 ? (
-            <>
-              <SectionHeader title="Upcoming Live Streams" />
-              <StreamSchedule
-                schedule={schedule}
-                locale={locale}
-                timezone={timezone}
-              />
-            </>
-          ) : null
-        }
-      </section>
-    </div>
-  </main>
+    <section>
+      {
+        errorMessage ? (
+          <>
+            <SectionHeader title="Upcoming Live Streams" />
+            <p class="text-red-600">{errorMessage}</p>
+          </>
+        ) : null
+      }
+      {
+        !errorMessage && schedule.length > 0 ? (
+          <>
+            <SectionHeader title="Upcoming Live Streams" />
+            <StreamSchedule
+              schedule={schedule}
+              locale={locale}
+              timezone={timezone}
+            />
+          </>
+        ) : null
+      }
+    </section>
+  </div>
 </Layout>

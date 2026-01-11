@@ -62,7 +62,9 @@ const { origin } = new URL(Astro.request.url);
     <SkipLink id="main" />
     <div>
       <Header />
-      <slot />
+      <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
+        <slot />
+      </main>
       <footer class="pt-8 text-center">
         <p class="text-lg text-muted-foreground">
           Want to stay updated with tech tips? Check out my newsletter:

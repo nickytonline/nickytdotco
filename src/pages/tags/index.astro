@@ -47,103 +47,99 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
 ---
 
 <Layout title="Tags | Nick Taylor" socialImage="/assets/images/tags.jpg">
-  <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
-    <div class="mb-12">
-      <SectionHeader title="Tags" />
-      <p class="text-xl text-muted-foreground mt-6">
-        Explore content by topic — from web development and AI to developer
-        tooling and beyond.
-      </p>
-
-      <div class="mt-6 flex flex-wrap items-center gap-4">
-        <a
-          href="/tags"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-pink-600 text-white dark:bg-pink-500 focus:outline-none"
-          aria-current="page"
-        >
-          All Tags
-        </a>
-        <a
-          href="/tags/blog"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
-        >
-          Blog Posts
-        </a>
-        <a
-          href="/tags/talks"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
-        >
-          Talks
-        </a>
-      </div>
-    </div>
-
-    <div class="space-y-16">
-      <section>
-        <div
-          class="mb-8 pb-1 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center"
-        >
-          <div>
-            <h2 class="text-3xl font-bold text-foreground">Popular Tags</h2>
-            <p class="text-muted-foreground mt-2">
-              Most frequently used topics
-            </p>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          {
-            sortedTags
-              .slice(0, 10)
-              .map(([tag, count]) => <Tag tag={tag} count={count} />)
-          }
-        </div>
-      </section>
-
-      <section>
-        <div
-          class="mb-8 pb-1 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center"
-        >
-          <div>
-            <h2 class="text-3xl font-bold text-foreground">All Tags</h2>
-            <p class="text-muted-foreground mt-2">
-              {alphabeticalTags.length} topics in alphabetical order
-            </p>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          {
-            alphabeticalTags.map(([tag, count]) => (
-              <Tag tag={tag} count={count} />
-            ))
-          }
-        </div>
-      </section>
-
-      {
-        sortedTags.length === 0 && (
-          <div class="text-center py-12">
-            <p class="text-xl text-gray-500">No tags found.</p>
-          </div>
-        )
-      }
-    </div>
-    <p class="text-center">
-      Photo by
-      <a
-        href="https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Angèle Kamp
-      </a>
-      on
-      <a
-        href="https://unsplash.com/photos/four-paper-card-tags-KaeaUITiWnc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Unsplash
-      </a>
+  <div class="mb-12">
+    <SectionHeader title="Tags" />
+    <p class="text-xl text-muted-foreground mt-6">
+      Explore content by topic — from web development and AI to developer
+      tooling and beyond.
     </p>
-  </main>
+
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <a
+        href="/tags"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-pink-600 text-white dark:bg-pink-500 focus:outline-none"
+        aria-current="page"
+      >
+        All Tags
+      </a>
+      <a
+        href="/tags/blog"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
+      >
+        Blog Posts
+      </a>
+      <a
+        href="/tags/talks"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
+      >
+        Talks
+      </a>
+    </div>
+  </div>
+
+  <div class="space-y-16">
+    <section>
+      <div
+        class="mb-8 pb-1 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center"
+      >
+        <div>
+          <h2 class="text-3xl font-bold text-foreground">Popular Tags</h2>
+          <p class="text-muted-foreground mt-2">Most frequently used topics</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {
+          sortedTags
+            .slice(0, 10)
+            .map(([tag, count]) => <Tag tag={tag} count={count} />)
+        }
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="mb-8 pb-1 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center"
+      >
+        <div>
+          <h2 class="text-3xl font-bold text-foreground">All Tags</h2>
+          <p class="text-muted-foreground mt-2">
+            {alphabeticalTags.length} topics in alphabetical order
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {
+          alphabeticalTags.map(([tag, count]) => (
+            <Tag tag={tag} count={count} />
+          ))
+        }
+      </div>
+    </section>
+
+    {
+      sortedTags.length === 0 && (
+        <div class="text-center py-12">
+          <p class="text-xl text-gray-500">No tags found.</p>
+        </div>
+      )
+    }
+  </div>
+  <p class="text-center">
+    Photo by
+    <a
+      href="https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Angèle Kamp
+    </a>
+    on
+    <a
+      href="https://unsplash.com/photos/four-paper-card-tags-KaeaUITiWnc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Unsplash
+    </a>
+  </p>
 </Layout>
