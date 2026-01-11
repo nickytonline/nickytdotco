@@ -14,7 +14,7 @@ interface Props {
 const {
   title,
   metaDesc = "Nick Taylor (@nickytonline) - Software developer sharing blog posts, live streams, conference talks, and open source.",
-  socialImage,
+  socialImage = "/assets/images/page-og/home.jpg",
 } = Astro.props;
 const { origin } = new URL(Astro.request.url);
 ---
