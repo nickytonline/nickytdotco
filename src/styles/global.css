@@ -176,8 +176,9 @@ nav a:not([aria-current="page"]) {
   @apply no-underline;
 }
 
-nav a:not([aria-current="page"]):hover {
-  @apply decoration-inherit;
+nav a:not([aria-current="page"]):hover,
+nav a:not([aria-current="page"]):focus {
+  @apply underline decoration-pink-600 dark:decoration-pink-400 decoration-4;
 }
 
 @theme inline {
