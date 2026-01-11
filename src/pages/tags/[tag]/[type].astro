@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../../layouts/MainLayout.astro";
 import SectionHeader from "../../../components/SectionHeader.astro";
 import { dateFilter } from "../../../utils/filters";
@@ -36,8 +36,8 @@ export async function getStaticPaths() {
   const paths: Array<{
     params: { tag: string; type: string };
     props: {
-      talks: unknown[];
-      blogPosts: unknown[];
+      talks: CollectionEntry<"talks">[];
+      blogPosts: CollectionEntry<"blog">[];
       originalTagCase: string;
       contentType: string;
     };
