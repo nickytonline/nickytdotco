@@ -25,7 +25,7 @@
     "@astrojs/rss": "^4.0.14",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "@varlock/astro-integration": "^0.1.0",
     "astro": "^5.16.8",
