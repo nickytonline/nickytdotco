@@ -30,7 +30,10 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
 );
 ---
 
-<Layout title="Blog Post Tags | Nick Taylor">
+<Layout
+  title="Blog Post Tags | Nick Taylor"
+  socialImage="/assets/images/tags.jpg"
+>
   <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
     <div class="mb-12">
       <SectionHeader title="Blog Post Tags" />
@@ -111,5 +114,23 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
         )
       }
     </div>
+    <p class="text-center">
+      Photo by
+      <a
+        href="https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Angèle Kamp
+      </a>
+      on
+      <a
+        href="https://unsplash.com/photos/four-paper-card-tags-KaeaUITiWnc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+    </p>
   </main>
 </Layout>

@@ -112,7 +112,10 @@ const contentTypeLabel = contentType === "blog" ? "Blog Posts" : "Talks";
 const totalCount = sortedTalks.length + sortedBlogPosts.length;
 ---
 
-<Layout title={`${contentTypeLabel} tagged with "${tag}" | Nick Taylor`}>
+<Layout
+  title={`${contentTypeLabel} tagged with "${tag}" | Nick Taylor`}
+  socialImage="/assets/images/tags.jpg"
+>
   <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
     <div class="mb-12">
       <SectionHeader
@@ -269,5 +272,23 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
         )
       }
     </div>
+    <p class="text-center">
+      Photo by
+      <a
+        href="https://unsplash.com/@angelekamp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Angèle Kamp
+      </a>
+      on
+      <a
+        href="https://unsplash.com/photos/four-paper-card-tags-KaeaUITiWnc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+    </p>
   </main>
 </Layout>
