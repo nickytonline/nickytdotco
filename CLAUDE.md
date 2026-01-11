@@ -5,17 +5,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ### Setup
+
 ```bash
 npm install  # Requires Node.js 22+
 ```
 
 ### Development
+
 ```bash
 npm run dev      # Start dev server (uses ENV.PORT from varlock)
 npm run preview  # Preview production build locally
 ```
 
 ### Build & Validation
+
 ```bash
 npm run build         # Full build: format:check → astro check → astro build
 npm run format        # Format with Prettier and auto-fix ESLint issues
@@ -29,6 +32,7 @@ npm run lint:fix      # Auto-fix ESLint issues
 ## Architecture Overview
 
 ### Tech Stack
+
 - **Astro 5** (Static Site Generation) with Netlify adapter
 - **React 19** for interactive UI components (EventCalendar, SeriesNavigation, etc.)
 - **TypeScript** with strict mode and path aliases (`@/` → `./src/`)
@@ -38,6 +42,7 @@ npm run lint:fix      # Auto-fix ESLint issues
 - **Varlock** for type-safe environment variable management
 
 ### Project Structure
+
 ```
 src/
 ├── components/       # UI components (Astro & React)
@@ -73,6 +78,7 @@ src/
 ### Content Collections
 
 **Blog Posts** (`src/content/blog/`):
+
 - MDX format with Zod schema validation
 - Frontmatter fields:
   - `title` (required), `date` (required), `excerpt`, `description`
@@ -85,6 +91,7 @@ src/
   - Supports: Spotify, Twitch, Vimeo, CodePen, CodeSandbox, Instagram, GitHub, DevLinks, Buzzsprout
 
 **Talks** (`src/content/talks/`):
+
 - Conference talks, streams, and presentations
 - Schema includes: `title`, `date`, `venue` (name + URL), `tags`
 - Optional: `video` (URL + type + image), `slideDeck`, `sourceCode`, `additionalLinks`
@@ -92,31 +99,37 @@ src/
 ### Key Architectural Patterns
 
 **1. Static Generation with Dynamic Data**
+
 - All pages are statically generated (`output: "static"`)
 - External data (Airtable, YouTube RSS) fetched at build time
 - Netlify CDN caching headers set per-response
 
 **2. Dark Mode**
+
 - Class-based (`darkMode: "class"` in Tailwind config)
 - Theme toggle in `MainLayout.astro` with localStorage + system preference detection
 - Dark variants throughout component styling
 
 **3. Path Aliases**
+
 - Use `@/` for imports: `import { site } from "@/data/site"`
 - Configured in `tsconfig.json` and `astro.config.mjs`
 
 **4. Series Navigation**
+
 - Multi-part blog posts use `series` frontmatter
 - `SeriesNavigation.tsx` React component provides prev/next navigation
 - `seriesFilter()` utility in `filters.ts` handles complex series queries
 
 **5. Environment Variables**
+
 - Managed by Varlock (`varlock/env`)
 - Type-safe access via `ENV` object
 - Sensitive vars: `AIRTABLE_API_KEY`, `AIRTABLE_STREAM_GUEST_BASE_ID`
 - Auto-generated `env.d.ts` for IDE support
 
 **6. Markdown Processing Pipeline**
+
 ```
 MDX → Remark Plugins → Rehype Plugins → HTML
        ↓                 ↓
@@ -125,6 +138,7 @@ MDX → Remark Plugins → Rehype Plugins → HTML
 ```
 
 **7. External Integrations**
+
 - **Airtable**: Streaming guest schedule (`src/utils/schedule-utils.ts`)
   - Three stream types: "nickyt.live", "2-full-2-stack", "pomerium-live"
   - Filters guests from yesterday onwards
@@ -135,6 +149,7 @@ MDX → Remark Plugins → Rehype Plugins → HTML
 ### ESLint Configuration
 
 Uses flat config format (`eslint.config.js`):
+
 - `@eslint/js` recommended rules
 - `typescript-eslint` recommended rules
 - `eslint-plugin-astro` for Astro-specific linting
@@ -149,6 +164,7 @@ Uses flat config format (`eslint.config.js`):
 ### Styling System
 
 **Tailwind CSS v4** (`tailwind.config.cjs`):
+
 - Custom spacing scale: `100`, `300`, `500`, `600`, `700`, `800`, `900`, `max`
 - Custom colors: `primary`, `highlight`, `light`, `mid`, `dark`, `slate` + shades
 - Custom z-index: `300`, `400`, `500`, `600`, `700`
@@ -156,28 +172,32 @@ Uses flat config format (`eslint.config.js`):
 - Animation utilities via `tailwindcss-animate`
 
 **Global styles** (`src/styles/tailwind.css`):
+
 - Imports legacy custom CSS from `src/styles/legacy.css`
 - Prose styling for blog post content
 
 ### Deployment (Netlify)
 
 **Build Configuration** (`netlify.toml`):
+
 - Command: `npm run build`
 - Publish directory: `dist/`
 - Custom headers: `Permissions-Policy: interest-cohort=()`
 - 30+ redirect rules for:
   - Domain migrations (iamdeveloper.com → nickyt.co)
-  - Path redirects (/posts/* → /blog/*)
+  - Path redirects (/posts/_ → /blog/_)
   - External services (newsletter, Discord, Mastodon webfinger)
   - Short URLs for slides and demos
 
 **Environment Detection**:
+
 - Uses `process.env.CONTEXT` for Netlify environment
 - Timezone detection from Netlify geo context
 
 ## Common Workflows
 
 ### Adding a New Blog Post
+
 1. Create MDX file in `src/content/blog/`
 2. Add required frontmatter: `title`, `date`
 3. Optional: Add `tags`, `excerpt`, `cover_image`, `series`
@@ -185,6 +205,7 @@ Uses flat config format (`eslint.config.js`):
 5. Use custom directives for embeds: `::youtube{videoId="xxx"}`
 
 ### Creating a Multi-Part Series
+
 1. Add `series` to frontmatter:
    ```yaml
    series:
@@ -195,21 +216,25 @@ Uses flat config format (`eslint.config.js`):
 3. `SeriesNavigation` component will auto-generate prev/next links
 
 ### Adding a New Talk
+
 1. Create MDX file in `src/content/talks/`
 2. Required: `title`, `date`, `venue` (name + optional URL), `tags`
 3. Optional: Add `video`, `slideDeck`, `sourceCode`, `additionalLinks`
 
 ### Working with External Data
+
 - **Airtable schedule**: Modify `src/utils/schedule-utils.ts`
 - **YouTube feeds**: Modify `src/utils/youtube-utils.ts`
 - Both utils include caching headers for Netlify CDN
 
 ### Styling Components
+
 - Use Tailwind utility classes (refer to custom config for available values)
 - Dark mode: Add `dark:` variants to classes
 - Use `@/` path alias for imports: `import { cn } from "@/lib/utils"`
 
 ### Environment Variables
+
 - Add new vars to Varlock schema (see existing env files)
 - Access via `ENV.VARIABLE_NAME`
 - Restart dev server after changes
@@ -217,11 +242,13 @@ Uses flat config format (`eslint.config.js`):
 ## Important Notes
 
 ### Content Licensing
+
 - **Code**: MIT License (root LICENSE.txt)
 - **Blog Content**: Creative Commons Attribution 4.0 (src/content/CONTENT_LICENSE.txt)
 - Do not modify license files without explicit permission
 
 ### Build Requirements
+
 - Node.js 22+ required (`engines` in package.json)
 - Build fails if:
   - Prettier formatting is incorrect
@@ -229,12 +256,14 @@ Uses flat config format (`eslint.config.js`):
   - TypeScript type checking fails (`astro check`)
 
 ### Accessibility
+
 - Use semantic HTML elements
 - Include ARIA labels where appropriate
 - Test with keyboard navigation
 - ESLint will warn about a11y issues
 
 ### Performance Considerations
+
 - All pages are statically generated
 - External data fetched at build time (not runtime)
 - Use Netlify CDN caching headers for dynamic data
