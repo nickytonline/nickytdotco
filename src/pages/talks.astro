@@ -1,8 +1,10 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import { dateFilter } from "../utils/filters";
+import talksHeroImage from "../../public/assets/talks/talks.jpg";
 export const prerender = true;
 
 const talks = await getCollection("talks");
@@ -27,7 +29,7 @@ const years = Object.keys(talksByYear)
   .sort((a, b) => b - a);
 ---
 
-<Layout title="Talks | Nick Taylor">
+<Layout title="Talks | Nick Taylor" socialImage="/assets/talks/talks.jpg">
   <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
     <div class="mb-12">
       <SectionHeader title="Talks" headingLevel={1} />
