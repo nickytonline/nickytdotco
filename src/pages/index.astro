@@ -7,7 +7,6 @@ import {
   getStreamSchedule,
   type StreamGuestInfo,
 } from "../utils/schedule-utils";
-import { ENV } from "varlock/env";
 import { getCollection } from "astro:content";
 import { site } from "../data/site";
 import { dateFilter } from "../utils/filters";
@@ -33,8 +32,8 @@ let schedule: StreamGuestInfo[] = [];
 
 try {
   schedule = await getStreamSchedule({
-    apiKey: ENV.AIRTABLE_API_KEY,
-    baseId: ENV.AIRTABLE_STREAM_GUEST_BASE_ID,
+    apiKey: import.meta.env.AIRTABLE_API_KEY,
+    baseId: import.meta.env.AIRTABLE_STREAM_GUEST_BASE_ID,
   });
 } catch (e) {
   console.error("Error fetching stream schedule:", e);
