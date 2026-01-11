@@ -47,24 +47,40 @@ const currentPath = pathname.slice(1);
             </a>
           </li>
           <li class="relative group">
-            <button
-              type="button"
-              class="cursor-pointer border-0 bg-transparent p-0 hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none"
-              >Watch</button
+            <input
+              type="checkbox"
+              id="watch-menu-toggle"
+              class="peer sr-only"
+            />
+            <label
+              for="watch-menu-toggle"
+              aria-label="Close watch menu"
+              class="peer-checked:block peer-checked:md:hidden fixed inset-0 z-10 cursor-default hidden"
+            ></label>
+            <label
+              for="watch-menu-toggle"
+              class="cursor-pointer hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none"
+              >Watch</label
             >
             <div
-              class="absolute invisible opacity-0 transition-all duration-300 transform -translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 right-0 md:right-auto md:left-0 z-20"
+              class="absolute invisible opacity-0 transition-all duration-300 transform -translate-y-1 peer-checked:visible peer-checked:opacity-100 peer-checked:translate-y-0 md:group-hover:visible md:group-hover:opacity-100 md:group-hover:translate-y-0 md:group-focus-within:visible md:group-focus-within:opacity-100 md:group-focus-within:translate-y-0 right-0 md:right-auto md:left-0 z-20"
             >
               <ul
-                class="mt-4 p-4 grid gap-4 border border-border [&_a]:block [&_a]:w-full [&_a]:whitespace-nowrap [&_a:hover]:text-pink-600 [&_a:hover]:dark:text-pink-400 [&_a:hover]:underline [&_a:hover]:decoration-pink-600 [&_a:hover]:dark:decoration-pink-400 [&_a:hover]:decoration-4 [&_a:hover]:underline-offset-4 [&_a:focus]:text-pink-600 [&_a:focus]:dark:text-pink-400 [&_a:focus]:underline [&_a:focus]:decoration-pink-600 [&_a:focus]:dark:decoration-pink-400 [&_a:focus]:decoration-4 [&_a:focus]:underline-offset-4 [&_a:focus]:outline-none bg-background min-w-50 shadow-lg z-30 rounded-lg"
+                class="mt-4 p-4 grid gap-4 border border-border bg-background min-w-50 shadow-lg z-30 rounded-lg"
               >
                 <li>
-                  <a href="https://youtube.com/@nickytonline" target="_blank"
+                  <a
+                    href="https://youtube.com/@nickytonline"
+                    target="_blank"
+                    class="block w-full whitespace-nowrap hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none"
                     >YouTube</a
                   >
                 </li>
                 <li>
-                  <a href="https://twitch.tv/nickytonline" target="_blank"
+                  <a
+                    href="https://twitch.tv/nickytonline"
+                    target="_blank"
+                    class="block w-full whitespace-nowrap hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none"
                     >Twitch</a
                   >
                 </li>
@@ -72,6 +88,7 @@ const currentPath = pathname.slice(1);
                   <a
                     href="https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU"
                     target="_blank"
+                    class="block w-full whitespace-nowrap hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none"
                     >Guest Appearances
                   </a>
                 </li>
@@ -79,11 +96,15 @@ const currentPath = pathname.slice(1);
                   <a
                     href="https://cfe.dev/talkshow/2full2stack/"
                     target="_blank"
+                    class="block w-full whitespace-nowrap hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none"
                     >2 Full 2 Stack
                   </a>
                 </li>
                 <li>
-                  <a href="https://youtube.com/@pomerium_io" target="_blank"
+                  <a
+                    href="https://youtube.com/@pomerium_io"
+                    target="_blank"
+                    class="block w-full whitespace-nowrap hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none"
                     >Pomerium Live</a
                   >
                 </li>
