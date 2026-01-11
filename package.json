@@ -34,7 +34,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
     "luxon": "^3.7.2",
-    "marked": "^12.0.2",
+    "marked": "^17.0.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "rehype-autolink-headings": "^7.1.0",
