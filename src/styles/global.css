@@ -159,14 +159,17 @@ a:not([class]) {
   @apply decoration-pink-600;
   @apply dark:decoration-pink-400;
   @apply underline-offset-4;
+  @apply outline-none;
 }
 
 nav a[aria-current="page"],
-a:not([class]):hover {
+a:not([class]):hover,
+a:not([class]):focus {
   @apply decoration-pink-600;
   @apply dark:decoration-pink-400;
   @apply underline;
   @apply decoration-4;
+  @apply outline-none;
 }
 
 nav a:not([aria-current="page"]) {
