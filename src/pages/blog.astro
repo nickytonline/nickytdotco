@@ -46,6 +46,7 @@ const blogPostsByYear = years.map((year) => ({
 <MainLayout
   title="Blog Posts - Archive"
   metaDesc="All blog posts by Nick Taylor"
+  socialImage="/assets/images/blog.jpg"
 >
   <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
     <BlogArchiveHeader totalPosts={sortedPosts.length} />
@@ -57,5 +58,19 @@ const blogPostsByYear = years.map((year) => ({
         ))
       }
     </div>
+    <p class="text-center">
+      Open Graph image provided by
+      <a
+        href="https://unsplash.com/@retrosupply?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      >
+        RetroSupply
+      </a>
+      on
+      <a
+        href="https://unsplash.com/photos/vintage-teal-typewriter-beside-book-jLwVAUtLOAQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      >
+        Unsplash
+      </a>
+    </p>
   </main>
 </MainLayout>
