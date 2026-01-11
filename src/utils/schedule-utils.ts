@@ -45,45 +45,6 @@ export function getLocalizedDate({
   return new Date(date).toLocaleString(locale, options);
 }
 
-export function getLatestGuestMarkup({
-  guests,
-  locale,
-  timezone,
-}: {
-  guests: StreamGuestInfo[];
-  locale: string;
-  timezone: string;
-}) {
-  if (!guests) {
-    return ``;
-  }
-
-  return guests.reduce((acc, guest) => {
-    const { date, title, guestName } = guest;
-    const headingId = getHeadingId(guestName, title);
-    const guestDate = getLocalizedDate({
-      date,
-      locale,
-      timezone,
-      showTime: true,
-    });
-
-    return (
-      acc +
-      `
-    <ol class="post-list__items sf-flow pad-top-300" reversed>
-      <li class="post-list__item">
-        <h3 class="font-base leading-tight text-600 weight-mid">
-          <a href="/pages/stream-schedule/#${headingId}" class="post-list__link" rel="bookmark">${title}</a>
-        </h3>
-        <time datetime="${date}" class="text-500 gap-top-300 weight-mid">${guestDate}</time>
-      </li>
-    </ol>
-    `
-    );
-  }, '<h2 class="post-list__heading text-700 md:text-800">Upcoming Live Streams</h2>');
-}
-
 const GUEST_FIELDS = [
   "Date",
   "Name",
@@ -186,55 +147,6 @@ export async function getStreamSchedule({
   });
 
   return schedule;
-}
-
-export type CfeScheduleItem = {
-  type: "2-full-2-stack";
-  title: string | undefined;
-  link: string | undefined;
-  description: string;
-  date: string;
-  ogImage: string;
-};
-
-async function getOgImage(url: string) {
-  try {
-    const response = await fetch(url);
-    const html = await response.text();
-    const match = html.match(
-      /<meta.+property=['"]og:image['"].+content=['"]([^"']+)['"]/
-    );
-
-    return match?.[1] ?? "";
-  } catch (e) {
-    console.error(e);
-    return "";
-  }
-}
-
-export async function get2Full2StackStreamSchedule() {
-  const parser = new Parser();
-
-  const feed = await parser.parseURL("https://cfe.dev/rss.xml");
-
-  const items = feed.items
-    .filter(
-      (item) =>
-        item.link?.startsWith("https://cfe.dev/talkshows/2full2stack") &&
-        new Date(item.pubDate!) > new Date()
-    )
-    .map(async (m) => {
-      return {
-        type: "2-full-2-stack" as const,
-        title: m.title,
-        link: m.link,
-        description: m.content as string,
-        date: m.pubDate ?? new Date().toISOString(),
-        ogImage: await getOgImage(m.link!),
-      };
-    });
-
-  return await Promise.all(items);
 }
 
 // Pomerium Live use the YouTube feed for @pomerium_io
