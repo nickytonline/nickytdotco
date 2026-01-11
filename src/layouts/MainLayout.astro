@@ -4,6 +4,7 @@ import OgMetaTags from "../components/OgMetaTags.astro";
 import Header from "../components/Header.astro";
 import SkipLink from "../components/SkipLink.astro";
 import site from "@/data/site";
+
 interface Props {
   title: string;
   metaDesc?: string;
@@ -12,8 +13,8 @@ interface Props {
 
 const {
   title,
-  metaDesc = "Links to Nick Taylor's live streaming channels and content",
-  socialImage = "/assets/og-image.png",
+  metaDesc = "Nick Taylor (@nickytonline) - Software developer sharing blog posts, live streams, conference talks, and open source.",
+  socialImage,
 } = Astro.props;
 const { origin } = new URL(Astro.request.url);
 ---
@@ -22,10 +23,7 @@ const { origin } = new URL(Astro.request.url);
 <html lang="en" class="scroll-smooth lg:scroll-pt-96">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="The home of Nick Taylor's live streaming channels"
-    />
+    <meta name="description" content={metaDesc} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href={site.faviconPath} />
     <meta name="generator" content={Astro.generator} />
