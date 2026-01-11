@@ -21,7 +21,10 @@ const currentPath = pathname.slice(1);
       >
         <ul class="list-none flex gap-6 place-content-center flex-wrap">
           <li>
-            <a href="/" aria-current={currentPath === "" ? "page" : "false"}
+            <a
+              href="/"
+              aria-current={currentPath === "" ? "page" : "false"}
+              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4"
               >Home</a
             >
           </li>
@@ -29,6 +32,7 @@ const currentPath = pathname.slice(1);
             <a
               href="/blog"
               aria-current={currentPath.startsWith("blog") ? "page" : "false"}
+              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4"
             >
               Blog
             </a>
@@ -37,6 +41,7 @@ const currentPath = pathname.slice(1);
             <a
               href="/talks"
               aria-current={currentPath.startsWith("talks") ? "page" : "false"}
+              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4"
             >
               Talks
             </a>
@@ -44,7 +49,8 @@ const currentPath = pathname.slice(1);
           <li class="relative group">
             <button
               type="button"
-              class="cursor-pointer border-0 bg-transparent p-0">Watch</button
+              class="cursor-pointer border-0 bg-transparent p-0 hover:text-pink-600 hover:dark:text-pink-400 focus:text-pink-600 focus:dark:text-pink-400 focus:outline-none"
+              >Watch</button
             >
             <div
               class="absolute invisible opacity-0 transition-all duration-300 transform -translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 right-0 md:right-auto md:left-0 z-20"
@@ -85,12 +91,18 @@ const currentPath = pathname.slice(1);
             </div>
           </li>
           <li>
-            <a href="https://onetipaweek.com" target="_blank">Newsletter</a>
+            <a
+              href="https://onetipaweek.com"
+              target="_blank"
+              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4"
+              >Newsletter</a
+            >
           </li>
           <li>
             <a
               href="/socials"
               aria-current={currentPath === "socials" ? "page" : "false"}
+              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4"
             >
               Socials
             </a>
@@ -99,6 +111,7 @@ const currentPath = pathname.slice(1);
             <a
               href="/uses"
               aria-current={currentPath === "uses" ? "page" : "false"}
+              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4"
               >Uses
             </a>
           </li>
@@ -106,6 +119,7 @@ const currentPath = pathname.slice(1);
             <a
               href="/about"
               aria-current={currentPath === "about" ? "page" : "false"}
+              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4"
               >About
             </a>
           </li>
