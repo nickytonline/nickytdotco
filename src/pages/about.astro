@@ -7,67 +7,61 @@ import MainLayout from "../layouts/MainLayout.astro";
   title="About"
   metaDesc="About Nick Taylor - Microsoft MVP, GitHub Star, Software Developer, and Developer Advocate."
 >
-  <main
-    id="main-content"
-    tabindex="-1"
-    class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12"
-  >
-    <article class="space-y-12">
-      <header class="space-y-8">
-        <SectionHeader title="About" headingLevel={1} />
+  <article>
+    <header>
+      <SectionHeader title="About" headingLevel={1} />
 
-        <div class="flex flex-col md:flex-row gap-8 items-start">
-          <img
-            class="w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover"
-            src="/assets/images/colour-headshot-500x500.jpg"
-            alt="Headshot of Nick Taylor"
-            loading="lazy"
-          />
+      <div class="flex flex-col md:flex-row gap-8 items-start">
+        <img
+          class="w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover"
+          src="/assets/images/colour-headshot-500x500.jpg"
+          alt="Headshot of Nick Taylor"
+          loading="lazy"
+        />
 
-          <div class="flex-1 space-y-6">
-            <p class="text-xl leading-relaxed">
-              Hi! My name is <strong class="text-pink-600 dark:text-pink-400"
-                >Nick Taylor</strong
-              >. I am a Microsoft MVP, GitHub Star, Software Developer, and
-              Developer Advocate.
-            </p>
+        <div class="flex-1 space-y-6">
+          <p class="text-xl leading-relaxed">
+            Hi! My name is <strong class="text-pink-600 dark:text-pink-400"
+              >Nick Taylor</strong
+            >. I am a Microsoft MVP, GitHub Star, Software Developer, and
+            Developer Advocate.
+          </p>
 
-            <p class="text-lg leading-relaxed text-muted-foreground">
-              With over two decades in technology and a decade of open source
-              contributions, plus five years of professional open source work at
-              companies like <a
-                href="https://opensauced.pizza"
-                class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
-                >OpenSauced</a
-              >, <a
-                href="https://dev.to"
-                class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
-                >dev.to</a
-              >, <a
-                href="https://www.netlify.com/"
-                class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
-                >Netlify</a
-              >, and now <a
-                href="https://pomerium.com"
-                class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
-                >Pomerium</a
-              >, I bring deep community knowledge to my work.
-            </p>
+          <p class="text-lg leading-relaxed text-muted-foreground">
+            With over two decades in technology and a decade of open source
+            contributions, plus five years of professional open source work at
+            companies like <a
+              href="https://opensauced.pizza"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >OpenSauced</a
+            >, <a
+              href="https://dev.to"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >dev.to</a
+            >, <a
+              href="https://www.netlify.com/"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >Netlify</a
+            >, and now <a
+              href="https://pomerium.com"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >Pomerium</a
+            >, I bring deep community knowledge to my work.
+          </p>
 
-            <p class="text-lg leading-relaxed text-muted-foreground">
-              You'll often find me live streaming tech content, either solo or
-              with friends from the community.
-            </p>
+          <p class="text-lg leading-relaxed text-muted-foreground">
+            You'll often find me live streaming tech content, either solo or
+            with friends from the community.
+          </p>
 
-            <p class="text-lg leading-relaxed text-muted-foreground">
-              Wanna get in touch? Drop me an e-mail at <span
-                class="font-semibold text-pink-600 dark:text-pink-400"
-                >nick at nickyt dot co</span
-              >.
-            </p>
-          </div>
+          <p class="text-lg leading-relaxed text-muted-foreground">
+            Wanna get in touch? Drop me an e-mail at <span
+              class="font-semibold text-pink-600 dark:text-pink-400"
+              >nick at nickyt dot co</span
+            >.
+          </p>
         </div>
-      </header>
-    </article>
-  </main>
+      </div>
+    </header>
+  </article>
 </MainLayout>
