@@ -1,10 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import { dateFilter } from "../utils/filters";
-import talksHeroImage from "../../public/assets/talks/talks.jpg";
 export const prerender = true;
 
 const talks = await getCollection("talks");
