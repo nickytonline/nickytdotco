@@ -4,12 +4,20 @@ import SectionHeader from "./SectionHeader.astro";
 const { totalPosts, description } = Astro.props;
 ---
 
-<div class="mb-12">
+<div class="mb-6">
   <SectionHeader title="Blog Posts Archive" headingLevel={1} />
   <p class="text-xl text-muted-foreground mt-6">
     {
       description ||
         `Exploring code, AI, and web development through ${totalPosts} posts.`
     }
+    <div class="mt-6">
+      <a
+        href="/tags/blog/"
+        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
+      >
+        Browse by tag<span class="text-2xl">→</span>
+      </a>
+    </div>
   </p>
 </div>
