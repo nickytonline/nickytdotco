@@ -5,34 +5,18 @@ import SectionHeader from "../../components/SectionHeader.astro";
 import Tag from "@/components/Tag.astro";
 export const prerender = true;
 
-const talks = await getCollection("talks");
 const blogPosts = await getCollection("blog");
 
-// Extract all unique tags and count their occurrences
+// Extract all unique tags and count their occurrences from blog posts only
 const tagCounts = new Map<string, number>();
 const tagToOriginalCase = new Map<string, string>();
 
-// Process talks
-talks.forEach((talk) => {
-  if (talk.data.tags) {
-    talk.data.tags.forEach((tag) => {
-      const normalizedTag = tag.toLowerCase().replace(/\s+/g, "");
-      tagCounts.set(normalizedTag, (tagCounts.get(normalizedTag) || 0) + 1);
-      tagToOriginalCase.set(normalizedTag, tag);
-    });
-  }
-});
-
-// Process blog posts
 blogPosts.forEach((post) => {
   if (post.data.tags) {
     post.data.tags.forEach((tag) => {
       const normalizedTag = tag.toLowerCase().replace(/\s+/g, "");
       tagCounts.set(normalizedTag, (tagCounts.get(normalizedTag) || 0) + 1);
-      // Keep the first occurrence's case
-      if (!tagToOriginalCase.has(normalizedTag)) {
-        tagToOriginalCase.set(normalizedTag, tag);
-      }
+      tagToOriginalCase.set(normalizedTag, tag);
     });
   }
 });
@@ -46,26 +30,26 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
 );
 ---
 
-<Layout title="Tags | Nick Taylor">
+<Layout title="Blog Post Tags | Nick Taylor">
   <main id="main" tabindex="-1" class="max-w-5xl mx-auto px-6 py-12">
     <div class="mb-12">
-      <SectionHeader title="Tags" />
+      <SectionHeader title="Blog Post Tags" />
       <p class="text-xl text-muted-foreground mt-6">
-        Explore content by topic — from web development and AI to developer
+        Explore blog posts by topic — from web development and AI to developer
         tooling and beyond.
       </p>
 
       <div class="mt-6 flex flex-wrap items-center gap-4">
         <a
           href="/tags"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-pink-600 text-white dark:bg-pink-500 focus:outline-none"
-          aria-current="page"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
         >
           All Tags
         </a>
         <a
           href="/tags/blog"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-pink-600 text-white dark:bg-pink-500 focus:outline-none"
+          aria-current="page"
         >
           Blog Posts
         </a>
@@ -122,7 +106,7 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
       {
         sortedTags.length === 0 && (
           <div class="text-center py-12">
-            <p class="text-xl text-gray-500">No tags found.</p>
+            <p class="text-xl text-muted-foreground">No tags found.</p>
           </div>
         )
       }
