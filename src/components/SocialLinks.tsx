@@ -51,7 +51,8 @@ const socialLinks: SocialLink[] = [
     name: "LinkedIn",
     url: "https://linkedin.com/in/nickytonline",
     icon: LinkedinIcon,
-    description: "Connect with me professionally",
+    description:
+      "Connect with me professionally. Please add a message if I don't know you.",
   },
   {
     name: "Twitch",
@@ -69,7 +70,7 @@ const socialLinks: SocialLink[] = [
     name: "Instagram",
     url: "https://instagram.com/nickytonline",
     icon: InstagramIcon,
-    description: "Follow my tech journey",
+    description: "Follow me for a mix of tech and personal content.",
   },
   {
     name: "Mastodon",
@@ -81,7 +82,7 @@ const socialLinks: SocialLink[] = [
     name: "TikTok",
     url: "https://tiktok.com/@nickytonline",
     icon: Music2,
-    description: "Quick tech tips and content",
+    description: "Follow me for a mix of tech and personal content",
   },
 ];
 
