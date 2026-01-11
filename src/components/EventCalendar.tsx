@@ -1,5 +1,5 @@
 import { CalendarPlus, Plus } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import {
   generateGoogleCalendarUrl,
   generateICalContent,
@@ -21,34 +21,39 @@ const EventCalendar = ({
   description,
   location,
 }: EventCalendarProps) => {
-  console.log(location);
-  const [dropdownPosition, setDropdownPosition] = useState<"below" | "above">(
-    "below"
-  );
-  const navRef = useRef<HTMLElement>(null);
+  const checkboxRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const id = useId();
+  const menuId = `${id}-menu`;
+  const toggleId = `${id}-toggle`;
 
   useEffect(() => {
-    const checkPosition = () => {
-      if (navRef.current) {
-        const rect = navRef.current.getBoundingClientRect();
-        const spaceBelow = window.innerHeight - rect.bottom;
-        const menuHeight = 250; // Approximate height of the dropdown menu
-
-        if (spaceBelow < menuHeight && rect.top > menuHeight) {
-          setDropdownPosition("above");
-        } else {
-          setDropdownPosition("below");
-        }
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && checkboxRef.current?.checked) {
+        checkboxRef.current.checked = false;
+        setIsExpanded(false);
       }
     };
 
-    checkPosition();
-    window.addEventListener("scroll", checkPosition);
-    window.addEventListener("resize", checkPosition);
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node) &&
+        checkboxRef.current?.checked
+      ) {
+        checkboxRef.current.checked = false;
+        setIsExpanded(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
-      window.removeEventListener("scroll", checkPosition);
-      window.removeEventListener("resize", checkPosition);
+      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -60,17 +65,27 @@ const EventCalendar = ({
   const endDate = new Date(startDate.getTime() + durationInMillis);
 
   return (
-    <nav ref={navRef} className="relative group w-fit">
-      <button className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-4 py-2 hover:bg-white dark:hover:bg-gray-900 hover:text-pink-600 dark:hover:text-pink-400 border-2 border-pink-600 dark:border-pink-500 hover:border-pink-600 dark:hover:border-pink-500 transition-colors focus:outline-none">
+    <div ref={containerRef} className="relative group w-fit">
+      <input
+        ref={checkboxRef}
+        type="checkbox"
+        id={toggleId}
+        className="peer sr-only"
+        aria-controls={menuId}
+        aria-expanded={isExpanded}
+        aria-label={`Add ${eventName} to calendar`}
+        onChange={(e) => setIsExpanded(e.target.checked)}
+      />
+      <label
+        htmlFor={toggleId}
+        className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-4 py-2 hover:bg-white dark:hover:bg-gray-900 hover:text-pink-600 dark:hover:text-pink-400 peer-focus:bg-white dark:peer-focus:bg-gray-900 peer-focus:text-pink-600 dark:peer-focus:text-pink-400 border-2 border-pink-600 dark:border-pink-500 hover:border-pink-600 dark:hover:border-pink-500 peer-focus:border-pink-600 dark:peer-focus:border-pink-500 transition-colors cursor-pointer"
+      >
         <Plus className="w-4 h-4" />
         <span>Add to Calendar</span>
-      </button>
+      </label>
       <div
-        className={`absolute invisible opacity-0 scale-95 transition-all duration-200 ease-out transform group-hover:visible group-hover:opacity-100 group-hover:scale-100 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:scale-100 z-50 ${
-          dropdownPosition === "above"
-            ? "bottom-full mb-2 translate-y-1 group-hover:translate-y-0 group-focus-within:translate-y-0"
-            : "mt-2 -translate-y-1 group-hover:translate-y-0 group-focus-within:translate-y-0"
-        }`}
+        id={menuId}
+        className="absolute right-0 invisible opacity-0 scale-95 transition-all duration-200 ease-out transform group-hover:visible group-hover:opacity-100 group-hover:scale-100 peer-checked:visible peer-checked:opacity-100 peer-checked:scale-100 z-50 mt-2 -translate-y-1 group-hover:translate-y-0 peer-checked:translate-y-0"
       >
         <ul className="p-4 grid gap-4 border-2 border-pink-600 rounded-md [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-white dark:bg-gray-900 shadow-lg">
           <li>
@@ -123,7 +138,7 @@ const EventCalendar = ({
           </li>
         </ul>
       </div>
-    </nav>
+    </div>
   );
 };
 
