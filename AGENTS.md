@@ -1,37 +1,36 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-
-- `src/` holds the Astro site source. Key areas: `src/pages/` for routes, `src/layouts/` for page shells, `src/components/` for UI components, `src/content/` and `src/blog/` for markdown content, `src/scss/` and `src/styles/` for styling, and `src/_data/` for shared data.
-- `public/` contains static assets copied as-is at build time.
-- `dist/` is the build output (generated).
-- Root config includes `astro.config.mjs`, `tsconfig.json`, and `netlify.toml`.
+- `src/` contains the Astro site source.
+- Routes live in `src/pages/`, layouts in `src/layouts/`, UI components in `src/components/`.
+- Content lives in `src/content/` and `src/blog/`.
+- Styling is split between `src/scss/` and `src/styles/`.
+- Shared data sits in `src/_data/`.
+- Static assets go in `public/` and are copied as-is at build time.
+- Build output is generated in `dist/` (do not commit).
 
 ## Build, Test, and Development Commands
-
-- `npm run dev` or `npm start`: run the Astro dev server.
-- `npm run build`: run `astro check` then build to `dist/`.
+- `npm run dev` or `npm start`: start the Astro dev server.
+- `npm run build`: run `astro check` and build the site to `dist/`.
 - `npm run preview`: serve the production build locally.
 
 ## Coding Style & Naming Conventions
-
-- Formatting: Prettier default config (`.prettierrc` is empty).
-- Modules: ESM (`"type": "module"` in `package.json`).
-- Naming: camelCase for JS/TS, kebab-case for filenames (e.g., `post-card.astro`).
-- Strings: prefer double quotes; use template literals for interpolation.
+- Formatting follows Prettier defaults (`.prettierrc` is empty).
+- Use ESM imports/exports (`"type": "module"` in `package.json`).
+- Prefer double quotes and template literals for interpolation.
+- Use camelCase for JS/TS variables and functions.
+- Use kebab-case for filenames, e.g. `post-card.astro`.
 
 ## Testing Guidelines
-
-- No dedicated test runner or test directory is configured. Use `npm run build` to validate type checks and builds before PRs.
+- There is no dedicated test runner; validation happens via `npm run build`.
+- Treat `astro check` failures as blockers before merging.
 
 ## Commit & Pull Request Guidelines
-
-- Commit messages follow Conventional Commits patterns (e.g., `feat:`, `fix:`, `chore:`, `docs:`; scoped variants like `feat(search):`).
-- Before opening a PR, discuss the change with maintainers via issue or email.
-- Ensure build or install artifacts are not committed, and verify changes are tested to the best of your ability.
-- PRs should include a clear description, any relevant links, and obtain maintainer sign-off before merge.
+- Use Conventional Commits, e.g. `feat:`, `fix:`, `docs:`, or scoped variants like `feat(search):`.
+- Discuss changes with maintainers before opening a PR (issue or email).
+- PRs should include a clear description and relevant links; add screenshots for UI changes.
+- Ensure build artifacts are not committed.
 
 ## Configuration & Environment Notes
-
-- Node.js version requirement: `>=18.13.0`.
-- Deployment is set up for Netlify via `netlify.toml`.
+- Node.js >= 22 is required.
+- Deployment is configured for Netlify via `netlify.toml`.
