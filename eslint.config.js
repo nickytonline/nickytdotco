@@ -31,6 +31,16 @@ export default [
     },
   },
   {
+    files: ["**/*.astro"],
+    rules: {
+      // Disable jsx-a11y rules for Astro files - they're designed for React/JSX
+      "jsx-a11y/label-has-associated-control": "off",
+      "jsx-a11y/no-redundant-roles": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/img-redundant-alt": "off",
+    },
+  },
+  {
     rules: {
       // TypeScript rules
       "@typescript-eslint/no-unused-vars": [
