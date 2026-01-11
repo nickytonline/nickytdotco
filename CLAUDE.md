@@ -169,7 +169,6 @@ Uses flat config format (`eslint.config.js`):
 - Custom colors: `primary`, `highlight`, `light`, `mid`, `dark`, `slate` + shades
 - Custom z-index: `300`, `400`, `500`, `600`, `700`
 - Fonts: Inter (body), Space Grotesk (headings) via `@fontsource`
-- Animation utilities via `tailwindcss-animate`
 
 **Global styles** (`src/styles/tailwind.css`):
 

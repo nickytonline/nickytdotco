@@ -9,7 +9,6 @@
 @import "@fontsource/space-grotesk/600.css";
 @import "@fontsource/space-grotesk/700.css";
 
-@plugin 'tailwindcss-animate';
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -50,17 +49,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-theme-feature-text: #fedb8b;
-  }
-}
-
-/* Flow utility for consistent vertical spacing */
-.sf-flow > * + * {
-  margin-top: var(--flow-space, 1.5rem);
 }
 
 h1,
@@ -137,12 +125,6 @@ h6:hover .heading-anchor {
 .prose ol {
   list-style-type: decimal;
   padding-left: 1.5em;
-}
-
-@screen lg {
-  .prose {
-    @apply text-lg;
-  }
 }
 
 body {
