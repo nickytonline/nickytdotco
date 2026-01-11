@@ -3,6 +3,7 @@ import "../styles/global.css";
 import OgMetaTags from "../components/OgMetaTags.astro";
 import Header from "../components/Header.astro";
 import SkipLink from "../components/SkipLink.astro";
+import site from "@/data/site";
 interface Props {
   title: string;
   metaDesc?: string;
@@ -26,10 +27,7 @@ const { origin } = new URL(Astro.request.url);
       content="The home of Nick Taylor's live streaming channels"
     />
     <meta name="viewport" content="width=device-width" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦙</text></svg>"
-    />
+    <link rel="icon" href={site.faviconPath} />
     <meta name="generator" content={Astro.generator} />
     <OgMetaTags
       title={title}
