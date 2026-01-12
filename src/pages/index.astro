@@ -3,10 +3,8 @@ import StreamSchedule from "../components/StreamSchedule.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import Layout from "../layouts/MainLayout.astro";
-import {
-  getStreamSchedule,
-  type StreamGuestInfo,
-} from "../utils/schedule-utils";
+import type { StreamGuestInfo } from "../utils/schedule-utils";
+import { getLiveCollection } from "astro:content";
 import { getCollection } from "astro:content";
 import { site } from "../data/site";
 import { dateFilter } from "../utils/filters";
@@ -30,14 +28,13 @@ const locale =
 let errorMessage = "";
 let schedule: StreamGuestInfo[] = [];
 
-try {
-  schedule = await getStreamSchedule({
-    apiKey: import.meta.env.AIRTABLE_API_KEY,
-    baseId: import.meta.env.AIRTABLE_STREAM_GUEST_BASE_ID,
-  });
-} catch (e) {
-  console.error("Error fetching stream schedule:", e);
+const scheduleResult = await getLiveCollection("streamSchedule");
+
+if (scheduleResult.error) {
+  console.error("Error fetching stream schedule:", scheduleResult.error);
   errorMessage = "Error fetching stream schedule.";
+} else {
+  schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
 }
 
 const { timezone = "" } = Astro.locals.netlify.context.geo;

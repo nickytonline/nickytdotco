@@ -16,6 +16,9 @@ export default defineConfig({
   output: "static",
   adapter: netlify(),
   site: "https://www.nickyt.co",
+  experimental: {
+    liveContentCollections: true,
+  },
   integrations: [
     expressiveCode({
       themes: ["github-dark"],

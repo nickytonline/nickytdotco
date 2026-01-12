@@ -34,6 +34,7 @@ npm run lint:fix      # Auto-fix ESLint issues
 ### Tech Stack
 
 - **Astro 5** (Static Site Generation) with Netlify adapter
+  - Uses experimental `liveContentCollections` feature for dynamic data at build time
 - **React 19** for interactive UI components (EventCalendar, SeriesNavigation, etc.)
 - **TypeScript** with strict mode and path aliases (`@/` → `./src/`)
 - **Tailwind CSS v4** with custom design system
@@ -52,7 +53,10 @@ src/
 │   ├── blog/        # 180+ MDX blog posts
 │   ├── talks/       # Conference talks and presentations
 │   ├── vscodetips/  # VS Code tips
-│   └── config.ts    # Content schemas
+│   ├── loaders/     # Custom content loaders for external data
+│   │   └── stream-schedule.ts  # Airtable loader for stream guests
+│   └── config.ts    # Static content schemas
+├── live.config.ts   # Live collection schemas (stream schedule)
 ├── layouts/         # Page templates
 │   ├── MainLayout.astro  # Base layout with dark mode, header, footer
 │   └── Post.astro        # Blog post layout with series navigation
@@ -77,6 +81,10 @@ src/
 
 ### Content Collections
 
+The codebase uses two types of content collections, configured in separate files:
+
+#### Static Collections (`src/content/config.ts`)
+
 **Blog Posts** (`src/content/blog/`):
 
 - MDX format with Zod schema validation
@@ -95,6 +103,17 @@ src/
 - Conference talks, streams, and presentations
 - Schema includes: `title`, `date`, `venue` (name + URL), `tags`
 - Optional: `video` (URL + type + image), `slideDeck`, `sourceCode`, `additionalLinks`
+
+#### Live Collections (`src/live.config.ts`)
+
+**Stream Schedule** (`streamSchedule`):
+
+- Fetches data from Airtable at build time via custom loader
+- Schema includes: `type`, `date`, `title`, `description`, `guestName`, `guestTitle`
+- Social links: `twitter`, `youtube`, `twitch`, `github`, `bluesky`, `linkedin`, `website`
+- Stream links: `youtubeStreamLink`, `linkedinStreamLink`, `ogImageURL`
+- Loader implementation: `src/content/loaders/stream-schedule.ts`
+- Access via `getCollection('streamSchedule')` in Astro components
 
 ### Key Architectural Patterns
 
@@ -137,11 +156,24 @@ MDX → Remark Plugins → Rehype Plugins → HTML
                          rehypeAutolinkHeadings
 ```
 
-**7. External Integrations**
+**7. Content Loaders for External Data**
 
-- **Airtable**: Streaming guest schedule (`src/utils/schedule-utils.ts`)
-  - Three stream types: "nickyt.live", "2-full-2-stack", "pomerium-live"
-  - Filters guests from yesterday onwards
+- **Custom Astro Loaders**: Implemented using Astro's live collections feature
+  - Loaders fetch external data at build time and make it available as content collections
+  - Located in `src/content/loaders/` directory
+  - Must implement `LiveLoader` interface with `loadCollection()` and `loadEntry()` methods
+
+- **Stream Schedule Loader** (`src/content/loaders/stream-schedule.ts`):
+  - Fetches from Airtable API using `AIRTABLE_API_KEY` and `AIRTABLE_STREAM_GUEST_BASE_ID` env vars
+  - Filters guests from yesterday onwards using `IS_AFTER({Date}, ...)` Airtable formula
+  - Two stream types: "nickyt.live" and "pomerium-live"
+  - Returns structured data matching the live collection schema defined in `src/live.config.ts`
+  - `loadCollection()`: Fetches all upcoming stream guests
+  - `loadEntry()`: Fetches a single stream guest by Airtable record ID
+
+**8. External Integrations**
+
+- **Airtable**: Streaming guest schedule (see Content Loaders above)
 - **YouTube RSS**: Multiple playlist feeds parsed (`src/utils/youtube-utils.ts`)
   - Main channel, nickyt.live, 2 Full 2 Stack, guest appearances, Pomerium Live
   - Includes special video injection logic (e.g., KubeConEU25)
@@ -222,9 +254,12 @@ Uses flat config format (`eslint.config.js`):
 
 ### Working with External Data
 
-- **Airtable schedule**: Modify `src/utils/schedule-utils.ts`
+- **Stream schedule (Airtable)**:
+  - Modify loader: `src/content/loaders/stream-schedule.ts`
+  - Modify schema: `src/live.config.ts`
+  - Data is fetched at build time and available via `getCollection('streamSchedule')`
 - **YouTube feeds**: Modify `src/utils/youtube-utils.ts`
-- Both utils include caching headers for Netlify CDN
+- Both integrations include caching headers for Netlify CDN
 
 ### Styling Components
 

@@ -1,7 +1,7 @@
 import Parser from "rss-parser";
 
-export interface StreamGuestInfo {
-  type: "nickyt.live" | "2-full-2-stack" | "pomerium-live";
+export interface StreamGuestInfo extends Record<string, unknown> {
+  type: "nickyt.live" | "pomerium-live";
   date: string;
   title: string;
   description: string;
@@ -43,110 +43,6 @@ export function getLocalizedDate({
   };
 
   return new Date(date).toLocaleString(locale, options);
-}
-
-const GUEST_FIELDS = [
-  "Date",
-  "Name",
-  "Guest Title",
-  "Stream Title",
-  "Stream Description",
-  "YouTube Stream Link",
-  "LinkedIn Stream Link",
-  "Twitter Username",
-  "Twitch Handle",
-  "GitHub Handle",
-  "YouTube Channel",
-  "Website",
-  "Bluesky",
-  "LinkedIn",
-  "type",
-] as const;
-
-export async function getStreamSchedule({
-  apiKey,
-  baseId,
-}: {
-  apiKey: string;
-  baseId: string;
-}): Promise<StreamGuestInfo[]> {
-  // Only get guests on the stream schedule from the day before and on
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  yesterday.setHours(23, 59, 0, 0);
-
-  const startDate = yesterday.toISOString();
-  // Only get guests on the stream schedule from the day before and on
-  const filter = `&filterByFormula=AND(IS_AFTER({Date}, '${startDate}'), {On%20Schedule})`;
-  const sorter = `&sortField=Date&sortDirection=asc`;
-
-  // Generates querystring key value pairs that look like this, Name&fields[]=Guest%20Title&fields[]=Stream%20Title
-  const fields = GUEST_FIELDS.map(encodeURIComponent).join("&fields[]=");
-
-  // Uses the Airtable API's filterByFormula (see https://support.airtable.com/docs/how-to-sort-filter-or-retrieve-ordered-records-in-the-api)
-  const streamGuestInfoQueryUrl = `https://api.airtable.com/v0/${baseId}/Stream%20Guests?${filter}${sorter}&fields[]=${fields}`;
-
-  const response = await fetch(streamGuestInfoQueryUrl, {
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-    },
-  });
-
-  interface GuestRecord {
-    createdTime: string;
-    fields: Partial<Record<(typeof GUEST_FIELDS)[number], string>>;
-  }
-
-  const { records } = (await response.json()) as { records: GuestRecord[] };
-  // Can't use satifies. Functions bundler doesn't support it yet
-  const schedule = records.map(({ fields }) => {
-    const {
-      Date: date,
-      Name: guestName,
-      "Guest Title": guestTitle,
-      "Stream Title": title,
-      "Stream Description": description,
-      "YouTube Stream Link": youtubeStreamLink,
-      "LinkedIn Stream Link": linkedinStreamLink,
-      "Twitter Username": twitter,
-      "Twitch Handle": twitch,
-      "GitHub Handle": github,
-      "YouTube Channel": youtube,
-      LinkedIn: linkedin,
-      Bluesky: bluesky,
-      Website: website,
-      type,
-    } = fields;
-
-    // Validate that type is one of the allowed values
-    if (
-      type !== "nickyt.live" &&
-      type !== "2-full-2-stack" &&
-      type !== "pomerium-live"
-    ) {
-      throw new Error(`Invalid stream type: ${type}`);
-    }
-
-    return {
-      type: type as "nickyt.live" | "2-full-2-stack" | "pomerium-live",
-      date: date!,
-      guestName: guestName!,
-      guestTitle: guestTitle ?? "",
-      title: title!,
-      description: description!,
-      youtubeStreamLink: youtubeStreamLink ?? undefined,
-      linkedinStreamLink: linkedinStreamLink ?? undefined,
-      twitter: twitter ?? undefined,
-      twitch: twitch ?? undefined,
-      github: github ?? undefined,
-      youtube: youtube ?? undefined,
-      bluesky: bluesky ?? undefined,
-      website: website ?? undefined,
-      linkedin: linkedin ?? undefined,
-    } satisfies StreamGuestInfo;
-  });
-
-  return schedule;
 }
 
 // Pomerium Live use the YouTube feed for @pomerium_io
