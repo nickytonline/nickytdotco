@@ -7,6 +7,7 @@ import { ENV } from "varlock/env";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import expressiveCode from "astro-expressive-code";
+import sitemap from "@astrojs/sitemap";
 
 import react from "@astrojs/react";
 
@@ -36,6 +37,7 @@ export default defineConfig({
     }),
     mdx(),
     react(),
+    sitemap(),
   ],
   markdown: {
     rehypePlugins: [

@@ -6,7 +6,7 @@ export async function GET(context: APIContext) {
   const robotsTxt = `User-agent: *
 Allow: /
 
-Sitemap: ${siteUrl}sitemap.xml`;
+Sitemap: ${new URL("sitemap-index.xml", siteUrl)}`;
 
   return new Response(robotsTxt, {
     headers: {
