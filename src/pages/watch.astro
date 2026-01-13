@@ -6,6 +6,7 @@ import {
   getVideos,
   getYouTubeId,
   DEFAULT_YT_FEED_URL,
+  sanitizeVideoDescription,
 } from "@/utils/youtube-utils";
 
 // Fetch recent videos and filter out shorts
@@ -60,9 +61,17 @@ export const prerender = false;
           Latest from YouTube
         </h2>
         <div class="mb-4">
-          <YouTubeEmbed videoId={videoId} loading="eager" />
+          <YouTubeEmbed
+            videoId={videoId}
+            loading="eager"
+            title={latestVideo.title}
+          />
         </div>
         <h3 class="text-xl font-semibold mb-2">{latestVideo.title}</h3>
+        <div
+          class="prose prose-lg dark:prose-invert max-w-none text-muted-foreground"
+          set:html={sanitizeVideoDescription(latestVideo.description)}
+        />
       </section>
     )
   }

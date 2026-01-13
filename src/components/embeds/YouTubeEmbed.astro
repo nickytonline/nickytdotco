@@ -3,23 +3,26 @@ interface Props {
   videoId: string;
   startTime?: string;
   loading?: "lazy" | "eager";
+  title?: string;
 }
 
-const { videoId, startTime, loading = "lazy" } = Astro.props;
+const { videoId, startTime, loading = "lazy", title: providedTitle } = Astro.props;
 
-// Fetch video title from YouTube oEmbed API
-let title = "YouTube Video";
-try {
-  const response = await fetch(
-    `https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v%3D${videoId}&format=json`
-  );
+// Use provided title or fetch from YouTube oEmbed API
+let title = providedTitle || "YouTube Video";
+if (!providedTitle) {
+  try {
+    const response = await fetch(
+      `https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v%3D${videoId}&format=json`
+    );
 
-  if (response.ok) {
-    const data = await response.json();
-    title = data.title;
+    if (response.ok) {
+      const data = await response.json();
+      title = data.title;
+    }
+  } catch (error) {
+    console.error(`Failed to fetch YouTube title for ${videoId}:`, error);
   }
-} catch (error) {
-  console.error(`Failed to fetch YouTube title for ${videoId}:`, error);
 }
 
 const timeQueryParameter = startTime ? `?start=${startTime}` : "";
