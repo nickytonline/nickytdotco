@@ -6,7 +6,12 @@ interface Props {
   title?: string;
 }
 
-const { videoId, startTime, loading = "lazy", title: providedTitle } = Astro.props;
+const {
+  videoId,
+  startTime,
+  loading = "lazy",
+  title: providedTitle,
+} = Astro.props;
 
 // Use provided title or fetch from YouTube oEmbed API
 let title = providedTitle || "YouTube Video";
