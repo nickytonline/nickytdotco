@@ -2,9 +2,10 @@
 interface Props {
   videoId: string;
   startTime?: string;
+  loading?: "lazy" | "eager";
 }
 
-const { videoId, startTime } = Astro.props;
+const { videoId, startTime, loading = "lazy" } = Astro.props;
 
 // Fetch video title from YouTube oEmbed API
 let title = "YouTube Video";
@@ -25,15 +26,20 @@ const timeQueryParameter = startTime ? `?start=${startTime}` : "";
 const url = `https://www.youtube.com/embed/${videoId}${timeQueryParameter}`;
 ---
 
-<div class="relative w-full max-w-4xl mx-auto aspect-video">
-  <iframe
-    title={title}
-    loading="lazy"
-    src={url}
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    referrerpolicy="strict-origin-when-cross-origin"
-    class="absolute inset-0 w-full h-full"
-    width="560"
-    height="315"></iframe>
+<div class="w-full max-w-4xl mx-auto" style="min-height: 315px;">
+  <div
+    class="relative w-full rounded-lg overflow-hidden bg-secondary"
+    style="padding-bottom: 56.25%; min-height: 315px;"
+  >
+    <iframe
+      title={title}
+      loading={loading}
+      src={url}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+      class="absolute inset-0 w-full h-full bg-black rounded-lg"
+      width="560"
+      height="315"></iframe>
+  </div>
 </div>

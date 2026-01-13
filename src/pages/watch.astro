@@ -1,0 +1,244 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";
+import {
+  getVideos,
+  getYouTubeId,
+  DEFAULT_YT_FEED_URL,
+} from "@/utils/youtube-utils";
+
+// Fetch recent videos and filter out shorts
+const videos = await getVideos({
+  videoFeedUrl: DEFAULT_YT_FEED_URL,
+  numberOfVideos: 10,
+});
+
+// Filter out shorts (videos with /shorts/ in the URL)
+const nonShortVideos = videos.filter(
+  (video) => !video.link.includes("/shorts/")
+);
+const latestVideo = nonShortVideos[0];
+const videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
+---
+
+<MainLayout
+  title="Watch - nickyt.co"
+  metaDesc="Watch Nick Taylor's latest videos, streams, and content across YouTube, Twitch, and more."
+>
+  <SectionHeader title="Watch" headingLevel={1} />
+
+  <div class="mb-12 space-y-4">
+    <p class="text-xl leading-relaxed">
+      I regularly create video content including live streams, tutorials,
+      interviews, and tech discussions. You'll often find me streaming tech
+      content, either solo or with friends from the community.
+    </p>
+    <p class="text-lg leading-relaxed text-muted-foreground">
+      From coding sessions and open source contributions to developer interviews
+      and tech deep dives, there's always something happening. Subscribe and
+      follow along!
+    </p>
+  </div>
+
+  {
+    videoId && latestVideo && (
+      <section class="mb-12">
+        <h2 class="text-2xl lg:text-3xl font-bold mb-4 font-heading">
+          Latest from YouTube
+        </h2>
+        <div class="mb-4">
+          <YouTubeEmbed videoId={videoId} loading="eager" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">{latestVideo.title}</h3>
+      </section>
+    )
+  }
+
+  <section class="mb-12">
+    <h2 class="text-2xl lg:text-3xl font-bold mb-6 font-heading">
+      Where to Watch
+    </h2>
+    <div class="grid gap-6">
+      <a
+        href="https://youtube.com/@nickytonline"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+      >
+        <svg
+          class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+          ></path>
+        </svg>
+        <div class="flex-1">
+          <h3
+            class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+          >
+            YouTube
+          </h3>
+          <p class="text-muted-foreground">
+            Subscribe to my YouTube channel for tutorials, live streams, and
+            tech content.
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="https://twitch.tv/nickytonline"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+      >
+        <svg
+          class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#9146FF] group-focus:text-[#9146FF] transition-colors"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"
+          ></path>
+        </svg>
+        <div class="flex-1">
+          <h3
+            class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+          >
+            Twitch
+          </h3>
+          <p class="text-muted-foreground">
+            Catch me live on Twitch for coding streams, tech discussions, and
+            community hangouts.
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+      >
+        <svg
+          class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+          ></path>
+        </svg>
+        <div class="flex-1">
+          <h3
+            class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+          >
+            Guest Appearances
+          </h3>
+          <p class="text-muted-foreground">
+            Watch me as a guest on various podcasts, streams, and tech shows.
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="https://youtube.com/@pomerium_io"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+      >
+        <svg
+          class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+          ></path>
+        </svg>
+        <div class="flex-1">
+          <h3
+            class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+          >
+            Pomerium Live
+          </h3>
+          <p class="text-muted-foreground">
+            Live streams with guests covering Pomerium, security, identity
+            management, and AI.
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl lg:text-3xl font-bold mb-6 font-heading">
+      Past Channels
+    </h2>
+    <div class="grid gap-6">
+      <a
+        href="https://cfe.dev/talkshow/2full2stack/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+      >
+        <svg
+          class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+          ></path>
+        </svg>
+        <div class="flex-1">
+          <h3
+            class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+          >
+            2 Full 2 Stack
+          </h3>
+          <p class="text-muted-foreground">
+            My live coding show exploring full stack web development
+            fundamentals and frameworks.
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="https://www.youtube.com/playlist?list=PL8Bb2WLXhUaDCHK5HrxDXZWmuTARKDiV3"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+      >
+        <svg
+          class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+          ></path>
+        </svg>
+        <div class="flex-1">
+          <h3
+            class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+          >
+            The Practical Dev
+          </h3>
+          <p class="text-muted-foreground">
+            Live streams and video content from my time at dev.to, featuring
+            community discussions and developer topics.
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+</MainLayout>

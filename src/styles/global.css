@@ -136,6 +136,10 @@ body {
   @apply transition-colors;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 a:not([class]) {
   text-decoration: underline;
   @apply decoration-pink-600;
