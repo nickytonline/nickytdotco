@@ -56,12 +56,12 @@ export const prerender = false;
     </div>
   </div>
 
-  <ul class="space-y-1 mt-12">
+  <ul class="grid gap-4 lg:gap-8 mt-12">
     {
       sortedPosts.map((post) => {
         const postDate = new Date(post.date);
         return (
-          <li class="py-5 px-6">
+          <li>
             <h2 class="text-xl font-bold">
               <a
                 href={post.link}
