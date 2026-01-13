@@ -1,6 +1,7 @@
 import { defineLiveCollection, z } from "astro:content";
 
 import { streamScheduleLoader } from "./content/loaders/stream-schedule";
+import { newsletterLoader } from "./content/loaders/newsletter";
 
 const streamSchedule = defineLiveCollection({
   loader: streamScheduleLoader,
@@ -24,6 +25,17 @@ const streamSchedule = defineLiveCollection({
   }),
 });
 
+const newsletter = defineLiveCollection({
+  loader: newsletterLoader,
+  schema: z.object({
+    title: z.string().min(1),
+    link: z.string().url(),
+    description: z.string(),
+    date: z.string(),
+  }),
+});
+
 export const collections = {
   streamSchedule,
+  newsletter,
 };

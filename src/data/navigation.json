@@ -17,8 +17,8 @@
     },
     {
       "text": "Newsletter",
-      "url": "/pages/newsletter",
-      "external": true
+      "url": "/newsletter",
+      "external": false
     },
     {
       "text": "Socials",
