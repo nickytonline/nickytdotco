@@ -20,6 +20,17 @@ const nonShortVideos = videos.filter(
 );
 const latestVideo = nonShortVideos[0];
 const videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=0, must-revalidate"
+);
+Astro.response.headers.set(
+  "Netlify-CDN-Cache-Control",
+  "public, max-age=259200, must-revalidate"
+);
+
+export const prerender = false;
 ---
 
 <MainLayout
