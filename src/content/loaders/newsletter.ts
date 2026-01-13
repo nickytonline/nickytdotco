@@ -6,6 +6,7 @@ export interface NewsletterPost {
   link: string;
   description: string;
   date: string;
+  [key: string]: unknown;
 }
 
 const NEWSLETTER_RSS_URL = "https://rss.beehiiv.com/feeds/NggVbrRMab.xml";
