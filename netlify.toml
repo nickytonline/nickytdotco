@@ -32,56 +32,8 @@ status = 302
 force = true
 
 [[redirects]]
-from = "/pages/newsletter/*"
-to = "https://OneTipAWeek.com?utm_source=nickytco&utm_medium=social"
-status = 302
-force = true
-
-[[redirects]]
-from = "/p/one-tip-a-week-log-points"
-to = "https://one-tip-a-week.beehiiv.com/p/one-tip-a-week-log-points"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://pod.iamdeveloper.com/2065897/*"
-to = "https://nickyt.co"
-status = 302
-force = true
-
-[[redirects]]
-from = "https://pod.iamdeveloper.com/*"
-to = "https://nickscuts.buzzsprout.com/2065897/:splat"
-status = 302
-force = true
-
-[[redirects]]
-from = "https://pod.nickyt.co/2065897/*"
-to = "https://nickyt.co"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://pod.nickyt.co/*"
-to = "https://nickyt.co"
-status = 302
-force = true
-
-[[redirects]]
 from = "https://vscodetips.com/"
 to = "https://nickyt.co"
-status = 301
-force = true
-
-[[redirects]]
-from = "/coc/*"
-to = "/pages/coc/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://discord.iamdeveloper.com/*"
-to = "https://discord.gg/FkGSHMxbTe"
 status = 301
 force = true
 
@@ -90,48 +42,6 @@ force = true
 from = "/.well-known/webfinger"
 to = "https://hachyderm.io/.well-known/webfinger?resource=acct:nickytonline@hachyderm.io"
 status = 200
-
-[[redirects]]
-from = "/schedule/"
-to = "/pages/stream-schedule/"
-status = 301
-force = true
-
-[[redirects]]
-from = "/newsletter.rss"
-to = "https://buttondown.email/nickytonline/rss"
-status = 302
-force = true
-
-[[redirects]]
-from = "/pages/newsletter-archives/*"
-to = "https://buttondown.email/nickytonline/archive/"
-status = 302
-force = true
-
-[[redirects]]
-from = "/pages/subscription-confirmed"
-to = "/pages/subscribed"
-status = 302
-force = true
-
-[[redirects]]
-from = "/copilot-extension-guide/*"
-to = "/blog/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0/:splat"
-staus = 301
-force = true
-
-[[redirects]]
-from = "/bsky/*"
-to = "https://bsky.app/profile/nickyt.online/:splat"
-staus = 301
-force = true
-
-[[redirects]]
-from = "https://nickyt.online/*"
-to = "https://bsky.app/profile/nickyt.online/:splat"
-staus = 301
-force = true
 
 [[redirects]]
 from = "/slides/apollo-mcp-july-2025"
