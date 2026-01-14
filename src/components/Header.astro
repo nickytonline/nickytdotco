@@ -24,7 +24,7 @@ const currentPath = pathname.slice(1);
             <a
               href="/"
               aria-current={currentPath === "" ? "page" : "false"}
-              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400 aria-[current=page]:underline aria-[current=page]:decoration-pink-600 aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-4"
+              class="nav-link"
               >Home</a
             >
           </li>
@@ -32,7 +32,7 @@ const currentPath = pathname.slice(1);
             <a
               href="/blog"
               aria-current={currentPath.startsWith("blog") ? "page" : "false"}
-              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400 aria-[current=page]:underline aria-[current=page]:decoration-pink-600 aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-4"
+              class="nav-link"
             >
               Blog
             </a>
@@ -41,7 +41,7 @@ const currentPath = pathname.slice(1);
             <a
               href="/talks"
               aria-current={currentPath.startsWith("talks") ? "page" : "false"}
-              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400 aria-[current=page]:underline aria-[current=page]:decoration-pink-600 aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-4"
+              class="nav-link"
             >
               Talks
             </a>
@@ -50,7 +50,7 @@ const currentPath = pathname.slice(1);
             <a
               href="/watch"
               aria-current={currentPath.startsWith("watch") ? "page" : "false"}
-              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400 aria-[current=page]:underline aria-[current=page]:decoration-pink-600 aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-4"
+              class="nav-link"
             >
               Watch
             </a>
@@ -61,14 +61,14 @@ const currentPath = pathname.slice(1);
               aria-current={currentPath.startsWith("newsletter")
                 ? "page"
                 : "false"}
-              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none"
+              class="nav-link"
               >Newsletter</a
             >
           </li>
           <li>
             <a
               href="/socials"
-              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400 aria-[current=page]:underline aria-[current=page]:decoration-pink-600 aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-4"
+              class="nav-link"
               aria-current={currentPath.startsWith("socials")
                 ? "page"
                 : "false"}
@@ -79,7 +79,7 @@ const currentPath = pathname.slice(1);
           <li>
             <a
               href="/uses"
-              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400 aria-[current=page]:underline aria-[current=page]:decoration-pink-600 aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-4"
+              class="nav-link"
               aria-current={currentPath.startsWith("uses") ? "page" : "false"}
               >Uses
             </a>
@@ -87,7 +87,7 @@ const currentPath = pathname.slice(1);
           <li>
             <a
               href="/about"
-              class="hover:text-pink-600 hover:dark:text-pink-400 hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400 hover:decoration-4 hover:underline-offset-4 focus:text-pink-600 focus:dark:text-pink-400 focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400 focus:decoration-4 focus:underline-offset-4 focus:outline-none aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400 aria-[current=page]:underline aria-[current=page]:decoration-pink-600 aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-4"
+              class="nav-link"
               aria-current={currentPath.startsWith("about") ? "page" : "false"}
               >About
             </a>

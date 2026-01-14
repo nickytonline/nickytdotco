@@ -167,6 +167,20 @@ nav a:not([aria-current="page"]):focus {
   @apply underline decoration-pink-600 dark:decoration-pink-400 decoration-4;
 }
 
+/* Navigation link component styles */
+.nav-link {
+  @apply hover:text-pink-600 hover:dark:text-pink-400;
+  @apply hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400;
+  @apply hover:decoration-4 hover:underline-offset-4;
+  @apply focus:text-pink-600 focus:dark:text-pink-400;
+  @apply focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400;
+  @apply focus:decoration-4 focus:underline-offset-4 focus:outline-none;
+  @apply aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400;
+  @apply aria-[current=page]:underline aria-[current=page]:decoration-pink-600;
+  @apply aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4;
+  @apply aria-[current=page]:underline-offset-4;
+}
+
 @theme inline {
   --font-heading:
     "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
