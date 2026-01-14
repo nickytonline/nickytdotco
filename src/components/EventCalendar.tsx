@@ -21,7 +21,6 @@ const EventCalendar = ({
   description,
   location,
 }: EventCalendarProps) => {
-  const checkboxRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -31,8 +30,7 @@ const EventCalendar = ({
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && checkboxRef.current?.checked) {
-        checkboxRef.current.checked = false;
+      if (e.key === "Escape" && isExpanded) {
         setIsExpanded(false);
       }
     };
@@ -41,9 +39,8 @@ const EventCalendar = ({
       if (
         containerRef.current &&
         !containerRef.current.contains(e.target as Node) &&
-        checkboxRef.current?.checked
+        isExpanded
       ) {
-        checkboxRef.current.checked = false;
         setIsExpanded(false);
       }
     };
@@ -55,7 +52,7 @@ const EventCalendar = ({
       document.removeEventListener("keydown", handleEscape);
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [isExpanded]);
 
   // the duration argument is in minutes and needs to be converted to milliseconds
   const durationInMillis = duration * 60 * 1000;
@@ -65,27 +62,29 @@ const EventCalendar = ({
   const endDate = new Date(startDate.getTime() + durationInMillis);
 
   return (
-    <div ref={containerRef} className="relative group w-fit">
-      <input
-        ref={checkboxRef}
-        type="checkbox"
+    <div ref={containerRef} className="relative w-fit">
+      <button
+        type="button"
         id={toggleId}
-        className="peer sr-only"
+        aria-haspopup="menu"
         aria-controls={menuId}
         aria-expanded={isExpanded}
         aria-label={`Add ${eventName} to calendar`}
-        onChange={(e) => setIsExpanded(e.target.checked)}
-      />
-      <label
-        htmlFor={toggleId}
-        className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-4 py-2 hover:bg-white dark:hover:bg-gray-900 hover:text-pink-600 dark:hover:text-pink-400 peer-focus:bg-white dark:peer-focus:bg-gray-900 peer-focus:text-pink-600 dark:peer-focus:text-pink-400 border-2 border-pink-600 dark:border-pink-500 hover:border-pink-600 dark:hover:border-pink-500 peer-focus:border-pink-600 dark:peer-focus:border-pink-500 transition-colors cursor-pointer"
+        onClick={() => setIsExpanded((prev) => !prev)}
+        className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-4 py-2 hover:bg-white dark:hover:bg-gray-900 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:bg-white dark:focus-visible:bg-gray-900 focus-visible:text-pink-600 dark:focus-visible:text-pink-400 border-2 border-pink-600 dark:border-pink-500 hover:border-pink-600 dark:hover:border-pink-500 focus-visible:border-pink-600 dark:focus-visible:border-pink-500 transition-colors"
       >
         <Plus className="w-4 h-4" />
         <span>Add to Calendar</span>
-      </label>
+      </button>
       <div
         id={menuId}
-        className="absolute right-0 invisible opacity-0 scale-95 transition-all duration-200 ease-out transform group-hover:visible group-hover:opacity-100 group-hover:scale-100 peer-checked:visible peer-checked:opacity-100 peer-checked:scale-100 z-50 mt-2 -translate-y-1 group-hover:translate-y-0 peer-checked:translate-y-0"
+        role="menu"
+        aria-labelledby={toggleId}
+        className={`absolute right-0 z-50 mt-2 transform transition-all duration-200 ease-out ${
+          isExpanded
+            ? "visible opacity-100 scale-100 translate-y-0"
+            : "invisible opacity-0 scale-95 -translate-y-1"
+        }`}
       >
         <ul className="p-4 grid gap-4 border-2 border-pink-600 rounded-md [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-white dark:bg-gray-900 shadow-lg">
           <li>
@@ -98,6 +97,7 @@ const EventCalendar = ({
                 description,
               })}
               target="_blank"
+              role="menuitem"
               className="flex items-center gap-2 text-gray-900 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 focus-within:text-pink-600 dark:focus-within:text-pink-400 transition-colors focus:outline-none"
             >
               <CalendarPlus className="w-4 h-4" />
@@ -114,6 +114,7 @@ const EventCalendar = ({
                 description,
               })}
               target="_blank"
+              role="menuitem"
               className="flex items-center gap-2 text-gray-900 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 focus-within:text-pink-600 dark:focus-within:text-pink-400 transition-colors focus:outline-none"
             >
               <CalendarPlus className="w-4 h-4" />
@@ -130,6 +131,7 @@ const EventCalendar = ({
                 description,
               })}
               download="event.ics"
+              role="menuitem"
               className="flex items-center gap-2 text-gray-900 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 focus-within:text-pink-600 dark:focus-within:text-pink-400 transition-colors focus:outline-none"
             >
               <CalendarPlus className="w-4 h-4" />
