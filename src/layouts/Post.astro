@@ -64,8 +64,7 @@ if (entry.data.series) {
     {
       entry.data.tags && entry.data.tags.length > 0 && (
         <footer class="pt-8">
-          <div class="flex items-center gap-3 flex-wrap">
-            <h2 class="text-foreground">Tags:</h2>
+          <nav aria-label="Tags" class="flex items-center gap-3 flex-wrap">
             <ul class="flex flex-wrap gap-2">
               {entry.data.tags.map((tag) => (
                 <li>
@@ -73,7 +72,7 @@ if (entry.data.series) {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </footer>
       )
     }
