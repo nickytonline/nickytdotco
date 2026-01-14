@@ -72,9 +72,12 @@ export const prerender = false;
                 {post.title}
               </a>
             </h2>
-            <div class="flex items-center gap-4 text-muted-foreground mt-2">
-              <span class="italic text-base">{dateFilter(postDate)}</span>
-            </div>
+            <date
+              datetime={post.date}
+              class="flex items-center gap-4 text-muted-foreground italic text-base"
+            >
+              {dateFilter(postDate)}
+            </date>
           </li>
         );
       })
