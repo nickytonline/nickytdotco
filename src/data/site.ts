@@ -21,7 +21,7 @@ export const site: SiteConfig = {
   twitterHandle: "@nickytonline",
   mastodonHandle: "@nickytonline@hachyderm.io",
   authorName: "Nick Taylor",
-  maxPostsPerPage: 5,
+  maxPostsPerPage: 2,
   paymentPointer: "$ilp.uphold.com/MZMhAWA7bkGa",
   faviconPath: "/assets/images/favicon.svg",
 };
