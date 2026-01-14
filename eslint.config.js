@@ -17,7 +17,6 @@ export default [
       ".netlify/**",
       "public/**",
       "*.cjs",
-      "postcss.config.cjs",
       "tailwind.config.cjs",
       "env.d.ts",
     ],
