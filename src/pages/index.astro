@@ -57,20 +57,19 @@ export const prerender = false;
 
 <Layout title="Welcome to Nick Taylor's website">
   <div class="space-y-12">
-    <section>
-      <SectionHeader title="Latest Content" headingLevel={1} />
-      <div class="grid gap-6 xl:gap-8">
-        {
-          recentPosts.map((post) => (
-            <BlogPostCard
-              title={post.data.title}
-              date={dateFilter(post.data.date)}
-              image={post.data.cover_image}
-              href={`/blog/${post.slug}`}
-            />
-          ))
-        }
-      </div>
+    <SectionHeader title="Latest Content" headingLevel={1} />
+    <section class="grid gap-6 xl:gap-8">
+      <h2>Blog Posts</h2>
+      {
+        recentPosts.map((post) => (
+          <BlogPostCard
+            title={post.data.title}
+            date={dateFilter(post.data.date)}
+            image={post.data.cover_image}
+            href={`/blog/${post.slug}`}
+          />
+        ))
+      }
       <a
         href="/archive"
         class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
@@ -79,11 +78,11 @@ export const prerender = false;
       </a>
     </section>
 
-    <section>
+    <section class="grid gap-6 xl:gap-8">
       {
         errorMessage ? (
           <>
-            <SectionHeader title="Upcoming Live Streams" />
+            <h2>Upcoming Live Streams</h2>
             <p class="text-red-600">{errorMessage}</p>
           </>
         ) : null
@@ -91,7 +90,7 @@ export const prerender = false;
       {
         !errorMessage && schedule.length > 0 ? (
           <>
-            <SectionHeader title="Upcoming Live Streams" />
+            <h2>Upcoming Live Streams</h2>
             <StreamSchedule
               schedule={schedule}
               locale={locale}
