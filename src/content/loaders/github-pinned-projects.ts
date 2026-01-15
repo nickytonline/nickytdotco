@@ -1,4 +1,5 @@
 import type { LiveLoader } from "astro/loaders";
+import { ENV } from "varlock/env";
 
 export type GitHubPinnedProject = {
   owner: string;
@@ -89,16 +90,11 @@ const PINNED_PROJECTS_QUERY = `
 `;
 
 async function fetchPinnedProjects(): Promise<GitHubPinnedProject[]> {
-  const token = import.meta.env.GITHUB_TOKEN;
-  if (!token) {
-    throw new Error("Missing GITHUB_TOKEN environment variable.");
-  }
-
   const response = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${ENV.GITHUB_TOKEN}`,
     },
     body: JSON.stringify({
       query: PINNED_PROJECTS_QUERY,

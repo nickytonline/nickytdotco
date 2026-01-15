@@ -1,4 +1,5 @@
 import type { LiveLoader } from "astro/loaders";
+import { ENV } from "varlock/env";
 
 import type { StreamGuestInfo } from "../../utils/schedule-utils";
 
@@ -37,10 +38,6 @@ function buildStreamGuestQueryUrl({
   apiKey: string;
   baseId: string;
 }) {
-  if (!apiKey || !baseId) {
-    throw new Error("Missing Airtable API credentials for stream schedule.");
-  }
-
   // Only get guests on the stream schedule from the day before and on.
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
@@ -117,8 +114,8 @@ function mapRecordToSchedule(fields: GuestRecordFields): StreamGuestInfo {
 }
 
 async function fetchStreamSchedule(): Promise<GuestRecord[]> {
-  const apiKey = import.meta.env.AIRTABLE_API_KEY;
-  const baseId = import.meta.env.AIRTABLE_STREAM_GUEST_BASE_ID;
+  const apiKey = ENV.AIRTABLE_API_KEY;
+  const baseId = ENV.AIRTABLE_STREAM_GUEST_BASE_ID;
   const { url, headers } = buildStreamGuestQueryUrl({ apiKey, baseId });
 
   const response = await fetch(url, { headers });
@@ -144,12 +141,8 @@ export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
       };
     },
     async loadEntry({ filter }) {
-      const apiKey = import.meta.env.AIRTABLE_API_KEY;
-      const baseId = import.meta.env.AIRTABLE_STREAM_GUEST_BASE_ID;
-      console.log("uo");
-      if (!apiKey || !baseId) {
-        return { error: new Error("Missing Airtable API credentials.") };
-      }
+      const apiKey = ENV.AIRTABLE_API_KEY;
+      const baseId = ENV.AIRTABLE_STREAM_GUEST_BASE_ID;
 
       if (!filter?.id) {
         return { error: new Error("Missing Airtable record id filter.") };
