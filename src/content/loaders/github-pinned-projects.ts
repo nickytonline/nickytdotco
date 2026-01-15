@@ -1,6 +1,7 @@
 import type { LiveLoader } from "astro/loaders";
 
 export type GitHubPinnedProject = {
+  owner: string;
   name: string;
   description: string;
   url: string;
@@ -10,13 +11,43 @@ export type GitHubPinnedProject = {
     name: string;
     color: string;
   } | null;
-} & Record<string, unknown>;
+};
+
+interface GQLOwner {
+  login: string;
+}
+
+interface GQLPrimaryLanguage {
+  name: string;
+  color: string;
+}
+
+interface GQLRepository {
+  __typename: "Repository";
+  owner: GQLOwner;
+  name: string;
+  description: string;
+  url: string;
+  stargazerCount: number;
+  forkCount: number;
+  primaryLanguage?: GQLPrimaryLanguage | null;
+}
+
+interface GQLGist {
+  __typename: "Gist";
+  owner: GQLOwner;
+  description: string;
+  url: string;
+  stargazerCount: number;
+}
+
+type GQLPinnedItem = GQLRepository | GQLGist;
 
 interface GraphQLResponse {
   data: {
     user?: {
       pinnedItems: {
-        nodes: (GitHubPinnedProject | null | Record<string, unknown>)[];
+        nodes: (GQLPinnedItem | null)[];
       };
     };
   };
@@ -28,7 +59,11 @@ const PINNED_PROJECTS_QUERY = `
     user(login: $login) {
       pinnedItems(first: 10) {
         nodes {
+          __typename
           ... on Repository {
+            owner {
+              login
+            }
             name
             description
             url
@@ -40,6 +75,9 @@ const PINNED_PROJECTS_QUERY = `
             }
           }
           ... on Gist {
+            owner {
+              login
+            }
             description
             url
             stargazerCount: stargazerCount
@@ -93,24 +131,28 @@ async function fetchPinnedProjects(): Promise<GitHubPinnedProject[]> {
 
   // Filter out any empty objects or nulls that might come back
   return (json.data.user.pinnedItems.nodes || [])
-    .filter(
-      (node): node is GitHubPinnedProject | Record<string, unknown> => !!node
-    )
+    .filter((node): node is GQLPinnedItem => node !== null)
     .map((node): GitHubPinnedProject => {
-      // If it's a Repository, it will have a 'name' field
-      if ("name" in node && typeof node.name === "string") {
-        return node as GitHubPinnedProject;
+      if (node.__typename === "Repository") {
+        return {
+          owner: node.owner.login,
+          name: node.name,
+          description: node.description,
+          url: node.url,
+          stargazerCount: node.stargazerCount,
+          forkCount: node.forkCount,
+          primaryLanguage: node.primaryLanguage,
+        };
       }
 
-      // If it's a Gist, 'name' is missing, so we derive it from description
-      // and ensure other required fields exist for the interface
-      const gist = node as Record<string, unknown>;
+      // If it's a Gist
       return {
-        name: (gist.description as string) || "Pinned Gist",
-        description: (gist.description as string) || "No description provided.",
-        url: (gist.url as string) || "",
-        stargazerCount: (gist.stargazerCount as number) || 0,
-        forkCount: 0, // Gist forks aren't as easily accessible in this query
+        owner: node.owner.login,
+        name: node.description || "Pinned Gist",
+        description: node.description || "No description provided.",
+        url: node.url,
+        stargazerCount: node.stargazerCount,
+        forkCount: 0,
         primaryLanguage: null,
       };
     });

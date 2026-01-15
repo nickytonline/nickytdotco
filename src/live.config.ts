@@ -39,6 +39,7 @@ const newsletter = defineLiveCollection({
 const pinnedProjects = defineLiveCollection({
   loader: githubPinnedProjectsLoader,
   schema: z.object({
+    owner: z.string(),
     name: z.string(),
     description: z.string(),
     url: z.string().url(),
