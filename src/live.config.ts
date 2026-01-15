@@ -2,6 +2,7 @@ import { defineLiveCollection, z } from "astro:content";
 
 import { streamScheduleLoader } from "./content/loaders/stream-schedule";
 import { newsletterLoader } from "./content/loaders/newsletter";
+import { githubPinnedProjectsLoader } from "./content/loaders/github-pinned-projects";
 
 const streamSchedule = defineLiveCollection({
   loader: streamScheduleLoader,
@@ -35,7 +36,26 @@ const newsletter = defineLiveCollection({
   }),
 });
 
+const pinnedProjects = defineLiveCollection({
+  loader: githubPinnedProjectsLoader,
+  schema: z.object({
+    name: z.string(),
+    description: z.string(),
+    url: z.string().url(),
+    stargazerCount: z.number(),
+    forkCount: z.number(),
+    primaryLanguage: z
+      .object({
+        name: z.string(),
+        color: z.string(),
+      })
+      .nullable()
+      .optional(),
+  }),
+});
+
 export const collections = {
   streamSchedule,
   newsletter,
+  pinnedProjects,
 };

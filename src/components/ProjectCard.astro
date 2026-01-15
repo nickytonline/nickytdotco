@@ -1,0 +1,100 @@
+---
+import type { GitHubPinnedProject } from "../content/loaders/github-pinned-projects";
+
+interface Props {
+  project: GitHubPinnedProject;
+}
+
+const { project } = Astro.props;
+---
+
+<article
+  class="relative group p-6 h-full rounded-xl border border-muted bg-card hover:border-pink-600/50 transition-all shadow-sm hover:shadow-md outline-none focus-within:ring-2 focus-within:ring-pink-600 focus-within:ring-offset-2"
+>
+  <div class="flex flex-col h-full">
+    <div class="flex items-start justify-between mb-2">
+      <h3
+        class="text-xl font-bold text-foreground group-hover:text-pink-600 dark:group-hover:text-pink-400 group-focus-within:text-pink-600 dark:group-focus-within:text-pink-400 transition-colors"
+      >
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="focus:outline-none after:absolute after:inset-0 after:rounded-xl"
+        >
+          {project.name}
+        </a>
+      </h3>
+      <div
+        class="flex items-center gap-1 text-muted-foreground bg-muted/50 px-2 py-1 rounded text-xs"
+        aria-label={`${project.stargazerCount} stars`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          ><polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+          ></polygon></svg
+        >
+        <span>{project.stargazerCount}</span>
+      </div>
+    </div>
+
+    <p class="text-muted-foreground text-sm mb-4 flex-1 line-clamp-3">
+      {project.description}
+    </p>
+
+    <div
+      class="flex items-center justify-between mt-auto pt-4 border-t border-muted/30"
+    >
+      {
+        project.primaryLanguage && (
+          <div class="flex items-center gap-2">
+            <span
+              class="w-3 h-3 rounded-full"
+              style={`background-color: ${project.primaryLanguage.color}`}
+              aria-hidden="true"
+            />
+            <span class="text-xs font-medium text-muted-foreground">
+              {project.primaryLanguage.name}
+            </span>
+          </div>
+        )
+      }
+
+      <div class="flex items-center gap-3 text-xs text-muted-foreground">
+        <div
+          class="flex items-center gap-1"
+          aria-label={`${project.forkCount} forks`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><line x1="6" y1="3" x2="6" y2="15"></line><circle
+              cx="18"
+              cy="6"
+              r="3"></circle><circle cx="6" cy="18" r="3"></circle><path
+              d="M18 9a9 9 0 0 1-9 9"></path></svg
+          >
+          <span>{project.forkCount}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

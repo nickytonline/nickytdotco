@@ -9,7 +9,7 @@ const currentPath = pathname.slice(1);
   class="lg:sticky top-0 pt-6 pb-6 bg-background z-10 max-w-7xl mx-auto px-6 transition-colors"
 >
   <div
-    class="flex flex-col items-center md:items-start md:flex-row gap-6 justify-between"
+    class="flex flex-col items-center md:md:items-start md:flex-row gap-6 justify-between"
   >
     <div class="flex flex-col gap-6 items-center md:items-start">
       <h1 class="font-heading md:text-6xl lg:text-8xl font-medium">
@@ -52,6 +52,17 @@ const currentPath = pathname.slice(1);
               class="nav-link"
             >
               Watch
+            </a>
+          </li>
+          <li>
+            <a
+              href="/projects"
+              aria-current={currentPath.startsWith("projects")
+                ? "page"
+                : "false"}
+              class="nav-link"
+            >
+              Projects
             </a>
           </li>
           <li>

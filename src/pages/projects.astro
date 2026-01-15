@@ -1,0 +1,74 @@
+---
+import { getLiveCollection } from "astro:content";
+import Layout from "../layouts/MainLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import type { GitHubPinnedProject } from "../content/loaders/github-pinned-projects";
+
+const projectsResult = await getLiveCollection("pinnedProjects");
+let projects: GitHubPinnedProject[] = [];
+let errorMessage = "";
+
+if (projectsResult.error) {
+  console.error("Error fetching pinned projects:", projectsResult.error);
+  errorMessage = "Error fetching pinned projects from GitHub.";
+} else {
+  projects = projectsResult.entries?.map((entry) => entry.data) ?? [];
+}
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=0, must-revalidate"
+);
+
+// cache for one week
+Astro.response.headers.set(
+  "Netlify-CDN-Cache-Control",
+  "public, max-age=604800, must-revalidate"
+);
+
+export const prerender = false;
+---
+
+<Layout
+  title="Projects | Nick Taylor"
+  socialImage="/assets/images/page-og/projects.jpg"
+>
+  <div class="mb-12">
+    <SectionHeader title="Projects" headingLevel={1} />
+    <p class="text-xl text-muted-foreground mt-6 max-w-2xl">
+      A selection of my pinned projects and open-source contributions from
+      GitHub. These represent tools, starters, and experiments I'm currently
+      focused on.
+    </p>
+  </div>
+
+  {
+    errorMessage && (
+      <div class="p-4 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800">
+        {errorMessage}
+      </div>
+    )
+  }
+
+  <div class="grid gap-6 lg:grid-cols-2">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+
+  {
+    !errorMessage && projects.length === 0 && (
+      <div class="text-center py-12">
+        <p class="text-muted-foreground">No pinned projects found.</p>
+      </div>
+    )
+  }
+
+  <a
+    href="https://github.com/nickytonline"
+    class="mt-6 inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View more on GitHub<span class="text-2xl">→</span>
+  </a>
+</Layout>
