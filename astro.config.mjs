@@ -20,6 +20,7 @@ export default defineConfig({
     liveContentCollections: true,
   },
   integrations: [
+    varlockintegration(),
     expressiveCode({
       themes: ["github-dark"],
       styleOverrides: {
@@ -62,7 +63,7 @@ export default defineConfig({
     ],
   },
   vite: {
-    plugins: [tailwindcss(), varlockintegration()],
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         "@": "/src",
