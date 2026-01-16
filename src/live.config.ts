@@ -3,6 +3,7 @@ import { defineLiveCollection, z } from "astro:content";
 import { streamScheduleLoader } from "./content/loaders/stream-schedule";
 import { newsletterLoader } from "./content/loaders/newsletter";
 import { githubPinnedProjectsLoader } from "./content/loaders/github-pinned-projects";
+import { brewfileLoader } from "./content/loaders/brewfile";
 
 const streamSchedule = defineLiveCollection({
   loader: streamScheduleLoader,
@@ -55,8 +56,23 @@ const pinnedProjects = defineLiveCollection({
   }),
 });
 
+const brewfile = defineLiveCollection({
+  loader: brewfileLoader,
+  schema: z.object({
+    id: z.string(),
+    type: z.enum(["brew", "cask", "mas", "tap"]),
+    name: z.string(),
+    displayName: z.string(),
+    description: z.string().optional().nullable(),
+    homepage: z.string().optional().nullable(),
+    masId: z.string().optional().nullable(),
+    tap: z.string().optional().nullable(),
+  }),
+});
+
 export const collections = {
   streamSchedule,
   newsletter,
   pinnedProjects,
+  brewfile,
 };

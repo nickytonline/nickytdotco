@@ -1,6 +1,52 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
+import { getLiveCollection } from "astro:content";
+
+const brewfileResult = await getLiveCollection("brewfile");
+const brewfile = brewfileResult.entries ?? [];
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=0, must-revalidate"
+);
+
+// cache for one week
+Astro.response.headers.set(
+  "Netlify-CDN-Cache-Control",
+  "public, max-age=604800, must-revalidate"
+);
+
+export const prerender = false;
+
+const editorIds = ["visual-studio-code", "cursor"];
+const editorCasks = brewfile.filter(
+  (entry) => entry.data.type === "cask" && editorIds.includes(entry.data.name)
+);
+
+const desktopAppEntries = brewfile.filter(
+  (entry) =>
+    (entry.data.type === "cask" || entry.data.type === "mas") &&
+    !editorIds.includes(entry.data.name) &&
+    !entry.data.name.startsWith("font-")
+);
+
+const cliEntries = brewfile.filter((entry) => entry.data.type === "brew");
+
+const getLink = (entry: (typeof brewfile)[number]) => {
+  if (entry.data.homepage) return entry.data.homepage;
+
+  if (entry.data.type === "cask") {
+    return `https://formulae.brew.sh/cask/${entry.data.name}`;
+  }
+  if (entry.data.type === "brew") {
+    return `https://formulae.brew.sh/formula/${entry.data.name}`;
+  }
+  if (entry.data.type === "mas") {
+    return `https://apps.apple.com/app/id${entry.data.masId}`;
+  }
+  return "#";
+};
 ---
 
 <MainLayout
@@ -39,10 +85,16 @@ import SectionHeader from "@/components/SectionHeader.astro";
           >
         </h2>
         <ul class="space-y-2 text-muted-foreground list-disc pl-6">
-          <li>
-            <a href="https://code.visualstudio.com">VS Code</a> with GitHub Copilot
-            and <a href="https://www.cursor.com">Cursor</a>
-          </li>
+          {
+            editorCasks.map((entry) => (
+              <li>
+                <a href={getLink(entry)}>{entry.data.displayName}</a>
+                {entry.data.description && (
+                  <span class="ml-1">- {entry.data.description}</span>
+                )}
+              </li>
+            ))
+          }
           <li>
             Themes: <a
               href="https://marketplace.visualstudio.com/items?itemName=astro-build.houston"
@@ -108,74 +160,16 @@ import SectionHeader from "@/components/SectionHeader.astro";
           >
         </h2>
         <ul class="space-y-2 text-muted-foreground list-disc pl-6">
-          <li>
-            <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a> - My
-            main browser for my day to day work and personal stuff.
-          </li><li>
-            <a href="https://www.macbartender.com">Bartender</a> - For managing your
-            menu bar. I used to use <a href="https://matthewpalmer.net/vanilla/"
-              >Vanilla</a
-            >, but with the notch in newer MacBook Pros, Bartender made the
-            menubar more usable when dealing with lots of menubar icons.
-          </li><li>
-            <a href="https://matthewpalmer.net/rocket/">Rocket</a> - Emojis, emojis
-          </li><li>
-            <a href="https://raycast.com">Raycast</a> - Workflows, snippets, macOS
-            spotlight on steroids. I previously used <a
-              href="https://www.alfredapp.com/">Alfred</a
-            >, another amazing Spotlight alternative.
-          </li><li>
-            <a href="https://justgetflux.com/">f.lux</a> - Be kind to your eyeballs
-          </li><li>
-            <a href="https://orbstack.dev/">Orbstack</a> - Because better Docker
-          </li><li>
-            <a href="https://xscope.app">xScope</a> - Awesome toolset for frontend
-            development. Rulers, guides etc.
-          </li><li>
-            <a href="https://sindresorhus.com/dato">Dato</a> - A better date app for
-            macOS. It's great for having multiple time zones in the address bar. I
-            have my local time as well as UTC. I also use it for upcoming meetings
-            and events. Previously I was using <a href="https://trymeeter.com"
-              >Meeter</a
-            > which is great for this, but it's one less app I need now.
-          </li><li>
-            <a href="https://ghostty.org">Ghostty</a> - A a fast, feature-rich, and
-            cross-platform terminal emulator that uses platform-native UI and GPU
-            acceleration.
-          </li><li>
-            <a href="https://starship.rs/">Starship</a> - A cross shell prompt
-          </li><li>
-            <a href="https://www.spotify.com/us/download/">Spotify</a> - Because music.
-          </li><li>
-            <a href="https://obsproject.com/download">OBS</a> - For streaming on Twitch
-          </li><li>
-            <a href="https://cleanshot.com/">Cleanshot X</a> - For better screenshots
-            and screen recordings
-          </li><li>
-            <a href="https://blog.cloudflare.com/1111-warp-better-vpn/"
-              >Cloudflare Warp</a
-            > - Faster Internet and some VPN goodness
-          </li><li>
-            <a href="https://krisp.ai/">Krisp</a> - Filter out unwanted noise on calls
-            and streams
-          </li><li>
-            <a href="https://gpgtools.org/">GPG Suite</a> - For all things GPG
-          </li><li>
-            <a href="https://www.figma.com/">Figma</a> - Design collaboratively on
-            the web
-          </li><li>
-            <a href="https://rogueamoeba.com/loopback/">Loopback</a> - Great for virtual
-            audio sources
-          </li><li>
-            <a href="https://macpaw.com/cleanmymac">CleanMyMac X</a> - A suite of
-            utilities for keeping your Mac in tip top shape.
-          </li><li>
-            <a href="https://reincubate.com/camo/">Camo</a> - Use your mobile devices
-            as cameras for your OS.
-          </li><li>
-            <a href="https://polypane.app/">Polypane</a> - A browser for helping develop
-            responsive, more accessible and more performant websites.
-          </li>
+          {
+            desktopAppEntries.map((entry) => (
+              <li>
+                <a href={getLink(entry)}>{entry.data.displayName}</a>
+                {entry.data.description && (
+                  <span class="ml-1">- {entry.data.description}</span>
+                )}
+              </li>
+            ))
+          }
         </ul>
       </section>
 
@@ -188,18 +182,21 @@ import SectionHeader from "@/components/SectionHeader.astro";
           >
         </h2>
         <ul class="space-y-2 text-muted-foreground list-disc pl-6">
-          <li>
-            <a href="https://brew.sh">Homebrew</a> - The Missing Package Manager for
-            macOS (or Linux)
-          </li><li>
-            <a href="https://github.com/cli/cli">GitHub CLI</a> - GitHub on the command
-            line. Great for creating PRs, etc.
-          </li><li>
-            <a href="https://github.com/nvm-sh/nvm">nvm</a> - Node version manager
-          </li><li>
-            <a href="https://github.com/cloudflare/cloudflared">cloudflared</a> -
-            Exposes local servers to the public internet over secure tunnels
-          </li>
+          {
+            cliEntries.map((entry) => (
+              <li>
+                <a href={getLink(entry)}>{entry.data.displayName}</a>
+                {entry.data.description && (
+                  <span class="ml-1">- {entry.data.description}</span>
+                )}
+                {entry.data.tap && (
+                  <code class="ml-1 text-xs text-muted-foreground">
+                    ({entry.data.tap})
+                  </code>
+                )}
+              </li>
+            ))
+          }
         </ul>
       </section>
 
