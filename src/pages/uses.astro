@@ -6,19 +6,6 @@ import { getLiveCollection } from "astro:content";
 const brewfileResult = await getLiveCollection("brewfile");
 const brewfile = brewfileResult.entries ?? [];
 
-Astro.response.headers.set(
-  "Cache-Control",
-  "public, max-age=0, must-revalidate"
-);
-
-// cache for one week
-Astro.response.headers.set(
-  "Netlify-CDN-Cache-Control",
-  "public, max-age=604800, must-revalidate"
-);
-
-export const prerender = false;
-
 const editorIds = ["visual-studio-code", "cursor"];
 const editorCasks = brewfile.filter(
   (entry) => entry.data.type === "cask" && editorIds.includes(entry.data.name)
