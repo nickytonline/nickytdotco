@@ -66,3 +66,10 @@ from = "/cyc2025"
 to = "https://docs.google.com/presentation/d/e/2PACX-1vSxw2QZXhKQ-tjmbm5RYSDfB28pXvLx-x_TW-e6Ucy2MrGqK2IvQ_O3ChJbK33TPisV0D4NvVJ8A9-9/pub?start=false&loop=false&delayms=5000"
 status = 301
 force = true
+
+# old page urls redirects
+[[redirects]]
+from = "/pages/*"
+to = "/:splat"
+status = 301
+force = true
