@@ -32,6 +32,7 @@ if (entry.data.series) {
   title={entry.data.title}
   metaDesc={entry.data.excerpt || entry.data.description}
   socialImage={new URL(entry.data.cover_image!, site.url).toString()}
+  pageType="Post"
 >
   <article>
     <PostIntro

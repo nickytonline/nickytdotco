@@ -9,12 +9,14 @@ interface Props {
   title: string;
   metaDesc?: string;
   socialImage?: string;
+  pageType?: string;
 }
 
 const {
   title,
   metaDesc = "Nick Taylor (@nickytonline) - Software developer sharing blog posts, live streams, conference talks, and open source.",
   socialImage = "/assets/images/page-og/home.jpg",
+  pageType,
 } = Astro.props;
 const { origin } = new URL(Astro.request.url);
 ---
@@ -66,6 +68,7 @@ const { origin } = new URL(Astro.request.url);
         tabindex="-1"
         class="max-w-[65ch] lg:max-w-[70ch] mx-auto px-6 py-12 text-base lg:text-lg"
         data-pagefind-body
+        data-pagefind-filter={pageType ? `type:${pageType}` : undefined}
       >
         <slot />
       </main>

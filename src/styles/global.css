@@ -265,6 +265,11 @@ nav a:not([aria-current="page"]):focus {
   @apply text-pink-400;
 }
 
+/* Pagefind search highlights */
+mark {
+  @apply bg-pink-100 dark:bg-pink-900/50 text-pink-700 dark:text-pink-300 rounded px-1 font-semibold;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
