@@ -72,15 +72,15 @@ const years = Object.keys(talksByYear)
                           {talk.data.title}
                         </a>
                       </h3>
-                      <div class="flex items-center gap-4 text-muted-foreground mt-2">
-                        <span class="italic text-base">
-                          {dateFilter(talk.data.date)}
-                        </span>
-                        <span class="text-pink-600 dark:text-pink-400 font-semibold">
-                          •
-                        </span>
+                      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground mt-2">
                         <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
                           {talk.data.venue.name}
+                        </span>
+                        <span class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold">
+                          •
+                        </span>
+                        <span class="italic text-base">
+                          {dateFilter(talk.data.date)}
                         </span>
                       </div>
                     </div>

@@ -59,12 +59,8 @@ const { Content } = await talk.render();
         {title}
       </h1>
       <div
-        class="flex flex-wrap items-center gap-3 text-lg text-muted-foreground"
+        class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-lg text-muted-foreground"
       >
-        <time datetime={date.toISOString()} class="italic">
-          {dateFilter(date)}
-        </time>
-        <span class="text-pink-600 dark:text-pink-400 font-semibold">•</span>
         {
           venue.url ? (
             <a
@@ -81,6 +77,13 @@ const { Content } = await talk.render();
             </span>
           )
         }
+        <span
+          class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold"
+          >•</span
+        >
+        <time datetime={date.toISOString()} class="italic">
+          {dateFilter(date)}
+        </time>
       </div>
     </header>
 
@@ -215,19 +218,19 @@ const { Content } = await talk.render();
                     <h3 class="text-xl font-semibold leading-snug text-card-foreground group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400">
                       {relatedTalk.data.title}
                     </h3>
-                    <div class="flex items-center gap-3 text-base text-muted-foreground">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-base text-muted-foreground">
+                      <span class="font-normal">
+                        {relatedTalk.data.venue.name}
+                      </span>
+                      <span class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold">
+                        •
+                      </span>
                       <time
                         datetime={relatedTalk.data.date.toISOString()}
                         class="italic font-normal"
                       >
                         {dateFilter(relatedTalk.data.date)}
                       </time>
-                      <span class="text-pink-600 dark:text-pink-400 font-semibold">
-                        •
-                      </span>
-                      <span class="font-normal">
-                        {relatedTalk.data.venue.name}
-                      </span>
                     </div>
                   </div>
                 </a>
