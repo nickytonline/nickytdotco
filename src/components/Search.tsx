@@ -148,9 +148,9 @@ const Search = () => {
                 <li key={result.url}>
                   <a
                     href={result.url}
-                    className="block p-4 rounded-lg hover:bg-secondary group transition-colors border border-transparent hover:border-secondary"
+                    className="block p-4 rounded-lg hover:bg-secondary focus:bg-secondary group transition-colors border border-transparent hover:border-secondary focus:border-secondary outline-none"
                   >
-                    <h3 className="font-bold text-lg group-hover:text-pink-600 transition-colors">
+                    <h3 className="font-bold text-lg group-hover:text-pink-600 group-focus:text-pink-600 transition-colors">
                       {result.meta.title}
                     </h3>
                     <p
