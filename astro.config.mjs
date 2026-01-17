@@ -69,6 +69,11 @@ export default defineConfig({
         "@": "/src",
       },
     },
+    build: {
+      rollupOptions: {
+        external: ["/pagefind/pagefind.js"],
+      },
+    },
   },
   server: {
     port: ENV.PORT,

@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run format:check && astro check && astro build",
+    "build": "npm run format:check && astro check && astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write . && eslint --fix .",
@@ -61,6 +61,7 @@
     "globals": "^17.0.0",
     "js-yaml": "^4.1.1",
     "jsdom": "^27.4.0",
+    "pagefind": "^1.4.0",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "slugify": "^1.6.6",

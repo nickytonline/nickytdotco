@@ -53,6 +53,7 @@ const { Content } = await talk.render();
     <header>
       <h1
         class="text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-tight"
+        data-pagefind-meta="title"
       >
         {title}
       </h1>
@@ -199,7 +200,7 @@ const { Content } = await talk.render();
 
     {
       relatedTalks.length > 0 && (
-        <section class="pt-8">
+        <section class="pt-8" data-pagefind-ignore>
           <h2 class="text-2xl font-bold mb-6 text-foreground">Related Talks</h2>
           <div class="grid gap-6 xl:gap-8">
             {relatedTalks.map((relatedTalk) => {

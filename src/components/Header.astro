@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import Search from "./Search";
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
@@ -127,6 +128,7 @@ const currentPath = pathname.slice(1);
         </svg>
         <span class="sr-only">Subscribe via RSS Feed</span>
       </a>
+      <Search client:load />
       <ThemeToggle />
     </div>
   </div>

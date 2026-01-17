@@ -10,7 +10,10 @@ const { title, headingLevel = 2 } = Astro.props;
 <div class="mb-8">
   {
     headingLevel === 1 ? (
-      <h1 class="text-5xl font-extrabold tracking-tight text-balance">
+      <h1
+        class="text-5xl font-extrabold tracking-tight text-balance"
+        data-pagefind-meta="title"
+      >
         {title}
       </h1>
     ) : (
