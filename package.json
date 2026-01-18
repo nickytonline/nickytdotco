@@ -62,7 +62,7 @@
     "js-yaml": "^4.1.1",
     "jsdom": "^27.4.0",
     "pagefind": "^1.4.0",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
     "slugify": "^1.6.6",
     "tailwindcss": "^4.1.18",
