@@ -3,8 +3,9 @@ import { getEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import TagList from "../../components/TagList.astro";
 import { getRelatedTalks } from "../../utils/tag-utils";
-import { getYouTubeEmbedUrl } from "../../utils/youtube-utils";
+import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
+import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 export const prerender = true;
 
 export async function getStaticPaths() {
@@ -91,13 +92,10 @@ const { Content } = await talk.render();
       video && (
         <div class="my-6">
           {video.type === "youtube" && (
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden border-2 border-border shadow-lg">
-              <iframe
-                src={getYouTubeEmbedUrl(video.url)}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                class="absolute inset-0 w-full h-full"
+            <div class="rounded-xl overflow-hidden border-2 border-border shadow-lg">
+              <YouTubeEmbed
+                videoId={getYouTubeId(video.url) || ""}
+                title={title}
               />
             </div>
           )}

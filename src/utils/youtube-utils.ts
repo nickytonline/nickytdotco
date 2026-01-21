@@ -21,7 +21,15 @@ export const POMERIUM_LIVE_PLAYLIST_FEED_URL =
   "https://www.youtube.com/feeds/videos.xml?playlist_id=PLZWncRoWaoFxwV4ZoTC-TydJYZ1c_FEGJ";
 
 export function getYouTubeId(url: string) {
-  return url?.match(/(?:live\/|v=)(?<videoId>[^?&]+)/)?.groups?.videoId;
+  try {
+    const urlObj = new URL(url);
+    if (urlObj.hostname.includes("youtu.be")) {
+      return urlObj.pathname.slice(1);
+    }
+    return urlObj.searchParams.get("v") || urlObj.pathname.split("/").pop();
+  } catch {
+    return url?.match(/(?:live\/|v=)(?<videoId>[^?&]+)/)?.groups?.videoId;
+  }
 }
 
 export function injectSpecificVideo(
