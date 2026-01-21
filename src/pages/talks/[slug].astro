@@ -92,12 +92,10 @@ const { Content } = await talk.render();
       video && (
         <div class="my-6">
           {video.type === "youtube" && (
-            <div class="rounded-xl overflow-hidden border-2 border-border shadow-lg">
-              <YouTubeEmbed
-                videoId={getYouTubeId(video.url) || ""}
-                title={title}
-              />
-            </div>
+            <YouTubeEmbed
+              videoId={getYouTubeId(video.url) || ""}
+              title={title}
+            />
           )}
           {video.type === "vimeo" && (
             <div class="relative w-full aspect-video rounded-xl overflow-hidden border-2 border-border shadow-lg">
