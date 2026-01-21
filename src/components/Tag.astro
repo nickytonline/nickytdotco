@@ -9,13 +9,13 @@ const { tag, count } = Astro.props;
 
 <a
   href={`/tags/${tag.toLowerCase().replace(/\s+/g, "")}`}
-  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none transition-colors bg-rose-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 hover:bg-pink-600 hover:text-white dark:hover:bg-pink-500 dark:hover:text-white focus:bg-pink-600 focus:text-white"
+  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none transition-colors bg-rose-50 dark:bg-pink-900/30 text-pink-800 dark:text-pink-400 hover:bg-pink-800 hover:text-white dark:hover:bg-pink-500 dark:hover:text-white focus:bg-pink-900 focus:text-white"
 >
   {tag}
 
   {
     count && (
-      <span class="flex items-center justify-center w-5 h-5 rounded-full text-xs font-semibold bg-pink-100 dark:bg-pink-800 text-pink-600 dark:text-pink-300">
+      <span class="flex items-center justify-center w-5 h-5 rounded-full text-xs font-semibold bg-pink-100 dark:bg-pink-800 text-pink-800 dark:text-pink-300">
         {count}
       </span>
     )
