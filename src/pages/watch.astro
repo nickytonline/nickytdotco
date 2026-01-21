@@ -63,11 +63,7 @@ export const prerender = false;
             Latest from YouTube
           </h2>
           <div class="mb-4">
-            <YouTubeEmbed
-              videoId={videoId}
-              loading="eager"
-              title={latestVideo.title}
-            />
+            <YouTubeEmbed videoId={videoId} title={latestVideo.title} />
           </div>
           <h3 class="text-xl font-semibold mb-2">{latestVideo.title}</h3>
           <div

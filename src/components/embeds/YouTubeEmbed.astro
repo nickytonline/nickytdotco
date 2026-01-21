@@ -1,17 +1,13 @@
 ---
+import "lite-youtube-embed/src/lite-yt-embed.css";
+
 interface Props {
   videoId: string;
   startTime?: string;
-  loading?: "lazy" | "eager";
   title?: string;
 }
 
-const {
-  videoId,
-  startTime,
-  loading = "lazy",
-  title: providedTitle,
-} = Astro.props;
+const { videoId, startTime, title: providedTitle } = Astro.props;
 
 // Use provided title or fetch from YouTube oEmbed API
 let title = providedTitle || "YouTube Video";
@@ -30,24 +26,20 @@ if (!providedTitle) {
   }
 }
 
-const timeQueryParameter = startTime ? `?start=${startTime}` : "";
-const url = `https://www.youtube.com/embed/${videoId}${timeQueryParameter}`;
+const params = startTime ? `start=${startTime}` : "";
 ---
 
-<div class="max-w-4xl mx-auto" style="min-height: 315px;">
-  <div
-    class="relative w-full rounded-lg overflow-hidden bg-secondary"
-    style="padding-bottom: 56.25%; min-height: 315px;"
+<div class="max-w-4xl mx-auto">
+  <lite-youtube
+    videoid={videoId}
+    params={params}
+    playlabel={title}
+    class="rounded-lg overflow-hidden bg-secondary w-full"
+    style="aspect-ratio: 16 / 9;"
   >
-    <iframe
-      title={title}
-      loading={loading}
-      src={url}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-      referrerpolicy="strict-origin-when-cross-origin"
-      class="absolute inset-0 w-full h-full bg-black rounded-lg"
-      width="560"
-      height="315"></iframe>
-  </div>
+  </lite-youtube>
 </div>
+
+<script>
+  import "lite-youtube-embed";
+</script>
