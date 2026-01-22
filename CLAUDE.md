@@ -2,303 +2,261 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Development Commands
-
-### Setup
-
-```bash
-npm install  # Requires Node.js 22+
-```
+## Commands
 
 ### Development
-
 ```bash
-npm run dev      # Start dev server (uses ENV.PORT from varlock)
-npm run preview  # Preview production build locally
+npm run dev        # Start dev server (default port from ENV.PORT in .env)
+npm start          # Alias for npm run dev
 ```
 
-### Build & Validation
-
+### Building
 ```bash
-npm run build         # Full build: format:check → astro check → astro build
-npm run format        # Format with Prettier and auto-fix ESLint issues
-npm run format:check  # Check formatting (Prettier) and ESLint with 0 warnings tolerance
-npm run lint          # Run ESLint
-npm run lint:fix      # Auto-fix ESLint issues
+npm run build      # Full production build pipeline:
+                   # 1. Format check (Prettier + ESLint)
+                   # 2. Type check (astro check)
+                   # 3. Build site (astro build)
+                   # 4. Build search index (pagefind --site dist)
+
+npm run preview    # Preview production build locally
 ```
 
-**Important**: The build command enforces code quality - it will fail if formatting is incorrect or ESLint warnings exist.
+### Code Quality
+```bash
+npm run format          # Auto-format with Prettier and fix ESLint issues
+npm run format:check    # Check formatting and linting (used in build)
+npm run lint            # Run ESLint
+npm run lint:fix        # Fix ESLint issues
+```
+
+### Type Checking
+```bash
+npx astro check    # Type check all Astro/TypeScript files
+```
 
 ## Architecture Overview
 
-### Tech Stack
-
-- **Astro 5** (Static Site Generation) with Netlify adapter
-  - Uses experimental `liveContentCollections` feature for dynamic data at build time
-- **React 19** for interactive UI components (EventCalendar, SeriesNavigation, etc.)
-- **TypeScript** with strict mode and path aliases (`@/` → `./src/`)
-- **Tailwind CSS v4** with custom design system
-- **MDX** for blog posts with embedded components
-- **Expressive Code** for syntax highlighting (GitHub Dark theme)
-- **Varlock** for type-safe environment variable management
-
-### Project Structure
-
-```
-src/
-├── components/       # UI components (Astro & React)
-│   ├── embeds/      # Custom embeds (YouTube, Twitter, Spotify, etc.)
-│   └── *.astro      # Layout components (Header, Footer, BlogPostCard)
-├── content/         # Content collections (Zod-validated)
-│   ├── blog/        # 180+ MDX blog posts
-│   ├── talks/       # Conference talks and presentations
-│   ├── vscodetips/  # VS Code tips
-│   ├── loaders/     # Custom content loaders for external data
-│   │   └── stream-schedule.ts  # Airtable loader for stream guests
-│   └── config.ts    # Static content schemas
-├── live.config.ts   # Live collection schemas (stream schedule)
-├── layouts/         # Page templates
-│   ├── MainLayout.astro  # Base layout with dark mode, header, footer
-│   └── Post.astro        # Blog post layout with series navigation
-├── pages/           # File-based routing
-│   ├── blog/[...slug].astro  # Dynamic blog routes
-│   ├── tags/[tag].astro      # Tag archive pages
-│   ├── feed.ts               # RSS feed endpoint
-│   └── *.astro               # Static pages
-├── utils/           # Utility functions
-│   ├── filters.ts           # Date formatting, series filtering, truncation
-│   ├── schedule-utils.ts    # Airtable streaming schedule integration
-│   ├── youtube-utils.ts     # RSS feed parsing for YouTube playlists
-│   ├── tag-utils.ts         # Tag management
-│   ├── video-utils.ts       # Video timestamp parsing
-│   └── remarkEmbedDirectives.js  # Custom Remark plugin for embeds
-├── data/            # Static configuration
-│   ├── site.ts      # Site metadata and config
-│   └── navigation.json  # Navigation structure
-└── styles/          # Global styles
-    └── tailwind.css # Tailwind imports + custom CSS
-```
+### Framework & Stack
+- **Astro 5.x** with static site generation (SSG)
+- **Netlify** deployment with static hosting
+- **Tailwind CSS v4** for styling
+- **TypeScript** throughout with strict mode
+- **React** for interactive components (Search)
+- **MDX** for blog posts and talks
+- **Pagefind** for client-side search (built at compile time)
 
 ### Content Collections
 
-The codebase uses two types of content collections, configured in separate files:
+Two primary collections defined in `src/content/config.ts`:
 
-#### Static Collections (`src/content/config.ts`)
+**Blog** (`src/content/blog/`)
+- MDX files with frontmatter
+- Schema: title, date, excerpt, tags, cover_image, canonical_url, draft, reading_time_minutes, series
+- Series support via `series.collection_id` and `series.name`
+- Drafts excluded in production builds
 
-**Blog Posts** (`src/content/blog/`):
+**Talks** (`src/content/talks/`)
+- MDX files for conference talks
+- Schema: title, date, video (url, type, image), venue, tags, slideDeck, sourceCode, additionalLinks
+- Video types: youtube, vimeo, custom
 
-- MDX format with Zod schema validation
-- Frontmatter fields:
-  - `title` (required), `date` (required), `excerpt`, `description`
-  - `tags`, `cover_image`, `canonical_url` (for cross-posts)
-  - `draft` (filtered in production), `reading_time_minutes`
-  - `series` (object with `name` and `collection_id` for multi-part articles)
-- Custom directive syntax via `remarkEmbedDirectives.js`:
-  - `::youtube{videoId="xxx"}` → YouTube embed
-  - `::twitter{tweetId="xxx"}` → Twitter/X embed
-  - Supports: Spotify, Twitch, Vimeo, CodePen, CodeSandbox, Instagram, GitHub, DevLinks, Buzzsprout
+### Live Collections (Experimental)
 
-**Talks** (`src/content/talks/`):
+Uses Astro's `liveContentCollections` feature to fetch external data at build time. Configured in `src/live.config.ts`:
 
-- Conference talks, streams, and presentations
-- Schema includes: `title`, `date`, `venue` (name + URL), `tags`
-- Optional: `video` (URL + type + image), `slideDeck`, `sourceCode`, `additionalLinks`
+1. **Stream Schedule** - Airtable API (requires `AIRTABLE_API_KEY`, `AIRTABLE_STREAM_GUEST_BASE_ID`)
+2. **Newsletter** - Beehiiv RSS feed
+3. **Pinned Projects** - GitHub GraphQL API (requires `GITHUB_TOKEN`)
+4. **Brewfile** - GitHub raw file + Homebrew/Cask APIs
 
-#### Live Collections (`src/live.config.ts`)
+All loaders are in `src/content/loaders/` and implement error handling with graceful degradation.
 
-**Stream Schedule** (`streamSchedule`):
+### Routing Patterns
 
-- Fetches data from Airtable at build time via custom loader
-- Schema includes: `type`, `date`, `title`, `description`, `guestName`, `guestTitle`
-- Social links: `twitter`, `youtube`, `twitch`, `github`, `bluesky`, `linkedin`, `website`
-- Stream links: `youtubeStreamLink`, `linkedinStreamLink`, `ogImageURL`
-- Loader implementation: `src/content/loaders/stream-schedule.ts`
-- Access via `getCollection('streamSchedule')` in Astro components
+**Static routes:** `/`, `/about`, `/blog`, `/talks`, `/uses`, `/newsletter`, `/projects`, `/watch`, `/socials`
 
-### Key Architectural Patterns
+**Dynamic routes:**
+- `/blog/[...slug].astro` - Blog posts (rest parameter captures any depth)
+- `/talks/[slug].astro` - Individual talks
+- `/tags/[tag].astro` - Tag pages (normalized: lowercase, slugified)
+- `/tags/[tag]/[type].astro` - Tag pages filtered by type (posts/talks)
 
-**1. Static Generation with Dynamic Data**
+**RSS feeds:**
+- `/feed.xml.ts` - Main blog feed
+- `/stream-schedule-feed.xml.ts` - Stream schedule feed
 
-- All pages are statically generated (`output: "static"`)
-- External data (Airtable, YouTube RSS) fetched at build time
-- Netlify CDN caching headers set per-response
+### Component Architecture
 
-**2. Dark Mode**
+**Layouts:**
+- `MainLayout.astro` - Base layout with theme toggle, skip links, global CSS
+- `Post.astro` - Blog post layout with PostIntro, SeriesNavigation, TableOfContents
 
-- Class-based (`darkMode: "class"` in Tailwind config)
-- Theme toggle in `MainLayout.astro` with localStorage + system preference detection
-- Dark variants throughout component styling
+**Key Components:**
+- `Search.tsx` - React-based search with keyboard shortcuts (`/` or `Cmd/Ctrl+K`)
+- `Embed.astro` - Intelligent URL parser for embeds (YouTube, Twitter, GitHub, CodePen, Dev.to, Twitch, Vimeo, Spotify, CodeSandbox, Instagram)
+- Individual embed components in `src/components/embeds/`
+- `SeriesNavigation.astro` - Shows navigation for blog post series
+- `TableOfContents.astro` - Auto-generated from headings (shows if 3+ headings)
 
-**3. Path Aliases**
+**Social Components:**
+- Individual link components: BlueskyLink, GitHubLink, LinkedInLink, TwitterLink, WebsiteLink
+- `SocialLinks.astro` - Unified social links component
 
-- Use `@/` for imports: `import { site } from "@/data/site"`
-- Configured in `tsconfig.json` and `astro.config.mjs`
+### Markdown Processing
 
-**4. Series Navigation**
+**Custom Remark Plugin** (`src/utils/remarkEmbedDirectives.js`)
+- Enables directive syntax: `::youtube{videoId="xxx"}`
+- Transforms to data attributes for hydration
+- Supports all embed types
 
-- Multi-part blog posts use `series` frontmatter
-- `SeriesNavigation.tsx` React component provides prev/next navigation
-- `seriesFilter()` utility in `filters.ts` handles complex series queries
+**Rehype Plugins** (configured in `astro.config.mjs`)
+- `rehype-slug` - Adds IDs to all headings
+- `rehype-autolink-headings` - Adds `#` anchor links to headings
 
-**5. Environment Variables**
-
-- Managed by Varlock (`varlock/env`)
-- Type-safe access via `ENV` object
-- Sensitive vars: `AIRTABLE_API_KEY`, `AIRTABLE_STREAM_GUEST_BASE_ID`
-- Auto-generated `env.d.ts` for IDE support
-
-**6. Markdown Processing Pipeline**
-
-```
-MDX → Remark Plugins → Rehype Plugins → HTML
-       ↓                 ↓
-  remarkEmbedDirectives  rehypeSlug
-                         rehypeAutolinkHeadings
-```
-
-**7. Content Loaders for External Data**
-
-- **Custom Astro Loaders**: Implemented using Astro's live collections feature
-  - Loaders fetch external data at build time and make it available as content collections
-  - Located in `src/content/loaders/` directory
-  - Must implement `LiveLoader` interface with `loadCollection()` and `loadEntry()` methods
-
-- **Stream Schedule Loader** (`src/content/loaders/stream-schedule.ts`):
-  - Fetches from Airtable API using `AIRTABLE_API_KEY` and `AIRTABLE_STREAM_GUEST_BASE_ID` env vars
-  - Filters guests from yesterday onwards using `IS_AFTER({Date}, ...)` Airtable formula
-  - Two stream types: "nickyt.live" and "pomerium-live"
-  - Returns structured data matching the live collection schema defined in `src/live.config.ts`
-  - `loadCollection()`: Fetches all upcoming stream guests
-  - `loadEntry()`: Fetches a single stream guest by Airtable record ID
-
-**8. External Integrations**
-
-- **Airtable**: Streaming guest schedule (see Content Loaders above)
-- **YouTube RSS**: Multiple playlist feeds parsed (`src/utils/youtube-utils.ts`)
-  - Main channel, nickyt.live, 2 Full 2 Stack, guest appearances, Pomerium Live
-  - Includes special video injection logic (e.g., KubeConEU25)
-
-### ESLint Configuration
-
-Uses flat config format (`eslint.config.js`):
-
-- `@eslint/js` recommended rules
-- `typescript-eslint` recommended rules
-- `eslint-plugin-astro` for Astro-specific linting
-- `eslint-plugin-jsx-a11y` for accessibility
-- Custom rules:
-  - Unused vars prefixed with `_` are ignored
-  - TypeScript `any` is a warning, not an error
-  - A11y rules are set to warn (not error)
-
-**Ignored files**: `dist/`, `node_modules/`, `.astro/`, `.netlify/`, `public/`, `*.cjs`, `env.d.ts`
+**Expressive Code:**
+- Theme: GitHub Dark
+- Custom styling: rose-100 border, rounded corners, padding
+- Automatic code wrapping and indent preservation
 
 ### Styling System
 
-**Tailwind CSS v4** (`tailwind.config.cjs`):
+**Tailwind v4** (`tailwind.config.cjs`)
+- Custom color palette: primary, highlight, light, mid, dark, slate
+- Pink accent: `#fedb8b` (light), `#ffc857` (dark)
+- Fonts: Inter (body), Space Grotesk (headings)
+- Dark mode: class-based strategy
 
-- Custom spacing scale: `100`, `300`, `500`, `600`, `700`, `800`, `900`, `max`
-- Custom colors: `primary`, `highlight`, `light`, `mid`, `dark`, `slate` + shades
-- Custom z-index: `300`, `400`, `500`, `600`, `700`
-- Fonts: Inter (body), Space Grotesk (headings) via `@fontsource`
-
-**Global styles** (`src/styles/tailwind.css`):
-
-- Imports legacy custom CSS from `src/styles/legacy.css`
-- Prose styling for blog post content
-
-### Deployment (Netlify)
-
-**Build Configuration** (`netlify.toml`):
-
-- Command: `npm run build`
-- Publish directory: `dist/`
-- Custom headers: `Permissions-Policy: interest-cohort=()`
-- 30+ redirect rules for:
-  - Domain migrations (iamdeveloper.com → nickyt.co)
-  - Path redirects (/posts/_ → /blog/_)
-  - External services (newsletter, Discord, Mastodon webfinger)
-  - Short URLs for slides and demos
-
-**Environment Detection**:
-
-- Uses `process.env.CONTEXT` for Netlify environment
-- Timezone detection from Netlify geo context
-
-## Common Workflows
-
-### Adding a New Blog Post
-
-1. Create MDX file in `src/content/blog/`
-2. Add required frontmatter: `title`, `date`
-3. Optional: Add `tags`, `excerpt`, `cover_image`, `series`
-4. Use `draft: true` to exclude from production
-5. Use custom directives for embeds: `::youtube{videoId="xxx"}`
-
-### Creating a Multi-Part Series
-
-1. Add `series` to frontmatter:
-   ```yaml
-   series:
-     name: "My Series Name"
-     collection_id: 12345
-   ```
-2. Use same `name` and `collection_id` for all posts in series
-3. `SeriesNavigation` component will auto-generate prev/next links
-
-### Adding a New Talk
-
-1. Create MDX file in `src/content/talks/`
-2. Required: `title`, `date`, `venue` (name + optional URL), `tags`
-3. Optional: Add `video`, `slideDeck`, `sourceCode`, `additionalLinks`
-
-### Working with External Data
-
-- **Stream schedule (Airtable)**:
-  - Modify loader: `src/content/loaders/stream-schedule.ts`
-  - Modify schema: `src/live.config.ts`
-  - Data is fetched at build time and available via `getCollection('streamSchedule')`
-- **YouTube feeds**: Modify `src/utils/youtube-utils.ts`
-- Both integrations include caching headers for Netlify CDN
-
-### Styling Components
-
-- Use Tailwind utility classes (refer to custom config for available values)
-- Dark mode: Add `dark:` variants to classes
-- Use `@/` path alias for imports: `import { cn } from "@/lib/utils"`
+**Global Styles** (`src/styles/global.css`)
+- CSS custom properties for theming
+- Dark mode color overrides using `.dark` class
+- Typography with `text-balance` and `text-wrap: pretty`
+- Consistent spacing via `--flow-space`
+- Heading styles with custom tracking
+- Anchor link hover effects
+- Focus states for accessibility
 
 ### Environment Variables
 
-- Add new vars to Varlock schema (see existing env files)
-- Access via `ENV.VARIABLE_NAME`
-- Restart dev server after changes
+Managed by Varlock integration (`@varlock/astro-integration`):
+- Schema defined in `.env.schema`
+- Auto-generates TypeScript types to `env.d.ts`
+- Access via `ENV` from `varlock/env`
 
-## Important Notes
+**Required variables:**
+- `AIRTABLE_API_KEY` - For stream schedule data
+- `AIRTABLE_STREAM_GUEST_BASE_ID` - Airtable base ID
+- `GITHUB_TOKEN` - For pinned projects
+- `DEV_API_KEY` - Dev.to API
+- `URL` - Site URL
 
-### Content Licensing
+### Utilities & Helpers
 
-- **Code**: MIT License (root LICENSE.txt)
-- **Blog Content**: Creative Commons Attribution 4.0 (src/content/CONTENT_LICENSE.txt)
-- Do not modify license files without explicit permission
+**Filter Utilities** (`src/utils/filters.ts`)
+- `dateFilter()` - Human-readable dates with ordinals ("1st January 2024")
+- `w3DateFilter()` - ISO 8601 format
+- `htmlDateString()` - yyyy-MM-dd format
+- `seriesFilter()` - Filter posts by series
+- `seriesName()` - Extract series name from various formats
 
-### Build Requirements
+**Other Utilities:**
+- `src/utils/tag-utils.ts` - Tag normalization and display
+- `src/utils/date-utils.ts` - Luxon-based date operations
+- `src/utils/video-utils.ts` - YouTube ID extraction and embed helpers
+- `src/utils/markdown.ts` - Markdown parsing/rendering
+- `src/utils/schedule-utils.ts` - Stream schedule transformations
 
-- Node.js 22+ required (`engines` in package.json)
-- Build fails if:
-  - Prettier formatting is incorrect
-  - ESLint has warnings (enforced by `--max-warnings 0`)
-  - TypeScript type checking fails (`astro check`)
+### Build Pipeline
 
-### Accessibility
+The build process (`npm run build`) runs these steps sequentially:
 
-- Use semantic HTML elements
-- Include ARIA labels where appropriate
-- Test with keyboard navigation
-- ESLint will warn about a11y issues
+1. **Format Check** - Prettier and ESLint validation (zero warnings enforced)
+2. **Type Check** - `astro check` validates all TypeScript/Astro files
+3. **Site Build** - Astro builds static site to `dist/`
+4. **Search Index** - Pagefind indexes content marked with `data-pagefind-body`
 
-### Performance Considerations
+Draft posts are automatically excluded in production builds.
 
-- All pages are statically generated
-- External data fetched at build time (not runtime)
-- Use Netlify CDN caching headers for dynamic data
-- Images should include `width`, `height`, and `alt` attributes
+### Search Implementation
+
+**Pagefind Integration:**
+- Built at compile time from `dist/` directory
+- Client-side search (no server needed)
+- Indexes content via `data-pagefind-body` attribute
+- Supports filtering by `data-pagefind-filter-type` (Post, Talk)
+
+**Search Component** (`src/components/Search.tsx`)
+- React component with state management
+- Keyboard shortcuts: `/` or `Cmd/Ctrl+K` to open, `Esc` to close
+- Arrow keys for navigation, `Enter` to select
+- Debounced search (300ms)
+- Lazy loads Pagefind library
+
+### Netlify Configuration
+
+**Domain Redirects** (`netlify.toml`)
+- `iamdeveloper.com` → `nickyt.co`
+- `/posts/*` → `/blog/*`
+- Mastodon webfinger alias
+- Custom short links for slides/demos
+
+**Headers:**
+- Privacy headers (Permissions-Policy)
+- Home page caching: `max-age=259200` (3 days)
+
+### Path Aliases
+
+Configured in `astro.config.mjs` and `tsconfig.json`:
+- `@/` → `/src/`
+
+### ESLint Configuration
+
+**Plugins:** TypeScript, Astro, JSX A11y
+
+**Key Rules:**
+- Unused vars with `_` prefix allowed
+- `@typescript-eslint/no-explicit-any` as warning
+- JSX A11y rules adjusted for Astro components
+- Zero warnings enforced in build
+
+**Ignored paths:** `dist/`, `node_modules/`, `.astro/`, `.netlify/`, `public/`, `*.cjs`, `env.d.ts`
+
+## Important Patterns
+
+### Adding Blog Posts
+1. Create MDX file in `src/content/blog/`
+2. Add required frontmatter: `title`, `date`
+3. Optional: `excerpt`, `tags`, `cover_image`, `series`, `draft`
+4. Use `draft: true` to exclude from production builds
+5. Series posts need matching `series.collection_id` or `series.name`
+
+### Adding Embeds
+Use directive syntax in MDX:
+```markdown
+::youtube{videoId="dQw4w9WgXcQ"}
+::github{url="https://github.com/user/repo"}
+::twitter{tweetId="123456789"}
+```
+
+### Adding Live Collection Loaders
+1. Create loader in `src/content/loaders/`
+2. Implement `loadCollection()` and `loadEntry()` methods
+3. Return `{ entries, error? }` structure
+4. Add to `src/live.config.ts`
+5. Handle errors gracefully (return empty arrays on failure)
+
+### Theme Toggle
+Persisted to localStorage as `theme` key. Values: `"light"` | `"dark"`. Applies `.dark` class to `<html>` element.
+
+### Content Filtering
+- Use `data.draft !== true` to exclude drafts in production
+- Use `seriesFilter()` for series navigation
+- Tags are normalized to lowercase and slugified
+
+### Type Safety
+- All content collections use Zod schemas
+- Environment variables auto-generate types
+- Custom `urlOrRelative` validator for flexible URL handling
+
+## Node Version
+
+Requires Node.js 22 or higher (specified in `package.json` engines).
