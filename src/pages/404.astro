@@ -1,8 +1,28 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
 ---
 
 <MainLayout title="404 - not found">
-  <h1>404 - not found</h1>
-  <p>Looks like that page can't be found.</p>
+  <SectionHeader title="404 - not found" headingLevel={1} />
+  <p class="text-lg">Looks like that page can't be found.</p>
+  <img
+    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmpwZjFtbHZ6ZHUxaHRzZGx5cGMzMHpuMWMwaDV3bWd2bXBqbXB2aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ukGm72ZLZvYfS/giphy.gif"
+    alt="Blinking guy GIF"
+    width="480"
+    height="360"
+    class="mt-8 rounded-lg shadow-lg"
+    id="gif-404"
+  />
 </MainLayout>
+
+<script is:inline>
+  const img = document.getElementById("gif-404");
+  if (img) {
+    img.onerror = () => img.remove();
+    // In case the error fired before the script ran
+    if (img.complete && img.naturalWidth === 0) {
+      img.remove();
+    }
+  }
+</script>
