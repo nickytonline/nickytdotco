@@ -2,6 +2,9 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";
+import StreamSchedule from "@/components/StreamSchedule.astro";
+import type { StreamGuestInfo } from "@/utils/schedule-utils";
+import { getLiveCollection } from "astro:content";
 import {
   getVideos,
   getYouTubeId,
@@ -22,6 +25,25 @@ const nonShortVideos = videos.filter(
 const latestVideo = nonShortVideos[0];
 const videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
 
+const locale =
+  Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
+  Astro.request.headers.get("Accept-Language") ||
+  "en-US";
+
+let errorMessage = "";
+let schedule: StreamGuestInfo[] = [];
+
+const scheduleResult = await getLiveCollection("streamSchedule");
+
+if (scheduleResult.error) {
+  console.error("Error fetching stream schedule:", scheduleResult.error);
+  errorMessage = "Error fetching stream schedule.";
+} else {
+  schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
+}
+
+const { timezone = "" } = Astro.locals.netlify.context.geo;
+
 Astro.response.headers.set(
   "Cache-Control",
   "public, max-age=0, must-revalidate"
@@ -30,6 +52,8 @@ Astro.response.headers.set(
   "Netlify-CDN-Cache-Control",
   "public, max-age=259200, must-revalidate"
 );
+Astro.response.headers.set("timezone", timezone);
+Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
 
 export const prerender = false;
 ---
@@ -57,20 +81,45 @@ export const prerender = false;
     </div>
 
     {
-      videoId && latestVideo && (
+      errorMessage && (
         <section class="mb-12">
-          <h2 class="text-2xl lg:text-3xl font-bold mb-4 font-heading">
-            Latest from YouTube
+          <h2 class="text-2xl lg:text-3xl font-bold mb-6 font-heading">
+            Upcoming Live Streams
           </h2>
-          <div class="mb-4">
-            <YouTubeEmbed videoId={videoId} title={latestVideo.title} />
-          </div>
-          <h3 class="text-xl font-semibold mb-2">{latestVideo.title}</h3>
-          <div
-            class="prose prose-lg dark:prose-invert max-w-none text-muted-foreground"
-            set:html={sanitizeVideoDescription(latestVideo.description)}
+          <p class="text-red-600">{errorMessage}</p>
+        </section>
+      )
+    }
+
+    {
+      !errorMessage && schedule.length > 0 ? (
+        <section class="mb-12">
+          <h2 class="text-2xl lg:text-3xl font-bold mb-6 font-heading">
+            Upcoming Live Streams
+          </h2>
+          <StreamSchedule
+            schedule={schedule}
+            locale={locale}
+            timezone={timezone}
           />
         </section>
+      ) : (
+        videoId &&
+        latestVideo && (
+          <section class="mb-12">
+            <h2 class="text-2xl lg:text-3xl font-bold mb-4 font-heading">
+              Latest from YouTube
+            </h2>
+            <div class="mb-4">
+              <YouTubeEmbed videoId={videoId} title={latestVideo.title} />
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{latestVideo.title}</h3>
+            <div
+              class="prose prose-lg dark:prose-invert max-w-none text-muted-foreground"
+              set:html={sanitizeVideoDescription(latestVideo.description)}
+            />
+          </section>
+        )
       )
     }
 
