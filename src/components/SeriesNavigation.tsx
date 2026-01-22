@@ -291,7 +291,7 @@ export default function SeriesNavigation({ series, currentUrl, posts }: Props) {
                       ) : (
                         <a
                           href={`/blog/${post.slug}`}
-                          className="block text-sm leading-tight text-gray-700 dark:text-gray-300 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:text-pink-600 dark:focus-visible:text-pink-400 focus-visible:text-pink-600 dark:focus-visible:text-pink-400 focus-visible:underline focus-visible:outline-none"
+                          className="block text-sm leading-tight text-gray-700 dark:text-gray-300 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:text-pink-600 dark:focus-visible:text-pink-400 focus-visible:underline focus-visible:outline-none"
                         >
                           {truncate(post.data.title, 80)}
                         </a>
