@@ -1,0 +1,79 @@
+---
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+const filteredHeadings = headings
+  .filter((h) => h.depth >= 2 && h.depth <= 3)
+  .map((h) => ({
+    ...h,
+    text: h.text.endsWith("#") ? h.text.slice(0, -1).trim() : h.text,
+  }));
+
+if (filteredHeadings.length === 0) return null;
+---
+
+<details class="mb-8 py-2 data-[pagefind-ignore]" open data-pagefind-ignore>
+  <summary
+    class="font-heading font-bold text-xl cursor-pointer list-none flex items-center gap-2 hover:text-primary-glare dark:hover:text-highlight transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-glare"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="w-5 h-5 transition-transform duration-200"
+      aria-hidden="true"
+    >
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+    Table of Contents
+  </summary>
+  <nav
+    class="mt-4 border-l-2 border-primary/10 dark:border-primary-glare/20 ml-2"
+    aria-label="Table of Contents"
+  >
+    <ul class="space-y-1">
+      {
+        filteredHeadings.map((heading) => (
+          <li
+            class:list={[
+              "text-base leading-relaxed py-1",
+              {
+                "pl-4": heading.depth === 2,
+                "pl-8": heading.depth === 3,
+              },
+            ]}
+          >
+            <a
+              href={`#${heading.slug}`}
+              class="text-primary-glare dark:text-mid hover:text-primary-shade dark:hover:text-highlight hover:underline underline-offset-4 decoration-highlight decoration-2 transition-all block focus-visible:outline-none focus-visible:underline decoration-3"
+            >
+              {heading.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</details>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details svg {
+    transform: rotate(-90deg);
+  }
+  details[open] svg {
+    transform: rotate(0deg);
+  }
+</style>

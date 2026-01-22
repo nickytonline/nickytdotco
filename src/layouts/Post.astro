@@ -7,13 +7,14 @@ import site from "../data/site";
 import { seriesFilter } from "../utils/filters";
 import { getCollection } from "astro:content";
 import Tag from "@/components/Tag.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 
 export interface Props {
   entry: CollectionEntry<"blog">;
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, headings } = await entry.render();
 
 const currentUrl = `/blog/${entry.slug}`;
 
@@ -57,6 +58,8 @@ if (entry.data.series) {
         </div>
       )
     }
+
+    {headings.length > 3 && <TableOfContents headings={headings} />}
 
     <div class="prose prose-lg max-w-none">
       <Content />
