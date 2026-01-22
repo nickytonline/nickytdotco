@@ -1,0 +1,258 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { seriesName, truncate } from "../utils/filters";
+import slugify from "slugify";
+
+interface Props {
+  series: {
+    name: string;
+    collection_id: number;
+  };
+  currentUrl: string;
+  posts: CollectionEntry<"blog">[];
+}
+
+const { series, currentUrl, posts } = Astro.props;
+
+const sortedPosts = posts.sort(
+  (a, b) => a.data.date.getTime() - b.data.date.getTime()
+);
+
+if (sortedPosts.length <= 1) {
+  return null;
+}
+
+const currentIndex = sortedPosts.findIndex(
+  (post) => `/blog/${post.slug}` === currentUrl
+);
+const totalPosts = sortedPosts.length;
+const hasCollapse = totalPosts > 5;
+
+const isNearStart = currentIndex <= 2;
+const isNearEnd = currentIndex >= totalPosts - 3;
+
+// Divide posts into logic groups
+let head: CollectionEntry<"blog">[] = [];
+let middle: CollectionEntry<"blog">[] = [];
+let middleHiddenBefore: CollectionEntry<"blog">[] = [];
+let middleHiddenAfter: CollectionEntry<"blog">[] = [];
+let tail: CollectionEntry<"blog">[] = [];
+
+if (!hasCollapse) {
+  head = sortedPosts;
+} else if (isNearStart) {
+  head = sortedPosts.slice(0, 3);
+  middleHiddenAfter = sortedPosts.slice(3, -1);
+  tail = [sortedPosts[totalPosts - 1]];
+} else if (isNearEnd) {
+  head = [sortedPosts[0]];
+  middleHiddenBefore = sortedPosts.slice(1, totalPosts - 3);
+  tail = sortedPosts.slice(totalPosts - 3);
+} else {
+  head = [sortedPosts[0]];
+  middleHiddenBefore = sortedPosts.slice(1, currentIndex);
+  middle = [sortedPosts[currentIndex]];
+  middleHiddenAfter = sortedPosts.slice(currentIndex + 1, -1);
+  tail = [sortedPosts[totalPosts - 1]];
+}
+
+const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
+
+// Helper to get global index for a post
+const getStaticIndex = (post: CollectionEntry<"blog">) =>
+  sortedPosts.findIndex((p) => p.slug === post.slug);
+---
+
+<details
+  class="group my-8 rounded-lg border border-primary/10 bg-primary/5 p-6 dark:border-primary/10 dark:bg-primary-shade/30 data-[pagefind-ignore]"
+  open
+  data-pagefind-ignore
+>
+  <summary
+    class="flex cursor-pointer list-none items-center gap-2 transition-colors hover:text-primary-glare dark:hover:text-highlight focus-visible:outline-none focus-visible:underline decoration-highlight decoration-3 ornament-none"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="h-5 w-5 -rotate-90 transition-transform duration-200 group-open:rotate-0"
+      aria-hidden="true"
+    >
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+    <span class="font-heading text-xl font-bold">
+      {seriesName(series)}
+    </span>
+  </summary>
+
+  <nav aria-label="Series navigation" role="navigation" class="mt-4">
+    <ol
+      id={`series-list-${seriesSlug}`}
+      class="m-0 flex list-none flex-col gap-2 p-0"
+    >
+      {/* 1. Head items */}
+      {
+        head.map((post) => (
+          <li class="flex items-start gap-2">
+            <span
+              class:list={[
+                "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold leading-none",
+                currentIndex === getStaticIndex(post)
+                  ? "bg-pink-600 dark:bg-pink-500 text-white"
+                  : "bg-primary/10 dark:bg-primary-glare/20 text-primary-glare dark:text-mid",
+              ]}
+            >
+              {getStaticIndex(post) + 1}
+            </span>
+            <div class="min-w-0 flex-1 pt-0.5">
+              {currentIndex === getStaticIndex(post) ? (
+                <span class="block text-sm leading-tight font-semibold text-pink-600 dark:text-pink-400">
+                  {post.data.title}
+                </span>
+              ) : (
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="block text-sm leading-tight text-gray-700 dark:text-gray-300 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:underline focus-visible:outline-none"
+                >
+                  {truncate(post.data.title, 80)}
+                </a>
+              )}
+            </div>
+          </li>
+        ))
+      }
+
+      {/* 2. Hidden Before segment */}
+      {
+        middleHiddenBefore.length > 0 && (
+          <li>
+            <details class="group/nested">
+              <summary class="flex items-center gap-2 cursor-pointer list-none text-sm text-gray-700 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:outline-none focus-visible:underline ornament-none">
+                <span class="grid h-6 w-6 place-items-center tracking-tight text-gray-500 dark:text-gray-400">
+                  ···
+                </span>
+                <span class="group-open/nested:hidden">
+                  {middleHiddenBefore.length} more parts…
+                </span>
+                <span class="hidden group-open/nested:inline">Show less</span>
+              </summary>
+              <div class="flex flex-col gap-2 pt-2">
+                {middleHiddenBefore.map((post) => (
+                  <div class="flex items-start gap-2">
+                    <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-glare/20 text-xs font-semibold text-primary-glare dark:text-mid">
+                      {getStaticIndex(post) + 1}
+                    </span>
+                    <div class="min-w-0 flex-1 pt-0.5">
+                      <a
+                        href={`/blog/${post.slug}`}
+                        class="block text-sm leading-tight text-gray-700 dark:text-gray-300 hover:text-pink-600 hover:underline"
+                      >
+                        {truncate(post.data.title, 80)}
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </details>
+          </li>
+        )
+      }
+
+      {/* 3. Middle items (Current if not in head/tail) */}
+      {
+        middle.map((post) => (
+          <li class="flex items-start gap-2">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-pink-600 dark:bg-pink-500 text-white text-xs font-semibold leading-none">
+              {getStaticIndex(post) + 1}
+            </span>
+            <div class="min-w-0 flex-1 pt-0.5">
+              <span class="block text-sm leading-tight font-semibold text-pink-600 dark:text-pink-400">
+                {post.data.title}
+              </span>
+            </div>
+          </li>
+        ))
+      }
+
+      {/* 4. Hidden After segment */}
+      {
+        middleHiddenAfter.length > 0 && (
+          <li>
+            <details class="group/nested">
+              <summary class="flex items-center gap-2 cursor-pointer list-none text-sm text-gray-700 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:outline-none focus-visible:underline ornament-none">
+                <span class="grid h-6 w-6 place-items-center tracking-tight text-gray-500 dark:text-gray-400">
+                  ···
+                </span>
+                <span class="group-open/nested:hidden">
+                  {middleHiddenAfter.length} more parts…
+                </span>
+                <span class="hidden group-open/nested:inline">Show less</span>
+              </summary>
+              <div class="flex flex-col gap-2 pt-2">
+                {middleHiddenAfter.map((post) => (
+                  <div class="flex items-start gap-2">
+                    <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-glare/20 text-xs font-semibold text-primary-glare dark:text-mid">
+                      {getStaticIndex(post) + 1}
+                    </span>
+                    <div class="min-w-0 flex-1 pt-0.5">
+                      <a
+                        href={`/blog/${post.slug}`}
+                        class="block text-sm leading-tight text-gray-700 dark:text-gray-300 hover:text-pink-600 hover:underline"
+                      >
+                        {truncate(post.data.title, 80)}
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </details>
+          </li>
+        )
+      }
+
+      {/* 5. Tail items */}
+      {
+        tail.map((post) => (
+          <li class="flex items-start gap-2">
+            <span
+              class:list={[
+                "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold leading-none",
+                currentIndex === getStaticIndex(post)
+                  ? "bg-pink-600 dark:bg-pink-500 text-white"
+                  : "bg-primary/10 dark:bg-primary-glare/20 text-primary-glare dark:text-mid",
+              ]}
+            >
+              {getStaticIndex(post) + 1}
+            </span>
+            <div class="min-w-0 flex-1 pt-0.5">
+              {currentIndex === getStaticIndex(post) ? (
+                <span class="block text-sm leading-tight font-semibold text-pink-600 dark:text-pink-400">
+                  {post.data.title}
+                </span>
+              ) : (
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="block text-sm leading-tight text-gray-700 dark:text-gray-300 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:underline focus-visible:outline-none"
+                >
+                  {truncate(post.data.title, 80)}
+                </a>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </nav>
+</details>
+
+<style>
+  summary.ornament-none::-webkit-details-marker {
+    display: none;
+  }
+</style>

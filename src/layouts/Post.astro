@@ -1,7 +1,7 @@
 ---
 import MainLayout from "./MainLayout.astro";
 import PostIntro from "../components/PostIntro.astro";
-import SeriesNavigation from "../components/SeriesNavigation.tsx";
+import SeriesNavigation from "../components/SeriesNavigation.astro";
 import type { CollectionEntry } from "astro:content";
 import site from "../data/site";
 import { seriesFilter } from "../utils/filters";
@@ -50,7 +50,6 @@ if (entry.data.series) {
       entry.data.series && seriesPosts.length > 1 && (
         <div data-pagefind-ignore>
           <SeriesNavigation
-            client:load
             series={entry.data.series}
             currentUrl={currentUrl}
             posts={seriesPosts}
