@@ -53,9 +53,11 @@ $CHANGE_SUMMARY
 EOF
 )"
 
+gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
+
 if [ $? -eq 0 ]; then
-  echo "✅ Pull request created successfully"
+  echo "✅ Pull request created and auto-merge enabled successfully"
 else
-  echo "❌ Failed to create pull request"
+  echo "❌ Failed to create pull request or enable auto-merge"
   exit 1
 fi
