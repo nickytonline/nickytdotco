@@ -296,6 +296,24 @@ async function readExistingMDX(
 }
 
 /**
+ * Clear out the streams directory before regenerating content.
+ */
+async function clearStreamsDirectory(): Promise<void> {
+  const entries = await fs.readdir(STREAMS_DIR, { withFileTypes: true });
+
+  if (entries.length === 0) {
+    return;
+  }
+
+  console.log(`\n🧹 Clearing ${entries.length} existing stream files...`);
+
+  for (const entry of entries) {
+    const entryPath = path.join(STREAMS_DIR, entry.name);
+    await fs.rm(entryPath, { recursive: true, force: true });
+  }
+}
+
+/**
  * Check if video content has changed
  */
 function hasVideoChanged(
@@ -326,6 +344,8 @@ async function syncStreams(): Promise<void> {
       console.warn("⚠️  No videos found in playlist");
       return;
     }
+
+    await clearStreamsDirectory();
 
     // Build a map of videoId -> existing filename by reading all MDX files
     const existingFiles = await fs.readdir(STREAMS_DIR);
