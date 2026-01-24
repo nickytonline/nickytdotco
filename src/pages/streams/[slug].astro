@@ -24,7 +24,7 @@ if (!stream) {
   throw new Error("Stream not found");
 }
 
-const { title, date, videoId, channelTitle, description } = stream.data;
+const { title, date, videoId } = stream.data;
 
 const { Content } = await stream.render();
 ---

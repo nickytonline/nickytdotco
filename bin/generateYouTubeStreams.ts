@@ -272,18 +272,6 @@ function generateMDX(video: YouTubeVideo): string {
 }
 
 /**
- * Check if a file exists
- */
-async function fileExists(filePath: string): Promise<boolean> {
-  try {
-    await fs.access(filePath);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-/**
  * Read existing MDX file and extract frontmatter
  */
 async function readExistingMDX(
@@ -444,7 +432,7 @@ async function syncStreams(): Promise<void> {
     if (videosToDelete.length > 0) {
       console.log(`\n🗑️  Removing ${videosToDelete.length} deleted videos...`);
 
-      for (const [videoId, filename] of videosToDelete) {
+      for (const [, filename] of videosToDelete) {
         const filePath = path.join(STREAMS_DIR, filename);
         try {
           await fs.unlink(filePath);
