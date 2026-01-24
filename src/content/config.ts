@@ -78,7 +78,20 @@ const talksCollection = defineCollection({
   }),
 });
 
+const streamsCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    videoId: z.string(),
+    thumbnailUrl: z.string().url(),
+    channelTitle: z.string(),
+    description: z.string(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   talks: talksCollection,
+  streams: streamsCollection,
 };

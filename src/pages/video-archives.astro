@@ -1,0 +1,82 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/MainLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import { dateFilter } from "../utils/filters";
+
+const streams = await getCollection("streams");
+const sortedStreams = streams.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const streamsByYear = sortedStreams.reduce(
+  (acc, stream) => {
+    const year = stream.data.date.getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(stream);
+    return acc;
+  },
+  {} as Record<number, typeof sortedStreams>
+);
+
+const years = Object.keys(streamsByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
+---
+
+<Layout
+  title="Video Archives | Nick Taylor"
+  metaDesc="Archive of Nick Taylor's past live streams, interviews, and video content."
+  socialImage="/assets/images/page-og/watch.jpg"
+>
+  <div class="mb-6">
+    <SectionHeader title="Video Archives" headingLevel={1} />
+    <p class="text-xl text-muted-foreground mt-6">
+      Browse through past live streams, developer interviews, tech discussions,
+      and coding sessions.
+    </p>
+  </div>
+
+  <div class="space-y-12">
+    {
+      years.map((year) => (
+        <div id={`year-${year}`} class="scroll-mt-24">
+          <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
+            <h2 class="text-4xl font-bold text-foreground leading-none">
+              {year}
+            </h2>
+          </div>
+
+          <div class="space-y-1" data-pagefind-ignore>
+            {streamsByYear[year].map((stream) => {
+              const slug = stream.slug;
+              return (
+                <div class="py-5 px-6">
+                  <div class="flex items-baseline justify-between gap-6">
+                    <div class="flex-1">
+                      <h3 class="text-xl font-bold">
+                        <a
+                          href={`/streams/${slug}`}
+                          class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
+                        >
+                          {stream.data.title}
+                        </a>
+                      </h3>
+                      <div class="text-muted-foreground mt-2">
+                        <span class="italic text-base">
+                          {dateFilter(stream.data.date)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Layout>
