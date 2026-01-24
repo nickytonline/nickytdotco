@@ -208,9 +208,7 @@ async function fetchPlaylist(): Promise<YouTubeVideo[]> {
 
       if (!response.ok) {
         const errorText = await response.text();
-        throw new Error(
-          `YouTube API error (${response.status}): ${errorText}`
-        );
+        throw new Error(`YouTube API error (${response.status}): ${errorText}`);
       }
 
       const data: YouTubePlaylistResponse = await response.json();
@@ -383,7 +381,10 @@ async function syncStreams(): Promise<void> {
         let filename = `${baseSlug}.mdx`;
         let counter = 1;
 
-        while (usedFilenames.has(filename) && !videoIdToFilename.get(video.videoId)?.includes(baseSlug)) {
+        while (
+          usedFilenames.has(filename) &&
+          !videoIdToFilename.get(video.videoId)?.includes(baseSlug)
+        ) {
           filename = `${baseSlug}-${counter}.mdx`;
           counter++;
         }
@@ -406,7 +407,10 @@ async function syncStreams(): Promise<void> {
             await fs.writeFile(newFilePath, mdxContent, "utf-8");
             console.log(`  🔄 Renamed: ${existingFilename} → ${filename}`);
             renamedCount++;
-          } else if (existingFrontmatter && hasVideoChanged(video, existingFrontmatter)) {
+          } else if (
+            existingFrontmatter &&
+            hasVideoChanged(video, existingFrontmatter)
+          ) {
             // Content changed, update file
             const mdxContent = generateMDX(video);
             await fs.writeFile(newFilePath, mdxContent, "utf-8");
