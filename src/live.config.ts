@@ -1,9 +1,9 @@
 import { defineLiveCollection, z } from "astro:content";
 
-import { streamScheduleLoader } from "./content/loaders/stream-schedule";
-import { newsletterLoader } from "./content/loaders/newsletter";
-import { githubPinnedProjectsLoader } from "./content/loaders/github-pinned-projects";
-import { brewfileLoader } from "./content/loaders/brewfile";
+import { streamScheduleLoader } from "./content/_loaders/stream-schedule";
+import { newsletterLoader } from "./content/_loaders/newsletter";
+import { githubPinnedProjectsLoader } from "./content/_loaders/github-pinned-projects";
+import { brewfileLoader } from "./content/_loaders/brewfile";
 
 const streamSchedule = defineLiveCollection({
   loader: streamScheduleLoader,
