@@ -20,6 +20,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "https://nickyt.online/*"
+to = "https://www.nickyt.co/socials/"
+status = 301
+force = true
+
+[[redirects]]
 from = "/posts/*"
 to = "/blog/:splat"
 status = 301
