@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../layouts/MainLayout.astro";
-import SectionHeader from "../components/SectionHeader.astro";
-import { dateFilter } from "../utils/filters";
+import Layout from "../../layouts/MainLayout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import { dateFilter } from "../../utils/filters";
 
 const streams = await getCollection("streams");
 const sortedStreams = streams.sort(
@@ -58,7 +58,7 @@ const years = Object.keys(streamsByYear)
                     <div class="flex-1">
                       <h3 class="text-xl font-bold">
                         <a
-                          href={`/streams/${slug}`}
+                          href={`/videos/${slug}`}
                           class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
                         >
                           {stream.data.title}
