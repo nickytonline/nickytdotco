@@ -3,7 +3,7 @@ import { getLiveCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import type { GitHubPinnedProject } from "../content/loaders/github-pinned-projects";
+import type { GitHubPinnedProject } from "../content/_loaders/github-pinned-projects";
 
 const projectsResult = await getLiveCollection("pinnedProjects");
 let projects: GitHubPinnedProject[] = [];
