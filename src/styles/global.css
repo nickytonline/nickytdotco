@@ -134,6 +134,7 @@ body {
   @apply bg-background;
   @apply text-foreground;
   @apply transition-colors;
+  isolation: isolate;
 }
 
 html {
@@ -276,5 +277,42 @@ mark {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media (min-width: 1024px) {
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: radial-gradient(
+      circle,
+      oklch(0.65 0.25 350 / 0.25) 1.2px,
+      transparent 1.2px
+    );
+    background-size: 16px 16px;
+    mask-image: radial-gradient(
+      ellipse 100% 100% at 100% 0%,
+      black 20%,
+      transparent 80%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 100% 100% at 100% 0%,
+      black 20%,
+      transparent 80%
+    );
+  }
+
+  :is(.dark) body::after {
+    background-image: radial-gradient(
+      circle,
+      oklch(0.65 0.25 350 / 0.4) 1.2px,
+      transparent 1.2px
+    );
   }
 }
