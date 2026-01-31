@@ -61,33 +61,37 @@
 
   const initThemeToggle = () => {
     const themeToggle = document.getElementById("theme-toggle");
-    const html = document.documentElement;
 
-    // Set initial theme
+    if (themeToggle?.dataset.initialized === "true") {
+      return;
+    }
+
     setTheme(getThemePreference());
 
-    // Toggle theme on button click
     themeToggle?.addEventListener("click", () => {
+      const html = document.documentElement;
       const currentTheme = html.classList.contains("dark") ? "dark" : "light";
       const newTheme = currentTheme === "dark" ? "light" : "dark";
 
       setTheme(newTheme);
       localStorage.setItem("theme", newTheme);
     });
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        if (!localStorage.getItem("theme")) {
+          setTheme(e.matches ? "dark" : "light");
+        }
+      });
+
+    if (themeToggle) {
+      themeToggle.dataset.initialized = "true";
+    }
   };
 
-  // Initialize theme
   initThemeToggle();
 
-  // Listen for system theme changes
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      if (!localStorage.getItem("theme")) {
-        setTheme(e.matches ? "dark" : "light");
-      }
-    });
-
-  // Handle page navigation (for Astro view transitions if enabled)
+  // Re-initialize after navigation (will skip if already initialized)
   document.addEventListener("astro:page-load", initThemeToggle);
 </script>
