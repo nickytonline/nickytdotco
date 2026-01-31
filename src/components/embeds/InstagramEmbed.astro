@@ -25,19 +25,27 @@ if (url.startsWith("http")) {
   </blockquote>
 </div>
 <script>
-  const scriptSrc = "//www.instagram.com/embed.js";
-  if (!document.querySelector(`script[src*="instagram.com/embed.js"]`)) {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = scriptSrc;
-    document.head.appendChild(script);
-  } else {
-    const instgrm = (
-      window as Window & { instgrm?: { Embeds: { process: () => void } } }
-    ).instgrm;
-    if (instgrm) {
-      // Re-process embeds if script already loaded
-      instgrm.Embeds.process();
+  function loadInstagram() {
+    const scriptSrc = "//www.instagram.com/embed.js";
+    if (!document.querySelector(`script[src*="instagram.com/embed.js"]`)) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = scriptSrc;
+      document.head.appendChild(script);
+    } else {
+      const instgrm = (
+        window as Window & { instgrm?: { Embeds: { process: () => void } } }
+      ).instgrm;
+      if (instgrm) {
+        // Re-process embeds if script already loaded
+        instgrm.Embeds.process();
+      }
     }
   }
+
+  // Initial load
+  loadInstagram();
+
+  // Re-run on View Transitions
+  document.addEventListener("astro:page-load", loadInstagram);
 </script>

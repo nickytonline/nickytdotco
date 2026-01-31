@@ -11,7 +11,10 @@ const currentPath = pathname.slice(1);
     class="flex flex-col items-center md:md:items-start md:flex-row gap-6 justify-between"
   >
     <div class="flex flex-col gap-6 items-center md:items-start">
-      <h1 class="font-heading md:text-6xl lg:text-8xl font-medium">
+      <h1
+        class="font-heading md:text-6xl lg:text-8xl font-medium"
+        transition:name="header-logo"
+      >
         nickyt<span class="text-pink-600">.</span>co
       </h1>
       <nav
@@ -126,7 +129,7 @@ const currentPath = pathname.slice(1);
         </svg>
         <span class="sr-only">Subscribe via RSS Feed</span>
       </a>
-      <Search client:load />
+      <Search client:load transition:persist />
       <ThemeToggle />
     </div>
   </div>

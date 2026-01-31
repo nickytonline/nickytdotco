@@ -4,6 +4,7 @@ import OgMetaTags from "../components/OgMetaTags.astro";
 import Header from "../components/Header.astro";
 import SkipLink from "../components/SkipLink.astro";
 import site from "@/data/site";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -36,6 +37,7 @@ const { origin } = new URL(Astro.request.url);
       socialImage={new URL(socialImage, origin).href}
     />
     <title>{title}</title>
+    <ClientRouter />
     <!-- Prevent flash of unstyled content -->
     <script is:inline>
       // Check for saved theme preference or default to system preference
@@ -57,6 +59,14 @@ const { origin } = new URL(Astro.request.url);
       } else {
         document.documentElement.classList.remove("dark");
       }
+
+      document.addEventListener("astro:after-swap", () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      });
     </script>
   </head>
   <body class="pb-32 font-sans">

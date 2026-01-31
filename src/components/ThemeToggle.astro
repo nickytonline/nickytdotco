@@ -34,12 +34,6 @@
 
 <script>
   // Theme toggle functionality
-  const themeToggle = document.getElementById("theme-toggle");
-  const darkIcon = document.getElementById("theme-toggle-dark-icon");
-  const lightIcon = document.getElementById("theme-toggle-light-icon");
-  const html = document.documentElement;
-
-  // Check for saved theme preference or default to system preference
   const getThemePreference = (): string => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme")!;
@@ -49,8 +43,11 @@
       : "light";
   };
 
-  // Set theme on page load
-  const setTheme = (theme: string): void => {
+  const setTheme = (theme: string, container: ParentNode = document): void => {
+    const html = document.documentElement;
+    const darkIcon = container.querySelector("#theme-toggle-dark-icon");
+    const lightIcon = container.querySelector("#theme-toggle-light-icon");
+
     if (theme === "dark") {
       html.classList.add("dark");
       darkIcon?.classList.remove("hidden");
@@ -62,17 +59,25 @@
     }
   };
 
+  const initThemeToggle = () => {
+    const themeToggle = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+
+    // Set initial theme
+    setTheme(getThemePreference());
+
+    // Toggle theme on button click
+    themeToggle?.addEventListener("click", () => {
+      const currentTheme = html.classList.contains("dark") ? "dark" : "light";
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      setTheme(newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+  };
+
   // Initialize theme
-  setTheme(getThemePreference());
-
-  // Toggle theme on button click
-  themeToggle?.addEventListener("click", () => {
-    const currentTheme = html.classList.contains("dark") ? "dark" : "light";
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-  });
+  initThemeToggle();
 
   // Listen for system theme changes
   window
@@ -84,7 +89,5 @@
     });
 
   // Handle page navigation (for Astro view transitions if enabled)
-  document.addEventListener("astro:page-load", () => {
-    setTheme(getThemePreference());
-  });
+  document.addEventListener("astro:page-load", initThemeToggle);
 </script>

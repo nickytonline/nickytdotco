@@ -28,17 +28,25 @@ const [, user, , codepenId] = pathname.split("/");
   </p>
 </div>
 <script>
-  const scriptSrc = "https://static.codepen.io/assets/embed/ei.js";
-  if (!document.querySelector(`script[src*="codepen.io/assets/embed"]`)) {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = scriptSrc;
-    document.head.appendChild(script);
-  } else {
-    const cpEmbed = (window as Window & { __CPEmbed?: () => void }).__CPEmbed;
-    if (cpEmbed) {
-      // Re-process embeds if script already loaded
-      cpEmbed();
+  function loadCodePen() {
+    const scriptSrc = "https://static.codepen.io/assets/embed/ei.js";
+    if (!document.querySelector(`script[src*="codepen.io/assets/embed"]`)) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = scriptSrc;
+      document.head.appendChild(script);
+    } else {
+      const cpEmbed = (window as Window & { __CPEmbed?: () => void }).__CPEmbed;
+      if (cpEmbed) {
+        // Re-process embeds if script already loaded
+        cpEmbed();
+      }
     }
   }
+
+  // Load on initial page load
+  loadCodePen();
+
+  // Re-run on View Transitions
+  document.addEventListener("astro:page-load", loadCodePen);
 </script>

@@ -86,6 +86,20 @@ const Search = () => {
   }, [isOpen, results, selectedIndex]);
 
   useEffect(() => {
+    const handleNavigation = () => {
+      setIsOpen(false);
+    };
+
+    document.addEventListener("astro:before-preparation", handleNavigation);
+    return () => {
+      document.removeEventListener(
+        "astro:before-preparation",
+        handleNavigation
+      );
+    };
+  }, []);
+
+  useEffect(() => {
     if (isOpen) {
       dialogRef.current?.showModal();
       inputRef.current?.focus();
