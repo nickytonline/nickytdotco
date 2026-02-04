@@ -87,6 +87,28 @@ const streamsCollection = defineCollection({
     thumbnailUrl: z.string().url(),
     channelTitle: z.string(),
     description: z.string(),
+    guest: z.string().optional(),
+    guestName: z.string().optional(),
+  }),
+});
+
+const guestsCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    name: z.string(),
+    slug: z.string(),
+    title: z.string().optional(),
+    bio: z.string().optional(),
+    photo: z.string().url().optional(),
+    social: z.object({
+      website: z.string().url().optional(),
+      twitter: z.string().optional(),
+      github: z.string().optional(),
+      youtube: z.string().optional(),
+      linkedin: z.string().url().optional(),
+      bluesky: z.string().optional(),
+      twitch: z.string().optional(),
+    }),
   }),
 });
 
@@ -94,4 +116,5 @@ export const collections = {
   blog: blogCollection,
   talks: talksCollection,
   streams: streamsCollection,
+  guests: guestsCollection,
 };

@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/MainLayout.astro";
+import GuestCard from "../../components/GuestCard.astro";
+
+const guests = await getCollection("guests");
+
+// Sort guests alphabetically by name
+const sortedGuests = guests.sort((a, b) =>
+  a.data.name.localeCompare(b.data.name)
+);
+
+// Get stream counts for each guest
+const allStreams = await getCollection("streams");
+const guestStreamCounts = sortedGuests.map((guest) => {
+  const count = allStreams.filter(
+    (stream) => stream.data.guest === guest.data.slug
+  ).length;
+  return { guest, count };
+});
+---
+
+<Layout
+  title="Stream Guests"
+  metaDesc="Browse all the amazing guests who have appeared on Nick's live streams"
+  pageType="Guests"
+>
+  <header class="mb-12">
+    <h1
+      class="text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-tight mb-4"
+    >
+      Stream Guests
+    </h1>
+    <p class="text-lg text-muted-foreground">
+      Amazing people who have appeared on the live streams
+    </p>
+  </header>
+
+  {
+    guestStreamCounts.length === 0 ? (
+      <p class="text-muted-foreground">No guests yet. Check back soon!</p>
+    ) : (
+      <div class="space-y-6">
+        {guestStreamCounts.map(({ guest, count }) => (
+          <div class="group">
+            <GuestCard
+              name={guest.data.name}
+              title={guest.data.title}
+              photo={guest.data.photo}
+              slug={guest.data.slug}
+              social={guest.data.social}
+              showLink={true}
+            />
+            {count > 0 && (
+              <p class="text-sm text-muted-foreground mt-2 ml-6">
+                {count} stream appearance{count !== 1 ? "s" : ""}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    )
+  }
+</Layout>

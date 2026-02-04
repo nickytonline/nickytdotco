@@ -3,13 +3,17 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
+import { parseGuestFromDescription } from "../src/utils/youtube-parser.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const STREAMS_DIR = path.join(__dirname, "../src/content/streams");
+const GUESTS_DIR = path.join(__dirname, "../src/content/guests");
 const API_KEY = process.env.YOUTUBE_API_KEY;
 const PLAYLIST_ID = process.env.YOUTUBE_PLAYLIST_ID;
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
+const AIRTABLE_BASE_ID = process.env.AIRTABLE_STREAM_GUEST_BASE_ID;
 
 const YOUTUBE_API_BASE = "https://www.googleapis.com/youtube/v3";
 
@@ -52,6 +56,38 @@ interface StreamFrontmatter {
   description?: string;
   thumbnailUrl: string;
   channelTitle: string;
+  guest?: string;
+  guestName?: string;
+}
+
+interface AirtableGuest {
+  name: string;
+  title?: string;
+  website?: string;
+  twitter?: string;
+  github?: string;
+  youtube?: string;
+  linkedin?: string;
+  bluesky?: string;
+  twitch?: string;
+  youtubeStreamLink?: string;
+}
+
+interface GuestFrontmatter {
+  name: string;
+  slug: string;
+  title?: string;
+  bio?: string;
+  photo?: string;
+  social: {
+    website?: string;
+    twitter?: string;
+    github?: string;
+    youtube?: string;
+    linkedin?: string;
+    bluesky?: string;
+    twitch?: string;
+  };
 }
 
 /**
@@ -95,6 +131,132 @@ function slugify(text: string): string {
  */
 async function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Extract video ID from YouTube URL
+ */
+function extractVideoIdFromUrl(url: string): string | null {
+  if (!url) return null;
+  const match = url.match(/[?&]v=([^&]+)/);
+  return match ? match[1] : null;
+}
+
+/**
+ * Normalize string for fuzzy matching (lowercase, remove punctuation)
+ */
+function normalizeForMatching(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * Fetch all guest records from Airtable
+ */
+async function fetchAirtableGuests(): Promise<Map<string, AirtableGuest>> {
+  const guestMap = new Map<string, AirtableGuest>();
+
+  if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
+    console.log("⚠️  Airtable credentials not found, skipping Airtable lookup");
+    return guestMap;
+  }
+
+  try {
+    console.log("📋 Fetching guest data from Airtable...");
+
+    const url = new URL(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Stream%20Guests`
+    );
+    url.searchParams.set("fields[]", "Name");
+    url.searchParams.set("fields[]", "Guest Title");
+    url.searchParams.set("fields[]", "Stream Title");
+    url.searchParams.set("fields[]", "YouTube Stream Link");
+    url.searchParams.set("fields[]", "Website");
+    url.searchParams.set("fields[]", "Twitter Username");
+    url.searchParams.set("fields[]", "GitHub Handle");
+    url.searchParams.set("fields[]", "YouTube Channel");
+    url.searchParams.set("fields[]", "LinkedIn");
+    url.searchParams.set("fields[]", "Bluesky");
+    url.searchParams.set("fields[]", "Twitch Handle");
+
+    const response = await fetchWithRetry(url.toString());
+
+    if (!response.ok) {
+      console.warn(
+        `⚠️  Failed to fetch Airtable data: ${response.status} ${response.statusText}`
+      );
+      return guestMap;
+    }
+
+    const data = await response.json();
+    const records = data.records || [];
+
+    for (const record of records) {
+      const fields = record.fields;
+      if (!fields.Name) continue;
+
+      const guest: AirtableGuest = {
+        name: fields.Name,
+        title: fields["Guest Title"],
+        website: fields.Website,
+        twitter: fields["Twitter Username"],
+        github: fields["GitHub Handle"],
+        youtube: fields["YouTube Channel"],
+        linkedin: fields.LinkedIn,
+        bluesky: fields.Bluesky,
+        twitch: fields["Twitch Handle"],
+        youtubeStreamLink: fields["YouTube Stream Link"],
+      };
+
+      // Index by video ID if available
+      if (guest.youtubeStreamLink) {
+        const videoId = extractVideoIdFromUrl(guest.youtubeStreamLink);
+        if (videoId) {
+          guestMap.set(`videoid:${videoId}`, guest);
+        }
+      }
+
+      // Index by normalized stream title
+      if (fields["Stream Title"]) {
+        const normalizedTitle = normalizeForMatching(fields["Stream Title"]);
+        guestMap.set(`title:${normalizedTitle}`, guest);
+      }
+    }
+
+    console.log(`  ✓ Fetched ${records.length} guest records from Airtable`);
+    return guestMap;
+  } catch (error) {
+    console.warn(
+      `⚠️  Error fetching Airtable guests: ${getErrorMessage(error)}`
+    );
+    return guestMap;
+  }
+}
+
+/**
+ * Match a YouTube video against Airtable guest data
+ */
+function matchAirtableGuest(
+  video: YouTubeVideo,
+  airtableGuests: Map<string, AirtableGuest>
+): AirtableGuest | null {
+  // Try video ID match first
+  const videoIdMatch = airtableGuests.get(`videoid:${video.videoId}`);
+  if (videoIdMatch) {
+    return videoIdMatch;
+  }
+
+  // Try fuzzy title match
+  const normalizedTitle = normalizeForMatching(video.title);
+  const titleMatch = airtableGuests.get(`title:${normalizedTitle}`);
+  if (titleMatch) {
+    return titleMatch;
+  }
+
+  return null;
 }
 
 /**
@@ -249,7 +411,11 @@ async function fetchPlaylist(): Promise<YouTubeVideo[]> {
 /**
  * Generate MDX frontmatter and content for a video
  */
-function generateMDX(video: YouTubeVideo): string {
+function generateMDX(
+  video: YouTubeVideo,
+  guestSlug?: string,
+  guestName?: string
+): string {
   const frontmatter: StreamFrontmatter = {
     title: video.title,
     date: video.publishedAt,
@@ -261,6 +427,14 @@ function generateMDX(video: YouTubeVideo): string {
   // Only include description if it's not empty
   if (video.description.trim()) {
     frontmatter.description = video.description;
+  }
+
+  // Add guest information if available
+  if (guestSlug) {
+    frontmatter.guest = guestSlug;
+  }
+  if (guestName) {
+    frontmatter.guestName = guestName;
   }
 
   const yamlFrontmatter = yaml.dump(frontmatter);
@@ -314,6 +488,91 @@ async function clearStreamsDirectory(): Promise<void> {
 }
 
 /**
+ * Create or update a guest MDX file
+ */
+async function createOrUpdateGuest(guestData: {
+  name: string;
+  title?: string;
+  social: {
+    website?: string;
+    twitter?: string;
+    github?: string;
+    youtube?: string;
+    linkedin?: string;
+    bluesky?: string;
+    twitch?: string;
+  };
+}): Promise<string> {
+  // Ensure guests directory exists
+  await fs.mkdir(GUESTS_DIR, { recursive: true });
+
+  // Generate slug from name
+  const slug = slugify(guestData.name);
+  const filePath = path.join(GUESTS_DIR, `${slug}.mdx`);
+
+  try {
+    // Check if guest file already exists
+    const existingContent = await fs.readFile(filePath, "utf-8");
+    const frontmatterMatch = existingContent.match(/^---\n([\s\S]*?)\n---/);
+
+    if (frontmatterMatch) {
+      // Guest exists - merge data
+      const existingFrontmatter = yaml.load(
+        frontmatterMatch[1]
+      ) as GuestFrontmatter;
+
+      // Keep existing bio and photo, update social links
+      const updatedFrontmatter: GuestFrontmatter = {
+        name: guestData.name,
+        slug,
+        ...(guestData.title || existingFrontmatter.title
+          ? { title: guestData.title || existingFrontmatter.title }
+          : {}),
+        ...(existingFrontmatter.bio ? { bio: existingFrontmatter.bio } : {}),
+        ...(existingFrontmatter.photo ? { photo: existingFrontmatter.photo } : {}),
+        social: {
+          website:
+            guestData.social.website || existingFrontmatter.social.website,
+          twitter:
+            guestData.social.twitter || existingFrontmatter.social.twitter,
+          github: guestData.social.github || existingFrontmatter.social.github,
+          youtube:
+            guestData.social.youtube || existingFrontmatter.social.youtube,
+          linkedin:
+            guestData.social.linkedin || existingFrontmatter.social.linkedin,
+          bluesky:
+            guestData.social.bluesky || existingFrontmatter.social.bluesky,
+          twitch: guestData.social.twitch || existingFrontmatter.social.twitch,
+        },
+      };
+
+      const yamlFrontmatter = yaml.dump(updatedFrontmatter);
+      const body = existingContent.substring(frontmatterMatch[0].length).trim();
+      const mdxContent = `---\n${yamlFrontmatter}---\n\n${body}`;
+
+      await fs.writeFile(filePath, mdxContent, "utf-8");
+      return slug;
+    }
+  } catch (error) {
+    // File doesn't exist, will create new
+  }
+
+  // Create new guest file
+  const frontmatter: GuestFrontmatter = {
+    name: guestData.name,
+    slug,
+    ...(guestData.title && { title: guestData.title }),
+    social: guestData.social,
+  };
+
+  const yamlFrontmatter = yaml.dump(frontmatter);
+  const mdxContent = `---\n${yamlFrontmatter}---\n\n# About ${guestData.name}\n\n[Bio will be added manually]\n`;
+
+  await fs.writeFile(filePath, mdxContent, "utf-8");
+  return slug;
+}
+
+/**
  * Check if video content has changed
  */
 function hasVideoChanged(
@@ -334,8 +593,9 @@ function hasVideoChanged(
  */
 async function syncStreams(): Promise<void> {
   try {
-    // Ensure streams directory exists
+    // Ensure streams and guests directories exist
     await fs.mkdir(STREAMS_DIR, { recursive: true });
+    await fs.mkdir(GUESTS_DIR, { recursive: true });
 
     // Fetch all videos from playlist
     const videos = await fetchPlaylist();
@@ -344,6 +604,9 @@ async function syncStreams(): Promise<void> {
       console.warn("⚠️  No videos found in playlist");
       return;
     }
+
+    // Fetch Airtable guest data
+    const airtableGuests = await fetchAirtableGuests();
 
     await clearStreamsDirectory();
 
@@ -371,12 +634,96 @@ async function syncStreams(): Promise<void> {
     let updatedCount = 0;
     let skippedCount = 0;
     let renamedCount = 0;
+    let guestsCreatedCount = 0;
+    let guestsUpdatedCount = 0;
+    let streamsWithGuestCount = 0;
+    let streamsWithoutGuestCount = 0;
 
     console.log(`\n📝 Processing ${videos.length} videos...`);
 
     // Create/update MDX files
     for (const video of videos) {
       try {
+        // Extract guest information
+        let guestSlug: string | undefined;
+        let guestName: string | undefined;
+
+        // Try Airtable match first
+        const airtableMatch = matchAirtableGuest(video, airtableGuests);
+
+        if (airtableMatch) {
+          // Guest found in Airtable
+          guestName = airtableMatch.name;
+          const slug = slugify(airtableMatch.name);
+
+          // Check if guest already exists
+          const existingGuest = await fs
+            .access(path.join(GUESTS_DIR, `${slug}.mdx`))
+            .then(() => true)
+            .catch(() => false);
+
+          // Create or update guest MDX file
+          guestSlug = await createOrUpdateGuest({
+            name: airtableMatch.name,
+            title: airtableMatch.title,
+            social: {
+              website: airtableMatch.website,
+              twitter: airtableMatch.twitter,
+              github: airtableMatch.github,
+              youtube: airtableMatch.youtube,
+              linkedin: airtableMatch.linkedin,
+              bluesky: airtableMatch.bluesky,
+              twitch: airtableMatch.twitch,
+            },
+          });
+
+          if (!existingGuest) {
+            guestsCreatedCount++;
+            console.log(`    ✨ Created guest: ${guestName}`);
+          } else {
+            guestsUpdatedCount++;
+          }
+
+          streamsWithGuestCount++;
+        } else {
+          // Try parsing YouTube description
+          const parsedGuest = parseGuestFromDescription(video.description);
+
+          if (parsedGuest) {
+            guestName = parsedGuest.name;
+            const slug = slugify(parsedGuest.name);
+
+            // Check if guest already exists
+            const existingGuest = await fs
+              .access(path.join(GUESTS_DIR, `${slug}.mdx`))
+              .then(() => true)
+              .catch(() => false);
+
+            // Create or update guest MDX file
+            guestSlug = await createOrUpdateGuest({
+              name: parsedGuest.name,
+              social: parsedGuest.social,
+            });
+
+            if (!existingGuest) {
+              guestsCreatedCount++;
+              console.log(
+                `    ✨ Created guest: ${guestName} (from description)`
+              );
+            } else {
+              guestsUpdatedCount++;
+            }
+
+            streamsWithGuestCount++;
+          } else {
+            // No guest found
+            console.log(
+              `    ⚠️  No guest found for: ${video.title} (${video.videoId})`
+            );
+            streamsWithoutGuestCount++;
+          }
+        }
+
         // Generate filename from slugified title
         let baseSlug = slugify(video.title);
 
@@ -411,7 +758,7 @@ async function syncStreams(): Promise<void> {
           if (existingFilename !== filename) {
             // Delete old file and create new one
             await fs.unlink(existingFilePath);
-            const mdxContent = generateMDX(video);
+            const mdxContent = generateMDX(video, guestSlug, guestName);
             await fs.writeFile(newFilePath, mdxContent, "utf-8");
             console.log(`  🔄 Renamed: ${existingFilename} → ${filename}`);
             renamedCount++;
@@ -420,7 +767,7 @@ async function syncStreams(): Promise<void> {
             hasVideoChanged(video, existingFrontmatter)
           ) {
             // Content changed, update file
-            const mdxContent = generateMDX(video);
+            const mdxContent = generateMDX(video, guestSlug, guestName);
             await fs.writeFile(newFilePath, mdxContent, "utf-8");
             console.log(`  ✏️  Updated: ${video.title}`);
             updatedCount++;
@@ -430,7 +777,7 @@ async function syncStreams(): Promise<void> {
           }
         } else {
           // New video, create file
-          const mdxContent = generateMDX(video);
+          const mdxContent = generateMDX(video, guestSlug, guestName);
           await fs.writeFile(newFilePath, mdxContent, "utf-8");
           console.log(`  ✨ Created: ${filename}`);
           createdCount++;
@@ -469,12 +816,18 @@ async function syncStreams(): Promise<void> {
     // Summary
     console.log("\n✅ Sync complete!");
     console.log(`  📊 Summary:`);
-    console.log(`     - Created: ${createdCount}`);
-    console.log(`     - Updated: ${updatedCount}`);
-    console.log(`     - Renamed: ${renamedCount}`);
-    console.log(`     - Deleted: ${deletedCount}`);
-    console.log(`     - Skipped: ${skippedCount} (unchanged)`);
-    console.log(`     - Total: ${videos.length} videos in playlist`);
+    console.log(`     Streams:`);
+    console.log(`       - Created: ${createdCount}`);
+    console.log(`       - Updated: ${updatedCount}`);
+    console.log(`       - Renamed: ${renamedCount}`);
+    console.log(`       - Deleted: ${deletedCount}`);
+    console.log(`       - Skipped: ${skippedCount} (unchanged)`);
+    console.log(`       - Total: ${videos.length} videos in playlist`);
+    console.log(`     Guests:`);
+    console.log(`       - Created: ${guestsCreatedCount}`);
+    console.log(`       - Updated: ${guestsUpdatedCount}`);
+    console.log(`       - Streams with guest: ${streamsWithGuestCount}`);
+    console.log(`       - Streams without guest: ${streamsWithoutGuestCount}`);
   } catch (error) {
     console.error(`❌ Fatal error during sync: ${getErrorMessage(error)}`);
     process.exit(1);

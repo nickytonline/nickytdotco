@@ -3,6 +3,7 @@ import { getEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import { dateFilter } from "../../utils/filters";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
+import GuestCard from "../../components/GuestCard.astro";
 
 export async function getStaticPaths() {
   const streams = await getCollection("streams");
@@ -24,7 +25,16 @@ if (!stream) {
   throw new Error("Stream not found");
 }
 
-const { title, date, videoId } = stream.data;
+const { title, date, videoId, guest: guestSlug } = stream.data;
+
+// Fetch guest information if available
+let guestData = null;
+if (guestSlug) {
+  const guestEntry = await getEntry("guests", guestSlug);
+  if (guestEntry) {
+    guestData = guestEntry.data;
+  }
+}
 
 const { Content } = await stream.render();
 ---
@@ -52,6 +62,22 @@ const { Content } = await stream.render();
     <div class="my-6">
       <YouTubeEmbed videoId={videoId} title={title} />
     </div>
+
+    {
+      guestData && (
+        <div class="my-8">
+          <h2 class="text-2xl font-bold text-foreground mb-4">Featured Guest</h2>
+          <GuestCard
+            name={guestData.name}
+            title={guestData.title}
+            photo={guestData.photo}
+            slug={guestData.slug}
+            social={guestData.social}
+            showLink={true}
+          />
+        </div>
+      )
+    }
 
     <div class="mb-6">
       <a

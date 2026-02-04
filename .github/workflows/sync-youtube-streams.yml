@@ -24,6 +24,8 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_PLAYLIST_ID }}
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_STREAM_GUEST_BASE_ID: ${{ secrets.AIRTABLE_STREAM_GUEST_BASE_ID }}
         run: node bin/generateYouTubeStreams.ts
 
       - name: Format generated files
