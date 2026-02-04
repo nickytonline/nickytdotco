@@ -127,6 +127,59 @@ async function fetchStreamSchedule(): Promise<GuestRecord[]> {
   return records;
 }
 
+function buildPastGuestsQueryUrl({
+  apiKey,
+  baseId,
+}: {
+  apiKey: string;
+  baseId: string;
+}) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const todayISOString = today.toISOString();
+
+  const url = new URL(
+    `https://api.airtable.com/v0/${baseId}/${STREAM_GUESTS_TABLE}`
+  );
+  url.searchParams.set(
+    "filterByFormula",
+    `AND(IS_BEFORE({Date}, '${todayISOString}'), {YouTube Stream Link} != '', {On Schedule})`
+  );
+  url.searchParams.set("sortField", "Date");
+  url.searchParams.set("sortDirection", "desc");
+  url.searchParams.set("maxRecords", "2");
+  GUEST_FIELDS.forEach((field) => {
+    url.searchParams.append("fields[]", field);
+  });
+
+  return {
+    url: url.toString(),
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+    },
+  };
+}
+
+export async function fetchPastGuestsWithYouTube(): Promise<StreamGuestInfo[]> {
+  try {
+    const apiKey = ENV.AIRTABLE_API_KEY;
+    const baseId = ENV.AIRTABLE_STREAM_GUEST_BASE_ID;
+    const { url, headers } = buildPastGuestsQueryUrl({ apiKey, baseId });
+
+    const response = await fetch(url, { headers });
+    if (!response.ok) {
+      throw new Error(`Airtable past guests request failed: ${response.status}`);
+    }
+
+    const { records } = (await response.json()) as { records: GuestRecord[] };
+    return records.map((record) => mapRecordToSchedule(record.fields));
+  } catch (error) {
+    console.error("Error fetching past guests:", error);
+    return [];
+  }
+}
+
 export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
   {
     name: "stream-schedule",

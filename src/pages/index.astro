@@ -1,5 +1,6 @@
 ---
 import StreamSchedule from "../components/StreamSchedule.astro";
+import PastGuestCard from "../components/PastGuestCard.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import Layout from "../layouts/MainLayout.astro";
@@ -8,6 +9,7 @@ import { getLiveCollection } from "astro:content";
 import { getCollection } from "astro:content";
 import { site } from "../data/site";
 import { dateFilter } from "../utils/filters";
+import { fetchPastGuestsWithYouTube } from "../content/_loaders/stream-schedule";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -27,6 +29,7 @@ const locale =
 
 let errorMessage = "";
 let schedule: StreamGuestInfo[] = [];
+let pastGuests: StreamGuestInfo[] = [];
 
 const scheduleResult = await getLiveCollection("streamSchedule");
 
@@ -35,6 +38,11 @@ if (scheduleResult.error) {
   errorMessage = "Error fetching stream schedule.";
 } else {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
+
+  // Only fetch past guests if there are no upcoming streams
+  if (schedule.length === 0) {
+    pastGuests = await fetchPastGuestsWithYouTube();
+  }
 }
 
 const { timezone = "" } = Astro.locals.netlify.context.geo;
@@ -96,6 +104,22 @@ export const prerender = false;
               locale={locale}
               timezone={timezone}
             />
+          </>
+        ) : null
+      }
+      {
+        !errorMessage && schedule.length === 0 && pastGuests.length > 0 ? (
+          <>
+            <h2>Recent Live Streams</h2>
+            <div class="grid gap-6 xl:gap-8">
+              {pastGuests.map((guest) => (
+                <PastGuestCard
+                  guest={guest}
+                  locale={locale}
+                  timezone={timezone}
+                />
+              ))}
+            </div>
           </>
         ) : null
       }
