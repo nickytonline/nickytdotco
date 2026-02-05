@@ -169,7 +169,9 @@ export async function fetchPastGuestsWithYouTube(): Promise<StreamGuestInfo[]> {
 
     const response = await fetch(url, { headers });
     if (!response.ok) {
-      throw new Error(`Airtable past guests request failed: ${response.status}`);
+      throw new Error(
+        `Airtable past guests request failed: ${response.status}`
+      );
     }
 
     const { records } = (await response.json()) as { records: GuestRecord[] };

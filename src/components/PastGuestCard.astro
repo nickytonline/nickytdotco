@@ -11,13 +11,7 @@ interface Props {
 
 const { guest, locale, timezone } = Astro.props;
 
-const {
-  date,
-  title,
-  guestName,
-  guestTitle,
-  youtubeStreamLink,
-} = guest;
+const { date, title, guestName, guestTitle, youtubeStreamLink } = guest;
 
 const guestDate = getLocalizedDate({
   date,
@@ -34,7 +28,10 @@ const image = videoId
 const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
 ---
 
-<div class="past-guest-card flex flex-col md:flex-row gap-6" data-pagefind-ignore>
+<div
+  class="past-guest-card flex flex-col md:flex-row gap-6"
+  data-pagefind-ignore
+>
   {
     image && youtubeStreamLink && (
       <a
