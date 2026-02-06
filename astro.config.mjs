@@ -21,24 +21,7 @@ export default defineConfig({
   },
   integrations: [
     varlockintegration(),
-    expressiveCode({
-      themes: ["github-dark"],
-      styleOverrides: {
-        borderRadius: "0.75rem",
-        borderWidth: "2px",
-        borderColor: "rgb(254 231 243)", // rose-100
-        codePaddingBlock: "1rem",
-        codePaddingInline: "1.5rem",
-        frames: {
-          shadowColor: "transparent",
-        },
-        uiFontFamily: "inherit",
-      },
-      defaultProps: {
-        wrap: true,
-        preserveIndent: true,
-      },
-    }),
+    expressiveCode(),
     mdx(),
     react(),
     sitemap(),

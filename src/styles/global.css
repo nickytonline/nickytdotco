@@ -9,6 +9,15 @@
 @import "@fontsource/space-grotesk/600.css";
 @import "@fontsource/space-grotesk/700.css";
 
+/* Geist Pixel font for code blocks */
+@font-face {
+  font-family: 'Geist Pixel';
+  src: url('/node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Square.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -105,7 +114,23 @@ h6:hover .heading-anchor {
 }
 
 .expressive-code .copy button {
-  @apply bg-gray-800 hover:bg-pink-600 text-white;
+  @apply bg-gray-800 hover:bg-gray-600 focus:bg-gray-600 focus:outline-2 focus:outline-blue-500 focus:outline-offset-2 text-white;
+}
+
+/* Light mode copy button */
+:root:not(.dark) .expressive-code .copy button {
+  @apply bg-gray-300 hover:bg-gray-400 focus:bg-gray-400 text-gray-900;
+}
+
+/* Light mode code block border - make it more subtle */
+:root:not(.dark) .expressive-code pre,
+:root:not(.dark) .expressive-code figure,
+:root:not(.dark) .expressive-code > div {
+  border-color: rgb(229 231 235) !important; /* gray-200 */
+}
+
+:root:not(.dark) .expressive-code * {
+  border-color: rgb(229 231 235) !important; /* gray-200 */
 }
 
 /* Improve spacing and font size for Markdown content */
