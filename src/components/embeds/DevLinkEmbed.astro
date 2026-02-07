@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { ENV } from "varlock/env";
 
 interface Props {
   url: string;
@@ -10,10 +11,10 @@ const { url } = Astro.props;
 let updatedUrl = new URL(url);
 let title: string | undefined = undefined;
 
-if (
-  updatedUrl.pathname.startsWith("/nickytonline") ||
-  updatedUrl.pathname.startsWith("/opensauced")
-) {
+const pathParts = updatedUrl.pathname.split("/").filter(Boolean);
+const [username, slug] = pathParts;
+
+if (username === "nickytonline" || username === "opensauced") {
   updatedUrl = new URL(
     updatedUrl.pathname.replace(/\/(nickytonline|opensauced)/, "/blog"),
     Astro.url
@@ -25,6 +26,24 @@ if (
     const entry = entries.find((e) => e.slug === blogSlug);
     return entry?.data.title;
   });
+} else if (username && slug) {
+  try {
+    const response = await fetch(
+      `https://dev.to/api/articles/${username}/${slug}`,
+      {
+        headers: {
+          "api-key": ENV.DEV_API_KEY,
+        },
+      }
+    );
+
+    if (response.ok) {
+      const post = await response.json();
+      title = post.title;
+    }
+  } catch (error) {
+    console.error(`Failed to fetch dev.to article title for ${url}:`, error);
+  }
 }
 
 const encodedUrl = encodeURIComponent(updatedUrl.toString()).replace(/\/$/, "");
@@ -55,7 +74,7 @@ const encodedUrl = encodeURIComponent(updatedUrl.toString()).replace(/\/$/, "");
   </picture>
   {
     title ? (
-      <span class="absolute bottom-0 left-0 px-2 py-1 text-sm bg-white/90 dark:bg-black/90 text-black dark:text-white">
+      <span class="absolute bottom-0 right-0 px-2 py-1 text-sm bg-white/90 dark:bg-black/90 text-black dark:text-white">
         {title}
       </span>
     ) : null
