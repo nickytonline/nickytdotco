@@ -4,11 +4,21 @@ interface Props {
 }
 
 const { url } = Astro.props;
-const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
+
+let updatedUrl = new URL(url);
+
+if (updatedUrl.pathname.startsWith("/nickytonline")) {
+  updatedUrl = new URL(
+    updatedUrl.pathname.replace("/nickytonline", "/blog"),
+    Astro.url
+  );
+}
+
+const encodedUrl = encodeURIComponent(updatedUrl.toString()).replace(/\/$/, "");
 ---
 
-<a href={url}>
-  <span class="sr-only">The {url} post on DEV</span>
+<a href={updatedUrl}>
+  <span class="sr-only">{updatedUrl}</span>
   <picture>
     <source
       type="image/webp"
@@ -21,7 +31,7 @@ const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
       sizes="100vw"
     />
     <img
-      alt={url}
+      alt={""}
       loading="lazy"
       decoding="async"
       src={`https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/`}
