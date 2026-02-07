@@ -22,7 +22,9 @@ export default defineEcConfig({
     frames: {
       shadowColor: "transparent",
     },
-    uiFontFamily: "inherit",
-    codeFontFamily: "'Geist Pixel', 'Courier New', monospace",
+    uiFontFamily:
+      '"Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Courier New", monospace',
+    codeFontFamily:
+      '"Geist Pixel", ui-monospace, SFMono-Regular, "SF Mono", Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Courier New", monospace',
   },
 });

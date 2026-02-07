@@ -9,10 +9,9 @@
 @import "@fontsource/space-grotesk/600.css";
 @import "@fontsource/space-grotesk/700.css";
 
-/* Geist Pixel font for code blocks */
 @font-face {
-  font-family: "Geist Pixel";
-  src: url("/node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Square.woff2")
+  font-family: "Geist Mono";
+  src: url("/node_modules/geist/dist/fonts/geist-mono/GeistMono-Regular.woff2")
     format("woff2");
   font-weight: normal;
   font-style: normal;
@@ -144,6 +143,10 @@ h6:hover .heading-anchor {
   color: rgb(
     156 163 175
   ) !important; /* gray-400 for dark mode - WCAG AA compliant */
+}
+
+.expressive-code .ln {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Improve spacing and font size for Markdown content */
