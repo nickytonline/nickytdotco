@@ -118,7 +118,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
               ) : (
                 <a
                   href={`/blog/${post.slug}`}
-                  class="block text-sm leading-tight text-gray-700 dark:text-gray-300 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:underline focus-visible:outline-none"
+                  class="block text-sm leading-tight text-gray-700 dark:text-gray-100 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:underline focus-visible:outline-none"
                 >
                   {truncate(post.data.title, 80)}
                 </a>
@@ -133,8 +133,8 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
         middleHiddenBefore.length > 0 && (
           <li>
             <details class="group/nested">
-              <summary class="flex items-center gap-2 cursor-pointer list-none text-sm text-gray-700 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:outline-none focus-visible:underline ornament-none">
-                <span class="grid h-6 w-6 place-items-center tracking-tight text-gray-500 dark:text-gray-400">
+              <summary class="flex items-center gap-2 cursor-pointer list-none text-sm text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:outline-none focus-visible:underline ornament-none">
+                <span class="grid h-6 w-6 place-items-center tracking-tight text-gray-500 dark:text-gray-200">
                   ···
                 </span>
                 <span class="group-open/nested:hidden">
@@ -151,7 +151,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
                     <div class="min-w-0 flex-1 pt-0.5">
                       <a
                         href={`/blog/${post.slug}`}
-                        class="block text-sm leading-tight text-gray-700 dark:text-gray-300 hover:text-pink-600 hover:underline"
+                        class="block text-sm leading-tight text-gray-700 dark:text-gray-100 hover:text-pink-600 hover:underline"
                       >
                         {truncate(post.data.title, 80)}
                       </a>
@@ -185,8 +185,8 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
         middleHiddenAfter.length > 0 && (
           <li>
             <details class="group/nested">
-              <summary class="flex items-center gap-2 cursor-pointer list-none text-sm text-gray-700 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:outline-none focus-visible:underline ornament-none">
-                <span class="grid h-6 w-6 place-items-center tracking-tight text-gray-500 dark:text-gray-400">
+              <summary class="flex items-center gap-2 cursor-pointer list-none text-sm text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:outline-none focus-visible:underline ornament-none">
+                <span class="grid h-6 w-6 place-items-center tracking-tight text-gray-500 dark:text-gray-200">
                   ···
                 </span>
                 <span class="group-open/nested:hidden">
@@ -203,7 +203,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
                     <div class="min-w-0 flex-1 pt-0.5">
                       <a
                         href={`/blog/${post.slug}`}
-                        class="block text-sm leading-tight text-gray-700 dark:text-gray-300 hover:text-pink-600 hover:underline"
+                        class="block text-sm leading-tight text-gray-700 dark:text-gray-100 hover:text-pink-600 hover:underline"
                       >
                         {truncate(post.data.title, 80)}
                       </a>
@@ -238,7 +238,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
               ) : (
                 <a
                   href={`/blog/${post.slug}`}
-                  class="block text-sm leading-tight text-gray-700 dark:text-gray-300 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:underline focus-visible:outline-none"
+                  class="block text-sm leading-tight text-gray-700 dark:text-gray-100 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:underline focus-visible:outline-none"
                 >
                   {truncate(post.data.title, 80)}
                 </a>
