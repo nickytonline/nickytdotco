@@ -114,12 +114,14 @@ h6:hover .heading-anchor {
 }
 
 .expressive-code .copy button {
-  @apply bg-gray-800 hover:bg-gray-600 focus:bg-gray-600 focus:outline-2 focus:outline-blue-500 focus:outline-offset-2 text-white;
+  @apply bg-gray-800 hover:bg-gray-600 focus:bg-gray-600 focus:outline-2 focus:outline-blue-500 focus:outline-offset-2 text-white rounded-md;
 }
 
 /* Light mode copy button */
 :root:not(.dark) .expressive-code .copy button {
-  @apply bg-gray-300 hover:bg-gray-400 focus:bg-gray-400 text-gray-900;
+  @apply bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 text-gray-900 border border-gray-200 shadow-sm transition-all;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 6%);
+  border: 1px solid rgb(229 231 235); /* gray-200 */
 }
 
 /* Light mode code block border - make it more subtle */
