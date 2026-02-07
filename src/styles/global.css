@@ -11,8 +11,9 @@
 
 /* Geist Pixel font for code blocks */
 @font-face {
-  font-family: 'Geist Pixel';
-  src: url('/node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Square.woff2') format('woff2');
+  font-family: "Geist Pixel";
+  src: url("/node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Square.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
