@@ -10,9 +10,12 @@ const { url } = Astro.props;
 let updatedUrl = new URL(url);
 let title: string | undefined = undefined;
 
-if (updatedUrl.pathname.startsWith("/nickytonline")) {
+if (
+  updatedUrl.pathname.startsWith("/nickytonline") ||
+  updatedUrl.pathname.startsWith("/opensauced")
+) {
   updatedUrl = new URL(
-    updatedUrl.pathname.replace("/nickytonline", "/blog"),
+    updatedUrl.pathname.replace(/\/(nickytonline|opensauced)/, "/blog"),
     Astro.url
   );
 
