@@ -357,3 +357,7 @@ mark {
     );
   }
 }
+
+[data-embed] {
+  @apply my-4;
+}

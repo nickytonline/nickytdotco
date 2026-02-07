@@ -8,7 +8,7 @@ const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
 const { hostname } = new URL(url);
 ---
 
-<a href={url} class="relative block w-fit">
+<a href={url} class="relative block w-fit" data-embed>
   <span class="sr-only">{url}</span>
   <picture>
     <source

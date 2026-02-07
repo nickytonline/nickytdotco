@@ -49,7 +49,7 @@ if (username === "nickytonline" || username === "opensauced") {
 const encodedUrl = encodeURIComponent(updatedUrl.toString()).replace(/\/$/, "");
 ---
 
-<a href={updatedUrl} class="relative block w-fit">
+<a href={updatedUrl} class="relative block w-fit" data-embed>
   <span class="sr-only">{title ?? updatedUrl}</span>
   <picture>
     <source

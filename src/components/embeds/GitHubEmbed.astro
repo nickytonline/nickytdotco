@@ -7,7 +7,7 @@ const { url } = Astro.props;
 const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
 ---
 
-<a href={url}>
+<a href={url} data-embed>
   <span class="sr-only">GitHub link: {url}</span>
   <picture>
     <source

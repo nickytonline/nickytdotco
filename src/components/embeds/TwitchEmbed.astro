@@ -12,7 +12,7 @@ const autoplayParam = autoplay ? "&autoplay=true" : "";
 const src = `https://player.twitch.tv/?video=${videoId}${channelParam}${autoplayParam}&parent=${new URL(Astro.url).hostname}`;
 ---
 
-<div class="relative w-full max-w-4xl mx-auto aspect-video">
+<div class="relative w-full max-w-4xl mx-auto aspect-video" data-embed>
   <iframe
     src={src}
     height="360"

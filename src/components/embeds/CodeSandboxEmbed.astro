@@ -8,7 +8,7 @@ const { sandboxId, height = 500 } = Astro.props;
 const src = `https://codesandbox.io/embed/${sandboxId}?fontsize=14&hidenavigation=1&theme=dark`;
 ---
 
-<div class="w-full max-w-4xl mx-auto rounded overflow-hidden">
+<div class="w-full max-w-4xl mx-auto rounded overflow-hidden" data-embed>
   <iframe
     src={src}
     style={`height:${height}px;`}

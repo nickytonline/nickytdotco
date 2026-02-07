@@ -26,7 +26,9 @@ try {
 }
 ---
 
-<Fragment set:html={tweetHtml} />
+<div class="relative max-w-4xl mx-auto" data-embed>
+  <Fragment set:html={tweetHtml} />
+</div>
 
 <script is:inline>
   function loadTwitter() {
