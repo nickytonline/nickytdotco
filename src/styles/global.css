@@ -134,6 +134,18 @@ h6:hover .heading-anchor {
   border-color: rgb(229 231 235) !important; /* gray-200 */
 }
 
+:root:not(.dark) .expressive-code .ln {
+  color: rgb(
+    75 85 99
+  ) !important; /* gray-600 for light mode - WCAG AA compliant */
+}
+
+.dark .expressive-code .ln {
+  color: rgb(
+    156 163 175
+  ) !important; /* gray-400 for dark mode - WCAG AA compliant */
+}
+
 /* Improve spacing and font size for Markdown content */
 .prose {
   @apply text-base leading-relaxed;
