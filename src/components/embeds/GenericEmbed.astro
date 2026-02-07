@@ -5,10 +5,11 @@ interface Props {
 
 const { url } = Astro.props;
 const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
+const { hostname } = new URL(url);
 ---
 
-<a href={url}>
-  <span class="sr-only">The {url} repository on GitHub</span>
+<a href={url} class="relative block w-fit">
+  <span class="sr-only">{url}</span>
   <picture>
     <source
       type="image/webp"
@@ -22,6 +23,7 @@ const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
     />
     <img
       alt={url}
+      class="block"
       loading="lazy"
       decoding="async"
       src={`https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/`}
@@ -29,4 +31,9 @@ const encodedUrl = encodeURIComponent(url).replace(/\/$/, "");
       height="341"
     />
   </picture>
+  <span
+    class="absolute bottom-0 right-0 px-2 py-1 text-sm bg-white/90 dark:bg-black/90 text-black dark:text-white"
+  >
+    {hostname}
+  </span>
 </a>

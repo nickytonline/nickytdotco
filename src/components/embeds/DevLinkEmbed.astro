@@ -15,9 +15,10 @@ if (updatedUrl.pathname.startsWith("/nickytonline")) {
 }
 
 const encodedUrl = encodeURIComponent(updatedUrl.toString()).replace(/\/$/, "");
+const { hostname } = updatedUrl;
 ---
 
-<a href={updatedUrl}>
+<a href={updatedUrl} class="relative block w-fit">
   <span class="sr-only">{updatedUrl}</span>
   <picture>
     <source
@@ -32,6 +33,7 @@ const encodedUrl = encodeURIComponent(updatedUrl.toString()).replace(/\/$/, "");
     />
     <img
       alt={""}
+      class="block"
       loading="lazy"
       decoding="async"
       src={`https://v1.opengraph.11ty.dev/${encodedUrl}/small/jpeg/`}
@@ -39,4 +41,9 @@ const encodedUrl = encodeURIComponent(updatedUrl.toString()).replace(/\/$/, "");
       height="341"
     />
   </picture>
+  <span
+    class="absolute bottom-0 right-0 px-2 py-1 text-sm bg-white/90 dark:bg-black/90 text-black dark:text-white"
+  >
+    {hostname}
+  </span>
 </a>
