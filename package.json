@@ -69,7 +69,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "slugify": "^1.6.6",
     "tailwindcss": "^4.1.18",
-    "typescript-eslint": "^8.53.1"
+    "typescript-eslint": "^8.54.0"
   },
   "repository": {
     "type": "git",
