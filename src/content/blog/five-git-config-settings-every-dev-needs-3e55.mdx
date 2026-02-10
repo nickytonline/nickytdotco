@@ -1,0 +1,77 @@
+---
+title: Five Git Config Settings Every Dev Needs
+excerpt: >-
+  You've probably added some settings to your Git Configuration, but here are
+  some you might not have...
+date: '2026-02-10T02:19:13Z'
+tags:
+  - git
+cover_image: >-
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3pafpssoe8bf9qoop65s.jpg
+canonical_url: https://www.nickyt.co/blog/five-git-config-settings-every-dev-needs-3e55
+reading_time_minutes: 3
+template: post
+---
+You've probably added some settings to your [Git Configuration](https://git-scm.com/docs/git-config), but here are some you might not have configured. If you haven't set these up yet, you're doing more manual work than you need to.
+
+## Rebase on pull instead of merge
+
+```bash
+git config --global pull.rebase true
+```
+
+Every time you pull without this, Git creates a merge commit. Do that a few times a day across a team and your git log turns into a mess of "Merge branch 'main' into main" entries that tell you nothing. With rebase, your commits stay on top of the latest changes and your history actually reads like a coherent timeline. Before setting this in my git config, I'd do a lot of this, `g pull -r origin main` (`g` is my shell alias for `git`). Now I just do `g pull origin main`. Sure it's only two. characters, but one less thing to think about.
+
+## Auto set upstream on push
+
+```bash
+git config --global push.autoSetupRemote true
+```
+
+You create a new branch, do your work, push, and Git hits you with this:
+
+```
+fatal: The current branch my-branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin my-branch
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+```
+
+Every single time. This setting makes that whole thing go away. Git sets the upstream automatically on your first push to a new branch.
+
+## Auto prune on fetch
+
+```bash
+git config --global fetch.prune true
+```
+
+Stale remote branches pile up silently. Someone merged and deleted their branch weeks ago, but your local still shows it when you run `git branch -r`. This cleans out those dead references every time you fetch so your branch list reflects what actually exists on the remote.
+
+## A better diff algorithm
+
+```bash
+git config --global diff.algorithm histogram
+```
+
+The default diff algorithm works, but histogram produces cleaner diffs when there are lots of similarly structured lines, think repeated return statements, closing braces, or blank lines. The default algorithm can get confused about which identical lines to match and produces diffs that interleave additions and deletions in ways that are hard to follow. Histogram handles that better. The bigger the file and the more repetitive the structure, the more noticeable the improvement. It's a drop-in upgrade with no downside.
+
+## Rerere (reuse recorded resolution)
+
+```bash
+git config --global rerere.enabled true
+```
+
+[Rerere](https://onetipaweek.com/p/one-tip-a-week-rerere) stands for "reuse recorded resolution." When you resolve a merge conflict, Git remembers how you resolved it. The next time the same conflict comes up, Git applies your previous resolution automatically. If you've ever rebased a long-lived branch and had to resolve the same conflict over and over, this is the fix. It won't silently merge things for you in a way you can't review. It records your resolutions and replays them so you don't have to redo the same work.
+
+Want to see what you currently have set? Run `git config --global --list` and see what's missing.
+
+If you enjoy tips like this, I have a newsletter, [OneTipAWeek.com](https://OneTipAWeek.com). One developer tip a week. Short & valuable. That's it!
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Until the next one!
+
+Photo by <a href="https://unsplash.com/@yancymin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Yancy Min</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-text-description-on-a-computer-screen-842ofHC6MaI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
