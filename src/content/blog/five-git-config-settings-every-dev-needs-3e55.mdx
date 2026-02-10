@@ -9,7 +9,7 @@ tags:
 cover_image: >-
   /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3pafpssoe8bf9qoop65s.jpg
 canonical_url: https://www.nickyt.co/blog/five-git-config-settings-every-dev-needs-3e55
-reading_time_minutes: 3
+reading_time_minutes: 4
 template: post
 ---
 You've probably added some settings to your [Git Configuration](https://git-scm.com/docs/git-config), but here are some you might not have configured. If you haven't set these up yet, you're doing more manual work than you need to.
@@ -30,7 +30,7 @@ git config --global push.autoSetupRemote true
 
 You create a new branch, do your work, push, and Git hits you with this:
 
-```
+```bash
 fatal: The current branch my-branch has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
@@ -57,6 +57,122 @@ git config --global diff.algorithm histogram
 ```
 
 The default diff algorithm works, but histogram produces cleaner diffs when there are lots of similarly structured lines, think repeated return statements, closing braces, or blank lines. The default algorithm can get confused about which identical lines to match and produces diffs that interleave additions and deletions in ways that are hard to follow. Histogram handles that better. The bigger the file and the more repetitive the structure, the more noticeable the improvement. It's a drop-in upgrade with no downside.
+
+Here's a fictitious example since I had a hard time finding a good example in my own recent commits showing the difference.
+
+### Myers Algorithm (Default)
+
+```diff
+diff --git a/tmp/example_before.js b/tmp/example_after.js
+index 30d9ab3c..8ec95ef5 100644
+--- a/tmp/example_before.js
++++ b/tmp/example_after.js
+@@ -8,15 +8,10 @@ function validateUser(user) {
+    if (!user.name) {
+      return { error: 'Name is required' };
+    }
+-  return { valid: true };
+-}
+-
+-function processData(data) {
+-  const result = transform(data);
+-  if (!result) {
+-    return { error: 'Transform failed' };
++  if (!user.id) {
++    return { error: 'ID is required' };
+    }
+-  return result;
++  return { valid: true };
+  }
+
+  function validateProduct(product) {
+@@ -26,13 +21,28 @@ function validateProduct(product) {
+    if (!product.price) {
+      return { error: 'Price is required' };
+    }
++  if (!product.name) {
++    return { error: 'Name is required' };
++  }
+    return { valid: true };
+  }
+
++function processData(data) {
++  const result = transform(data);
++  if (!result) {
++    return { error: 'Transform failed' };
++  }
++  return result;
++}
++
+  function saveToDatabase(item) {
+    const connection = getConnection();
+    if (!connection) {
+      return { error: 'Database connection failed' };
+    }
++  const validated = validateItem(item);
++  if (!validated) {
++    return { error: 'Validation failed' };
++  }
+    return connection.save(item);
+  }
+```
+
+### Histogram Algorithm
+
+```diff
+diff --git a/tmp/example_before.js b/tmp/example_after.js
+index 30d9ab3c..8ec95ef5 100644
+--- a/tmp/example_before.js
++++ b/tmp/example_after.js
+@@ -8,6 +8,22 @@ function validateUser(user) {
+    if (!user.name) {
+      return { error: 'Name is required' };
+    }
++  if (!user.id) {
++    return { error: 'ID is required' };
++  }
++  return { valid: true };
++}
++
++function validateProduct(product) {
++  if (!product) {
++    return { error: 'Product is required' };
++  }
++  if (!product.price) {
++    return { error: 'Price is required' };
++  }
++  if (!product.name) {
++    return { error: 'Name is required' };
++  }
+    return { valid: true };
+  }
+
+@@ -19,20 +35,14 @@ function processData(data) {
+    return result;
+  }
+
+-function validateProduct(product) {
+-  if (!product) {
+-    return { error: 'Product is required' };
+-  }
+-  if (!product.price) {
+-    return { error: 'Price is required' };
+-  }
+-  return { valid: true };
+-}
+-
+  function saveToDatabase(item) {
+    const connection = getConnection();
+    if (!connection) {
+      return { error: 'Database connection failed' };
+    }
++  const validated = validateItem(item);
++  if (!validated) {
++    return { error: 'Validation failed' };
++  }
+    return connection.save(item);
+  }
+```
 
 ## Rerere
 
