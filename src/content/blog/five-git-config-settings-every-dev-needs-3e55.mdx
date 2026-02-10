@@ -58,7 +58,7 @@ git config --global diff.algorithm histogram
 
 The default diff algorithm works, but histogram produces cleaner diffs when there are lots of similarly structured lines, think repeated return statements, closing braces, or blank lines. The default algorithm can get confused about which identical lines to match and produces diffs that interleave additions and deletions in ways that are hard to follow. Histogram handles that better. The bigger the file and the more repetitive the structure, the more noticeable the improvement. It's a drop-in upgrade with no downside.
 
-## Rerere (reuse recorded resolution)
+## Rerere
 
 ```bash
 git config --global rerere.enabled true
