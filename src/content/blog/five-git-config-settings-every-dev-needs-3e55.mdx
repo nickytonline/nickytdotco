@@ -20,7 +20,15 @@ You've probably added some settings to your [Git Configuration](https://git-scm.
 git config --global pull.rebase true
 ```
 
-Every time you pull without this, Git creates a merge commit. Do that a few times a day across a team and your git log turns into a mess of "Merge branch 'main' into main" entries that tell you nothing. With rebase, your commits stay on top of the latest changes and your history actually reads like a coherent timeline. Before setting this in my git config, I'd do a lot of this, `g pull -r origin main` (`g` is my shell alias for `git`). Now I just do `g pull origin main`. Sure it's only two. characters, but one less thing to think about.
+Every time you pull without this, Git creates a merge commit. Do that a few times a day across a team and your git log turns into a mess of "Merge branch 'main' into main" entries that tell you nothing. With rebase, your commits stay on top of the latest changes and your history actually reads like a coherent timeline.
+
+Bonus: I do this a lot, `g pull -r origin main` (`g` is my shell alias for `git`) to keep my branch up to date with main. You can also add
+
+```bash
+git config --global branch.main.rebase true
+```
+
+and now I just do `g pull origin main`. Sure it's only two less characters, but one less thing for me to think about.
 
 ## Auto set upstream on push
 
