@@ -50,6 +50,22 @@ git config --global fetch.prune true
 
 Stale remote branches pile up silently. Someone merged and deleted their branch weeks ago, but your local still shows it when you run `git branch -r`. This cleans out those dead references every time you fetch so your branch list reflects what actually exists on the remote.
 
+I had this alias in my shell to prune local and remote branches.
+
+```bash
+rmmerged() {
+  git branch --merged | grep -Ev "(\*|master|main)" | xargs -n 1 git branch -d && git remote prune origin
+}
+```
+
+Now, it's simplified to only pruning local branches since the fetch prune setting handles remote ones.
+
+```bash
+rmmerged() {
+  git branch --merged | grep -Ev "(\*|master|main)" | xargs -n 1 git branch -d
+}
+```
+
 ## A better diff algorithm
 
 ```bash
