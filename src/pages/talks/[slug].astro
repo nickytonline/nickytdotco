@@ -89,7 +89,7 @@ const { Content } = await talk.render();
     </header>
 
     {
-      video && (
+      video ? (
         <div class="my-6">
           {video.type === "youtube" && (
             <YouTubeEmbed
@@ -125,6 +125,10 @@ const { Content } = await talk.render();
             </a>
           )}
         </div>
+      ) : (
+        <p class="my-6 text-muted-foreground italic">
+          This talk was not recorded.
+        </p>
       )
     }
 
