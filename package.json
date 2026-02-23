@@ -27,7 +27,7 @@
     "@expressive-code/plugin-line-numbers": "^0.41.6",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
-    "@types/react": "^19.2.13",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@varlock/astro-integration": "^0.1.0",
     "astro": "^5.17.1",
