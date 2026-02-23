@@ -59,7 +59,7 @@
     "@types/node": "^25.0.3",
     "dotenv": "^17.2.3",
     "eslint": "^9.39.2",
-    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "globals": "^17.3.0",
     "js-yaml": "^4.1.1",
