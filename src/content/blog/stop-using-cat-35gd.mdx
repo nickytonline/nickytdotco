@@ -1,0 +1,103 @@
+---
+title: Stop using cat
+excerpt: >-
+  If you use cat in your daily workflow, this is a tiny upgrade with lots of
+  upsides and honestly, no...
+date: '2026-03-02T02:08:25Z'
+tags:
+  - terminal
+  - shell
+cover_image: >-
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fngjma5afmsv65bs7k133.jpg
+canonical_url: https://www.nickyt.co/blog/stop-using-cat-35gd
+reading_time_minutes: 2
+template: post
+---
+If you use `cat` in your daily workflow, this is a tiny upgrade with lots of upsides and honestly, no downsides aside from you need to install it as it’s not native.
+
+## What bat?
+
+[bat](https://github.com/sharkdp/bat) is a `cat` alternative with syntax highlighting and line numbering to name a few features while being a drop in replacement to workflows you have that use regular `cat`.
+
+## Install
+
+```bash
+# macOS
+brew install bat
+
+# Ubuntu / Debian
+sudo apt install bat
+
+# via installation script
+curl -s https://sh.rustup.rs | bat
+```
+
+Just FYI, on some Linux distros, the binary is named `batcat`.
+
+## 5 practical ways to use `bat`
+
+By default you get all the `bat` goodness when you don’t specify any flags. Syntax highlighting, line numbering etc. Here’s some common use cases.
+
+### Read config files quickly
+
+```bash
+bat ./astro.config.mjs
+```
+
+With `cat`:
+
+![cat outputting an Astro configuration file](/assets/images/posts/_uploads_articles_rk86lix3uo49i477zqia.png)
+
+With `bat`:
+
+![bat outputting an Astro configuration file](/assets/images/posts/_uploads_articles_ahshr9qzj83glfe5gwha.png)
+
+You get visual structure without opening an editor.
+
+### Show line numbers while debugging
+
+```bash
+bat -n src/server.ts
+```
+
+Line numbers make it much easier to point teammates to exact spots in a file.
+
+### Use plain mode for logs or scripts
+
+```bash
+bat -p logs/app.log
+```
+
+`-p` strips the decorations when you want cleaner output.
+
+### Focus on a line range
+
+```bash
+bat --line-range 40:120 src/index.ts
+```
+
+Great when you only need one section of a file.
+
+### Quickly review changed files
+
+```bash
+git diff --name-only | xargs bat
+```
+
+Useful for a quick scan of touched files before a commit or review.
+
+## Should you alias `cat` to `bat`?
+
+I alias it, because YOLO, but if you do run into issues, just alias it to something other than `cat`, or not at all.
+
+```bash
+alias c='bat'
+```
+
+## TL;DR
+
+`bat` is one of the easiest terminal upgrades you can make. If you read code, logs, or config files in the terminal every day, switching from `cat` to `bat` is a no brainer.
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online)
+
+Until the next one!
