@@ -86,6 +86,14 @@ git diff --name-only | xargs bat
 
 Useful for a quick scan of touched files before a commit or review.
 
+### Navigate large files with a pager
+
+```bash
+bat large-file.log
+```
+
+`bat` automatically pipes output through a pager like [less](https://www.man7.org/linux/man-pages/man1/less.1.html) when the file is longer than your terminal window. No need to manually pipe to `less` like you would with `cat`.
+
 ## Should you alias `cat` to `bat`?
 
 I alias it, because YOLO, but if you do run into issues, just alias it to something other than `cat`, or not at all.
