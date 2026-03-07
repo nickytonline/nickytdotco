@@ -15,7 +15,8 @@
     "format": "prettier --write . && eslint --fix .",
     "format:check": "prettier --check . && eslint --max-warnings 0 .",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
@@ -63,8 +64,10 @@
     "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "globals": "^17.3.0",
+    "husky": "^9.1.7",
     "js-yaml": "^4.1.1",
     "jsdom": "^27.4.0",
+    "lint-staged": "^16.3.2",
     "pagefind": "^1.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
@@ -86,5 +89,14 @@
   "bugs": {
     "url": "https://github.com/nickytonline/nickytdotco/issues"
   },
-  "homepage": "https://www.nickyt.co"
+  "homepage": "https://www.nickyt.co",
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,astro,mjs,cjs}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md,mdx,css,html,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
 }
