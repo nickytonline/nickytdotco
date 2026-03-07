@@ -74,60 +74,65 @@ export async function fetchPastGuestsWithYouTube(): Promise<StreamGuestInfo[]> {
       args: [today.toISOString()],
     });
 
-    return result.rows.map((row) => mapRowToSchedule(row as unknown as Record<string, unknown>));
+    return result.rows.map((row) =>
+      mapRowToSchedule(row as unknown as Record<string, unknown>)
+    );
   } catch (error) {
     console.error("Error fetching past guests:", error);
     return [];
   }
 }
 
-export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> = {
-  name: "stream-schedule",
+export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
+  {
+    name: "stream-schedule",
 
-  async loadCollection() {
-    const client = getClient();
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    yesterday.setHours(23, 59, 0, 0);
+    async loadCollection() {
+      const client = getClient();
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      yesterday.setHours(23, 59, 0, 0);
 
-    const result = await client.execute({
-      sql: `SELECT * FROM stream_guests
+      const result = await client.execute({
+        sql: `SELECT * FROM stream_guests
             WHERE on_schedule = 1
               AND date > ?
             ORDER BY date ASC`,
-      args: [yesterday.toISOString()],
-    });
+        args: [yesterday.toISOString()],
+      });
 
-    return {
-      entries: result.rows.map((row) => {
-        const r = row as unknown as Record<string, unknown>;
+      return {
+        entries: result.rows.map((row) => {
+          const r = row as unknown as Record<string, unknown>;
+          return {
+            id: r.id as string,
+            data: mapRowToSchedule(r),
+          };
+        }),
+      };
+    },
+
+    async loadEntry({ filter }) {
+      if (!filter?.id) {
+        return { error: new Error("Missing record id filter.") };
+      }
+
+      const client = getClient();
+      const result = await client.execute({
+        sql: `SELECT * FROM stream_guests WHERE id = ? AND on_schedule = 1`,
+        args: [filter.id],
+      });
+
+      if (result.rows.length === 0) {
         return {
-          id: r.id as string,
-          data: mapRowToSchedule(r),
+          error: new Error(`No stream guest found with id: ${filter.id}`),
         };
-      }),
-    };
-  },
+      }
 
-  async loadEntry({ filter }) {
-    if (!filter?.id) {
-      return { error: new Error("Missing record id filter.") };
-    }
-
-    const client = getClient();
-    const result = await client.execute({
-      sql: `SELECT * FROM stream_guests WHERE id = ? AND on_schedule = 1`,
-      args: [filter.id],
-    });
-
-    if (result.rows.length === 0) {
-      return { error: new Error(`No stream guest found with id: ${filter.id}`) };
-    }
-
-    const row = result.rows[0] as unknown as Record<string, unknown>;
-    return {
-      id: row.id as string,
-      data: mapRowToSchedule(row),
-    };
-  },
-};
+      const row = result.rows[0] as unknown as Record<string, unknown>;
+      return {
+        id: row.id as string,
+        data: mapRowToSchedule(row),
+      };
+    },
+  };
