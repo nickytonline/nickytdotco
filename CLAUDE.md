@@ -71,7 +71,7 @@ Two primary collections defined in `src/content/config.ts`:
 
 Uses Astro's `liveContentCollections` feature to fetch external data at build time. Configured in `src/live.config.ts`:
 
-1. **Stream Schedule** - Airtable API (requires `AIRTABLE_API_KEY`, `AIRTABLE_STREAM_GUEST_BASE_ID`)
+1. **Stream Schedule** - Turso (requires `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`)
 2. **Newsletter** - Beehiiv RSS feed
 3. **Pinned Projects** - GitHub GraphQL API (requires `GITHUB_TOKEN`)
 4. **Brewfile** - GitHub raw file + Homebrew/Cask APIs
@@ -162,8 +162,8 @@ Managed by Varlock integration (`@varlock/astro-integration`):
 
 **Required variables:**
 
-- `AIRTABLE_API_KEY` - For stream schedule data
-- `AIRTABLE_STREAM_GUEST_BASE_ID` - Airtable base ID
+- `TURSO_DATABASE_URL` - Turso database URL for stream schedule data
+- `TURSO_AUTH_TOKEN` - Turso auth token
 - `GITHUB_TOKEN` - For pinned projects
 - `DEV_API_KEY` - Dev.to API
 - `URL` - Site URL

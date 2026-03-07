@@ -1,233 +1,133 @@
+import { createClient } from "@libsql/client/http";
 import type { LiveLoader } from "astro/loaders";
 import { ENV } from "varlock/env";
 
 import type { StreamGuestInfo } from "../../utils/schedule-utils";
 
-const GUEST_FIELDS = [
-  "Date",
-  "Name",
-  "Guest Title",
-  "Stream Title",
-  "Stream Description",
-  "YouTube Stream Link",
-  "LinkedIn Stream Link",
-  "Twitter Username",
-  "Twitch Handle",
-  "GitHub Handle",
-  "YouTube Channel",
-  "Website",
-  "Bluesky",
-  "LinkedIn",
-  "type",
-] as const;
-
-type GuestRecordFields = Partial<Record<(typeof GUEST_FIELDS)[number], string>>;
-
-interface GuestRecord {
-  id: string;
-  createdTime: string;
-  fields: GuestRecordFields;
-}
-
-const STREAM_GUESTS_TABLE = "Stream%20Guests";
-
-function buildStreamGuestQueryUrl({
-  apiKey,
-  baseId,
-}: {
-  apiKey: string;
-  baseId: string;
-}) {
-  // Only get guests on the stream schedule from the day before and on.
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  yesterday.setHours(23, 59, 0, 0);
-
-  const startDate = yesterday.toISOString();
-
-  const url = new URL(
-    `https://api.airtable.com/v0/${baseId}/${STREAM_GUESTS_TABLE}`
-  );
-  url.searchParams.set(
-    "filterByFormula",
-    `AND(IS_AFTER({Date}, '${startDate}'), {On Schedule})`
-  );
-  url.searchParams.set("sortField", "Date");
-  url.searchParams.set("sortDirection", "asc");
-  GUEST_FIELDS.forEach((field) => {
-    url.searchParams.append("fields[]", field);
+function getClient() {
+  return createClient({
+    url: ENV.TURSO_DATABASE_URL,
+    authToken: ENV.TURSO_AUTH_TOKEN,
   });
-
-  return {
-    url: url.toString(),
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-    },
-  };
 }
 
-function mapRecordToSchedule(fields: GuestRecordFields): StreamGuestInfo {
+function mapRowToSchedule(row: Record<string, unknown>): StreamGuestInfo {
   const {
-    Date: date,
-    Name: guestName,
-    "Guest Title": guestTitle,
-    "Stream Title": title,
-    "Stream Description": description,
-    "YouTube Stream Link": youtubeStreamLink,
-    "LinkedIn Stream Link": linkedinStreamLink,
-    "Twitter Username": twitter,
-    "Twitch Handle": twitch,
-    "GitHub Handle": github,
-    "YouTube Channel": youtube,
-    LinkedIn: linkedin,
-    Bluesky: bluesky,
-    Website: website,
     type,
-  } = fields;
+    date,
+    title,
+    description,
+    guest_name,
+    guest_title,
+    youtube_stream_link,
+    linkedin_stream_link,
+    twitter,
+    twitch,
+    github,
+    youtube,
+    bluesky,
+    website,
+    linkedin,
+  } = row;
 
-  if (!date || !guestName || !title || !description) {
+  if (!date || !guest_name || !title || !description) {
     throw new Error("Missing required stream schedule fields.");
   }
 
-  // Validate that type is one of the allowed values.
   if (type !== "nickyt.live" && type !== "pomerium-live") {
     throw new Error(`Invalid stream type: ${type}`);
   }
 
   return {
     type: type as "nickyt.live" | "pomerium-live",
-    date,
-    guestName,
-    guestTitle: guestTitle ?? "",
-    title,
-    description,
-    youtubeStreamLink: youtubeStreamLink ?? undefined,
-    linkedinStreamLink: linkedinStreamLink ?? undefined,
-    twitter: twitter ?? undefined,
-    twitch: twitch ?? undefined,
-    github: github ?? undefined,
-    youtube: youtube ?? undefined,
-    bluesky: bluesky ?? undefined,
-    website: website ?? undefined,
-    linkedin: linkedin ?? undefined,
+    date: date as string,
+    guestName: guest_name as string,
+    guestTitle: (guest_title as string) ?? "",
+    title: title as string,
+    description: description as string,
+    youtubeStreamLink: (youtube_stream_link as string) ?? undefined,
+    linkedinStreamLink: (linkedin_stream_link as string) ?? undefined,
+    twitter: (twitter as string) ?? undefined,
+    twitch: (twitch as string) ?? undefined,
+    github: (github as string) ?? undefined,
+    youtube: (youtube as string) ?? undefined,
+    bluesky: (bluesky as string) ?? undefined,
+    website: (website as string) ?? undefined,
+    linkedin: (linkedin as string) ?? undefined,
   } satisfies StreamGuestInfo;
-}
-
-async function fetchStreamSchedule(): Promise<GuestRecord[]> {
-  const apiKey = ENV.AIRTABLE_API_KEY;
-  const baseId = ENV.AIRTABLE_STREAM_GUEST_BASE_ID;
-  const { url, headers } = buildStreamGuestQueryUrl({ apiKey, baseId });
-
-  const response = await fetch(url, { headers });
-  if (!response.ok) {
-    throw new Error(`Airtable schedule request failed: ${response.status}`);
-  }
-
-  const { records } = (await response.json()) as { records: GuestRecord[] };
-  return records;
-}
-
-function buildPastGuestsQueryUrl({
-  apiKey,
-  baseId,
-}: {
-  apiKey: string;
-  baseId: string;
-}) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const todayISOString = today.toISOString();
-
-  const url = new URL(
-    `https://api.airtable.com/v0/${baseId}/${STREAM_GUESTS_TABLE}`
-  );
-  url.searchParams.set(
-    "filterByFormula",
-    `AND(IS_BEFORE({Date}, '${todayISOString}'), {YouTube Stream Link} != '', {On Schedule})`
-  );
-  url.searchParams.set("sortField", "Date");
-  url.searchParams.set("sortDirection", "desc");
-  url.searchParams.set("maxRecords", "2");
-  GUEST_FIELDS.forEach((field) => {
-    url.searchParams.append("fields[]", field);
-  });
-
-  return {
-    url: url.toString(),
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-    },
-  };
 }
 
 export async function fetchPastGuestsWithYouTube(): Promise<StreamGuestInfo[]> {
   try {
-    const apiKey = ENV.AIRTABLE_API_KEY;
-    const baseId = ENV.AIRTABLE_STREAM_GUEST_BASE_ID;
-    const { url, headers } = buildPastGuestsQueryUrl({ apiKey, baseId });
+    const client = getClient();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-    const response = await fetch(url, { headers });
-    if (!response.ok) {
-      throw new Error(
-        `Airtable past guests request failed: ${response.status}`
-      );
-    }
+    const result = await client.execute({
+      sql: `SELECT * FROM stream_guests
+            WHERE on_schedule = 1
+              AND date < ?
+              AND youtube_stream_link IS NOT NULL
+              AND youtube_stream_link != ''
+            ORDER BY date DESC
+            LIMIT 2`,
+      args: [today.toISOString()],
+    });
 
-    const { records } = (await response.json()) as { records: GuestRecord[] };
-    return records.map((record) => mapRecordToSchedule(record.fields));
+    return result.rows.map((row) => mapRowToSchedule(row as unknown as Record<string, unknown>));
   } catch (error) {
     console.error("Error fetching past guests:", error);
     return [];
   }
 }
 
-export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
-  {
-    name: "stream-schedule",
-    async loadCollection() {
-      const records = await fetchStreamSchedule();
+export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> = {
+  name: "stream-schedule",
 
-      return {
-        entries: records.map((record) => ({
-          id: record.id,
-          data: mapRecordToSchedule(record.fields),
-        })),
-      };
-    },
-    async loadEntry({ filter }) {
-      const apiKey = ENV.AIRTABLE_API_KEY;
-      const baseId = ENV.AIRTABLE_STREAM_GUEST_BASE_ID;
+  async loadCollection() {
+    const client = getClient();
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    yesterday.setHours(23, 59, 0, 0);
 
-      if (!filter?.id) {
-        return { error: new Error("Missing Airtable record id filter.") };
-      }
+    const result = await client.execute({
+      sql: `SELECT * FROM stream_guests
+            WHERE on_schedule = 1
+              AND date > ?
+            ORDER BY date ASC`,
+      args: [yesterday.toISOString()],
+    });
 
-      const url = new URL(
-        `${baseId}/${STREAM_GUESTS_TABLE}/${filter.id}`,
-        "https://api.airtable.com/v0/"
-      );
-      GUEST_FIELDS.forEach((field) => {
-        url.searchParams.append("fields[]", field);
-      });
-
-      const response = await fetch(url.toString(), {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-        },
-      });
-
-      if (!response.ok) {
+    return {
+      entries: result.rows.map((row) => {
+        const r = row as unknown as Record<string, unknown>;
         return {
-          error: new Error(`Airtable entry request failed: ${response.status}`),
+          id: r.id as string,
+          data: mapRowToSchedule(r),
         };
-      }
+      }),
+    };
+  },
 
-      const record = (await response.json()) as GuestRecord;
+  async loadEntry({ filter }) {
+    if (!filter?.id) {
+      return { error: new Error("Missing record id filter.") };
+    }
 
-      return {
-        id: record.id,
-        data: mapRecordToSchedule(record.fields),
-      };
-    },
-  };
+    const client = getClient();
+    const result = await client.execute({
+      sql: `SELECT * FROM stream_guests WHERE id = ? AND on_schedule = 1`,
+      args: [filter.id],
+    });
+
+    if (result.rows.length === 0) {
+      return { error: new Error(`No stream guest found with id: ${filter.id}`) };
+    }
+
+    const row = result.rows[0] as unknown as Record<string, unknown>;
+    return {
+      id: row.id as string,
+      data: mapRowToSchedule(row),
+    };
+  },
+};
