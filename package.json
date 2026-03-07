@@ -24,7 +24,7 @@
     "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
-    "@expressive-code/plugin-line-numbers": "^0.41.6",
+    "@expressive-code/plugin-line-numbers": "^0.41.7",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
     "@types/react": "^19.2.14",
