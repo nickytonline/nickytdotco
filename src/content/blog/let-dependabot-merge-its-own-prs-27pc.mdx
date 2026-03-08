@@ -29,7 +29,9 @@ Before the workflow can do anything, you need to allow auto-merge in your reposi
 
 ![allow auto-merge in your repository settings](/assets/images/posts/_uploads_articles_ojecpo5catdgb6r48qdf.png)
 
-This isn't Dependabot-specific, but it is required for this to work. Without it, the `gh pr merge --auto` command in the workflow will fail.
+This isn't Dependabot-specific, but it is required for this to work. Without it, the `gh pr merge --auto` command in the workflow will fail. In fact this is what I do to automate using dev.to as a headless CMS for my blog!
+
+<Embed url="https://dev.to/nickytonline/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6" />
 
 ## The workflow
 
@@ -66,7 +68,11 @@ The `if: github.actor == 'dependabot[bot]'` condition makes sure this only runs 
 
 The two steps do exactly what they say: approve the PR, then enable auto-merge with squash. GitHub handles the actual merge once all your required checks pass.
 
-`GITHUB_TOKEN` is automatically available in every GitHub Actions workflow, no setup needed on your end.
+Here's an example of it not auto-merging after auto-approval because checks failed.
+
+<Embed url="https://github.com/nickytonline/nickytdotco/pull/809" />
+
+Note: `GITHUB_TOKEN` is automatically available in every GitHub Actions workflow, no setup needed on your end.
 
 ## What it looks like
 
