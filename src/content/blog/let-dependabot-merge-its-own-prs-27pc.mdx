@@ -1,0 +1,99 @@
+---
+title: Let Dependabot Merge Its Own PRs
+excerpt: >-
+  Dependabot opens PRs automatically. That part most people have set up. But
+  then those PRs just sit...
+date: '2026-03-08T18:16:29Z'
+tags:
+  - github
+  - cicd
+  - githubactions
+  - devops
+cover_image: >-
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpyfquld83ghx1qmim1um.jpg
+canonical_url: https://www.nickyt.co/blog/let-dependabot-merge-its-own-prs-27pc
+reading_time_minutes: 3
+template: post
+---
+import Embed from "@/components/Embed.astro";
+
+Dependabot opens PRs automatically. That part most people have set up. But then those PRs just sit there until you get around to reviewing and merging them. I had 6 open across one of my repos recently. None of them were risky. I just didn't feel like giving a review and approving, then merging.
+
+If your CI passes and the update is a patch or minor version bump, there's not much to review. You're going to merge it. So why not let it happen automatically?
+
+I've added this to two repos now and it's one of those small things that quietly removes friction from your day.
+
+## First, enable auto-merge on your repo
+
+Before the workflow can do anything, you need to allow auto-merge in your repository settings. Go to e.g. https://github.com/yourorg-username/your-repo/settings/actions and scroll down to the Pull Requests section, and check Allow auto-merge.
+
+![allow auto-merge in your repository settings](/assets/images/posts/_uploads_articles_ojecpo5catdgb6r48qdf.png)
+
+This isn't Dependabot-specific, but it is required for this to work. Without it, the `gh pr merge --auto` command in the workflow will fail.
+
+## The workflow
+
+Create `.github/workflows/auto-merge-dependabot.yml` in your repo:
+
+```yaml
+name: Auto-merge Dependabot PRs
+
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Approve PR
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Enable auto-merge
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+The `if: github.actor == 'dependabot[bot]'` condition makes sure this only runs on Dependabot PRs, not every PR that comes in.
+
+The two steps do exactly what they say: approve the PR, then enable auto-merge with squash. GitHub handles the actual merge once all your required checks pass.
+
+`GITHUB_TOKEN` is automatically available in every GitHub Actions workflow, no setup needed on your end.
+
+## What it looks like
+
+Once it's set up and a Dependabot PR comes in, you'll see the github-actions bot approve the PR and enable auto-merge. The PR then waits for your required checks to complete and merges itself when everything is green.
+
+![github-actions bot approving a PR](/assets/images/posts/_uploads_articles_aiv3ozw0xf2andqrxvrz.png)
+
+## A note on safety
+
+**This setup is only as safe as your CI.** If you don't have required checks configured, the PR can auto-merge the moment the workflow approves it. At a minimum you want a build check required, tests if you have them. Branch protection rules still apply. If a required check fails, the PR won't merge. The workflow isn't bypassing anything, it's just handling the approval and queuing up the merge for you.
+
+## Being more selective
+
+This workflow approves and enables auto-merge on every Dependabot PR regardless of whether it's a patch, minor, or major update. If you want to be more selective, you can use the [dependabot/fetch-metadata action](https://github.com/dependabot/fetch-metadata) to check the update type and only proceed for patch and minor updates. The [GitHub docs on automating Dependabot](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions) cover that in more detail.
+
+If you want to see a PR that went through this whole flow check out the PR below.
+
+<Embed url="https://github.com/nickytonline/nickytdotco/pull/790" />
+
+This has taken a whole category of busywork off my plate for my personal site and my Clawspace project.
+
+<Embed url="https://github.com/nickytonline/nickytdotco" />
+
+<Embed url="https://github.com/nickytonline/clawspace" />
+
+For work projects there would probably be some push back on this potentially, but if you have a really great CI/CD pipeline with checks, definitely consider doing this or at least having a discussion with your team.
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Until the next one!
