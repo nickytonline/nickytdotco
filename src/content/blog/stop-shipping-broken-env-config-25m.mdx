@@ -1,0 +1,202 @@
+---
+title: Stop Shipping Broken Env Config
+excerpt: >-
+  I first hung out with the Varlock team back in late August 2025, so this is
+  not brand new to me. But...
+date: '2026-03-10T14:28:56Z'
+tags:
+  - security
+  - vite
+  - astro
+  - javascript
+cover_image: >-
+  /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fl4mabgx0qxzay5p9l8q7.png
+canonical_url: https://www.nickyt.co/blog/stop-shipping-broken-env-config-25m
+reading_time_minutes: 6
+template: post
+---
+import Embed from "@/components/Embed.astro";
+
+I first hung out with the Varlock team back in late August 2025, so this is not brand new to me. But while wiring it into an Astro project recently, I had the same reaction I always have after cleaning up env handling: I should have done this sooner.
+
+Most teams start with `.env` files and a few runtime checks. That works for a while, until it does not. Someone forgets a key in CI. A value is malformed in production. A secret accidentally gets logged. Then you are debugging config problems instead of shipping.
+
+Varlock gives you a schema-first workflow for environment variables, with validation and safer defaults. In Astro projects, the integration is clean and built on top of the Vite plugin.
+
+<Embed url="https://github.com/dmno-dev/varlock" />
+
+## TL;DR
+
+- Use Varlock to define your environment contract in `.env.schema`.
+- Add the Astro integration with [`@varlock/astro-integration`](https://www.npmjs.com/package/@varlock/astro-integration).
+- Validate locally and in CI with `npx varlock load`.
+- If you work with other Vite-based apps, [`@varlock/vite-integration`](https://www.npmjs.com/package/@varlock/vite-integration) is the foundation.
+- You catch config mistakes earlier and avoid expensive deploy churn.
+
+## Where `.env` workflows usually break
+
+The usual pattern is familiar:
+
+- Keep secrets in `.env.local`
+- Keep a partial `.env.example`
+- Add manual checks in app startup
+- Hope `.env.example` stays in sync
+
+The cracks show up quickly:
+
+1. Drift between docs and reality
+   `.env.example` gets stale the minute someone adds a new variable and forgets to update it.
+
+2. Validation is scattered
+   One variable is checked in server startup, another in a route handler, another not at all.
+
+3. Bad feedback timing
+   You often learn about missing config at runtime, not at build/startup when you can fix it fast.
+
+4. Risk of secret leaks
+   People print env values while debugging. It happens.
+
+## What got better right away
+
+Varlock centers everything around a schema so your config has a single source of truth. Instead of treating env as untyped key-value noise, you define expectations up front.
+
+In practice, that means:
+
+- Required values are explicit
+- Types and rules are explicit
+- Validation happens before your app gets far enough to do damage
+- Sensitive values can be redacted from logs/output
+
+This is the part I like most: it moves config errors from "mystery bug in prod" to "clear error in dev/CI."
+
+## Setting it up in Astro
+
+If you're in an Astro project, this is the fastest path:
+
+```bash
+npx astro add @varlock/astro-integration
+```
+
+That wires in the integration and updates your Astro config.
+
+Then initialize Varlock:
+
+```bash
+npx varlock init
+```
+
+If you already have existing env files, `init` can help bootstrap your schema from what is there.
+
+If required values are missing, you get actionable errors immediately. Here is a real fail-fast example from my build logs for my personal site when a required env var was missing:
+
+```text
+🚨 🚨 🚨 Configuration is currently invalid 🚨 🚨 🚨
+Invalid items:
+❓ TURSO_AUTH_TOKEN* 🔐sensitive
+└ undefined
+- Value is required but is currently empty
+💥 Resolved config/env did not pass validation 💥
+🚨 initVarlockEnv failed 🚨
+```
+
+This was the biggest win for me. I hit missing env vars during setup, and Varlock made those failures obvious early instead of letting them turn into runtime bugs. It also let me delete a bunch of defensive "does this env var exist" checks in app code because the schema and validation now handle that upfront.
+
+I also opened a PR on my personal site while doing this migration. If you want a concrete implementation reference, here it is:
+
+<Embed url="https://github.com/nickytonline/nickyt.live/pull/22" />
+
+That is exactly the behavior I want. Stop immediately, show me what is wrong, and do not let a bad config sneak into a deploy.
+
+## Quick note on Astro + Vite
+
+Astro uses Vite under the hood, and Varlock leans on that.
+
+I like this approach. [`@varlock/astro-integration`](https://www.npmjs.com/package/@varlock/astro-integration) stays thin, most of the logic lives in [`@varlock/vite-integration`](https://www.npmjs.com/package/@varlock/vite-integration), and that usually means fewer weird bugs and less maintenance.
+
+So even if you start with Astro, you are learning a model that transfers well.
+
+## The setup flow I recommend
+
+Here is a workflow I would recommend for personal projects and teams.
+
+1. Define your schema first. Treat `.env.schema` like API contract documentation for your app config.
+   - Mark required values as required
+   - Add validation constraints where obvious
+   - Keep non-sensitive defaults where appropriate
+2. Keep local secrets local. Be explicit about your current setup. Right now, I still keep local secrets in a plaintext `.env` file 🙈 (on my TODO list to move to 1Password), and in deploys those values come from Netlify environment configuration.
+3. Run validation early. Run `npx varlock load` locally.
+4. Fail fast in CI. If config is broken, the build should fail before deploy.
+5. Use typed env access when available. Where it fits your codebase, use Varlock’s typed env access instead of reading raw `process.env` values everywhere.
+
+## Example CI step
+
+If your build/check already initializes Varlock (like Astro config loading does), you do not need a separate `npx varlock load` in that same job.
+
+Use `npx varlock load` as an explicit precheck when you want to fail fast before heavier steps, or when another job/step needs validated env without running your full app init path.
+
+```yaml
+# Option A: rely on your normal build if it already initializes Varlock
+- name: Build
+  run: npm run build
+
+# Option B: explicit precheck before build (optional)
+- name: Validate environment with Varlock
+  run: npx varlock load
+- name: Build
+  run: npm run build
+```
+
+## One Astro config gotcha this fixes
+
+In many setups, using env values inside config files is awkward because loading order can get weird. With Varlock integrated, that experience is much cleaner because env loading and validation are already part of the flow.
+
+That can reduce the number of one-off workarounds in `astro.config.*` and keep configuration logic more predictable.
+
+## This is not just a convenience thing
+
+Varlock is a productivity win, but it is also a security and reliability win.
+
+- It reduces accidental secret exposure during debugging
+- It encourages explicit handling of sensitive values
+- It lowers the chance of deploying with bad or partial config
+
+I think a lot of env tooling gets treated like "nice to have." I disagree. Configuration bugs can take down production just as effectively as code bugs.
+
+## Astro integration or Vite plugin?
+
+- Use [`@varlock/astro-integration`](https://www.npmjs.com/package/@varlock/astro-integration) when you are in an Astro app and want the smoothest native setup.
+- Use [`@varlock/vite-integration`](https://www.npmjs.com/package/@varlock/vite-integration) for non-Astro Vite projects.
+
+If your stack includes multiple frameworks, it is good to know they can share the same core model.
+
+## Final thoughts
+
+If your current env strategy is "it mostly works," Varlock is worth trying. It feels like a small upgrade until it prevents the next deployment headache.
+
+In my opinion, schema-first env management should be the default for modern JavaScript projects, especially where AI tools and automation are involved and you want strong guardrails around secrets.
+
+When would I skip this? Tiny throwaway scripts with no real deploy surface. For anything that ships, this is worth it.
+
+If you want to see the walkthrough that motivated this post, here is the video:
+
+<Embed url="https://www.youtube.com/watch?v=AG9rTCZwokw" />
+
+Also give them some love over on the Syntax YouTube channel, they were on there recently too!
+
+<Embed url="https://www.youtube.com/watch?v=M5IkdUunf8g" />
+
+One thing worth calling out from their broader direction is that they are working on better support for other languages, including automatic type generation from your schema for various languages. That is a big deal if your stack is not purely JavaScript.
+
+## Useful links
+
+- Varlock: https://varlock.dev
+- `@varlock/astro-integration`: https://www.npmjs.com/package/@varlock/astro-integration
+- `@varlock/vite-integration`: https://www.npmjs.com/package/@varlock/vite-integration
+- Other language support roadmap: https://varlock.dev/integrations/other-languages/
+
+If you want to stay in touch, all my socials are on [nickyt.online](https://nickyt.online).
+
+Until the next one!
+
+Want to stay updated with tech tips? Check out my newsletter:
+[OneTipAWeek.com](https://onetipaweek.com)
