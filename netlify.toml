@@ -79,6 +79,12 @@ to = "https://docs.google.com/presentation/d/e/2PACX-1vSxw2QZXhKQ-tjmbm5RYSDfB28
 status = 301
 force = true
 
+[[redirects]]
+from = "/rss.xml"
+to = "/feed.xml"
+status = 301
+force = true
+
 # old page urls redirects
 [[redirects]]
 from = "/pages/*"
