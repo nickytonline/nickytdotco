@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import { dateFilter } from "../utils/filters";
+import { getYouTubeId } from "../utils/youtube-utils";
 export const prerender = true;
 
 const talks = await getCollection("talks");
@@ -60,9 +61,51 @@ const years = Object.keys(talksByYear)
           <div class="space-y-1" data-pagefind-ignore>
             {talksByYear[year].map((talk) => {
               const slug = talk.slug;
+              const video = talk.data.video;
+              let thumbnailUrl: string | undefined;
+              if (video?.type === "youtube") {
+                const videoId = getYouTubeId(video.url);
+                if (videoId) {
+                  thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                }
+              } else if (video?.type === "custom" && video.image) {
+                thumbnailUrl = video.image.url;
+              }
               return (
                 <div class="py-5 px-6">
-                  <div class="flex items-baseline justify-between gap-6">
+                  <div class="flex items-center gap-5">
+                    <a
+                      href={`/talks/${slug}`}
+                      class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      {thumbnailUrl ? (
+                        <img
+                          src={thumbnailUrl}
+                          alt=""
+                          width={160}
+                          height={90}
+                          loading="lazy"
+                          decoding="async"
+                          class="w-40 h-22.5 object-cover"
+                        />
+                      ) : (
+                        <div class="w-40 h-22.5 bg-muted flex items-center justify-center">
+                          <svg
+                            class="w-8 h-8 text-muted-foreground/50"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1.5"
+                              d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
+                            />
+                          </svg>
+                        </div>
+                      )}
+                    </a>
                     <div class="flex-1">
                       <h3 class="text-xl font-bold">
                         <a
