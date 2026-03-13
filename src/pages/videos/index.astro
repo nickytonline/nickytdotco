@@ -54,7 +54,21 @@ const years = Object.keys(streamsByYear)
               const slug = stream.slug;
               return (
                 <div class="py-5 px-6">
-                  <div class="flex items-baseline justify-between gap-6">
+                  <div class="flex items-center gap-5">
+                    <a
+                      href={`/videos/${slug}`}
+                      class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      <img
+                        src={stream.data.thumbnailUrl}
+                        alt=""
+                        width={160}
+                        height={90}
+                        loading="lazy"
+                        decoding="async"
+                        class="w-40 h-22.5 object-cover"
+                      />
+                    </a>
                     <div class="flex-1">
                       <h3 class="text-xl font-bold">
                         <a
