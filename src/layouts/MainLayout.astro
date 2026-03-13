@@ -20,6 +20,7 @@ const {
   pageType,
 } = Astro.props;
 const { origin } = new URL(Astro.request.url);
+const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -68,6 +69,23 @@ const { origin } = new URL(Astro.request.url);
         }
       });
     </script>
+    {gaMeasurementId && (
+      <>
+        <script
+          is:inline
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+        ></script>
+        <script is:inline define:vars={{ gaMeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", gaMeasurementId);
+        </script>
+      </>
+    )}
   </head>
   <body class="pb-32 font-sans">
     <SkipLink id="main" />
