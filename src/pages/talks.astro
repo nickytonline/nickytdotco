@@ -66,7 +66,7 @@ const years = Object.keys(talksByYear)
               if (video?.type === "youtube") {
                 const videoId = getYouTubeId(video.url);
                 if (videoId) {
-                  thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                  thumbnailUrl = `https://img.youtube.com/vi/${videoId}/default.jpg`;
                 }
               } else if (video?.type === "custom" && video.image) {
                 thumbnailUrl = video.image.url;

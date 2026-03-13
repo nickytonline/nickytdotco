@@ -60,7 +60,10 @@ const years = Object.keys(streamsByYear)
                       class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
                     >
                       <img
-                        src={stream.data.thumbnailUrl}
+                        src={stream.data.thumbnailUrl.replace(
+                          "hqdefault",
+                          "default"
+                        )}
                         alt=""
                         width={160}
                         height={90}
