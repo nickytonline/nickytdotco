@@ -19,9 +19,42 @@ const { year, posts } = Astro.props;
           title: string;
           date: string;
           readTime: string;
+          coverImage: string | null;
         }) => (
           <div class="py-5 px-6">
-            <div class="flex items-baseline justify-between gap-6">
+            <div class="flex items-center gap-5">
+              <a
+                href={post.url}
+                class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+              >
+                {post.coverImage ? (
+                  <img
+                    src={post.coverImage}
+                    alt=""
+                    width={160}
+                    height={90}
+                    loading="lazy"
+                    decoding="async"
+                    class="w-40 h-22.5 object-cover"
+                  />
+                ) : (
+                  <div class="w-40 h-22.5 bg-muted flex items-center justify-center">
+                    <svg
+                      class="w-8 h-8 text-muted-foreground/50"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                      />
+                    </svg>
+                  </div>
+                )}
+              </a>
               <div class="flex-1">
                 <h3 class="text-xl font-bold">
                   <a
