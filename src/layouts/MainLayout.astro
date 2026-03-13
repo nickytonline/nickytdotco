@@ -69,23 +69,21 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
         }
       });
     </script>
-    {gaMeasurementId && (
-      <>
-        <script
-          is:inline
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-        ></script>
-        <script is:inline define:vars={{ gaMeasurementId }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-          gtag("config", gaMeasurementId);
-        </script>
-      </>
-    )}
+    {
+      gaMeasurementId && (
+        <>
+          <script
+            is:inline
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+          />
+          <script
+            is:inline
+            set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaMeasurementId}');`}
+          />
+        </>
+      )
+    }
   </head>
   <body class="pb-32 font-sans">
     <SkipLink id="main" />
