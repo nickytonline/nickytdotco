@@ -71,7 +71,7 @@
     "pagefind": "^1.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "slugify": "^1.6.6",
+    "slugify": "^1.6.8",
     "tailwindcss": "^4.2.1",
     "typescript-eslint": "^8.56.1"
   },
