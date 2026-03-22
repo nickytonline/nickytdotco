@@ -31,7 +31,7 @@
     "@libsql/client": "^0.17.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@varlock/astro-integration": "^0.1.0",
+    "@varlock/astro-integration": "^0.2.5",
     "astro": "^5.17.1",
     "astro-expressive-code": "^0.41.6",
     "class-variance-authority": "^0.7.1",
