@@ -2,6 +2,7 @@
 
 ## Quick Start
 
+- Install Vite+ CLI: `curl -fsSL https://vite.plus | bash` (one-time setup, see [guide](https://viteplus.dev/guide/)).
 - Install deps: `vp install` (Node.js 22+).
 - Dev server: `vp run dev` (runs Astro dev on port 4321; do **not** use `vp dev`, which starts Vite's raw server on port 5173).
 - Build pipeline: `vp run build`.
