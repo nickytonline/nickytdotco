@@ -60,7 +60,7 @@ const years = Object.keys(talksByYear)
 
           <div class="space-y-1" data-pagefind-ignore>
             {talksByYear[year].map((talk) => {
-              const slug = talk.slug;
+              const slug = talk.id;
               const video = talk.data.video;
               let thumbnailUrl: string | undefined;
               if (video?.type === "youtube") {

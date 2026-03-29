@@ -181,7 +181,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
         <section>
           <div class="space-y-1">
             {sortedBlogPosts.map((post) => {
-              const slug = post.slug;
+              const slug = post.id;
               const readTime = post.data.reading_time_minutes
                 ? `${post.data.reading_time_minutes} min read`
                 : null;
@@ -227,7 +227,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
         <section>
           <div class="space-y-1">
             {sortedTalks.map((talk) => {
-              const slug = talk.slug;
+              const slug = talk.id;
               return (
                 <div class="py-5 px-6">
                   <div class="flex items-baseline justify-between gap-6">

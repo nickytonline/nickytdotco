@@ -1,5 +1,5 @@
 ---
-import { getEntry, getCollection } from "astro:content";
+import { getEntry, getCollection, render } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import { dateFilter } from "../../utils/filters";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const streams = await getCollection("streams");
 
   return streams.map((stream) => ({
-    params: { slug: stream.slug },
+    params: { slug: stream.id },
   }));
 }
 
@@ -26,7 +26,7 @@ if (!stream) {
 
 const { title, date, videoId } = stream.data;
 
-const { Content } = await stream.render();
+const { Content } = await render(stream);
 ---
 
 <Layout
