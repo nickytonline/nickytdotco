@@ -1,4 +1,5 @@
-import { defineLiveCollection, z } from "astro:content";
+import { defineLiveCollection } from "astro:content";
+import { z } from "astro/zod";
 
 import { streamScheduleLoader } from "./content/_loaders/stream-schedule";
 import { newsletterLoader } from "./content/_loaders/newsletter";
@@ -14,15 +15,15 @@ const streamSchedule = defineLiveCollection({
     description: z.string().min(1),
     guestName: z.string().min(1),
     guestTitle: z.string().optional(),
-    youtubeStreamLink: z.string().url().optional(),
-    linkedinStreamLink: z.string().url().optional(),
+    youtubeStreamLink: z.url().optional(),
+    linkedinStreamLink: z.url().optional(),
     twitter: z.string().optional(),
     youtube: z.string().optional(),
     twitch: z.string().optional(),
     github: z.string().optional(),
     bluesky: z.string().optional(),
-    website: z.string().url().optional(),
-    ogImageURL: z.string().url().optional(),
+    website: z.url().optional(),
+    ogImageURL: z.url().optional(),
     linkedin: z.string().optional(),
   }),
 });
@@ -31,7 +32,7 @@ const newsletter = defineLiveCollection({
   loader: newsletterLoader,
   schema: z.object({
     title: z.string().min(1),
-    link: z.string().url(),
+    link: z.url(),
     description: z.string(),
     date: z.string(),
   }),
@@ -43,7 +44,7 @@ const pinnedProjects = defineLiveCollection({
     owner: z.string(),
     name: z.string(),
     description: z.string(),
-    url: z.string().url(),
+    url: z.url(),
     stargazerCount: z.number(),
     forkCount: z.number(),
     primaryLanguage: z

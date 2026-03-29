@@ -1,4 +1,5 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 
 /**
@@ -30,7 +31,7 @@ const blogCollection = defineCollection({
     description: z.string().optional(),
     tags: z.array(z.string()).optional(),
     cover_image: z.string().optional().nullable(),
-    canonical_url: z.string().url().optional(),
+    canonical_url: z.url().optional(),
     draft: z.boolean().optional(),
     reading_time_minutes: z.number().optional(),
     template: z.string().optional(),
@@ -50,7 +51,7 @@ const talksCollection = defineCollection({
     date: z.date(),
     video: z
       .object({
-        url: z.string().url(),
+        url: z.url(),
         type: z.enum(["youtube", "vimeo", "custom"]),
         image: z
           .object({
@@ -85,7 +86,7 @@ const streamsCollection = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     videoId: z.string(),
-    thumbnailUrl: z.string().url(),
+    thumbnailUrl: z.url(),
     channelTitle: z.string(),
     description: z.string(),
   }),
