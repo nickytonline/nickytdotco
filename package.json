@@ -12,11 +12,11 @@
     "build": "npm run format:check && astro check && astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write . && eslint --fix .",
-    "format:check": "prettier --check . && eslint --max-warnings 0 .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "prepare": "husky"
+    "format": "vp fmt . && vp lint --fix .",
+    "format:check": "vp fmt --check . && vp lint --max-warnings 0 .",
+    "lint": "vp lint .",
+    "lint:fix": "vp lint --fix .",
+    "prepare": "vp config"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
@@ -60,20 +60,16 @@
     "@types/luxon": "^3.7.1",
     "@types/node": "^25.0.3",
     "dotenv": "^17.3.1",
-    "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "globals": "^17.3.0",
-    "husky": "^9.1.7",
     "js-yaml": "^4.1.1",
     "jsdom": "^29.0.1",
-    "lint-staged": "^16.4.0",
     "pagefind": "^1.4.0",
-    "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1",
     "slugify": "^1.6.8",
     "tailwindcss": "^4.2.2",
-    "typescript-eslint": "^8.57.2"
+    "typescript-eslint": "^8.57.2",
+    "vite-plus": "latest"
   },
   "repository": {
     "type": "git",
@@ -90,13 +86,9 @@
     "url": "https://github.com/nickytonline/nickytdotco/issues"
   },
   "homepage": "https://www.nickyt.co",
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx,astro,mjs,cjs}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
-    "*.{json,md,mdx,css,html,yml,yaml}": [
-      "prettier --write"
-    ]
+  "packageManager": "npm@11.12.1",
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
   }
 }
