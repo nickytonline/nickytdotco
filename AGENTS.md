@@ -2,12 +2,12 @@
 
 ## Quick Start
 
-- Install deps: `npm install` (Node.js 22+).
-- Dev server: `npm run dev` (`npm start` alias).
-- Build pipeline: `npm run build`.
-- Preview build: `npm run preview`.
-- Format/lint: `npm run format`, `npm run format:check`, `npm run lint`, `npm run lint:fix`.
-- Type check: `npx astro check`.
+- Install deps: `vp install` (Node.js 22+).
+- Dev server: `vp run dev` (runs Astro dev on port 4321; do **not** use `vp dev`, which starts Vite's raw server on port 5173).
+- Build pipeline: `vp run build`.
+- Preview build: `vp run preview`.
+- Format/lint: `vp fmt .`, `vp fmt --check .`, `vp lint .`, `vp lint --fix .`.
+- Type check: `vp dlx astro check`.
 
 ## Architecture
 
@@ -38,7 +38,7 @@
 
 ## Code Standards
 
-- Formatting: Prettier; linting: ESLint (`eslint.config.js`).
+- Formatting: Oxfmt (`vp fmt`); linting: Oxlint (`vp lint`).
 - TypeScript: explicit types when helpful; unused vars use `_` prefix.
 - Naming: content slugs are kebab-case.
 
@@ -119,7 +119,7 @@ These commands map to their corresponding tools. For example, `vp dev --port 300
 
 - **Using the package manager directly:** Do not use pnpm, npm, or Yarn directly. Vite+ can handle all package manager operations.
 - **Always use Vite commands to run tools:** Don't attempt to run `vp vitest` or `vp oxlint`. They do not exist. Use `vp test` and `vp lint` instead.
-- **Running scripts:** Vite+ built-in commands (`vp dev`, `vp build`, `vp test`, etc.) always run the Vite+ built-in tool, not any `package.json` script of the same name. To run a custom script that shares a name with a built-in command, use `vp run <script>`. For example, if you have a custom `dev` script that runs multiple services concurrently, run it with `vp run dev`, not `vp dev` (which always starts Vite's dev server).
+- **Running scripts:** Vite+ built-in commands (`vp dev`, `vp build`, `vp test`, etc.) always run the Vite+ built-in tool, not any `package.json` script of the same name. To run a custom script that shares a name with a built-in command, use `vp run <script>`. For example, this project's `dev` script runs `astro dev` (port 4321), so use `vp run dev` — not `vp dev` (which starts Vite's raw dev server on port 5173 and will 404).
 - **Do not install Vitest, Oxlint, Oxfmt, or tsdown directly:** Vite+ wraps these tools. They must not be installed directly. You cannot upgrade these tools by installing their latest versions. Always use Vite+ commands.
 - **Use Vite+ wrappers for one-off binaries:** Use `vp dlx` instead of package-manager-specific `dlx`/`npx` commands.
 - **Import JavaScript modules from `vite-plus`:** Instead of importing from `vite` or `vitest`, all modules should be imported from the project's `vite-plus` dependency. For example, `import { defineConfig } from 'vite-plus';` or `import { expect, test, vi } from 'vite-plus/test';`. You must not install `vitest` to import test utilities.
