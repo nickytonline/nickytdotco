@@ -17,28 +17,36 @@ This is the source code for [nickyt.co](https://www.nickyt.co), Nick Taylor's pe
 
 ## Terminal commands
 
-### Install the dependencies first
+### Install the Vite+ CLI (one-time setup)
 
 ```bash
-npm install
+curl -fsSL https://vite.plus | bash
+```
+
+See the [Vite+ guide](https://viteplus.dev/guide/) for more details.
+
+### Install the dependencies
+
+```bash
+vp install
 ```
 
 ### Run in dev mode
 
 ```bash
-npm run dev
+vp run dev
 ```
 
 ### Build a production version of the site
 
 ```bash
-npm run build
+vp run build
 ```
 
 #### Test the production site locally
 
 ```bash
-npm run preview
+vp run preview
 ```
 
 ## Styling

@@ -22,7 +22,7 @@ const Search = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLUListElement>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   const pagefind = useRef<any>(null);
 
   useEffect(() => {
@@ -143,7 +143,7 @@ const Search = () => {
         if (search.results) {
           setTotalResults(search.results.length);
           const res = await Promise.all(
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // oxlint-disable-next-line @typescript-eslint/no-explicit-any
             search.results.slice(0, 8).map((r: any) => r.data())
           );
           setResults(res);
