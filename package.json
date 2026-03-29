@@ -7,7 +7,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "portless run astro dev",
     "start": "astro dev",
     "build": "npm run format:check && astro check && astro build && pagefind --site dist",
     "preview": "astro preview",
@@ -41,6 +41,7 @@
     "lucide-react": "^0.577.0",
     "luxon": "^3.7.2",
     "marked": "^17.0.1",
+    "portless": "^0.7.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "rehype-autolink-headings": "^7.1.0",
