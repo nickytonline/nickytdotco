@@ -1,0 +1,11 @@
+dist
+node_modules
+.astro
+public/service-worker.js
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+src/pages/posts
+src/**/*.md
+*.mdx
+env.d.ts
