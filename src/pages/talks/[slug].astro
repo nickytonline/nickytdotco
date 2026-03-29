@@ -1,5 +1,5 @@
 ---
-import { getEntry, getCollection } from "astro:content";
+import { getEntry, getCollection, render } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import TagList from "../../components/TagList.astro";
 import { getRelatedTalks } from "../../utils/tag-utils";
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   const talks = await getCollection("talks");
 
   return talks.map((talk) => ({
-    params: { slug: talk.slug },
+    params: { slug: talk.id },
   }));
 }
 
@@ -43,7 +43,7 @@ const {
   additionalLinks = [],
 } = talk.data;
 
-const { Content } = await talk.render();
+const { Content } = await render(talk);
 ---
 
 <Layout
@@ -208,7 +208,7 @@ const { Content } = await talk.render();
           <h2 class="text-2xl font-bold mb-6 text-foreground">Related Talks</h2>
           <div class="grid gap-6 xl:gap-8">
             {relatedTalks.map((relatedTalk) => {
-              const relatedSlug = relatedTalk.slug;
+              const relatedSlug = relatedTalk.id;
               return (
                 <a
                   href={`/talks/${relatedSlug}`}

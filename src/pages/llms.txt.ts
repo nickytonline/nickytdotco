@@ -56,7 +56,7 @@ You are free to share and adapt this content for any purpose, even commercially,
     ? `\n\n## Recent Blog Posts\n${sortedPosts
         .map(
           (post) =>
-            `- [${post.data.title}](https://www.nickyt.co/blog/${post.slug}/)`
+            `- [${post.data.title}](https://www.nickyt.co/blog/${post.id}/)`
         )
         .join("\n")}`
     : "";
@@ -65,7 +65,7 @@ You are free to share and adapt this content for any purpose, even commercially,
     ? `\n\n## Recent Talks\n${sortedTalks
         .map(
           (talk) =>
-            `- [${talk.data.title}](https://www.nickyt.co/talks/${talk.slug}/)`
+            `- [${talk.data.title}](https://www.nickyt.co/talks/${talk.id}/)`
         )
         .join("\n")}`
     : "";

@@ -16,9 +16,6 @@ export default defineConfig({
   output: "static",
   adapter: netlify(),
   site: "https://www.nickyt.co",
-  experimental: {
-    liveContentCollections: true,
-  },
   integrations: [
     varlockintegration(),
     expressiveCode(),

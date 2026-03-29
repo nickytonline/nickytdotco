@@ -23,7 +23,7 @@ if (sortedPosts.length <= 1) {
 }
 
 const currentIndex = sortedPosts.findIndex(
-  (post) => `/blog/${post.slug}` === currentUrl
+  (post) => `/blog/${post.id}` === currentUrl
 );
 const totalPosts = sortedPosts.length;
 const hasCollapse = totalPosts > 5;
@@ -60,7 +60,7 @@ const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
 
 // Helper to get global index for a post
 const getStaticIndex = (post: CollectionEntry<"blog">) =>
-  sortedPosts.findIndex((p) => p.slug === post.slug);
+  sortedPosts.findIndex((p) => p.id === post.id);
 ---
 
 <details
@@ -117,7 +117,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
                 </span>
               ) : (
                 <a
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${post.id}`}
                   class="block text-sm leading-tight text-gray-700 dark:text-gray-100 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:underline focus-visible:outline-none"
                 >
                   {truncate(post.data.title, 80)}
@@ -150,7 +150,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
                     </span>
                     <div class="min-w-0 flex-1 pt-0.5">
                       <a
-                        href={`/blog/${post.slug}`}
+                        href={`/blog/${post.id}`}
                         class="block text-sm leading-tight text-gray-700 dark:text-gray-100 hover:text-pink-600 hover:underline"
                       >
                         {truncate(post.data.title, 80)}
@@ -202,7 +202,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
                     </span>
                     <div class="min-w-0 flex-1 pt-0.5">
                       <a
-                        href={`/blog/${post.slug}`}
+                        href={`/blog/${post.id}`}
                         class="block text-sm leading-tight text-gray-700 dark:text-gray-100 hover:text-pink-600 hover:underline"
                       >
                         {truncate(post.data.title, 80)}
@@ -237,7 +237,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
                 </span>
               ) : (
                 <a
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${post.id}`}
                   class="block text-sm leading-tight text-gray-700 dark:text-gray-100 no-underline hover:text-pink-600 dark:hover:text-pink-400 hover:underline focus-visible:underline focus-visible:outline-none"
                 >
                   {truncate(post.data.title, 80)}

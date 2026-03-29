@@ -5,7 +5,7 @@ import SeriesNavigation from "../components/SeriesNavigation.astro";
 import type { CollectionEntry } from "astro:content";
 import site from "../data/site";
 import { seriesFilter } from "../utils/filters";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Tag from "@/components/Tag.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 
@@ -14,9 +14,9 @@ export interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content, headings } = await entry.render();
+const { Content, headings } = await render(entry);
 
-const currentUrl = `/blog/${entry.slug}`;
+const currentUrl = `/blog/${entry.id}`;
 
 // Get series posts if this is part of a series
 let seriesPosts: CollectionEntry<"blog">[] = [];
@@ -41,7 +41,7 @@ if (entry.data.series) {
       cover_image={entry.data.cover_image}
       date={entry.data.date}
       reading_time_minutes={entry.data.reading_time_minutes}
-      fileSlug={entry.slug}
+      fileSlug={entry.id}
       url={currentUrl}
       canonical_url={entry.data.canonical_url}
     />

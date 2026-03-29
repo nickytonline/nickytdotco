@@ -51,7 +51,7 @@ const years = Object.keys(streamsByYear)
 
           <div class="space-y-1" data-pagefind-ignore>
             {streamsByYear[year].map((stream) => {
-              const slug = stream.slug;
+              const slug = stream.id;
               return (
                 <div class="py-5 px-6">
                   <div class="flex items-center gap-5">

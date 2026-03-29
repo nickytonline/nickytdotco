@@ -23,7 +23,7 @@ if (username === "nickytonline" || username === "opensauced") {
   // the blog slug here is in the blog content collection so get the title from there
   const blogSlug = updatedUrl.pathname.replace("/blog/", "").replace(/\/$/, "");
   title = await getCollection("blog").then((entries) => {
-    const entry = entries.find((e) => e.slug === blogSlug);
+    const entry = entries.find((e) => e.id === blogSlug);
     return entry?.data.title;
   });
 } else if (username && slug) {

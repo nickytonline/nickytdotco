@@ -1,4 +1,5 @@
 import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 
 /**
  * A Zod schema that validates a string is either an absolute URL or a relative path.
@@ -21,7 +22,7 @@ const urlOrRelative = z
   );
 
 const blogCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.mdx", base: "src/content/blog" }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
@@ -43,7 +44,7 @@ const blogCollection = defineCollection({
 });
 
 const talksCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "src/content/talks" }),
   schema: z.object({
     title: z.string(),
     date: z.date(),
@@ -79,7 +80,7 @@ const talksCollection = defineCollection({
 });
 
 const streamsCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.mdx", base: "src/content/streams" }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),

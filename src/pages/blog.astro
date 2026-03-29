@@ -38,7 +38,7 @@ const blogPostsByYear = years.map((year) => ({
     readTime: post.data.reading_time_minutes
       ? `${post.data.reading_time_minutes} min read`
       : null,
-    url: `/blog/${post.slug}`,
+    url: `/blog/${post.id}`,
     coverImage: post.data.cover_image ?? null,
   })),
 }));
