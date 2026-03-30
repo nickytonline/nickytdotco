@@ -10,17 +10,17 @@ jobs:
     name: Get latest blog posts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: voidzero-dev/setup-vp@v1
         with:
           node-version: 22
+          cache: true
       - name: Get blog posts
         env:
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
         run: |
-          npm install
           node bin/generateDevToPosts.ts
-          npm run format
+          vp run format
       - name: Setup git config
         run: |
           git config user.name 'token-generator-app[bot]'

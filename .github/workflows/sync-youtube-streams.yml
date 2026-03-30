@@ -13,12 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: voidzero-dev/setup-vp@v1
         with:
           node-version: 22
-
-      - name: Install dependencies
-        run: npm install
+          cache: true
 
       - name: Generate stream MDX files
         env:
@@ -27,7 +25,7 @@ jobs:
         run: node bin/generateYouTubeStreams.ts
 
       - name: Format generated files
-        run: npm run format
+        run: vp run format
 
       - name: Setup git config
         run: |
