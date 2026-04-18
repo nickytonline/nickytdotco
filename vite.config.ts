@@ -239,7 +239,7 @@ export default defineConfig({
   },
   staged: {
     "*.{js,ts,jsx,tsx,astro,mjs,cjs}": ["vp fmt", "vp lint --fix"],
-    "*.{json,md,mdx,css,html,yml,yaml}": ["vp fmt"],
+    "*.{json,md,css,html,yml,yaml}": ["vp fmt"],
   },
   fmt: {
     semi: true,
