@@ -105,7 +105,7 @@ export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
         entries: result.rows.map((row) => {
           const r = row as unknown as Record<string, unknown>;
           return {
-            id: r.id as string,
+            id: String(r.id),
             data: mapRowToSchedule(r),
           };
         }),
@@ -131,7 +131,7 @@ export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
 
       const row = result.rows[0] as unknown as Record<string, unknown>;
       return {
-        id: row.id as string,
+        id: String(row.id),
         data: mapRowToSchedule(row),
       };
     },
