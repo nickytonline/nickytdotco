@@ -1,6 +1,4 @@
 ---
-export const prerender = false;
-
 import { getLiveCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import { dateFilter } from "../../utils/filters";
@@ -10,26 +8,17 @@ import {
   slugifyVideo,
 } from "../../utils/video-utils";
 
-const { slug } = Astro.params;
-const result = await getLiveCollection("streamVideos");
-const stream = (result.entries ?? []).find(
-  (s) => slugifyVideo(s.data.title, s.data.guestName) === slug
-);
-
-if (!stream) {
-  return Astro.redirect("/404");
+export async function getStaticPaths() {
+  const result = await getLiveCollection("streamVideos");
+  return (result.entries ?? []).map((stream) => ({
+    params: { slug: slugifyVideo(stream.data.title, stream.data.guestName) },
+    props: { stream },
+  }));
 }
 
+const { stream } = Astro.props;
 const { title, date, description, guestName, guestTitle, youtubeStreamLink } =
   stream.data;
-
-const isPast = new Date(date) < new Date();
-Astro.response.headers.set(
-  "Cache-Control",
-  isPast
-    ? "public, max-age=31536000, immutable"
-    : "public, max-age=86400, s-maxage=86400"
-);
 
 const videoId = extractYouTubeVideoId(youtubeStreamLink);
 
