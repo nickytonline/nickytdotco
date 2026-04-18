@@ -40,10 +40,12 @@ const {
         <a
           href={videoLink}
           class="relative shrink-0 w-full md:w-40 h-50 md:h-40 rounded-xl overflow-hidden block"
+          aria-hidden="true"
+          tabindex="-1"
         >
           <img
             src={image}
-            alt={title}
+            alt=""
             class="w-full h-full object-cover object-right"
           />
         </a>

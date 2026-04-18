@@ -79,6 +79,8 @@ const years = Object.keys(streamsByYear)
                       <a
                         href={`/videos/${slug}`}
                         class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+                        aria-hidden="true"
+                        tabindex="-1"
                       >
                         <img
                           src={thumbnailUrl}
