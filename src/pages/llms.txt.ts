@@ -1,5 +1,6 @@
-import { getCollection } from "astro:content";
+import { getCollection, getLiveCollection } from "astro:content";
 import type { APIContext } from "astro";
+import { extractYouTubeVideoId, slugifyVideo } from "../utils/video-utils";
 
 export async function GET(_context: APIContext) {
   const blog = await getCollection("blog", ({ data }) => {
@@ -7,7 +8,8 @@ export async function GET(_context: APIContext) {
   });
 
   const talks = await getCollection("talks");
-  const streams = await getCollection("streams");
+  const streamsResult = await getLiveCollection("streamVideos");
+  const streams = streamsResult.entries ?? [];
 
   const sortedPosts = blog
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -21,8 +23,11 @@ export async function GET(_context: APIContext) {
     })
     .slice(0, 10);
 
-  const sortedStreams = streams
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  const sortedStreams = [...streams]
+    .sort(
+      (a, b) =>
+        new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+    )
     .slice(0, 10);
 
   const header = `# Nick Taylor (@nickytonline) - Software Developer
@@ -72,10 +77,14 @@ You are free to share and adapt this content for any purpose, even commercially,
 
   const recentStreams = sortedStreams.length
     ? `\n\n## Recent Streams\n${sortedStreams
-        .map(
-          (stream) =>
-            `- [${stream.data.title}](https://www.youtube.com/watch?v=${stream.data.videoId})`
-        )
+        .map((stream) => {
+          const slug = slugifyVideo(stream.data.title, stream.data.guestName);
+          const videoId = extractYouTubeVideoId(stream.data.youtubeStreamLink);
+          const ytUrl = videoId
+            ? `https://www.youtube.com/watch?v=${videoId}`
+            : `https://www.nickyt.co/videos/${slug}/`;
+          return `- [${stream.data.title}](${ytUrl})`;
+        })
         .join("\n")}`
     : "";
 

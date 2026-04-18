@@ -1,32 +1,75 @@
 ---
-import { getEntry, getCollection, render } from "astro:content";
+import { getLiveCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import { dateFilter } from "../../utils/filters";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
+import {
+  extractYouTubeVideoId,
+  slugifyVideo,
+} from "../../utils/video-utils";
 
 export async function getStaticPaths() {
-  const streams = await getCollection("streams");
+  const result = await getLiveCollection("streamVideos");
+  const streams = result.entries ?? [];
 
   return streams.map((stream) => ({
-    params: { slug: stream.id },
+    params: {
+      slug: slugifyVideo(stream.data.title, stream.data.guestName),
+    },
+    props: { stream },
   }));
 }
 
-const { slug } = Astro.params;
+const { stream } = Astro.props;
 
-if (!slug) {
-  throw new Error("Stream not found");
-}
+const { title, date, description, guestName, guestTitle, youtubeStreamLink } =
+  stream.data;
 
-const stream = await getEntry("streams", slug);
+const videoId = extractYouTubeVideoId(youtubeStreamLink);
 
-if (!stream) {
-  throw new Error("Stream not found");
-}
-
-const { title, date, videoId } = stream.data;
-
-const { Content } = await render(stream);
+const socials: { label: string; href: string; handle: string }[] = [];
+if (stream.data.twitter)
+  socials.push({
+    label: "X / Twitter",
+    href: `https://twitter.com/${stream.data.twitter}`,
+    handle: `@${stream.data.twitter}`,
+  });
+if (stream.data.bluesky)
+  socials.push({
+    label: "Bluesky",
+    href: `https://bsky.app/profile/${stream.data.bluesky}`,
+    handle: stream.data.bluesky,
+  });
+if (stream.data.github)
+  socials.push({
+    label: "GitHub",
+    href: `https://github.com/${stream.data.github}`,
+    handle: stream.data.github,
+  });
+if (stream.data.linkedin)
+  socials.push({
+    label: "LinkedIn",
+    href: `https://linkedin.com/in/${stream.data.linkedin}`,
+    handle: stream.data.linkedin,
+  });
+if (stream.data.youtube)
+  socials.push({
+    label: "YouTube",
+    href: `https://youtube.com/@${stream.data.youtube}`,
+    handle: stream.data.youtube,
+  });
+if (stream.data.twitch)
+  socials.push({
+    label: "Twitch",
+    href: `https://twitch.tv/${stream.data.twitch}`,
+    handle: stream.data.twitch,
+  });
+if (stream.data.website)
+  socials.push({
+    label: "Website",
+    href: stream.data.website,
+    handle: stream.data.website,
+  });
 ---
 
 <Layout
@@ -42,28 +85,74 @@ const { Content } = await render(stream);
       >
         {title}
       </h1>
-      <div class="text-lg text-muted-foreground">
-        <time datetime={date.toISOString()} class="italic">
-          {dateFilter(date)}
+      <div class="text-lg text-muted-foreground mt-2">
+        <time datetime={new Date(date).toISOString()} class="italic">
+          {dateFilter(new Date(date))}
         </time>
       </div>
+      <p class="text-base text-muted-foreground mt-1">
+        with <span class="font-semibold">{guestName}</span>
+        {guestTitle && <span> — {guestTitle}</span>}
+      </p>
     </header>
 
-    <div class="my-6">
-      <YouTubeEmbed videoId={videoId} title={title} />
-    </div>
+    {
+      videoId && (
+        <div class="my-6">
+          <YouTubeEmbed videoId={videoId} title={title} />
+        </div>
+      )
+    }
 
-    <div class="mb-6">
+    {
+      !videoId && (
+        <div class="my-6">
+          <a
+            href={youtubeStreamLink}
+            class="text-pink-600 dark:text-pink-400 hover:underline"
+          >
+            Watch on YouTube →
+          </a>
+        </div>
+      )
+    }
+
+    <div
+      class="prose max-w-none"
+      data-pagefind-body
+      set:html={description}
+    />
+
+    {
+      socials.length > 0 && (
+        <div class="mt-6 pt-6 border-t border-border">
+          <h2 class="text-lg font-semibold mb-3">Links</h2>
+          <ul class="list-disc list-inside">
+            {socials.map(({ label, href, handle }) => (
+              <li>
+                {label}:{" "}
+                <a
+                  href={href}
+                  class="text-sm font-medium text-pink-600 dark:text-pink-400 hover:underline"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {handle}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    <div class="mt-8">
       <a
         href="/videos"
         class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
       >
         Back to video archives<span class="text-2xl">→</span>
       </a>
-    </div>
-
-    <div class="prose max-w-none" data-pagefind-body>
-      <Content />
     </div>
   </article>
 </Layout>

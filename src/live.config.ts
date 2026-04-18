@@ -2,6 +2,7 @@ import { defineLiveCollection } from "astro:content";
 import { z } from "astro/zod";
 
 import { streamScheduleLoader } from "./content/_loaders/stream-schedule";
+import { streamVideosLoader } from "./content/_loaders/stream-videos";
 import { newsletterLoader } from "./content/_loaders/newsletter";
 import { githubPinnedProjectsLoader } from "./content/_loaders/github-pinned-projects";
 import { brewfileLoader } from "./content/_loaders/brewfile";
@@ -71,8 +72,29 @@ const brewfile = defineLiveCollection({
   }),
 });
 
+const streamVideos = defineLiveCollection({
+  loader: streamVideosLoader,
+  schema: z.object({
+    type: z.enum(["nickyt.live", "pomerium-live"]),
+    date: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(1),
+    guestName: z.string().min(1),
+    guestTitle: z.string().optional(),
+    youtubeStreamLink: z.string().min(1),
+    twitter: z.string().optional(),
+    youtube: z.string().optional(),
+    twitch: z.string().optional(),
+    github: z.string().optional(),
+    bluesky: z.string().optional(),
+    website: z.string().optional(),
+    linkedin: z.string().optional(),
+  }),
+});
+
 export const collections = {
   streamSchedule,
+  streamVideos,
   newsletter,
   pinnedProjects,
   brewfile,

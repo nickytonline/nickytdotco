@@ -80,20 +80,7 @@ const talksCollection = defineCollection({
   }),
 });
 
-const streamsCollection = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "src/content/streams" }),
-  schema: z.object({
-    title: z.string(),
-    date: z.coerce.date(),
-    videoId: z.string(),
-    thumbnailUrl: z.url(),
-    channelTitle: z.string(),
-    description: z.string(),
-  }),
-});
-
 export const collections = {
   blog: blogCollection,
   talks: talksCollection,
-  streams: streamsCollection,
 };

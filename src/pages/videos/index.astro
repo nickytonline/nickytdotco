@@ -1,17 +1,25 @@
 ---
-import { getCollection } from "astro:content";
+import { getLiveCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import { dateFilter } from "../../utils/filters";
+import {
+  extractYouTubeVideoId,
+  slugifyVideo,
+} from "../../utils/video-utils";
 
-const streams = await getCollection("streams");
-const sortedStreams = streams.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+const result = await getLiveCollection("streamVideos");
+const entries = result.entries ?? [];
+const sortedStreams = [...entries].sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
 
 const streamsByYear = sortedStreams.reduce(
-  (acc, stream) => {
-    const year = stream.data.date.getFullYear();
+  (
+    acc: Record<number, typeof sortedStreams>,
+    stream: (typeof sortedStreams)[number]
+  ) => {
+    const year = new Date(stream.data.date).getFullYear();
     if (!acc[year]) {
       acc[year] = [];
     }
@@ -51,27 +59,35 @@ const years = Object.keys(streamsByYear)
 
           <div class="space-y-1" data-pagefind-ignore>
             {streamsByYear[year].map((stream) => {
-              const slug = stream.id;
+              const slug = slugifyVideo(
+                stream.data.title,
+                stream.data.guestName
+              );
+              const videoId = extractYouTubeVideoId(
+                stream.data.youtubeStreamLink
+              );
+              const thumbnailUrl = videoId
+                ? `https://img.youtube.com/vi/${videoId}/default.jpg`
+                : undefined;
               return (
                 <div class="py-5 px-6">
                   <div class="flex items-center gap-5">
-                    <a
-                      href={`/videos/${slug}`}
-                      class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
-                    >
-                      <img
-                        src={stream.data.thumbnailUrl.replace(
-                          "hqdefault",
-                          "default"
-                        )}
-                        alt=""
-                        width={160}
-                        height={90}
-                        loading="lazy"
-                        decoding="async"
-                        class="w-40 h-22.5 object-cover"
-                      />
-                    </a>
+                    {thumbnailUrl && (
+                      <a
+                        href={`/videos/${slug}`}
+                        class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+                      >
+                        <img
+                          src={thumbnailUrl}
+                          alt=""
+                          width={160}
+                          height={90}
+                          loading="lazy"
+                          decoding="async"
+                          class="w-40 h-22.5 object-cover"
+                        />
+                      </a>
+                    )}
                     <div class="flex-1">
                       <h3 class="text-xl font-bold">
                         <a
@@ -83,7 +99,7 @@ const years = Object.keys(streamsByYear)
                       </h3>
                       <div class="text-muted-foreground mt-2">
                         <span class="italic text-base">
-                          {dateFilter(stream.data.date)}
+                          {dateFilter(new Date(stream.data.date))}
                         </span>
                       </div>
                     </div>

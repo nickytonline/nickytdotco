@@ -1,6 +1,20 @@
 import type { CollectionEntry } from "astro:content";
+import slugify from "slugify";
 
 const PLACEHOLDER_IMAGE = "/assets/talks/no-video-thumb.svg";
+
+export function extractYouTubeVideoId(url: string): string | undefined {
+  return (
+    url.match(/(?:v=|youtu\.be\/|\/live\/)([A-Za-z0-9_-]{11})/)?.[1] ??
+    undefined
+  );
+}
+
+export function slugifyVideo(title: string, guestName: string): string {
+  const opts = { lower: true, strict: true };
+  const primaryGuest = guestName.split(",")[0].trim();
+  return `${slugify(title, opts)}-${slugify(primaryGuest, opts)}`;
+}
 
 /**
  * Get the thumbnail URL for a talk

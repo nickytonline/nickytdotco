@@ -91,3 +91,515 @@ from = "/pages/*"
 to = "/:splat"
 status = 301
 force = true
+
+# video slug redirects (old slug -> new slug with guest name)
+[[redirects]]
+from = "/videos/a-deep-dive-into-astros-content-layer"
+to = "/videos/a-deep-dive-into-astros-content-layer-matt-kane"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/a-look-into-valibot-a-1-kb-zod-alternative"
+to = "/videos/a-look-into-valibot-a-1-kb-zod-alternative-fabian-hiller"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/a-maintainers-story-managing-to-code-is-rare"
+to = "/videos/a-maintainers-story-managing-to-code-is-rare-bjoern-idrinth-buettner"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/accessbility-and-an-audit-with-graham-ritchie"
+to = "/videos/accessbility-and-an-audit-graham-ritchie"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/ai-for-developers-and-open-source-models"
+to = "/videos/ai-for-developers-and-open-source-models-sam-julien"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/ai-frontends"
+to = "/videos/ai-frontends-anthony-campolo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/ai-life-in-y-combinator"
+to = "/videos/ai-life-in-y-combinator-abhi-aiyer"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/all-things-clerk"
+to = "/videos/all-things-clerk-jacob-m-g-evans"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/all-things-rails"
+to = "/videos/all-things-rails-ridhwana-khan"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/an-ai-thanksgiving-with-lizzie-siegle"
+to = "/videos/an-ai-thanksgiving-lizzie-siegle"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/an-intro-to-elixir"
+to = "/videos/an-intro-to-elixir-brian-meeker"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/an-intro-to-react-native-and-expo-with-ramn-huidobro"
+to = "/videos/an-intro-to-react-native-and-expo-ramn-huidobro"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/an-introduction-to-effect"
+to = "/videos/an-introduction-to-effect-michael-arnaldi"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/an-introduction-to-tanstack-form"
+to = "/videos/an-introduction-to-tanstack-form-corbin-crutchley"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/api-monitoring-and-observability"
+to = "/videos/api-monitoring-and-observability-anthony-alaribe"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/applying-compassion-to-our-technical-work"
+to = "/videos/applying-compassion-to-our-technical-work-april-wensel"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/autogenerate-shownotes-with-whispercpp-and-yt-dlp"
+to = "/videos/autogenerate-shownotes-with-whispercpp-and-yt-dlp-anthony-campolo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/autoshow-automated-content-repurposing-tool"
+to = "/videos/autoshow-automated-content-repurposing-tool-anthony-campolo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/beyond-the-buzz-practical-genai"
+to = "/videos/beyond-the-buzz-practical-genai-raymond-camden"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/big-data-and-smart-gadgets"
+to = "/videos/big-data-and-smart-gadgets-travis-nyhoff"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/biz-bytes-with-scott-steinlage"
+to = "/videos/biz-bytes-scott-steinlage"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/building-appwrite-functions-with-aditya-oberai"
+to = "/videos/building-appwrite-functions-aditya-oberai"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/building-reliable-systems-using-temporal"
+to = "/videos/building-reliable-systems-using-temporal-peter-mbanugo"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/building-with-ionic"
+to = "/videos/building-with-ionic-mike-hartington"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/clerk-authentication-web-dev-all-the-things-with-dev-agrawal"
+to = "/videos/clerk-authentication-web-dev-all-the-things-dev-agrawal"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/coaching-and-why-its-helpful-for-engineers-with-kball"
+to = "/videos/coaching-and-why-its-helpful-for-engineers-kevin-ball-kball"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/codenewbie-notadesignerio-fundraising-all-the-things-with-saron-yitbarek"
+to = "/videos/codenewbie-notadesignerio-fundraising-all-the-things-saron-yitbarek"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/community-core-skills-with-bekahhw"
+to = "/videos/community-core-skills-bekahhw"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/community-devrel"
+to = "/videos/community-devrel-chris-demars"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/content-creation-and-networking-for-developers"
+to = "/videos/content-creation-and-networking-for-developers-brian-morrison-ii"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/content-creation"
+to = "/videos/content-creation-shruti-kapoor"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/devicescript-typescript-for-microelectronics-with-peli-de-halleux"
+to = "/videos/devicescript-typescript-for-microelectronics-peli-de-halleux"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/discussion-de-open-source-avec-thomas-bonnet-dvelopeur-web"
+to = "/videos/discussion-de-open-source-thomas-bonnet"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/end-to-end-testing-a-browser-extension"
+to = "/videos/end-to-end-testing-a-browser-extension-abdurrahman-rajab"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/freaky-fast-full-stack-with-expo-router-api-routes"
+to = "/videos/freaky-fast-full-stack-with-expo-router-api-routes-keith-kurak"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/from-individual-contributor-to-cto"
+to = "/videos/from-individual-contributor-to-cto-mike-chen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/full-spectrum-file-uploads"
+to = "/videos/full-spectrum-file-uploads-austin-gil"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/full-stack-javascript-with-the-boring-javascript-stack"
+to = "/videos/full-stack-javascript-with-the-boring-javascript-stack-kelvin-omereshone"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/functional-programming-buffet"
+to = "/videos/the-functional-programming-buffet-dillon-mulroy"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/genaiscript"
+to = "/videos/genaiscript-peli-de-halleux"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/getting-started-with-storyblok-with-cat-ballar"
+to = "/videos/getting-started-with-storyblok-cat-ballar"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/html-videos-on-canvas"
+to = "/videos/html-videos-on-canvas-shruti-kapoor"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/hunting-accessibility-bugs-with-todd-libby"
+to = "/videos/hunting-accessibility-bugs-todd-libby"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/i-am-definitely-not-a-robot"
+to = "/videos/i-am-definitely-not-a-robot-gant-laborde"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/intro-to-wasp-full-stack-development-with-react-nodejs"
+to = "/videos/intro-to-wasp-full-stack-development-with-react-nodejs-matija-sosic"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/kettlebells-code-with-anna-nettles"
+to = "/videos/kettlebells-and-code-anna-nettles"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/leadership-and-lifting"
+to = "/videos/leadership-and-lifting-claire-knight"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/lets-build-a-copilot-extension"
+to = "/videos/lets-build-a-copilot-extension-gregor-martynus"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/lets-build-with-cloudinary"
+to = "/videos/lets-build-with-cloudinary-colby-fayock"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/levelling-up-astro-env-with-varlock"
+to = "/videos/levelling-up-astro-env-with-varlock-phil-miller-and-theo-ephraim"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/leverage-data-at-the-edge-with-turso"
+to = "/videos/leverage-data-at-the-edge-with-turso-glauber-costa"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/low-code-ai-equals-opportunity-with-ray-deck"
+to = "/videos/low-code-ai-equals-opportunity-ray-deck"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/mobile-serverless-with-net-maui-and-aws-lambda"
+to = "/videos/mobile-serverless-with-net-maui-and-aws-lambda-brandon-minnick"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/multitenant-database-schemas"
+to = "/videos/multitenant-database-schemas-jamie-barton"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/musician-to-developer"
+to = "/videos/musician-to-developer-ryan-furrer"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/my-path-to-devrel"
+to = "/videos/my-path-to-devrel-eleftheria-batsou"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/netlify-primitives-and-local-dx"
+to = "/videos/netlify-primitives-and-local-dx-eduardo-bouas"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/netlifys-new-primitives"
+to = "/videos/netlifys-new-primitives-eduardo-bouas"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/new-things-coming-to-astro"
+to = "/videos/new-things-coming-to-astro-matt-kane"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/open-graph-images-with-cloudinary"
+to = "/videos/open-graph-images-with-cloudinary-colby-fayock"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/open-source-data-labeling-and-why-its-important"
+to = "/videos/open-source-data-labeling-and-why-its-important-erin-mikail-staples"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/open-source-from-design-to-dev"
+to = "/videos/open-source-from-design-to-dev-drew-powers"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/optimizing-your-open-source-contributions-with-bekahhw"
+to = "/videos/optimizing-your-open-source-contributions-bekahhw"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/pizza-bake-off-with-brian-douglas-and-john-mcbride"
+to = "/videos/pizza-bake-off-brian-douglas"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/react-natives-most-popular-stack-ignite-maybe"
+to = "/videos/react-natives-most-popular-stack-ignite-maybe-jamon-holmgren"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/react-server-components-with-go"
+to = "/videos/react-server-components-with-go-yaroslav-lapin"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/redwoodjs-dev-design-with-amy-dutton-redwoodjs-core-team"
+to = "/videos/redwoodjs-dev-design-amy-dutton"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/sentry-in-action-with-salma-alam-naylor"
+to = "/videos/sentry-in-action-salma-alam-naylor"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/spicy-cybersecurity-showdown"
+to = "/videos/spicy-cybersecurity-showdown-diana-pham"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/style-dictionary-vs-cobalt-for-design-tokens"
+to = "/videos/style-dictionary-vs-cobalt-for-design-tokens-kaelig-deloumeau-prigent"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/swift-on-the-server-with-vapor"
+to = "/videos/swift-on-the-server-with-vapor-tim-condon"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/tanstack-table"
+to = "/videos/tanstack-table-kevin-thomas-van-cott"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/tauri-solidjs"
+to = "/videos/tauri-solidjs-atila"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/the-open-source-hour"
+to = "/videos/the-open-source-hour-tobiloba-adedeji"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/travel-dev-life"
+to = "/videos/travel-dev-life-alex-appleget"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/using-chrome-devtools-mcp-with-polypane"
+to = "/videos/using-chrome-devtools-mcp-with-polypane-kilian-valkhof"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/valibot-standard-schema-and-why-i-created-formisch"
+to = "/videos/valibot-standard-schema-and-why-i-created-formisch-fabian-hiller"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/virtual-dom-back-in-block-with-aiden-bai-creator-of-millionjs"
+to = "/videos/virtual-dom-back-in-block-aiden-bai"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/waku-the-minimal-react-framework"
+to = "/videos/waku-the-minimal-react-framework-daishi-kato"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/web-accessibility-is-coming-and-we-need-better-tooling"
+to = "/videos/web-accessibility-is-coming-and-we-need-better-tooling-andrew-hedges"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/web-design-indie-life"
+to = "/videos/web-design-indie-life-andy-bell"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/whats-the-deal-with-laravel"
+to = "/videos/whats-the-deal-with-laravel-josh-cirre"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/whys-it-so-damn-hard-to-break-into-tech"
+to = "/videos/whys-it-so-damn-hard-to-break-into-tech-andrew-hedges"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/write-code-faster-with-chatgpt"
+to = "/videos/write-code-faster-with-chatgpt-matt-mcinnis"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/yeoman"
+to = "/videos/yeoman-josh-goldberg"
+status = 301
+force = true
+
