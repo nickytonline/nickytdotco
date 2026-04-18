@@ -1,6 +1,7 @@
 import rss from "@astrojs/rss";
 import { getLiveCollection } from "astro:content";
 import { site } from "@/data/site";
+import { slugifyVideo } from "../utils/video-utils";
 import type { APIContext } from "astro";
 
 export async function GET(context: APIContext) {
@@ -25,10 +26,9 @@ export async function GET(context: APIContext) {
       title: `${stream.data.title} - ${stream.data.guestName}`,
       pubDate: new Date(stream.data.date),
       description: stream.data.description,
-      link:
-        stream.data.youtubeStreamLink ||
-        stream.data.linkedinStreamLink ||
-        site.url,
+      link: stream.data.youtubeStreamLink
+        ? `${context.site || site.url}videos/${slugifyVideo(stream.data.title, stream.data.guestName)}`
+        : stream.data.linkedinStreamLink || site.url,
       categories: [stream.data.type],
     })),
     customData: `<language>en-us</language>`,

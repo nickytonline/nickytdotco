@@ -2,6 +2,7 @@
 import type { StreamGuestInfo } from "../utils/schedule-utils";
 import { getHeadingId, getLocalizedDate } from "../utils/schedule-utils";
 import { getYouTubeId } from "../utils/youtube-utils";
+import { slugifyVideo } from "../utils/video-utils";
 import LiveStreamCard from "./LiveStreamCard.astro";
 
 const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
@@ -46,6 +47,9 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
         : null;
       const headingId = getHeadingId(guestName, date);
       const eventLocation = `${Astro.request.url}#${headingId}`;
+      const videoPageUrl = youtubeStreamLink
+        ? `${new URL(Astro.request.url).origin}/videos/${slugifyVideo(title, guestName)}`
+        : undefined;
       const noGuest =
         guestName === "nickytonline" || guestName === "2Full2Stack";
 
@@ -84,6 +88,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
           eventName={eventName}
           description={description}
           location={eventLocation}
+          videoLink={videoPageUrl}
         />
       );
     })

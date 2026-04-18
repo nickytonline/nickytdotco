@@ -82,7 +82,6 @@ export const streamVideosLoader: LiveLoader<StreamVideoInfo, { id: string }> = {
             WHERE on_schedule = 1
               AND youtube_stream_link IS NOT NULL
               AND youtube_stream_link != ''
-              AND date < datetime('now')
             ORDER BY date DESC`,
       args: [],
     });

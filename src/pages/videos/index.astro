@@ -9,7 +9,10 @@ import {
 } from "../../utils/video-utils";
 
 const result = await getLiveCollection("streamVideos");
-const entries = result.entries ?? [];
+const now = new Date();
+const entries = (result.entries ?? []).filter(
+  (e) => new Date(e.data.date) < now
+);
 const sortedStreams = [...entries].sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
