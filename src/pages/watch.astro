@@ -13,17 +13,21 @@ import {
 } from "@/utils/youtube-utils";
 
 // Fetch recent videos and filter out shorts
-const videos = await getVideos({
-  videoFeedUrl: DEFAULT_YT_FEED_URL,
-  numberOfVideos: 10,
-});
-
-// Filter out shorts (videos with /shorts/ in the URL)
-const nonShortVideos = videos.filter(
-  (video) => !video.link.includes("/shorts/")
-);
-const latestVideo = nonShortVideos[0];
-const videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
+let latestVideo = null;
+let videoId = null;
+try {
+  const videos = await getVideos({
+    videoFeedUrl: DEFAULT_YT_FEED_URL,
+    numberOfVideos: 10,
+  });
+  const nonShortVideos = videos.filter(
+    (video) => !video.link.includes("/shorts/")
+  );
+  latestVideo = nonShortVideos[0] ?? null;
+  videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
+} catch (err) {
+  console.error("Error fetching YouTube feed:", err);
+}
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
