@@ -22,42 +22,64 @@ const { title, date, description, guestName, guestTitle, youtubeStreamLink } =
 
 const videoId = extractYouTubeVideoId(youtubeStreamLink);
 
+function normalizeLink(
+  value: string,
+  baseUrl: string,
+  prefix = "",
+): { href: string; handle: string } {
+  if (value.startsWith("http://") || value.startsWith("https://")) {
+    const handle = new URL(value).pathname.replace(/^\//, "");
+    return { href: value, handle: prefix ? `${prefix}${handle}` : handle };
+  }
+  return {
+    href: `${baseUrl}${value}`,
+    handle: prefix ? `${prefix}${value}` : value,
+  };
+}
+
 const socials: { label: string; href: string; handle: string }[] = [];
 if (stream.data.twitter)
   socials.push({
     label: "X / Twitter",
-    href: `https://twitter.com/${stream.data.twitter}`,
-    handle: `@${stream.data.twitter}`,
+    ...normalizeLink(stream.data.twitter, "https://x.com/", "@"),
   });
 if (stream.data.bluesky)
   socials.push({
     label: "Bluesky",
-    href: `https://bsky.app/profile/${stream.data.bluesky}`,
-    handle: stream.data.bluesky,
+    href: stream.data.bluesky.startsWith("http")
+      ? stream.data.bluesky
+      : `https://bsky.app/profile/${stream.data.bluesky}`,
+    handle: `@${stream.data.bluesky.startsWith("http") ? new URL(stream.data.bluesky).pathname.replace(/^\/profile\//, "") : stream.data.bluesky}`,
   });
 if (stream.data.github)
   socials.push({
     label: "GitHub",
-    href: `https://github.com/${stream.data.github}`,
-    handle: stream.data.github,
+    ...normalizeLink(stream.data.github, "https://github.com/"),
   });
 if (stream.data.linkedin)
   socials.push({
     label: "LinkedIn",
-    href: `https://linkedin.com/in/${stream.data.linkedin}`,
-    handle: stream.data.linkedin,
+    href: stream.data.linkedin.startsWith("http")
+      ? stream.data.linkedin
+      : `https://linkedin.com/in/${stream.data.linkedin}`,
+    handle: stream.data.linkedin.startsWith("http")
+      ? stream.data.linkedin
+      : stream.data.linkedin,
   });
 if (stream.data.youtube)
   socials.push({
     label: "YouTube",
-    href: `https://youtube.com/@${stream.data.youtube}`,
-    handle: stream.data.youtube,
+    href: stream.data.youtube.startsWith("http")
+      ? stream.data.youtube
+      : `https://youtube.com/@${stream.data.youtube}`,
+    handle: stream.data.youtube.startsWith("http")
+      ? stream.data.youtube
+      : stream.data.youtube,
   });
 if (stream.data.twitch)
   socials.push({
     label: "Twitch",
-    href: `https://twitch.tv/${stream.data.twitch}`,
-    handle: stream.data.twitch,
+    ...normalizeLink(stream.data.twitch, "https://twitch.tv/", "@"),
   });
 if (stream.data.website)
   socials.push({
