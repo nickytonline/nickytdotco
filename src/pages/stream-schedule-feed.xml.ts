@@ -4,6 +4,19 @@ import { site } from "@/data/site";
 import { slugifyVideo } from "../utils/video-utils";
 import type { APIContext } from "astro";
 
+function getYouTubeThumbnailUrl(youtubeLink: string): string | null {
+  try {
+    const url = new URL(youtubeLink);
+    const videoId =
+      url.searchParams.get("v") ?? url.pathname.split("/live/")[1];
+    return videoId
+      ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+      : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function GET(context: APIContext) {
   const scheduleResult = await getLiveCollection("streamSchedule");
 
@@ -22,15 +35,24 @@ export async function GET(context: APIContext) {
     title: `${site.name} - Stream Schedule`,
     description: "Upcoming live streams and guest appearances",
     site: context.site?.toString() || site.url,
-    items: sortedStreams.map((stream) => ({
-      title: `${stream.data.title} - ${stream.data.guestName}`,
-      pubDate: new Date(stream.data.date),
-      description: stream.data.description,
-      link: stream.data.youtubeStreamLink
-        ? `${context.site || site.url}videos/${slugifyVideo(stream.data.title, stream.data.guestName)}`
-        : stream.data.linkedinStreamLink || site.url,
-      categories: [stream.data.type],
-    })),
+    xmlns: { media: "http://search.yahoo.com/mrss/" },
+    items: sortedStreams.map((stream) => {
+      const thumbnailUrl = stream.data.youtubeStreamLink
+        ? getYouTubeThumbnailUrl(stream.data.youtubeStreamLink)
+        : null;
+      return {
+        title: `${stream.data.title} - ${stream.data.guestName}`,
+        pubDate: new Date(stream.data.date),
+        description: stream.data.description,
+        link: stream.data.youtubeStreamLink
+          ? `${context.site || site.url}videos/${slugifyVideo(stream.data.title, stream.data.guestName)}`
+          : stream.data.linkedinStreamLink || site.url,
+        categories: [stream.data.type],
+        customData: thumbnailUrl
+          ? `<media:thumbnail url="${thumbnailUrl}" />`
+          : undefined,
+      };
+    }),
     customData: `<language>en-us</language>`,
   });
 
