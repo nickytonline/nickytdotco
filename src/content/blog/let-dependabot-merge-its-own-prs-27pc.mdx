@@ -1,8 +1,8 @@
 ---
 title: Let Dependabot Merge Its Own PRs
 excerpt: >-
-  Dependabot opens PRs automatically. That part most people have set up. But
-  then those PRs just sit...
+  Update March 2026: Given the Axios supply chain attack, revising this. It's
+  still convenient to let...
 date: '2026-03-08T18:16:29Z'
 tags:
   - github
@@ -12,10 +12,12 @@ tags:
 cover_image: >-
   /assets/images/posts/_dynamic_image_width=1000,height=420,fit=cover,gravity=auto,format=auto_https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpyfquld83ghx1qmim1um.jpg
 canonical_url: https://www.nickyt.co/blog/let-dependabot-merge-its-own-prs-27pc
-reading_time_minutes: 3
+reading_time_minutes: 4
 template: post
 ---
 import Embed from "@/components/Embed.astro";
+
+Update March 2026: Given the [Axios supply chain attack](https://github.com/axios/axios/issues/10636), revising this. It's still convenient to let dependabot merge on it's own if your CI/CD pipeline checks pass, but probably wiser to be a litte more cautious. I know [socket.dev has a GitHub app](https://github.com/apps/socket-security) you can install, and you can [harden your npm dependency updates](https://github.com/pomerium/desktop-client/pull/499) like we did at work.
 
 Dependabot opens PRs automatically. That part most people have set up. But then those PRs just sit there until you get around to reviewing and merging them. I had 6 open across one of my repos recently. None of them were risky. I just didn't feel like giving a review and approving, then merging.
 
