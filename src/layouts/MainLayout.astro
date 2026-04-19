@@ -39,6 +39,14 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
     />
     <title>{title}</title>
     <ClientRouter />
+    <!-- Fix back-button regression with ClientRouter: on the very first page load
+         the router calls replaceState, which erases the "came from external page"
+         history entry. Pushing a duplicate entry before that happens restores it. -->
+    <script is:inline>
+      if (!history.state?.["astro"]) {
+        history.pushState({ astro: { index: 0 } }, "", location.href);
+      }
+    </script>
     <!-- Prevent flash of unstyled content -->
     <script is:inline>
       // Check for saved theme preference or default to system preference
