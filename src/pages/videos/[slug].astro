@@ -62,9 +62,7 @@ if (stream.data.linkedin)
     href: stream.data.linkedin.startsWith("http")
       ? stream.data.linkedin
       : `https://linkedin.com/in/${stream.data.linkedin}`,
-    handle: stream.data.linkedin.startsWith("http")
-      ? stream.data.linkedin
-      : stream.data.linkedin,
+    handle: stream.data.linkedin.replace(/^https?:\/\//, ""),
   });
 if (stream.data.youtube)
   socials.push({
@@ -72,9 +70,7 @@ if (stream.data.youtube)
     href: stream.data.youtube.startsWith("http")
       ? stream.data.youtube
       : `https://youtube.com/@${stream.data.youtube}`,
-    handle: stream.data.youtube.startsWith("http")
-      ? stream.data.youtube
-      : stream.data.youtube,
+    handle: stream.data.youtube.replace(/^https?:\/\//, ""),
   });
 if (stream.data.twitch)
   socials.push({
@@ -85,7 +81,7 @@ if (stream.data.website)
   socials.push({
     label: "Website",
     href: stream.data.website,
-    handle: stream.data.website,
+    handle: stream.data.website.replace(/^https?:\/\//, ""),
   });
 ---
 
