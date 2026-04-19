@@ -94,6 +94,7 @@ const { Content } = await render(talk);
           {video.type === "youtube" && (
             <YouTubeEmbed
               videoId={getYouTubeId(video.url) || ""}
+              startTime={(() => { try { const t = new URL(video.url).searchParams.get("t"); return t ? t.replace(/s$/, "") : undefined; } catch { return undefined; } })()}
               title={title}
             />
           )}
