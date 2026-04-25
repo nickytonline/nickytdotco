@@ -15,6 +15,8 @@ canonical_url: >-
 reading_time_minutes: 3
 template: post
 ---
+import Embed from "@/components/Embed.astro";
+
 *This is a submission for the [OpenClaw Writing Challenge](https://dev.to/challenges/openclaw-2026-04-16)*
 
 I already use the [Excalidraw Model Context Protocol (MCP) remote server](https://github.com/excalidraw/excalidraw-mcp) in Claude and ChatGPT, but I was curious how it would work in OpenClaw. In Claude and ChatGPT, the MCP renders the diagram inline. I can iterate, see changes in real time, edit directly, and when I am happy, open it in Excalidraw.
@@ -47,17 +49,20 @@ From there, I thought everything was fixed so I went with a more complicated dia
 
 You can see the progression in the links generated along the way:
 
-- First hello-world export that opened empty: https://excalidraw.com/#json=Fy95JSR14xBx11AcsLanp,5Et8J3TBBTz1Dzof0lfDJQ
+- [First hello-world export that opened empty](https://excalidraw.com/#json=Fy95JSR14xBx11AcsLanp,5Et8J3TBBTz1Dzof0lfDJQ)
 
-- Fixed hello-world scene export: https://excalidraw.com/#json=tIZAfHTpxxp6SZyRCyHwz,CrzJ9xkO3jv5IcLpz-tSww
+- [Fixed hello-world scene export](https://excalidraw.com/#json=tIZAfHTpxxp6SZyRCyHwz,CrzJ9xkO3jv5IcLpz-tSww)
 
-- First Kubernetes architecture attempt: https://excalidraw.com/#json=a_pCVfjZVrtJ48nkUrbUg,hma7cx8T6aeRzIkQhnTLvg
+- [First Kubernetes architecture attempt](https://excalidraw.com/#json=a_pCVfjZVrtJ48nkUrbUg,hma7cx8T6aeRzIkQhnTLvg)
 
-- Kubernetes attempt with more explicit text, but still not quite right: https://excalidraw.com/#json=UXKfZbYOghzN3r-ivWshq,VhWdX9PT-TVTZyaJ0l2-TQ
+- [Kubernetes attempt with more explicit text, but still not quite right](https://excalidraw.com/#json=UXKfZbYOghzN3r-ivWshq,VhWdX9PT-TVTZyaJ0l2-TQ)
 
-- Version with explicit text elements and Excalifont: https://excalidraw.com/#json=RWA_hrunvpASHouEksoVV,2kV4_nMbAX2rBpEBQ_ELcQ
+- [Version with explicit text elements and Excalifont](https://excalidraw.com/#json=RWA_hrunvpASHouEksoVV,2kV4_nMbAX2rBpEBQ_ELcQ)
 
-- Final fresh-run diagram after the skill was tightened up: https://excalidraw.com/#json=QnzIcl0-t3iLLu8DDjZbe,dD5hPUPEn4gBr-SrjOFn_Q
+- [Final fresh-run diagram after the skill was tightened up](https://excalidraw.com/#json=QnzIcl0-t3iLLu8DDjZbe,dD5hPUPEn4gBr-SrjOFn_Q)
+
+- [The winner](https://excalidraw.com/#json=AAADhO1vK-rwdoVJ8emF9,CusnFi4h5msXAOM5QT0XeQ)
+
 
 That debugging process turned into a small OpenClaw skill McClaw and I built called Excaliclaw.
 
@@ -75,11 +80,15 @@ If you want to use it, install it via OpenClaw:
 openclaw skills install excaliclaw
 ```
 
+<Embed url="https://clawhub.ai/nickytonline/excaliclaw" />
+
 or, install it from GitHub using `npx skills`:
 
 ```bash
 npx skills add nickytonline/skills --skill excaliclaw
 ```
+
+<Embed url="https://www.github.com/nickytonline/skills" />
 
 MCP gives the assistant access to a specialized tool. The skill captures the practical lessons that make it reliable.
 
