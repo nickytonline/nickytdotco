@@ -238,8 +238,11 @@ export default defineConfig({
     options: {},
   },
   staged: {
-    "*.{js,ts,jsx,tsx,astro,mjs,cjs}": ["vp fmt", "vp lint --fix"],
-    "*.{json,md,css,html,yml,yaml}": ["vp fmt"],
+    "*.{js,ts,jsx,tsx,astro,mjs,cjs}": [
+      "vp fmt --no-error-on-unmatched-pattern",
+      "vp lint --fix",
+    ],
+    "*.{json,md,css,html,yml,yaml}": ["vp fmt --no-error-on-unmatched-pattern"],
   },
   fmt: {
     semi: true,
