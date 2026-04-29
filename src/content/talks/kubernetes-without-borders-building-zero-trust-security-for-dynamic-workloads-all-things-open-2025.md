@@ -6,6 +6,9 @@ venue:
   url: "https://2025.allthingsopen.org/"
 tags:
   ["kubernetes", "zero trust", "security", "pomerium", "identity-aware proxy"]
+video:
+  "type": "youtube"
+  "url": "https://www.youtube.com/watch?v=Hp9U6pC6JxE"
 slideDeck: https://docs.google.com/presentation/d/e/2PACX-1vT1fvyKTBULi0wLecK93QBTkNLlWUc6sTzH_W33IF8iXHdMNPrNjx5fXbgkKtIfyA/pub?start=false&loop=false&delayms=5000
 ---
 
