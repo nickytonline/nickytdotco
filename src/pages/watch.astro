@@ -9,24 +9,44 @@ import {
   getVideos,
   getYouTubeId,
   DEFAULT_YT_FEED_URL,
+  POMERIUM_CHANNEL_FEED_URL,
   sanitizeVideoDescription,
 } from "@/utils/youtube-utils";
 
-// Fetch recent videos and filter out shorts
+// Fetch recent videos from both channels and pick the newest
 let latestVideo = null;
 let videoId = null;
 try {
-  const videos = await getVideos({
-    videoFeedUrl: DEFAULT_YT_FEED_URL,
-    numberOfVideos: 10,
-  });
-  const nonShortVideos = videos.filter(
+  const [personalVideos, pomeriumVideos] = await Promise.all([
+    getVideos({
+      videoFeedUrl: DEFAULT_YT_FEED_URL,
+      numberOfVideos: 10,
+    }).catch(() => []),
+    getVideos({
+      videoFeedUrl: POMERIUM_CHANNEL_FEED_URL,
+      numberOfVideos: 10,
+    }).catch(() => []),
+  ]);
+
+  const personalLatest = personalVideos.filter(
     (video) => !video.link.includes("/shorts/")
-  );
-  latestVideo = nonShortVideos[0] ?? null;
+  )[0];
+  const pomeriumLatest = pomeriumVideos.filter(
+    (video) => !video.link.includes("/shorts/")
+  )[0];
+
+  // Compare dates and pick the newer video
+  if (personalLatest && pomeriumLatest) {
+    const personalDate = new Date(personalLatest.date);
+    const pomeriumDate = new Date(pomeriumLatest.date);
+    latestVideo = personalDate > pomeriumDate ? personalLatest : pomeriumLatest;
+  } else {
+    latestVideo = personalLatest ?? pomeriumLatest ?? null;
+  }
+
   videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
 } catch (err) {
-  console.error("Error fetching YouTube feed:", err);
+  console.error("Error fetching YouTube feeds:", err);
 }
 
 const locale =

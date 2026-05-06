@@ -19,6 +19,8 @@ export const GUEST_APPEARANCES_PLAYLIST_FEED_URL =
   "https://www.youtube.com/feeds/videos.xml?playlist_id=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU";
 export const POMERIUM_LIVE_PLAYLIST_FEED_URL =
   "https://www.youtube.com/feeds/videos.xml?playlist_id=PLZWncRoWaoFxwV4ZoTC-TydJYZ1c_FEGJ";
+export const POMERIUM_CHANNEL_FEED_URL =
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCBJq3tmXb-1fOvv2bFc8l0A";
 
 export function getYouTubeId(url: string) {
   try {
