@@ -220,9 +220,22 @@ const { Content } = await render(talk);
                       {relatedTalk.data.title}
                     </h3>
                     <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-base text-muted-foreground">
-                      <span class="font-normal">
-                        {relatedTalk.data.venue.name}
-                      </span>
+                      {
+                        relatedTalk.data.venue.url ? (
+                          <a
+                            href={relatedTalk.data.venue.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="font-normal text-pink-600 dark:text-pink-400 hover:underline focus:underline focus:outline-none"
+                          >
+                            {relatedTalk.data.venue.name}
+                          </a>
+                        ) : (
+                          <span class="font-normal">
+                            {relatedTalk.data.venue.name}
+                          </span>
+                        )
+                      }
                       <span class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold">
                         •
                       </span>
