@@ -498,7 +498,7 @@ force = true
 
 [[redirects]]
 from = "/videos/redwoodjs-dev-design-with-amy-dutton-redwoodjs-core-team"
-to = "/videos/redwoodjs-dev-design-amy-dutton"
+to = "/videos/redwoodjs-dev-and-design-amy-dutton"
 status = 301
 force = true
 
@@ -582,7 +582,7 @@ force = true
 
 [[redirects]]
 from = "/videos/web-design-indie-life"
-to = "/videos/web-design-indie-life-andy-bell"
+to = "/videos/web-design-and-indie-life-andy-bell"
 status = 301
 force = true
 
@@ -607,6 +607,143 @@ force = true
 [[redirects]]
 from = "/videos/yeoman"
 to = "/videos/yeoman-josh-goldberg"
+status = 301
+force = true
+
+# missing video slug redirects
+[[redirects]]
+from = "/videos/highlight-clerk-authentication-web-dev-all-the-things-with-dev-agrawal"
+to = "/videos/clerk-authentication-web-dev-all-the-things-dev-agrawal"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/al-buffet-mcps-vibe-prompting-goose"
+to = "/videos/al-buffet-mcps-vibe-prompting-and-goose-w-ian-douglas"
+status = 301
+force = true
+
+# old deleted pages redirects
+[[redirects]]
+from = "/pages/all-vscode-tips"
+to = "/blog"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/thanks"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/stream-schedule"
+to = "/watch"
+status = 301
+force = true
+
+[[redirects]]
+from = "/pages/subscribed"
+to = "/newsletter"
+status = 301
+force = true
+
+# tag type-specific page redirects (content no longer exists for that type)
+[[redirects]]
+from = "/tags/aicoding-summit/blog"
+to = "/tags/aicoding-summit"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/introduction/talks"
+to = "/tags/introduction"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/web3/talks"
+to = "/tags/web3"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/extensions/talks"
+to = "/tags/extensions"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/sre/blog"
+to = "/tags/sre"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/nodejs/blog"
+to = "/tags/nodejs"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/dotnetframework/talks"
+to = "/tags/dotnetframework"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/dataviz/talks"
+to = "/tags/dataviz"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/officesetup/talks"
+to = "/tags/officesetup"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/contentcreation/talks"
+to = "/tags/contentcreation"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/polywork/talks"
+to = "/tags/polywork"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/review/talks"
+to = "/tags/review"
+status = 301
+force = true
+
+# removed tag redirects
+[[redirects]]
+from = "/tags/api"
+to = "/tags"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/api/blog"
+to = "/tags"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags/api/talks"
+to = "/tags"
+status = 301
+force = true
+
+# removed blog post redirect
+[[redirects]]
+from = "/blog/rethinking-authorization-in-the-age-of-ai-agents-110c"
+to = "/blog"
 status = 301
 force = true
 
