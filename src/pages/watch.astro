@@ -119,7 +119,7 @@ export const prerender = false;
     }
 
     {
-      !errorMessage && schedule.length > 0 ? (
+      !errorMessage && schedule.length > 0 && (
         <section class="mb-12">
           <h2 class="text-2xl lg:text-3xl font-bold mb-6 font-heading">
             Upcoming Live Streams
@@ -130,23 +130,24 @@ export const prerender = false;
             timezone={timezone}
           />
         </section>
-      ) : (
-        videoId &&
-        latestVideo && (
-          <section class="mb-12">
-            <h2 class="text-2xl lg:text-3xl font-bold mb-4 font-heading">
-              Latest from YouTube
-            </h2>
-            <div class="mb-4">
-              <YouTubeEmbed videoId={videoId} title={latestVideo.title} />
-            </div>
-            <h3 class="text-xl font-semibold mb-2">{latestVideo.title}</h3>
-            <div
-              class="prose prose-lg dark:prose-invert max-w-none text-muted-foreground"
-              set:html={sanitizeVideoDescription(latestVideo.description)}
-            />
-          </section>
-        )
+      )
+    }
+
+    {
+      videoId && latestVideo && (
+        <section class="mb-12">
+          <h2 class="text-2xl lg:text-3xl font-bold mb-4 font-heading">
+            Latest from YouTube
+          </h2>
+          <div class="mb-4">
+            <YouTubeEmbed videoId={videoId} title={latestVideo.title} />
+          </div>
+          <h3 class="text-xl font-semibold mb-2">{latestVideo.title}</h3>
+          <div
+            class="prose prose-lg dark:prose-invert max-w-none text-muted-foreground"
+            set:html={sanitizeVideoDescription(latestVideo.description)}
+          />
+        </section>
       )
     }
 
