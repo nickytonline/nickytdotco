@@ -1,8 +1,8 @@
 ---
 title: Let Dependabot Merge Its Own PRs
 excerpt: >-
-  Update March 2026: Given the Axios supply chain attack, revising this. It's
-  still convenient to let...
+  Update May 2026: Given there's an explosion of supply chain attacks recently,
+  I decided to remove...
 date: '2026-03-08T18:16:29Z'
 tags:
   - github
@@ -16,6 +16,8 @@ reading_time_minutes: 4
 template: post
 ---
 import Embed from "@/components/Embed.astro";
+
+Update May 2026: Given there's an [explosion of supply chain attacks](https://www.reddit.com/r/cybersecurity/comments/1taposq/mass_npm_supply_chain_attack_hits_tanstack/) recently, I decided to remove this workflow from my own repo, so leaving this post here, but more for historical purposes. Even with the recommendations from March 2026 below, I just don't feel comfortable atm letting these auto-merge.
 
 Update March 2026: Given the [Axios supply chain attack](https://github.com/axios/axios/issues/10636), revising this. It's still convenient to let dependabot merge on it's own if your CI/CD pipeline checks pass, but probably wiser to be a litte more cautious. I know [socket.dev has a GitHub app](https://github.com/apps/socket-security) you can install, and you can [harden your npm dependency updates](https://github.com/pomerium/desktop-client/pull/499) like we did at work.
 
