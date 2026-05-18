@@ -6,7 +6,7 @@ venue:
   url: "https://www.learncodinganywhere.com/"
 tags: ["ai", "learning", "developer education", "critical thinking"]
 video:
-  url: "https://youtube.com/watch?v=CZ_ZZEk4sX8"
+  url: "https://youtube.com/watch?v=HOrOpmc1nhk"
   type: "youtube"
 slideDeck: "https://ai-without-losing-the-fundamentals.netlify.app/"
 ---
