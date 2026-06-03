@@ -22,7 +22,7 @@
     "@astrojs/check": "^0.9.9",
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/netlify": "^7.0.5",
-    "@astrojs/react": "^5.0.2",
+    "@astrojs/react": "^5.0.7",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@expressive-code/plugin-line-numbers": "^0.42.0",
