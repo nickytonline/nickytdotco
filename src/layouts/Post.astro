@@ -2,9 +2,11 @@
 import MainLayout from "./MainLayout.astro";
 import PostIntro from "../components/PostIntro.astro";
 import SeriesNavigation from "../components/SeriesNavigation.astro";
+import RelatedContent from "../components/RelatedContent.astro";
 import type { CollectionEntry } from "astro:content";
 import site from "../data/site";
 import { seriesFilter } from "../utils/filters";
+import { getRelatedTalksForPost } from "../utils/tag-utils";
 import { getCollection, render } from "astro:content";
 import Tag from "@/components/Tag.astro";
 import TableOfContents from "../components/TableOfContents.astro";
@@ -27,6 +29,10 @@ if (entry.data.series) {
     entry.data.series
   ) as CollectionEntry<"blog">[];
 }
+
+// Get related talks by shared tags
+const allTalks = await getCollection("talks");
+const relatedTalks = getRelatedTalksForPost(entry, allTalks, 3);
 ---
 
 <MainLayout
@@ -79,5 +85,7 @@ if (entry.data.series) {
         </footer>
       )
     }
+
+    <RelatedContent talks={relatedTalks} />
   </article>
 </MainLayout>

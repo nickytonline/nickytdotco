@@ -2,7 +2,8 @@
 import { getEntry, getCollection, render } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import TagList from "../../components/TagList.astro";
-import { getRelatedTalks } from "../../utils/tag-utils";
+import RelatedContent from "../../components/RelatedContent.astro";
+import { getRelatedTalks, getRelatedPostsForTalk } from "../../utils/tag-utils";
 import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
@@ -31,6 +32,10 @@ if (!talk) {
 // Get all talks to find related ones
 const allTalks = await getCollection("talks");
 const relatedTalks = getRelatedTalks(talk, allTalks, 3);
+
+// Get related blog posts by shared tags
+const allPosts = await getCollection("blog");
+const relatedPosts = getRelatedPostsForTalk(talk, allPosts, 3);
 
 const {
   title,
@@ -203,56 +208,6 @@ const { Content } = await render(talk);
       )
     }
 
-    {
-      relatedTalks.length > 0 && (
-        <section class="pt-8" data-pagefind-ignore>
-          <h2 class="text-2xl font-bold mb-6 text-foreground">Related Talks</h2>
-          <div class="grid gap-6 xl:gap-8">
-            {relatedTalks.map((relatedTalk) => {
-              const relatedSlug = relatedTalk.id;
-              return (
-                <a
-                  href={`/talks/${relatedSlug}`}
-                  class="group grid gap-6 xl:gap-8 no-underline outline-none transition-colors"
-                >
-                  <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
-                    <h3 class="text-xl font-semibold leading-snug text-card-foreground group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400">
-                      {relatedTalk.data.title}
-                    </h3>
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-base text-muted-foreground">
-                      {
-                        relatedTalk.data.venue.url ? (
-                          <a
-                            href={relatedTalk.data.venue.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="font-normal text-pink-600 dark:text-pink-400 hover:underline focus:underline focus:outline-none"
-                          >
-                            {relatedTalk.data.venue.name}
-                          </a>
-                        ) : (
-                          <span class="font-normal">
-                            {relatedTalk.data.venue.name}
-                          </span>
-                        )
-                      }
-                      <span class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold">
-                        •
-                      </span>
-                      <time
-                        datetime={relatedTalk.data.date.toISOString()}
-                        class="italic font-normal"
-                      >
-                        {dateFilter(relatedTalk.data.date)}
-                      </time>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </section>
-      )
-    }
+    <RelatedContent talks={relatedTalks} posts={relatedPosts} />
   </article>
 </Layout>
