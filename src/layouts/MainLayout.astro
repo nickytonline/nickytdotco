@@ -3,6 +3,7 @@ import "../styles/global.css";
 import OgMetaTags from "../components/OgMetaTags.astro";
 import Header from "../components/Header.astro";
 import SkipLink from "../components/SkipLink.astro";
+import BackToTop from "../components/BackToTop.astro";
 import site from "@/data/site";
 import { ClientRouter } from "astro:transitions";
 
@@ -126,5 +127,6 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
         </p>
       </footer>
     </div>
+    <BackToTop />
   </body>
 </html>
