@@ -65,9 +65,42 @@ export const prerender = false;
 
 <Layout title="Welcome to Nick Taylor's website">
   <div class="space-y-12">
-    <SectionHeader title="Latest Content" headingLevel={1} />
+    <section class="flex flex-col md:flex-row gap-8 items-start">
+      <img
+        class="w-32 h-32 md:w-48 md:h-48 rounded-xl object-cover shrink-0"
+        src="/assets/images/colour-headshot-500x500.jpg"
+        alt="Headshot of Nick Taylor"
+        loading="eager"
+      />
+      <div class="flex-1 space-y-4">
+        <h1 class="text-3xl md:text-4xl font-bold">
+          Just some dev from <span class="text-pink-600 dark:text-pink-400">Montreal</span>
+        </h1>
+        <p class="text-lg leading-relaxed text-muted-foreground">
+          I'm <strong class="text-foreground">Nick Taylor</strong> (@nickytonline) — a developer advocate at
+          <a href="https://pomerium.com" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">Pomerium</a>,
+          Microsoft MVP, and GitHub Star. I've been in tech for 20+ years, contributing to open source for over a decade.
+        </p>
+        <p class="text-lg leading-relaxed text-muted-foreground">
+          You'll find me writing articles, streaming tech content on
+          <a href="https://twitch.tv/nickytonline" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">Twitch</a>/<a href="https://youtube.com/@nickytonline" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">YouTube</a>,
+          and mentoring in the
+          <a href="https://discord.gg/PcNdE2jJ" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">Let's Get Technical</a> community.
+        </p>
+        <p class="text-lg leading-relaxed text-muted-foreground">
+          I also run <a href="https://onetipaweek.com" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">One Tip a Week</a> — a newsletter with practical dev tips.
+        </p>
+        <p class="text-base text-muted-foreground">
+          Wanna chat? Drop me an email at <span class="font-semibold text-pink-600 dark:text-pink-400">nick at nickyt dot co</span>, or find me on <a href="/socials" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">my socials</a>.
+        </p>
+        <p class="text-sm text-muted-foreground">
+          <a href="/about" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">More about me →</a>
+        </p>
+      </div>
+    </section>
+
+    <SectionHeader title="Latest Content" headingLevel={2} />
     <section class="grid gap-6 xl:gap-8">
-      <h2>Blog Posts</h2>
       {
         recentPosts.map((post) => (
           <BlogPostCard

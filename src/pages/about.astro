@@ -9,7 +9,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   socialImage="/assets/images/page-og/about.jpg"
   pageType="Page"
 >
-  <article>
+  <article class="space-y-12">
     <header>
       <SectionHeader title="About" headingLevel={1} />
 
@@ -26,12 +26,12 @@ import MainLayout from "../layouts/MainLayout.astro";
             Hi! My name is <strong class="text-pink-600 dark:text-pink-400"
               >Nick Taylor (nickytonline)</strong
             >. I am a Microsoft MVP, GitHub Star, Software Developer, and
-            Developer Advocate.
+            Developer Advocate based in <strong>Montreal, Quebec, Canada</strong>.
           </p>
 
           <p class="text-lg leading-relaxed text-muted-foreground">
             With over two decades in technology and a decade of open source
-            contributions, plus five years of professional open source work at
+            contributions, plus six years of professional open source work at
             companies like <a
               href="https://opensauced.pizza"
               class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
@@ -52,20 +52,91 @@ import MainLayout from "../layouts/MainLayout.astro";
           </p>
 
           <p class="text-lg leading-relaxed text-muted-foreground">
-            You'll often find me live streaming tech content, either solo or
-            with friends from the community.
+            You can browse <a
+              href="/projects"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >my open-source projects</a
+            >, and check out the full list on <a
+              href="https://github.com/nickytonline"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >GitHub</a
+            >.
           </p>
 
           <p class="text-lg leading-relaxed text-muted-foreground">
-            Wanna get in touch? Drop me an e-mail at <span
-              class="font-semibold text-pink-600 dark:text-pink-400"
-              >nick at nickyt dot co</span
-            >.
+            You'll often find me live streaming tech content, either solo or
+            with friends from the community. I also run the
+            <a
+              href="https://onetipaweek.com"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >One Tip a Week</a
+            > newsletter and mentor in the
+            <a
+              href="https://discord.gg/PcNdE2jJ"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >Let's Get Technical</a
+            > community.
           </p>
         </div>
       </div>
     </header>
+
+    <section class="space-y-6">
+      <SectionHeader title="Speaking & Conferences" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        I'm an active conference speaker and have delivered 15-20 talks in 2025
+        alone at events like <strong>BlackHat USA</strong>, <strong>All Things Open</strong>, <strong>ConFoo</strong>,
+        <strong>SREday</strong>, <strong>AI Engineer Europe</strong>, and <strong>MCP Dev Summit</strong>. My talks cover topics ranging from Zero Trust security and
+        AI agent workflows to web development and open source contribution.
+      </p>
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        You can browse <a
+          href="/talks"
+          class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+          >all my talks and presentations</a
+        > for slide decks, recordings, and more.
+      </p>
+    </section>
+
+    <section class="space-y-6">
+      <SectionHeader title="Content Creation" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        I create content across multiple platforms — live streaming on
+        <a
+          href="https://twitch.tv/nickytonline"
+          class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+          >Twitch</a>
+        and
+        <a
+          href="https://youtube.com/@nickytonline"
+          class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+          >YouTube</a>,
+        writing technical articles, and publishing my
+        <a
+          href="https://onetipaweek.com"
+          class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+          >One Tip a Week</a>
+        newsletter.
+      </p>
+    </section>
+
+    <section class="space-y-6">
+      <SectionHeader title="Connect" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        Wanna get in touch? Drop me an e-mail at <span
+          class="font-semibold text-pink-600 dark:text-pink-400"
+          >nick at nickyt dot co</span
+        >. You can also find me <a
+          href="/socials"
+          class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+          >across the web</a
+        >.
+      </p>
+    </section>
   </article>
+
   <p class="text-center text-muted-foreground mt-4">
     Open graph image by
     <a
