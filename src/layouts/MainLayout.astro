@@ -31,6 +31,12 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href={site.faviconPath} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Feed for Nick Taylor's Blog"
+      href={`${origin}/feed.xml`}
+    />
     <meta name="generator" content={Astro.generator} />
     <OgMetaTags
       title={title}
