@@ -1,6 +1,5 @@
 import type { LiveLoader } from "astro/loaders";
 import Parser from "rss-parser";
-import { JSDOM } from "jsdom";
 
 export interface NewsletterPost {
   title: string;
@@ -12,13 +11,20 @@ export interface NewsletterPost {
 
 const NEWSLETTER_RSS_URL = "https://rss.beehiiv.com/feeds/NggVbrRMab.xml";
 
+function decodeEntities(text: string): string {
+  return text
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
 function extractText(html: string): string {
-  const dom = new JSDOM(html);
-  const body = dom.window.document.body;
-  // Remove <style> elements so they don't leak as visible text
-  body.querySelectorAll("style").forEach((el) => el.remove());
-  const text = body.textContent || "";
-  return text.replace(/\s+/g, " ").trim();
+  const noStyle = html.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, " ");
+  const noTags = noStyle.replace(/<[^>]*>/g, " ");
+  return decodeEntities(noTags).replace(/\s+/g, " ").trim();
 }
 
 async function fetchNewsletterFeed(): Promise<NewsletterPost[]> {
