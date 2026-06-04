@@ -49,11 +49,22 @@ const {
 } = talk.data;
 
 const { Content } = await render(talk);
+
+// Use the talk's video thumbnail as the Open Graph image
+let thumbnailUrl: string | undefined;
+if (video?.type === "youtube") {
+  const videoId = getYouTubeId(video.url);
+  if (videoId) {
+    thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  }
+} else if (video?.type === "custom" && video.image) {
+  thumbnailUrl = video.image.url;
+}
 ---
 
 <Layout
   title={`${title} | Nick Taylor's Talks`}
-  socialImage="/assets/images/page-og/talks.jpg"
+  socialImage={thumbnailUrl ?? "/assets/images/page-og/talks.jpg"}
   pageType="Talk"
 >
   <article>
