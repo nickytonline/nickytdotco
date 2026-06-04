@@ -79,27 +79,36 @@ export const prerender = false;
         <p class="text-lg leading-relaxed text-muted-foreground">
           I'm <strong class="text-foreground">Nick Taylor</strong> (@nickytonline) — a developer advocate at
           <a href="https://pomerium.com" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">Pomerium</a>,
-          Microsoft MVP, and GitHub Star. I've been in tech for 20+ years, contributing to open source for over a decade.
+          Microsoft MVP, and GitHub Star. I write, stream, and speak about
+          developer tools, open source, AI workflows, and Zero Trust security.
         </p>
         <p class="text-lg leading-relaxed text-muted-foreground">
-          You'll find me writing articles, streaming tech content on
-          <a href="https://twitch.tv/nickytonline" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">Twitch</a>/<a href="https://youtube.com/@nickytonline" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">YouTube</a>,
-          and mentoring in the
-          <a href="https://discord.gg/PcNdE2jJ" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">Let's Get Technical</a> community.
+          I also run <a href="https://onetipaweek.com" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">One Tip a Week</a> — a short newsletter with practical dev tips you can actually use.
         </p>
-        <p class="text-lg leading-relaxed text-muted-foreground">
-          I also run <a href="https://onetipaweek.com" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">One Tip a Week</a> — a newsletter with practical dev tips.
-        </p>
-        <p class="text-base text-muted-foreground">
-          Wanna chat? Drop me an email at <span class="font-semibold text-pink-600 dark:text-pink-400">nick at nickyt dot co</span>, or find me on <a href="/socials" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">my socials</a>.
-        </p>
-        <p class="text-sm text-muted-foreground">
-          <a href="/about" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">More about me →</a>
-        </p>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a
+            href="/blog"
+            class="inline-flex items-center px-5 py-2.5 rounded-lg bg-pink-600 text-white font-semibold text-base hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+          >
+            Read the blog
+          </a>
+          <a
+            href="https://onetipaweek.com"
+            class="inline-flex items-center px-5 py-2.5 rounded-lg border-2 border-pink-600 text-pink-600 dark:text-pink-400 dark:border-pink-400 font-semibold text-base hover:bg-pink-600 hover:text-white dark:hover:bg-pink-400 dark:hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+          >
+            Subscribe to the newsletter
+          </a>
+          <a
+            href="/socials"
+            class="inline-flex items-center px-5 py-2.5 rounded-lg border-2 border-foreground/20 text-foreground font-semibold text-base hover:border-pink-600 hover:text-pink-600 dark:hover:border-pink-400 dark:hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+          >
+            Get in touch
+          </a>
+        </div>
       </div>
     </section>
 
-    <SectionHeader title="Latest Content" headingLevel={2} />
+    <SectionHeader title="Featured Content" headingLevel={2} />
     <section class="grid gap-6 xl:gap-8">
       {
         recentPosts.map((post) => (
