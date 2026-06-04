@@ -1,5 +1,6 @@
 import type { LiveLoader } from "astro/loaders";
 import Parser from "rss-parser";
+import { JSDOM } from "jsdom";
 
 export interface NewsletterPost {
   title: string;
@@ -10,6 +11,15 @@ export interface NewsletterPost {
 }
 
 const NEWSLETTER_RSS_URL = "https://rss.beehiiv.com/feeds/NggVbrRMab.xml";
+
+function extractText(html: string): string {
+  const dom = new JSDOM(html);
+  const body = dom.window.document.body;
+  // Remove <style> elements so they don't leak as visible text
+  body.querySelectorAll("style").forEach((el) => el.remove());
+  const text = body.textContent || "";
+  return text.replace(/\s+/g, " ").trim();
+}
 
 async function fetchNewsletterFeed(): Promise<NewsletterPost[]> {
   const parser = new Parser({
@@ -22,22 +32,15 @@ async function fetchNewsletterFeed(): Promise<NewsletterPost[]> {
   return feed.items
     .filter((item) => item.title && item.link && item.pubDate)
     .map((item) => {
-      // Use contentSnippet if available, otherwise extract plain text from HTML
-      let description = "";
-      if (item.contentSnippet) {
-        description = item.contentSnippet;
-      } else if (item["content:encoded"]) {
-        // Strip HTML tags for a plain text description
-        description = item["content:encoded"]
-          .replace(/<[^>]*>/g, " ")
-          .replace(/\s+/g, " ")
-          .trim();
-      }
+      const html = (item["content:encoded"] as string) || "";
+      const text = extractText(html);
+      const description =
+        text.length > 200 ? text.slice(0, 200).trimEnd() + "..." : text;
 
       return {
         title: item.title || "",
         link: item.link || "",
-        description: description.substring(0, 300), // Limit description length
+        description,
         date: item.pubDate || new Date().toISOString(),
       };
     });

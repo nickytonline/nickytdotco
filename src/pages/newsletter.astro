@@ -57,7 +57,7 @@ export const prerender = false;
     </div>
   </div>
 
-  <ul class="grid gap-4 lg:gap-8 mt-12">
+  <ul class="grid gap-6 lg:gap-8 mt-12">
     {
       sortedPosts.map((post) => {
         const postDate = new Date(post.date);
@@ -75,10 +75,15 @@ export const prerender = false;
             </h2>
             <date
               datetime={post.date}
-              class="flex items-center gap-4 text-muted-foreground italic text-base"
+              class="flex items-center gap-4 text-muted-foreground italic text-base mt-1"
             >
               {dateFilter(postDate)}
             </date>
+            {post.description && (
+              <p class="text-muted-foreground text-base mt-2 line-clamp-3">
+                {post.description}
+              </p>
+            )}
           </li>
         );
       })
