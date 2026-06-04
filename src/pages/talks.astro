@@ -48,6 +48,30 @@ const years = Object.keys(talksByYear)
     </div>
   </div>
 
+  {
+    years.length > 1 && (
+      <nav
+        aria-label="Jump to year"
+        class="sticky top-0 z-30 py-3 my-6 bg-background/90 backdrop-blur-sm border-y border-muted"
+        data-pagefind-ignore
+      >
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar">
+          <span class="text-sm font-medium text-muted-foreground shrink-0 pr-2">
+            Jump to:
+          </span>
+          {years.map((year) => (
+            <a
+              href={`#year-${year}`}
+              class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none transition-colors shrink-0"
+            >
+              {year}
+            </a>
+          ))}
+        </div>
+      </nav>
+    )
+  }
+
   <div class="space-y-12">
     {
       years.map((year) => (
