@@ -1,5 +1,6 @@
 ---
 import type { GitHubPinnedProject } from "../content/_loaders/github-pinned-projects";
+import { formatCompactNumber } from "../utils/filters";
 
 interface Props {
   project: GitHubPinnedProject;
@@ -47,7 +48,7 @@ const { project } = Astro.props;
             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
           ></polygon></svg
         >
-        <span>{project.stargazerCount}</span>
+        <span>{formatCompactNumber(project.stargazerCount)}</span>
       </div>
     </div>
 
@@ -95,7 +96,7 @@ const { project } = Astro.props;
               r="3"></circle><circle cx="6" cy="18" r="3"></circle><path
               d="M18 9a9 9 0 0 1-9 9"></path></svg
           >
-          <span>{project.forkCount}</span>
+          <span>{formatCompactNumber(project.forkCount)}</span>
         </div>
       </div>
     </div>

@@ -157,3 +157,24 @@ export function seriesName(series: Series | null | undefined): string {
   if (!series) return "";
   return typeof series === "string" ? series : series.name || "";
 }
+
+/**
+ * Formats a number with compact notation (e.g., 1200 -> 1.2k, 1500000 -> 1.5M).
+ *
+ * @param num - The number to format
+ * @returns Compact formatted string
+ */
+export function formatCompactNumber(num: number): string {
+  if (num === 0) return "0";
+  const abs = Math.abs(num);
+  if (abs < 1000) return String(num);
+  const suffixes = ["", "k", "M", "B"];
+  const tier = Math.floor(Math.log10(abs) / 3);
+  if (tier === 0) return String(num);
+  const scale = Math.pow(10, tier * 3);
+  const scaled = abs / scale;
+  const formatted =
+    scaled < 10 ? scaled.toFixed(1) : Math.round(scaled).toString();
+  const suffix = suffixes[tier] || "";
+  return num < 0 ? `-${formatted}${suffix}` : `${formatted}${suffix}`;
+}
