@@ -50,11 +50,11 @@ const { timezone = "" } = Astro.locals.netlify.context.geo;
 if (!errorMessage) {
   Astro.response.headers.set(
     "Cache-Control",
-    "public, max-age=0, must-revalidate"
+    "public, max-age=0, must-revalidate",
   );
   Astro.response.headers.set(
     "Netlify-CDN-Cache-Control",
-    "public, max-age=259200, must-revalidate"
+    "public, max-age=259200, must-revalidate",
   );
   Astro.response.headers.set("timezone", timezone);
   Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
@@ -74,31 +74,27 @@ export const prerender = false;
       />
       <div class="flex-1 space-y-4">
         <h1 class="text-3xl md:text-4xl font-bold">
-          Just some dev from <span class="text-pink-600 dark:text-pink-400">Montreal</span>
+          Just some dev from <span class="text-pink-600 dark:text-pink-400"
+            >Montreal</span
+          >
         </h1>
         <p class="text-lg leading-relaxed text-muted-foreground">
-          I'm <strong class="text-foreground">Nick Taylor</strong> (@nickytonline) — a developer advocate at
-          <a href="https://pomerium.com" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">Pomerium</a>,
-          Microsoft MVP, and GitHub Star. I write, stream, and speak about
+          I'm <strong class="text-foreground">Nick Taylor</strong> (@nickytonline)
+          — a developer advocate and software engineer at
+          <a
+            href="https://pomerium.com"
+            class="text-pink-600 dark:text-pink-400 font-semibold hover:underline"
+            >Pomerium</a
+          >, Microsoft MVP, and GitHub Star. I write, stream, and speak about
           developer tools, open source, AI workflows, and Zero Trust security.
         </p>
         <p class="text-lg leading-relaxed text-muted-foreground">
-          I also run <a href="https://onetipaweek.com" class="text-pink-600 dark:text-pink-400 font-semibold hover:underline">One Tip a Week</a> — a short newsletter with practical dev tips you can actually use.
-        </p>
-        <div class="flex flex-wrap gap-3 pt-2">
-          <a
+          I also run <a
             href="https://onetipaweek.com"
-            class="inline-flex items-center px-5 py-2.5 rounded-lg bg-pink-600 text-white font-semibold text-base hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
-          >
-            Subscribe to Newsletter
-          </a>
-          <a
-            href="/socials"
-            class="inline-flex items-center px-5 py-2.5 rounded-lg border-2 border-foreground/20 text-foreground font-semibold text-base hover:border-pink-600 hover:text-pink-600 dark:hover:border-pink-400 dark:hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
-          >
-            Get in touch
-          </a>
-        </div>
+            class="text-pink-600 dark:text-pink-400 font-semibold hover:underline"
+            >One Tip a Week</a
+          > — a short newsletter with practical dev tips you can actually use.
+        </p>
       </div>
     </section>
 
@@ -116,8 +112,7 @@ export const prerender = false;
       }
       <a
         href="/blog"
-        class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
-      >
+        class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600">
         More blog posts<span class="text-2xl">→</span>
       </a>
     </section>
