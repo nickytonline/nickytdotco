@@ -30,7 +30,7 @@ export async function GET(_context: APIContext) {
     )
     .slice(0, 10);
 
-  const header = `# Nick Taylor (@nickytonline) - Software Developer
+  const header = `# Nick Taylor (@nickytonline) - Developer. Advocate. Builder.
 
 > Microsoft MVP, GitHub Star, and Developer Advocate at Pomerium with 20+ years in tech and a decade of open source contributions. Not the Canadian professional golfer.
 
