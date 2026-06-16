@@ -21,6 +21,9 @@ const { title, date, description, guestName, guestTitle, youtubeStreamLink } =
   stream.data;
 
 const videoId = extractYouTubeVideoId(youtubeStreamLink);
+const socialImage = videoId
+  ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+  : "/assets/images/page-og/watch.jpg";
 
 function normalizeLink(
   value: string,
@@ -88,7 +91,7 @@ if (stream.data.website)
 <Layout
   title={`${title} | Nick Taylor's Streams`}
   metaDesc={description}
-  socialImage="/assets/images/page-og/watch.jpg"
+  socialImage={socialImage}
   pageType="Stream"
 >
   <article>
