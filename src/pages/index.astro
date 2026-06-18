@@ -10,6 +10,7 @@ import { getCollection } from "astro:content";
 import { site } from "../data/site";
 import { dateFilter } from "../utils/filters";
 import { fetchPastGuestsWithYouTube } from "../content/_loaders/stream-schedule";
+import TalkCard from "../components/TalkCard.astro";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -21,6 +22,12 @@ const sortedPosts = allPosts.sort((a, b) => {
 });
 
 const recentPosts = sortedPosts.slice(0, site.maxPostsPerPage);
+
+const allTalks = await getCollection("talks");
+const sortedTalks = allTalks.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+const recentTalks = sortedTalks.slice(0, site.maxPostsPerPage);
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
@@ -94,7 +101,7 @@ export const prerender = false;
       </div>
     </section>
 
-    <SectionHeader title="Featured Content" headingLevel={2} />
+    <SectionHeader title="Recent Blog Posts" headingLevel={2} />
     <section class="grid gap-6 xl:gap-8">
       {
         recentPosts.map((post) => (
@@ -117,7 +124,7 @@ export const prerender = false;
       {
         errorMessage ? (
           <>
-            <h2>Upcoming Live Streams</h2>
+            <SectionHeader title="Upcoming Live Streams" headingLevel={2} />
             <p class="text-red-600">{errorMessage}</p>
           </>
         ) : null
@@ -125,7 +132,7 @@ export const prerender = false;
       {
         !errorMessage && schedule.length > 0 ? (
           <>
-            <h2>Upcoming Live Streams</h2>
+            <SectionHeader title="Upcoming Live Streams" headingLevel={2} />
             <StreamSchedule
               schedule={schedule}
               locale={locale}
@@ -137,7 +144,7 @@ export const prerender = false;
       {
         !errorMessage && schedule.length === 0 && pastGuests.length > 0 ? (
           <>
-            <h2>Recent Live Streams</h2>
+            <SectionHeader title="Recent Live Streams" headingLevel={2} />
             <div class="grid gap-6 xl:gap-8">
               {pastGuests.map((guest) => (
                 <PastGuestCard
@@ -150,6 +157,28 @@ export const prerender = false;
           </>
         ) : null
       }
+    </section>
+
+    <SectionHeader title="Recent Talks" headingLevel={2} />
+    <section class="grid gap-6 xl:gap-8">
+      {
+        recentTalks.map((talk) => (
+          <TalkCard
+            title={talk.data.title}
+            venueName={talk.data.venue.name}
+            venueUrl={talk.data.venue.url}
+            date={dateFilter(talk.data.date)}
+            href={`/talks/${talk.id}`}
+            video={talk.data.video}
+          />
+        ))
+      }
+      <a
+        href="/talks"
+        class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+      >
+        More talks<span class="text-2xl">→</span>
+      </a>
     </section>
   </div>
 </Layout>
