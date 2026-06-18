@@ -70,7 +70,45 @@ if (!errorMessage) {
 export const prerender = false;
 ---
 
-<Layout title="Nick Taylor — Developer. Advocate. Builder.">
+<Layout
+  title="Nick Taylor — Developer. Advocate. Builder."
+  metaDesc="Developer Advocate at Pomerium specializing in Zero Trust security, MCP (Model Context Protocol), and agentic AI. Microsoft MVP, GitHub Star, and open source contributor."
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Nick Taylor",
+        alternateName: "@nickytonline",
+        jobTitle: "Developer Advocate at Pomerium",
+        url: "https://www.nickyt.co",
+        sameAs: [
+          "https://github.com/nickytonline",
+          "https://linkedin.com/in/nickytonline",
+          "https://dev.to/nickytonline",
+          "https://bsky.app/profile/nickyt.online",
+          "https://x.com/nickytonline",
+          "https://youtube.com/@nickytonline",
+          "https://twitch.tv/nickytonline",
+        ],
+        knowsAbout: [
+          "Zero Trust Security",
+          "Model Context Protocol (MCP)",
+          "Agentic AI",
+          "TypeScript",
+          "Developer Advocacy",
+          "OpenClaw",
+        ],
+        worksFor: {
+          "@type": "Organization",
+          name: "Pomerium",
+          url: "https://pomerium.com",
+        },
+      })}
+    />
+  </Fragment>
   <div class="space-y-12">
     <section class="flex flex-col md:flex-row gap-8 items-start">
       <img
@@ -90,7 +128,7 @@ export const prerender = false;
             href="https://pomerium.com"
             >Pomerium</a
           >, Microsoft MVP, and GitHub Star. I write, stream, and speak about
-          developer tools, open source, AI workflows, and Zero Trust security.
+          developer tools, open source, agentic AI, and Zero Trust security.
         </p>
         <p class="text-lg leading-relaxed text-muted-foreground">
           I also run <a

@@ -39,11 +39,13 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
       href={`${origin}/feed.xml`}
     />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={`${origin}${Astro.url.pathname}`} />
     <OgMetaTags
       title={title}
       description={metaDesc}
       socialImage={new URL(socialImage, origin).href}
     />
+    <slot name="head" />
     <title>{title}</title>
     <ClientRouter />
     <!-- Fix back-button regression with ClientRouter: on the very first page load
