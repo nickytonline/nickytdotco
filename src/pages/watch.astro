@@ -9,7 +9,7 @@ import {
   getVideos,
   getYouTubeId,
   DEFAULT_YT_FEED_URL,
-  POMERIUM_CHANNEL_FEED_URL,
+  POMERIUM_LIVE_PLAYLIST_FEED_URL,
   sanitizeVideoDescription,
 } from "@/utils/youtube-utils";
 
@@ -23,7 +23,7 @@ try {
       numberOfVideos: 10,
     }).catch(() => []),
     getVideos({
-      videoFeedUrl: POMERIUM_CHANNEL_FEED_URL,
+      videoFeedUrl: POMERIUM_LIVE_PLAYLIST_FEED_URL,
       numberOfVideos: 10,
     }).catch(() => []),
   ]);
