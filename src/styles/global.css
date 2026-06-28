@@ -84,11 +84,6 @@ h6 {
   @apply font-semibold;
 }
 
-h2 {
-  @apply text-2xl;
-  @apply lg:text-3xl;
-}
-
 /* Heading anchor links */
 .heading-anchor {
   @apply opacity-0 no-underline ml-2 text-pink-600 focus:opacity-100 focus:outline-none;

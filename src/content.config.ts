@@ -80,7 +80,21 @@ const talksCollection = defineCollection({
   }),
 });
 
+const guidesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "src/content/guides" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    description: z.string(),
+    url: z.url(),
+    cover_image: z.string().optional(),
+    source: z.string(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   talks: talksCollection,
+  guides: guidesCollection,
 };

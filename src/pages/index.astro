@@ -11,6 +11,7 @@ import { site } from "../data/site";
 import { dateFilter } from "../utils/filters";
 import { fetchPastGuestsWithYouTube } from "../content/_loaders/stream-schedule";
 import TalkCard from "../components/TalkCard.astro";
+import GuideCard from "../components/GuideCard.astro";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -28,6 +29,12 @@ const sortedTalks = allTalks.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
 const recentTalks = sortedTalks.slice(0, site.maxPostsPerPage);
+
+const allGuides = await getCollection("guides");
+const sortedGuides = allGuides.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+const recentGuides = sortedGuides.slice(0, site.maxPostsPerPage);
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
@@ -127,96 +134,164 @@ export const prerender = false;
           <a
             href="https://pomerium.com"
             >Pomerium</a
-          >, Microsoft MVP, and GitHub Star. I write, stream, and speak about
-          developer tools, open source, agentic AI, and Zero Trust security.
+          >, Microsoft MVP, GitHub Star, and AWS Community Builder. I write,
+          stream, and speak about Zero Trust security, agentic AI, MCP (Model
+          Context Protocol), and open source.
         </p>
-        <p class="text-lg leading-relaxed text-muted-foreground">
-          I also run <a
-            href="https://onetipaweek.com"
-            >One Tip a Week</a
-          > — a short newsletter with practical dev tips you can actually use.
-        </p>
+        <div class="rounded-xl border border-border bg-secondary/50 p-5">
+          <p class="text-lg leading-relaxed text-muted-foreground">
+            I run <a
+              href="https://onetipaweek.com"
+              class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+              >One Tip a Week</a
+            > — a short newsletter with practical dev tips you can actually use.
+            <a
+              href="https://onetipaweek.com"
+              class="inline-flex items-center gap-1 ml-1 text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+            >
+              Subscribe <span class="text-xl">→</span>
+            </a>
+          </p>
+        </div>
       </div>
     </section>
 
-    <SectionHeader title="Recent Blog Posts" headingLevel={2} />
-    <section class="grid gap-6 xl:gap-8">
-      {
-        recentPosts.map((post) => (
-          <BlogPostCard
-            title={post.data.title}
-            date={dateFilter(post.data.date)}
-            image={post.data.cover_image}
-            href={`/blog/${post.id}`}
-          />
-        ))
-      }
-      <a
-        href="/blog"
-        class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600">
-        More blog posts<span class="text-2xl">→</span>
-      </a>
-    </section>
+    <section class="space-y-12">
+      <SectionHeader title="Latest Content" headingLevel={2} />
 
-    <section class="grid gap-6 xl:gap-8">
-      {
-        errorMessage ? (
-          <>
-            <SectionHeader title="Upcoming Live Streams" headingLevel={2} />
-            <p class="text-red-600">{errorMessage}</p>
-          </>
-        ) : null
-      }
-      {
-        !errorMessage && schedule.length > 0 ? (
-          <>
-            <SectionHeader title="Upcoming Live Streams" headingLevel={2} />
-            <StreamSchedule
-              schedule={schedule}
-              locale={locale}
-              timezone={timezone}
-            />
-          </>
-        ) : null
-      }
-      {
-        !errorMessage && schedule.length === 0 && pastGuests.length > 0 ? (
-          <>
-            <SectionHeader title="Recent Live Streams" headingLevel={2} />
-            <div class="grid gap-6 xl:gap-8">
-              {pastGuests.map((guest) => (
-                <PastGuestCard
-                  guest={guest}
-                  locale={locale}
-                  timezone={timezone}
-                />
-              ))}
+      <div class="space-y-10">
+        {
+          errorMessage ? (
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+                Live Streams
+              </h3>
+              <p class="text-red-600">{errorMessage}</p>
             </div>
-          </>
-        ) : null
-      }
-    </section>
+          ) : null
+        }
+        {
+          !errorMessage && schedule.length > 0 ? (
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+                Upcoming Live Streams
+              </h3>
+              <StreamSchedule
+                schedule={schedule}
+                locale={locale}
+                timezone={timezone}
+              />
+              <a
+                href="/videos"
+                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+              >
+                More live streams<span class="text-2xl">→</span>
+              </a>
+            </div>
+          ) : null
+        }
+        {
+          !errorMessage && schedule.length === 0 && pastGuests.length > 0 ? (
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+                Live Streams
+              </h3>
+              <div class="grid gap-6 xl:gap-8">
+                {pastGuests.map((guest) => (
+                  <PastGuestCard
+                    guest={guest}
+                    locale={locale}
+                    timezone={timezone}
+                  />
+                ))}
+              </div>
+              <a
+                href="/videos"
+                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+              >
+                More live streams<span class="text-2xl">→</span>
+              </a>
+            </div>
+          ) : null
+        }
 
-    <SectionHeader title="Recent Talks" headingLevel={2} />
-    <section class="grid gap-6 xl:gap-8">
-      {
-        recentTalks.map((talk) => (
-          <TalkCard
-            title={talk.data.title}
-            venueName={talk.data.venue.name}
-            venueUrl={talk.data.venue.url}
-            date={dateFilter(talk.data.date)}
-            href={`/talks/${talk.id}`}
-            video={talk.data.video}
-          />
-        ))
-      }
-      <a
-        href="/talks"
-        class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
-      >
-        More talks<span class="text-2xl">→</span>
-      </a>
+        <div>
+          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+            Blog Posts
+          </h3>
+          <div class="grid gap-6 xl:gap-8">
+            {
+              recentPosts.map((post) => (
+                <BlogPostCard
+                  title={post.data.title}
+                  date={dateFilter(post.data.date)}
+                  image={post.data.cover_image}
+                  href={`/blog/${post.id}`}
+                />
+              ))
+            }
+            <a
+              href="/blog"
+              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600">
+              More blog posts<span class="text-2xl">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+            Talks
+          </h3>
+          <div class="grid gap-6 xl:gap-8">
+            {
+              recentTalks.map((talk) => (
+                <TalkCard
+                  title={talk.data.title}
+                  venueName={talk.data.venue.name}
+                  venueUrl={talk.data.venue.url}
+                  date={dateFilter(talk.data.date)}
+                  href={`/talks/${talk.id}`}
+                  video={talk.data.video}
+                />
+              ))
+            }
+            <a
+              href="/talks"
+              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+            >
+              More talks<span class="text-2xl">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+            Hands-On Tutorials
+          </h3>
+          <div class="grid gap-6 xl:gap-8">
+            {
+              recentGuides.map((guide) => (
+                <GuideCard
+                  title={guide.data.title}
+                  description={guide.data.description}
+                  date={dateFilter(guide.data.date)}
+                  coverImage={guide.data.cover_image}
+                  href={guide.data.url}
+                  source={guide.data.source}
+                />
+              ))
+            }
+            <a
+              href="https://labs.iximiuz.com/a/nickytonline"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+            >
+              More guides on iximiuz Labs<span class="text-2xl">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </Layout>

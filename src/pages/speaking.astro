@@ -1,0 +1,145 @@
+---
+import Layout from "../layouts/MainLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+---
+
+<Layout
+  title="Speaking | Nick Taylor"
+  metaDesc="Invite Nick Taylor to speak at your conference or event. Talks on Zero Trust security, MCP (Model Context Protocol), agentic AI, Kubernetes, and open source."
+  socialImage="/assets/images/page-og/talks.jpg"
+>
+  <div class="space-y-12">
+    <header class="space-y-6">
+      <SectionHeader title="Speaking" headingLevel={1} />
+      <p class="text-xl leading-relaxed text-muted-foreground max-w-2xl">
+        I speak at conferences, meetups, and corporate events about the
+        intersection of <strong>Zero Trust security</strong>,
+        <strong>MCP (Model Context Protocol)</strong>, and
+        <strong>agentic AI</strong> — plus the open-source tooling and
+        infrastructure that makes it production-ready.
+      </p>
+      <div class="pt-2">
+        <a
+          href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-pink-600 text-white font-semibold text-base hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+        >
+          Invite me to speak
+          <span class="text-xl">→</span>
+        </a>
+      </div>
+    </header>
+
+    <section class="space-y-6">
+      <SectionHeader title="Talk Topics" headingLevel={2} />
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6">
+          <h3 class="text-xl font-bold">
+            Zero Trust Security for AI Agents &amp; MCP
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+            How to secure Model Context Protocol servers and agentic AI
+            workflows with identity-aware proxies, OAuth 2.1, and fine-grained
+            access control. Covers real-world gaps like unscoped tool exposure
+            and missing token validation.
+          </p>
+        </div>
+
+        <div class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6">
+          <h3 class="text-xl font-bold">
+            Securing OpenClaw &amp; AI Infrastructure
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+            Practical hardening of AI development environments — from
+            trusted-proxy authentication to production-ready deployments.
+            Includes live demos of securing OpenClaw and building tools on top
+            of it.
+          </p>
+        </div>
+
+        <div class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6">
+          <h3 class="text-xl font-bold">
+            Kubernetes &amp; Cloud-Native Security
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+            Zero Trust networking for dynamic workloads with RKE2, Cilium, and
+            modern service mesh patterns. Based on real homelab and production
+            experience running identity-aware proxies at the edge.
+          </p>
+        </div>
+
+        <div class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6">
+          <h3 class="text-xl font-bold">
+            Developer Tooling &amp; Open Source
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+            Building developer tools, browser extensions, and full-stack
+            frameworks that developers actually want to use. Lessons from
+            shipping at Netlify, dev.to, and in the open-source community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <SectionHeader title="Selected Venues" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        Recent and upcoming appearances include
+        <strong>All Things Open</strong>, <strong>BlackHat USA</strong>,
+        <strong>AI Engineer Europe</strong>, <strong>MCP Dev Summit</strong>,
+        <strong>SREday</strong>, <strong>ConFoo</strong>,
+        <strong>KCD</strong>, <strong>DevOpsDays</strong>, and
+        <strong>KubeCon</strong>.
+      </p>
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        Browse <a
+          href="/talks"
+          class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+          >all talks</a
+        > for slide decks, recordings, and abstracts.
+      </p>
+    </section>
+
+    <section class="space-y-6">
+      <SectionHeader title="Speaker Bio" headingLevel={2} />
+      <div class="rounded-xl border border-border bg-secondary/30 p-6 space-y-4">
+        <p class="text-lg leading-relaxed text-muted-foreground">
+          <strong>Nick Taylor</strong> is a Developer Advocate at Pomerium and a
+          Microsoft MVP, GitHub Star, and AWS Community Builder. With 20+ years
+          in software, he specializes in the intersection of Zero Trust
+          security, MCP (Model Context Protocol), and agentic AI — helping
+          developers ship secure AI-powered software. He has spoken at
+          conferences across North America and Europe, runs a livestream on
+          Twitch, and publishes the <em>One Tip a Week</em> newsletter.
+        </p>
+        <p class="text-muted-foreground">
+          Based in Montréal, Quebec, Canada. Available for keynotes,
+          technical deep-dives, workshops, and panels.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <SectionHeader title="Get in Touch" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        Interested in having me speak at your event? Drop me a line with the
+        date, format, and topic — or just say hi and we'll figure it out
+        together.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-pink-600 text-white font-semibold text-base hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+        >
+          Email me
+          <span class="text-xl">→</span>
+        </a>
+        <a
+          href="/socials"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border font-semibold text-base hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+        >
+          Find me online
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
