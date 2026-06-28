@@ -54,8 +54,10 @@ export async function GET(_context: APIContext) {
 
 ## Key Facts
 - Developer Advocate at Pomerium, working on identity-aware access for AI agents
-- Microsoft MVP and GitHub Star
+- GitHub Star
+- Agentic AI Foundation (AAIF) Ambassador
 - AWS Community Builder
+- Microsoft MVP
 - Built the TypeScript MCP template (widely forked)
 - Created the Pomerium MCP client and Agentic Access Gateway
 - Creator of OpenClaw, an open-source agentic AI tool
