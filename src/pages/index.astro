@@ -160,6 +160,60 @@ export const prerender = false;
       <SectionHeader title="Latest Content" headingLevel={2} />
 
       <div class="space-y-10">
+        <div>
+          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+            Talks
+          </h3>
+          <div class="grid gap-6 xl:gap-8">
+            {
+              recentTalks.map((talk) => (
+                <TalkCard
+                  title={talk.data.title}
+                  venueName={talk.data.venue.name}
+                  venueUrl={talk.data.venue.url}
+                  date={dateFilter(talk.data.date)}
+                  href={`/talks/${talk.id}`}
+                  video={talk.data.video}
+                />
+              ))
+            }
+            <a
+              href="/talks"
+              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+            >
+              More talks<span class="text-2xl">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+            Hands-On Tutorials
+          </h3>
+          <div class="grid gap-6 xl:gap-8">
+            {
+              recentGuides.map((guide) => (
+                <GuideCard
+                  title={guide.data.title}
+                  description={guide.data.description}
+                  date={dateFilter(guide.data.date)}
+                  coverImage={guide.data.cover_image}
+                  href={guide.data.url}
+                  source={guide.data.source}
+                />
+              ))
+            }
+            <a
+              href="https://labs.iximiuz.com/a/nickytonline"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+            >
+              More guides on iximiuz Labs<span class="text-2xl">→</span>
+            </a>
+          </div>
+        </div>
+
         {
           errorMessage ? (
             <div>
@@ -234,60 +288,6 @@ export const prerender = false;
               href="/blog"
               class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600">
               More blog posts<span class="text-2xl">→</span>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-            Talks
-          </h3>
-          <div class="grid gap-6 xl:gap-8">
-            {
-              recentTalks.map((talk) => (
-                <TalkCard
-                  title={talk.data.title}
-                  venueName={talk.data.venue.name}
-                  venueUrl={talk.data.venue.url}
-                  date={dateFilter(talk.data.date)}
-                  href={`/talks/${talk.id}`}
-                  video={talk.data.video}
-                />
-              ))
-            }
-            <a
-              href="/talks"
-              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
-            >
-              More talks<span class="text-2xl">→</span>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-            Hands-On Tutorials
-          </h3>
-          <div class="grid gap-6 xl:gap-8">
-            {
-              recentGuides.map((guide) => (
-                <GuideCard
-                  title={guide.data.title}
-                  description={guide.data.description}
-                  date={dateFilter(guide.data.date)}
-                  coverImage={guide.data.cover_image}
-                  href={guide.data.url}
-                  source={guide.data.source}
-                />
-              ))
-            }
-            <a
-              href="https://labs.iximiuz.com/a/nickytonline"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
-            >
-              More guides on iximiuz Labs<span class="text-2xl">→</span>
             </a>
           </div>
         </div>
