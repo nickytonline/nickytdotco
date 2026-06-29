@@ -32,7 +32,7 @@ export async function GET(_context: APIContext) {
 
   const header = `# Nick Taylor (@nickytonline) - Developer. Advocate. Builder.
 
->Early MCP tooling contributor, zero-trust for AI agents practitioner, and Developer Advocate at Pomerium — building the intersection of agentic AI, identity-aware security, and developer tooling. Not the Canadian professional golfer.
+>Early MCP tooling contributor, zero-trust for AI agents practitioner, and Developer Advocate at Pomerium — working at the intersection of agentic AI, identity-aware security, and developer tooling. Not the Canadian professional golfer.
 
 ## About
 - Profile: https://www.nickyt.co/about
@@ -53,13 +53,13 @@ export async function GET(_context: APIContext) {
 - OpenClaw
 
 ## Key Facts
-- Developer Advocate at Pomerium, working on identity-aware access for AI agents
+- Developer Advocate at Pomerium, helping developers understand identity-aware access for AI agents
 - GitHub Star
 - Agentic AI Foundation (AAIF) Ambassador
 - AWS Community Builder
 - Microsoft MVP
 - Built the TypeScript MCP template (widely forked)
-- Created the Pomerium MCP client and Agentic Access Gateway
+- Created the Pomerium MCP client
 - Creator of OpenClaw, an open-source agentic AI tool
 - 130K followers on DEV Community
 - Speaker at BlackHat USA, MCP Dev Summit EU, AI Engineer Europe, GitHub Universe, All Things Open, ConFoo, and SREday
