@@ -1,6 +1,19 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import TalkCard from "../components/TalkCard.astro";
+import { dateFilter } from "../utils/filters";
+export const prerender = true;
+
+const now = new Date();
+const upcomingTalks = (await getCollection("talks"))
+  .filter(
+    (talk) =>
+      talk.data.upcoming === true &&
+      (talk.data.endDate ?? talk.data.date) >= now,
+  )
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 ---
 
 <Layout
@@ -28,6 +41,33 @@ import SectionHeader from "../components/SectionHeader.astro";
         </a>
       </div>
     </header>
+
+    {
+      upcomingTalks.length > 0 && (
+        <section class="space-y-6">
+          <SectionHeader title="Upcoming Talks" headingLevel={2} />
+          <div class="grid gap-6 xl:gap-8">
+            {upcomingTalks.map((talk) => {
+              const { date, endDate } = talk.data;
+              const dateRange = endDate
+                ? `${dateFilter(date)} – ${dateFilter(endDate)}`
+                : dateFilter(date);
+              return (
+                <TalkCard
+                  title={talk.data.title}
+                  venueName={talk.data.venue.name}
+                  venueUrl={talk.data.venue.url}
+                  date={dateRange}
+                  href={`/talks/${talk.id}`}
+                  coverImage={talk.data.cover_image}
+                  upcoming
+                />
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
 
     <section class="space-y-6">
       <SectionHeader title="Talk Topics" headingLevel={2} />

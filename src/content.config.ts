@@ -49,6 +49,8 @@ const talksCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date(),
+    endDate: z.date().optional(),
+    upcoming: z.boolean().optional(),
     video: z
       .object({
         url: z.url(),
@@ -65,8 +67,10 @@ const talksCollection = defineCollection({
     venue: z.object({
       name: z.string(),
       url: urlOrRelative.optional(),
+      location: z.string().optional(),
     }),
     tags: z.array(z.string()),
+    cover_image: z.string().optional(),
     slideDeck: urlOrRelative.optional(),
     sourceCode: urlOrRelative.optional(),
     additionalLinks: z
@@ -77,6 +81,8 @@ const talksCollection = defineCollection({
         })
       )
       .optional(),
+    sessionUrl: urlOrRelative.optional(),
+    registrationUrl: urlOrRelative.optional(),
   }),
 });
 

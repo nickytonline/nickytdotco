@@ -89,8 +89,11 @@ const years = Object.keys(talksByYear)
             {talksByYear[year].map((talk) => {
               const slug = talk.id;
               const video = talk.data.video;
+              const isUpcoming = talk.data.upcoming === true;
               let thumbnailUrl: string | undefined;
-              if (video?.type === "custom" && video.image) {
+              if (talk.data.cover_image) {
+                thumbnailUrl = talk.data.cover_image;
+              } else if (video?.type === "custom" && video.image) {
                 thumbnailUrl = video.image.url;
               } else if (video?.type === "youtube") {
                 const videoId = getYouTubeId(video.url);
@@ -103,7 +106,7 @@ const years = Object.keys(talksByYear)
                   <div class="flex items-center gap-5">
                     <a
                       href={`/talks/${slug}`}
-                      class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+                      class="hidden sm:block relative shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
                     >
                       {thumbnailUrl ? (
                         <img
@@ -116,9 +119,17 @@ const years = Object.keys(talksByYear)
                           class="w-40 h-22.5 object-cover"
                         />
                       ) : (
-                        <div class="w-40 h-22.5 bg-muted flex items-center justify-center">
+                        <div class="w-40 h-22.5 bg-muted flex items-center justify-center relative overflow-hidden">
+                          <svg class="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                              <pattern id="dots-list" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+                                <circle cx="2" cy="2" r="1.5" fill="currentColor" />
+                              </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#dots-list)" />
+                          </svg>
                           <svg
-                            class="w-8 h-8 text-muted-foreground/50"
+                            class="relative w-8 h-8 text-muted-foreground/50"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -131,6 +142,11 @@ const years = Object.keys(talksByYear)
                             />
                           </svg>
                         </div>
+                      )}
+                      {isUpcoming && (
+                        <span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded text-xs font-semibold bg-pink-600 text-white">
+                          Upcoming
+                        </span>
                       )}
                     </a>
                     <div class="flex-1">

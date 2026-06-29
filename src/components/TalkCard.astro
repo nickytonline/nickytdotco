@@ -12,12 +12,16 @@ interface Props {
     url: string;
     image?: { url: string };
   } | null;
+  coverImage?: string;
+  upcoming?: boolean;
 }
 
-const { title, venueName, venueUrl, date, href, video } = Astro.props;
+const { title, venueName, venueUrl, date, href, video, coverImage, upcoming } = Astro.props;
 
 let thumbnailUrl: string | undefined;
-if (video?.type === "custom" && video.image) {
+if (coverImage) {
+  thumbnailUrl = coverImage;
+} else if (video?.type === "custom" && video.image) {
   thumbnailUrl = video.image.url;
 } else if (video?.type === "youtube") {
   const videoId = getYouTubeId(video.url);
@@ -42,11 +46,26 @@ if (video?.type === "custom" && video.image) {
             loading="lazy"
             decoding="async"
           />
+          {upcoming && (
+            <span class="absolute top-2 left-2 px-2 py-1 rounded-md text-xs font-semibold bg-pink-600 text-white">
+              Upcoming
+            </span>
+          )}
         </div>
       ) : (
         <div class="relative shrink-0 w-full md:w-40 h-45 md:h-30 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+          {/* subtle dot grid */}
+          <svg class="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="dots" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.5" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)" />
+          </svg>
+          {/* camera icon */}
           <svg
-            class="w-8 h-8 text-muted-foreground/50"
+            class="relative w-8 h-8 text-muted-foreground/50"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -58,6 +77,11 @@ if (video?.type === "custom" && video.image) {
               d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
             />
           </svg>
+          {upcoming && (
+            <span class="absolute top-2 left-2 px-2 py-1 rounded-md text-xs font-semibold bg-pink-600 text-white">
+              Upcoming
+            </span>
+          )}
         </div>
       )
     }

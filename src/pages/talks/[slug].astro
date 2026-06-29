@@ -1,5 +1,6 @@
 ---
 import { getEntry, getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content"; // used for related-content casts below
 import Layout from "../../layouts/MainLayout.astro";
 import TagList from "../../components/TagList.astro";
 import RelatedContent from "../../components/RelatedContent.astro";
@@ -11,10 +12,7 @@ export const prerender = true;
 
 export async function getStaticPaths() {
   const talks = await getCollection("talks");
-
-  return talks.map((talk) => ({
-    params: { slug: talk.id },
-  }));
+  return talks.map((talk) => ({ params: { slug: talk.id } }));
 }
 
 const { slug } = Astro.params;
@@ -29,28 +27,38 @@ if (!talk) {
   throw new Error("Talk not found");
 }
 
-// Get all talks to find related ones
+const { title, date, venue, tags = [] } = talk.data;
+const { Content } = await render(talk);
+
+const isUpcoming = talk.data.upcoming === true;
+const venueUrl = venue.url;
+const venueLocation = venue.location;
+const endDate = talk.data.endDate;
+const video = talk.data.video;
+const slideDeck = talk.data.slideDeck;
+const sourceCode = talk.data.sourceCode;
+const additionalLinks = talk.data.additionalLinks ?? [];
+const coverImage = talk.data.cover_image;
+const dateDisplay =
+  isUpcoming && endDate
+    ? `${dateFilter(date)} – ${dateFilter(endDate)}`
+    : dateFilter(date);
+
+// Get all talks to find related ones (past talks only)
 const allTalks = await getCollection("talks");
-const relatedTalks = getRelatedTalks(talk, allTalks, 3);
+const relatedTalks = isUpcoming
+  ? []
+  : getRelatedTalks(talk as CollectionEntry<"talks">, allTalks, 3);
 
 // Get related blog posts by shared tags
 const allPosts = await getCollection("blog");
-const relatedPosts = getRelatedPostsForTalk(talk, allPosts, 3);
+const relatedPosts = getRelatedPostsForTalk(
+  talk as CollectionEntry<"talks">,
+  allPosts,
+  3,
+);
 
-const {
-  title,
-  date,
-  venue,
-  tags = [],
-  video,
-  slideDeck,
-  sourceCode,
-  additionalLinks = [],
-} = talk.data;
-
-const { Content } = await render(talk);
-
-// Use the talk's video thumbnail as the Open Graph image
+// Use the talk's video thumbnail or cover image as the Open Graph image
 let thumbnailUrl: string | undefined;
 if (video?.type === "youtube") {
   const videoId = getYouTubeId(video.url);
@@ -59,6 +67,8 @@ if (video?.type === "youtube") {
   }
 } else if (video?.type === "custom" && video.image) {
   thumbnailUrl = video.image.url;
+} else if (coverImage) {
+  thumbnailUrl = coverImage;
 }
 ---
 
@@ -70,38 +80,46 @@ if (video?.type === "youtube") {
 >
   <article>
     <header>
+      {
+        isUpcoming && (
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 mb-3 rounded-full bg-pink-600/10 border border-pink-600/20 text-pink-600 dark:text-pink-400 text-sm font-semibold">
+            <span class="w-2 h-2 rounded-full bg-pink-600 dark:bg-pink-400" />
+            Upcoming Talk
+          </span>
+        )
+      }
       <h1
         class="text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-tight"
         data-pagefind-meta="title"
       >
         {title}
       </h1>
-      <div
-        class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-lg text-muted-foreground"
-      >
+      <div class="text-lg text-muted-foreground">
         {
-          venue.url ? (
+          venueUrl ? (
             <a
-              href={venue.url}
+              href={venueUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="font-semibold text-pink-600 dark:text-pink-400 hover:underline focus:underline focus:outline-none"
+              class="block font-semibold text-pink-600 dark:text-pink-400 hover:underline focus:underline focus:outline-none"
             >
               {venue.name}
             </a>
           ) : (
-            <span class="font-semibold text-pink-600 dark:text-pink-400">
+            <span class="block font-semibold text-pink-600 dark:text-pink-400">
               {venue.name}
             </span>
           )
         }
-        <span
-          class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold"
-          >•</span
-        >
-        <time datetime={date.toISOString()} class="italic">
-          {dateFilter(date)}
-        </time>
+        <div class="flex flex-wrap items-center gap-2">
+          {venueLocation && <span>{venueLocation}</span>}
+          {venueLocation && (
+            <span class="text-pink-600 dark:text-pink-400 font-semibold">•</span>
+          )}
+          <time datetime={date.toISOString()} class="italic">
+            {dateDisplay}
+          </time>
+        </div>
       </div>
     </header>
 
@@ -143,7 +161,7 @@ if (video?.type === "youtube") {
             </a>
           )}
         </div>
-      ) : (
+      ) : isUpcoming ? null : (
         <p class="my-6 text-muted-foreground italic">
           This talk was not recorded.
         </p>

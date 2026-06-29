@@ -5,6 +5,7 @@ venue:
   name: "DevOpsDays Sibiu 2026"
   url: "https://devopsdays.org/events/2026-sibiu/"
 tags: ["mcp", "agentic ai", "zero trust", "ai", "oauth", "security", "devopsdays"]
+cover_image: /assets/talks/devopsdays-sibiu-thumb.png
 slideDeck: https://docs.google.com/presentation/d/e/2PACX-1vSLUv1c_IqXnqm8gUIsT0uxHab9aKdclxxLMX6HCITBgdxlcn8_mduSg65ZdwfsjWjSRvGNC4TyZZDC/pub?start=false&loop=false&delayms=5000&slide=id.g35ee33cdc91_0_1
 ---
 

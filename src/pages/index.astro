@@ -25,10 +25,16 @@ const sortedPosts = allPosts.sort((a, b) => {
 const recentPosts = sortedPosts.slice(0, site.maxPostsPerPage);
 
 const allTalks = await getCollection("talks");
-const sortedTalks = allTalks.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
-const recentTalks = sortedTalks.slice(0, site.maxPostsPerPage);
+const now = new Date();
+const upcomingTalks = allTalks
+  .filter((t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now)
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
+  .slice(0, 2);
+const pastTalks = allTalks
+  .filter((t) => !t.data.upcoming)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, site.maxPostsPerPage - upcomingTalks.length);
+const recentTalks = [...upcomingTalks, ...pastTalks];
 
 const allGuides = await getCollection("guides");
 const sortedGuides = allGuides.sort(
@@ -175,6 +181,8 @@ export const prerender = false;
                   date={dateFilter(talk.data.date)}
                   href={`/talks/${talk.id}`}
                   video={talk.data.video}
+                  coverImage={talk.data.cover_image}
+                  upcoming={talk.data.upcoming}
                 />
               ))
             }
