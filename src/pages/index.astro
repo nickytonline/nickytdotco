@@ -7,7 +7,6 @@ import Layout from "../layouts/MainLayout.astro";
 import type { StreamGuestInfo } from "../utils/schedule-utils";
 import { getLiveCollection } from "astro:content";
 import { getCollection } from "astro:content";
-import { site } from "../data/site";
 import { dateFilter } from "../utils/filters";
 import { fetchPastGuestsWithYouTube } from "../content/_loaders/stream-schedule";
 import TalkCard from "../components/TalkCard.astro";
@@ -17,30 +16,49 @@ const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
 });
 
-// Sort by date descending
 const sortedPosts = allPosts.sort((a, b) => {
   return b.data.date.getTime() - a.data.date.getTime();
 });
 
-const recentPosts = sortedPosts.slice(0, site.maxPostsPerPage);
+// Featured: evergreen, curated best work (excluded from Latest to avoid duplication)
+const featuredPosts = sortedPosts
+  .filter((p) => p.data.featured === true)
+  .slice(0, 2);
+const featuredPostIds = new Set(featuredPosts.map((p) => p.id));
+
+// Latest: recency feed, excludes featured posts
+const recentPosts = sortedPosts
+  .filter((p) => !featuredPostIds.has(p.id))
+  .slice(0, 2);
 
 const allTalks = await getCollection("talks");
 const now = new Date();
+
+// Featured talks: flagship, evergreen (must have a recording, not upcoming)
+const featuredTalks = allTalks
+  .filter((t) => t.data.featured === true && !t.data.upcoming)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 2);
+const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
+
+// Latest talks: upcoming first (timely), then recent past (excluding featured)
 const upcomingTalks = allTalks
   .filter((t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now)
   .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
   .slice(0, 2);
 const pastTalks = allTalks
-  .filter((t) => !t.data.upcoming)
+  .filter((t) => !t.data.upcoming && !featuredTalkIds.has(t.id))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, site.maxPostsPerPage - upcomingTalks.length);
+  .slice(0, 3 - upcomingTalks.length);
 const recentTalks = [...upcomingTalks, ...pastTalks];
 
 const allGuides = await getCollection("guides");
 const sortedGuides = allGuides.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
-const recentGuides = sortedGuides.slice(0, site.maxPostsPerPage);
+const featuredGuides = sortedGuides
+  .filter((g) => g.data.featured === true)
+  .slice(0, 2);
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
@@ -163,29 +181,104 @@ export const prerender = false;
       </div>
     </section>
 
-    <section class="space-y-12">
-      <SectionHeader title="Latest Content" headingLevel={2} />
+    {/* ── Featured: evergreen, curated best work ── */}
+    {
+      featuredTalks.length > 0 || featuredGuides.length > 0 || featuredPosts.length > 0 ? (
+        <section class="space-y-10">
+          <SectionHeader title="Featured" headingLevel={2} />
 
-      <div class="space-y-10">
+          {featuredTalks.length > 0 && (
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+                Talks
+              </h3>
+              <div class="grid gap-6 xl:gap-8">
+                {featuredTalks.map((talk) => (
+                  <TalkCard
+                    title={talk.data.title}
+                    venueName={talk.data.venue.name}
+                    venueUrl={talk.data.venue.url}
+                    date={dateFilter(talk.data.date)}
+                    href={`/talks/${talk.id}`}
+                    video={talk.data.video}
+                    coverImage={talk.data.cover_image}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {featuredGuides.length > 0 && (
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+                Hands-On Tutorials
+              </h3>
+              <div class="grid gap-6 xl:gap-8">
+                {featuredGuides.map((guide) => (
+                  <GuideCard
+                    title={guide.data.title}
+                    description={guide.data.description}
+                    date={dateFilter(guide.data.date)}
+                    coverImage={guide.data.cover_image}
+                    href={guide.data.url}
+                    source={guide.data.source}
+                  />
+                ))}
+                <a
+                  href="https://labs.iximiuz.com/a/nickytonline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+                >
+                  More guides on iximiuz Labs<span class="text-2xl">→</span>
+                </a>
+              </div>
+            </div>
+          )}
+
+          {featuredPosts.length > 0 && (
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+                Writing
+              </h3>
+              <div class="grid gap-6 xl:gap-8">
+                {featuredPosts.map((post) => (
+                  <BlogPostCard
+                    title={post.data.title}
+                    date={dateFilter(post.data.date)}
+                    image={post.data.cover_image}
+                    href={`/blog/${post.id}`}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      ) : null
+    }
+
+    {/* ── Latest: recency feed ── */}
+    <section class="space-y-10">
+      <SectionHeader title="Latest" headingLevel={2} />
+
+      {recentTalks.length > 0 && (
         <div>
           <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
             Talks
           </h3>
           <div class="grid gap-6 xl:gap-8">
-            {
-              recentTalks.map((talk) => (
-                <TalkCard
-                  title={talk.data.title}
-                  venueName={talk.data.venue.name}
-                  venueUrl={talk.data.venue.url}
-                  date={dateFilter(talk.data.date)}
-                  href={`/talks/${talk.id}`}
-                  video={talk.data.video}
-                  coverImage={talk.data.cover_image}
-                  upcoming={talk.data.upcoming}
-                />
-              ))
-            }
+            {recentTalks.map((talk) => (
+              <TalkCard
+                title={talk.data.title}
+                venueName={talk.data.venue.name}
+                venueUrl={talk.data.venue.url}
+                date={dateFilter(talk.data.date)}
+                href={`/talks/${talk.id}`}
+                video={talk.data.video}
+                coverImage={talk.data.cover_image}
+                upcoming={talk.data.upcoming}
+              />
+            ))}
             <a
               href="/talks"
               class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
@@ -194,105 +287,77 @@ export const prerender = false;
             </a>
           </div>
         </div>
+      )}
 
-        <div>
-          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-            Hands-On Tutorials
-          </h3>
-          <div class="grid gap-6 xl:gap-8">
-            {
-              recentGuides.map((guide) => (
-                <GuideCard
-                  title={guide.data.title}
-                  description={guide.data.description}
-                  date={dateFilter(guide.data.date)}
-                  coverImage={guide.data.cover_image}
-                  href={guide.data.url}
-                  source={guide.data.source}
-                />
-              ))
-            }
+      {
+        errorMessage ? (
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+              Live Streams
+            </h3>
+            <p class="text-red-600">{errorMessage}</p>
+          </div>
+        ) : null
+      }
+      {
+        !errorMessage && schedule.length > 0 ? (
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+              Upcoming Live Streams
+            </h3>
+            <StreamSchedule
+              schedule={schedule}
+              locale={locale}
+              timezone={timezone}
+            />
             <a
-              href="https://labs.iximiuz.com/a/nickytonline"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/videos"
               class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
             >
-              More guides on iximiuz Labs<span class="text-2xl">→</span>
+              More live streams<span class="text-2xl">→</span>
             </a>
           </div>
-        </div>
+        ) : null
+      }
+      {
+        !errorMessage && schedule.length === 0 && pastGuests.length > 0 ? (
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+              Live Streams
+            </h3>
+            <div class="grid gap-6 xl:gap-8">
+              {pastGuests.map((guest) => (
+                <PastGuestCard
+                  guest={guest}
+                  locale={locale}
+                  timezone={timezone}
+                />
+              ))}
+            </div>
+            <a
+              href="/videos"
+              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+            >
+              More live streams<span class="text-2xl">→</span>
+            </a>
+          </div>
+        ) : null
+      }
 
-        {
-          errorMessage ? (
-            <div>
-              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-                Live Streams
-              </h3>
-              <p class="text-red-600">{errorMessage}</p>
-            </div>
-          ) : null
-        }
-        {
-          !errorMessage && schedule.length > 0 ? (
-            <div>
-              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-                Upcoming Live Streams
-              </h3>
-              <StreamSchedule
-                schedule={schedule}
-                locale={locale}
-                timezone={timezone}
-              />
-              <a
-                href="/videos"
-                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
-              >
-                More live streams<span class="text-2xl">→</span>
-              </a>
-            </div>
-          ) : null
-        }
-        {
-          !errorMessage && schedule.length === 0 && pastGuests.length > 0 ? (
-            <div>
-              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-                Live Streams
-              </h3>
-              <div class="grid gap-6 xl:gap-8">
-                {pastGuests.map((guest) => (
-                  <PastGuestCard
-                    guest={guest}
-                    locale={locale}
-                    timezone={timezone}
-                  />
-                ))}
-              </div>
-              <a
-                href="/videos"
-                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
-              >
-                More live streams<span class="text-2xl">→</span>
-              </a>
-            </div>
-          ) : null
-        }
-
+      {recentPosts.length > 0 && (
         <div>
           <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
             Blog Posts
           </h3>
           <div class="grid gap-6 xl:gap-8">
-            {
-              recentPosts.map((post) => (
-                <BlogPostCard
-                  title={post.data.title}
-                  date={dateFilter(post.data.date)}
-                  image={post.data.cover_image}
-                  href={`/blog/${post.id}`}
-                />
-              ))
-            }
+            {recentPosts.map((post) => (
+              <BlogPostCard
+                title={post.data.title}
+                date={dateFilter(post.data.date)}
+                image={post.data.cover_image}
+                href={`/blog/${post.id}`}
+              />
+            ))}
             <a
               href="/blog"
               class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600">
@@ -300,6 +365,41 @@ export const prerender = false;
             </a>
           </div>
         </div>
+      )}
+    </section>
+
+    {/* ── Explore: gateway links for specific audiences ── */}
+    <section class="space-y-6">
+      <SectionHeader title="Explore" headingLevel={2} />
+      <div class="grid gap-4 sm:grid-cols-3">
+        <a
+          href="/speaking"
+          class="group rounded-xl border border-border bg-secondary/30 p-6 hover:border-pink-600 dark:hover:border-pink-400 transition-colors"
+        >
+          <h3 class="text-xl font-bold mb-1">Speaking</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Talk topics, selected venues, and how to invite me to your event.
+          </p>
+        </a>
+        <a
+          href="/projects"
+          class="group rounded-xl border border-border bg-secondary/30 p-6 hover:border-pink-600 dark:hover:border-pink-400 transition-colors"
+        >
+          <h3 class="text-xl font-bold mb-1">Projects</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Open-source MCP tooling, Zero Trust infrastructure, and developer
+            utilities.
+          </p>
+        </a>
+        <a
+          href="/about"
+          class="group rounded-xl border border-border bg-secondary/30 p-6 hover:border-pink-600 dark:hover:border-pink-400 transition-colors"
+        >
+          <h3 class="text-xl font-bold mb-1">About</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Background, community involvement, and what I'm working on now.
+          </p>
+        </a>
       </div>
     </section>
   </div>

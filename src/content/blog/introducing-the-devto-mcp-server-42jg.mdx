@@ -17,6 +17,7 @@ template: post
 series:
   name: MCP
   collection_id: 33658
+featured: true
 ---
 import Embed from "@/components/Embed.astro";
 
@@ -43,7 +44,7 @@ The dev-to-mcp server exposes [dev.to's public API](https://developers.forem.com
 **Content Discovery:**
 
 - `get_articles` - Filter by author, tag, popularity, publication state
-- `search_articles` - Full-text search across all of dev.to's content  
+- `search_articles` - Full-text search across all of dev.to's content
 - `get_tags` - Access trending tags and topics
 
 For example, ask to get the latest React articles
@@ -87,7 +88,7 @@ The setup is pretty straightforward:
 
 ```bash
 npm install
-npm run build  
+npm run build
 npm start
 ```
 

@@ -6,6 +6,7 @@ venue:
   url: "https://www.blackhat.com/us-25/"
 video: { "url": "https://youtu.be/V33Go0nIufs", "type": "youtube" }
 tags: ["mcp", "agentic ai", "zero trust", "ai", "oauth", "security"]
+featured: true
 ---
 
 AI agents are no longer speculative—they're querying APIs, rewriting records, and chaining tools via protocols like MCP (Model Context Protocol). The latest MCP spec requires OAuth 2.1 and Resource Indicators (RFC 8707), strengthening identity security while leaving authorization up to the implementer. But OAuth alone can't enforce what an agent does after login—or whether it should act at all.

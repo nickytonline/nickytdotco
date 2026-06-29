@@ -8,6 +8,7 @@ tags: ["mcp", "security", "oauth", "identity", "zero trust", "ai"]
 video:
   { "url": "https://www.youtube.com/watch?v=_wtJzDf068w", "type": "youtube" }
 slideDeck: "https://docs.google.com/presentation/d/e/2PACX-1vQeCiB__9gwoTMDI_Zu8PcRg5GpgGNfu4TqGAwDiiRjw2dWfeKBQZwU9e8mrRxcN74dtAvQ68zXPt0w/pub?start=false&loop=false&delayms=5000"
+featured: true
 ---
 
 The Model Context Protocol (MCP) is transforming how AI agents interact with APIs and data, but many MCP servers are built like prototypes, leaving security as an afterthought instead of a core part of the development workflow. This session blends explanation with live coding to show how to build security in from day one. We start with an MCP server that has no authentication, add OAuth 2.1 support, and then show how organizations can unify identity and access control using an open-source identity-aware proxy such as Pomerium.

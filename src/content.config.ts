@@ -41,6 +41,7 @@ const blogCollection = defineCollection({
         collection_id: z.number(),
       })
       .optional(),
+    featured: z.boolean().optional(),
   }),
 });
 
@@ -83,6 +84,7 @@ const talksCollection = defineCollection({
       .optional(),
     sessionUrl: urlOrRelative.optional(),
     registrationUrl: urlOrRelative.optional(),
+    featured: z.boolean().optional(),
   }),
 });
 
@@ -96,6 +98,7 @@ const guidesCollection = defineCollection({
     cover_image: z.string().optional(),
     source: z.string(),
     tags: z.array(z.string()).optional(),
+    featured: z.boolean().optional(),
   }),
 });
 

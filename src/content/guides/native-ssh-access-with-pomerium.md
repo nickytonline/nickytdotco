@@ -6,4 +6,5 @@ url: "https://labs.iximiuz.com/tutorials/native-ssh-access-with-pomerium-747d04b
 cover_image: "https://labs.iximiuz.com/content/files/tutorials/native-ssh-access-with-pomerium-747d04bb/__static__/cover-v2.png"
 source: "iximiuz Labs"
 tags: ["docker", "security-policy", "deployment"]
+featured: true
 ---

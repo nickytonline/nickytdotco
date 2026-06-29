@@ -6,4 +6,5 @@ url: "https://labs.iximiuz.com/tutorials/native-reverse-ssh-tunneling-with-pomer
 cover_image: "https://labs.iximiuz.com/content/files/tutorials/native-reverse-ssh-tunneling-with-pomerium-005bfe2a/__static__/og-v4.png"
 source: "iximiuz Labs"
 tags: ["docker", "security-policy", "deployment"]
+featured: true
 ---
