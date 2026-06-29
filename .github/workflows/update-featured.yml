@@ -1,0 +1,50 @@
+name: Update Featured Content
+
+on:
+  schedule:
+    # 1st and 15th of each month at midnight UTC (biweekly cadence)
+    - cron: "0 0 1,15 * *"
+  workflow_dispatch:
+
+jobs:
+  update_featured:
+    name: Curate featured content with Copilot CLI
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+
+      - name: Curate featured content
+        env:
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
+        run: |
+          copilot -p "$(cat .github/update-featured-prompt.md)" \
+            -s \
+            --model claude-haiku-4.5 \
+            --allow-tool='write, shell' \
+            --no-ask-user \
+            > /tmp/featured-reasoning.md
+
+      - name: Install Vite+ and format
+        run: |
+          curl -fsSL https://vite.plus | bash
+          vp fmt src/content/talks/ src/content/guides/ src/content/blog/
+
+      - name: Setup git config
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Create PR for featured content update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./bin/pr-featured.sh
