@@ -72,6 +72,7 @@ const talksCollection = defineCollection({
     }),
     tags: z.array(z.string()),
     cover_image: z.string().optional(),
+    cover_image_large: z.string().optional(),
     slideDeck: urlOrRelative.optional(),
     sourceCode: urlOrRelative.optional(),
     additionalLinks: z

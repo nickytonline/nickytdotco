@@ -40,7 +40,7 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
     image && videoPageUrl && (
       <a
         href={videoPageUrl}
-        class="relative shrink-0 w-full md:w-40 h-50 md:h-40 rounded-xl overflow-hidden hover:opacity-90 transition-opacity"
+        class="relative shrink-0 hidden md:block w-40 h-40 rounded-xl overflow-hidden hover:opacity-90 transition-opacity"
       >
         <img
           src={image}
@@ -60,7 +60,7 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
     )
   }
   <div class="flex-1 flex flex-col gap-3">
-    <h3 class="text-2xl font-bold leading-tight text-foreground">
+    <h3 class="text-2xl font-bold leading-tight text-balance text-foreground">
       {
         videoPageUrl ? (
           <a

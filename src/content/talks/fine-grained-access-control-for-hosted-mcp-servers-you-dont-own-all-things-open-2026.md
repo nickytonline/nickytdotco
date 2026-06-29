@@ -3,6 +3,8 @@ title: "Fine-Grained Access Control for Hosted MCP Servers You Don't Own"
 date: 2026-10-19T12:00:00.000Z
 endDate: 2026-10-20T12:00:00.000Z
 upcoming: true
+cover_image: /assets/talks/all-things-open-2026-thumb.jpg
+cover_image_large: /assets/talks/all-things-open-2026-cover.jpg
 venue:
   name: "All Things Open 2026"
   url: "https://2026.allthingsopen.org/"

@@ -39,6 +39,7 @@ const slideDeck = talk.data.slideDeck;
 const sourceCode = talk.data.sourceCode;
 const additionalLinks = talk.data.additionalLinks ?? [];
 const coverImage = talk.data.cover_image;
+const coverImageLarge = talk.data.cover_image_large;
 const dateDisplay =
   isUpcoming && endDate
     ? `${dateFilter(date)} – ${dateFilter(endDate)}`
@@ -67,6 +68,8 @@ if (video?.type === "youtube") {
   }
 } else if (video?.type === "custom" && video.image) {
   thumbnailUrl = video.image.url;
+} else if (coverImageLarge) {
+  thumbnailUrl = coverImageLarge;
 } else if (coverImage) {
   thumbnailUrl = coverImage;
 }
@@ -80,14 +83,6 @@ if (video?.type === "youtube") {
 >
   <article>
     <header>
-      {
-        isUpcoming && (
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 mb-3 rounded-full bg-pink-600/10 border border-pink-600/20 text-pink-600 dark:text-pink-400 text-sm font-semibold">
-            <span class="w-2 h-2 rounded-full bg-pink-600 dark:bg-pink-400" />
-            Upcoming Talk
-          </span>
-        )
-      }
       <h1
         class="text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-tight"
         data-pagefind-meta="title"
@@ -95,22 +90,40 @@ if (video?.type === "youtube") {
         {title}
       </h1>
       <div class="text-lg text-muted-foreground">
-        {
-          venueUrl ? (
-            <a
-              href={venueUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block font-semibold text-pink-600 dark:text-pink-400 hover:underline focus:underline focus:outline-none"
-            >
-              {venue.name}
-            </a>
-          ) : (
-            <span class="block font-semibold text-pink-600 dark:text-pink-400">
-              {venue.name}
+        <div class="flex flex-wrap items-center gap-2">
+          {
+            venueUrl ? (
+              <a
+                href={venueUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-pink-600 dark:text-pink-400 hover:underline focus:underline focus:outline-none"
+              >
+                {venue.name}
+              </a>
+            ) : (
+              <span class="font-semibold text-pink-600 dark:text-pink-400">
+                {venue.name}
+              </span>
+            )
+          }
+          {isUpcoming && (
+            <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-xs font-semibold bg-pink-600 text-white">
+              <span aria-hidden="true">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </span>
+              <span class="hidden sm:inline">Upcoming</span>
+              <span class="sr-only sm:hidden">Upcoming</span>
             </span>
-          )
-        }
+          )}
+        </div>
         <div class="flex flex-wrap items-center gap-2">
           {venueLocation && <span>{venueLocation}</span>}
           {venueLocation && (
@@ -160,6 +173,22 @@ if (video?.type === "youtube") {
               />
             </a>
           )}
+        </div>
+      ) : isUpcoming && coverImageLarge ? (
+        <div class="my-6">
+          <img
+            src={coverImageLarge}
+            alt={`${title} at ${venue.name}`}
+            class="w-full max-w-2xl rounded-xl border-2 border-border shadow-lg"
+          />
+        </div>
+      ) : isUpcoming && coverImage ? (
+        <div class="my-6">
+          <img
+            src={coverImage}
+            alt={`${title} at ${venue.name}`}
+            class="w-full max-w-2xl rounded-xl border-2 border-border shadow-lg"
+          />
         </div>
       ) : isUpcoming ? null : (
         <p class="my-6 text-muted-foreground italic">
