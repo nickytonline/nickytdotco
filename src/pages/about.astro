@@ -13,15 +13,15 @@ import MainLayout from "../layouts/MainLayout.astro";
     <header>
       <SectionHeader title="About" headingLevel={1} />
 
-      <div class="flex flex-col md:flex-row gap-8 items-start">
+      <div class="flex flex-col md:block overflow-hidden">
         <img
-          class="w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover"
+          class="w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover self-center mb-6 md:mb-0 md:float-left md:mr-8"
           src="/assets/images/colour-headshot-500x500.jpg"
           alt="Headshot of Nick Taylor"
           loading="lazy"
         />
 
-        <div class="flex-1 space-y-6">
+        <div class="space-y-6">
           <p class="text-xl leading-relaxed">
             I'm <strong>Nick Taylor</strong> (<a href="/socials">@nickytonline</a>)
             — a developer advocate and software engineer at
