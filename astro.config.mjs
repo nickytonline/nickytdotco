@@ -8,6 +8,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import expressiveCode from "astro-expressive-code";
 import sitemap from "@astrojs/sitemap";
+import { unified } from "@astrojs/markdown-remark";
 
 import react from "@astrojs/react";
 
@@ -24,23 +25,25 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
-    rehypePlugins: [
-      rehypeSlug,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "append",
-          properties: {
-            className: ["heading-anchor"],
-            ariaLabel: "Link to this section",
+    processor: unified({
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "append",
+            properties: {
+              className: ["heading-anchor"],
+              ariaLabel: "Link to this section",
+            },
+            content: {
+              type: "text",
+              value: "#",
+            },
           },
-          content: {
-            type: "text",
-            value: "#",
-          },
-        },
+        ],
       ],
-    ],
+    }),
   },
   vite: {
     plugins: [tailwindcss()],
