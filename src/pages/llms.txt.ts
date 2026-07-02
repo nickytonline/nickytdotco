@@ -60,7 +60,7 @@ export async function GET(_context: APIContext) {
 - Microsoft MVP
 - Built the TypeScript MCP template (widely forked)
 - Created the Pomerium MCP client
-- Creator of OpenClaw, an open-source agentic AI tool
+- Creator of ClawSpace, an open-source project for viewing OpenClaw workspace files
 - 130K followers on DEV Community
 - Speaker at BlackHat USA, MCP Dev Summit EU, AI Engineer Europe, GitHub Universe, All Things Open, ConFoo, and SREday
 - 20+ years in tech, 10+ years of open source contributions
