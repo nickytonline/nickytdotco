@@ -234,6 +234,27 @@ const upcomingTalks = (await getCollection("talks"))
       return;
     }
 
+    const showFeedback = (label: string) => {
+      const originalLabel = button.textContent;
+      button.textContent = label;
+      setTimeout(() => {
+        button.textContent = originalLabel;
+      }, 2000);
+    };
+
+    const copyWithExecCommand = (text: string) => {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      const copied = document.execCommand("copy");
+      textarea.remove();
+      return copied;
+    };
+
     button.addEventListener("click", async () => {
       const bio = button.dataset.bio;
 
@@ -241,12 +262,16 @@ const upcomingTalks = (await getCollection("talks"))
         return;
       }
 
-      await navigator.clipboard.writeText(bio);
-      const originalLabel = button.textContent;
-      button.textContent = "Copied!";
-      setTimeout(() => {
-        button.textContent = originalLabel;
-      }, 2000);
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(bio);
+        } else if (!copyWithExecCommand(bio)) {
+          throw new Error("execCommand copy failed");
+        }
+        showFeedback("Copied!");
+      } catch {
+        showFeedback(copyWithExecCommand(bio) ? "Copied!" : "Copy failed");
+      }
     });
   }
 
