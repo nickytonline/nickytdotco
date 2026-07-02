@@ -7,6 +7,9 @@ import { dateFilter } from "../utils/filters";
 export const prerender = true;
 
 const now = new Date();
+const speakerBio =
+  "Nick Taylor is a Developer Advocate at Pomerium and a GitHub Star, Agentic AI Foundation (AAIF) Ambassador, AWS Community Builder, and Microsoft MVP. With 20+ years in software, he specializes in the intersection of Zero Trust security, MCP (Model Context Protocol), and agentic AI — helping developers ship secure AI-powered software. He has spoken at conferences across North America and Europe, runs a livestream on Twitch, and publishes the One Tip a Week newsletter.";
+
 const upcomingTalks = (await getCollection("talks"))
   .filter(
     (talk) =>
@@ -164,6 +167,40 @@ const upcomingTalks = (await getCollection("talks"))
     </section>
 
     <section class="space-y-6">
+      <SectionHeader title="Speaker Kit" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        Everything you need for your event program — grab a headshot and copy
+        the bio above.
+      </p>
+      <div class="flex flex-wrap items-center gap-6">
+        <img
+          class="w-40 h-40 rounded-xl object-cover"
+          src="/assets/images/latest-headshot%203.jpg"
+          alt="Headshot of Nick Taylor"
+          loading="lazy"
+        />
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/assets/images/latest-headshot%203.jpg"
+            download="nick-taylor-headshot.jpg"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-pink-600 text-white font-semibold text-base hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+          >
+            Download headshot
+            <span class="text-xl">↓</span>
+          </a>
+          <button
+            type="button"
+            id="copy-speaker-bio"
+            data-bio={speakerBio}
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border font-semibold text-base hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+          >
+            Copy bio
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-6">
       <SectionHeader title="Get in Touch" headingLevel={2} />
       <p class="text-lg leading-relaxed text-muted-foreground">
         Interested in having me speak at your event? Drop me a line with the
@@ -188,3 +225,31 @@ const upcomingTalks = (await getCollection("talks"))
     </section>
   </div>
 </Layout>
+
+<script>
+  function setUpCopyBio() {
+    const button = document.getElementById("copy-speaker-bio");
+
+    if (!(button instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    button.addEventListener("click", async () => {
+      const bio = button.dataset.bio;
+
+      if (!bio) {
+        return;
+      }
+
+      await navigator.clipboard.writeText(bio);
+      const originalLabel = button.textContent;
+      button.textContent = "Copied!";
+      setTimeout(() => {
+        button.textContent = originalLabel;
+      }, 2000);
+    });
+  }
+
+  setUpCopyBio();
+  document.addEventListener("astro:page-load", setUpCopyBio);
+</script>
