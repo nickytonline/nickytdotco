@@ -33,6 +33,11 @@ if (entry.data.series) {
 // Get related talks by shared tags
 const allTalks = await getCollection("talks");
 const relatedTalks = getRelatedTalksForPost(entry, allTalks, 3);
+
+const postUrl = new URL(currentUrl, site.url).toString();
+const coverImageUrl = entry.data.cover_image
+  ? new URL(entry.data.cover_image, site.url).toString()
+  : undefined;
 ---
 
 <MainLayout
@@ -40,7 +45,36 @@ const relatedTalks = getRelatedTalksForPost(entry, allTalks, 3);
   metaDesc={entry.data.excerpt || entry.data.description}
   socialImage={new URL(entry.data.cover_image!, site.url).toString()}
   pageType="Post"
+  ogType="article"
+  publishedTime={entry.data.date.toISOString()}
 >
+  <Fragment slot="head">
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: entry.data.title,
+        description: entry.data.excerpt || entry.data.description,
+        datePublished: entry.data.date.toISOString(),
+        url: postUrl,
+        ...(coverImageUrl && { image: coverImageUrl }),
+        ...(entry.data.tags?.length && {
+          keywords: entry.data.tags.join(", "),
+        }),
+        author: {
+          "@type": "Person",
+          name: site.authorName,
+          url: site.url,
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": postUrl,
+        },
+      })}
+    />
+  </Fragment>
   <article>
     <PostIntro
       title={entry.data.title}

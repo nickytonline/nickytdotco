@@ -12,6 +12,8 @@ interface Props {
   metaDesc?: string;
   socialImage?: string;
   pageType?: string;
+  ogType?: "website" | "article";
+  publishedTime?: string;
 }
 
 const {
@@ -19,8 +21,14 @@ const {
   metaDesc = "Nick Taylor (@nickytonline) - Software developer sharing blog posts, live streams, conference talks, and open source.",
   socialImage = "/assets/images/page-og/home.jpg",
   pageType,
+  ogType,
+  publishedTime,
 } = Astro.props;
 const { origin } = new URL(Astro.request.url);
+const canonicalUrl = `${origin}${Astro.url.pathname}`;
+const fullTitle = title.includes("Nick Taylor")
+  ? title
+  : `${title} | Nick Taylor`;
 const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
 ---
 
@@ -37,14 +45,17 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
       title="RSS Feed for Nick Taylor's Blog"
       href={`${origin}/feed.xml`}
     />
-    <link rel="canonical" href={`${origin}${Astro.url.pathname}`} />
+    <link rel="canonical" href={canonicalUrl} />
     <OgMetaTags
-      title={title}
+      title={fullTitle}
       description={metaDesc}
       socialImage={new URL(socialImage, origin).href}
+      url={canonicalUrl}
+      type={ogType}
+      publishedTime={publishedTime}
     />
     <slot name="head" />
-    <title>{title}</title>
+    <title>{fullTitle}</title>
     <ClientRouter />
     <!-- Fix back-button regression with ClientRouter: on the very first page load
          the router calls replaceState, which erases the "came from external page"
