@@ -12,11 +12,63 @@ export interface BrewfileEntry {
   [key: string]: unknown;
 }
 
+// Formulae that are pure transitive dependencies or too obvious to list on the uses page
+const BREW_DENYLIST = new Set([
+  // Pure library/build dependencies
+  "aom",
+  "glib",
+  "libtiff",
+  "harfbuzz",
+  "pango",
+  "tesseract",
+  "jpeg-xl",
+  "nss",
+  "fzf", // only present as a dep of git-wt
+  // Not worth listing on a uses page
+  "cfssl",
+  "etcd",
+  "libass",
+  "libpq",
+  "mas",
+  "trash",
+  // Too standard/obvious to mention
+  "git",
+  "go",
+  "vim",
+  "unbound",
+  "pkgconf",
+  "cmake",
+  "openjdk@11",
+  "wxwidgets",
+  "wxwidgets@3.2",
+]);
+
 const BREWFILE_URL =
   "https://raw.githubusercontent.com/nickytonline/dotfiles/main/Brewfile";
 const BREW_API_URL = "https://formulae.brew.sh/api/formula.json";
 const CASK_API_URL = "https://formulae.brew.sh/api/cask.json";
 const ITUNES_LOOKUP_URL = "https://itunes.apple.com/lookup?id=";
+
+const APPLE_APP_BLOCKLIST = [
+  "apple developer",
+  "apple configurator",
+  "apple remote desktop",
+  "final cut pro",
+  "garageband",
+  "imovie",
+  "keynote",
+  "logic pro",
+  "numbers",
+  "pages",
+  "xcode",
+];
+
+function isAppleApp(entry: BrewfileEntry): boolean {
+  const name = entry.displayName.toLowerCase();
+  return APPLE_APP_BLOCKLIST.some(
+    (app) => name === app || name.startsWith(`${app} `)
+  );
+}
 
 function prettify(name: string): string {
   if (!name.includes("-") && !name.includes("_") && name.length <= 3) {
@@ -115,6 +167,8 @@ async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
     if (brewMatch) {
       const fullName = brewMatch[1];
       const name = fullName.split("/").pop() || fullName;
+      if (BREW_DENYLIST.has(name)) continue;
+
       const tap = fullName.includes("/")
         ? fullName.split("/").slice(0, 2).join("/")
         : undefined;
@@ -179,7 +233,7 @@ async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
     }
   }
 
-  return entries;
+  return entries.filter((entry) => !isAppleApp(entry));
 }
 
 export const brewfileLoader: LiveLoader<BrewfileEntry, { id: string }> = {
