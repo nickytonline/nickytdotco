@@ -15,7 +15,7 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: "Just Some Dev",
+  name: "Nick Taylor — Developer. Advocate. Builder.",
   shortDesc: "Welcome to Nick Taylor's personal website.",
   url: getSiteUrl(),
   twitterHandle: "@nickytonline",
