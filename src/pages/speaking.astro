@@ -230,9 +230,11 @@ const upcomingTalks = (await getCollection("talks"))
   function setUpCopyBio() {
     const button = document.getElementById("copy-speaker-bio");
 
-    if (!(button instanceof HTMLButtonElement)) {
+    if (!(button instanceof HTMLButtonElement) || button.dataset.initialized) {
       return;
     }
+
+    button.dataset.initialized = "true";
 
     const showFeedback = (label: string) => {
       const originalLabel = button.textContent;
