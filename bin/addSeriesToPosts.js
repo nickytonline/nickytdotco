@@ -7,7 +7,7 @@ import "dotenv/config";
 import path from "path";
 import { promises as fs } from "fs";
 import { fileURLToPath } from "url";
-import yaml from "js-yaml";
+import { dump, load } from "js-yaml";
 
 const { DEV_API_KEY } = process.env;
 
@@ -124,14 +124,14 @@ async function updatePostWithSeries(filePath, seriesData) {
     return false;
   }
 
-  const frontmatter = yaml.load(match[1]);
+  const frontmatter = load(match[1]);
   const body = match[2];
 
   // Add series data
   frontmatter.series = seriesData;
 
   // Write back
-  const updatedContent = `---\n${yaml.dump(frontmatter)}---\n${body}`;
+  const updatedContent = `---\n${dump(frontmatter)}---\n${body}`;
   await fs.writeFile(filePath, updatedContent);
 
   return true;
@@ -168,7 +168,7 @@ async function syncAllPostsWithSeries() {
         continue;
       }
 
-      const frontmatter = yaml.load(match[1]);
+      const frontmatter = load(match[1]);
 
       // Skip if already has series with collection_id
       if (frontmatter.series && frontmatter.series.collection_id) {

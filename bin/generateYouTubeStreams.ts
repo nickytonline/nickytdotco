@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import yaml from "js-yaml";
+import { dump, load } from "js-yaml";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -263,7 +263,7 @@ function generateMDX(video: YouTubeVideo): string {
     frontmatter.description = video.description;
   }
 
-  const yamlFrontmatter = yaml.dump(frontmatter);
+  const yamlFrontmatter = dump(frontmatter);
   const content = video.description.trim()
     ? `\n${video.description.trim()}\n`
     : "";
@@ -285,7 +285,7 @@ async function readExistingMDX(
       return null;
     }
 
-    const frontmatter = yaml.load(frontmatterMatch[1]) as StreamFrontmatter;
+    const frontmatter = load(frontmatterMatch[1]) as StreamFrontmatter;
     return frontmatter;
   } catch (error) {
     console.warn(

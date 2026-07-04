@@ -6,7 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs/promises";
 import { readFileSync } from "fs";
-import yaml from "js-yaml";
+import { dump } from "js-yaml";
 import siteData from "../src/data/site.ts";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -708,7 +708,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     sanitizeMarkdownEmbeds(markdownBody);
 
   const importsSection = imports.length > 0 ? `${imports.join("\n")}\n\n` : "";
-  const yamlFrontmatter = yaml.dump(jsonFrontmatter);
+  const yamlFrontmatter = dump(jsonFrontmatter);
   const markdown = `---\n${yamlFrontmatter}---\n${importsSection}${sanitizedContent.trim()}\n`;
 
   const basePath = tagArray.includes("vscodetips")
