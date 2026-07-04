@@ -16,7 +16,8 @@ interface Props {
   upcoming?: boolean;
 }
 
-const { title, venueName, venueUrl, date, href, video, coverImage, upcoming } = Astro.props;
+const { title, venueName, venueUrl, date, href, video, coverImage, upcoming } =
+  Astro.props;
 
 let thumbnailUrl: string | undefined;
 if (coverImage) {
@@ -50,9 +51,19 @@ if (coverImage) {
       ) : (
         <div class="relative shrink-0 hidden md:block w-40 aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center">
           {/* subtle dot grid */}
-          <svg class="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            class="absolute inset-0 w-full h-full opacity-[0.07]"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <defs>
-              <pattern id="dots" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+              <pattern
+                id="dots"
+                x="0"
+                y="0"
+                width="12"
+                height="12"
+                patternUnits="userSpaceOnUse"
+              >
                 <circle cx="2" cy="2" r="1.5" fill="currentColor" />
               </pattern>
             </defs>
@@ -79,27 +90,37 @@ if (coverImage) {
       <h3
         class="text-xl font-semibold leading-snug text-balance text-card-foreground"
       >
-        <span class="group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400">
+        <span
+          class="group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400"
+        >
           {title}
         </span>
-        {upcoming && (
-          <span class="inline-flex items-center gap-1 ml-1 px-1.5 py-0.5 rounded-md text-xs font-semibold bg-black text-white border border-white dark:bg-white dark:text-black dark:border-black">
-            <span aria-hidden="true">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
+        {
+          upcoming && (
+            <span class="inline-flex items-center gap-1 ml-1 px-1.5 py-0.5 rounded-md text-xs font-semibold bg-black text-white border border-white dark:bg-white dark:text-black dark:border-black">
+              <span aria-hidden="true">
+                <svg
+                  class="w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </span>
+              <span>Upcoming</span>
             </span>
-            <span class="hidden sm:inline">Upcoming</span>
-            <span class="sr-only sm:hidden">Upcoming</span>
-          </span>
-        )}
+          )
+        }
       </h3>
-      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground">
+      <div
+        class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground"
+      >
         {
           venueUrl ? (
             <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
@@ -111,7 +132,9 @@ if (coverImage) {
             </span>
           )
         }
-        <span class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold">
+        <span
+          class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold"
+        >
           •
         </span>
         <time class="italic text-base text-muted-foreground">{date}</time>
