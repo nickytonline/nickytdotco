@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import "dotenv/config";
-
 import { JSDOM } from "jsdom";
 import path from "path";
 import { fileURLToPath } from "url";

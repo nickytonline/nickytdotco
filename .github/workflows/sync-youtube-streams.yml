@@ -20,9 +20,10 @@ jobs:
 
       - name: Generate stream MDX files
         env:
+          APP_ENV: production
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_PLAYLIST_ID }}
-        run: node bin/generateYouTubeStreams.ts
+        run: vp run generate:streams
 
       - name: Format generated files
         run: vp run format

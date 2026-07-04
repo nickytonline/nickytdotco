@@ -16,6 +16,8 @@
     "format:check": "vp fmt --check . && vp lint --max-warnings 0 .",
     "lint": "vp lint .",
     "lint:fix": "vp lint --fix .",
+    "generate:posts": "varlock run --path env/devto -- node ./bin/generateDevToPosts.ts",
+    "generate:streams": "varlock run --path env/youtube -- node ./bin/generateYouTubeStreams.ts",
     "prepare": "vp config"
   },
   "dependencies": {

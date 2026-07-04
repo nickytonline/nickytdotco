@@ -17,9 +17,10 @@ jobs:
           cache: true
       - name: Get blog posts
         env:
+          APP_ENV: production
           DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
         run: |
-          node bin/generateDevToPosts.ts
+          vp run generate:posts
           vp run format
       - name: Setup git config
         run: |
