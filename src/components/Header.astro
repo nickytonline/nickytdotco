@@ -52,7 +52,9 @@ const currentPath = pathname.slice(1);
           <li>
             <a
               href="/speaking"
-              aria-current={currentPath.startsWith("speaking") ? "page" : "false"}
+              aria-current={currentPath.startsWith("speaking")
+                ? "page"
+                : "false"}
               class="nav-link"
             >
               Speaking
@@ -86,25 +88,6 @@ const currentPath = pathname.slice(1);
                 : "false"}
               class="nav-link">Newsletter</a
             >
-          </li>
-          <li>
-            <a
-              href="/socials"
-              class="nav-link"
-              aria-current={currentPath.startsWith("socials")
-                ? "page"
-                : "false"}
-            >
-              Socials
-            </a>
-          </li>
-          <li>
-            <a
-              href="/uses"
-              class="nav-link"
-              aria-current={currentPath.startsWith("uses") ? "page" : "false"}
-              >Uses
-            </a>
           </li>
           <li>
             <a

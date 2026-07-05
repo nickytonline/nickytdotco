@@ -124,18 +124,25 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
       >
         <slot />
       </main>
-      <footer class="pt-8 text-center px-1">
-        <p class="text-lg text-muted-foreground">
-          Want to stay updated with tech tips? Check out my newsletter:
-          <a
-            href="https://onetipaweek.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
-          >
-            OneTipAWeek.com
-          </a>
-        </p>
+      <footer class="pt-8 text-center px-6">
+        <div
+          class="mx-auto flex max-w-4xl flex-col items-center gap-4 text-lg text-muted-foreground"
+        >
+          <nav aria-label="footer navigation">
+            <ul class="flex list-none flex-wrap justify-center gap-x-6 gap-y-2">
+              <li>
+                <a href="/socials" class="hover:underline focus:underline">
+                  Socials
+                </a>
+              </li>
+              <li>
+                <a href="/uses" class="hover:underline focus:underline">
+                  Uses
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </footer>
     </div>
     <BackToTop />
