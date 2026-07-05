@@ -69,7 +69,7 @@ const EventCalendar = ({
         aria-label={`Add ${eventName} to calendar`}
         ref={refs.setReference}
         {...getReferenceProps()}
-        className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-4 py-2 hover:bg-white dark:hover:bg-gray-900 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:bg-white dark:focus-visible:bg-gray-900 focus-visible:text-pink-600 dark:focus-visible:text-pink-400 border-2 border-pink-600 dark:border-pink-500 hover:border-pink-600 dark:hover:border-pink-500 focus-visible:border-pink-600 dark:focus-visible:border-pink-500 transition-colors"
+        className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-2 py-1 hover:bg-white dark:hover:bg-gray-900 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:bg-white dark:focus-visible:bg-gray-900 focus-visible:text-pink-600 dark:focus-visible:text-pink-400 border-2 border-pink-600 dark:border-pink-500 hover:border-pink-600 dark:hover:border-pink-500 focus-visible:border-pink-600 dark:focus-visible:border-pink-500 transition-colors"
       >
         <Plus className="w-4 h-4" />
         <span>Add to Calendar</span>
