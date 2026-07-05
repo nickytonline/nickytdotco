@@ -33,34 +33,40 @@ const {
 } = Astro.props;
 ---
 
-<div class="stream-card flex flex-col md:flex-row gap-6" data-pagefind-ignore>
+<div class="stream-card group grid md:flex gap-6 xl:gap-8" data-pagefind-ignore>
   {
     image &&
       (videoLink ? (
         <a
           href={videoLink}
-          class="relative shrink-0 hidden md:block w-40 h-40 rounded-xl overflow-hidden"
+          class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden"
           aria-hidden="true"
           tabindex="-1"
         >
           <img
             src={image}
             alt=""
-            class="w-full h-full object-cover object-right"
+            class="w-full h-full object-contain"
+            loading="lazy"
+            decoding="async"
           />
         </a>
       ) : (
-        <div class="relative shrink-0 hidden md:block w-40 h-40 rounded-xl overflow-hidden">
+        <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden">
           <img
             src={image}
             alt=""
-            class="w-full h-full object-cover object-right"
+            class="w-full h-full object-contain"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       ))
   }
-  <div class="flex-1 flex flex-col gap-3">
-    <h3 class="text-2xl font-bold leading-tight text-balance text-foreground">
+  <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
+    <h3
+      class="text-xl font-semibold leading-snug text-balance text-card-foreground"
+    >
       {
         videoLink ? (
           <a
@@ -74,14 +80,12 @@ const {
         )
       }
     </h3>
-    <p class="text-lg text-muted-foreground">{guest}</p>
-    <time class="italic text-base text-muted-foreground font-medium"
+    <p class="text-base text-muted-foreground">{guest}</p>
+    <time class="italic text-base text-muted-foreground font-normal"
       >{datetime}</time
     >
 
-    <div
-      class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-auto flex-wrap"
-    >
+    <div class="flex flex-col md:flex-row md:items-center gap-3 mt-1 flex-wrap">
       <div class="flex items-center gap-3 flex-wrap">
         <span class="text-base text-foreground">Watch live on:</span>
         {

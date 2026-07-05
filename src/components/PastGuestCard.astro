@@ -23,7 +23,7 @@ const guestDate = getLocalizedDate({
 
 const videoId = youtubeStreamLink ? getYouTubeId(youtubeStreamLink) : null;
 const image = videoId
-  ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+  ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
   : undefined;
 const videoPageUrl = youtubeStreamLink
   ? `/videos/${slugifyVideo(title, guestName)}`
@@ -33,34 +33,29 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
 ---
 
 <div
-  class="past-guest-card flex flex-col md:flex-row gap-6"
+  class="past-guest-card group grid md:flex gap-6 xl:gap-8"
   data-pagefind-ignore
 >
   {
     image && videoPageUrl && (
       <a
         href={videoPageUrl}
-        class="relative shrink-0 hidden md:block w-40 h-40 rounded-xl overflow-hidden hover:opacity-90 transition-opacity"
+        class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden hover:opacity-90 transition-opacity"
       >
         <img
           src={image}
           alt={`Watch ${title}`}
-          class="w-full h-full object-cover object-center"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
-        <div class="absolute inset-0 flex items-center justify-center">
-          <svg
-            class="w-16 h-16 text-white opacity-90"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </div>
       </a>
     )
   }
-  <div class="flex-1 flex flex-col gap-3">
-    <h3 class="text-2xl font-bold leading-tight text-balance text-foreground">
+  <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
+    <h3
+      class="text-xl font-semibold leading-snug text-balance text-card-foreground"
+    >
       {
         videoPageUrl ? (
           <a
@@ -74,13 +69,13 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
         )
       }
     </h3>
-    <p class="text-lg text-muted-foreground">{guestInfo}</p>
-    <time class="italic text-base text-muted-foreground font-medium"
+    <p class="text-base text-muted-foreground">{guestInfo}</p>
+    <time class="italic text-base text-muted-foreground font-normal"
       >{guestDate}</time
     >
     {
       youtubeStreamLink && (
-        <div class="flex items-center gap-3 mt-auto">
+        <div class="flex items-center gap-3 mt-1">
           <a
             href={youtubeStreamLink}
             class="text-base text-foreground underline font-medium hover:text-pink-600 focus:text-pink-600 dark:hover:text-pink-400 dark:focus:text-pink-400 outline-none"
