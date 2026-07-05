@@ -20,7 +20,7 @@ const { title, description, date, coverImage, href, source } = Astro.props;
   >
     {
       coverImage ? (
-        <div class="relative shrink-0 hidden md:block w-40 aspect-video rounded-lg overflow-hidden bg-muted">
+        <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden bg-muted">
           <img
             src={coverImage}
             alt=""
@@ -30,7 +30,7 @@ const { title, description, date, coverImage, href, source } = Astro.props;
           />
         </div>
       ) : (
-        <div class="relative shrink-0 hidden md:block w-40 aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+        <div class="relative shrink-0 hidden md:flex w-40 h-22.5 rounded-lg overflow-hidden bg-muted items-center justify-center">
           <svg
             class="w-8 h-8 text-muted-foreground/50"
             fill="none"
@@ -56,11 +56,15 @@ const { title, description, date, coverImage, href, source } = Astro.props;
       <p class="text-base text-muted-foreground leading-relaxed line-clamp-2">
         {description}
       </p>
-      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground">
+      <div
+        class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground"
+      >
         <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
           {source}
         </span>
-        <span class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold">
+        <span
+          class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold"
+        >
           •
         </span>
         <time class="italic text-base text-muted-foreground">{date}</time>
