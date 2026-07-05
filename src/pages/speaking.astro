@@ -7,13 +7,18 @@ import { dateFilter } from "../utils/filters";
 export const prerender = true;
 
 const now = new Date();
-const upcomingTalks = (await getCollection("talks"))
+const allTalks = await getCollection("talks");
+const upcomingTalks = allTalks
   .filter(
     (talk) =>
       talk.data.upcoming === true &&
       (talk.data.endDate ?? talk.data.date) >= now,
   )
   .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+const featuredTalks = allTalks
+  .filter((talk) => talk.data.featured === true && !talk.data.upcoming)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
 ---
 
 <Layout
@@ -28,16 +33,22 @@ const upcomingTalks = (await getCollection("talks"))
         I speak at conferences, meetups, and corporate events about the
         intersection of <strong>Zero Trust security</strong>,
         <strong>MCP (Model Context Protocol)</strong>, and
-        <strong>agentic AI</strong> — plus the open-source tooling and
+        <strong>agentic AI</strong>, along with the open-source tooling and
         infrastructure that makes it production-ready.
       </p>
-      <div class="pt-2">
+      <div class="flex flex-wrap gap-4 pt-2">
         <a
           href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-pink-600 text-white font-semibold text-base hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
         >
           Invite me to speak
           <span class="text-xl">→</span>
+        </a>
+        <a
+          href="/talks"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border font-semibold text-base hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+        >
+          View all talks
         </a>
       </div>
     </header>
@@ -59,8 +70,37 @@ const upcomingTalks = (await getCollection("talks"))
                   venueUrl={talk.data.venue.url}
                   date={dateRange}
                   href={`/talks/${talk.id}`}
+                  video={talk.data.video}
                   coverImage={talk.data.cover_image}
-                  upcoming
+                  upcoming={talk.data.upcoming}
+                />
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      featuredTalks.length > 0 && (
+        <section class="space-y-6">
+          <SectionHeader title="Featured Talks" headingLevel={2} />
+          <div class="grid gap-6 xl:gap-8">
+            {featuredTalks.map((talk) => {
+              const { date, endDate } = talk.data;
+              const dateRange = endDate
+                ? `${dateFilter(date)} – ${dateFilter(endDate)}`
+                : dateFilter(date);
+              return (
+                <TalkCard
+                  title={talk.data.title}
+                  venueName={talk.data.venue.name}
+                  venueUrl={talk.data.venue.url}
+                  date={dateRange}
+                  href={`/talks/${talk.id}`}
+                  video={talk.data.video}
+                  coverImage={talk.data.cover_image}
+                  upcoming={talk.data.upcoming}
                 />
               );
             })}
@@ -72,7 +112,9 @@ const upcomingTalks = (await getCollection("talks"))
     <section class="space-y-6">
       <SectionHeader title="Talk Topics" headingLevel={2} />
       <div class="grid gap-6 lg:grid-cols-2">
-        <div class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6">
+        <div
+          class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6"
+        >
           <h3 class="text-xl font-bold">
             Zero Trust Security for AI Agents &amp; MCP
           </h3>
@@ -84,19 +126,23 @@ const upcomingTalks = (await getCollection("talks"))
           </p>
         </div>
 
-        <div class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6">
+        <div
+          class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6"
+        >
           <h3 class="text-xl font-bold">
             Securing OpenClaw &amp; AI Infrastructure
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Practical hardening of AI development environments — from
+            Practical hardening of AI development environments, from
             trusted-proxy authentication to production-ready deployments.
             Includes live demos of securing OpenClaw and building tools on top
             of it.
           </p>
         </div>
 
-        <div class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6">
+        <div
+          class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6"
+        >
           <h3 class="text-xl font-bold">
             Kubernetes &amp; Cloud-Native Security
           </h3>
@@ -107,10 +153,10 @@ const upcomingTalks = (await getCollection("talks"))
           </p>
         </div>
 
-        <div class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6">
-          <h3 class="text-xl font-bold">
-            Developer Tooling &amp; Open Source
-          </h3>
+        <div
+          class="space-y-3 rounded-xl border border-border bg-secondary/30 p-6"
+        >
+          <h3 class="text-xl font-bold">Developer Tooling &amp; Open Source</h3>
           <p class="text-muted-foreground leading-relaxed">
             Building developer tools, browser extensions, and full-stack
             frameworks that developers actually want to use. Lessons from
@@ -130,35 +176,32 @@ const upcomingTalks = (await getCollection("talks"))
         <strong>KCD</strong>, <strong>DevOpsDays</strong>, and
         <strong>KubeCon</strong>.
       </p>
-      <p class="text-lg leading-relaxed text-muted-foreground">
-        Browse <a
-          href="/talks"
-          class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
-          >all talks</a
-        > for slide decks, recordings, and abstracts.
-      </p>
     </section>
 
     <section class="space-y-6">
       <SectionHeader title="Speaker Bio" headingLevel={2} />
-      <div class="rounded-xl border border-border bg-secondary/30 p-6 space-y-4">
+      <div
+        class="rounded-xl border border-border bg-secondary/30 p-6 space-y-4"
+      >
         <p class="text-lg leading-relaxed text-muted-foreground">
-          <strong>Nick Taylor</strong> is a Developer Advocate at Pomerium and a
-          GitHub Star, <a
+          <strong>Nick Taylor</strong> is a Developer Advocate at Pomerium and a GitHub
+          Star, <a
             href="https://aaif.io/ambassadors/"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none">Agentic AI Foundation (AAIF) Ambassador</a>, AWS Community Builder, and Microsoft MVP.
-          With 20+ years
-          in software, he specializes in the intersection of Zero Trust
-          security, MCP (Model Context Protocol), and agentic AI — helping
-          developers ship secure AI-powered software. He has spoken at
-          conferences across North America and Europe, runs a livestream on
-          Twitch, and publishes the <em>One Tip a Week</em> newsletter.
+            class="text-pink-600 dark:text-pink-400 font-semibold hover:underline focus:underline focus:outline-none"
+            >Agentic AI Foundation (AAIF) Ambassador</a
+          >, AWS Community Builder, and Microsoft MVP. With 20+ years in
+          software, he specializes in the intersection of Zero Trust security,
+          MCP (Model Context Protocol), and agentic AI, helping developers ship
+          secure AI-powered software. He has spoken at conferences across North
+          America and Europe, runs a livestream on Twitch, and publishes the <em
+            >One Tip a Week</em
+          > newsletter.
         </p>
         <p class="text-muted-foreground">
-          Based in Montréal, Quebec, Canada. Available for keynotes,
-          technical deep-dives, workshops, and panels.
+          Based in Montréal, Quebec, Canada. Available for keynotes, technical
+          deep-dives, workshops, and panels.
         </p>
       </div>
     </section>
