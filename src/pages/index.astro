@@ -43,7 +43,9 @@ const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
 // Latest talks: upcoming first (timely), then recent past (excluding featured)
 const upcomingTalks = allTalks
-  .filter((t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now)
+  .filter(
+    (t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now,
+  )
   .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
   .slice(0, 2);
 const pastTalks = allTalks
@@ -68,6 +70,8 @@ const locale =
 let errorMessage = "";
 let schedule: StreamGuestInfo[] = [];
 let pastGuests: StreamGuestInfo[] = [];
+let latestUpcomingStreams: StreamGuestInfo[] = [];
+let latestPastStreams: StreamGuestInfo[] = [];
 
 const scheduleResult = await getLiveCollection("streamSchedule");
 
@@ -76,10 +80,14 @@ if (scheduleResult.error) {
   errorMessage = "Error fetching stream schedule.";
 } else {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
+  latestUpcomingStreams = schedule
+    .filter((stream) => new Date(stream.date).getTime() > now.getTime())
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .slice(0, 2);
 
-  // Only fetch past guests if there are no upcoming streams
-  if (schedule.length === 0) {
+  if (latestUpcomingStreams.length < 2) {
     pastGuests = await fetchPastGuestsWithYouTube();
+    latestPastStreams = pastGuests.slice(0, 2 - latestUpcomingStreams.length);
   }
 }
 
@@ -153,23 +161,23 @@ export const prerender = false;
           Developer. Advocate. Builder.
         </h1>
         <p class="text-lg leading-relaxed text-muted-foreground">
-          <strong class="text-foreground"><em>Hi!</em> I'm Nick Taylor</strong> (<a href="/socials">@nickytonline</a>)
-          — I'm a Developer Advocate at
-          <a
-            href="https://pomerium.com"
-            >Pomerium</a
-          >, where I help developers understand the security layer for AI
-          agents. GitHub Star,
-          Agentic AI Foundation (AAIF) Ambassador, AWS Community Builder, and
-          Microsoft MVP, I write, stream, and speak about Zero Trust security,
-          agentic AI, MCP (Model Context Protocol), and open source.
+          <strong class="text-foreground"><em>Hi!</em> I'm Nick Taylor</strong> (<a
+            href="/socials">@nickytonline</a
+          >) — I'm a Developer Advocate at
+          <a href="https://pomerium.com">Pomerium</a>, where I help developers
+          understand the security layer for AI agents. GitHub Star, Agentic AI
+          Foundation (AAIF) Ambassador, AWS Community Builder, and Microsoft
+          MVP, I write, stream, and speak about Zero Trust security, agentic AI,
+          MCP (Model Context Protocol), and open source.
         </p>
       </div>
     </section>
 
     {/* ── Featured: evergreen, curated best work ── */}
     {
-      featuredTalks.length > 0 || featuredGuides.length > 0 || featuredPosts.length > 0 ? (
+      featuredTalks.length > 0 ||
+      featuredGuides.length > 0 ||
+      featuredPosts.length > 0 ? (
         <section class="space-y-10">
           <SectionHeader title="Featured" headingLevel={2} />
 
@@ -239,33 +247,35 @@ export const prerender = false;
     <section class="space-y-10">
       <SectionHeader title="Latest" headingLevel={2} />
 
-      {recentTalks.length > 0 && (
-        <div>
-          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-            Talks
-          </h3>
-          <div class="grid gap-6 xl:gap-8">
-            {recentTalks.map((talk) => (
-              <TalkCard
-                title={talk.data.title}
-                venueName={talk.data.venue.name}
-                venueUrl={talk.data.venue.url}
-                date={dateFilter(talk.data.date)}
-                href={`/talks/${talk.id}`}
-                video={talk.data.video}
-                coverImage={talk.data.cover_image}
-                upcoming={talk.data.upcoming}
-              />
-            ))}
-            <a
-              href="/talks"
-              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
-            >
-              More talks<span class="text-2xl">→</span>
-            </a>
+      {
+        recentTalks.length > 0 && (
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+              Talks
+            </h3>
+            <div class="grid gap-6 xl:gap-8">
+              {recentTalks.map((talk) => (
+                <TalkCard
+                  title={talk.data.title}
+                  venueName={talk.data.venue.name}
+                  venueUrl={talk.data.venue.url}
+                  date={dateFilter(talk.data.date)}
+                  href={`/talks/${talk.id}`}
+                  video={talk.data.video}
+                  coverImage={talk.data.cover_image}
+                  upcoming={talk.data.upcoming}
+                />
+              ))}
+              <a
+                href="/talks"
+                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+              >
+                More talks<span class="text-2xl">→</span>
+              </a>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
       {
         errorMessage ? (
@@ -278,33 +288,21 @@ export const prerender = false;
         ) : null
       }
       {
-        !errorMessage && schedule.length > 0 ? (
-          <div>
-            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-              Upcoming Live Streams
-            </h3>
-            <StreamSchedule
-              schedule={schedule}
-              locale={locale}
-              timezone={timezone}
-            />
-            <a
-              href="/videos"
-              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
-            >
-              More live streams<span class="text-2xl">→</span>
-            </a>
-          </div>
-        ) : null
-      }
-      {
-        !errorMessage && schedule.length === 0 && pastGuests.length > 0 ? (
+        !errorMessage &&
+        (latestUpcomingStreams.length > 0 || latestPastStreams.length > 0) ? (
           <div>
             <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
               Live Streams
             </h3>
             <div class="grid gap-6 xl:gap-8">
-              {pastGuests.map((guest) => (
+              {latestUpcomingStreams.length > 0 && (
+                <StreamSchedule
+                  schedule={latestUpcomingStreams}
+                  locale={locale}
+                  timezone={timezone}
+                />
+              )}
+              {latestPastStreams.map((guest) => (
                 <PastGuestCard
                   guest={guest}
                   locale={locale}
@@ -322,28 +320,31 @@ export const prerender = false;
         ) : null
       }
 
-      {recentPosts.length > 0 && (
-        <div>
-          <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-            Blog Posts
-          </h3>
-          <div class="grid gap-6 xl:gap-8">
-            {recentPosts.map((post) => (
-              <BlogPostCard
-                title={post.data.title}
-                date={dateFilter(post.data.date)}
-                image={post.data.cover_image}
-                href={`/blog/${post.id}`}
-              />
-            ))}
-            <a
-              href="/blog"
-              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600">
-              More blog posts<span class="text-2xl">→</span>
-            </a>
+      {
+        recentPosts.length > 0 && (
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
+              Blog Posts
+            </h3>
+            <div class="grid gap-6 xl:gap-8">
+              {recentPosts.map((post) => (
+                <BlogPostCard
+                  title={post.data.title}
+                  date={dateFilter(post.data.date)}
+                  image={post.data.cover_image}
+                  href={`/blog/${post.id}`}
+                />
+              ))}
+              <a
+                href="/blog"
+                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+              >
+                More blog posts<span class="text-2xl">→</span>
+              </a>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
     </section>
 
     {/* ── Explore: gateway links for specific audiences ── */}
