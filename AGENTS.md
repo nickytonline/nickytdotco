@@ -43,6 +43,14 @@
 - TypeScript: explicit types when helpful; unused vars use `_` prefix.
 - Naming: content slugs are kebab-case.
 
+## Design System & Styling
+
+- Tailwind v4 theme tokens live in `src/styles/global.css` under `:root`, `.dark`, and `@theme inline`.
+- Prefer semantic color utilities: `bg-background`, `text-foreground`, `text-muted-foreground`, `bg-card`, `text-card-foreground`, `bg-secondary`, `text-secondary-foreground`, `bg-popover`, `text-popover-foreground`, `border-border`, `text-brand`, `bg-brand-solid`, `bg-brand-soft`, `text-warning-foreground`, and `bg-warning-soft`.
+- Do not introduce raw palette classes such as `text-pink-*`, `bg-rose-*`, `text-gray-*`, `text-red-*`, or arbitrary color utilities like `text-[#...]` in UI code. Add or reuse a named token in `global.css` instead.
+- Third-party brand colors are allowed only through named tokens such as `text-youtube` and `text-twitch`.
+- Keep Tailwind utility classes for layout, spacing, typography, and state, but route color decisions through the design tokens.
+
 ## Change Hygiene
 
 - Do not edit `dist/` or `node_modules/` directly.

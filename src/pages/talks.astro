@@ -55,7 +55,7 @@ const years = Object.keys(talksByYear)
             {years.map((year) => (
               <a
                 href={`#year-${year}`}
-                class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none transition-colors shrink-0"
+                class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-white focus:bg-brand-solid focus:text-white dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none transition-colors shrink-0"
               >
                 {year}
               </a>
@@ -68,7 +68,7 @@ const years = Object.keys(talksByYear)
     <div class="mt-6">
       <a
         href="/tags/talks/"
-        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
+        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand"
       >
         Browse by tag<span class="text-2xl">→</span>
       </a>
@@ -79,7 +79,7 @@ const years = Object.keys(talksByYear)
     {
       years.map((year) => (
         <div id={`year-${year}`} class="scroll-mt-24">
-          <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
+          <div class="mb-6 py-3 border-l-4 border-brand dark:border-brand pl-6 bg-linear-to-r from-brand-soft dark:from-brand-soft to-transparent flex items-center">
             <h2 class="text-4xl font-bold text-foreground leading-none">
               {year}
             </h2>
@@ -153,7 +153,7 @@ const years = Object.keys(talksByYear)
                       <h3 class="text-xl font-bold">
                         <a
                           href={`/talks/${slug}`}
-                          class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
                         >
                           {talk.data.title}
                         </a>
@@ -164,16 +164,16 @@ const years = Object.keys(talksByYear)
                             href={talk.data.venue.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="text-base font-semibold text-pink-600 dark:text-pink-400 hover:underline focus:underline focus:outline-none"
+                            class="text-base font-semibold text-brand hover:underline focus:underline focus:outline-none"
                           >
                             {talk.data.venue.name}
                           </a>
                         ) : (
-                          <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
+                          <span class="text-base font-semibold text-brand">
                             {talk.data.venue.name}
                           </span>
                         )}
-                        <span class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold">
+                        <span class="hidden sm:inline text-brand font-semibold">
                           •
                         </span>
                         <span class="italic text-base">

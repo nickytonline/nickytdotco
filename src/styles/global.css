@@ -27,6 +27,20 @@
   --color-theme-feature-text: #fedb8b;
   --link: oklch(0.656 0.241 354.308);
   --link-hover: oklch(0.592 0.249 0.584);
+  --brand: oklch(0.592 0.249 0.584);
+  --brand-hover: oklch(0.525 0.223 3.958);
+  --brand-solid: var(--brand);
+  --brand-solid-hover: var(--brand-hover);
+  --brand-foreground: oklch(1 0 0);
+  --brand-soft: oklch(0.969 0.015 12.422);
+  --brand-soft-foreground: oklch(0.459 0.187 3.815);
+  --brand-border: oklch(0.592 0.249 0.584 / 50%);
+  --warning: oklch(0.828 0.189 84.429);
+  --warning-foreground: oklch(0.473 0.137 46.201);
+  --warning-soft: oklch(0.987 0.022 95.277);
+  --warning-border: oklch(0.924 0.12 95.746);
+  --youtube: #ff0000;
+  --twitch: #9146ff;
   --flow-space: 1.5rem;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -88,7 +102,7 @@ h6 {
 
 /* Heading anchor links */
 .heading-anchor {
-  @apply opacity-0 no-underline ml-2 text-pink-600 focus:opacity-100 focus:outline-none;
+  @apply opacity-0 no-underline ml-2 text-brand focus:opacity-100 focus:outline-none;
 }
 
 .heading-anchor:hover,
@@ -183,8 +197,8 @@ html {
 
 a:not([class]) {
   text-decoration: underline;
-  @apply decoration-pink-600;
-  @apply dark:decoration-pink-400;
+  @apply decoration-brand;
+  @apply dark:decoration-brand;
   @apply underline-offset-4;
   @apply outline-none;
 }
@@ -192,8 +206,8 @@ a:not([class]) {
 nav a[aria-current="page"],
 a:not([class]):hover,
 a:not([class]):focus {
-  @apply decoration-pink-600;
-  @apply dark:decoration-pink-400;
+  @apply decoration-brand;
+  @apply dark:decoration-brand;
   @apply underline;
   @apply decoration-4;
   @apply outline-none;
@@ -205,20 +219,20 @@ nav a:not([aria-current="page"]) {
 
 nav a:not([aria-current="page"]):hover,
 nav a:not([aria-current="page"]):focus {
-  @apply underline decoration-pink-600 dark:decoration-pink-400 decoration-4;
+  @apply underline decoration-brand dark:decoration-brand decoration-4;
 }
 
 /* Navigation link component styles */
 .nav-link {
-  @apply hover:text-pink-600 hover:dark:text-pink-400;
-  @apply hover:underline hover:decoration-pink-600 hover:dark:decoration-pink-400;
+  @apply hover:text-brand;
+  @apply hover:underline hover:decoration-brand hover:dark:decoration-brand;
   @apply hover:decoration-4 hover:underline-offset-4;
-  @apply focus:text-pink-600 focus:dark:text-pink-400;
-  @apply focus:underline focus:decoration-pink-600 focus:dark:decoration-pink-400;
+  @apply focus:text-brand;
+  @apply focus:underline focus:decoration-brand focus:dark:decoration-brand;
   @apply focus:decoration-4 focus:underline-offset-4 focus:outline-none;
-  @apply aria-[current=page]:text-pink-600 aria-[current=page]:dark:text-pink-400;
-  @apply aria-[current=page]:underline aria-[current=page]:decoration-pink-600;
-  @apply aria-[current=page]:dark:decoration-pink-400 aria-[current=page]:decoration-4;
+  @apply aria-[current=page]:text-brand;
+  @apply aria-[current=page]:underline aria-[current=page]:decoration-brand;
+  @apply aria-[current=page]:dark:decoration-brand aria-[current=page]:decoration-4;
   @apply aria-[current=page]:underline-offset-4;
 }
 
@@ -266,6 +280,20 @@ nav a:not([aria-current="page"]):focus {
   --color-sidebar-ring: var(--sidebar-ring);
   --color-link: var(--link);
   --color-link-hover: var(--link-hover);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-solid: var(--brand-solid);
+  --color-brand-solid-hover: var(--brand-solid-hover);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-soft-foreground: var(--brand-soft-foreground);
+  --color-brand-border: var(--brand-border);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-border: var(--warning-border);
+  --color-youtube: var(--youtube);
+  --color-twitch: var(--twitch);
 }
 
 .dark {
@@ -303,16 +331,28 @@ nav a:not([aria-current="page"]):focus {
   --color-theme-feature-text: #ffc857;
   --link: oklch(0.718 0.202 349.761);
   --link-hover: oklch(0.823 0.12 346.018);
+  --brand: oklch(0.718 0.202 349.761);
+  --brand-hover: oklch(0.823 0.12 346.018);
+  --brand-solid: oklch(0.656 0.241 354.308);
+  --brand-solid-hover: oklch(0.592 0.249 0.584);
+  --brand-foreground: oklch(1 0 0);
+  --brand-soft: oklch(0.408 0.153 2.432 / 30%);
+  --brand-soft-foreground: var(--brand);
+  --brand-border: oklch(0.718 0.202 349.761 / 50%);
+  --warning: oklch(0.769 0.188 70.08);
+  --warning-foreground: oklch(0.924 0.12 95.746);
+  --warning-soft: oklch(0.473 0.137 46.201 / 30%);
+  --warning-border: oklch(0.473 0.137 46.201);
 }
 
 /* Dark mode heading anchor improvements */
 .dark .heading-anchor {
-  @apply text-pink-400;
+  @apply text-brand;
 }
 
 /* Pagefind search highlights */
 mark {
-  @apply bg-pink-100 dark:bg-pink-900/50 text-pink-700 dark:text-pink-300 rounded px-1 font-semibold;
+  @apply bg-brand-soft dark:bg-brand-soft text-brand-soft-foreground dark:text-brand rounded px-1 font-semibold;
 }
 
 @layer base {

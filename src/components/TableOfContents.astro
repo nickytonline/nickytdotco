@@ -18,7 +18,7 @@ if (filteredHeadings.length === 0) return null;
 
 <details class="mb-8 py-2 data-[pagefind-ignore]" open data-pagefind-ignore>
   <summary
-    class="font-heading font-bold text-xl cursor-pointer list-none flex items-center gap-2 hover:text-primary-glare dark:hover:text-highlight transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-glare"
+    class="font-heading font-bold text-xl cursor-pointer list-none flex items-center gap-2 hover:text-brand transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ if (filteredHeadings.length === 0) return null;
     Table of Contents
   </summary>
   <nav
-    class="mt-4 border-l-2 border-primary/10 dark:border-primary-glare/20 ml-2"
+    class="mt-4 border-l-2 border-brand-border ml-2"
     aria-label="Table of Contents"
   >
     <ul class="space-y-1">
@@ -55,7 +55,7 @@ if (filteredHeadings.length === 0) return null;
           >
             <a
               href={`#${heading.slug}`}
-              class="text-primary-glare dark:text-mid hover:text-primary-shade dark:hover:text-highlight hover:underline underline-offset-4 decoration-highlight decoration-2 transition-all block focus-visible:outline-none focus-visible:underline decoration-3"
+              class="text-muted-foreground hover:text-brand hover:underline underline-offset-4 decoration-brand decoration-2 transition-all block focus-visible:outline-none focus-visible:underline"
             >
               {heading.text}
             </a>

@@ -54,7 +54,7 @@ const years = Object.keys(streamsByYear)
     {
       years.map((year) => (
         <div id={`year-${year}`} class="scroll-mt-24">
-          <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
+          <div class="mb-6 py-3 border-l-4 border-brand dark:border-brand pl-6 bg-linear-to-r from-brand-soft dark:from-brand-soft to-transparent flex items-center">
             <h2 class="text-4xl font-bold text-foreground leading-none">
               {year}
             </h2>
@@ -97,7 +97,7 @@ const years = Object.keys(streamsByYear)
                       <h3 class="text-xl font-bold">
                         <a
                           href={`/videos/${slug}`}
-                          class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
                         >
                           {stream.data.title}
                         </a>

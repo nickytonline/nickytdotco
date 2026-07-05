@@ -23,11 +23,11 @@ const hasContent = (talks && talks.length > 0) || (posts && posts.length > 0);
                 href={`/talks/${talk.id}`}
                 class="group block no-underline outline-none transition-colors"
               >
-                <h3 class="text-lg font-semibold text-foreground group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400">
+                <h3 class="text-lg font-semibold text-foreground group-hover:text-brand group-hover:underline group-focus:text-brand group-focus:underline dark:group-hover:text-brand dark:group-focus:text-brand">
                   {talk.data.title}
                 </h3>
                 <div class="flex flex-wrap items-center gap-2 text-sm text-muted-foreground mt-1">
-                  <span class="font-medium text-pink-600 dark:text-pink-400">
+                  <span class="font-medium text-brand">
                     {talk.data.venue.name}
                   </span>
                   <span>•</span>
@@ -50,7 +50,7 @@ const hasContent = (talks && talks.length > 0) || (posts && posts.length > 0);
                 href={`/blog/${post.id}`}
                 class="group block no-underline outline-none transition-colors"
               >
-                <h3 class="text-lg font-semibold text-foreground group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400">
+                <h3 class="text-lg font-semibold text-foreground group-hover:text-brand group-hover:underline group-focus:text-brand group-focus:underline dark:group-hover:text-brand dark:group-focus:text-brand">
                   {post.data.title}
                 </h3>
                 <div class="flex flex-wrap items-center gap-2 text-sm text-muted-foreground mt-1">

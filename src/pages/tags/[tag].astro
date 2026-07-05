@@ -107,20 +107,20 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
         <div class="mt-6 flex flex-wrap items-center gap-4">
           <a
             href={`/tags/${tag}`}
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-pink-600 text-white dark:bg-pink-500 focus:outline-none"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-brand-solid text-white dark:bg-brand-solid focus:outline-none"
             aria-current="page"
           >
             All Content
           </a>
           <a
             href={`/tags/${tag}/blog`}
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-white focus:bg-brand-solid focus:text-white dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none"
           >
             Blog Posts
           </a>
           <a
             href={`/tags/${tag}/talks`}
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white dark:hover:bg-pink-500 dark:focus:bg-pink-500 focus:outline-none"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-white focus:bg-brand-solid focus:text-white dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none"
           >
             Talks
           </a>
@@ -131,7 +131,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
     <div class="mt-6">
       <a
         href="/tags"
-        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
+        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand"
       >
         View all tags<span class="text-2xl">→</span>
       </a>
@@ -142,7 +142,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
     {
       sortedBlogPosts.length > 0 && (
         <section>
-          <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
+          <div class="mb-6 py-3 border-l-4 border-brand dark:border-brand pl-6 bg-linear-to-r from-brand-soft dark:from-brand-soft to-transparent flex items-center">
             <div>
               <h2 class="text-3xl font-bold text-foreground leading-none">
                 Blog Posts
@@ -166,7 +166,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
                       <h3 class="text-xl font-bold">
                         <a
                           href={`/blog/${slug}`}
-                          class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
                         >
                           {post.data.title}
                         </a>
@@ -177,10 +177,10 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
                         </span>
                         {readTime && (
                           <>
-                            <span class="text-pink-600 dark:text-pink-400 font-semibold">
+                            <span class="text-brand font-semibold">
                               •
                             </span>
-                            <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
+                            <span class="text-base font-semibold text-brand">
                               {readTime}
                             </span>
                           </>
@@ -199,7 +199,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
     {
       sortedTalks.length > 0 && (
         <section>
-          <div class="mb-6 py-3 border-l-4 border-pink-600 dark:border-pink-400 pl-6 bg-linear-to-r from-rose-50 dark:from-pink-900/20 to-transparent flex items-center">
+          <div class="mb-6 py-3 border-l-4 border-brand dark:border-brand pl-6 bg-linear-to-r from-brand-soft dark:from-brand-soft to-transparent flex items-center">
             <div>
               <h2 class="text-3xl font-bold text-foreground leading-none">
                 Talks
@@ -220,16 +220,16 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
                       <h3 class="text-xl font-bold">
                         <a
                           href={`/talks/${slug}`}
-                          class="text-foreground hover:text-pink-600 hover:underline focus:text-pink-600 focus:underline dark:hover:text-pink-400 dark:focus:text-pink-400 focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
                         >
                           {talk.data.title}
                         </a>
                       </h3>
                       <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground mt-2">
-                        <span class="text-base font-semibold text-pink-600 dark:text-pink-400">
+                        <span class="text-base font-semibold text-brand">
                           {talk.data.venue.name}
                         </span>
-                        <span class="hidden sm:inline text-pink-600 dark:text-pink-400 font-semibold">
+                        <span class="hidden sm:inline text-brand font-semibold">
                           •
                         </span>
                         <span class="italic text-base">

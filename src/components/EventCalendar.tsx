@@ -69,7 +69,7 @@ const EventCalendar = ({
         aria-label={`Add ${eventName} to calendar`}
         ref={refs.setReference}
         {...getReferenceProps()}
-        className="flex gap-2 items-center rounded-md bg-link text-white dark:text-gray-950 px-2 py-1 hover:bg-white dark:hover:bg-gray-900 hover:text-link focus-visible:bg-white dark:focus-visible:bg-gray-900 focus-visible:text-link border-2 border-link hover:border-link focus-visible:border-link transition-colors"
+        className="flex gap-2 items-center rounded-md bg-brand-solid text-brand-foreground px-2 py-1 hover:bg-background hover:text-brand focus-visible:bg-background focus-visible:text-brand border-2 border-brand hover:border-brand focus-visible:border-brand transition-colors"
       >
         <Plus className="w-4 h-4" />
         <span>Add to Calendar</span>
@@ -82,7 +82,7 @@ const EventCalendar = ({
           {...getFloatingProps()}
           className="z-50"
         >
-          <ul className="p-4 grid gap-4 border-2 border-link rounded-md [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-white dark:bg-gray-900 shadow-lg">
+          <ul className="p-4 grid gap-4 border-2 border-brand rounded-md [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-popover text-popover-foreground shadow-lg">
             <li>
               <a
                 href={generateGoogleCalendarUrl({
@@ -94,7 +94,7 @@ const EventCalendar = ({
                 })}
                 target="_blank"
                 role="menuitem"
-                className="flex items-center gap-2 text-gray-900 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 focus-within:text-pink-600 dark:focus-within:text-pink-400 transition-colors focus:outline-none"
+                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors focus:outline-none"
               >
                 <CalendarPlus className="w-4 h-4" />
                 Google Calendar
@@ -111,7 +111,7 @@ const EventCalendar = ({
                 })}
                 target="_blank"
                 role="menuitem"
-                className="flex items-center gap-2 text-gray-900 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 focus-within:text-pink-600 dark:focus-within:text-pink-400 transition-colors focus:outline-none"
+                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors focus:outline-none"
               >
                 <CalendarPlus className="w-4 h-4" />
                 Outlook Calendar
@@ -128,7 +128,7 @@ const EventCalendar = ({
                 })}
                 download="event.ics"
                 role="menuitem"
-                className="flex items-center gap-2 text-gray-900 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 focus-within:text-pink-600 dark:focus-within:text-pink-400 transition-colors focus:outline-none"
+                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors focus:outline-none"
               >
                 <CalendarPlus className="w-4 h-4" />
                 iCal/Apple Calendar

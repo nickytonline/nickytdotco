@@ -89,7 +89,7 @@ export const prerender = false;
       <div class="mt-6">
         <a
           href="/videos"
-          class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-pink-600 dark:hover:text-pink-400"
+          class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand"
         >
           Browse video archives<span class="text-2xl">→</span>
         </a>
@@ -102,7 +102,7 @@ export const prerender = false;
           <h2 class="text-2xl lg:text-3xl font-bold mb-6 font-heading">
             Upcoming Live Streams
           </h2>
-          <p class="text-red-600">{errorMessage}</p>
+          <p class="text-destructive">{errorMessage}</p>
         </section>
       )
     }
@@ -152,7 +152,7 @@ export const prerender = false;
                           />
                         </div>
                         <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
-                          <h3 class="text-xl font-semibold leading-snug text-balance text-card-foreground group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400">
+                          <h3 class="text-xl font-semibold leading-snug text-balance text-card-foreground group-hover:text-brand group-hover:underline group-focus:text-brand group-focus:underline dark:group-hover:text-brand dark:group-focus:text-brand">
                             {video.title}
                           </h3>
                           <time class="italic text-base text-muted-foreground font-normal">
@@ -170,7 +170,7 @@ export const prerender = false;
               })}
               <a
                 href="/videos"
-                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-brand"
               >
                 More videos<span class="text-2xl">→</span>
               </a>
@@ -192,7 +192,7 @@ export const prerender = false;
           class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
         >
           <svg
-            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
@@ -203,7 +203,7 @@ export const prerender = false;
           </svg>
           <div class="flex-1">
             <h3
-              class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+              class="text-xl font-semibold mb-1 text-brand group-hover:underline group-focus:underline"
             >
               YouTube
             </h3>
@@ -221,7 +221,7 @@ export const prerender = false;
           class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
         >
           <svg
-            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#9146FF] group-focus:text-[#9146FF] transition-colors"
+            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-twitch group-focus:text-twitch transition-colors"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
@@ -232,7 +232,7 @@ export const prerender = false;
           </svg>
           <div class="flex-1">
             <h3
-              class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+              class="text-xl font-semibold mb-1 text-brand group-hover:underline group-focus:underline"
             >
               Twitch
             </h3>
@@ -250,7 +250,7 @@ export const prerender = false;
           class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
         >
           <svg
-            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
@@ -261,7 +261,7 @@ export const prerender = false;
           </svg>
           <div class="flex-1">
             <h3
-              class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+              class="text-xl font-semibold mb-1 text-brand group-hover:underline group-focus:underline"
             >
               Guest Appearances
             </h3>
@@ -278,7 +278,7 @@ export const prerender = false;
           class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
         >
           <svg
-            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
@@ -289,7 +289,7 @@ export const prerender = false;
           </svg>
           <div class="flex-1">
             <h3
-              class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+              class="text-xl font-semibold mb-1 text-brand group-hover:underline group-focus:underline"
             >
               Pomerium Live
             </h3>
@@ -314,7 +314,7 @@ export const prerender = false;
           class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
         >
           <svg
-            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
@@ -325,7 +325,7 @@ export const prerender = false;
           </svg>
           <div class="flex-1">
             <h3
-              class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+              class="text-xl font-semibold mb-1 text-brand group-hover:underline group-focus:underline"
             >
               2 Full 2 Stack
             </h3>
@@ -343,7 +343,7 @@ export const prerender = false;
           class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
         >
           <svg
-            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-[#FF0000] group-focus:text-[#FF0000] transition-colors"
+            class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
@@ -354,7 +354,7 @@ export const prerender = false;
           </svg>
           <div class="flex-1">
             <h3
-              class="text-xl font-semibold mb-1 text-pink-600 dark:text-pink-400 group-hover:underline group-focus:underline"
+              class="text-xl font-semibold mb-1 text-brand group-hover:underline group-focus:underline"
             >
               The Practical Dev
             </h3>

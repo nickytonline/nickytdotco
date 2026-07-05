@@ -10,14 +10,14 @@ const { project } = Astro.props;
 ---
 
 <article
-  class="relative group p-6 h-full rounded-xl border border-muted bg-card hover:border-pink-600/50 transition-all shadow-sm hover:shadow-md outline-none focus-within:ring-2 focus-within:ring-pink-600 focus-within:ring-offset-2"
+  class="relative group p-6 h-full rounded-xl border border-muted bg-card hover:border-brand/50 transition-all shadow-sm hover:shadow-md outline-none focus-within:ring-2 focus-within:ring-brand focus-within:ring-offset-2"
 >
   <div class="flex flex-col h-full">
     <div class="flex items-start justify-between mb-2">
       <div class="flex flex-col">
         <span class="text-xs text-muted-foreground mb-1">{project.owner}/</span>
         <h3
-          class="text-xl font-bold text-foreground group-hover:text-pink-600 dark:group-hover:text-pink-400 group-focus-within:text-pink-600 dark:group-focus-within:text-pink-400 transition-colors"
+          class="text-xl font-bold text-foreground group-hover:text-brand group-focus-within:text-brand transition-colors"
         >
           <a
             href={project.url}

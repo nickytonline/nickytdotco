@@ -98,12 +98,12 @@ if (video?.type === "youtube") {
                 href={venueUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-semibold text-pink-600 dark:text-pink-400 hover:underline focus:underline focus:outline-none"
+                class="font-semibold text-brand hover:underline focus:underline focus:outline-none"
               >
                 {venue.name}
               </a>
             ) : (
-              <span class="font-semibold text-pink-600 dark:text-pink-400">
+              <span class="font-semibold text-brand">
                 {venue.name}
               </span>
             )
@@ -114,7 +114,7 @@ if (video?.type === "youtube") {
           {venueLocation && <span>{venueLocation}</span>}
           {
             venueLocation && (
-              <span class="text-pink-600 dark:text-pink-400 font-semibold">
+              <span class="text-brand font-semibold">
                 •
               </span>
             )
@@ -206,7 +206,7 @@ if (video?.type === "youtube") {
               href={slideDeck}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-5 py-2.5 bg-pink-600 text-white font-semibold rounded-lg hover:bg-pink-700 focus:bg-pink-700 focus:outline-none transition-colors"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-solid text-white font-semibold rounded-lg hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:outline-none transition-colors"
             >
               <svg
                 class="w-5 h-5"
@@ -242,7 +242,7 @@ if (video?.type === "youtube") {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-pink-600 dark:border-pink-400 text-pink-600 dark:text-pink-400 font-semibold rounded-lg hover:bg-pink-600 hover:text-white dark:hover:bg-pink-500 focus:bg-pink-600 focus:text-white dark:focus:bg-pink-500 focus:outline-none transition-colors"
+              class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-brand dark:border-brand text-brand font-semibold rounded-lg hover:bg-brand-solid hover:text-white dark:hover:bg-brand-solid focus:bg-brand-solid focus:text-white dark:focus:bg-brand-solid focus:outline-none transition-colors"
             >
               {link.title}
             </a>

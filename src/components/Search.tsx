@@ -162,7 +162,7 @@ const Search = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="inline-flex hover:text-pink-600 hover:dark:text-pink-400 focus:text-pink-600 focus:dark:text-pink-400 focus:outline-none transition-colors"
+        className="inline-flex hover:text-brand focus:text-brand focus:outline-none transition-colors"
         aria-label="Search site"
       >
         <SearchIcon className="w-4.5 h-4.5 lg:w-5 lg:h-5" strokeWidth={3} />
@@ -183,7 +183,7 @@ const Search = () => {
               ref={inputRef}
               type="text"
               placeholder="Search posts, talks, projects... (shortcut: /)"
-              className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-pink-600 text-lg"
+              className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-brand text-lg"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -192,7 +192,7 @@ const Search = () => {
 
         <div className="max-h-[60vh] overflow-y-auto p-4">
           {import.meta.env.DEV && (
-            <div className="bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 p-4 rounded-md mb-4 text-center text-sm border border-amber-200 dark:border-amber-800">
+            <div className="bg-warning-soft dark:bg-warning-soft text-warning-foreground dark:text-warning-foreground p-4 rounded-md mb-4 text-center text-sm border border-warning-border dark:border-warning-border">
               Note: Search results are only available after a production build.
             </div>
           )}
@@ -219,7 +219,7 @@ const Search = () => {
                       onMouseEnter={() => setSelectedIndex(index)}
                       className={`block p-4 rounded-lg transition-colors border outline-none ${
                         isSelected
-                          ? "bg-secondary border-pink-600/30 dark:border-pink-400/30 ring-1 ring-pink-600/20 dark:ring-pink-400/20"
+                          ? "bg-secondary border-brand/30 dark:border-brand/30 ring-1 ring-brand/20 dark:ring-brand/20"
                           : "hover:bg-secondary border-transparent"
                       }`}
                     >
@@ -228,8 +228,8 @@ const Search = () => {
                           <h3
                             className={`font-bold text-lg transition-colors ${
                               isSelected
-                                ? "text-pink-600 dark:text-pink-400"
-                                : "group-hover:text-pink-600 group-focus:text-pink-600"
+                                ? "text-brand"
+                                : "group-hover:text-brand group-focus:text-brand"
                             }`}
                           >
                             {result.meta.title}
@@ -254,7 +254,7 @@ const Search = () => {
             <div className="text-center text-muted-foreground py-12">
               {import.meta.env.DEV ? (
                 <div className="space-y-4">
-                  <p className="text-lg font-semibold text-amber-600 dark:text-amber-400">
+                  <p className="text-lg font-semibold text-warning-foreground dark:text-warning-foreground">
                     Search is unavailable in development
                   </p>
                   <p className="text-sm max-w-md mx-auto">
