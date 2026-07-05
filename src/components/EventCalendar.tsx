@@ -69,7 +69,7 @@ const EventCalendar = ({
         aria-label={`Add ${eventName} to calendar`}
         ref={refs.setReference}
         {...getReferenceProps()}
-        className="flex gap-2 items-center rounded-md bg-pink-600 text-white px-2 py-1 hover:bg-white dark:hover:bg-gray-900 hover:text-pink-600 dark:hover:text-pink-400 focus-visible:bg-white dark:focus-visible:bg-gray-900 focus-visible:text-pink-600 dark:focus-visible:text-pink-400 border-2 border-pink-600 dark:border-pink-500 hover:border-pink-600 dark:hover:border-pink-500 focus-visible:border-pink-600 dark:focus-visible:border-pink-500 transition-colors"
+        className="flex gap-2 items-center rounded-md bg-link text-white dark:text-gray-950 px-2 py-1 hover:bg-white dark:hover:bg-gray-900 hover:text-link focus-visible:bg-white dark:focus-visible:bg-gray-900 focus-visible:text-link border-2 border-link hover:border-link focus-visible:border-link transition-colors"
       >
         <Plus className="w-4 h-4" />
         <span>Add to Calendar</span>
@@ -82,7 +82,7 @@ const EventCalendar = ({
           {...getFloatingProps()}
           className="z-50"
         >
-          <ul className="p-4 grid gap-4 border-2 border-pink-600 rounded-md [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-white dark:bg-gray-900 shadow-lg">
+          <ul className="p-4 grid gap-4 border-2 border-link rounded-md [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-white dark:bg-gray-900 shadow-lg">
             <li>
               <a
                 href={generateGoogleCalendarUrl({
