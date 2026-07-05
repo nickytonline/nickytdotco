@@ -8,6 +8,7 @@ import { getRelatedTalks, getRelatedPostsForTalk } from "../../utils/tag-utils";
 import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
+import UpcomingBadge from "../../components/UpcomingBadge.astro";
 export const prerender = true;
 
 export async function getStaticPaths() {
@@ -107,28 +108,17 @@ if (video?.type === "youtube") {
               </span>
             )
           }
-          {isUpcoming && (
-            <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-xs font-semibold bg-black text-white border border-white dark:bg-white dark:text-black dark:border-black">
-              <span aria-hidden="true">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </span>
-              <span class="hidden sm:inline">Upcoming</span>
-              <span class="sr-only sm:hidden">Upcoming</span>
-            </span>
-          )}
+          {isUpcoming && <UpcomingBadge />}
         </div>
         <div class="flex flex-wrap items-center gap-2">
           {venueLocation && <span>{venueLocation}</span>}
-          {venueLocation && (
-            <span class="text-pink-600 dark:text-pink-400 font-semibold">•</span>
-          )}
+          {
+            venueLocation && (
+              <span class="text-pink-600 dark:text-pink-400 font-semibold">
+                •
+              </span>
+            )
+          }
           <time datetime={date.toISOString()} class="italic">
             {dateDisplay}
           </time>
@@ -142,7 +132,14 @@ if (video?.type === "youtube") {
           {video.type === "youtube" && (
             <YouTubeEmbed
               videoId={getYouTubeId(video.url) || ""}
-              startTime={(() => { try { const t = new URL(video.url).searchParams.get("t"); return t ? t.replace(/s$/, "") : undefined; } catch { return undefined; } })()}
+              startTime={(() => {
+                try {
+                  const t = new URL(video.url).searchParams.get("t");
+                  return t ? t.replace(/s$/, "") : undefined;
+                } catch {
+                  return undefined;
+                }
+              })()}
               title={title}
             />
           )}
