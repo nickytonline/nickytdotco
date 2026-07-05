@@ -1,18 +1,13 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
-import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";
 import StreamSchedule from "@/components/StreamSchedule.astro";
 import type { StreamGuestInfo } from "@/utils/schedule-utils";
+import { dateFilter } from "@/utils/filters";
 import { getLiveCollection } from "astro:content";
-import type { YouTubeVideo } from "@/utils/youtube-utils";
-import {
-  getVideos,
-  getYouTubeId,
-  DEFAULT_YT_FEED_URL,
-  POMERIUM_LIVE_PLAYLIST_FEED_URL,
-  sanitizeVideoDescription,
-} from "@/utils/youtube-utils";
+import type { StreamVideoInfo } from "@/content/_loaders/stream-videos";
+import { getYouTubeId } from "@/utils/youtube-utils";
+import { slugifyVideo } from "@/utils/video-utils";
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
@@ -31,57 +26,33 @@ if (scheduleResult.error) {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
 }
 
-// Fetch recent videos from both channels and pick the newest completed stream.
-let latestVideo = null;
-let videoId = null;
-try {
+let latestVideos: StreamVideoInfo[] = [];
+const streamVideosResult = await getLiveCollection("streamVideos");
+
+if (streamVideosResult.error) {
+  console.error("Error fetching stream videos:", streamVideosResult.error);
+} else {
   const now = Date.now();
-  const upcomingVideoIds = new Set(
-    schedule
-      .filter((stream) => new Date(stream.date).getTime() > now)
-      .map((stream) =>
-        stream.youtubeStreamLink
-          ? getYouTubeId(stream.youtubeStreamLink)
-          : null,
-      )
-      .filter((id): id is string => Boolean(id)),
+
+  const pastVideos =
+    streamVideosResult.entries
+      ?.map((entry) => entry.data)
+      .filter((video) => new Date(video.date).getTime() <= now)
+      .sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+      ) ?? [];
+
+  const latestOverallVideos = pastVideos.slice(0, 2);
+  const latestNickytLiveVideo = pastVideos.find(
+    (video) => video.type === "nickyt.live",
   );
-  const isPastVideo = (video: YouTubeVideo) => {
-    const id = getYouTubeId(video.link);
 
-    return (
-      !video.link.includes("/shorts/") &&
-      new Date(video.date).getTime() <= now &&
-      (!id || !upcomingVideoIds.has(id))
-    );
-  };
-
-  const [personalVideos, pomeriumVideos] = await Promise.all([
-    getVideos({
-      videoFeedUrl: DEFAULT_YT_FEED_URL,
-      numberOfVideos: 10,
-    }).catch(() => []),
-    getVideos({
-      videoFeedUrl: POMERIUM_LIVE_PLAYLIST_FEED_URL,
-      numberOfVideos: 10,
-    }).catch(() => []),
-  ]);
-
-  const personalLatest = personalVideos.find(isPastVideo);
-  const pomeriumLatest = pomeriumVideos.find(isPastVideo);
-
-  // Compare dates and pick the newer video
-  if (personalLatest && pomeriumLatest) {
-    const personalDate = new Date(personalLatest.date);
-    const pomeriumDate = new Date(pomeriumLatest.date);
-    latestVideo = personalDate > pomeriumDate ? personalLatest : pomeriumLatest;
-  } else {
-    latestVideo = personalLatest ?? pomeriumLatest ?? null;
-  }
-
-  videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
-} catch (err) {
-  console.error("Error fetching YouTube feeds:", err);
+  latestVideos =
+    latestNickytLiveVideo &&
+    latestOverallVideos.length === 2 &&
+    !latestOverallVideos.some((video) => video.type === "nickyt.live")
+      ? [latestOverallVideos[0], latestNickytLiveVideo]
+      : latestOverallVideos;
 }
 
 const { timezone = "" } = Astro.locals.netlify.context.geo;
@@ -152,19 +123,59 @@ export const prerender = false;
     }
 
     {
-      videoId && latestVideo && (
-        <section class="mb-12">
-          <h2 class="text-2xl lg:text-3xl font-bold mb-4 font-heading">
-            Latest from YouTube
-          </h2>
-          <div class="mb-4">
-            <YouTubeEmbed videoId={videoId} title={latestVideo.title} />
+      latestVideos.length > 0 && (
+        <section class="mb-12 space-y-10">
+          <SectionHeader title="Latest from YouTube" headingLevel={2} />
+          <div>
+            <div class="grid gap-6 xl:gap-8">
+              {latestVideos.map((video) => {
+                const videoId = getYouTubeId(video.youtubeStreamLink);
+                const videoPageUrl = `/videos/${slugifyVideo(
+                  video.title,
+                  video.guestName,
+                )}`;
+
+                return (
+                  videoId && (
+                    <article data-pagefind-ignore>
+                      <a
+                        href={videoPageUrl}
+                        class="group grid md:flex gap-6 xl:gap-8 no-underline outline-none transition-colors"
+                      >
+                        <div class="relative shrink-0 hidden md:block w-40 aspect-video rounded-lg overflow-hidden bg-muted">
+                          <img
+                            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                            alt=""
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                        <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
+                          <h3 class="text-xl font-semibold leading-snug text-balance text-card-foreground group-hover:text-pink-600 group-hover:underline group-focus:text-pink-600 group-focus:underline dark:group-hover:text-pink-400 dark:group-focus:text-pink-400">
+                            {video.title}
+                          </h3>
+                          <time class="italic text-base text-muted-foreground font-normal">
+                            {dateFilter(video.date)}
+                          </time>
+                          <p class="text-base text-muted-foreground">
+                            Guest: {video.guestName}
+                            {video.guestTitle ? `, ${video.guestTitle}` : ""}
+                          </p>
+                        </div>
+                      </a>
+                    </article>
+                  )
+                );
+              })}
+              <a
+                href="/videos"
+                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-pink-600"
+              >
+                More videos<span class="text-2xl">→</span>
+              </a>
+            </div>
           </div>
-          <h3 class="text-xl font-semibold mb-2">{latestVideo.title}</h3>
-          <div
-            class="prose prose-lg dark:prose-invert max-w-none text-muted-foreground"
-            set:html={sanitizeVideoDescription(latestVideo.description)}
-          />
         </section>
       )
     }
