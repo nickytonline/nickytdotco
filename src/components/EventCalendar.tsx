@@ -69,9 +69,9 @@ const EventCalendar = ({
         aria-label={`Add ${eventName} to calendar`}
         ref={refs.setReference}
         {...getReferenceProps()}
-        className="flex gap-2 items-center rounded-md bg-brand-solid text-brand-foreground px-2 py-1 hover:bg-background hover:text-brand focus-visible:bg-background focus-visible:text-brand border-2 border-brand hover:border-brand focus-visible:border-brand transition-colors"
+        className="flex items-center gap-1.5 rounded-md bg-brand-solid text-brand-foreground text-base px-2 py-0.5 hover:bg-background hover:text-brand focus-visible:bg-background focus-visible:text-brand border border-brand hover:border-brand focus-visible:border-brand transition-colors"
       >
-        <Plus className="w-4 h-4" />
+        <Plus className="w-3.5 h-3.5" />
         <span>Add to Calendar</span>
       </button>
       {isExpanded && (
@@ -82,7 +82,7 @@ const EventCalendar = ({
           {...getFloatingProps()}
           className="z-50"
         >
-          <ul className="p-4 grid gap-4 border-2 border-brand rounded-md [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-popover text-popover-foreground shadow-lg">
+          <ul className="p-4 grid gap-4 border-2 border-brand rounded-md text-base [&_a]:text-base [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-popover text-popover-foreground shadow-lg">
             <li>
               <a
                 href={generateGoogleCalendarUrl({
