@@ -15,6 +15,7 @@ interface Props {
 
 const { locale, timezone, schedule } = Astro.props;
 
+const now = Date.now();
 const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
   return new Date(a.date).getTime() - new Date(b.date).getTime();
 });
@@ -71,6 +72,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
       const guestInfo = noGuest
         ? ""
         : `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
+      const upcoming = new Date(date).getTime() > now;
 
       const eventName =
         guestName === "2Full2Stack"
@@ -89,6 +91,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
           description={description}
           location={eventLocation}
           videoLink={videoPageUrl}
+          upcoming={upcoming}
         />
       );
     })

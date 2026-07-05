@@ -1,5 +1,6 @@
 ---
 import EventCalendar from "./EventCalendar";
+import UpcomingBadge from "./UpcomingBadge.astro";
 
 interface Platform {
   name: string;
@@ -17,6 +18,7 @@ interface Props {
   description: string;
   location: string;
   videoLink?: string;
+  upcoming?: boolean;
 }
 
 const {
@@ -30,6 +32,7 @@ const {
   description,
   location,
   videoLink,
+  upcoming,
 } = Astro.props;
 ---
 
@@ -79,6 +82,7 @@ const {
           title
         )
       }
+      {upcoming && <UpcomingBadge />}
     </h3>
     <p class="text-base text-muted-foreground">{guest}</p>
     <time class="italic text-base text-muted-foreground font-normal"
