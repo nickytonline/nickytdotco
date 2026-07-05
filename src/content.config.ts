@@ -32,6 +32,7 @@ const blogCollection = defineCollection({
     tags: z.array(z.string()).optional(),
     cover_image: z.string().optional().nullable(),
     canonical_url: z.url().optional(),
+    dev_to_slug: z.string(),
     draft: z.boolean().optional(),
     reading_time_minutes: z.number().optional(),
     template: z.string().optional(),

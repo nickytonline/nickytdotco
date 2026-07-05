@@ -37,6 +37,1150 @@ to = "/blog/:splat"
 status = 301
 force = true
 
+# blog post redirects for pre-normalized slugs
+
+[[redirects]]
+from = "/blog/-webpack-secrets-jg"
+to = "/blog/webpack-secrets"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/2018-resolutions-1deo"
+to = "/blog/2018-resolutions"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/2024-year-in-review-1p7p"
+to = "/blog/my-2024-year-in-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/a--notification-code-pen-4o0n"
+to = "/blog/a-notification-code-pen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/a-new-year-a-new-start-i-m-joining-the-dev-team-3ap0"
+to = "/blog/a-new-year-a-new-start-im-joining-the-dev-team"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/a11y-twitter-a-browser-extension-for-making-twitter-more-accessible-17kg"
+to = "/blog/a11y-twitter-a-browser-extension-for-making-tweets-more-accessible"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-1-building-data-visualizations-with-goose-g7f"
+to = "/blog/advent-of-ai-2025-day-3-building-data-visualizations-with-goose"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-1-getting-goose-to-generate-daily-fortunes-in-ci-3alp"
+to = "/blog/advent-of-ai-2025-day-1-getting-goose-to-generate-daily-fortunes-in-ci"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-14-agent-skills-4d48"
+to = "/blog/advent-of-ai-2025-day-14-agent-skills"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-15-goose-sub-recipes-3mnd"
+to = "/blog/advent-of-ai-2025-day-15-goose-sub-recipes"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-16-planning-with-goosehints-875"
+to = "/blog/advent-of-ai-2025-day-16-planning-with-goosehints"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-17-building-a-wishlist-app-with-goose-and-mcp-ui-330l"
+to = "/blog/advent-of-ai-2025-day-17-building-a-wishlist-app-with-goose-and-mcp-ui"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-2-building-a-winter-festival-game-41eg"
+to = "/blog/advent-of-ai-2025-day-2-building-a-winter-festival-game"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-4-building-a-winter-festival-website-with-goose-3oac"
+to = "/blog/advent-of-ai-2025-day-4-building-a-winter-festival-website-with-goose"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-5-i-built-a-touchless-flight-tracker-you-control-with-hand-gestures-1jn8"
+to = "/blog/advent-of-ai-2025-day-5-i-built-a-touchless-flight-tracker-you-control-with-hand-gestures"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-6-automating-github-issue-triage-with-goose-1pn5"
+to = "/blog/advent-of-ai-2025-day-6-automating-github-issue-triage-with-goose"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-7-goose-recipes-5d1c"
+to = "/blog/advent-of-ai-2025-day-7-goose-recipes"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-8-messy-data-to-structured-output-25i2"
+to = "/blog/advent-of-ai-2025-day-8-messy-data-to-structured-output"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-2025-day-9-building-a-gift-tag-generator-with-goose-recipes-3i73"
+to = "/blog/advent-of-ai-2025-day-9-building-a-gift-tag-generator-with-goose-recipes"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-day-10-understanding-arguments-in-goose-recipes-2obg"
+to = "/blog/advent-of-ai-day-10-understanding-arguments-in-goose-recipes"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-day-11-goose-subagents-2n2"
+to = "/blog/advent-of-ai-day-11-goose-subagents"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-day-12-mcp-sampling-29b4"
+to = "/blog/advent-of-ai-day-12-mcp-sampling"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/advent-of-ai-day-13-goose-terminal-integration-145p"
+to = "/blog/advent-of-ai-day-13-goose-terminal-integration"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/an-a11y-extension-coming-to-a-browser-near-you-1mg2"
+to = "/blog/an-a11y-extension-coming-to-a-browser-near-you"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/an-enhanced-typescript-playground-49j6"
+to = "/blog/an-enhanced-typescript-playground"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/an-nft-based-game-1jfk"
+to = "/blog/an-nft-based-game"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/any-contribution-to-open-source-is-valuable-57d3"
+to = "/blog/any-contribution-to-open-source-is-valuable"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/anyone-can-commit-code-as-you-on-github-heres-how-to-stop-them-2in7"
+to = "/blog/anyone-can-commit-code-as-you-on-github-heres-how-to-stop-them"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/app-to-grab-your-revue-newsletters-1gci"
+to = "/blog/app-to-grab-your-revue-newsletters"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/automate-and-merge-pull-requests-using-github-actions-and-the-github-cli-4lo6"
+to = "/blog/automate-and-auto-merge-pull-requests-using-github-actions-and-the-github-cli"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/benq-rd280u-review-a-28-4k-monitor-built-for-developers-20d2"
+to = "/blog/benq-rd280u-review-a-28-4k-monitor-built-for-developers"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/benq-rd280ug-review-28-inch-4k-programming-monitor-for-developers-2iko"
+to = "/blog/benq-rd280ug-review-28-inch-4k-programming-monitor-for-developers"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/benq-screenbar-halo-monitor-light-review-54ej"
+to = "/blog/benq-screenbar-halo-monitor-light-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/boost-productivity-with-the-github-cli-2mne"
+to = "/blog/boost-productivity-with-the-github-cli"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/build-framework-agnostic-components-with-mitosis-4c4k"
+to = "/blog/build-framework-agnostic-components-with-mitosis"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template-3k3f"
+to = "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/building-an-ollama-powered-github-copilot-extension-2l4n"
+to = "/blog/building-an-ollama-powered-github-copilot-extension"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith-32he"
+to = "/blog/building-out-the-go-playground-liquid-tag-for-dev-with-chuck-smith"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/can-you-create-the-great-redux-store-4eo1"
+to = "/blog/can-you-create-the-great-redux-store"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/challenging-the-skeptics-unveiling-the-undeniable-goodness-of-tailwind-css-4doc"
+to = "/blog/challenging-the-skeptics-unveiling-the-undeniable-goodness-of-tailwind-css"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/changelog-dev-has-some-stories-for-you-15kn"
+to = "/blog/changelog-dev-has-some-stories-for-you"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/changelog-dev-upgraded-to-webpacker-4-babel-7-1mm4"
+to = "/blog/changelog-dev-upgraded-to-webpacker-4babel-7"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/changelog-frontend-edition-30l7"
+to = "/blog/changelog-frontend-edition"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/changelog-subscribe-to-a-post-s-threads-v2-5fn0"
+to = "/blog/changelog-subscribe-to-a-posts-threads-v2"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/clawspace-a-browser-based-file-explorer-for-openclaw-2ef"
+to = "/blog/clawspace-a-browser-based-file-explorer-for-openclaw"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/contributing-to-open-source-and-how-open-sauced-can-help-5d97"
+to = "/blog/contributing-to-open-source-and-how-open-sauced-can-help"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/cool-rust-and-webassembly-resource-33j6"
+to = "/blog/cool-rust-and-webassembly-resource"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/creating-an-og-image-using-react-and-netlify-edge-functions-563a"
+to = "/blog/creating-an-og-image-using-react-and-netlify-edge-functions"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/creating-your-first-github-copilot-extension-a-step-by-step-guide-28g0"
+to = "/blog/creating-a-github-copilot-extension-a-step-by-step-guide"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/css-mask-property-2d42"
+to = "/blog/the-css-mask-property"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/dev-as-a-headless-cms-for-your-gatsby-site-4mj2"
+to = "/blog/dev-as-a-headless-cms-for-your-gatsby-site"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/dev-to-s-frontend-a-brain-dump-in-one-act-7mg"
+to = "/blog/devtos-frontend-a-brain-dump-in-one-act"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/dev-to-with-a-typescript-or-flow-frontend-codebase-1n33"
+to = "/blog/devto-with-a-typescript-or-flow-frontend-codebase"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/dom-chef---build-dom-elements-with-jsx-5fi"
+to = "/blog/dom-chef-build-dom-elements-with-jsx"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/dont-get-rate-limited-use-lets-encrypt-staging-4kk2"
+to = "/blog/dont-get-rate-limited-use-lets-encrypt-staging"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/ecosystem-and-frameworks-my-role-at-netlify-306b"
+to = "/blog/ecosystem-and-frameworks-my-role-at-netlify"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/enabling-keyboard-navigation-on-your-mac-1hjb"
+to = "/blog/enabling-keyboard-navigation-on-your-mac"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/evaluating-the-new-microsoft-edge-4m1j"
+to = "/blog/evaluating-the-new-microsoft-edge"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/five-git-config-settings-every-dev-needs-3e55"
+to = "/blog/five-git-config-settings-every-dev-needs"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/form-and-function-how-i-lost-my-submit-button-got-it-back-5b91"
+to = "/blog/form-and-function-how-i-lost-my-submit-button-and-got-it-back"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/from-fresh-mac-to-productive-in-30-minutes-21db"
+to = "/blog/from-fresh-mac-to-productive-in-30-minutes"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/frontend-developer-resources-2022-4cp2"
+to = "/blog/frontend-developer-resources-2022"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/frontend-developer-resources-246j"
+to = "/blog/frontend-developer-resources-2020"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/funding-in-open-source-4i6k"
+to = "/blog/funding-in-open-source"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/funding-in-open-source-a-conversation-with-chad-whitacre-4264"
+to = "/blog/funding-in-open-source-a-conversation-with-chad-whitacre"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/getting-mcfly-working-on-ubuntu-server-without-losing-your-mind-2k5e"
+to = "/blog/getting-mcfly-working-on-ubuntu-server"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/getting-saucy-i-joined-opensauced-2ici"
+to = "/blog/getting-saucy-i-joined-opensauced"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/getting-started-with-react-storybook-9jh"
+to = "/blog/getting-started-with-storybook-for-react"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/getting-started-with-regular-expressions-11dg"
+to = "/blog/getting-started-with-regular-expressions"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/getting-started-with-streaming-on-twitch-4im7"
+to = "/blog/getting-started-with-streaming-on-twitch"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/git-history-20nh"
+to = "/blog/git-history"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/git-worktrees-git-done-right-2p7f"
+to = "/blog/git-worktrees-git-done-right"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/github-actions-a-maintainers-best-friend-488n"
+to = "/blog/github-actions-a-maintainers-best-friend"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/gos-singleflight-package-and-why-its-awesome-for-concurrent-requests-4122"
+to = "/blog/gos-singleflight-package-and-why-its-awesome-for-concurrent-requests"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/hacktoberfest-preptember-3p7"
+to = "/blog/hacktoberfest-2022-preptember"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/handy-js-snippets-352f"
+to = "/blog/have-a-handy-js-snippet-you-want-to-share"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/have-questions-about-eslint-2ahp"
+to = "/blog/have-questions-about-eslint"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/have-you-moved-from-twitter-to-mastodon-for-social-media-4a37"
+to = "/blog/have-you-moved-from-twitter-to-mastodon-for-social-media"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/hot-reloading-in-rust-4i1c"
+to = "/blog/live-reloading-in-rust"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/how-i-automated-my-github-profile-and-you-can-too-399e"
+to = "/blog/how-i-automated-my-github-profile-and-you-can-too"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/how-i-review-pull-requests-44nl"
+to = "/blog/how-i-do-code-reviews"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/how-i-travel-for-work-4b87"
+to = "/blog/how-i-travel-for-work"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95-m0f"
+to = "/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95percent"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/how-to-debug-a-firefox-add-on-extension-489f"
+to = "/blog/how-to-debug-a-firefox-add-on-extension"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/html-data-attributes-one-of-the-original-state-management-libraries-8bf"
+to = "/blog/html-data-attributes-one-of-the-original-state-management-libraries"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/html-forms-back-to-basics-1mph"
+to = "/blog/html-forms-back-to-basics"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/i-built-my-first-dapp-3pbm"
+to = "/blog/i-built-my-first-dapp"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/i-started-a-javascript-stream-on-twitch-4f3g"
+to = "/blog/i-started-a-javascript-stream-on-twitch"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/i-started-a-newsletter-3g8d"
+to = "/blog/i-started-a-newsletter"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/i-switched-shell-history-tools-heres-why-m6h"
+to = "/blog/i-switched-shell-history-tools-heres-why"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/i-ve-started-to-live-code-on-twitch-for-dev-13cn"
+to = "/blog/ive-started-to-live-code-on-twitch-for-dev"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/im-joining-pomerium-225j"
+to = "/blog/im-joining-pomerium"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/impressions-of-polywork-3pbp"
+to = "/blog/first-impressions-of-polywork-as-a-software-engineer"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/infer-types-to-avoid-explicit-types-1pnn"
+to = "/blog/typescript-infer-types-to-avoid-explicit-types"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/ink-react-for-clis-2l3b"
+to = "/blog/ink-react-for-clis"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/introducing-excaliclaw-a-skill-for-openclaw-to-generate-excalidraw-diagrams-48k6"
+to = "/blog/introducing-excaliclaw-a-skill-for-openclaw-to-generate-excalidraw-diagrams"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/introducing-the-devto-mcp-server-42jg"
+to = "/blog/introducing-the-devto-mcp-server"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/introducing-the-opensauced-pizza-github-action-automate-your-repository-management-44aj"
+to = "/blog/introducing-the-opensauced-pizza-github-action-automate-your-repository-management"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/jamstack-and-serverless-with-jason-lengstorf-3jdl"
+to = "/blog/jamstack-and-serverless-with-jason-lengstorf"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/kettlebells-code-dev-health-3eim"
+to = "/blog/kettlebells-and-code-dev-health"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/learning-resources-for-typescript-4g1n"
+to = "/blog/learning-resources-for-typescript"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/learning-rust-1h2n"
+to = "/blog/learning-rust"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/let-dependabot-merge-its-own-prs-27pc"
+to = "/blog/let-dependabot-merge-its-own-prs"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/let-s-pair-during-a-live-coding-session-8he"
+to = "/blog/lets-pair-during-a-live-coding-session"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/live-coding-pairing-converting-a-preact-component-to-use-hooks-75e"
+to = "/blog/converting-a-preact-component-to-use-hooks-with-sophia-li"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/logitech-ergo-k860-wireless-keyboard-nef"
+to = "/blog/review-logitech-ergo-k860-wireless-keyboard"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/london-adventures-kubecon-eu-2025-sreday-and-more-3igl"
+to = "/blog/london-adventures-kubecon-eu-2025-sreday-and-more"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/migrating-from-jest-to-vitest-for-your-react-application-1b75"
+to = "/blog/migrating-from-jest-to-vitest-for-your-react-application"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/more-engagement-through-series-on-devto-6hb"
+to = "/blog/more-engagement-through-series-on-devto"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/multitenant-database-schemas-4ofc"
+to = "/blog/multitenant-database-schemas"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-2018-year-in-review-2f0k"
+to = "/blog/my-2018-year-in-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-2019-year-in-review-23i1"
+to = "/blog/my-2019-year-in-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-2020-year-in-review-1p17"
+to = "/blog/my-2020-year-in-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-2021-year-in-review-3n83"
+to = "/blog/my-2021-year-in-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-2022-year-in-review-a72"
+to = "/blog/my-2022-year-in-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-2023-year-in-review-33ep"
+to = "/blog/my-2023-year-in-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-2025-year-in-review-3nom"
+to = "/blog/my-2025-year-in-review"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-eleventy-meetup-talk-3b2p"
+to = "/blog/automate-syndication-of-your-content-with-eleventy-devto-and-github-actions"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-git-aliases-5dea"
+to = "/blog/my-git-aliases"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-hacktoberfest-2019-32i2"
+to = "/blog/my-hacktoberfest-2019"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-impact-at-forem-23mj"
+to = "/blog/my-impact-at-forem"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-mac-setup-2m05"
+to = "/blog/my-mac-setup"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-newsletter-growth-fun-slow-steady-4fpd"
+to = "/blog/my-newsletter-growth-fun-slow-and-steady"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-shell-aliases-1obk"
+to = "/blog/my-shell-aliases"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-talk-on-react-storybook-at-the-js-montreal-meetup-2598"
+to = "/blog/my-talk-on-react-storybook-at-the-js-montreal-meetup"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-twitch-stream-setup-2m0c"
+to = "/blog/my-twitch-stream-setup"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/my-visual-studio-code-setup-2ima"
+to = "/blog/my-visual-studio-code-setup"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/need-help-picking-a-tabletop-colour-2mki"
+to = "/blog/need-help-picking-a-tabletop-colour"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/non-tech-reading-recommendations-55pm"
+to = "/blog/non-tech-reading-recommendations"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/not-captain-obvious-1boj"
+to = "/blog/not-captain-obvious"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/npx-gitignore-5087"
+to = "/blog/npx-gitignore"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-community-manager-christina-gorton-4537"
+to = "/blog/pairing-with-community-manager-christina-gorton"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-community-member-dan-ott-2ge"
+to = "/blog/pairing-with-community-member-dan-ott"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-community-member-eliot-sanford-f7a"
+to = "/blog/pairing-with-community-member-eliot-sanford"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-community-member-jono-yeong-3knk"
+to = "/blog/pairing-with-community-member-jono-yeong"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-community-member-marie-antons-3doi"
+to = "/blog/pairing-with-community-member-marie-antons"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-community-member-rachael-wright-munn-5bol"
+to = "/blog/pairing-with-community-member-rachael-wright-munn"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-community-member-rafi-5169"
+to = "/blog/pairing-with-community-member-rafi"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-community-member-seth-hall-1889"
+to = "/blog/pairing-with-community-member-seth-hall"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-jhey-tompkins-2k85"
+to = "/blog/pairing-with-jhey-tompkins"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-meg-gutshall-28o7"
+to = "/blog/pairing-with-meg-gutshall"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pairing-with-taniyah-jackson-on-a-forem-dev-issue-28fh"
+to = "/blog/pairing-with-taniyah-jackson-on-pinning-comments-to-articles"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/pock-an-awesome-utility-for-the-mac-touchbar-11ia"
+to = "/blog/pock-an-awesome-utility-for-the-mac-touchbar"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/probably-another-battleship-board-on-codepenio-coverimage-httpsc1staticflickrcom7609963333175677fc467e409ojpg--4n7m"
+to = "/blog/probably-another-battleship-board-on-code-pen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/productivity-tools-i-use-4gm3"
+to = "/blog/productivity-tools-i-use"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/quick-fix-my-mcp-tools-were-showing-as-write-tools-in-chatgpt-dev-mode-3id9"
+to = "/blog/quick-fix-my-mcp-tools-were-showing-as-write-tools-in-chatgpt-dev-mode"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/quick-hulk-code-pen-18i1"
+to = "/blog/quick-hulk-code-pen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/quick-simple-rating-code-pen-3ecp"
+to = "/blog/a-simple-rating-code-pen"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/repurposing-content-for-content-creation-3l4d"
+to = "/blog/repurposing-content-for-content-creation"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/review-fifine-ampligame-am6-condenser-mic-714"
+to = "/blog/review-fifine-ampligame-am6-condenser-mic"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/review-logitech-litra-glow-premium-led-streaming-light-with-truesoft-2p60"
+to = "/blog/review-logitech-litra-glow-premium-led-streaming-light-with-truesoft"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/revue-being-phased-out-by-twitter-4kle"
+to = "/blog/revue-being-phased-out-by-twitter"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/scoped-style--36n3"
+to = "/blog/scoped-style"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/see-the-big-picture-22bg"
+to = "/blog/see-the-big-picture"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/set-sail-for-server-islands-how-they-work-and-when-to-use-them-1p76"
+to = "/blog/astro-server-islands-how-they-work-and-when-to-use-them"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/setting-up-storybook-for-preact-p5a"
+to = "/blog/setting-up-storybook-for-preact"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/showcase-your-gatsby-site-266"
+to = "/blog/showcase-your-gatsby-site"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/showcase-your-open-source-contributions-with-opensauced-dev-cards-2j0k"
+to = "/blog/supercharge-your-github-profile-showcase-your-open-source-contributions"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/speech-to-text-with-deepgram-2b6i"
+to = "/blog/speech-to-text-with-deepgram"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/stop-shipping-broken-env-config-25m"
+to = "/blog/stop-shipping-broken-env-config"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/stop-using-cat-35gd"
+to = "/blog/stop-using-cat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/storybook-talk-live-coding-klp"
+to = "/blog/storybook-talk-live-coding"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/strongly-typed-json-in-typescript-5gb2"
+to = "/blog/strongly-typed-json-in-typescript"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/stuck-in-the-middle-with-you-an-intro-to-middleware-1gjo"
+to = "/blog/stuck-in-the-middle-with-you-an-intro-to-middleware"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/stuff-i-always-set-up-for-frontend-work-56h2"
+to = "/blog/set-up-a-git-precommit-hook-with-husky-lint-staged-prettier-and-stylelint"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/supercharge-your-repository-with-code-owners-4clg"
+to = "/blog/supercharge-your-repository-with-code-owners"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/take-chances-and-standout-because-who-knows-3kh6"
+to = "/blog/take-chances-and-stand-out"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/testing-preact-react-portals-with-testing-library-52ja"
+to = "/blog/testing-preactreact-portals-with-testing-library"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/the-native-browser-dialog-element-1nhn"
+to = "/blog/unlocking-the-power-of-htmls-native-browser-dialog-element"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/the-raycast-port-manager-extension-lca"
+to = "/blog/the-raycast-port-manager-extension"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/the-react-useref-hook-not-just-for-html-elements-3cf3"
+to = "/blog/the-react-useref-hook-not-just-for-dom-elements"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/the-state-of-net-tooling-2024-169g"
+to = "/blog/the-state-of-net-tooling-in-2024"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/toast-messages-4hhd"
+to = "/blog/toast-messages"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/tools-that-keep-me-productive-1no5"
+to = "/blog/tools-that-keep-me-productive"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/transform-your-portfolio-website-with-these-expert-tips-334e"
+to = "/blog/transform-your-portfolio-website-with-these-expert-tips"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/twitter-charging-for-api-usage-starting-feb-9th-713"
+to = "/blog/twitter-charging-for-api-usage-starting-feb-9th"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/typescript-and-react-enforcing-props-for-accessibility-2h49"
+to = "/blog/typescript-and-react-enforcing-props-for-accessibility"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/typescript-tips-part-i-4hhp"
+to = "/blog/typescript-tips-part-i"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/typescript-tips-part-ii-declaration-merging-5gba"
+to = "/blog/typescript-tips-part-ii-declaration-merging"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/update-dependencies-with-dependabot-cypress-and-netlify-3lkf"
+to = "/blog/update-dependencies-with-dependabot-cypress-and-netlify"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/using-a-hook-in-a-class-component-3eh2"
+to = "/blog/how-to-use-a-react-hook-in-a-class-component"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/valibot-a-new-approach-to-data-validation-in-javascript-1mgb"
+to = "/blog/valibot-a-new-approach-to-data-validation-in-javascript"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/what-are-ai-evals-1kk9"
+to = "/blog/what-are-ai-evals"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/what-is-deno-13he"
+to = "/blog/what-is-deno"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/what-is-genaiscript-1mf2"
+to = "/blog/what-is-genaiscript"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/what-is-the-collab-lab-427f"
+to = "/blog/what-is-the-collab-lab"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/what-makes-goose-different-from-other-ai-coding-agents-2edc"
+to = "/blog/what-makes-goose-different-from-other-ai-coding-agents"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/where-do-you-find-community-458p"
+to = "/blog/where-do-you-find-community"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/why-you-might-want-to-consider-using-typescript-6j3"
+to = "/blog/consider-using-typescript"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog/you-do-no-need-to-use-the-classnames-package-1bb"
+to = "/blog/you-do-not-need-to-use-the-classnames-package"
+status = 301
+force = true
+
+# end blog post redirects for pre-normalized slugs
+
 [[redirects]]
 from = "/news"
 to = "https://OneTipAWeek.com"

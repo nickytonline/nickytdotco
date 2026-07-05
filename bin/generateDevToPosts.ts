@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import fs from "fs/promises";
 import { readFileSync } from "fs";
 import { dump } from "js-yaml";
+import slugify from "slugify";
 import siteData from "../src/data/site.ts";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,6 +17,10 @@ const __dirname = path.dirname(__filename);
 function getErrorMessage(error: unknown): string {
   if (error instanceof Error) return error.message;
   return String(error);
+}
+
+function createLocalSlug(title: string): string {
+  return slugify(title, { lower: true, strict: true });
 }
 
 /**
@@ -85,6 +90,7 @@ interface PostFrontmatter {
   tags: string[];
   cover_image: string | null;
   canonical_url: string;
+  dev_to_slug: string;
   reading_time_minutes: number;
   template: string;
   series?: {
@@ -664,7 +670,6 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     reading_time_minutes,
     cover_image,
     slug,
-    canonical_url,
   } = post;
 
   const tagArray = Array.isArray(tags)
@@ -677,7 +682,11 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     date,
     tags: tagArray,
     cover_image,
-    canonical_url,
+    canonical_url: new URL(
+      `/blog/${createLocalSlug(title)}`,
+      siteUrl
+    ).toString(),
+    dev_to_slug: slug,
     reading_time_minutes,
     template: "post",
   };
@@ -715,7 +724,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
         new Date(date).getFullYear().toString()
       )
     : POSTS_DIRECTORY;
-  const postFile = path.join(basePath, `${slug}.mdx`);
+  const postFile = path.join(basePath, `${createLocalSlug(title)}.mdx`);
   await fs.writeFile(postFile, markdown);
 
   const twitterEmbedMatches = markdown.matchAll(
