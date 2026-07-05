@@ -7,32 +7,32 @@ export interface Props {
   cover_image?: string | null;
   date?: Date;
   reading_time_minutes?: number;
-  fileSlug: string;
+  dev_to_slug: string;
   url: string;
   canonical_url?: string;
 }
 
-const { title, cover_image, date, reading_time_minutes, fileSlug, url } =
+const { title, cover_image, date, reading_time_minutes, dev_to_slug, url } =
   Astro.props;
 
 // Generate boost links
 const intentToTweet = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-  `${title} by ${site.twitterHandle} ${site.url}${url}`
+  `${title} by ${site.twitterHandle} ${site.url}${url}`,
 )}`;
 
 const intentToLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-  site.url + url
+  site.url + url,
 )}`;
 
 const intentToToot = `https://toot.kytta.dev/?text=${encodeURIComponent(
-  `${title} by ${site.mastodonHandle} ${site.url}${url}`
+  `${title} by ${site.mastodonHandle} ${site.url}${url}`,
 )}`;
 
 const intentToBluesky = `https://bsky.app/intent/compose?text=${encodeURIComponent(
-  `${title} ${site.url}${url}`
+  `${title} ${site.url}${url}`,
 )}`;
 
-const foremBoostLink = `https://dev.to/nickytonline/${fileSlug}`;
+const foremBoostLink = `https://dev.to/nickytonline/${dev_to_slug}`;
 ---
 
 <header class="mb-12">

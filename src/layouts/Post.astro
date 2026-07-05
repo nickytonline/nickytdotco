@@ -26,7 +26,7 @@ if (entry.data.series) {
   const allPosts = await getCollection("blog");
   seriesPosts = seriesFilter(
     allPosts,
-    entry.data.series
+    entry.data.series,
   ) as CollectionEntry<"blog">[];
 }
 
@@ -81,7 +81,7 @@ const coverImageUrl = entry.data.cover_image
       cover_image={entry.data.cover_image}
       date={entry.data.date}
       reading_time_minutes={entry.data.reading_time_minutes}
-      fileSlug={entry.id}
+      dev_to_slug={entry.data.dev_to_slug}
       url={currentUrl}
       canonical_url={entry.data.canonical_url}
     />
