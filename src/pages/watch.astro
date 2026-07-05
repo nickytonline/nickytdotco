@@ -5,6 +5,7 @@ import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";
 import StreamSchedule from "@/components/StreamSchedule.astro";
 import type { StreamGuestInfo } from "@/utils/schedule-utils";
 import { getLiveCollection } from "astro:content";
+import type { YouTubeVideo } from "@/utils/youtube-utils";
 import {
   getVideos,
   getYouTubeId,
@@ -12,42 +13,6 @@ import {
   POMERIUM_LIVE_PLAYLIST_FEED_URL,
   sanitizeVideoDescription,
 } from "@/utils/youtube-utils";
-
-// Fetch recent videos from both channels and pick the newest
-let latestVideo = null;
-let videoId = null;
-try {
-  const [personalVideos, pomeriumVideos] = await Promise.all([
-    getVideos({
-      videoFeedUrl: DEFAULT_YT_FEED_URL,
-      numberOfVideos: 10,
-    }).catch(() => []),
-    getVideos({
-      videoFeedUrl: POMERIUM_LIVE_PLAYLIST_FEED_URL,
-      numberOfVideos: 10,
-    }).catch(() => []),
-  ]);
-
-  const personalLatest = personalVideos.filter(
-    (video) => !video.link.includes("/shorts/")
-  )[0];
-  const pomeriumLatest = pomeriumVideos.filter(
-    (video) => !video.link.includes("/shorts/")
-  )[0];
-
-  // Compare dates and pick the newer video
-  if (personalLatest && pomeriumLatest) {
-    const personalDate = new Date(personalLatest.date);
-    const pomeriumDate = new Date(pomeriumLatest.date);
-    latestVideo = personalDate > pomeriumDate ? personalLatest : pomeriumLatest;
-  } else {
-    latestVideo = personalLatest ?? pomeriumLatest ?? null;
-  }
-
-  videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
-} catch (err) {
-  console.error("Error fetching YouTube feeds:", err);
-}
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
@@ -66,15 +31,68 @@ if (scheduleResult.error) {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
 }
 
+// Fetch recent videos from both channels and pick the newest completed stream.
+let latestVideo = null;
+let videoId = null;
+try {
+  const now = Date.now();
+  const upcomingVideoIds = new Set(
+    schedule
+      .filter((stream) => new Date(stream.date).getTime() > now)
+      .map((stream) =>
+        stream.youtubeStreamLink
+          ? getYouTubeId(stream.youtubeStreamLink)
+          : null,
+      )
+      .filter((id): id is string => Boolean(id)),
+  );
+  const isPastVideo = (video: YouTubeVideo) => {
+    const id = getYouTubeId(video.link);
+
+    return (
+      !video.link.includes("/shorts/") &&
+      new Date(video.date).getTime() <= now &&
+      (!id || !upcomingVideoIds.has(id))
+    );
+  };
+
+  const [personalVideos, pomeriumVideos] = await Promise.all([
+    getVideos({
+      videoFeedUrl: DEFAULT_YT_FEED_URL,
+      numberOfVideos: 10,
+    }).catch(() => []),
+    getVideos({
+      videoFeedUrl: POMERIUM_LIVE_PLAYLIST_FEED_URL,
+      numberOfVideos: 10,
+    }).catch(() => []),
+  ]);
+
+  const personalLatest = personalVideos.find(isPastVideo);
+  const pomeriumLatest = pomeriumVideos.find(isPastVideo);
+
+  // Compare dates and pick the newer video
+  if (personalLatest && pomeriumLatest) {
+    const personalDate = new Date(personalLatest.date);
+    const pomeriumDate = new Date(pomeriumLatest.date);
+    latestVideo = personalDate > pomeriumDate ? personalLatest : pomeriumLatest;
+  } else {
+    latestVideo = personalLatest ?? pomeriumLatest ?? null;
+  }
+
+  videoId = latestVideo ? getYouTubeId(latestVideo.link) : null;
+} catch (err) {
+  console.error("Error fetching YouTube feeds:", err);
+}
+
 const { timezone = "" } = Astro.locals.netlify.context.geo;
 
 Astro.response.headers.set(
   "Cache-Control",
-  "public, max-age=0, must-revalidate"
+  "public, max-age=0, must-revalidate",
 );
 Astro.response.headers.set(
   "Netlify-CDN-Cache-Control",
-  "public, max-age=259200, must-revalidate"
+  "public, max-age=259200, must-revalidate",
 );
 Astro.response.headers.set("timezone", timezone);
 Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
