@@ -24,7 +24,8 @@ export default defineConfig({
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
-        command: "npx varlock run -- netlify serve --geo=mock --country=US",
+        command:
+          "command -v netlify >/dev/null 2>&1 || { echo 'netlify-cli not found on PATH. Install it globally: npm install -g netlify-cli (https://docs.netlify.com/cli/get-started/)' >&2; exit 1; }; npx varlock run -- netlify serve --country=US",
         url: baseURL,
         reuseExistingServer: !process.env.CI,
         timeout: 5 * 60 * 1000,

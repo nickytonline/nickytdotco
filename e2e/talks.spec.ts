@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { escapeRegExp } from "./test-utils";
 
 test.describe("talks archive", () => {
   test("lists talks grouped by year with a breadcrumb", async ({ page }) => {
@@ -31,7 +32,7 @@ test.describe("talks archive", () => {
     const href = await link.getAttribute("href");
     await link.click();
 
-    await expect(page).toHaveURL(new RegExp(`${href}/?$`));
+    await expect(page).toHaveURL(new RegExp(`${escapeRegExp(href!)}/?$`));
     await expect(
       page.getByRole("main").getByRole("heading", { level: 1 })
     ).toBeVisible();

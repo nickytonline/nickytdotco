@@ -1,8 +1,14 @@
 import { test, expect } from "@playwright/test";
+import { escapeRegExp } from "./test-utils";
 
 test.describe("site search (Pagefind)", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    // Search is a client:load React island; wait for it to hydrate before
+    // interacting, since firing the "/" shortcut or a click too early (a real
+    // risk against a live host, less so against instant-loading localhost) is
+    // a no-op if the keydown/click listeners haven't attached yet.
+    await page.waitForLoadState("networkidle");
   });
 
   test("opens via the search button and returns results for a query", async ({
@@ -54,7 +60,7 @@ test.describe("site search (Pagefind)", () => {
 
     await page.keyboard.press("Enter");
 
-    await expect(page).toHaveURL(new RegExp(`${href}$`));
+    await expect(page).toHaveURL(new RegExp(`${escapeRegExp(href!)}$`));
   });
 
   test("Escape closes the dialog", async ({ page }) => {

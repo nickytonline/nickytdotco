@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { escapeRegExp } from "./test-utils";
 
 test.describe("tags", () => {
   test("tags index shows popular and all-tags sections", async ({ page }) => {
@@ -47,7 +48,7 @@ test.describe("tags", () => {
     const href = await tagLink.getAttribute("href");
     await tagLink.click();
 
-    await expect(page).toHaveURL(new RegExp(`${href}/?$`));
+    await expect(page).toHaveURL(new RegExp(`${escapeRegExp(href!)}/?$`));
 
     const breadcrumb = page.getByRole("navigation", { name: "Breadcrumb" });
     await expect(

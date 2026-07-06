@@ -1,4 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
+import { escapeRegExp } from "./test-utils";
 
 async function firstBlogPostLink(page: Page) {
   await page.goto("/blog");
@@ -36,7 +37,7 @@ test.describe("blog archive", () => {
     const href = await link.getAttribute("href");
     await link.click();
 
-    await expect(page).toHaveURL(new RegExp(`${href}/?$`));
+    await expect(page).toHaveURL(new RegExp(`${escapeRegExp(href!)}/?$`));
     await expect(
       page.getByRole("main").getByRole("heading", { level: 1 })
     ).toBeVisible();

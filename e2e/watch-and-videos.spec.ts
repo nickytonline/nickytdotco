@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { escapeRegExp } from "./test-utils";
 
 test.describe("watch page", () => {
   test("renders the watch pitch and links to video archives", async ({
@@ -58,7 +59,7 @@ test.describe("video archives", () => {
 
     const href = await link.getAttribute("href");
     await link.click();
-    await expect(page).toHaveURL(new RegExp(`${href}/?$`));
+    await expect(page).toHaveURL(new RegExp(`${escapeRegExp(href!)}/?$`));
     await expect(
       page.getByRole("main").getByRole("heading", { level: 1 })
     ).toBeVisible();
