@@ -27,7 +27,7 @@
 
 ## Content & Routing
 
-- Blog: `src/content/blog/` (frontmatter: `title`, `date`, optional `excerpt`, `tags`, `cover_image`, `series`, `draft`).
+- Blog: `src/content/blog/` (frontmatter: `title`, `date`, optional `excerpt`, `tags`, `cover_image`, `series`, `draft`). Slugs/filenames are generated locally from `title` via `slugify` in `bin/generateDevToPosts.ts`, not from dev.to's slug; the original dev.to slug is preserved as `dev_to_slug`.
 - Talks: `src/content/talks/` (video metadata + links).
 - Drafts: excluded from production builds.
 - RSS: `src/pages/feed.xml.ts`, `src/pages/stream-schedule-feed.xml.ts`.
@@ -36,6 +36,7 @@
 
 - Env schema: `.env.schema`, types: `env.d.ts` (Varlock).
 - Required vars: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `GITHUB_TOKEN`, `DEV_API_KEY`, `URL`.
+- Sync scripts use scoped Varlock env dirs instead of the root schema: `env/devto/.env.schema` (imports `DEV_API_KEY`, used by `vp run generate:posts`) and `env/youtube/.env.schema` (`YOUTUBE_API_KEY`, `YOUTUBE_PLAYLIST_ID`, used by `vp run generate:streams`). Both are invoked as `varlock run --path env/<name> -- ...` from `package.json`.
 
 ## Code Standards
 
@@ -46,7 +47,8 @@
 ## Design System & Styling
 
 - Tailwind v4 theme tokens live in `src/styles/global.css` under `:root`, `.dark`, and `@theme inline`.
-- Prefer semantic color utilities: `bg-background`, `text-foreground`, `text-muted-foreground`, `bg-card`, `text-card-foreground`, `bg-secondary`, `text-secondary-foreground`, `bg-popover`, `text-popover-foreground`, `border-border`, `text-brand`, `bg-brand-solid`, `bg-brand-soft`, `text-warning-foreground`, and `bg-warning-soft`.
+- Prefer semantic color utilities: `bg-background`, `text-foreground`, `text-muted-foreground`, `bg-card`, `text-card-foreground`, `bg-secondary`, `text-secondary-foreground`, `bg-popover`, `text-popover-foreground`, `border-border`, `text-brand`, `bg-brand-solid`, `bg-brand-solid-hover`, `bg-brand-soft`, `border-brand`, `border-brand-border`, `text-destructive`, `text-warning-foreground`, and `bg-warning-soft`.
+- Full token-to-utility mapping (surfaces, text, borders/focus, brand, status, third-party) is kept in sync in `.github/instructions/design-system.instructions.md` — update both files together when tokens change.
 - Do not introduce raw palette classes such as `text-pink-*`, `bg-rose-*`, `text-gray-*`, `text-red-*`, or arbitrary color utilities like `text-[#...]` in UI code. Add or reuse a named token in `global.css` instead.
 - Third-party brand colors are allowed only through named tokens such as `text-youtube` and `text-twitch`.
 - Keep Tailwind utility classes for layout, spacing, typography, and state, but route color decisions through the design tokens.
