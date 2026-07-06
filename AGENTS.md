@@ -24,6 +24,7 @@
 - Live loaders: `src/content/loaders/`, config in `src/live.config.ts`.
 - Styles: `src/styles/` (globals in `src/styles/global.css`).
 - Static: `public/`.
+- E2E tests: `e2e/`, config in `playwright.config.ts`.
 
 ## Content & Routing
 
@@ -37,6 +38,13 @@
 - Env schema: `.env.schema`, types: `env.d.ts` (Varlock).
 - Required vars: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `GITHUB_TOKEN`, `DEV_API_KEY`, `URL`.
 - Sync scripts use scoped Varlock env dirs instead of the root schema: `env/devto/.env.schema` (imports `DEV_API_KEY`, used by `vp run generate:posts`) and `env/youtube/.env.schema` (`YOUTUBE_API_KEY`, `YOUTUBE_PLAYLIST_ID`, used by `vp run generate:streams`). Both are invoked as `varlock run --path env/<name> -- ...` from `package.json`.
+
+## Testing (E2E)
+
+- Playwright specs live in `e2e/`; run with `vp run test:e2e` (`test:e2e:ui` for UI mode, `test:e2e:report` to reopen the last HTML report).
+- Tests run against a real production build, not the dev server: `playwright.config.ts`'s `webServer` builds and serves via `npx varlock run -- netlify serve`. This is required, not optional — `astro preview` throws ("adapter does not support the preview command") because `@astrojs/netlify` has no preview entrypoint, and Pagefind search only has an index after a production build.
+- `varlock run --` matters: it resolves real secrets before `netlify serve`'s own `.env.development` injection runs, so the real values win instead of the raw unresolved `op://...` reference strings.
+- CI (`.github/workflows/e2e.yml`) builds with `APP_ENV=test` (not `development`) so the 1Password plugin (`@initOp(allowAppAuth=forEnv(development))`) never engages — secrets must come from GitHub Actions secrets instead: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `DEV_API_KEY` (`GITHUB_TOKEN` is auto-provided by Actions).
 
 ## Code Standards
 
