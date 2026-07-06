@@ -25,8 +25,6 @@
 /* CSS Custom Properties */
 :root {
   --color-theme-feature-text: #fedb8b;
-  --link: oklch(0.656 0.241 354.308);
-  --link-hover: oklch(0.592 0.249 0.584);
   --brand: oklch(0.592 0.249 0.584);
   --brand-hover: oklch(0.525 0.223 3.958);
   --brand-solid: var(--brand);
@@ -278,8 +276,6 @@ nav a:not([aria-current="page"]):focus {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --color-link: var(--link);
-  --color-link-hover: var(--link-hover);
   --color-brand: var(--brand);
   --color-brand-hover: var(--brand-hover);
   --color-brand-solid: var(--brand-solid);
@@ -329,8 +325,6 @@ nav a:not([aria-current="page"]):focus {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
   --color-theme-feature-text: #ffc857;
-  --link: oklch(0.718 0.202 349.761);
-  --link-hover: oklch(0.823 0.12 346.018);
   --brand: oklch(0.718 0.202 349.761);
   --brand-hover: oklch(0.823 0.12 346.018);
   --brand-solid: oklch(0.656 0.241 354.308);
