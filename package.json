@@ -74,7 +74,7 @@
     "jsdom": "^29.1.1",
     "pagefind": "^1.4.0",
     "slugify": "^1.6.9",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.3.2",
     "vite-plus": "^0.2.1"
   },
   "repository": {
