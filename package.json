@@ -18,6 +18,9 @@
     "lint:fix": "vp lint --fix .",
     "generate:posts": "varlock run --path env/devto -- node ./bin/generateDevToPosts.ts",
     "generate:streams": "varlock run --path env/youtube -- node ./bin/generateYouTubeStreams.ts",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report",
     "prepare": "vp config"
   },
   "dependencies": {
@@ -59,6 +62,7 @@
     "varlock": "^1.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/vite": "^4.3.0",
     "@types/js-yaml": "^4.0.9",
     "@types/jsdom": "^28.0.1",
