@@ -21,13 +21,13 @@ const featuredTalks = allTalks
   .filter((talk) => talk.data.featured === true && !talk.data.upcoming)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
-const speakerBioMarkdown = `**Nick Taylor** is a Developer Advocate at Pomerium and a GitHub Star, [Agentic AI Foundation (AAIF) Ambassador](https://aaif.io/ambassadors/), AWS Community Builder, and Microsoft MVP. With 20+ years in software, he specializes in the intersection of Zero Trust security, MCP (Model Context Protocol), and agentic AI, helping developers ship secure AI-powered software. He has spoken at conferences across North America and Europe, runs a livestream, and publishes the [_One Tip a Week_](https://onetipaweek.com) newsletter.`;
+const speakerBioMarkdown = `**Nick Taylor** is a software engineer and developer advocate with 20+ years in the industry. A GitHub Star, [Agentic AI Foundation (AAIF) Ambassador](https://aaif.io/ambassadors/), AWS Community Builder, and Microsoft MVP, he has spoken at conferences across North America and Europe, runs a livestream, and publishes the [_One Tip a Week_](https://onetipaweek.com) newsletter. He currently works in developer relations at Pomerium, where the focus is Zero Trust security, MCP (Model Context Protocol), and agentic AI.`;
 const speakerBioHtml = markdownFilter(speakerBioMarkdown);
 ---
 
 <Layout
   title="Speaking | Nick Taylor"
-  metaDesc="Invite Nick Taylor to speak at your conference or event. Talks on Zero Trust security, MCP (Model Context Protocol), agentic AI, Kubernetes, and open source."
+  metaDesc="Invite Nick Taylor to speak at your conference or event. Topics include web development, open source, agentic AI, Zero Trust security, and MCP (Model Context Protocol)."
   socialImage="/assets/images/page-og/talks.jpg"
 >
   <div class="space-y-12">

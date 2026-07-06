@@ -5,7 +5,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout
   title="About"
-  metaDesc="Nick Taylor — Developer Advocate at Pomerium. GitHub Star, AAIF Ambassador, AWS Community Builder, and Microsoft MVP. 20+ years in software. I work at the intersection of Zero Trust security, MCP (Model Context Protocol), and agentic AI."
+  metaDesc="Nick Taylor, software engineer and developer advocate with 20+ years in the industry and a decade of open source. I write, stream, speak, and build things. Currently in developer relations at Pomerium."
   socialImage="/assets/images/page-og/about.jpg"
   pageType="Page"
 >
@@ -24,30 +24,15 @@ import MainLayout from "../layouts/MainLayout.astro";
         <div class="space-y-6">
           <p class="text-xl leading-relaxed">
             I'm <strong>Nick Taylor</strong> (<a href="/socials">@nickytonline</a>)
-            — a developer advocate and software engineer at
-            <a
-              href="https://pomerium.com"
-              class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
-              >Pomerium</a
-            >, based in <strong>Montréal, Quebec, Canada</strong>. I'm a
-            <strong>GitHub Star</strong>,
-            <a
-              href="https://aaif.io/ambassadors/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-brand font-semibold hover:underline focus:underline focus:outline-none"><strong>Agentic AI Foundation (AAIF) Ambassador</strong></a>,
-            <strong>AWS Community Builder</strong>, and
-            <strong>Microsoft MVP</strong> with 20+ years in software
-            and a focus on the intersection of
-            <strong>Zero Trust security</strong>,
-            <strong>MCP (Model Context Protocol)</strong>, and
-            <strong>agentic AI</strong>. I write, speak, stream, and build
-            things where those worlds collide.
+            , a software engineer and developer advocate based in
+            <strong>Montréal, Quebec, Canada</strong>. I've been building
+            software for over twenty years, contributing to open source for
+            about half that, and writing, streaming, and speaking about
+            the things I'm learning along the way.
           </p>
 
           <p class="text-lg leading-relaxed text-muted-foreground">
-            I've been building software for over twenty years and contributing
-            to open source for about half that. I've worked at <a
+            I've worked at <a
               href="https://opensauced.pizza"
               class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
               >OpenSauced</a
@@ -59,41 +44,21 @@ import MainLayout from "../layouts/MainLayout.astro";
               href="https://www.netlify.com/"
               class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
               >Netlify</a
-            >, and now I'm in developer relations at <a
+            >, and I'm currently in developer relations at <a
               href="https://pomerium.com"
               class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
               >Pomerium</a
-            >.
-          </p>
-
-          <p class="text-lg leading-relaxed text-muted-foreground">
-            You can browse <a
-              href="/projects"
-              class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
-              >my open-source projects</a
-            >, and check out the full list on <a
-              href="https://github.com/nickytonline"
+            >, where the focus is Zero Trust security, MCP (Model Context
+            Protocol), and agentic AI. I'm also a <strong>GitHub Star</strong>,
+            <a
+              href="https://aaif.io/ambassadors/"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
-              >GitHub</a
-            >.
+              class="text-brand font-semibold hover:underline focus:underline focus:outline-none"><strong>AAIF Ambassador</strong></a>,
+            <strong>AWS Community Builder</strong>, and
+            <strong>Microsoft MVP</strong>.
           </p>
 
-          <p class="text-lg leading-relaxed text-muted-foreground">
-            You'll often find me live streaming tech content, either solo or
-            with friends from the community. I also run the
-            <a
-              href="https://onetipaweek.com"
-              class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
-              >One Tip a Week</a
-            > newsletter and mentor in the
-            <a
-              href="https://discord.gg/Q8XuFauC9"
-              class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
-              >Let's Get Technical</a
-            > community.
-          </p>
         </div>
       </div>
     </header>
@@ -149,11 +114,36 @@ import MainLayout from "../layouts/MainLayout.astro";
     </section>
 
     <section class="space-y-6">
+      <SectionHeader title="Open Source & Community" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        I've been contributing to open source for about a decade, maintaining projects, reviewing PRs, and occasionally starting something new. You can browse <a
+          href="/projects"
+          class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
+          >my projects</a
+        > or see the full list on <a
+          href="https://github.com/nickytonline"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
+          >GitHub</a
+        >.
+      </p>
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        I also mentor developers in the <a
+          href="https://discord.gg/Q8XuFauC9"
+          class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
+          >Let's Get Technical</a
+        > community, a Discord for folks learning and levelling up in tech.
+      </p>
+    </section>
+
+    <section class="space-y-6">
       <SectionHeader title="Connect" headingLevel={2} />
       <p class="text-lg leading-relaxed text-muted-foreground">
-        Wanna get in touch? Drop me an e-mail at <span
-          class="font-semibold text-brand"
-          >nick at nickyt dot co</span
+        Wanna get in touch? Drop me an e-mail at <a
+          href="mailto:nick@nickyt.co"
+          class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
+          >nick@nickyt.co</a
         >. You can also find me <a
           href="/socials"
           class="text-brand font-semibold hover:underline focus:underline focus:outline-none"

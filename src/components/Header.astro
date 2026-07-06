@@ -71,6 +71,14 @@ const currentPath = pathname.slice(1);
           </li>
           <li>
             <a
+              href="/projects"
+              class="nav-link"
+              aria-current={currentPath.startsWith("projects") ? "page" : "false"}
+              >Projects
+            </a>
+          </li>
+          <li>
+            <a
               href="/about"
               class="nav-link"
               aria-current={currentPath.startsWith("about") ? "page" : "false"}
