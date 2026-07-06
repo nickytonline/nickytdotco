@@ -1,33 +1,120 @@
 ---
-import { getLiveCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import type { GitHubPinnedProject } from "../content/_loaders/github-pinned-projects";
 
-const projectsResult = await getLiveCollection("pinnedProjects");
-let projects: GitHubPinnedProject[] = [];
-let errorMessage = "";
+export const prerender = true;
 
-if (projectsResult.error) {
-  console.error("Error fetching pinned projects:", projectsResult.error);
-  errorMessage = "Error fetching pinned projects from GitHub.";
-} else {
-  projects = projectsResult.entries?.map((entry) => entry.data) ?? [];
+interface ProjectLink {
+  label: string;
+  url: string;
 }
 
-Astro.response.headers.set(
-  "Cache-Control",
-  "public, max-age=0, must-revalidate"
-);
+interface CuratedProject {
+  owner: string;
+  name: string;
+  description: string;
+  url: string;
+  stargazerCount: number;
+  forkCount: number;
+  primaryLanguage?: { name: string; color: string } | null;
+  myRole?: string;
+  links?: ProjectLink[];
+}
 
-// cache for one week
-Astro.response.headers.set(
-  "Netlify-CDN-Cache-Control",
-  "public, max-age=604800, must-revalidate"
-);
-
-export const prerender = false;
+const projects: CuratedProject[] = [
+  {
+    owner: "nickytonline",
+    name: "mcp-typescript-template",
+    description:
+      "Production-ready starter for building MCP servers in TypeScript. No build step needed during development, Vite for production, Vitest for testing, Pino logging, and Docker support out of the box.",
+    url: "https://github.com/nickytonline/mcp-typescript-template",
+    stargazerCount: 55,
+    forkCount: 12,
+    primaryLanguage: { name: "TypeScript", color: "#3178c6" },
+    myRole: "Author & maintainer",
+    links: [
+      {
+        label: "Blog post",
+        url: "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template/",
+      },
+    ],
+  },
+  {
+    owner: "pomerium",
+    name: "chatgpt-app-typescript-template",
+    description:
+      "Starter for building ChatGPT Apps with the OpenAI Apps SDK and Model Context Protocol. React widgets, Storybook, Pomerium integration for authenticated remote access, and a full dev/prod workflow.",
+    url: "https://github.com/pomerium/chatgpt-app-typescript-template",
+    stargazerCount: 18,
+    forkCount: 7,
+    primaryLanguage: { name: "TypeScript", color: "#3178c6" },
+    myRole: "Author & maintainer",
+  },
+  {
+    owner: "pomerium",
+    name: "mcp-app-demo",
+    description:
+      "A full chat client that started as a demo for securing MCP servers with Pomerium and grew into a real application. Supports multiple MCP servers with Zero Trust access control. Used internally and at conference demos.",
+    url: "https://github.com/pomerium/mcp-app-demo",
+    stargazerCount: 51,
+    forkCount: 7,
+    primaryLanguage: { name: "TypeScript", color: "#3178c6" },
+    myRole: "Author & maintainer",
+  },
+  {
+    owner: "openclaw",
+    name: "openclaw",
+    description:
+      "Open-source personal AI assistant you run on your own devices, supporting 20+ messaging channels. I contributed the Trusted Proxy authentication mode — hardening access to the control plane UI and SSH.",
+    url: "https://github.com/openclaw/openclaw",
+    stargazerCount: 381855,
+    forkCount: 80092,
+    primaryLanguage: { name: "TypeScript", color: "#3178c6" },
+    myRole: "Contributor",
+    links: [
+      { label: "Setup guide", url: "https://usepom.link/claw-guide" },
+      {
+        label: "AI Engineer Europe 2026 talk",
+        url: "/talks/claws-out-securing-and-building-with-openclaw-ai-engineer-europe-2026",
+      },
+    ],
+  },
+  {
+    owner: "nickytonline",
+    name: "dev-to-mcp",
+    description:
+      "A remote MCP server for the dev.to public API — no authentication required. Browse articles, search content, fetch user profiles, and pull comments from dev.to via any MCP-compatible client.",
+    url: "https://github.com/nickytonline/dev-to-mcp",
+    stargazerCount: 44,
+    forkCount: 15,
+    primaryLanguage: { name: "TypeScript", color: "#3178c6" },
+    myRole: "Author & maintainer",
+    links: [
+      {
+        label: "Blog post",
+        url: "/blog/introducing-the-devto-mcp-server/",
+      },
+    ],
+  },
+  {
+    owner: "nickytonline",
+    name: "clawspace",
+    description:
+      "Browser-based file explorer and editor for OpenClaw workspaces. Monaco editor (the same engine powering VS Code), file browsing, editing, saving, and reverting — faster than reaching for a terminal for quick workspace edits.",
+    url: "https://github.com/nickytonline/clawspace",
+    stargazerCount: 11,
+    forkCount: 0,
+    primaryLanguage: { name: "Astro", color: "#FF5D01" },
+    myRole: "Author & maintainer",
+    links: [
+      {
+        label: "Blog post",
+        url: "/blog/clawspace-a-browser-based-file-explorer-for-openclaw/",
+      },
+    ],
+  },
+];
 ---
 
 <Layout
@@ -38,30 +125,14 @@ export const prerender = false;
   <div class="mb-12">
     <SectionHeader title="Projects" headingLevel={1} />
     <p class="text-xl text-muted-foreground mt-6 max-w-2xl">
-      A selection of my pinned open-source projects from GitHub. These span
-      developer tooling, web utilities, and whatever I've been deep in lately.
+      A selection of projects I've built, maintain, or contributed to. Mostly
+      open source, mostly TypeScript.
     </p>
   </div>
-
-  {
-    errorMessage && (
-      <div class="p-4 rounded-lg bg-destructive/10 dark:bg-destructive/10 text-destructive dark:text-destructive border border-destructive/30 dark:border-destructive/30">
-        {errorMessage}
-      </div>
-    )
-  }
 
   <div class="grid gap-6 lg:grid-cols-2">
     {projects.map((project) => <ProjectCard project={project} />)}
   </div>
-
-  {
-    !errorMessage && projects.length === 0 && (
-      <div class="text-center py-12">
-        <p class="text-muted-foreground">No pinned projects found.</p>
-      </div>
-    )
-  }
 
   <a
     href="https://github.com/nickytonline"
@@ -69,6 +140,6 @@ export const prerender = false;
     target="_blank"
     rel="noopener noreferrer"
   >
-    View more on GitHub<span class="text-2xl">→</span>
+    More on GitHub<span class="text-2xl">→</span>
   </a>
 </Layout>

@@ -1,9 +1,26 @@
 ---
-import type { GitHubPinnedProject } from "../content/_loaders/github-pinned-projects";
 import { formatCompactNumber } from "../utils/filters";
 
+interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 interface Props {
-  project: GitHubPinnedProject;
+  project: {
+    owner: string;
+    name: string;
+    description: string;
+    url: string;
+    stargazerCount: number;
+    forkCount: number;
+    primaryLanguage?: {
+      name: string;
+      color: string;
+    } | null;
+    myRole?: string;
+    links?: ProjectLink[];
+  };
 }
 
 const { project } = Astro.props;
@@ -56,6 +73,14 @@ const { project } = Astro.props;
       {project.description}
     </p>
 
+    {
+      project.myRole && (
+        <p class="text-xs text-muted-foreground mb-4">
+          <span class="font-medium text-foreground">Role:</span> {project.myRole}
+        </p>
+      )
+    }
+
     <div
       class="flex items-center justify-between mt-auto pt-4 border-t border-muted/30"
     >
@@ -100,5 +125,20 @@ const { project } = Astro.props;
         </div>
       </div>
     </div>
+
+    {
+      project.links && project.links.length > 0 && (
+        <div class="flex flex-wrap gap-3 mt-4 pt-4 border-t border-muted/30">
+          {project.links.map((link) => (
+            <a
+              href={link.url}
+              class="relative z-10 text-xs font-medium text-brand hover:underline focus:outline-none focus:underline"
+            >
+              {link.label} →
+            </a>
+          ))}
+        </div>
+      )
+    }
   </div>
 </article>
