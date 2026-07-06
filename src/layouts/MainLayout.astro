@@ -30,6 +30,7 @@ const fullTitle = title.includes("Nick Taylor")
   ? title
   : `${title} | Nick Taylor`;
 const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
+const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -142,6 +143,7 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
               </li>
             </ul>
           </nav>
+          <p class="text-sm">&copy; {currentYear} Nick Taylor</p>
         </div>
       </footer>
     </div>
