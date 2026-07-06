@@ -2,6 +2,7 @@
 import { getLiveCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import { dateFilter } from "../../utils/filters";
 import {
   extractYouTubeVideoId,
@@ -42,6 +43,13 @@ const years = Object.keys(streamsByYear)
   metaDesc="Archive of Nick Taylor's past live streams, interviews, and video content."
   socialImage="/assets/images/page-og/watch.jpg"
 >
+  <Breadcrumb
+    items={[
+      { label: "Watch", href: "/watch" },
+      { label: "Video Archives" },
+    ]}
+  />
+
   <div class="mb-6">
     <SectionHeader title="Video Archives" headingLevel={1} />
     <p class="text-xl text-muted-foreground mt-6">

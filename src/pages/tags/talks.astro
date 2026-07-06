@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import Tag from "@/components/Tag.astro";
 export const prerender = true;
 
@@ -35,6 +36,10 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
   metaDesc="Explore Nick Taylor's talks by topic — from web development and AI to developer tooling."
   socialImage="/assets/images/page-og/tags.jpg"
 >
+  <Breadcrumb
+    items={[{ label: "Tags", href: "/tags" }, { label: "Talk Tags" }]}
+  />
+
   <div class="mb-12">
     <SectionHeader title="Talk Tags" />
     <p class="text-xl text-muted-foreground mt-6">

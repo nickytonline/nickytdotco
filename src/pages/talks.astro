@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import { dateFilter } from "../utils/filters";
 import { getYouTubeId } from "../utils/youtube-utils";
 export const prerender = true;
@@ -33,6 +34,10 @@ const years = Object.keys(talksByYear)
   metaDesc="Conference talks and presentations by Nick Taylor on web development, open source, agentic AI, Zero Trust security, and MCP (Model Context Protocol)."
   socialImage="/assets/images/page-og/talks.jpg"
 >
+  <Breadcrumb
+    items={[{ label: "Speaking", href: "/speaking" }, { label: "Talks" }]}
+  />
+
   <div class="mb-6">
     <SectionHeader title="Talks" headingLevel={1} />
     <p class="text-xl text-muted-foreground mt-6 max-w-2xl">

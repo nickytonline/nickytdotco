@@ -1,6 +1,7 @@
 ---
 import { getLiveCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import { dateFilter } from "../../utils/filters";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import {
@@ -94,6 +95,14 @@ if (stream.data.website)
   socialImage={socialImage}
   pageType="Stream"
 >
+  <Breadcrumb
+    items={[
+      { label: "Watch", href: "/watch" },
+      { label: "Video Archives", href: "/videos" },
+      { label: title },
+    ]}
+  />
+
   <article>
     <header>
       <h1

@@ -1,5 +1,6 @@
 ---
 import MainLayout from "./MainLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import PostIntro from "../components/PostIntro.astro";
 import SeriesNavigation from "../components/SeriesNavigation.astro";
 import RelatedContent from "../components/RelatedContent.astro";
@@ -76,6 +77,13 @@ const coverImageUrl = entry.data.cover_image
     />
   </Fragment>
   <article>
+    <Breadcrumb
+      items={[
+        { label: "Blog", href: "/blog" },
+        { label: entry.data.title },
+      ]}
+    />
+
     <PostIntro
       title={entry.data.title}
       cover_image={entry.data.cover_image}

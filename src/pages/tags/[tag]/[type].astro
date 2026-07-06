@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../../layouts/MainLayout.astro";
 import SectionHeader from "../../../components/SectionHeader.astro";
+import Breadcrumb from "../../../components/Breadcrumb.astro";
 import { dateFilter } from "../../../utils/filters";
 
 export const prerender = true;
@@ -117,6 +118,14 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
   metaDesc={`${contentTypeLabel} by Nick Taylor tagged with "${displayTag}".`}
   socialImage="/assets/images/page-og/tags.jpg"
 >
+  <Breadcrumb
+    items={[
+      { label: "Tags", href: "/tags" },
+      { label: displayTag, href: `/tags/${tag}` },
+      { label: contentTypeLabel },
+    ]}
+  />
+
   <div class="mb-12">
     <SectionHeader
       title={`${contentTypeLabel} tagged with "${displayTag}"`}

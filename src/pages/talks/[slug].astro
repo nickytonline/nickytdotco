@@ -2,6 +2,7 @@
 import { getEntry, getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content"; // used for related-content casts below
 import Layout from "../../layouts/MainLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import TagList from "../../components/TagList.astro";
 import RelatedContent from "../../components/RelatedContent.astro";
 import { getRelatedTalks, getRelatedPostsForTalk } from "../../utils/tag-utils";
@@ -82,6 +83,14 @@ if (video?.type === "youtube") {
   socialImage={thumbnailUrl ?? "/assets/images/page-og/talks.jpg"}
   pageType="Talk"
 >
+  <Breadcrumb
+    items={[
+      { label: "Speaking", href: "/speaking" },
+      { label: "Talks", href: "/talks" },
+      { label: title },
+    ]}
+  />
+
   <article>
     <header>
       <h1
