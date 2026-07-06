@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import TalkCard from "../components/TalkCard.astro";
+import CopyButton from "../components/CopyButton";
 import { dateFilter } from "../utils/filters";
+import { markdownFilter } from "../utils/markdown";
 export const prerender = true;
 
 const now = new Date();
@@ -19,6 +21,8 @@ const featuredTalks = allTalks
   .filter((talk) => talk.data.featured === true && !talk.data.upcoming)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
+const speakerBioMarkdown = `**Nick Taylor** is a Developer Advocate at Pomerium and a GitHub Star, [Agentic AI Foundation (AAIF) Ambassador](https://aaif.io/ambassadors/), AWS Community Builder, and Microsoft MVP. With 20+ years in software, he specializes in the intersection of Zero Trust security, MCP (Model Context Protocol), and agentic AI, helping developers ship secure AI-powered software. He has spoken at conferences across North America and Europe, runs a livestream, and publishes the [_One Tip a Week_](https://onetipaweek.com) newsletter.`;
+const speakerBioHtml = markdownFilter(speakerBioMarkdown);
 ---
 
 <Layout
@@ -169,29 +173,28 @@ const featuredTalks = allTalks
     <section class="space-y-6">
       <SectionHeader title="Speaker Bio" headingLevel={2} />
       <div
-        class="rounded-xl border border-border bg-secondary/30 p-6 space-y-4"
+        id="speaker-bio"
+        data-bio={speakerBioMarkdown}
+        class="relative rounded-xl border border-border bg-secondary/30 p-6"
       >
-        <p class="text-lg leading-relaxed text-muted-foreground">
-          <strong>Nick Taylor</strong> is a Developer Advocate at Pomerium and a GitHub
-          Star, <a
-            href="https://aaif.io/ambassadors/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
-            >Agentic AI Foundation (AAIF) Ambassador</a
-          >, AWS Community Builder, and Microsoft MVP. With 20+ years in
-          software, he specializes in the intersection of Zero Trust security,
-          MCP (Model Context Protocol), and agentic AI, helping developers ship
-          secure AI-powered software. He has spoken at conferences across North
-          America and Europe, runs a livestream on Twitch, and publishes the <em
-            >One Tip a Week</em
-          > newsletter.
-        </p>
-        <p class="text-muted-foreground">
-          Based in Montréal, Quebec, Canada. Available for keynotes, technical
-          deep-dives, workshops, and panels.
-        </p>
+        <div class="absolute right-2 top-2">
+          <CopyButton
+            targetId="speaker-bio"
+            label="Copy speaker bio"
+            copiedMessage="Copied speaker bio to clipboard"
+            errorMessage="Clipboard access was blocked. Select and copy the speaker bio manually."
+            client:load
+          />
+        </div>
+        <div
+          class="pr-10 text-lg leading-relaxed text-muted-foreground [&_a]:text-brand [&_a]:font-semibold [&_a:hover]:underline [&_a:focus]:underline [&_a:focus]:outline-none"
+          set:html={speakerBioHtml}
+        />
       </div>
+      <p class="text-sm leading-relaxed text-muted-foreground">
+        Based in Montréal, Quebec, Canada. Available for keynotes, technical
+        deep-dives, workshops, and panels.
+      </p>
     </section>
 
     <section class="space-y-6">
