@@ -6,6 +6,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  statuses: read
+
 jobs:
   e2e:
     name: Playwright e2e tests
@@ -21,14 +25,40 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Wait for Netlify deploy
+        id: netlify
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sha="${{ github.event.pull_request.head.sha || github.sha }}"
+          echo "Waiting for the deploy/netlify status on $sha..."
+
+          for i in $(seq 1 60); do
+            response=$(gh api "repos/${{ github.repository }}/commits/$sha/status")
+            state=$(echo "$response" | jq -r '[.statuses[] | select(.context=="deploy/netlify")][0].state // empty')
+            url=$(echo "$response" | jq -r '[.statuses[] | select(.context=="deploy/netlify")][0].target_url // empty')
+
+            if [ "$state" = "success" ]; then
+              echo "Netlify deploy ready: $url"
+              echo "url=$url" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            if [ "$state" = "failure" ] || [ "$state" = "error" ]; then
+              echo "Netlify deploy failed, aborting."
+              exit 1
+            fi
+
+            echo "Still waiting (state: ${state:-pending}), attempt $i/60..."
+            sleep 15
+          done
+
+          echo "Timed out waiting for the Netlify deploy."
+          exit 1
+
       - name: Run Playwright tests
         env:
-          APP_ENV: test
-          URL: http://localhost:8888
-          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
-          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
-          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PLAYWRIGHT_BASE_URL: ${{ steps.netlify.outputs.url }}
         run: vp run test:e2e
 
       - name: Upload Playwright report

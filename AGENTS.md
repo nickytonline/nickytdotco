@@ -42,9 +42,9 @@
 ## Testing (E2E)
 
 - Playwright specs live in `e2e/`; run with `vp run test:e2e` (`test:e2e:ui` for UI mode, `test:e2e:report` to reopen the last HTML report).
-- Tests run against a real production build, not the dev server: `playwright.config.ts`'s `webServer` builds and serves via `npx varlock run -- netlify serve`. This is required, not optional — `astro preview` throws ("adapter does not support the preview command") because `@astrojs/netlify` has no preview entrypoint, and Pagefind search only has an index after a production build.
+- Locally, tests run against a real production build, not the dev server: `playwright.config.ts`'s `webServer` builds and serves via `npx varlock run -- netlify serve` unless `PLAYWRIGHT_BASE_URL` is set. This is required, not optional — `astro preview` throws ("adapter does not support the preview command") because `@astrojs/netlify` has no preview entrypoint, and Pagefind search only has an index after a production build.
 - `varlock run --` matters: it resolves real secrets before `netlify serve`'s own `.env.development` injection runs, so the real values win instead of the raw unresolved `op://...` reference strings.
-- CI (`.github/workflows/e2e.yml`) builds with `APP_ENV=test` (not `development`) so the 1Password plugin (`@initOp(allowAppAuth=forEnv(development))`) never engages — secrets must come from GitHub Actions secrets instead: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `DEV_API_KEY` (`GITHUB_TOKEN` is auto-provided by Actions).
+- CI (`.github/workflows/e2e.yml`) does not build at all — it polls the `deploy/netlify` commit status until Netlify's own build finishes, then sets `PLAYWRIGHT_BASE_URL` to that deploy's URL (the PR's deploy preview, or production for pushes to `main`). This tests the real deployed environment (real edge/geo behavior, real Pagefind index) and needs no app secrets in the workflow at all, since Netlify's own build environment already has them.
 
 ## Code Standards
 
