@@ -55,7 +55,8 @@ if (streamVideosResult.error) {
       : latestOverallVideos;
 }
 
-const { timezone = "" } = Astro.locals.netlify.context.geo;
+const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
+const timezone = rawTimezone || "UTC";
 
 Astro.response.headers.set(
   "Cache-Control",
