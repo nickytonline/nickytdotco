@@ -4,6 +4,7 @@ import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import TalkCard from "../components/TalkCard.astro";
 import CopyButton from "../components/CopyButton";
+import { Button } from "../components/Button";
 import { dateFilter } from "../utils/filters";
 import { markdownFilter } from "../utils/markdown";
 export const prerender = true;
@@ -41,16 +42,13 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
         infrastructure that makes it production-ready.
       </p>
       <div class="flex flex-wrap gap-4 pt-2">
-        <a
-          href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-solid text-white font-semibold text-base hover:bg-brand-solid-hover focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
-        >
+        <Button href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry">
           Invite me to speak
           <span class="text-xl">→</span>
-        </a>
+        </Button>
         <a
           href="/talks"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border font-semibold text-base hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md border border-border font-semibold text-base hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
         >
           View all talks
         </a>
@@ -205,16 +203,13 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
         together.
       </p>
       <div class="flex flex-wrap gap-4">
-        <a
-          href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-solid text-white font-semibold text-base hover:bg-brand-solid-hover focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
-        >
+        <Button href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry">
           Email me
           <span class="text-xl">→</span>
-        </a>
+        </Button>
         <a
           href="/socials"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border font-semibold text-base hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md border border-border font-semibold text-base hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
         >
           Find me online
         </a>

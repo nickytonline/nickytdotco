@@ -1,6 +1,7 @@
 ---
 import SectionHeader from "@/components/SectionHeader.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import { Button } from "../components/Button";
 ---
 
 <MainLayout
@@ -82,13 +83,10 @@ import MainLayout from "../layouts/MainLayout.astro";
         > for topics, a bio, and how to book me.
       </p>
       <div class="pt-2">
-        <a
-          href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-solid text-white font-semibold text-base hover:bg-brand-solid-hover focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
-        >
+        <Button href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry">
           Book me to speak
           <span class="text-xl">→</span>
-        </a>
+        </Button>
       </div>
     </section>
 

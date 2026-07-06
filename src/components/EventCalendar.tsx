@@ -11,6 +11,7 @@ import {
 } from "@floating-ui/react";
 import { CalendarPlus, Plus } from "lucide-react";
 import { useId, useState } from "react";
+import { Button } from "./Button";
 import {
   generateGoogleCalendarUrl,
   generateICalContent,
@@ -62,7 +63,7 @@ const EventCalendar = ({
 
   return (
     <div className="relative w-fit">
-      <button
+      <Button
         type="button"
         id={toggleId}
         aria-controls={menuId}
@@ -73,7 +74,7 @@ const EventCalendar = ({
       >
         <Plus className="w-3.5 h-3.5" />
         <span>Add to Calendar</span>
-      </button>
+      </Button>
       {isExpanded && (
         <div
           id={menuId}
