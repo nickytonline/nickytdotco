@@ -26,6 +26,30 @@ function getClient() {
   });
 }
 
+/**
+ * Returns the value only if it is a valid http(s) URL, otherwise undefined.
+ * Filters out garbage values like emails, bare domains, or free text.
+ */
+function sanitizeWebsiteUrl(value: unknown): string | undefined {
+  if (typeof value !== "string" || !value) return undefined;
+  const lower = value.toLowerCase();
+  if (!lower.startsWith("http://") && !lower.startsWith("https://")) {
+    return undefined;
+  }
+  try {
+    new URL(value);
+    return value;
+  } catch {
+    return undefined;
+  }
+}
+
+const YOUTUBE_VIDEO_ID_RE = /(?:v=|youtu\.be\/|\/live\/)([A-Za-z0-9_-]{11})/;
+
+function hasYouTubeVideoId(url: string): boolean {
+  return YOUTUBE_VIDEO_ID_RE.test(url);
+}
+
 function mapRowToVideo(row: Record<string, unknown>): StreamVideoInfo {
   const {
     type,
@@ -48,6 +72,12 @@ function mapRowToVideo(row: Record<string, unknown>): StreamVideoInfo {
     throw new Error("Missing required stream video fields.");
   }
 
+  if (!hasYouTubeVideoId(youtube_stream_link as string)) {
+    throw new Error(
+      `youtube_stream_link does not contain an extractable YouTube video ID: ${youtube_stream_link}`
+    );
+  }
+
   if (type !== "nickyt.live" && type !== "pomerium-live") {
     throw new Error(`Invalid stream type: ${type}`);
   }
@@ -65,7 +95,7 @@ function mapRowToVideo(row: Record<string, unknown>): StreamVideoInfo {
     github: (github as string) ?? undefined,
     youtube: (youtube as string) ?? undefined,
     bluesky: (bluesky as string) ?? undefined,
-    website: (website as string) ?? undefined,
+    website: sanitizeWebsiteUrl(website),
     linkedin: (linkedin as string) ?? undefined,
   } satisfies StreamVideoInfo;
 }
@@ -76,12 +106,16 @@ export const streamVideosLoader: LiveLoader<StreamVideoInfo, { id: string }> = {
   async loadCollection() {
     const client = getClient();
 
-    // TODO: Remove youtube_stream_link filter once all rows have links
     const result = await client.execute({
       sql: `SELECT * FROM stream_guests
             WHERE on_schedule = 1
               AND youtube_stream_link IS NOT NULL
               AND youtube_stream_link != ''
+              AND (
+                youtube_stream_link LIKE '%v=___________%'
+                OR youtube_stream_link LIKE '%youtu.be/___________%'
+                OR youtube_stream_link LIKE '%/live/___________%'
+              )
             ORDER BY date DESC`,
       args: [],
     });
@@ -104,13 +138,17 @@ export const streamVideosLoader: LiveLoader<StreamVideoInfo, { id: string }> = {
 
     const client = getClient();
 
-    // TODO: Remove youtube_stream_link filter once all rows have links
     const result = await client.execute({
       sql: `SELECT * FROM stream_guests
             WHERE id = ?
               AND on_schedule = 1
               AND youtube_stream_link IS NOT NULL
-              AND youtube_stream_link != ''`,
+              AND youtube_stream_link != ''
+              AND (
+                youtube_stream_link LIKE '%v=___________%'
+                OR youtube_stream_link LIKE '%youtu.be/___________%'
+                OR youtube_stream_link LIKE '%/live/___________%'
+              )`,
       args: [filter.id],
     });
 

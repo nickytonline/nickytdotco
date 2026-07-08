@@ -1263,8 +1263,26 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/videos/a-history-of-redux-and-modern-redux-with-mark-erikson"
+to = "/videos/a-history-of-redux-and-modern-redux-mark-erikson"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/a-b-testing-accessibility-and-devrel-with-chris-demars"
+to = "/videos/ab-testing-accessibility-and-devrel-chris-demars"
+status = 301
+force = true
+
+[[redirects]]
 from = "/videos/accessbility-and-an-audit-with-graham-ritchie"
 to = "/videos/accessbility-and-an-audit-graham-ritchie"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/accessibility-of-things-with-todd-libby"
+to = "/videos/accessibility-of-things-todd-libby"
 status = 301
 force = true
 
@@ -1312,7 +1330,7 @@ force = true
 
 [[redirects]]
 from = "/videos/an-intro-to-react-native-and-expo-with-ramn-huidobro"
-to = "/videos/an-intro-to-react-native-and-expo-ramn-huidobro"
+to = "/videos/an-intro-to-react-native-and-expo-ramon-huidobro"
 status = 301
 force = true
 
@@ -1331,6 +1349,12 @@ force = true
 [[redirects]]
 from = "/videos/api-monitoring-and-observability"
 to = "/videos/api-monitoring-and-observability-anthony-alaribe"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/asts-eslint-and-typescript-eslint-with-josh-goldberg-open-source-developer"
+to = "/videos/asts-eslint-and-typescript-eslint-josh-goldberg"
 status = 301
 force = true
 
@@ -1366,7 +1390,7 @@ force = true
 
 [[redirects]]
 from = "/videos/biz-bytes-with-scott-steinlage"
-to = "/videos/biz-bytes-scott-steinlage"
+to = "/videos/biz-and-bytes-scott-steinlage"
 status = 301
 force = true
 
@@ -1408,13 +1432,19 @@ force = true
 
 [[redirects]]
 from = "/videos/community-core-skills-with-bekahhw"
-to = "/videos/community-core-skills-bekahhw"
+to = "/videos/community-and-core-skills-bekahhw"
 status = 301
 force = true
 
 [[redirects]]
 from = "/videos/community-devrel"
-to = "/videos/community-devrel-chris-demars"
+to = "/videos/community-and-devrel-chris-demars"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/contributing-to-open-source-with-brian-douglas"
+to = "/videos/contributing-to-open-source-brian-douglas"
 status = 301
 force = true
 
@@ -1510,13 +1540,19 @@ force = true
 
 [[redirects]]
 from = "/videos/intro-to-wasp-full-stack-development-with-react-nodejs"
-to = "/videos/intro-to-wasp-full-stack-development-with-react-nodejs-matija-sosic"
+to = "/videos/intro-to-wasp-full-stack-development-with-react-and-nodejs-matija-sosic"
 status = 301
 force = true
 
 [[redirects]]
 from = "/videos/kettlebells-code-with-anna-nettles"
 to = "/videos/kettlebells-and-code-anna-nettles"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/making-and-learning-with-andy-piper"
+to = "/videos/making-and-learning-andy-piper"
 status = 301
 force = true
 
@@ -1552,7 +1588,7 @@ force = true
 
 [[redirects]]
 from = "/videos/low-code-ai-equals-opportunity-with-ray-deck"
-to = "/videos/low-code-ai-equals-opportunity-ray-deck"
+to = "/videos/low-code-and-ai-equals-opportunity-ray-deck"
 status = 301
 force = true
 
@@ -1582,13 +1618,13 @@ force = true
 
 [[redirects]]
 from = "/videos/netlify-primitives-and-local-dx"
-to = "/videos/netlify-primitives-and-local-dx-eduardo-bouas"
+to = "/videos/netlify-primitives-and-local-dx-eduardo-boucas"
 status = 301
 force = true
 
 [[redirects]]
 from = "/videos/netlifys-new-primitives"
-to = "/videos/netlifys-new-primitives-eduardo-bouas"
+to = "/videos/netlifys-new-primitives-eduardo-boucas"
 status = 301
 force = true
 
@@ -1689,8 +1725,14 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/videos/the-future-of-identity-with-web5-verifiable-credentials-with-rizel-scarlett"
+to = "/videos/the-future-of-identity-with-web5-and-verifiable-credentials-rizel-scarlett"
+status = 301
+force = true
+
+[[redirects]]
 from = "/videos/travel-dev-life"
-to = "/videos/travel-dev-life-alex-appleget"
+to = "/videos/travel-and-dev-life-alex-appleget"
 status = 301
 force = true
 
@@ -1709,6 +1751,12 @@ force = true
 [[redirects]]
 from = "/videos/virtual-dom-back-in-block-with-aiden-bai-creator-of-millionjs"
 to = "/videos/virtual-dom-back-in-block-aiden-bai"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/vue-with-drew"
+to = "/videos/vue-with-drew-drew-clements"
 status = 301
 force = true
 
@@ -1758,6 +1806,12 @@ force = true
 [[redirects]]
 from = "/videos/highlight-clerk-authentication-web-dev-all-the-things-with-dev-agrawal"
 to = "/videos/clerk-authentication-web-dev-all-the-things-dev-agrawal"
+status = 301
+force = true
+
+[[redirects]]
+from = "/videos/highlight-exploring-nuxt-with-daniel-roe-nuxt-core-team-member"
+to = "/videos/highlight-exploring-nuxt-daniel-roe"
 status = 301
 force = true
 
