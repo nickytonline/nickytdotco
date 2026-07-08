@@ -1461,6 +1461,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/videos/code-reviews-for-a11y-pull-requests"
+to = "/videos/code-reviews-for-a11y-pull-requests-fatuma-abdullahi"
+status = 301
+force = true
+
+[[redirects]]
 from = "/videos/devicescript-typescript-for-microelectronics-with-peli-de-halleux"
 to = "/videos/devicescript-typescript-for-microelectronics-peli-de-halleux"
 status = 301
@@ -1811,7 +1817,7 @@ force = true
 
 [[redirects]]
 from = "/videos/highlight-exploring-nuxt-with-daniel-roe-nuxt-core-team-member"
-to = "/videos/highlight-exploring-nuxt-daniel-roe"
+to = "/videos/exploring-nuxt-daniel-roe"
 status = 301
 force = true
 
