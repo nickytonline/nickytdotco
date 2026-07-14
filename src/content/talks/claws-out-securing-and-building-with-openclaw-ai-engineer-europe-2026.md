@@ -6,7 +6,7 @@ venue:
   url: "https://ai.engineer/europe"
 tags: ["openclaw", "security", "ai", "pomerium", "zero trust"]
 video:
-  { "url": "https://www.youtube.com/watch?v=O_IMsEg91g8&t=14220s", "type": "youtube" }
+  { "url": "https://youtube.com/watch?v=xg1zNlzw7Jk", "type": "youtube" }
 featured: true
 ---
 
