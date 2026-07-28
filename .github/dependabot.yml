@@ -20,3 +20,10 @@ updates:
       - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]
         versions: [">= 23.a"]
+      # TypeScript 7 is the native (Go) compiler port and does not yet expose the
+      # programmatic API that @astrojs/language-server / Volar rely on.
+      # See: https://github.com/withastro/astro/pull/17345
+      # Re-enable once Astro supports TS 7: https://github.com/withastro/roadmap/discussions/1321
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+        versions: [">= 7.a"]
