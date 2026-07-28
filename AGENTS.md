@@ -46,6 +46,7 @@
 - `netlify-cli` is expected as a **global** install (`npm install -g netlify-cli`), not a project dependency — it's Netlify's own recommended install method and avoids ~400 extra packages in `node_modules` for something CI never touches. `webServer.command` checks `command -v netlify` first and fails with an install hint if it's missing.
 - `varlock run --` matters: it resolves real secrets before `netlify serve`'s own `.env.development` injection runs, so the real values win instead of the raw unresolved `op://...` reference strings.
 - CI (`.github/workflows/e2e.yml`) does not build at all — it polls the `deploy/netlify` commit status until Netlify's own build finishes, then sets `PLAYWRIGHT_BASE_URL` to that deploy preview's URL. This tests the real deployed environment (real edge/geo behavior, real Pagefind index) and needs no app secrets in the workflow at all, since Netlify's own build environment already has them. PR-only: Netlify only posts that commit status for deploy previews, not for direct pushes to `main` — a push to `main` has already passed this check on its PR beforehand.
+- Future improvement (on hold): switch to polling the Netlify API directly so e2e can also run on pushes to `main`. See `todo.md` for the full plan and acceptance criteria. Remove `todo.md` once issue #967 is implemented.
 
 ## Code Standards
 
