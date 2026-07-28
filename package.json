@@ -57,7 +57,7 @@
     "remark-directive": "^4.0.0",
     "rss-parser": "^3.13.0",
     "tailwind-merge": "^3.6.0",
-    "typescript": "^5.6.0",
+    "typescript": "^7.0.2",
     "unist-util-visit": "^5.1.0",
     "varlock": "^1.2.0"
   },
