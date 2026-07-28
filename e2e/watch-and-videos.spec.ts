@@ -29,9 +29,12 @@ test.describe("watch page", () => {
     ).toBeVisible();
   });
 
-  test("sets a timezone response header from geo context", async ({ page }) => {
-    const response = await page.goto("/watch");
-    expect(response?.headers()["timezone"]).toBeDefined();
+  test("sets a timezone response header from geo context", async ({
+    request,
+  }) => {
+    const response = await request.get("/watch");
+    expect(response.ok()).toBeTruthy();
+    expect(response.headers()["timezone"]).toBeDefined();
   });
 });
 

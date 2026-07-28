@@ -38,9 +38,12 @@ test.describe("home page", () => {
     await expect(subheadings.first()).toBeVisible();
   });
 
-  test("sets a timezone response header from geo context", async ({ page }) => {
-    const response = await page.goto("/");
-    expect(response?.headers()["timezone"]).toBeDefined();
+  test("sets a timezone response header from geo context", async ({
+    request,
+  }) => {
+    const response = await request.get("/");
+    expect(response.ok()).toBeTruthy();
+    expect(response.headers()["timezone"]).toBeDefined();
   });
 
   test("embeds Person JSON-LD structured data", async ({ page }) => {
