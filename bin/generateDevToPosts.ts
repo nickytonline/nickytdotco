@@ -594,7 +594,10 @@ async function fetchWithRetry(
       );
     }
     const retryAfter = response.headers.get("Retry-After");
-    const waitTime = retryAfter ? parseInt(retryAfter, 10) * 1000 : delay;
+    const retryAfterMs = retryAfter ? Number(retryAfter) * 1000 : 0;
+    // Honor the server's Retry-After but never drop below exponential backoff,
+    // because dev.to's Retry-After can be shorter than the actual rate-limit window.
+    const waitTime = Math.max(delay, retryAfterMs);
     console.warn(
       `Rate limited (429) on ${url}. Retrying in ${waitTime / 1000}s (attempt ${attempt}/${maxRetries})...`
     );
@@ -1012,6 +1015,9 @@ async function updateTwitterEmbeds(
   console.log(`Processing ${filteredPosts.length} posts...`);
 
   for (const postSummary of filteredPosts) {
+    // Throttle individual article fetches to stay under dev.to's rate limit.
+    await sleep(1000);
+
     const post = await getDevPost(postSummary.id);
 
     post.canonical_url = new URL(
