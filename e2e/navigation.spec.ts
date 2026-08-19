@@ -8,6 +8,8 @@ const NAV_LINKS: Array<{ name: string; href: string }> = [
   { name: "Newsletter", href: "/newsletter" },
   { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
+  { name: "Socials", href: "/socials" },
+  { name: "Uses", href: "/uses" },
 ];
 
 test.describe("primary navigation", () => {
@@ -18,6 +20,12 @@ test.describe("primary navigation", () => {
 
     const nav = page.getByRole("navigation", { name: "main navigation" });
     await expect(nav).toBeVisible();
+    await expect(nav.locator("li").nth(NAV_LINKS.length - 2)).toHaveText(
+      "Socials"
+    );
+    await expect(nav.locator("li").nth(NAV_LINKS.length - 1)).toHaveText(
+      "Uses"
+    );
 
     for (const link of NAV_LINKS) {
       await expect(
@@ -67,18 +75,12 @@ test.describe("primary navigation", () => {
     ).toHaveAttribute("href", "/feed.xml");
   });
 
-  test("footer exposes secondary navigation", async ({ page }) => {
+  test("footer exposes the copyright", async ({ page }) => {
     await page.goto("/");
-    const footerNav = page.getByRole("navigation", {
-      name: "footer navigation",
-    });
-    await expect(
-      footerNav.getByRole("link", { name: "Socials" })
-    ).toHaveAttribute("href", "/socials");
-    await expect(footerNav.getByRole("link", { name: "Uses" })).toHaveAttribute(
-      "href",
-      "/uses"
-    );
+    const footer = page.locator("footer");
+    await expect(footer).toContainText("Nick Taylor");
+    await expect(footer.getByRole("link", { name: "Socials" })).toHaveCount(0);
+    await expect(footer.getByRole("link", { name: "Uses" })).toHaveCount(0);
   });
 
   test("skip link moves focus to main content", async ({ page }) => {
