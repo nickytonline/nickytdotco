@@ -1,15 +1,5 @@
-import {
-  autoUpdate,
-  flip,
-  offset,
-  shift,
-  useDismiss,
-  useFloating,
-  useInteractions,
-  useRole,
-} from "@floating-ui/react";
 import { CalendarPlus, Plus } from "lucide-react";
-import { useId, useState } from "react";
+import { useState } from "react";
 import { Button } from "./Button";
 import {
   generateGoogleCalendarUrl,
@@ -34,42 +24,30 @@ const EventCalendar = ({
 }: EventCalendarProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const id = useId();
-  const menuId = `${id}-menu`;
-  const toggleId = `${id}-toggle`;
-
-  const { refs, floatingStyles, context } = useFloating({
-    open: isExpanded,
-    onOpenChange: setIsExpanded,
-    placement: "bottom-end",
-    middleware: [offset(8), flip(), shift({ padding: 8 })],
-    whileElementsMounted: autoUpdate,
-  });
-
-  const dismiss = useDismiss(context);
-  const role = useRole(context, { role: "menu" });
-
-  const { getReferenceProps, getFloatingProps } = useInteractions([
-    dismiss,
-    role,
-  ]);
-
   const durationInMillis = duration * 60 * 1000;
   const startDate = new Date(eventDate);
   const endDate = new Date(startDate.getTime() + durationInMillis);
   const toggleMenu = () => setIsExpanded((current) => !current);
+  const closeMenu = () => setIsExpanded(false);
 
   return (
-    <div className="relative w-fit">
+    <div
+      className="relative flex w-fit items-center"
+      onMouseEnter={() => setIsExpanded(true)}
+      onMouseLeave={() => setIsExpanded(false)}
+      onFocusCapture={() => setIsExpanded(true)}
+      onBlurCapture={(event) => {
+        const nextFocusTarget = event.relatedTarget as Node | null;
+        if (!event.currentTarget.contains(nextFocusTarget)) {
+          closeMenu();
+        }
+      }}
+    >
       <Button
         type="button"
-        id={toggleId}
-        aria-controls={menuId}
         aria-expanded={isExpanded}
         aria-haspopup="menu"
         aria-label={`Add ${eventName} to calendar`}
-        ref={refs.setReference}
-        {...getReferenceProps()}
         onClick={toggleMenu}
         className="inline-flex items-center gap-1.5 rounded-md border border-brand/30 bg-brand-soft px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-soft-foreground hover:bg-background hover:text-brand focus-visible:bg-background focus-visible:text-brand focus-visible:border-brand transition-colors"
       >
@@ -77,13 +55,7 @@ const EventCalendar = ({
         <span>Add to Calendar</span>
       </Button>
       {isExpanded && (
-        <div
-          id={menuId}
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps()}
-          className="z-50"
-        >
+        <div className="absolute left-0 top-full z-50 mt-2">
           <ul className="p-4 grid gap-4 border-2 border-brand rounded-md text-base [&_a]:text-base [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-popover text-popover-foreground shadow-lg">
             <li>
               <a

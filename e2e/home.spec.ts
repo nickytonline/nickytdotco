@@ -54,6 +54,34 @@ test.describe("home page", () => {
     await expect(subheadings.first()).toBeVisible();
   });
 
+  test("shows add to calendar controls on live stream cards", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const button = page
+      .getByRole("button", { name: /Add .* to calendar/i })
+      .first();
+
+    await expect(button).toBeVisible();
+    await button.hover();
+
+    await expect(
+      page.getByRole("menuitem", { name: /Google Calendar/i })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("menuitem", { name: /Outlook Calendar/i })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("menuitem", { name: /iCal\/Apple Calendar/i })
+    ).toBeVisible();
+
+    await button.click();
+    await expect(
+      page.getByRole("menuitem", { name: /Google Calendar/i })
+    ).toBeVisible();
+  });
+
   test("sets a timezone response header from geo context", async ({
     request,
   }) => {
