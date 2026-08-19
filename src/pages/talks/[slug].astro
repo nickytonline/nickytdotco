@@ -44,10 +44,15 @@ const registrationUrl = talk.data.registrationUrl;
 const additionalLinks = talk.data.additionalLinks ?? [];
 const coverImage = talk.data.cover_image;
 const coverImageLarge = talk.data.cover_image_large;
-const dateDisplay =
-  isUpcoming && endDate
-    ? `${dateFilter(date)} – ${dateFilter(endDate)}`
-    : dateFilter(date);
+const isMultiDayEvent =
+  isUpcoming &&
+  endDate &&
+  new Date(endDate).toISOString().slice(0, 10) !==
+    new Date(date).toISOString().slice(0, 10);
+
+const dateDisplay = isMultiDayEvent
+  ? `${dateFilter(date)} – ${dateFilter(endDate)}`
+  : dateFilter(date);
 
 // Get all talks to find related ones (past talks only)
 const allTalks = await getCollection("talks");
@@ -94,15 +99,15 @@ if (video?.type === "youtube") {
   />
 
   <article>
-    <header>
+    <header class="space-y-5">
       <h1
         class="text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-tight"
         data-pagefind-meta="title"
       >
         {title}
       </h1>
-      <div class="text-lg text-muted-foreground">
-        <div class="flex flex-wrap items-center gap-2">
+      <div class="text-lg text-muted-foreground space-y-3">
+        <div class="flex flex-wrap items-center gap-2 leading-none">
           {
             venueUrl ? (
               <a
@@ -117,11 +122,10 @@ if (video?.type === "youtube") {
               <span class="font-semibold text-brand">{venue.name}</span>
             )
           }
-          {isUpcoming && <UpcomingBadge />}
+          {isUpcoming && <UpcomingBadge label="Upcoming talk" />}
         </div>
-        <div class="flex flex-wrap items-center gap-2">
+        <div class="flex flex-wrap items-center gap-2 leading-relaxed">
           {venueLocation && <span>{venueLocation}</span>}
-          {venueLocation && <span class="text-brand font-semibold">•</span>}
           <time datetime={date.toISOString()} class="italic">
             {dateDisplay}
           </time>
