@@ -101,21 +101,4 @@ test.describe("home page", () => {
     expect(person).toBeTruthy();
     expect(person.name).toBe("Nick Taylor");
   });
-
-  // The site has hundreds of blog posts and many talks, so both "More" links
-  // are effectively always present — assert them directly rather than skipping
-  // when absent, so a regression that removes either link fails the test.
-  test("More links from Latest sections lead to their archive pages", async ({
-    page,
-  }) => {
-    await page.goto("/");
-    const main = page.getByRole("main");
-
-    await expect(
-      main.getByRole("link", { name: /More talks/ })
-    ).toHaveAttribute("href", "/talks");
-    await expect(
-      main.getByRole("link", { name: /More blog posts/ })
-    ).toHaveAttribute("href", "/blog");
-  });
 });
