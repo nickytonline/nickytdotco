@@ -3,14 +3,16 @@ import type { StreamGuestInfo } from "../utils/schedule-utils";
 import { getLocalizedDate } from "../utils/schedule-utils";
 import { getYouTubeId } from "../utils/youtube-utils";
 import { slugifyVideo } from "../utils/video-utils";
+import Pill from "./Pill.astro";
 
 interface Props {
   guest: StreamGuestInfo;
   locale: string;
   timezone: string;
+  category?: string;
 }
 
-const { guest, locale, timezone } = Astro.props;
+const { guest, locale, timezone, category } = Astro.props;
 
 const { date, title, guestName, guestTitle, youtubeStreamLink } = guest;
 
@@ -58,10 +60,7 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
     >
       {
         videoPageUrl ? (
-          <a
-            href={videoPageUrl}
-            class="hover:text-brand transition-colors"
-          >
+          <a href={videoPageUrl} class="hover:text-brand transition-colors">
             {title}
           </a>
         ) : (
@@ -73,6 +72,13 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
     <time class="italic text-base text-muted-foreground font-normal"
       >{guestDate}</time
     >
+    {
+      category && (
+        <div class="pt-1">
+          <Pill label={category} srLabel={category} />
+        </div>
+      )
+    }
     {
       youtubeStreamLink && (
         <div class="flex items-center gap-3 mt-1">

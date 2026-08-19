@@ -1,6 +1,5 @@
 ---
 import StreamSchedule from "../components/StreamSchedule.astro";
-import PastGuestCard from "../components/PastGuestCard.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import Layout from "../layouts/MainLayout.astro";
@@ -70,7 +69,6 @@ const locale =
 
 let errorMessage = "";
 let schedule: StreamGuestInfo[] = [];
-let pastGuests: StreamGuestInfo[] = [];
 let latestUpcomingStreams: StreamGuestInfo[] = [];
 let latestPastStreams: StreamGuestInfo[] = [];
 
@@ -87,8 +85,10 @@ if (scheduleResult.error) {
     .slice(0, 2);
 
   if (latestUpcomingStreams.length < 2) {
-    pastGuests = await fetchPastGuestsWithYouTube();
-    latestPastStreams = pastGuests.slice(0, 2 - latestUpcomingStreams.length);
+    latestPastStreams = (await fetchPastGuestsWithYouTube()).slice(
+      0,
+      2 - latestUpcomingStreams.length,
+    );
   }
 }
 
@@ -183,10 +183,8 @@ export const prerender = false;
           <SectionHeader title="Featured" headingLevel={2} />
 
           {featuredTalks.length > 0 && (
-            <div>
-              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-                Talks
-              </h3>
+            <div class="space-y-4">
+              <h3 class="sr-only">Talks</h3>
               <div class="grid gap-6 xl:gap-8">
                 {featuredTalks.map((talk) => (
                   <TalkCard
@@ -197,6 +195,7 @@ export const prerender = false;
                     href={`/talks/${talk.id}`}
                     video={talk.data.video}
                     coverImage={talk.data.cover_image}
+                    category="Talk"
                   />
                 ))}
               </div>
@@ -204,10 +203,8 @@ export const prerender = false;
           )}
 
           {featuredGuides.length > 0 && (
-            <div>
-              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-                Hands-On Tutorials
-              </h3>
+            <div class="space-y-4">
+              <h3 class="sr-only">Hands-On Tutorials</h3>
               <div class="grid gap-6 xl:gap-8">
                 {featuredGuides.map((guide) => (
                   <GuideCard
@@ -217,6 +214,7 @@ export const prerender = false;
                     coverImage={guide.data.cover_image}
                     href={guide.data.url}
                     source={guide.data.source}
+                    category="Hands-on tutorial"
                   />
                 ))}
               </div>
@@ -224,10 +222,8 @@ export const prerender = false;
           )}
 
           {featuredPosts.length > 0 && (
-            <div>
-              <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-                Writing
-              </h3>
+            <div class="space-y-4">
+              <h3 class="sr-only">Writing</h3>
               <div class="grid gap-6 xl:gap-8">
                 {featuredPosts.map((post) => (
                   <BlogPostCard
@@ -235,6 +231,7 @@ export const prerender = false;
                     date={dateFilter(post.data.date)}
                     image={post.data.cover_image}
                     href={`/blog/${post.id}`}
+                    category="Writing"
                   />
                 ))}
               </div>
@@ -250,10 +247,8 @@ export const prerender = false;
 
       {
         recentTalks.length > 0 && (
-          <div>
-            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-              Talks
-            </h3>
+          <div class="space-y-4">
+            <h3 class="sr-only">Talks</h3>
             <div class="grid gap-6 xl:gap-8">
               {recentTalks.map((talk) => (
                 <TalkCard
@@ -265,14 +260,9 @@ export const prerender = false;
                   video={talk.data.video}
                   coverImage={talk.data.cover_image}
                   upcoming={talk.data.upcoming}
+                  category="Talk"
                 />
               ))}
-              <a
-                href="/talks"
-                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-brand"
-              >
-                More talks<span class="text-2xl">→</span>
-              </a>
             </div>
           </div>
         )
@@ -280,10 +270,7 @@ export const prerender = false;
 
       {
         errorMessage ? (
-          <div>
-            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-              Live Streams
-            </h3>
+          <div class="space-y-3">
             <p class="text-destructive">{errorMessage}</p>
           </div>
         ) : null
@@ -291,42 +278,23 @@ export const prerender = false;
       {
         !errorMessage &&
         (latestUpcomingStreams.length > 0 || latestPastStreams.length > 0) ? (
-          <div>
-            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-              Live Streams
-            </h3>
+          <div class="space-y-4">
+            <h3 class="sr-only">Live streams</h3>
             <div class="grid gap-6 xl:gap-8">
-              {latestUpcomingStreams.length > 0 && (
-                <StreamSchedule
-                  schedule={latestUpcomingStreams}
-                  locale={locale}
-                  timezone={timezone}
-                />
-              )}
-              {latestPastStreams.map((guest) => (
-                <PastGuestCard
-                  guest={guest}
-                  locale={locale}
-                  timezone={timezone}
-                />
-              ))}
+              <StreamSchedule
+                schedule={[...latestUpcomingStreams, ...latestPastStreams]}
+                locale={locale}
+                timezone={timezone}
+              />
             </div>
-            <a
-              href="/videos"
-              class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-brand"
-            >
-              More live streams<span class="text-2xl">→</span>
-            </a>
           </div>
         ) : null
       }
 
       {
         recentPosts.length > 0 && (
-          <div>
-            <h3 class="text-2xl font-bold tracking-tight text-balance mb-2">
-              Blog Posts
-            </h3>
+          <div class="space-y-4">
+            <h3 class="sr-only">Blog posts</h3>
             <div class="grid gap-6 xl:gap-8">
               {recentPosts.map((post) => (
                 <BlogPostCard
@@ -334,14 +302,9 @@ export const prerender = false;
                   date={dateFilter(post.data.date)}
                   image={post.data.cover_image}
                   href={`/blog/${post.id}`}
+                  category="Writing"
                 />
               ))}
-              <a
-                href="/blog"
-                class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-black dark:text-white hover:text-brand"
-              >
-                More blog posts<span class="text-2xl">→</span>
-              </a>
             </div>
           </div>
         )

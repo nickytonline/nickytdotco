@@ -23,6 +23,22 @@ test.describe("home page", () => {
     ).toHaveAttribute("href", "/socials");
   });
 
+  test("renders a curated Featured section with at least one content type", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Featured" })
+    ).toBeVisible();
+
+    const subheadings = page.getByRole("heading", {
+      level: 3,
+      name: /Talks|Hands-On Tutorials|Writing/,
+    });
+    await expect(subheadings.first()).toBeVisible();
+  });
+
   test("renders a Latest section with at least one content type", async ({
     page,
   }) => {

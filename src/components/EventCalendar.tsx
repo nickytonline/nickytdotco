@@ -3,7 +3,6 @@ import {
   flip,
   offset,
   shift,
-  useClick,
   useDismiss,
   useFloating,
   useInteractions,
@@ -47,12 +46,10 @@ const EventCalendar = ({
     whileElementsMounted: autoUpdate,
   });
 
-  const click = useClick(context);
   const dismiss = useDismiss(context);
   const role = useRole(context, { role: "menu" });
 
   const { getReferenceProps, getFloatingProps } = useInteractions([
-    click,
     dismiss,
     role,
   ]);
@@ -60,6 +57,7 @@ const EventCalendar = ({
   const durationInMillis = duration * 60 * 1000;
   const startDate = new Date(eventDate);
   const endDate = new Date(startDate.getTime() + durationInMillis);
+  const toggleMenu = () => setIsExpanded((current) => !current);
 
   return (
     <div className="relative w-fit">
@@ -67,12 +65,15 @@ const EventCalendar = ({
         type="button"
         id={toggleId}
         aria-controls={menuId}
+        aria-expanded={isExpanded}
+        aria-haspopup="menu"
         aria-label={`Add ${eventName} to calendar`}
         ref={refs.setReference}
         {...getReferenceProps()}
-        className="flex items-center gap-1.5 rounded-md bg-brand-solid text-brand-foreground text-base px-2 py-0.5 hover:bg-background hover:text-brand focus-visible:bg-background focus-visible:text-brand border border-brand hover:border-brand focus-visible:border-brand transition-colors"
+        onClick={toggleMenu}
+        className="inline-flex items-center gap-1.5 rounded-md border border-brand/30 bg-brand-soft px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-soft-foreground hover:bg-background hover:text-brand focus-visible:bg-background focus-visible:text-brand focus-visible:border-brand transition-colors"
       >
-        <Plus className="w-3.5 h-3.5" />
+        <Plus className="w-3 h-3" />
         <span>Add to Calendar</span>
       </Button>
       {isExpanded && (

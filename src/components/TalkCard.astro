@@ -1,5 +1,6 @@
 ---
 import { getYouTubeId } from "../utils/youtube-utils";
+import Pill from "./Pill.astro";
 import UpcomingBadge from "./UpcomingBadge.astro";
 
 interface Props {
@@ -15,10 +16,20 @@ interface Props {
   } | null;
   coverImage?: string;
   upcoming?: boolean;
+  category?: string;
 }
 
-const { title, venueName, venueUrl, date, href, video, coverImage, upcoming } =
-  Astro.props;
+const {
+  title,
+  venueName,
+  venueUrl,
+  date,
+  href,
+  video,
+  coverImage,
+  upcoming,
+  category,
+} = Astro.props;
 
 let thumbnailUrl: string | undefined;
 if (coverImage) {
@@ -96,28 +107,28 @@ if (coverImage) {
         >
           {title}
         </span>
-        {upcoming && <UpcomingBadge />}
       </h3>
       <div
         class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground"
       >
         {
           venueUrl ? (
-            <span class="text-base font-semibold text-brand">
-              {venueName}
-            </span>
+            <span class="text-base font-semibold text-brand">{venueName}</span>
           ) : (
-            <span class="text-base font-semibold text-brand">
-              {venueName}
-            </span>
+            <span class="text-base font-semibold text-brand">{venueName}</span>
           )
         }
-        <span
-          class="hidden sm:inline text-brand font-semibold"
-        >
-          •
-        </span>
+        <span class="hidden sm:inline text-brand font-semibold"> • </span>
         <time class="italic text-base text-muted-foreground">{date}</time>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 pt-1">
+        {
+          upcoming ? (
+            <UpcomingBadge label="Upcoming talk" />
+          ) : (
+            category && <Pill label={category} srLabel={category} />
+          )
+        }
       </div>
     </div>
   </a>

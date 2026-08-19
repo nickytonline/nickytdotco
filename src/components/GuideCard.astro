@@ -1,4 +1,6 @@
 ---
+import Pill from "./Pill.astro";
+
 interface Props {
   title: string;
   description: string;
@@ -6,9 +8,11 @@ interface Props {
   coverImage?: string;
   href: string;
   source: string;
+  category?: string;
 }
 
-const { title, description, date, coverImage, href, source } = Astro.props;
+const { title, description, date, coverImage, href, source, category } =
+  Astro.props;
 ---
 
 <article data-pagefind-ignore>
@@ -62,13 +66,16 @@ const { title, description, date, coverImage, href, source } = Astro.props;
         <span class="text-base font-semibold text-brand">
           {source}
         </span>
-        <span
-          class="hidden sm:inline text-brand font-semibold"
-        >
-          •
-        </span>
+        <span class="hidden sm:inline text-brand font-semibold">•</span>
         <time class="italic text-base text-muted-foreground">{date}</time>
       </div>
+      {
+        category && (
+          <div class="pt-1">
+            <Pill label={category} srLabel={category} />
+          </div>
+        )
+      }
     </div>
   </a>
 </article>

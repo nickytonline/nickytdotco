@@ -1,12 +1,15 @@
 ---
+import Pill from "./Pill.astro";
+
 interface Props {
   title: string;
   date: string;
   image?: string | null;
   href: string;
+  category?: string;
 }
 
-const { title, date, image, href } = Astro.props;
+const { title, date, image, href, category } = Astro.props;
 
 if (!image) {
   console.warn(`BlogPostCard is missing an image for post: ${title}`);
@@ -39,6 +42,13 @@ if (!image) {
       <time class="italic text-base text-muted-foreground font-normal"
         >{date}</time
       >
+      {
+        category && (
+          <div class="pt-1">
+            <Pill label={category} srLabel={category} />
+          </div>
+        )
+      }
     </div>
   </a>
 </article>

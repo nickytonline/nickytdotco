@@ -2,28 +2,30 @@
 interface Props {
   title: string;
   headingLevel?: 1 | 2;
+  visuallyHidden?: boolean;
 }
 
-const { title, headingLevel = 2 } = Astro.props;
+const { title, headingLevel = 2, visuallyHidden = false } = Astro.props;
+const baseHeadingClasses =
+  "text-5xl font-extrabold tracking-tight text-balance";
 ---
 
 <div class="mb-8">
   {
     headingLevel === 1 ? (
       <h1
-        class="text-5xl font-extrabold tracking-tight text-balance"
+        class={visuallyHidden ? "sr-only" : baseHeadingClasses}
         data-pagefind-meta="title"
       >
         {title}
       </h1>
     ) : (
-      <h2 class="text-5xl font-extrabold tracking-tight text-balance">
-        {title}
-      </h2>
+      <h2 class={visuallyHidden ? "sr-only" : baseHeadingClasses}>{title}</h2>
     )
   }
-  <div
-    class="w-20 h-1.5 bg-linear-to-r from-pink-600 to-brand rounded-full mt-3"
-  >
-  </div>
+  {
+    !visuallyHidden && (
+      <div class="w-20 h-1.5 bg-linear-to-r from-pink-600 to-brand rounded-full mt-3"></div>
+    )
+  }
 </div>
