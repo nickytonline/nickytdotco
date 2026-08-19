@@ -40,13 +40,12 @@ const featuredTalks = allTalks
   .slice(0, 2);
 const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
-// Upcoming talks: timely events only.
+// Upcoming talks: all future events, not a capped subset.
 const upcomingTalks = allTalks
   .filter(
     (t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now,
   )
-  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
-  .slice(0, 3);
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 const recentTalks = allTalks
   .filter(
     (t) =>
@@ -84,11 +83,11 @@ if (scheduleResult.error) {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
   upcomingStreams = schedule
     .filter((stream) => new Date(stream.date).getTime() > now.getTime())
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    .slice(0, 2);
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }
 
-const hasUpcomingEvents = upcomingTalks.length > 0 || upcomingStreams.length > 0;
+const hasUpcomingEvents =
+  upcomingTalks.length > 0 || upcomingStreams.length > 0;
 
 if (!hasUpcomingEvents && !errorMessage) {
   recentStreams = await fetchPastGuestsWithYouTube();
