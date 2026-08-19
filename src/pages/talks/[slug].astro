@@ -39,6 +39,8 @@ const endDate = talk.data.endDate;
 const video = talk.data.video;
 const slideDeck = talk.data.slideDeck;
 const sourceCode = talk.data.sourceCode;
+const sessionUrl = talk.data.sessionUrl;
+const registrationUrl = talk.data.registrationUrl;
 const additionalLinks = talk.data.additionalLinks ?? [];
 const coverImage = talk.data.cover_image;
 const coverImageLarge = talk.data.cover_image_large;
@@ -112,22 +114,14 @@ if (video?.type === "youtube") {
                 {venue.name}
               </a>
             ) : (
-              <span class="font-semibold text-brand">
-                {venue.name}
-              </span>
+              <span class="font-semibold text-brand">{venue.name}</span>
             )
           }
           {isUpcoming && <UpcomingBadge />}
         </div>
         <div class="flex flex-wrap items-center gap-2">
           {venueLocation && <span>{venueLocation}</span>}
-          {
-            venueLocation && (
-              <span class="text-brand font-semibold">
-                •
-              </span>
-            )
-          }
+          {venueLocation && <span class="text-brand font-semibold">•</span>}
           <time datetime={date.toISOString()} class="italic">
             {dateDisplay}
           </time>
@@ -208,8 +202,58 @@ if (video?.type === "youtube") {
     </div>
 
     {
-      (slideDeck || sourceCode || additionalLinks.length > 0) && (
+      (sessionUrl ||
+        registrationUrl ||
+        slideDeck ||
+        sourceCode ||
+        additionalLinks.length > 0) && (
         <div class="flex flex-wrap gap-3 mt-6">
+          {sessionUrl && (
+            <a
+              href={sessionUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-solid text-white font-semibold rounded-lg hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:outline-none transition-colors"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 10-5.656-5.656l-1.102 1.101"
+                />
+              </svg>
+              Session Details
+            </a>
+          )}
+          {registrationUrl && (
+            <a
+              href={registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-semibold rounded-lg hover:opacity-90 focus:opacity-90 focus:outline-none transition-opacity"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15.75 5.25h3.375A2.625 2.625 0 0121.75 7.875v8.25a2.625 2.625 0 01-2.625 2.625H15.75M8.25 5.25H4.875A2.625 2.625 0 002.25 7.875v8.25A2.625 2.625 0 004.875 18.75H8.25M8.25 8.25h7.5M8.25 12h7.5M8.25 15.75h4.5"
+                />
+              </svg>
+              Register
+            </a>
+          )}
           {slideDeck && (
             <a
               href={slideDeck}

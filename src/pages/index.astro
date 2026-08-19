@@ -42,12 +42,13 @@ const featuredTalks = allTalks
 const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
 // Latest talks: upcoming first (timely), then recent past (excluding featured)
+// Keep the home-page feed capped at three total items.
 const upcomingTalks = allTalks
   .filter(
     (t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now,
   )
   .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
-  .slice(0, 2);
+  .slice(0, 3);
 const pastTalks = allTalks
   .filter((t) => !t.data.upcoming && !featuredTalkIds.has(t.id))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
