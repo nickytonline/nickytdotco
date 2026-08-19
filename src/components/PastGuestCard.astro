@@ -75,7 +75,7 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
     {
       category && (
         <div class="pt-1">
-          <Pill label={category} srLabel={category} />
+          <Pill label={category} aria-hidden="true" />
         </div>
       )
     }

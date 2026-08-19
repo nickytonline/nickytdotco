@@ -1,12 +1,12 @@
 ---
 interface Props {
   label: string;
-  srLabel?: string;
   href?: string;
   class?: string;
+  [attribute: string]: unknown;
 }
 
-const { label, srLabel, href, class: className = "" } = Astro.props;
+const { label, href, class: className = "", ...rest } = Astro.props;
 const classes = [
   "inline-flex items-center self-center rounded-md border border-brand/30 bg-brand-soft px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-soft-foreground",
   className,
@@ -14,7 +14,6 @@ const classes = [
 const TagElement = href ? "a" : "span";
 ---
 
-<TagElement href={href} class={classes}>
-  {srLabel && <span class="sr-only">{srLabel}</span>}
+<TagElement href={href} class={classes} {...rest}>
   {label}
 </TagElement>

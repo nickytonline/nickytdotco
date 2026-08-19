@@ -126,7 +126,7 @@ if (coverImage) {
           upcoming ? (
             <UpcomingBadge label="Upcoming talk" />
           ) : (
-            category && <Pill label={category} srLabel={category} />
+            category && <Pill label={category} aria-hidden="true" />
           )
         }
       </div>
