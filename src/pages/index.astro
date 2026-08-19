@@ -25,10 +25,10 @@ const featuredPosts = sortedPosts
   .slice(0, 2);
 const featuredPostIds = new Set(featuredPosts.map((p) => p.id));
 
-// Latest: recency feed, excludes featured posts
+// Latest fallback: recency feed, excludes featured posts
 const recentPosts = sortedPosts
   .filter((p) => !featuredPostIds.has(p.id))
-  .slice(0, 2);
+  .slice(0, 4);
 
 const allTalks = await getCollection("talks");
 const now = new Date();
@@ -40,19 +40,22 @@ const featuredTalks = allTalks
   .slice(0, 2);
 const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
-// Latest talks: upcoming first (timely), then recent past (excluding featured)
-// Keep the home-page feed capped at three total items.
+// Upcoming talks: timely events only.
 const upcomingTalks = allTalks
   .filter(
     (t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now,
   )
   .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
   .slice(0, 3);
-const pastTalks = allTalks
-  .filter((t) => !t.data.upcoming && !featuredTalkIds.has(t.id))
+const recentTalks = allTalks
+  .filter(
+    (t) =>
+      !t.data.upcoming &&
+      !featuredTalkIds.has(t.id) &&
+      (t.data.endDate ?? t.data.date) < now,
+  )
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3 - upcomingTalks.length);
-const recentTalks = [...upcomingTalks, ...pastTalks];
+  .slice(0, 4);
 
 const allGuides = await getCollection("guides");
 const sortedGuides = allGuides.sort(
@@ -69,8 +72,8 @@ const locale =
 
 let errorMessage = "";
 let schedule: StreamGuestInfo[] = [];
-let latestUpcomingStreams: StreamGuestInfo[] = [];
-let latestPastStreams: StreamGuestInfo[] = [];
+let upcomingStreams: StreamGuestInfo[] = [];
+let recentStreams: StreamGuestInfo[] = [];
 
 const scheduleResult = await getLiveCollection("streamSchedule");
 
@@ -79,18 +82,37 @@ if (scheduleResult.error) {
   errorMessage = "Error fetching stream schedule.";
 } else {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
-  latestUpcomingStreams = schedule
+  upcomingStreams = schedule
     .filter((stream) => new Date(stream.date).getTime() > now.getTime())
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, 2);
-
-  if (latestUpcomingStreams.length < 2) {
-    latestPastStreams = (await fetchPastGuestsWithYouTube()).slice(
-      0,
-      2 - latestUpcomingStreams.length,
-    );
-  }
 }
+
+const hasUpcomingEvents = upcomingTalks.length > 0 || upcomingStreams.length > 0;
+
+if (!hasUpcomingEvents && !errorMessage) {
+  recentStreams = await fetchPastGuestsWithYouTube();
+}
+
+const latestContent = [
+  ...recentTalks.map((item) => ({
+    kind: "talk" as const,
+    item,
+    date: item.data.endDate ?? item.data.date,
+  })),
+  ...recentStreams.map((item) => ({
+    kind: "stream" as const,
+    item,
+    date: new Date(item.date),
+  })),
+  ...recentPosts.map((item) => ({
+    kind: "post" as const,
+    item,
+    date: item.data.date,
+  })),
+]
+  .sort((a, b) => b.date.getTime() - a.date.getTime())
+  .slice(0, 4);
 
 const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
 const timezone = rawTimezone || "UTC";
@@ -241,74 +263,95 @@ export const prerender = false;
       ) : null
     }
 
-    {/* ── Latest: recency feed ── */}
-    <section class="space-y-10">
-      <SectionHeader title="Latest" headingLevel={2} />
+    {
+      hasUpcomingEvents ? (
+        <section class="space-y-10">
+          <SectionHeader title="Upcoming Events" headingLevel={2} />
 
-      {
-        recentTalks.length > 0 && (
-          <div class="space-y-4">
-            <h3 class="sr-only">Talks</h3>
-            <div class="grid gap-6 xl:gap-8">
-              {recentTalks.map((talk) => (
-                <TalkCard
-                  title={talk.data.title}
-                  venueName={talk.data.venue.name}
-                  venueUrl={talk.data.venue.url}
-                  date={dateFilter(talk.data.date)}
-                  href={`/talks/${talk.id}`}
-                  video={talk.data.video}
-                  coverImage={talk.data.cover_image}
-                  upcoming={talk.data.upcoming}
-                  category="Talk"
+          {upcomingTalks.length > 0 && (
+            <div class="space-y-4">
+              <h3 class="sr-only">Talks</h3>
+              <div class="grid gap-6 xl:gap-8">
+                {upcomingTalks.map((talk) => (
+                  <TalkCard
+                    title={talk.data.title}
+                    venueName={talk.data.venue.name}
+                    venueUrl={talk.data.venue.url}
+                    date={dateFilter(talk.data.date)}
+                    href={`/talks/${talk.id}`}
+                    video={talk.data.video}
+                    coverImage={talk.data.cover_image}
+                    upcoming={true}
+                    category="Talk"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {upcomingStreams.length > 0 && (
+            <div class="space-y-4">
+              <h3 class="sr-only">Live streams</h3>
+              <div class="grid gap-6 xl:gap-8">
+                <StreamSchedule
+                  schedule={upcomingStreams}
+                  locale={locale}
+                  timezone={timezone}
                 />
-              ))}
+              </div>
             </div>
-          </div>
-        )
-      }
+          )}
 
-      {
-        errorMessage ? (
-          <div class="space-y-3">
-            <p class="text-destructive">{errorMessage}</p>
-          </div>
-        ) : null
-      }
-      {
-        !errorMessage &&
-        (latestUpcomingStreams.length > 0 || latestPastStreams.length > 0) ? (
-          <div class="space-y-4">
-            <h3 class="sr-only">Live streams</h3>
-            <div class="grid gap-6 xl:gap-8">
-              <StreamSchedule
-                schedule={[...latestUpcomingStreams, ...latestPastStreams]}
-                locale={locale}
-                timezone={timezone}
-              />
-            </div>
-          </div>
-        ) : null
-      }
+          {errorMessage && <p class="text-destructive">{errorMessage}</p>}
+        </section>
+      ) : (
+        <section class="space-y-10">
+          <SectionHeader title="Latest" headingLevel={2} />
 
-      {
-        recentPosts.length > 0 && (
-          <div class="space-y-4">
-            <h3 class="sr-only">Blog posts</h3>
+          {latestContent.length > 0 && (
             <div class="grid gap-6 xl:gap-8">
-              {recentPosts.map((post) => (
-                <BlogPostCard
-                  title={post.data.title}
-                  date={dateFilter(post.data.date)}
-                  image={post.data.cover_image}
-                  href={`/blog/${post.id}`}
-                  category="Writing"
-                />
-              ))}
+              {latestContent.map((content) => {
+                if (content.kind === "talk") {
+                  return (
+                    <TalkCard
+                      title={content.item.data.title}
+                      venueName={content.item.data.venue.name}
+                      venueUrl={content.item.data.venue.url}
+                      date={dateFilter(content.item.data.date)}
+                      href={`/talks/${content.item.id}`}
+                      video={content.item.data.video}
+                      coverImage={content.item.data.cover_image}
+                      category="Talk"
+                    />
+                  );
+                }
+
+                if (content.kind === "stream") {
+                  return (
+                    <StreamSchedule
+                      schedule={[content.item]}
+                      locale={locale}
+                      timezone={timezone}
+                    />
+                  );
+                }
+
+                return (
+                  <BlogPostCard
+                    title={content.item.data.title}
+                    date={dateFilter(content.item.data.date)}
+                    image={content.item.data.cover_image}
+                    href={`/blog/${content.item.id}`}
+                    category="Writing"
+                  />
+                );
+              })}
             </div>
-          </div>
-        )
-      }
-    </section>
+          )}
+
+          {errorMessage && <p class="text-destructive">{errorMessage}</p>}
+        </section>
+      )
+    }
   </div>
 </Layout>

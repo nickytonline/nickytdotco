@@ -39,19 +39,39 @@ test.describe("home page", () => {
     await expect(subheadings.first()).toBeVisible();
   });
 
-  test("renders a Latest section with at least one content type", async ({
+  test("renders upcoming events or a capped Latest fallback", async ({
     page,
   }) => {
     await page.goto("/");
 
-    await expect(
-      page.getByRole("heading", { level: 2, name: "Latest" })
-    ).toBeVisible();
+    const upcomingHeading = page.getByRole("heading", {
+      level: 2,
+      name: "Upcoming Events",
+    });
+    const latestHeading = page.getByRole("heading", {
+      level: 2,
+      name: "Latest",
+    });
 
-    // At least one of Talks / Blog Posts / Live Streams subsections should render,
-    // since content is dynamic and not guaranteed to always include all three.
-    const subheadings = page.getByRole("heading", { level: 3 });
-    await expect(subheadings.first()).toBeVisible();
+    await expect(upcomingHeading.or(latestHeading)).toHaveCount(1);
+
+    const sectionHeading = (await upcomingHeading.count())
+      ? upcomingHeading
+      : latestHeading;
+    await expect(sectionHeading).toBeVisible();
+
+    const section = sectionHeading.locator("xpath=ancestor::section");
+    const contentItems = section.locator("article, .stream-card");
+    await expect(contentItems.first()).toBeVisible();
+
+    if (await latestHeading.count()) {
+      expect(await contentItems.count()).toBeLessThanOrEqual(4);
+    } else {
+      const upcomingBadges = section.getByText(
+        /Upcoming talk|Upcoming livestream/
+      );
+      await expect(upcomingBadges).toHaveCount(await contentItems.count());
+    }
   });
 
   test("sets a timezone response header from geo context", async ({
