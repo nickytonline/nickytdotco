@@ -11,9 +11,10 @@ interface Props {
   locale: string;
   timezone: string;
   schedule: StreamGuestInfo[];
+  showCategory?: boolean;
 }
 
-const { locale, timezone, schedule } = Astro.props;
+const { locale, timezone, schedule, showCategory = true } = Astro.props;
 
 const now = Date.now();
 const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
@@ -92,7 +93,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
           location={youtubeStreamLink ?? eventLocation}
           videoLink={videoPageUrl}
           upcoming={upcoming}
-          category="Live stream"
+          category={showCategory ? "Live stream" : undefined}
         />
       );
     })
