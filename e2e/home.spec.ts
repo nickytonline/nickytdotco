@@ -69,6 +69,30 @@ test.describe("home page", () => {
     }
   });
 
+  test("orders upcoming events by date across event types", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const upcomingHeading = page.getByRole("heading", {
+      level: 2,
+      name: "Upcoming Events",
+    });
+
+    if (!(await upcomingHeading.count())) return;
+
+    const section = upcomingHeading.locator("xpath=ancestor::section");
+    const timestamps = await section
+      .locator("[data-upcoming-event]")
+      .evaluateAll((events) =>
+        events.map((event) =>
+          Number(event.getAttribute("data-event-timestamp"))
+        )
+      );
+
+    expect(timestamps).toEqual([...timestamps].sort((a, b) => a - b));
+  });
+
   test("sets a timezone response header from geo context", async ({
     request,
   }) => {

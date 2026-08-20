@@ -44,8 +44,7 @@ const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 const upcomingTalks = allTalks
   .filter(
     (t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now,
-  )
-  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+  );
 const recentTalks = allTalks
   .filter(
     (t) =>
@@ -82,12 +81,23 @@ if (scheduleResult.error) {
 } else {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
   upcomingStreams = schedule
-    .filter((stream) => new Date(stream.date).getTime() > now.getTime())
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    .filter((stream) => new Date(stream.date).getTime() > now.getTime());
 }
 
-const hasUpcomingEvents =
-  upcomingTalks.length > 0 || upcomingStreams.length > 0;
+const upcomingEvents = [
+  ...upcomingTalks.map((item) => ({
+    kind: "talk" as const,
+    item,
+    timestamp: item.data.date.getTime(),
+  })),
+  ...upcomingStreams.map((item) => ({
+    kind: "stream" as const,
+    item,
+    timestamp: new Date(item.date).getTime(),
+  })),
+].sort((a, b) => a.timestamp - b.timestamp);
+
+const hasUpcomingEvents = upcomingEvents.length > 0;
 
 if (!hasUpcomingEvents && !errorMessage) {
   recentStreams = await fetchPastGuestsWithYouTube();
@@ -267,40 +277,35 @@ export const prerender = false;
         <section class="space-y-10">
           <SectionHeader title="Upcoming Events" headingLevel={2} />
 
-          {upcomingTalks.length > 0 && (
-            <div class="space-y-4">
-              <h3 class="sr-only">Talks</h3>
-              <div class="grid gap-6 xl:gap-8">
-                {upcomingTalks.map((talk) => (
+          <div class="grid gap-6 xl:gap-8">
+            {upcomingEvents.map((event) => (
+              <div
+                data-upcoming-event
+                data-event-timestamp={event.timestamp}
+              >
+                {event.kind === "talk" ? (
                   <TalkCard
-                    title={talk.data.title}
-                    venueName={talk.data.venue.name}
-                    venueUrl={talk.data.venue.url}
-                    date={dateFilter(talk.data.date)}
-                    href={`/talks/${talk.id}`}
-                    video={talk.data.video}
-                    coverImage={talk.data.cover_image}
+                    title={event.item.data.title}
+                    venueName={event.item.data.venue.name}
+                    venueUrl={event.item.data.venue.url}
+                    date={dateFilter(event.item.data.date)}
+                    href={`/talks/${event.item.id}`}
+                    video={event.item.data.video}
+                    coverImage={event.item.data.cover_image}
                     upcoming={true}
                     upcomingLabel="Talk"
                     category="Talk"
                   />
-                ))}
+                ) : (
+                  <StreamSchedule
+                    schedule={[event.item]}
+                    locale={locale}
+                    timezone={timezone}
+                  />
+                )}
               </div>
-            </div>
-          )}
-
-          {upcomingStreams.length > 0 && (
-            <div class="space-y-4">
-              <h3 class="sr-only">Live streams</h3>
-              <div class="grid gap-6 xl:gap-8">
-                <StreamSchedule
-                  schedule={upcomingStreams}
-                  locale={locale}
-                  timezone={timezone}
-                />
-              </div>
-            </div>
-          )}
+            ))}
+          </div>
 
           {errorMessage && <p class="text-destructive">{errorMessage}</p>}
         </section>
