@@ -89,7 +89,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
           eventDate={date}
           eventName={eventName}
           description={description}
-          location={eventLocation}
+          location={youtubeStreamLink ?? eventLocation}
           videoLink={videoPageUrl}
           upcoming={upcoming}
           category="Live stream"
