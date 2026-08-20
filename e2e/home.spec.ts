@@ -67,9 +67,7 @@ test.describe("home page", () => {
     if (await latestHeading.count()) {
       expect(await contentItems.count()).toBeLessThanOrEqual(4);
     } else {
-      const upcomingBadges = section.getByText(
-        /Upcoming talk|Upcoming livestream/
-      );
+      const upcomingBadges = section.getByText(/^(Talk|Upcoming livestream)$/);
       await expect(upcomingBadges).toHaveCount(await contentItems.count());
     }
   });

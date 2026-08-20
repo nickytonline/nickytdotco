@@ -16,6 +16,7 @@ interface Props {
   } | null;
   coverImage?: string;
   upcoming?: boolean;
+  upcomingLabel?: string;
   category?: string;
 }
 
@@ -28,6 +29,7 @@ const {
   video,
   coverImage,
   upcoming,
+  upcomingLabel = "Upcoming talk",
   category,
 } = Astro.props;
 
@@ -124,7 +126,7 @@ if (coverImage) {
       <div class="flex flex-wrap items-center gap-2 pt-1">
         {
           upcoming ? (
-            <UpcomingBadge label="Upcoming talk" />
+            <UpcomingBadge label={upcomingLabel} />
           ) : (
             category && <Pill label={category} aria-hidden="true" />
           )
