@@ -1,7 +1,6 @@
 ---
 import EventCalendar from "./EventCalendar";
 import Pill from "./Pill.astro";
-import UpcomingBadge from "./UpcomingBadge.astro";
 
 interface Platform {
   name: string;
@@ -86,13 +85,6 @@ const {
         )
       }
     </h3>
-    {
-      upcoming && (
-        <div class="flex self-start">
-          <UpcomingBadge label="Upcoming livestream" />
-        </div>
-      )
-    }
     <p class="text-base text-muted-foreground">{guest}</p>
     <time class="italic text-base text-muted-foreground font-normal"
       >{datetime}</time
