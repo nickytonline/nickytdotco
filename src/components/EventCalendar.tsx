@@ -55,7 +55,7 @@ const EventCalendar = ({
         <span>Add to Calendar</span>
       </Button>
       {isExpanded && (
-        <div className="absolute left-0 top-full z-50 mt-2">
+        <div className="absolute left-0 top-full z-50 pt-2">
           <ul className="p-4 grid gap-4 border-2 border-brand rounded-md text-base [&_a]:text-base [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-popover text-popover-foreground shadow-lg">
             <li>
               <a

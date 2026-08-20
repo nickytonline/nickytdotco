@@ -93,6 +93,31 @@ test.describe("home page", () => {
     expect(timestamps).toEqual([...timestamps].sort((a, b) => a - b));
   });
 
+  test("keeps the calendar menu open while moving from its button to an option", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const upcomingHeading = page.getByRole("heading", {
+      level: 2,
+      name: "Upcoming Events",
+    });
+    if (!(await upcomingHeading.count())) return;
+
+    const button = page
+      .getByRole("button", { name: /Add .* to calendar/ })
+      .first();
+    await expect(button).toBeVisible();
+
+    await button.hover();
+    const menuItem = page.getByRole("menuitem", {
+      name: "Google Calendar",
+    });
+    await expect(menuItem).toBeVisible();
+    await menuItem.hover();
+    await expect(menuItem).toBeVisible();
+  });
+
   test("sets a timezone response header from geo context", async ({
     request,
   }) => {
