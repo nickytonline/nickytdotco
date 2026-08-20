@@ -77,7 +77,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
       const eventName =
         guestName === "2Full2Stack"
           ? `2 Full 2 Stack - ${title}`
-          : `nickyt.live - ${title}`;
+          : `${type === "pomerium-live" ? "Pomerium Live Stream" : "nickyt.live"}: ${title}`;
 
       return (
         <LiveStreamCard
