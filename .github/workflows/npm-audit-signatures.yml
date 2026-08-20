@@ -1,0 +1,31 @@
+name: NPM Audit Signatures
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "package.json"
+      - "package-lock.json"
+  pull_request:
+    paths:
+      - "package.json"
+      - "package-lock.json"
+
+permissions:
+  contents: read
+
+jobs:
+  audit-signatures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install npm 11.12.1 (npm 10 ignores min-release-age)
+        run: npm install -g npm@11.12.1
+
+      - run: npm ci --ignore-scripts
+      - run: npm audit signatures --min-release-age=0
