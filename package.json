@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Nick Taylor's personal website built with Astro",
   "engines": {
-    "node": ">=22",
+    "node": ">=24.0.0",
     "npm": ">=11 <12"
   },
   "scripts": {
@@ -94,7 +94,6 @@
     "url": "https://github.com/nickytonline/nickytdotco/issues"
   },
   "homepage": "https://www.nickyt.co",
-  "packageManager": "npm@11.12.1",
   "overrides": {
     "vitest": "4.1.9",
     "sharp": "^0.35.0"
