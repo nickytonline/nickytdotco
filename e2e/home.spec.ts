@@ -137,4 +137,20 @@ test.describe("home page", () => {
     expect(person).toBeTruthy();
     expect(person.name).toBe("Nick Taylor");
   });
+
+  test("promotes the newsletter after homepage content", async ({ page }) => {
+    await page.goto("/");
+
+    const newsletter = page.getByRole("heading", { name: "Newsletter" });
+    await expect(newsletter).toBeAttached();
+    await expect(
+      page.getByText(
+        "Get one developer tip a week. Short & valuable. That's it!"
+      )
+    ).toBeVisible();
+    await expect(page.getByRole("link", { name: /Subscribe/ })).toHaveAttribute(
+      "href",
+      /onetipaweek\.com\/\?utm_source=nickytco&utm_medium=homepage/i
+    );
+  });
 });

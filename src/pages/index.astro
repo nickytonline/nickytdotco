@@ -41,10 +41,9 @@ const featuredTalks = allTalks
 const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
 // Upcoming talks: all future events, not a capped subset.
-const upcomingTalks = allTalks
-  .filter(
-    (t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now,
-  );
+const upcomingTalks = allTalks.filter(
+  (t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now,
+);
 const recentTalks = allTalks
   .filter(
     (t) =>
@@ -80,8 +79,9 @@ if (scheduleResult.error) {
   errorMessage = "Error fetching stream schedule.";
 } else {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
-  upcomingStreams = schedule
-    .filter((stream) => new Date(stream.date).getTime() > now.getTime());
+  upcomingStreams = schedule.filter(
+    (stream) => new Date(stream.date).getTime() > now.getTime(),
+  );
 }
 
 const upcomingEvents = [
@@ -279,10 +279,7 @@ export const prerender = false;
 
           <div class="grid gap-6 xl:gap-8">
             {upcomingEvents.map((event) => (
-              <div
-                data-upcoming-event
-                data-event-timestamp={event.timestamp}
-              >
+              <div data-upcoming-event data-event-timestamp={event.timestamp}>
                 {event.kind === "talk" ? (
                   <TalkCard
                     title={event.item.data.title}
@@ -358,5 +355,22 @@ export const prerender = false;
         </section>
       )
     }
+
+    <section
+      class="flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between"
+      aria-labelledby="newsletter-heading"
+    >
+      <h2 id="newsletter-heading" class="sr-only">Newsletter</h2>
+      <p class="text-lg text-muted-foreground">
+        Get one developer tip a week. Short &amp; valuable. That's it!
+      </p>
+      <a
+        href="https://OneTipAWeek.com?utm_source=nickytco&utm_medium=homepage"
+        target="_blank"
+        class="inline-flex w-fit items-center gap-2 rounded-lg bg-brand-solid px-5 py-2.5 text-base font-semibold text-brand-foreground transition-colors hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:outline-none dark:bg-brand-solid dark:hover:bg-brand-solid"
+      >
+        Subscribe<span class="text-xl" aria-hidden="true">→</span>
+      </a>
+    </section>
   </div>
 </Layout>
