@@ -22,6 +22,75 @@ const urlOrRelative = z
     }
   );
 
+function hasYouTubeVideoId(value: string): boolean {
+  try {
+    const url = new URL(value);
+    const hostname = url.hostname.toLowerCase().replace(/^www\./, "");
+    const videoId =
+      hostname === "youtu.be"
+        ? url.pathname.split("/").filter(Boolean)[0]
+        : hostname === "youtube.com" || hostname === "m.youtube.com"
+          ? (url.searchParams.get("v") ??
+            url.pathname.split("/").filter(Boolean).pop())
+          : undefined;
+
+    return Boolean(videoId && /^[A-Za-z0-9_-]{11}$/.test(videoId));
+  } catch {
+    return false;
+  }
+}
+
+function hasVimeoVideoId(value: string): boolean {
+  try {
+    const url = new URL(value);
+    const hostname = url.hostname.toLowerCase();
+    return (
+      (hostname === "vimeo.com" || hostname.endsWith(".vimeo.com")) &&
+      /\/\d+(?:\/|$)/.test(url.pathname)
+    );
+  } catch {
+    return false;
+  }
+}
+
+const videoSchema = z
+  .object({
+    url: z.url(),
+    type: z.enum(["youtube", "vimeo", "custom"]),
+    image: z
+      .object({
+        url: urlOrRelative,
+        width: z.number(),
+        height: z.number(),
+      })
+      .optional(),
+  })
+  .superRefine((video, ctx) => {
+    if (video.type === "youtube" && !hasYouTubeVideoId(video.url)) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["url"],
+        message: "YouTube videos must include a valid 11-character video ID",
+      });
+    }
+
+    if (video.type === "vimeo" && !hasVimeoVideoId(video.url)) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["url"],
+        message: "Vimeo videos must include a numeric video ID",
+      });
+    }
+
+    if (video.type === "custom" && !video.image) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["image"],
+        message: "Custom videos must include a preview image",
+      });
+    }
+  });
+
 const blogCollection = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "src/content/blog" }),
   schema: z.object({
@@ -53,19 +122,7 @@ const talksCollection = defineCollection({
     date: z.date(),
     endDate: z.date().optional(),
     upcoming: z.boolean().optional(),
-    video: z
-      .object({
-        url: z.url(),
-        type: z.enum(["youtube", "vimeo", "custom"]),
-        image: z
-          .object({
-            url: urlOrRelative,
-            width: z.number(),
-            height: z.number(),
-          })
-          .optional(),
-      })
-      .optional(),
+    video: videoSchema.optional(),
     venue: z.object({
       name: z.string(),
       url: urlOrRelative.optional(),
