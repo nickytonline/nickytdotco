@@ -13,7 +13,6 @@ This is the source code for [nickyt.co](https://www.nickyt.co), Nick Taylor's pe
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
 - **[Expressive Code](https://expressive-code.com/)** - Syntax highlighting for code blocks
 - **[Netlify](https://netlify.com)** - Hosting and deployment platform
-- **Node.js 22+** - Runtime environment
 
 ## Terminal commands
 
