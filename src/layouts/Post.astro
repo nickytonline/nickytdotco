@@ -39,12 +39,15 @@ const postUrl = new URL(currentUrl, site.url).toString();
 const coverImageUrl = entry.data.cover_image
   ? new URL(entry.data.cover_image, site.url).toString()
   : undefined;
+const postSocialImage =
+  coverImageUrl ??
+  new URL("/assets/images/page-og/blog.jpg", site.url).toString();
 ---
 
 <MainLayout
   title={entry.data.title}
   metaDesc={entry.data.excerpt || entry.data.description}
-  socialImage={new URL(entry.data.cover_image!, site.url).toString()}
+  socialImage={postSocialImage}
   pageType="Post"
   ogType="article"
   publishedTime={entry.data.date.toISOString()}

@@ -1,0 +1,26 @@
+export const curatedTagLabels: Record<string, string> = {
+  accessibility: "Accessibility",
+  agenticai: "Agentic AI",
+  ai: "AI",
+  astro: "Astro",
+  css: "CSS",
+  deno: "Deno",
+  developertools: "Developer tooling",
+  devops: "DevOps",
+  devrel: "DevRel",
+  docker: "Docker",
+  git: "Git",
+  github: "GitHub",
+  javascript: "JavaScript",
+  kubernetes: "Kubernetes",
+  mcp: "MCP",
+  opensource: "Open source",
+  productivity: "Productivity",
+  react: "React",
+  security: "Security",
+  testing: "Testing",
+  typescript: "TypeScript",
+  zerotrust: "Zero Trust",
+};
+
+export const curatedTagSlugs = new Set(Object.keys(curatedTagLabels));

@@ -18,9 +18,7 @@ const hasMoreTags = showMore && limit && tags.length > limit;
 
 <div class="flex flex-wrap gap-2 items-center">
   {displayTags.map((tag) => <Tag tag={tag} />)}
-  {
-    hasMoreTags && (
-      <span class="text-sm text-gray-500">+{tags.length - limit} more</span>
-    )
-  }
+  {hasMoreTags && (
+    <span class="text-sm text-muted-foreground">+{tags.length - limit} more</span>
+  )}
 </div>

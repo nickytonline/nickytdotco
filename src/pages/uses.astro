@@ -11,14 +11,23 @@ const editorCasks = brewfile.filter(
   (entry) => entry.data.type === "cask" && editorIds.includes(entry.data.name),
 );
 
-const desktopAppEntries = brewfile.filter(
+const uniqueByName = (entries: typeof brewfile) =>
+  entries.filter(
+    (entry, index, list) =>
+      list.findIndex((candidate) => candidate.data.name === entry.data.name) ===
+      index,
+  );
+
+const desktopAppEntries = uniqueByName(brewfile.filter(
   (entry) =>
     (entry.data.type === "cask" || entry.data.type === "mas") &&
     !editorIds.includes(entry.data.name) &&
     !entry.data.name.startsWith("font-"),
-);
+));
 
-const cliEntries = brewfile.filter((entry) => entry.data.type === "brew");
+const cliEntries = uniqueByName(
+  brewfile.filter((entry) => entry.data.type === "brew"),
+);
 
 const getLink = (entry: (typeof brewfile)[number]) => {
   if (entry.data.homepage) return entry.data.homepage;
@@ -38,7 +47,7 @@ const getLink = (entry: (typeof brewfile)[number]) => {
 
 <MainLayout
   title="Uses"
-  metaDesc="This page details pretty much all I use as a developer."
+  metaDesc="Nick Taylor's developer setup: daily tools, coding agents, terminal utilities, office gear, and streaming equipment."
   socialImage="/assets/images/page-og/uses.jpg"
   pageType="Page"
 >
@@ -406,13 +415,17 @@ const getLink = (entry: (typeof brewfile)[number]) => {
       </section>
 
       <section class="space-y-4">
-        <h2 id="heading-other" class="text-3xl font-bold text-foreground">
-          Other<a
-            href="#heading-other"
+        <h2 id="heading-recommendations" class="text-3xl font-bold text-foreground">
+          Personal recommendations<a
+            href="#heading-recommendations"
             class="heading-anchor"
             aria-label="Link to this section">#</a
           >
         </h2>
+        <p class="text-muted-foreground">
+          These recommendations sit apart from my core developer setup and may
+          include referral links.
+        </p>
         <ul class="space-y-2 text-muted-foreground list-disc pl-6">
           <li>
             WISE for banking. I use it for my business. It's a great way to send
@@ -429,7 +442,7 @@ const getLink = (entry: (typeof brewfile)[number]) => {
           id="heading-health-and-training"
           class="text-3xl font-bold text-foreground"
         >
-          Health and Training<a
+          Health and training recommendations<a
             href="#heading-health-and-training"
             class="heading-anchor"
             aria-label="Link to this section">#</a
