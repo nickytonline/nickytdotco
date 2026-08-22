@@ -7,7 +7,7 @@ test.describe("home page", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "Developer. Advocate. Builder.",
+        name: "Developer advocate working at the intersection of AI, security, and software.",
       })
     ).toBeVisible();
 
@@ -118,13 +118,14 @@ test.describe("home page", () => {
 
     const newsletter = page.getByRole("heading", { name: "Newsletter" });
     await expect(newsletter).toBeAttached();
+    const newsletterSection = page.locator(
+      'section[aria-labelledby="newsletter-heading"]'
+    );
+    await expect(newsletterSection).toContainText(
+      "One developer tip a week. Short & valuable. That's it!"
+    );
     await expect(
-      page.getByText(
-        "Get one developer tip a week. Short & valuable. That's it!"
-      )
-    ).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: "Subscribe", exact: true })
+      newsletterSection.getByRole("link", { name: "Subscribe", exact: true })
     ).toHaveAttribute(
       "href",
       /onetipaweek\.com\/\?utm_source=nickytco&utm_medium=homepage/i

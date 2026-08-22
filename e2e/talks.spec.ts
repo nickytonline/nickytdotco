@@ -54,9 +54,11 @@ test.describe("speaking page", () => {
     await expect(
       page.getByRole("link", { name: "View all talks" })
     ).toHaveAttribute("href", "/talks");
-    await expect(page.getByRole("link", { name: "Email me" })).toHaveAttribute(
+    await expect(
+      page.getByRole("link", { name: "Invite me to speak" })
+    ).toHaveAttribute(
       "href",
-      /^mailto:nick@nickyt\.co/
+      /^mailto:nick@nickyt\.co\?subject=Speaking%20Inquiry/
     );
   });
 });

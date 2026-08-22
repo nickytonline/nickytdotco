@@ -13,7 +13,10 @@ test.describe("blog archive", () => {
     await page.goto("/blog");
 
     await expect(
-      page.getByRole("heading", { level: 1, name: "Blog Posts Archive" })
+      page.getByRole("heading", { level: 1, name: "Blog" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Blog Posts Archive" })
     ).toBeVisible();
 
     // Year headings are h2s rendered by BlogArchiveYear.
