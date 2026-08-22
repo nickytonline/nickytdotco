@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
 const defaultClass =
-  "inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-brand-solid text-white font-semibold text-base hover:bg-brand-solid-hover focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand-solid px-5 py-2.5 text-base font-semibold leading-6 text-brand-foreground transition-colors hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900";
 
 type AsAnchor = { href: string } & AnchorHTMLAttributes<HTMLAnchorElement>;
 type AsButton = { href?: never } & ButtonHTMLAttributes<HTMLButtonElement>;
