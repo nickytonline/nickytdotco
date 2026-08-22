@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import BlogArchiveHeader from "../components/BlogArchiveHeader.astro";
 import BlogArchiveYear from "../components/BlogArchiveYear.astro";
+import BlogPostCard from "../components/BlogPostCard.astro";
 import { getCollection } from "astro:content";
 import { dateFilter } from "../utils/filters";
 
@@ -29,6 +30,12 @@ const postsByYear = sortedPosts.reduce(
 
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 
+const startHerePosts = sortedPosts
+  .filter((post) => post.data.featured === true)
+  .slice(0, 4);
+const curatedStartHerePosts =
+  startHerePosts.length >= 3 ? startHerePosts : sortedPosts.slice(0, 4);
+
 // Transform data for components
 const blogPostsByYear = years.map((year) => ({
   year,
@@ -50,6 +57,41 @@ const blogPostsByYear = years.map((year) => ({
   socialImage="/assets/images/page-og/blog.jpg"
 >
   <BlogArchiveHeader totalPosts={sortedPosts.length} />
+  <section class="mb-12 space-y-6" aria-labelledby="start-here-heading">
+    <div>
+      <h2 id="start-here-heading" class="text-3xl font-bold">Start here</h2>
+      <p class="mt-2 max-w-2xl text-lg text-muted-foreground">
+        Practical notes on AI engineering, developer tooling, open source, and
+        the lessons I pick up while building.
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-2" aria-label="Blog topics">
+      {[
+        ["AI & MCP", "/tags/mcp/blog"],
+        ["Security", "/tags/security/blog"],
+        ["Developer tooling", "/tags/developertools/blog"],
+        ["Open source", "/tags/opensource/blog"],
+      ].map(([label, href]) => (
+        <a
+          href={href}
+          class="rounded-full border border-border px-3 py-1.5 text-sm font-semibold text-foreground hover:bg-secondary focus:bg-secondary focus:outline-none"
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+    <div class="grid gap-6 xl:gap-8">
+      {curatedStartHerePosts.map((post) => (
+        <BlogPostCard
+          title={post.data.title}
+          date={dateFilter(post.data.date)}
+          image={post.data.cover_image}
+          href={`/blog/${post.id}`}
+          category="Start here"
+        />
+      ))}
+    </div>
+  </section>
   <div class="space-y-12">
     {
       blogPostsByYear.map((yearGroup) => (

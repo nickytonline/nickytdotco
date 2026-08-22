@@ -120,10 +120,9 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
             Zero Trust Security for AI Agents &amp; MCP
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            How to secure Model Context Protocol servers and agentic AI
-            workflows with identity-aware proxies, OAuth 2.1, and fine-grained
-            access control. Covers real-world gaps like unscoped tool exposure
-            and missing token validation.
+            Attendees learn where OAuth stops, where authorization gaps appear,
+            and how to apply identity-aware access controls to real MCP
+            deployments.
           </p>
         </div>
 
@@ -134,10 +133,9 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
             Securing OpenClaw &amp; AI Infrastructure
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Practical hardening of AI development environments, from
-            trusted-proxy authentication to production-ready deployments.
-            Includes live demos of securing OpenClaw and building tools on top
-            of it.
+            A hands-on look at protecting a self-hosted AI assistant and the
+            infrastructure around it, with live demos of trusted-proxy
+            authentication, policy enforcement, and safer remote access.
           </p>
         </div>
 
@@ -148,9 +146,9 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
             Kubernetes &amp; Cloud-Native Security
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Securing Kubernetes workloads with Pomerium and Zero Trust
-            principles. Based on real production experience running
-            identity-aware proxies at the edge.
+            Attendees leave with a practical model for applying Zero Trust to
+            dynamic workloads, from identity-aware access at the edge to
+            policies that keep changing infrastructure manageable.
           </p>
         </div>
 
@@ -159,12 +157,22 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
         >
           <h3 class="text-xl font-bold">Developer Tooling &amp; Open Source</h3>
           <p class="text-muted-foreground leading-relaxed">
-            Building developer tools, browser extensions, and full-stack
-            frameworks that developers actually want to use. Lessons from
-            shipping at Netlify, dev.to, and in the open-source community.
+            Lessons from shipping developer tools and open source at Netlify,
+            dev.to, and in the wider community — including how to turn a rough
+            idea into something developers can actually adopt.
           </p>
         </div>
       </div>
+    </section>
+
+    <section class="space-y-6">
+      <SectionHeader title="Why book Nick?" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        I bring technical depth, live demos, and stories from building in the
+        open. I've spoken at Black Hat USA, AI Engineer Europe, All Things Open,
+        ConFoo, SREday, and MCP Dev Summit, and can shape a session as a
+        keynote, deep-dive, workshop, or panel.
+      </p>
     </section>
 
     <section class="space-y-6">
@@ -195,24 +203,22 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
     </section>
 
     <section class="space-y-6">
-      <SectionHeader title="Get in Touch" headingLevel={2} />
+      <SectionHeader title="Planning an event?" headingLevel={2} />
       <p class="text-lg leading-relaxed text-muted-foreground">
-        Interested in having me speak at your event? Drop me a line with the
-        date, format, and topic — or just say hi and we'll figure it out
-        together.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <Button href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry">
-          Email me
-          <span class="text-xl">→</span>
-        </Button>
+        Send the date, format, audience, and topic you're considering to
         <a
+          href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry"
+          class="font-semibold text-brand hover:underline focus:underline focus:outline-none"
+          >nick@nickyt.co</a
+        >. I'll follow up with availability and a session that fits.
+      </p>
+      <p class="text-sm leading-relaxed text-muted-foreground">
+        Prefer social? You can also <a
           href="/socials"
-          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md border border-border font-semibold text-base hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
-        >
-          Find me online
-        </a>
-      </div>
+          class="font-semibold text-brand hover:underline focus:underline focus:outline-none"
+          >find me online</a
+        >.
+      </p>
     </section>
   </div>
 </Layout>
