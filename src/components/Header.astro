@@ -49,14 +49,31 @@ const isCurrent = (href: string) =>
           ))}
         </ul>
       </nav>
-      <details class="group w-full md:hidden">
+      <details class="group relative w-full md:hidden">
         <summary
-          class="flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-lg font-semibold text-foreground hover:bg-secondary focus:outline-none [&::-webkit-details-marker]:hidden"
+          class="relative z-10 flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-lg font-semibold text-foreground hover:bg-secondary focus:outline-none [&::-webkit-details-marker]:hidden"
         >
           Menu
-          <span aria-hidden="true" class="text-brand transition-transform group-open:rotate-180">⌄</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-5 w-5 shrink-0 text-brand transition-transform duration-200 group-open:rotate-180"
+            aria-hidden="true"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </summary>
-        <nav aria-label="main navigation" class="pt-4 text-lg">
+        <nav
+          aria-label="main navigation"
+          class="absolute left-0 right-0 top-full z-50 mt-2 rounded-lg border border-border bg-background p-4 text-lg shadow-lg"
+        >
           <ul class="flex list-none flex-col items-center gap-3">
             {navItems.map((item) => (
               <li>
