@@ -11,10 +11,19 @@ const editorCasks = brewfile.filter(
   (entry) => entry.data.type === "cask" && editorIds.includes(entry.data.name),
 );
 
+const getCanonicalName = (entry: (typeof brewfile)[number]) => {
+  const name = entry.data.displayName.trim().toLowerCase().replace(/\s+/g, " ");
+
+  if (name === "whatsapp messenger") return "whatsapp";
+  return name;
+};
+
 const uniqueByName = (entries: typeof brewfile) =>
   entries.filter(
     (entry, index, list) =>
-      list.findIndex((candidate) => candidate.data.name === entry.data.name) ===
+      list.findIndex(
+        (candidate) => getCanonicalName(candidate) === getCanonicalName(entry),
+      ) ===
       index,
   );
 
@@ -30,6 +39,12 @@ const cliEntries = uniqueByName(
 );
 
 const getLink = (entry: (typeof brewfile)[number]) => {
+  const canonicalName = getCanonicalName(entry);
+
+  if (canonicalName === "codex") return "https://openai.com/codex";
+  if (canonicalName === "whatsapp") return "https://www.whatsapp.com/";
+  if (canonicalName === "herdr") return "https://herdr.dev";
+
   if (entry.data.homepage) return entry.data.homepage;
 
   if (entry.data.type === "cask") {
@@ -73,14 +88,14 @@ const getLink = (entry: (typeof brewfile)[number]) => {
       <section class="space-y-4 rounded-xl border border-border bg-secondary/30 p-6">
         <h2 class="text-3xl font-bold text-foreground">Daily drivers</h2>
         <p class="text-muted-foreground">
-          The short version: a MacBook Pro, herdr and the terminal, Claude Code
+          The short version: a MacBook Pro, Herdr and the terminal, Claude Code
           for work, and a small collection of MCP and AI tools for experiments.
           For recording, I use a Shure MV7+ with a simple desk setup.
         </p>
         <ul class="grid gap-2 text-muted-foreground sm:grid-cols-2 list-disc pl-6">
-          <li>Terminal-first development with herdr</li>
+          <li>Terminal-first development with Herdr</li>
           <li>Claude Code for work</li>
-          <li>OpenCode, Codex, and OpenClaw for personal experiments</li>
+          <li>OpenCode and OpenClaw for personal experiments</li>
           <li>VS Code Insiders when I need a traditional editor</li>
           <li>MacBook Pro M2 (personal) and M4 (work)</li>
           <li>Shure MV7+ for streams and recordings</li>
@@ -97,7 +112,7 @@ const getLink = (entry: (typeof brewfile)[number]) => {
         </h2>
         <p class="text-muted-foreground">
           These days I'm mainly working in the terminal via <a
-            href="https://herd.laravel.com/docs/herdr">herdr</a
+            href="https://herdr.dev">Herdr</a
           >. When I do need a traditional editor, I reach for VS Code Insiders
           or Devin.
         </p>
@@ -155,7 +170,6 @@ const getLink = (entry: (typeof brewfile)[number]) => {
             <a href="https://hermes-agent.nousresearch.com">Hermes Agent</a> - Still
             exploring it, but it has great UX
           </li>
-          <li><a href="https://openai.com/codex">Codex Desktop</a></li>
           <li><a href="https://claude.ai/download">Claude Desktop</a></li>
         </ul>
       </section>
