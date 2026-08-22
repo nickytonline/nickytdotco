@@ -4,13 +4,25 @@ import Search from "./Search";
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Watch", href: "/watch" },
+  { label: "Speaking", href: "/speaking" },
+  { label: "Blog", href: "/blog" },
+  { label: "Newsletter", href: "/newsletter" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
+  { label: "Socials", href: "/socials" },
+];
+const isCurrent = (href: string) =>
+  href === "/" ? currentPath === "" : currentPath.startsWith(href.slice(1));
 ---
 
 <header class="pt-6 pb-6 max-w-7xl mx-auto px-6 transition-colors">
   <div
-    class="flex flex-col items-center md:md:items-start md:flex-row gap-6 justify-between"
+    class="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between"
   >
-    <div class="flex flex-col gap-6 items-center md:items-start">
+    <div class="flex w-full flex-col items-center gap-4 md:w-auto md:items-start md:gap-6">
       <h1
         class="font-heading md:text-6xl lg:text-8xl font-medium"
         transition:name="header-logo"
@@ -21,92 +33,62 @@ const currentPath = pathname.slice(1);
       </h1>
       <nav
         aria-label="main navigation"
-        class="mt-2 text-xl md:text-2xl lg:text-3xl"
+        class="mt-2 hidden text-xl md:block md:text-2xl lg:text-3xl"
       >
         <ul class="list-none flex gap-6 place-content-center flex-wrap">
-          <li>
-            <a
-              href="/"
-              aria-current={currentPath === "" ? "page" : "false"}
-              class="nav-link">Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="/watch"
-              aria-current={currentPath.startsWith("watch") ? "page" : "false"}
-              class="nav-link"
-            >
-              Watch
-            </a>
-          </li>
-          <li>
-            <a
-              href="/speaking"
-              aria-current={currentPath.startsWith("speaking")
-                ? "page"
-                : "false"}
-              class="nav-link"
-            >
-              Speaking
-            </a>
-          </li>
-          <li>
-            <a
-              href="/blog"
-              aria-current={currentPath.startsWith("blog") ? "page" : "false"}
-              class="nav-link"
-            >
-              Blog
-            </a>
-          </li>
-          <li>
-            <a
-              href="/newsletter"
-              aria-current={currentPath.startsWith("newsletter")
-                ? "page"
-                : "false"}
-              class="nav-link">Newsletter</a
-            >
-          </li>
-          <li>
-            <a
-              href="/projects"
-              class="nav-link"
-              aria-current={currentPath.startsWith("projects") ? "page" : "false"}
-              >Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="/about"
-              class="nav-link"
-              aria-current={currentPath.startsWith("about") ? "page" : "false"}
-              >About
-            </a>
-          </li>
-          <li>
-            <a
-              href="/socials"
-              aria-current={currentPath.startsWith("socials")
-                ? "page"
-                : "false"}
-              class="nav-link"
-            >
-              Socials
-            </a>
-          </li>
-          <li>
-            <a
-              href="/uses"
-              aria-current={currentPath.startsWith("uses") ? "page" : "false"}
-              class="nav-link"
-            >
-              Uses
-            </a>
-          </li>
+          {navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={isCurrent(item.href) ? "page" : undefined}
+                class="nav-link"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
+      <details class="group relative w-full md:hidden">
+        <summary
+          class="relative z-10 flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-lg font-semibold text-foreground hover:bg-secondary focus:outline-none [&::-webkit-details-marker]:hidden"
+        >
+          Menu
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-5 w-5 shrink-0 text-brand transition-transform duration-200 group-open:rotate-180"
+            aria-hidden="true"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </summary>
+        <nav
+          aria-label="main navigation"
+          class="absolute left-0 right-0 top-full z-50 mt-2 rounded-lg border border-border bg-background p-4 text-lg shadow-lg"
+        >
+          <ul class="flex list-none flex-col items-center gap-3">
+            {navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={isCurrent(item.href) ? "page" : undefined}
+                  class="nav-link"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </details>
     </div>
     <div class="flex items-center gap-4">
       <a

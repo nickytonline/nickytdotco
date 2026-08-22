@@ -1,17 +1,18 @@
 ---
 interface Props {
   tag: string;
+  label?: string;
   count?: number;
 }
 
-const { tag, count } = Astro.props;
+const { tag, label = tag, count } = Astro.props;
 ---
 
 <a
   href={`/tags/${tag.toLowerCase().replace(/\s+/g, "")}`}
   class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none transition-colors bg-brand-soft text-brand-soft-foreground hover:bg-brand-solid-hover hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground"
 >
-  {tag}
+  {label}
 
   {
     count && (

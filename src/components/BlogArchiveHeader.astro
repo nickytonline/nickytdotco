@@ -1,23 +1,15 @@
 ---
 import SectionHeader from "./SectionHeader.astro";
 
-const { totalPosts, description } = Astro.props;
+const { description } = Astro.props;
 ---
 
 <div class="mb-6">
-  <SectionHeader title="Blog Posts Archive" headingLevel={1} />
+  <SectionHeader title="Blog" headingLevel={1} />
   <p class="text-xl text-muted-foreground mt-6">
     {
       description ||
-        `Exploring code, AI, and web development through ${totalPosts} posts.`
+        "Practical notes on secure AI infrastructure, security, developer tooling, software engineering, and open source."
     }
-    <div class="mt-6">
-      <a
-        href="/tags/blog/"
-        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand"
-      >
-        Browse by tag<span class="text-2xl">→</span>
-      </a>
-    </div>
   </p>
 </div>

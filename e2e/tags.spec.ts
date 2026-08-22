@@ -2,15 +2,18 @@ import { test, expect } from "@playwright/test";
 import { escapeRegExp } from "./test-utils";
 
 test.describe("tags", () => {
-  test("tags index shows popular and all-tags sections", async ({ page }) => {
+  test("tags index shows curated and expandable all-tags sections", async ({
+    page,
+  }) => {
     await page.goto("/tags");
 
     await expect(
       page.getByRole("heading", { level: 1, name: "Tags" })
     ).toBeVisible();
     await expect(
-      page.getByRole("heading", { level: 2, name: "Popular Tags" })
+      page.getByRole("heading", { level: 2, name: "Curated topics" })
     ).toBeVisible();
+    await page.locator("main summary").click();
     await expect(
       page.getByRole("heading", { level: 2, name: "All Tags" })
     ).toBeVisible();
@@ -44,7 +47,8 @@ test.describe("tags", () => {
     page,
   }) => {
     await page.goto("/tags");
-    const tagLink = page.locator('main a[href^="/tags/"]').last();
+    const tagLink = page.locator('main a[href^="/tags/"]:visible').last();
+    await expect(tagLink).toBeVisible();
     const href = await tagLink.getAttribute("href");
     await tagLink.click();
 

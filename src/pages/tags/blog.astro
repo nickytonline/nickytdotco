@@ -4,6 +4,7 @@ import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import Tag from "@/components/Tag.astro";
+import { curatedTagLabels, curatedTagSlugs } from "../../utils/tag-taxonomy";
 export const prerender = true;
 
 const blogPosts = await getCollection("blog");
@@ -29,6 +30,7 @@ const sortedTags = Array.from(tagCounts.entries()).sort((a, b) => b[1] - a[1]);
 const alphabeticalTags = [...sortedTags].sort((a, b) =>
   a[0].localeCompare(b[0])
 );
+const curatedTags = sortedTags.filter(([tag]) => curatedTagSlugs.has(tag));
 ---
 
 <Layout
@@ -76,38 +78,43 @@ const alphabeticalTags = [...sortedTags].sort((a, b) =>
         class="mb-8 pb-1 border-l-4 border-brand dark:border-brand pl-6 bg-linear-to-r from-brand-soft dark:from-brand-soft to-transparent flex items-center"
       >
         <div>
-          <h2 class="text-3xl font-bold text-foreground">Popular Tags</h2>
-          <p class="text-muted-foreground mt-2">Most frequently used topics</p>
+          <h2 class="text-3xl font-bold text-foreground">Curated topics</h2>
+          <p class="text-muted-foreground mt-2">The topics I return to most</p>
         </div>
       </div>
       <div class="flex flex-wrap gap-3">
         {
-          sortedTags
-            .slice(0, 10)
-            .map(([tag, count]) => <Tag tag={tag} count={count} />)
-        }
-      </div>
-    </section>
-
-    <section>
-      <div
-        class="mb-8 pb-1 border-l-4 border-brand dark:border-brand pl-6 bg-linear-to-r from-brand-soft dark:from-brand-soft to-transparent flex items-center"
-      >
-        <div>
-          <h2 class="text-3xl font-bold text-foreground">All Tags</h2>
-          <p class="text-muted-foreground mt-2">
-            {alphabeticalTags.length} topics in alphabetical order
-          </p>
-        </div>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        {
-          alphabeticalTags.map(([tag, count]) => (
-            <Tag tag={tag} count={count} />
+          curatedTags.map(([tag, count]) => (
+            <Tag tag={tag} label={curatedTagLabels[tag]} count={count} />
           ))
         }
       </div>
     </section>
+
+    <details>
+      <summary class="cursor-pointer text-3xl font-bold text-foreground">
+        Browse all {alphabeticalTags.length} tags
+      </summary>
+      <div class="mt-8">
+        <div
+          class="mb-8 pb-1 border-l-4 border-brand dark:border-brand pl-6 bg-linear-to-r from-brand-soft dark:from-brand-soft to-transparent flex items-center"
+        >
+          <div>
+            <h2 class="text-3xl font-bold text-foreground">All Tags</h2>
+            <p class="text-muted-foreground mt-2">
+              {alphabeticalTags.length} topics in alphabetical order
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          {
+            alphabeticalTags.map(([tag, count]) => (
+              <Tag tag={tag} count={count} />
+            ))
+          }
+        </div>
+      </div>
+    </details>
 
     {
       sortedTags.length === 0 && (

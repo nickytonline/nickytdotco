@@ -18,7 +18,7 @@ interface Props {
 
 const {
   title,
-  metaDesc = "Nick Taylor (@nickytonline) - Software developer sharing blog posts, live streams, conference talks, and open source.",
+  metaDesc = "Nick Taylor builds and teaches secure AI infrastructure, developer tooling, and open source through talks, videos, writing, and projects.",
   socialImage = "/assets/images/page-og/home.jpg",
   pageType,
   ogType,
@@ -129,6 +129,14 @@ const currentYear = new Date().getFullYear();
         <div
           class="mx-auto flex max-w-4xl flex-col items-center gap-4 text-lg text-muted-foreground"
         >
+          <nav aria-label="Footer navigation" class="text-sm">
+            <a
+              href="/uses"
+              class="hover:text-brand focus:text-brand focus:outline-none"
+            >
+              Uses
+            </a>
+          </nav>
           <p class="text-sm">&copy; {currentYear} Nick Taylor</p>
         </div>
       </footer>

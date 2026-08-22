@@ -15,8 +15,9 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: "Nick Taylor — Developer. Advocate. Builder.",
-  shortDesc: "Welcome to Nick Taylor's personal website.",
+  name: "Nick Taylor — Developer advocate building secure AI infrastructure.",
+  shortDesc:
+    "Nick Taylor builds and teaches secure AI infrastructure, developer tooling, and open source.",
   url: getSiteUrl(),
   twitterHandle: "@nickytonline",
   mastodonHandle: "@nickytonline@hachyderm.io",

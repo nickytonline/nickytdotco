@@ -46,6 +46,11 @@ export const prerender = false;
     <p class="text-xl text-muted-foreground mt-6">
       Get one developer tip a week. Short & valuable. That's it!
     </p>
+    <p class="text-lg leading-relaxed text-muted-foreground mt-4 max-w-2xl">
+      Each issue covers one practical thing worth trying: developer tools, AI
+      workflows, Git, productivity, terminal tricks, and other things I
+      actually use.
+    </p>
     <div class="mt-6">
       <a
         href={SUBSCRIBE_URL}
@@ -58,9 +63,20 @@ export const prerender = false;
     </div>
   </div>
 
-  <ul class="grid gap-6 lg:gap-8 mt-12">
+  <div class="mt-12 flex items-center justify-between gap-4">
+    <h2 class="text-3xl font-bold">Latest issues</h2>
+    <a
+      href={SUBSCRIBE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="font-semibold text-brand hover:underline focus:underline focus:outline-none"
+    >
+      Browse all issues →
+    </a>
+  </div>
+  <ul class="grid gap-6 lg:gap-8 mt-6">
     {
-      sortedPosts.map((post) => {
+      sortedPosts.slice(0, 5).map((post) => {
         const postDate = new Date(post.date);
         return (
           <li>

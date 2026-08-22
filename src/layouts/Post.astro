@@ -39,12 +39,15 @@ const postUrl = new URL(currentUrl, site.url).toString();
 const coverImageUrl = entry.data.cover_image
   ? new URL(entry.data.cover_image, site.url).toString()
   : undefined;
+const postSocialImage =
+  coverImageUrl ??
+  new URL("/assets/images/page-og/blog.jpg", site.url).toString();
 ---
 
 <MainLayout
   title={entry.data.title}
   metaDesc={entry.data.excerpt || entry.data.description}
-  socialImage={new URL(entry.data.cover_image!, site.url).toString()}
+  socialImage={postSocialImage}
   pageType="Post"
   ogType="article"
   publishedTime={entry.data.date.toISOString()}
@@ -111,6 +114,25 @@ const coverImageUrl = entry.data.cover_image
     <div class="prose prose-lg max-w-none">
       <Content />
     </div>
+
+    <aside
+      class="mt-12 rounded-xl border border-border bg-secondary/30 p-6"
+      data-pagefind-ignore
+    >
+      <h2 class="text-2xl font-bold">One practical tip a week</h2>
+      <p class="mt-2 text-lg text-muted-foreground">
+        Get a short developer tip about AI workflows, tooling, Git, and the
+        things I actually use.
+      </p>
+      <a
+        href="https://OneTipAWeek.com?utm_source=nickytco&utm_medium=blog"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-flex items-center gap-2 rounded-lg bg-brand-solid px-5 py-2.5 font-semibold text-brand-foreground hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:outline-none"
+      >
+        Subscribe to One Tip a Week<span aria-hidden="true">→</span>
+      </a>
+    </aside>
 
     {
       entry.data.tags && entry.data.tags.length > 0 && (

@@ -10,6 +10,7 @@ import { dateFilter } from "../utils/filters";
 import { fetchPastGuestsWithYouTube } from "../content/_loaders/stream-schedule";
 import TalkCard from "../components/TalkCard.astro";
 import GuideCard from "../components/GuideCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -22,7 +23,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 // Featured: evergreen, curated best work (excluded from Latest to avoid duplication)
 const featuredPosts = sortedPosts
   .filter((p) => p.data.featured === true)
-  .slice(0, 2);
+  .slice(0, 1);
 const featuredPostIds = new Set(featuredPosts.map((p) => p.id));
 
 // Latest fallback: recency feed, excludes featured posts
@@ -37,7 +38,7 @@ const now = new Date();
 const featuredTalks = allTalks
   .filter((t) => t.data.featured === true && !t.data.upcoming)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 2);
+  .slice(0, 1);
 const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
 // Upcoming talks: all future events, not a capped subset.
@@ -61,6 +62,24 @@ const sortedGuides = allGuides.sort(
 const featuredGuides = sortedGuides
   .filter((g) => g.data.featured === true)
   .slice(0, 2);
+
+const featuredProject = {
+  owner: "nickytonline",
+  name: "mcp-typescript-template",
+  description:
+    "Production-ready starter for building MCP servers in TypeScript, with Vite, Vitest, Pino logging, and Docker support out of the box.",
+  url: "https://github.com/nickytonline/mcp-typescript-template",
+  stargazerCount: 55,
+  forkCount: 12,
+  primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
+  myRole: "Author & maintainer",
+  links: [
+    {
+      label: "Read the build story",
+      url: "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template/",
+    },
+  ],
+};
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
@@ -143,8 +162,8 @@ export const prerender = false;
 ---
 
 <Layout
-  title="Nick Taylor — Developer. Advocate. Builder."
-  metaDesc="Software engineer and developer advocate with 20+ years in the industry. I write, stream, speak, and build open source. Currently in developer relations at Pomerium."
+  title="Nick Taylor — Developer advocate at the intersection of AI, security, and software"
+  metaDesc="Nick Taylor is a software engineer and developer advocate focused on MCP, agentic AI, Zero Trust security, developer tooling, and open source."
 >
   <Fragment slot="head">
     <script
@@ -191,16 +210,33 @@ export const prerender = false;
       />
       <div class="space-y-4">
         <h1 class="text-3xl md:text-4xl font-bold">
-          Developer. Advocate. Builder.
+          Developer advocate working at the intersection of AI, security, and software.
         </h1>
         <p class="text-lg leading-relaxed text-muted-foreground">
           <strong class="text-foreground"><em>Hi!</em> I'm Nick Taylor</strong> (<a
             href="/socials">@nickytonline</a
-          >), a software engineer and developer advocate with 20+ years in the
-          industry and a decade of open source. I write, stream, speak, and
-          build things, currently in developer relations at
-          <a href="https://pomerium.com">Pomerium</a>, where the focus is on
-          Zero Trust security, MCP (Model Context Protocol), and agentic AI.
+          >), a software engineer and developer advocate focused on MCP,
+          agentic AI, Zero Trust security, developer tooling, and open source.
+          I'm currently in developer relations at
+          <a href="https://pomerium.com">Pomerium</a>.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a
+            href="/speaking"
+            class="inline-flex items-center gap-2 rounded-lg bg-brand-solid px-5 py-2.5 text-base font-semibold text-brand-foreground transition-colors hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:outline-none"
+          >
+            Invite me to speak<span class="text-xl" aria-hidden="true">→</span>
+          </a>
+          <a
+            href="/watch"
+            class="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-base font-semibold text-foreground transition-colors hover:bg-secondary focus:bg-secondary focus:outline-none"
+          >
+            Watch latest videos<span class="text-xl" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <p class="pt-2 text-sm font-medium text-muted-foreground">
+          20+ years in software · GitHub Star · AAIF Ambassador · AWS Community
+          Builder · Microsoft MVP
         </p>
       </div>
     </section>
@@ -211,7 +247,11 @@ export const prerender = false;
       featuredGuides.length > 0 ||
       featuredPosts.length > 0 ? (
         <section class="space-y-10">
-          <SectionHeader title="Featured" headingLevel={2} />
+          <SectionHeader title="Start here" headingLevel={2} />
+          <p class="max-w-2xl text-lg text-muted-foreground">
+            A few of my best recent talks, tutorials, and practical notes on
+            building with AI while keeping access secure.
+          </p>
 
           {featuredTalks.length > 0 && (
             <div class="space-y-4">
@@ -271,6 +311,17 @@ export const prerender = false;
         </section>
       ) : null
     }
+
+    <section class="space-y-6">
+      <SectionHeader title="Featured project" headingLevel={2} />
+      <p class="max-w-2xl text-lg text-muted-foreground">
+        A production-ready starting point for building MCP servers in
+        TypeScript.
+      </p>
+      <div class="max-w-2xl">
+        <ProjectCard project={featuredProject} />
+      </div>
+    </section>
 
     {
       hasUpcomingEvents ? (
@@ -362,7 +413,8 @@ export const prerender = false;
     >
       <h2 id="newsletter-heading" class="sr-only">Newsletter</h2>
       <p class="text-lg text-muted-foreground">
-        Get one developer tip a week. Short &amp; valuable. That's it!
+        Developer tools, AI workflows, Git, productivity, and other things I
+        actually use. One developer tip a week. Short &amp; valuable. That's it!
       </p>
       <a
         href="https://OneTipAWeek.com?utm_source=nickytco&utm_medium=homepage"

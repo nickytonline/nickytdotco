@@ -13,11 +13,14 @@ test.describe("blog archive", () => {
     await page.goto("/blog");
 
     await expect(
-      page.getByRole("heading", { level: 1, name: "Blog Posts Archive" })
+      page.getByRole("heading", { level: 1, name: "Blog" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Blog Posts Archive" })
     ).toBeVisible();
 
     // Year headings are h2s rendered by BlogArchiveYear.
-    const yearHeadings = page.getByRole("heading", { level: 2 });
+    const yearHeadings = page.locator("main h2").filter({ hasText: /^\d{4}$/ });
     await expect(yearHeadings.first()).toHaveText(/^\d{4}$/);
 
     const postLinks = page.locator('main a[href^="/blog/"]');

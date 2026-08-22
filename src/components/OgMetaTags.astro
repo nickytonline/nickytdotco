@@ -6,6 +6,7 @@ interface Props {
   description: string;
   socialImage: string;
   url: string;
+  imageAlt?: string;
   type?: "website" | "article";
   publishedTime?: string;
 }
@@ -15,6 +16,7 @@ const {
   description,
   socialImage,
   url,
+  imageAlt = `${title} preview`,
   type = "website",
   publishedTime,
 } = Astro.props;
@@ -24,6 +26,7 @@ const {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={socialImage} />
+<meta property="og:image:alt" content={imageAlt} />
 <meta property="og:url" content={url} />
 <meta property="og:site_name" content={site.name} />
 <meta property="og:type" content={type} />
@@ -36,4 +39,5 @@ const {
 <meta name="twitter:creator" content="@nickytonline" />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={socialImage} />
+<meta name="twitter:image:alt" content={imageAlt} />
 <meta name="twitter:card" content="summary_large_image" />

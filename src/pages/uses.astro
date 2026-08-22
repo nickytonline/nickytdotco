@@ -11,16 +11,40 @@ const editorCasks = brewfile.filter(
   (entry) => entry.data.type === "cask" && editorIds.includes(entry.data.name),
 );
 
-const desktopAppEntries = brewfile.filter(
+const getCanonicalName = (entry: (typeof brewfile)[number]) => {
+  const name = entry.data.displayName.trim().toLowerCase().replace(/\s+/g, " ");
+
+  if (name === "whatsapp messenger") return "whatsapp";
+  return name;
+};
+
+const uniqueByName = (entries: typeof brewfile) =>
+  entries.filter(
+    (entry, index, list) =>
+      list.findIndex(
+        (candidate) => getCanonicalName(candidate) === getCanonicalName(entry),
+      ) ===
+      index,
+  );
+
+const desktopAppEntries = uniqueByName(brewfile.filter(
   (entry) =>
     (entry.data.type === "cask" || entry.data.type === "mas") &&
     !editorIds.includes(entry.data.name) &&
     !entry.data.name.startsWith("font-"),
+));
+
+const cliEntries = uniqueByName(
+  brewfile.filter((entry) => entry.data.type === "brew"),
 );
 
-const cliEntries = brewfile.filter((entry) => entry.data.type === "brew");
-
 const getLink = (entry: (typeof brewfile)[number]) => {
+  const canonicalName = getCanonicalName(entry);
+
+  if (canonicalName === "codex") return "https://openai.com/codex";
+  if (canonicalName === "whatsapp") return "https://www.whatsapp.com/";
+  if (canonicalName === "herdr") return "https://herdr.dev";
+
   if (entry.data.homepage) return entry.data.homepage;
 
   if (entry.data.type === "cask") {
@@ -38,7 +62,7 @@ const getLink = (entry: (typeof brewfile)[number]) => {
 
 <MainLayout
   title="Uses"
-  metaDesc="This page details pretty much all I use as a developer."
+  metaDesc="Nick Taylor's developer setup: daily tools, coding agents, terminal utilities, office gear, and streaming equipment."
   socialImage="/assets/images/page-og/uses.jpg"
   pageType="Page"
 >
@@ -49,8 +73,9 @@ const getLink = (entry: (typeof brewfile)[number]) => {
 
     <div class="space-y-8 text-lg leading-relaxed">
       <p class="text-muted-foreground">
-        This page details pretty much all I use as a developer. If you decide to
-        make your own, consider adding it to <a
+        This page starts with the tools I reach for every day, followed by the
+        longer inventory for anyone who wants the details. If you decide to make
+        your own, consider adding it to <a
           href="https://twitter.com/wesbos">Wes Bos</a
         >' <a href="https://uses.tech">uses.tech</a>. I use a Mac, so most tools
         are macOS specific, but there are some OS-agnostic ones in the list.
@@ -59,6 +84,23 @@ const getLink = (entry: (typeof brewfile)[number]) => {
         Note: This page contains affiliate links. I may earn a commission for
         purchases made through these links at no additional cost to you.
       </p>
+
+      <section class="space-y-4 rounded-xl border border-border bg-secondary/30 p-6">
+        <h2 class="text-3xl font-bold text-foreground">Daily drivers</h2>
+        <p class="text-muted-foreground">
+          The short version: a MacBook Pro, Herdr and the terminal, Claude Code
+          for work, and a small collection of MCP and AI tools for experiments.
+          For recording, I use a Shure MV7+ with a simple desk setup.
+        </p>
+        <ul class="grid gap-2 text-muted-foreground sm:grid-cols-2 list-disc pl-6">
+          <li>Terminal-first development with Herdr</li>
+          <li>Claude Code for work</li>
+          <li>OpenCode and OpenClaw for personal experiments</li>
+          <li>VS Code Insiders when I need a traditional editor</li>
+          <li>MacBook Pro M2 (personal) and M4 (work)</li>
+          <li>Shure MV7+ for streams and recordings</li>
+        </ul>
+      </section>
 
       <section class="space-y-4">
         <h2 class="text-3xl font-bold text-foreground" id="heading-editor">
@@ -70,7 +112,7 @@ const getLink = (entry: (typeof brewfile)[number]) => {
         </h2>
         <p class="text-muted-foreground">
           These days I'm mainly working in the terminal via <a
-            href="https://herd.laravel.com/docs/herdr">herdr</a
+            href="https://herdr.dev">Herdr</a
           >. When I do need a traditional editor, I reach for VS Code Insiders
           or Devin.
         </p>
@@ -79,9 +121,6 @@ const getLink = (entry: (typeof brewfile)[number]) => {
             editorCasks.map((entry) => (
               <li>
                 <a href={getLink(entry)}>{entry.data.displayName}</a>
-                {entry.data.description && (
-                  <span class="ml-1">- {entry.data.description}</span>
-                )}
               </li>
             ))
           }
@@ -131,7 +170,6 @@ const getLink = (entry: (typeof brewfile)[number]) => {
             <a href="https://hermes-agent.nousresearch.com">Hermes Agent</a> - Still
             exploring it, but it has great UX
           </li>
-          <li><a href="https://openai.com/codex">Codex Desktop</a></li>
           <li><a href="https://claude.ai/download">Claude Desktop</a></li>
         </ul>
       </section>
@@ -197,9 +235,6 @@ const getLink = (entry: (typeof brewfile)[number]) => {
             desktopAppEntries.map((entry) => (
               <li>
                 <a href={getLink(entry)}>{entry.data.displayName}</a>
-                {entry.data.description && (
-                  <span class="ml-1">- {entry.data.description}</span>
-                )}
               </li>
             ))
           }
@@ -219,9 +254,6 @@ const getLink = (entry: (typeof brewfile)[number]) => {
             cliEntries.map((entry) => (
               <li>
                 <a href={getLink(entry)}>{entry.data.displayName}</a>
-                {entry.data.description && (
-                  <span class="ml-1">- {entry.data.description}</span>
-                )}
                 {entry.data.tap && (
                   <code class="ml-1 text-xs text-muted-foreground">
                     ({entry.data.tap})
@@ -331,7 +363,7 @@ const getLink = (entry: (typeof brewfile)[number]) => {
           </li><li>
             <a href="https://amzn.to/3YrjjXZ">LEVOIT Air Purifier Core 300</a>
           </li><li>
-            <a href="https://amzn.to/3YuyMq2">Elgato Streamd Deck XL</a> - Great for
+            <a href="https://amzn.to/3YuyMq2">Elgato Stream Deck XL</a> - Great for
             controlling scenes in OBS, dropping links and messages in chat, but I
             also use it for other apps like Spotify and Zoom.
           </li><li>
@@ -397,13 +429,17 @@ const getLink = (entry: (typeof brewfile)[number]) => {
       </section>
 
       <section class="space-y-4">
-        <h2 id="heading-other" class="text-3xl font-bold text-foreground">
-          Other<a
-            href="#heading-other"
+        <h2 id="heading-recommendations" class="text-3xl font-bold text-foreground">
+          Personal recommendations<a
+            href="#heading-recommendations"
             class="heading-anchor"
             aria-label="Link to this section">#</a
           >
         </h2>
+        <p class="text-muted-foreground">
+          These recommendations sit apart from my core developer setup and may
+          include referral links.
+        </p>
         <ul class="space-y-2 text-muted-foreground list-disc pl-6">
           <li>
             WISE for banking. I use it for my business. It's a great way to send
@@ -420,7 +456,7 @@ const getLink = (entry: (typeof brewfile)[number]) => {
           id="heading-health-and-training"
           class="text-3xl font-bold text-foreground"
         >
-          Health and Training<a
+          Health and training recommendations<a
             href="#heading-health-and-training"
             class="heading-anchor"
             aria-label="Link to this section">#</a

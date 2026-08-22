@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import BlogArchiveHeader from "../components/BlogArchiveHeader.astro";
 import BlogArchiveYear from "../components/BlogArchiveYear.astro";
+import BlogPostCard from "../components/BlogPostCard.astro";
 import { getCollection } from "astro:content";
 import { dateFilter } from "../utils/filters";
 
@@ -29,6 +30,16 @@ const postsByYear = sortedPosts.reduce(
 
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 
+const startHereSlugs = [
+  "clawspace-a-browser-based-file-explorer-for-openclaw",
+  "introducing-excaliclaw-a-skill-for-openclaw-to-generate-excalidraw-diagrams",
+  "stop-shipping-broken-env-config",
+  "build-your-first-or-next-mcp-server-with-the-typescript-mcp-template",
+];
+const curatedStartHerePosts = startHereSlugs
+  .map((slug) => sortedPosts.find((post) => post.id === slug))
+  .filter((post): post is (typeof sortedPosts)[number] => Boolean(post));
+
 // Transform data for components
 const blogPostsByYear = years.map((year) => ({
   year,
@@ -46,10 +57,49 @@ const blogPostsByYear = years.map((year) => ({
 
 <MainLayout
   title="Blog Posts - Archive"
-  metaDesc="All blog posts by Nick Taylor"
+  metaDesc="Practical writing by Nick Taylor on AI engineering, MCP, developer tooling, open source, and the lessons learned while building."
   socialImage="/assets/images/page-og/blog.jpg"
 >
-  <BlogArchiveHeader totalPosts={sortedPosts.length} />
+  <BlogArchiveHeader />
+  <section class="mb-12 space-y-6" aria-labelledby="start-here-heading">
+    <div>
+      <h2 id="start-here-heading" class="text-3xl font-bold">Start here</h2>
+    </div>
+    <div class="flex flex-wrap gap-2" aria-label="Blog topics">
+      {[
+        ["AI & MCP", "/tags/mcp/blog"],
+        ["Security", "/tags/security/blog"],
+        ["Developer tooling", "/tags/developertools/blog"],
+        ["Open source", "/tags/opensource/blog"],
+      ].map(([label, href]) => (
+        <a
+          href={href}
+          class="rounded-full border border-brand-border bg-brand-soft px-3 py-1.5 text-sm font-semibold text-brand-soft-foreground transition-colors hover:border-brand-solid hover:bg-brand-solid hover:text-brand-foreground focus-visible:border-brand-solid focus-visible:bg-brand-solid focus-visible:text-brand-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-solid"
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+    <div class="grid gap-6 xl:gap-8">
+      {curatedStartHerePosts.map((post) => (
+        <BlogPostCard
+          title={post.data.title}
+          date={dateFilter(post.data.date)}
+          image={post.data.cover_image}
+          href={`/blog/${post.id}`}
+        />
+      ))}
+    </div>
+  </section>
+  <section class="mb-6">
+    <h2 class="text-3xl font-bold text-foreground">Blog Posts Archive</h2>
+    <a
+      href="/tags/blog/"
+      class="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand"
+    >
+      Browse by tag<span class="text-2xl">→</span>
+    </a>
+  </section>
   <div class="space-y-12">
     {
       blogPostsByYear.map((yearGroup) => (
