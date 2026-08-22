@@ -7,6 +7,13 @@
     "node": ">=24.0.0",
     "npm": ">=11 <12"
   },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "12.0.2",
+      "onFail": "download"
+    }
+  },
   "scripts": {
     "dev": "portless run astro dev",
     "start": "astro dev",
