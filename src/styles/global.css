@@ -45,6 +45,7 @@
   --devto: #0a0a0a;
   --bluesky: #1185fe;
   --mastodon: #6364ff;
+  --typescript: #3178c6;
   --flow-space: 1.5rem;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -302,6 +303,7 @@ nav a:not([aria-current="page"]):focus {
   --color-devto: var(--devto);
   --color-bluesky: var(--bluesky);
   --color-mastodon: var(--mastodon);
+  --color-typescript: var(--typescript);
 }
 
 .dark {
