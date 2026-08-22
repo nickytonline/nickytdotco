@@ -4,51 +4,70 @@ const socialLinks = [
     name: "YouTube",
     url: "https://youtube.com/@nickytonline",
     icon: "youtube",
+    brand: "youtube",
     description: "Tutorials, talks, livestreams, and technical demos",
   },
   {
     name: "GitHub",
     url: "https://github.com/nickytonline",
     icon: "github",
+    brand: "github",
     description: "Projects and open-source work",
   },
   {
     name: "X (Twitter)",
     url: "https://x.com/nickytonline",
     icon: "twitter",
+    brand: "x",
     description: "Short takes on AI, security, and developer tooling",
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/nickytonline",
     icon: "linkedin",
+    brand: "linkedin",
     description: "DevRel, AI, security, and conference updates",
   },
   {
     name: "Dev.to",
     url: "https://dev.to/nickytonline",
     icon: "devto",
+    brand: "devto",
     description: "Technical writing and experiments",
   },
   {
     name: "Twitch",
     url: "https://twitch.tv/nickytonline",
     icon: "twitch",
+    brand: "twitch",
     description: "Live coding, demos, and community conversations",
   },
   {
     name: "Bluesky",
     url: "https://bsky.app/profile/nickyt.online",
     icon: "globe",
+    brand: "bluesky",
     description: "A quieter feed for tech and community conversations",
   },
   {
     name: "Mastodon",
     url: "https://hachyderm.io/@nickytonline",
     icon: "mastodon",
+    brand: "mastodon",
     description: "Tech conversations on the Fediverse",
   },
 ];
+
+const socialBrandClasses: Record<string, string> = {
+  youtube: "group-hover:bg-youtube group-focus:bg-youtube",
+  github: "group-hover:bg-github group-focus:bg-github",
+  x: "group-hover:bg-x group-focus:bg-x",
+  linkedin: "group-hover:bg-linkedin group-focus:bg-linkedin",
+  devto: "group-hover:bg-devto group-focus:bg-devto",
+  twitch: "group-hover:bg-twitch group-focus:bg-twitch",
+  bluesky: "group-hover:bg-bluesky group-focus:bg-bluesky",
+  mastodon: "group-hover:bg-mastodon group-focus:bg-mastodon",
+};
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -58,9 +77,14 @@ const socialLinks = [
         href={social.url}
         target="_blank"
         rel="noopener noreferrer me"
-        class="group flex items-start gap-4 p-6 rounded-lg transition-all duration-200 focus:outline-none"
+        class="group flex items-start gap-4 rounded-lg p-6 transition-all duration-200 focus:outline-none"
       >
-        <div class="shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-secondary group-hover:bg-brand-solid group-focus:bg-brand-solid dark:group-hover:bg-brand-solid dark:group-focus:bg-brand-solid transition-colors duration-200">
+        <div
+          class:list={[
+            "flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary transition-colors duration-200",
+            socialBrandClasses[social.brand],
+          ]}
+        >
           {social.icon === "youtube" && (
             <svg
               xmlns="http://www.w3.org/2000/svg"

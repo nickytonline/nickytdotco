@@ -39,6 +39,12 @@
   --warning-border: oklch(0.924 0.12 95.746);
   --youtube: #ff0000;
   --twitch: #9146ff;
+  --github: #24292f;
+  --x: #000000;
+  --linkedin: #0a66c2;
+  --devto: #0a0a0a;
+  --bluesky: #1185fe;
+  --mastodon: #6364ff;
   --flow-space: 1.5rem;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -290,6 +296,12 @@ nav a:not([aria-current="page"]):focus {
   --color-warning-border: var(--warning-border);
   --color-youtube: var(--youtube);
   --color-twitch: var(--twitch);
+  --color-github: var(--github);
+  --color-x: var(--x);
+  --color-linkedin: var(--linkedin);
+  --color-devto: var(--devto);
+  --color-bluesky: var(--bluesky);
+  --color-mastodon: var(--mastodon);
 }
 
 .dark {
