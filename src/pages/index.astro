@@ -10,6 +10,7 @@ import { dateFilter } from "../utils/filters";
 import { fetchPastGuestsWithYouTube } from "../content/_loaders/stream-schedule";
 import TalkCard from "../components/TalkCard.astro";
 import GuideCard from "../components/GuideCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -61,6 +62,24 @@ const sortedGuides = allGuides.sort(
 const featuredGuides = sortedGuides
   .filter((g) => g.data.featured === true)
   .slice(0, 2);
+
+const featuredProject = {
+  owner: "nickytonline",
+  name: "mcp-typescript-template",
+  description:
+    "Production-ready starter for building MCP servers in TypeScript, with Vite, Vitest, Pino logging, and Docker support out of the box.",
+  url: "https://github.com/nickytonline/mcp-typescript-template",
+  stargazerCount: 55,
+  forkCount: 12,
+  primaryLanguage: { name: "TypeScript", color: "#3178c6" },
+  myRole: "Author & maintainer",
+  links: [
+    {
+      label: "Read the build story",
+      url: "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template/",
+    },
+  ],
+};
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
@@ -292,6 +311,17 @@ export const prerender = false;
         </section>
       ) : null
     }
+
+    <section class="space-y-6">
+      <SectionHeader title="Featured project" headingLevel={2} />
+      <p class="max-w-2xl text-lg text-muted-foreground">
+        A production-ready starting point for building MCP servers in
+        TypeScript.
+      </p>
+      <div class="max-w-2xl">
+        <ProjectCard project={featuredProject} />
+      </div>
+    </section>
 
     {
       hasUpcomingEvents ? (
