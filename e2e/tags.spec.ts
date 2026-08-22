@@ -13,7 +13,7 @@ test.describe("tags", () => {
     await expect(
       page.getByRole("heading", { level: 2, name: "Curated topics" })
     ).toBeVisible();
-    await page.getByText(/^Browse all \d+ tags$/).click();
+    await page.locator("summary").click();
     await expect(
       page.getByRole("heading", { level: 2, name: "All Tags" })
     ).toBeVisible();

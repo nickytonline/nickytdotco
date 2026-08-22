@@ -128,7 +128,7 @@ test.describe("home page", () => {
       newsletterSection.getByRole("link", { name: "Subscribe", exact: true })
     ).toHaveAttribute(
       "href",
-      /onetipaweek\.com\/\?utm_source=nickytco&utm_medium=homepage/i
+      /onetipaweek\.com\/?\?utm_source=nickytco&utm_medium=homepage/i
     );
   });
 });
