@@ -38,9 +38,9 @@ export async function GET(_context: APIContext) {
 - Profile: https://www.nickyt.co/about
 - GitHub: https://github.com/nickytonline
 - LinkedIn: https://linkedin.com/in/nickytonline
-- DEV Community: https://dev.to/nickytonline (130K followers)
-- Bluesky: https://bsky.app/profile/nickyt.online (10.8K followers)
-- X (Twitter): https://x.com/nickytonline (5.6K followers)
+- DEV Community: https://dev.to/nickytonline
+- Bluesky: https://bsky.app/profile/nickyt.online
+- X (Twitter): https://x.com/nickytonline
 - Newsletter: https://onetipaweek.com
 
 ## Expertise
@@ -61,7 +61,6 @@ export async function GET(_context: APIContext) {
 - Built the TypeScript MCP template (widely forked)
 - Created the Pomerium MCP client
 - Creator of ClawSpace, an open-source project for viewing OpenClaw workspace files
-- 130K followers on DEV Community
 - Speaker at BlackHat USA, MCP Dev Summit EU, AI Engineer Europe, GitHub Universe, All Things Open, ConFoo, and SREday
 - 20+ years in tech, 10+ years of open source contributions
 
