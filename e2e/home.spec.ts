@@ -37,6 +37,9 @@ test.describe("home page", () => {
       name: /Talks|Hands-On Tutorials|Writing/,
     });
     await expect(subheadings.first()).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Explore the MCP hub" })
+    ).toHaveAttribute("href", "/mcp");
   });
 
   test("includes the selected AI and Zero Trust talks", async ({ page }) => {

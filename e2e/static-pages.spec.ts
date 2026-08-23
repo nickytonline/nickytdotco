@@ -32,6 +32,88 @@ test.describe("projects page", () => {
     await expect(
       page.getByRole("link", { name: "More on GitHub" })
     ).toHaveAttribute("href", "https://github.com/nickytonline");
+    await expect(
+      page.locator(
+        'main article a[href="https://github.com/pomerium/mcp-app-typescript-template"]'
+      )
+    ).toBeVisible();
+  });
+});
+
+test.describe("MCP topic hub", () => {
+  test("connects MCP learning, projects, and talks", async ({ page }) => {
+    await page.goto("/mcp");
+
+    await expect(
+      page.getByRole("heading", {
+        level: 1,
+        name: "Model Context Protocol (MCP)",
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Learn" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Build" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Watch" })
+    ).toBeVisible();
+    await expect(
+      page.locator('section[aria-label="Watch"] article').first()
+    ).toContainText("MCP Security & Authorization");
+    await expect(
+      page
+        .locator('section[aria-label="Watch"] article')
+        .first()
+        .locator('a[href="https://www.youtube.com/watch?v=U9rSRnjis7c"]')
+    ).toBeVisible();
+    await expect(
+      page.locator('section[aria-label="Watch"] article').nth(1)
+    ).toContainText("All Things MCP");
+    await expect(
+      page
+        .locator('section[aria-label="Watch"] article')
+        .nth(1)
+        .locator('a[href="https://www.youtube.com/watch?v=D7KfnGdHayA"]')
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Browse all MCP content" })
+    ).toHaveAttribute("href", "/tags/mcp");
+    await expect(
+      page.getByRole("link", { name: "See all projects" })
+    ).toHaveAttribute("href", "/projects");
+    await expect(
+      page.getByRole("link", { name: "Browse talk archive" })
+    ).toHaveAttribute("href", "/talks");
+    await expect(
+      page.getByRole("link", { name: "Browse video archive" })
+    ).toHaveAttribute("href", "/videos");
+    await expect(
+      page.locator(
+        'section[aria-label="Build"] a[href="https://github.com/pomerium/mcp-app-typescript-template"]'
+      )
+    ).toBeVisible();
+    await expect(page.getByText("Writing", { exact: true })).toHaveCount(3);
+    await expect(page.getByText("Course", { exact: true })).toHaveCount(1);
+    await expect(
+      page.locator(
+        'a[href="https://labs.iximiuz.com/courses/securing-mcp-servers-and-mcp-apps-with-pomerium-2d28fcaa"]'
+      )
+    ).toBeVisible();
+    const learnSection = page.locator('section[aria-label="Learn"]');
+    await expect(
+      learnSection.locator("article").first().locator('a[href*="iximiuz.com"]')
+    ).toBeVisible();
+    await expect(learnSection.locator("img")).toHaveCount(4);
+    await expect(
+      learnSection.locator('img[src*="iximiuz.com/content/files/courses"]')
+    ).toHaveCount(1);
+
+    await page.goto("/tags/mcp");
+    await expect(
+      page.getByRole("link", { name: "Explore the MCP hub" })
+    ).toHaveAttribute("href", "/mcp");
   });
 });
 

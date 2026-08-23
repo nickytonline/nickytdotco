@@ -1,0 +1,232 @@
+---
+import { getCollection } from "astro:content";
+import BlogPostCard from "../components/BlogPostCard.astro";
+import GuideCard from "../components/GuideCard.astro";
+import Layout from "../layouts/MainLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import TalkCard from "../components/TalkCard.astro";
+import { dateFilter } from "../utils/filters";
+
+export const prerender = true;
+
+const hasMcpTag = (tags?: string[]) =>
+  tags?.some((tag) => tag.toLowerCase().replace(/\s+/g, "") === "mcp") ??
+  false;
+
+const allPosts = await getCollection("blog", ({ data }) =>
+  import.meta.env.PROD ? data.draft !== true : true
+);
+const mcpPosts = allPosts
+  .filter((post) => hasMcpTag(post.data.tags))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const allTalks = await getCollection("talks");
+const mcpTalks = allTalks
+  .filter((talk) => hasMcpTag(talk.data.tags))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const mcpGuides = await getCollection("guides", ({ data }) =>
+  hasMcpTag(data.tags)
+);
+const iximiuzCourseImage =
+  "https://labs.iximiuz.com/content/files/courses/securing-mcp-servers-and-mcp-apps-with-pomerium-2d28fcaa/__static__/cover-v4.png";
+
+const featuredPostSlugs = [
+  "build-your-first-or-next-mcp-server-with-the-typescript-mcp-template",
+  "securing-mcp-servers-and-mcp-apps-with-pomerium",
+  "quick-fix-my-mcp-tools-were-showing-as-write-tools-in-chatgpt-dev-mode",
+  "introducing-the-devto-mcp-server",
+];
+
+const featuredPosts = featuredPostSlugs
+  .map((slug) => mcpPosts.find((post) => post.id === slug))
+  .filter((post): post is (typeof mcpPosts)[number] => Boolean(post));
+
+const pastTalks = mcpTalks.filter((talk) => !talk.data.upcoming).slice(0, 5);
+const featuredLivestreams = [
+  {
+    title: "MCP Security & Authorization with Den Delimarsky",
+    date: "2025",
+    href: "https://www.youtube.com/watch?v=U9rSRnjis7c",
+    video: {
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=U9rSRnjis7c",
+    },
+  },
+  {
+    title: "All Things MCP with Rachel Lee Nabors",
+    date: "23rd February 2026",
+    href: "https://www.youtube.com/watch?v=D7KfnGdHayA",
+    video: {
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=D7KfnGdHayA",
+    },
+  },
+];
+
+const projects = [
+  {
+    name: "mcp-typescript-template",
+    description:
+      "A production-ready TypeScript starter for building, testing, and shipping MCP servers.",
+    url: "https://github.com/nickytonline/mcp-typescript-template",
+  },
+  {
+    name: "dev-to-mcp",
+    description:
+      "A remote MCP server for browsing dev.to articles, users, and comments from an MCP-compatible client.",
+    url: "https://github.com/nickytonline/dev-to-mcp",
+  },
+  {
+    name: "mcp-app-typescript-template",
+    description:
+      "A well-architected starter for building MCP Apps with TypeScript, React widgets, the OpenAI Apps SDK, and Pomerium.",
+    url: "https://github.com/pomerium/mcp-app-typescript-template",
+  },
+  {
+    name: "mcp-app-demo",
+    description:
+      "A multi-server MCP chat client demonstrating authenticated remote access and Zero Trust authorization.",
+    url: "https://github.com/pomerium/mcp-app-demo",
+  },
+];
+---
+
+<Layout
+  title="MCP: Security, Tutorials, Apps & Tools | Nick Taylor"
+  metaDesc="Nick Taylor's practical guide to Model Context Protocol (MCP), including server development, MCP Apps, OAuth, fine-grained authorization for tool calls, Zero Trust access policies, talks, and open-source projects."
+  socialImage="/assets/images/page-og/home.jpg"
+>
+  <div class="space-y-6">
+    <SectionHeader title="Model Context Protocol (MCP)" headingLevel={1} />
+    <p class="text-xl leading-relaxed text-muted-foreground">
+      Practical notes, talks, projects, and hands-on guides for using MCP to
+      connect AI applications to tools and data, build servers and apps, and
+      secure access with OAuth, fine-grained authorization, and policies for
+      individual tool calls.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <a
+        href="https://modelcontextprotocol.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg bg-brand-solid px-4 py-2.5 font-semibold text-white transition-colors hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:outline-none"
+      >
+        Read the MCP specification<span aria-hidden="true">↗</span>
+      </a>
+      <a
+        href="/tags/mcp"
+        class="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-semibold text-foreground transition-colors hover:bg-secondary focus:bg-secondary focus:outline-none"
+      >
+        Browse all MCP content<span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mt-16 space-y-16">
+    <section class="space-y-6" aria-label="Learn">
+      <h2 class="text-3xl font-bold text-foreground">Learn</h2>
+      <div class="space-y-5">
+        {
+          mcpGuides.map((guide) => (
+            <GuideCard
+              title={guide.data.title}
+              description={guide.data.description}
+              date={dateFilter(guide.data.date)}
+              coverImage={iximiuzCourseImage}
+              href={guide.data.url}
+              source={guide.data.source}
+              category="Course"
+            />
+          ))
+        }
+        {
+          featuredPosts.map((post) => (
+            <BlogPostCard
+              title={post.data.title}
+              date={dateFilter(post.data.date)}
+              image={post.data.cover_image}
+              href={`/blog/${post.id}`}
+              category="Writing"
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="space-y-6" aria-label="Build">
+      <h2 class="text-3xl font-bold text-foreground">Build</h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        {
+          projects.map((project) => (
+            <article class="rounded-xl border border-border bg-card p-6">
+              <h3 class="text-2xl font-bold">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-foreground hover:text-brand hover:underline focus:text-brand focus:outline-none"
+                >
+                  {project.name}<span aria-hidden="true">↗</span>
+                </a>
+              </h3>
+              <p class="mt-2 text-muted-foreground">{project.description}</p>
+            </article>
+          ))
+        }
+      </div>
+      <a
+        href="/projects"
+        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand focus:text-brand focus:outline-none"
+      >
+        See all projects<span aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <section class="space-y-6" aria-label="Watch">
+      <h2 class="text-3xl font-bold text-foreground">Watch</h2>
+      <div class="space-y-5">
+        {
+          featuredLivestreams.map((stream) => (
+            <TalkCard
+              title={stream.title}
+              venueName="Pomerium Live"
+              date={stream.date}
+              href={stream.href}
+              video={stream.video}
+              category="Livestream"
+            />
+          ))
+        }
+        <a
+          href="/videos"
+          class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand focus:text-brand focus:outline-none"
+        >
+          Browse video archive<span aria-hidden="true">→</span>
+        </a>
+        {
+          pastTalks.map((talk) => (
+            <TalkCard
+              title={talk.data.title}
+              venueName={talk.data.venue.name}
+              venueUrl={talk.data.venue.url}
+              date={dateFilter(talk.data.date)}
+              href={`/talks/${talk.id}`}
+              video={talk.data.video}
+              coverImage={talk.data.cover_image}
+              category="Talk"
+            />
+          ))
+        }
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-3">
+        <a
+          href="/talks"
+          class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand focus:text-brand focus:outline-none"
+        >
+          Browse talk archive<span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

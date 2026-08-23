@@ -106,6 +106,20 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
     </p>
 
     {
+      tag === "mcp" && (
+        <p class="mt-6 text-lg text-muted-foreground">
+          Looking for a curated path?{" "}
+          <a
+            href="/mcp"
+            class="font-semibold text-foreground hover:text-brand hover:underline focus:text-brand focus:underline focus:outline-none"
+          >
+            Explore the MCP hub<span aria-hidden="true">→</span>
+          </a>
+        </p>
+      )
+    }
+
+    {
       sortedBlogPosts.length > 0 && sortedTalks.length > 0 && (
         <div class="mt-6 flex flex-wrap items-center gap-4">
           <a
