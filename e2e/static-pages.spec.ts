@@ -61,6 +61,10 @@ test.describe("MCP topic hub", () => {
         name: "Model Context Protocol (MCP)",
       })
     ).toBeVisible();
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      "content",
+      "https://www.nickyt.co/assets/images/page-og/mcp.png"
+    );
     await expect(
       page.getByRole("heading", { level: 2, name: "Learn" })
     ).toBeVisible();
