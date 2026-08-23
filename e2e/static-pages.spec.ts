@@ -16,6 +16,17 @@ test.describe("about page", () => {
   });
 });
 
+test.describe("shared metadata", () => {
+  test("uses the brand name for Open Graph site metadata", async ({ page }) => {
+    await page.goto("/mcp");
+
+    await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute(
+      "content",
+      "Nick Taylor"
+    );
+  });
+});
+
 test.describe("projects page", () => {
   test("lists curated projects with links to GitHub", async ({ page }) => {
     await page.goto("/projects");
