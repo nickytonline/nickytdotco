@@ -15,9 +15,9 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: "Nick Taylor — Developer advocate building secure AI infrastructure.",
+  name: "Nick Taylor — Developer advocate at the intersection of AI, security, and software.",
   shortDesc:
-    "Nick Taylor builds and teaches secure AI infrastructure, developer tooling, and open source.",
+    "Nick Taylor is a developer advocate at the intersection of AI, security, and software, building and teaching practical approaches to MCP, AI agents, Zero Trust, and developer infrastructure.",
   url: getSiteUrl(),
   twitterHandle: "@nickytonline",
   mastodonHandle: "@nickytonline@hachyderm.io",

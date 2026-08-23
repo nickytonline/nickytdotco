@@ -7,7 +7,7 @@ test.describe("home page", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "Developer advocate working at the intersection of AI, security, and software.",
+        name: "Developer advocate at the intersection of AI, security, and software.",
       })
     ).toBeVisible();
 
@@ -23,13 +23,13 @@ test.describe("home page", () => {
     ).toHaveAttribute("href", "/socials");
   });
 
-  test("renders a curated Featured section with at least one content type", async ({
+  test("renders a curated Start here section with at least one content type", async ({
     page,
   }) => {
     await page.goto("/");
 
     await expect(
-      page.getByRole("heading", { level: 2, name: "Featured" })
+      page.getByRole("heading", { level: 2, name: "Start here" })
     ).toBeVisible();
 
     const subheadings = page.getByRole("heading", {
@@ -37,6 +37,39 @@ test.describe("home page", () => {
       name: /Talks|Hands-On Tutorials|Writing/,
     });
     await expect(subheadings.first()).toBeVisible();
+  });
+
+  test("includes the selected AI and Zero Trust talks", async ({ page }) => {
+    await page.goto("/");
+
+    await expect(
+      page.getByRole("heading", {
+        level: 3,
+        name: "Claws Out: Securing and Building with OpenClaw",
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", {
+        level: 3,
+        name: "Kubernetes Without Borders: Building Zero Trust Security for Dynamic Workloads",
+      })
+    ).toBeVisible();
+  });
+
+  test("promotes speaking and newsletter CTAs in the hero", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    await expect(
+      page.getByRole("link", { name: "Invite me to speak" })
+    ).toHaveAttribute("href", "/speaking");
+    await expect(
+      page.getByRole("link", { name: "Get one dev tip a week" })
+    ).toHaveAttribute(
+      "href",
+      /onetipaweek\.com\/?\?utm_source=nickytco&utm_medium=homepage-hero/i
+    );
   });
 
   test("renders upcoming events or a capped Latest fallback", async ({

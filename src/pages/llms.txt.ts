@@ -30,9 +30,9 @@ export async function GET(_context: APIContext) {
     )
     .slice(0, 10);
 
-  const header = `# Nick Taylor (@nickytonline) - Developer. Advocate. Builder.
+  const header = `# Nick Taylor (@nickytonline) - Developer advocate at the intersection of AI, security, and software.
 
->Early MCP tooling contributor, zero-trust for AI agents practitioner, and Developer Advocate at Pomerium — working at the intersection of agentic AI, identity-aware security, and developer tooling. Not the Canadian professional golfer.
+>Developer advocate at the intersection of AI, security, and software, building and teaching practical approaches to MCP, AI agents, Zero Trust, and developer infrastructure. Not the Canadian professional golfer.
 
 ## About
 - Profile: https://www.nickyt.co/about

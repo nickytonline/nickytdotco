@@ -34,11 +34,11 @@ const recentPosts = sortedPosts
 const allTalks = await getCollection("talks");
 const now = new Date();
 
-// Featured talks: flagship, evergreen (must have a recording, not upcoming)
+// Featured talks: selected, recorded talks (not upcoming)
 const featuredTalks = allTalks
   .filter((t) => t.data.featured === true && !t.data.upcoming)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 1);
+  .slice(0, 2);
 const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
 // Upcoming talks: all future events, not a capped subset.
@@ -210,7 +210,7 @@ export const prerender = false;
       />
       <div class="space-y-4">
         <h1 class="text-3xl md:text-4xl font-bold">
-          Developer advocate working at the intersection of AI, security, and software.
+          Developer advocate at the intersection of AI, security, and software.
         </h1>
         <p class="text-lg leading-relaxed text-muted-foreground">
           <strong class="text-foreground"><em>Hi!</em> I'm Nick Taylor</strong> (<a
@@ -228,10 +228,12 @@ export const prerender = false;
             Invite me to speak<span class="text-xl" aria-hidden="true">→</span>
           </a>
           <a
-            href="/watch"
+            href="https://OneTipAWeek.com?utm_source=nickytco&utm_medium=homepage-hero"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-base font-semibold text-foreground transition-colors hover:bg-secondary focus:bg-secondary focus:outline-none"
           >
-            Watch latest videos<span class="text-xl" aria-hidden="true">→</span>
+            Get one dev tip a week<span class="text-xl" aria-hidden="true">→</span>
           </a>
         </div>
         <p class="pt-2 text-sm font-medium text-muted-foreground">
@@ -249,8 +251,8 @@ export const prerender = false;
         <section class="space-y-10">
           <SectionHeader title="Start here" headingLevel={2} />
           <p class="max-w-2xl text-lg text-muted-foreground">
-            A few of my best recent talks, tutorials, and practical notes on
-            building with AI while keeping access secure.
+            A few selected talks, tutorials, and practical notes on AI, Zero
+            Trust security, and developer infrastructure.
           </p>
 
           {featuredTalks.length > 0 && (
