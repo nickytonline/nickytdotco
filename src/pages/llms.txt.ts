@@ -68,6 +68,7 @@ export async function GET(_context: APIContext) {
 - Blog: https://www.nickyt.co/blog
 - Conference Talks: https://www.nickyt.co/talks
 - Open Source Projects: https://www.nickyt.co/projects
+- MCP Hub: https://www.nickyt.co/mcp
 - Live Streams: https://www.nickyt.co/watch
 
 ## License
