@@ -3,6 +3,7 @@ import { getLiveCollection } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import { dateFilter } from "../../utils/filters";
+import { site } from "../../data/site";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import {
   extractYouTubeVideoId,
@@ -25,6 +26,31 @@ const videoId = extractYouTubeVideoId(youtubeStreamLink);
 const socialImage = videoId
   ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   : "/assets/images/page-og/watch.jpg";
+const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const videoJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": `${pageUrl}#video`,
+  name: title,
+  description,
+  thumbnailUrl: new URL(socialImage, site.url).toString(),
+  uploadDate: new Date(date).toISOString(),
+  url: pageUrl,
+  sameAs: youtubeStreamLink,
+  ...(videoId && {
+    embedUrl: `https://www.youtube.com/embed/${videoId}`,
+  }),
+  author: {
+    "@type": "Person",
+    name: site.authorName,
+    url: site.url,
+  },
+  contributor: {
+    "@type": "Person",
+    name: guestName,
+    ...(guestTitle && { jobTitle: guestTitle }),
+  },
+};
 
 function normalizeLink(
   value: string,
@@ -95,6 +121,13 @@ if (stream.data.website)
   socialImage={socialImage}
   pageType="Stream"
 >
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(videoJsonLd)}
+    />
+  </Fragment>
   <Breadcrumb
     items={[
       { label: "Watch", href: "/watch" },

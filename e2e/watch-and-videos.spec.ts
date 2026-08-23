@@ -66,5 +66,10 @@ test.describe("video archives", () => {
     await expect(
       page.getByRole("main").getByRole("heading", { level: 1 })
     ).toBeVisible();
+    await expect(
+      page
+        .locator('script[type="application/ld+json"]')
+        .filter({ hasText: '"@type":"VideoObject"' })
+    ).toHaveCount(1);
   });
 });

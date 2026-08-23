@@ -60,6 +60,18 @@ test.describe("talks archive", () => {
       /Agentic Access: OAuth Gets You In, Zero Trust Keeps You Safe — All Things Open 2025 — 13th October 2025 \| Nick Taylor's Talks/
     );
   });
+
+  test("emits Event structured data", async ({ page }) => {
+    await page.goto(
+      "/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-blackhat-usa-2025"
+    );
+
+    await expect(
+      page
+        .locator('script[type="application/ld+json"]')
+        .filter({ hasText: '"@type":"Event"' })
+    ).toHaveCount(1);
+  });
 });
 
 test.describe("speaking page", () => {

@@ -8,6 +8,7 @@ import RelatedContent from "../../components/RelatedContent.astro";
 import { getRelatedTalks, getRelatedPostsForTalk } from "../../utils/tag-utils";
 import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
+import { site } from "../../data/site";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import UpcomingBadge from "../../components/UpcomingBadge.astro";
 export const prerender = true;
@@ -83,14 +84,72 @@ if (video?.type === "youtube") {
 } else if (coverImage) {
   thumbnailUrl = coverImage;
 }
+
+const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const talkDescription = `${title} — a talk by Nick Taylor at ${venue.name} on ${dateDisplay}.`;
+const venuePageUrl = venueUrl
+  ? new URL(venueUrl, site.url).toString()
+  : undefined;
+const isVirtualVenue =
+  /live stream|online|virtual/i.test(venue.name) ||
+  venuePageUrl?.includes("youtube.com");
+const eventLocation = isVirtualVenue
+  ? {
+      "@type": "VirtualLocation",
+      name: venue.name,
+      ...(venuePageUrl && { url: venuePageUrl }),
+    }
+  : {
+      "@type": "Place",
+      name: venue.name,
+      ...(venueLocation && { address: venueLocation }),
+      ...(venuePageUrl && { url: venuePageUrl }),
+    };
+const eventJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": `${pageUrl}#event`,
+  name: title,
+  description: talkDescription,
+  startDate: date.toISOString(),
+  ...(endDate && { endDate: endDate.toISOString() }),
+  eventStatus: isUpcoming
+    ? "https://schema.org/EventScheduled"
+    : "https://schema.org/EventCompleted",
+  ...(isVirtualVenue && {
+    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+  }),
+  location: eventLocation,
+  ...(thumbnailUrl && {
+    image: new URL(thumbnailUrl, site.url).toString(),
+  }),
+  url: pageUrl,
+  performer: {
+    "@type": "Person",
+    name: site.authorName,
+    url: site.url,
+  },
+  organizer: {
+    "@type": "Organization",
+    name: venue.name,
+    ...(venuePageUrl && { url: venuePageUrl }),
+  },
+};
 ---
 
 <Layout
   title={`${talkMetaTitle} | Nick Taylor's Talks`}
-  metaDesc={`${title} — a talk by Nick Taylor at ${venue.name} on ${dateDisplay}.`}
+  metaDesc={talkDescription}
   socialImage={thumbnailUrl ?? "/assets/images/page-og/talks.jpg"}
   pageType="Talk"
 >
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(eventJsonLd)}
+    />
+  </Fragment>
   <Breadcrumb
     items={[
       { label: "Speaking", href: "/speaking" },
