@@ -55,6 +55,16 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
       </div>
     </header>
 
+    <section class="space-y-6">
+      <SectionHeader title="Why Nick?" headingLevel={2} />
+      <p class="text-lg leading-relaxed text-muted-foreground">
+        I bring technical depth, live demos, and stories from building in the
+        open. I've spoken at Black Hat USA, AI Engineer Europe, All Things Open,
+        ConFoo, SREday, and MCP Dev Summit, and can shape a session as a
+        deep-dive, workshop, lightning talk, or panel.
+      </p>
+    </section>
+
     {
       upcomingTalks.length > 0 && (
         <section class="space-y-6">
@@ -163,16 +173,6 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
           </p>
         </div>
       </div>
-    </section>
-
-    <section class="space-y-6">
-      <SectionHeader title="Why book Nick?" headingLevel={2} />
-      <p class="text-lg leading-relaxed text-muted-foreground">
-        I bring technical depth, live demos, and stories from building in the
-        open. I've spoken at Black Hat USA, AI Engineer Europe, All Things Open,
-        ConFoo, SREday, and MCP Dev Summit, and can shape a session as a
-        deep-dive, workshop, lightning talk, or panel.
-      </p>
     </section>
 
     <section class="space-y-6">
