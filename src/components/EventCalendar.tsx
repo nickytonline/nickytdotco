@@ -27,6 +27,7 @@ const EventCalendar = ({
   const durationInMillis = duration * 60 * 1000;
   const startDate = new Date(eventDate);
   const endDate = new Date(startDate.getTime() + durationInMillis);
+  const menuId = `calendar-menu-${eventName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
   const toggleMenu = () => setIsExpanded((current) => !current);
   const closeMenu = () => setIsExpanded(false);
 
@@ -47,6 +48,7 @@ const EventCalendar = ({
         type="button"
         aria-expanded={isExpanded}
         aria-haspopup="menu"
+        aria-controls={menuId}
         aria-label={`Add ${eventName} to calendar`}
         onClick={toggleMenu}
         className="inline-flex items-center gap-1.5 rounded-md border border-brand/30 bg-brand-soft px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-soft-foreground hover:bg-background hover:text-brand focus-visible:bg-background focus-visible:text-brand focus-visible:border-brand transition-colors"
@@ -56,7 +58,11 @@ const EventCalendar = ({
       </Button>
       {isExpanded && (
         <div className="absolute left-0 top-full z-50 pt-2">
-          <ul className="p-4 grid gap-4 border-2 border-brand rounded-md text-base [&_a]:text-base [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-popover text-popover-foreground shadow-lg">
+          <ul
+            id={menuId}
+            role="menu"
+            className="p-4 grid gap-4 border-2 border-brand rounded-md text-base [&_a]:text-base [&_a]:whitespace-nowrap [&_a]:items-center [&_a]:p-1 bg-popover text-popover-foreground shadow-lg"
+          >
             <li>
               <a
                 href={generateGoogleCalendarUrl({

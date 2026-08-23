@@ -26,7 +26,9 @@ const { year, posts } = Astro.props;
             <div class="flex items-center gap-5">
               <a
                 href={post.url}
-                class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+                aria-hidden="true"
+                tabindex="-1"
+                class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:border-brand-solid focus-visible:border-brand-solid transition-shadow"
               >
                 {post.coverImage ? (
                   <Image

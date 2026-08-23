@@ -30,6 +30,7 @@
   --brand-solid: var(--brand);
   --brand-solid-hover: var(--brand-hover);
   --brand-foreground: oklch(1 0 0);
+  --focus-ring: var(--brand);
   --brand-soft: oklch(0.969 0.015 12.422);
   --brand-soft-foreground: oklch(0.459 0.187 3.815);
   --brand-border: oklch(0.592 0.249 0.584 / 50%);
@@ -130,25 +131,24 @@ h6:hover .heading-anchor {
 }
 
 .expressive-code .copy button {
-  @apply bg-gray-800 hover:bg-gray-600 focus:bg-gray-600 focus:outline-2 focus:outline-blue-500 focus:outline-offset-2 text-white rounded-md;
+  @apply bg-secondary hover:bg-muted focus:bg-muted focus:outline-2 focus:outline-focus-ring focus:outline-offset-2 text-secondary-foreground rounded-md;
 }
 
 /* Light mode copy button */
 :root:not(.dark) .expressive-code .copy button {
-  @apply bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 text-gray-900 border border-gray-200 shadow-sm transition-all;
+  @apply bg-secondary hover:bg-muted focus:bg-muted text-secondary-foreground border border-border shadow-sm transition-all;
   box-shadow: 0 1px 4px 0 rgb(0 0 0 / 6%);
-  border: 1px solid rgb(229 231 235); /* gray-200 */
 }
 
 /* Light mode code block border - make it more subtle */
 :root:not(.dark) .expressive-code pre,
 :root:not(.dark) .expressive-code figure,
 :root:not(.dark) .expressive-code > div {
-  border-color: rgb(229 231 235) !important; /* gray-200 */
+  border-color: var(--border) !important;
 }
 
 :root:not(.dark) .expressive-code * {
-  border-color: rgb(229 231 235) !important; /* gray-200 */
+  border-color: var(--border) !important;
 }
 
 :root:not(.dark) .expressive-code .ln {
@@ -208,7 +208,7 @@ a:not([class]) {
   @apply outline-none;
 }
 
-nav a[aria-current="page"],
+nav a[aria-current="page"]:not(.tag-pill),
 a:not([class]):hover,
 a:not([class]):focus {
   @apply decoration-brand;
@@ -222,8 +222,8 @@ nav a:not([aria-current="page"]) {
   @apply no-underline;
 }
 
-nav a:not([aria-current="page"]):hover,
-nav a:not([aria-current="page"]):focus {
+nav a:not([aria-current="page"]):not(.tag-pill):hover,
+nav a:not([aria-current="page"]):not(.tag-pill):focus {
   @apply underline decoration-brand dark:decoration-brand decoration-4;
 }
 
@@ -288,6 +288,7 @@ nav a:not([aria-current="page"]):focus {
   --color-brand-solid: var(--brand-solid);
   --color-brand-solid-hover: var(--brand-solid-hover);
   --color-brand-foreground: var(--brand-foreground);
+  --color-focus-ring: var(--focus-ring);
   --color-brand-soft: var(--brand-soft);
   --color-brand-soft-foreground: var(--brand-soft-foreground);
   --color-brand-border: var(--brand-border);
@@ -343,7 +344,8 @@ nav a:not([aria-current="page"]):focus {
   --brand-hover: oklch(0.823 0.12 346.018);
   --brand-solid: oklch(0.656 0.241 354.308);
   --brand-solid-hover: oklch(0.592 0.249 0.584);
-  --brand-foreground: oklch(1 0 0);
+  --brand-foreground: oklch(0.145 0 0);
+  --focus-ring: var(--brand);
   --brand-soft: oklch(0.408 0.153 2.432 / 30%);
   --brand-soft-foreground: var(--brand);
   --brand-border: oklch(0.718 0.202 349.761 / 50%);
@@ -370,6 +372,11 @@ mark {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Component focus states use color, underline, or background changes. */
+:where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
 }
 
 @media (min-width: 1024px) {

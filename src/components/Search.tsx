@@ -174,20 +174,35 @@ const Search = () => {
         ref={dialogRef}
         onClose={() => setIsOpen(false)}
         onClick={handleBackdropClick}
+        aria-labelledby="search-dialog-title"
         className="fixed inset-0 m-auto backdrop:bg-black/60 backdrop:backdrop-blur-sm bg-background text-foreground p-0 rounded-xl shadow-2xl w-[90vw] max-w-2xl border border-secondary transition-all outline-none overflow-hidden"
       >
-        <div className="p-4 border-b border-secondary">
-          <div className="relative">
+        <div className="flex items-center justify-between gap-4 p-4 border-b border-secondary">
+          <h2 id="search-dialog-title" className="sr-only">
+            Search site
+          </h2>
+          <div className="relative min-w-0 flex-1">
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <input
               ref={inputRef}
               type="text"
+              aria-label="Search posts, talks, and projects"
               placeholder="Search posts, talks, projects... (shortcut: /)"
               className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-brand text-lg"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
+          <button
+            type="button"
+            aria-label="Close search"
+            onClick={() => setIsOpen(false)}
+            className="shrink-0 rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:bg-secondary focus-visible:text-foreground focus:outline-none"
+          >
+            <span aria-hidden="true" className="text-xl leading-none">
+              ×
+            </span>
+          </button>
         </div>
 
         <div className="max-h-[60vh] overflow-y-auto p-4">

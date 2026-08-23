@@ -43,11 +43,13 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
     image && videoPageUrl && (
       <a
         href={videoPageUrl}
-        class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden hover:opacity-90 transition-opacity"
+        aria-hidden="true"
+        tabindex="-1"
+        class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden border border-transparent hover:border-brand-solid focus-visible:border-brand-solid transition-opacity"
       >
         <Image
           src={image}
-          alt={`Watch ${title}`}
+          alt=""
           width={320}
           height={180}
           class="w-full h-full object-cover"
@@ -63,7 +65,7 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
     >
       {
         videoPageUrl ? (
-          <a href={videoPageUrl} class="hover:text-brand transition-colors">
+          <a href={videoPageUrl} class="hover:text-brand focus:text-brand transition-colors">
             {title}
           </a>
         ) : (

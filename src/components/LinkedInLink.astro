@@ -11,7 +11,7 @@ const { name, url } = Astro.props;
   href={url.startsWith("https://") ? url : `https://linkedin.com/in/${url}`}
   target="_blank"
   rel="noopener noreferrer"
-  class="hover:text-brand"
+  class="hover:text-brand focus:text-brand"
   title={`${name}'s LinkedIn profile`}
 >
   <svg

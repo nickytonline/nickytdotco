@@ -79,7 +79,7 @@ const CopyButton = ({
     <>
       <button
         type="button"
-        className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border transition-colors hover:bg-background hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-background"
+        className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border transition-colors hover:bg-background hover:text-brand focus:bg-background focus:text-brand focus:outline-none"
         onClick={handleCopy}
         title={label}
       >

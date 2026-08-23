@@ -49,9 +49,12 @@ const isCurrent = (href: string) =>
           ))}
         </ul>
       </nav>
-      <details class="group relative w-full md:hidden">
+      <details
+        class="group relative w-full md:hidden"
+        data-mobile-menu
+      >
         <summary
-          class="relative z-10 flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-lg font-semibold text-foreground hover:bg-secondary focus:outline-none [&::-webkit-details-marker]:hidden"
+          class="relative z-10 flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-lg font-semibold text-foreground hover:bg-secondary focus-visible:bg-secondary focus:outline-none [&::-webkit-details-marker]:hidden"
         >
           Menu
           <svg
@@ -118,3 +121,28 @@ const isCurrent = (href: string) =>
     </div>
   </div>
 </header>
+
+<script>
+  const initMobileMenu = (): void => {
+    document
+      .querySelectorAll<HTMLDetailsElement>("[data-mobile-menu]")
+      .forEach((menu) => {
+        if (menu.dataset.initialized === "true") {
+          return;
+        }
+
+        menu.addEventListener("focusout", (event) => {
+          const nextFocusTarget = event.relatedTarget;
+
+          if (!(nextFocusTarget instanceof Node) || !menu.contains(nextFocusTarget)) {
+            menu.removeAttribute("open");
+          }
+        });
+
+        menu.dataset.initialized = "true";
+      });
+  };
+
+  initMobileMenu();
+  document.addEventListener("astro:page-load", initMobileMenu);
+</script>

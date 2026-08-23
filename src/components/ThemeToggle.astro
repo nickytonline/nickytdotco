@@ -6,6 +6,7 @@
   id="theme-toggle"
   type="button"
   aria-label="Toggle dark mode"
+  aria-pressed="false"
   class="inline-flex hover:text-brand focus:text-brand focus:outline-none"
 >
   <svg
@@ -47,15 +48,18 @@
     const html = document.documentElement;
     const darkIcon = container.querySelector("#theme-toggle-dark-icon");
     const lightIcon = container.querySelector("#theme-toggle-light-icon");
+    const themeToggle = container.querySelector<HTMLButtonElement>("#theme-toggle");
 
     if (theme === "dark") {
       html.classList.add("dark");
       darkIcon?.classList.remove("hidden");
       lightIcon?.classList.add("hidden");
+      themeToggle?.setAttribute("aria-pressed", "true");
     } else {
       html.classList.remove("dark");
       lightIcon?.classList.remove("hidden");
       darkIcon?.classList.add("hidden");
+      themeToggle?.setAttribute("aria-pressed", "false");
     }
   };
 

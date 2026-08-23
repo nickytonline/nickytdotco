@@ -147,7 +147,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
     <div class="mt-6 flex flex-wrap items-center gap-4">
       <a
         href={`/tags/${tag}`}
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-white focus:bg-brand-solid focus:text-white dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none"
       >
         All Content
       </a>
@@ -155,8 +155,8 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
         href={`/tags/${tag}/blog`}
         class={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors focus:outline-none ${
           contentType === "blog"
-            ? "bg-brand-solid text-white dark:bg-brand-solid"
-            : "bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-white focus:bg-brand-solid focus:text-white dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
+            ? "bg-brand-solid text-brand-foreground hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:text-brand-foreground dark:bg-brand-solid"
+            : "bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
         }`}
         aria-current={contentType === "blog" ? "page" : undefined}
       >
@@ -166,8 +166,8 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
         href={`/tags/${tag}/talks`}
         class={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors focus:outline-none ${
           contentType === "talks"
-            ? "bg-brand-solid text-white dark:bg-brand-solid"
-            : "bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-white focus:bg-brand-solid focus:text-white dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
+            ? "bg-brand-solid text-brand-foreground hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:text-brand-foreground dark:bg-brand-solid"
+            : "bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
         }`}
         aria-current={contentType === "talks" ? "page" : undefined}
       >
@@ -178,7 +178,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
     <div class="mt-6">
       <a
         href="/tags"
-        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand"
+        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
       >
         View all tags<span class="text-2xl">→</span>
       </a>

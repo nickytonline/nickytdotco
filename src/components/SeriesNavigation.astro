@@ -104,7 +104,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
               class:list={[
                 "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold leading-none",
                 currentIndex === getStaticIndex(post)
-                  ? "bg-brand-solid dark:bg-brand-solid text-white"
+                  ? "bg-brand-solid dark:bg-brand-solid text-brand-foreground"
                   : "bg-background/60 text-brand-soft-foreground",
               ]}
             >
@@ -151,7 +151,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
                     <div class="min-w-0 flex-1 pt-0.5">
                       <a
                         href={`/blog/${post.id}`}
-                        class="block text-sm leading-tight text-muted-foreground hover:text-brand hover:underline"
+                        class="block text-sm leading-tight text-muted-foreground hover:text-brand hover:underline focus:text-brand focus:underline"
                       >
                         {truncate(post.data.title, 80)}
                       </a>
@@ -168,7 +168,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
       {
         middle.map((post) => (
           <li class="flex items-start gap-2">
-            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-solid dark:bg-brand-solid text-white text-xs font-semibold leading-none">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-solid dark:bg-brand-solid text-brand-foreground text-xs font-semibold leading-none">
               {getStaticIndex(post) + 1}
             </span>
             <div class="min-w-0 flex-1 pt-0.5">
@@ -203,7 +203,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
                     <div class="min-w-0 flex-1 pt-0.5">
                       <a
                         href={`/blog/${post.id}`}
-                        class="block text-sm leading-tight text-muted-foreground hover:text-brand hover:underline"
+                        class="block text-sm leading-tight text-muted-foreground hover:text-brand hover:underline focus:text-brand focus:underline"
                       >
                         {truncate(post.data.title, 80)}
                       </a>
@@ -224,7 +224,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
               class:list={[
                 "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold leading-none",
                 currentIndex === getStaticIndex(post)
-                  ? "bg-brand-solid dark:bg-brand-solid text-white"
+                  ? "bg-brand-solid dark:bg-brand-solid text-brand-foreground"
                   : "bg-background/60 text-brand-soft-foreground",
               ]}
             >
@@ -238,7 +238,7 @@ const getStaticIndex = (post: CollectionEntry<"blog">) =>
               ) : (
                 <a
                   href={`/blog/${post.id}`}
-                  class="block text-sm leading-tight text-muted-foreground no-underline hover:text-brand hover:underline focus-visible:underline focus-visible:outline-none"
+                        class="block text-sm leading-tight text-muted-foreground no-underline hover:text-brand hover:underline focus:text-brand focus:underline focus-visible:outline-none"
                 >
                   {truncate(post.data.title, 80)}
                 </a>

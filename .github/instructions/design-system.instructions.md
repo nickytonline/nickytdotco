@@ -13,7 +13,7 @@ Prefer these semantic utilities in UI code:
 
 - Surfaces: `bg-background`, `bg-card`, `bg-popover`, `bg-secondary`, `bg-muted`
 - Text: `text-foreground`, `text-card-foreground`, `text-popover-foreground`, `text-secondary-foreground`, `text-muted-foreground`
-- Borders and focus: `border-border`, `border-brand`, `border-brand-border`, `ring-brand`, `outline-brand`
+- Borders and focus: `border-border`, `border-brand`, `border-brand-border`, `ring-brand`, `outline-brand`, `ring-focus-ring`, `outline-focus-ring`
 - Brand accents: `text-brand`, `bg-brand-solid`, `bg-brand-solid-hover`, `bg-brand-soft`, `text-brand-soft-foreground`, `text-brand-foreground`, `decoration-brand`
 - Status: `text-destructive`, `bg-destructive/10`, `border-destructive/30`, `bg-warning-soft`, `text-warning-foreground`, `border-warning-border`
 - Third-party brands: `text-youtube`, `text-twitch`, `text-github`, `text-x`, `text-linkedin`, `text-devto`, `text-bluesky`, `text-mastodon`

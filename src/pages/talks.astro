@@ -61,7 +61,7 @@ const years = Object.keys(talksByYear)
             {years.map((year) => (
               <a
                 href={`#year-${year}`}
-                class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-white focus:bg-brand-solid focus:text-white dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none transition-colors shrink-0"
+                class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none transition-colors shrink-0"
               >
                 {year}
               </a>
@@ -74,7 +74,7 @@ const years = Object.keys(talksByYear)
     <div class="mt-6">
       <a
         href="/tags/talks/"
-        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand"
+        class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
       >
         Browse by tag<span class="text-2xl">→</span>
       </a>
@@ -112,7 +112,9 @@ const years = Object.keys(talksByYear)
                   <div class="flex items-center gap-5">
                     <a
                       href={`/talks/${slug}`}
-                      class="hidden sm:block relative shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      class="hidden sm:block relative shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:border-brand-solid focus-visible:border-brand-solid transition-shadow"
                     >
                       {thumbnailUrl ? (
                         <Image
