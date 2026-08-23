@@ -74,11 +74,12 @@ import { Button } from "../components/Button";
     </header>
 
     <section class="space-y-6">
-      <SectionHeader title="Speaking & Conferences" headingLevel={2} />
+      <SectionHeader title="Speaking & Guest Appearances" headingLevel={2} />
       <p class="text-lg leading-relaxed text-muted-foreground">
         I speak at conferences like <strong>All Things Open</strong>, <strong>ConFoo</strong>, <strong>BlackHat USA</strong>,
         <strong>AI Engineer Europe</strong>, <strong>SREday</strong>, and <strong>MCP Dev Summit</strong>. I usually talk about web dev, open source,
-        AI agents, or Zero Trust security.
+        AI agents, or Zero Trust security. I also join podcasts, livestreams,
+        and panels.
       </p>
       <p class="text-lg leading-relaxed text-muted-foreground">
         You can browse <a
@@ -89,12 +90,13 @@ import { Button } from "../components/Button";
           href="/speaking"
           class="text-brand font-semibold hover:underline focus:underline focus:outline-none"
           >speaking page</a
-        > for topics, a bio, and how to book me.
+        > for topics, a bio, and how to book me for a talk or guest appearance.
       </p>
       <div class="pt-2">
-        <Button href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry">
-          Book me to speak
-          <span class="text-xl">→</span>
+        <Button
+          href="mailto:nick@nickyt.co?subject=Speaking%20or%20Guest%20Appearance%20Inquiry"
+        >
+          Book me<span class="sr-only"> for a talk or guest appearance</span>
         </Button>
       </div>
     </section>

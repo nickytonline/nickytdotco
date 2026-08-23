@@ -11,7 +11,7 @@ test.describe("about page", () => {
       page.getByRole("img", { name: "Headshot of Nick Taylor" })
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Book me to speak" })
+      page.getByRole("link", { name: "Book me for a talk or guest appearance" })
     ).toHaveAttribute("href", /^mailto:nick@nickyt\.co/);
   });
 });

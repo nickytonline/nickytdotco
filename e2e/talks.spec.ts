@@ -82,13 +82,19 @@ test.describe("speaking page", () => {
       page.getByRole("heading", { level: 1, name: "Speaking" })
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "View all talks" })
+      page.getByRole("main").getByRole("link", { name: "Talks" })
     ).toHaveAttribute("href", "/talks");
     await expect(
-      page.getByRole("link", { name: "Invite me to speak" })
+      page.getByRole("link", { name: "Guest appearances" })
     ).toHaveAttribute(
       "href",
-      /^mailto:nick@nickyt\.co\?subject=Speaking%20Inquiry/
+      "https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU"
+    );
+    await expect(
+      page.getByRole("link", { name: "Book me for a talk or guest appearance" })
+    ).toHaveAttribute(
+      "href",
+      /^mailto:nick@nickyt\.co\?subject=Speaking%20or%20Guest%20Appearance%20Inquiry/
     );
   });
 });

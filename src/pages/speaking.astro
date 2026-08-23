@@ -28,29 +28,39 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
 
 <Layout
   title="Speaking | Nick Taylor"
-  metaDesc="Invite Nick Taylor to speak about secure AI infrastructure, MCP, Zero Trust security, developer tooling, and open source."
+  metaDesc="Book Nick Taylor for a talk or guest appearance about secure AI infrastructure, MCP, Zero Trust security, developer tooling, and open source."
   socialImage="/assets/images/page-og/speaking.jpg"
 >
   <div class="space-y-12">
     <header class="space-y-6">
       <SectionHeader title="Speaking" headingLevel={1} />
       <p class="text-xl leading-relaxed text-muted-foreground max-w-2xl">
-        I speak at conferences, meetups, and corporate events about the
-        intersection of <strong>Zero Trust security</strong>,
+        I speak at conferences, meetups, and corporate events, and join
+        podcasts, livestreams, and panels to discuss the intersection of
+        <strong>Zero Trust security</strong>,
         <strong>MCP (Model Context Protocol)</strong>, and
         <strong>agentic AI</strong>, along with the open-source tooling and
         infrastructure that makes it production-ready.
       </p>
       <div class="flex flex-wrap gap-4 pt-2">
-        <Button href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry">
-          Invite me to speak
-          <span class="text-xl">→</span>
+        <Button
+          href="mailto:nick@nickyt.co?subject=Speaking%20or%20Guest%20Appearance%20Inquiry"
+        >
+          Book me<span class="sr-only"> for a talk or guest appearance</span>
         </Button>
         <a
           href="/talks"
           class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-5 py-2.5 text-base font-semibold leading-6 text-foreground transition-colors hover:bg-secondary focus:bg-secondary focus:outline-none"
         >
-          View all talks
+          Talks
+        </a>
+        <a
+          href="https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-5 py-2.5 text-base font-semibold leading-6 text-foreground transition-colors hover:bg-secondary focus:bg-secondary focus:outline-none"
+        >
+          Guest appearances
         </a>
       </div>
     </header>
@@ -198,16 +208,16 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
       </div>
       <p class="text-sm leading-relaxed text-muted-foreground">
         Based in Montréal, Quebec, Canada. Available for technical deep-dives,
-        workshops, lightning talks, and panels.
+        workshops, lightning talks, panels, podcasts, and livestreams.
       </p>
     </section>
 
     <section class="space-y-6">
-      <SectionHeader title="Planning an event?" headingLevel={2} />
+      <SectionHeader title="Planning an event or recording?" headingLevel={2} />
       <p class="text-lg leading-relaxed text-muted-foreground">
         Send the date, format, audience, and topic you're considering to
         <a
-          href="mailto:nick@nickyt.co?subject=Speaking%20Inquiry"
+          href="mailto:nick@nickyt.co?subject=Speaking%20or%20Guest%20Appearance%20Inquiry"
           class="font-semibold text-brand hover:underline focus:underline focus:outline-none"
           >nick@nickyt.co</a
         >. I'll follow up with availability and a session that fits.
