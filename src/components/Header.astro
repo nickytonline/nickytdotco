@@ -123,6 +123,22 @@ const isCurrent = (href: string) =>
 </header>
 
 <script>
+  const closeOpenMobileMenus = (event: MouseEvent): void => {
+    const clickTarget = event.target;
+
+    if (!(clickTarget instanceof Node)) {
+      return;
+    }
+
+    document
+      .querySelectorAll<HTMLDetailsElement>("[data-mobile-menu]")
+      .forEach((menu) => {
+        if (!menu.contains(clickTarget)) {
+          menu.removeAttribute("open");
+        }
+      });
+  };
+
   const initMobileMenu = (): void => {
     document
       .querySelectorAll<HTMLDetailsElement>("[data-mobile-menu]")
@@ -134,7 +150,10 @@ const isCurrent = (href: string) =>
         menu.addEventListener("focusout", (event) => {
           const nextFocusTarget = event.relatedTarget;
 
-          if (!(nextFocusTarget instanceof Node) || !menu.contains(nextFocusTarget)) {
+          if (
+            nextFocusTarget instanceof Node &&
+            !menu.contains(nextFocusTarget)
+          ) {
             menu.removeAttribute("open");
           }
         });
@@ -143,6 +162,7 @@ const isCurrent = (href: string) =>
       });
   };
 
+  document.addEventListener("click", closeOpenMobileMenus);
   initMobileMenu();
   document.addEventListener("astro:page-load", initMobileMenu);
 </script>

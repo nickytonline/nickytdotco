@@ -96,6 +96,39 @@ test.describe("primary navigation", () => {
   });
 });
 
+test.describe("mobile navigation", () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test("menu links navigate from a phone-sized viewport", async ({ page }) => {
+    await page.goto("/");
+
+    const menu = page.locator("[data-mobile-menu]");
+    await menu.locator("summary").click();
+
+    const watchLink = menu.getByRole("link", { name: "Watch", exact: true });
+    await watchLink.click();
+
+    await expect(page).toHaveURL(/\/watch\/?$/);
+    await expect(
+      page
+        .getByRole("main")
+        .getByRole("heading", { name: "Watch", exact: true })
+    ).toBeVisible();
+  });
+
+  test("menu closes when clicking outside it", async ({ page }) => {
+    await page.goto("/");
+
+    const menu = page.locator("[data-mobile-menu]");
+    await menu.locator("summary").click();
+    await expect(menu).toHaveAttribute("open", "");
+
+    await page.getByRole("main").click({ position: { x: 10, y: 10 } });
+
+    await expect(menu).not.toHaveAttribute("open", "");
+  });
+});
+
 test.describe("404 handling", () => {
   test("unknown routes render the not-found page", async ({ page }) => {
     const response = await page.goto("/this-page-definitely-does-not-exist");
