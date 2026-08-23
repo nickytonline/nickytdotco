@@ -21,8 +21,14 @@ const mcpPosts = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const allTalks = await getCollection("talks");
+const excludedMcpTalks = new Set([
+  "agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-blackhat-usa-2025",
+]);
 const mcpTalks = allTalks
-  .filter((talk) => hasMcpTag(talk.data.tags))
+  .filter(
+    (talk) =>
+      hasMcpTag(talk.data.tags) && !excludedMcpTalks.has(talk.id),
+  )
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const mcpGuides = await getCollection("guides", ({ data }) =>
@@ -42,9 +48,22 @@ const featuredPosts = featuredPostSlugs
   .map((slug) => mcpPosts.find((post) => post.id === slug))
   .filter((post): post is (typeof mcpPosts)[number] => Boolean(post));
 
+const featuredMcpTalkSlug =
+  "agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe";
+const featuredMcpTalk = mcpTalks.find(
+  (talk) => talk.id === featuredMcpTalkSlug,
+);
 const pastTalks = mcpTalks
-  .filter((talk) => !talk.data.upcoming && talk.data.video)
-  .slice(0, 5);
+  .filter(
+    (talk) =>
+      talk.id !== featuredMcpTalkSlug &&
+      !talk.data.upcoming &&
+      talk.data.video,
+  )
+  .slice(0, featuredMcpTalk ? 4 : 5);
+const curatedMcpTalks = featuredMcpTalk
+  ? [featuredMcpTalk, ...pastTalks]
+  : pastTalks;
 const featuredLivestreams = [
   {
     title: "MCP Security & Authorization with Den Delimarsky",
@@ -134,12 +153,6 @@ const projects = [
       >
         Read the MCP specification<span aria-hidden="true">↗</span>
       </a>
-      <a
-        href="/tags/mcp"
-        class="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-semibold text-foreground transition-colors hover:bg-secondary focus:bg-secondary focus:outline-none"
-      >
-        Browse all MCP content<span aria-hidden="true">→</span>
-      </a>
     </div>
   </div>
 
@@ -225,7 +238,7 @@ const projects = [
           Browse video archive<span aria-hidden="true">→</span>
         </a>
         {
-          pastTalks.map((talk) => (
+          curatedMcpTalks.map((talk) => (
             <TalkCard
               title={talk.data.title}
               venueName={talk.data.venue.name}
@@ -248,5 +261,13 @@ const projects = [
         </a>
       </div>
     </section>
+  </div>
+  <div class="mt-16 border-t border-border pt-8">
+    <a
+      href="/tags/mcp"
+      class="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-brand focus:text-brand focus:outline-none"
+    >
+      Browse all MCP-tagged content<span aria-hidden="true">→</span>
+    </a>
   </div>
 </Layout>

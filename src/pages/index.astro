@@ -254,12 +254,20 @@ export const prerender = false;
             A few selected talks, tutorials, and practical notes on AI, Zero
             Trust security, and developer infrastructure.
           </p>
-          <a
-            href="/mcp"
-            class="inline-flex items-center gap-2 font-semibold text-foreground hover:text-brand focus:text-brand focus:outline-none"
-          >
-            Explore the MCP hub<span aria-hidden="true">→</span>
-          </a>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a
+              href="/mcp"
+              class="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-base font-semibold text-foreground transition-colors hover:bg-secondary focus:bg-secondary focus:outline-none"
+            >
+              Explore the MCP hub
+            </a>
+            <a
+              href="/zero-trust-security"
+              class="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-base font-semibold text-foreground transition-colors hover:bg-secondary focus:bg-secondary focus:outline-none"
+            >
+              Explore the Zero Trust security hub
+            </a>
+          </div>
 
           {featuredTalks.length > 0 && (
             <div class="space-y-4">

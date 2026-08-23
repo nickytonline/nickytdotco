@@ -115,7 +115,7 @@ test.describe("MCP topic hub", () => {
       )
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Browse all MCP content" })
+      page.getByRole("link", { name: "Browse all MCP-tagged content" })
     ).toHaveAttribute("href", "/tags/mcp");
     await expect(
       page.getByRole("link", { name: "See all projects" })
@@ -151,6 +151,42 @@ test.describe("MCP topic hub", () => {
     await expect(
       page.getByRole("link", { name: "Explore the MCP hub" })
     ).toHaveAttribute("href", "/mcp");
+  });
+});
+
+test.describe("Zero Trust security hub", () => {
+  test("connects security learning, writing, talks, and external work", async ({
+    page,
+  }) => {
+    await page.goto("/zero-trust-security");
+
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Zero Trust Security" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Learn" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Writing elsewhere" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Talks" })
+    ).toBeVisible();
+    await expect(
+      page.locator(
+        'a[href="https://labs.iximiuz.com/courses/securing-mcp-servers-and-mcp-apps-with-pomerium-2d28fcaa"]'
+      )
+    ).toHaveCount(0);
+    await expect(
+      page.locator(
+        'a[href="https://thenewstack.io/the-model-context-protocol-security-reality-check/"]'
+      )
+    ).toBeVisible();
+    await expect(
+      page.locator(
+        'a[href="https://thenewstack.io/2-8-million-reasons-why-you-cant-trust-your-vpn/"]'
+      )
+    ).toBeVisible();
   });
 });
 
