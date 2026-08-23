@@ -1193,6 +1193,12 @@ to = "https://nickyt.co"
 status = 301
 force = true
 
+[[redirects]]
+from = "https://community.vscodetips.com/*"
+to = "https://www.nickyt.co/:splat"
+status = 301
+force = true
+
 # Thanks two Phils! https://www.hawksworx.com/blog/alias-your-mastodon-username-to-your-domain-with-one-netlify-config-setting/
 [[redirects]]
 from = "/.well-known/webfinger"
@@ -1950,4 +1956,3 @@ from = "/blog/rethinking-authorization-in-the-age-of-ai-agents-110c"
 to = "/blog"
 status = 301
 force = true
-
