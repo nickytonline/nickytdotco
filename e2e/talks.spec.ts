@@ -42,6 +42,24 @@ test.describe("talks archive", () => {
       breadcrumb.getByRole("link", { name: "Talks" })
     ).toHaveAttribute("href", "/talks");
   });
+
+  test("distinguishes repeated talk appearances in document titles", async ({
+    page,
+  }) => {
+    await page.goto(
+      "/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-blackhat-usa-2025"
+    );
+    await expect(page).toHaveTitle(
+      /Agentic Access: OAuth Gets You In, Zero Trust Keeps You Safe — BlackHat USA 2025 — 6th August 2025 \| Nick Taylor's Talks/
+    );
+
+    await page.goto(
+      "/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-all-things-open-2025"
+    );
+    await expect(page).toHaveTitle(
+      /Agentic Access: OAuth Gets You In, Zero Trust Keeps You Safe — All Things Open 2025 — 13th October 2025 \| Nick Taylor's Talks/
+    );
+  });
 });
 
 test.describe("speaking page", () => {
