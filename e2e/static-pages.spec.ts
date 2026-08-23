@@ -78,6 +78,28 @@ test.describe("MCP topic hub", () => {
         .locator('a[href="https://www.youtube.com/watch?v=D7KfnGdHayA"]')
     ).toBeVisible();
     await expect(
+      page.locator(
+        'section[aria-label="Watch"] a[href="/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-all-things-open-2025"]'
+      )
+    ).toHaveCount(0);
+    await expect(
+      page
+        .locator(
+          'section[aria-label="Watch"] a[href="/talks/securing-mcp-servers-with-zero-trust-apollo-mcp-server-builder-series-2024"]'
+        )
+        .locator("..")
+    ).toContainText("Apollo MCP Server Builder Series - July Session (NYC)");
+    await expect(
+      page.locator(
+        'section[aria-label="Watch"] a[href="https://www.youtube.com/watch?v=GCjtGLvNvZo"]'
+      )
+    ).toBeVisible();
+    await expect(
+      page.locator(
+        'section[aria-label="Watch"] a[href="https://www.youtube.com/watch?v=0u8ZHnWi4j0"]'
+      )
+    ).toBeVisible();
+    await expect(
       page.getByRole("link", { name: "Browse all MCP content" })
     ).toHaveAttribute("href", "/tags/mcp");
     await expect(

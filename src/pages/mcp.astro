@@ -42,7 +42,9 @@ const featuredPosts = featuredPostSlugs
   .map((slug) => mcpPosts.find((post) => post.id === slug))
   .filter((post): post is (typeof mcpPosts)[number] => Boolean(post));
 
-const pastTalks = mcpTalks.filter((talk) => !talk.data.upcoming).slice(0, 5);
+const pastTalks = mcpTalks
+  .filter((talk) => !talk.data.upcoming && talk.data.video)
+  .slice(0, 5);
 const featuredLivestreams = [
   {
     title: "MCP Security & Authorization with Den Delimarsky",
@@ -60,6 +62,24 @@ const featuredLivestreams = [
     video: {
       type: "youtube",
       url: "https://www.youtube.com/watch?v=D7KfnGdHayA",
+    },
+  },
+  {
+    title: "ChatGPT apps & MCP apps with Skybridge",
+    date: "28th January 2026",
+    href: "https://www.youtube.com/watch?v=GCjtGLvNvZo",
+    video: {
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=GCjtGLvNvZo",
+    },
+  },
+  {
+    title: "ChatGPT Original Games",
+    date: "16th December 2025",
+    href: "https://www.youtube.com/watch?v=0u8ZHnWi4j0",
+    video: {
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=0u8ZHnWi4j0",
     },
   },
 ];
