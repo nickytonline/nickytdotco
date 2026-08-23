@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "@/layouts/MainLayout.astro";
 import SectionHeader from "@/components/SectionHeader.astro";
 import StreamSchedule from "@/components/StreamSchedule.astro";
@@ -145,9 +146,11 @@ export const prerender = false;
                         class="group grid md:flex gap-6 xl:gap-8 no-underline outline-none transition-colors"
                       >
                         <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden">
-                          <img
+                          <Image
                             src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
                             alt=""
+                            width={320}
+                            height={180}
                             class="w-full h-full object-cover"
                             loading="lazy"
                             decoding="async"

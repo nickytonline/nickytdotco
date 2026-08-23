@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Pill from "./Pill.astro";
 
 interface Props {
@@ -24,11 +25,14 @@ if (!image) {
     {
       image && (
         <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden bg-muted">
-          <img
+          <Image
             src={image}
             alt=""
+            width={320}
+            height={180}
             class="w-full h-full object-cover"
-            data-not-lazy
+            loading="eager"
+            decoding="async"
           />
         </div>
       )

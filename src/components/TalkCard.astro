@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getYouTubeId } from "../utils/youtube-utils";
 import Pill from "./Pill.astro";
 import UpcomingBadge from "./UpcomingBadge.astro";
@@ -54,9 +55,11 @@ if (coverImage) {
     {
       thumbnailUrl ? (
         <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden bg-muted">
-          <img
+          <Image
             src={thumbnailUrl}
             alt=""
+            width={320}
+            height={180}
             class="w-full h-full object-cover"
             loading="lazy"
             decoding="async"

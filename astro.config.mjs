@@ -18,6 +18,13 @@ export default defineConfig({
   adapter: netlify(),
   site: "https://www.nickyt.co",
   compressHTML: true,
+  image: {
+    remotePatterns: [
+      { protocol: "https", hostname: "img.youtube.com" },
+      { protocol: "https", hostname: "cdn.thenewstack.io" },
+      { protocol: "https", hostname: "labs.iximiuz.com" },
+    ],
+  },
   integrations: [
     varlockintegration(),
     expressiveCode(),

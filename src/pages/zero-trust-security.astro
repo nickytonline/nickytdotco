@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection, getLiveCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
@@ -173,9 +174,11 @@ const securityJsonLd = {
               class="group grid gap-6 no-underline outline-none md:flex"
             >
               <div class="relative hidden h-22.5 w-40 shrink-0 overflow-hidden rounded-lg bg-muted md:block">
-                <img
+                <Image
                   src={article.image}
                   alt=""
+                  width={320}
+                  height={180}
                   class="h-full w-full object-cover"
                   loading="lazy"
                   decoding="async"

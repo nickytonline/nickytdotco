@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { StreamGuestInfo } from "../utils/schedule-utils";
 import { getLocalizedDate } from "../utils/schedule-utils";
 import { getYouTubeId } from "../utils/youtube-utils";
@@ -44,9 +45,11 @@ const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
         href={videoPageUrl}
         class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden hover:opacity-90 transition-opacity"
       >
-        <img
+        <Image
           src={image}
           alt={`Watch ${title}`}
+          width={320}
+          height={180}
           class="w-full h-full object-cover"
           loading="lazy"
           decoding="async"

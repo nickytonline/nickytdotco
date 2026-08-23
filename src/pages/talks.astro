@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
@@ -114,7 +115,7 @@ const years = Object.keys(talksByYear)
                       class="hidden sm:block relative shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
                     >
                       {thumbnailUrl ? (
-                        <img
+                        <Image
                           src={thumbnailUrl}
                           alt=""
                           width={160}
