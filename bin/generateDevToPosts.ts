@@ -40,8 +40,42 @@ const SLUG_INCLUSION_LIST: string[] = JSON.parse(
 
 const { url: siteUrl } = siteData;
 const DEV_TO_API_URL = "https://dev.to/api";
+const DEV_TO_USERNAME = "nickytonline";
+
+function createLocalCanonicalUrl(title: string): string {
+  return new URL(`/blog/${createLocalSlug(title)}/`, siteUrl).toString();
+}
 
 const SERIES_MAP_PATH = path.join(__dirname, "series-names.js");
+const DEV_TO_SYNC_STATE_PATH = path.join(__dirname, "devToPostSyncState.json");
+
+interface DevToPostSyncState {
+  posts: Record<string, string | null>;
+}
+
+function loadDevToPostSyncState(): DevToPostSyncState {
+  try {
+    const state = JSON.parse(
+      readFileSync(DEV_TO_SYNC_STATE_PATH, "utf-8")
+    ) as Partial<DevToPostSyncState>;
+
+    if (!state.posts || typeof state.posts !== "object") {
+      throw new Error("The sync state is missing its posts object.");
+    }
+
+    return { posts: state.posts };
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return { posts: {} };
+    }
+
+    throw new Error(
+      `Unable to load DEV post sync state: ${getErrorMessage(error)}`
+    );
+  }
+}
+
+const devToPostSyncState = loadDevToPostSyncState();
 
 let SERIES_NAMES: Record<number, string> = {};
 try {
@@ -60,6 +94,16 @@ interface ConversionResult {
 
 interface DevToOrganization {
   username: string;
+}
+
+interface DevToPostSummary {
+  id: number;
+  title: string;
+  slug: string;
+  canonical_url: string | null;
+  edited_at: string | null;
+  tag_list: string[] | string;
+  organization?: DevToOrganization;
 }
 
 interface DevToPost {
@@ -518,7 +562,7 @@ function sanitizeMarkdownEmbeds(markdown: string): ConversionResult {
  *
  * @returns True if the post is valid for publishing, otherwise false.
  */
-function isValidPost(post: DevToPost): boolean {
+function isValidPost(post: DevToPostSummary): boolean {
   const { tag_list: tags = [], slug, organization } = post;
 
   // Ensure tags is an array
@@ -540,9 +584,7 @@ function isValidPost(post: DevToPost): boolean {
       !tagArray.includes("discuss") &&
       !tagArray.includes("vscodetip") &&
       !tagArray.includes("explainlikeimfive") &&
-      !tagArray.includes("help") &&
-      // omits my newsletter posts which are already published on my site
-      !tagArray.includes("newsletter")) ||
+      !tagArray.includes("help")) ||
     SLUG_INCLUSION_LIST.includes(slug)
   );
 }
@@ -582,7 +624,13 @@ async function fetchWithRetry(
   let attempt = 0;
   let delay = initialDelay;
   while (attempt <= maxRetries) {
-    const response = await fetch(url, options);
+    const headers = new Headers(options.headers);
+    headers.set("User-Agent", "nickytonline-blog-sync");
+
+    const response = await fetch(url, {
+      ...options,
+      headers,
+    });
     if (response.status !== 429) {
       return response;
     }
@@ -612,22 +660,157 @@ async function fetchWithRetry(
  *
  * @returns A promise that resolves to an array of blog posts.
  */
-async function getDevPosts(): Promise<DevToPost[]> {
-  const response = await fetchWithRetry(
-    DEV_TO_API_URL + "/articles/me/published?per_page=1000",
-    {
-      headers: {
-        "api-key": DEV_API_KEY!,
-      },
-    }
-  );
+async function getDevPosts(): Promise<DevToPostSummary[]> {
+  const url = new URL(`${DEV_TO_API_URL}/articles`);
+  url.searchParams.set("username", DEV_TO_USERNAME);
+  url.searchParams.set("per_page", "1000");
+
+  const response = await fetchWithRetry(url.toString(), {
+    headers: {
+      Accept: "application/vnd.forem.api-v1+json",
+    },
+  });
   if (!response.ok) {
     throw new Error(
       `Failed to fetch posts: ${response.status} ${response.statusText}`
     );
   }
-  const posts: DevToPost[] = await response.json();
-  return posts.filter(isValidPost);
+  const posts: DevToPostSummary[] = await response.json();
+
+  if (
+    posts.some(
+      (post) =>
+        !Object.hasOwn(post, "canonical_url") ||
+        (post.canonical_url !== null &&
+          typeof post.canonical_url !== "string") ||
+        !Object.hasOwn(post, "edited_at") ||
+        (post.edited_at !== null && typeof post.edited_at !== "string")
+    )
+  ) {
+    throw new Error(
+      "DEV did not return canonical_url and edited_at for every article summary. Refusing to sync without required metadata."
+    );
+  }
+
+  const publishedResponse = await fetchWithRetry(
+    `${DEV_TO_API_URL}/articles/me/published?per_page=1000`,
+    {
+      headers: {
+        Accept: "application/vnd.forem.api-v1+json",
+        "api-key": DEV_API_KEY!,
+      },
+    }
+  );
+  if (!publishedResponse.ok) {
+    throw new Error(
+      `Failed to fetch published post IDs: ${publishedResponse.status} ${publishedResponse.statusText}`
+    );
+  }
+
+  const publishedPosts: Array<{ id: number }> = await publishedResponse.json();
+  const publishedPostIds = new Set(publishedPosts.map((post) => post.id));
+
+  return posts.filter(
+    (post) => publishedPostIds.has(post.id) && isValidPost(post)
+  );
+}
+
+/**
+ * Updates the canonical URL on the corresponding DEV.to post.
+ *
+ * @param blogPostId The ID of the DEV.to post to update.
+ * @param canonicalUrl The canonical URL for the local blog post.
+ *
+ * @returns The edited_at timestamp returned by DEV.to after the update.
+ */
+async function updateDevToPostCanonicalUrl(
+  blogPostId: number,
+  canonicalUrl: string,
+  title: string
+): Promise<string | null> {
+  const updateArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
+  const response = await fetchWithRetry(updateArticleUrl, {
+    method: "PUT",
+    headers: {
+      Accept: "application/vnd.forem.api-v1+json",
+      "api-key": DEV_API_KEY!,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ article: { canonical_url: canonicalUrl } }),
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.text();
+    throw new Error(
+      `Failed to update canonical URL for post ${blogPostId}: ${response.status} ${response.statusText}: ${errorBody}`
+    );
+  }
+
+  let updatedPost: {
+    edited_at?: unknown;
+    canonical_url?: unknown;
+  };
+  try {
+    updatedPost = await response.json();
+  } catch (error) {
+    throw new Error(
+      `Failed to parse canonical URL update response for ${updateArticleUrl}: ${getErrorMessage(error)}`
+    );
+  }
+
+  if (
+    !Object.hasOwn(updatedPost, "edited_at") ||
+    (updatedPost.edited_at !== null &&
+      typeof updatedPost.edited_at !== "string")
+  ) {
+    throw new Error(
+      `DEV did not return edited_at after updating canonical URL for post ${blogPostId}. Refusing to update sync state.`
+    );
+  }
+
+  if (
+    Object.hasOwn(updatedPost, "canonical_url") &&
+    updatedPost.canonical_url !== canonicalUrl
+  ) {
+    throw new Error(
+      `DEV returned an unexpected canonical URL for post ${blogPostId}: ${String(updatedPost.canonical_url)}`
+    );
+  }
+
+  console.log(
+    `Updated DEV.to canonical URL for "${title}" (${blogPostId}) to ${canonicalUrl}`
+  );
+
+  return updatedPost.edited_at as string | null;
+}
+
+/**
+ * Attempts to update a DEV.to canonical URL without stopping the sync.
+ *
+ * A failed update intentionally does not provide an edited_at value, so the
+ * existing sync state remains unchanged and the update is retried next run.
+ */
+async function tryUpdateDevToPostCanonicalUrl(
+  blogPostId: number,
+  canonicalUrl: string,
+  title: string
+): Promise<{ success: boolean; editedAt: string | null }> {
+  try {
+    return {
+      success: true,
+      editedAt: await updateDevToPostCanonicalUrl(
+        blogPostId,
+        canonicalUrl,
+        title
+      ),
+    };
+  } catch (error) {
+    console.error(
+      `Failed to update DEV.to canonical URL for "${title}" (${blogPostId}) to ${canonicalUrl}: ${getErrorMessage(error)}`
+    );
+
+    return { success: false, editedAt: null };
+  }
 }
 
 /**
@@ -685,10 +868,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     date,
     tags: tagArray,
     cover_image,
-    canonical_url: new URL(
-      `/blog/${createLocalSlug(title)}`,
-      siteUrl
-    ).toString(),
+    canonical_url: createLocalCanonicalUrl(title),
     dev_to_slug: slug,
     reading_time_minutes,
     template: "post",
@@ -980,6 +1160,14 @@ async function updateTwitterEmbeds(
   console.log(`Saved Twitter embeds markup to ${filepath}!`);
 }
 
+async function saveDevToPostSyncState(
+  state: DevToPostSyncState
+): Promise<void> {
+  const data = `${JSON.stringify(state, null, 2)}\n`;
+  await fs.writeFile(DEV_TO_SYNC_STATE_PATH, data);
+  console.log(`Saved DEV post sync state to ${DEV_TO_SYNC_STATE_PATH}`);
+}
+
 (async () => {
   await Promise.all([
     fs.mkdir(POSTS_DIRECTORY, { recursive: true }),
@@ -1000,35 +1188,61 @@ async function updateTwitterEmbeds(
 
   const posts = await getDevPosts();
 
-  const filteredPosts = posts.filter((post) => {
-    const orgUsername = post.organization?.username || "";
-    const tagList = Array.isArray(post.tag_list)
-      ? post.tag_list
-      : post.tag_list.split(",").map((t) => t.trim());
+  console.log(`Checking ${posts.length} posts for changes...`);
 
-    return (
-      !["vscodetips", "virtualcoffee", "pomerium"].includes(orgUsername) ||
-      (orgUsername === "vscodetips" && tagList.includes("vscodetips"))
-    );
-  });
+  let processedPostCount = 0;
+  let updatedCanonicalUrlCount = 0;
+  let canonicalUpdateFailureCount = 0;
+  let skippedPostCount = 0;
 
-  console.log(`Processing ${filteredPosts.length} posts...`);
+  for (const postSummary of posts) {
+    const syncKey = String(postSummary.id);
+    const localCanonicalUrl = createLocalCanonicalUrl(postSummary.title);
+    const isUnchanged =
+      devToPostSyncState.posts[syncKey] === postSummary.edited_at;
 
-  for (const postSummary of filteredPosts) {
+    if (isUnchanged && postSummary.canonical_url === localCanonicalUrl) {
+      skippedPostCount++;
+      continue;
+    }
+
+    if (isUnchanged) {
+      await sleep(1000);
+      const canonicalUpdate = await tryUpdateDevToPostCanonicalUrl(
+        postSummary.id,
+        localCanonicalUrl,
+        postSummary.title
+      );
+      if (canonicalUpdate.success) {
+        devToPostSyncState.posts[syncKey] = canonicalUpdate.editedAt;
+        updatedCanonicalUrlCount++;
+      } else {
+        canonicalUpdateFailureCount++;
+      }
+      continue;
+    }
+
     // Throttle individual article fetches to stay under dev.to's rate limit.
     await sleep(1000);
 
     const post = await getDevPost(postSummary.id);
+    let syncEditedAt = postSummary.edited_at;
 
-    post.canonical_url = new URL(
-      post.slug,
-      "https://www.nickyt.co/blog/"
-    ).toString();
-
-    if (/<!-- my newsletter -->/.test(post.body_markdown)) {
-      console.warn(`Skipping newsletter post ${post.title}`);
-      continue;
+    if (post.canonical_url !== localCanonicalUrl) {
+      await sleep(1000);
+      const canonicalUpdate = await tryUpdateDevToPostCanonicalUrl(
+        postSummary.id,
+        localCanonicalUrl,
+        postSummary.title
+      );
+      if (canonicalUpdate.success) {
+        syncEditedAt = canonicalUpdate.editedAt;
+        updatedCanonicalUrlCount++;
+      } else {
+        canonicalUpdateFailureCount++;
+      }
     }
+
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
     const { markdown, imagesToSave } = await updateMarkdownImageUrls(
       post.body_markdown
@@ -1053,7 +1267,16 @@ async function updateTwitterEmbeds(
 
       throw new Error(`Unabled to generate markdown file: status ${status}`);
     }
+
+    devToPostSyncState.posts[syncKey] = syncEditedAt;
+    processedPostCount++;
   }
+
+  console.log(
+    `Processed ${processedPostCount} changed posts; updated ${updatedCanonicalUrlCount} DEV.to canonical URLs; canonical URL update failures ${canonicalUpdateFailureCount}; skipped ${skippedPostCount} unchanged posts.`
+  );
+
+  await saveDevToPostSyncState(devToPostSyncState);
 
   try {
     await updateTwitterEmbeds(twitterEmbeds, TWITTER_EMBEDS_FILE);
