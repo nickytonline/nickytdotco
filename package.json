@@ -72,7 +72,7 @@
     "@types/luxon": "^3.7.2",
     "@types/node": "^25.0.3",
     "dotenv": "^17.4.2",
-    "eslint-plugin-astro": "^2.1.1",
+    "eslint-plugin-astro": "^3.1.0",
     "js-yaml": "^5.2.1",
     "jsdom": "^29.1.1",
     "pagefind": "^1.4.0",
