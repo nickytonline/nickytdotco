@@ -97,7 +97,7 @@ test.describe("speaking page", () => {
       "https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU"
     );
     await expect(
-      page.getByRole("link", { name: "Book me for a talk or guest appearance" })
+      page.getByRole("link", { name: "Speaking inquiries" })
     ).toHaveAttribute(
       "href",
       /^mailto:nick@nickyt\.co\?subject=Speaking%20or%20Guest%20Appearance%20Inquiry/

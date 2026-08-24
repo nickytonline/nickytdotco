@@ -65,7 +65,7 @@ test.describe("home page", () => {
     await page.goto("/");
 
     await expect(
-      page.getByRole("link", { name: "Book me for a talk or guest appearance" })
+      page.getByRole("link", { name: "Speaking & guest appearances" })
     ).toHaveAttribute("href", "/speaking");
     await expect(
       page.getByRole("link", { name: "Get one dev tip a week" })
