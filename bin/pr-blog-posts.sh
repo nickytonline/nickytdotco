@@ -19,6 +19,11 @@ if [[ -n "$EXISTING_PR_NUMBER" ]]; then
   BRANCH_NAME=$(git branch --show-current)
 
   echo "Merging origin/main into $BRANCH_NAME"
+  # GitHub Actions checks out a shallow repository. Fetch the full history so
+  # the PR branch and main have a common ancestor for the merge.
+  if [[ "$(git rev-parse --is-shallow-repository)" == "true" ]]; then
+    git fetch --unshallow origin
+  fi
   git fetch origin main
   git merge origin/main --no-edit
 else
