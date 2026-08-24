@@ -66,11 +66,17 @@ test.describe("talks archive", () => {
       "/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-blackhat-usa-2025"
     );
 
-    await expect(
-      page
-        .locator('script[type="application/ld+json"]')
-        .filter({ hasText: '"@type":"Event"' })
-    ).toHaveCount(1);
+    const eventStructuredDataCount = await page
+      .locator('script[type="application/ld+json"]')
+      .evaluateAll(
+        (scripts) =>
+          scripts.filter((script) => {
+            const data = JSON.parse(script.textContent ?? "{}");
+            return data["@type"] === "Event";
+          }).length
+      );
+
+    expect(eventStructuredDataCount).toBe(1);
   });
 });
 

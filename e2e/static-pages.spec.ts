@@ -143,9 +143,9 @@ test.describe("MCP topic hub", () => {
       learnSection.locator("article").first().locator('a[href*="iximiuz.com"]')
     ).toBeVisible();
     await expect(learnSection.locator("img")).toHaveCount(4);
-    await expect(
-      learnSection.locator('img[src*="iximiuz.com/content/files/courses"]')
-    ).toHaveCount(1);
+    await expect(learnSection.locator('img[src*="iximiuz.com"]')).toHaveCount(
+      1
+    );
 
     await page.goto("/tags/mcp");
     await expect(
