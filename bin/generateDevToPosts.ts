@@ -749,6 +749,7 @@ async function updateDevToPostCanonicalUrl(
   let updatedPost: {
     edited_at?: unknown;
     canonical_url?: unknown;
+    body_markdown?: unknown;
   };
   try {
     updatedPost = await response.json();
@@ -772,8 +773,17 @@ async function updateDevToPostCanonicalUrl(
     Object.hasOwn(updatedPost, "canonical_url") &&
     updatedPost.canonical_url !== canonicalUrl
   ) {
+    const bodyCanonicalUrlCount =
+      typeof updatedPost.body_markdown === "string"
+        ? (updatedPost.body_markdown.match(/^canonical_url:/gm) ?? []).length
+        : 0;
+    const legacyPostHint =
+      bodyCanonicalUrlCount > 1
+        ? " This may be a legacy DEV.to post with multiple canonical_url entries in its body; review and update the old entry manually."
+        : "";
+
     throw new Error(
-      `DEV returned an unexpected canonical URL for post ${blogPostId}: ${String(updatedPost.canonical_url)}`
+      `DEV returned an unexpected canonical URL for post ${blogPostId}: ${String(updatedPost.canonical_url)}.${legacyPostHint}`
     );
   }
 
