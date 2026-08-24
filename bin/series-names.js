@@ -15,6 +15,7 @@ export default {
   15087: "web3 adventures",
   16050: "Frontend Developer Resources",
   17495: "all things npm",
+  18232: "Asking Coding Questions with Bekah & Nick",
   19733: "Writing",
   24726: "Maintainer Toolkit",
   26157: "Fullstack Learnings",
