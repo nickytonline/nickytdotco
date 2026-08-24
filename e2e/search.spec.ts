@@ -4,11 +4,21 @@ import { escapeRegExp } from "./test-utils";
 test.describe("site search (Pagefind)", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
-    // Search is a client:load React island; wait for it to hydrate before
-    // interacting, since firing the "/" shortcut or a click too early (a real
-    // risk against a live host, less so against instant-loading localhost) is
-    // a no-op if the keydown/click listeners haven't attached yet.
-    await page.waitForLoadState("networkidle");
+    // page.goto() waits for the page load event. Waiting for networkidle is
+    // unreliable on the deployed site because long-lived requests can keep
+    // the network from becoming idle.
+    const searchButton = page.getByRole("button", { name: "Search site" });
+    const dialog = page.getByRole("dialog");
+    await expect(searchButton).toBeVisible();
+    await expect(async () => {
+      await searchButton.click();
+      await expect(dialog).toBeVisible();
+      await page.keyboard.press("Escape");
+      await expect(dialog).not.toBeVisible();
+      await page.evaluate(() => {
+        (document.activeElement as HTMLElement | null)?.blur();
+      });
+    }).toPass({ timeout: 10000 });
   });
 
   test("opens via the search button and returns results for a query", async ({
@@ -36,8 +46,11 @@ test.describe("site search (Pagefind)", () => {
   });
 
   test("opens with the / keyboard shortcut", async ({ page }) => {
-    await page.keyboard.press("/");
-    await expect(page.getByRole("dialog")).toBeVisible();
+    const dialog = page.getByRole("dialog");
+    await expect(async () => {
+      await page.keyboard.press("/");
+      await expect(dialog).toBeVisible();
+    }).toPass({ timeout: 10000 });
   });
 
   test("arrow keys and Enter navigate to the selected result", async ({
