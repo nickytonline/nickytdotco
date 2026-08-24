@@ -15,19 +15,14 @@ jobs:
         with:
           node-version: 24
           cache: true
-      - name: Get blog posts
-        env:
-          APP_ENV: production
-          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
-        run: |
-          vp run generate:posts
-          vp run format
       - name: Setup git config
         run: |
           git config user.name 'token-generator-app[bot]'
           git config user.email '82042599+token-generator-app[bot]@users.noreply.github.com'
       - name: PR for Blog Post Updates
         env:
+          APP_ENV: production
+          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ./bin/pr-blog-posts.sh
