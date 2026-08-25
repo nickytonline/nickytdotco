@@ -3,12 +3,13 @@ title: "Your SSH Keys Are Already Stale"
 date: 2026-09-25T15:45:00-03:00
 endDate: 2026-09-25T16:25:00-03:00
 upcoming: true
-cover_image: "/assets/talks/nerdearla-ssh-title-card.png"
-cover_image_large: "/assets/talks/nerdearla-ssh-title-card.png"
+cover_image: "/assets/talks/nerdearla-ssh-og.png"
+cover_image_large: "/assets/talks/nerdearla-ssh-og.png"
 venue:
   name: "Nerdearla Buenos Aires"
-  url: "https://nerdearla.com/en/argentina/"
+  url: "https://nerdearla.com/en/argentina/schedule/your-ssh-keys-are-already-stale/"
   location: "Ciudad Cultural Konex, Buenos Aires, Argentina"
+sessionUrl: "https://nerdearla.com/en/argentina/schedule/your-ssh-keys-are-already-stale/"
 registrationUrl: "https://tickets.nerdearla.com/?utm_source=website&utm_medium=footer&utm_campaign=argentina2026"
 tags: ["ssh", "security", "devops", "sre", "identity", "infrastructure"]
 ---
