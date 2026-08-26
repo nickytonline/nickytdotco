@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import {
   SEARCH_EMBEDDING_DIMENSIONS,
   SEARCH_EMBEDDING_MODEL,
-} from "./constants";
+} from "./constants.ts";
 
 export function hashSearchContent(textToEmbed: string): string {
   return createHash("sha256")

@@ -4,8 +4,8 @@ import {
   SEARCH_EMBED_BATCH_SIZE,
   SEARCH_EMBEDDING_DIMENSIONS,
   SEARCH_EMBEDDING_MODEL,
-} from "./constants";
-import { l2Normalize } from "./normalize";
+} from "./constants.ts";
+import { l2Normalize } from "./normalize.ts";
 
 type EmbeddingTaskType = "RETRIEVAL_DOCUMENT" | "RETRIEVAL_QUERY";
 

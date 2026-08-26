@@ -1,7 +1,7 @@
 import { createClient, type Client } from "@libsql/client/http";
 import { ENV } from "varlock/env";
-import { SEARCH_EMBEDDING_DIMENSIONS, SEARCH_TABLE } from "./constants";
-import type { SearchDocumentInput, SearchResult } from "./types";
+import { SEARCH_EMBEDDING_DIMENSIONS, SEARCH_TABLE } from "./constants.ts";
+import type { SearchDocumentInput, SearchResult } from "./types.ts";
 
 let client: Client | undefined;
 
