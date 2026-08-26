@@ -46,6 +46,14 @@ function createLocalCanonicalUrl(title: string): string {
   return new URL(`/blog/${createLocalSlug(title)}/`, siteUrl).toString();
 }
 
+function hasCanonicalUrlInFrontmatter(bodyMarkdown: string): boolean {
+  const frontmatter = bodyMarkdown.match(
+    /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/
+  )?.[1];
+
+  return frontmatter ? /^canonical_url:\s*/m.test(frontmatter) : false;
+}
+
 const SERIES_MAP_PATH = path.join(__dirname, "series-names.js");
 const DEV_TO_SYNC_STATE_PATH = path.join(__dirname, "devToPostSyncState.json");
 
@@ -512,6 +520,7 @@ const currentBlogPostEmbeds: Record<string, unknown> = JSON.parse(
 const blogPostEmbeds = new Map<string, unknown>(
   Object.entries(currentBlogPostEmbeds)
 );
+const newlyDiscoveredBlogPostEmbeds = new Set<string>();
 
 // Load existing Twitter embeds or initialize empty object
 let currentTwitterEmbeds: Record<string, string> = {};
@@ -1089,6 +1098,7 @@ async function getDevBlogPostEmbedsMarkup(
         }
         const markup = await response.text();
         embeds.set(embedUrl, markup);
+        newlyDiscoveredBlogPostEmbeds.add(embedUrl);
       } catch (error) {
         console.warn(
           `Error fetching embed ${embedUrl}:`,
@@ -1102,11 +1112,20 @@ async function getDevBlogPostEmbedsMarkup(
 
 async function updateBlogPostEmbeds(
   embeds: Map<string, unknown>,
-  filePaths: string
+  filePaths: string,
+  urlsToUpdate: Set<string>
 ): Promise<void> {
+  if (urlsToUpdate.size === 0) {
+    return;
+  }
+
   const blogPostEmbedsMarkup: Record<string, unknown> = {};
 
   for (const [url] of embeds) {
+    if (!urlsToUpdate.has(url)) {
+      continue;
+    }
+
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -1142,6 +1161,12 @@ async function updateBlogPostEmbeds(
     } catch (error) {
       console.warn(`Failed to process embed ${url}:`, getErrorMessage(error));
       continue;
+    }
+  }
+
+  for (const [url, data] of embeds) {
+    if (!Object.hasOwn(blogPostEmbedsMarkup, url) && !urlsToUpdate.has(url)) {
+      blogPostEmbedsMarkup[url] = data;
     }
   }
 
@@ -1218,6 +1243,24 @@ async function saveDevToPostSyncState(
 
     if (isUnchanged) {
       await sleep(1000);
+
+      // Fetch the full post before attempting an update. Legacy DEV posts can
+      // have canonical_url in their frontmatter, which makes DEV ignore the
+      // API value while still changing edited_at for every PUT.
+      const post = await getDevPost(postSummary.id);
+      if (post.canonical_url === localCanonicalUrl) {
+        skippedPostCount++;
+        continue;
+      }
+
+      if (hasCanonicalUrlInFrontmatter(post.body_markdown)) {
+        console.warn(
+          `Skipping canonical URL update for legacy DEV.to post "${postSummary.title}" (${postSummary.id}); canonical_url is defined in its frontmatter.`
+        );
+        skippedPostCount++;
+        continue;
+      }
+
       const canonicalUpdate = await tryUpdateDevToPostCanonicalUrl(
         postSummary.id,
         localCanonicalUrl,
@@ -1239,17 +1282,23 @@ async function saveDevToPostSyncState(
     let syncEditedAt = postSummary.edited_at;
 
     if (post.canonical_url !== localCanonicalUrl) {
-      await sleep(1000);
-      const canonicalUpdate = await tryUpdateDevToPostCanonicalUrl(
-        postSummary.id,
-        localCanonicalUrl,
-        postSummary.title
-      );
-      if (canonicalUpdate.success) {
-        syncEditedAt = canonicalUpdate.editedAt;
-        updatedCanonicalUrlCount++;
+      if (hasCanonicalUrlInFrontmatter(post.body_markdown)) {
+        console.warn(
+          `Skipping canonical URL update for legacy DEV.to post "${postSummary.title}" (${postSummary.id}); canonical_url is defined in its frontmatter.`
+        );
       } else {
-        canonicalUpdateFailureCount++;
+        await sleep(1000);
+        const canonicalUpdate = await tryUpdateDevToPostCanonicalUrl(
+          postSummary.id,
+          localCanonicalUrl,
+          postSummary.title
+        );
+        if (canonicalUpdate.success) {
+          syncEditedAt = canonicalUpdate.editedAt;
+          updatedCanonicalUrlCount++;
+        } else {
+          canonicalUpdateFailureCount++;
+        }
       }
     }
 
@@ -1295,7 +1344,11 @@ async function saveDevToPostSyncState(
   }
 
   try {
-    await updateBlogPostEmbeds(blogPostEmbeds, EMBEDDED_POSTS_MARKUP_FILE);
+    await updateBlogPostEmbeds(
+      blogPostEmbeds,
+      EMBEDDED_POSTS_MARKUP_FILE,
+      newlyDiscoveredBlogPostEmbeds
+    );
   } catch (error) {
     console.error("unable to update DEV blog post embeds", error);
   }
