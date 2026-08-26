@@ -9,6 +9,7 @@ import { getRelatedTalks, getRelatedPostsForTalk } from "../../utils/tag-utils";
 import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
 import { site } from "../../data/site";
+import { Image } from "astro:assets";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import UpcomingBadge from "../../components/UpcomingBadge.astro";
 export const prerender = true;
@@ -240,17 +241,21 @@ const eventJsonLd = {
         </div>
       ) : isUpcoming && coverImageLarge ? (
         <div class="my-6">
-          <img
+          <Image
             src={coverImageLarge}
             alt={`${title} at ${venue.name}`}
+            width={1600}
+            height={900}
             class="w-full max-w-2xl rounded-xl border-2 border-border shadow-lg"
           />
         </div>
       ) : isUpcoming && coverImage ? (
         <div class="my-6">
-          <img
+          <Image
             src={coverImage}
             alt={`${title} at ${venue.name}`}
+            width={1600}
+            height={900}
             class="w-full max-w-2xl rounded-xl border-2 border-border shadow-lg"
           />
         </div>
