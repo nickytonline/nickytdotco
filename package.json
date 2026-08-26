@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "portless run astro dev",
     "start": "astro dev",
-    "build": "npm run format:check && astro check && npm run index:search && astro build",
+    "build": "npm run format:check && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "vp fmt . && vp lint --fix .",

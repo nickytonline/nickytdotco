@@ -1,0 +1,41 @@
+name: Index site search
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: index-search
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  index:
+    name: Embed and upsert search documents
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: 24
+          cache: true
+
+      - name: Index search documents
+        env:
+          APP_ENV: staging
+          URL: https://www.nickyt.co
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+          TURSO_SEARCH_DATABASE_URL: ${{ secrets.TURSO_SEARCH_DATABASE_URL }}
+          TURSO_SEARCH_AUTH_TOKEN: ${{ secrets.TURSO_SEARCH_AUTH_TOKEN }}
+        run: vp run index:search

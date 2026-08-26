@@ -36,7 +36,7 @@
 ## Env & Integrations
 
 - Env schema: `.env.schema`, types: `env.d.ts` (Varlock).
-- Required vars: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `TURSO_SEARCH_DATABASE_URL`, `TURSO_SEARCH_AUTH_TOKEN`, `GITHUB_TOKEN`, `DEV_API_KEY`, `GEMINI_API_KEY`, `URL`. Search indexing and `/api/search` use the `TURSO_SEARCH_*` database; stream guests stay on `TURSO_*`.
+- Required vars: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `TURSO_SEARCH_DATABASE_URL`, `TURSO_SEARCH_AUTH_TOKEN`, `GITHUB_TOKEN`, `DEV_API_KEY`, `GEMINI_API_KEY`, `URL`. Search indexing and `/api/search` use the `TURSO_SEARCH_*` database; stream guests stay on `TURSO_*`. Embeddings run in `.github/workflows/index-search.yml` (`vp run index:search`), not during the Netlify build.
 - Sync scripts use scoped Varlock env dirs instead of the root schema: `env/devto/.env.schema` (imports `DEV_API_KEY`, used by `vp run generate:posts`) and `env/youtube/.env.schema` (`YOUTUBE_API_KEY`, `YOUTUBE_PLAYLIST_ID`, used by `vp run generate:streams`). Both are invoked as `varlock run --path env/<name> -- ...` from `package.json`.
 
 ## Testing (E2E)

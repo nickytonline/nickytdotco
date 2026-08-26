@@ -5,7 +5,11 @@ import { fileURLToPath } from "node:url";
 import { load } from "js-yaml";
 import slugify from "slugify";
 import { site } from "../src/data/site.ts";
-import { SEARCH_MAX_EMBED_CHARS } from "../src/lib/search/constants.ts";
+import {
+  SEARCH_EMBED_BATCH_DELAY_MS,
+  SEARCH_EMBED_BATCH_SIZE,
+  SEARCH_MAX_EMBED_CHARS,
+} from "../src/lib/search/constants.ts";
 import {
   excerptFromText,
   hashSearchContent,
@@ -226,16 +230,27 @@ async function indexSearchDocuments() {
   );
 
   if (staleOrNew.length > 0) {
-    const vectors = await embedDocuments(
-      staleOrNew.map((document) => document.textToEmbed)
-    );
-    await upsertSearchDocuments(
-      staleOrNew.map((document, index) => ({
-        ...document,
-        contentHash: hashSearchContent(document.textToEmbed),
-        embedding: vectors[index],
-      }))
-    );
+    for (let i = 0; i < staleOrNew.length; i += SEARCH_EMBED_BATCH_SIZE) {
+      const chunk = staleOrNew.slice(i, i + SEARCH_EMBED_BATCH_SIZE);
+      console.log(
+        `Embedding batch ${Math.floor(i / SEARCH_EMBED_BATCH_SIZE) + 1}/${Math.ceil(staleOrNew.length / SEARCH_EMBED_BATCH_SIZE)} (${chunk.length} docs)`
+      );
+      const vectors = await embedDocuments(
+        chunk.map((document) => document.textToEmbed)
+      );
+      await upsertSearchDocuments(
+        chunk.map((document, index) => ({
+          ...document,
+          contentHash: hashSearchContent(document.textToEmbed),
+          embedding: vectors[index],
+        }))
+      );
+      if (i + SEARCH_EMBED_BATCH_SIZE < staleOrNew.length) {
+        await new Promise((resolve) =>
+          setTimeout(resolve, SEARCH_EMBED_BATCH_DELAY_MS)
+        );
+      }
+    }
   }
 
   await deleteMissingSearchDocuments(documents.map((document) => document.id));

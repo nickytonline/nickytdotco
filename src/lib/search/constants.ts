@@ -3,7 +3,8 @@ export const SEARCH_EMBEDDING_DIMENSIONS = 768;
 export const SEARCH_DEFAULT_LIMIT = 8;
 export const SEARCH_MAX_LIMIT = 20;
 export const SEARCH_TABLE = "search_documents";
-export const SEARCH_EMBED_BATCH_SIZE = 10;
+export const SEARCH_EMBED_BATCH_SIZE = 5;
+export const SEARCH_EMBED_BATCH_DELAY_MS = 2500;
 export const SEARCH_MAX_EMBED_CHARS = 6000;
 
 export const SEARCH_CDN_HEADERS = {
