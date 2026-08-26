@@ -1,51 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
-
-interface PagefindResult {
-  url: string;
-  excerpt: string;
-  meta: {
-    title: string;
-    image?: string;
-  };
-  filters?: {
-    type?: string[];
-  };
-}
+import { searchSite, type SearchResult } from "../lib/search/searchSite";
 
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<PagefindResult[]>([]);
-  const [totalResults, setTotalResults] = useState(0);
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLUListElement>(null);
-  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
-  const pagefind = useRef<any>(null);
-
-  useEffect(() => {
-    const initPagefind = async () => {
-      if (import.meta.env.DEV) {
-        console.warn("Pagefind is not available in dev mode.");
-        return;
-      }
-
-      try {
-        const pagefindPath = "/pagefind/pagefind.js";
-        // Using @vite-ignore to prevent Vite from resolving at build time
-        pagefind.current = await import(/* @vite-ignore */ pagefindPath);
-        if (pagefind.current && typeof pagefind.current.init === "function") {
-          await pagefind.current.init();
-        }
-      } catch (e) {
-        console.error("Failed to load pagefind", e);
-      }
-    };
-
-    initPagefind();
-  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -65,9 +31,7 @@ const Search = () => {
       } else if (isOpen) {
         if (e.key === "ArrowDown") {
           e.preventDefault();
-          setSelectedIndex((prev) =>
-            prev < results.length - 1 ? prev + 1 : prev
-          );
+          setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
         } else if (e.key === "ArrowUp") {
           e.preventDefault();
           setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
@@ -92,10 +56,7 @@ const Search = () => {
 
     document.addEventListener("astro:before-preparation", handleNavigation);
     return () => {
-      document.removeEventListener(
-        "astro:before-preparation",
-        handleNavigation
-      );
+      document.removeEventListener("astro:before-preparation", handleNavigation);
     };
   }, []);
 
@@ -114,9 +75,7 @@ const Search = () => {
   // Scroll active result into view
   useEffect(() => {
     if (selectedIndex >= 0 && resultsRef.current) {
-      const selectedElement = resultsRef.current.children[
-        selectedIndex
-      ] as HTMLElement;
+      const selectedElement = resultsRef.current.children[selectedIndex] as HTMLElement;
       if (selectedElement) {
         selectedElement.scrollIntoView({ block: "nearest" });
       }
@@ -130,33 +89,51 @@ const Search = () => {
   };
 
   useEffect(() => {
-    const performSearch = async () => {
-      if (!query || !pagefind.current) {
-        setResults([]);
-        setTotalResults(0);
-        setSelectedIndex(-1);
-        return;
-      }
+    const controller = new AbortController();
 
+    if (!query.trim()) {
+      setResults([]);
+      setIsSearching(false);
+      setSearchError(null);
+      setSelectedIndex(-1);
+      return () => controller.abort();
+    }
+
+    setIsSearching(true);
+    setSearchError(null);
+
+    const performSearch = async () => {
       try {
-        const search = await pagefind.current.search(query);
-        if (search.results) {
-          setTotalResults(search.results.length);
-          const res = await Promise.all(
-            // oxlint-disable-next-line @typescript-eslint/no-explicit-any
-            search.results.slice(0, 8).map((r: any) => r.data())
-          );
-          setResults(res);
-          setSelectedIndex(res.length > 0 ? 0 : -1);
+        const response = await searchSite(query, undefined, controller.signal);
+        setResults(response.results);
+        setSelectedIndex(response.results.length > 0 ? 0 : -1);
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") {
+          return;
         }
-      } catch (e) {
-        console.error("Search failed", e);
+        if (error instanceof Error && error.name === "AbortError") {
+          return;
+        }
+        console.error("Search failed", error);
+        setResults([]);
+        setSelectedIndex(-1);
+        setSearchError("Search is temporarily unavailable. Try again.");
+      } finally {
+        if (!controller.signal.aborted) {
+          setIsSearching(false);
+        }
       }
     };
 
     const debounce = setTimeout(performSearch, 300);
-    return () => clearTimeout(debounce);
+    return () => {
+      clearTimeout(debounce);
+      controller.abort();
+    };
   }, [query]);
+
+  const resultCountLabel =
+    results.length === 1 ? "1 result found" : `${results.length} results found`;
 
   return (
     <>
@@ -206,26 +183,24 @@ const Search = () => {
         </div>
 
         <div className="max-h-[60vh] overflow-y-auto p-4">
-          {import.meta.env.DEV && (
-            <div className="bg-warning-soft dark:bg-warning-soft text-warning-foreground dark:text-warning-foreground p-4 rounded-md mb-4 text-center text-sm border border-warning-border dark:border-warning-border">
-              Note: Search results are only available after a production build.
-            </div>
-          )}
-
           {results.length > 0 && (
             <div className="flex justify-between items-baseline mb-4 px-2 text-sm text-muted-foreground">
-              <span>{totalResults} results found</span>
+              <span>{resultCountLabel}</span>
               <kbd className="hidden sm:inline-block px-1.5 py-0.5 border border-secondary rounded bg-muted font-sans text-xs">
                 ESC to close
               </kbd>
             </div>
           )}
 
-          {results.length > 0 ? (
+          {searchError ? (
+            <div className="text-center py-12 space-y-2">
+              <p className="text-lg text-destructive">{searchError}</p>
+              <p className="text-sm text-muted-foreground">Try searching again in a moment.</p>
+            </div>
+          ) : results.length > 0 ? (
             <ul ref={resultsRef} className="space-y-2">
               {results.map((result, index) => {
                 const isSelected = index === selectedIndex;
-                const type = result.filters?.type?.[0];
 
                 return (
                   <li key={result.url}>
@@ -247,45 +222,29 @@ const Search = () => {
                                 : "group-hover:text-brand group-focus:text-brand"
                             }`}
                           >
-                            {result.meta.title}
+                            {result.title}
                           </h3>
-                          <p
-                            className="text-sm text-muted-foreground line-clamp-2 mt-1"
-                            dangerouslySetInnerHTML={{ __html: result.excerpt }}
-                          />
+                          <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
+                            {result.excerpt}
+                          </p>
                         </div>
-                        {type && (
-                          <span className="shrink-0 text-[10px] uppercase tracking-wider font-bold bg-muted px-2 py-0.5 rounded-full text-muted-foreground border border-secondary">
-                            {type}
-                          </span>
-                        )}
+                        <span className="shrink-0 text-[10px] uppercase tracking-wider font-bold bg-muted px-2 py-0.5 rounded-full text-muted-foreground border border-secondary">
+                          {result.type}
+                        </span>
                       </div>
                     </a>
                   </li>
                 );
               })}
             </ul>
-          ) : query ? (
+          ) : query.trim() && isSearching ? (
             <div className="text-center text-muted-foreground py-12">
-              {import.meta.env.DEV ? (
-                <div className="space-y-4">
-                  <p className="text-lg font-semibold text-warning-foreground dark:text-warning-foreground">
-                    Search is unavailable in development
-                  </p>
-                  <p className="text-sm max-w-md mx-auto">
-                    Pagefind indexes your site during the production build. To
-                    test search locally, run:
-                    <code className="block mt-2 p-2 bg-secondary rounded text-foreground">
-                      npm run build && npm run preview
-                    </code>
-                  </p>
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  <p className="text-lg">No results found for "{query}"</p>
-                  <p className="text-sm">Try searching for something else.</p>
-                </div>
-              )}
+              <p className="text-lg">Searching…</p>
+            </div>
+          ) : query.trim() ? (
+            <div className="text-center text-muted-foreground py-12 space-y-2">
+              <p className="text-lg">No results found for "{query}"</p>
+              <p className="text-sm">Try searching for something else.</p>
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center py-12 text-muted-foreground space-y-4">
@@ -294,9 +253,7 @@ const Search = () => {
               </div>
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
-                <p className="text-sm">
-                  Search for blog posts, talks, projects, and more
-                </p>
+                <p className="text-sm">Search for blog posts, talks, livestreams, and more</p>
               </div>
               <div className="flex gap-4 pt-4 text-xs">
                 <span className="flex items-center gap-1">
@@ -306,15 +263,11 @@ const Search = () => {
                   Navigate
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
-                    Enter
-                  </kbd>
+                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">Enter</kbd>
                   Open
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
-                    ESC
-                  </kbd>
+                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">ESC</kbd>
                   Close
                 </span>
               </div>

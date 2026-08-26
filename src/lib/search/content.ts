@@ -36,3 +36,14 @@ export function excerptFromText(text: string, maxLength = 220): string {
   }
   return `${collapsed.slice(0, maxLength - 1).trimEnd()}…`;
 }
+
+export function rewriteSearchResultUrl(
+  storedUrl: string,
+  requestOrigin: string
+): string {
+  const parsed = new URL(storedUrl);
+  return new URL(
+    `${parsed.pathname}${parsed.search}${parsed.hash}`,
+    requestOrigin
+  ).toString();
+}

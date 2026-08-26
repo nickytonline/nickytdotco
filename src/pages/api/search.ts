@@ -11,6 +11,7 @@ import {
   parseSearchLimit,
 } from "../../lib/search/normalize";
 import { ensureSearchTable, searchDocuments } from "../../lib/search/turso";
+import { rewriteSearchResultUrl } from "../../lib/search/content";
 
 export const prerender = false;
 
@@ -48,7 +49,17 @@ export const GET: APIRoute = async ({ url }) => {
     await ensureSearchTable();
     const embedding = await embedQuery(query);
     const results = await searchDocuments(embedding, limit);
-    return json({ query, results }, 200, SEARCH_CDN_HEADERS);
+    return json(
+      {
+        query,
+        results: results.map((result) => ({
+          ...result,
+          url: rewriteSearchResultUrl(result.url, url.origin),
+        })),
+      },
+      200,
+      SEARCH_CDN_HEADERS
+    );
   } catch (error) {
     console.error("Search request failed", error);
     return json(

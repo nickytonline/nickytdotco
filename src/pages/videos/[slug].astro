@@ -121,7 +121,6 @@ if (stream.data.website)
   title={`${title} | Nick Taylor's Streams`}
   metaDesc={description}
   socialImage={socialImage}
-  pageType="Stream"
 >
   <Fragment slot="head">
     <script
@@ -142,7 +141,6 @@ if (stream.data.website)
     <header>
       <h1
         class="text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-tight"
-        data-pagefind-meta="title"
       >
         {title}
       </h1>
@@ -180,7 +178,6 @@ if (stream.data.website)
 
     <div
       class="prose max-w-none"
-      data-pagefind-body
       set:html={descriptionHtml}
     />
 

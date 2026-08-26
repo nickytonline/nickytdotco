@@ -13,7 +13,7 @@
 ## Architecture
 
 - Stack: Astro 5.x SSG, React for interactivity, MDX content, Tailwind v4.
-- Search: Pagefind builds from `dist/`.
+- Search: Turso vector search via `GET /api/search` (Gemini embeddings); Cmd-K dialog in `src/components/Search.tsx`.
 - Deploy: Netlify (`netlify.toml`).
 
 ## Where Things Live
@@ -42,10 +42,10 @@
 ## Testing (E2E)
 
 - Playwright specs live in `e2e/`; run with `vp run test:e2e` (`test:e2e:ui` for UI mode, `test:e2e:report` to reopen the last HTML report).
-- Locally, tests run against a real production build, not the dev server: `playwright.config.ts`'s `webServer` builds and serves via `npx varlock run -- netlify serve` unless `PLAYWRIGHT_BASE_URL` is set. This is required, not optional — `astro preview` throws ("adapter does not support the preview command") because `@astrojs/netlify` has no preview entrypoint, and Pagefind search only has an index after a production build.
+- Locally, tests run against a real production build, not the dev server: `playwright.config.ts`'s `webServer` builds and serves via `npx varlock run -- netlify serve` unless `PLAYWRIGHT_BASE_URL` is set. This is required, not optional — `astro preview` throws ("adapter does not support the preview command") because `@astrojs/netlify` has no preview entrypoint, and search hits the production `/api/search` function against the Turso index.
 - `netlify-cli` is expected as a **global** install (`npm install -g netlify-cli`), not a project dependency — it's Netlify's own recommended install method and avoids ~400 extra packages in `node_modules` for something CI never touches. `webServer.command` checks `command -v netlify` first and fails with an install hint if it's missing.
 - `varlock run --` matters: it resolves real secrets before `netlify serve`'s own `.env.development` injection runs, so the real values win instead of the raw unresolved `op://...` reference strings.
-- CI (`.github/workflows/e2e.yml`) does not build at all — it polls the `deploy/netlify` commit status until Netlify's own build finishes, then sets `PLAYWRIGHT_BASE_URL` to that deploy preview's URL. This tests the real deployed environment (real edge/geo behavior, real Pagefind index) and needs no app secrets in the workflow at all, since Netlify's own build environment already has them. PR-only: Netlify only posts that commit status for deploy previews, not for direct pushes to `main` — a push to `main` has already passed this check on its PR beforehand.
+- CI (`.github/workflows/e2e.yml`) does not build at all — it polls the `deploy/netlify` commit status until Netlify's own build finishes, then sets `PLAYWRIGHT_BASE_URL` to that deploy preview's URL. This tests the real deployed environment (real edge/geo behavior, real search API) and needs no app secrets in the workflow at all, since Netlify's own build environment already has them. PR-only: Netlify only posts that commit status for deploy previews, not for direct pushes to `main` — a push to `main` has already passed this check on its PR beforehand.
 
 ## Code Standards
 

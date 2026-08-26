@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "portless run astro dev",
     "start": "astro dev",
-    "build": "npm run format:check && astro check && npm run index:search && astro build && pagefind --site dist",
+    "build": "npm run format:check && astro check && npm run index:search && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "vp fmt . && vp lint --fix .",
@@ -77,7 +77,6 @@
     "eslint-plugin-astro": "^3.1.0",
     "js-yaml": "^5.2.1",
     "jsdom": "^29.1.1",
-    "pagefind": "^1.4.0",
     "slugify": "^1.6.9",
     "tailwindcss": "^4.3.2",
     "vite-plus": "^0.2.6"
