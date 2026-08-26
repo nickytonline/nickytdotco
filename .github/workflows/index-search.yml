@@ -30,33 +30,27 @@ jobs:
       - name: Check required secrets
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
-          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
           TURSO_SEARCH_DATABASE_URL: ${{ secrets.TURSO_SEARCH_DATABASE_URL }}
           TURSO_SEARCH_AUTH_TOKEN: ${{ secrets.TURSO_SEARCH_AUTH_TOKEN }}
-          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
         run: |
           missing=
-          for name in GEMINI_API_KEY TURSO_DATABASE_URL TURSO_AUTH_TOKEN TURSO_SEARCH_DATABASE_URL TURSO_SEARCH_AUTH_TOKEN DEV_API_KEY; do
+          for name in GEMINI_API_KEY TURSO_SEARCH_DATABASE_URL TURSO_SEARCH_AUTH_TOKEN; do
             if [ -z "${!name}" ]; then
               missing="$missing $name"
             fi
           done
           if [ -n "$missing" ]; then
             echo "These repo Actions secrets are empty:$missing"
-            echo "Add them under Settings → Secrets and variables → Actions (repository secrets, not an environment)."
+            echo "Add them under Settings → Secrets and variables → Actions (repository secrets)."
             exit 1
           fi
 
       - name: Index search documents
         env:
           APP_ENV: staging
-          URL: https://www.nickyt.co
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
-          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
           TURSO_SEARCH_DATABASE_URL: ${{ secrets.TURSO_SEARCH_DATABASE_URL }}
           TURSO_SEARCH_AUTH_TOKEN: ${{ secrets.TURSO_SEARCH_AUTH_TOKEN }}
+          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
         run: vp run index:search

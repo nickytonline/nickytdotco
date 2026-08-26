@@ -28,7 +28,6 @@ import type {
   SearchDocumentType,
 } from "../src/lib/search/types.ts";
 import { createClient } from "@libsql/client/http";
-import { ENV } from "varlock/env";
 
 const VIDEO_SLUG_OPTS = { lower: true, strict: true } as const;
 
@@ -184,9 +183,17 @@ async function collectTalkDocuments(): Promise<SearchDocumentInput[]> {
 }
 
 async function collectVideoDocuments(): Promise<SearchDocumentInput[]> {
+  const url = process.env.TURSO_DATABASE_URL;
+  const authToken = process.env.TURSO_AUTH_TOKEN;
+  if (!url || !authToken) {
+    console.warn(
+      "Skipping stream documents; TURSO_DATABASE_URL / TURSO_AUTH_TOKEN are not set."
+    );
+    return [];
+  }
   const db = createClient({
-    url: ENV.TURSO_DATABASE_URL,
-    authToken: ENV.TURSO_AUTH_TOKEN,
+    url,
+    authToken,
   });
   const result = await db.execute(VIDEO_SQL);
   return result.rows.flatMap((row) => {
