@@ -31,7 +31,9 @@ const Search = () => {
       } else if (isOpen) {
         if (e.key === "ArrowDown") {
           e.preventDefault();
-          setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
+          setSelectedIndex((prev) =>
+            prev < results.length - 1 ? prev + 1 : prev
+          );
         } else if (e.key === "ArrowUp") {
           e.preventDefault();
           setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
@@ -56,7 +58,10 @@ const Search = () => {
 
     document.addEventListener("astro:before-preparation", handleNavigation);
     return () => {
-      document.removeEventListener("astro:before-preparation", handleNavigation);
+      document.removeEventListener(
+        "astro:before-preparation",
+        handleNavigation
+      );
     };
   }, []);
 
@@ -75,7 +80,9 @@ const Search = () => {
   // Scroll active result into view
   useEffect(() => {
     if (selectedIndex >= 0 && resultsRef.current) {
-      const selectedElement = resultsRef.current.children[selectedIndex] as HTMLElement;
+      const selectedElement = resultsRef.current.children[
+        selectedIndex
+      ] as HTMLElement;
       if (selectedElement) {
         selectedElement.scrollIntoView({ block: "nearest" });
       }
@@ -195,7 +202,9 @@ const Search = () => {
           {searchError ? (
             <div className="text-center py-12 space-y-2">
               <p className="text-lg text-destructive">{searchError}</p>
-              <p className="text-sm text-muted-foreground">Try searching again in a moment.</p>
+              <p className="text-sm text-muted-foreground">
+                Try searching again in a moment.
+              </p>
             </div>
           ) : results.length > 0 ? (
             <ul ref={resultsRef} className="space-y-2">
@@ -206,6 +215,7 @@ const Search = () => {
                   <li key={result.url}>
                     <a
                       href={result.url}
+                      aria-label={`${result.title} (${result.type})`}
                       onMouseEnter={() => setSelectedIndex(index)}
                       className={`block p-4 rounded-lg transition-colors border outline-none ${
                         isSelected
@@ -253,7 +263,9 @@ const Search = () => {
               </div>
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
-                <p className="text-sm">Search for blog posts, talks, livestreams, and more</p>
+                <p className="text-sm">
+                  Search for blog posts, talks, livestreams, and more
+                </p>
               </div>
               <div className="flex gap-4 pt-4 text-xs">
                 <span className="flex items-center gap-1">
@@ -263,11 +275,15 @@ const Search = () => {
                   Navigate
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">Enter</kbd>
+                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                    Enter
+                  </kbd>
                   Open
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">ESC</kbd>
+                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                    ESC
+                  </kbd>
                   Close
                 </span>
               </div>

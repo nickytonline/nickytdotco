@@ -8,7 +8,7 @@ export type { SearchResponse, SearchResult } from "./types";
 export async function searchSite(
   query: string,
   limit?: number,
-  signal?: AbortSignal,
+  signal?: AbortSignal
 ): Promise<SearchResponse> {
   const normalized = normalizeSearchQuery(query);
   if (!normalized) {
@@ -19,7 +19,9 @@ export async function searchSite(
   if (limit !== undefined) {
     params.set(
       "limit",
-      String(parseSearchLimit(String(limit), SEARCH_DEFAULT_LIMIT, SEARCH_MAX_LIMIT)),
+      String(
+        parseSearchLimit(String(limit), SEARCH_DEFAULT_LIMIT, SEARCH_MAX_LIMIT)
+      )
     );
   }
 

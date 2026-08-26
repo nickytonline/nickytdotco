@@ -29,8 +29,12 @@ export async function ensureSearchTable(db: Client = getSearchDb()) {
   `);
 }
 
-export async function loadContentHashes(db: Client = getSearchDb()): Promise<Map<string, string>> {
-  const result = await db.execute(`SELECT id, content_hash FROM ${SEARCH_TABLE}`);
+export async function loadContentHashes(
+  db: Client = getSearchDb()
+): Promise<Map<string, string>> {
+  const result = await db.execute(
+    `SELECT id, content_hash FROM ${SEARCH_TABLE}`
+  );
   const hashes = new Map<string, string>();
   for (const row of result.rows) {
     hashes.set(String(row.id), String(row.content_hash));
@@ -39,8 +43,10 @@ export async function loadContentHashes(db: Client = getSearchDb()): Promise<Map
 }
 
 export async function upsertSearchDocuments(
-  documents: Array<SearchDocumentInput & { contentHash: string; embedding: number[] }>,
-  db: Client = getSearchDb(),
+  documents: Array<
+    SearchDocumentInput & { contentHash: string; embedding: number[] }
+  >,
+  db: Client = getSearchDb()
 ) {
   if (documents.length === 0) {
     return;
@@ -70,7 +76,10 @@ export async function upsertSearchDocuments(
   await db.batch(statements, "write");
 }
 
-export async function deleteMissingSearchDocuments(keepIds: string[], db: Client = getSearchDb()) {
+export async function deleteMissingSearchDocuments(
+  keepIds: string[],
+  db: Client = getSearchDb()
+) {
   if (keepIds.length === 0) {
     await db.execute(`DELETE FROM ${SEARCH_TABLE}`);
     return;
@@ -86,7 +95,7 @@ export async function deleteMissingSearchDocuments(keepIds: string[], db: Client
 export async function searchDocuments(
   queryEmbedding: number[],
   limit: number,
-  db: Client = getSearchDb(),
+  db: Client = getSearchDb()
 ): Promise<SearchResult[]> {
   const result = await db.execute({
     sql: `SELECT url, title, excerpt, type

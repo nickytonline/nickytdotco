@@ -21,13 +21,17 @@ test.describe("site search", () => {
     }).toPass({ timeout: 10000 });
   });
 
-  test("opens via the search button and returns results for a query", async ({ page }) => {
+  test("opens via the search button and returns results for a query", async ({
+    page,
+  }) => {
     await page.getByRole("button", { name: "Search site" }).click();
 
     const dialog = page.getByRole("dialog");
     await expect(dialog).toBeVisible();
 
-    const input = page.getByPlaceholder("Search posts, talks, projects... (shortcut: /)");
+    const input = page.getByPlaceholder(
+      "Search posts, talks, projects... (shortcut: /)"
+    );
     await input.fill("Nick Taylor");
 
     await expect(page.getByText(/\d+ results? found/)).toBeVisible({
@@ -45,9 +49,13 @@ test.describe("site search", () => {
     }).toPass({ timeout: 10000 });
   });
 
-  test("arrow keys and Enter navigate to the selected result", async ({ page }) => {
+  test("arrow keys and Enter navigate to the selected result", async ({
+    page,
+  }) => {
     await page.getByRole("button", { name: "Search site" }).click();
-    const input = page.getByPlaceholder("Search posts, talks, projects... (shortcut: /)");
+    const input = page.getByPlaceholder(
+      "Search posts, talks, projects... (shortcut: /)"
+    );
     await input.fill("Nick Taylor");
 
     const dialog = page.getByRole("dialog");
