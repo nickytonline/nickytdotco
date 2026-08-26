@@ -4,6 +4,7 @@ import Layout from "../../layouts/MainLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import { dateFilter } from "../../utils/filters";
 import { site } from "../../data/site";
+import { markdownFilter } from "../../utils/markdown";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import {
   extractYouTubeVideoId,
@@ -21,6 +22,7 @@ export async function getStaticPaths() {
 const { stream } = Astro.props;
 const { title, date, description, guestName, guestTitle, youtubeStreamLink } =
   stream.data;
+const descriptionHtml = markdownFilter(description);
 
 const videoId = extractYouTubeVideoId(youtubeStreamLink);
 const socialImage = videoId
@@ -179,7 +181,7 @@ if (stream.data.website)
     <div
       class="prose max-w-none"
       data-pagefind-body
-      set:html={description}
+      set:html={descriptionHtml}
     />
 
     {
