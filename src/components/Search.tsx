@@ -192,10 +192,23 @@ const Search = () => {
     void performSearch(query);
   };
 
+  const trimmedQuery = query.trim();
+  const hasTypedEnough = trimmedQuery.length >= SEARCH_MIN_QUERY_CHARS;
+  const isPendingSearch =
+    hasTypedEnough && trimmedQuery !== submittedQuery && !isSearching;
+  const showResults = results.length > 0 && hasTypedEnough;
+  const showSearching = hasTypedEnough && (isSearching || isPendingSearch);
   const resultCountLabel =
     results.length === 1 ? "1 result found" : `${results.length} results found`;
-  const showResults =
-    results.length > 0 && query.trim() === submittedQuery && !isSearching;
+  const paneStatus = showSearching
+    ? "Searching…"
+    : showResults
+      ? resultCountLabel
+      : hasTypedEnough &&
+          trimmedQuery === submittedQuery &&
+          results.length === 0
+        ? "No results"
+        : "\u00a0";
 
   return (
     <>
@@ -214,9 +227,9 @@ const Search = () => {
         onClose={() => setIsOpen(false)}
         onClick={handleBackdropClick}
         aria-labelledby="search-dialog-title"
-        className="fixed inset-0 m-auto backdrop:bg-black/60 backdrop:backdrop-blur-sm bg-background text-foreground p-0 rounded-xl shadow-2xl w-[90vw] max-w-2xl border border-secondary transition-all outline-none overflow-hidden"
+        className="fixed left-1/2 top-[12vh] m-0 flex h-[min(70vh,36rem)] w-[90vw] max-w-2xl -translate-x-1/2 flex-col overflow-hidden rounded-xl border border-secondary bg-background p-0 text-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
       >
-        <div className="flex items-center justify-between gap-4 p-4 border-b border-secondary">
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-secondary p-4">
           <h2 id="search-dialog-title" className="sr-only">
             Search site
           </h2>
@@ -247,25 +260,31 @@ const Search = () => {
           </button>
         </div>
 
-        <div className="max-h-[60vh] overflow-y-auto p-4">
-          {showResults && (
-            <div className="flex justify-between items-baseline mb-4 px-2 text-sm text-muted-foreground">
-              <span>{resultCountLabel}</span>
-              <kbd className="hidden sm:inline-block px-1.5 py-0.5 border border-secondary rounded bg-muted font-sans text-xs">
-                ESC to close
-              </kbd>
-            </div>
-          )}
+        <div
+          className="min-h-0 flex-1 overflow-y-auto p-4"
+          aria-busy={showSearching}
+        >
+          <div className="mb-4 flex h-6 items-baseline justify-between px-2 text-sm text-muted-foreground">
+            <span>{paneStatus}</span>
+            <kbd className="hidden rounded border border-secondary bg-muted px-1.5 py-0.5 font-sans text-xs sm:inline-block">
+              ESC to close
+            </kbd>
+          </div>
 
           {searchError ? (
-            <div className="text-center py-12 space-y-2">
-              <p className="text-lg text-destructive">{searchError}</p>
-              <p className="text-sm text-muted-foreground">
-                Try searching again in a moment.
-              </p>
+            <div className="flex min-h-[16rem] items-center justify-center text-center">
+              <div className="space-y-2">
+                <p className="text-lg text-destructive">{searchError}</p>
+                <p className="text-sm text-muted-foreground">
+                  Try searching again in a moment.
+                </p>
+              </div>
             </div>
           ) : showResults ? (
-            <ul ref={resultsRef} className="space-y-2">
+            <ul
+              ref={resultsRef}
+              className={`space-y-2 ${showSearching ? "opacity-60" : ""}`}
+            >
               {results.map((result, index) => {
                 const isSelected = index === selectedIndex;
 
@@ -275,28 +294,26 @@ const Search = () => {
                       href={result.url}
                       aria-label={`${result.title} (${result.type})`}
                       onMouseEnter={() => setSelectedIndex(index)}
-                      className={`block p-4 rounded-lg transition-colors border outline-none ${
+                      className={`block rounded-lg border p-4 outline-none transition-colors ${
                         isSelected
-                          ? "bg-secondary border-brand/30 dark:border-brand/30 ring-1 ring-brand/20 dark:ring-brand/20"
-                          : "hover:bg-secondary border-transparent"
+                          ? "border-brand/30 bg-secondary ring-1 ring-brand/20 dark:border-brand/30 dark:ring-brand/20"
+                          : "border-transparent hover:bg-secondary"
                       }`}
                     >
-                      <div className="flex justify-between items-start gap-4">
+                      <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0 flex-1">
                           <h3
-                            className={`font-bold text-lg transition-colors ${
-                              isSelected
-                                ? "text-brand"
-                                : "group-hover:text-brand group-focus:text-brand"
+                            className={`text-lg font-bold transition-colors ${
+                              isSelected ? "text-brand" : ""
                             }`}
                           >
                             {result.title}
                           </h3>
-                          <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
+                          <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
                             {result.excerpt}
                           </p>
                         </div>
-                        <span className="shrink-0 text-[10px] uppercase tracking-wider font-bold bg-muted px-2 py-0.5 rounded-full text-muted-foreground border border-secondary">
+                        <span className="shrink-0 rounded-full border border-secondary bg-muted px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                           {result.type}
                         </span>
                       </div>
@@ -305,21 +322,23 @@ const Search = () => {
                 );
               })}
             </ul>
-          ) : isSearching ? (
-            <div className="text-center text-muted-foreground py-12">
+          ) : showSearching ? (
+            <div className="flex min-h-[16rem] items-center justify-center text-muted-foreground">
               <p className="text-lg">Searching…</p>
             </div>
-          ) : submittedQuery &&
-            query.trim() === submittedQuery &&
+          ) : hasTypedEnough &&
+            trimmedQuery === submittedQuery &&
             results.length === 0 ? (
-            <div className="text-center text-muted-foreground py-12 space-y-2">
-              <p className="text-lg">No results found for "{query}"</p>
-              <p className="text-sm">Try searching for something else.</p>
+            <div className="flex min-h-[16rem] items-center justify-center text-center text-muted-foreground">
+              <div className="space-y-2">
+                <p className="text-lg">No results found for "{query}"</p>
+                <p className="text-sm">Try searching for something else.</p>
+              </div>
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center py-12 text-muted-foreground space-y-4">
-              <div className="p-4 bg-secondary rounded-full">
-                <SearchIcon className="w-8 h-8 opacity-20" />
+            <div className="flex min-h-[16rem] flex-col items-center justify-center space-y-4 text-muted-foreground">
+              <div className="rounded-full bg-secondary p-4">
+                <SearchIcon className="h-8 w-8 opacity-20" />
               </div>
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
@@ -330,19 +349,19 @@ const Search = () => {
               </div>
               <div className="flex gap-4 pt-4 text-xs">
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
                     Enter
                   </kbd>
                   Open
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
                     &uarr;&darr;
                   </kbd>
                   Navigate
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
                     ESC
                   </kbd>
                   Close
