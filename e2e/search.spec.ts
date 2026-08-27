@@ -29,11 +29,8 @@ test.describe("site search", () => {
     const dialog = page.getByRole("dialog");
     await expect(dialog).toBeVisible();
 
-    const input = page.getByPlaceholder(
-      "Search posts, talks, projects... then press Enter"
-    );
+    const input = page.getByPlaceholder("Search posts, talks, projects...");
     await input.fill("Nick Taylor");
-    await input.press("Enter");
 
     await expect(page.getByText(/\d+ results? found/)).toBeVisible({
       timeout: 15000,
@@ -54,11 +51,8 @@ test.describe("site search", () => {
     page,
   }) => {
     await page.getByRole("button", { name: "Search site" }).click();
-    const input = page.getByPlaceholder(
-      "Search posts, talks, projects... then press Enter"
-    );
+    const input = page.getByPlaceholder("Search posts, talks, projects...");
     await input.fill("Nick Taylor");
-    await input.press("Enter");
 
     const dialog = page.getByRole("dialog");
     const results = dialog.getByRole("listitem");

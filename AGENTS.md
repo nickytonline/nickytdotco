@@ -13,7 +13,7 @@
 ## Architecture
 
 - Stack: Astro 5.x SSG, React for interactivity, MDX content, Tailwind v4.
-- Search: Turso vector search via `GET /api/search` (Gemini embeddings); Cmd-K dialog in `src/components/Search.tsx` searches on Enter. Query strings are capped at 200 chars; query embeddings are cached in Turso. `/api/search` is rate-limited at the Netlify edge (20 req/IP/min).
+- Search: Turso vector search via `GET /api/search` (Gemini embeddings); Cmd-K dialog in `src/components/Search.tsx` searches after 500ms debounce once 2 characters are typed (Enter still searches immediately / opens a result). Query strings are capped at 200 chars; query embeddings are cached in Turso. `/api/search` is rate-limited at the Netlify edge (20 req/IP/min).
 - Deploy: Netlify (`netlify.toml`).
 
 ## Where Things Live

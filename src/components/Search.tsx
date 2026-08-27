@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import { searchSite, type SearchResult } from "../lib/search/searchSite";
 import {
+  SEARCH_DEBOUNCE_MS,
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
 } from "../lib/search/constants";
 
-const SEARCH_PLACEHOLDER = "Search posts, talks, projects... then press Enter";
+const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
 
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -102,7 +103,7 @@ const Search = () => {
     }
   };
 
-  const performSearch = async (rawQuery: string) => {
+  const performSearch = useCallback(async (rawQuery: string) => {
     const trimmed = rawQuery.trim();
     if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
       setResults([]);
@@ -145,7 +146,37 @@ const Search = () => {
         setIsSearching(false);
       }
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) {
+      abortRef.current?.abort();
+      return;
+    }
+
+    const trimmed = query.trim();
+    if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
+      abortRef.current?.abort();
+      setResults([]);
+      setSubmittedQuery("");
+      setSearchError(null);
+      setSelectedIndex(-1);
+      setIsSearching(false);
+      return;
+    }
+
+    if (trimmed === submittedQuery) {
+      return;
+    }
+
+    const debounce = setTimeout(() => {
+      void performSearch(trimmed);
+    }, SEARCH_DEBOUNCE_MS);
+
+    return () => {
+      clearTimeout(debounce);
+    };
+  }, [isOpen, query, submittedQuery, performSearch]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -293,8 +324,8 @@ const Search = () => {
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
                 <p className="text-sm">
-                  Type a query and press Enter. Search for blog posts, talks,
-                  livestreams, and more.
+                  Type at least two characters to search blog posts, talks, and
+                  livestreams.
                 </p>
               </div>
               <div className="flex gap-4 pt-4 text-xs">
@@ -302,7 +333,7 @@ const Search = () => {
                   <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
                     Enter
                   </kbd>
-                  Search
+                  Open
                 </span>
                 <span className="flex items-center gap-1">
                   <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
