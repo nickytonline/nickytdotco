@@ -6,8 +6,12 @@ import {
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
 } from "../lib/search/constants";
+import { getSearchShortcut, type SearchShortcut } from "../lib/search/shortcut";
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
+const SHORTCUT_KBD_CLASS =
+  "rounded border border-border bg-muted px-1.5 py-0.5 font-sans text-xs font-medium text-muted-foreground";
+const FALLBACK_ARIA_KEYSHORTCUTS = "Meta+K Control+K /";
 
 type SearchErrorKind = "rate-limit" | "unavailable";
 
@@ -26,6 +30,7 @@ const Search = () => {
   const resultsListId = `${searchId}-results`;
   const optionId = (index: number) => `${searchId}-result-${index}`;
   const [isOpen, setIsOpen] = useState(false);
+  const [shortcut, setShortcut] = useState<SearchShortcut | null>(null);
   const [query, setQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -36,6 +41,10 @@ const Search = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+
+  useEffect(() => {
+    setShortcut(getSearchShortcut());
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -286,12 +295,25 @@ const Search = () => {
   return (
     <>
       <button
+        type="button"
         onClick={() => setIsOpen(true)}
-        className="inline-flex hover:text-brand focus:text-brand focus:outline-none transition-colors"
+        className="inline-flex items-center gap-1.5 hover:text-brand focus:text-brand focus:outline-none transition-colors"
         aria-label="Search site"
+        aria-keyshortcuts={
+          shortcut?.ariaKeyShortcuts ?? FALLBACK_ARIA_KEYSHORTCUTS
+        }
       >
         <SearchIcon className="w-4.5 h-4.5 lg:w-5 lg:h-5" strokeWidth={3} />
         <span className="sr-only">Search</span>
+        {shortcut ? (
+          <span
+            aria-hidden="true"
+            className="hidden items-center gap-1 md:inline-flex"
+          >
+            <kbd className={SHORTCUT_KBD_CLASS}>{shortcut.modifierChord}</kbd>
+            <kbd className={SHORTCUT_KBD_CLASS}>/</kbd>
+          </span>
+        ) : null}
       </button>
 
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
@@ -385,7 +407,7 @@ const Search = () => {
               id={resultsListId}
               role="listbox"
               aria-label="Search results"
-              className={`space-y-2 ${showSearching ? "opacity-60" : ""}`}
+              className="space-y-2"
             >
               {results.map((result, index) => {
                 const isSelected = index === selectedIndex;
@@ -419,7 +441,7 @@ const Search = () => {
                           {result.excerpt}
                         </p>
                       </div>
-                      <span className="shrink-0 rounded-full border border-secondary bg-muted px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <span className="shrink-0 rounded-full border border-secondary bg-muted px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                         {result.type}
                       </span>
                     </div>
@@ -452,6 +474,15 @@ const Search = () => {
                   Type at least two characters to search blog posts, talks, and
                   livestreams.
                 </p>
+                {shortcut ? (
+                  <p className="pt-2 text-xs">
+                    Open anytime with{" "}
+                    <kbd className={SHORTCUT_KBD_CLASS}>
+                      {shortcut.modifierChord}
+                    </kbd>{" "}
+                    or <kbd className={SHORTCUT_KBD_CLASS}>/</kbd>.
+                  </p>
+                ) : null}
               </div>
               <div className="flex gap-4 pt-4 text-xs">
                 <span className="flex items-center gap-1">
