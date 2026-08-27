@@ -50,13 +50,33 @@ test.describe("site search", () => {
   test("opens with Control+K and Meta+K", async ({ page }) => {
     const dialog = page.getByRole("dialog");
 
-    await page.keyboard.press("Control+k");
+    // Dispatch on the page so Chromium's Ctrl+K omnibox shortcut cannot
+    // swallow the event before our listener sees it.
+    await page.evaluate(() => {
+      window.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "k",
+          ctrlKey: true,
+          bubbles: true,
+          cancelable: true,
+        })
+      );
+    });
     await expect(dialog).toBeVisible();
 
     await page.keyboard.press("Escape");
     await expect(dialog).not.toBeVisible();
 
-    await page.keyboard.press("Meta+k");
+    await page.evaluate(() => {
+      window.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "k",
+          metaKey: true,
+          bubbles: true,
+          cancelable: true,
+        })
+      );
+    });
     await expect(dialog).toBeVisible();
   });
 

@@ -474,35 +474,6 @@ const Search = () => {
                   Type at least two characters to search blog posts, talks, and
                   livestreams.
                 </p>
-                {shortcut ? (
-                  <p className="pt-2 text-xs">
-                    Open anytime with{" "}
-                    <kbd className={SHORTCUT_KBD_CLASS}>
-                      {shortcut.modifierChord}
-                    </kbd>{" "}
-                    or <kbd className={SHORTCUT_KBD_CLASS}>/</kbd>.
-                  </p>
-                ) : null}
-              </div>
-              <div className="flex gap-4 pt-4 text-xs">
-                <span className="flex items-center gap-1">
-                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
-                    Enter
-                  </kbd>
-                  Open
-                </span>
-                <span className="flex items-center gap-1">
-                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
-                    &uarr;&darr;
-                  </kbd>
-                  Navigate
-                </span>
-                <span className="flex items-center gap-1">
-                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
-                    ESC
-                  </kbd>
-                  Close
-                </span>
               </div>
             </div>
           )}
