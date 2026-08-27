@@ -48,7 +48,6 @@ const postSocialImage =
   title={entry.data.title}
   metaDesc={entry.data.excerpt || entry.data.description}
   socialImage={postSocialImage}
-  pageType="Post"
   ogType="article"
   publishedTime={entry.data.date.toISOString()}
 >
@@ -99,7 +98,7 @@ const postSocialImage =
 
     {
       entry.data.series && seriesPosts.length > 1 && (
-        <div data-pagefind-ignore>
+        <div>
           <SeriesNavigation
             series={entry.data.series}
             currentUrl={currentUrl}
@@ -117,7 +116,6 @@ const postSocialImage =
 
     <aside
       class="mt-12 rounded-xl border border-border bg-secondary/30 p-6"
-      data-pagefind-ignore
     >
       <h2 class="text-2xl font-bold">One practical tip a week</h2>
       <p class="mt-2 text-lg text-muted-foreground">
@@ -136,7 +134,7 @@ const postSocialImage =
 
     {
       entry.data.tags && entry.data.tags.length > 0 && (
-        <footer class="pt-8" data-pagefind-ignore>
+        <footer class="pt-8">
           <nav aria-label="Tags" class="flex items-center gap-3 flex-wrap">
             <ul class="flex flex-wrap gap-2">
               {entry.data.tags.map((tag) => (

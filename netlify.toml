@@ -2,6 +2,12 @@
 publish = "dist"
 command = "npm run build"
 
+# Per-IP origin cap for search (Gemini embed on cache miss). Complements
+# the UI Rate Limiting ruleset on /api/search.
+[[edge_functions]]
+function = "search-rate-limit"
+path = "/api/search"
+
 [[headers]]
 for = "/*"
 [headers.values]

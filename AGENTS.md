@@ -13,7 +13,7 @@
 ## Architecture
 
 - Stack: Astro 5.x SSG, React for interactivity, MDX content, Tailwind v4.
-- Search: Pagefind builds from `dist/`.
+- Search: Turso vector search via `GET /api/search` (Gemini embeddings); Cmd-K dialog in `src/components/Search.tsx` searches after 500ms debounce once 2 characters are typed (Enter still searches immediately / opens a result). Query strings are capped at 200 chars; query embeddings are cached in Turso. `/api/search` is rate-limited at the Netlify edge (20 req/IP/min).
 - Deploy: Netlify (`netlify.toml`).
 
 ## Where Things Live
@@ -36,20 +36,22 @@
 ## Env & Integrations
 
 - Env schema: `.env.schema`, types: `env.d.ts` (Varlock).
-- Required vars: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `GITHUB_TOKEN`, `DEV_API_KEY`, `URL`.
-- Sync scripts use scoped Varlock env dirs instead of the root schema: `env/devto/.env.schema` (imports `DEV_API_KEY`, used by `vp run generate:posts`) and `env/youtube/.env.schema` (`YOUTUBE_API_KEY`, `YOUTUBE_PLAYLIST_ID`, used by `vp run generate:streams`). Both are invoked as `varlock run --path env/<name> -- ...` from `package.json`.
+- Required vars for the site: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `TURSO_SEARCH_DATABASE_URL`, `TURSO_SEARCH_AUTH_TOKEN`, `GITHUB_TOKEN`, `DEV_API_KEY`, `GEMINI_API_KEY`, `URL`.
+- Sync scripts use scoped Varlock env dirs instead of the root schema: `env/devto/.env.schema` (imports `DEV_API_KEY`, used by `vp run generate:posts`), `env/youtube/.env.schema` (`YOUTUBE_API_KEY`, `YOUTUBE_PLAYLIST_ID`, used by `vp run generate:streams`), and `env/search/.env.schema` (`GEMINI_API_KEY`, `TURSO_SEARCH_*`, optional `TURSO_*` for stream guests, used by `vp run index:search`). All are invoked as `varlock run --path env/<name> -- ...` from `package.json`. Embeddings run in `.github/workflows/index-search.yml` on **push to `main`** (and `workflow_dispatch`), not during the Netlify build and not on PRs. Batches of 5 with a 5s pause so Gemini rate limits are tolerated; content hashes skip unchanged docs.
 
 ## Testing (E2E)
 
 - Playwright specs live in `e2e/`; run with `vp run test:e2e` (`test:e2e:ui` for UI mode, `test:e2e:report` to reopen the last HTML report).
-- Locally, tests run against a real production build, not the dev server: `playwright.config.ts`'s `webServer` builds and serves via `npx varlock run -- netlify serve` unless `PLAYWRIGHT_BASE_URL` is set. This is required, not optional — `astro preview` throws ("adapter does not support the preview command") because `@astrojs/netlify` has no preview entrypoint, and Pagefind search only has an index after a production build.
+- Locally, tests run against a real production build, not the dev server: `playwright.config.ts`'s `webServer` builds and serves via `npx varlock run -- netlify serve` unless `PLAYWRIGHT_BASE_URL` is set. This is required, not optional — `astro preview` throws ("adapter does not support the preview command") because `@astrojs/netlify` has no preview entrypoint, and search hits the production `/api/search` function against the Turso index.
 - `netlify-cli` is expected as a **global** install (`npm install -g netlify-cli`), not a project dependency — it's Netlify's own recommended install method and avoids ~400 extra packages in `node_modules` for something CI never touches. `webServer.command` checks `command -v netlify` first and fails with an install hint if it's missing.
 - `varlock run --` matters: it resolves real secrets before `netlify serve`'s own `.env.development` injection runs, so the real values win instead of the raw unresolved `op://...` reference strings.
-- CI (`.github/workflows/e2e.yml`) does not build at all — it polls the `deploy/netlify` commit status until Netlify's own build finishes, then sets `PLAYWRIGHT_BASE_URL` to that deploy preview's URL. This tests the real deployed environment (real edge/geo behavior, real Pagefind index) and needs no app secrets in the workflow at all, since Netlify's own build environment already has them. PR-only: Netlify only posts that commit status for deploy previews, not for direct pushes to `main` — a push to `main` has already passed this check on its PR beforehand.
+- CI (`.github/workflows/e2e.yml`) does not build at all — it polls the `deploy/netlify` commit status until Netlify's own build finishes, then sets `PLAYWRIGHT_BASE_URL` to that deploy preview's URL. This tests the real deployed environment (real edge/geo behavior, real search API) and needs no app secrets in the workflow at all, since Netlify's own build environment already has them. PR-only: Netlify only posts that commit status for deploy previews, not for direct pushes to `main` — a push to `main` has already passed this check on its PR beforehand.
 
 ## Code Standards
 
 - Formatting: Oxfmt (`vp fmt`); linting: Oxlint (`vp lint`).
+- **Before every commit**, run `vp fmt .` then `vp fmt --check .` (or `npm run format`). Netlify `npm run build` starts with `format:check` and fails the whole deploy if Oxfmt is unhappy. Use `vp fmt` (reads `vite.config.ts` `fmt`, including `printWidth: 80`). Do **not** run bare `oxfmt` from `node_modules` — that uses defaults and will not match CI.
+- Pre-commit hook: this repo already has one. `prepare` runs `vp config`, which installs `.vite-hooks/pre-commit` (`vp staged` on matching staged files). Locally that is the Husky-style hook. Cursor Cloud sets `core.hooksPath` to its own agent hooks, so **the Vite+ hook does not run on agent commits** — format in the same turn as the commit.
 - TypeScript: explicit types when helpful; unused vars use `_` prefix.
 - Naming: content slugs are kebab-case.
 
@@ -67,6 +69,7 @@
 - Do not edit `dist/` or `node_modules/` directly.
 - Keep dependency changes intentional; update `package.json` and `package-lock.json` together.
 - Prefer `rg` for search.
+- Do not commit until `vp fmt --check .` passes on the files you touched.
 
 ## Review & Delivery
 
@@ -85,6 +88,7 @@ Docs are local at `node_modules/vite-plus/docs` or online at https://viteplus.de
 ## Review Checklist
 
 - [ ] Run `vp install` after pulling remote changes and before getting started.
+- [ ] Run `vp fmt .` and `vp fmt --check .` (or `npm run format`) **before every commit**. Do not rely on the pre-commit hook in Cursor Cloud.
 - [ ] Run `vp check` and `vp test` to format, lint, type check and test changes.
 - [ ] Check if there are `vite.config.ts` tasks or `package.json` scripts necessary for validation, run via `vp run <script>`.
 - [ ] If setup, runtime, or package-manager behavior looks wrong, run `vp env doctor` and include its output when asking for help.

@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { escapeRegExp } from "./test-utils";
 
-test.describe("site search (Pagefind)", () => {
+test.describe("site search", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
     // page.goto() waits for the page load event. Waiting for networkidle is
@@ -29,18 +29,12 @@ test.describe("site search (Pagefind)", () => {
     const dialog = page.getByRole("dialog");
     await expect(dialog).toBeVisible();
 
-    // This assertion only holds when tests run against a production build,
-    // since Pagefind's index is generated at build time and Search bails out in dev mode.
-    await expect(
-      page.getByText("Search is unavailable in development")
-    ).toHaveCount(0);
-
-    const input = page.getByPlaceholder(
-      "Search posts, talks, projects... (shortcut: /)"
-    );
+    const input = page.getByPlaceholder("Search posts, talks, projects...");
     await input.fill("Nick Taylor");
 
-    await expect(page.getByText(/\d+ results? found/)).toBeVisible();
+    await expect(page.getByText(/\d+ results? found/)).toBeVisible({
+      timeout: 15000,
+    });
     const results = dialog.getByRole("listitem");
     await expect(results.first()).toBeVisible();
   });
@@ -57,14 +51,12 @@ test.describe("site search (Pagefind)", () => {
     page,
   }) => {
     await page.getByRole("button", { name: "Search site" }).click();
-    const input = page.getByPlaceholder(
-      "Search posts, talks, projects... (shortcut: /)"
-    );
+    const input = page.getByPlaceholder("Search posts, talks, projects...");
     await input.fill("Nick Taylor");
 
     const dialog = page.getByRole("dialog");
     const results = dialog.getByRole("listitem");
-    await expect(results.first()).toBeVisible();
+    await expect(results.first()).toBeVisible({ timeout: 15000 });
 
     // The first result is already highlighted by default once results load,
     // so Enter alone should open it without pressing ArrowDown first.

@@ -1,56 +1,30 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
+import { searchSite, type SearchResult } from "../lib/search/searchSite";
+import {
+  SEARCH_DEBOUNCE_MS,
+  SEARCH_MAX_QUERY_CHARS,
+  SEARCH_MIN_QUERY_CHARS,
+} from "../lib/search/constants";
 
-interface PagefindResult {
-  url: string;
-  excerpt: string;
-  meta: {
-    title: string;
-    image?: string;
-  };
-  filters?: {
-    type?: string[];
-  };
-}
+const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
 
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<PagefindResult[]>([]);
-  const [totalResults, setTotalResults] = useState(0);
+  const [submittedQuery, setSubmittedQuery] = useState("");
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLUListElement>(null);
-  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
-  const pagefind = useRef<any>(null);
-
-  useEffect(() => {
-    const initPagefind = async () => {
-      if (import.meta.env.DEV) {
-        console.warn("Pagefind is not available in dev mode.");
-        return;
-      }
-
-      try {
-        const pagefindPath = "/pagefind/pagefind.js";
-        // Using @vite-ignore to prevent Vite from resolving at build time
-        pagefind.current = await import(/* @vite-ignore */ pagefindPath);
-        if (pagefind.current && typeof pagefind.current.init === "function") {
-          await pagefind.current.init();
-        }
-      } catch (e) {
-        console.error("Failed to load pagefind", e);
-      }
-    };
-
-    initPagefind();
-  }, []);
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "/" && !isOpen) {
-        // Only trigger if no input is focused
         if (
           document.activeElement?.tagName === "INPUT" ||
           document.activeElement?.tagName === "TEXTAREA"
@@ -71,19 +45,13 @@ const Search = () => {
         } else if (e.key === "ArrowUp") {
           e.preventDefault();
           setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
-        } else if (e.key === "Enter" && selectedIndex >= 0) {
-          e.preventDefault();
-          const selected = results[selectedIndex];
-          if (selected) {
-            window.location.href = selected.url;
-          }
         }
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, results, selectedIndex]);
+  }, [isOpen, results]);
 
   useEffect(() => {
     const handleNavigation = () => {
@@ -111,7 +79,50 @@ const Search = () => {
     }
   }, [isOpen]);
 
-  // Scroll active result into view
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const dialog = dialogRef.current;
+    if (!dialog) {
+      return;
+    }
+
+    const inset = 12;
+    const maxHeightPx = 36 * 16;
+
+    const syncToVisualViewport = () => {
+      const viewport = window.visualViewport;
+      const height = viewport?.height ?? window.innerHeight;
+      const offsetTop = viewport?.offsetTop ?? 0;
+      const available = Math.max(0, height - inset * 2);
+      dialog.style.top = `${offsetTop + inset}px`;
+      dialog.style.height = `${Math.min(available, maxHeightPx)}px`;
+      dialog.style.maxHeight = `${available}px`;
+    };
+
+    syncToVisualViewport();
+    window.visualViewport?.addEventListener("resize", syncToVisualViewport);
+    window.visualViewport?.addEventListener("scroll", syncToVisualViewport);
+    window.addEventListener("resize", syncToVisualViewport);
+
+    return () => {
+      window.visualViewport?.removeEventListener(
+        "resize",
+        syncToVisualViewport
+      );
+      window.visualViewport?.removeEventListener(
+        "scroll",
+        syncToVisualViewport
+      );
+      window.removeEventListener("resize", syncToVisualViewport);
+      dialog.style.top = "";
+      dialog.style.height = "";
+      dialog.style.maxHeight = "";
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     if (selectedIndex >= 0 && resultsRef.current) {
       const selectedElement = resultsRef.current.children[
@@ -129,34 +140,121 @@ const Search = () => {
     }
   };
 
-  useEffect(() => {
-    const performSearch = async () => {
-      if (!query || !pagefind.current) {
-        setResults([]);
-        setTotalResults(0);
-        setSelectedIndex(-1);
+  const openSelectedResult = () => {
+    const selected = results[selectedIndex];
+    if (selected) {
+      window.location.href = selected.url;
+    }
+  };
+
+  const performSearch = useCallback(async (rawQuery: string) => {
+    const trimmed = rawQuery.trim();
+    if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
+      setResults([]);
+      setSubmittedQuery("");
+      setSearchError(null);
+      setSelectedIndex(-1);
+      return;
+    }
+
+    abortRef.current?.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
+
+    setIsSearching(true);
+    setSearchError(null);
+    setSubmittedQuery(trimmed);
+
+    try {
+      const response = await searchSite(trimmed, undefined, controller.signal);
+      setResults(response.results);
+      setSelectedIndex(response.results.length > 0 ? 0 : -1);
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
         return;
       }
-
-      try {
-        const search = await pagefind.current.search(query);
-        if (search.results) {
-          setTotalResults(search.results.length);
-          const res = await Promise.all(
-            // oxlint-disable-next-line @typescript-eslint/no-explicit-any
-            search.results.slice(0, 8).map((r: any) => r.data())
-          );
-          setResults(res);
-          setSelectedIndex(res.length > 0 ? 0 : -1);
-        }
-      } catch (e) {
-        console.error("Search failed", e);
+      if (error instanceof Error && error.name === "AbortError") {
+        return;
       }
-    };
+      console.error("Search failed", error);
+      setResults([]);
+      setSelectedIndex(-1);
+      const status = (error as { status?: number }).status;
+      setSearchError(
+        status === 429
+          ? "Too many searches. Wait a moment and try again."
+          : "Search is temporarily unavailable. Try again."
+      );
+    } finally {
+      if (!controller.signal.aborted) {
+        setIsSearching(false);
+      }
+    }
+  }, []);
 
-    const debounce = setTimeout(performSearch, 300);
-    return () => clearTimeout(debounce);
-  }, [query]);
+  useEffect(() => {
+    if (!isOpen) {
+      abortRef.current?.abort();
+      abortRef.current = null;
+      setIsSearching(false);
+      return;
+    }
+
+    const trimmed = query.trim();
+    if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
+      abortRef.current?.abort();
+      setResults([]);
+      setSubmittedQuery("");
+      setSearchError(null);
+      setSelectedIndex(-1);
+      setIsSearching(false);
+      return;
+    }
+
+    if (trimmed === submittedQuery) {
+      return;
+    }
+
+    const debounce = setTimeout(() => {
+      void performSearch(trimmed);
+    }, SEARCH_DEBOUNCE_MS);
+
+    return () => {
+      clearTimeout(debounce);
+    };
+  }, [isOpen, query, submittedQuery, performSearch]);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const normalizedInput = query.trim();
+    if (
+      selectedIndex >= 0 &&
+      results.length > 0 &&
+      normalizedInput === submittedQuery
+    ) {
+      openSelectedResult();
+      return;
+    }
+    void performSearch(query);
+  };
+
+  const trimmedQuery = query.trim();
+  const hasTypedEnough = trimmedQuery.length >= SEARCH_MIN_QUERY_CHARS;
+  const isPendingSearch =
+    hasTypedEnough && trimmedQuery !== submittedQuery && !isSearching;
+  const showResults = results.length > 0 && hasTypedEnough;
+  const showSearching = hasTypedEnough && (isSearching || isPendingSearch);
+  const resultCountLabel =
+    results.length === 1 ? "1 result found" : `${results.length} results found`;
+  const paneStatus = showSearching
+    ? "Searching…"
+    : showResults
+      ? resultCountLabel
+      : hasTypedEnough &&
+          trimmedQuery === submittedQuery &&
+          results.length === 0
+        ? "No results"
+        : "\u00a0";
 
   return (
     <>
@@ -175,24 +273,27 @@ const Search = () => {
         onClose={() => setIsOpen(false)}
         onClick={handleBackdropClick}
         aria-labelledby="search-dialog-title"
-        className="fixed inset-0 m-auto backdrop:bg-black/60 backdrop:backdrop-blur-sm bg-background text-foreground p-0 rounded-xl shadow-2xl w-[90vw] max-w-2xl border border-secondary transition-all outline-none overflow-hidden"
+        className="fixed left-1/2 top-3 m-0 h-[min(70dvh,36rem)] max-h-[calc(100dvh-1.5rem)] w-[90vw] max-w-2xl -translate-x-1/2 open:flex open:flex-col overflow-hidden rounded-xl border border-secondary bg-background p-0 text-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
       >
-        <div className="flex items-center justify-between gap-4 p-4 border-b border-secondary">
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-secondary p-4">
           <h2 id="search-dialog-title" className="sr-only">
             Search site
           </h2>
-          <div className="relative min-w-0 flex-1">
+          <form className="relative min-w-0 flex-1" onSubmit={handleSubmit}>
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <input
               ref={inputRef}
-              type="text"
+              type="search"
+              name="q"
+              maxLength={SEARCH_MAX_QUERY_CHARS}
+              autoComplete="off"
               aria-label="Search posts, talks, and projects"
-              placeholder="Search posts, talks, projects... (shortcut: /)"
+              placeholder={SEARCH_PLACEHOLDER}
               className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-brand text-lg"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
-          </div>
+          </form>
           <button
             type="button"
             aria-label="Close search"
@@ -205,114 +306,110 @@ const Search = () => {
           </button>
         </div>
 
-        <div className="max-h-[60vh] overflow-y-auto p-4">
-          {import.meta.env.DEV && (
-            <div className="bg-warning-soft dark:bg-warning-soft text-warning-foreground dark:text-warning-foreground p-4 rounded-md mb-4 text-center text-sm border border-warning-border dark:border-warning-border">
-              Note: Search results are only available after a production build.
-            </div>
-          )}
+        <div
+          className="min-h-0 flex-1 overflow-y-auto p-4"
+          aria-busy={showSearching}
+        >
+          <div className="mb-4 flex h-6 items-baseline justify-between px-2 text-sm text-muted-foreground">
+            <span aria-live="polite" aria-atomic="true">
+              {paneStatus}
+            </span>
+            <kbd className="hidden rounded border border-secondary bg-muted px-1.5 py-0.5 font-sans text-xs sm:inline-block">
+              ESC to close
+            </kbd>
+          </div>
 
-          {results.length > 0 && (
-            <div className="flex justify-between items-baseline mb-4 px-2 text-sm text-muted-foreground">
-              <span>{totalResults} results found</span>
-              <kbd className="hidden sm:inline-block px-1.5 py-0.5 border border-secondary rounded bg-muted font-sans text-xs">
-                ESC to close
-              </kbd>
+          {searchError ? (
+            <div className="flex min-h-[16rem] items-center justify-center text-center">
+              <div className="space-y-2">
+                <p className="text-lg text-destructive">{searchError}</p>
+                <p className="text-sm text-muted-foreground">
+                  Try searching again in a moment.
+                </p>
+              </div>
             </div>
-          )}
-
-          {results.length > 0 ? (
-            <ul ref={resultsRef} className="space-y-2">
+          ) : showResults ? (
+            <ul
+              ref={resultsRef}
+              className={`space-y-2 ${showSearching ? "opacity-60" : ""}`}
+            >
               {results.map((result, index) => {
                 const isSelected = index === selectedIndex;
-                const type = result.filters?.type?.[0];
 
                 return (
                   <li key={result.url}>
                     <a
                       href={result.url}
+                      aria-label={`${result.title} (${result.type})`}
                       onMouseEnter={() => setSelectedIndex(index)}
-                      className={`block p-4 rounded-lg transition-colors border outline-none ${
+                      className={`block rounded-lg border p-4 outline-none transition-colors ${
                         isSelected
-                          ? "bg-secondary border-brand/30 dark:border-brand/30 ring-1 ring-brand/20 dark:ring-brand/20"
-                          : "hover:bg-secondary border-transparent"
+                          ? "border-brand/30 bg-secondary ring-1 ring-brand/20 dark:border-brand/30 dark:ring-brand/20"
+                          : "border-transparent hover:bg-secondary"
                       }`}
                     >
-                      <div className="flex justify-between items-start gap-4">
+                      <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0 flex-1">
                           <h3
-                            className={`font-bold text-lg transition-colors ${
-                              isSelected
-                                ? "text-brand"
-                                : "group-hover:text-brand group-focus:text-brand"
+                            className={`text-lg font-bold transition-colors ${
+                              isSelected ? "text-brand" : ""
                             }`}
                           >
-                            {result.meta.title}
+                            {result.title}
                           </h3>
-                          <p
-                            className="text-sm text-muted-foreground line-clamp-2 mt-1"
-                            dangerouslySetInnerHTML={{ __html: result.excerpt }}
-                          />
+                          <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+                            {result.excerpt}
+                          </p>
                         </div>
-                        {type && (
-                          <span className="shrink-0 text-[10px] uppercase tracking-wider font-bold bg-muted px-2 py-0.5 rounded-full text-muted-foreground border border-secondary">
-                            {type}
-                          </span>
-                        )}
+                        <span className="shrink-0 rounded-full border border-secondary bg-muted px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                          {result.type}
+                        </span>
                       </div>
                     </a>
                   </li>
                 );
               })}
             </ul>
-          ) : query ? (
-            <div className="text-center text-muted-foreground py-12">
-              {import.meta.env.DEV ? (
-                <div className="space-y-4">
-                  <p className="text-lg font-semibold text-warning-foreground dark:text-warning-foreground">
-                    Search is unavailable in development
-                  </p>
-                  <p className="text-sm max-w-md mx-auto">
-                    Pagefind indexes your site during the production build. To
-                    test search locally, run:
-                    <code className="block mt-2 p-2 bg-secondary rounded text-foreground">
-                      npm run build && npm run preview
-                    </code>
-                  </p>
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  <p className="text-lg">No results found for "{query}"</p>
-                  <p className="text-sm">Try searching for something else.</p>
-                </div>
-              )}
+          ) : showSearching ? (
+            <div className="flex min-h-[16rem] items-center justify-center text-muted-foreground">
+              <p className="text-lg">Searching…</p>
+            </div>
+          ) : hasTypedEnough &&
+            trimmedQuery === submittedQuery &&
+            results.length === 0 ? (
+            <div className="flex min-h-[16rem] items-center justify-center text-center text-muted-foreground">
+              <div className="space-y-2">
+                <p className="text-lg">No results found for "{query}"</p>
+                <p className="text-sm">Try searching for something else.</p>
+              </div>
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center py-12 text-muted-foreground space-y-4">
-              <div className="p-4 bg-secondary rounded-full">
-                <SearchIcon className="w-8 h-8 opacity-20" />
+            <div className="flex min-h-[16rem] flex-col items-center justify-center space-y-4 text-muted-foreground">
+              <div className="rounded-full bg-secondary p-4">
+                <SearchIcon className="h-8 w-8 opacity-20" />
               </div>
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
                 <p className="text-sm">
-                  Search for blog posts, talks, projects, and more
+                  Type at least two characters to search blog posts, talks, and
+                  livestreams.
                 </p>
               </div>
               <div className="flex gap-4 pt-4 text-xs">
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
-                    &uarr;&darr;
-                  </kbd>
-                  Navigate
-                </span>
-                <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
                     Enter
                   </kbd>
                   Open
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
+                    &uarr;&darr;
+                  </kbd>
+                  Navigate
+                </span>
+                <span className="flex items-center gap-1">
+                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
                     ESC
                   </kbd>
                   Close
