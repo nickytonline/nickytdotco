@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import { searchSite, type SearchResult } from "../lib/search/searchSite";
 import {
@@ -22,6 +22,9 @@ const SEARCH_ERROR_STATUS: Record<SearchErrorKind, string> = {
 };
 
 const Search = () => {
+  const searchId = useId().replaceAll(":", "");
+  const resultsListId = `${searchId}-results`;
+  const optionId = (index: number) => `${searchId}-result-${index}`;
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");
@@ -31,7 +34,7 @@ const Search = () => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const resultsRef = useRef<HTMLUListElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
@@ -48,22 +51,12 @@ const Search = () => {
       } else if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setIsOpen(true);
-      } else if (isOpen) {
-        if (e.key === "ArrowDown") {
-          e.preventDefault();
-          setSelectedIndex((prev) =>
-            prev < results.length - 1 ? prev + 1 : prev
-          );
-        } else if (e.key === "ArrowUp") {
-          e.preventDefault();
-          setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
-        }
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, results]);
+  }, [isOpen]);
 
   useEffect(() => {
     const handleNavigation = () => {
@@ -246,12 +239,36 @@ const Search = () => {
     void performSearch(query);
   };
 
+  const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Escape") {
+      // type="search" would otherwise consume the first Escape to clear the
+      // field, leaving the dialog open until a second Escape.
+      e.preventDefault();
+      setIsOpen(false);
+      return;
+    }
+
+    if (results.length === 0) {
+      return;
+    }
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    }
+  };
+
   const trimmedQuery = query.trim();
   const hasTypedEnough = trimmedQuery.length >= SEARCH_MIN_QUERY_CHARS;
   const isPendingSearch =
     hasTypedEnough && trimmedQuery !== submittedQuery && !isSearching;
   const showResults = results.length > 0 && hasTypedEnough;
   const showSearching = hasTypedEnough && (isSearching || isPendingSearch);
+  const activeOptionId =
+    showResults && selectedIndex >= 0 ? optionId(selectedIndex) : undefined;
   const resultCountLabel =
     results.length === 1 ? "1 result found" : `${results.length} results found`;
   const paneStatus = searchError
@@ -295,6 +312,11 @@ const Search = () => {
               ref={inputRef}
               type="search"
               name="q"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={showResults}
+              aria-controls={showResults ? resultsListId : undefined}
+              aria-activedescendant={activeOptionId}
               maxLength={SEARCH_MAX_QUERY_CHARS}
               autoComplete="off"
               aria-label="Search posts, talks, and projects"
@@ -302,6 +324,7 @@ const Search = () => {
               className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-brand text-lg"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleInputKeyDown}
             />
           </form>
           <button
@@ -354,48 +377,58 @@ const Search = () => {
           </div>
 
           {searchError ? null : showResults ? (
-            <ul
+            /* Native select/option cannot host remote results, links, or
+               aria-activedescendant while focus stays in the combobox input. */
+            /* eslint-disable jsx-a11y/prefer-tag-over-role -- combobox listbox */
+            <div
               ref={resultsRef}
+              id={resultsListId}
+              role="listbox"
+              aria-label="Search results"
               className={`space-y-2 ${showSearching ? "opacity-60" : ""}`}
             >
               {results.map((result, index) => {
                 const isSelected = index === selectedIndex;
 
                 return (
-                  <li key={result.url}>
-                    <a
-                      href={result.url}
-                      aria-label={`${result.title} (${result.type})`}
-                      onMouseEnter={() => setSelectedIndex(index)}
-                      className={`block rounded-lg border p-4 outline-none transition-colors ${
-                        isSelected
-                          ? "border-brand/30 bg-secondary ring-1 ring-brand/20 dark:border-brand/30 dark:ring-brand/20"
-                          : "border-transparent hover:bg-secondary"
-                      }`}
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="min-w-0 flex-1">
-                          <h3
-                            className={`text-lg font-bold transition-colors ${
-                              isSelected ? "text-brand" : ""
-                            }`}
-                          >
-                            {result.title}
-                          </h3>
-                          <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                            {result.excerpt}
-                          </p>
-                        </div>
-                        <span className="shrink-0 rounded-full border border-secondary bg-muted px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                          {result.type}
-                        </span>
+                  <a
+                    key={result.url}
+                    id={optionId(index)}
+                    href={result.url}
+                    role="option"
+                    aria-selected={isSelected}
+                    tabIndex={-1}
+                    aria-label={`${result.title} (${result.type})`}
+                    onMouseEnter={() => setSelectedIndex(index)}
+                    className={`block rounded-lg border p-4 outline-none transition-colors ${
+                      isSelected
+                        ? "border-brand/30 bg-secondary ring-1 ring-brand/20 dark:border-brand/30 dark:ring-brand/20"
+                        : "border-transparent hover:bg-secondary"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="min-w-0 flex-1">
+                        <h3
+                          className={`text-lg font-bold transition-colors ${
+                            isSelected ? "text-brand" : ""
+                          }`}
+                        >
+                          {result.title}
+                        </h3>
+                        <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+                          {result.excerpt}
+                        </p>
                       </div>
-                    </a>
-                  </li>
+                      <span className="shrink-0 rounded-full border border-secondary bg-muted px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                        {result.type}
+                      </span>
+                    </div>
+                  </a>
                 );
               })}
-            </ul>
-          ) : showSearching ? (
+            </div>
+          ) : /* eslint-enable jsx-a11y/prefer-tag-over-role */
+          showSearching ? (
             <div className="flex min-h-[16rem] items-center justify-center text-muted-foreground">
               <p className="text-lg">Searching…</p>
             </div>
