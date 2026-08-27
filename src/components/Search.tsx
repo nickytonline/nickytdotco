@@ -9,13 +9,25 @@ import {
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
 
+type SearchErrorKind = "rate-limit" | "unavailable";
+
+const SEARCH_ERROR_MESSAGE: Record<SearchErrorKind, string> = {
+  "rate-limit": "Too many searches. Wait a moment and try again.",
+  unavailable: "Search is temporarily unavailable. Try again.",
+};
+
+const SEARCH_ERROR_STATUS: Record<SearchErrorKind, string> = {
+  "rate-limit": "Too many searches",
+  unavailable: "Search is temporarily unavailable",
+};
+
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
-  const [searchError, setSearchError] = useState<string | null>(null);
+  const [searchError, setSearchError] = useState<SearchErrorKind | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -180,11 +192,7 @@ const Search = () => {
       setResults([]);
       setSelectedIndex(-1);
       const status = (error as { status?: number }).status;
-      setSearchError(
-        status === 429
-          ? "Too many searches. Wait a moment and try again."
-          : "Search is temporarily unavailable. Try again."
-      );
+      setSearchError(status === 429 ? "rate-limit" : "unavailable");
     } finally {
       if (!controller.signal.aborted) {
         setIsSearching(false);
@@ -248,13 +256,15 @@ const Search = () => {
     results.length === 1 ? "1 result found" : `${results.length} results found`;
   const paneStatus = showSearching
     ? "Searching…"
-    : showResults
-      ? resultCountLabel
-      : hasTypedEnough &&
-          trimmedQuery === submittedQuery &&
-          results.length === 0
-        ? "No results"
-        : "\u00a0";
+    : searchError
+      ? SEARCH_ERROR_STATUS[searchError]
+      : showResults
+        ? resultCountLabel
+        : hasTypedEnough &&
+            trimmedQuery === submittedQuery &&
+            results.length === 0
+          ? "No results"
+          : "\u00a0";
 
   return (
     <>
@@ -322,7 +332,9 @@ const Search = () => {
           {searchError ? (
             <div className="flex min-h-[16rem] items-center justify-center text-center">
               <div className="space-y-2">
-                <p className="text-lg text-destructive">{searchError}</p>
+                <p className="text-lg text-destructive">
+                  {SEARCH_ERROR_MESSAGE[searchError]}
+                </p>
                 <p className="text-sm text-muted-foreground">
                   Try searching again in a moment.
                 </p>
