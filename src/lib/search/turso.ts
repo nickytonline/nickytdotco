@@ -22,8 +22,12 @@ export function getSearchDb(): Client {
   return client;
 }
 
+let tableReady: Promise<void> | undefined;
+
 export async function ensureSearchTable(db: Client = getSearchDb()) {
-  await db.execute(`
+  if (!tableReady) {
+    tableReady = (async () => {
+      await db.execute(`
     CREATE TABLE IF NOT EXISTS ${SEARCH_TABLE} (
       id TEXT PRIMARY KEY,
       url TEXT NOT NULL,
@@ -34,13 +38,19 @@ export async function ensureSearchTable(db: Client = getSearchDb()) {
       embedding F32_BLOB(${SEARCH_EMBEDDING_DIMENSIONS}) NOT NULL
     )
   `);
-  await db.execute(`
+      await db.execute(`
     CREATE TABLE IF NOT EXISTS ${SEARCH_QUERY_CACHE_TABLE} (
       query_hash TEXT PRIMARY KEY,
       embedding TEXT NOT NULL,
       created_at INTEGER NOT NULL
     )
   `);
+    })().catch((error) => {
+      tableReady = undefined;
+      throw error;
+    });
+  }
+  return tableReady;
 }
 
 function queryCacheHash(query: string): string {

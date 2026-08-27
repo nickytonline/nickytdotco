@@ -151,6 +151,8 @@ const Search = () => {
   useEffect(() => {
     if (!isOpen) {
       abortRef.current?.abort();
+      abortRef.current = null;
+      setIsSearching(false);
       return;
     }
 
@@ -265,7 +267,9 @@ const Search = () => {
           aria-busy={showSearching}
         >
           <div className="mb-4 flex h-6 items-baseline justify-between px-2 text-sm text-muted-foreground">
-            <span>{paneStatus}</span>
+            <span aria-live="polite" aria-atomic="true">
+              {paneStatus}
+            </span>
             <kbd className="hidden rounded border border-secondary bg-muted px-1.5 py-0.5 font-sans text-xs sm:inline-block">
               ESC to close
             </kbd>

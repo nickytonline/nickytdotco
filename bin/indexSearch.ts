@@ -182,45 +182,52 @@ async function collectTalkDocuments(): Promise<SearchDocumentInput[]> {
   });
 }
 
-async function collectVideoDocuments(): Promise<SearchDocumentInput[]> {
+async function collectVideoDocuments(): Promise<{
+  documents: SearchDocumentInput[];
+  available: boolean;
+}> {
   const url = process.env.TURSO_DATABASE_URL;
   const authToken = process.env.TURSO_AUTH_TOKEN;
   if (!url || !authToken) {
     console.warn(
       "Skipping stream documents; TURSO_DATABASE_URL / TURSO_AUTH_TOKEN are not set."
     );
-    return [];
+    return { documents: [], available: false };
   }
   const db = createClient({
     url,
     authToken,
   });
   const result = await db.execute(VIDEO_SQL);
-  return result.rows.flatMap((row) => {
-    const title = asString(row.title);
-    const guestName = asString(row.guest_name);
-    const description = asString(row.description);
-    if (!title || !guestName || !description) {
-      return [];
-    }
-    return [
-      buildDocument({
-        id: `video:${String(row.id)}`,
-        url: siteUrl(`/videos/${slugifyVideoTitle(title, guestName)}/`),
-        title,
-        excerpt: excerptFromText(description),
-        type: "Stream",
-        body: `${guestName}\n\n${description}`,
-      }),
-    ];
-  });
+  return {
+    available: true,
+    documents: result.rows.flatMap((row) => {
+      const title = asString(row.title);
+      const guestName = asString(row.guest_name);
+      const description = asString(row.description);
+      if (!title || !guestName || !description) {
+        return [];
+      }
+      return [
+        buildDocument({
+          id: `video:${String(row.id)}`,
+          url: siteUrl(`/videos/${slugifyVideoTitle(title, guestName)}/`),
+          title,
+          excerpt: excerptFromText(description),
+          type: "Stream",
+          body: `${guestName}\n\n${description}`,
+        }),
+      ];
+    }),
+  };
 }
 
 async function indexSearchDocuments() {
+  const videos = await collectVideoDocuments();
   const documents = [
     ...(await collectBlogDocuments()),
     ...(await collectTalkDocuments()),
-    ...(await collectVideoDocuments()),
+    ...videos.documents,
   ];
 
   console.log(`Collected ${documents.length} search documents.`);
@@ -260,7 +267,18 @@ async function indexSearchDocuments() {
     }
   }
 
-  await deleteMissingSearchDocuments(documents.map((document) => document.id));
+  const keepIds = documents.map((document) => document.id);
+  if (!videos.available) {
+    for (const id of existingHashes.keys()) {
+      if (id.startsWith("video:")) {
+        keepIds.push(id);
+      }
+    }
+    console.warn(
+      "Preserving existing stream documents; guest Turso was unavailable."
+    );
+  }
+  await deleteMissingSearchDocuments(keepIds);
   console.log("Search index updated.");
 }
 
