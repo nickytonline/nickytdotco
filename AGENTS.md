@@ -50,6 +50,8 @@
 ## Code Standards
 
 - Formatting: Oxfmt (`vp fmt`); linting: Oxlint (`vp lint`).
+- **Before every commit**, run `vp fmt .` then `vp fmt --check .` (or `npm run format`). Netlify `npm run build` starts with `format:check` and fails the whole deploy if Oxfmt is unhappy. Use `vp fmt` (reads `vite.config.ts` `fmt`, including `printWidth: 80`). Do **not** run bare `oxfmt` from `node_modules` — that uses defaults and will not match CI.
+- Pre-commit hook: this repo already has one. `prepare` runs `vp config`, which installs `.vite-hooks/pre-commit` (`vp staged` on matching staged files). Locally that is the Husky-style hook. Cursor Cloud sets `core.hooksPath` to its own agent hooks, so **the Vite+ hook does not run on agent commits** — format in the same turn as the commit.
 - TypeScript: explicit types when helpful; unused vars use `_` prefix.
 - Naming: content slugs are kebab-case.
 
@@ -67,6 +69,7 @@
 - Do not edit `dist/` or `node_modules/` directly.
 - Keep dependency changes intentional; update `package.json` and `package-lock.json` together.
 - Prefer `rg` for search.
+- Do not commit until `vp fmt --check .` passes on the files you touched.
 
 ## Review & Delivery
 
@@ -85,6 +88,7 @@ Docs are local at `node_modules/vite-plus/docs` or online at https://viteplus.de
 ## Review Checklist
 
 - [ ] Run `vp install` after pulling remote changes and before getting started.
+- [ ] Run `vp fmt .` and `vp fmt --check .` (or `npm run format`) **before every commit**. Do not rely on the pre-commit hook in Cursor Cloud.
 - [ ] Run `vp check` and `vp test` to format, lint, type check and test changes.
 - [ ] Check if there are `vite.config.ts` tasks or `package.json` scripts necessary for validation, run via `vp run <script>`.
 - [ ] If setup, runtime, or package-manager behavior looks wrong, run `vp env doctor` and include its output when asking for help.
