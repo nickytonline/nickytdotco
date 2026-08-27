@@ -76,4 +76,52 @@ test.describe("site search", () => {
     await page.keyboard.press("Escape");
     await expect(dialog).not.toBeVisible();
   });
+
+  test("announces a 503 search failure in the live region", async ({
+    page,
+  }) => {
+    await page.route("**/api/search*", async (route) => {
+      await route.fulfill({
+        status: 503,
+        contentType: "application/json",
+        body: JSON.stringify({ error: "Search is temporarily unavailable." }),
+      });
+    });
+
+    await page.getByRole("button", { name: "Search site" }).click();
+    const dialog = page.getByRole("dialog");
+    await page.getByPlaceholder("Search posts, talks, projects...").fill("ab");
+
+    const alert = dialog.getByRole("alert");
+    await expect(alert).toContainText("Search is temporarily unavailable", {
+      timeout: 15000,
+    });
+    await expect(
+      dialog.getByText("Search is temporarily unavailable. Try again.")
+    ).toBeVisible();
+  });
+
+  test("announces a 429 search failure in the live region", async ({
+    page,
+  }) => {
+    await page.route("**/api/search*", async (route) => {
+      await route.fulfill({
+        status: 429,
+        contentType: "application/json",
+        body: JSON.stringify({ error: "Too many searches." }),
+      });
+    });
+
+    await page.getByRole("button", { name: "Search site" }).click();
+    const dialog = page.getByRole("dialog");
+    await page.getByPlaceholder("Search posts, talks, projects...").fill("ab");
+
+    const alert = dialog.getByRole("alert");
+    await expect(alert).toContainText("Too many searches", {
+      timeout: 15000,
+    });
+    await expect(
+      dialog.getByText("Too many searches. Wait a moment and try again.")
+    ).toBeVisible();
+  });
 });

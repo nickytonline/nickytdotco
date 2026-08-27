@@ -9,13 +9,25 @@ import {
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
 
+type SearchErrorKind = "rate-limit" | "unavailable";
+
+const SEARCH_ERROR_MESSAGE: Record<SearchErrorKind, string> = {
+  "rate-limit": "Too many searches. Wait a moment and try again.",
+  unavailable: "Search is temporarily unavailable. Try again.",
+};
+
+const SEARCH_ERROR_STATUS: Record<SearchErrorKind, string> = {
+  "rate-limit": "Too many searches",
+  unavailable: "Search is temporarily unavailable",
+};
+
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
-  const [searchError, setSearchError] = useState<string | null>(null);
+  const [searchError, setSearchError] = useState<SearchErrorKind | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -180,11 +192,7 @@ const Search = () => {
       setResults([]);
       setSelectedIndex(-1);
       const status = (error as { status?: number }).status;
-      setSearchError(
-        status === 429
-          ? "Too many searches. Wait a moment and try again."
-          : "Search is temporarily unavailable. Try again."
-      );
+      setSearchError(status === 429 ? "rate-limit" : "unavailable");
     } finally {
       if (!controller.signal.aborted) {
         setIsSearching(false);
@@ -246,15 +254,17 @@ const Search = () => {
   const showSearching = hasTypedEnough && (isSearching || isPendingSearch);
   const resultCountLabel =
     results.length === 1 ? "1 result found" : `${results.length} results found`;
-  const paneStatus = showSearching
-    ? "Searching…"
-    : showResults
-      ? resultCountLabel
-      : hasTypedEnough &&
-          trimmedQuery === submittedQuery &&
-          results.length === 0
-        ? "No results"
-        : "\u00a0";
+  const paneStatus = searchError
+    ? SEARCH_ERROR_STATUS[searchError]
+    : showSearching
+      ? "Searching…"
+      : showResults
+        ? resultCountLabel
+        : hasTypedEnough &&
+            trimmedQuery === submittedQuery &&
+            results.length === 0
+          ? "No results"
+          : "\u00a0";
 
   return (
     <>
@@ -311,7 +321,11 @@ const Search = () => {
           aria-busy={showSearching}
         >
           <div className="mb-4 flex h-6 items-baseline justify-between px-2 text-sm text-muted-foreground">
-            <span aria-live="polite" aria-atomic="true">
+            <span
+              aria-live="polite"
+              aria-atomic="true"
+              aria-hidden={searchError ? true : undefined}
+            >
               {paneStatus}
             </span>
             <kbd className="hidden rounded border border-secondary bg-muted px-1.5 py-0.5 font-sans text-xs sm:inline-block">
@@ -319,16 +333,27 @@ const Search = () => {
             </kbd>
           </div>
 
-          {searchError ? (
-            <div className="flex min-h-[16rem] items-center justify-center text-center">
+          <div
+            role="alert"
+            className={
+              searchError
+                ? "flex min-h-[16rem] items-center justify-center text-center"
+                : "sr-only"
+            }
+          >
+            {searchError ? (
               <div className="space-y-2">
-                <p className="text-lg text-destructive">{searchError}</p>
+                <p className="text-lg text-destructive">
+                  {SEARCH_ERROR_MESSAGE[searchError]}
+                </p>
                 <p className="text-sm text-muted-foreground">
                   Try searching again in a moment.
                 </p>
               </div>
-            </div>
-          ) : showResults ? (
+            ) : null}
+          </div>
+
+          {searchError ? null : showResults ? (
             <ul
               ref={resultsRef}
               className={`space-y-2 ${showSearching ? "opacity-60" : ""}`}
