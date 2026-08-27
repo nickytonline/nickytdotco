@@ -37,7 +37,7 @@
 
 - Env schema: `.env.schema`, types: `env.d.ts` (Varlock).
 - Required vars for the site: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `TURSO_SEARCH_DATABASE_URL`, `TURSO_SEARCH_AUTH_TOKEN`, `GITHUB_TOKEN`, `DEV_API_KEY`, `GEMINI_API_KEY`, `URL`.
-- Sync scripts use scoped Varlock env dirs instead of the root schema: `env/devto/.env.schema` (imports `DEV_API_KEY`, used by `vp run generate:posts`), `env/youtube/.env.schema` (`YOUTUBE_API_KEY`, `YOUTUBE_PLAYLIST_ID`, used by `vp run generate:streams`), and `env/search/.env.schema` (`GEMINI_API_KEY`, `TURSO_SEARCH_*`, optional `TURSO_*` for stream guests, used by `vp run index:search`). All are invoked as `varlock run --path env/<name> -- ...` from `package.json`. Embeddings run in `.github/workflows/index-search.yml` on **push to `main`** (and `workflow_dispatch`), not during the Netlify build and not on PRs. Batches of 5 with a 5s pause so Gemini rate limits are tolerated; content hashes skip unchanged docs.
+- Sync scripts use scoped Varlock env dirs instead of the root schema: `env/devto/.env.schema` (imports `DEV_API_KEY`, used by `vp run generate:posts`) and `env/search/.env.schema` (`GEMINI_API_KEY`, `TURSO_SEARCH_*`, optional `TURSO_*` for stream guests, used by `vp run index:search`). All are invoked as `varlock run --path env/<name> -- ...` from `package.json`. Live streams and schedule come from Turso via Astro live loaders (`streamVideos`, `streamSchedule`). Embeddings run in `.github/workflows/index-search.yml` on **push to `main`** (and `workflow_dispatch`), not during the Netlify build and not on PRs. Batches of 5 with a 5s pause so Gemini rate limits are tolerated; content hashes skip unchanged docs.
 
 ## Testing (E2E)
 
@@ -88,7 +88,6 @@ Docs are local at `node_modules/vite-plus/docs` or online at https://viteplus.de
 ## Review Checklist
 
 - [ ] Run `vp install` after pulling remote changes and before getting started.
-- [ ] Run `vp fmt .` and `vp fmt --check .` (or `npm run format`) **before every commit**. Do not rely on the pre-commit hook in Cursor Cloud.
 - [ ] Run `vp check` and `vp test` to format, lint, type check and test changes.
 - [ ] Check if there are `vite.config.ts` tasks or `package.json` scripts necessary for validation, run via `vp run <script>`.
 - [ ] If setup, runtime, or package-manager behavior looks wrong, run `vp env doctor` and include its output when asking for help.
