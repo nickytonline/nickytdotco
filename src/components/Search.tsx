@@ -352,6 +352,9 @@ const Search = () => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleInputKeyDown}
             />
+            <button type="submit" className="sr-only">
+              Search
+            </button>
           </form>
           <button
             type="button"
