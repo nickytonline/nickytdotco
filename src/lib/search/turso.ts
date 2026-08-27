@@ -69,9 +69,10 @@ function parseStoredEmbedding(value: unknown): number[] | null {
 
 export async function getCachedQueryEmbedding(
   query: string,
-  db: Client = getSearchDb(),
+  db: Client = getSearchDb()
 ): Promise<number[] | null> {
-  const minCreatedAt = Math.floor(Date.now() / 1000) - SEARCH_QUERY_CACHE_TTL_SECONDS;
+  const minCreatedAt =
+    Math.floor(Date.now() / 1000) - SEARCH_QUERY_CACHE_TTL_SECONDS;
   const result = await db.execute({
     sql: `SELECT embedding FROM ${SEARCH_QUERY_CACHE_TABLE}
           WHERE query_hash = ? AND created_at >= ?`,
@@ -87,7 +88,7 @@ export async function getCachedQueryEmbedding(
 export async function cacheQueryEmbedding(
   query: string,
   embedding: number[],
-  db: Client = getSearchDb(),
+  db: Client = getSearchDb()
 ) {
   const now = Math.floor(Date.now() / 1000);
   const minCreatedAt = now - SEARCH_QUERY_CACHE_TTL_SECONDS;
@@ -106,7 +107,9 @@ export async function cacheQueryEmbedding(
     args: [minCreatedAt],
   });
 
-  const countResult = await db.execute(`SELECT COUNT(*) AS count FROM ${SEARCH_QUERY_CACHE_TABLE}`);
+  const countResult = await db.execute(
+    `SELECT COUNT(*) AS count FROM ${SEARCH_QUERY_CACHE_TABLE}`
+  );
   const count = Number(countResult.rows[0]?.count ?? 0);
   const excess = count - SEARCH_QUERY_CACHE_MAX_ROWS;
   if (excess > 0) {
@@ -122,8 +125,12 @@ export async function cacheQueryEmbedding(
   }
 }
 
-export async function loadContentHashes(db: Client = getSearchDb()): Promise<Map<string, string>> {
-  const result = await db.execute(`SELECT id, content_hash FROM ${SEARCH_TABLE}`);
+export async function loadContentHashes(
+  db: Client = getSearchDb()
+): Promise<Map<string, string>> {
+  const result = await db.execute(
+    `SELECT id, content_hash FROM ${SEARCH_TABLE}`
+  );
   const hashes = new Map<string, string>();
   for (const row of result.rows) {
     hashes.set(String(row.id), String(row.content_hash));
@@ -132,8 +139,10 @@ export async function loadContentHashes(db: Client = getSearchDb()): Promise<Map
 }
 
 export async function upsertSearchDocuments(
-  documents: Array<SearchDocumentInput & { contentHash: string; embedding: number[] }>,
-  db: Client = getSearchDb(),
+  documents: Array<
+    SearchDocumentInput & { contentHash: string; embedding: number[] }
+  >,
+  db: Client = getSearchDb()
 ) {
   if (documents.length === 0) {
     return;
@@ -163,7 +172,10 @@ export async function upsertSearchDocuments(
   await db.batch(statements, "write");
 }
 
-export async function deleteMissingSearchDocuments(keepIds: string[], db: Client = getSearchDb()) {
+export async function deleteMissingSearchDocuments(
+  keepIds: string[],
+  db: Client = getSearchDb()
+) {
   if (keepIds.length === 0) {
     await db.execute(`DELETE FROM ${SEARCH_TABLE}`);
     return;
@@ -179,7 +191,7 @@ export async function deleteMissingSearchDocuments(keepIds: string[], db: Client
 export async function searchDocuments(
   queryEmbedding: number[],
   limit: number,
-  db: Client = getSearchDb(),
+  db: Client = getSearchDb()
 ): Promise<SearchResult[]> {
   const result = await db.execute({
     sql: `SELECT url, title, excerpt, type

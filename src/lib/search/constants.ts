@@ -16,7 +16,8 @@ export const SEARCH_RATE_LIMIT_PER_IP = 20;
 
 export const SEARCH_CDN_HEADERS = {
   "Cache-Control": "public, max-age=0, must-revalidate",
-  "Netlify-CDN-Cache-Control": "public, durable, max-age=3600, stale-while-revalidate=86400",
+  "Netlify-CDN-Cache-Control":
+    "public, durable, max-age=3600, stale-while-revalidate=86400",
   "Netlify-Vary": "query=q|limit",
 } as const;
 

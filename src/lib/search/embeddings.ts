@@ -47,14 +47,19 @@ function isRetryable(error: unknown): boolean {
 }
 
 function retryDelayMs(error: unknown, fallbackMs: number): number {
-  const match = errorMessage(error).match(/"retryDelay"\s*:\s*"(\d+(?:\.\d+)?)s"/);
+  const match = errorMessage(error).match(
+    /"retryDelay"\s*:\s*"(\d+(?:\.\d+)?)s"/
+  );
   if (match) {
     return Math.max(fallbackMs, Math.ceil(Number(match[1]) * 1000));
   }
   return fallbackMs;
 }
 
-async function withRetry<T>(fn: () => Promise<T>, maxAttempts = 10): Promise<T> {
+async function withRetry<T>(
+  fn: () => Promise<T>,
+  maxAttempts = 10
+): Promise<T> {
   let delayMs = 4000;
   let lastError: unknown;
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
@@ -67,7 +72,7 @@ async function withRetry<T>(fn: () => Promise<T>, maxAttempts = 10): Promise<T> 
       }
       const waitMs = retryDelayMs(error, delayMs);
       console.warn(
-        `Gemini embedding rate-limited (attempt ${attempt + 1}/${maxAttempts}), waiting ${waitMs}ms`,
+        `Gemini embedding rate-limited (attempt ${attempt + 1}/${maxAttempts}), waiting ${waitMs}ms`
       );
       await sleep(waitMs);
       delayMs = Math.min(delayMs * 2, 60000);
@@ -76,20 +81,25 @@ async function withRetry<T>(fn: () => Promise<T>, maxAttempts = 10): Promise<T> 
   throw lastError;
 }
 
-function embeddingFromResponse(response: { embeddings?: Array<{ values?: number[] }> }): number[] {
+function embeddingFromResponse(response: {
+  embeddings?: Array<{ values?: number[] }>;
+}): number[] {
   const values = response.embeddings?.[0]?.values;
   if (!values?.length) {
     throw new Error("Gemini embedContent returned no embedding values.");
   }
   if (values.length !== SEARCH_EMBEDDING_DIMENSIONS) {
     throw new Error(
-      `Expected ${SEARCH_EMBEDDING_DIMENSIONS} embedding dimensions, got ${values.length}.`,
+      `Expected ${SEARCH_EMBEDDING_DIMENSIONS} embedding dimensions, got ${values.length}.`
     );
   }
   return l2Normalize(values);
 }
 
-async function embedBatch(texts: string[], taskType: EmbeddingTaskType): Promise<number[][]> {
+async function embedBatch(
+  texts: string[],
+  taskType: EmbeddingTaskType
+): Promise<number[][]> {
   if (texts.length === 0) {
     return [];
   }
@@ -102,12 +112,14 @@ async function embedBatch(texts: string[], taskType: EmbeddingTaskType): Promise
         outputDimensionality: SEARCH_EMBEDDING_DIMENSIONS,
         taskType,
       },
-    }),
+    })
   );
 
   const embeddings = response.embeddings ?? [];
   if (embeddings.length !== texts.length) {
-    throw new Error(`Expected ${texts.length} embeddings, got ${embeddings.length}.`);
+    throw new Error(
+      `Expected ${texts.length} embeddings, got ${embeddings.length}.`
+    );
   }
 
   return embeddings.map((embedding, index) => {
@@ -117,7 +129,7 @@ async function embedBatch(texts: string[], taskType: EmbeddingTaskType): Promise
     }
     if (values.length !== SEARCH_EMBEDDING_DIMENSIONS) {
       throw new Error(
-        `Expected ${SEARCH_EMBEDDING_DIMENSIONS} embedding dimensions, got ${values.length}.`,
+        `Expected ${SEARCH_EMBEDDING_DIMENSIONS} embedding dimensions, got ${values.length}.`
       );
     }
     return l2Normalize(values);
@@ -135,7 +147,7 @@ export async function embedQuery(text: string): Promise<number[]> {
           taskType: "RETRIEVAL_QUERY",
         },
       }),
-    2,
+    2
   );
   return embeddingFromResponse(response);
 }

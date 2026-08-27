@@ -1,6 +1,6 @@
 export default async function searchRateLimit(
   _request: Request,
-  context: { next: () => Promise<Response> },
+  context: { next: () => Promise<Response> }
 ) {
   return context.next();
 }

@@ -21,7 +21,7 @@ export function l2Normalize(values: number[]): number[] {
 export function parseSearchLimit(
   raw: string | null,
   defaultLimit: number,
-  maxLimit: number,
+  maxLimit: number
 ): number {
   if (raw == null || raw === "") {
     return defaultLimit;

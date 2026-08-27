@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import { searchSite, type SearchResult } from "../lib/search/searchSite";
-import { SEARCH_MAX_QUERY_CHARS, SEARCH_MIN_QUERY_CHARS } from "../lib/search/constants";
+import {
+  SEARCH_MAX_QUERY_CHARS,
+  SEARCH_MIN_QUERY_CHARS,
+} from "../lib/search/constants";
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects... then press Enter";
 
@@ -35,7 +38,9 @@ const Search = () => {
       } else if (isOpen) {
         if (e.key === "ArrowDown") {
           e.preventDefault();
-          setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
+          setSelectedIndex((prev) =>
+            prev < results.length - 1 ? prev + 1 : prev
+          );
         } else if (e.key === "ArrowUp") {
           e.preventDefault();
           setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
@@ -54,7 +59,10 @@ const Search = () => {
 
     document.addEventListener("astro:before-preparation", handleNavigation);
     return () => {
-      document.removeEventListener("astro:before-preparation", handleNavigation);
+      document.removeEventListener(
+        "astro:before-preparation",
+        handleNavigation
+      );
     };
   }, []);
 
@@ -72,7 +80,9 @@ const Search = () => {
 
   useEffect(() => {
     if (selectedIndex >= 0 && resultsRef.current) {
-      const selectedElement = resultsRef.current.children[selectedIndex] as HTMLElement;
+      const selectedElement = resultsRef.current.children[
+        selectedIndex
+      ] as HTMLElement;
       if (selectedElement) {
         selectedElement.scrollIntoView({ block: "nearest" });
       }
@@ -128,7 +138,7 @@ const Search = () => {
       setSearchError(
         status === 429
           ? "Too many searches. Wait a moment and try again."
-          : "Search is temporarily unavailable. Try again.",
+          : "Search is temporarily unavailable. Try again."
       );
     } finally {
       if (!controller.signal.aborted) {
@@ -140,7 +150,11 @@ const Search = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const normalizedInput = query.trim();
-    if (selectedIndex >= 0 && results.length > 0 && normalizedInput === submittedQuery) {
+    if (
+      selectedIndex >= 0 &&
+      results.length > 0 &&
+      normalizedInput === submittedQuery
+    ) {
       openSelectedResult();
       return;
     }
@@ -149,7 +163,8 @@ const Search = () => {
 
   const resultCountLabel =
     results.length === 1 ? "1 result found" : `${results.length} results found`;
-  const showResults = results.length > 0 && query.trim() === submittedQuery && !isSearching;
+  const showResults =
+    results.length > 0 && query.trim() === submittedQuery && !isSearching;
 
   return (
     <>
@@ -214,7 +229,9 @@ const Search = () => {
           {searchError ? (
             <div className="text-center py-12 space-y-2">
               <p className="text-lg text-destructive">{searchError}</p>
-              <p className="text-sm text-muted-foreground">Try searching again in a moment.</p>
+              <p className="text-sm text-muted-foreground">
+                Try searching again in a moment.
+              </p>
             </div>
           ) : showResults ? (
             <ul ref={resultsRef} className="space-y-2">
@@ -261,7 +278,9 @@ const Search = () => {
             <div className="text-center text-muted-foreground py-12">
               <p className="text-lg">Searching…</p>
             </div>
-          ) : submittedQuery && query.trim() === submittedQuery && results.length === 0 ? (
+          ) : submittedQuery &&
+            query.trim() === submittedQuery &&
+            results.length === 0 ? (
             <div className="text-center text-muted-foreground py-12 space-y-2">
               <p className="text-lg">No results found for "{query}"</p>
               <p className="text-sm">Try searching for something else.</p>
@@ -274,12 +293,15 @@ const Search = () => {
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
                 <p className="text-sm">
-                  Type a query and press Enter. Search for blog posts, talks, livestreams, and more.
+                  Type a query and press Enter. Search for blog posts, talks,
+                  livestreams, and more.
                 </p>
               </div>
               <div className="flex gap-4 pt-4 text-xs">
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">Enter</kbd>
+                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                    Enter
+                  </kbd>
                   Search
                 </span>
                 <span className="flex items-center gap-1">
@@ -289,7 +311,9 @@ const Search = () => {
                   Navigate
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">ESC</kbd>
+                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
+                    ESC
+                  </kbd>
                   Close
                 </span>
               </div>
