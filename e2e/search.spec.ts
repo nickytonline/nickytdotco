@@ -47,34 +47,14 @@ test.describe("site search", () => {
     }).toPass({ timeout: 10000 });
   });
 
-  test("exposes a platform keyboard shortcut hint on the search button", async ({
-    page,
-  }) => {
+  test("exposes keyboard shortcuts on the search button", async ({ page }) => {
     const searchButton = page.getByRole("button", { name: "Search site" });
 
     await expect(searchButton).toHaveAttribute(
       "aria-keyshortcuts",
       "Meta+K Control+K /"
     );
-
-    const shortcutKeys = searchButton.locator("kbd");
-    await expect(shortcutKeys).toHaveCount(2);
-    await expect(shortcutKeys.first()).toHaveText(/⌘K|Ctrl\+K/);
-    await expect(shortcutKeys.last()).toHaveText("/");
-    await expect(shortcutKeys.first()).toBeVisible();
-    await expect(shortcutKeys.last()).toBeVisible();
-  });
-
-  test("hides the visible shortcut hint below the md breakpoint", async ({
-    page,
-  }) => {
-    await page.setViewportSize({ width: 375, height: 720 });
-    const searchButton = page.getByRole("button", { name: "Search site" });
-    const shortcutKeys = searchButton.locator("kbd");
-
-    await expect(shortcutKeys).toHaveCount(2);
-    await expect(shortcutKeys.first()).toBeHidden();
-    await expect(shortcutKeys.last()).toBeHidden();
+    await expect(searchButton.locator("kbd")).toHaveCount(0);
   });
 
   test("arrow keys and Enter navigate to the selected result", async ({

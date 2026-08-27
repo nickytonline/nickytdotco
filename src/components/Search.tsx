@@ -2,19 +2,13 @@ import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import { searchSite, type SearchResult } from "../lib/search/searchSite";
 import {
+  SEARCH_ARIA_KEYSHORTCUTS,
   SEARCH_DEBOUNCE_MS,
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
 } from "../lib/search/constants";
-import {
-  getSearchShortcut,
-  SEARCH_ARIA_KEYSHORTCUTS,
-  type SearchShortcut,
-} from "../lib/search/shortcut";
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
-const SHORTCUT_KBD_CLASS =
-  "rounded border border-border bg-muted px-1.5 py-0.5 font-sans text-xs font-medium text-muted-foreground";
 
 type SearchErrorKind = "rate-limit" | "unavailable";
 
@@ -33,7 +27,6 @@ const Search = () => {
   const resultsListId = `${searchId}-results`;
   const optionId = (index: number) => `${searchId}-result-${index}`;
   const [isOpen, setIsOpen] = useState(false);
-  const [shortcut, setShortcut] = useState<SearchShortcut | null>(null);
   const [query, setQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -44,10 +37,6 @@ const Search = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
-
-  useEffect(() => {
-    setShortcut(getSearchShortcut());
-  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -300,21 +289,12 @@ const Search = () => {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="inline-flex items-center gap-1.5 hover:text-brand focus:text-brand focus:outline-none transition-colors"
+        className="inline-flex hover:text-brand focus:text-brand focus:outline-none transition-colors"
         aria-label="Search site"
         aria-keyshortcuts={SEARCH_ARIA_KEYSHORTCUTS}
       >
         <SearchIcon className="w-4.5 h-4.5 lg:w-5 lg:h-5" strokeWidth={3} />
         <span className="sr-only">Search</span>
-        {shortcut ? (
-          <span
-            aria-hidden="true"
-            className="hidden items-center gap-1 md:inline-flex"
-          >
-            <kbd className={SHORTCUT_KBD_CLASS}>{shortcut.modifierChord}</kbd>
-            <kbd className={SHORTCUT_KBD_CLASS}>/</kbd>
-          </span>
-        ) : null}
       </button>
 
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}

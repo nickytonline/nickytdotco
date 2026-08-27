@@ -10,6 +10,7 @@ export const SEARCH_MAX_EMBED_CHARS = 6000;
 export const SEARCH_MIN_QUERY_CHARS = 2;
 export const SEARCH_MAX_QUERY_CHARS = 200;
 export const SEARCH_DEBOUNCE_MS = 500;
+export const SEARCH_ARIA_KEYSHORTCUTS = "Meta+K Control+K /";
 export const SEARCH_QUERY_CACHE_TTL_SECONDS = 60 * 60 * 24 * 7;
 export const SEARCH_QUERY_CACHE_MAX_ROWS = 2000;
 export const SEARCH_RATE_LIMIT_WINDOW_SECONDS = 60;
