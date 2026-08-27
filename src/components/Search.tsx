@@ -365,7 +365,7 @@ const Search = () => {
           className="min-h-0 flex-1 overflow-y-auto p-4"
           aria-busy={showSearching}
         >
-          <div className="mb-4 flex h-6 items-baseline justify-between px-2 text-sm text-muted-foreground">
+          <div className="mb-4 h-6 px-2 text-sm text-muted-foreground">
             <span
               aria-live="polite"
               aria-atomic="true"
@@ -373,9 +373,6 @@ const Search = () => {
             >
               {paneStatus}
             </span>
-            <kbd className="hidden rounded border border-secondary bg-muted px-1.5 py-0.5 font-sans text-xs sm:inline-block">
-              ESC to close
-            </kbd>
           </div>
 
           <div
