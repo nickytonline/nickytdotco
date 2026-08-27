@@ -227,7 +227,7 @@ const Search = () => {
         onClose={() => setIsOpen(false)}
         onClick={handleBackdropClick}
         aria-labelledby="search-dialog-title"
-        className="fixed left-1/2 top-[12vh] m-0 h-[min(70vh,36rem)] w-[90vw] max-w-2xl -translate-x-1/2 open:flex open:flex-col overflow-hidden rounded-xl border border-secondary bg-background p-0 text-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+        className="fixed left-1/2 top-3 m-0 h-[min(70dvh,36rem)] max-h-[calc(100dvh-1.5rem)] w-[90vw] max-w-2xl -translate-x-1/2 open:flex open:flex-col overflow-hidden rounded-xl border border-secondary bg-background p-0 text-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
       >
         <div className="flex shrink-0 items-center justify-between gap-4 border-b border-secondary p-4">
           <h2 id="search-dialog-title" className="sr-only">
