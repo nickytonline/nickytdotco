@@ -6,18 +6,22 @@ export type SearchShortcut = {
 /** Both modifier chords work; `/` is the additional opener. */
 export const SEARCH_ARIA_KEYSHORTCUTS = "Meta+K Control+K /";
 
+declare global {
+  interface NavigatorUAData {
+    readonly platform: string;
+  }
+
+  interface Navigator {
+    readonly userAgentData?: NavigatorUAData;
+  }
+}
+
 function isApplePlatform(): boolean {
   if (typeof navigator === "undefined") {
     return false;
   }
 
-  const userAgentData = (
-    navigator as Navigator & {
-      userAgentData?: { platform?: string };
-    }
-  ).userAgentData;
-  const platform = userAgentData?.platform ?? navigator.platform;
-
+  const platform = navigator.userAgentData?.platform ?? navigator.platform;
   return /Mac|iPhone|iPad|iPod/i.test(platform);
 }
 
