@@ -254,10 +254,10 @@ const Search = () => {
   const showSearching = hasTypedEnough && (isSearching || isPendingSearch);
   const resultCountLabel =
     results.length === 1 ? "1 result found" : `${results.length} results found`;
-  const paneStatus = showSearching
-    ? "Searching…"
-    : searchError
-      ? SEARCH_ERROR_STATUS[searchError]
+  const paneStatus = searchError
+    ? SEARCH_ERROR_STATUS[searchError]
+    : showSearching
+      ? "Searching…"
       : showResults
         ? resultCountLabel
         : hasTypedEnough &&
