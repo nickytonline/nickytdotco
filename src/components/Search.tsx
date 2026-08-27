@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import { searchSite, type SearchResult } from "../lib/search/searchSite";
+import { SEARCH_MAX_QUERY_CHARS, SEARCH_MIN_QUERY_CHARS } from "../lib/search/constants";
+
+const SEARCH_PLACEHOLDER = "Search posts, talks, projects... then press Enter";
 
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [submittedQuery, setSubmittedQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
@@ -12,11 +16,11 @@ const Search = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLUListElement>(null);
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "/" && !isOpen) {
-        // Only trigger if no input is focused
         if (
           document.activeElement?.tagName === "INPUT" ||
           document.activeElement?.tagName === "TEXTAREA"
@@ -31,25 +35,17 @@ const Search = () => {
       } else if (isOpen) {
         if (e.key === "ArrowDown") {
           e.preventDefault();
-          setSelectedIndex((prev) =>
-            prev < results.length - 1 ? prev + 1 : prev
-          );
+          setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
         } else if (e.key === "ArrowUp") {
           e.preventDefault();
           setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev));
-        } else if (e.key === "Enter" && selectedIndex >= 0) {
-          e.preventDefault();
-          const selected = results[selectedIndex];
-          if (selected) {
-            window.location.href = selected.url;
-          }
         }
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, results, selectedIndex]);
+  }, [isOpen, results]);
 
   useEffect(() => {
     const handleNavigation = () => {
@@ -58,10 +54,7 @@ const Search = () => {
 
     document.addEventListener("astro:before-preparation", handleNavigation);
     return () => {
-      document.removeEventListener(
-        "astro:before-preparation",
-        handleNavigation
-      );
+      document.removeEventListener("astro:before-preparation", handleNavigation);
     };
   }, []);
 
@@ -77,12 +70,9 @@ const Search = () => {
     }
   }, [isOpen]);
 
-  // Scroll active result into view
   useEffect(() => {
     if (selectedIndex >= 0 && resultsRef.current) {
-      const selectedElement = resultsRef.current.children[
-        selectedIndex
-      ] as HTMLElement;
+      const selectedElement = resultsRef.current.children[selectedIndex] as HTMLElement;
       if (selectedElement) {
         selectedElement.scrollIntoView({ block: "nearest" });
       }
@@ -95,52 +85,71 @@ const Search = () => {
     }
   };
 
-  useEffect(() => {
-    const controller = new AbortController();
+  const openSelectedResult = () => {
+    const selected = results[selectedIndex];
+    if (selected) {
+      window.location.href = selected.url;
+    }
+  };
 
-    if (!query.trim()) {
+  const performSearch = async (rawQuery: string) => {
+    const trimmed = rawQuery.trim();
+    if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
       setResults([]);
-      setIsSearching(false);
+      setSubmittedQuery("");
       setSearchError(null);
       setSelectedIndex(-1);
-      return () => controller.abort();
+      return;
     }
+
+    abortRef.current?.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
 
     setIsSearching(true);
     setSearchError(null);
+    setSubmittedQuery(trimmed);
 
-    const performSearch = async () => {
-      try {
-        const response = await searchSite(query, undefined, controller.signal);
-        setResults(response.results);
-        setSelectedIndex(response.results.length > 0 ? 0 : -1);
-      } catch (error) {
-        if (error instanceof DOMException && error.name === "AbortError") {
-          return;
-        }
-        if (error instanceof Error && error.name === "AbortError") {
-          return;
-        }
-        console.error("Search failed", error);
-        setResults([]);
-        setSelectedIndex(-1);
-        setSearchError("Search is temporarily unavailable. Try again.");
-      } finally {
-        if (!controller.signal.aborted) {
-          setIsSearching(false);
-        }
+    try {
+      const response = await searchSite(trimmed, undefined, controller.signal);
+      setResults(response.results);
+      setSelectedIndex(response.results.length > 0 ? 0 : -1);
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
       }
-    };
+      if (error instanceof Error && error.name === "AbortError") {
+        return;
+      }
+      console.error("Search failed", error);
+      setResults([]);
+      setSelectedIndex(-1);
+      const status = (error as { status?: number }).status;
+      setSearchError(
+        status === 429
+          ? "Too many searches. Wait a moment and try again."
+          : "Search is temporarily unavailable. Try again.",
+      );
+    } finally {
+      if (!controller.signal.aborted) {
+        setIsSearching(false);
+      }
+    }
+  };
 
-    const debounce = setTimeout(performSearch, 300);
-    return () => {
-      clearTimeout(debounce);
-      controller.abort();
-    };
-  }, [query]);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const normalizedInput = query.trim();
+    if (selectedIndex >= 0 && results.length > 0 && normalizedInput === submittedQuery) {
+      openSelectedResult();
+      return;
+    }
+    void performSearch(query);
+  };
 
   const resultCountLabel =
     results.length === 1 ? "1 result found" : `${results.length} results found`;
+  const showResults = results.length > 0 && query.trim() === submittedQuery && !isSearching;
 
   return (
     <>
@@ -165,18 +174,21 @@ const Search = () => {
           <h2 id="search-dialog-title" className="sr-only">
             Search site
           </h2>
-          <div className="relative min-w-0 flex-1">
+          <form className="relative min-w-0 flex-1" onSubmit={handleSubmit}>
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <input
               ref={inputRef}
-              type="text"
+              type="search"
+              name="q"
+              maxLength={SEARCH_MAX_QUERY_CHARS}
+              autoComplete="off"
               aria-label="Search posts, talks, and projects"
-              placeholder="Search posts, talks, projects... (shortcut: /)"
+              placeholder={SEARCH_PLACEHOLDER}
               className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-brand text-lg"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
-          </div>
+          </form>
           <button
             type="button"
             aria-label="Close search"
@@ -190,7 +202,7 @@ const Search = () => {
         </div>
 
         <div className="max-h-[60vh] overflow-y-auto p-4">
-          {results.length > 0 && (
+          {showResults && (
             <div className="flex justify-between items-baseline mb-4 px-2 text-sm text-muted-foreground">
               <span>{resultCountLabel}</span>
               <kbd className="hidden sm:inline-block px-1.5 py-0.5 border border-secondary rounded bg-muted font-sans text-xs">
@@ -202,11 +214,9 @@ const Search = () => {
           {searchError ? (
             <div className="text-center py-12 space-y-2">
               <p className="text-lg text-destructive">{searchError}</p>
-              <p className="text-sm text-muted-foreground">
-                Try searching again in a moment.
-              </p>
+              <p className="text-sm text-muted-foreground">Try searching again in a moment.</p>
             </div>
-          ) : results.length > 0 ? (
+          ) : showResults ? (
             <ul ref={resultsRef} className="space-y-2">
               {results.map((result, index) => {
                 const isSelected = index === selectedIndex;
@@ -247,11 +257,11 @@ const Search = () => {
                 );
               })}
             </ul>
-          ) : query.trim() && isSearching ? (
+          ) : isSearching ? (
             <div className="text-center text-muted-foreground py-12">
               <p className="text-lg">Searching…</p>
             </div>
-          ) : query.trim() ? (
+          ) : submittedQuery && query.trim() === submittedQuery && results.length === 0 ? (
             <div className="text-center text-muted-foreground py-12 space-y-2">
               <p className="text-lg">No results found for "{query}"</p>
               <p className="text-sm">Try searching for something else.</p>
@@ -264,10 +274,14 @@ const Search = () => {
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
                 <p className="text-sm">
-                  Search for blog posts, talks, livestreams, and more
+                  Type a query and press Enter. Search for blog posts, talks, livestreams, and more.
                 </p>
               </div>
               <div className="flex gap-4 pt-4 text-xs">
+                <span className="flex items-center gap-1">
+                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">Enter</kbd>
+                  Search
+                </span>
                 <span className="flex items-center gap-1">
                   <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
                     &uarr;&darr;
@@ -275,15 +289,7 @@ const Search = () => {
                   Navigate
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
-                    Enter
-                  </kbd>
-                  Open
-                </span>
-                <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">
-                    ESC
-                  </kbd>
+                  <kbd className="px-1 py-0.5 bg-muted border border-secondary rounded">ESC</kbd>
                   Close
                 </span>
               </div>

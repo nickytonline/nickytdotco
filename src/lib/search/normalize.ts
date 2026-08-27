@@ -2,6 +2,10 @@ export function normalizeSearchQuery(query: string): string {
   return query.trim().replace(/\s+/g, " ").toLowerCase();
 }
 
+export function isSearchQueryTooLong(query: string, maxChars: number): boolean {
+  return query.length > maxChars;
+}
+
 export function l2Normalize(values: number[]): number[] {
   let sumSquares = 0;
   for (const value of values) {
@@ -17,7 +21,7 @@ export function l2Normalize(values: number[]): number[] {
 export function parseSearchLimit(
   raw: string | null,
   defaultLimit: number,
-  maxLimit: number
+  maxLimit: number,
 ): number {
   if (raw == null || raw === "") {
     return defaultLimit;
