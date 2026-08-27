@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useId, useRef, useState } from "react";
-import { Search as SearchIcon } from "lucide-react";
+import { Loader2, Search as SearchIcon } from "lucide-react";
 import {
   isSearchQueryTooLong,
   normalizeSearchQuery,
@@ -527,8 +527,11 @@ const Search = () => {
             </div>
           ) : /* eslint-enable jsx-a11y/prefer-tag-over-role */
           showSearching ? (
-            <div className="flex min-h-[16rem] items-center justify-center text-muted-foreground">
-              <p className="text-lg">Searching…</p>
+            <div
+              className="flex min-h-[16rem] items-center justify-center text-muted-foreground"
+              aria-hidden="true"
+            >
+              <Loader2 className="h-8 w-8 animate-spin opacity-50" />
             </div>
           ) : hasTypedEnough &&
             trimmedQuery === submittedQuery &&
