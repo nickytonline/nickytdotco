@@ -1,12 +1,19 @@
 import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
-import { searchSite, type SearchResult } from "../lib/search/searchSite";
+import {
+  isSearchQueryTooLong,
+  normalizeSearchQuery,
+  searchSite,
+  type SearchResponse,
+  type SearchResult,
+} from "../lib/search/searchSite";
 import {
   SEARCH_ARIA_KEYSHORTCUTS,
   SEARCH_DEBOUNCE_MS,
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
 } from "../lib/search/constants";
+import { registerSearchSiteTool } from "../lib/webmcp/searchSiteTool";
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
 
@@ -153,46 +160,137 @@ const Search = () => {
     }
   };
 
-  const performSearch = useCallback(async (rawQuery: string) => {
-    const trimmed = rawQuery.trim();
-    if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
-      setResults([]);
-      setSubmittedQuery("");
+  const performSearch = useCallback(
+    async (
+      rawQuery: string,
+      options?: { limit?: number; signal?: AbortSignal }
+    ): Promise<
+      | { status: "ok"; response: SearchResponse }
+      | { status: "error"; kind: SearchErrorKind }
+      | { status: "aborted" }
+      | { status: "too-short"; query: string }
+    > => {
+      const trimmed = rawQuery.trim();
+      if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
+        setResults([]);
+        setSubmittedQuery("");
+        setSearchError(null);
+        setSelectedIndex(-1);
+        return { status: "too-short", query: trimmed };
+      }
+
+      abortRef.current?.abort();
+      const controller = new AbortController();
+      abortRef.current = controller;
+
+      const onAbort = () => {
+        controller.abort();
+      };
+      options?.signal?.addEventListener("abort", onAbort);
+      if (options?.signal?.aborted) {
+        controller.abort();
+      }
+
+      setIsSearching(true);
       setSearchError(null);
-      setSelectedIndex(-1);
-      return;
-    }
+      setSubmittedQuery(trimmed);
 
-    abortRef.current?.abort();
-    const controller = new AbortController();
-    abortRef.current = controller;
+      try {
+        const response = await searchSite(
+          trimmed,
+          options?.limit,
+          controller.signal
+        );
+        setResults(response.results);
+        setSelectedIndex(response.results.length > 0 ? 0 : -1);
+        return { status: "ok", response };
+      } catch (error) {
+        if (
+          (error instanceof DOMException && error.name === "AbortError") ||
+          (error instanceof Error && error.name === "AbortError")
+        ) {
+          return { status: "aborted" };
+        }
+        console.error("Search failed", error);
+        setResults([]);
+        setSelectedIndex(-1);
+        const statusCode = (error as { status?: number }).status;
+        const kind: SearchErrorKind =
+          statusCode === 429 ? "rate-limit" : "unavailable";
+        setSearchError(kind);
+        return { status: "error", kind };
+      } finally {
+        options?.signal?.removeEventListener("abort", onAbort);
+        if (!controller.signal.aborted) {
+          setIsSearching(false);
+        }
+      }
+    },
+    []
+  );
 
-    setIsSearching(true);
-    setSearchError(null);
-    setSubmittedQuery(trimmed);
+  useEffect(() => {
+    const registration = new AbortController();
 
-    try {
-      const response = await searchSite(trimmed, undefined, controller.signal);
-      setResults(response.results);
-      setSelectedIndex(response.results.length > 0 ? 0 : -1);
-    } catch (error) {
-      if (error instanceof DOMException && error.name === "AbortError") {
-        return;
-      }
-      if (error instanceof Error && error.name === "AbortError") {
-        return;
-      }
-      console.error("Search failed", error);
-      setResults([]);
-      setSelectedIndex(-1);
-      const status = (error as { status?: number }).status;
-      setSearchError(status === 429 ? "rate-limit" : "unavailable");
-    } finally {
-      if (!controller.signal.aborted) {
-        setIsSearching(false);
-      }
-    }
-  }, []);
+    void registerSearchSiteTool(
+      async (inputObject, { signal }) => {
+        const queryValue =
+          typeof inputObject.query === "string" ? inputObject.query : "";
+        const trimmed = queryValue.trim();
+        const normalized = normalizeSearchQuery(queryValue);
+
+        if (normalized.length < SEARCH_MIN_QUERY_CHARS) {
+          return JSON.stringify({
+            error: `Query must be at least ${SEARCH_MIN_QUERY_CHARS} characters.`,
+          });
+        }
+
+        if (isSearchQueryTooLong(normalized, SEARCH_MAX_QUERY_CHARS)) {
+          return JSON.stringify({
+            error: `Query must be at most ${SEARCH_MAX_QUERY_CHARS} characters.`,
+          });
+        }
+
+        const limit =
+          typeof inputObject.limit === "number" ? inputObject.limit : undefined;
+
+        setSubmittedQuery(trimmed);
+        setIsOpen(true);
+        setQuery(trimmed);
+
+        const outcome = await performSearch(trimmed, { limit, signal });
+
+        if (outcome.status === "ok") {
+          return JSON.stringify({
+            query: outcome.response.query,
+            count: outcome.response.results.length,
+            results: outcome.response.results,
+          });
+        }
+
+        if (outcome.status === "aborted") {
+          return JSON.stringify({ error: "Search was cancelled." });
+        }
+
+        if (outcome.status === "too-short") {
+          return JSON.stringify({
+            error: `Query must be at least ${SEARCH_MIN_QUERY_CHARS} characters.`,
+          });
+        }
+
+        return JSON.stringify({
+          error: SEARCH_ERROR_MESSAGE[outcome.kind],
+        });
+      },
+      { signal: registration.signal }
+    ).catch((error) => {
+      console.error("WebMCP search tool registration failed", error);
+    });
+
+    return () => {
+      registration.abort();
+    };
+  }, [performSearch]);
 
   useEffect(() => {
     if (!isOpen) {

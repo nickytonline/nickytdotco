@@ -1,8 +1,12 @@
-import { normalizeSearchQuery, parseSearchLimit } from "./normalize.ts";
+import {
+  isSearchQueryTooLong,
+  normalizeSearchQuery,
+  parseSearchLimit,
+} from "./normalize.ts";
 import { SEARCH_DEFAULT_LIMIT, SEARCH_MAX_LIMIT } from "./constants.ts";
 import type { SearchResponse } from "./types.ts";
 
-export { normalizeSearchQuery, parseSearchLimit };
+export { isSearchQueryTooLong, normalizeSearchQuery, parseSearchLimit };
 export type { SearchResponse, SearchResult } from "./types.ts";
 
 export async function searchSite(
