@@ -54,7 +54,7 @@ test.describe("site search", () => {
 
     await expect(searchButton).toHaveAttribute(
       "aria-keyshortcuts",
-      /(Meta\+K|Control\+K)/
+      "Meta+K Control+K /"
     );
 
     const shortcutKeys = searchButton.locator("kbd");

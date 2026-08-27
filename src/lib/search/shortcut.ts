@@ -1,9 +1,10 @@
 export type SearchShortcut = {
   /** Visible chord for the modifier+K shortcut, e.g. "⌘K" or "Ctrl+K". */
   modifierChord: string;
-  /** Space-separated `aria-keyshortcuts` value for the search control. */
-  ariaKeyShortcuts: string;
 };
+
+/** Both modifier chords work; `/` is the additional opener. */
+export const SEARCH_ARIA_KEYSHORTCUTS = "Meta+K Control+K /";
 
 function isApplePlatform(): boolean {
   if (typeof navigator === "undefined") {
@@ -21,10 +22,7 @@ function isApplePlatform(): boolean {
 }
 
 export function getSearchShortcut(): SearchShortcut {
-  const isApple = isApplePlatform();
-
   return {
-    modifierChord: isApple ? "⌘K" : "Ctrl+K",
-    ariaKeyShortcuts: isApple ? "Meta+K /" : "Control+K /",
+    modifierChord: isApplePlatform() ? "⌘K" : "Ctrl+K",
   };
 }

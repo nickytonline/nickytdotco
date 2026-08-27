@@ -6,12 +6,15 @@ import {
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
 } from "../lib/search/constants";
-import { getSearchShortcut, type SearchShortcut } from "../lib/search/shortcut";
+import {
+  getSearchShortcut,
+  SEARCH_ARIA_KEYSHORTCUTS,
+  type SearchShortcut,
+} from "../lib/search/shortcut";
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
 const SHORTCUT_KBD_CLASS =
   "rounded border border-border bg-muted px-1.5 py-0.5 font-sans text-xs font-medium text-muted-foreground";
-const FALLBACK_ARIA_KEYSHORTCUTS = "Meta+K Control+K /";
 
 type SearchErrorKind = "rate-limit" | "unavailable";
 
@@ -299,9 +302,7 @@ const Search = () => {
         onClick={() => setIsOpen(true)}
         className="inline-flex items-center gap-1.5 hover:text-brand focus:text-brand focus:outline-none transition-colors"
         aria-label="Search site"
-        aria-keyshortcuts={
-          shortcut?.ariaKeyShortcuts ?? FALLBACK_ARIA_KEYSHORTCUTS
-        }
+        aria-keyshortcuts={SEARCH_ARIA_KEYSHORTCUTS}
       >
         <SearchIcon className="w-4.5 h-4.5 lg:w-5 lg:h-5" strokeWidth={3} />
         <span className="sr-only">Search</span>
