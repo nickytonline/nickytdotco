@@ -333,14 +333,16 @@ const Search = () => {
             </kbd>
           </div>
 
-          {searchError ? (
-            <div className="flex min-h-[16rem] items-center justify-center text-center">
-              <div
-                className="space-y-2"
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-              >
+          <div
+            role="alert"
+            className={
+              searchError
+                ? "flex min-h-[16rem] items-center justify-center text-center"
+                : "sr-only"
+            }
+          >
+            {searchError ? (
+              <div className="space-y-2">
                 <p className="text-lg text-destructive">
                   {SEARCH_ERROR_MESSAGE[searchError]}
                 </p>
@@ -348,8 +350,10 @@ const Search = () => {
                   Try searching again in a moment.
                 </p>
               </div>
-            </div>
-          ) : showResults ? (
+            ) : null}
+          </div>
+
+          {searchError ? null : showResults ? (
             <ul
               ref={resultsRef}
               className={`space-y-2 ${showSearching ? "opacity-60" : ""}`}

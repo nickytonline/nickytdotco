@@ -96,7 +96,6 @@ test.describe("site search", () => {
     await expect(alert).toContainText("Search is temporarily unavailable", {
       timeout: 15000,
     });
-    await expect(alert).toHaveAttribute("aria-live", "assertive");
     await expect(
       dialog.getByText("Search is temporarily unavailable. Try again.")
     ).toBeVisible();
@@ -121,7 +120,6 @@ test.describe("site search", () => {
     await expect(alert).toContainText("Too many searches", {
       timeout: 15000,
     });
-    await expect(alert).toHaveAttribute("aria-live", "assertive");
     await expect(
       dialog.getByText("Too many searches. Wait a moment and try again.")
     ).toBeVisible();
