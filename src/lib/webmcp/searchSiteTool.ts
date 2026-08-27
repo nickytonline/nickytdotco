@@ -4,7 +4,6 @@ import {
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
 } from "../search/constants";
-import { getModelContext } from "./getModelContext";
 
 export const SEARCH_SITE_TOOL_NAME = "search_site";
 
@@ -47,7 +46,7 @@ export async function registerSearchSiteTool(
   execute: WebMCP.ToolExecuteCallback,
   options?: WebMCP.ModelContextRegisterToolOptions
 ): Promise<boolean> {
-  const modelContext = getModelContext();
+  const modelContext = document.modelContext;
   if (!modelContext) {
     return false;
   }
