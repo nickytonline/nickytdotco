@@ -80,6 +80,50 @@ const Search = () => {
   }, [isOpen]);
 
   useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const dialog = dialogRef.current;
+    if (!dialog) {
+      return;
+    }
+
+    const inset = 12;
+    const maxHeightPx = 36 * 16;
+
+    const syncToVisualViewport = () => {
+      const viewport = window.visualViewport;
+      const height = viewport?.height ?? window.innerHeight;
+      const offsetTop = viewport?.offsetTop ?? 0;
+      const available = Math.max(0, height - inset * 2);
+      dialog.style.top = `${offsetTop + inset}px`;
+      dialog.style.height = `${Math.min(available, maxHeightPx)}px`;
+      dialog.style.maxHeight = `${available}px`;
+    };
+
+    syncToVisualViewport();
+    window.visualViewport?.addEventListener("resize", syncToVisualViewport);
+    window.visualViewport?.addEventListener("scroll", syncToVisualViewport);
+    window.addEventListener("resize", syncToVisualViewport);
+
+    return () => {
+      window.visualViewport?.removeEventListener(
+        "resize",
+        syncToVisualViewport
+      );
+      window.visualViewport?.removeEventListener(
+        "scroll",
+        syncToVisualViewport
+      );
+      window.removeEventListener("resize", syncToVisualViewport);
+      dialog.style.top = "";
+      dialog.style.height = "";
+      dialog.style.maxHeight = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     if (selectedIndex >= 0 && resultsRef.current) {
       const selectedElement = resultsRef.current.children[
         selectedIndex
