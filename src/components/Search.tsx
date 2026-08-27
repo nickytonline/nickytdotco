@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import { searchSite, type SearchResult } from "../lib/search/searchSite";
 import {
+  SEARCH_ARIA_KEYSHORTCUTS,
   SEARCH_DEBOUNCE_MS,
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
@@ -286,9 +287,11 @@ const Search = () => {
   return (
     <>
       <button
+        type="button"
         onClick={() => setIsOpen(true)}
         className="inline-flex hover:text-brand focus:text-brand focus:outline-none transition-colors"
         aria-label="Search site"
+        aria-keyshortcuts={SEARCH_ARIA_KEYSHORTCUTS}
       >
         <SearchIcon className="w-4.5 h-4.5 lg:w-5 lg:h-5" strokeWidth={3} />
         <span className="sr-only">Search</span>
@@ -343,7 +346,7 @@ const Search = () => {
           className="min-h-0 flex-1 overflow-y-auto p-4"
           aria-busy={showSearching}
         >
-          <div className="mb-4 flex h-6 items-baseline justify-between px-2 text-sm text-muted-foreground">
+          <div className="mb-4 h-6 px-2 text-sm text-muted-foreground">
             <span
               aria-live="polite"
               aria-atomic="true"
@@ -351,9 +354,6 @@ const Search = () => {
             >
               {paneStatus}
             </span>
-            <kbd className="hidden rounded border border-secondary bg-muted px-1.5 py-0.5 font-sans text-xs sm:inline-block">
-              ESC to close
-            </kbd>
           </div>
 
           <div
@@ -385,7 +385,7 @@ const Search = () => {
               id={resultsListId}
               role="listbox"
               aria-label="Search results"
-              className={`space-y-2 ${showSearching ? "opacity-60" : ""}`}
+              className="space-y-2"
             >
               {results.map((result, index) => {
                 const isSelected = index === selectedIndex;
@@ -419,7 +419,7 @@ const Search = () => {
                           {result.excerpt}
                         </p>
                       </div>
-                      <span className="shrink-0 rounded-full border border-secondary bg-muted px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <span className="shrink-0 rounded-full border border-secondary bg-muted px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                         {result.type}
                       </span>
                     </div>
@@ -452,26 +452,6 @@ const Search = () => {
                   Type at least two characters to search blog posts, talks, and
                   livestreams.
                 </p>
-              </div>
-              <div className="flex gap-4 pt-4 text-xs">
-                <span className="flex items-center gap-1">
-                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
-                    Enter
-                  </kbd>
-                  Open
-                </span>
-                <span className="flex items-center gap-1">
-                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
-                    &uarr;&darr;
-                  </kbd>
-                  Navigate
-                </span>
-                <span className="flex items-center gap-1">
-                  <kbd className="rounded border border-secondary bg-muted px-1 py-0.5">
-                    ESC
-                  </kbd>
-                  Close
-                </span>
               </div>
             </div>
           )}

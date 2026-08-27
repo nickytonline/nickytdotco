@@ -47,6 +47,16 @@ test.describe("site search", () => {
     }).toPass({ timeout: 10000 });
   });
 
+  test("exposes keyboard shortcuts on the search button", async ({ page }) => {
+    const searchButton = page.getByRole("button", { name: "Search site" });
+
+    await expect(searchButton).toHaveAttribute(
+      "aria-keyshortcuts",
+      "Meta+K Control+K /"
+    );
+    await expect(searchButton.locator("kbd")).toHaveCount(0);
+  });
+
   test("arrow keys and Enter navigate to the selected result", async ({
     page,
   }) => {
