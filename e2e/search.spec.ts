@@ -92,10 +92,11 @@ test.describe("site search", () => {
     const dialog = page.getByRole("dialog");
     await page.getByPlaceholder("Search posts, talks, projects...").fill("ab");
 
-    const status = dialog.locator("[aria-live='polite']");
-    await expect(status).toHaveText("Search is temporarily unavailable", {
+    const alert = dialog.getByRole("alert");
+    await expect(alert).toContainText("Search is temporarily unavailable", {
       timeout: 15000,
     });
+    await expect(alert).toHaveAttribute("aria-live", "assertive");
     await expect(
       dialog.getByText("Search is temporarily unavailable. Try again.")
     ).toBeVisible();
@@ -116,10 +117,11 @@ test.describe("site search", () => {
     const dialog = page.getByRole("dialog");
     await page.getByPlaceholder("Search posts, talks, projects...").fill("ab");
 
-    const status = dialog.locator("[aria-live='polite']");
-    await expect(status).toHaveText("Too many searches", {
+    const alert = dialog.getByRole("alert");
+    await expect(alert).toContainText("Too many searches", {
       timeout: 15000,
     });
+    await expect(alert).toHaveAttribute("aria-live", "assertive");
     await expect(
       dialog.getByText("Too many searches. Wait a moment and try again.")
     ).toBeVisible();

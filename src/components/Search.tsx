@@ -321,7 +321,11 @@ const Search = () => {
           aria-busy={showSearching}
         >
           <div className="mb-4 flex h-6 items-baseline justify-between px-2 text-sm text-muted-foreground">
-            <span aria-live="polite" aria-atomic="true">
+            <span
+              aria-live="polite"
+              aria-atomic="true"
+              aria-hidden={searchError ? true : undefined}
+            >
               {paneStatus}
             </span>
             <kbd className="hidden rounded border border-secondary bg-muted px-1.5 py-0.5 font-sans text-xs sm:inline-block">
@@ -331,7 +335,12 @@ const Search = () => {
 
           {searchError ? (
             <div className="flex min-h-[16rem] items-center justify-center text-center">
-              <div className="space-y-2">
+              <div
+                className="space-y-2"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+              >
                 <p className="text-lg text-destructive">
                   {SEARCH_ERROR_MESSAGE[searchError]}
                 </p>
