@@ -120,6 +120,21 @@ test.describe("site search", () => {
     await expect(dialog).not.toBeVisible();
   });
 
+  test("one Escape closes the dialog after typing a query", async ({
+    page,
+  }) => {
+    await page.getByRole("button", { name: "Search site" }).click();
+    const dialog = page.getByRole("dialog");
+    const input = page.getByPlaceholder("Search posts, talks, projects...");
+    await input.fill("Nick Taylor");
+    await expect(dialog.getByRole("option").first()).toBeVisible({
+      timeout: 15000,
+    });
+
+    await page.keyboard.press("Escape");
+    await expect(dialog).not.toBeVisible();
+  });
+
   test("announces a 503 search failure in the live region", async ({
     page,
   }) => {

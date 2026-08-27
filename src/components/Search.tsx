@@ -240,6 +240,14 @@ const Search = () => {
   };
 
   const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Escape") {
+      // type="search" would otherwise consume the first Escape to clear the
+      // field, leaving the dialog open until a second Escape.
+      e.preventDefault();
+      setIsOpen(false);
+      return;
+    }
+
     if (results.length === 0) {
       return;
     }
