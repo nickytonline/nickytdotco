@@ -35,7 +35,7 @@ test.describe("site search", () => {
     await expect(page.getByText(/\d+ results? found/)).toBeVisible({
       timeout: 15000,
     });
-    const results = dialog.getByRole("listitem");
+    const results = dialog.getByRole("option");
     await expect(results.first()).toBeVisible();
   });
 
@@ -55,17 +55,60 @@ test.describe("site search", () => {
     await input.fill("Nick Taylor");
 
     const dialog = page.getByRole("dialog");
-    const results = dialog.getByRole("listitem");
+    const results = dialog.getByRole("option");
     await expect(results.first()).toBeVisible({ timeout: 15000 });
 
     // The first result is already highlighted by default once results load,
     // so Enter alone should open it without pressing ArrowDown first.
-    const firstResultLink = results.first().getByRole("link");
-    const href = await firstResultLink.getAttribute("href");
+    const href = await results.first().getAttribute("href");
 
     await page.keyboard.press("Enter");
 
     await expect(page).toHaveURL(new RegExp(`${escapeRegExp(href!)}$`));
+  });
+
+  test("exposes results as a combobox listbox with aria-activedescendant", async ({
+    page,
+  }) => {
+    await page.getByRole("button", { name: "Search site" }).click();
+    const input = page.getByRole("combobox", {
+      name: "Search posts, talks, and projects",
+    });
+    await expect(input).toHaveAttribute("aria-expanded", "false");
+
+    await input.fill("Nick Taylor");
+
+    const dialog = page.getByRole("dialog");
+    const results = dialog.getByRole("option");
+    await expect(results.first()).toBeVisible({ timeout: 15000 });
+
+    await expect(input).toHaveAttribute("aria-expanded", "true");
+    await expect(input).toHaveAttribute("aria-autocomplete", "list");
+    const listbox = dialog.getByRole("listbox", { name: "Search results" });
+    await expect(listbox).toBeVisible();
+    const listboxId = await listbox.getAttribute("id");
+    expect(listboxId).toBeTruthy();
+    await expect(input).toHaveAttribute("aria-controls", listboxId!);
+
+    const firstOptionId = await results.first().getAttribute("id");
+    expect(firstOptionId).toBeTruthy();
+    await expect(input).toHaveAttribute(
+      "aria-activedescendant",
+      firstOptionId!
+    );
+    await expect(results.first()).toHaveAttribute("aria-selected", "true");
+
+    const resultCount = await results.count();
+    if (resultCount > 1) {
+      await input.press("ArrowDown");
+      const secondOptionId = await results.nth(1).getAttribute("id");
+      await expect(input).toHaveAttribute(
+        "aria-activedescendant",
+        secondOptionId!
+      );
+      await expect(results.nth(1)).toHaveAttribute("aria-selected", "true");
+      await expect(results.first()).toHaveAttribute("aria-selected", "false");
+    }
   });
 
   test("Escape closes the dialog", async ({ page }) => {
