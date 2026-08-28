@@ -21,6 +21,15 @@ export const SEARCH_COSINE_DISTANCE_GAP = 0.12;
 export const SEARCH_VECTOR_CANDIDATE_LIMIT = 24;
 export const SEARCH_LEXICAL_CANDIDATE_LIMIT = 48;
 export const SEARCH_TEXT_UPDATE_BATCH_SIZE = 50;
+export const SEARCH_REINDEX_GITHUB_REPO = "nickytonline/nickytdotco";
+export const SEARCH_REINDEX_WORKFLOW_FILE = "index-search.yml";
+export const SEARCH_REINDEX_REF = "main";
+// Collapse concurrent origin renders after a CDN miss, including homepage
+// variants (Accept-Language, timezone) and short homepage TTLs.
+export const SEARCH_REINDEX_COOLDOWN_SECONDS = 60 * 60;
+export const SEARCH_REINDEX_MEMORY_COOLDOWN_MS = 60_000;
+export const SEARCH_REINDEX_LOCK_TABLE = "search_reindex_triggers";
+export const SEARCH_REINDEX_LOCK_ID = "latest";
 
 export const SEARCH_CDN_HEADERS = {
   "Cache-Control": "public, max-age=0, must-revalidate",

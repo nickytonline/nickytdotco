@@ -14,6 +14,7 @@ import {
   setCdnCacheHeaders,
   soonestExpiryTimestamp,
 } from "@/utils/cdn-cache";
+import { scheduleSearchReindex } from "@/lib/search/scheduleSearchReindex";
 
 const now = Date.now();
 
@@ -80,6 +81,7 @@ if (!errorMessage) {
 }
 Astro.response.headers.set("timezone", timezone);
 Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
+scheduleSearchReindex("/watch", Astro.locals.netlify.context);
 
 export const prerender = false;
 ---

@@ -3,6 +3,7 @@ import { getLiveCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import { dateFilter } from "../utils/filters";
+import { scheduleSearchReindex } from "../lib/search/scheduleSearchReindex";
 
 const newsletterResult = await getLiveCollection("newsletter");
 
@@ -31,6 +32,7 @@ Astro.response.headers.set(
   "Netlify-CDN-Cache-Control",
   "public, max-age=259200, must-revalidate"
 );
+scheduleSearchReindex("/newsletter", Astro.locals.netlify.context);
 
 export const prerender = false;
 ---
