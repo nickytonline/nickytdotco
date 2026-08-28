@@ -9,6 +9,13 @@ import { getLiveCollection } from "astro:content";
 import type { StreamVideoInfo } from "@/content/_loaders/stream-videos";
 import { getYouTubeId } from "@/utils/youtube-utils";
 import { slugifyVideo } from "@/utils/video-utils";
+import {
+  isEventUpcoming,
+  setCdnCacheHeaders,
+  soonestExpiryTimestamp,
+} from "@/utils/cdn-cache";
+
+const now = Date.now();
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
@@ -27,14 +34,16 @@ if (scheduleResult.error) {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
 }
 
+schedule = schedule.filter((stream) =>
+  isEventUpcoming(new Date(stream.date), now),
+);
+
 let latestVideos: StreamVideoInfo[] = [];
 const streamVideosResult = await getLiveCollection("streamVideos");
 
 if (streamVideosResult.error) {
   console.error("Error fetching stream videos:", streamVideosResult.error);
 } else {
-  const now = Date.now();
-
   const pastVideos =
     streamVideosResult.entries
       ?.map((entry) => entry.data)
@@ -59,14 +68,16 @@ if (streamVideosResult.error) {
 const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
 const timezone = rawTimezone || "UTC";
 
-Astro.response.headers.set(
-  "Cache-Control",
-  "public, max-age=0, must-revalidate",
-);
-Astro.response.headers.set(
-  "Netlify-CDN-Cache-Control",
-  "public, max-age=259200, must-revalidate",
-);
+if (!errorMessage) {
+  setCdnCacheHeaders(
+    Astro.response.headers,
+    soonestExpiryTimestamp(
+      schedule.map((stream) => new Date(stream.date)),
+      now,
+    ),
+    now,
+  );
+}
 Astro.response.headers.set("timezone", timezone);
 Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
 
