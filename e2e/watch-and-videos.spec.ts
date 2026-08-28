@@ -77,5 +77,28 @@ test.describe("video archives", () => {
       );
 
     expect(videoStructuredDataCount).toBe(1);
+    await expect(page.getByText("Upcoming livestream")).toHaveCount(0);
+  });
+
+  test("upcoming stream video pages show an upcoming pill", async ({
+    page,
+  }) => {
+    await page.goto("/watch");
+
+    const upcomingHeading = page.getByRole("heading", {
+      name: "Upcoming Live Streams",
+    });
+    if (!(await upcomingHeading.count())) {
+      test.skip(true, "no upcoming streams scheduled");
+    }
+
+    const section = upcomingHeading.locator("xpath=ancestor::section");
+    const videoLink = section.locator('a[href^="/videos/"]').first();
+    if ((await videoLink.count()) === 0) {
+      test.skip(true, "upcoming streams have no on-site video pages");
+    }
+
+    await videoLink.click();
+    await expect(page.getByText("Upcoming livestream")).toBeVisible();
   });
 });

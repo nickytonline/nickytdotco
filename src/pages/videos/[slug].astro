@@ -6,6 +6,7 @@ import { dateFilter } from "../../utils/filters";
 import { site } from "../../data/site";
 import { markdownFilter } from "../../utils/markdown";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
+import UpcomingBadge from "../../components/UpcomingBadge.astro";
 import {
   extractYouTubeVideoId,
   slugifyVideo,
@@ -22,6 +23,7 @@ export async function getStaticPaths() {
 const { stream } = Astro.props;
 const { title, date, description, guestName, guestTitle, youtubeStreamLink } =
   stream.data;
+const isUpcoming = new Date(date).getTime() > Date.now();
 const descriptionHtml = markdownFilter(description);
 
 const videoId = extractYouTubeVideoId(youtubeStreamLink);
@@ -144,10 +146,13 @@ if (stream.data.website)
       >
         {title}
       </h1>
-      <div class="text-lg text-muted-foreground mt-2">
+      <div
+        class="flex flex-wrap items-center gap-2 leading-none text-lg text-muted-foreground mt-2"
+      >
         <time datetime={new Date(date).toISOString()} class="italic">
           {dateFilter(new Date(date))}
         </time>
+        {isUpcoming && <UpcomingBadge label="Upcoming livestream" />}
       </div>
       <p class="text-base text-muted-foreground mt-1">
         with <span class="font-semibold">{guestName}</span>
