@@ -11,6 +11,11 @@ import { fetchPastGuestsWithYouTube } from "../content/_loaders/stream-schedule"
 import TalkCard from "../components/TalkCard.astro";
 import GuideCard from "../components/GuideCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import {
+  isEventUpcoming,
+  setCdnCacheHeaders,
+  soonestExpiryTimestamp,
+} from "../utils/cdn-cache";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -43,7 +48,9 @@ const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
 // Upcoming talks: all future events, not a capped subset.
 const upcomingTalks = allTalks.filter(
-  (t) => t.data.upcoming === true && (t.data.endDate ?? t.data.date) >= now,
+  (t) =>
+    t.data.upcoming === true &&
+    isEventUpcoming(t.data.endDate ?? t.data.date, now.getTime()),
 );
 const recentTalks = allTalks
   .filter(
@@ -98,8 +105,8 @@ if (scheduleResult.error) {
   errorMessage = "Error fetching stream schedule.";
 } else {
   schedule = scheduleResult.entries?.map((entry) => entry.data) ?? [];
-  upcomingStreams = schedule.filter(
-    (stream) => new Date(stream.date).getTime() > now.getTime(),
+  upcomingStreams = schedule.filter((stream) =>
+    isEventUpcoming(new Date(stream.date), now.getTime()),
   );
 }
 
@@ -145,25 +152,18 @@ const latestContent = [
 const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
 const timezone = rawTimezone || "UTC";
 
-// Expire when the next event starts so it drops off Upcoming, capped at 1 day
-// so newly scheduled Turso streams still appear without a deploy.
-const CDN_CACHE_MAX_SECONDS = 86_400;
-const secondsUntilNextEvent = hasUpcomingEvents
-  ? Math.max(
-      0,
-      Math.floor((upcomingEvents[0].timestamp - now.getTime()) / 1000),
-    )
-  : CDN_CACHE_MAX_SECONDS;
-const cdnMaxAge = Math.min(CDN_CACHE_MAX_SECONDS, secondsUntilNextEvent);
-
 if (!errorMessage) {
-  Astro.response.headers.set(
-    "Cache-Control",
-    "public, max-age=0, must-revalidate",
-  );
-  Astro.response.headers.set(
-    "Netlify-CDN-Cache-Control",
-    `public, max-age=${cdnMaxAge}, must-revalidate`,
+  setCdnCacheHeaders(
+    Astro.response.headers,
+    soonestExpiryTimestamp(
+      upcomingEvents.map((event) =>
+        event.kind === "talk"
+          ? (event.item.data.endDate ?? event.item.data.date)
+          : new Date(event.item.date),
+      ),
+      now.getTime(),
+    ),
+    now.getTime(),
   );
   Astro.response.headers.set("timezone", timezone);
   Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");

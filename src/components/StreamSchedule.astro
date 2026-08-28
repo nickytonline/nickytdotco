@@ -4,6 +4,7 @@ import { getHeadingId, getLocalizedDate } from "../utils/schedule-utils";
 import { getYouTubeId } from "../utils/youtube-utils";
 import { slugifyVideo } from "../utils/video-utils";
 import LiveStreamCard from "./LiveStreamCard.astro";
+import { isEventUpcoming } from "../utils/cdn-cache";
 
 const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
 
@@ -73,7 +74,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
       const guestInfo = noGuest
         ? ""
         : `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;
-      const upcoming = new Date(date).getTime() > now;
+      const upcoming = isEventUpcoming(new Date(date), now);
 
       const eventName =
         guestName === "2Full2Stack"
