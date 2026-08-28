@@ -1,13 +1,24 @@
 import { createHash } from "node:crypto";
-import { createClient, type Client } from "@libsql/client/http";
+import { createClient, type Client, type Row } from "@libsql/client/http";
 import { ENV } from "varlock/env";
 import {
+  SEARCH_COSINE_DISTANCE_GAP,
   SEARCH_EMBEDDING_DIMENSIONS,
+  SEARCH_LEXICAL_CANDIDATE_LIMIT,
+  SEARCH_MAX_COSINE_DISTANCE,
   SEARCH_QUERY_CACHE_MAX_ROWS,
   SEARCH_QUERY_CACHE_TABLE,
   SEARCH_QUERY_CACHE_TTL_SECONDS,
   SEARCH_TABLE,
+  SEARCH_TEXT_UPDATE_BATCH_SIZE,
+  SEARCH_VECTOR_CANDIDATE_LIMIT,
 } from "./constants.ts";
+import {
+  documentMatchesQueryPhrase,
+  phraseTokens,
+  selectSearchHits,
+  type ScoredSearchHit,
+} from "./rank.ts";
 import type { SearchDocumentInput, SearchResult } from "./types.ts";
 
 let client: Client | undefined;
@@ -35,9 +46,11 @@ export async function ensureSearchTable(db: Client = getSearchDb()) {
       excerpt TEXT NOT NULL,
       type TEXT NOT NULL,
       content_hash TEXT NOT NULL,
+      search_text TEXT NOT NULL DEFAULT '',
       embedding F32_BLOB(${SEARCH_EMBEDDING_DIMENSIONS}) NOT NULL
     )
   `);
+      await ensureSearchTextColumn(db);
       await db.execute(`
     CREATE TABLE IF NOT EXISTS ${SEARCH_QUERY_CACHE_TABLE} (
       query_hash TEXT PRIMARY KEY,
@@ -51,6 +64,22 @@ export async function ensureSearchTable(db: Client = getSearchDb()) {
     });
   }
   return tableReady;
+}
+
+async function ensureSearchTextColumn(db: Client) {
+  try {
+    await db.execute(
+      `ALTER TABLE ${SEARCH_TABLE} ADD COLUMN search_text TEXT NOT NULL DEFAULT ''`
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (
+      !/duplicate column name/i.test(message) &&
+      !/already exists/i.test(message)
+    ) {
+      throw error;
+    }
+  }
 }
 
 function queryCacheHash(query: string): string {
@@ -159,14 +188,15 @@ export async function upsertSearchDocuments(
   }
 
   const statements = documents.map((document) => ({
-    sql: `INSERT INTO ${SEARCH_TABLE} (id, url, title, excerpt, type, content_hash, embedding)
-          VALUES (?, ?, ?, ?, ?, ?, vector32(?))
+    sql: `INSERT INTO ${SEARCH_TABLE} (id, url, title, excerpt, type, content_hash, search_text, embedding)
+          VALUES (?, ?, ?, ?, ?, ?, ?, vector32(?))
           ON CONFLICT(id) DO UPDATE SET
             url = excluded.url,
             title = excluded.title,
             excerpt = excluded.excerpt,
             type = excluded.type,
             content_hash = excluded.content_hash,
+            search_text = excluded.search_text,
             embedding = excluded.embedding`,
     args: [
       document.id,
@@ -175,11 +205,36 @@ export async function upsertSearchDocuments(
       document.excerpt,
       document.type,
       document.contentHash,
+      document.textToEmbed,
       JSON.stringify(document.embedding),
     ],
   }));
 
   await db.batch(statements, "write");
+}
+
+export async function updateSearchTexts(
+  documents: Array<{ id: string; searchText: string }>,
+  db: Client = getSearchDb()
+) {
+  if (documents.length === 0) {
+    return;
+  }
+
+  for (
+    let index = 0;
+    index < documents.length;
+    index += SEARCH_TEXT_UPDATE_BATCH_SIZE
+  ) {
+    const chunk = documents.slice(index, index + SEARCH_TEXT_UPDATE_BATCH_SIZE);
+    await db.batch(
+      chunk.map((document) => ({
+        sql: `UPDATE ${SEARCH_TABLE} SET search_text = ? WHERE id = ?`,
+        args: [document.searchText, document.id],
+      })),
+      "write"
+    );
+  }
 }
 
 export async function deleteMissingSearchDocuments(
@@ -199,22 +254,112 @@ export async function deleteMissingSearchDocuments(
 }
 
 export async function searchDocuments(
+  query: string,
   queryEmbedding: number[],
   limit: number,
   db: Client = getSearchDb()
 ): Promise<SearchResult[]> {
+  const embeddingJson = JSON.stringify(queryEmbedding);
+  const lexicalHits = await searchLexicalHits(query, embeddingJson, limit, db);
+  if (lexicalHits.length > 0) {
+    return selectSearchHits(
+      lexicalHits,
+      [],
+      limit,
+      SEARCH_MAX_COSINE_DISTANCE,
+      SEARCH_COSINE_DISTANCE_GAP
+    ).map(toSearchResult);
+  }
+
+  const vectorHits = await searchVectorHits(embeddingJson, limit, db);
+  return selectSearchHits(
+    [],
+    vectorHits,
+    limit,
+    SEARCH_MAX_COSINE_DISTANCE,
+    SEARCH_COSINE_DISTANCE_GAP
+  ).map(toSearchResult);
+}
+
+function toSearchResult(hit: ScoredSearchHit): SearchResult {
+  return {
+    url: hit.url,
+    title: hit.title,
+    excerpt: hit.excerpt,
+    type: hit.type,
+  };
+}
+
+const SEARCH_HAYSTACK_SQL = `lower(coalesce(nullif(search_text, ''), title || ' ' || excerpt))`;
+
+async function searchLexicalHits(
+  query: string,
+  embeddingJson: string,
+  limit: number,
+  db: Client
+): Promise<ScoredSearchHit[]> {
+  const tokens = phraseTokens(query);
+  if (tokens.length === 0) {
+    return [];
+  }
+
+  const tokenClauses = tokens
+    .map(() => `instr(${SEARCH_HAYSTACK_SQL}, ?) > 0`)
+    .join(" AND ");
+  const candidateLimit = Math.max(limit, SEARCH_LEXICAL_CANDIDATE_LIMIT);
   const result = await db.execute({
-    sql: `SELECT url, title, excerpt, type
+    sql: `SELECT url, title, excerpt, type,
+                 ${SEARCH_HAYSTACK_SQL} AS haystack,
+                 vector_distance_cos(embedding, vector32(?)) AS distance
           FROM ${SEARCH_TABLE}
-          ORDER BY vector_distance_cos(embedding, vector32(?)) ASC
+          WHERE ${tokenClauses}
+          ORDER BY distance ASC
           LIMIT ?`,
-    args: [JSON.stringify(queryEmbedding), limit],
+    args: [embeddingJson, ...tokens, candidateLimit],
   });
 
-  return result.rows.map((row) => ({
+  return result.rows
+    .map((row) => ({
+      url: String(row.url),
+      title: String(row.title),
+      excerpt: String(row.excerpt),
+      type: row.type as SearchResult["type"],
+      distance: Number(row.distance),
+      haystack: String(row.haystack ?? ""),
+    }))
+    .filter((hit) => documentMatchesQueryPhrase(hit.haystack, query))
+    .map((hit) => ({
+      url: hit.url,
+      title: hit.title,
+      excerpt: hit.excerpt,
+      type: hit.type,
+      distance: hit.distance,
+    }));
+}
+
+async function searchVectorHits(
+  embeddingJson: string,
+  limit: number,
+  db: Client
+): Promise<ScoredSearchHit[]> {
+  const candidateLimit = Math.max(limit, SEARCH_VECTOR_CANDIDATE_LIMIT);
+  const result = await db.execute({
+    sql: `SELECT url, title, excerpt, type,
+                 vector_distance_cos(embedding, vector32(?)) AS distance
+          FROM ${SEARCH_TABLE}
+          ORDER BY distance ASC
+          LIMIT ?`,
+    args: [embeddingJson, candidateLimit],
+  });
+  return mapScoredHits(result.rows);
+}
+
+function mapScoredHits(rows: Row[]): ScoredSearchHit[] {
+  return rows.map((row) => ({
     url: String(row.url),
     title: String(row.title),
     excerpt: String(row.excerpt),
     type: row.type as SearchResult["type"],
+    distance: Number(row.distance),
   }));
 }

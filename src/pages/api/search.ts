@@ -67,7 +67,7 @@ export const GET: APIRoute = async ({ url }) => {
       embedding = await embedQuery(query);
       await cacheQueryEmbedding(query, embedding);
     }
-    const results = await searchDocuments(embedding, limit);
+    const results = await searchDocuments(query, embedding, limit);
     return json(
       {
         query,
