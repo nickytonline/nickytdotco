@@ -145,6 +145,17 @@ const latestContent = [
 const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
 const timezone = rawTimezone || "UTC";
 
+// Expire when the next event starts so it drops off Upcoming, capped at 1 day
+// so newly scheduled Turso streams still appear without a deploy.
+const CDN_CACHE_MAX_SECONDS = 86_400;
+const secondsUntilNextEvent = hasUpcomingEvents
+  ? Math.max(
+      0,
+      Math.floor((upcomingEvents[0].timestamp - now.getTime()) / 1000),
+    )
+  : CDN_CACHE_MAX_SECONDS;
+const cdnMaxAge = Math.min(CDN_CACHE_MAX_SECONDS, secondsUntilNextEvent);
+
 if (!errorMessage) {
   Astro.response.headers.set(
     "Cache-Control",
@@ -152,7 +163,7 @@ if (!errorMessage) {
   );
   Astro.response.headers.set(
     "Netlify-CDN-Cache-Control",
-    "public, max-age=259200, must-revalidate",
+    `public, max-age=${cdnMaxAge}, must-revalidate`,
   );
   Astro.response.headers.set("timezone", timezone);
   Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
