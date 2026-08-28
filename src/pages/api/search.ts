@@ -6,6 +6,7 @@ import {
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_NO_STORE_HEADERS,
 } from "../../lib/search/constants";
+import { queryHasNounOrVerb } from "../../lib/search/contentWords";
 import { embedQuery } from "../../lib/search/embeddings";
 import {
   isSearchQueryTooLong,
@@ -14,7 +15,6 @@ import {
 } from "../../lib/search/normalize";
 import {
   cacheQueryEmbedding,
-  ensureSearchTable,
   getCachedQueryEmbedding,
   searchDocuments,
 } from "../../lib/search/turso";
@@ -60,14 +60,25 @@ export const GET: APIRoute = async ({ url }) => {
     );
   }
 
+  if (!queryHasNounOrVerb(query)) {
+    return json({ query, results: [] }, 200, SEARCH_NO_STORE_HEADERS);
+  }
+
   try {
-    await ensureSearchTable();
     let embedding = await getCachedQueryEmbedding(query);
+    let cachePromise: Promise<unknown> = Promise.resolve();
     if (!embedding) {
       embedding = await embedQuery(query);
-      await cacheQueryEmbedding(query, embedding);
+      cachePromise = cacheQueryEmbedding(query, embedding).catch(
+        (error: unknown) => {
+          console.error("Failed to cache query embedding", error);
+        }
+      );
     }
-    const results = await searchDocuments(query, embedding, limit);
+    const [results] = await Promise.all([
+      searchDocuments(query, embedding, limit),
+      cachePromise,
+    ]);
     return json(
       {
         query,

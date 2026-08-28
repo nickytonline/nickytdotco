@@ -130,8 +130,6 @@ export async function cacheQueryEmbedding(
   db: Client = getSearchDb()
 ) {
   const now = Math.floor(Date.now() / 1000);
-  const minCreatedAt = now - SEARCH_QUERY_CACHE_TTL_SECONDS;
-
   await db.execute({
     sql: `INSERT INTO ${SEARCH_QUERY_CACHE_TABLE} (query_hash, embedding, created_at)
           VALUES (?, ?, ?)
@@ -140,6 +138,11 @@ export async function cacheQueryEmbedding(
             created_at = excluded.created_at`,
     args: [queryCacheHash(query), JSON.stringify(embedding), now],
   });
+}
+
+export async function pruneQueryEmbeddingCache(db: Client = getSearchDb()) {
+  const minCreatedAt =
+    Math.floor(Date.now() / 1000) - SEARCH_QUERY_CACHE_TTL_SECONDS;
 
   await db.execute({
     sql: `DELETE FROM ${SEARCH_QUERY_CACHE_TABLE} WHERE created_at < ?`,

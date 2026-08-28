@@ -7,6 +7,7 @@ import { SEARCH_DEFAULT_LIMIT, SEARCH_MAX_LIMIT } from "./constants.ts";
 import type { SearchResponse } from "./types.ts";
 
 export { isSearchQueryTooLong, normalizeSearchQuery, parseSearchLimit };
+export { queryHasNounOrVerb } from "./contentWords.ts";
 export type { SearchResponse, SearchResult } from "./types.ts";
 
 export async function searchSite(

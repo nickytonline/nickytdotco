@@ -3,6 +3,7 @@ import { Loader2, Search as SearchIcon } from "lucide-react";
 import {
   isSearchQueryTooLong,
   normalizeSearchQuery,
+  queryHasNounOrVerb,
   searchSite,
   type SearchResponse,
   type SearchResult,
@@ -169,6 +170,7 @@ const Search = () => {
       | { status: "error"; kind: SearchErrorKind }
       | { status: "aborted" }
       | { status: "too-short"; query: string }
+      | { status: "no-content-word"; query: string }
     > => {
       const trimmed = rawQuery.trim();
       if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
@@ -177,6 +179,16 @@ const Search = () => {
         setSearchError(null);
         setSelectedIndex(-1);
         return { status: "too-short", query: trimmed };
+      }
+
+      if (!queryHasNounOrVerb(trimmed)) {
+        abortRef.current?.abort();
+        setResults([]);
+        setSubmittedQuery(trimmed);
+        setSearchError(null);
+        setSelectedIndex(-1);
+        setIsSearching(false);
+        return { status: "no-content-word", query: trimmed };
       }
 
       abortRef.current?.abort();
@@ -280,6 +292,12 @@ const Search = () => {
           });
         }
 
+        if (outcome.status === "no-content-word") {
+          return JSON.stringify({
+            error: "Query must include a noun or verb.",
+          });
+        }
+
         return JSON.stringify({
           error: SEARCH_ERROR_MESSAGE[outcome.kind],
         });
@@ -303,10 +321,13 @@ const Search = () => {
     }
 
     const trimmed = query.trim();
-    if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
+    if (
+      trimmed.length < SEARCH_MIN_QUERY_CHARS ||
+      !queryHasNounOrVerb(trimmed)
+    ) {
       abortRef.current?.abort();
       setResults([]);
-      setSubmittedQuery("");
+      setSubmittedQuery(trimmed.length < SEARCH_MIN_QUERY_CHARS ? "" : trimmed);
       setSearchError(null);
       setSelectedIndex(-1);
       setIsSearching(false);
@@ -369,11 +390,20 @@ const Search = () => {
 
   const trimmedQuery = query.trim();
   const hasTypedEnough = trimmedQuery.length >= SEARCH_MIN_QUERY_CHARS;
+  const hasContentWord = queryHasNounOrVerb(trimmedQuery);
+  const hasSearchableQuery = hasTypedEnough && hasContentWord;
   const isPendingSearch =
-    hasTypedEnough && trimmedQuery !== submittedQuery && !isSearching;
-  const showSearching = hasTypedEnough && (isSearching || isPendingSearch);
+    hasSearchableQuery && trimmedQuery !== submittedQuery && !isSearching;
+  const showSearching = hasSearchableQuery && (isSearching || isPendingSearch);
+  const showNoContentWord = hasTypedEnough && !hasContentWord;
   // Drop stale hits as soon as Searching… is shown for a new query.
-  const showResults = results.length > 0 && hasTypedEnough && !showSearching;
+  const showResults =
+    results.length > 0 && hasSearchableQuery && !showSearching;
+  const showNoResults =
+    hasSearchableQuery &&
+    trimmedQuery === submittedQuery &&
+    results.length === 0 &&
+    !showSearching;
   const activeOptionId =
     showResults && selectedIndex >= 0 ? optionId(selectedIndex) : undefined;
   const resultCountLabel =
@@ -384,11 +414,11 @@ const Search = () => {
       ? "Searching…"
       : showResults
         ? resultCountLabel
-        : hasTypedEnough &&
-            trimmedQuery === submittedQuery &&
-            results.length === 0
+        : showNoResults
           ? "No results"
-          : "\u00a0";
+          : showNoContentWord
+            ? "Add a noun or verb to search"
+            : "\u00a0";
 
   return (
     <>
@@ -541,9 +571,7 @@ const Search = () => {
             >
               <Loader2 className="h-8 w-8 animate-spin opacity-50" />
             </div>
-          ) : hasTypedEnough &&
-            trimmedQuery === submittedQuery &&
-            results.length === 0 ? (
+          ) : showNoResults ? (
             <div className="flex min-h-[16rem] items-center justify-center text-center text-muted-foreground">
               <div className="space-y-2">
                 <p className="text-lg">No results found for "{query}"</p>
@@ -558,8 +586,9 @@ const Search = () => {
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
                 <p className="text-sm">
-                  Type at least two characters to search blog posts, talks, and
-                  livestreams.
+                  {showNoContentWord
+                    ? "Add a noun or verb to search blog posts, talks, and livestreams."
+                    : "Type at least two characters to search blog posts, talks, and livestreams."}
                 </p>
               </div>
             </div>
