@@ -192,4 +192,53 @@ test.describe("site search", () => {
       dialog.getByText("Too many searches. Wait a moment and try again.")
     ).toBeVisible();
   });
+
+  test("hides previous results while a new search is in flight", async ({
+    page,
+  }) => {
+    const fulfillSearch = (query: string, title: string) => ({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({
+        query,
+        results: [
+          {
+            url: `/blog/${query.replaceAll(" ", "-").toLowerCase()}`,
+            title,
+            excerpt: `Excerpt for ${title}`,
+            type: "Post",
+          },
+        ],
+      }),
+    });
+
+    await page.route("**/api/search*", async (route) => {
+      const url = new URL(route.request().url());
+      const q = url.searchParams.get("q") ?? "";
+      if (/rust/i.test(q)) {
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        await route.fulfill(fulfillSearch(q, "Cool Rust and WebAssembly"));
+        return;
+      }
+      await route.fulfill(fulfillSearch(q, "Nick Taylor"));
+    });
+
+    await page.getByRole("button", { name: "Search site" }).click();
+    const dialog = page.getByRole("dialog");
+    const input = page.getByPlaceholder("Search posts, talks, projects...");
+    await input.fill("Nick Taylor");
+
+    const results = dialog.getByRole("option");
+    await expect(results.first()).toBeVisible({ timeout: 15000 });
+    await expect(results.first()).toContainText("Nick Taylor");
+
+    await input.fill("Rust");
+
+    await expect(dialog.getByText("Searching…")).toBeVisible();
+    await expect(results).toHaveCount(0);
+
+    await expect(results.first()).toBeVisible({ timeout: 15000 });
+    await expect(results.first()).toContainText("Cool Rust and WebAssembly");
+    await expect(dialog.getByText("Searching…")).toHaveCount(0);
+  });
 });
