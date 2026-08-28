@@ -197,6 +197,15 @@ test.describe("site search", () => {
     await expect(dialog.getByRole("option")).toHaveCount(0);
     await page.waitForTimeout(SEARCH_DEBOUNCE_MS + 250);
     expect(searchCalls).toBe(0);
+
+    await page.getByPlaceholder("Search posts, talks, projects...").fill("all");
+    await expect(
+      dialog.getByText(
+        "Add a noun or verb to search blog posts, talks, and livestreams."
+      )
+    ).toBeVisible();
+    await page.waitForTimeout(SEARCH_DEBOUNCE_MS + 250);
+    expect(searchCalls).toBe(0);
   });
 
   test("calls the search API once a verb is present", async ({ page }) => {

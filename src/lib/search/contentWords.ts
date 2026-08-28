@@ -15,6 +15,7 @@ const FUNCTION_WORDS = new Set<string>([
   "after",
   "against",
   "ah",
+  "all",
   "along",
   "also",
   "although",
