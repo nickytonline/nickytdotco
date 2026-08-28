@@ -21,6 +21,7 @@ import {
   deleteMissingSearchDocuments,
   ensureSearchTable,
   loadContentHashes,
+  updateSearchTexts,
   upsertSearchDocuments,
 } from "../src/lib/search/turso.ts";
 import type {
@@ -279,6 +280,12 @@ async function indexSearchDocuments() {
     );
   }
   await deleteMissingSearchDocuments(keepIds);
+  await updateSearchTexts(
+    documents.map((document) => ({
+      id: document.id,
+      searchText: document.textToEmbed,
+    }))
+  );
   console.log("Search index updated.");
 }
 

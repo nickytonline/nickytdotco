@@ -15,6 +15,11 @@ export const SEARCH_QUERY_CACHE_TTL_SECONDS = 60 * 60 * 24 * 7;
 export const SEARCH_QUERY_CACHE_MAX_ROWS = 2000;
 export const SEARCH_RATE_LIMIT_WINDOW_SECONDS = 60;
 export const SEARCH_RATE_LIMIT_PER_IP = 20;
+// Cosine distance is 0 for identical vectors and 1 for orthogonal ones.
+export const SEARCH_MAX_COSINE_DISTANCE = 0.5;
+export const SEARCH_COSINE_DISTANCE_GAP = 0.12;
+export const SEARCH_VECTOR_CANDIDATE_LIMIT = 24;
+export const SEARCH_TEXT_UPDATE_BATCH_SIZE = 50;
 
 export const SEARCH_CDN_HEADERS = {
   "Cache-Control": "public, max-age=0, must-revalidate",
