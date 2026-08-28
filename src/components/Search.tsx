@@ -194,6 +194,8 @@ const Search = () => {
       setIsSearching(true);
       setSearchError(null);
       setSubmittedQuery(trimmed);
+      setResults([]);
+      setSelectedIndex(-1);
 
       try {
         const response = await searchSite(
@@ -330,6 +332,7 @@ const Search = () => {
     if (
       selectedIndex >= 0 &&
       results.length > 0 &&
+      !isSearching &&
       normalizedInput === submittedQuery
     ) {
       openSelectedResult();
@@ -347,7 +350,11 @@ const Search = () => {
       return;
     }
 
-    if (results.length === 0) {
+    if (
+      results.length === 0 ||
+      isSearching ||
+      query.trim() !== submittedQuery
+    ) {
       return;
     }
 
@@ -364,8 +371,9 @@ const Search = () => {
   const hasTypedEnough = trimmedQuery.length >= SEARCH_MIN_QUERY_CHARS;
   const isPendingSearch =
     hasTypedEnough && trimmedQuery !== submittedQuery && !isSearching;
-  const showResults = results.length > 0 && hasTypedEnough;
   const showSearching = hasTypedEnough && (isSearching || isPendingSearch);
+  // Drop stale hits as soon as Searching… is shown for a new query.
+  const showResults = results.length > 0 && hasTypedEnough && !showSearching;
   const activeOptionId =
     showResults && selectedIndex >= 0 ? optionId(selectedIndex) : undefined;
   const resultCountLabel =

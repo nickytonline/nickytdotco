@@ -192,4 +192,29 @@ test.describe("site search", () => {
       dialog.getByText("Too many searches. Wait a moment and try again.")
     ).toBeVisible();
   });
+
+  test("hides previous results while a new search is in flight", async ({
+    page,
+  }) => {
+    await page.getByRole("button", { name: "Search site" }).click();
+    const dialog = page.getByRole("dialog");
+    const input = page.getByPlaceholder("Search posts, talks, projects...");
+    await input.fill("Nick Taylor");
+
+    const results = dialog.getByRole("option");
+    await expect(results.first()).toBeVisible({ timeout: 15000 });
+
+    await page.route("**/api/search*", async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await route.continue();
+    });
+
+    await input.fill("Rust");
+
+    await expect(dialog.getByText("Searching…")).toBeVisible();
+    await expect(results).toHaveCount(0);
+
+    await expect(results.first()).toBeVisible({ timeout: 15000 });
+    await expect(dialog.getByText("Searching…")).toHaveCount(0);
+  });
 });
