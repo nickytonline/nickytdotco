@@ -9,11 +9,27 @@ import {
   extractYouTubeVideoId,
   slugifyVideo,
 } from "../../utils/video-utils";
+import {
+  isEventUpcoming,
+  setCdnCacheHeaders,
+  soonestExpiryTimestamp,
+} from "../../utils/cdn-cache";
+
+export const prerender = false;
 
 const result = await getLiveCollection("streamVideos");
-const now = new Date();
-const entries = (result.entries ?? []).filter(
-  (e) => new Date(e.data.date) < now
+const now = Date.now();
+const allEntries = result.entries ?? [];
+setCdnCacheHeaders(
+  Astro.response.headers,
+  soonestExpiryTimestamp(
+    allEntries.map((entry) => new Date(entry.data.date)),
+    now,
+  ),
+  now,
+);
+const entries = allEntries.filter(
+  (e) => !isEventUpcoming(new Date(e.data.date), now),
 );
 const sortedStreams = [...entries].sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
