@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { SEARCH_DEBOUNCE_MS } from "../src/lib/search/constants";
 import { escapeRegExp } from "./test-utils";
 
 test.describe("site search", () => {
@@ -167,6 +168,65 @@ test.describe("site search", () => {
     await expect(
       dialog.getByText("Search is temporarily unavailable. Try again.")
     ).toBeVisible();
+  });
+
+  test("does not call the search API for function-word-only queries", async ({
+    page,
+  }) => {
+    let searchCalls = 0;
+    await page.route("**/api/search*", async (route) => {
+      searchCalls += 1;
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ query: "then they", results: [] }),
+      });
+    });
+
+    await page.getByRole("button", { name: "Search site" }).click();
+    const dialog = page.getByRole("dialog");
+    await page
+      .getByPlaceholder("Search posts, talks, projects...")
+      .fill("then they");
+
+    await expect(
+      dialog.getByText(
+        "Add a noun or verb to search blog posts, talks, and livestreams."
+      )
+    ).toBeVisible();
+    await expect(dialog.getByRole("option")).toHaveCount(0);
+    await page.waitForTimeout(SEARCH_DEBOUNCE_MS + 250);
+    expect(searchCalls).toBe(0);
+
+    await page.getByPlaceholder("Search posts, talks, projects...").fill("all");
+    await expect(
+      dialog.getByText(
+        "Add a noun or verb to search blog posts, talks, and livestreams."
+      )
+    ).toBeVisible();
+    await page.waitForTimeout(SEARCH_DEBOUNCE_MS + 250);
+    expect(searchCalls).toBe(0);
+  });
+
+  test("calls the search API once a verb is present", async ({ page }) => {
+    const searchRequests: string[] = [];
+    await page.route("**/api/search*", async (route) => {
+      searchRequests.push(route.request().url());
+      await route.continue();
+    });
+
+    await page.getByRole("button", { name: "Search site" }).click();
+    const dialog = page.getByRole("dialog");
+    await page
+      .getByPlaceholder("Search posts, talks, projects...")
+      .fill("then they would");
+
+    await expect(page.getByText(/\d+ results? found|No results/)).toBeVisible({
+      timeout: 15000,
+    });
+    expect(searchRequests.length).toBeGreaterThan(0);
+    expect(searchRequests[0]).toContain("q=then+they+would");
+    await expect(dialog).toBeVisible();
   });
 
   test("announces a 429 search failure in the live region", async ({

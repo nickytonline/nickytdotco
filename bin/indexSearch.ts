@@ -21,6 +21,7 @@ import {
   deleteMissingSearchDocuments,
   ensureSearchTable,
   loadContentHashes,
+  pruneQueryEmbeddingCache,
   updateSearchTexts,
   upsertSearchDocuments,
 } from "../src/lib/search/turso.ts";
@@ -286,6 +287,7 @@ async function indexSearchDocuments() {
       searchText: document.textToEmbed,
     }))
   );
+  await pruneQueryEmbeddingCache();
   console.log("Search index updated.");
 }
 
