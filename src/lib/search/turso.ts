@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { createClient, type Client } from "@libsql/client/http";
+import { createClient, type Client, type Row } from "@libsql/client/http";
 import { ENV } from "varlock/env";
 import {
   SEARCH_COSINE_DISTANCE_GAP,
@@ -333,15 +333,7 @@ async function searchVectorHits(
   return mapScoredHits(result.rows);
 }
 
-function mapScoredHits(
-  rows: ReadonlyArray<{
-    url: unknown;
-    title: unknown;
-    excerpt: unknown;
-    type: unknown;
-    distance: unknown;
-  }>
-): ScoredSearchHit[] {
+function mapScoredHits(rows: Row[]): ScoredSearchHit[] {
   return rows.map((row) => ({
     url: String(row.url),
     title: String(row.title),
