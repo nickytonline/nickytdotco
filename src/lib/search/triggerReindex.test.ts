@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   githubWorkflowDispatchUrl,
+  resolveNetlifyDeployContext,
   triggerSearchReindex,
   type SearchReindexDeps,
 } from "./triggerReindex.ts";
@@ -24,7 +25,8 @@ type SearchReindexTestOverrides = Partial<
 
 function createDeps(overrides: SearchReindexTestOverrides = {}) {
   return {
-    netlifyContext: overrides.netlifyContext ?? "production",
+    netlifyContext:
+      "netlifyContext" in overrides ? overrides.netlifyContext : "production",
     githubToken:
       "githubToken" in overrides ? overrides.githubToken : "ghp_test_token",
     repo: overrides.repo ?? "nickytonline/nickytdotco",
@@ -48,6 +50,28 @@ function createDeps(overrides: SearchReindexTestOverrides = {}) {
   } satisfies SearchReindexDeps;
 }
 
+describe("resolveNetlifyDeployContext", () => {
+  it("prefers the request-scoped Netlify deploy context", () => {
+    expect(
+      resolveNetlifyDeployContext(
+        { deploy: { context: "production" } },
+        "deploy-preview"
+      )
+    ).toBe("production");
+  });
+
+  it("falls back to the CONTEXT env value", () => {
+    expect(resolveNetlifyDeployContext(undefined, "production")).toBe(
+      "production"
+    );
+  });
+
+  it("returns undefined when neither source has a context", () => {
+    expect(resolveNetlifyDeployContext(undefined, undefined)).toBeUndefined();
+    expect(resolveNetlifyDeployContext({}, "")).toBeUndefined();
+  });
+});
+
 describe("githubWorkflowDispatchUrl", () => {
   it("builds the workflow_dispatch API URL", () => {
     expect(
@@ -70,7 +94,21 @@ describe("triggerSearchReindex", () => {
       reason: "not-production",
     });
     expect(deps.fetch).not.toHaveBeenCalled();
-    expect(deps.log).not.toHaveBeenCalled();
+    expect(deps.log).toHaveBeenCalledWith(
+      "[search-reindex] Skipping from /watch: not production (context=deploy-preview)"
+    );
+  });
+
+  it("logs and skips when the deploy context is missing", async () => {
+    const deps = createDeps({ netlifyContext: undefined });
+    await expect(triggerSearchReindex("/", deps)).resolves.toEqual({
+      status: "skipped",
+      reason: "not-production",
+    });
+    expect(deps.fetch).not.toHaveBeenCalled();
+    expect(deps.log).toHaveBeenCalledWith(
+      "[search-reindex] Skipping from /: not production (context=unset)"
+    );
   });
 
   it("logs and skips when the GitHub token is missing", async () => {
@@ -96,7 +134,9 @@ describe("triggerSearchReindex", () => {
       reason: "cooldown",
     });
     expect(deps.fetch).not.toHaveBeenCalled();
-    expect(deps.log).not.toHaveBeenCalled();
+    expect(deps.log).toHaveBeenCalledWith(
+      "[search-reindex] Skipping from /watch: cooldown"
+    );
   });
 
   it("does not dispatch when claiming the lock throws", async () => {

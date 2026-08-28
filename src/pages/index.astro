@@ -168,8 +168,8 @@ if (!errorMessage) {
   );
   Astro.response.headers.set("timezone", timezone);
   Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
-  scheduleSearchReindex("/", Astro.locals.netlify.context);
 }
+scheduleSearchReindex("/", Astro.locals.netlify.context);
 
 export const prerender = false;
 ---

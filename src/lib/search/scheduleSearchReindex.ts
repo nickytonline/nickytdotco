@@ -9,14 +9,18 @@ import {
   SEARCH_REINDEX_WORKFLOW_FILE,
 } from "./constants.ts";
 import {
+  resolveNetlifyDeployContext,
   triggerSearchReindex,
   type SearchReindexDeps,
   type SearchReindexResult,
 } from "./triggerReindex.ts";
 import { getSearchDb } from "./turso.ts";
 
-type WaitUntilContext = {
-  waitUntil: (promise: Promise<unknown>) => void;
+type NetlifyScheduleContext = {
+  waitUntil?: (promise: Promise<unknown>) => void;
+  deploy?: {
+    context?: string;
+  };
 };
 
 let inFlight: Promise<SearchReindexResult> | undefined;
@@ -62,9 +66,14 @@ async function releaseTriggerSlot(): Promise<void> {
   });
 }
 
-function createProductionDeps(): SearchReindexDeps {
+function createProductionDeps(
+  netlifyContext?: NetlifyScheduleContext
+): SearchReindexDeps {
   return {
-    netlifyContext: process.env.CONTEXT,
+    netlifyContext: resolveNetlifyDeployContext(
+      netlifyContext,
+      process.env.CONTEXT
+    ),
     githubToken: readGithubToken(),
     repo: SEARCH_REINDEX_GITHUB_REPO,
     workflowFile: SEARCH_REINDEX_WORKFLOW_FILE,
@@ -88,7 +97,7 @@ function createProductionDeps(): SearchReindexDeps {
  */
 export function scheduleSearchReindex(
   source: string,
-  netlifyContext?: WaitUntilContext
+  netlifyContext?: NetlifyScheduleContext
 ): void {
   const waitUntil = netlifyContext?.waitUntil?.bind(netlifyContext);
   const now = Date.now();
@@ -100,7 +109,7 @@ export function scheduleSearchReindex(
     return;
   }
 
-  inFlight = triggerSearchReindex(source, createProductionDeps())
+  inFlight = triggerSearchReindex(source, createProductionDeps(netlifyContext))
     .catch((cause: unknown) => {
       console.error("[search-reindex] Unexpected failure", cause);
       return {

@@ -35,11 +35,26 @@ export function githubWorkflowDispatchUrl(
   return `https://api.github.com/repos/${repo}/actions/workflows/${workflowFile}/dispatches`;
 }
 
+/**
+ * Prefer the request-scoped Netlify deploy context. `process.env.CONTEXT` is
+ * not in the Varlock schema, so it is often `undefined` in the SSR bundle
+ * even on production origin renders.
+ */
+export function resolveNetlifyDeployContext(
+  netlifyContext?: { deploy?: { context?: string } },
+  envContext?: string
+): string | undefined {
+  return netlifyContext?.deploy?.context || envContext || undefined;
+}
+
 export async function triggerSearchReindex(
   source: string,
   deps: SearchReindexDeps
 ): Promise<SearchReindexResult> {
   if (deps.netlifyContext !== "production") {
+    deps.log(
+      `[search-reindex] Skipping from ${source}: not production (context=${deps.netlifyContext ?? "unset"})`
+    );
     return { status: "skipped", reason: "not-production" };
   }
 
@@ -60,6 +75,7 @@ export async function triggerSearchReindex(
   }
 
   if (!claimed) {
+    deps.log(`[search-reindex] Skipping from ${source}: cooldown`);
     return { status: "skipped", reason: "cooldown" };
   }
 
