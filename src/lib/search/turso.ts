@@ -4,6 +4,7 @@ import { ENV } from "varlock/env";
 import {
   SEARCH_COSINE_DISTANCE_GAP,
   SEARCH_EMBEDDING_DIMENSIONS,
+  SEARCH_LEXICAL_CANDIDATE_LIMIT,
   SEARCH_MAX_COSINE_DISTANCE,
   SEARCH_QUERY_CACHE_MAX_ROWS,
   SEARCH_QUERY_CACHE_TABLE,
@@ -13,7 +14,8 @@ import {
   SEARCH_VECTOR_CANDIDATE_LIMIT,
 } from "./constants.ts";
 import {
-  searchTokens,
+  documentMatchesQueryPhrase,
+  phraseTokens,
   selectSearchHits,
   type ScoredSearchHit,
 } from "./rank.ts";
@@ -258,8 +260,7 @@ export async function searchDocuments(
   db: Client = getSearchDb()
 ): Promise<SearchResult[]> {
   const embeddingJson = JSON.stringify(queryEmbedding);
-  const tokens = searchTokens(query);
-  const lexicalHits = await searchLexicalHits(tokens, embeddingJson, limit, db);
+  const lexicalHits = await searchLexicalHits(query, embeddingJson, limit, db);
   if (lexicalHits.length > 0) {
     return selectSearchHits(
       lexicalHits,
@@ -292,11 +293,12 @@ function toSearchResult(hit: ScoredSearchHit): SearchResult {
 const SEARCH_HAYSTACK_SQL = `lower(coalesce(nullif(search_text, ''), title || ' ' || excerpt))`;
 
 async function searchLexicalHits(
-  tokens: string[],
+  query: string,
   embeddingJson: string,
   limit: number,
   db: Client
 ): Promise<ScoredSearchHit[]> {
+  const tokens = phraseTokens(query);
   if (tokens.length === 0) {
     return [];
   }
@@ -304,16 +306,35 @@ async function searchLexicalHits(
   const tokenClauses = tokens
     .map(() => `instr(${SEARCH_HAYSTACK_SQL}, ?) > 0`)
     .join(" AND ");
+  const candidateLimit = Math.max(limit, SEARCH_LEXICAL_CANDIDATE_LIMIT);
   const result = await db.execute({
     sql: `SELECT url, title, excerpt, type,
+                 ${SEARCH_HAYSTACK_SQL} AS haystack,
                  vector_distance_cos(embedding, vector32(?)) AS distance
           FROM ${SEARCH_TABLE}
           WHERE ${tokenClauses}
           ORDER BY distance ASC
           LIMIT ?`,
-    args: [embeddingJson, ...tokens, limit],
+    args: [embeddingJson, ...tokens, candidateLimit],
   });
-  return mapScoredHits(result.rows);
+
+  return result.rows
+    .map((row) => ({
+      url: String(row.url),
+      title: String(row.title),
+      excerpt: String(row.excerpt),
+      type: row.type as SearchResult["type"],
+      distance: Number(row.distance),
+      haystack: String(row.haystack ?? ""),
+    }))
+    .filter((hit) => documentMatchesQueryPhrase(hit.haystack, query))
+    .map((hit) => ({
+      url: hit.url,
+      title: hit.title,
+      excerpt: hit.excerpt,
+      type: hit.type,
+      distance: hit.distance,
+    }));
 }
 
 async function searchVectorHits(

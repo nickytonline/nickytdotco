@@ -1,58 +1,50 @@
 import type { SearchResult } from "./types.ts";
 
 /**
- * Site search always embeds the query and ranks by cosine distance.
- * Word overlap does not replace embeddings: it only decides eligibility
- * when the typed tokens appear in a document (a name like "roxy", or a
- * topic word like "cypress"). Unrelated vector neighbors are dropped
- * unless they are actually close to the query.
+ * Text match is the whole query as consecutive whole words, then
+ * embeddings if that finds nothing. "roxy" does not match "proxy".
+ * "roxy joing nick" does not match unless those words sit in a row.
  */
 export interface ScoredSearchHit extends SearchResult {
   distance: number;
 }
 
-const SEARCH_STOPWORDS = new Set([
-  "a",
-  "an",
-  "and",
-  "at",
-  "for",
-  "from",
-  "in",
-  "of",
-  "on",
-  "or",
-  "the",
-  "to",
-  "with",
-]);
-
-export function searchTokens(query: string): string[] {
-  const raw: string[] = [];
-  const seen = new Set<string>();
-  for (const part of query.toLowerCase().split(/[^a-z0-9]+/)) {
-    if (part.length < 2 || seen.has(part)) {
-      continue;
+export function contentTokens(text: string): string[] {
+  const tokens: string[] = [];
+  for (const part of text.toLowerCase().split(/[^a-z0-9]+/)) {
+    if (part.length >= 2) {
+      tokens.push(part);
     }
-    seen.add(part);
-    raw.push(part);
   }
-
-  if (raw.length === 0) {
-    const fallback = query.trim().toLowerCase();
-    return fallback.length >= 2 ? [fallback] : [];
-  }
-
-  const content = raw.filter((token) => !SEARCH_STOPWORDS.has(token));
-  return content.length > 0 ? content : raw;
+  return tokens;
 }
 
-export function documentMatchesTokens(text: string, tokens: string[]): boolean {
-  if (tokens.length === 0) {
+export function phraseTokens(query: string): string[] {
+  return contentTokens(query);
+}
+
+export function hasConsecutivePhrase(
+  haystackTokens: string[],
+  phrase: string[]
+): boolean {
+  if (phrase.length === 0 || haystackTokens.length < phrase.length) {
     return false;
   }
-  const haystack = text.toLowerCase();
-  return tokens.every((token) => haystack.includes(token));
+  for (let index = 0; index <= haystackTokens.length - phrase.length; index++) {
+    if (
+      phrase.every((token, offset) => haystackTokens[index + offset] === token)
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
+export function documentMatchesQueryPhrase(
+  text: string,
+  query: string
+): boolean {
+  return hasConsecutivePhrase(contentTokens(text), phraseTokens(query));
 }
 
 export function filterWeakVectorHits<T extends { distance: number }>(

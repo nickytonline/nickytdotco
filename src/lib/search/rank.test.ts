@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
-  documentMatchesTokens,
+  contentTokens,
+  documentMatchesQueryPhrase,
   filterWeakVectorHits,
-  searchTokens,
+  hasConsecutivePhrase,
+  phraseTokens,
   selectSearchHits,
 } from "./rank.ts";
 
@@ -10,59 +12,66 @@ function hit(url: string, distance: number) {
   return { url, distance };
 }
 
-describe("searchTokens", () => {
-  it("keeps a unique name as a single token", () => {
-    expect(searchTokens("roxy")).toEqual(["roxy"]);
-  });
+const ROXY_BLURB =
+  "Roxy Rodriguez-Becker, Developer Community Manager, joins Nick Taylor to recap Commit Your Code";
 
-  it("splits a personal name and lowercases it", () => {
-    expect(searchTokens("Nick Taylor")).toEqual(["nick", "taylor"]);
-  });
-
-  it("drops short stopwords so topic phrases stay meaningful", () => {
-    expect(searchTokens("the future of identity")).toEqual([
-      "future",
-      "identity",
-    ]);
+describe("phraseTokens", () => {
+  it("keeps the typed words in order, including typos", () => {
+    expect(phraseTokens("roxy")).toEqual(["roxy"]);
+    expect(phraseTokens("roxy joing nick")).toEqual(["roxy", "joing", "nick"]);
+    expect(phraseTokens("Nick Taylor")).toEqual(["nick", "taylor"]);
   });
 });
 
-describe("documentMatchesTokens", () => {
-  it("requires every token to appear in the document text", () => {
-    const text =
-      "Roxy Rodriguez-Becker, Developer Community Manager, joins Nick Taylor";
-    expect(documentMatchesTokens(text, ["roxy"])).toBe(true);
-    expect(documentMatchesTokens(text, ["roxy", "cypress"])).toBe(false);
+describe("documentMatchesQueryPhrase", () => {
+  it("matches roxy as a whole word, not inside proxy", () => {
+    expect(documentMatchesQueryPhrase(ROXY_BLURB, "roxy")).toBe(true);
+    expect(
+      documentMatchesQueryPhrase(
+        "How to configure an HTTP reverse proxy in production",
+        "roxy"
+      )
+    ).toBe(false);
+  });
+
+  it("requires the full query as consecutive words before embeddings", () => {
+    expect(documentMatchesQueryPhrase(ROXY_BLURB, "nick taylor")).toBe(true);
+    expect(documentMatchesQueryPhrase(ROXY_BLURB, "roxy joing nick")).toBe(
+      false
+    );
+    expect(documentMatchesQueryPhrase(ROXY_BLURB, "roxy nick")).toBe(false);
+  });
+});
+
+describe("hasConsecutivePhrase", () => {
+  it("does not treat scattered words as a phrase", () => {
+    const tokens = contentTokens(ROXY_BLURB);
+    expect(hasConsecutivePhrase(tokens, phraseTokens("nick taylor"))).toBe(
+      true
+    );
+    expect(hasConsecutivePhrase(tokens, phraseTokens("roxy nick"))).toBe(false);
   });
 });
 
 describe("selectSearchHits", () => {
-  it("ranks keyword matches by embedding distance and drops unrelated neighbors", () => {
+  it("returns textual phrase hits and does not pad with vector neighbors", () => {
     const results = selectSearchHits(
-      [hit("/roxy", 0.41), hit("/also-roxy", 0.33)],
-      [
-        hit("/roxy", 0.41),
-        hit("/web5", 0.48),
-        hit("/cypress", 0.5),
-        hit("/opensauced", 0.52),
-      ],
+      [hit("/roxy", 0.41)],
+      [hit("/roxy", 0.41), hit("/proxy", 0.48), hit("/cypress", 0.5)],
       8,
       0.5,
       0.12
     );
 
-    expect(results.map((result) => result.url)).toEqual([
-      "/also-roxy",
-      "/roxy",
-    ]);
+    expect(results.map((result) => result.url)).toEqual(["/roxy"]);
   });
 
-  it("uses nearby embeddings when the typed words do not appear", () => {
+  it("uses nearby embeddings when the typed phrase is not in the text", () => {
     const results = selectSearchHits(
       [],
       [
-        hit("/cypress", 0.22),
-        hit("/playwright", 0.28),
+        hit("/roxy-stream", 0.22),
+        hit("/communities", 0.28),
         hit("/unrelated", 0.61),
       ],
       8,
@@ -71,21 +80,9 @@ describe("selectSearchHits", () => {
     );
 
     expect(results.map((result) => result.url)).toEqual([
-      "/cypress",
-      "/playwright",
+      "/roxy-stream",
+      "/communities",
     ]);
-  });
-
-  it("returns nothing when vector neighbors are all far from the query", () => {
-    const results = selectSearchHits(
-      [],
-      [hit("/a", 0.62), hit("/b", 0.65), hit("/c", 0.7)],
-      8,
-      0.5,
-      0.12
-    );
-
-    expect(results).toEqual([]);
   });
 });
 
