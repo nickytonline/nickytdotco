@@ -16,6 +16,7 @@ import {
   setCdnCacheHeaders,
   soonestExpiryTimestamp,
 } from "../utils/cdn-cache";
+import { scheduleSearchReindex } from "../lib/search/scheduleSearchReindex";
 
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -167,6 +168,7 @@ if (!errorMessage) {
   );
   Astro.response.headers.set("timezone", timezone);
   Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
+  scheduleSearchReindex("/", Astro.locals.netlify.context);
 }
 
 export const prerender = false;
