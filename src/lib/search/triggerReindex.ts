@@ -18,7 +18,7 @@ export interface SearchReindexDeps {
   ref: string;
   cooldownSeconds: number;
   now: () => number;
-  fetch: typeof fetch;
+  fetch: (url: string, init?: RequestInit) => Promise<Response>;
   claimTriggerSlot: (
     nowSeconds: number,
     cooldownSeconds: number

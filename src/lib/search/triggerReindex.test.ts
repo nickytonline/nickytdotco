@@ -5,36 +5,47 @@ import {
   type SearchReindexDeps,
 } from "./triggerReindex.ts";
 
-function createDeps(
-  overrides: Partial<SearchReindexDeps> = {}
-): SearchReindexDeps & {
-  log: ReturnType<typeof vi.fn>;
-  error: ReturnType<typeof vi.fn>;
-  fetch: ReturnType<typeof vi.fn>;
-  claimTriggerSlot: ReturnType<typeof vi.fn>;
-  releaseTriggerSlot: ReturnType<typeof vi.fn>;
-} {
-  const fetch = vi.fn(async () => new Response(null, { status: 204 }));
-  const claimTriggerSlot = vi.fn(async () => true);
-  const releaseTriggerSlot = vi.fn(async () => undefined);
-  const log = vi.fn();
-  const error = vi.fn();
+type SearchReindexTestOverrides = Partial<
+  Omit<
+    SearchReindexDeps,
+    "fetch" | "claimTriggerSlot" | "releaseTriggerSlot" | "log" | "error"
+  >
+> & {
+  fetch?: ReturnType<typeof vi.fn<SearchReindexDeps["fetch"]>>;
+  claimTriggerSlot?: ReturnType<
+    typeof vi.fn<SearchReindexDeps["claimTriggerSlot"]>
+  >;
+  releaseTriggerSlot?: ReturnType<
+    typeof vi.fn<SearchReindexDeps["releaseTriggerSlot"]>
+  >;
+  log?: ReturnType<typeof vi.fn<SearchReindexDeps["log"]>>;
+  error?: ReturnType<typeof vi.fn<SearchReindexDeps["error"]>>;
+};
 
+function createDeps(overrides: SearchReindexTestOverrides = {}) {
   return {
-    netlifyContext: "production",
-    githubToken: "ghp_test_token",
-    repo: "nickytonline/nickytdotco",
-    workflowFile: "index-search.yml",
-    ref: "main",
-    cooldownSeconds: 3600,
-    now: () => 1_700_000_000_000,
-    fetch,
-    claimTriggerSlot,
-    releaseTriggerSlot,
-    log,
-    error,
-    ...overrides,
-  };
+    netlifyContext: overrides.netlifyContext ?? "production",
+    githubToken:
+      "githubToken" in overrides ? overrides.githubToken : "ghp_test_token",
+    repo: overrides.repo ?? "nickytonline/nickytdotco",
+    workflowFile: overrides.workflowFile ?? "index-search.yml",
+    ref: overrides.ref ?? "main",
+    cooldownSeconds: overrides.cooldownSeconds ?? 3600,
+    now: overrides.now ?? (() => 1_700_000_000_000),
+    fetch:
+      overrides.fetch ??
+      vi.fn<SearchReindexDeps["fetch"]>(
+        async () => new Response(null, { status: 204 })
+      ),
+    claimTriggerSlot:
+      overrides.claimTriggerSlot ??
+      vi.fn<SearchReindexDeps["claimTriggerSlot"]>(async () => true),
+    releaseTriggerSlot:
+      overrides.releaseTriggerSlot ??
+      vi.fn<SearchReindexDeps["releaseTriggerSlot"]>(async () => undefined),
+    log: overrides.log ?? vi.fn<SearchReindexDeps["log"]>(),
+    error: overrides.error ?? vi.fn<SearchReindexDeps["error"]>(),
+  } satisfies SearchReindexDeps;
 }
 
 describe("githubWorkflowDispatchUrl", () => {
@@ -76,7 +87,9 @@ describe("triggerSearchReindex", () => {
 
   it("skips GitHub when the cooldown lock is held", async () => {
     const deps = createDeps({
-      claimTriggerSlot: vi.fn(async () => false),
+      claimTriggerSlot: vi.fn<SearchReindexDeps["claimTriggerSlot"]>(
+        async () => false
+      ),
     });
     await expect(triggerSearchReindex("/watch", deps)).resolves.toEqual({
       status: "skipped",
@@ -88,9 +101,11 @@ describe("triggerSearchReindex", () => {
 
   it("does not dispatch when claiming the lock throws", async () => {
     const deps = createDeps({
-      claimTriggerSlot: vi.fn(async () => {
-        throw new Error("turso unavailable");
-      }),
+      claimTriggerSlot: vi.fn<SearchReindexDeps["claimTriggerSlot"]>(
+        async () => {
+          throw new Error("turso unavailable");
+        }
+      ),
     });
     await expect(triggerSearchReindex("/watch", deps)).resolves.toEqual({
       status: "error",
@@ -130,7 +145,9 @@ describe("triggerSearchReindex", () => {
 
   it("releases the lock and logs when GitHub dispatch fails", async () => {
     const deps = createDeps({
-      fetch: vi.fn(async () => new Response("Forbidden", { status: 403 })),
+      fetch: vi.fn<SearchReindexDeps["fetch"]>(
+        async () => new Response("Forbidden", { status: 403 })
+      ),
     });
 
     await expect(triggerSearchReindex("/", deps)).resolves.toEqual({
