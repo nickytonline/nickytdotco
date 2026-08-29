@@ -33,7 +33,7 @@ const { project } = Astro.props;
     <div class="flex items-start justify-between mb-2">
       <div class="flex flex-col">
         <span class="text-xs text-muted-foreground mb-1">{project.owner}/</span>
-        <h3
+        <h2
           class="text-xl font-bold text-foreground group-hover:text-brand group-focus-within:text-brand transition-colors"
         >
           <a
@@ -44,7 +44,7 @@ const { project } = Astro.props;
           >
             {project.name}
           </a>
-        </h3>
+        </h2>
       </div>
       <div
         class="flex items-center gap-1 text-muted-foreground bg-muted/50 px-2 py-1 rounded text-xs"
