@@ -69,8 +69,26 @@ const { project } = Astro.props;
       </div>
     </div>
 
+    <details class="project-card-details group/details mb-4 flex-1 lg:hidden">
+      <summary
+        class="list-none cursor-pointer [&::-webkit-details-marker]:hidden focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-2 rounded-md"
+      >
+        <p
+          class="text-muted-foreground text-sm leading-relaxed line-clamp-3 group-open/details:line-clamp-none"
+        >
+          {project.description}
+        </p>
+        <span
+          class="relative z-10 mt-2 inline-block text-xs font-medium text-brand hover:underline"
+        >
+          <span class="group-open/details:hidden">Show more</span>
+          <span class="hidden group-open/details:inline">Show less</span>
+        </span>
+      </summary>
+    </details>
+
     <div
-      class="project-card-description mb-4 flex-1 min-h-18 max-h-18 overflow-y-auto overscroll-contain pr-1"
+      class="project-card-description mb-4 flex-1 min-h-18 max-h-18 overflow-y-auto overscroll-contain pr-1 hidden lg:block"
       tabindex="0"
     >
       <p class="text-muted-foreground text-sm leading-relaxed">
