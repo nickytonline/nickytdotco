@@ -183,7 +183,7 @@ test.describe("home page mobile CTAs", () => {
     const box = await speakingLink.boundingBox();
     expect(box).not.toBeNull();
 
-    await page.mouse.click(box!.x + 8, box!.y + box!.height / 2);
+    await speakingLink.click({ position: { x: 8, y: box!.height / 2 } });
 
     await expect(page).toHaveURL(/\/speaking\/?$/);
     await expect(
