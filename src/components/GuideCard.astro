@@ -21,11 +21,11 @@ const { title, description, date, coverImage, href, source, category } =
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    class="group grid md:flex gap-6 xl:gap-8 no-underline outline-none transition-colors"
+    class="group grid md:flex gap-3 md:gap-6 xl:gap-8 no-underline outline-none transition-colors"
   >
     {
       coverImage ? (
-        <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden bg-muted">
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted md:w-40 md:h-22.5 md:aspect-auto">
           <Image
             src={coverImage}
             alt=""
@@ -37,7 +37,7 @@ const { title, description, date, coverImage, href, source, category } =
           />
         </div>
       ) : (
-        <div class="relative shrink-0 hidden md:flex w-40 h-22.5 rounded-lg overflow-hidden bg-muted items-center justify-center">
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center md:w-40 md:h-22.5 md:aspect-auto">
           <svg
             class="w-8 h-8 text-muted-foreground/50"
             fill="none"
