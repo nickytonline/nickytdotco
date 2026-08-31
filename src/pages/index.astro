@@ -12,6 +12,14 @@ import TalkCard from "../components/TalkCard.astro";
 import GuideCard from "../components/GuideCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import {
+  curatedProjects,
+  featuredProjectRef,
+} from "../data/curated-projects";
+import {
+  enrichCuratedProjects,
+  toFeaturedProject,
+} from "../lib/github/enrichCuratedProjects";
+import {
   isEventUpcoming,
   setCdnCacheHeaders,
   soonestExpiryTimestamp,
@@ -71,23 +79,18 @@ const featuredGuides = sortedGuides
   .filter((g) => g.data.featured === true)
   .slice(0, 2);
 
-const featuredProject = {
-  owner: "nickytonline",
-  name: "mcp-typescript-template",
-  description:
-    "Production-ready starter for building MCP servers in TypeScript, with Vite, Vitest, Pino logging, and Docker support out of the box.",
-  url: "https://github.com/nickytonline/mcp-typescript-template",
-  stargazerCount: 55,
-  forkCount: 12,
-  primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
-  myRole: "Author & maintainer",
-  links: [
-    {
-      label: "Read the build story",
-      url: "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template/",
-    },
-  ],
-};
+const featuredProjectBase = curatedProjects.find(
+  (project) =>
+    project.owner === featuredProjectRef.owner &&
+    project.name === featuredProjectRef.name,
+)!;
+const [featuredProjectStats] = await enrichCuratedProjects([
+  featuredProjectBase,
+]);
+const featuredProject = toFeaturedProject(
+  featuredProjectBase,
+  featuredProjectStats,
+);
 
 const locale =
   Astro.request.headers.get("Accept-Language")?.split(",")[0] ||

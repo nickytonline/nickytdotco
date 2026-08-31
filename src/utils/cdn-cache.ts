@@ -1,4 +1,5 @@
 export const CDN_CACHE_MAX_SECONDS = 86_400;
+export const PROJECTS_CACHE_MAX_SECONDS = 259_200;
 
 export function isUtcMidnight(date: Date): boolean {
   return (
@@ -71,5 +72,16 @@ export function setCdnCacheHeaders(
   headers.set(
     "Netlify-CDN-Cache-Control",
     `public, max-age=${maxAge}, must-revalidate`
+  );
+}
+
+export function setFixedCdnCacheHeaders(
+  headers: Headers,
+  maxAgeSeconds: number
+): void {
+  headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+  headers.set(
+    "Netlify-CDN-Cache-Control",
+    `public, max-age=${maxAgeSeconds}, must-revalidate`
   );
 }
