@@ -45,7 +45,7 @@ const {
       (videoLink ? (
         <a
           href={videoLink}
-          class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden"
+          class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden md:w-40 md:h-22.5 md:aspect-auto"
           aria-hidden="true"
           tabindex="-1"
         >
@@ -60,7 +60,7 @@ const {
           />
         </a>
       ) : (
-        <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden">
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden md:w-40 md:h-22.5 md:aspect-auto">
           <Image
             src={image}
             alt=""

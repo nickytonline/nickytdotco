@@ -54,7 +54,7 @@ if (coverImage) {
   >
     {
       thumbnailUrl ? (
-        <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden bg-muted">
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted md:w-40 md:h-22.5 md:aspect-auto">
           <Image
             src={thumbnailUrl}
             alt=""
@@ -66,7 +66,7 @@ if (coverImage) {
           />
         </div>
       ) : (
-        <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center md:w-40 md:h-22.5 md:aspect-auto">
           {/* subtle dot grid */}
           <svg
             class="absolute inset-0 w-full h-full opacity-[0.07]"
