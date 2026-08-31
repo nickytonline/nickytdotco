@@ -77,13 +77,13 @@ const isCurrent = (href: string) =>
           aria-label="main navigation"
           class="absolute left-0 right-0 top-full z-50 mt-2 rounded-lg border border-border bg-background p-4 text-lg shadow-lg"
         >
-          <ul class="flex list-none flex-col items-center gap-3">
+          <ul class="flex list-none flex-col gap-1">
             {navItems.map((item) => (
-              <li>
+              <li class="w-full">
                 <a
                   href={item.href}
                   aria-current={isCurrent(item.href) ? "page" : undefined}
-                  class="nav-link"
+                  class="nav-link block w-full rounded-lg px-4 py-2 text-center hover:bg-secondary focus-visible:bg-secondary"
                 >
                   {item.label}
                 </a>

@@ -168,3 +168,26 @@ test.describe("home page", () => {
     );
   });
 });
+
+test.describe("home page mobile CTAs", () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test("hero CTAs are full-width and clickable across the row", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const speakingLink = page.getByRole("link", {
+      name: "Speaking & guest appearances",
+    });
+    const box = await speakingLink.boundingBox();
+    expect(box).not.toBeNull();
+
+    await speakingLink.click({ position: { x: 8, y: box!.height / 2 } });
+
+    await expect(page).toHaveURL(/\/speaking\/?$/);
+    await expect(
+      page.getByRole("main").getByRole("heading", { level: 1 })
+    ).toBeVisible();
+  });
+});
