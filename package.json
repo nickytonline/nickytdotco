@@ -36,7 +36,7 @@
     "@expressive-code/plugin-line-numbers": "^0.44.1",
     "@floating-ui/react": "^0.27.19",
     "@fontsource/inter": "^5.2.8",
-    "@fontsource/space-grotesk": "^5.2.10",
+    "@fontsource/space-grotesk": "^5.3.0",
     "@google/genai": "^2.19.0",
     "@libsql/client": "^0.17.4",
     "@types/react": "^19.2.18",
