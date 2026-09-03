@@ -52,7 +52,7 @@
     "lucide-react": "^1.27.0",
     "luxon": "^3.7.2",
     "marked": "^18.0.6",
-    "portless": "^0.15.5",
+    "portless": "^0.15.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "rehype-autolink-headings": "^7.1.0",
