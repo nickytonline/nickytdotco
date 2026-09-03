@@ -10,6 +10,7 @@ venue:
   url: "https://www.commityourcode.com/"
   location: "Capital One Campus, Plano, TX"
 registrationUrl: "https://www.commityourcode.com/"
+slideDeck: https://cyc2026.netlify.app/
 tags: ["mcp", "agentic ai", "pomerium", "zero trust", "security", "ai"]
 ---
 
