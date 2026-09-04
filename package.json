@@ -78,7 +78,7 @@
     "jsdom": "^29.1.1",
     "slugify": "^1.6.9",
     "tailwindcss": "^4.3.2",
-    "vite-plus": "^0.2.6",
+    "vite-plus": "^0.3.0",
     "webmcp-types": "^0.1.5"
   },
   "repository": {
