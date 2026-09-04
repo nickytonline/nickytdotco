@@ -373,20 +373,12 @@ mark {
 }
 
 /*
-  Keyboard focus ring. Unlayered so it wins over Tailwind
-  `focus:outline-none` utilities. Mouse clicks stay ring-free.
+  Links, buttons, and summaries already restyle on :focus
+  (underline, color, background). Keep the UA outline off.
+  Form fields have no other treatment, so they get a brand ring.
 */
-:where(
-  a,
-  button,
-  summary,
-  input,
-  select,
-  textarea,
-  [tabindex]:not([tabindex="-1"])
-):focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: none;
 }
 
 :where(a, button, summary, input, select, textarea, [tabindex]):focus:not(
@@ -395,9 +387,15 @@ mark {
   outline: none;
 }
 
-/* Stretched links already ring the parent via focus-within. */
-.stretch-link:focus-visible {
-  outline: none;
+:where(input, select, textarea):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Current-page nav already looks focused; invert to body text on Tab. */
+nav[aria-label="main navigation"] .nav-link[aria-current="page"]:focus-visible {
+  @apply text-foreground underline decoration-foreground decoration-4
+    underline-offset-4;
 }
 
 @media (min-width: 1024px) {
