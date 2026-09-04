@@ -39,6 +39,14 @@ const Search = () => {
   const resultsRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
+  const closeSearch = useCallback(() => {
+    abortRef.current?.abort();
+    abortRef.current = null;
+    setIsSearching(false);
+    setSelectedIndex(-1);
+    setIsOpen(false);
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "/" && !isOpen) {
@@ -62,7 +70,7 @@ const Search = () => {
 
   useEffect(() => {
     const handleNavigation = () => {
-      setIsOpen(false);
+      closeSearch();
     };
 
     document.addEventListener("astro:before-preparation", handleNavigation);
@@ -72,14 +80,13 @@ const Search = () => {
         handleNavigation
       );
     };
-  }, []);
+  }, [closeSearch]);
 
   useEffect(() => {
     if (isOpen) {
       dialogRef.current?.showModal();
       inputRef.current?.focus();
       document.body.style.overflow = "hidden";
-      setSelectedIndex(-1);
     } else {
       dialogRef.current?.close();
       document.body.style.overflow = "";
@@ -143,7 +150,7 @@ const Search = () => {
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDialogElement>) => {
     if (e.target === dialogRef.current) {
-      setIsOpen(false);
+      closeSearch();
     }
   };
 
@@ -213,20 +220,11 @@ const Search = () => {
 
   useEffect(() => {
     if (!isOpen) {
-      abortRef.current?.abort();
-      abortRef.current = null;
-      setIsSearching(false);
       return;
     }
 
     const trimmed = query.trim();
     if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
-      abortRef.current?.abort();
-      setResults([]);
-      setSubmittedQuery("");
-      setSearchError(null);
-      setSelectedIndex(-1);
-      setIsSearching(false);
       return;
     }
 
@@ -242,6 +240,23 @@ const Search = () => {
       clearTimeout(debounce);
     };
   }, [isOpen, query, submittedQuery, performSearch]);
+
+  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const nextQuery = e.target.value;
+    setQuery(nextQuery);
+
+    if (nextQuery.trim().length >= SEARCH_MIN_QUERY_CHARS) {
+      return;
+    }
+
+    abortRef.current?.abort();
+    abortRef.current = null;
+    setResults([]);
+    setSubmittedQuery("");
+    setSearchError(null);
+    setSelectedIndex(-1);
+    setIsSearching(false);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -263,7 +278,7 @@ const Search = () => {
       // type="search" would otherwise consume the first Escape to clear the
       // field, leaving the dialog open until a second Escape.
       e.preventDefault();
-      setIsOpen(false);
+      closeSearch();
       return;
     }
 
@@ -323,7 +338,7 @@ const Search = () => {
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <dialog
         ref={dialogRef}
-        onClose={() => setIsOpen(false)}
+        onClose={closeSearch}
         onClick={handleBackdropClick}
         aria-labelledby="search-dialog-title"
         className="fixed left-1/2 top-3 m-0 h-[min(70dvh,36rem)] max-h-[calc(100dvh-1.5rem)] w-[90vw] max-w-2xl -translate-x-1/2 open:flex open:flex-col overflow-hidden rounded-xl border border-secondary bg-background p-0 text-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
@@ -349,7 +364,7 @@ const Search = () => {
               placeholder={SEARCH_PLACEHOLDER}
               className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-brand text-lg"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={handleQueryChange}
               onKeyDown={handleInputKeyDown}
             />
             <button type="submit" className="sr-only">
@@ -359,7 +374,7 @@ const Search = () => {
           <button
             type="button"
             aria-label="Close search"
-            onClick={() => setIsOpen(false)}
+            onClick={closeSearch}
             className="shrink-0 rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:bg-secondary focus-visible:text-foreground focus:outline-none"
           >
             <span aria-hidden="true" className="text-xl leading-none">
