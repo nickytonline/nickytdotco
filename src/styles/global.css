@@ -108,7 +108,7 @@ h6 {
 
 /* Heading anchor links */
 .heading-anchor {
-  @apply opacity-0 no-underline ml-2 text-brand focus:opacity-100 focus:outline-none;
+  @apply opacity-0 no-underline ml-2 text-brand focus-visible:opacity-100;
 }
 
 .heading-anchor:hover,
@@ -205,7 +205,6 @@ a:not([class]) {
   @apply decoration-brand;
   @apply dark:decoration-brand;
   @apply underline-offset-4;
-  @apply outline-none;
 }
 
 nav a[aria-current="page"]:not(.tag-pill),
@@ -215,7 +214,6 @@ a:not([class]):focus {
   @apply dark:decoration-brand;
   @apply underline;
   @apply decoration-4;
-  @apply outline-none;
 }
 
 nav a:not([aria-current="page"]) {
@@ -234,7 +232,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   @apply hover:decoration-4 hover:underline-offset-4;
   @apply focus:text-brand;
   @apply focus:underline focus:decoration-brand focus:dark:decoration-brand;
-  @apply focus:decoration-4 focus:underline-offset-4 focus:outline-none;
+  @apply focus:decoration-4 focus:underline-offset-4;
   @apply aria-[current=page]:text-brand;
   @apply aria-[current=page]:underline aria-[current=page]:decoration-brand;
   @apply aria-[current=page]:dark:decoration-brand aria-[current=page]:decoration-4;
@@ -374,8 +372,31 @@ mark {
   }
 }
 
-/* Component focus states use color, underline, or background changes. */
-:where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+/*
+  Keyboard focus ring. Unlayered so it wins over Tailwind
+  `focus:outline-none` utilities. Mouse clicks stay ring-free.
+*/
+:where(
+  a,
+  button,
+  summary,
+  input,
+  select,
+  textarea,
+  [tabindex]:not([tabindex="-1"])
+):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+:where(a, button, summary, input, select, textarea, [tabindex]):focus:not(
+    :focus-visible
+  ) {
+  outline: none;
+}
+
+/* Stretched links already ring the parent via focus-within. */
+.stretch-link:focus-visible {
   outline: none;
 }
 

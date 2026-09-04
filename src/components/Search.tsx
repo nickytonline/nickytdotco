@@ -327,7 +327,7 @@ const Search = () => {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="inline-flex hover:text-brand focus:text-brand focus:outline-none transition-colors"
+        className="inline-flex hover:text-brand focus:text-brand transition-colors"
         aria-label="Search site"
         aria-keyshortcuts={SEARCH_ARIA_KEYSHORTCUTS}
       >
@@ -362,12 +362,12 @@ const Search = () => {
               autoComplete="off"
               aria-label="Search posts, talks, and projects"
               placeholder={SEARCH_PLACEHOLDER}
-              className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-brand text-lg"
+              className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md text-lg"
               value={query}
               onChange={handleQueryChange}
               onKeyDown={handleInputKeyDown}
             />
-            <button type="submit" className="sr-only">
+            <button type="submit" className="sr-only" tabIndex={-1}>
               Search
             </button>
           </form>
@@ -375,7 +375,7 @@ const Search = () => {
             type="button"
             aria-label="Close search"
             onClick={closeSearch}
-            className="shrink-0 rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:bg-secondary focus-visible:text-foreground focus:outline-none"
+            className="shrink-0 rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:bg-secondary focus-visible:text-foreground"
           >
             <span aria-hidden="true" className="text-xl leading-none">
               ×

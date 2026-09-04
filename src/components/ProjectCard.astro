@@ -40,7 +40,7 @@ const { project } = Astro.props;
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="focus:outline-none after:absolute after:inset-0 after:rounded-xl"
+            class="stretch-link after:absolute after:inset-0 after:rounded-xl"
           >
             {project.name}
           </a>
@@ -137,7 +137,7 @@ const { project } = Astro.props;
           {project.links.map((link) => (
             <a
               href={link.url}
-              class="relative z-10 text-xs font-medium text-brand hover:underline focus:outline-none focus:underline"
+              class="relative z-10 text-xs font-medium text-brand hover:underline focus:underline"
             >
               {link.label}
             </a>

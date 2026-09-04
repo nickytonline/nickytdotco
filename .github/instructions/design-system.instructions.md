@@ -26,3 +26,4 @@ Prefer these semantic utilities in UI code:
 - Avoid one-off dark-mode color overrides when a token already adapts in `.dark`.
 - Use raw CSS color values only inside `global.css` token definitions or third-party integration overrides.
 - For hover and focus states, verify contrast in light and dark mode. Prefer inverse token pairs such as `bg-brand-solid text-brand-foreground` and `hover:bg-background hover:text-brand`.
+- Keyboard focus is a global 2px `outline` using `--focus-ring` on `:focus-visible` in `global.css`. Do not add `focus:outline-none` to suppress it. Mouse clicks stay outline-free via `:focus:not(:focus-visible)`. Stretched card links that ring a parent with `focus-within` should use the `stretch-link` class.

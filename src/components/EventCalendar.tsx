@@ -74,7 +74,7 @@ const EventCalendar = ({
                 })}
                 target="_blank"
                 role="menuitem"
-                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors focus:outline-none"
+                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors"
               >
                 <CalendarPlus className="w-4 h-4" />
                 Google Calendar
@@ -91,7 +91,7 @@ const EventCalendar = ({
                 })}
                 target="_blank"
                 role="menuitem"
-                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors focus:outline-none"
+                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors"
               >
                 <CalendarPlus className="w-4 h-4" />
                 Outlook Calendar
@@ -108,7 +108,7 @@ const EventCalendar = ({
                 })}
                 download="event.ics"
                 role="menuitem"
-                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors focus:outline-none"
+                className="flex items-center gap-2 text-popover-foreground hover:text-brand focus-within:text-brand transition-colors"
               >
                 <CalendarPlus className="w-4 h-4" />
                 iCal/Apple Calendar

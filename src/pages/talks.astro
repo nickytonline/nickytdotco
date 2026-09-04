@@ -77,7 +77,7 @@ const years = Object.keys(talksByYear)
             {years.map((year) => (
               <a
                 href={`#year-${year}`}
-                class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none transition-colors shrink-0"
+                class="inline-flex items-center px-3 py-1 rounded-md text-sm font-semibold bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid transition-colors shrink-0"
               >
                 {year}
               </a>
@@ -179,7 +179,7 @@ const years = Object.keys(talksByYear)
                       <h3 class="text-xl font-bold">
                         <a
                           href={`/talks/${slug}`}
-                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {talk.data.title}
                         </a>
@@ -190,7 +190,7 @@ const years = Object.keys(talksByYear)
                             href={talk.data.venue.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="text-base font-semibold text-brand hover:underline focus:underline focus:outline-none"
+                            class="text-base font-semibold text-brand hover:underline focus:underline"
                           >
                             {talk.data.venue.name}
                           </a>

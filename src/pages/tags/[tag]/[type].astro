@@ -147,13 +147,13 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
     <div class="mt-6 flex flex-wrap items-center gap-4">
       <a
         href={`/tags/${tag}`}
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
       >
         All Content
       </a>
       <a
         href={`/tags/${tag}/blog`}
-        class={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors focus:outline-none ${
+        class={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors ${
           contentType === "blog"
             ? "bg-brand-solid text-brand-foreground hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:text-brand-foreground dark:bg-brand-solid"
             : "bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
@@ -164,7 +164,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
       </a>
       <a
         href={`/tags/${tag}/talks`}
-        class={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors focus:outline-none ${
+        class={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors ${
           contentType === "talks"
             ? "bg-brand-solid text-brand-foreground hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:text-brand-foreground dark:bg-brand-solid"
             : "bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
@@ -202,7 +202,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
                       <h2 class="text-xl font-bold">
                         <a
                           href={`/blog/${slug}`}
-                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {post.data.title}
                         </a>
@@ -245,7 +245,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
                       <h2 class="text-xl font-bold">
                         <a
                           href={`/talks/${slug}`}
-                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {talk.data.title}
                         </a>
