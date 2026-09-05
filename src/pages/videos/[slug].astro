@@ -7,23 +7,59 @@ import { site } from "../../data/site";
 import { markdownFilter } from "../../utils/markdown";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import UpcomingBadge from "../../components/UpcomingBadge.astro";
+import EventCalendar from "../../components/EventCalendar";
+import StreamLinks from "../../components/StreamLinks.astro";
 import {
   extractYouTubeVideoId,
   slugifyVideo,
 } from "../../utils/video-utils";
+import {
+  eventExpiryTimestamp,
+  isEventUpcoming,
+  setCdnCacheHeaders,
+} from "../../utils/cdn-cache";
 
-export async function getStaticPaths() {
-  const result = await getLiveCollection("streamVideos");
-  return (result.entries ?? []).map((stream) => ({
-    params: { slug: slugifyVideo(stream.data.title, stream.data.guestName) },
-    props: { stream },
-  }));
+export const prerender = false;
+
+const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  throw new Error("Video not found");
 }
 
-const { stream } = Astro.props;
-const { title, date, description, guestName, guestTitle, youtubeStreamLink } =
-  stream.data;
-const isUpcoming = new Date(date).getTime() > Date.now();
+const result = await getLiveCollection("streamVideos");
+
+if (result.error) {
+  throw result.error;
+}
+
+const stream = (result.entries ?? []).find(
+  (entry) => slugifyVideo(entry.data.title, entry.data.guestName) === slug,
+);
+
+if (!stream) {
+  throw new Error("Video not found");
+}
+
+const {
+  title,
+  date,
+  description,
+  guestName,
+  guestTitle,
+  youtubeStreamLink,
+  linkedinStreamLink,
+  type,
+} = stream.data;
+const now = Date.now();
+const isUpcoming = isEventUpcoming(new Date(date), now);
+setCdnCacheHeaders(
+  Astro.response.headers,
+  isUpcoming ? eventExpiryTimestamp(new Date(date)) : undefined,
+  now,
+);
 const descriptionHtml = markdownFilter(description);
 
 const videoId = extractYouTubeVideoId(youtubeStreamLink);
@@ -31,6 +67,11 @@ const socialImage = videoId
   ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   : "/assets/images/page-og/watch.jpg";
 const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const eventName =
+  guestName === "2Full2Stack"
+    ? `2 Full 2 Stack - ${title}`
+    : `${type === "pomerium-live" ? "Pomerium Live Stream" : "nickyt.live"}: ${title}`;
+const twitchStreamUrl = type === "nickyt.live" ? TWITCH_STREAM_URL : undefined;
 const videoJsonLd = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
@@ -158,6 +199,25 @@ if (stream.data.website)
         with <span class="font-semibold">{guestName}</span>
         {guestTitle && <span> — {guestTitle}</span>}
       </p>
+      {
+        isUpcoming && (
+          <div class="mt-4 flex flex-col gap-3">
+            <StreamLinks
+              youtubeUrl={youtubeStreamLink}
+              twitchUrl={twitchStreamUrl}
+              linkedinUrl={linkedinStreamLink}
+            />
+            <EventCalendar
+              eventDate={date}
+              eventName={eventName}
+              description={description}
+              duration={90}
+              location={youtubeStreamLink}
+              client:visible
+            />
+          </div>
+        )
+      }
     </header>
 
     {
@@ -175,16 +235,13 @@ if (stream.data.website)
             href={youtubeStreamLink}
             class="text-brand hover:underline focus:underline"
           >
-          Watch on YouTube
+            Watch on YouTube
           </a>
         </div>
       )
     }
 
-    <div
-      class="prose max-w-none"
-      set:html={descriptionHtml}
-    />
+    <div class="prose max-w-none" set:html={descriptionHtml} />
 
     {
       socials.length > 0 && (

@@ -82,6 +82,7 @@ const streamVideos = defineLiveCollection({
     guestName: z.string().min(1),
     guestTitle: z.string().optional(),
     youtubeStreamLink: z.string().min(1),
+    linkedinStreamLink: z.url().optional(),
     twitter: z.string().optional(),
     youtube: z.string().optional(),
     twitch: z.string().optional(),
