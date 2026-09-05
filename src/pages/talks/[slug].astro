@@ -12,12 +12,13 @@ import { site } from "../../data/site";
 import { Image } from "astro:assets";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import UpcomingBadge from "../../components/UpcomingBadge.astro";
-export const prerender = true;
+import {
+  eventExpiryTimestamp,
+  isTalkUpcoming,
+  setCdnCacheHeaders,
+} from "../../utils/cdn-cache";
 
-export async function getStaticPaths() {
-  const talks = await getCollection("talks");
-  return talks.map((talk) => ({ params: { slug: talk.id } }));
-}
+export const prerender = false;
 
 const { slug } = Astro.params;
 
@@ -31,10 +32,18 @@ if (!talk) {
   throw new Error("Talk not found");
 }
 
+const now = Date.now();
 const { title, date, venue, tags = [] } = talk.data;
 const { Content } = await render(talk);
 
-const isUpcoming = talk.data.upcoming === true;
+const isUpcoming = isTalkUpcoming(talk.data, now);
+setCdnCacheHeaders(
+  Astro.response.headers,
+  isUpcoming
+    ? eventExpiryTimestamp(talk.data.endDate ?? talk.data.date)
+    : undefined,
+  now,
+);
 const venueUrl = venue.url;
 const venueLocation = venue.location;
 const endDate = talk.data.endDate;
