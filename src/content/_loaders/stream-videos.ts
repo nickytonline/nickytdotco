@@ -92,10 +92,7 @@ function mapRowToVideo(row: Record<string, unknown>): StreamVideoInfo {
     title: title as string,
     description: description as string,
     youtubeStreamLink: youtube_stream_link as string,
-    linkedinStreamLink:
-      typeof linkedin_stream_link === "string" && linkedin_stream_link
-        ? linkedin_stream_link
-        : undefined,
+    linkedinStreamLink: sanitizeWebsiteUrl(linkedin_stream_link),
     twitter: (twitter as string) ?? undefined,
     twitch: (twitch as string) ?? undefined,
     github: (github as string) ?? undefined,
