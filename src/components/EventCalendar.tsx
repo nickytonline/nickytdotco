@@ -28,15 +28,15 @@ const EventCalendar = ({
   const startDate = new Date(eventDate);
   const endDate = new Date(startDate.getTime() + durationInMillis);
   const menuId = `calendar-menu-${eventName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-  const toggleMenu = () => setIsExpanded((current) => !current);
+  const openMenu = () => setIsExpanded(true);
   const closeMenu = () => setIsExpanded(false);
 
   return (
     <div
       className="relative flex w-fit items-center"
-      onMouseEnter={() => setIsExpanded(true)}
-      onMouseLeave={() => setIsExpanded(false)}
-      onFocusCapture={() => setIsExpanded(true)}
+      onMouseEnter={openMenu}
+      onMouseLeave={closeMenu}
+      onFocusCapture={openMenu}
       onBlurCapture={(event) => {
         const nextFocusTarget = event.relatedTarget as Node | null;
         if (!event.currentTarget.contains(nextFocusTarget)) {
@@ -50,7 +50,8 @@ const EventCalendar = ({
         aria-haspopup="menu"
         aria-controls={menuId}
         aria-label={`Add ${eventName} to calendar`}
-        onClick={toggleMenu}
+        // Open only — toggle fights focus/hover open on the same click (#1104).
+        onClick={openMenu}
         className="inline-flex items-center gap-1.5 rounded-md border border-brand/30 bg-brand-soft px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-brand-soft-foreground hover:bg-background hover:text-brand focus-visible:bg-background focus-visible:text-brand focus-visible:border-brand transition-colors"
       >
         <Plus className="w-3 h-3" />
