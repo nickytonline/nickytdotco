@@ -74,46 +74,34 @@ test.describe("MCP topic hub", () => {
     await expect(
       page.getByRole("heading", { level: 2, name: "Watch" })
     ).toBeVisible();
+    const watchSection = page.locator('section[aria-label="Watch"]');
+    // Curated livestreams are hardcoded on the page; talk cards rotate as
+    // content changes, so only assert shape + durable curation rules.
     await expect(
-      page.locator('section[aria-label="Watch"] article').first()
-    ).toContainText("MCP Security & Authorization");
+      watchSection.getByText("Livestream", { exact: true })
+    ).toHaveCount(4);
     await expect(
-      page
-        .locator('section[aria-label="Watch"] article')
-        .first()
-        .locator('a[href="https://www.youtube.com/watch?v=U9rSRnjis7c"]')
+      watchSection.locator('a[href^="https://www.youtube.com/watch"]')
+    ).toHaveCount(4);
+
+    const talkLinks = watchSection.locator('a[href^="/talks/"]');
+    const talkCount = await talkLinks.count();
+    expect(talkCount).toBeGreaterThanOrEqual(1);
+    expect(talkCount).toBeLessThanOrEqual(5);
+    await expect(watchSection.getByText("Talk", { exact: true })).toHaveCount(
+      talkCount
+    );
+    await expect(
+      watchSection.locator(
+        'a[href="/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe"]'
+      )
     ).toBeVisible();
     await expect(
-      page.locator('section[aria-label="Watch"] article').nth(1)
-    ).toContainText("All Things MCP");
-    await expect(
-      page
-        .locator('section[aria-label="Watch"] article')
-        .nth(1)
-        .locator('a[href="https://www.youtube.com/watch?v=D7KfnGdHayA"]')
-    ).toBeVisible();
-    await expect(
-      page.locator(
-        'section[aria-label="Watch"] a[href="/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-all-things-open-2025"]'
+      watchSection.locator(
+        'a[href="/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-blackhat-usa-2025"]'
       )
     ).toHaveCount(0);
-    await expect(
-      page
-        .locator(
-          'section[aria-label="Watch"] a[href="/talks/build-your-first-mcp-app-commit-your-code-2026"]'
-        )
-        .locator("..")
-    ).toContainText("Commit Your Code 2026");
-    await expect(
-      page.locator(
-        'section[aria-label="Watch"] a[href="https://www.youtube.com/watch?v=GCjtGLvNvZo"]'
-      )
-    ).toBeVisible();
-    await expect(
-      page.locator(
-        'section[aria-label="Watch"] a[href="https://www.youtube.com/watch?v=0u8ZHnWi4j0"]'
-      )
-    ).toBeVisible();
+
     await expect(
       page.getByRole("link", { name: "Browse all MCP-tagged content" })
     ).toHaveAttribute("href", "/tags/mcp");
