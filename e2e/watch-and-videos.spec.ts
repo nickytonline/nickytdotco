@@ -97,7 +97,7 @@ test.describe("video archives", () => {
     }
 
     const section = upcomingHeading.locator("xpath=ancestor::section");
-    const videoLink = section.locator('a[href^="/videos/"]').first();
+    const videoLink = section.locator('a[href*="/videos/"]').first();
     if ((await videoLink.count()) === 0) {
       test.skip(true, "upcoming streams have no on-site video pages");
     }

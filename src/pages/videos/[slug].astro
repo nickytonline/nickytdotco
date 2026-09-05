@@ -26,13 +26,14 @@ const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
 const { slug } = Astro.params;
 
 if (!slug) {
-  throw new Error("Video not found");
+  return Astro.rewrite("/404");
 }
 
 const result = await getLiveCollection("streamVideos");
 
 if (result.error) {
-  throw result.error;
+  console.error("Error loading stream videos:", result.error);
+  return Astro.rewrite("/404");
 }
 
 const stream = (result.entries ?? []).find(
@@ -40,7 +41,7 @@ const stream = (result.entries ?? []).find(
 );
 
 if (!stream) {
-  throw new Error("Video not found");
+  return Astro.rewrite("/404");
 }
 
 const {
