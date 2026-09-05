@@ -7,7 +7,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
 import { dateFilter } from "../utils/filters";
 import { getYouTubeId } from "../utils/youtube-utils";
 import {
-  isEventUpcoming,
+  isTalkUpcoming,
   setCdnCacheHeaders,
   soonestExpiryTimestamp,
 } from "../utils/cdn-cache";
@@ -20,7 +20,7 @@ setCdnCacheHeaders(
   Astro.response.headers,
   soonestExpiryTimestamp(
     talks
-      .filter((talk) => talk.data.upcoming === true)
+      .filter((talk) => isTalkUpcoming(talk.data, now))
       .map((talk) => talk.data.endDate ?? talk.data.date),
     now,
   ),
@@ -111,9 +111,7 @@ const years = Object.keys(talksByYear)
             {talksByYear[year].map((talk) => {
               const slug = talk.id;
               const video = talk.data.video;
-              const isUpcoming =
-                talk.data.upcoming === true &&
-                isEventUpcoming(talk.data.endDate ?? talk.data.date, now);
+              const isUpcoming = isTalkUpcoming(talk.data, now);
               let thumbnailUrl: string | undefined;
               if (talk.data.cover_image) {
                 thumbnailUrl = talk.data.cover_image;

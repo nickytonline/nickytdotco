@@ -7,19 +7,31 @@ import CopyButton from "../components/CopyButton";
 import { Button } from "../components/Button";
 import { dateFilter } from "../utils/filters";
 import { markdownFilter } from "../utils/markdown";
-export const prerender = true;
+import {
+  isTalkUpcoming,
+  setCdnCacheHeaders,
+  soonestExpiryTimestamp,
+} from "../utils/cdn-cache";
 
-const now = new Date();
+export const prerender = false;
+
+const now = Date.now();
 const allTalks = await getCollection("talks");
 const upcomingTalks = allTalks
-  .filter(
-    (talk) =>
-      talk.data.upcoming === true &&
-      (talk.data.endDate ?? talk.data.date) >= now,
-  )
+  .filter((talk) => isTalkUpcoming(talk.data, now))
   .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+setCdnCacheHeaders(
+  Astro.response.headers,
+  soonestExpiryTimestamp(
+    upcomingTalks.map((talk) => talk.data.endDate ?? talk.data.date),
+    now,
+  ),
+  now,
+);
 const featuredTalks = allTalks
-  .filter((talk) => talk.data.featured === true && !talk.data.upcoming)
+  .filter(
+    (talk) => talk.data.featured === true && !isTalkUpcoming(talk.data, now),
+  )
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
 const speakerBioMarkdown = `**Nick Taylor** is a developer advocate at the intersection of AI, security, and software, with 20+ years in the industry. A GitHub Star, [Agentic AI Foundation (AAIF) Ambassador](https://aaif.io/ambassadors/), AWS Community Builder, and Microsoft MVP, he has spoken at conferences across North America and Europe, runs a livestream, and publishes the [_One Tip a Week_](https://onetipaweek.com) newsletter. He currently works in developer relations at Pomerium, where the focus is Zero Trust security, MCP (Model Context Protocol), and agentic AI.`;
@@ -121,7 +133,7 @@ const speakerBioHtml = markdownFilter(speakerBioMarkdown);
                   href={`/talks/${talk.id}`}
                   video={talk.data.video}
                   coverImage={talk.data.cover_image}
-                  upcoming={talk.data.upcoming}
+                  upcoming={isTalkUpcoming(talk.data, now)}
                 />
               );
             })}

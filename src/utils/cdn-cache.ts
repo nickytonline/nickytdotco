@@ -33,6 +33,19 @@ export function isEventUpcoming(
   return eventExpiryTimestamp(date) > nowMs;
 }
 
+/**
+ * Talks marked `upcoming: true` stay upcoming only until endDate (or date)
+ * expires. Past talks drop the pill even if the frontmatter flag is stale.
+ */
+export function isTalkUpcoming(
+  talk: { upcoming?: boolean; date: Date; endDate?: Date },
+  nowMs: number = Date.now()
+): boolean {
+  return (
+    talk.upcoming === true && isEventUpcoming(talk.endDate ?? talk.date, nowMs)
+  );
+}
+
 export function soonestExpiryTimestamp(
   dates: Date[],
   nowMs: number = Date.now()

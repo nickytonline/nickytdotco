@@ -6,6 +6,7 @@ import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import TalkCard from "../components/TalkCard.astro";
 import { dateFilter } from "../utils/filters";
+import { isTalkUpcoming } from "../utils/cdn-cache";
 
 export const prerender = true;
 
@@ -13,6 +14,7 @@ const hasMcpTag = (tags?: string[]) =>
   tags?.some((tag) => tag.toLowerCase().replace(/\s+/g, "") === "mcp") ??
   false;
 
+const now = Date.now();
 const allPosts = await getCollection("blog", ({ data }) =>
   import.meta.env.PROD ? data.draft !== true : true
 );
@@ -57,7 +59,7 @@ const pastTalks = mcpTalks
   .filter(
     (talk) =>
       talk.id !== featuredMcpTalkSlug &&
-      !talk.data.upcoming &&
+      !isTalkUpcoming(talk.data, now) &&
       talk.data.video,
   )
   .slice(0, featuredMcpTalk ? 4 : 5);

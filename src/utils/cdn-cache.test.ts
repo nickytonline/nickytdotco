@@ -4,6 +4,7 @@ import {
   cdnMaxAgeSeconds,
   eventExpiryTimestamp,
   isEventUpcoming,
+  isTalkUpcoming,
   isUtcMidnight,
   soonestExpiryTimestamp,
 } from "./cdn-cache.ts";
@@ -33,6 +34,44 @@ describe("isEventUpcoming", () => {
     expect(isEventUpcoming(date, Date.parse("2026-09-16T00:00:00.000Z"))).toBe(
       false
     );
+  });
+});
+
+describe("isTalkUpcoming", () => {
+  it("requires the upcoming flag and a future end date", () => {
+    const talk = {
+      upcoming: true as const,
+      date: new Date("2026-09-03T12:00:00.000Z"),
+      endDate: new Date("2026-09-04T12:00:00.000Z"),
+    };
+    expect(isTalkUpcoming(talk, Date.parse("2026-09-04T11:59:00.000Z"))).toBe(
+      true
+    );
+    expect(isTalkUpcoming(talk, Date.parse("2026-09-04T12:00:00.000Z"))).toBe(
+      false
+    );
+  });
+
+  it("ignores a stale upcoming flag after the talk ends", () => {
+    expect(
+      isTalkUpcoming(
+        {
+          upcoming: true,
+          date: new Date("2026-09-03T12:00:00.000Z"),
+          endDate: new Date("2026-09-04T12:00:00.000Z"),
+        },
+        Date.parse("2026-09-05T18:00:00.000Z")
+      )
+    ).toBe(false);
+  });
+
+  it("is false when the upcoming flag is missing", () => {
+    expect(
+      isTalkUpcoming(
+        { date: new Date("2026-10-01T12:00:00.000Z") },
+        Date.parse("2026-09-05T18:00:00.000Z")
+      )
+    ).toBe(false);
   });
 });
 

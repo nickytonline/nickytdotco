@@ -21,6 +21,7 @@ import {
 } from "../lib/github/enrichCuratedProjects";
 import {
   isEventUpcoming,
+  isTalkUpcoming,
   setCdnCacheHeaders,
   soonestExpiryTimestamp,
 } from "../utils/cdn-cache";
@@ -47,24 +48,21 @@ const recentPosts = sortedPosts
 
 const allTalks = await getCollection("talks");
 const now = new Date();
+const nowMs = now.getTime();
 
 // Featured talks: selected, recorded talks (not upcoming)
 const featuredTalks = allTalks
-  .filter((t) => t.data.featured === true && !t.data.upcoming)
+  .filter((t) => t.data.featured === true && !isTalkUpcoming(t.data, nowMs))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 2);
 const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
 
 // Upcoming talks: all future events, not a capped subset.
-const upcomingTalks = allTalks.filter(
-  (t) =>
-    t.data.upcoming === true &&
-    isEventUpcoming(t.data.endDate ?? t.data.date, now.getTime()),
-);
+const upcomingTalks = allTalks.filter((t) => isTalkUpcoming(t.data, nowMs));
 const recentTalks = allTalks
   .filter(
     (t) =>
-      !t.data.upcoming &&
+      !isTalkUpcoming(t.data, nowMs) &&
       !featuredTalkIds.has(t.id) &&
       (t.data.endDate ?? t.data.date) < now,
   )

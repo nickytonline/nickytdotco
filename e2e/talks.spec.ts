@@ -78,6 +78,18 @@ test.describe("talks archive", () => {
 
     expect(eventStructuredDataCount).toBe(1);
   });
+
+  test("past talks do not show an upcoming pill", async ({ page }) => {
+    await page.goto("/talks/build-your-first-mcp-app-commit-your-code-2026");
+
+    await expect(
+      page.getByRole("main").getByRole("heading", {
+        level: 1,
+        name: "Build your First MCP App",
+      })
+    ).toBeVisible();
+    await expect(page.getByText("Upcoming talk")).toHaveCount(0);
+  });
 });
 
 test.describe("speaking page", () => {

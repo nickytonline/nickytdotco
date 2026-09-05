@@ -8,8 +8,11 @@ import GuideCard from "../components/GuideCard.astro";
 import TalkCard from "../components/TalkCard.astro";
 import { dateFilter } from "../utils/filters";
 import { slugifyVideo } from "../utils/video-utils";
+import { isTalkUpcoming } from "../utils/cdn-cache";
 
 export const prerender = true;
+
+const now = Date.now();
 
 const normalizeTag = (tag: string) => tag.toLowerCase().replace(/[\s-]+/g, "");
 const hasAnyTag = (tags: string[] | undefined, wanted: string[]) => {
@@ -215,7 +218,7 @@ const securityJsonLd = {
             href={`/talks/${talk.id}`}
             video={talk.data.video}
             coverImage={talk.data.cover_image}
-            upcoming={talk.data.upcoming}
+            upcoming={isTalkUpcoming(talk.data, now)}
           />
         ))}
       </div>
