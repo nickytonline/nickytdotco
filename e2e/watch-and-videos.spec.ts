@@ -97,9 +97,9 @@ test.describe("video archives", () => {
     }
 
     const section = upcomingHeading.locator("xpath=ancestor::section");
-    await expect(section.getByText("Watch live on:")).toBeVisible();
+    await expect(section.getByText("Watch live on:").first()).toBeVisible();
     await expect(
-      section.getByRole("button", { name: /Add .+ to calendar/i })
+      section.getByRole("button", { name: /Add .+ to calendar/i }).first()
     ).toBeVisible();
 
     const videoLink = section.locator('a[href^="/videos/"]').first();
