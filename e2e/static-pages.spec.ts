@@ -100,10 +100,10 @@ test.describe("MCP topic hub", () => {
     await expect(
       page
         .locator(
-          'section[aria-label="Watch"] a[href="/talks/securing-mcp-servers-with-zero-trust-apollo-mcp-server-builder-series-2024"]'
+          'section[aria-label="Watch"] a[href="/talks/build-your-first-mcp-app-commit-your-code-2026"]'
         )
         .locator("..")
-    ).toContainText("Apollo MCP Server Builder Series - July Session (NYC)");
+    ).toContainText("Commit Your Code 2026");
     await expect(
       page.locator(
         'section[aria-label="Watch"] a[href="https://www.youtube.com/watch?v=GCjtGLvNvZo"]'
