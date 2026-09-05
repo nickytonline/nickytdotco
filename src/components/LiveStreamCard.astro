@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import EventCalendar from "./EventCalendar";
 import Pill from "./Pill.astro";
-import StreamLinks from "./StreamLinks.astro";
 
 interface Platform {
   name: string;
@@ -38,10 +37,6 @@ const {
   upcoming,
   category,
 } = Astro.props;
-
-const youtubeUrl = platforms.find((p) => p.name === "YouTube")?.url;
-const twitchUrl = platforms.find((p) => p.name === "Twitch")?.url;
-const linkedinUrl = platforms.find((p) => p.name === "LinkedIn")?.url;
 ---
 
 <div class="stream-card group grid md:flex gap-3 md:gap-6 xl:gap-8">
@@ -99,15 +94,6 @@ const linkedinUrl = platforms.find((p) => p.name === "LinkedIn")?.url;
     <time class="italic text-base text-muted-foreground font-normal"
       >{datetime}</time
     >
-    {
-      upcoming && (
-        <StreamLinks
-          youtubeUrl={youtubeUrl}
-          twitchUrl={twitchUrl}
-          linkedinUrl={linkedinUrl}
-        />
-      )
-    }
     <div class="flex flex-wrap items-center gap-2 pt-1">
       {category && <Pill label={category} aria-hidden="true" />}
       {
