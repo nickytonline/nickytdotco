@@ -39,7 +39,16 @@
 - Required vars for the site: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `TURSO_SEARCH_DATABASE_URL`, `TURSO_SEARCH_AUTH_TOKEN`, `GITHUB_TOKEN`, `DEV_API_KEY`, `GEMINI_API_KEY`, `URL`.
 - Sync scripts use scoped Varlock env dirs instead of the root schema: `env/devto/.env.schema` (imports `DEV_API_KEY`, used by `vp run generate:posts`) and `env/search/.env.schema` (`GEMINI_API_KEY`, `TURSO_SEARCH_*`, optional `TURSO_*` for stream guests, used by `vp run index:search`). All are invoked as `varlock run --path env/<name> -- ...` from `package.json`. Live streams and schedule come from Turso via Astro live loaders (`streamVideos`, `streamSchedule`). Embeddings run in `.github/workflows/index-search.yml` on **push to `main`**, **workflow_dispatch**, and when production SSR pages (`/`, `/watch`, `/newsletter`) regenerate after CDN cache expiry. Those Netlify functions detect production from `Astro.locals.netlify.context.deploy.context` (not `process.env.CONTEXT`, which is outside the Varlock schema and unset in the SSR bundle), dispatch the workflow with `GITHUB_TOKEN` (`actions:write`) at most once per hour, and log `[search-reindex] Kicked off…` or a skip reason when they run. Not during the Netlify build and not on PRs. Batches of 5 with a 5s pause so Gemini rate limits are tolerated; content hashes skip unchanged docs.
 
-## Testing (E2E)
+## Testing
+
+### Unit / component (Vitest)
+
+- Colocated under `src/` as `*.test.ts` / `*.test.tsx` (configured in `vite.config.ts` `test.include`).
+- Run with `vp test` / `vp test run` (or `vp run test`).
+- Prefer Vitest + Testing Library for interactive React behavior (focus, clicks, keyboard). Skip for static Astro markup.
+- CI: `.github/workflows/vitest.yml` runs `vp test run` on pull requests (no app secrets).
+
+### E2E (Playwright)
 
 - Playwright specs live in `e2e/`; run with `vp run test:e2e` (`test:e2e:ui` for UI mode, `test:e2e:report` to reopen the last HTML report).
 - Locally, tests run against a real production build, not the dev server: `playwright.config.ts`'s `webServer` builds and serves via `npx varlock run -- netlify serve` unless `PLAYWRIGHT_BASE_URL` is set. This is required, not optional — `astro preview` throws ("adapter does not support the preview command") because `@astrojs/netlify` has no preview entrypoint, and search hits the production `/api/search` function against the Turso index.
