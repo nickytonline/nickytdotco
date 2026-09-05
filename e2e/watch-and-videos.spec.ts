@@ -78,9 +78,13 @@ test.describe("video archives", () => {
 
     expect(videoStructuredDataCount).toBe(1);
     await expect(page.getByText("Upcoming livestream")).toHaveCount(0);
+    await expect(page.getByText("Watch live on:")).toHaveCount(0);
+    await expect(
+      page.getByRole("button", { name: /Add .+ to calendar/i })
+    ).toHaveCount(0);
   });
 
-  test("upcoming stream video pages show an upcoming pill", async ({
+  test("upcoming stream video pages show calendar and live links", async ({
     page,
   }) => {
     await page.goto("/watch");
@@ -93,12 +97,16 @@ test.describe("video archives", () => {
     }
 
     const section = upcomingHeading.locator("xpath=ancestor::section");
-    const videoLink = section.locator('a[href^="/videos/"]').first();
+    const videoLink = section.locator('a[href*="/videos/"]').first();
     if ((await videoLink.count()) === 0) {
       test.skip(true, "upcoming streams have no on-site video pages");
     }
 
     await videoLink.click();
     await expect(page.getByText("Upcoming livestream")).toBeVisible();
+    await expect(page.getByText("Watch live on:")).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: /Add .+ to calendar/i })
+    ).toBeVisible();
   });
 });
