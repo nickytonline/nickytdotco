@@ -20,6 +20,7 @@
     "lint:fix": "vp lint --fix .",
     "generate:posts": "varlock run --path env/devto -- node ./bin/generateDevToPosts.ts",
     "index:search": "varlock run --path env/search -- node ./bin/indexSearch.ts",
+    "test": "vitest run",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:report": "playwright show-report",
