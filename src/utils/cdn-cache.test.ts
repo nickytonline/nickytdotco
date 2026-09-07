@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   CDN_CACHE_MAX_SECONDS,
+  SCHEDULE_CDN_CACHE_SECONDS,
   cdnMaxAgeSeconds,
   eventExpiryTimestamp,
   isEventUpcoming,
@@ -105,5 +106,11 @@ describe("soonestExpiryTimestamp", () => {
         now
       )
     ).toBe(Date.parse("2026-01-01T01:00:00.000Z"));
+  });
+});
+
+describe("SCHEDULE_CDN_CACHE_SECONDS", () => {
+  it("is a fixed two-day TTL for schedule pages", () => {
+    expect(SCHEDULE_CDN_CACHE_SECONDS).toBe(172_800);
   });
 });

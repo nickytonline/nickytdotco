@@ -1,4 +1,6 @@
 export const CDN_CACHE_MAX_SECONDS = 86_400;
+/** Fixed CDN TTL for Turso-backed schedule pages (/ and /watch). */
+export const SCHEDULE_CDN_CACHE_SECONDS = 172_800;
 export const PROJECTS_CACHE_MAX_SECONDS = 259_200;
 
 export function isUtcMidnight(date: Date): boolean {

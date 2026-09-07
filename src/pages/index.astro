@@ -22,8 +22,8 @@ import {
 import {
   isEventUpcoming,
   isTalkUpcoming,
-  setCdnCacheHeaders,
-  soonestExpiryTimestamp,
+  SCHEDULE_CDN_CACHE_SECONDS,
+  setFixedCdnCacheHeaders,
 } from "../utils/cdn-cache";
 import { scheduleSearchReindex } from "../lib/search/scheduleSearchReindex";
 
@@ -155,17 +155,9 @@ const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
 const timezone = rawTimezone || "UTC";
 
 if (!errorMessage) {
-  setCdnCacheHeaders(
+  setFixedCdnCacheHeaders(
     Astro.response.headers,
-    soonestExpiryTimestamp(
-      upcomingEvents.map((event) =>
-        event.kind === "talk"
-          ? (event.item.data.endDate ?? event.item.data.date)
-          : new Date(event.item.date),
-      ),
-      now.getTime(),
-    ),
-    now.getTime(),
+    SCHEDULE_CDN_CACHE_SECONDS,
   );
   Astro.response.headers.set("timezone", timezone);
   Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
