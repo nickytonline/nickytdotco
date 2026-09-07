@@ -11,8 +11,8 @@ import { getYouTubeId } from "@/utils/youtube-utils";
 import { slugifyVideo } from "@/utils/video-utils";
 import {
   isEventUpcoming,
-  setCdnCacheHeaders,
-  soonestExpiryTimestamp,
+  SCHEDULE_CDN_CACHE_SECONDS,
+  setFixedCdnCacheHeaders,
 } from "@/utils/cdn-cache";
 import { scheduleSearchReindex } from "@/lib/search/scheduleSearchReindex";
 
@@ -70,13 +70,9 @@ const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
 const timezone = rawTimezone || "UTC";
 
 if (!errorMessage) {
-  setCdnCacheHeaders(
+  setFixedCdnCacheHeaders(
     Astro.response.headers,
-    soonestExpiryTimestamp(
-      schedule.map((stream) => new Date(stream.date)),
-      now,
-    ),
-    now,
+    SCHEDULE_CDN_CACHE_SECONDS,
   );
 }
 Astro.response.headers.set("timezone", timezone);
