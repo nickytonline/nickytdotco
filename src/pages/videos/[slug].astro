@@ -13,10 +13,13 @@ import {
   extractYouTubeVideoId,
   slugifyVideo,
 } from "../../utils/video-utils";
+import { getLocalizedDate } from "../../utils/schedule-utils";
 import {
   eventExpiryTimestamp,
   isEventUpcoming,
   setCdnCacheHeaders,
+  setFixedCdnCacheHeaders,
+  UNTIL_DEPLOY_CDN_CACHE_SECONDS,
 } from "../../utils/cdn-cache";
 
 export const prerender = false;
@@ -56,11 +59,41 @@ const {
 } = stream.data;
 const now = Date.now();
 const isUpcoming = isEventUpcoming(new Date(date), now);
-setCdnCacheHeaders(
-  Astro.response.headers,
-  isUpcoming ? eventExpiryTimestamp(new Date(date)) : undefined,
-  now,
-);
+
+const locale =
+  Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
+  Astro.request.headers.get("Accept-Language") ||
+  "en-US";
+const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
+const timezone = rawTimezone || "UTC";
+
+const dateDisplay = isUpcoming
+  ? getLocalizedDate({
+      date,
+      locale,
+      timezone,
+      showTime: true,
+    })
+  : dateFilter(new Date(date));
+
+if (isUpcoming) {
+  setCdnCacheHeaders(
+    Astro.response.headers,
+    eventExpiryTimestamp(new Date(date)),
+    now,
+  );
+  Astro.response.headers.set("timezone", timezone);
+  Astro.response.headers.set(
+    "Netlify-Vary",
+    "header=Accept-Language|timezone",
+  );
+} else {
+  // Past pages are stable until the next deploy (no durable → purged on deploy).
+  setFixedCdnCacheHeaders(
+    Astro.response.headers,
+    UNTIL_DEPLOY_CDN_CACHE_SECONDS,
+  );
+}
 const descriptionHtml = markdownFilter(description);
 
 const videoId = extractYouTubeVideoId(youtubeStreamLink);
@@ -192,7 +225,7 @@ if (stream.data.website)
         class="flex flex-wrap items-center gap-2 leading-none text-lg text-muted-foreground mt-2"
       >
         <time datetime={new Date(date).toISOString()} class="italic">
-          {dateFilter(new Date(date))}
+          {dateDisplay}
         </time>
         {isUpcoming && <UpcomingBadge label="Upcoming livestream" />}
       </div>

@@ -2,6 +2,11 @@ export const CDN_CACHE_MAX_SECONDS = 86_400;
 /** Fixed CDN TTL for Turso-backed schedule pages (/ and /watch). */
 export const SCHEDULE_CDN_CACHE_SECONDS = 172_800;
 export const PROJECTS_CACHE_MAX_SECONDS = 259_200;
+/**
+ * Long CDN TTL for responses that only change on deploy.
+ * Omit `durable` so Netlify still purges on the next deploy.
+ */
+export const UNTIL_DEPLOY_CDN_CACHE_SECONDS = 31_536_000;
 
 export function isUtcMidnight(date: Date): boolean {
   return (
