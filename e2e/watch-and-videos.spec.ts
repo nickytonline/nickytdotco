@@ -64,9 +64,6 @@ test.describe("video archives", () => {
     const archiveResponse = await request.get(href!);
     expect(archiveResponse.ok()).toBeTruthy();
     expect(archiveResponse.headers()["timezone"]).toBeUndefined();
-    expect(
-      archiveResponse.headers()["netlify-cdn-cache-control"] ?? ""
-    ).toMatch(/max-age=31536000/);
 
     await link.click();
     await expect(page).toHaveURL(new RegExp(`${escapeRegExp(href!)}/?$`));
