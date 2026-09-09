@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   CDN_CACHE_MAX_SECONDS,
   SCHEDULE_CDN_CACHE_SECONDS,
+  UNTIL_DEPLOY_CDN_CACHE_SECONDS,
   cdnMaxAgeSeconds,
   eventExpiryTimestamp,
   isEventUpcoming,
@@ -112,5 +113,11 @@ describe("soonestExpiryTimestamp", () => {
 describe("SCHEDULE_CDN_CACHE_SECONDS", () => {
   it("is a fixed two-day TTL for schedule pages", () => {
     expect(SCHEDULE_CDN_CACHE_SECONDS).toBe(172_800);
+  });
+});
+
+describe("UNTIL_DEPLOY_CDN_CACHE_SECONDS", () => {
+  it("is a one-year TTL purged on the next deploy", () => {
+    expect(UNTIL_DEPLOY_CDN_CACHE_SECONDS).toBe(31_536_000);
   });
 });

@@ -52,7 +52,7 @@ test.describe("video archives", () => {
     ).toBeVisible();
   });
 
-  test("navigating to a video shows its title", async ({ page }) => {
+  test("navigating to a video shows its title", async ({ page, request }) => {
     await page.goto("/videos");
     const link = page.locator('main a[href^="/videos/"]').first();
 
@@ -61,6 +61,10 @@ test.describe("video archives", () => {
     }
 
     const href = await link.getAttribute("href");
+    const archiveResponse = await request.get(href!);
+    expect(archiveResponse.ok()).toBeTruthy();
+    expect(archiveResponse.headers()["timezone"]).toBeUndefined();
+
     await link.click();
     await expect(page).toHaveURL(new RegExp(`${escapeRegExp(href!)}/?$`));
     await expect(
@@ -108,5 +112,30 @@ test.describe("video archives", () => {
     await expect(
       page.getByRole("button", { name: /Add .+ to calendar/i })
     ).toBeVisible();
+  });
+
+  test("upcoming stream video pages set a timezone response header", async ({
+    page,
+    request,
+  }) => {
+    await page.goto("/watch");
+
+    const upcomingHeading = page.getByRole("heading", {
+      name: "Upcoming Live Streams",
+    });
+    if (!(await upcomingHeading.count())) {
+      test.skip(true, "no upcoming streams scheduled");
+    }
+
+    const section = upcomingHeading.locator("xpath=ancestor::section");
+    const videoLink = section.locator('a[href*="/videos/"]').first();
+    if ((await videoLink.count()) === 0) {
+      test.skip(true, "upcoming streams have no on-site video pages");
+    }
+
+    const href = await videoLink.getAttribute("href");
+    const response = await request.get(href!);
+    expect(response.ok()).toBeTruthy();
+    expect(response.headers()["timezone"]).toBeDefined();
   });
 });
