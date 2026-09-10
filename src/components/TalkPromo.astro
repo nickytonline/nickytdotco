@@ -1,0 +1,14 @@
+---
+interface Props {
+  html: string;
+}
+
+const { html } = Astro.props;
+---
+
+<aside
+  class="my-6 rounded-xl border border-brand-border bg-brand-soft p-5 text-brand-soft-foreground"
+  aria-label="Ticket offer"
+>
+  <div class="prose max-w-none [&_p]:my-0" set:html={html} />
+</aside>

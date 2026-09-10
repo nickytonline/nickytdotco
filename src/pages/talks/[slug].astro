@@ -5,6 +5,7 @@ import Layout from "../../layouts/MainLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import TagList from "../../components/TagList.astro";
 import RelatedContent from "../../components/RelatedContent.astro";
+import TalkPromo from "../../components/TalkPromo.astro";
 import { getRelatedTalks, getRelatedPostsForTalk } from "../../utils/tag-utils";
 import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
@@ -17,6 +18,7 @@ import {
   isTalkUpcoming,
   setCdnCacheHeaders,
 } from "../../utils/cdn-cache";
+import { upcomingTalkPromoHtml } from "../../utils/talk-promo";
 
 export const prerender = false;
 
@@ -55,6 +57,7 @@ const registrationUrl = talk.data.registrationUrl;
 const additionalLinks = talk.data.additionalLinks ?? [];
 const coverImage = talk.data.cover_image;
 const coverImageLarge = talk.data.cover_image_large;
+const promoHtml = upcomingTalkPromoHtml(talk.data, now);
 const isMultiDayEvent =
   isUpcoming &&
   endDate &&
@@ -276,6 +279,8 @@ const eventJsonLd = {
     <div class="prose max-w-none">
       <Content />
     </div>
+
+    {promoHtml && <TalkPromo html={promoHtml} />}
 
     {
       (sessionUrl ||
