@@ -3,7 +3,7 @@ title: "Share Work, Not Access: Control & Identity for Multiplayer Agents"
 date: 2026-09-23T11:30:00-07:00
 endDate: 2026-09-23T11:55:00-07:00
 upcoming: true
-cover_image: /assets/talks/ai-context-san-jose-2026-thumb.jpg
+cover_image: /assets/talks/ai-context-san-jose-2026-cover.jpg
 cover_image_large: /assets/talks/ai-context-san-jose-2026-cover.jpg
 venue:
   name: "AI Context San Jose"
