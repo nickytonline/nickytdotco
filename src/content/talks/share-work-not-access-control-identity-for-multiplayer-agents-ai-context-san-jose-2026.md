@@ -26,7 +26,7 @@ tags:
   ]
 ---
 
-The moment a second person joins an AI agent's conversation, whose permissions does the agent use? Current systems like Claude Tag basically force broad permission scoped at the channel level.
+The moment a second person joins an AI agent's conversation, whose permissions does the agent use? In [Claude Tag](https://support.claude.com/en/articles/15594475-what-is-claude-tag), channel tagging runs under the organization's identity, with tools and access an administrator configures at the organization, workspace, or private-channel level. Everyone in that channel still works with the same Claude, so collaboration can inherit a shared permission set rather than each person's own.
 
 Multiplayer agents also break the assumption that one session represents one user. When developers, operators, and security teams work through the same agent, combining their permissions can turn collaboration into privilege escalation.
 
