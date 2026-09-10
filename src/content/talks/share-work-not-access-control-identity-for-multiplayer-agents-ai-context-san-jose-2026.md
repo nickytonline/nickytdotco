@@ -11,6 +11,10 @@ venue:
   location: "AI Context Room 1, CreaTV San José, 38 S Second St, San Jose, CA"
 sessionUrl: "https://www.aicontextseries.com/san-jose"
 registrationUrl: "https://www.aicontextseries.com/san-jose"
+promo: >-
+  If you're coming to AI Context San Jose, tickets are **50% off**
+  with code [**NICKTAYLOR50**](https://luma.com/sanjose26?coupon=NICKTAYLOR50).
+  Use it when you [register on Luma](https://luma.com/sanjose26?coupon=NICKTAYLOR50).
 tags:
   [
     "agentic ai",

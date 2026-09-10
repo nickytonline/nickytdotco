@@ -79,6 +79,29 @@ test.describe("talks archive", () => {
     expect(eventStructuredDataCount).toBe(1);
   });
 
+  test("upcoming talks render a markdown ticket promo", async ({ page }) => {
+    await page.goto(
+      "/talks/share-work-not-access-control-identity-for-multiplayer-agents-ai-context-san-jose-2026"
+    );
+
+    const promo = page.getByRole("complementary", { name: "Ticket offer" });
+    await expect(promo).toBeVisible();
+    await expect(
+      promo.getByRole("link", { name: "NICKTAYLOR50" })
+    ).toHaveAttribute("href", "https://luma.com/sanjose26?coupon=NICKTAYLOR50");
+    await expect(
+      promo.getByRole("link", { name: /register on Luma/i })
+    ).toHaveAttribute("href", "https://luma.com/sanjose26?coupon=NICKTAYLOR50");
+  });
+
+  test("past talks do not show a ticket promo", async ({ page }) => {
+    await page.goto("/talks/build-your-first-mcp-app-commit-your-code-2026");
+
+    await expect(
+      page.getByRole("complementary", { name: "Ticket offer" })
+    ).toHaveCount(0);
+  });
+
   test("past talks do not show an upcoming pill", async ({ page }) => {
     await page.goto("/talks/build-your-first-mcp-app-commit-your-code-2026");
 
