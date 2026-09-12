@@ -362,6 +362,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 .windows95 {
   --radius: 0;
   --color-theme-feature-text: #ffff00;
+  /* Teal desktop chrome; readable copy lives on silver window surfaces. */
   --background: #008080;
   --foreground: #000000;
   --card: #c0c0c0;
@@ -373,6 +374,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   --secondary: #c0c0c0;
   --secondary-foreground: #000000;
   --muted: #dfdfdf;
+  /* #404040 on silver ≈ 5.7:1 (AA). Do not place muted text on teal. */
   --muted-foreground: #404040;
   --accent: #000080;
   --accent-foreground: #ffffff;
@@ -393,13 +395,14 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   --sidebar-accent-foreground: #000000;
   --sidebar-border: #808080;
   --sidebar-ring: #000080;
+  /* Navy on silver ≈ 8.8:1; hover navy stays AA on silver (not teal). */
   --brand: #000080;
-  --brand-hover: #1084d0;
+  --brand-hover: #0000aa;
   --brand-solid: #000080;
-  --brand-solid-hover: #1084d0;
+  --brand-solid-hover: #0000aa;
   --brand-foreground: #ffffff;
   --focus-ring: #000080;
-  --brand-soft: #c0c0c0;
+  --brand-soft: #dfdfdf;
   --brand-soft-foreground: #000080;
   --brand-border: #000080;
   --warning: #ffff00;
@@ -454,19 +457,40 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   border-radius: 0;
 }
 
-.windows95 header {
+.windows95 header,
+.windows95 main,
+.windows95 footer {
   background: #c0c0c0;
+  color: #000000;
   border: 2px solid;
   border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
   box-shadow:
     inset 1px 1px 0 #ffffff,
     inset -1px -1px 0 #808080;
+}
+
+.windows95 header {
   padding-inline: 1rem;
   margin-block-start: 0.75rem;
 }
 
+.windows95 main {
+  margin-block: 1rem;
+  padding-block: 1.5rem;
+}
+
+.windows95 footer {
+  margin-inline: 1.5rem;
+  padding-block: 1rem;
+}
+
+/* Black/navy on silver meets WCAG AA; muted must stay on silver, not teal. */
+.windows95 footer .text-muted-foreground {
+  color: #404040;
+}
+
 .windows95 header .site-logo {
-  background: linear-gradient(90deg, #000080, #1084d0);
+  background: linear-gradient(90deg, #000080, #0000aa);
   color: #ffffff;
   padding: 0.25rem 0.5rem;
   margin-inline: -0.25rem;
@@ -477,6 +501,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 }
 
 .windows95 header .site-logo .text-brand {
+  /* Yellow on navy ≈ 14.9:1 */
   color: #ffff00;
 }
 
@@ -500,6 +525,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   background: #ffffff;
   border-radius: 0;
   box-shadow: inset 1px 1px 0 #0a0a0a;
+  color: #000000;
 }
 
 .windows95 .expressive-code .copy button {
@@ -508,6 +534,65 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 
 .windows95 .expressive-code .ln {
   color: #404040 !important;
+}
+
+/* High-contrast focus for Win95 (links/buttons otherwise rely on color alone). */
+.windows95 :where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px dotted #000000;
+  outline-offset: 2px;
+}
+
+.windows95 :where(input, select, textarea):focus-visible {
+  outline: 2px solid #000080;
+  outline-offset: 1px;
+}
+
+/* Segmented theme switcher (all themes) */
+.theme-switcher {
+  border-width: 2px;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.theme-switcher__option {
+  border-inline-end: 1px solid var(--border);
+}
+
+.theme-switcher__option:last-child {
+  border-inline-end: 0;
+}
+
+.theme-switcher__option--active {
+  background: var(--brand-solid);
+  color: var(--brand-foreground);
+}
+
+.theme-switcher__option--active:hover,
+.theme-switcher__option--active:focus {
+  color: var(--brand-foreground);
+}
+
+.windows95 .theme-switcher {
+  border-radius: 0;
+  border-color: #0a0a0a #dfdfdf #dfdfdf #0a0a0a;
+  background: #c0c0c0;
+  box-shadow:
+    inset -1px -1px 0 #ffffff,
+    inset 1px 1px 0 #808080;
+}
+
+.windows95 .theme-switcher__option {
+  border-inline-end-color: #808080;
+  box-shadow: none;
+}
+
+.windows95 .theme-switcher__option--active {
+  background: #c0c0c0;
+  color: #000000;
+  border-color: #0a0a0a #dfdfdf #dfdfdf #0a0a0a;
+  box-shadow:
+    inset 1px 1px 0 #0a0a0a,
+    inset -1px -1px 0 #ffffff;
 }
 
 /* Pagefind search highlights */
@@ -542,6 +627,18 @@ mark {
 :where(input, select, textarea):focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+/* Theme switcher needs a visible focus ring (icon-only radios). */
+.theme-switcher__option:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.windows95 .theme-switcher__option:focus-visible {
+  outline: 2px dotted #000000;
+  outline-offset: -2px;
 }
 
 /* Current-page nav already looks focused; invert to body text on Tab. */

@@ -25,6 +25,8 @@ Prefer these semantic utilities in UI code:
 - Do not add arbitrary color utilities like `text-[#...]`, `bg-[#...]`, or `border-[#...]` in source UI. Add a named token in `global.css` instead.
 - Avoid one-off dark-mode color overrides when a token already adapts in `.dark` or `.windows95`.
 - Themes are exclusive classes on `<html>`: light (no theme class), `.dark`, or `.windows95` (POC). Prefer semantic tokens so all three stay consistent; use `@custom-variant windows95` only when a token is not enough.
+- Theme UI is a three-option `radiogroup` in `ThemeToggle.astro` (Light / Dark / Windows 95), not a binary button.
+- In `.windows95`, put readable text on silver surfaces (`header` / `main` / `footer`); teal `--background` is desktop chrome only. Navy/black on silver meets AA; do not place `text-brand` or `text-muted-foreground` on teal.
 - Use raw CSS color values only inside `global.css` token definitions or third-party integration overrides.
 - For hover and focus states, verify contrast in light, dark, and windows95. Prefer inverse token pairs such as `bg-brand-solid text-brand-foreground` and `hover:bg-background hover:text-brand`.
 - Keyboard focus: links, buttons, and summaries already restyle on `:focus` (underline, color, or background) — do not add a second outline. Exception: the current-page item in main nav (`aria-current="page"`) keeps its underline on `:focus-visible` but switches text and decoration to `foreground`, because it already looks active at rest. Form fields (`input`, `select`, `textarea`) get a 2px `--focus-ring` outline. Project cards ring the card via `focus-within`.

@@ -1,26 +1,34 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("theme toggle", () => {
-  test("cycles light → dark → windows95 and persists", async ({ page }) => {
+test.describe("theme switcher", () => {
+  test("selects light, dark, and windows95 and persists", async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.setItem("theme", "light");
     });
     await page.goto("/");
     const html = page.locator("html");
-    const toggle = page.getByRole("button", { name: /Current theme:/i });
+    const switcher = page.getByRole("radiogroup", { name: "Color theme" });
+    const light = switcher.getByRole("radio", { name: "Light" });
+    const dark = switcher.getByRole("radio", { name: "Dark" });
+    const windows95 = switcher.getByRole("radio", { name: "Windows 95" });
 
     await expect(html).not.toHaveClass(/dark|windows95/);
+    await expect(light).toHaveAttribute("aria-checked", "true");
+    await expect(dark).toHaveAttribute("aria-checked", "false");
+    await expect(windows95).toHaveAttribute("aria-checked", "false");
 
-    await toggle.click();
+    await dark.click();
     await expect(html).toHaveClass(/dark/);
     await expect(html).not.toHaveClass(/windows95/);
+    await expect(dark).toHaveAttribute("aria-checked", "true");
     expect(await page.evaluate(() => localStorage.getItem("theme"))).toBe(
       "dark"
     );
 
-    await toggle.click();
+    await windows95.click();
     await expect(html).toHaveClass(/windows95/);
     await expect(html).not.toHaveClass(/dark/);
+    await expect(windows95).toHaveAttribute("aria-checked", "true");
     expect(await page.evaluate(() => localStorage.getItem("theme"))).toBe(
       "windows95"
     );
@@ -29,8 +37,13 @@ test.describe("theme toggle", () => {
     await page.reload();
     await expect(html).toHaveClass(/windows95/);
     await expect(html).not.toHaveClass(/dark/);
+    await expect(
+      page.getByRole("radiogroup", { name: "Color theme" }).getByRole("radio", {
+        name: "Windows 95",
+      })
+    ).toHaveAttribute("aria-checked", "true");
 
-    await toggle.click();
+    await light.click();
     await expect(html).not.toHaveClass(/dark|windows95/);
     expect(await page.evaluate(() => localStorage.getItem("theme"))).toBe(
       "light"
@@ -43,10 +56,9 @@ test.describe("theme toggle", () => {
     });
     await page.goto("/");
     const html = page.locator("html");
-    const toggle = page.getByRole("button", { name: /Current theme:/i });
+    const switcher = page.getByRole("radiogroup", { name: "Color theme" });
 
-    await toggle.click(); // dark
-    await toggle.click(); // windows95
+    await switcher.getByRole("radio", { name: "Windows 95" }).click();
     await expect(html).toHaveClass(/windows95/);
 
     await page
@@ -57,5 +69,10 @@ test.describe("theme toggle", () => {
 
     await expect(html).toHaveClass(/windows95/);
     await expect(html).not.toHaveClass(/dark/);
+    await expect(
+      page.getByRole("radiogroup", { name: "Color theme" }).getByRole("radio", {
+        name: "Windows 95",
+      })
+    ).toHaveAttribute("aria-checked", "true");
   });
 });

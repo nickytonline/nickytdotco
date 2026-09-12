@@ -1,61 +1,79 @@
 ---
-// Theme toggle: cycles light → dark → windows95
+// Theme switcher: visible three-way control (light | dark | Windows 95)
 ---
 
-<button
-  id="theme-toggle"
-  type="button"
-  aria-label="Cycle color theme"
-  title="Cycle color theme"
-  class="inline-flex hover:text-brand focus:text-brand"
+<div
+  id="theme-switcher"
+  role="radiogroup"
+  aria-label="Color theme"
+  class="theme-switcher inline-flex border border-border bg-secondary text-secondary-foreground"
 >
-  <svg
-    id="theme-toggle-dark-icon"
-    class="hidden w-6 h-6"
-    fill="currentColor"
-    viewBox="0 0 20 20"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
+  <button
+    type="button"
+    role="radio"
+    data-theme="light"
+    aria-checked="false"
+    aria-label="Light"
+    title="Light"
+    class="theme-switcher__option inline-flex h-9 w-9 items-center justify-center hover:text-brand focus:text-brand"
   >
-    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-    ></path>
-  </svg>
-  <svg
-    id="theme-toggle-light-icon"
-    class="hidden w-6 h-6"
-    fill="currentColor"
-    viewBox="0 0 20 20"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
+    <svg
+      class="h-5 w-5"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+        fill-rule="evenodd"
+        clip-rule="evenodd"></path>
+    </svg>
+  </button>
+  <button
+    type="button"
+    role="radio"
+    data-theme="dark"
+    aria-checked="false"
+    aria-label="Dark"
+    title="Dark"
+    class="theme-switcher__option inline-flex h-9 w-9 items-center justify-center hover:text-brand focus:text-brand"
   >
-    <path
-      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-      fill-rule="evenodd"
-      clip-rule="evenodd"></path>
-  </svg>
-  <svg
-    id="theme-toggle-windows95-icon"
-    class="hidden w-6 h-6"
-    fill="currentColor"
-    viewBox="0 0 20 20"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
+    <svg
+      class="h-5 w-5"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+      ></path>
+    </svg>
+  </button>
+  <button
+    type="button"
+    role="radio"
+    data-theme="windows95"
+    aria-checked="false"
+    aria-label="Windows 95"
+    title="Windows 95"
+    class="theme-switcher__option inline-flex h-9 w-9 items-center justify-center hover:text-brand focus:text-brand"
   >
-    <path
-      d="M3 3h6v6H3V3zm8 0h6v6h-6V3zM3 11h6v6H3v-6zm8 0h6v6h-6v-6z"
-    ></path>
-  </svg>
-</button>
+    <svg
+      class="h-5 w-5"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M3 3h6v6H3V3zm8 0h6v6h-6V3zM3 11h6v6H3v-6zm8 0h6v6h-6v-6z"></path>
+    </svg>
+  </button>
+</div>
 
 <script>
   type ThemeName = "light" | "dark" | "windows95";
-
-  const THEMES: ThemeName[] = ["light", "dark", "windows95"];
-  const THEME_LABELS: Record<ThemeName, string> = {
-    light: "Light",
-    dark: "Dark",
-    windows95: "Windows 95",
-  };
 
   const isThemeName = (value: string | null): value is ThemeName =>
     value === "light" || value === "dark" || value === "windows95";
@@ -72,59 +90,93 @@
       : "light";
   };
 
-  const getCurrentTheme = (): ThemeName => {
+  const setTheme = (
+    theme: ThemeName,
+    container: ParentNode = document
+  ): void => {
     const html = document.documentElement;
-    if (html.classList.contains("windows95")) {
-      return "windows95";
-    }
-    if (html.classList.contains("dark")) {
-      return "dark";
-    }
-    return "light";
-  };
-
-  const nextTheme = (theme: ThemeName): ThemeName => {
-    const index = THEMES.indexOf(theme);
-    return THEMES[(index + 1) % THEMES.length]!;
-  };
-
-  const setTheme = (theme: ThemeName, container: ParentNode = document): void => {
-    const html = document.documentElement;
-    const darkIcon = container.querySelector("#theme-toggle-dark-icon");
-    const lightIcon = container.querySelector("#theme-toggle-light-icon");
-    const windows95Icon = container.querySelector(
-      "#theme-toggle-windows95-icon"
-    );
-    const themeToggle =
-      container.querySelector<HTMLButtonElement>("#theme-toggle");
-
     html.classList.remove("dark", "windows95");
     if (theme === "dark" || theme === "windows95") {
       html.classList.add(theme);
     }
 
-    darkIcon?.classList.toggle("hidden", theme !== "dark");
-    lightIcon?.classList.toggle("hidden", theme !== "light");
-    windows95Icon?.classList.toggle("hidden", theme !== "windows95");
+    const switcher = container.querySelector("#theme-switcher");
+    const options =
+      switcher?.querySelectorAll<HTMLButtonElement>("[data-theme]") ?? [];
 
-    const label = `Current theme: ${THEME_LABELS[theme]}. Click to cycle themes`;
-    themeToggle?.setAttribute("aria-label", label);
-    themeToggle?.setAttribute("title", label);
+    options.forEach((option) => {
+      const isSelected = option.dataset.theme === theme;
+      option.setAttribute("aria-checked", isSelected ? "true" : "false");
+      option.tabIndex = isSelected ? 0 : -1;
+      option.classList.toggle("theme-switcher__option--active", isSelected);
+    });
   };
 
-  const initThemeToggle = () => {
-    const themeToggle = document.getElementById("theme-toggle");
+  const initThemeSwitcher = () => {
+    const switcher = document.getElementById("theme-switcher");
 
-    if (themeToggle?.dataset.initialized === "true") {
+    if (switcher?.dataset.initialized === "true") {
       return;
     }
 
     setTheme(getThemePreference());
 
-    themeToggle?.addEventListener("click", () => {
-      const newTheme = nextTheme(getCurrentTheme());
-      setTheme(newTheme);
-      localStorage.setItem("theme", newTheme);
+    switcher?.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
+      const option = target.closest<HTMLButtonElement>("[data-theme]");
+      const theme = option?.dataset.theme;
+      if (!isThemeName(theme)) {
+        return;
+      }
+      setTheme(theme);
+      localStorage.setItem("theme", theme);
+    });
+
+    switcher?.addEventListener("keydown", (event) => {
+      if (
+        event.key !== "ArrowRight" &&
+        event.key !== "ArrowLeft" &&
+        event.key !== "ArrowDown" &&
+        event.key !== "ArrowUp" &&
+        event.key !== "Home" &&
+        event.key !== "End"
+      ) {
+        return;
+      }
+
+      const options = [
+        ...switcher.querySelectorAll<HTMLButtonElement>("[data-theme]"),
+      ];
+      const currentIndex = options.findIndex(
+        (option) => option.getAttribute("aria-checked") === "true"
+      );
+      if (currentIndex < 0) {
+        return;
+      }
+
+      event.preventDefault();
+
+      let nextIndex = currentIndex;
+      if (event.key === "Home") {
+        nextIndex = 0;
+      } else if (event.key === "End") {
+        nextIndex = options.length - 1;
+      } else if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        nextIndex = (currentIndex + 1) % options.length;
+      } else {
+        nextIndex = (currentIndex - 1 + options.length) % options.length;
+      }
+
+      const nextTheme = options[nextIndex]?.dataset.theme;
+      if (!isThemeName(nextTheme)) {
+        return;
+      }
+      setTheme(nextTheme);
+      localStorage.setItem("theme", nextTheme);
+      options[nextIndex]?.focus();
     });
 
     window
@@ -135,13 +187,13 @@
         }
       });
 
-    if (themeToggle) {
-      themeToggle.dataset.initialized = "true";
+    if (switcher) {
+      switcher.dataset.initialized = "true";
     }
   };
 
-  initThemeToggle();
+  initThemeSwitcher();
 
   // Re-initialize after navigation (will skip if already initialized)
-  document.addEventListener("astro:page-load", initThemeToggle);
+  document.addEventListener("astro:page-load", initThemeSwitcher);
 </script>
