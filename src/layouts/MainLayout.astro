@@ -67,6 +67,13 @@ const currentYear = new Date().getFullYear();
     <!-- Prevent flash of unstyled content -->
     <script is:inline>
       // Check for saved theme preference or default to system preference
+      const applyThemeClass = (root, theme) => {
+        root.classList.remove("dark", "windows95");
+        if (theme === "dark" || theme === "windows95") {
+          root.classList.add(theme);
+        }
+      };
+
       const theme = (() => {
         if (
           typeof localStorage !== "undefined" &&
@@ -80,18 +87,13 @@ const currentYear = new Date().getFullYear();
         return "light";
       })();
 
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+      applyThemeClass(document.documentElement, theme);
 
       document.addEventListener("astro:before-swap", (ev) => {
-        if (localStorage.getItem("theme") === "dark") {
-          ev.newDocument.documentElement.classList.add("dark");
-        } else {
-          ev.newDocument.documentElement.classList.remove("dark");
-        }
+        applyThemeClass(
+          ev.newDocument.documentElement,
+          localStorage.getItem("theme")
+        );
       });
     </script>
     {

@@ -1,12 +1,12 @@
 ---
-// Theme toggle component
+// Theme toggle: cycles light → dark → windows95
 ---
 
 <button
   id="theme-toggle"
   type="button"
-  aria-label="Toggle dark mode"
-  aria-pressed="false"
+  aria-label="Cycle color theme"
+  title="Cycle color theme"
   class="inline-flex hover:text-brand focus:text-brand"
 >
   <svg
@@ -33,36 +33,83 @@
       fill-rule="evenodd"
       clip-rule="evenodd"></path>
   </svg>
+  <svg
+    id="theme-toggle-windows95-icon"
+    class="hidden w-6 h-6"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M3 3h6v6H3V3zm8 0h6v6h-6V3zM3 11h6v6H3v-6zm8 0h6v6h-6v-6z"
+    ></path>
+  </svg>
 </button>
 
 <script>
-  // Theme toggle functionality
-  const getThemePreference = (): string => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme")!;
+  type ThemeName = "light" | "dark" | "windows95";
+
+  const THEMES: ThemeName[] = ["light", "dark", "windows95"];
+  const THEME_LABELS: Record<ThemeName, string> = {
+    light: "Light",
+    dark: "Dark",
+    windows95: "Windows 95",
+  };
+
+  const isThemeName = (value: string | null): value is ThemeName =>
+    value === "light" || value === "dark" || value === "windows95";
+
+  const getThemePreference = (): ThemeName => {
+    if (typeof localStorage !== "undefined") {
+      const stored = localStorage.getItem("theme");
+      if (isThemeName(stored)) {
+        return stored;
+      }
     }
     return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
   };
 
-  const setTheme = (theme: string, container: ParentNode = document): void => {
+  const getCurrentTheme = (): ThemeName => {
+    const html = document.documentElement;
+    if (html.classList.contains("windows95")) {
+      return "windows95";
+    }
+    if (html.classList.contains("dark")) {
+      return "dark";
+    }
+    return "light";
+  };
+
+  const nextTheme = (theme: ThemeName): ThemeName => {
+    const index = THEMES.indexOf(theme);
+    return THEMES[(index + 1) % THEMES.length]!;
+  };
+
+  const setTheme = (theme: ThemeName, container: ParentNode = document): void => {
     const html = document.documentElement;
     const darkIcon = container.querySelector("#theme-toggle-dark-icon");
     const lightIcon = container.querySelector("#theme-toggle-light-icon");
-    const themeToggle = container.querySelector<HTMLButtonElement>("#theme-toggle");
+    const windows95Icon = container.querySelector(
+      "#theme-toggle-windows95-icon"
+    );
+    const themeToggle =
+      container.querySelector<HTMLButtonElement>("#theme-toggle");
 
-    if (theme === "dark") {
-      html.classList.add("dark");
-      darkIcon?.classList.remove("hidden");
-      lightIcon?.classList.add("hidden");
-      themeToggle?.setAttribute("aria-pressed", "true");
-    } else {
-      html.classList.remove("dark");
-      lightIcon?.classList.remove("hidden");
-      darkIcon?.classList.add("hidden");
-      themeToggle?.setAttribute("aria-pressed", "false");
+    html.classList.remove("dark", "windows95");
+    if (theme === "dark" || theme === "windows95") {
+      html.classList.add(theme);
     }
+
+    darkIcon?.classList.toggle("hidden", theme !== "dark");
+    lightIcon?.classList.toggle("hidden", theme !== "light");
+    windows95Icon?.classList.toggle("hidden", theme !== "windows95");
+
+    const label = `Current theme: ${THEME_LABELS[theme]}. Click to cycle themes`;
+    themeToggle?.setAttribute("aria-label", label);
+    themeToggle?.setAttribute("title", label);
   };
 
   const initThemeToggle = () => {
@@ -75,10 +122,7 @@
     setTheme(getThemePreference());
 
     themeToggle?.addEventListener("click", () => {
-      const html = document.documentElement;
-      const currentTheme = html.classList.contains("dark") ? "dark" : "light";
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-
+      const newTheme = nextTheme(getCurrentTheme());
       setTheme(newTheme);
       localStorage.setItem("theme", newTheme);
     });

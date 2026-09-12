@@ -21,6 +21,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant windows95 (&:is(.windows95 *));
 
 /* CSS Custom Properties */
 :root {
@@ -353,9 +354,160 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   --warning-border: oklch(0.473 0.137 46.201);
 }
 
+/*
+  Windows 95 theme (proof of concept).
+  Classic silver chrome on teal desktop; tokens only — most UI follows
+  semantic utilities (bg-background, text-brand, border-border, etc.).
+*/
+.windows95 {
+  --radius: 0;
+  --color-theme-feature-text: #ffff00;
+  --background: #008080;
+  --foreground: #000000;
+  --card: #c0c0c0;
+  --card-foreground: #000000;
+  --popover: #c0c0c0;
+  --popover-foreground: #000000;
+  --primary: #000080;
+  --primary-foreground: #ffffff;
+  --secondary: #c0c0c0;
+  --secondary-foreground: #000000;
+  --muted: #dfdfdf;
+  --muted-foreground: #404040;
+  --accent: #000080;
+  --accent-foreground: #ffffff;
+  --destructive: #800000;
+  --border: #808080;
+  --input: #ffffff;
+  --ring: #000080;
+  --chart-1: #000080;
+  --chart-2: #008080;
+  --chart-3: #800080;
+  --chart-4: #808000;
+  --chart-5: #800000;
+  --sidebar: #c0c0c0;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #000080;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #dfdfdf;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #808080;
+  --sidebar-ring: #000080;
+  --brand: #000080;
+  --brand-hover: #1084d0;
+  --brand-solid: #000080;
+  --brand-solid-hover: #1084d0;
+  --brand-foreground: #ffffff;
+  --focus-ring: #000080;
+  --brand-soft: #c0c0c0;
+  --brand-soft-foreground: #000080;
+  --brand-border: #000080;
+  --warning: #ffff00;
+  --warning-foreground: #000000;
+  --warning-soft: #ffffe1;
+  --warning-border: #808000;
+  --github: #000000;
+  --x: #000000;
+  --devto: #000000;
+}
+
 /* Dark mode heading anchor improvements */
 .dark .heading-anchor {
   @apply text-brand;
+}
+
+.windows95 .heading-anchor {
+  @apply text-brand;
+}
+
+/* Win95 chrome: system UI font, sharp corners, raised/sunken bevels */
+.windows95,
+.windows95 body {
+  font-family:
+    Tahoma, "MS Sans Serif", "Microsoft Sans Serif", Geneva, sans-serif;
+}
+
+.windows95 .font-heading,
+.windows95 h1,
+.windows95 h2,
+.windows95 h3,
+.windows95 h4,
+.windows95 h5,
+.windows95 h6 {
+  font-family:
+    Tahoma, "MS Sans Serif", "Microsoft Sans Serif", Geneva, sans-serif;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.windows95
+  :where(
+    .rounded,
+    .rounded-sm,
+    .rounded-md,
+    .rounded-lg,
+    .rounded-xl,
+    .rounded-2xl,
+    .rounded-3xl,
+    .rounded-full
+  ) {
+  border-radius: 0;
+}
+
+.windows95 header {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #808080;
+  padding-inline: 1rem;
+  margin-block-start: 0.75rem;
+}
+
+.windows95 header .site-logo {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  margin-inline: -0.25rem;
+}
+
+.windows95 header .site-logo a {
+  color: inherit;
+}
+
+.windows95 header .site-logo .text-brand {
+  color: #ffff00;
+}
+
+.windows95 :where(button, .bg-card, .bg-popover, [role="dialog"]) {
+  border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #808080;
+}
+
+.windows95 :where(button:active) {
+  border-color: #0a0a0a #dfdfdf #dfdfdf #0a0a0a;
+  box-shadow:
+    inset -1px -1px 0 #ffffff,
+    inset 1px 1px 0 #808080;
+}
+
+.windows95 :where(input, select, textarea) {
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 #0a0a0a;
+}
+
+.windows95 .expressive-code .copy button {
+  border-radius: 0;
+}
+
+.windows95 .expressive-code .ln {
+  color: #404040 !important;
 }
 
 /* Pagefind search highlights */
@@ -432,6 +584,11 @@ nav[aria-label="main navigation"] .nav-link[aria-current="page"]:focus-visible {
       oklch(0.65 0.25 350 / 0.4) 1.2px,
       transparent 1.2px
     );
+  }
+
+  /* Win95 desktop: no modern brand dots */
+  :is(.windows95) body::after {
+    display: none;
   }
 }
 
