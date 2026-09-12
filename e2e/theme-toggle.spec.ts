@@ -2,10 +2,11 @@ import { test, expect } from "@playwright/test";
 
 test.describe("theme switcher", () => {
   test("selects light, dark, and windows95 and persists", async ({ page }) => {
-    await page.addInitScript(() => {
-      localStorage.setItem("theme", "light");
-    });
+    // Seed once via evaluate after load so reload is not reset by addInitScript.
     await page.goto("/");
+    await page.evaluate(() => localStorage.setItem("theme", "light"));
+    await page.reload();
+
     const html = page.locator("html");
     const switcher = page.getByRole("radiogroup", { name: "Color theme" });
     const light = switcher.getByRole("radio", { name: "Light" });
@@ -51,10 +52,10 @@ test.describe("theme switcher", () => {
   });
 
   test("persists across client-side navigation", async ({ page }) => {
-    await page.addInitScript(() => {
-      localStorage.setItem("theme", "light");
-    });
     await page.goto("/");
+    await page.evaluate(() => localStorage.setItem("theme", "light"));
+    await page.reload();
+
     const html = page.locator("html");
     const switcher = page.getByRole("radiogroup", { name: "Color theme" });
 

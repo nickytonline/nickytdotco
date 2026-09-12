@@ -75,7 +75,9 @@
 <script>
   type ThemeName = "light" | "dark" | "windows95";
 
-  const isThemeName = (value: string | null): value is ThemeName =>
+  const isThemeName = (
+    value: string | null | undefined
+  ): value is ThemeName =>
     value === "light" || value === "dark" || value === "windows95";
 
   const getThemePreference = (): ThemeName => {
