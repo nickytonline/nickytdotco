@@ -9,7 +9,7 @@ venue:
   url: "https://www.commityourcode.com/"
   location: "Capital One Campus, Plano, TX"
 video:
-  { "url": "https://www.youtube.com/watch?v=P-e0DXCewIQ&t=12480s", "type": "youtube" }
+  { "url": "https://youtube.com/watch?v=zdGf2U7jskc", "type": "youtube" }
 slideDeck: https://cyc2026.netlify.app/
 tags: ["mcp", "agentic ai", "pomerium", "zero trust", "security", "ai"]
 ---
