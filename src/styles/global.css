@@ -557,7 +557,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   outline-offset: 1px;
 }
 
-/* Theme switcher: compact trigger + attached fan of options */
+/* Theme switcher: compact trigger + options that open below */
 .theme-switcher {
   z-index: 40;
 }
@@ -565,13 +565,19 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 .theme-switcher__trigger {
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 9999px;
   border-width: 1px;
 }
 
 .theme-switcher__menu {
   position: absolute;
+  top: 100%;
+  left: 50%;
   display: flex;
+  flex-direction: column;
   gap: 0.2rem;
   padding: 0;
   border: 0;
@@ -581,13 +587,24 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   box-shadow: none;
   opacity: 0;
   pointer-events: none;
+  transform: translate(-50%, -0.35rem) scale(0.92);
   transition:
     opacity 160ms ease,
     transform 180ms ease;
   z-index: 50;
 }
 
+.theme-switcher--open .theme-switcher__menu {
+  opacity: 1;
+  pointer-events: auto;
+  /* Sit just under the trigger so options feel attached. */
+  transform: translate(-50%, 0.2rem) scale(1);
+}
+
 .theme-switcher__option {
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 2.25rem;
   border: 1px solid var(--border);
   border-radius: 9999px;
   background: var(--secondary);
@@ -595,38 +612,15 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   box-shadow:
     0 4px 14px rgb(0 0 0 / 10%),
     0 1px 3px rgb(0 0 0 / 6%);
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
 }
 
-/* Desktop / tablet: options slide out beside the trigger, vertically centered. */
-.theme-switcher[data-direction="end"] .theme-switcher__menu {
-  top: 50%;
-  right: 100%;
-  left: auto;
-  flex-direction: row;
-  transform: translate(0.35rem, -50%) scale(0.92);
-}
-
-.theme-switcher--open[data-direction="end"] .theme-switcher__menu {
-  opacity: 1;
-  pointer-events: auto;
-  /* Nudge left so the first circle sits flush against the trigger. */
-  transform: translate(-0.2rem, -50%) scale(1);
-}
-
-/* Mobile: options slide out below the trigger, horizontally centered. */
-.theme-switcher[data-direction="down"] .theme-switcher__menu {
-  top: 100%;
-  left: 50%;
-  right: auto;
-  flex-direction: column;
-  transform: translate(-50%, -0.35rem) scale(0.92);
-}
-
-.theme-switcher--open[data-direction="down"] .theme-switcher__menu {
-  opacity: 1;
-  pointer-events: auto;
-  /* Nudge down so the first circle sits flush under the trigger. */
-  transform: translate(-50%, 0.2rem) scale(1);
+.theme-switcher__option:hover {
+  color: var(--brand);
+  border-color: var(--brand);
 }
 
 .theme-switcher__option--active {
@@ -637,18 +631,23 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 
 .theme-switcher__option--active:hover,
 .theme-switcher__option--active:focus {
+  background: var(--brand-solid-hover);
   color: var(--brand-foreground);
+  border-color: var(--brand-solid-hover);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-switcher__menu {
+  .theme-switcher__menu,
+  .theme-switcher__option {
     transition: none;
   }
 }
 
-/* Win95 keeps the chunky square chrome as one attached block. */
+/* Win95: same-size square tiles stacked under the trigger. */
 .windows95 .theme-switcher__trigger,
-.windows95 .theme-switcher__menu {
+.windows95 .theme-switcher__option {
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 0;
   border: 2px solid;
   border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
@@ -657,61 +656,41 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   box-shadow:
     inset 1px 1px 0 #ffffff,
     inset -1px -1px 0 #808080;
-  gap: 0;
-  padding: 0;
 }
 
 .windows95 .theme-switcher__menu {
-  border-width: 2px;
+  top: calc(100% - 2px);
+  left: 50%;
+  gap: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: translate(-50%, -0.25rem) scale(0.98);
+}
+
+.windows95 .theme-switcher--open .theme-switcher__menu {
+  transform: translate(-50%, 0) scale(1);
 }
 
 .windows95 .theme-switcher__option {
-  border-radius: 0;
-  border: 0;
-  border-inline-end: 1px solid #808080;
-  background: transparent;
-  box-shadow: none;
+  transition: none;
 }
 
-.windows95 .theme-switcher[data-direction="down"] .theme-switcher__option {
-  border-inline-end: 0;
-  border-block-end: 1px solid #808080;
+.windows95 .theme-switcher__option:hover {
+  background: #dfdfdf;
+  color: #000000;
+  border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
 }
 
-.windows95 .theme-switcher__option:last-child {
-  border-inline-end: 0;
-  border-block-end: 0;
-}
-
-.windows95 .theme-switcher__option--active {
+.windows95 .theme-switcher__option--active,
+.windows95 .theme-switcher__option--active:hover,
+.windows95 .theme-switcher__option--active:focus {
   background: #c0c0c0;
   color: #000000;
   border-color: #0a0a0a #dfdfdf #dfdfdf #0a0a0a;
   box-shadow:
     inset 1px 1px 0 #0a0a0a,
     inset -1px -1px 0 #ffffff;
-}
-
-/* Keep Win95 menu aligned to the trigger edge (block, not free circles). */
-.windows95 .theme-switcher[data-direction="end"] .theme-switcher__menu {
-  top: 0;
-  right: calc(100% - 2px);
-  transform: translateX(0.25rem) scale(0.98);
-}
-
-.windows95 .theme-switcher--open[data-direction="end"] .theme-switcher__menu {
-  transform: translateX(0) scale(1);
-}
-
-.windows95 .theme-switcher[data-direction="down"] .theme-switcher__menu {
-  top: calc(100% - 2px);
-  left: auto;
-  right: 0;
-  transform: translateY(-0.25rem) scale(0.98);
-}
-
-.windows95 .theme-switcher--open[data-direction="down"] .theme-switcher__menu {
-  transform: translateY(0) scale(1);
 }
 
 /* Pagefind search highlights */

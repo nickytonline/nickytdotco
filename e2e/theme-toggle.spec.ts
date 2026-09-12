@@ -85,14 +85,22 @@ test.describe("theme switcher", () => {
     await expect(html).not.toHaveClass(/dark/);
   });
 
-  test("fans below on a narrow viewport", async ({ page }) => {
-    await page.setViewportSize({ width: 390, height: 844 });
+  test("opens below on desktop and mobile", async ({ page }) => {
     await page.goto("/");
     await page.evaluate(() => localStorage.setItem("theme", "light"));
     await page.reload();
 
     const root = page.locator("[data-theme-switcher]");
-    await page.getByRole("button", { name: /Color theme:/i }).click();
+    const trigger = page.getByRole("button", { name: /Color theme:/i });
+
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await trigger.click();
+    await expect(root).toHaveAttribute("data-open", "true");
+    await expect(root).toHaveAttribute("data-direction", "down");
+    await trigger.click();
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await trigger.click();
     await expect(root).toHaveAttribute("data-open", "true");
     await expect(root).toHaveAttribute("data-direction", "down");
   });

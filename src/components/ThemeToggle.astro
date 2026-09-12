@@ -1,6 +1,6 @@
 ---
-// Theme switcher: compact trigger that fans open to the right (desktop)
-// or below (mobile). Options stay a radiogroup for accessibility.
+// Theme switcher: compact trigger that opens options below.
+// Options stay a radiogroup for accessibility.
 ---
 
 <div class="theme-switcher relative inline-flex" data-theme-switcher>
@@ -154,8 +154,7 @@
       : "light";
   };
 
-  const getOpenDirection = (): "end" | "down" =>
-    window.matchMedia("(min-width: 768px)").matches ? "end" : "down";
+  const getOpenDirection = (): "down" => "down";
 
   const syncTrigger = (
     theme: ThemeName,
@@ -334,22 +333,14 @@
 
       event.preventDefault();
 
-      const horizontal = root.dataset.direction === "end";
       let nextIndex = activeIndex;
       if (event.key === "Home") {
         nextIndex = 0;
       } else if (event.key === "End") {
         nextIndex = options.length - 1;
-      } else if (
-        event.key === "ArrowRight" ||
-        (event.key === "ArrowDown" && !horizontal) ||
-        (event.key === "ArrowDown" && horizontal)
-      ) {
+      } else if (event.key === "ArrowDown" || event.key === "ArrowRight") {
         nextIndex = (activeIndex + 1) % options.length;
-      } else if (
-        event.key === "ArrowLeft" ||
-        event.key === "ArrowUp"
-      ) {
+      } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
         nextIndex = (activeIndex - 1 + options.length) % options.length;
       }
 
@@ -365,7 +356,6 @@
     trigger.addEventListener("keydown", (event) => {
       if (
         event.key === "ArrowDown" ||
-        event.key === "ArrowRight" ||
         event.key === "Enter" ||
         event.key === " "
       ) {
@@ -407,12 +397,6 @@
           setTheme(e.matches ? "dark" : "light");
         }
       });
-
-    window.matchMedia("(min-width: 768px)").addEventListener("change", () => {
-      if (root.dataset.open === "true") {
-        root.dataset.direction = getOpenDirection();
-      }
-    });
 
     root.dataset.initialized = "true";
   };
