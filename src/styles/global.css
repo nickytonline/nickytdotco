@@ -538,8 +538,13 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   }
 }
 
+/*
+  Search is a React island (`astro-island` is display:contents by default),
+  so it is not matched by `> button`. Target the trigger by aria-label;
+  leave dialog controls alone.
+*/
 .windows95 [data-site-header-actions] > a,
-.windows95 [data-site-header-actions] > button,
+.windows95 [data-site-header-actions] button[aria-label="Search site"],
 .windows95 [data-site-header-actions] .theme-switcher__trigger,
 .windows95 [data-site-header-actions] .theme-switcher__option {
   box-sizing: border-box;
@@ -547,10 +552,11 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   height: var(--win95-header-action-size);
   min-width: var(--win95-header-action-size);
   min-height: var(--win95-header-action-size);
+  flex-shrink: 0;
 }
 
 .windows95 [data-site-header-actions] > a,
-.windows95 [data-site-header-actions] > button,
+.windows95 [data-site-header-actions] button[aria-label="Search site"],
 .windows95 [data-site-header-actions] .theme-switcher__trigger {
   padding: 0;
   display: inline-flex;
@@ -568,36 +574,77 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 }
 
 .windows95 [data-site-header-actions] > a:hover,
-.windows95 [data-site-header-actions] > button:hover,
+.windows95 [data-site-header-actions] button[aria-label="Search site"]:hover,
 .windows95 [data-site-header-actions] .theme-switcher__trigger:hover {
   background: #c0c0c0 !important;
   color: #000000 !important;
 }
 
 .windows95 [data-site-header-actions] > a:active,
-.windows95 [data-site-header-actions] > button:active,
+.windows95 [data-site-header-actions] button[aria-label="Search site"]:active,
 .windows95 [data-site-header-actions] .theme-switcher__trigger:active {
   border-color: #0a0a0a #ffffff #ffffff #0a0a0a !important;
   box-shadow: inset 1px 1px #808080;
 }
 
-.windows95 [data-site-header-actions] svg {
+.windows95 [data-site-header-actions] > a svg,
+.windows95 [data-site-header-actions] button[aria-label="Search site"] svg,
+.windows95 [data-site-header-actions] .theme-switcher__trigger svg,
+.windows95 [data-site-header-actions] .theme-switcher__option svg {
   width: 1.125rem;
   height: 1.125rem;
 }
 
 @media (min-width: 768px) {
-  .windows95 [data-site-header-actions] svg {
+  .windows95 [data-site-header-actions] > a svg,
+  .windows95 [data-site-header-actions] button[aria-label="Search site"] svg,
+  .windows95 [data-site-header-actions] .theme-switcher__trigger svg,
+  .windows95 [data-site-header-actions] .theme-switcher__option svg {
     width: 1.25rem;
     height: 1.25rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .windows95 [data-site-header-actions] svg {
+  .windows95 [data-site-header-actions] > a svg,
+  .windows95 [data-site-header-actions] button[aria-label="Search site"] svg,
+  .windows95 [data-site-header-actions] .theme-switcher__trigger svg,
+  .windows95 [data-site-header-actions] .theme-switcher__option svg {
     width: 1.375rem;
     height: 1.375rem;
   }
+}
+
+/* Mobile menu panel: silver chrome, not teal desktop background. */
+.windows95 [data-mobile-menu] nav {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #0a0a0a #0a0a0a #ffffff !important;
+  border-radius: 0 !important;
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #808080,
+    2px 2px 0 #000000;
+}
+
+.windows95 [data-mobile-menu] .nav-link {
+  color: #000000 !important;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.windows95 [data-mobile-menu] .nav-link:hover,
+.windows95 [data-mobile-menu] .nav-link:focus-visible {
+  background: #000080 !important;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.windows95 [data-mobile-menu] .nav-link[aria-current="page"] {
+  background: #000080 !important;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 /*
