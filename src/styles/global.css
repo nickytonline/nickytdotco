@@ -515,18 +515,68 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   color: #ffff00;
 }
 
-.windows95 :where(button, .bg-card, .bg-popover, [role="dialog"]) {
+/*
+  Classic Win95 raised buttons.
+  Cover <button>/<summary> and CTA-looking anchors (brand / secondary /
+  bordered inline-flex). Skip tag pills and the theme switcher.
+  Do not match bare .bg-brand-solid (series badges) or a.border-border
+  without inline-flex (thumbnail cards).
+*/
+.windows95
+  :is(
+    button,
+    summary,
+    a.bg-brand-solid,
+    a.bg-secondary,
+    a.inline-flex.border-border,
+    a.inline-flex.border-brand
+  ):not(.tag-pill, .theme-switcher__trigger, .theme-switcher__option) {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #0a0a0a #0a0a0a #ffffff !important;
+  border-radius: 0 !important;
+  box-shadow:
+    inset -1px -1px #808080,
+    inset 1px 1px #dfdfdf;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.windows95
+  :is(
+    button,
+    summary,
+    a.bg-brand-solid,
+    a.bg-secondary,
+    a.inline-flex.border-border,
+    a.inline-flex.border-brand
+  ):not(.tag-pill, .theme-switcher__trigger, .theme-switcher__option):hover {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+}
+
+.windows95
+  :is(
+    button,
+    summary,
+    a.bg-brand-solid,
+    a.bg-secondary,
+    a.inline-flex.border-border,
+    a.inline-flex.border-brand
+  ):not(.tag-pill, .theme-switcher__trigger, .theme-switcher__option):active {
+  border-color: #0a0a0a #ffffff #ffffff #0a0a0a !important;
+  box-shadow: inset 1px 1px #808080;
+}
+
+/* Cards / dialogs keep raised panel chrome without forcing button colors. */
+.windows95 :is(.bg-card, .bg-popover, [role="dialog"]) {
+  border: 2px solid;
   border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
   box-shadow:
     inset 1px 1px 0 #ffffff,
     inset -1px -1px 0 #808080;
-}
-
-.windows95 :where(button:active) {
-  border-color: #0a0a0a #dfdfdf #dfdfdf #0a0a0a;
-  box-shadow:
-    inset -1px -1px 0 #ffffff,
-    inset 1px 1px 0 #808080;
+  border-radius: 0;
 }
 
 .windows95 :where(input, select, textarea) {
