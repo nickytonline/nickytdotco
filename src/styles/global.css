@@ -557,12 +557,14 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   outline-offset: 1px;
 }
 
-/* Theme switcher: compact trigger + animated fan menu */
+/* Theme switcher: compact trigger + attached fan of options */
 .theme-switcher {
   z-index: 40;
 }
 
 .theme-switcher__trigger {
+  position: relative;
+  z-index: 1;
   border-radius: 9999px;
   border-width: 1px;
 }
@@ -570,59 +572,67 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 .theme-switcher__menu {
   position: absolute;
   display: flex;
-  gap: 0.15rem;
-  padding: 0.2rem;
-  border: 1px solid var(--border);
-  border-radius: 9999px;
-  background: var(--secondary);
+  gap: 0.2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--secondary-foreground);
-  box-shadow:
-    0 8px 24px rgb(0 0 0 / 12%),
-    0 2px 6px rgb(0 0 0 / 6%);
+  box-shadow: none;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.92);
   transition:
     opacity 160ms ease,
     transform 180ms ease;
   z-index: 50;
 }
 
-/* Desktop / tablet: fan out beside the trigger (toward page center). */
+.theme-switcher__option {
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  box-shadow:
+    0 4px 14px rgb(0 0 0 / 10%),
+    0 1px 3px rgb(0 0 0 / 6%);
+}
+
+/* Desktop / tablet: options slide out beside the trigger, vertically centered. */
 .theme-switcher[data-direction="end"] .theme-switcher__menu {
-  top: 0;
-  right: calc(100% + 2px);
+  top: 50%;
+  right: 100%;
+  left: auto;
   flex-direction: row;
-  transform: translateX(0.15rem) scale(0.92);
+  transform: translate(0.35rem, -50%) scale(0.92);
 }
 
-/* Mobile: fan out below the trigger. */
-.theme-switcher[data-direction="down"] .theme-switcher__menu {
-  top: calc(100% + 2px);
-  right: 0;
-  flex-direction: column;
-  border-radius: 1rem;
-  transform: translateY(-0.15rem) scale(0.92);
-}
-
-.theme-switcher--open .theme-switcher__menu {
+.theme-switcher--open[data-direction="end"] .theme-switcher__menu {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(0, 0) scale(1);
+  /* Nudge left so the first circle sits flush against the trigger. */
+  transform: translate(-0.2rem, -50%) scale(1);
 }
 
-.theme-switcher__option {
-  border: 0;
-  border-radius: 9999px;
+/* Mobile: options slide out below the trigger, horizontally centered. */
+.theme-switcher[data-direction="down"] .theme-switcher__menu {
+  top: 100%;
+  left: 50%;
+  right: auto;
+  flex-direction: column;
+  transform: translate(-50%, -0.35rem) scale(0.92);
 }
 
-.theme-switcher[data-direction="down"] .theme-switcher__option {
-  border-radius: 0.75rem;
+.theme-switcher--open[data-direction="down"] .theme-switcher__menu {
+  opacity: 1;
+  pointer-events: auto;
+  /* Nudge down so the first circle sits flush under the trigger. */
+  transform: translate(-50%, 0.2rem) scale(1);
 }
 
 .theme-switcher__option--active {
   background: var(--brand-solid);
   color: var(--brand-foreground);
+  border-color: var(--brand-solid);
 }
 
 .theme-switcher__option--active:hover,
@@ -636,11 +646,11 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   }
 }
 
-/* Win95 keeps the chunky square chrome. */
+/* Win95 keeps the chunky square chrome as one attached block. */
 .windows95 .theme-switcher__trigger,
 .windows95 .theme-switcher__menu {
   border-radius: 0;
-  border-width: 2px;
+  border: 2px solid;
   border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
   background: #c0c0c0;
   color: #000000;
@@ -651,20 +661,21 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   padding: 0;
 }
 
-.windows95 .theme-switcher[data-direction="down"] .theme-switcher__menu {
-  border-radius: 0;
+.windows95 .theme-switcher__menu {
+  border-width: 2px;
 }
 
 .windows95 .theme-switcher__option {
   border-radius: 0;
+  border: 0;
   border-inline-end: 1px solid #808080;
+  background: transparent;
   box-shadow: none;
 }
 
 .windows95 .theme-switcher[data-direction="down"] .theme-switcher__option {
   border-inline-end: 0;
   border-block-end: 1px solid #808080;
-  border-radius: 0;
 }
 
 .windows95 .theme-switcher__option:last-child {
@@ -679,6 +690,28 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   box-shadow:
     inset 1px 1px 0 #0a0a0a,
     inset -1px -1px 0 #ffffff;
+}
+
+/* Keep Win95 menu aligned to the trigger edge (block, not free circles). */
+.windows95 .theme-switcher[data-direction="end"] .theme-switcher__menu {
+  top: 0;
+  right: calc(100% - 2px);
+  transform: translateX(0.25rem) scale(0.98);
+}
+
+.windows95 .theme-switcher--open[data-direction="end"] .theme-switcher__menu {
+  transform: translateX(0) scale(1);
+}
+
+.windows95 .theme-switcher[data-direction="down"] .theme-switcher__menu {
+  top: calc(100% - 2px);
+  left: auto;
+  right: 0;
+  transform: translateY(-0.25rem) scale(0.98);
+}
+
+.windows95 .theme-switcher--open[data-direction="down"] .theme-switcher__menu {
+  transform: translateY(0) scale(1);
 }
 
 /* Pagefind search highlights */
