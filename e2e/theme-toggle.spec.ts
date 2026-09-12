@@ -1,47 +1,79 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("theme toggle", () => {
-  test("toggles the dark class on the html element and persists it", async ({
-    page,
-  }) => {
+test.describe("theme switcher", () => {
+  test("opens a fan menu, selects themes, and persists", async ({ page }) => {
+    // Seed once via evaluate after load so reload is not reset by addInitScript.
     await page.goto("/");
+    await page.evaluate(() => localStorage.setItem("theme", "light"));
+    await page.reload();
+
     const html = page.locator("html");
-    const toggle = page.getByRole("button", { name: "Toggle dark mode" });
+    const trigger = page.getByRole("button", { name: /Color theme:/i });
+    const menu = page.getByRole("radiogroup", { name: "Color theme options" });
 
-    const startedDark = await html.evaluate((el) =>
-      el.classList.contains("dark")
+    await expect(html).not.toHaveClass(/dark|windows95/);
+    await expect(trigger).toHaveAttribute("aria-expanded", "false");
+
+    await trigger.click();
+    await expect(trigger).toHaveAttribute("aria-expanded", "true");
+    await expect(menu).toBeVisible();
+
+    const light = menu.getByRole("radio", { name: "Light" });
+    const dark = menu.getByRole("radio", { name: "Dark" });
+    const windows95 = menu.getByRole("radio", { name: "Windows 95" });
+
+    await expect(light).toHaveAttribute("aria-checked", "true");
+
+    await dark.click();
+    await expect(html).toHaveClass(/dark/);
+    await expect(html).not.toHaveClass(/windows95/);
+    await expect(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(await page.evaluate(() => localStorage.getItem("theme"))).toBe(
+      "dark"
     );
 
-    await toggle.click();
-    if (startedDark) {
-      await expect(html).not.toHaveClass(/dark/);
-    } else {
-      await expect(html).toHaveClass(/dark/);
-    }
-
-    const themeAfterToggle = await page.evaluate(() =>
-      localStorage.getItem("theme")
+    await trigger.click();
+    await windows95.click();
+    await expect(html).toHaveClass(/windows95/);
+    await expect(html).not.toHaveClass(/dark/);
+    expect(await page.evaluate(() => localStorage.getItem("theme"))).toBe(
+      "windows95"
     );
-    expect(themeAfterToggle).toBe(startedDark ? "light" : "dark");
 
     // Persists across a full reload.
     await page.reload();
-    if (startedDark) {
-      await expect(html).not.toHaveClass(/dark/);
-    } else {
-      await expect(html).toHaveClass(/dark/);
-    }
+    await expect(html).toHaveClass(/windows95/);
+    await expect(html).not.toHaveClass(/dark/);
+
+    await page.getByRole("button", { name: /Color theme:/i }).click();
+    await expect(
+      page
+        .getByRole("radiogroup", { name: "Color theme options" })
+        .getByRole("radio", { name: "Windows 95" })
+    ).toHaveAttribute("aria-checked", "true");
+
+    await page
+      .getByRole("radiogroup", { name: "Color theme options" })
+      .getByRole("radio", { name: "Light" })
+      .click();
+    await expect(html).not.toHaveClass(/dark|windows95/);
+    expect(await page.evaluate(() => localStorage.getItem("theme"))).toBe(
+      "light"
+    );
   });
 
   test("persists across client-side navigation", async ({ page }) => {
     await page.goto("/");
-    const html = page.locator("html");
-    const toggle = page.getByRole("button", { name: "Toggle dark mode" });
+    await page.evaluate(() => localStorage.setItem("theme", "light"));
+    await page.reload();
 
-    await toggle.click();
-    const themeAfterToggle = await html.evaluate((el) =>
-      el.classList.contains("dark")
-    );
+    const html = page.locator("html");
+    await page.getByRole("button", { name: /Color theme:/i }).click();
+    await page
+      .getByRole("radiogroup", { name: "Color theme options" })
+      .getByRole("radio", { name: "Windows 95" })
+      .click();
+    await expect(html).toHaveClass(/windows95/);
 
     await page
       .getByRole("navigation", { name: "main navigation" })
@@ -49,9 +81,27 @@ test.describe("theme toggle", () => {
       .click();
     await expect(page).toHaveURL(/\/about\/?$/);
 
-    const themeAfterNav = await html.evaluate((el) =>
-      el.classList.contains("dark")
-    );
-    expect(themeAfterNav).toBe(themeAfterToggle);
+    await expect(html).toHaveClass(/windows95/);
+    await expect(html).not.toHaveClass(/dark/);
+  });
+
+  test("opens below on desktop and mobile", async ({ page }) => {
+    await page.goto("/");
+    await page.evaluate(() => localStorage.setItem("theme", "light"));
+    await page.reload();
+
+    const root = page.locator("[data-theme-switcher]");
+    const trigger = page.getByRole("button", { name: /Color theme:/i });
+
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await trigger.click();
+    await expect(root).toHaveAttribute("data-open", "true");
+    await expect(root).toHaveAttribute("data-direction", "down");
+    await trigger.click();
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await trigger.click();
+    await expect(root).toHaveAttribute("data-open", "true");
+    await expect(root).toHaveAttribute("data-direction", "down");
   });
 });
