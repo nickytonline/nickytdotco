@@ -516,6 +516,91 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 }
 
 /*
+  Header icon controls (RSS / Search / theme) share one raised square size
+  so they line up with each other and with the desktop nav scale.
+*/
+.windows95 [data-site-header-actions] {
+  --win95-header-action-size: 2.25rem;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .windows95 [data-site-header-actions] {
+    /* Sit with md nav (text-2xl) without dwarfing the logo row. */
+    --win95-header-action-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .windows95 [data-site-header-actions] {
+    /* Track lg nav (text-3xl) a bit more closely. */
+    --win95-header-action-size: 2.75rem;
+  }
+}
+
+.windows95 [data-site-header-actions] > a,
+.windows95 [data-site-header-actions] > button,
+.windows95 [data-site-header-actions] .theme-switcher__trigger,
+.windows95 [data-site-header-actions] .theme-switcher__option {
+  box-sizing: border-box;
+  width: var(--win95-header-action-size);
+  height: var(--win95-header-action-size);
+  min-width: var(--win95-header-action-size);
+  min-height: var(--win95-header-action-size);
+}
+
+.windows95 [data-site-header-actions] > a,
+.windows95 [data-site-header-actions] > button,
+.windows95 [data-site-header-actions] .theme-switcher__trigger {
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #0a0a0a #0a0a0a #ffffff !important;
+  border-radius: 0 !important;
+  box-shadow:
+    inset -1px -1px #808080,
+    inset 1px 1px #dfdfdf;
+  text-decoration: none;
+}
+
+.windows95 [data-site-header-actions] > a:hover,
+.windows95 [data-site-header-actions] > button:hover,
+.windows95 [data-site-header-actions] .theme-switcher__trigger:hover {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+}
+
+.windows95 [data-site-header-actions] > a:active,
+.windows95 [data-site-header-actions] > button:active,
+.windows95 [data-site-header-actions] .theme-switcher__trigger:active {
+  border-color: #0a0a0a #ffffff #ffffff #0a0a0a !important;
+  box-shadow: inset 1px 1px #808080;
+}
+
+.windows95 [data-site-header-actions] svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .windows95 [data-site-header-actions] svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .windows95 [data-site-header-actions] svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+}
+
+/*
   Classic Win95 raised buttons.
   Cover <button>/<summary> and CTA-looking anchors (brand / secondary /
   bordered inline-flex). Skip tag pills and the theme switcher.
