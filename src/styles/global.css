@@ -457,10 +457,10 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   border-radius: 0;
 }
 
-/* Site chrome only — not in-page <header> title/info blocks. */
+/* Site chrome only — not in-page <header>/<footer> blocks (e.g. tags). */
 .windows95 [data-site-header],
 .windows95 main,
-.windows95 footer {
+.windows95 [data-site-footer] {
   background: #c0c0c0;
   color: #000000;
   border: 2px solid;
@@ -482,14 +482,21 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   padding-inline: 1.75rem;
 }
 
-.windows95 footer {
+.windows95 [data-site-footer] {
   margin-inline: 1.5rem;
   padding-block: 1rem;
 }
 
 /* Black/navy on silver meets WCAG AA; muted must stay on silver, not teal. */
-.windows95 footer .text-muted-foreground {
+.windows95 [data-site-footer] .text-muted-foreground {
   color: #404040;
+}
+
+/* Tags stay soft pills — no Win95 raised chrome. */
+.windows95 .tag-pill {
+  border-radius: 9999px;
+  border: 1px solid #808080;
+  box-shadow: none;
 }
 
 .windows95 [data-site-header] .site-logo {
@@ -556,17 +563,22 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 }
 
 .theme-switcher__trigger {
-  border-radius: 0.375rem;
-  border-width: 2px;
+  border-radius: 9999px;
+  border-width: 1px;
 }
 
 .theme-switcher__menu {
   position: absolute;
   display: flex;
-  border: 2px solid var(--border);
-  border-radius: 0.375rem;
+  gap: 0.15rem;
+  padding: 0.2rem;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
   background: var(--secondary);
   color: var(--secondary-foreground);
+  box-shadow:
+    0 8px 24px rgb(0 0 0 / 12%),
+    0 2px 6px rgb(0 0 0 / 6%);
   opacity: 0;
   pointer-events: none;
   transform: scale(0.92);
@@ -579,17 +591,18 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 /* Desktop / tablet: fan out beside the trigger (toward page center). */
 .theme-switcher[data-direction="end"] .theme-switcher__menu {
   top: 0;
-  right: calc(100% + 0.35rem);
+  right: calc(100% + 2px);
   flex-direction: row;
-  transform: translateX(0.4rem) scale(0.92);
+  transform: translateX(0.15rem) scale(0.92);
 }
 
 /* Mobile: fan out below the trigger. */
 .theme-switcher[data-direction="down"] .theme-switcher__menu {
-  top: calc(100% + 0.35rem);
+  top: calc(100% + 2px);
   right: 0;
   flex-direction: column;
-  transform: translateY(-0.35rem) scale(0.92);
+  border-radius: 1rem;
+  transform: translateY(-0.15rem) scale(0.92);
 }
 
 .theme-switcher--open .theme-switcher__menu {
@@ -599,17 +612,12 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 }
 
 .theme-switcher__option {
-  border-inline-end: 1px solid var(--border);
+  border: 0;
+  border-radius: 9999px;
 }
 
 .theme-switcher[data-direction="down"] .theme-switcher__option {
-  border-inline-end: 0;
-  border-block-end: 1px solid var(--border);
-}
-
-.theme-switcher__option:last-child {
-  border-inline-end: 0;
-  border-block-end: 0;
+  border-radius: 0.75rem;
 }
 
 .theme-switcher__option--active {
@@ -628,20 +636,40 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   }
 }
 
+/* Win95 keeps the chunky square chrome. */
 .windows95 .theme-switcher__trigger,
 .windows95 .theme-switcher__menu {
   border-radius: 0;
+  border-width: 2px;
   border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
   background: #c0c0c0;
   color: #000000;
   box-shadow:
     inset 1px 1px 0 #ffffff,
     inset -1px -1px 0 #808080;
+  gap: 0;
+  padding: 0;
+}
+
+.windows95 .theme-switcher[data-direction="down"] .theme-switcher__menu {
+  border-radius: 0;
 }
 
 .windows95 .theme-switcher__option {
-  border-color: #808080;
+  border-radius: 0;
+  border-inline-end: 1px solid #808080;
   box-shadow: none;
+}
+
+.windows95 .theme-switcher[data-direction="down"] .theme-switcher__option {
+  border-inline-end: 0;
+  border-block-end: 1px solid #808080;
+  border-radius: 0;
+}
+
+.windows95 .theme-switcher__option:last-child {
+  border-inline-end: 0;
+  border-block-end: 0;
 }
 
 .windows95 .theme-switcher__option--active {
