@@ -457,7 +457,8 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   border-radius: 0;
 }
 
-.windows95 header,
+/* Site chrome only — not in-page <header> title/info blocks. */
+.windows95 [data-site-header],
 .windows95 main,
 .windows95 footer {
   background: #c0c0c0;
@@ -469,14 +470,16 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
     inset -1px -1px 0 #808080;
 }
 
-.windows95 header {
+.windows95 [data-site-header] {
   padding-inline: 1rem;
   margin-block-start: 0.75rem;
 }
 
 .windows95 main {
+  /* Keep the content window, but give title/info room inside the bevel. */
   margin-block: 1rem;
-  padding-block: 1.5rem;
+  padding-block: 2.5rem;
+  padding-inline: 1.75rem;
 }
 
 .windows95 footer {
@@ -489,18 +492,18 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   color: #404040;
 }
 
-.windows95 header .site-logo {
+.windows95 [data-site-header] .site-logo {
   background: linear-gradient(90deg, #000080, #0000aa);
   color: #ffffff;
   padding: 0.25rem 0.5rem;
   margin-inline: -0.25rem;
 }
 
-.windows95 header .site-logo a {
+.windows95 [data-site-header] .site-logo a {
   color: inherit;
 }
 
-.windows95 header .site-logo .text-brand {
+.windows95 [data-site-header] .site-logo .text-brand {
   /* Yellow on navy ≈ 14.9:1 */
   color: #ffff00;
 }
@@ -547,19 +550,66 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   outline-offset: 1px;
 }
 
-/* Segmented theme switcher (all themes) */
+/* Theme switcher: compact trigger + animated fan menu */
 .theme-switcher {
-  border-width: 2px;
+  z-index: 40;
+}
+
+.theme-switcher__trigger {
   border-radius: 0.375rem;
-  overflow: hidden;
+  border-width: 2px;
+}
+
+.theme-switcher__menu {
+  position: absolute;
+  display: flex;
+  border: 2px solid var(--border);
+  border-radius: 0.375rem;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.92);
+  transition:
+    opacity 160ms ease,
+    transform 180ms ease;
+  z-index: 50;
+}
+
+/* Desktop / tablet: fan out beside the trigger (toward page center). */
+.theme-switcher[data-direction="end"] .theme-switcher__menu {
+  top: 0;
+  right: calc(100% + 0.35rem);
+  flex-direction: row;
+  transform: translateX(0.4rem) scale(0.92);
+}
+
+/* Mobile: fan out below the trigger. */
+.theme-switcher[data-direction="down"] .theme-switcher__menu {
+  top: calc(100% + 0.35rem);
+  right: 0;
+  flex-direction: column;
+  transform: translateY(-0.35rem) scale(0.92);
+}
+
+.theme-switcher--open .theme-switcher__menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, 0) scale(1);
 }
 
 .theme-switcher__option {
   border-inline-end: 1px solid var(--border);
 }
 
+.theme-switcher[data-direction="down"] .theme-switcher__option {
+  border-inline-end: 0;
+  border-block-end: 1px solid var(--border);
+}
+
 .theme-switcher__option:last-child {
   border-inline-end: 0;
+  border-block-end: 0;
 }
 
 .theme-switcher__option--active {
@@ -572,17 +622,25 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   color: var(--brand-foreground);
 }
 
-.windows95 .theme-switcher {
+@media (prefers-reduced-motion: reduce) {
+  .theme-switcher__menu {
+    transition: none;
+  }
+}
+
+.windows95 .theme-switcher__trigger,
+.windows95 .theme-switcher__menu {
   border-radius: 0;
-  border-color: #0a0a0a #dfdfdf #dfdfdf #0a0a0a;
+  border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
   background: #c0c0c0;
+  color: #000000;
   box-shadow:
-    inset -1px -1px 0 #ffffff,
-    inset 1px 1px 0 #808080;
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #808080;
 }
 
 .windows95 .theme-switcher__option {
-  border-inline-end-color: #808080;
+  border-color: #808080;
   box-shadow: none;
 }
 

@@ -18,7 +18,10 @@ const isCurrent = (href: string) =>
   href === "/" ? currentPath === "" : currentPath.startsWith(href.slice(1));
 ---
 
-<header class="pt-6 pb-6 max-w-7xl mx-auto px-6 transition-colors">
+<header
+  data-site-header
+  class="pt-6 pb-6 max-w-7xl mx-auto px-6 transition-colors"
+>
   <div
     class="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between"
   >

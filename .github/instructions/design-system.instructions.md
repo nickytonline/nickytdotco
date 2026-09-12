@@ -25,7 +25,7 @@ Prefer these semantic utilities in UI code:
 - Do not add arbitrary color utilities like `text-[#...]`, `bg-[#...]`, or `border-[#...]` in source UI. Add a named token in `global.css` instead.
 - Avoid one-off dark-mode color overrides when a token already adapts in `.dark` or `.windows95`.
 - Themes are exclusive classes on `<html>`: light (no theme class), `.dark`, or `.windows95` (POC). Prefer semantic tokens so all three stay consistent; use `@custom-variant windows95` only when a token is not enough.
-- Theme UI is a three-option `radiogroup` in `ThemeToggle.astro` (Light / Dark / Windows 95), not a binary button.
+- Theme UI is a compact fan menu in `ThemeToggle.astro`: one trigger showing the active theme, with Light / Dark / Windows 95 options in a `radiogroup` that opens beside the trigger on `md+` and below on small screens. Use a generic four-pane window glyph for Windows 95 — not the Microsoft Windows logo.
 - In `.windows95`, put readable text on silver surfaces (`header` / `main` / `footer`); teal `--background` is desktop chrome only. Navy/black on silver meets AA; do not place `text-brand` or `text-muted-foreground` on teal.
 - Use raw CSS color values only inside `global.css` token definitions or third-party integration overrides.
 - For hover and focus states, verify contrast in light, dark, and windows95. Prefer inverse token pairs such as `bg-brand-solid text-brand-foreground` and `hover:bg-background hover:text-brand`.
