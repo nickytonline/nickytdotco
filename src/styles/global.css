@@ -650,7 +650,9 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 /*
   Classic Win95 raised buttons.
   Cover <button>/<summary> and CTA-looking anchors (brand / secondary /
-  bordered inline-flex). Skip tag pills and the theme switcher.
+  bordered inline-flex). Skip tag pills, the theme switcher, and
+  lite-youtube's full-bleed .lyt-playbtn (silver background would hide
+  the poster thumbnail until click activates the iframe).
   Do not match bare .bg-brand-solid (series badges) or a.border-border
   without inline-flex (thumbnail cards).
 */
@@ -662,7 +664,13 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
     a.bg-secondary,
     a.inline-flex.border-border,
     a.inline-flex.border-brand
-  ):not(.tag-pill, .theme-switcher__trigger, .theme-switcher__option) {
+  ):not(
+    .tag-pill,
+    .theme-switcher__trigger,
+    .theme-switcher__option,
+    .lyt-playbtn,
+    .lty-playbtn
+  ) {
   background: #c0c0c0 !important;
   color: #000000 !important;
   border: 2px solid !important;
@@ -683,7 +691,13 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
     a.bg-secondary,
     a.inline-flex.border-border,
     a.inline-flex.border-brand
-  ):not(.tag-pill, .theme-switcher__trigger, .theme-switcher__option):hover {
+  ):not(
+    .tag-pill,
+    .theme-switcher__trigger,
+    .theme-switcher__option,
+    .lyt-playbtn,
+    .lty-playbtn
+  ):hover {
   background: #c0c0c0 !important;
   color: #000000 !important;
 }
@@ -696,7 +710,13 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
     a.bg-secondary,
     a.inline-flex.border-border,
     a.inline-flex.border-brand
-  ):not(.tag-pill, .theme-switcher__trigger, .theme-switcher__option):active {
+  ):not(
+    .tag-pill,
+    .theme-switcher__trigger,
+    .theme-switcher__option,
+    .lyt-playbtn,
+    .lty-playbtn
+  ):active {
   border-color: #0a0a0a #ffffff #ffffff #0a0a0a !important;
   box-shadow: inset 1px 1px #808080;
 }
