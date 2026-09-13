@@ -7,6 +7,7 @@ import {
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
 } from "../lib/search/constants";
+import { getSearchDialogLayout } from "../lib/search/searchDialogLayout";
 import { registerSearchSiteTool } from "../lib/webmcp/searchSiteTool";
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
@@ -34,6 +35,7 @@ const Search = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState<SearchErrorKind | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [keyboardOpen, setKeyboardOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
@@ -103,17 +105,19 @@ const Search = () => {
       return;
     }
 
-    const inset = 12;
-    const maxHeightPx = 36 * 16;
-
     const syncToVisualViewport = () => {
       const viewport = window.visualViewport;
-      const height = viewport?.height ?? window.innerHeight;
-      const offsetTop = viewport?.offsetTop ?? 0;
-      const available = Math.max(0, height - inset * 2);
-      dialog.style.top = `${offsetTop + inset}px`;
-      dialog.style.height = `${Math.min(available, maxHeightPx)}px`;
-      dialog.style.maxHeight = `${available}px`;
+      const layout = getSearchDialogLayout({
+        visualHeight: viewport?.height ?? window.innerHeight,
+        offsetTop: viewport?.offsetTop ?? 0,
+        layoutHeight: window.innerHeight,
+      });
+      dialog.style.top = `${layout.top}px`;
+      dialog.style.height = `${layout.height}px`;
+      dialog.style.maxHeight = `${layout.maxHeight}px`;
+      setKeyboardOpen((prev) =>
+        prev === layout.keyboardOpen ? prev : layout.keyboardOpen
+      );
     };
 
     syncToVisualViewport();
@@ -134,6 +138,7 @@ const Search = () => {
       dialog.style.top = "";
       dialog.style.height = "";
       dialog.style.maxHeight = "";
+      setKeyboardOpen(false);
     };
   }, [isOpen]);
 
@@ -384,7 +389,9 @@ const Search = () => {
         </div>
 
         <div
-          className="min-h-0 flex-1 overflow-y-auto p-4"
+          className={`min-h-0 flex-1 overflow-y-auto p-4 ${
+            keyboardOpen ? "pb-8" : ""
+          }`}
           aria-busy={showSearching}
         >
           <div className="mb-4 h-6 px-2 text-sm text-muted-foreground">
@@ -401,7 +408,9 @@ const Search = () => {
             role="alert"
             className={
               searchError
-                ? "flex min-h-[16rem] items-center justify-center text-center"
+                ? `flex items-center justify-center text-center ${
+                    keyboardOpen ? "min-h-0 py-2" : "min-h-[16rem]"
+                  }`
                 : "sr-only"
             }
           >
@@ -471,7 +480,9 @@ const Search = () => {
           ) : /* eslint-enable jsx-a11y/prefer-tag-over-role */
           showSearching ? (
             <div
-              className="flex min-h-[16rem] items-center justify-center text-muted-foreground"
+              className={`flex items-center justify-center text-muted-foreground ${
+                keyboardOpen ? "min-h-0 py-2" : "min-h-[16rem]"
+              }`}
               aria-hidden="true"
             >
               <Loader2 className="h-8 w-8 animate-spin opacity-50" />
@@ -479,7 +490,11 @@ const Search = () => {
           ) : hasTypedEnough &&
             trimmedQuery === submittedQuery &&
             results.length === 0 ? (
-            <div className="flex min-h-[16rem] items-center justify-center text-center text-foreground">
+            <div
+              className={`flex items-center justify-center text-center text-foreground ${
+                keyboardOpen ? "min-h-0 py-2" : "min-h-[16rem]"
+              }`}
+            >
               <div className="space-y-2">
                 <p className="text-lg">No results found for "{query}"</p>
                 <p className="text-sm text-muted-foreground">
@@ -488,7 +503,11 @@ const Search = () => {
               </div>
             </div>
           ) : (
-            <div className="flex min-h-[16rem] flex-col items-center justify-center space-y-4 text-foreground">
+            <div
+              className={`flex flex-col items-center justify-center space-y-4 text-foreground ${
+                keyboardOpen ? "min-h-0 py-2" : "min-h-[16rem]"
+              }`}
+            >
               <div className="rounded-full bg-secondary p-4">
                 <SearchIcon className="h-8 w-8 text-muted-foreground opacity-40" />
               </div>
