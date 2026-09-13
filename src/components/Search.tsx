@@ -341,7 +341,7 @@ const Search = () => {
         onClose={closeSearch}
         onClick={handleBackdropClick}
         aria-labelledby="search-dialog-title"
-        className="fixed left-1/2 top-3 m-0 h-[min(70dvh,36rem)] max-h-[calc(100dvh-1.5rem)] w-[90vw] max-w-2xl -translate-x-1/2 open:flex open:flex-col overflow-hidden rounded-xl border border-secondary bg-background p-0 text-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+        className="fixed left-1/2 top-3 m-0 h-[min(70dvh,36rem)] max-h-[calc(100dvh-1.5rem)] w-[90vw] max-w-2xl -translate-x-1/2 open:flex open:flex-col overflow-hidden rounded-xl border border-secondary bg-popover p-0 text-popover-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
       >
         <div className="flex shrink-0 items-center justify-between gap-4 border-b border-secondary p-4">
           <h2 id="search-dialog-title" className="sr-only">
@@ -479,20 +479,22 @@ const Search = () => {
           ) : hasTypedEnough &&
             trimmedQuery === submittedQuery &&
             results.length === 0 ? (
-            <div className="flex min-h-[16rem] items-center justify-center text-center text-muted-foreground">
+            <div className="flex min-h-[16rem] items-center justify-center text-center text-foreground">
               <div className="space-y-2">
                 <p className="text-lg">No results found for "{query}"</p>
-                <p className="text-sm">Try searching for something else.</p>
+                <p className="text-sm text-muted-foreground">
+                  Try searching for something else.
+                </p>
               </div>
             </div>
           ) : (
-            <div className="flex min-h-[16rem] flex-col items-center justify-center space-y-4 text-muted-foreground">
+            <div className="flex min-h-[16rem] flex-col items-center justify-center space-y-4 text-foreground">
               <div className="rounded-full bg-secondary p-4">
-                <SearchIcon className="h-8 w-8 opacity-20" />
+                <SearchIcon className="h-8 w-8 text-muted-foreground opacity-40" />
               </div>
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
-                <p className="text-sm">
+                <p className="text-sm text-muted-foreground">
                   Type at least two characters to search blog posts, talks, and
                   livestreams.
                 </p>

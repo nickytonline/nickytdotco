@@ -702,13 +702,24 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 }
 
 /* Cards / dialogs keep raised panel chrome without forcing button colors. */
-.windows95 :is(.bg-card, .bg-popover, [role="dialog"]) {
+.windows95 :is(.bg-card, .bg-popover, dialog, [role="dialog"]) {
   border: 2px solid;
   border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
   box-shadow:
     inset 1px 1px 0 #ffffff,
     inset -1px -1px 0 #808080;
   border-radius: 0;
+}
+
+/* Search dialog: silver chrome, not teal desktop background. */
+.windows95 :is(dialog, [role="dialog"]) {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+}
+
+.windows95 :is(dialog, [role="dialog"]) .text-muted-foreground {
+  /* #404040 on silver ≈ 5.7:1 (AA). */
+  color: #404040;
 }
 
 .windows95 :where(input, select, textarea) {
