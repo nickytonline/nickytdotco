@@ -52,7 +52,7 @@
     "lite-youtube-embed": "^0.3.4",
     "lucide-react": "^1.38.0",
     "luxon": "^3.7.2",
-    "marked": "^18.0.6",
+    "marked": "^18.0.13",
     "portless": "^0.15.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
