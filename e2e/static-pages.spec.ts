@@ -179,7 +179,9 @@ test.describe("Zero Trust security hub", () => {
 });
 
 test.describe("newsletter page", () => {
-  test("renders the subscribe CTA", async ({ page }) => {
+  test("renders the subscribe CTA and newsletter RSS feed", async ({
+    page,
+  }) => {
     await page.goto("/newsletter");
 
     await expect(
@@ -188,6 +190,12 @@ test.describe("newsletter page", () => {
     await expect(
       page.getByRole("link", { name: "Subscribe to One Tip a Week" })
     ).toHaveAttribute("href", /onetipaweek\.com/i);
+    await expect(
+      page.getByRole("link", { name: "RSS feed for One Tip a Week" })
+    ).toHaveAttribute("href", "https://onetipaweek.com/rss");
+    await expect(
+      page.locator('link[rel="alternate"][title="One Tip a Week RSS"]')
+    ).toHaveAttribute("href", "https://onetipaweek.com/rss");
   });
 });
 
