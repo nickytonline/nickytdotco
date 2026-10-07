@@ -8,8 +8,6 @@ venue:
   location: "Ciudad Cultural Konex, Buenos Aires, Argentina"
 video:
   { "url": "https://www.youtube.com/watch?v=Rard1glAXVA", "type": "youtube" }
-sessionUrl: "https://nerdearla.com/en/argentina/schedule/your-ssh-keys-are-already-stale/"
-registrationUrl: "https://tickets.nerdearla.com/?utm_source=website&utm_medium=footer&utm_campaign=argentina2026"
 tags: ["ssh", "security", "devops", "sre", "identity", "infrastructure"]
 ---
 
