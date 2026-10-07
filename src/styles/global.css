@@ -508,6 +508,20 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   font-weight: 700;
 }
 
+/* Arial's northeast arrow is a long shaft. Keep the compact heading glyph from the other themes. */
+.windows95 .external-mark {
+  font-family:
+    "Space Grotesk",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-weight: 600;
+}
+
 .windows95 ::selection {
   background: var(--win-navy);
   color: #ffffff;
@@ -632,39 +646,52 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   text-decoration: none;
 }
 
-/* Title bar + menu bar. The logo is the window caption, not a masthead. */
+/* Title bar is caption plus real window buttons. Commands live in the menu. */
+.win-caption-buttons,
+.win-menu-label {
+  display: none;
+}
+
 .windows95 [data-site-header] {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas:
-    "title actions"
-    "menu menu"
-    "mobile mobile";
-  gap: 2px 0;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  padding: 0 0 2px;
+  background:
+    var(--win-title) left top / 100% 26px no-repeat,
+    var(--win-surface);
 }
 
 .windows95 [data-site-header]::before {
+  content: none;
+}
+
+.windows95 [data-site-header]::after {
   content: "";
-  grid-column: 1 / -1;
-  grid-row: 1;
-  background: var(--win-title);
-  pointer-events: none;
+  order: 3;
+  flex-basis: 100%;
+  height: 2px;
 }
 
 .windows95 [data-site-header] > div,
-.windows95 [data-site-header] > div > div:first-child {
+.windows95 [data-site-header] > div > div:first-child,
+.windows95 [data-site-header] > div > div:first-child > nav,
+.windows95 [data-site-header] > div > div:first-child > nav ul,
+.windows95 [data-site-header-actions] {
   display: contents;
 }
 
 .windows95 [data-site-header] .site-logo {
-  grid-area: title;
+  order: 1;
+  flex: 1 1 auto;
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
+  height: 26px;
   margin: 0;
-  padding: 4px 6px;
+  padding: 0 6px;
   background: transparent;
   color: #ffffff;
   font-family: var(--font-win);
@@ -673,6 +700,48 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   line-height: 1;
   letter-spacing: 0;
   -webkit-font-smoothing: none;
+}
+
+.windows95 .win-caption-buttons {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 26px;
+  padding-right: 3px;
+}
+
+.windows95 .win-caption-buttons button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 14px;
+  min-width: 16px;
+  min-height: 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--win-surface);
+  color: #000000;
+  box-shadow: var(--win-border-raised);
+}
+
+.windows95 .win-caption-buttons button:active {
+  box-shadow: var(--win-border-sunken);
+  transform: none;
+}
+
+.windows95 .win-glyph-restore {
+  display: none;
+}
+
+.windows95[data-win-state="maximized"] .win-glyph-max {
+  display: none;
+}
+
+.windows95[data-win-state="maximized"] .win-glyph-restore {
+  display: block;
 }
 
 .windows95 [data-site-header] .site-logo a,
@@ -684,12 +753,17 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 }
 
 .windows95 [data-site-header] > div > div:first-child > nav {
-  grid-area: menu;
   margin: 0;
-  padding: 1px 2px 2px;
+  padding: 0;
   font-family: var(--font-win);
   font-size: 11px;
   -webkit-font-smoothing: none;
+}
+
+.windows95 [data-site-header] nav li {
+  order: 4;
+  display: flex;
+  list-style: none;
 }
 
 .windows95 [data-site-header] > div > div:first-child > nav ul {
@@ -709,6 +783,19 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   background: transparent;
 }
 
+/* Current page is a pressed menu command. Hover and focus use the navy highlight. */
+.windows95
+  [data-site-header]
+  > div
+  > div:first-child
+  > nav
+  .nav-link[aria-current="page"] {
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-sunken);
+  text-decoration: none;
+}
+
 .windows95 [data-site-header] > div > div:first-child > nav .nav-link:hover,
 .windows95
   [data-site-header]
@@ -721,27 +808,35 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   > div
   > div:first-child
   > nav
-  .nav-link[aria-current="page"] {
+  .nav-link[aria-current="page"]:hover {
   background: var(--win-navy);
   color: #ffffff;
+  box-shadow: none;
   text-decoration: none;
 }
 
-.windows95 [data-mobile-menu] {
-  grid-area: mobile;
-  width: 100%;
+.windows95
+  [data-site-header]
+  > div
+  > div:first-child
+  > nav
+  .nav-link[aria-current="page"]:focus-visible {
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-sunken);
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
 }
 
-/* Caption buttons sit on the title bar. 24px meets the AA target size. */
-.windows95 [data-site-header-actions] {
-  --win-caption-size: 24px;
-  grid-area: actions;
-  position: relative;
-  z-index: 1;
-  align-items: center;
-  gap: 2px;
-  padding: 2px;
-  background: transparent;
+.windows95 [data-mobile-menu] {
+  display: none;
+}
+
+/* RSS, Search, and Theme sit in the menu bar with the page links. */
+.windows95 [data-site-header-actions] > a,
+.windows95 [data-site-header-actions] button[aria-label="Search site"],
+.windows95 [data-site-header-actions] .theme-switcher {
+  order: 4;
 }
 
 /*
@@ -749,52 +844,71 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   so it is not matched by `> button`. Target the trigger by aria-label;
   leave dialog controls alone.
 */
-.windows95 [data-site-header-actions] > a,
-.windows95 [data-site-header-actions] button[aria-label="Search site"],
-.windows95 [data-site-header-actions] .theme-switcher__trigger,
-.windows95 [data-site-header-actions] .theme-switcher__option {
-  box-sizing: border-box;
-  width: var(--win-caption-size);
-  height: var(--win-caption-size);
-  min-width: var(--win-caption-size);
-  min-height: var(--win-caption-size);
-  flex-shrink: 0;
+.windows95 .win-menu-label {
+  display: inline;
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+}
+
+.windows95 [data-site-header-actions] > a svg,
+.windows95 [data-site-header-actions] button[aria-label="Search site"] svg,
+.windows95 .theme-switcher__trigger svg,
+.windows95 .theme-switcher__option svg {
+  display: none;
 }
 
 .windows95 [data-site-header-actions] > a,
 .windows95 [data-site-header-actions] button[aria-label="Search site"],
 .windows95 [data-site-header-actions] .theme-switcher__trigger {
-  padding: 0;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 3px 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--win-surface);
+  background: transparent;
   color: var(--foreground);
   border: none;
   border-radius: 0;
-  box-shadow: var(--win-border-raised);
+  box-shadow: none;
+  font-family: var(--font-win);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
   text-decoration: none;
+  appearance: none;
+  -webkit-font-smoothing: none;
 }
 
 .windows95 [data-site-header-actions] > a:hover,
+.windows95 [data-site-header-actions] > a:focus-visible,
 .windows95 [data-site-header-actions] button[aria-label="Search site"]:hover,
-.windows95 [data-site-header-actions] .theme-switcher__trigger:hover {
-  background: var(--win-surface);
-  color: var(--foreground);
+.windows95
+  [data-site-header-actions]
+  button[aria-label="Search site"]:focus-visible,
+.windows95 [data-site-header-actions] .theme-switcher__trigger:hover,
+.windows95 [data-site-header-actions] .theme-switcher__trigger:focus-visible {
+  background: var(--win-navy);
+  color: #ffffff;
+  box-shadow: none;
 }
 
 .windows95 [data-site-header-actions] > a:active,
 .windows95 [data-site-header-actions] button[aria-label="Search site"]:active,
 .windows95 [data-site-header-actions] .theme-switcher__trigger:active {
-  box-shadow: var(--win-border-sunken);
-}
-
-.windows95 [data-site-header-actions] > a svg,
-.windows95 [data-site-header-actions] button[aria-label="Search site"] svg,
-.windows95 [data-site-header-actions] .theme-switcher__trigger svg,
-.windows95 [data-site-header-actions] .theme-switcher__option svg {
-  width: 12px;
-  height: 12px;
+  box-shadow: none;
+  transform: none;
 }
 
 /* Mobile menu panel: silver chrome, not teal desktop background. */
@@ -812,12 +926,28 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   text-decoration: none;
 }
 
+.windows95 [data-mobile-menu] .nav-link[aria-current="page"] {
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-sunken);
+  text-decoration: none;
+}
+
 .windows95 [data-mobile-menu] .nav-link:hover,
 .windows95 [data-mobile-menu] .nav-link:focus-visible,
-.windows95 [data-mobile-menu] .nav-link[aria-current="page"] {
+.windows95 [data-mobile-menu] .nav-link[aria-current="page"]:hover {
   background: var(--win-navy);
   color: #ffffff;
+  box-shadow: none;
   text-decoration: none;
+}
+
+.windows95 [data-mobile-menu] .nav-link[aria-current="page"]:focus-visible {
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-sunken);
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
 }
 
 /*
@@ -842,7 +972,9 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
     .theme-switcher__trigger,
     .theme-switcher__option,
     .lyt-playbtn,
-    .lty-playbtn
+    .lty-playbtn,
+    .win-caption-button,
+    .win-menu-command
   ) {
   background: var(--win-surface);
   color: var(--foreground);
@@ -865,7 +997,9 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
     .theme-switcher__trigger,
     .theme-switcher__option,
     .lyt-playbtn,
-    .lty-playbtn
+    .lty-playbtn,
+    .win-caption-button,
+    .win-menu-command
   ):hover {
   background: var(--win-surface);
   color: var(--foreground);
@@ -884,7 +1018,9 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
     .theme-switcher__trigger,
     .theme-switcher__option,
     .lyt-playbtn,
-    .lty-playbtn
+    .lty-playbtn,
+    .win-caption-button,
+    .win-menu-command
   ):active {
   box-shadow: var(--win-border-sunken);
   transform: translate(1px, 1px);
@@ -986,9 +1122,46 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   box-shadow: var(--win-border-raised);
 }
 
-.windows95 [data-win-taskbar] a:active {
+.windows95 [data-win-taskbar] a:active,
+.windows95 [data-win-task]:active {
   box-shadow: var(--win-border-sunken);
-  transform: translate(1px, 1px);
+  transform: none;
+}
+
+.windows95 [data-win-task] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  max-width: 12rem;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 0;
+  background: var(--win-surface);
+  color: var(--foreground);
+  font-family: var(--font-win);
+  font-size: 11px;
+  font-weight: 400;
+  box-shadow: var(--win-border-raised);
+}
+
+.windows95[data-win-state="open"] [data-win-task],
+.windows95[data-win-state="maximized"] [data-win-task] {
+  box-shadow: var(--win-border-sunken);
+}
+
+.windows95[data-win-state="closed"] [data-win-task] {
+  display: none;
+}
+
+.windows95[data-win-state="minimized"] [data-site-window],
+.windows95[data-win-state="closed"] [data-site-window] {
+  display: none;
+}
+
+.windows95[data-win-state="maximized"] [data-site-window] {
+  width: 100%;
+  margin: 0 0 28px;
+  min-height: calc(100dvh - 28px);
 }
 
 .windows95 [data-win-clock] {
@@ -1090,47 +1263,70 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   }
 }
 
-/* Win98: same-size square tiles stacked under the trigger. */
+/* Theme opens as a menu, not a stack of icon buttons. */
 .windows95 .theme-switcher__trigger,
 .windows95 .theme-switcher__option {
-  width: 24px;
-  height: 24px;
+  width: auto;
+  height: auto;
   border-radius: 0;
   border: none;
-  background: var(--win-surface);
+  background: transparent;
   color: var(--foreground);
-  box-shadow: var(--win-border-raised);
+  box-shadow: none;
 }
 
 .windows95 .theme-switcher__menu {
-  top: calc(100% - 2px);
-  left: 50%;
+  top: 100%;
+  left: 0;
   gap: 0;
+  min-width: 7.5rem;
+  padding: 2px;
   border: 0;
-  background: transparent;
-  box-shadow: none;
-  transform: translate(-50%, -0.25rem) scale(0.98);
+  background: var(--win-surface);
+  box-shadow: var(--win-border-window);
+  transform: none;
 }
 
 .windows95 .theme-switcher--open .theme-switcher__menu {
-  transform: translate(-50%, 0) scale(1);
+  transform: none;
 }
 
 .windows95 .theme-switcher__option {
+  justify-content: flex-start;
+  width: 100%;
+  padding: 3px 8px;
+  font-family: var(--font-win);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
   transition: none;
+  -webkit-font-smoothing: none;
 }
 
-.windows95 .theme-switcher__option:hover {
-  background: var(--win-light);
-  color: var(--foreground);
+.windows95 .theme-switcher__option:hover,
+.windows95 .theme-switcher__option:focus-visible {
+  background: var(--win-navy);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.windows95 .theme-switcher__option--active::before {
+  content: "✓ ";
 }
 
 .windows95 .theme-switcher__option--active,
 .windows95 .theme-switcher__option--active:hover,
 .windows95 .theme-switcher__option--active:focus {
-  background: var(--win-surface);
+  background: transparent;
   color: var(--foreground);
-  box-shadow: var(--win-border-sunken);
+  box-shadow: none;
+}
+
+.windows95 .theme-switcher__option--active:hover,
+.windows95 .theme-switcher__option--active:focus,
+.windows95 .theme-switcher__option--active:focus-visible {
+  background: var(--win-navy);
+  color: #ffffff;
 }
 
 /* Pagefind search highlights */
@@ -1188,11 +1384,12 @@ nav[aria-label="main navigation"] .nav-link[aria-current="page"]:focus-visible {
 .windows95
   nav[aria-label="main navigation"]
   .nav-link[aria-current="page"]:focus-visible {
-  color: #ffffff;
-  background: var(--win-navy);
+  color: var(--foreground);
+  background: var(--win-surface);
+  box-shadow: var(--win-border-sunken);
   text-decoration: none;
-  outline: 1px dotted #ffffff;
-  outline-offset: -3px;
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
 }
 
 @media (min-width: 1024px) {
