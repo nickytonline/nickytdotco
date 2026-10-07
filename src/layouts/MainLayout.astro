@@ -114,7 +114,7 @@ const currentYear = new Date().getFullYear();
   </head>
   <body class="pb-32 font-sans">
     <SkipLink id="main" />
-    <div>
+    <div data-site-window>
       <Header />
       <main
         id="main"
@@ -138,6 +138,28 @@ const currentYear = new Date().getFullYear();
         </div>
       </footer>
     </div>
+    <div data-win-taskbar>
+      <a href="/">Start</a>
+      <time data-win-clock>--:--</time>
+    </div>
+    <script is:inline>
+      if (!window.__winClockStarted) {
+        window.__winClockStarted = true;
+        const tickWinClock = () => {
+          const clock = document.querySelector("[data-win-clock]");
+          if (!(clock instanceof HTMLTimeElement)) return;
+          const now = new Date();
+          clock.dateTime = now.toISOString();
+          clock.textContent = now.toLocaleTimeString(undefined, {
+            hour: "numeric",
+            minute: "2-digit",
+          });
+        };
+        tickWinClock();
+        window.setInterval(tickWinClock, 30000);
+        document.addEventListener("astro:page-load", tickWinClock);
+      }
+    </script>
     <BackToTop transition:persist />
   </body>
 </html>
