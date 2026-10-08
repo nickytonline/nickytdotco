@@ -8,6 +8,7 @@ export interface StreamVideoInfo extends Record<string, unknown> {
   title: string;
   description: string;
   youtubeStreamLink: string;
+  linkedinStreamLink?: string;
   guestName: string;
   guestTitle?: string;
   twitter?: string;
@@ -59,6 +60,7 @@ function mapRowToVideo(row: Record<string, unknown>): StreamVideoInfo {
     guest_name,
     guest_title,
     youtube_stream_link,
+    linkedin_stream_link,
     twitter,
     twitch,
     github,
@@ -90,6 +92,7 @@ function mapRowToVideo(row: Record<string, unknown>): StreamVideoInfo {
     title: title as string,
     description: description as string,
     youtubeStreamLink: youtube_stream_link as string,
+    linkedinStreamLink: sanitizeWebsiteUrl(linkedin_stream_link),
     twitter: (twitter as string) ?? undefined,
     twitch: (twitch as string) ?? undefined,
     github: (github as string) ?? undefined,

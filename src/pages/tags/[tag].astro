@@ -111,7 +111,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
           Looking for a curated path?{" "}
           <a
             href="/mcp"
-            class="font-semibold text-foreground hover:text-brand hover:underline focus:text-brand focus:underline focus:outline-none"
+            class="font-semibold text-foreground hover:text-brand hover:underline focus:text-brand focus:underline"
           >
             Explore the MCP hub
           </a>
@@ -124,20 +124,20 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
         <div class="mt-6 flex flex-wrap items-center gap-4">
           <a
             href={`/tags/${tag}`}
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-brand-solid text-brand-foreground hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:text-brand-foreground dark:bg-brand-solid focus:outline-none"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-brand-solid text-brand-foreground hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:text-brand-foreground dark:bg-brand-solid"
             aria-current="page"
           >
             All Content
           </a>
           <a
             href={`/tags/${tag}/blog`}
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
           >
             Blog Posts
           </a>
           <a
             href={`/tags/${tag}/talks`}
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid focus:outline-none"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
           >
             Talks
           </a>
@@ -183,7 +183,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
                       <h3 class="text-xl font-bold">
                         <a
                           href={`/blog/${slug}`}
-                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {post.data.title}
                         </a>
@@ -237,7 +237,7 @@ const totalCount = sortedTalks.length + sortedBlogPosts.length;
                       <h3 class="text-xl font-bold">
                         <a
                           href={`/talks/${slug}`}
-                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand focus:outline-none"
+                          class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {talk.data.title}
                         </a>

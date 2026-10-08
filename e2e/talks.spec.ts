@@ -78,6 +78,42 @@ test.describe("talks archive", () => {
 
     expect(eventStructuredDataCount).toBe(1);
   });
+
+  test("hides a ticket promo after the talk ends", async ({ page }) => {
+    await page.goto(
+      "/talks/share-work-not-access-control-identity-for-multiplayer-agents-ai-context-san-jose-2026"
+    );
+
+    await expect(
+      page.getByRole("main").getByRole("heading", {
+        level: 1,
+        name: "Share Work, Not Access: Control & Identity for Multiplayer Agents",
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("complementary", { name: "Ticket offer" })
+    ).toHaveCount(0);
+  });
+
+  test("past talks do not show a ticket promo", async ({ page }) => {
+    await page.goto("/talks/build-your-first-mcp-app-commit-your-code-2026");
+
+    await expect(
+      page.getByRole("complementary", { name: "Ticket offer" })
+    ).toHaveCount(0);
+  });
+
+  test("past talks do not show an upcoming pill", async ({ page }) => {
+    await page.goto("/talks/build-your-first-mcp-app-commit-your-code-2026");
+
+    await expect(
+      page.getByRole("main").getByRole("heading", {
+        level: 1,
+        name: "Build your First MCP App",
+      })
+    ).toBeVisible();
+    await expect(page.getByText("Upcoming talk")).toHaveCount(0);
+  });
 });
 
 test.describe("speaking page", () => {

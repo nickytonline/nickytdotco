@@ -11,9 +11,10 @@ import { getYouTubeId } from "@/utils/youtube-utils";
 import { slugifyVideo } from "@/utils/video-utils";
 import {
   isEventUpcoming,
-  setCdnCacheHeaders,
-  soonestExpiryTimestamp,
+  SCHEDULE_CDN_CACHE_SECONDS,
+  setFixedCdnCacheHeaders,
 } from "@/utils/cdn-cache";
+import { scheduleSearchReindex } from "@/lib/search/scheduleSearchReindex";
 
 const now = Date.now();
 
@@ -69,17 +70,14 @@ const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
 const timezone = rawTimezone || "UTC";
 
 if (!errorMessage) {
-  setCdnCacheHeaders(
+  setFixedCdnCacheHeaders(
     Astro.response.headers,
-    soonestExpiryTimestamp(
-      schedule.map((stream) => new Date(stream.date)),
-      now,
-    ),
-    now,
+    SCHEDULE_CDN_CACHE_SECONDS,
   );
 }
 Astro.response.headers.set("timezone", timezone);
 Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
+scheduleSearchReindex("/watch", Astro.locals.netlify.context);
 
 export const prerender = false;
 ---
@@ -153,7 +151,7 @@ export const prerender = false;
                     <article>
                       <a
                         href={videoPageUrl}
-                        class="group grid md:flex gap-6 xl:gap-8 no-underline outline-none transition-colors"
+                        class="group grid md:flex gap-6 xl:gap-8 no-underline transition-colors"
                       >
                         <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden">
                           <Image
@@ -198,7 +196,7 @@ export const prerender = false;
           href="https://youtube.com/@nickytonline"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+          class="flex items-start gap-4 p-4 rounded-lg transition-colors group"
         >
           <svg
             class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
@@ -227,7 +225,7 @@ export const prerender = false;
           href="https://twitch.tv/nickytonline"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+          class="flex items-start gap-4 p-4 rounded-lg transition-colors group"
         >
           <svg
             class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-twitch group-focus:text-twitch transition-colors"
@@ -256,7 +254,7 @@ export const prerender = false;
           href="https://www.youtube.com/playlist?list=PLcR4ZgxWXeIAa0VXPJQ7fgXkx73A5TeGU"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+          class="flex items-start gap-4 p-4 rounded-lg transition-colors group"
         >
           <svg
             class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
@@ -284,7 +282,7 @@ export const prerender = false;
           href="https://youtube.com/@pomerium_io"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+          class="flex items-start gap-4 p-4 rounded-lg transition-colors group"
         >
           <svg
             class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
@@ -320,7 +318,7 @@ export const prerender = false;
           href="https://cfe.dev/talkshow/2full2stack/"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+          class="flex items-start gap-4 p-4 rounded-lg transition-colors group"
         >
           <svg
             class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"
@@ -349,7 +347,7 @@ export const prerender = false;
           href="https://www.youtube.com/playlist?list=PL8Bb2WLXhUaDCHK5HrxDXZWmuTARKDiV3"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-start gap-4 p-4 rounded-lg transition-colors group focus:outline-none"
+          class="flex items-start gap-4 p-4 rounded-lg transition-colors group"
         >
           <svg
             class="w-8 h-8 shrink-0 text-muted-foreground group-hover:text-youtube group-focus:text-youtube transition-colors"

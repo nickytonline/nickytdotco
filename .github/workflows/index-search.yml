@@ -2,6 +2,11 @@ name: Index site search
 
 on:
   workflow_dispatch:
+    inputs:
+      reason:
+        description: Why this reindex was requested
+        required: false
+        default: manual
   push:
     branches:
       - main
@@ -43,6 +48,10 @@ jobs:
             echo "Add them under Settings → Secrets and variables → Actions (repository secrets)."
             exit 1
           fi
+
+      - name: Reindex reason
+        run: |
+          echo "Reason: ${{ github.event.inputs.reason || github.event_name }}"
 
       - name: Index search documents
         env:

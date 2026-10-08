@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import EventCalendar from "./EventCalendar";
 import Pill from "./Pill.astro";
+import StreamLinks from "./StreamLinks.astro";
 
 interface Platform {
   name: string;
@@ -37,15 +38,19 @@ const {
   upcoming,
   category,
 } = Astro.props;
+
+const youtubeUrl = platforms.find((p) => p.name === "YouTube")?.url;
+const twitchUrl = platforms.find((p) => p.name === "Twitch")?.url;
+const linkedinUrl = platforms.find((p) => p.name === "LinkedIn")?.url;
 ---
 
-<div class="stream-card group grid md:flex gap-6 xl:gap-8">
+<div class="stream-card group grid md:flex gap-3 md:gap-6 xl:gap-8">
   {
     image &&
       (videoLink ? (
         <a
           href={videoLink}
-          class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden"
+          class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden md:w-40 md:h-22.5 md:aspect-auto"
           aria-hidden="true"
           tabindex="-1"
         >
@@ -60,7 +65,7 @@ const {
           />
         </a>
       ) : (
-        <div class="relative shrink-0 hidden md:block w-40 h-22.5 rounded-lg overflow-hidden">
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden md:w-40 md:h-22.5 md:aspect-auto">
           <Image
             src={image}
             alt=""
@@ -81,7 +86,7 @@ const {
         videoLink ? (
           <a
             href={videoLink}
-            class="hover:text-brand focus:text-brand dark:hover:text-brand dark:focus:text-brand outline-none"
+            class="hover:text-brand focus:text-brand dark:hover:text-brand dark:focus:text-brand"
           >
             {title}
           </a>
@@ -94,6 +99,15 @@ const {
     <time class="italic text-base text-muted-foreground font-normal"
       >{datetime}</time
     >
+    {
+      upcoming && (
+        <StreamLinks
+          youtubeUrl={youtubeUrl}
+          twitchUrl={twitchUrl}
+          linkedinUrl={linkedinUrl}
+        />
+      )
+    }
     <div class="flex flex-wrap items-center gap-2 pt-1">
       {category && <Pill label={category} aria-hidden="true" />}
       {

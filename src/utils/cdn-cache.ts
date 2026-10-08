@@ -1,4 +1,12 @@
 export const CDN_CACHE_MAX_SECONDS = 86_400;
+/** Fixed CDN TTL for Turso-backed schedule pages (/ and /watch). */
+export const SCHEDULE_CDN_CACHE_SECONDS = 172_800;
+export const PROJECTS_CACHE_MAX_SECONDS = 259_200;
+/**
+ * Long CDN TTL for responses that only change on deploy.
+ * Omit `durable` so Netlify still purges on the next deploy.
+ */
+export const UNTIL_DEPLOY_CDN_CACHE_SECONDS = 31_536_000;
 
 export function isUtcMidnight(date: Date): boolean {
   return (
@@ -30,6 +38,19 @@ export function isEventUpcoming(
   nowMs: number = Date.now()
 ): boolean {
   return eventExpiryTimestamp(date) > nowMs;
+}
+
+/**
+ * Talks marked `upcoming: true` stay upcoming only until endDate (or date)
+ * expires. Past talks drop the pill even if the frontmatter flag is stale.
+ */
+export function isTalkUpcoming(
+  talk: { upcoming?: boolean; date: Date; endDate?: Date },
+  nowMs: number = Date.now()
+): boolean {
+  return (
+    talk.upcoming === true && isEventUpcoming(talk.endDate ?? talk.date, nowMs)
+  );
 }
 
 export function soonestExpiryTimestamp(
@@ -71,5 +92,16 @@ export function setCdnCacheHeaders(
   headers.set(
     "Netlify-CDN-Cache-Control",
     `public, max-age=${maxAge}, must-revalidate`
+  );
+}
+
+export function setFixedCdnCacheHeaders(
+  headers: Headers,
+  maxAgeSeconds: number
+): void {
+  headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+  headers.set(
+    "Netlify-CDN-Cache-Control",
+    `public, max-age=${maxAgeSeconds}, must-revalidate`
   );
 }

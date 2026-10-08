@@ -144,6 +144,7 @@ const talksCollection = defineCollection({
     sessionUrl: urlOrRelative.optional(),
     registrationUrl: urlOrRelative.optional(),
     featured: z.boolean().optional(),
+    promo: z.string().optional(),
   }),
 });
 

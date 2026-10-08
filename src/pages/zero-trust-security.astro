@@ -8,8 +8,11 @@ import GuideCard from "../components/GuideCard.astro";
 import TalkCard from "../components/TalkCard.astro";
 import { dateFilter } from "../utils/filters";
 import { slugifyVideo } from "../utils/video-utils";
+import { isTalkUpcoming } from "../utils/cdn-cache";
 
 export const prerender = true;
+
+const now = Date.now();
 
 const normalizeTag = (tag: string) => tag.toLowerCase().replace(/[\s-]+/g, "");
 const hasAnyTag = (tags: string[] | undefined, wanted: string[]) => {
@@ -134,7 +137,7 @@ const securityJsonLd = {
     </p>
     <a
       href="/speaking"
-      class="inline-flex items-center rounded-lg bg-brand-solid px-4 py-2.5 font-semibold text-brand-foreground transition-colors hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:outline-none"
+      class="inline-flex items-center rounded-lg bg-brand-solid px-4 py-2.5 font-semibold text-brand-foreground transition-colors hover:bg-brand-solid-hover focus:bg-brand-solid-hover"
     >
       Speaking &amp; guest appearances
     </a>
@@ -171,7 +174,7 @@ const securityJsonLd = {
               href={article.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="group grid gap-6 no-underline outline-none md:flex"
+              class="group grid gap-6 no-underline md:flex"
             >
               <div class="relative hidden h-22.5 w-40 shrink-0 overflow-hidden rounded-lg bg-muted md:block">
                 <Image
@@ -215,13 +218,13 @@ const securityJsonLd = {
             href={`/talks/${talk.id}`}
             video={talk.data.video}
             coverImage={talk.data.cover_image}
-            upcoming={talk.data.upcoming}
+            upcoming={isTalkUpcoming(talk.data, now)}
           />
         ))}
       </div>
       <a
         href="/talks"
-        class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand focus:outline-none"
+        class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
       >
         Browse the talk archive
       </a>
@@ -247,7 +250,7 @@ const securityJsonLd = {
         </div>
         <a
           href="/videos"
-          class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand focus:outline-none"
+          class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
         >
           Browse the video archive
         </a>
@@ -257,7 +260,7 @@ const securityJsonLd = {
   <div class="mt-16 border-t border-border pt-8">
     <a
       href="/tags/zerotrust"
-      class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand focus:outline-none"
+      class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
     >
       Browse all Zero Trust-tagged content
     </a>

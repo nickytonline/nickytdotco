@@ -21,7 +21,7 @@ const hasContent = (talks && talks.length > 0) || (posts && posts.length > 0);
             {talks.map((talk) => (
               <a
                 href={`/talks/${talk.id}`}
-                class="group block no-underline outline-none transition-colors"
+                class="group block no-underline transition-colors"
               >
                 <h3 class="text-lg font-semibold text-foreground group-hover:text-brand group-hover:underline group-focus:text-brand group-focus:underline dark:group-hover:text-brand dark:group-focus:text-brand">
                   {talk.data.title}
@@ -48,7 +48,7 @@ const hasContent = (talks && talks.length > 0) || (posts && posts.length > 0);
             {posts.map((post) => (
               <a
                 href={`/blog/${post.id}`}
-                class="group block no-underline outline-none transition-colors"
+                class="group block no-underline transition-colors"
               >
                 <h3 class="text-lg font-semibold text-foreground group-hover:text-brand group-hover:underline group-focus:text-brand group-focus:underline dark:group-hover:text-brand dark:group-focus:text-brand">
                   {post.data.title}

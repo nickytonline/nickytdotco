@@ -116,6 +116,26 @@ test.describe("mobile navigation", () => {
     ).toBeVisible();
   });
 
+  test("menu links are clickable across the full row width", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const menu = page.locator("[data-mobile-menu]");
+    await menu.locator("summary").click();
+
+    const blogLink = menu.getByRole("link", { name: "Blog", exact: true });
+    const box = await blogLink.boundingBox();
+    expect(box).not.toBeNull();
+
+    await page.mouse.click(box!.x + 8, box!.y + box!.height / 2);
+
+    await expect(page).toHaveURL(/\/blog\/?$/);
+    await expect(
+      page.getByRole("main").getByRole("heading", { level: 1 })
+    ).toBeVisible();
+  });
+
   test("menu closes when clicking outside it", async ({ page }) => {
     await page.goto("/");
 

@@ -18,19 +18,74 @@ const isCurrent = (href: string) =>
   href === "/" ? currentPath === "" : currentPath.startsWith(href.slice(1));
 ---
 
-<header class="pt-6 pb-6 max-w-7xl mx-auto px-6 transition-colors">
+<header
+  data-site-header
+  class="pt-6 pb-6 max-w-7xl mx-auto px-6 transition-colors"
+>
   <div
     class="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between"
   >
     <div class="flex w-full flex-col items-center gap-4 md:w-auto md:items-start md:gap-6">
-      <h1
-        class="font-heading md:text-6xl lg:text-8xl font-medium"
+      <p
+        class="site-logo font-heading md:text-6xl lg:text-8xl font-medium m-0"
         transition:name="header-logo"
       >
         <a href="/" class="text-current no-underline"
           >nickyt<span class="text-brand">.</span>co</a
         >
-      </h1>
+      </p>
+      <div class="win-caption-buttons">
+        <button
+          type="button"
+          class="win-caption-button"
+          data-win-action="minimize"
+          aria-label="Minimize"
+        >
+          <svg viewBox="0 0 8 8" width="8" height="8" aria-hidden="true">
+            <path d="M0 6h8v2H0z" fill="currentColor"></path>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="win-caption-button"
+          data-win-action="maximize"
+          aria-label="Maximize"
+          aria-pressed="false"
+        >
+          <svg
+            class="win-glyph-max"
+            viewBox="0 0 8 8"
+            width="8"
+            height="8"
+            aria-hidden="true"
+          >
+            <path d="M0 0h8v8H0V0zm1 1v6h6V1H1z" fill="currentColor"></path>
+          </svg>
+          <svg
+            class="win-glyph-restore"
+            viewBox="0 0 8 8"
+            width="8"
+            height="8"
+            aria-hidden="true"
+          >
+            <path
+              d="M2 0h6v6H6V2H2V0zM0 2h6v6H0V2zm1 1v4h4V3H1z"
+              fill="currentColor"></path>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="win-caption-button"
+          data-win-action="close"
+          aria-label="Close"
+        >
+          <svg viewBox="0 0 8 8" width="8" height="8" aria-hidden="true">
+            <path
+              d="M1 0 4 3 7 0l1 1-3 3 3 3-1 1-3-3-3 3-1-1 3-3L0 1z"
+              fill="currentColor"></path>
+          </svg>
+        </button>
+      </div>
       <nav
         aria-label="main navigation"
         class="mt-2 hidden text-xl md:block md:text-2xl lg:text-3xl"
@@ -54,7 +109,7 @@ const isCurrent = (href: string) =>
         data-mobile-menu
       >
         <summary
-          class="relative z-10 flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-lg font-semibold text-foreground hover:bg-secondary focus-visible:bg-secondary focus:outline-none [&::-webkit-details-marker]:hidden"
+          class="relative z-10 flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-lg font-semibold text-foreground hover:bg-secondary focus-visible:bg-secondary [&::-webkit-details-marker]:hidden"
         >
           Menu
           <svg
@@ -77,13 +132,13 @@ const isCurrent = (href: string) =>
           aria-label="main navigation"
           class="absolute left-0 right-0 top-full z-50 mt-2 rounded-lg border border-border bg-background p-4 text-lg shadow-lg"
         >
-          <ul class="flex list-none flex-col items-center gap-3">
+          <ul class="flex list-none flex-col gap-1">
             {navItems.map((item) => (
-              <li>
+              <li class="w-full">
                 <a
                   href={item.href}
                   aria-current={isCurrent(item.href) ? "page" : undefined}
-                  class="nav-link"
+                  class="nav-link block w-full rounded-lg px-4 py-2 text-center hover:bg-secondary focus-visible:bg-secondary"
                 >
                   {item.label}
                 </a>
@@ -93,10 +148,13 @@ const isCurrent = (href: string) =>
         </nav>
       </details>
     </div>
-    <div class="flex items-center gap-4">
+    <div
+      data-site-header-actions
+      class="flex items-center gap-4"
+    >
       <a
         href="/feed.xml"
-        class="inline-flex hover:text-brand focus:text-brand focus:outline-none"
+        class="inline-flex hover:text-brand focus:text-brand"
         target="_blank"
       >
         <svg
@@ -114,6 +172,7 @@ const isCurrent = (href: string) =>
           <path d="M4 4a16 16 0 0 1 16 16"></path>
           <circle cx="5" cy="19" r="1"></circle>
         </svg>
+        <span class="win-menu-label" aria-hidden="true">RSS</span>
         <span class="sr-only">Subscribe via RSS Feed</span>
       </a>
       <Search client:load transition:persist />

@@ -3,8 +3,8 @@ title: "From stdio to Anywhere: Securely Exposing OpenClaw as a Remote MCP Serve
 date: 2026-10-05T15:50:00-04:00
 endDate: 2026-10-05T16:15:00-04:00
 upcoming: true
-cover_image: /assets/talks/openclaw-remote-mcp-mcp-dev-summit-toronto-2026.png
-cover_image_large: /assets/talks/openclaw-remote-mcp-mcp-dev-summit-toronto-2026.png
+cover_image: /assets/talks/openclaw-remote-mcp-mcp-dev-summit-toronto-2026.jpg
+cover_image_large: /assets/talks/openclaw-remote-mcp-mcp-dev-summit-toronto-2026.jpg
 venue:
   name: "MCP Dev Summit Toronto"
   url: "https://events.linuxfoundation.org/mcp-dev-summit-toronto/"

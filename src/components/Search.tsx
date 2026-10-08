@@ -1,11 +1,8 @@
 import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Loader2, Search as SearchIcon } from "lucide-react";
 import {
-  isSearchQueryTooLong,
-  normalizeSearchQuery,
   queryHasNounOrVerb,
   searchSite,
-  type SearchResponse,
   type SearchResult,
 } from "../lib/search/searchSite";
 import {
@@ -14,6 +11,7 @@ import {
   SEARCH_MAX_QUERY_CHARS,
   SEARCH_MIN_QUERY_CHARS,
 } from "../lib/search/constants";
+import { getSearchDialogLayout } from "../lib/search/searchDialogLayout";
 import { registerSearchSiteTool } from "../lib/webmcp/searchSiteTool";
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
@@ -41,10 +39,19 @@ const Search = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState<SearchErrorKind | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [keyboardOpen, setKeyboardOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+
+  const closeSearch = useCallback(() => {
+    abortRef.current?.abort();
+    abortRef.current = null;
+    setIsSearching(false);
+    setSelectedIndex(-1);
+    setIsOpen(false);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -69,7 +76,7 @@ const Search = () => {
 
   useEffect(() => {
     const handleNavigation = () => {
-      setIsOpen(false);
+      closeSearch();
     };
 
     document.addEventListener("astro:before-preparation", handleNavigation);
@@ -79,14 +86,13 @@ const Search = () => {
         handleNavigation
       );
     };
-  }, []);
+  }, [closeSearch]);
 
   useEffect(() => {
     if (isOpen) {
       dialogRef.current?.showModal();
       inputRef.current?.focus();
       document.body.style.overflow = "hidden";
-      setSelectedIndex(-1);
     } else {
       dialogRef.current?.close();
       document.body.style.overflow = "";
@@ -103,17 +109,19 @@ const Search = () => {
       return;
     }
 
-    const inset = 12;
-    const maxHeightPx = 36 * 16;
-
     const syncToVisualViewport = () => {
       const viewport = window.visualViewport;
-      const height = viewport?.height ?? window.innerHeight;
-      const offsetTop = viewport?.offsetTop ?? 0;
-      const available = Math.max(0, height - inset * 2);
-      dialog.style.top = `${offsetTop + inset}px`;
-      dialog.style.height = `${Math.min(available, maxHeightPx)}px`;
-      dialog.style.maxHeight = `${available}px`;
+      const layout = getSearchDialogLayout({
+        visualHeight: viewport?.height ?? window.innerHeight,
+        offsetTop: viewport?.offsetTop ?? 0,
+        layoutHeight: window.innerHeight,
+      });
+      dialog.style.top = `${layout.top}px`;
+      dialog.style.height = `${layout.height}px`;
+      dialog.style.maxHeight = `${layout.maxHeight}px`;
+      setKeyboardOpen((prev) =>
+        prev === layout.keyboardOpen ? prev : layout.keyboardOpen
+      );
     };
 
     syncToVisualViewport();
@@ -134,6 +142,7 @@ const Search = () => {
       dialog.style.top = "";
       dialog.style.height = "";
       dialog.style.maxHeight = "";
+      setKeyboardOpen(false);
     };
   }, [isOpen]);
 
@@ -150,7 +159,7 @@ const Search = () => {
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDialogElement>) => {
     if (e.target === dialogRef.current) {
-      setIsOpen(false);
+      closeSearch();
     }
   };
 
@@ -161,173 +170,84 @@ const Search = () => {
     }
   };
 
-  const performSearch = useCallback(
-    async (
-      rawQuery: string,
-      options?: { limit?: number; signal?: AbortSignal }
-    ): Promise<
-      | { status: "ok"; response: SearchResponse }
-      | { status: "error"; kind: SearchErrorKind }
-      | { status: "aborted" }
-      | { status: "too-short"; query: string }
-      | { status: "no-content-word"; query: string }
-    > => {
-      const trimmed = rawQuery.trim();
-      if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
-        setResults([]);
-        setSubmittedQuery("");
-        setSearchError(null);
-        setSelectedIndex(-1);
-        return { status: "too-short", query: trimmed };
-      }
-
-      if (!queryHasNounOrVerb(trimmed)) {
-        abortRef.current?.abort();
-        setResults([]);
-        setSubmittedQuery(trimmed);
-        setSearchError(null);
-        setSelectedIndex(-1);
-        setIsSearching(false);
-        return { status: "no-content-word", query: trimmed };
-      }
-
-      abortRef.current?.abort();
-      const controller = new AbortController();
-      abortRef.current = controller;
-
-      const onAbort = () => {
-        controller.abort();
-      };
-      options?.signal?.addEventListener("abort", onAbort);
-      if (options?.signal?.aborted) {
-        controller.abort();
-      }
-
-      setIsSearching(true);
-      setSearchError(null);
-      setSubmittedQuery(trimmed);
-      setResults([]);
-      setSelectedIndex(-1);
-
-      try {
-        const response = await searchSite(
-          trimmed,
-          options?.limit,
-          controller.signal
-        );
-        setResults(response.results);
-        setSelectedIndex(response.results.length > 0 ? 0 : -1);
-        return { status: "ok", response };
-      } catch (error) {
-        if (
-          (error instanceof DOMException && error.name === "AbortError") ||
-          (error instanceof Error && error.name === "AbortError")
-        ) {
-          return { status: "aborted" };
-        }
-        console.error("Search failed", error);
-        setResults([]);
-        setSelectedIndex(-1);
-        const statusCode = (error as { status?: number }).status;
-        const kind: SearchErrorKind =
-          statusCode === 429 ? "rate-limit" : "unavailable";
-        setSearchError(kind);
-        return { status: "error", kind };
-      } finally {
-        options?.signal?.removeEventListener("abort", onAbort);
-        if (!controller.signal.aborted) {
-          setIsSearching(false);
-        }
-      }
-    },
-    []
-  );
-
-  useEffect(() => {
-    const registration = new AbortController();
-
-    void registerSearchSiteTool(
-      async (inputObject, { signal }) => {
-        const queryValue =
-          typeof inputObject.query === "string" ? inputObject.query : "";
-        const trimmed = queryValue.trim();
-        const normalized = normalizeSearchQuery(queryValue);
-
-        if (normalized.length < SEARCH_MIN_QUERY_CHARS) {
-          return JSON.stringify({
-            error: `Query must be at least ${SEARCH_MIN_QUERY_CHARS} characters.`,
-          });
-        }
-
-        if (isSearchQueryTooLong(normalized, SEARCH_MAX_QUERY_CHARS)) {
-          return JSON.stringify({
-            error: `Query must be at most ${SEARCH_MAX_QUERY_CHARS} characters.`,
-          });
-        }
-
-        const limit =
-          typeof inputObject.limit === "number" ? inputObject.limit : undefined;
-
-        setSubmittedQuery(trimmed);
-        setIsOpen(true);
-        setQuery(trimmed);
-
-        const outcome = await performSearch(trimmed, { limit, signal });
-
-        if (outcome.status === "ok") {
-          return JSON.stringify({
-            query: outcome.response.query,
-            count: outcome.response.results.length,
-            results: outcome.response.results,
-          });
-        }
-
-        if (outcome.status === "aborted") {
-          return JSON.stringify({ error: "Search was cancelled." });
-        }
-
-        if (outcome.status === "too-short") {
-          return JSON.stringify({
-            error: `Query must be at least ${SEARCH_MIN_QUERY_CHARS} characters.`,
-          });
-        }
-
-        if (outcome.status === "no-content-word") {
-          return JSON.stringify({
-            error: "Query must include a noun or verb.",
-          });
-        }
-
-        return JSON.stringify({
-          error: SEARCH_ERROR_MESSAGE[outcome.kind],
-        });
-      },
-      { signal: registration.signal }
-    ).catch((error) => {
-      console.error("WebMCP search tool registration failed", error);
-    });
-
-    return () => {
-      registration.abort();
-    };
-  }, [performSearch]);
-
-  useEffect(() => {
-    if (!isOpen) {
-      abortRef.current?.abort();
-      abortRef.current = null;
-      setIsSearching(false);
-      return;
-    }
-
-    const trimmed = query.trim();
+  const performSearch = useCallback(async (rawQuery: string) => {
+    const trimmed = rawQuery.trim();
     if (
       trimmed.length < SEARCH_MIN_QUERY_CHARS ||
       !queryHasNounOrVerb(trimmed)
     ) {
       abortRef.current?.abort();
+      abortRef.current = null;
       setResults([]);
-      setSubmittedQuery(trimmed.length < SEARCH_MIN_QUERY_CHARS ? "" : trimmed);
+      setSubmittedQuery("");
+      setSearchError(null);
+      setSelectedIndex(-1);
+      setIsSearching(false);
+      return;
+    }
+
+    abortRef.current?.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
+
+    setIsSearching(true);
+    setSearchError(null);
+    setSubmittedQuery(trimmed);
+    setResults([]);
+    setSelectedIndex(-1);
+
+    try {
+      const response = await searchSite(trimmed, undefined, controller.signal);
+      setResults(response.results);
+      setSelectedIndex(response.results.length > 0 ? 0 : -1);
+    } catch (error) {
+      if (
+        (error instanceof DOMException && error.name === "AbortError") ||
+        (error instanceof Error && error.name === "AbortError")
+      ) {
+        return;
+      }
+      console.error("Search failed", error);
+      setResults([]);
+      setSelectedIndex(-1);
+      const statusCode = (error as { status?: number }).status;
+      setSearchError(statusCode === 429 ? "rate-limit" : "unavailable");
+    } finally {
+      if (!controller.signal.aborted) {
+        setIsSearching(false);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const registration = new AbortController();
+
+    void registerSearchSiteTool({ signal: registration.signal }).catch(
+      (error) => {
+        console.error("WebMCP search tool registration failed", error);
+      }
+    );
+
+    return () => {
+      registration.abort();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const trimmed = query.trim();
+    if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
+      return;
+    }
+
+    if (!queryHasNounOrVerb(trimmed)) {
+      abortRef.current?.abort();
+      abortRef.current = null;
+      setResults([]);
+      setSubmittedQuery("");
       setSearchError(null);
       setSelectedIndex(-1);
       setIsSearching(false);
@@ -346,6 +266,23 @@ const Search = () => {
       clearTimeout(debounce);
     };
   }, [isOpen, query, submittedQuery, performSearch]);
+
+  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const nextQuery = e.target.value;
+    setQuery(nextQuery);
+
+    if (nextQuery.trim().length >= SEARCH_MIN_QUERY_CHARS) {
+      return;
+    }
+
+    abortRef.current?.abort();
+    abortRef.current = null;
+    setResults([]);
+    setSubmittedQuery("");
+    setSearchError(null);
+    setSelectedIndex(-1);
+    setIsSearching(false);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -367,7 +304,7 @@ const Search = () => {
       // type="search" would otherwise consume the first Escape to clear the
       // field, leaving the dialog open until a second Escape.
       e.preventDefault();
-      setIsOpen(false);
+      closeSearch();
       return;
     }
 
@@ -399,11 +336,6 @@ const Search = () => {
   // Drop stale hits as soon as Searching… is shown for a new query.
   const showResults =
     results.length > 0 && hasSearchableQuery && !showSearching;
-  const showNoResults =
-    hasSearchableQuery &&
-    trimmedQuery === submittedQuery &&
-    results.length === 0 &&
-    !showSearching;
   const activeOptionId =
     showResults && selectedIndex >= 0 ? optionId(selectedIndex) : undefined;
   const resultCountLabel =
@@ -414,7 +346,9 @@ const Search = () => {
       ? "Searching…"
       : showResults
         ? resultCountLabel
-        : showNoResults
+        : hasSearchableQuery &&
+            trimmedQuery === submittedQuery &&
+            results.length === 0
           ? "No results"
           : showNoContentWord
             ? "Add a noun or verb to search"
@@ -425,21 +359,24 @@ const Search = () => {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="inline-flex hover:text-brand focus:text-brand focus:outline-none transition-colors"
+        className="win-menu-command inline-flex hover:text-brand focus:text-brand transition-colors"
         aria-label="Search site"
         aria-keyshortcuts={SEARCH_ARIA_KEYSHORTCUTS}
       >
         <SearchIcon className="w-4.5 h-4.5 lg:w-5 lg:h-5" strokeWidth={3} />
+        <span className="win-menu-label" aria-hidden="true">
+          Search
+        </span>
         <span className="sr-only">Search</span>
       </button>
 
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <dialog
         ref={dialogRef}
-        onClose={() => setIsOpen(false)}
+        onClose={closeSearch}
         onClick={handleBackdropClick}
         aria-labelledby="search-dialog-title"
-        className="fixed left-1/2 top-3 m-0 h-[min(70dvh,36rem)] max-h-[calc(100dvh-1.5rem)] w-[90vw] max-w-2xl -translate-x-1/2 open:flex open:flex-col overflow-hidden rounded-xl border border-secondary bg-background p-0 text-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+        className="fixed left-1/2 top-3 m-0 h-[min(70dvh,36rem)] max-h-[calc(100dvh-1.5rem)] w-[90vw] max-w-2xl -translate-x-1/2 open:flex open:flex-col overflow-hidden rounded-xl border border-secondary bg-popover p-0 text-popover-foreground shadow-2xl outline-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
       >
         <div className="flex shrink-0 items-center justify-between gap-4 border-b border-secondary p-4">
           <h2 id="search-dialog-title" className="sr-only">
@@ -460,17 +397,20 @@ const Search = () => {
               autoComplete="off"
               aria-label="Search posts, talks, and projects"
               placeholder={SEARCH_PLACEHOLDER}
-              className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-brand text-lg"
+              className="w-full pl-10 pr-4 py-3 bg-secondary rounded-md text-lg"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={handleQueryChange}
               onKeyDown={handleInputKeyDown}
             />
+            <button type="submit" className="sr-only" tabIndex={-1}>
+              Search
+            </button>
           </form>
           <button
             type="button"
             aria-label="Close search"
-            onClick={() => setIsOpen(false)}
-            className="shrink-0 rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:bg-secondary focus-visible:text-foreground focus:outline-none"
+            onClick={closeSearch}
+            className="shrink-0 rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:bg-secondary focus-visible:text-foreground"
           >
             <span aria-hidden="true" className="text-xl leading-none">
               ×
@@ -479,7 +419,9 @@ const Search = () => {
         </div>
 
         <div
-          className="min-h-0 flex-1 overflow-y-auto p-4"
+          className={`min-h-0 flex-1 overflow-y-auto p-4 ${
+            keyboardOpen ? "pb-8" : ""
+          }`}
           aria-busy={showSearching}
         >
           <div className="mb-4 h-6 px-2 text-sm text-muted-foreground">
@@ -496,7 +438,9 @@ const Search = () => {
             role="alert"
             className={
               searchError
-                ? "flex min-h-[16rem] items-center justify-center text-center"
+                ? `flex items-center justify-center text-center ${
+                    keyboardOpen ? "min-h-0 py-2" : "min-h-[16rem]"
+                  }`
                 : "sr-only"
             }
           >
@@ -566,26 +510,40 @@ const Search = () => {
           ) : /* eslint-enable jsx-a11y/prefer-tag-over-role */
           showSearching ? (
             <div
-              className="flex min-h-[16rem] items-center justify-center text-muted-foreground"
+              className={`flex items-center justify-center text-muted-foreground ${
+                keyboardOpen ? "min-h-0 py-2" : "min-h-[16rem]"
+              }`}
               aria-hidden="true"
             >
               <Loader2 className="h-8 w-8 animate-spin opacity-50" />
             </div>
-          ) : showNoResults ? (
-            <div className="flex min-h-[16rem] items-center justify-center text-center text-muted-foreground">
+          ) : hasSearchableQuery &&
+            trimmedQuery === submittedQuery &&
+            results.length === 0 ? (
+            <div
+              className={`flex items-center justify-center text-center text-foreground ${
+                keyboardOpen ? "min-h-0 py-2" : "min-h-[16rem]"
+              }`}
+            >
               <div className="space-y-2">
                 <p className="text-lg">No results found for "{query}"</p>
-                <p className="text-sm">Try searching for something else.</p>
+                <p className="text-sm text-muted-foreground">
+                  Try searching for something else.
+                </p>
               </div>
             </div>
           ) : (
-            <div className="flex min-h-[16rem] flex-col items-center justify-center space-y-4 text-muted-foreground">
+            <div
+              className={`flex flex-col items-center justify-center space-y-4 text-foreground ${
+                keyboardOpen ? "min-h-0 py-2" : "min-h-[16rem]"
+              }`}
+            >
               <div className="rounded-full bg-secondary p-4">
-                <SearchIcon className="h-8 w-8 opacity-20" />
+                <SearchIcon className="h-8 w-8 text-muted-foreground opacity-40" />
               </div>
               <div className="text-center">
                 <p className="text-lg font-medium">Search the site</p>
-                <p className="text-sm">
+                <p className="text-sm text-muted-foreground">
                   {showNoContentWord
                     ? "Add a noun or verb to search blog posts, talks, and livestreams."
                     : "Type at least two characters to search blog posts, talks, and livestreams."}

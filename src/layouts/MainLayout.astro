@@ -67,7 +67,14 @@ const currentYear = new Date().getFullYear();
     <!-- Prevent flash of unstyled content -->
     <script is:inline>
       // Check for saved theme preference or default to system preference
-      const theme = (() => {
+      const applyThemeClass = (root, theme) => {
+        root.classList.remove("dark", "windows95");
+        if (theme === "dark" || theme === "windows95") {
+          root.classList.add(theme);
+        }
+      };
+
+      const resolveTheme = () => {
         if (
           typeof localStorage !== "undefined" &&
           localStorage.getItem("theme")
@@ -78,20 +85,12 @@ const currentYear = new Date().getFullYear();
           return "dark";
         }
         return "light";
-      })();
+      };
 
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+      applyThemeClass(document.documentElement, resolveTheme());
 
       document.addEventListener("astro:before-swap", (ev) => {
-        if (localStorage.getItem("theme") === "dark") {
-          ev.newDocument.documentElement.classList.add("dark");
-        } else {
-          ev.newDocument.documentElement.classList.remove("dark");
-        }
+        applyThemeClass(ev.newDocument.documentElement, resolveTheme());
       });
     </script>
     {
@@ -112,7 +111,7 @@ const currentYear = new Date().getFullYear();
   </head>
   <body class="pb-32 font-sans">
     <SkipLink id="main" />
-    <div>
+    <div data-site-window>
       <Header />
       <main
         id="main"
@@ -120,14 +119,14 @@ const currentYear = new Date().getFullYear();
       >
         <slot />
       </main>
-      <footer class="pt-8 text-center px-6">
+      <footer data-site-footer class="pt-8 text-center px-6">
         <div
           class="mx-auto flex max-w-4xl flex-col items-center gap-4 text-lg text-muted-foreground"
         >
           <nav aria-label="Footer navigation" class="text-sm">
             <a
               href="/uses"
-              class="hover:text-brand focus:text-brand focus:outline-none"
+              class="hover:text-brand focus:text-brand"
             >
               Uses
             </a>
@@ -136,6 +135,125 @@ const currentYear = new Date().getFullYear();
         </div>
       </footer>
     </div>
+    <div data-win-taskbar>
+      <a href="/">Start</a>
+      <button type="button" data-win-action="restore" data-win-task>
+        nickyt.co
+      </button>
+      <time data-win-clock>--:--</time>
+    </div>
+    <script is:inline>
+      if (!window.__winClockStarted) {
+        window.__winClockStarted = true;
+        const tickWinClock = () => {
+          const clock = document.querySelector("[data-win-clock]");
+          if (!(clock instanceof HTMLTimeElement)) return;
+          const now = new Date();
+          clock.dateTime = now.toISOString();
+          clock.textContent = now.toLocaleTimeString(undefined, {
+            hour: "numeric",
+            minute: "2-digit",
+          });
+        };
+        tickWinClock();
+        window.setInterval(tickWinClock, 30000);
+        document.addEventListener("astro:page-load", tickWinClock);
+      }
+
+      if (!window.__winWindowStarted) {
+        window.__winWindowStarted = true;
+        const winStateKey = "win-window-state";
+        let lastOpenState = "open";
+
+        const readWinState = () => {
+          const saved = sessionStorage.getItem(winStateKey);
+          if (
+            saved === "open" ||
+            saved === "maximized" ||
+            saved === "minimized" ||
+            saved === "closed"
+          ) {
+            return saved;
+          }
+          return "open";
+        };
+
+        const applyWinState = (state) => {
+          const root = document.documentElement;
+          if (!root.classList.contains("windows95")) {
+            delete root.dataset.winState;
+            return;
+          }
+          root.dataset.winState = state;
+          const maximize = document.querySelector(
+            "[data-win-action='maximize']",
+          );
+          if (maximize instanceof HTMLButtonElement) {
+            const isMaximized = state === "maximized";
+            maximize.setAttribute(
+              "aria-label",
+              isMaximized ? "Restore" : "Maximize",
+            );
+            maximize.setAttribute(
+              "aria-pressed",
+              isMaximized ? "true" : "false",
+            );
+          }
+        };
+
+        const setWinState = (state) => {
+          if (state === "open" || state === "maximized") {
+            lastOpenState = state;
+          }
+          sessionStorage.setItem(winStateKey, state);
+          applyWinState(state);
+        };
+
+        const syncWinState = () => {
+          if (!document.documentElement.classList.contains("windows95")) {
+            delete document.documentElement.dataset.winState;
+            return;
+          }
+          const saved = readWinState();
+          if (saved === "open" || saved === "maximized") {
+            lastOpenState = saved;
+          }
+          applyWinState(saved);
+        };
+
+        document.addEventListener("click", (event) => {
+          const target = event.target;
+          if (!(target instanceof Element)) return;
+          if (!document.documentElement.classList.contains("windows95")) return;
+
+          const control = target.closest("[data-win-action]");
+          if (control instanceof HTMLElement && control.dataset.winAction) {
+            const action = control.dataset.winAction;
+            const current = document.documentElement.dataset.winState || "open";
+            if (action === "minimize") setWinState("minimized");
+            else if (action === "close") setWinState("closed");
+            else if (action === "maximize") {
+              setWinState(current === "maximized" ? "open" : "maximized");
+            } else if (action === "restore") {
+              setWinState(lastOpenState === "maximized" ? "maximized" : "open");
+            }
+            return;
+          }
+
+          const start = target.closest("[data-win-taskbar] a[href='/']");
+          if (!start) return;
+          setWinState("open");
+          if (location.pathname === "/") event.preventDefault();
+        });
+
+        syncWinState();
+        document.addEventListener("astro:page-load", syncWinState);
+        new MutationObserver(syncWinState).observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["class"],
+        });
+      }
+    </script>
     <BackToTop transition:persist />
   </body>
 </html>

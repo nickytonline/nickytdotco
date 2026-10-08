@@ -1,9 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
   CDN_CACHE_MAX_SECONDS,
+  SCHEDULE_CDN_CACHE_SECONDS,
+  UNTIL_DEPLOY_CDN_CACHE_SECONDS,
   cdnMaxAgeSeconds,
   eventExpiryTimestamp,
   isEventUpcoming,
+  isTalkUpcoming,
   isUtcMidnight,
   soonestExpiryTimestamp,
 } from "./cdn-cache.ts";
@@ -33,6 +36,44 @@ describe("isEventUpcoming", () => {
     expect(isEventUpcoming(date, Date.parse("2026-09-16T00:00:00.000Z"))).toBe(
       false
     );
+  });
+});
+
+describe("isTalkUpcoming", () => {
+  it("requires the upcoming flag and a future end date", () => {
+    const talk = {
+      upcoming: true as const,
+      date: new Date("2026-09-03T12:00:00.000Z"),
+      endDate: new Date("2026-09-04T12:00:00.000Z"),
+    };
+    expect(isTalkUpcoming(talk, Date.parse("2026-09-04T11:59:00.000Z"))).toBe(
+      true
+    );
+    expect(isTalkUpcoming(talk, Date.parse("2026-09-04T12:00:00.000Z"))).toBe(
+      false
+    );
+  });
+
+  it("ignores a stale upcoming flag after the talk ends", () => {
+    expect(
+      isTalkUpcoming(
+        {
+          upcoming: true,
+          date: new Date("2026-09-03T12:00:00.000Z"),
+          endDate: new Date("2026-09-04T12:00:00.000Z"),
+        },
+        Date.parse("2026-09-05T18:00:00.000Z")
+      )
+    ).toBe(false);
+  });
+
+  it("is false when the upcoming flag is missing", () => {
+    expect(
+      isTalkUpcoming(
+        { date: new Date("2026-10-01T12:00:00.000Z") },
+        Date.parse("2026-09-05T18:00:00.000Z")
+      )
+    ).toBe(false);
   });
 });
 
@@ -66,5 +107,17 @@ describe("soonestExpiryTimestamp", () => {
         now
       )
     ).toBe(Date.parse("2026-01-01T01:00:00.000Z"));
+  });
+});
+
+describe("SCHEDULE_CDN_CACHE_SECONDS", () => {
+  it("is a fixed two-day TTL for schedule pages", () => {
+    expect(SCHEDULE_CDN_CACHE_SECONDS).toBe(172_800);
+  });
+});
+
+describe("UNTIL_DEPLOY_CDN_CACHE_SECONDS", () => {
+  it("is a one-year TTL purged on the next deploy", () => {
+    expect(UNTIL_DEPLOY_CDN_CACHE_SECONDS).toBe(31_536_000);
   });
 });

@@ -18,9 +18,27 @@
   font-display: swap;
 }
 
+/* Pixelated MS Sans Serif by lou, CC BY-SA 3.0. woff2 via 98.css (MIT). */
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("/fonts/ms-sans-serif/ms_sans_serif.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("/fonts/ms-sans-serif/ms_sans_serif_bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant windows95 (&:is(.windows95 *));
 
 /* CSS Custom Properties */
 :root {
@@ -108,7 +126,7 @@ h6 {
 
 /* Heading anchor links */
 .heading-anchor {
-  @apply opacity-0 no-underline ml-2 text-brand focus:opacity-100 focus:outline-none;
+  @apply opacity-0 no-underline ml-2 text-brand focus-visible:opacity-100;
 }
 
 .heading-anchor:hover,
@@ -205,7 +223,6 @@ a:not([class]) {
   @apply decoration-brand;
   @apply dark:decoration-brand;
   @apply underline-offset-4;
-  @apply outline-none;
 }
 
 nav a[aria-current="page"]:not(.tag-pill),
@@ -215,7 +232,6 @@ a:not([class]):focus {
   @apply dark:decoration-brand;
   @apply underline;
   @apply decoration-4;
-  @apply outline-none;
 }
 
 nav a:not([aria-current="page"]) {
@@ -234,7 +250,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   @apply hover:decoration-4 hover:underline-offset-4;
   @apply focus:text-brand;
   @apply focus:underline focus:decoration-brand focus:dark:decoration-brand;
-  @apply focus:decoration-4 focus:underline-offset-4 focus:outline-none;
+  @apply focus:decoration-4 focus:underline-offset-4;
   @apply aria-[current=page]:text-brand;
   @apply aria-[current=page]:underline aria-[current=page]:decoration-brand;
   @apply aria-[current=page]:dark:decoration-brand aria-[current=page]:decoration-4;
@@ -305,6 +321,21 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   --color-bluesky: var(--bluesky);
   --color-mastodon: var(--mastodon);
   --color-typescript: var(--typescript);
+  /* 98.css palette. Values live on .windows95; utilities inherit them. */
+  --color-win-surface: var(--win-surface);
+  --color-win-highlight: var(--win-highlight);
+  --color-win-light: var(--win-light);
+  --color-win-shadow: var(--win-shadow);
+  --color-win-frame: var(--win-frame);
+  --color-win-navy: var(--win-navy);
+  --color-win-navy-light: var(--win-navy-light);
+  --color-win-link: var(--win-link);
+  --color-win-desktop: var(--win-desktop);
+  --shadow-win-raised: var(--win-border-raised);
+  --shadow-win-sunken: var(--win-border-sunken);
+  --shadow-win-window: var(--win-border-window);
+  --shadow-win-field: var(--win-border-field);
+  --font-win: "Pixelated MS Sans Serif", Arial, sans-serif;
 }
 
 .dark {
@@ -355,9 +386,947 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   --warning-border: oklch(0.473 0.137 46.201);
 }
 
+/*
+  Windows 98 chrome, ported from 98.css by Jordan Scales (MIT).
+  https://github.com/jdan/98.css
+  Copyright (c) 2020 Jordan Scales
+
+  Palette names follow 98.css. Semantic tokens point at them so existing
+  utilities (bg-card, text-brand, border-border) pick up the system colors.
+  No Windows logo.
+*/
+.windows95 {
+  --radius: 0;
+  --color-theme-feature-text: #ffff00;
+
+  /* 98.css --surface, --button-highlight, --button-face, --button-shadow, --window-frame */
+  --win-surface: #c0c0c0;
+  --win-highlight: #ffffff;
+  --win-light: #dfdfdf;
+  --win-shadow: #808080;
+  --win-frame: #0a0a0a;
+  /* 98.css --dialog-blue, --dialog-blue-light, --dialog-gray-light, --link-blue */
+  --win-navy: #000080;
+  --win-navy-light: #1084d0;
+  --win-gray-light: #b5b5b5;
+  --win-link: #0000ff;
+  --win-desktop: #008080;
+  --win-title: linear-gradient(90deg, var(--win-navy), var(--win-navy-light));
+
+  /* 98.css raised / sunken / window / field borders, as one box-shadow each. */
+  --win-border-raised:
+    inset -1px -1px var(--win-frame), inset 1px 1px var(--win-highlight),
+    inset -2px -2px var(--win-shadow), inset 2px 2px var(--win-light);
+  --win-border-sunken:
+    inset -1px -1px var(--win-highlight), inset 1px 1px var(--win-frame),
+    inset -2px -2px var(--win-light), inset 2px 2px var(--win-shadow);
+  --win-border-window:
+    inset -1px -1px var(--win-frame), inset 1px 1px var(--win-light),
+    inset -2px -2px var(--win-shadow), inset 2px 2px var(--win-highlight);
+  --win-border-field:
+    inset -1px -1px var(--win-highlight), inset 1px 1px var(--win-shadow),
+    inset -2px -2px var(--win-light), inset 2px 2px var(--win-frame);
+  --win-border-status:
+    inset -1px -1px var(--win-light), inset 1px 1px var(--win-shadow);
+
+  /* Teal is the desktop. Copy sits on the silver window, not the desktop. */
+  --background: var(--win-desktop);
+  --foreground: #222222;
+  --card: var(--win-surface);
+  --card-foreground: #222222;
+  --popover: var(--win-surface);
+  --popover-foreground: #222222;
+  --primary: var(--win-navy);
+  --primary-foreground: #ffffff;
+  --secondary: var(--win-surface);
+  --secondary-foreground: #222222;
+  --muted: var(--win-light);
+  /* #404040 on silver ≈ 5.7:1. #808080 on silver fails AA. */
+  --muted-foreground: #404040;
+  --accent: var(--win-navy);
+  --accent-foreground: #ffffff;
+  --destructive: #800000;
+  --border: var(--win-shadow);
+  --input: #ffffff;
+  --ring: var(--win-navy);
+  --chart-1: var(--win-navy);
+  --chart-2: var(--win-desktop);
+  --chart-3: #800080;
+  --chart-4: #808000;
+  --chart-5: #800000;
+  --sidebar: var(--win-surface);
+  --sidebar-foreground: #222222;
+  --sidebar-primary: var(--win-navy);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--win-light);
+  --sidebar-accent-foreground: #222222;
+  --sidebar-border: var(--win-shadow);
+  --sidebar-ring: var(--win-navy);
+  /* Navy on silver ≈ 8.6:1. Link blue is for anchors, not brand fills. */
+  --brand: var(--win-navy);
+  --brand-hover: var(--win-navy);
+  --brand-solid: var(--win-navy);
+  --brand-solid-hover: var(--win-navy);
+  --brand-foreground: #ffffff;
+  --focus-ring: var(--win-navy);
+  --brand-soft: var(--win-light);
+  --brand-soft-foreground: var(--win-navy);
+  --brand-border: var(--win-navy);
+  --warning: #ffff00;
+  --warning-foreground: #000000;
+  --warning-soft: #ffffe1;
+  --warning-border: #808000;
+  --github: #000000;
+  --x: #000000;
+  --devto: #000000;
+}
+
 /* Dark mode heading anchor improvements */
 .dark .heading-anchor {
   @apply text-brand;
+}
+
+.windows95 .heading-anchor {
+  @apply text-brand;
+}
+
+/* Page copy is Arial, like a page inside Internet Explorer. Chrome is the pixel font at 11px. */
+.windows95,
+.windows95 body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.windows95 .font-heading,
+.windows95 h1,
+.windows95 h2,
+.windows95 h3,
+.windows95 h4,
+.windows95 h5,
+.windows95 h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+/* Arial's northeast arrow is a long shaft. Keep the compact heading glyph from the other themes. */
+.windows95 .external-mark {
+  font-family:
+    "Space Grotesk",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-weight: 600;
+}
+
+.windows95 ::selection {
+  background: var(--win-navy);
+  color: #ffffff;
+}
+
+.windows95
+  :where(
+    .rounded,
+    .rounded-sm,
+    .rounded-md,
+    .rounded-lg,
+    .rounded-xl,
+    .rounded-2xl,
+    .rounded-3xl,
+    .rounded-full
+  ) {
+  border-radius: 0;
+}
+
+/*
+  One application window, the same width as the old header (80rem / max-w-7xl).
+  The client area used to stay at 70ch, so the body sat in a narrow column
+  with teal on both sides. It now fills the window. Articles keep a reading
+  measure via .prose.
+*/
+.windows95 [data-site-window] {
+  box-sizing: border-box;
+  width: min(100% - 1rem, 80rem);
+  margin: 0.5rem auto 2.75rem;
+  padding: 3px;
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-window);
+}
+
+.windows95 [data-site-header],
+.windows95 main,
+.windows95 [data-site-footer] {
+  max-width: none;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  border: none;
+  box-shadow: none;
+}
+
+.windows95 main {
+  padding: 0.75rem 1rem 1.25rem;
+}
+
+/* Long-form copy stays readable inside the wide window. */
+.windows95 .prose {
+  max-width: 75ch;
+}
+
+.windows95 [data-site-footer] {
+  display: flex;
+  margin-top: 2px;
+  padding: 2px;
+}
+
+.windows95 [data-site-footer] > div {
+  width: 100%;
+  max-width: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-family: var(--font-win);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  -webkit-font-smoothing: none;
+  color: var(--foreground);
+  text-align: left;
+}
+
+.windows95 [data-site-footer] .text-muted-foreground,
+.windows95 [data-site-footer] p,
+.windows95 [data-site-footer] a {
+  color: var(--foreground);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.windows95 [data-site-footer] nav,
+.windows95 [data-site-footer] p {
+  margin: 0;
+  padding: 2px 4px;
+  box-shadow: var(--win-border-status);
+}
+
+.windows95 [data-site-footer] p {
+  margin-left: auto;
+}
+
+.windows95 .tag-pill {
+  border-radius: 0;
+  border: none;
+  box-shadow: var(--win-border-status);
+  background: var(--win-surface);
+  color: var(--foreground);
+}
+
+.windows95 .tag-pill:hover,
+.windows95 .tag-pill:focus-visible {
+  background: var(--win-navy);
+  color: #ffffff;
+}
+
+.windows95 .tag-pill span {
+  border-radius: 0;
+  background: var(--win-light);
+  color: var(--foreground);
+}
+
+.windows95 [data-site-footer] nav a:hover,
+.windows95 [data-site-footer] nav a:focus-visible {
+  background: var(--win-navy);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Title bar is caption plus real window buttons. Commands live in the menu. */
+.win-caption-buttons,
+.win-menu-label {
+  display: none;
+}
+
+.windows95 [data-site-header] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  padding: 0 0 2px;
+  background:
+    var(--win-title) left top / 100% 26px no-repeat,
+    var(--win-surface);
+}
+
+.windows95 [data-site-header]::before {
+  content: none;
+}
+
+.windows95 [data-site-header]::after {
+  content: "";
+  order: 3;
+  flex-basis: 100%;
+  height: 2px;
+}
+
+.windows95 [data-site-header] > div,
+.windows95 [data-site-header] > div > div:first-child,
+.windows95 [data-site-header] > div > div:first-child > nav,
+.windows95 [data-site-header] > div > div:first-child > nav ul,
+.windows95 [data-site-header-actions] {
+  display: contents;
+}
+
+.windows95 [data-site-header] .site-logo {
+  order: 1;
+  flex: 1 1 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  margin: 0;
+  padding: 0 6px;
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-win);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  -webkit-font-smoothing: none;
+}
+
+.windows95 .win-caption-buttons {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 26px;
+  padding-right: 3px;
+}
+
+.windows95 .win-caption-buttons button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 14px;
+  min-width: 16px;
+  min-height: 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--win-surface);
+  color: #000000;
+  box-shadow: var(--win-border-raised);
+}
+
+.windows95 .win-caption-buttons button:active {
+  box-shadow: var(--win-border-sunken);
+  transform: none;
+}
+
+.windows95 .win-glyph-restore {
+  display: none;
+}
+
+.windows95[data-win-state="maximized"] .win-glyph-max {
+  display: none;
+}
+
+.windows95[data-win-state="maximized"] .win-glyph-restore {
+  display: block;
+}
+
+.windows95 [data-site-header] .site-logo a,
+.windows95 [data-site-header] .site-logo .text-brand {
+  color: #ffffff;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.windows95 [data-site-header] > div > div:first-child > nav {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-win);
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+}
+
+.windows95 [data-site-header] nav li {
+  order: 4;
+  display: flex;
+  list-style: none;
+}
+
+.windows95 [data-site-header] > div > div:first-child > nav ul {
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.windows95 [data-site-header] > div > div:first-child > nav .nav-link {
+  display: inline-block;
+  padding: 3px 8px;
+  color: var(--foreground);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-decoration: none;
+  background: transparent;
+}
+
+/* Current page is a pressed menu command. Hover and focus use the navy highlight. */
+.windows95
+  [data-site-header]
+  > div
+  > div:first-child
+  > nav
+  .nav-link[aria-current="page"] {
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-sunken);
+  text-decoration: none;
+}
+
+.windows95 [data-site-header] > div > div:first-child > nav .nav-link:hover,
+.windows95
+  [data-site-header]
+  > div
+  > div:first-child
+  > nav
+  .nav-link:focus-visible,
+.windows95
+  [data-site-header]
+  > div
+  > div:first-child
+  > nav
+  .nav-link[aria-current="page"]:hover {
+  background: var(--win-navy);
+  color: #ffffff;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.windows95
+  [data-site-header]
+  > div
+  > div:first-child
+  > nav
+  .nav-link[aria-current="page"]:focus-visible {
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-sunken);
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+.windows95 [data-mobile-menu] {
+  display: none;
+}
+
+/* RSS, Search, and Theme sit in the menu bar with the page links. */
+.windows95 [data-site-header-actions] > a,
+.windows95 [data-site-header-actions] button[aria-label="Search site"],
+.windows95 [data-site-header-actions] .theme-switcher {
+  order: 4;
+}
+
+/*
+  Search is a React island (`astro-island` is display:contents by default),
+  so it is not matched by `> button`. Target the trigger by aria-label;
+  leave dialog controls alone.
+*/
+.windows95 .win-menu-label {
+  display: inline;
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+}
+
+.windows95 [data-site-header-actions] > a svg,
+.windows95 [data-site-header-actions] button[aria-label="Search site"] svg,
+.windows95 .theme-switcher__trigger svg,
+.windows95 .theme-switcher__option svg {
+  display: none;
+}
+
+.windows95 [data-site-header-actions] > a,
+.windows95 [data-site-header-actions] button[aria-label="Search site"],
+.windows95 [data-site-header-actions] .theme-switcher__trigger {
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 3px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--foreground);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: var(--font-win);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-decoration: none;
+  appearance: none;
+  -webkit-font-smoothing: none;
+}
+
+.windows95 [data-site-header-actions] > a:hover,
+.windows95 [data-site-header-actions] > a:focus-visible,
+.windows95 [data-site-header-actions] button[aria-label="Search site"]:hover,
+.windows95
+  [data-site-header-actions]
+  button[aria-label="Search site"]:focus-visible,
+.windows95 [data-site-header-actions] .theme-switcher__trigger:hover,
+.windows95 [data-site-header-actions] .theme-switcher__trigger:focus-visible {
+  background: var(--win-navy);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.windows95 [data-site-header-actions] > a:active,
+.windows95 [data-site-header-actions] button[aria-label="Search site"]:active,
+.windows95 [data-site-header-actions] .theme-switcher__trigger:active {
+  box-shadow: none;
+  transform: none;
+}
+
+/* Mobile menu panel: silver chrome, not teal desktop background. */
+.windows95 [data-mobile-menu] nav {
+  background: var(--win-surface);
+  color: var(--foreground);
+  border: none;
+  border-radius: 0;
+  box-shadow: var(--win-border-window);
+}
+
+.windows95 [data-mobile-menu] .nav-link {
+  color: var(--foreground);
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.windows95 [data-mobile-menu] .nav-link[aria-current="page"] {
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-sunken);
+  text-decoration: none;
+}
+
+.windows95 [data-mobile-menu] .nav-link:hover,
+.windows95 [data-mobile-menu] .nav-link:focus-visible,
+.windows95 [data-mobile-menu] .nav-link[aria-current="page"]:hover {
+  background: var(--win-navy);
+  color: #ffffff;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.windows95 [data-mobile-menu] .nav-link[aria-current="page"]:focus-visible {
+  background: var(--win-surface);
+  color: var(--foreground);
+  box-shadow: var(--win-border-sunken);
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+/*
+  Classic Win95 raised buttons.
+  Cover <button>/<summary> and CTA-looking anchors (brand / secondary /
+  bordered inline-flex). Skip tag pills, the theme switcher, and
+  lite-youtube's full-bleed .lyt-playbtn (silver background would hide
+  the poster thumbnail until click activates the iframe).
+  Do not match bare .bg-brand-solid (series badges) or a.border-border
+  without inline-flex (thumbnail cards).
+*/
+.windows95
+  :is(
+    button,
+    summary,
+    a.bg-brand-solid,
+    a.bg-secondary,
+    a.inline-flex.border-border,
+    a.inline-flex.border-brand
+  ):not(
+    .tag-pill,
+    .theme-switcher__trigger,
+    .theme-switcher__option,
+    .lyt-playbtn,
+    .lty-playbtn,
+    .win-caption-button,
+    .win-menu-command
+  ) {
+  background: var(--win-surface);
+  color: var(--foreground);
+  border: none;
+  border-radius: 0;
+  box-shadow: var(--win-border-raised);
+  text-decoration: none;
+}
+
+.windows95
+  :is(
+    button,
+    summary,
+    a.bg-brand-solid,
+    a.bg-secondary,
+    a.inline-flex.border-border,
+    a.inline-flex.border-brand
+  ):not(
+    .tag-pill,
+    .theme-switcher__trigger,
+    .theme-switcher__option,
+    .lyt-playbtn,
+    .lty-playbtn,
+    .win-caption-button,
+    .win-menu-command
+  ):hover {
+  background: var(--win-surface);
+  color: var(--foreground);
+}
+
+.windows95
+  :is(
+    button,
+    summary,
+    a.bg-brand-solid,
+    a.bg-secondary,
+    a.inline-flex.border-border,
+    a.inline-flex.border-brand
+  ):not(
+    .tag-pill,
+    .theme-switcher__trigger,
+    .theme-switcher__option,
+    .lyt-playbtn,
+    .lty-playbtn,
+    .win-caption-button,
+    .win-menu-command
+  ):active {
+  box-shadow: var(--win-border-sunken);
+  transform: translate(1px, 1px);
+}
+
+/* Cards / dialogs keep raised panel chrome without forcing button colors. */
+.windows95 :is(.bg-card, .bg-popover, dialog, [role="dialog"]) {
+  border: none;
+  box-shadow: var(--win-border-window);
+  border-radius: 0;
+}
+
+/* Search dialog: silver chrome, not teal desktop background. */
+.windows95 :is(dialog, [role="dialog"]) {
+  background: var(--win-surface);
+  color: var(--foreground);
+}
+
+.windows95 :is(dialog, [role="dialog"]) .text-muted-foreground {
+  /* #404040 on silver ≈ 5.7:1 (AA). */
+  color: #404040;
+}
+
+.windows95 :where(input, select, textarea) {
+  border: none;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: var(--win-border-field);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.windows95 main a:not([class]) {
+  color: var(--win-link);
+  text-decoration-color: var(--win-link);
+}
+
+.windows95 main a:not([class]):visited {
+  color: #800080;
+  text-decoration-color: #800080;
+}
+
+.windows95 .expressive-code .copy button {
+  border-radius: 0;
+}
+
+.windows95 .expressive-code .ln {
+  color: #404040 !important;
+}
+
+/* High-contrast focus for Win95 (links/buttons otherwise rely on color alone). */
+.windows95 :where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px dotted #000000;
+  outline-offset: 2px;
+}
+
+.windows95 :where(button, summary):focus-visible {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+.windows95 :where(input, select, textarea):focus-visible {
+  outline: 1px dotted var(--win-navy);
+  outline-offset: -2px;
+}
+
+/* Desktop taskbar. Text only — no Windows logo. */
+[data-win-taskbar] {
+  display: none;
+}
+
+.windows95 [data-win-taskbar] {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 2px 3px;
+  background: var(--win-surface);
+  box-shadow: var(--win-border-raised);
+  font-family: var(--font-win);
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+}
+
+.windows95 [data-win-taskbar] a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 2px 8px;
+  background: var(--win-surface);
+  color: var(--foreground);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--win-border-raised);
+}
+
+.windows95 [data-win-taskbar] a:active,
+.windows95 [data-win-task]:active {
+  box-shadow: var(--win-border-sunken);
+  transform: none;
+}
+
+.windows95 [data-win-task] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  max-width: 12rem;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 0;
+  background: var(--win-surface);
+  color: var(--foreground);
+  font-family: var(--font-win);
+  font-size: 11px;
+  font-weight: 400;
+  box-shadow: var(--win-border-raised);
+}
+
+.windows95[data-win-state="open"] [data-win-task],
+.windows95[data-win-state="maximized"] [data-win-task] {
+  box-shadow: var(--win-border-sunken);
+}
+
+.windows95[data-win-state="closed"] [data-win-task] {
+  display: none;
+}
+
+.windows95[data-win-state="minimized"] [data-site-window],
+.windows95[data-win-state="closed"] [data-site-window] {
+  display: none;
+}
+
+.windows95[data-win-state="maximized"] [data-site-window] {
+  width: 100%;
+  margin: 0 0 28px;
+  min-height: calc(100dvh - 28px);
+}
+
+.windows95 [data-win-clock] {
+  margin-left: auto;
+  min-width: 4.75rem;
+  padding: 2px 6px;
+  text-align: center;
+  box-shadow: var(--win-border-status);
+}
+
+.windows95 #back-to-top {
+  bottom: 2.75rem;
+  border-radius: 0;
+}
+
+/* Theme switcher: compact trigger + options that open below */
+.theme-switcher {
+  z-index: 40;
+}
+
+.theme-switcher__trigger {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  border-width: 1px;
+}
+
+.theme-switcher__menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--secondary-foreground);
+  box-shadow: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -0.35rem) scale(0.92);
+  transition:
+    opacity 160ms ease,
+    transform 180ms ease;
+  z-index: 50;
+}
+
+.theme-switcher--open .theme-switcher__menu {
+  opacity: 1;
+  pointer-events: auto;
+  /* Sit just under the trigger so options feel attached. */
+  transform: translate(-50%, 0.2rem) scale(1);
+}
+
+.theme-switcher__option {
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  box-shadow:
+    0 4px 14px rgb(0 0 0 / 10%),
+    0 1px 3px rgb(0 0 0 / 6%);
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
+}
+
+.theme-switcher__option:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.theme-switcher__option--active {
+  background: var(--brand-solid);
+  color: var(--brand-foreground);
+  border-color: var(--brand-solid);
+}
+
+.theme-switcher__option--active:hover,
+.theme-switcher__option--active:focus {
+  background: var(--brand-solid-hover);
+  color: var(--brand-foreground);
+  border-color: var(--brand-solid-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switcher__menu,
+  .theme-switcher__option {
+    transition: none;
+  }
+}
+
+/* Theme opens as a menu, not a stack of icon buttons. */
+.windows95 .theme-switcher__trigger,
+.windows95 .theme-switcher__option {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  color: var(--foreground);
+  box-shadow: none;
+}
+
+.windows95 .theme-switcher__menu {
+  top: 100%;
+  left: 0;
+  gap: 0;
+  min-width: 7.5rem;
+  padding: 2px;
+  border: 0;
+  background: var(--win-surface);
+  box-shadow: var(--win-border-window);
+  transform: none;
+}
+
+.windows95 .theme-switcher--open .theme-switcher__menu {
+  transform: none;
+}
+
+.windows95 .theme-switcher__option {
+  justify-content: flex-start;
+  width: 100%;
+  padding: 3px 8px;
+  font-family: var(--font-win);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  transition: none;
+  -webkit-font-smoothing: none;
+}
+
+.windows95 .theme-switcher__option:hover,
+.windows95 .theme-switcher__option:focus-visible {
+  background: var(--win-navy);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.windows95 .theme-switcher__option--active::before {
+  content: "✓ ";
+}
+
+.windows95 .theme-switcher__option--active,
+.windows95 .theme-switcher__option--active:hover,
+.windows95 .theme-switcher__option--active:focus {
+  background: transparent;
+  color: var(--foreground);
+  box-shadow: none;
+}
+
+.windows95 .theme-switcher__option--active:hover,
+.windows95 .theme-switcher__option--active:focus,
+.windows95 .theme-switcher__option--active:focus-visible {
+  background: var(--win-navy);
+  color: #ffffff;
 }
 
 /* Pagefind search highlights */
@@ -374,9 +1343,53 @@ mark {
   }
 }
 
-/* Component focus states use color, underline, or background changes. */
-:where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+/*
+  Links, buttons, and summaries already restyle on :focus
+  (underline, color, background). Keep the UA outline off.
+  Form fields have no other treatment, so they get a brand ring.
+*/
+:where(a, button, summary, [tabindex]):focus-visible {
   outline: none;
+}
+
+:where(a, button, summary, input, select, textarea, [tabindex]):focus:not(
+    :focus-visible
+  ) {
+  outline: none;
+}
+
+:where(input, select, textarea):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Theme switcher needs a visible focus ring (icon-only radios). */
+.theme-switcher__option:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.windows95 .theme-switcher__option:focus-visible {
+  outline: 2px dotted #000000;
+  outline-offset: -2px;
+}
+
+/* Current-page nav already looks focused; invert to body text on Tab. */
+nav[aria-label="main navigation"] .nav-link[aria-current="page"]:focus-visible {
+  @apply text-foreground underline decoration-foreground decoration-4
+    underline-offset-4;
+}
+
+.windows95
+  nav[aria-label="main navigation"]
+  .nav-link[aria-current="page"]:focus-visible {
+  color: var(--foreground);
+  background: var(--win-surface);
+  box-shadow: var(--win-border-sunken);
+  text-decoration: none;
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
 }
 
 @media (min-width: 1024px) {
@@ -413,6 +1426,11 @@ mark {
       oklch(0.65 0.25 350 / 0.4) 1.2px,
       transparent 1.2px
     );
+  }
+
+  /* Win95 desktop: no modern brand dots */
+  :is(.windows95) body::after {
+    display: none;
   }
 }
 

@@ -51,7 +51,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
       const headingId = getHeadingId(guestName, date);
       const eventLocation = `${Astro.request.url}#${headingId}`;
       const videoPageUrl = youtubeStreamLink
-        ? `${new URL(Astro.request.url).origin}/videos/${slugifyVideo(title, guestName)}`
+        ? `/videos/${slugifyVideo(title, guestName)}`
         : undefined;
       const noGuest =
         guestName === "nickytonline" || guestName === "2Full2Stack";

@@ -11,6 +11,24 @@ function getClient() {
   });
 }
 
+/**
+ * Returns the value only if it is a valid http(s) URL, otherwise undefined.
+ * Keeps z.url() schema fields from rejecting dirty Turso values.
+ */
+function sanitizeHttpUrl(value: unknown): string | undefined {
+  if (typeof value !== "string" || !value) return undefined;
+  const lower = value.toLowerCase();
+  if (!lower.startsWith("http://") && !lower.startsWith("https://")) {
+    return undefined;
+  }
+  try {
+    new URL(value);
+    return value;
+  } catch {
+    return undefined;
+  }
+}
+
 function mapRowToSchedule(row: Record<string, unknown>): StreamGuestInfo {
   const {
     type,
@@ -46,7 +64,7 @@ function mapRowToSchedule(row: Record<string, unknown>): StreamGuestInfo {
     title: title as string,
     description: description as string,
     youtubeStreamLink: (youtube_stream_link as string) ?? undefined,
-    linkedinStreamLink: (linkedin_stream_link as string) ?? undefined,
+    linkedinStreamLink: sanitizeHttpUrl(linkedin_stream_link),
     twitter: (twitter as string) ?? undefined,
     twitch: (twitch as string) ?? undefined,
     github: (github as string) ?? undefined,

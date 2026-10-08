@@ -2,119 +2,18 @@
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import { curatedProjects } from "../data/curated-projects";
+import { enrichCuratedProjects } from "../lib/github/enrichCuratedProjects";
+import {
+  PROJECTS_CACHE_MAX_SECONDS,
+  setFixedCdnCacheHeaders,
+} from "../utils/cdn-cache";
 
-export const prerender = true;
+const projects = await enrichCuratedProjects(curatedProjects);
 
-interface ProjectLink {
-  label: string;
-  url: string;
-}
+setFixedCdnCacheHeaders(Astro.response.headers, PROJECTS_CACHE_MAX_SECONDS);
 
-interface CuratedProject {
-  owner: string;
-  name: string;
-  description: string;
-  url: string;
-  stargazerCount: number;
-  forkCount: number;
-  primaryLanguage?: { name: string; color: string } | null;
-  myRole?: string;
-  links?: ProjectLink[];
-}
-
-const projects: CuratedProject[] = [
-  {
-    owner: "nickytonline",
-    name: "mcp-typescript-template",
-    description:
-      "Production-ready starter for building MCP servers in TypeScript. No build step needed during development, Vite for production, Vitest for testing, Pino logging, and Docker support out of the box.",
-    url: "https://github.com/nickytonline/mcp-typescript-template",
-    stargazerCount: 55,
-    forkCount: 12,
-    primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
-    myRole: "Author & maintainer",
-    links: [
-      {
-        label: "Blog post",
-        url: "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template/",
-      },
-    ],
-  },
-  {
-    owner: "pomerium",
-    name: "mcp-app-typescript-template",
-    description:
-      "A well-architected starter for building MCP Apps with TypeScript, React widgets, the OpenAI Apps SDK, and Pomerium. Includes a Node.js server, Storybook, Vitest, and production-ready patterns.",
-    url: "https://github.com/pomerium/mcp-app-typescript-template",
-    stargazerCount: 19,
-    forkCount: 7,
-    primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
-    myRole: "Author & maintainer",
-  },
-  {
-    owner: "pomerium",
-    name: "mcp-app-demo",
-    description:
-      "A full chat client that started as a demo for securing MCP servers with Pomerium and grew into a real application. Supports multiple MCP servers with Zero Trust access control. Used internally and at conference demos.",
-    url: "https://github.com/pomerium/mcp-app-demo",
-    stargazerCount: 51,
-    forkCount: 7,
-    primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
-    myRole: "Author & maintainer",
-  },
-  {
-    owner: "openclaw",
-    name: "openclaw",
-    description:
-      "Open-source personal AI assistant you run on your own devices, supporting 20+ messaging channels. I contributed the Trusted Proxy authentication mode — hardening access to the control plane UI and SSH.",
-    url: "https://github.com/openclaw/openclaw",
-    stargazerCount: 381855,
-    forkCount: 80092,
-    primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
-    myRole: "Contributor",
-    links: [
-      { label: "Setup guide", url: "https://usepom.link/claw-guide" },
-      {
-        label: "AI Engineer Europe 2026 talk",
-        url: "/talks/claws-out-securing-and-building-with-openclaw-ai-engineer-europe-2026",
-      },
-    ],
-  },
-  {
-    owner: "nickytonline",
-    name: "dev-to-mcp",
-    description:
-      "A remote MCP server for the dev.to public API — no authentication required. Browse articles, search content, fetch user profiles, and pull comments from dev.to via any MCP-compatible client.",
-    url: "https://github.com/nickytonline/dev-to-mcp",
-    stargazerCount: 44,
-    forkCount: 15,
-    primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
-    myRole: "Author & maintainer",
-    links: [
-      {
-        label: "Blog post",
-        url: "/blog/introducing-the-devto-mcp-server/",
-      },
-    ],
-  },
-  {
-    owner: "nickytonline",
-    name: "clawspace",
-    description:
-      "Browser-based file explorer and editor for OpenClaw workspaces. Monaco editor (the same engine powering VS Code), file browsing, editing, saving, and reverting — faster than reaching for a terminal for quick workspace edits.",
-    url: "https://github.com/nickytonline/clawspace",
-    stargazerCount: 11,
-    forkCount: 0,
-    primaryLanguage: { name: "Astro", color: "#FF5D01" },
-    myRole: "Author & maintainer",
-    links: [
-      {
-        label: "Blog post",
-        url: "/blog/clawspace-a-browser-based-file-explorer-for-openclaw/",
-      },
-    ],
-  },
-];
+export const prerender = false;
 ---
 
 <Layout

@@ -2,14 +2,15 @@
 title: "Build your First MCP App"
 date: 2026-09-03T12:00:00.000Z
 endDate: 2026-09-04T12:00:00.000Z
-upcoming: true
 cover_image: /assets/talks/commit-your-code-2026-thumb.jpg
 cover_image_large: /assets/talks/commit-your-code-2026-cover.jpg
 venue:
   name: "Commit Your Code 2026"
   url: "https://www.commityourcode.com/"
   location: "Capital One Campus, Plano, TX"
-registrationUrl: "https://www.commityourcode.com/"
+video:
+  { "url": "https://youtube.com/watch?v=zdGf2U7jskc", "type": "youtube" }
+slideDeck: https://cyc2026.netlify.app/
 tags: ["mcp", "agentic ai", "pomerium", "zero trust", "security", "ai"]
 ---
 

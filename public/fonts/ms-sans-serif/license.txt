@@ -1,0 +1,17 @@
+Pixelated MS Sans Serif
+https://fontstruct.com/fontstructions/show/1384746
+by “lou”
+Creative Commons Attribution-ShareAlike 3.0
+http://creativecommons.org/licenses/by-sa/3.0/
+
+Pixelated MS Sans Serif Bold
+https://fontstruct.com/fontstructions/show/1384862
+by “lou”
+Creative Commons Attribution-ShareAlike 3.0
+http://creativecommons.org/licenses/by-sa/3.0/
+
+The woff2 files are the conversions shipped with 98.css (MIT):
+https://github.com/jdan/98.css
+Copyright (c) 2020 Jordan Scales
+
+Best displayed at 11px.
