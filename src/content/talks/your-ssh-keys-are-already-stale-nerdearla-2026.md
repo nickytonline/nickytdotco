@@ -9,6 +9,7 @@ venue:
 video:
   { "url": "https://www.youtube.com/watch?v=Rard1glAXVA", "type": "youtube" }
 tags: ["ssh", "security", "devops", "sre", "identity", "infrastructure"]
+featured: true
 ---
 
 Someone on your team left six months ago. Their SSH key is probably still on a server somewhere.
