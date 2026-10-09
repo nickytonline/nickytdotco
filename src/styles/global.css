@@ -412,6 +412,11 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   --win-link: #0000ff;
   --win-desktop: #008080;
   --win-title: linear-gradient(90deg, var(--win-navy), var(--win-navy-light));
+  /* Original 2×2 squares for Start. Not the Windows flag logo. */
+  --win-start-nw: #c23b2e;
+  --win-start-ne: #2f8a3a;
+  --win-start-sw: #2458b0;
+  --win-start-se: #d4a017;
 
   /* 98.css raised / sunken / window / field borders, as one box-shadow each. */
   --win-border-raised:
@@ -1088,7 +1093,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   outline-offset: -2px;
 }
 
-/* Desktop taskbar. Start uses a generic four-pane glyph, not the Windows logo. */
+/* Desktop taskbar. Start uses an original four-square glyph, not the Windows logo. */
 [data-win-taskbar] {
   display: none;
 }
@@ -1126,8 +1131,8 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 
 .windows95 [data-win-start-icon] {
   display: block;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   flex: none;
 }
 
