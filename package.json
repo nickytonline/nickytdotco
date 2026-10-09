@@ -30,7 +30,7 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/markdown-remark": "^7.3.1",
     "@astrojs/mdx": "^8.0.1",
-    "@astrojs/netlify": "^8.2.3",
+    "@astrojs/netlify": "^8.2.4",
     "@astrojs/react": "^7.0.0",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
