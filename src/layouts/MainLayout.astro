@@ -136,8 +136,29 @@ const currentYear = new Date().getFullYear();
       </footer>
     </div>
     <div data-win-taskbar>
-      <a href="/">Start</a>
+      <a href="/">
+        <svg
+          data-win-start-icon
+          viewBox="0 0 16 16"
+          width="16"
+          height="16"
+          aria-hidden="true"
+        >
+          <rect width="7" height="7" fill="var(--win-start-nw)"></rect>
+          <rect x="9" width="7" height="7" fill="var(--win-start-ne)"></rect>
+          <rect y="9" width="7" height="7" fill="var(--win-start-sw)"></rect>
+          <rect x="9" y="9" width="7" height="7" fill="var(--win-start-se)"></rect>
+        </svg>
+        Start
+      </a>
       <button type="button" data-win-action="restore" data-win-task>
+        <img
+          src={site.faviconPath}
+          alt=""
+          width="16"
+          height="16"
+          data-win-task-icon
+        />
         nickyt.co
       </button>
       <time data-win-clock>--:--</time>
@@ -220,6 +241,84 @@ const currentYear = new Date().getFullYear();
           }
           applyWinState(saved);
         };
+
+        let titleClickTimer = 0;
+
+        const cancelTitleClick = () => {
+          window.clearTimeout(titleClickTimer);
+          titleClickTimer = 0;
+        };
+
+        const toggleMaximized = () => {
+          const current = document.documentElement.dataset.winState || "open";
+          if (current === "minimized" || current === "closed") return;
+          setWinState(current === "maximized" ? "open" : "maximized");
+        };
+
+        const titleLinkFrom = (target) => {
+          if (!(target instanceof Element)) return null;
+          if (!document.documentElement.classList.contains("windows95")) {
+            return null;
+          }
+          const titleLink = target.closest("[data-site-header] .site-logo a");
+          return titleLink instanceof HTMLAnchorElement ? titleLink : null;
+        };
+
+        // Win95/98: a double-click on the title bar toggles maximize. Hold the
+        // title link's first click until the double-click window closes so
+        // that gesture does not navigate home.
+        document.addEventListener(
+          "pointerdown",
+          (event) => {
+            if (event.detail < 2) return;
+            if (!titleLinkFrom(event.target)) return;
+            cancelTitleClick();
+          },
+          true,
+        );
+
+        document.addEventListener(
+          "click",
+          (event) => {
+            const titleLink = titleLinkFrom(event.target);
+            if (!titleLink) return;
+
+            if (event.detail > 1) {
+              cancelTitleClick();
+              event.preventDefault();
+              event.stopPropagation();
+              return;
+            }
+
+            if (event.detail !== 1) return;
+
+            event.preventDefault();
+            event.stopPropagation();
+            cancelTitleClick();
+            titleClickTimer = window.setTimeout(() => {
+              titleClickTimer = 0;
+              titleLink.dispatchEvent(
+                new MouseEvent("click", {
+                  bubbles: true,
+                  cancelable: true,
+                  view: window,
+                }),
+              );
+            }, 500);
+          },
+          true,
+        );
+
+        document.addEventListener("dblclick", (event) => {
+          const target = event.target;
+          if (!(target instanceof Element)) return;
+          if (!document.documentElement.classList.contains("windows95")) return;
+          if (!target.closest("[data-site-header] .site-logo")) return;
+
+          cancelTitleClick();
+          event.preventDefault();
+          toggleMaximized();
+        });
 
         document.addEventListener("click", (event) => {
           const target = event.target;

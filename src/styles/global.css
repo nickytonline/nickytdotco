@@ -412,6 +412,11 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   --win-link: #0000ff;
   --win-desktop: #008080;
   --win-title: linear-gradient(90deg, var(--win-navy), var(--win-navy-light));
+  /* Original 2×2 squares for Start. Not the Windows flag logo. */
+  --win-start-nw: #c23b2e;
+  --win-start-ne: #2f8a3a;
+  --win-start-sw: #2458b0;
+  --win-start-se: #d4a017;
 
   /* 98.css raised / sunken / window / field borders, as one box-shadow each. */
   --win-border-raised:
@@ -699,6 +704,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
+  user-select: none;
   -webkit-font-smoothing: none;
 }
 
@@ -1087,7 +1093,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   outline-offset: -2px;
 }
 
-/* Desktop taskbar. Text only — no Windows logo. */
+/* Desktop taskbar. Start uses an original four-square glyph, not the Windows logo. */
 [data-win-taskbar] {
   display: none;
 }
@@ -1113,13 +1119,21 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 .windows95 [data-win-taskbar] a {
   display: inline-flex;
   align-items: center;
+  gap: 4px;
   min-height: 22px;
-  padding: 2px 8px;
+  padding: 2px 6px 2px 4px;
   background: var(--win-surface);
   color: var(--foreground);
   font-weight: 700;
   text-decoration: none;
   box-shadow: var(--win-border-raised);
+}
+
+.windows95 [data-win-start-icon] {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: none;
 }
 
 .windows95 [data-win-taskbar] a:active,
@@ -1131,9 +1145,10 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 .windows95 [data-win-task] {
   display: inline-flex;
   align-items: center;
+  gap: 4px;
   min-height: 22px;
   max-width: 12rem;
-  padding: 2px 8px;
+  padding: 2px 6px 2px 4px;
   border: none;
   border-radius: 0;
   background: var(--win-surface);
@@ -1142,6 +1157,13 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   font-size: 11px;
   font-weight: 400;
   box-shadow: var(--win-border-raised);
+}
+
+.windows95 [data-win-task-icon] {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: none;
 }
 
 .windows95[data-win-state="open"] [data-win-task],
