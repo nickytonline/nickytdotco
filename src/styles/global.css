@@ -1088,7 +1088,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   outline-offset: -2px;
 }
 
-/* Desktop taskbar. Start stays text-only — no Windows logo. */
+/* Desktop taskbar. Start uses a generic four-pane glyph, not the Windows logo. */
 [data-win-taskbar] {
   display: none;
 }
@@ -1114,13 +1114,21 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 .windows95 [data-win-taskbar] a {
   display: inline-flex;
   align-items: center;
+  gap: 4px;
   min-height: 22px;
-  padding: 2px 8px;
+  padding: 2px 6px 2px 4px;
   background: var(--win-surface);
   color: var(--foreground);
   font-weight: 700;
   text-decoration: none;
   box-shadow: var(--win-border-raised);
+}
+
+.windows95 [data-win-start-icon] {
+  display: block;
+  width: 14px;
+  height: 14px;
+  flex: none;
 }
 
 .windows95 [data-win-taskbar] a:active,
