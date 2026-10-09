@@ -332,11 +332,14 @@ const Search = () => {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="inline-flex hover:text-brand focus:text-brand transition-colors"
+        className="win-menu-command inline-flex hover:text-brand focus:text-brand transition-colors"
         aria-label="Search site"
         aria-keyshortcuts={SEARCH_ARIA_KEYSHORTCUTS}
       >
         <SearchIcon className="w-4.5 h-4.5 lg:w-5 lg:h-5" strokeWidth={3} />
+        <span className="win-menu-label" aria-hidden="true">
+          Search
+        </span>
         <span className="sr-only">Search</span>
       </button>
 

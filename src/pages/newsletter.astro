@@ -2,6 +2,7 @@
 import { getLiveCollection } from "astro:content";
 import Layout from "../layouts/MainLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import { Button } from "../components/Button";
 import { dateFilter } from "../utils/filters";
 import { scheduleSearchReindex } from "../lib/search/scheduleSearchReindex";
 
@@ -23,6 +24,7 @@ const sortedPosts = [...newsletter].sort((a, b) => {
 
 const SUBSCRIBE_URL =
   "https://OneTipAWeek.com?utm_source=nickytco&utm_medium=social";
+const RSS_URL = "https://onetipaweek.com/rss";
 
 Astro.response.headers.set(
   "Cache-Control",
@@ -42,6 +44,15 @@ export const prerender = false;
   metaDesc="One Tip a Week — practical developer tips delivered weekly by Nick Taylor. Browse past issues and subscribe."
   socialImage="/assets/images/page-og/newsletter.jpg"
 >
+  <Fragment slot="head">
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="One Tip a Week RSS"
+      href={RSS_URL}
+    />
+  </Fragment>
+
   <div class="mb-6">
     <SectionHeader title="Newsletter" headingLevel={1} />
     <p class="text-xl text-muted-foreground mt-6">
@@ -52,14 +63,37 @@ export const prerender = false;
       workflows, Git, productivity, terminal tricks, and other things I
       actually use.
     </p>
-    <div class="mt-6">
-      <a
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <Button
         href={SUBSCRIBE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center px-5 py-2.5 text-base font-semibold text-brand-foreground bg-brand-solid hover:bg-brand-solid-hover dark:bg-brand-solid dark:hover:bg-brand-solid rounded-lg transition-colors focus:bg-brand-solid-hover dark:focus:bg-brand-solid"
       >
         Subscribe to One Tip a Week
+      </Button>
+      <a
+        href={RSS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-5 py-2.5 text-base font-semibold leading-6 text-foreground transition-colors hover:bg-secondary focus:bg-secondary"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          class="h-4 w-4"
+        >
+          <path d="M4 11a9 9 0 0 1 9 9"></path>
+          <path d="M4 4a16 16 0 0 1 16 16"></path>
+          <circle cx="5" cy="19" r="1"></circle>
+        </svg>
+        RSS feed
+        <span class="sr-only"> for One Tip a Week</span>
       </a>
     </div>
   </div>

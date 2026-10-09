@@ -79,19 +79,20 @@ test.describe("talks archive", () => {
     expect(eventStructuredDataCount).toBe(1);
   });
 
-  test("upcoming talks render a markdown ticket promo", async ({ page }) => {
+  test("hides a ticket promo after the talk ends", async ({ page }) => {
     await page.goto(
       "/talks/share-work-not-access-control-identity-for-multiplayer-agents-ai-context-san-jose-2026"
     );
 
-    const promo = page.getByRole("complementary", { name: "Ticket offer" });
-    await expect(promo).toBeVisible();
     await expect(
-      promo.getByRole("link", { name: "NICKTAYLOR50" })
-    ).toHaveAttribute("href", "https://luma.com/sanjose26?coupon=NICKTAYLOR50");
+      page.getByRole("main").getByRole("heading", {
+        level: 1,
+        name: "Share Work, Not Access: Control & Identity for Multiplayer Agents",
+      })
+    ).toBeVisible();
     await expect(
-      promo.getByRole("link", { name: /register on Luma/i })
-    ).toHaveAttribute("href", "https://luma.com/sanjose26?coupon=NICKTAYLOR50");
+      page.getByRole("complementary", { name: "Ticket offer" })
+    ).toHaveCount(0);
   });
 
   test("past talks do not show a ticket promo", async ({ page }) => {

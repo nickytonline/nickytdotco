@@ -42,21 +42,45 @@ test.describe("home page", () => {
     ).toHaveAttribute("href", "/mcp");
   });
 
-  test("includes the selected AI and Zero Trust talks", async ({ page }) => {
+  test("shows a capped featured set in Start here", async ({ page }) => {
     await page.goto("/");
 
-    await expect(
-      page.getByRole("heading", {
+    const startHere = page
+      .getByRole("heading", { level: 2, name: "Start here" })
+      .locator("xpath=ancestor::section");
+
+    // Caps match the homepage slices: two talks, two tutorials, one post.
+    const groups = [
+      { name: "Talks", href: /^\/talks\//, max: 2 },
+      { name: "Hands-On Tutorials", href: /^https:\/\//, max: 2 },
+      { name: "Writing", href: /^\/blog\//, max: 1 },
+    ] as const;
+
+    const present: string[] = [];
+
+    for (const group of groups) {
+      const heading = startHere.getByRole("heading", {
         level: 3,
-        name: "Claws Out: Securing and Building with OpenClaw",
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", {
-        level: 3,
-        name: "Kubernetes Without Borders: Building Zero Trust Security for Dynamic Workloads",
-      })
-    ).toBeVisible();
+        name: group.name,
+        exact: true,
+      });
+      if ((await heading.count()) === 0) continue;
+
+      present.push(group.name);
+      const cards = heading.locator("xpath=..").getByRole("article");
+      await expect(cards.first()).toBeVisible();
+      expect(await cards.count()).toBeLessThanOrEqual(group.max);
+
+      for (const card of await cards.all()) {
+        await expect(card.getByRole("heading", { level: 3 })).toHaveText(/\S/);
+        await expect(card.getByRole("link")).toHaveAttribute(
+          "href",
+          group.href
+        );
+      }
+    }
+
+    expect(present.length).toBeGreaterThan(0);
   });
 
   test("promotes speaking and newsletter CTAs in the hero", async ({
