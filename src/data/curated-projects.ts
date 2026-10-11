@@ -83,6 +83,16 @@ export const curatedProjects: CuratedProjectBase[] = [
   },
   {
     owner: "nickytonline",
+    name: "beads-mcp",
+    description:
+      "A remote TypeScript MCP for Steve Yegge's Beads. Agents share an engineering backlog through eleven tools — ready, claim, handoff, and more — with JWT auth, agent skill discovery, and a containerized embedded Dolt store.",
+    url: "https://github.com/nickytonline/beads-mcp",
+    primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
+    myRole: "Author & maintainer",
+    fallbackStats: { stargazerCount: 1, forkCount: 0 },
+  },
+  {
+    owner: "nickytonline",
     name: "dev-to-mcp",
     description:
       "A remote MCP server for the dev.to public API — no authentication required. Browse articles, search content, fetch user profiles, and pull comments from dev.to via any MCP-compatible client.",
