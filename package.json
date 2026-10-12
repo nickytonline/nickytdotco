@@ -39,7 +39,7 @@
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.3.0",
     "@google/genai": "^2.19.0",
-    "@libsql/client": "^0.17.4",
+    "@libsql/client": "^0.18.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@varlock/1password-plugin": "^2.0.4",
