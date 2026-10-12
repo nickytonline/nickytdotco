@@ -49,6 +49,19 @@ else
   echo "Looks like there were no generated changes."
 fi
 
+# Fresh branches with no commits ahead of main cannot open a PR (GitHub 422 /
+# "No commits between main and ..."). Exit cleanly instead of failing the job
+# when sync only hit remote DEV.to updates that produced no local diff, or when
+# there was nothing to do.
+if ! git rev-parse --verify origin/main >/dev/null 2>&1; then
+  git fetch origin main
+fi
+COMMITS_AHEAD=$(git rev-list --count "origin/main..HEAD")
+if [[ "$COMMITS_AHEAD" -eq 0 ]]; then
+  echo "No commits ahead of origin/main; skipping push and PR."
+  exit 0
+fi
+
 # Push and verify it succeeded.
 if ! git push origin "$BRANCH_NAME"; then
   echo "Failed to push branch"

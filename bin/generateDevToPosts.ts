@@ -7,6 +7,7 @@ import { readFileSync } from "fs";
 import { dump } from "js-yaml";
 import slugify from "slugify";
 import siteData from "../src/data/site.ts";
+import { replaceBrokenLiquidEmbeds } from "../src/utils/devToLiquidEmbeds.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -724,19 +725,16 @@ async function getDevPosts(): Promise<DevToPostSummary[]> {
   );
 }
 
-/**
- * Updates the canonical URL on the corresponding DEV.to post.
- *
- * @param blogPostId The ID of the DEV.to post to update.
- * @param canonicalUrl The canonical URL for the local blog post.
- *
- * @returns The edited_at timestamp returned by DEV.to after the update.
- */
-async function updateDevToPostCanonicalUrl(
+interface DevToArticleUpdateResponse {
+  edited_at?: unknown;
+  canonical_url?: unknown;
+  body_markdown?: unknown;
+}
+
+async function putDevToArticleUpdate(
   blogPostId: number,
-  canonicalUrl: string,
-  title: string
-): Promise<string | null> {
+  article: { canonical_url: string; body_markdown?: string }
+): Promise<{ response: Response; errorBody: string }> {
   const updateArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
   const response = await fetchWithRetry(updateArticleUrl, {
     method: "PUT",
@@ -745,28 +743,22 @@ async function updateDevToPostCanonicalUrl(
       "api-key": DEV_API_KEY!,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ article: { canonical_url: canonicalUrl } }),
+    body: JSON.stringify({ article }),
   });
 
-  if (!response.ok) {
-    const errorBody = await response.text();
-    throw new Error(
-      `Failed to update canonical URL for post ${blogPostId}: ${response.status} ${response.statusText}: ${errorBody}`
-    );
+  if (response.ok) {
+    return { response, errorBody: "" };
   }
 
-  let updatedPost: {
-    edited_at?: unknown;
-    canonical_url?: unknown;
-    body_markdown?: unknown;
-  };
-  try {
-    updatedPost = await response.json();
-  } catch (error) {
-    throw new Error(
-      `Failed to parse canonical URL update response for ${updateArticleUrl}: ${getErrorMessage(error)}`
-    );
-  }
+  return { response, errorBody: await response.text() };
+}
+
+function parseDevToArticleUpdateResponse(
+  responseBody: unknown,
+  blogPostId: number,
+  canonicalUrl: string
+): string | null {
+  const updatedPost = responseBody as DevToArticleUpdateResponse;
 
   if (
     !Object.hasOwn(updatedPost, "edited_at") ||
@@ -796,11 +788,82 @@ async function updateDevToPostCanonicalUrl(
     );
   }
 
+  return updatedPost.edited_at as string | null;
+}
+
+/**
+ * Updates the canonical URL on the corresponding DEV.to post.
+ *
+ * Forem re-evaluates body_markdown liquid tags on every article PUT, even when
+ * only canonical_url changes. Dead `{% embed %}` / `{% github %}` URLs then
+ * return 422. When that happens and we have the current body, rewrite broken
+ * embeds to markdown links and retry with body_markdown + canonical_url.
+ *
+ * @param blogPostId The ID of the DEV.to post to update.
+ * @param canonicalUrl The canonical URL for the local blog post.
+ * @param title The post title (for logging).
+ * @param bodyMarkdown Current DEV body_markdown, used to repair embeds on 422.
+ *
+ * @returns The edited_at timestamp returned by DEV.to after the update.
+ */
+async function updateDevToPostCanonicalUrl(
+  blogPostId: number,
+  canonicalUrl: string,
+  title: string,
+  bodyMarkdown?: string
+): Promise<string | null> {
+  const updateArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
+  let { response, errorBody } = await putDevToArticleUpdate(blogPostId, {
+    canonical_url: canonicalUrl,
+  });
+
+  if (
+    !response.ok &&
+    response.status === 422 &&
+    typeof bodyMarkdown === "string" &&
+    bodyMarkdown.length > 0
+  ) {
+    const { markdown, replacedUrls } =
+      await replaceBrokenLiquidEmbeds(bodyMarkdown);
+
+    if (replacedUrls.length > 0) {
+      console.warn(
+        `Repairing ${replacedUrls.length} broken liquid embed(s) on "${title}" (${blogPostId}) before retrying canonical URL update: ${replacedUrls.join(", ")}`
+      );
+      await sleep(1000);
+      ({ response, errorBody } = await putDevToArticleUpdate(blogPostId, {
+        canonical_url: canonicalUrl,
+        body_markdown: markdown,
+      }));
+    }
+  }
+
+  if (!response.ok) {
+    throw new Error(
+      `Failed to update canonical URL for post ${blogPostId}: ${response.status} ${response.statusText}: ${errorBody}`
+    );
+  }
+
+  let updatedPost: unknown;
+  try {
+    updatedPost = await response.json();
+  } catch (error) {
+    throw new Error(
+      `Failed to parse canonical URL update response for ${updateArticleUrl}: ${getErrorMessage(error)}`
+    );
+  }
+
+  const editedAt = parseDevToArticleUpdateResponse(
+    updatedPost,
+    blogPostId,
+    canonicalUrl
+  );
+
   console.log(
     `Updated DEV.to canonical URL for "${title}" (${blogPostId}) to ${canonicalUrl}`
   );
 
-  return updatedPost.edited_at as string | null;
+  return editedAt;
 }
 
 /**
@@ -812,7 +875,8 @@ async function updateDevToPostCanonicalUrl(
 async function tryUpdateDevToPostCanonicalUrl(
   blogPostId: number,
   canonicalUrl: string,
-  title: string
+  title: string,
+  bodyMarkdown?: string
 ): Promise<{ success: boolean; editedAt: string | null }> {
   try {
     return {
@@ -820,7 +884,8 @@ async function tryUpdateDevToPostCanonicalUrl(
       editedAt: await updateDevToPostCanonicalUrl(
         blogPostId,
         canonicalUrl,
-        title
+        title,
+        bodyMarkdown
       ),
     };
   } catch (error) {
@@ -1264,7 +1329,8 @@ async function saveDevToPostSyncState(
       const canonicalUpdate = await tryUpdateDevToPostCanonicalUrl(
         postSummary.id,
         localCanonicalUrl,
-        postSummary.title
+        postSummary.title,
+        post.body_markdown
       );
       if (canonicalUpdate.success) {
         devToPostSyncState.posts[syncKey] = canonicalUpdate.editedAt;
@@ -1291,7 +1357,8 @@ async function saveDevToPostSyncState(
         const canonicalUpdate = await tryUpdateDevToPostCanonicalUrl(
           postSummary.id,
           localCanonicalUrl,
-          postSummary.title
+          postSummary.title,
+          post.body_markdown
         );
         if (canonicalUpdate.success) {
           syncEditedAt = canonicalUpdate.editedAt;
