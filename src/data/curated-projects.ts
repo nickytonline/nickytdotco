@@ -55,16 +55,6 @@ export const curatedProjects: CuratedProjectBase[] = [
     fallbackStats: { stargazerCount: 19, forkCount: 7 },
   },
   {
-    owner: "pomerium",
-    name: "mcp-app-demo",
-    description:
-      "A full chat client that started as a demo for securing MCP servers with Pomerium and grew into a real application. Supports multiple MCP servers with Zero Trust access control. Used internally and at conference demos.",
-    url: "https://github.com/pomerium/mcp-app-demo",
-    primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
-    myRole: "Author & maintainer",
-    fallbackStats: { stargazerCount: 51, forkCount: 7 },
-  },
-  {
     owner: "openclaw",
     name: "openclaw",
     description:
