@@ -3,7 +3,8 @@
  * updates (including canonical_url-only PUTs, which still re-evaluate markdown).
  */
 
-const LIQUID_EMBED_TAG_RE = /{%\s*(embed|github)\s+([^%]+?)%}/gi;
+/** Any liquid tag whose args include an http(s) URL (embed, github, codepen, …). */
+const LIQUID_URL_TAG_RE = /{%\s*([a-zA-Z]+)\s+([^%]+?)%}/gi;
 
 /** Hosts Forem's UnifiedEmbed validator skips (never treated as 404). */
 const FOREM_SKIP_VALIDATION_HOSTS = new Set([
@@ -20,14 +21,20 @@ export interface LiquidEmbedTag {
   url: string;
 }
 
+function extractUrlFromLiquidArgs(rawArgs: string): string | undefined {
+  return rawArgs
+    .split(/\s+/)
+    .map((part) => part.replace(/^["']|["']$/g, ""))
+    .find((part) => /^https?:\/\//i.test(part));
+}
+
 export function extractLiquidEmbedTags(bodyMarkdown: string): LiquidEmbedTag[] {
   const tags: LiquidEmbedTag[] = [];
 
-  for (const match of bodyMarkdown.matchAll(LIQUID_EMBED_TAG_RE)) {
+  for (const match of bodyMarkdown.matchAll(LIQUID_URL_TAG_RE)) {
     const fullTag = match[0];
     const tagName = match[1]!.toLowerCase();
-    const rawArgs = match[2]!.trim();
-    const url = rawArgs.split(/\s+/).find((part) => /^https?:\/\//i.test(part));
+    const url = extractUrlFromLiquidArgs(match[2]!.trim());
 
     if (!url) {
       continue;
@@ -87,25 +94,82 @@ export async function isUrlReachableForForemEmbed(
 
 export interface ReplaceBrokenLiquidEmbedsResult {
   markdown: string;
+  /** Specialized URL tags rewritten to `{% embed url %}`. */
+  convertedToEmbedUrls: string[];
+  /** Unreachable `{% embed %}` tags rewritten to markdown links. */
+  replacedWithMarkdownUrls: string[];
+  /** All URLs touched by either repair step (for logging). */
   replacedUrls: string[];
 }
 
+function replaceFirstOccurrence(
+  markdown: string,
+  search: string,
+  replacement: string
+): string | null {
+  const index = markdown.indexOf(search);
+  if (index === -1) {
+    return null;
+  }
+
+  return (
+    markdown.slice(0, index) +
+    replacement +
+    markdown.slice(index + search.length)
+  );
+}
+
 /**
- * Replaces unreachable `{% embed %}` / `{% github %}` liquid tags with plain
- * markdown links so Forem article updates can succeed.
+ * Converts specialized URL-based liquid tags (e.g. `{% github url %}`,
+ * `{% codepen url %}`, `{% link url %}`) to the universal `{% embed url %}`.
+ */
+export function convertSpecializedLiquidTagsToEmbed(bodyMarkdown: string): {
+  markdown: string;
+  convertedUrls: string[];
+} {
+  const tags = extractLiquidEmbedTags(bodyMarkdown).filter(
+    (tag) => tag.tagName !== "embed"
+  );
+
+  let markdown = bodyMarkdown;
+  const convertedUrls: string[] = [];
+
+  for (const tag of tags) {
+    const next = replaceFirstOccurrence(
+      markdown,
+      tag.fullTag,
+      `{% embed ${tag.url} %}`
+    );
+    if (next === null) {
+      continue;
+    }
+
+    markdown = next;
+    convertedUrls.push(tag.url);
+  }
+
+  return { markdown, convertedUrls };
+}
+
+/**
+ * On Forem 422, repair liquid tags in preferred order:
+ * 1. Convert specialized URL tags to `{% embed url %}`.
+ * 2. Convert unreachable `{% embed %}` tags to markdown links so validation can
+ *    pass when the URL itself is dead.
  */
 export async function replaceBrokenLiquidEmbeds(
   bodyMarkdown: string,
   checkUrl: (url: string) => Promise<boolean> = isUrlReachableForForemEmbed
 ): Promise<ReplaceBrokenLiquidEmbedsResult> {
-  const tags = extractLiquidEmbedTags(bodyMarkdown);
+  const { markdown: afterSpecialize, convertedUrls: convertedToEmbedUrls } =
+    convertSpecializedLiquidTagsToEmbed(bodyMarkdown);
 
-  if (tags.length === 0) {
-    return { markdown: bodyMarkdown, replacedUrls: [] };
-  }
+  const tags = extractLiquidEmbedTags(afterSpecialize).filter(
+    (tag) => tag.tagName === "embed"
+  );
 
-  let markdown = bodyMarkdown;
-  const replacedUrls: string[] = [];
+  let markdown = afterSpecialize;
+  const replacedWithMarkdownUrls: string[] = [];
 
   for (const tag of tags) {
     if (shouldSkipUrlValidation(tag.url)) {
@@ -117,18 +181,23 @@ export async function replaceBrokenLiquidEmbeds(
       continue;
     }
 
-    // Only replace the first remaining occurrence of this exact tag text.
-    const index = markdown.indexOf(tag.fullTag);
-    if (index === -1) {
+    const next = replaceFirstOccurrence(
+      markdown,
+      tag.fullTag,
+      `[${tag.url}](${tag.url})`
+    );
+    if (next === null) {
       continue;
     }
 
-    markdown =
-      markdown.slice(0, index) +
-      `[${tag.url}](${tag.url})` +
-      markdown.slice(index + tag.fullTag.length);
-    replacedUrls.push(tag.url);
+    markdown = next;
+    replacedWithMarkdownUrls.push(tag.url);
   }
 
-  return { markdown, replacedUrls };
+  return {
+    markdown,
+    convertedToEmbedUrls,
+    replacedWithMarkdownUrls,
+    replacedUrls: [...convertedToEmbedUrls, ...replacedWithMarkdownUrls],
+  };
 }

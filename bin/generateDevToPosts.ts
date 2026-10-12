@@ -796,8 +796,9 @@ function parseDevToArticleUpdateResponse(
  *
  * Forem re-evaluates body_markdown liquid tags on every article PUT, even when
  * only canonical_url changes. Dead `{% embed %}` / `{% github %}` URLs then
- * return 422. When that happens and we have the current body, rewrite broken
- * embeds to markdown links and retry with body_markdown + canonical_url.
+ * return 422. When that happens and we have the current body, repair liquid
+ * tags (specialized URL tags → `{% embed %}`, then unreachable embeds →
+ * markdown links) and retry with body_markdown + canonical_url.
  *
  * @param blogPostId The ID of the DEV.to post to update.
  * @param canonicalUrl The canonical URL for the local blog post.
@@ -823,12 +824,27 @@ async function updateDevToPostCanonicalUrl(
     typeof bodyMarkdown === "string" &&
     bodyMarkdown.length > 0
   ) {
-    const { markdown, replacedUrls } =
-      await replaceBrokenLiquidEmbeds(bodyMarkdown);
+    const {
+      markdown,
+      replacedUrls,
+      convertedToEmbedUrls,
+      replacedWithMarkdownUrls,
+    } = await replaceBrokenLiquidEmbeds(bodyMarkdown);
 
     if (replacedUrls.length > 0) {
+      const repairParts: string[] = [];
+      if (convertedToEmbedUrls.length > 0) {
+        repairParts.push(
+          `${convertedToEmbedUrls.length} specialized tag(s) → embed (${convertedToEmbedUrls.join(", ")})`
+        );
+      }
+      if (replacedWithMarkdownUrls.length > 0) {
+        repairParts.push(
+          `${replacedWithMarkdownUrls.length} unreachable embed(s) → markdown (${replacedWithMarkdownUrls.join(", ")})`
+        );
+      }
       console.warn(
-        `Repairing ${replacedUrls.length} broken liquid embed(s) on "${title}" (${blogPostId}) before retrying canonical URL update: ${replacedUrls.join(", ")}`
+        `Repairing liquid embeds on "${title}" (${blogPostId}) before retrying canonical URL update: ${repairParts.join("; ")}`
       );
       await sleep(1000);
       ({ response, errorBody } = await putDevToArticleUpdate(blogPostId, {
