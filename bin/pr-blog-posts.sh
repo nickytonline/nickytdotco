@@ -40,11 +40,18 @@ vp run format
 # There are potentially multiple files if the blog post has images.
 git add .
 
-# Commit generated changes when there are any. An existing PR may also have
-# received a merge commit above, which should still be pushed below.
+# Commit generated changes when there are any. This runs after `vp run format`,
+# which includes `vp lint --fix`, so formatter and linter edits are included.
+# An existing PR may also have received a merge commit above, which should
+# still be pushed below.
 if [[ -n "$(git diff --cached --name-only)" ]]; then
   echo "Committing generated changes for $BRANCH_NAME"
   git commit -m "$PR_TITLE"
+elif [[ -z "$EXISTING_PR_NUMBER" ]]; then
+  # A fresh branch with nothing to commit is identical to main. Pushing it and
+  # opening a PR fails with "No commits between main and <branch>".
+  echo "Looks like there were no generated changes."
+  exit 0
 else
   echo "Looks like there were no generated changes."
 fi
