@@ -1,0 +1,41 @@
+---
+export const prerender = false;
+
+import { getEmDashCollection } from "emdash";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const { entries, error, cacheHint } = await getEmDashCollection("posts", {
+  orderBy: { published_at: "desc" },
+  limit: 20,
+});
+if (!error && Astro.cache?.enabled) Astro.cache.set(cacheHint);
+---
+
+<MainLayout title="Notes" metaDesc="Posts edited in EmDash.">
+  <h1 class="text-4xl font-bold tracking-tight text-foreground">Notes</h1>
+  <p class="mt-4 max-w-2xl text-muted-foreground">
+    Editor-managed posts. The blog, talks, and guides collections stay in the repository.
+  </p>
+  {
+    error ? (
+      <p class="mt-8 text-muted-foreground">
+        EmDash is installed. Posts show up here after the Turso database is connected and the first post is published.
+      </p>
+    ) : (
+      <ul class="mt-8 space-y-6">
+        {entries.map((post) => {
+          const title = typeof post.data.title === "string" ? post.data.title : post.id;
+          const excerpt = typeof post.data.excerpt === "string" ? post.data.excerpt : undefined;
+          return (
+            <li>
+              <a class="text-xl font-semibold text-foreground hover:text-brand" href={`/cms/${post.id}`}>
+                {title}
+              </a>
+              {excerpt && <p class="mt-1 text-muted-foreground">{excerpt}</p>}
+            </li>
+          );
+        })}
+      </ul>
+    )
+  }
+</MainLayout>

@@ -4,7 +4,10 @@ export default defineConfig({
   test: {
     // Keep Playwright specs out of `vp test` — they live under e2e/ and
     // need a deployed/served site, not Vitest's jsdom runner.
-    include: ["src/**/*.{test,spec}.{ts,tsx}"],
+    include: [
+      "src/**/*.{test,spec}.{ts,tsx}",
+      "packages/emdash-netlify/**/*.{test,spec}.ts",
+    ],
   },
   lint: {
     plugins: ["oxc", "typescript", "unicorn", "react", "jsx-a11y"],
