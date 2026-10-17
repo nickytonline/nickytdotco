@@ -1,3 +1,4 @@
+import process from "node:process";
 import { defineConfig } from "astro/config";
 import netlify from "@astrojs/netlify";
 import mdx from "@astrojs/mdx";
@@ -14,6 +15,7 @@ import react from "@astrojs/react";
 import emdash from "emdash/astro";
 import { libsql } from "emdash/db";
 import { blobs } from "./packages/emdash-netlify/src/index.ts";
+import { resolveEmDashSiteUrl } from "./packages/emdash-netlify/src/site-url.ts";
 import { embedPlugin } from "./src/emdash/embed-plugin.ts";
 
 // https://astro.build/config
@@ -47,7 +49,11 @@ export default defineConfig({
         : {}),
       storage: blobs(),
       plugins: [embedPlugin()],
-      siteUrl: ENV.DEPLOY_PRIME_URL || ENV.URL,
+      siteUrl: resolveEmDashSiteUrl({
+        url: ENV.URL,
+        deployPrimeUrl: ENV.DEPLOY_PRIME_URL,
+        context: process.env.CONTEXT,
+      }),
     }),
   ],
   markdown: {
