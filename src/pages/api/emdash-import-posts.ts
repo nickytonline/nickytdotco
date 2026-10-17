@@ -33,13 +33,29 @@ function chainImport(request: Request, locals: App.Locals, hops: number): void {
   if (context?.waitUntil) context.waitUntil(next);
 }
 
-export const GET: APIRoute = async () => {
+export const GET: APIRoute = async ({ locals, request }) => {
   const [{ getEmDashCollection }, seedModule] = await Promise.all([
     import("emdash"),
     import("../../../.emdash/seed.json"),
   ]);
   const seed = seedModule.default as SeedFile;
   const total = seed.content?.posts?.length ?? 0;
+  const db = databaseFrom(locals);
+  let imported: Awaited<ReturnType<typeof importPostsWithin>> | undefined;
+  if (db) {
+    try {
+      imported = await importPostsWithin(db, IMPORT_BUDGET_MS);
+    } catch (error) {
+      console.error("[emdash-import]", error);
+      return Response.json(
+        {
+          total,
+          error: error instanceof Error ? error.message : "Import failed",
+        },
+        { status: 500 }
+      );
+    }
+  }
   const loaded = await getEmDashCollection("posts", { limit: 1000 });
   if (loaded.error) {
     const message =
@@ -48,10 +64,13 @@ export const GET: APIRoute = async () => {
         : "Could not read posts";
     return Response.json({ total, error: message }, { status: 500 });
   }
+  const complete = loaded.entries.length >= total;
+  if (imported && !imported.complete) chainImport(request, locals, 0);
   return Response.json({
     total,
     present: loaded.entries.length,
-    complete: loaded.entries.length >= total,
+    complete,
+    imported,
   });
 };
 
