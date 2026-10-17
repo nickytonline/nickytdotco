@@ -5,8 +5,11 @@ import BlogArchiveYear from "../components/BlogArchiveYear.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import { dateFilter } from "../utils/filters";
 import { getLiveBlogPosts } from "../emdash/blog";
+import { kickBlogPostImport } from "../emdash/import-posts";
 
 export const prerender = false;
+
+kickBlogPostImport(Astro.url, Astro.locals.netlify?.context);
 
 const allPosts = await getLiveBlogPosts();
 

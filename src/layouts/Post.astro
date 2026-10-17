@@ -10,8 +10,9 @@ import { getRelatedTalksForPost } from "../utils/tag-utils";
 import { getCollection } from "astro:content";
 import Tag from "@/components/Tag.astro";
 import TableOfContents from "../components/TableOfContents.astro";
-import { PortableText } from "emdash/ui";
+import { PortableText } from "astro-portabletext";
 import EmbedBlock from "../components/EmbedBlock.astro";
+import PortableTextCode from "../components/PortableTextCode.astro";
 import PortableTextImage from "../components/PortableTextImage.astro";
 import {
   getLiveBlogPosts,
@@ -118,7 +119,11 @@ const postSocialImage =
       <PortableText
         value={entry.data.content}
         components={{
-          type: { embed: EmbedBlock, image: PortableTextImage },
+          type: {
+            embed: EmbedBlock,
+            image: PortableTextImage,
+            code: PortableTextCode,
+          },
         }}
       />
     </div>
