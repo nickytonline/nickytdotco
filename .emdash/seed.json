@@ -1,0 +1,38 @@
+{
+  "$schema": "https://emdashcms.com/schema/seed.json",
+  "version": "1",
+  "meta": {
+    "name": "nickyt.co",
+    "description": "Editor-managed posts. Repository content collections stay in src/content."
+  },
+  "collections": [
+    {
+      "slug": "posts",
+      "label": "Posts",
+      "labelSingular": "Post",
+      "supports": ["drafts", "revisions", "preview", "scheduling", "search"],
+      "urlPattern": "/cms/{slug}",
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "excerpt",
+          "label": "Excerpt",
+          "type": "text",
+          "searchable": true
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        }
+      ]
+    }
+  ]
+}

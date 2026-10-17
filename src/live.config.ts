@@ -1,5 +1,6 @@
 import { defineLiveCollection } from "astro:content";
 import { z } from "astro/zod";
+import { emdashLoader } from "emdash/runtime";
 
 import { streamScheduleLoader } from "./content/_loaders/stream-schedule";
 import { streamVideosLoader } from "./content/_loaders/stream-videos";
@@ -95,10 +96,15 @@ const streamVideos = defineLiveCollection({
   }),
 });
 
+const emdash = defineLiveCollection({
+  loader: emdashLoader(),
+});
+
 export const collections = {
   streamSchedule,
   streamVideos,
   newsletter,
   pinnedProjects,
   brewfile,
+  _emdash: emdash,
 };

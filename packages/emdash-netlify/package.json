@@ -1,0 +1,17 @@
+{
+  "name": "@nickyt/emdash-netlify",
+  "version": "0.1.0",
+  "description": "Netlify adapter for EmDash: Blobs media storage and a scheduled publishing heartbeat.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./storage/blobs": "./src/storage/blobs.ts",
+    "./schedule-auth": "./src/schedule-auth.ts",
+    "./scheduled": "./src/scheduled-function.ts"
+  },
+  "peerDependencies": {
+    "@netlify/blobs": ">=8.0.0",
+    "emdash": ">=1.2.0"
+  },
+  "license": "MIT"
+}

@@ -11,6 +11,10 @@ import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
 
 import react from "@astrojs/react";
+import emdash from "emdash/astro";
+import { libsql } from "emdash/db";
+import { blobs } from "./packages/emdash-netlify/src/index.ts";
+import { embedPlugin } from "./src/emdash/embed-plugin.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +35,20 @@ export default defineConfig({
     mdx(),
     react(),
     sitemap(),
+    emdash({
+      ...(ENV.EMDASH_TURSO_DATABASE_URL
+        ? {
+            database: libsql({
+              url: ENV.EMDASH_TURSO_DATABASE_URL,
+              authToken: ENV.EMDASH_TURSO_AUTH_TOKEN || undefined,
+              migrationAuthTokenEnv: "EMDASH_TURSO_AUTH_TOKEN",
+            }),
+          }
+        : {}),
+      storage: blobs(),
+      plugins: [embedPlugin()],
+      siteUrl: ENV.DEPLOY_PRIME_URL || ENV.URL,
+    }),
   ],
   markdown: {
     processor: unified({
