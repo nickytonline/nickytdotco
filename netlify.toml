@@ -43,6 +43,25 @@ to = "/blog/:splat"
 status = 301
 force = true
 
+# EmDash admin shortcut
+[[redirects]]
+from = "/admin"
+to = "/_emdash/admin"
+status = 301
+force = true
+
+[[redirects]]
+from = "/admin/"
+to = "/_emdash/admin/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/admin/*"
+to = "/_emdash/admin/:splat"
+status = 301
+force = true
+
 # blog post redirects for pre-normalized slugs
 
 [[redirects]]
