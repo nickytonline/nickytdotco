@@ -1,4 +1,5 @@
 import type { SeedFile } from "emdash/seed";
+import { sql } from "kysely";
 
 const POSTS_PER_CHUNK = 4;
 
@@ -36,26 +37,30 @@ async function readSeed(): Promise<SeedFile> {
   return seedModule.default as SeedFile;
 }
 
+/** Slugs already stored. Entry ids from the loader are not the slug. */
+async function storedSlugs(db: SeedDb): Promise<Set<string>> {
+  const result = await sql<{ slug: string | null }>`
+    SELECT slug FROM ec_posts WHERE deleted_at IS NULL
+  `.execute(db);
+  const slugs = new Set<string>();
+  for (const row of result.rows) {
+    if (typeof row.slug === "string" && row.slug.length > 0)
+      slugs.add(row.slug);
+  }
+  return slugs;
+}
+
 /**
  * Insert the next few ported posts. Existing slugs are left as they are,
  * so a setup run that stopped early can be finished without rewriting it.
  */
 export async function importNextPostChunk(db: SeedDb): Promise<ImportChunk> {
-  const [{ applySeed }, { getEmDashCollection }, seed] = await Promise.all([
+  const [{ applySeed }, seed] = await Promise.all([
     import("emdash/seed"),
-    import("emdash"),
     readSeed(),
   ]);
   const posts = seed.content?.posts ?? [];
-  const loaded = await getEmDashCollection("posts", { limit: 1000 });
-  if (loaded.error) {
-    const message =
-      "message" in loaded.error && loaded.error.message
-        ? loaded.error.message
-        : "Could not read posts";
-    throw new Error(message);
-  }
-  const present = new Set(loaded.entries.map((entry) => entry.id));
+  const present = await storedSlugs(db);
   const missing = selectMissingPosts(posts, present, POSTS_PER_CHUNK);
   if (missing.length === 0) {
     return { created: 0, skipped: 0, remaining: 0, complete: true };
