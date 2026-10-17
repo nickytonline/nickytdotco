@@ -5,23 +5,19 @@ import BlogArchiveYear from "../components/BlogArchiveYear.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import { dateFilter } from "../utils/filters";
 import { getLiveBlogPosts } from "../emdash/blog";
-import { importPostsWithin, kickBlogPostImport } from "../emdash/import-posts";
+import { continueBlogImport, kickBlogPostImport } from "../emdash/import-posts";
 
 export const prerender = false;
 
-type SeedDb = Parameters<typeof import("emdash/seed").applySeed>[0];
-const emdashDb = (Astro.locals as { emdash?: { db?: SeedDb } }).emdash?.db;
-if (emdashDb) {
-  try {
-    const imported = await importPostsWithin(emdashDb, 12_000);
-    Astro.response.headers.set("x-emdash-import", JSON.stringify(imported));
-  } catch (error) {
-    console.error("[emdash-import]", error);
-    Astro.response.headers.set(
-      "x-emdash-import",
-      error instanceof Error ? error.message : "Import failed"
-    );
-  }
+try {
+  const imported = await continueBlogImport(12_000);
+  Astro.response.headers.set("x-emdash-import", JSON.stringify(imported));
+} catch (error) {
+  console.error("[emdash-import]", error);
+  Astro.response.headers.set(
+    "x-emdash-import",
+    error instanceof Error ? error.message : "Import failed"
+  );
 }
 kickBlogPostImport(Astro.url, Astro.locals.netlify?.context);
 

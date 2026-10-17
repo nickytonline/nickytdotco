@@ -1,5 +1,8 @@
 import type { APIRoute } from "astro";
-import { importPostsWithin } from "../../emdash/import-posts";
+import {
+  continueBlogImport,
+  importPostsWithin,
+} from "../../emdash/import-posts";
 import { isAuthorizedScheduleRequest } from "../../../packages/emdash-netlify/src/schedule-auth.ts";
 import type { SeedFile } from "emdash/seed";
 
@@ -7,12 +10,6 @@ export const prerender = false;
 
 const IMPORT_BUDGET_MS = 8_000;
 const MAX_HOPS = 60;
-
-type SeedDb = Parameters<typeof import("emdash/seed").applySeed>[0];
-
-function databaseFrom(locals: App.Locals): SeedDb | undefined {
-  return (locals as { emdash?: { db?: SeedDb } }).emdash?.db;
-}
 
 function chainImport(request: Request, locals: App.Locals, hops: number): void {
   if (hops >= MAX_HOPS) return;
@@ -40,21 +37,18 @@ export const GET: APIRoute = async ({ locals, request }) => {
   ]);
   const seed = seedModule.default as SeedFile;
   const total = seed.content?.posts?.length ?? 0;
-  const db = databaseFrom(locals);
   let imported: Awaited<ReturnType<typeof importPostsWithin>> | undefined;
-  if (db) {
-    try {
-      imported = await importPostsWithin(db, IMPORT_BUDGET_MS);
-    } catch (error) {
-      console.error("[emdash-import]", error);
-      return Response.json(
-        {
-          total,
-          error: error instanceof Error ? error.message : "Import failed",
-        },
-        { status: 500 }
-      );
-    }
+  try {
+    imported = await continueBlogImport(IMPORT_BUDGET_MS);
+  } catch (error) {
+    console.error("[emdash-import]", error);
+    return Response.json(
+      {
+        total,
+        error: error instanceof Error ? error.message : "Import failed",
+      },
+      { status: 500 }
+    );
   }
   const loaded = await getEmDashCollection("posts", { limit: 1000 });
   if (loaded.error) {
@@ -79,16 +73,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
   if (!isAuthorizedScheduleRequest(request, secret)) {
     return new Response("Unauthorized", { status: 401 });
   }
-  const db = databaseFrom(locals);
-  if (!db) {
-    return Response.json(
-      { error: "EmDash is not initialized" },
-      { status: 500 }
-    );
-  }
   const hops = Number(request.headers.get("x-import-hops") ?? "0");
   try {
-    const imported = await importPostsWithin(db, IMPORT_BUDGET_MS);
+    const imported = await continueBlogImport(IMPORT_BUDGET_MS);
     if (!imported.complete) chainImport(request, locals, hops);
     return Response.json(imported);
   } catch (error) {

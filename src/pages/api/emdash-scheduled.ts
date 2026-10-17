@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { runScheduledTasks } from "emdash/middleware";
-import { importPostsWithin } from "../../emdash/import-posts";
+import { continueBlogImport } from "../../emdash/import-posts";
 import { isAuthorizedScheduleRequest } from "../../../packages/emdash-netlify/src/schedule-auth.ts";
 
 export const prerender = false;
@@ -10,9 +10,7 @@ export const prerender = false;
  * The scheduled function in `netlify/functions` calls this route because
  * `runScheduledTasks()` has to run inside the Astro server bundle.
  */
-type SeedDb = Parameters<typeof import("emdash/seed").applySeed>[0];
-
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   const secret = process.env.EMDASH_SCHEDULE_SECRET;
   if (!isAuthorizedScheduleRequest(request, secret)) {
     return new Response("Unauthorized", { status: 401 });
@@ -20,8 +18,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
   try {
     const { published } = await runScheduledTasks();
-    const db = (locals as { emdash?: { db?: SeedDb } }).emdash?.db;
-    const imported = db ? await importPostsWithin(db, 8_000) : undefined;
+    const imported = await continueBlogImport(8_000);
     return Response.json({ published: published.length, imported });
   } catch (error) {
     console.error("[emdash-scheduled] Sweep failed:", error);

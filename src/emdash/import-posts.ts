@@ -79,6 +79,16 @@ export async function importNextPostChunk(db: SeedDb): Promise<ImportChunk> {
   };
 }
 
+/** Import through the EmDash runtime. Public pages do not receive `locals.emdash.db`. */
+export async function continueBlogImport(
+  budgetMs: number
+): Promise<ImportChunk> {
+  const { withEmDashRuntime } = await import("emdash/middleware");
+  return withEmDashRuntime((runtime) =>
+    importPostsWithin(runtime.db, budgetMs)
+  );
+}
+
 export async function importPostsWithin(
   db: SeedDb,
   budgetMs: number
