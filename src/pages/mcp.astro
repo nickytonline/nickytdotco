@@ -9,14 +9,14 @@ import TalkCard from "../components/TalkCard.astro";
 import { dateFilter } from "../utils/filters";
 import { isTalkUpcoming } from "../utils/cdn-cache";
 
-export const prerender = true;
+export const prerender = false;
 
 const hasMcpTag = (tags?: string[]) =>
   tags?.some((tag) => tag.toLowerCase().replace(/\s+/g, "") === "mcp") ??
   false;
 
 const now = Date.now();
-const allPosts = getBlogPosts();
+const allPosts = await getBlogPosts();
 const mcpPosts = allPosts
   .filter((post) => hasMcpTag(post.data.tags))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());

@@ -14,11 +14,7 @@ import { PortableText } from "astro-portabletext";
 import EmbedBlock from "../components/EmbedBlock.astro";
 import PortableTextCode from "../components/PortableTextCode.astro";
 import PortableTextImage from "../components/PortableTextImage.astro";
-import {
-  getLiveBlogPosts,
-  headingsFor,
-  type BlogPost,
-} from "../emdash/blog";
+import { getBlogPosts, headingsFor, type BlogPost } from "../emdash/blog";
 
 export interface Props {
   entry: BlogPost;
@@ -32,7 +28,7 @@ const currentUrl = `/blog/${entry.id}`;
 // Get series posts if this is part of a series
 let seriesPosts: BlogPost[] = [];
 if (entry.data.series) {
-  const allPosts = await getLiveBlogPosts();
+  const allPosts = await getBlogPosts();
   seriesPosts = seriesFilter(allPosts, entry.data.series);
 }
 

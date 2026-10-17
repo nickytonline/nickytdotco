@@ -3,12 +3,12 @@ import { getLiveCollection } from "astro:content";
 import { site } from "../data/site";
 import { slugifyVideo } from "../utils/video-utils";
 import type { APIContext } from "astro";
-import { getLiveBlogPosts } from "../emdash/blog";
+import { getBlogPosts } from "../emdash/blog";
 
 export const prerender = false;
 
 export async function GET(context: APIContext) {
-  const blog = await getLiveBlogPosts();
+  const blog = await getBlogPosts();
 
   const videosResult = await getLiveCollection("streamVideos");
   const now = new Date();

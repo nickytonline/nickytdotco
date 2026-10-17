@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
 import { runScheduledTasks } from "emdash/middleware";
-import { continueBlogImport } from "../../emdash/import-posts";
 import { isAuthorizedScheduleRequest } from "../../../packages/emdash-netlify/src/schedule-auth.ts";
 
 export const prerender = false;
@@ -18,8 +17,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     const { published } = await runScheduledTasks();
-    const imported = await continueBlogImport(8_000);
-    return Response.json({ published: published.length, imported });
+    return Response.json({ published: published.length });
   } catch (error) {
     console.error("[emdash-scheduled] Sweep failed:", error);
     return new Response("Scheduled publish failed", { status: 500 });

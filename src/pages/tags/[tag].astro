@@ -6,82 +6,48 @@ import SectionHeader from "../../components/SectionHeader.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import { dateFilter } from "../../utils/filters";
 
-export const prerender = true;
+export const prerender = false;
 
-export async function getStaticPaths() {
-  const talks = await getCollection("talks");
-  const blogPosts = getBlogPosts();
-  const allTags = new Set<string>();
-  const tagToOriginalCase = new Map<string, string>();
+const tag = Astro.params.tag ?? "";
+const normalizedTag = tag.toLowerCase().replace(/\s+/g, "");
 
-  // Collect tags from talks
-  talks.forEach((talk) => {
-    talk.data.tags?.forEach((tag) => {
-      // Normalize tag by converting to lowercase and removing spaces
-      const normalizedTag = tag.toLowerCase().replace(/\s+/g, "");
-      allTags.add(normalizedTag);
-      tagToOriginalCase.set(normalizedTag, tag);
-    });
-  });
-
-  // Collect tags from blog posts
-  blogPosts.forEach((post) => {
-    post.data.tags?.forEach((tag) => {
-      const normalizedTag = tag.toLowerCase().replace(/\s+/g, "");
-      allTags.add(normalizedTag);
-      // Keep the first occurrence's case
-      if (!tagToOriginalCase.has(normalizedTag)) {
-        tagToOriginalCase.set(normalizedTag, tag);
-      }
-    });
-  });
-
-  // Create a path for each tag
-  return Array.from(allTags).map((normalizedTag) => {
-    const taggedTalks = talks.filter(
-      (talk) =>
-        talk.data.tags &&
-        talk.data.tags.some(
-          (tag) => tag.toLowerCase().replace(/\s+/g, "") === normalizedTag
-        )
-    );
-
-    const taggedBlogPosts = blogPosts.filter(
-      (post) =>
-        post.data.tags &&
-        post.data.tags.some(
-          (tag) => tag.toLowerCase().replace(/\s+/g, "") === normalizedTag
-        )
-    );
-
-    return {
-      params: { tag: normalizedTag },
-      props: {
-        talks: taggedTalks,
-        blogPosts: taggedBlogPosts,
-        originalTagCase: tagToOriginalCase.get(normalizedTag) || normalizedTag,
-      },
-    };
-  });
+function hasTag(tags: string[] | undefined): boolean {
+  return (
+    tags?.some(
+      (item) => item.toLowerCase().replace(/\s+/g, "") === normalizedTag
+    ) ?? false
+  );
 }
 
-const { tag } = Astro.params;
-const { talks, blogPosts, originalTagCase } = Astro.props;
+const talks = await getCollection("talks");
+const blogPosts = await getBlogPosts();
+const taggedTalks = talks.filter((talk) => hasTag(talk.data.tags));
+const taggedBlogPosts = blogPosts.filter((post) => hasTag(post.data.tags));
+const originalTagCase =
+  talks
+    .flatMap((talk) => talk.data.tags)
+    .find(
+      (item) => item.toLowerCase().replace(/\s+/g, "") === normalizedTag
+    ) ??
+  blogPosts
+    .flatMap((post) => post.data.tags ?? [])
+    .find(
+      (item) => item.toLowerCase().replace(/\s+/g, "") === normalizedTag
+    ) ??
+  tag;
 
-// Sort talks by date (newest first)
-const sortedTalks =
-  talks && talks.length
-    ? talks.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-    : [];
-
-// Sort blog posts by date (newest first)
-const sortedBlogPosts =
-  blogPosts && blogPosts.length
-    ? blogPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-    : [];
-
-const displayTag = originalTagCase || tag;
+const sortedTalks = taggedTalks.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const sortedBlogPosts = taggedBlogPosts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const displayTag = originalTagCase;
 const totalCount = sortedTalks.length + sortedBlogPosts.length;
+
+if (totalCount === 0) {
+  return Astro.rewrite("/404");
+}
 ---
 
 <Layout

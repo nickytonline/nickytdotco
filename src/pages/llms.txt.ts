@@ -3,8 +3,10 @@ import type { APIContext } from "astro";
 import { extractYouTubeVideoId, slugifyVideo } from "../utils/video-utils";
 import { getBlogPosts } from "../emdash/blog";
 
+export const prerender = false;
+
 export async function GET(_context: APIContext) {
-  const blog = getBlogPosts();
+  const blog = await getBlogPosts();
 
   const talks = await getCollection("talks");
   const streamsResult = await getLiveCollection("streamVideos");
