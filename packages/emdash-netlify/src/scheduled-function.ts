@@ -1,4 +1,5 @@
 import type { Config } from "@netlify/functions";
+import { resolveEmDashSiteUrl } from "./site-url.ts";
 
 export interface ScheduledPublishOptions {
   siteUrl: string | undefined;
@@ -36,7 +37,11 @@ export async function postScheduledPublish(
  */
 export default function handler(): Promise<Response> {
   return postScheduledPublish({
-    siteUrl: process.env.DEPLOY_PRIME_URL || process.env.URL,
+    siteUrl: resolveEmDashSiteUrl({
+      url: process.env.URL,
+      deployPrimeUrl: process.env.DEPLOY_PRIME_URL,
+      context: process.env.CONTEXT,
+    }),
     secret: process.env.EMDASH_SCHEDULE_SECRET,
   });
 }
