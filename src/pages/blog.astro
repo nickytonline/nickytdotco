@@ -4,24 +4,11 @@ import BlogArchiveHeader from "../components/BlogArchiveHeader.astro";
 import BlogArchiveYear from "../components/BlogArchiveYear.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import { dateFilter } from "../utils/filters";
-import { getLiveBlogPosts } from "../emdash/blog";
-import { continueBlogImport, kickBlogPostImport } from "../emdash/import-posts";
+import { getBlogPosts } from "../emdash/blog";
 
 export const prerender = false;
 
-try {
-  const imported = await continueBlogImport(12_000);
-  Astro.response.headers.set("x-emdash-import", JSON.stringify(imported));
-} catch (error) {
-  console.error("[emdash-import]", error);
-  Astro.response.headers.set(
-    "x-emdash-import",
-    error instanceof Error ? error.message : "Import failed"
-  );
-}
-kickBlogPostImport(Astro.url, Astro.locals.netlify?.context);
-
-const allPosts = await getLiveBlogPosts();
+const allPosts = await getBlogPosts();
 
 // Sort by date descending
 const sortedPosts = allPosts.sort((a, b) => {

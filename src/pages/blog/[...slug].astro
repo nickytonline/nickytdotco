@@ -2,10 +2,10 @@
 export const prerender = false;
 
 import Post from "../../layouts/Post.astro";
-import { getLiveBlogPost } from "../../emdash/blog";
+import { getBlogPost } from "../../emdash/blog";
 
 const slug = Astro.params.slug ?? "";
-const entry = slug ? await getLiveBlogPost(slug) : undefined;
+const entry = slug ? await getBlogPost(slug) : undefined;
 if (!entry || (import.meta.env.PROD && entry.data.draft)) {
   return Astro.rewrite("/404");
 }

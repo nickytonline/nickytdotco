@@ -1,5 +1,4 @@
 import { getEmDashCollection, getEmDashEntry } from "emdash";
-import seed from "../../.emdash/seed.json";
 
 export interface BlogSeries {
   name: string;
@@ -35,11 +34,8 @@ export interface BlogPost {
   data: BlogPostData;
 }
 
-interface SeedEntry {
-  slug?: string;
-  status?: string;
-  data?: Record<string, unknown>;
-}
+const PAGE_SIZE = 100;
+const MAX_PAGES = 20;
 
 function asString(value: unknown): string | undefined {
   return typeof value === "string" && value.length > 0 ? value : undefined;
@@ -90,35 +86,6 @@ function mapData(data: Record<string, unknown>, slug: string): BlogPostData {
   };
 }
 
-function catalogPosts(): BlogPost[] {
-  const entries =
-    (seed as { content?: { posts?: SeedEntry[] } }).content?.posts ?? [];
-  return entries
-    .map((entry) => {
-      const slug = entry.slug ?? "";
-      if (!slug || !entry.data) return undefined;
-      return {
-        id: slug,
-        data: mapData(entry.data, slug),
-      };
-    })
-    .filter((post): post is BlogPost => Boolean(post))
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-}
-
-const catalog = catalogPosts();
-
-export function getBlogPosts(options?: {
-  includeDrafts?: boolean;
-}): BlogPost[] {
-  const includeDrafts = options?.includeDrafts ?? !import.meta.env.PROD;
-  return catalog.filter((post) => includeDrafts || post.data.draft !== true);
-}
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return getBlogPosts({ includeDrafts: true }).find((post) => post.id === slug);
-}
-
 function mapLiveEntry(entry: {
   id: string;
   data: Record<string, unknown>;
@@ -126,50 +93,52 @@ function mapLiveEntry(entry: {
   return { id: entry.id, data: mapData(entry.data, entry.id) };
 }
 
-async function livePosts(): Promise<BlogPost[] | undefined> {
-  try {
-    const { entries, error } = await getEmDashCollection("posts", {
-      limit: 1000,
+/** Published posts from EmDash. Public queries omit drafts. */
+async function loadPosts(): Promise<BlogPost[]> {
+  const collected: BlogPost[] = [];
+  let cursor: string | undefined;
+  for (let page = 0; page < MAX_PAGES; page++) {
+    const result = await getEmDashCollection("posts", {
+      limit: PAGE_SIZE,
+      cursor,
     });
-    if (error || entries.length < catalog.length) return undefined;
-    return entries
-      .map((entry) =>
+    if (result.error) throw result.error;
+    for (const entry of result.entries) {
+      collected.push(
         mapLiveEntry({
           id: entry.id,
           data: entry.data as Record<string, unknown>,
         })
-      )
-      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-  } catch {
-    return undefined;
+      );
+    }
+    if (!result.nextCursor) {
+      return collected.sort(
+        (a, b) => b.data.date.getTime() - a.data.date.getTime()
+      );
+    }
+    cursor = result.nextCursor;
   }
+  throw new Error("Blog post query exceeded 2000 rows");
 }
 
-/** CMS posts when the database has the full import. Otherwise the ported catalog. */
-export async function getLiveBlogPosts(): Promise<BlogPost[]> {
-  const live = await livePosts();
-  const posts = live ?? getBlogPosts();
+function visiblePosts(posts: BlogPost[]): BlogPost[] {
   return import.meta.env.PROD
     ? posts.filter((post) => post.data.draft !== true)
     : posts;
 }
 
-export async function getLiveBlogPost(
-  slug: string
-): Promise<BlogPost | undefined> {
-  const fallback = getBlogPost(slug);
-  try {
-    const { entry, error } = await getEmDashEntry("posts", slug);
-    if (error || !entry) return fallback;
-    const live = mapLiveEntry({
-      id: entry.id,
-      data: entry.data as Record<string, unknown>,
-    });
-    if (live.data.content.length === 0) return fallback ?? live;
-    return live;
-  } catch {
-    return fallback;
-  }
+export async function getBlogPosts(): Promise<BlogPost[]> {
+  return visiblePosts(await loadPosts());
+}
+
+export async function getBlogPost(slug: string): Promise<BlogPost | undefined> {
+  const { entry, error } = await getEmDashEntry("posts", slug);
+  if (error) throw error;
+  if (!entry) return undefined;
+  return mapLiveEntry({
+    id: entry.id,
+    data: entry.data as Record<string, unknown>,
+  });
 }
 
 export function headingsFor(
