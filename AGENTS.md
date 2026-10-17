@@ -28,7 +28,7 @@
 
 ## Content & Routing
 
-- Blog: `src/content/blog/` (frontmatter: `title`, `date`, optional `excerpt`, `tags`, `cover_image`, `series`, `draft`). Slugs/filenames are generated locally from `title` via `slugify` in `bin/generateDevToPosts.ts`, not from dev.to's slug; the original dev.to slug is preserved as `dev_to_slug`.
+- Blog: EmDash `posts` collection. The local catalog is `.emdash/seed.json`; live rows come from the EmDash database. Pages load posts through `src/emdash/blog.ts`. Public URLs stay `/blog/{slug}`. Cover images are the `cover_image` string (a path under `public/assets/images/posts/`) and that URL is the post `og:image`, falling back to `public/assets/images/page-og/blog.jpg`. Inline images are Portable Text `image` blocks with `asset.url` set to that public path or a remote URL. The import skips media download, so those files stay in `public/` and were not copied into EmDash storage. `vp run generate:posts` still writes MDX into `src/content/blog`; the site does not read those files.
 - Talks: `src/content/talks/` (video metadata + links).
 - Drafts: excluded from production builds.
 - RSS: `src/pages/feed.xml.ts`, `src/pages/stream-schedule-feed.xml.ts`.

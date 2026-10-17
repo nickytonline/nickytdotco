@@ -91,30 +91,6 @@ const videoSchema = z
     }
   });
 
-const blogCollection = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "src/content/blog" }),
-  schema: z.object({
-    title: z.string(),
-    date: z.coerce.date(),
-    excerpt: z.string().optional(),
-    description: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    cover_image: z.string().optional().nullable(),
-    canonical_url: z.url().optional(),
-    dev_to_slug: z.string(),
-    draft: z.boolean().optional(),
-    reading_time_minutes: z.number().optional(),
-    template: z.string().optional(),
-    series: z
-      .object({
-        name: z.string(),
-        collection_id: z.number(),
-      })
-      .optional(),
-    featured: z.boolean().optional(),
-  }),
-});
-
 const talksCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "src/content/talks" }),
   schema: z.object({
@@ -163,7 +139,6 @@ const guidesCollection = defineCollection({
 });
 
 export const collections = {
-  blog: blogCollection,
   talks: talksCollection,
   guides: guidesCollection,
 };

@@ -13,6 +13,7 @@ import {
 import {
   excerptFromText,
   hashSearchContent,
+  portableTextToSearchText,
   stripMdxImports,
   truncateForEmbedding,
 } from "../src/lib/search/content.ts";
@@ -39,7 +40,7 @@ function slugifyVideoTitle(title: string, guestName: string): string {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
-const BLOG_DIR = path.join(ROOT, "src/content/blog");
+const SEED_PATH = path.join(ROOT, ".emdash/seed.json");
 const TALKS_DIR = path.join(ROOT, "src/content/talks");
 
 const VIDEO_SQL = `SELECT id, title, description, guest_name, date
@@ -126,26 +127,40 @@ function buildDocument(input: {
   };
 }
 
+interface SeedPost {
+  slug?: string;
+  status?: string;
+  data?: {
+    title?: unknown;
+    excerpt?: unknown;
+    description?: unknown;
+    draft?: unknown;
+    content?: unknown;
+  };
+}
+
 async function collectBlogDocuments(): Promise<SearchDocumentInput[]> {
-  const files = await readMarkdownDir(BLOG_DIR, ".mdx");
+  const raw = await readFile(SEED_PATH, "utf8");
+  const seed = JSON.parse(raw) as { content?: { posts?: SeedPost[] } };
   const documents: SearchDocumentInput[] = [];
-  for (const file of files) {
-    if (file.data.draft === true) {
+  for (const post of seed.content?.posts ?? []) {
+    if (post.status === "draft" || post.data?.draft === true) {
       continue;
     }
-    const title = asString(file.data.title);
-    if (!title) {
+    const slug = post.slug;
+    const title = asString(post.data?.title);
+    if (!slug || !title) {
       continue;
     }
-    const body = stripMdxImports(file.body);
+    const body = portableTextToSearchText(post.data?.content);
     const excerpt =
-      asString(file.data.excerpt) ??
-      asString(file.data.description) ??
+      asString(post.data?.excerpt) ??
+      asString(post.data?.description) ??
       excerptFromText(body);
     documents.push(
       buildDocument({
-        id: `blog:${file.id}`,
-        url: siteUrl(`/blog/${file.id}/`),
+        id: `blog:${slug}`,
+        url: siteUrl(`/blog/${slug}/`),
         title,
         excerpt,
         type: "Post",
