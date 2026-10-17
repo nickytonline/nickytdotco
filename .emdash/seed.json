@@ -3,7 +3,7 @@
   "version": "1",
   "meta": {
     "name": "nickyt.co",
-    "description": "Blog posts ported from src/content/blog. Public URLs stay /blog/{slug}."
+    "description": "Blog posts in EmDash. Public URLs stay /blog/{slug}."
   },
   "collections": [
     {

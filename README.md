@@ -8,7 +8,7 @@ This is the source code for [nickyt.co](https://www.nickyt.co), Nick Taylor's pe
 
 - **[Astro](https://astro.build/)** - Modern web framework for building fast, content-focused websites
 - **[React](https://react.dev/)** - For interactive UI components
-- **[MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)** - For blog posts and content with embedded components
+- **EmDash** - Blog posts (Portable Text), served at `/blog`
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
 - **[Expressive Code](https://expressive-code.com/)** - Syntax highlighting for code blocks
@@ -60,7 +60,7 @@ This project contains two separate licenses:
 1. **Code License**: The website's source code (in the project root and all non-content folders) is licensed under the MIT License.
    - For full details, see the [LICENSE.txt](./LICENSE.txt) file in the root directory of this project.
 
-2. **Content License**: All blog posts, articles, and other written content in the `src/content/` directory are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+2. **Content License**: Blog posts in `.emdash/seed.json`, and other written content in the `src/content/` directory, are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
    - You are free to share and adapt this content for any purpose, even commercially, as long as you give appropriate credit.
    - To view a copy of this license, see the [src/content/CONTENT_LICENSE.txt](./src/content/CONTENT_LICENSE.txt) file or visit [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/).
 
