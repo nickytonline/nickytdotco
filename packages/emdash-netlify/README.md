@@ -21,8 +21,7 @@ export default defineConfig({
     emdash({
       database: libsql({
         url: process.env.EMDASH_TURSO_DATABASE_URL,
-        authToken: process.env.EMDASH_TURSO_AUTH_TOKEN,
-        migrationAuthTokenEnv: "EMDASH_TURSO_AUTH_TOKEN",
+        authToken: process.env.TURSO_AUTH_TOKEN,
       }),
       storage: blobs(),
     }),

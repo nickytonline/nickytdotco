@@ -40,8 +40,8 @@ export default defineConfig({
         ? {
             database: libsql({
               url: ENV.EMDASH_TURSO_DATABASE_URL,
-              authToken: ENV.EMDASH_TURSO_AUTH_TOKEN || undefined,
-              migrationAuthTokenEnv: "EMDASH_TURSO_AUTH_TOKEN",
+              authToken: ENV.TURSO_AUTH_TOKEN,
+              migrationAuthTokenEnv: "TURSO_AUTH_TOKEN",
             }),
           }
         : {}),
