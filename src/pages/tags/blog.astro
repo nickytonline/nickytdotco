@@ -5,9 +5,9 @@ import SectionHeader from "../../components/SectionHeader.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import Tag from "@/components/Tag.astro";
 import { curatedTagLabels, curatedTagSlugs } from "../../utils/tag-taxonomy";
-export const prerender = true;
+export const prerender = false;
 
-const blogPosts = getBlogPosts();
+const blogPosts = await getBlogPosts();
 
 // Extract all unique tags and count their occurrences from blog posts only
 const tagCounts = new Map<string, number>();

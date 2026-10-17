@@ -26,9 +26,9 @@ import {
   setFixedCdnCacheHeaders,
 } from "../utils/cdn-cache";
 import { scheduleSearchReindex } from "../lib/search/scheduleSearchReindex";
-import { getLiveBlogPosts } from "../emdash/blog";
+import { getBlogPosts } from "../emdash/blog";
 
-const allPosts = await getLiveBlogPosts();
+const allPosts = await getBlogPosts();
 
 const sortedPosts = allPosts.sort((a, b) => {
   return b.data.date.getTime() - a.data.date.getTime();

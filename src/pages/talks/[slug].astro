@@ -7,7 +7,7 @@ import TagList from "../../components/TagList.astro";
 import RelatedContent from "../../components/RelatedContent.astro";
 import TalkPromo from "../../components/TalkPromo.astro";
 import { getRelatedTalks, getRelatedPostsForTalk } from "../../utils/tag-utils";
-import { getLiveBlogPosts } from "../../emdash/blog";
+import { getBlogPosts } from "../../emdash/blog";
 import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
 import { site } from "../../data/site";
@@ -77,7 +77,7 @@ const relatedTalks = isUpcoming
   : getRelatedTalks(talk as CollectionEntry<"talks">, allTalks, 3);
 
 // Get related blog posts by shared tags
-const allPosts = await getLiveBlogPosts();
+const allPosts = await getBlogPosts();
 const relatedPosts = getRelatedPostsForTalk(
   talk as CollectionEntry<"talks">,
   allPosts,

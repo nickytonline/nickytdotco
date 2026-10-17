@@ -1,6 +1,6 @@
 ---
 import { ENV } from "varlock/env";
-import { getBlogPosts } from "../../emdash/blog";
+import { getBlogPost } from "../../emdash/blog";
 
 interface Props {
   url: string;
@@ -20,11 +20,10 @@ if (username === "nickytonline" || username === "opensauced") {
     Astro.url
   );
 
-  // the blog slug here is in the blog content collection so get the title from there
-  const blogSlug = updatedUrl.pathname.replace("/blog/", "").replace(/\/$/, "");
-  title = getBlogPosts({ includeDrafts: true }).find(
-    (entry) => entry.id === blogSlug,
-  )?.data.title;
+  const blogSlug = updatedUrl.pathname
+    .replace("/blog/", "")
+    .replace(/\/$/, "");
+  title = (await getBlogPost(blogSlug))?.data.title;
 } else if (username && slug) {
   try {
     const response = await fetch(
