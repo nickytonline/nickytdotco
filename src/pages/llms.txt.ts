@@ -1,11 +1,10 @@
 import { getCollection, getLiveCollection } from "astro:content";
 import type { APIContext } from "astro";
 import { extractYouTubeVideoId, slugifyVideo } from "../utils/video-utils";
+import { getBlogPosts } from "../emdash/blog";
 
 export async function GET(_context: APIContext) {
-  const blog = await getCollection("blog", ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true;
-  });
+  const blog = getBlogPosts();
 
   const talks = await getCollection("talks");
   const streamsResult = await getLiveCollection("streamVideos");

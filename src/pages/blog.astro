@@ -3,12 +3,12 @@ import MainLayout from "../layouts/MainLayout.astro";
 import BlogArchiveHeader from "../components/BlogArchiveHeader.astro";
 import BlogArchiveYear from "../components/BlogArchiveYear.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
-import { getCollection } from "astro:content";
 import { dateFilter } from "../utils/filters";
+import { getLiveBlogPosts } from "../emdash/blog";
 
-const allPosts = await getCollection("blog", ({ data }) => {
-  return import.meta.env.PROD ? data.draft !== true : true;
-});
+export const prerender = false;
+
+const allPosts = await getLiveBlogPosts();
 
 // Sort by date descending
 const sortedPosts = allPosts.sort((a, b) => {

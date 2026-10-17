@@ -1,13 +1,14 @@
 import rss from "@astrojs/rss";
-import { getCollection, getLiveCollection } from "astro:content";
+import { getLiveCollection } from "astro:content";
 import { site } from "../data/site";
 import { slugifyVideo } from "../utils/video-utils";
 import type { APIContext } from "astro";
+import { getLiveBlogPosts } from "../emdash/blog";
+
+export const prerender = false;
 
 export async function GET(context: APIContext) {
-  const blog = await getCollection("blog", ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true;
-  });
+  const blog = await getLiveBlogPosts();
 
   const videosResult = await getLiveCollection("streamVideos");
   const now = new Date();

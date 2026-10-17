@@ -1,4 +1,5 @@
 import type { CollectionEntry } from "astro:content";
+import type { BlogPost } from "../emdash/blog";
 
 interface ScoredItem<T> {
   item: T;
@@ -61,7 +62,7 @@ export function getRelatedTalks(
  * @returns Array of related talks sorted by relevance
  */
 export function getRelatedTalksForPost(
-  currentPost: CollectionEntry<"blog">,
+  currentPost: BlogPost,
   allTalks: CollectionEntry<"talks">[],
   limit: number = 3
 ): CollectionEntry<"talks">[] {
@@ -87,9 +88,9 @@ export function getRelatedTalksForPost(
  */
 export function getRelatedPostsForTalk(
   currentTalk: CollectionEntry<"talks">,
-  allPosts: CollectionEntry<"blog">[],
+  allPosts: BlogPost[],
   limit: number = 3
-): CollectionEntry<"blog">[] {
+): BlogPost[] {
   const currentTags = currentTalk.data.tags || [];
   if (!currentTags.length) return [];
 

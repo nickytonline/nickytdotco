@@ -9,6 +9,7 @@ import VimeoEmbed from "./embeds/VimeoEmbed.astro";
 import SpotifyEmbed from "./embeds/SpotifyEmbed.astro";
 import CodeSandboxEmbed from "./embeds/CodeSandboxEmbed.astro";
 import InstagramEmbed from "./embeds/InstagramEmbed.astro";
+import GitHubEmbed from "./embeds/GitHubEmbed.astro";
 
 interface Props {
   url: string;
@@ -65,7 +66,7 @@ try {
   }
   // GitHub detection
   else if (hostname === "github.com") {
-    embedType = "generic";
+    embedType = "github";
   }
   // CodePen detection
   else if (hostname === "codepen.io") {
@@ -155,6 +156,8 @@ try {
     <CodeSandboxEmbed sandboxId={embedProps.sandboxId as string} />
   ) : embedType === "instagram" ? (
     <InstagramEmbed url={url} />
+  ) : embedType === "github" ? (
+    <GitHubEmbed url={url} />
   ) : (
     <GenericEmbed url={url} />
   )

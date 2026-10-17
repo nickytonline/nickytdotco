@@ -1,0 +1,19 @@
+---
+interface ImageNode {
+  alt?: string;
+  asset?: { url?: string };
+}
+
+interface Props {
+  node: ImageNode;
+}
+
+const { node } = Astro.props;
+const url = node.asset?.url;
+---
+
+{
+  url && (
+    <img src={url} alt={node.alt ?? ""} loading="lazy" decoding="async" />
+  )
+}

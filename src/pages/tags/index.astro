@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { getBlogPosts } from "../../emdash/blog";
 import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import Tag from "@/components/Tag.astro";
@@ -7,7 +8,7 @@ import { curatedTagLabels, curatedTagSlugs } from "../../utils/tag-taxonomy";
 export const prerender = true;
 
 const talks = await getCollection("talks");
-const blogPosts = await getCollection("blog");
+const blogPosts = getBlogPosts();
 
 // Extract all unique tags and count their occurrences
 const tagCounts = new Map<string, number>();

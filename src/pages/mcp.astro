@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { getBlogPosts } from "../emdash/blog";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import GuideCard from "../components/GuideCard.astro";
 import Layout from "../layouts/MainLayout.astro";
@@ -15,9 +16,7 @@ const hasMcpTag = (tags?: string[]) =>
   false;
 
 const now = Date.now();
-const allPosts = await getCollection("blog", ({ data }) =>
-  import.meta.env.PROD ? data.draft !== true : true
-);
+const allPosts = getBlogPosts();
 const mcpPosts = allPosts
   .filter((post) => hasMcpTag(post.data.tags))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
