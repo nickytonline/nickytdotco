@@ -70,11 +70,29 @@ export async function importNextPostChunk(db: SeedDb): Promise<ImportChunk> {
     settings: undefined,
     content: { posts: missing },
   };
-  const result = await applySeed(db, partial, {
-    includeContent: true,
-    onConflict: "skip",
-    skipMediaDownload: true,
-  });
+  let result;
+  try {
+    result = await applySeed(db, partial, {
+      includeContent: true,
+      onConflict: "skip",
+      skipMediaDownload: true,
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    const sample = await sql<Record<string, unknown>>`
+      SELECT slug, locale, deleted_at FROM ec_posts LIMIT 3
+    `.execute(db);
+    const count = await sql<{ n: number }>`
+      SELECT COUNT(*) AS n FROM ec_posts
+    `.execute(db);
+    throw new Error(
+      `${message} present=${present.size} missing=${missing
+        .map((post) => post.slug)
+        .join(
+          ","
+        )} count=${JSON.stringify(count.rows)} sample=${JSON.stringify(sample.rows)}`
+    );
+  }
   const remaining = Math.max(0, posts.length - present.size - missing.length);
   return {
     created: result.content.created,
