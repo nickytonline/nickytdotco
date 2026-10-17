@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 const slug = Astro.params.slug ?? "";
 return Astro.redirect(slug ? `/blog/${slug}/` : "/blog/");
 ---
