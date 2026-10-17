@@ -26,10 +26,9 @@ import {
   setFixedCdnCacheHeaders,
 } from "../utils/cdn-cache";
 import { scheduleSearchReindex } from "../lib/search/scheduleSearchReindex";
+import { getLiveBlogPosts } from "../emdash/blog";
 
-const allPosts = await getCollection("blog", ({ data }) => {
-  return import.meta.env.PROD ? data.draft !== true : true;
-});
+const allPosts = await getLiveBlogPosts();
 
 const sortedPosts = allPosts.sort((a, b) => {
   return b.data.date.getTime() - a.data.date.getTime();

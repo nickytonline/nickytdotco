@@ -1,23 +1,14 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+export const prerender = false;
+
 import Post from "../../layouts/Post.astro";
+import { getLiveBlogPost } from "../../emdash/blog";
 
-export async function getStaticPaths() {
-  const blogEntries = await getCollection("blog", ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true;
-  });
-
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+const slug = Astro.params.slug ?? "";
+const entry = slug ? await getLiveBlogPost(slug) : undefined;
+if (!entry || (import.meta.env.PROD && entry.data.draft)) {
+  return Astro.rewrite("/404");
 }
-
-interface Props {
-  entry: CollectionEntry<"blog">;
-}
-
-const { entry } = Astro.props;
 ---
 
 <Post entry={entry} />

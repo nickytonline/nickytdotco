@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { getBlogPosts } from "../../emdash/blog";
 import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
@@ -9,7 +10,7 @@ export const prerender = true;
 
 export async function getStaticPaths() {
   const talks = await getCollection("talks");
-  const blogPosts = await getCollection("blog");
+  const blogPosts = getBlogPosts();
   const allTags = new Set<string>();
   const tagToOriginalCase = new Map<string, string>();
 

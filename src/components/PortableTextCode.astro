@@ -1,0 +1,30 @@
+---
+interface CodeNode {
+  code?: string;
+  language?: string;
+  filename?: string;
+}
+
+interface Props {
+  node: CodeNode;
+}
+
+const { node } = Astro.props;
+---
+
+{
+  node.code && (
+    <figure class="my-6">
+      {node.filename && (
+        <figcaption class="mb-2 text-sm text-muted-foreground">
+          {node.filename}
+        </figcaption>
+      )}
+      <pre class="overflow-x-auto rounded-lg bg-secondary p-4 text-sm text-secondary-foreground">
+        <code class={node.language ? `language-${node.language}` : undefined}>
+          {node.code}
+        </code>
+      </pre>
+    </figure>
+  )
+}

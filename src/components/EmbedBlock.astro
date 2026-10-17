@@ -1,0 +1,17 @@
+---
+import Embed from "./Embed.astro";
+
+interface EmbedNode {
+  _type: "embed";
+  _key?: string;
+  id?: string;
+}
+
+interface Props {
+  node: EmbedNode;
+}
+
+const { node } = Astro.props;
+---
+
+{node.id && <Embed url={node.id} />}

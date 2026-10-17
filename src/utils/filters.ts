@@ -107,7 +107,6 @@ interface Post {
   data: {
     series?: Series;
   };
-  [key: string]: unknown;
 }
 
 /**
@@ -118,10 +117,10 @@ interface Post {
  * @param series - The series identifier (string, object with collection_id, or object with name)
  * @returns Filtered array of posts belonging to the specified series
  */
-export function seriesFilter(
-  collection: Post[],
+export function seriesFilter<T extends Post>(
+  collection: T[],
   series: Series | null | undefined
-): Post[] {
+): T[] {
   if (!series) return [];
 
   // Normalize series identifier

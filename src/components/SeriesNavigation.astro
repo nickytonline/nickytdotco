@@ -1,7 +1,7 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { seriesName, truncate } from "../utils/filters";
 import slugify from "slugify";
+import type { BlogPost } from "../emdash/blog";
 
 interface Props {
   series: {
@@ -9,7 +9,7 @@ interface Props {
     collection_id: number;
   };
   currentUrl: string;
-  posts: CollectionEntry<"blog">[];
+  posts: BlogPost[];
 }
 
 const { series, currentUrl, posts } = Astro.props;
@@ -32,11 +32,11 @@ const isNearStart = currentIndex <= 2;
 const isNearEnd = currentIndex >= totalPosts - 3;
 
 // Divide posts into logic groups
-let head: CollectionEntry<"blog">[] = [];
-let middle: CollectionEntry<"blog">[] = [];
-let middleHiddenBefore: CollectionEntry<"blog">[] = [];
-let middleHiddenAfter: CollectionEntry<"blog">[] = [];
-let tail: CollectionEntry<"blog">[] = [];
+let head: BlogPost[] = [];
+let middle: BlogPost[] = [];
+let middleHiddenBefore: BlogPost[] = [];
+let middleHiddenAfter: BlogPost[] = [];
+let tail: BlogPost[] = [];
 
 if (!hasCollapse) {
   head = sortedPosts;
@@ -59,7 +59,7 @@ if (!hasCollapse) {
 const seriesSlug = slugify(seriesName(series), { lower: true, strict: true });
 
 // Helper to get global index for a post
-const getStaticIndex = (post: CollectionEntry<"blog">) =>
+const getStaticIndex = (post: BlogPost) =>
   sortedPosts.findIndex((p) => p.id === post.id);
 ---
 
