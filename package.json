@@ -19,6 +19,7 @@
     "lint": "vp lint .",
     "lint:fix": "vp lint --fix .",
     "generate:posts": "varlock run --path env/devto -- node ./bin/generateDevToPosts.ts",
+    "backfill:dev-to-urls": "varlock run -- node ./bin/backfillDevToUrls.ts",
     "index:search": "varlock run --path env/search -- node ./bin/indexSearch.ts",
     "test": "vitest run",
     "test:e2e": "playwright test",

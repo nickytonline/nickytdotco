@@ -22,6 +22,8 @@ export interface BlogPostData {
   cover_image?: string | null;
   canonical_url?: string;
   dev_to_slug: string;
+  /** Public DEV article URL. The Boost on DEV button renders only when this is set. */
+  dev_to_url?: string;
   draft?: boolean;
   reading_time_minutes?: number;
   series?: BlogSeries;
@@ -75,6 +77,7 @@ function mapData(data: Record<string, unknown>, slug: string): BlogPostData {
       data.cover_image === null ? null : (asString(data.cover_image) ?? null),
     canonical_url: asString(data.canonical_url),
     dev_to_slug: asString(data.dev_to_slug) ?? slug,
+    dev_to_url: asString(data.dev_to_url),
     draft: data.draft === true,
     reading_time_minutes:
       typeof data.reading_time_minutes === "number"
