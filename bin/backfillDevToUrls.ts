@@ -13,7 +13,7 @@
  */
 import { execFileSync } from "node:child_process";
 import { createClient } from "@libsql/client";
-import { LibsqlDialect } from "@libsql/kysely-libsql";
+import { LibsqlDialect, type LibsqlDialectConfig } from "@libsql/kysely-libsql";
 import { Kysely, sql } from "kysely";
 import { SchemaError, SchemaRegistry } from "emdash";
 import {
@@ -293,9 +293,16 @@ function openEmDashDatabase(): { db: Kysely<unknown>; close: () => void } {
     );
   }
   const client = createClient({ url, authToken });
+  // The dialect only calls execute(), transaction(), and close(), whose APIs
+  // are compatible. Its older client type expects sync() to return void;
+  // the current client returns replication details. The dialect never calls it.
+  const dialectClient = client as Extract<
+    LibsqlDialectConfig,
+    { client: unknown }
+  >["client"];
   return {
     db: new Kysely({
-      dialect: new LibsqlDialect({ client }),
+      dialect: new LibsqlDialect({ client: dialectClient }),
     }),
     close: () => {
       client.close();
