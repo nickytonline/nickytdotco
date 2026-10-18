@@ -21,7 +21,21 @@ import { embedPlugin } from "./src/emdash/embed-plugin.ts";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  adapter: netlify(),
+  // Only for local `astro dev`: Edge Functions emulation boots Deno via
+  // @netlify/edge-functions-dev, which crashes on Deno 2.9.6+
+  // (`unexpected argument '--allow-scripts'`). Never pass this on Netlify
+  // builds/deploys — production edge functions (e.g. /api/search rate
+  // limit) must keep their default enabled behavior. Remove once
+  // netlify/primitives#790 ships.
+  adapter: netlify(
+    process.env.NETLIFY
+      ? {}
+      : {
+          devFeatures: {
+            edgeFunctions: false,
+          },
+        }
+  ),
   site: "https://www.nickyt.co",
   compressHTML: true,
   image: {
