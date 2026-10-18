@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { load } from "js-yaml";
 import slugify from "slugify";
+import { loadSearchBlogPosts } from "../src/lib/search/blogPosts.ts";
 import { site } from "../src/data/site.ts";
 import {
   SEARCH_EMBED_BATCH_DELAY_MS,
@@ -40,7 +41,6 @@ function slugifyVideoTitle(title: string, guestName: string): string {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
-const SEED_PATH = path.join(ROOT, ".emdash/seed.json");
 const TALKS_DIR = path.join(ROOT, "src/content/talks");
 
 const VIDEO_SQL = `SELECT id, title, description, guest_name, date
@@ -127,26 +127,23 @@ function buildDocument(input: {
   };
 }
 
-interface SeedPost {
-  slug?: string;
-  status?: string;
-  data?: {
-    title?: unknown;
-    excerpt?: unknown;
-    description?: unknown;
-    draft?: unknown;
-    content?: unknown;
-  };
-}
-
 async function collectBlogDocuments(): Promise<SearchDocumentInput[]> {
-  const raw = await readFile(SEED_PATH, "utf8");
-  const seed = JSON.parse(raw) as { content?: { posts?: SeedPost[] } };
+  const url = process.env.EMDASH_TURSO_DATABASE_URL;
+  const authToken = process.env.TURSO_AUTH_TOKEN;
+  if (!url || !authToken) {
+    throw new Error(
+      "Blog indexing requires EMDASH_TURSO_DATABASE_URL and TURSO_AUTH_TOKEN."
+    );
+  }
+  const db = createClient({ url, authToken });
+  let posts;
+  try {
+    posts = await loadSearchBlogPosts(db);
+  } finally {
+    db.close();
+  }
   const documents: SearchDocumentInput[] = [];
-  for (const post of seed.content?.posts ?? []) {
-    if (post.status === "draft" || post.data?.draft === true) {
-      continue;
-    }
+  for (const post of posts) {
     const slug = post.slug;
     const title = asString(post.data?.title);
     if (!slug || !title) {

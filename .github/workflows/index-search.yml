@@ -33,12 +33,14 @@ jobs:
 
       - name: Check required secrets
         env:
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+          EMDASH_TURSO_DATABASE_URL: ${{ secrets.EMDASH_TURSO_DATABASE_URL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TURSO_SEARCH_DATABASE_URL: ${{ secrets.TURSO_SEARCH_DATABASE_URL }}
           TURSO_SEARCH_AUTH_TOKEN: ${{ secrets.TURSO_SEARCH_AUTH_TOKEN }}
         run: |
           missing=
-          for name in GEMINI_API_KEY TURSO_SEARCH_DATABASE_URL TURSO_SEARCH_AUTH_TOKEN; do
+          for name in GEMINI_API_KEY TURSO_SEARCH_DATABASE_URL TURSO_SEARCH_AUTH_TOKEN EMDASH_TURSO_DATABASE_URL TURSO_AUTH_TOKEN; do
             if [ -z "${!name}" ]; then
               missing="$missing $name"
             fi
@@ -56,6 +58,7 @@ jobs:
       - name: Index search documents
         env:
           APP_ENV: staging
+          EMDASH_TURSO_DATABASE_URL: ${{ secrets.EMDASH_TURSO_DATABASE_URL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TURSO_SEARCH_DATABASE_URL: ${{ secrets.TURSO_SEARCH_DATABASE_URL }}
           TURSO_SEARCH_AUTH_TOKEN: ${{ secrets.TURSO_SEARCH_AUTH_TOKEN }}
