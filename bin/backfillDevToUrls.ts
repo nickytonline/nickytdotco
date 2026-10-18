@@ -12,8 +12,9 @@
  *   vp run backfill:dev-to-urls -- --dry-run
  */
 import { execFileSync } from "node:child_process";
+import { createClient } from "@libsql/client";
+import { LibsqlDialect } from "@libsql/kysely-libsql";
 import { Kysely, sql } from "kysely";
-import { createDialect } from "emdash/db/libsql";
 import { SchemaError, SchemaRegistry } from "emdash";
 import {
   DEV_TO_URL_FIELD,
@@ -256,23 +257,66 @@ async function main(): Promise<void> {
     return;
   }
 
-  const url = process.env.EMDASH_TURSO_DATABASE_URL;
-  const authToken = process.env.TURSO_AUTH_TOKEN;
+  const { db, close } = openEmDashDatabase();
+  try {
+    await ensureDevToUrlField(db);
+    await applyAssignments(db, assignments);
+  } catch (error) {
+    if (isTursoUnauthorized(error)) {
+      throw new Error(
+        "Turso rejected TURSO_AUTH_TOKEN for EMDASH_TURSO_DATABASE_URL (HTTP 401).",
+        { cause: error }
+      );
+    }
+    throw error;
+  } finally {
+    await db.destroy();
+    close();
+  }
+}
+
+/**
+ * Open the EmDash Turso database with the site's libSQL client.
+ *
+ * `emdash/db/libsql` builds its dialect through `@libsql/kysely-libsql`,
+ * and that package depends on `@libsql/client` 0.8. Node resolves that
+ * nested client for a plain `node` script. Turso answers it with HTTP 401.
+ * The Astro app uses the direct `@libsql/client` 0.18 dependency, so this
+ * script creates that client and hands it to the dialect.
+ */
+function openEmDashDatabase(): { db: Kysely<unknown>; close: () => void } {
+  const url = process.env.EMDASH_TURSO_DATABASE_URL?.trim();
+  const authToken = process.env.TURSO_AUTH_TOKEN?.trim();
   if (!url || !authToken) {
     throw new Error(
       "EMDASH_TURSO_DATABASE_URL and TURSO_AUTH_TOKEN are required. Run via vp run backfill:dev-to-urls."
     );
   }
+  const client = createClient({ url, authToken });
+  return {
+    db: new Kysely({
+      dialect: new LibsqlDialect({ client }),
+    }),
+    close: () => {
+      client.close();
+    },
+  };
+}
 
-  const db = new Kysely({
-    dialect: createDialect({ url, authToken }),
-  });
-  try {
-    await ensureDevToUrlField(db);
-    await applyAssignments(db, assignments);
-  } finally {
-    await db.destroy();
+function isTursoUnauthorized(error: unknown): boolean {
+  if (!error || typeof error !== "object") return false;
+  const record = error as {
+    code?: unknown;
+    message?: unknown;
+    cause?: unknown;
+  };
+  if (
+    record.code === "SERVER_ERROR" &&
+    String(record.message).includes("401")
+  ) {
+    return true;
   }
+  return isTursoUnauthorized(record.cause);
 }
 
 await main();
