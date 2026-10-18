@@ -33,7 +33,7 @@
     "@astrojs/netlify": "^8.2.4",
     "@emdash-cms/auth-atproto": "^0.2.8",
     "@libsql/kysely-libsql": "^0.4.0",
-    "@netlify/blobs": "^10.0.0",
+    "@netlify/blobs": "^11.1.4",
     "@netlify/functions": "^5.2.0",
     "@astrojs/react": "^7.0.0",
     "@astrojs/rss": "^4.0.19",
