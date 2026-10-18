@@ -29,7 +29,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/markdown-remark": "^7.3.1",
-    "@astrojs/mdx": "^8.0.1",
+    "@astrojs/mdx": "^8.0.3",
     "@astrojs/netlify": "^8.2.4",
     "@emdash-cms/auth-atproto": "^0.2.8",
     "@libsql/kysely-libsql": "^0.4.0",
