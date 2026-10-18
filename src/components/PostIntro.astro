@@ -1,5 +1,6 @@
 ---
 import { site } from "../data/site";
+import { boostOnDevHref } from "../emdash/dev-to-url";
 import { dateFilter, w3DateFilter } from "../utils/filters";
 
 export interface Props {
@@ -7,13 +8,20 @@ export interface Props {
   cover_image?: string | null;
   date?: Date;
   reading_time_minutes?: number;
-  dev_to_slug: string;
+  dev_to_url?: string;
   url: string;
   canonical_url?: string;
 }
 
-const { title, cover_image, date, reading_time_minutes, dev_to_slug, url } =
-  Astro.props;
+const {
+  title,
+  cover_image,
+  date,
+  reading_time_minutes,
+  dev_to_url,
+  url,
+} = Astro.props;
+const boostOnDev = boostOnDevHref(dev_to_url);
 
 // Generate boost links
 const intentToTweet = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -32,7 +40,6 @@ const intentToBluesky = `https://bsky.app/intent/compose?text=${encodeURICompone
   `${title} ${site.url}${url}`,
 )}`;
 
-const foremBoostLink = `https://dev.to/nickytonline/${dev_to_slug}`;
 ---
 
 <header class="mb-12">
@@ -79,12 +86,16 @@ const foremBoostLink = `https://dev.to/nickytonline/${dev_to_slug}`;
   </div>
 
   <div class="flex flex-wrap gap-3">
-    <a
-      href={foremBoostLink}
-      class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-brand-solid focus:bg-brand-solid text-secondary-foreground hover:text-brand-foreground focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid rounded-lg font-semibold transition-colors"
-    >
-      Boost on DEV
-    </a>
+    {
+      boostOnDev && (
+        <a
+          href={boostOnDev}
+          class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-brand-solid focus:bg-brand-solid text-secondary-foreground hover:text-brand-foreground focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid rounded-lg font-semibold transition-colors"
+        >
+          Boost on DEV
+        </a>
+      )
+    }
     <a
       href={intentToBluesky}
       class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-brand-solid focus:bg-brand-solid text-secondary-foreground hover:text-brand-foreground focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid rounded-lg font-semibold transition-colors"

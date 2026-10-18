@@ -115,6 +115,7 @@ interface DevToPostSummary {
 }
 
 interface DevToPost {
+  url: string;
   id: number;
   title: string;
   description: string;
@@ -142,7 +143,7 @@ interface PostFrontmatter {
   tags: string[];
   cover_image: string | null;
   canonical_url: string;
-  dev_to_slug: string;
+  dev_to_url: string;
   reading_time_minutes: number;
   template: string;
   series?: {
@@ -874,7 +875,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     tag_list: tags,
     reading_time_minutes,
     cover_image,
-    slug,
+    url: devToUrl,
   } = post;
 
   const tagArray = Array.isArray(tags)
@@ -888,7 +889,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     tags: tagArray,
     cover_image,
     canonical_url: createLocalCanonicalUrl(title),
-    dev_to_slug: slug,
+    dev_to_url: devToUrl,
     reading_time_minutes,
     template: "post",
   };
