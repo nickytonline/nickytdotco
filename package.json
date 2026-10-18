@@ -48,7 +48,7 @@
     "@types/react-dom": "^19.3.0",
     "@varlock/1password-plugin": "^2.0.4",
     "@varlock/astro-integration": "^1.4.2",
-    "astro": "^7.3.2",
+    "astro": "^7.3.8",
     "astro-expressive-code": "^0.44.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
