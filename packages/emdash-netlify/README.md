@@ -31,7 +31,7 @@ export default defineConfig({
 
 Wire `netlify/functions/emdash-scheduled.ts` to the package's scheduled handler, and add an on-demand route that checks `EMDASH_SCHEDULE_SECRET` before calling `runScheduledTasks()`.
 
-Outside Netlify (`NETLIFY` unset), storage falls back to `.emdash/uploads` so `astro dev` can accept uploads.
+`astro dev` (non-production) falls back to `.emdash/uploads` so uploads work on disk. Production builds always use Blobs: Varlock leaves platform env like `NETLIFY` out of the SSR schema, so a `process.env.NETLIFY` check alone would keep selecting local disk on Netlify Functions and break backups/media writes.
 
 ## Upstream
 

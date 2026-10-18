@@ -137,22 +137,49 @@ describe("NetlifyBlobsStorage", () => {
 });
 
 describe("createStorage", () => {
-  const previous = process.env.NETLIFY;
+  const previousNetlify = process.env.NETLIFY;
+  const previousBlobsContext = process.env.NETLIFY_BLOBS_CONTEXT;
 
   afterEach(() => {
-    if (previous === undefined) delete process.env.NETLIFY;
-    else process.env.NETLIFY = previous;
+    if (previousNetlify === undefined) delete process.env.NETLIFY;
+    else process.env.NETLIFY = previousNetlify;
+    if (previousBlobsContext === undefined) {
+      delete process.env.NETLIFY_BLOBS_CONTEXT;
+    } else {
+      process.env.NETLIFY_BLOBS_CONTEXT = previousBlobsContext;
+    }
     vi.unstubAllEnvs();
   });
 
-  it("uses the local filesystem adapter outside Netlify", () => {
+  it("uses the local filesystem adapter in non-production without Netlify env", () => {
     delete process.env.NETLIFY;
+    delete process.env.NETLIFY_BLOBS_CONTEXT;
+    // Vitest runs with import.meta.env.PROD === false.
     const storage = createStorage({
       baseUrl: "/_emdash/api/media/file",
       localDirectory: ".emdash/uploads",
     });
+    expect(storage).not.toBeInstanceOf(NetlifyBlobsStorage);
     expect(storage.getPublicUrl("photo.png")).toBe(
       "/_emdash/api/media/file/photo.png"
     );
+  });
+
+  it("uses Netlify Blobs when NETLIFY=true even if Blobs context is unset", () => {
+    process.env.NETLIFY = "true";
+    delete process.env.NETLIFY_BLOBS_CONTEXT;
+    const storage = createStorage({
+      baseUrl: "/_emdash/api/media/file",
+    });
+    expect(storage).toBeInstanceOf(NetlifyBlobsStorage);
+  });
+
+  it("uses Netlify Blobs when NETLIFY_BLOBS_CONTEXT is set without NETLIFY", () => {
+    delete process.env.NETLIFY;
+    process.env.NETLIFY_BLOBS_CONTEXT = "dGVzdA==";
+    const storage = createStorage({
+      baseUrl: "/_emdash/api/media/file",
+    });
+    expect(storage).toBeInstanceOf(NetlifyBlobsStorage);
   });
 });

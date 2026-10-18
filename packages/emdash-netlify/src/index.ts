@@ -30,8 +30,9 @@ const storageEntrypoint = fileURLToPath(
  * Netlify Blobs storage adapter for EmDash media.
  *
  * On Netlify the runtime reads and writes a site-wide Blobs store, which
- * persists across function invocations and deploys. Outside Netlify it falls
- * back to EmDash's local filesystem adapter so `astro dev` can upload media.
+ * persists across function invocations and deploys. Production builds always
+ * select Blobs (Varlock omits `NETLIFY` from the SSR schema). `astro dev`
+ * falls back to EmDash's local filesystem adapter so uploads work on disk.
  *
  * Signed direct-to-storage uploads are not supported. The admin falls back
  * to uploading through the EmDash API.

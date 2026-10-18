@@ -323,11 +323,31 @@ export class NetlifyBlobsStorage implements Storage {
 }
 
 /**
+ * Whether EmDash should use Netlify Blobs instead of the local filesystem.
+ *
+ * `process.env.NETLIFY` is unreliable in this site's Astro SSR bundle: Varlock
+ * only injects schema keys, so platform vars like `NETLIFY` and `CONTEXT` are
+ * often unset at runtime (same reason search reindex reads deploy context from
+ * `Astro.locals.netlify`). Without Blobs, "Back up now" writes under
+ * `.emdash/uploads` on the function's ephemeral disk and fails — the admin
+ * toast is generic and may leave no useful function log.
+ *
+ * Prefer Blobs when Netlify signals are present, and in production builds
+ * (`import.meta.env.PROD`), which on this adapter always target Netlify
+ * Functions. `astro dev` stays on local disk.
+ */
+export function shouldUseNetlifyBlobs(): boolean {
+  if (process.env.NETLIFY === "true") return true;
+  if (process.env.NETLIFY_BLOBS_CONTEXT) return true;
+  return import.meta.env.PROD === true;
+}
+
+/**
  * Runtime factory EmDash loads from the storage descriptor.
- * Netlify functions (`NETLIFY=true`) use Blobs. Local `astro dev` uses disk.
+ * Netlify Functions use Blobs. Local `astro dev` uses disk.
  */
 export function createStorage(config: Record<string, unknown>): Storage {
-  if (process.env.NETLIFY === "true") return new NetlifyBlobsStorage(config);
+  if (shouldUseNetlifyBlobs()) return new NetlifyBlobsStorage(config);
   return createLocalStorage({
     directory: stringConfig(config, "localDirectory", ".emdash/uploads"),
     baseUrl: stringConfig(config, "baseUrl", "/_emdash/api/media/file"),
