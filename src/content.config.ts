@@ -99,6 +99,8 @@ const talksCollection = defineCollection({
     endDate: z.date().optional(),
     upcoming: z.boolean().optional(),
     video: videoSchema.optional(),
+    /** Past talk whose recording is not published yet. */
+    videoComingSoon: z.boolean().optional(),
     venue: z.object({
       name: z.string(),
       url: urlOrRelative.optional(),
