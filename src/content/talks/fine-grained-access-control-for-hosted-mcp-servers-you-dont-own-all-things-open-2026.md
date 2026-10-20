@@ -9,8 +9,8 @@ venue:
   name: "All Things Open 2026"
   url: "https://2026.allthingsopen.org/"
   location: "Raleigh Convention Center, Raleigh, NC"
-sessionUrl: "https://2026.allthingsopen.org/sessions/fine-grained-access-control-for-hosted-mcp-servers-you-dont-own"
-registrationUrl: "https://2026.allthingsopen.org/register"
+slideDeck: https://ato2026-talk.netlify.app
+videoComingSoon: true
 tags: ["mcp", "zero trust", "agentic ai", "security", "pomerium", "oauth"]
 ---
 

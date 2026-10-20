@@ -20,6 +20,11 @@ import {
   setCdnCacheHeaders,
 } from "../../utils/cdn-cache";
 import { upcomingTalkPromoHtml } from "../../utils/talk-promo";
+import {
+  showTalkHeroImage,
+  talkRecordingNote,
+  talkRecordingNoteText,
+} from "../../utils/talk-recording";
 
 export const prerender = false;
 
@@ -58,6 +63,17 @@ const registrationUrl = talk.data.registrationUrl;
 const additionalLinks = talk.data.additionalLinks ?? [];
 const coverImage = talk.data.cover_image;
 const coverImageLarge = talk.data.cover_image_large;
+const heroImage = coverImageLarge ?? coverImage;
+const recordingInput = {
+  hasVideo: Boolean(video),
+  isUpcoming,
+  videoComingSoon: talk.data.videoComingSoon,
+};
+const showHeroImage = showTalkHeroImage({
+  ...recordingInput,
+  hasCover: Boolean(heroImage),
+});
+const recordingNote = talkRecordingNote(recordingInput);
 const promoHtml = upcomingTalkPromoHtml(talk.data, now);
 const isMultiDayEvent =
   isUpcoming &&
@@ -250,29 +266,23 @@ const eventJsonLd = {
             </a>
           )}
         </div>
-      ) : isUpcoming && coverImageLarge ? (
+      ) : showHeroImage && heroImage ? (
         <div class="my-6">
           <Image
-            src={coverImageLarge}
+            src={heroImage}
             alt={`${title} at ${venue.name}`}
             width={1600}
             height={900}
             class="w-full max-w-2xl rounded-xl border-2 border-border shadow-lg"
           />
         </div>
-      ) : isUpcoming && coverImage ? (
-        <div class="my-6">
-          <Image
-            src={coverImage}
-            alt={`${title} at ${venue.name}`}
-            width={1600}
-            height={900}
-            class="w-full max-w-2xl rounded-xl border-2 border-border shadow-lg"
-          />
-        </div>
-      ) : isUpcoming ? null : (
+      ) : null
+    }
+
+    {
+      recordingNote && (
         <p class="my-6 text-muted-foreground italic">
-          This talk was not recorded.
+          {talkRecordingNoteText(recordingNote)}
         </p>
       )
     }
