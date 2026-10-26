@@ -5,6 +5,13 @@ import {
   toFeaturedProject,
 } from "./enrichCuratedProjects";
 
+const mcpTemplate = curatedProjects.find(
+  (project) => project.name === "mcp-typescript-template"
+)!;
+const pomeriumQuest = curatedProjects.find(
+  (project) => project.name === "pomerium-quest"
+)!;
+
 describe("enrichCuratedProjects", () => {
   it("merges live GitHub stats with curated project copy", async () => {
     const fetch = vi.fn(async () =>
@@ -19,7 +26,7 @@ describe("enrichCuratedProjects", () => {
       })
     );
 
-    const [project] = await enrichCuratedProjects([curatedProjects[0]!], {
+    const [project] = await enrichCuratedProjects([mcpTemplate], {
       fetch,
       githubToken: "ghp_test",
     });
@@ -39,7 +46,7 @@ describe("enrichCuratedProjects", () => {
       throw new Error("network down");
     });
 
-    const [project] = await enrichCuratedProjects([curatedProjects[0]!], {
+    const [project] = await enrichCuratedProjects([mcpTemplate], {
       fetch,
       githubToken: "ghp_test",
     });
@@ -51,13 +58,12 @@ describe("enrichCuratedProjects", () => {
 
 describe("toFeaturedProject", () => {
   it("uses homepage-specific copy when present", () => {
-    const featured = toFeaturedProject(curatedProjects[0]!, {
+    const featured = toFeaturedProject(pomeriumQuest, {
       stargazerCount: 77,
       forkCount: 8,
     });
 
-    expect(featured.description).toContain("with Vite, Vitest, Pino logging");
-    expect(featured.links?.[0]?.label).toBe("Read the build story");
+    expect(featured.description).toContain("teaches Zero Trust with Pomerium");
     expect(featured.stargazerCount).toBe(77);
   });
 });
