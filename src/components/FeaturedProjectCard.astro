@@ -35,19 +35,19 @@ const title = `${project.owner}/${project.name}`;
   <div class="grid md:flex gap-3 md:gap-6 xl:gap-8">
     {
       project.imageUrl ? (
-        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted md:w-56 md:h-31.5 md:aspect-auto xl:w-72 xl:h-40.5">
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted md:w-40 md:h-22.5 md:aspect-auto">
           <Image
             src={project.imageUrl}
             alt=""
-            width={576}
-            height={324}
+            width={320}
+            height={180}
             class="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
           />
         </div>
       ) : (
-        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center md:w-56 md:h-31.5 md:aspect-auto xl:w-72 xl:h-40.5">
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center md:w-40 md:h-22.5 md:aspect-auto">
           <svg
             class="w-8 h-8 text-muted-foreground/50"
             fill="none"
