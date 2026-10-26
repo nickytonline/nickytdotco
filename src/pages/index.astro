@@ -10,7 +10,7 @@ import { dateFilter } from "../utils/filters";
 import { fetchPastGuestsWithYouTube } from "../content/_loaders/stream-schedule";
 import TalkCard from "../components/TalkCard.astro";
 import GuideCard from "../components/GuideCard.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import FeaturedProjectCard from "../components/FeaturedProjectCard.astro";
 import {
   curatedProjects,
   featuredProjectRef,
@@ -365,12 +365,8 @@ export const prerender = false;
 
     <section class="space-y-6">
       <SectionHeader title="Featured project" headingLevel={2} />
-      <p class="max-w-2xl text-lg text-muted-foreground">
-        A production-ready starting point for building MCP servers in
-        TypeScript.
-      </p>
-      <div class="max-w-2xl">
-        <ProjectCard project={featuredProject} />
+      <div class="grid gap-6 xl:gap-8">
+        <FeaturedProjectCard project={featuredProject} />
       </div>
     </section>
 

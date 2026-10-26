@@ -8,12 +8,14 @@ export interface RepositoryRef {
 export interface RepositoryStats {
   stargazerCount: number;
   forkCount: number;
+  openGraphImageUrl?: string | null;
   primaryLanguage?: { name: string; color: string } | null;
 }
 
 interface GraphQLRepository {
   stargazerCount: number;
   forkCount: number;
+  openGraphImageUrl?: string | null;
   primaryLanguage?: { name: string; color: string } | null;
 }
 
@@ -33,6 +35,7 @@ function buildStatsQuery(repositories: RepositoryRef[]): string {
     repo${index}: repository(owner: ${JSON.stringify(repo.owner)}, name: ${JSON.stringify(repo.name)}) {
       stargazerCount
       forkCount
+      openGraphImageUrl
       primaryLanguage {
         name
         color
@@ -96,6 +99,7 @@ export async function fetchRepositoryStats(
     stats.set(repositoryKey(repo.owner, repo.name), {
       stargazerCount: node.stargazerCount,
       forkCount: node.forkCount,
+      openGraphImageUrl: node.openGraphImageUrl,
       primaryLanguage: node.primaryLanguage,
     });
   }

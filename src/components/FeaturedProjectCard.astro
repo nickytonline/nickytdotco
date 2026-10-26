@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import { formatCompactNumber } from "../utils/filters";
+import Pill from "./Pill.astro";
+
+interface ProjectLink {
+  label: string;
+  url: string;
+}
+
+interface Props {
+  project: {
+    owner: string;
+    name: string;
+    description: string;
+    url: string;
+    stargazerCount: number;
+    forkCount: number;
+    imageUrl?: string | null;
+    primaryLanguage?: {
+      name: string;
+      color: string;
+    } | null;
+    myRole?: string;
+    links?: ProjectLink[];
+  };
+  category?: string;
+}
+
+const { project, category = "Project" } = Astro.props;
+const title = `${project.owner}/${project.name}`;
+---
+
+<article class="relative group">
+  <div class="grid md:flex gap-3 md:gap-6 xl:gap-8">
+    {
+      project.imageUrl ? (
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted md:w-56 md:h-31.5 md:aspect-auto xl:w-72 xl:h-40.5">
+          <Image
+            src={project.imageUrl}
+            alt=""
+            width={576}
+            height={324}
+            class="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      ) : (
+        <div class="relative shrink-0 w-full aspect-video rounded-lg overflow-hidden bg-muted flex items-center justify-center md:w-56 md:h-31.5 md:aspect-auto xl:w-72 xl:h-40.5">
+          <svg
+            class="w-8 h-8 text-muted-foreground/50"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M17.25 6.075L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+            />
+          </svg>
+        </div>
+      )
+    }
+    <div class="flex-1 flex flex-col justify-center gap-2 min-w-0">
+      <h3
+        class="text-xl font-semibold leading-snug text-balance text-card-foreground"
+      >
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="after:absolute after:inset-0 after:rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+        >
+          <span
+            class="group-hover:text-brand group-hover:underline group-focus-within:text-brand group-focus-within:underline dark:group-hover:text-brand dark:group-focus-within:text-brand"
+          >
+            {title}<span class="external-mark" aria-hidden="true">↗</span>
+          </span>
+        </a>
+      </h3>
+      <p class="text-base text-muted-foreground leading-relaxed line-clamp-3">
+        {project.description}
+      </p>
+      <div
+        class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground"
+      >
+        {
+          project.primaryLanguage && (
+            <span class="inline-flex items-center gap-2">
+              <span
+                class="w-2.5 h-2.5 rounded-full"
+                style={`background-color: ${project.primaryLanguage.color}`}
+                aria-hidden="true"
+              />
+              {project.primaryLanguage.name}
+            </span>
+          )
+        }
+        <span aria-label={`${project.stargazerCount} stars`}>
+          ★ {formatCompactNumber(project.stargazerCount)}
+        </span>
+        {
+          project.myRole && (
+            <span>
+              <span class="font-medium text-foreground">Role:</span>{" "}
+              {project.myRole}
+            </span>
+          )
+        }
+      </div>
+      {
+        project.links && project.links.length > 0 && (
+          <div class="flex flex-wrap gap-3 pt-1">
+            {project.links.map((link) => (
+              <a
+                href={link.url}
+                class="relative z-10 text-sm font-medium text-brand hover:underline focus:underline"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )
+      }
+      {
+        category && (
+          <div class="pt-1">
+            <Pill label={category} aria-hidden="true" />
+          </div>
+        )
+      }
+    </div>
+  </div>
+</article>

@@ -20,6 +20,8 @@ describe("enrichCuratedProjects", () => {
           repo0: {
             stargazerCount: 99,
             forkCount: 21,
+            openGraphImageUrl:
+              "https://repository-images.githubusercontent.com/example/og.png",
             primaryLanguage: { name: "TypeScript", color: "#3178c6" },
           },
         },
@@ -34,6 +36,9 @@ describe("enrichCuratedProjects", () => {
     expect(fetch).toHaveBeenCalledOnce();
     expect(project.stargazerCount).toBe(99);
     expect(project.forkCount).toBe(21);
+    expect(project.imageUrl).toBe(
+      "https://repository-images.githubusercontent.com/example/og.png"
+    );
     expect(project.description).toContain("Production-ready starter");
     expect(project.primaryLanguage).toEqual({
       name: "TypeScript",
@@ -46,13 +51,16 @@ describe("enrichCuratedProjects", () => {
       throw new Error("network down");
     });
 
-    const [project] = await enrichCuratedProjects([mcpTemplate], {
+    const [project] = await enrichCuratedProjects([pomeriumQuest], {
       fetch,
       githubToken: "ghp_test",
     });
 
-    expect(project.stargazerCount).toBe(55);
-    expect(project.forkCount).toBe(12);
+    expect(project.stargazerCount).toBe(1);
+    expect(project.forkCount).toBe(0);
+    expect(project.imageUrl).toContain(
+      "repository-images.githubusercontent.com"
+    );
   });
 });
 
@@ -61,9 +69,12 @@ describe("toFeaturedProject", () => {
     const featured = toFeaturedProject(pomeriumQuest, {
       stargazerCount: 77,
       forkCount: 8,
+      imageUrl:
+        "https://repository-images.githubusercontent.com/example/featured.png",
     });
 
     expect(featured.description).toContain("teaches Zero Trust with Pomerium");
     expect(featured.stargazerCount).toBe(77);
+    expect(featured.imageUrl).toContain("featured.png");
   });
 });
