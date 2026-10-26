@@ -26,9 +26,7 @@ export const curatedProjects: CuratedProjectBase[] = [
     owner: "nickytonline",
     name: "pomerium-quest",
     description:
-      "A Zelda-style browser RPG that teaches how Pomerium works. Every gate is a real Pomerium route, every guard follows real policy, and when you're turned away the game shows the exact rule that failed — all behind a local k3d cluster with Keycloak as the Oracle.",
-    featuredDescription:
-      "A Zelda-style browser RPG that teaches Zero Trust with Pomerium. Every gate is a real route and policy; when a guard turns you away, you see the exact rule that failed.",
+      "A top-down pixel-art action RPG that teaches how Pomerium works, running behind a real Pomerium instance.",
     url: "https://github.com/nickytonline/pomerium-quest",
     primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
     myRole: "Author & maintainer",

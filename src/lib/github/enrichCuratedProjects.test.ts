@@ -65,7 +65,7 @@ describe("enrichCuratedProjects", () => {
 });
 
 describe("toFeaturedProject", () => {
-  it("uses homepage-specific copy when present", () => {
+  it("falls back to the curated description when no featured copy is set", () => {
     const featured = toFeaturedProject(pomeriumQuest, {
       stargazerCount: 77,
       forkCount: 8,
@@ -73,8 +73,30 @@ describe("toFeaturedProject", () => {
         "https://repository-images.githubusercontent.com/example/featured.png",
     });
 
-    expect(featured.description).toContain("teaches Zero Trust with Pomerium");
+    expect(featured.description).toBe(pomeriumQuest.description);
+    expect(featured.description).toContain(
+      "top-down pixel-art action RPG that teaches how Pomerium works"
+    );
     expect(featured.stargazerCount).toBe(77);
     expect(featured.imageUrl).toContain("featured.png");
+  });
+
+  it("uses homepage-specific copy when present", () => {
+    const featured = toFeaturedProject(
+      {
+        ...pomeriumQuest,
+        featuredDescription: "Short homepage blurb for Pomerium Quest.",
+      },
+      {
+        stargazerCount: 77,
+        forkCount: 8,
+        imageUrl:
+          "https://repository-images.githubusercontent.com/example/featured.png",
+      }
+    );
+
+    expect(featured.description).toBe(
+      "Short homepage blurb for Pomerium Quest."
+    );
   });
 });
