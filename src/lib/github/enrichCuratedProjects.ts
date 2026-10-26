@@ -12,6 +12,7 @@ export interface EnrichedProject {
   url: string;
   stargazerCount: number;
   forkCount: number;
+  imageUrl?: string | null;
   primaryLanguage?: { name: string; color: string } | null;
   myRole?: string;
   links?: CuratedProjectBase["links"];
@@ -57,6 +58,7 @@ export async function enrichCuratedProjects(
       links: project.links,
       stargazerCount: stats?.stargazerCount ?? fallback?.stargazerCount ?? 0,
       forkCount: stats?.forkCount ?? fallback?.forkCount ?? 0,
+      imageUrl: stats?.openGraphImageUrl ?? project.fallbackImage ?? null,
       primaryLanguage:
         project.primaryLanguage ?? stats?.primaryLanguage ?? null,
     };
@@ -65,7 +67,7 @@ export async function enrichCuratedProjects(
 
 export function toFeaturedProject(
   project: CuratedProjectBase,
-  stats: Pick<EnrichedProject, "stargazerCount" | "forkCount">
+  stats: Pick<EnrichedProject, "stargazerCount" | "forkCount" | "imageUrl">
 ): EnrichedProject {
   return {
     owner: project.owner,
@@ -76,6 +78,7 @@ export function toFeaturedProject(
     links: project.featuredLinks ?? project.links,
     stargazerCount: stats.stargazerCount,
     forkCount: stats.forkCount,
+    imageUrl: stats.imageUrl ?? project.fallbackImage ?? null,
     primaryLanguage: project.primaryLanguage ?? null,
   };
 }

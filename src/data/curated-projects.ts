@@ -17,6 +17,8 @@ export interface CuratedProjectBase {
   featuredLinks?: ProjectLink[];
   /** Used when GitHub stats are unavailable. */
   fallbackStats?: { stargazerCount: number; forkCount: number };
+  /** Used when GitHub openGraphImageUrl is unavailable. */
+  fallbackImage?: string;
 }
 
 export const curatedProjects: CuratedProjectBase[] = [
@@ -31,6 +33,8 @@ export const curatedProjects: CuratedProjectBase[] = [
     primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
     myRole: "Author & maintainer",
     fallbackStats: { stargazerCount: 1, forkCount: 0 },
+    fallbackImage:
+      "https://repository-images.githubusercontent.com/1432883457/ba866c8c-7793-4788-9c4c-fcf1d59a7399",
   },
   {
     owner: "nickytonline",
