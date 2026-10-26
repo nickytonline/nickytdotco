@@ -22,23 +22,27 @@ export interface CuratedProjectBase {
 export const curatedProjects: CuratedProjectBase[] = [
   {
     owner: "nickytonline",
+    name: "pomerium-quest",
+    description:
+      "A Zelda-style browser RPG that teaches how Pomerium works. Every gate is a real Pomerium route, every guard follows real policy, and when you're turned away the game shows the exact rule that failed — all behind a local k3d cluster with Keycloak as the Oracle.",
+    featuredDescription:
+      "A Zelda-style browser RPG that teaches Zero Trust with Pomerium. Every gate is a real route and policy; when a guard turns you away, you see the exact rule that failed.",
+    url: "https://github.com/nickytonline/pomerium-quest",
+    primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
+    myRole: "Author & maintainer",
+    fallbackStats: { stargazerCount: 1, forkCount: 0 },
+  },
+  {
+    owner: "nickytonline",
     name: "mcp-typescript-template",
     description:
       "Production-ready starter for building MCP servers in TypeScript. No build step needed during development, Vite for production, Vitest for testing, Pino logging, and Docker support out of the box.",
-    featuredDescription:
-      "Production-ready starter for building MCP servers in TypeScript, with Vite, Vitest, Pino logging, and Docker support out of the box.",
     url: "https://github.com/nickytonline/mcp-typescript-template",
     primaryLanguage: { name: "TypeScript", color: "var(--typescript)" },
     myRole: "Author & maintainer",
     links: [
       {
         label: "Blog post",
-        url: "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template/",
-      },
-    ],
-    featuredLinks: [
-      {
-        label: "Read the build story",
         url: "/blog/build-your-first-or-next-mcp-server-with-the-typescript-mcp-template/",
       },
     ],
@@ -117,5 +121,5 @@ export const curatedProjects: CuratedProjectBase[] = [
 
 export const featuredProjectRef = {
   owner: "nickytonline",
-  name: "mcp-typescript-template",
+  name: "pomerium-quest",
 } as const;
