@@ -7,7 +7,6 @@ venue:
 tags: ["openclaw", "security", "ai", "pomerium", "zero trust"]
 video:
   { "url": "https://youtube.com/watch?v=xg1zNlzw7Jk", "type": "youtube" }
-featured: true
 ---
 
 Running OpenClaw without hardening access to it is a bad idea. We'll cover how I secured my OpenClaw, McClaw, contributed trusted-proxy auth mode to the OpenClaw project, and how I use it to build tools.

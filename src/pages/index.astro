@@ -54,7 +54,10 @@ const featuredTalks = allTalks
   .filter((t) => t.data.featured === true && !isTalkUpcoming(t.data, nowMs))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 2);
-const featuredTalkIds = new Set(featuredTalks.map((t) => t.id));
+// Exclude every featured talk from Latest, not only the Start here cap
+const allFeaturedTalkIds = new Set(
+  allTalks.filter((t) => t.data.featured === true).map((t) => t.id),
+);
 
 // Upcoming talks: all future events, not a capped subset.
 const upcomingTalks = allTalks.filter((t) => isTalkUpcoming(t.data, nowMs));
@@ -62,7 +65,7 @@ const recentTalks = allTalks
   .filter(
     (t) =>
       !isTalkUpcoming(t.data, nowMs) &&
-      !featuredTalkIds.has(t.id) &&
+      !allFeaturedTalkIds.has(t.id) &&
       (t.data.endDate ?? t.data.date) < now,
   )
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
