@@ -10,6 +10,7 @@ venue:
 video:
   type: "youtube"
   url: "https://www.youtube.com/watch?v=mxd-ZdSD0ak"
+featured: true
 tags: ["mcp", "security", "zero trust", "agentic ai", "oauth", "pomerium", "github"]
 ---
 
