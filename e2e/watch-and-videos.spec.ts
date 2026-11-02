@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { escapeRegExp } from "./test-utils";
+import { escapeRegExp, expectBrowserLocalTime } from "./test-utils";
 
 test.describe("watch page", () => {
   test("renders the watch pitch and links to video archives", async ({
@@ -41,8 +41,7 @@ test.describe("watch page", () => {
     const times = page.locator("time[data-local-datetime]");
     if ((await times.count()) === 0) return;
 
-    await expect(times.first()).toBeVisible();
-    await expect(times.first()).not.toContainText(" UTC");
+    await expectBrowserLocalTime(times.first());
   });
 });
 
@@ -147,8 +146,6 @@ test.describe("video archives", () => {
     expect(response.headers()["timezone"]).toBeUndefined();
 
     await page.goto(href!);
-    const time = page.locator("time[data-local-datetime]");
-    await expect(time).toBeVisible();
-    await expect(time).not.toContainText(" UTC");
+    await expectBrowserLocalTime(page.locator("time[data-local-datetime]"));
   });
 });

@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { expectBrowserLocalTime } from "./test-utils";
 
 test.describe("home page", () => {
   test("renders the hero with a heading and headshot", async ({ page }) => {
@@ -162,8 +163,7 @@ test.describe("home page", () => {
     const times = page.locator("time[data-local-datetime]");
     if ((await times.count()) === 0) return;
 
-    await expect(times.first()).toBeVisible();
-    await expect(times.first()).not.toContainText(" UTC");
+    await expectBrowserLocalTime(times.first());
   });
 
   test("embeds Person JSON-LD structured data", async ({ page }) => {

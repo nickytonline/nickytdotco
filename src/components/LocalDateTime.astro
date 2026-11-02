@@ -9,14 +9,16 @@ interface Props {
 
 const { date, showTime = false, class: className } = Astro.props;
 const parsed = new Date(date);
-const fallback = Number.isNaN(parsed.getTime())
+const utcLabel = Number.isNaN(parsed.getTime())
   ? date
-  : `${getLocalizedDate({
+  : getLocalizedDate({
       date,
       locale: "en-US",
       timezone: "UTC",
       showTime,
-    })} UTC`;
+    });
+// A time-style format already names the zone. Date-only does not.
+const fallback = showTime ? utcLabel : `${utcLabel} UTC`;
 ---
 
 <time
@@ -41,6 +43,7 @@ const fallback = Number.isNaN(parsed.getTime())
         dateStyle: "full",
         timeStyle: showTime ? "long" : undefined,
       });
+      node.dataset.localized = "true";
     }
   }
 
