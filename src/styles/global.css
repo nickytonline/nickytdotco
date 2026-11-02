@@ -1456,6 +1456,90 @@ nav[aria-label="main navigation"] .nav-link[aria-current="page"]:focus-visible {
   }
 }
 
+/* One random background-dot sparkle (~every 10s). Matches the 16px grid. */
+.star-twinkle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 2.4px;
+  height: 2.4px;
+  margin: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: oklch(0.65 0.25 350 / 0.85);
+  box-shadow: 0 0 6px 1px oklch(0.65 0.25 350 / 0.55);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  will-change: opacity, transform;
+}
+
+.star-twinkle::before,
+.star-twinkle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: oklch(0.72 0.2 350 / 0.9);
+  border-radius: 999px;
+  opacity: 0.85;
+  transform: translate(-50%, -50%);
+}
+
+.star-twinkle::before {
+  width: 1px;
+  height: 14px;
+}
+
+.star-twinkle::after {
+  width: 14px;
+  height: 1px;
+}
+
+:is(.dark) .star-twinkle {
+  background: oklch(0.78 0.2 350 / 0.95);
+  box-shadow: 0 0 8px 2px oklch(0.7 0.22 350 / 0.7);
+}
+
+:is(.dark) .star-twinkle::before,
+:is(.dark) .star-twinkle::after {
+  background: oklch(0.85 0.15 350 / 0.95);
+}
+
+.star-twinkle--active {
+  animation: star-twinkle 1.2s ease-in-out;
+}
+
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+  }
+  35% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2.4) rotate(12deg);
+  }
+  55% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.6) rotate(18deg);
+  }
+  75% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1.1) rotate(22deg);
+  }
+}
+
+@media (max-width: 1023px), (prefers-reduced-motion: reduce) {
+  .star-twinkle {
+    display: none;
+  }
+}
+
+:is(.windows95) .star-twinkle {
+  display: none;
+}
+
 [data-embed] {
   @apply my-4;
 }

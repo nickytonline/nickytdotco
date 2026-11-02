@@ -1,0 +1,100 @@
+---
+---
+
+<span id="star-twinkle" class="star-twinkle" aria-hidden="true"></span>
+
+<script is:inline>
+  function startStarTwinkle() {
+    if (window.__starTwinkleStarted) return;
+    window.__starTwinkleStarted = true;
+
+    const GRID = 16;
+    const INTERVAL_MS = 10000;
+    const TWINKLE_MS = 1200;
+    const MIN_WIDTH = 1024;
+
+    const el = document.getElementById("star-twinkle");
+    if (!(el instanceof HTMLElement)) return;
+
+    let timer = 0;
+    let busy = false;
+
+    const canTwinkle = () =>
+      window.matchMedia(`(min-width: ${MIN_WIDTH}px)`).matches &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+      !document.documentElement.classList.contains("windows95");
+
+    const pickPosition = () => {
+      const overlayLeft = window.innerWidth * 0.4;
+      const overlayWidth = window.innerWidth * 0.6;
+      const cols = Math.max(1, Math.floor(overlayWidth / GRID));
+      const rows = Math.max(1, Math.floor(window.innerHeight / GRID));
+      // Bias toward the top-right, where the dotted mask is densest.
+      const col = Math.min(
+        cols - 1,
+        Math.floor((1 - Math.pow(Math.random(), 1.6)) * cols),
+      );
+      const row = Math.min(
+        rows - 1,
+        Math.floor(Math.pow(Math.random(), 1.8) * rows),
+      );
+      return {
+        left: overlayLeft + col * GRID + GRID / 2,
+        top: row * GRID + GRID / 2,
+      };
+    };
+
+    const twinkle = () => {
+      if (busy || !canTwinkle()) return;
+      busy = true;
+
+      const { left, top } = pickPosition();
+      el.style.left = `${left}px`;
+      el.style.top = `${top}px`;
+      el.classList.remove("star-twinkle--active");
+      // Restart the CSS animation even if the class was already present.
+      void el.offsetWidth;
+      el.classList.add("star-twinkle--active");
+
+      window.setTimeout(() => {
+        el.classList.remove("star-twinkle--active");
+        busy = false;
+      }, TWINKLE_MS);
+    };
+
+    const sync = () => {
+      const enabled = canTwinkle();
+      el.hidden = !enabled;
+      if (!enabled) {
+        el.classList.remove("star-twinkle--active");
+        busy = false;
+        if (timer) {
+          window.clearInterval(timer);
+          timer = 0;
+        }
+        return;
+      }
+      if (!timer) {
+        // First sparkle shortly after becoming eligible, then every 10s.
+        window.setTimeout(twinkle, 1500);
+        timer = window.setInterval(twinkle, INTERVAL_MS);
+      }
+    };
+
+    sync();
+    window.addEventListener("resize", sync, { passive: true });
+    window
+      .matchMedia("(prefers-reduced-motion: reduce)")
+      .addEventListener("change", sync);
+    window
+      .matchMedia(`(min-width: ${MIN_WIDTH}px)`)
+      .addEventListener("change", sync);
+    new MutationObserver(sync).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+
+  startStarTwinkle();
+  document.addEventListener("astro:page-load", startStarTwinkle);
+</script>
