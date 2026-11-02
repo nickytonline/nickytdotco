@@ -23,12 +23,15 @@ import {
   isEventUpcoming,
   isTalkUpcoming,
   SCHEDULE_CDN_CACHE_SECONDS,
-  setFixedCdnCacheHeaders,
 } from "../utils/cdn-cache";
 import { scheduleSearchReindex } from "../lib/search/scheduleSearchReindex";
-import { getBlogPosts } from "../emdash/blog";
+import { getBlogListing } from "../emdash/blog";
+import {
+  cacheRenderedContent,
+  EXPIRING_CACHE_SWR_SECONDS,
+} from "../utils/route-cache";
 
-const allPosts = await getBlogPosts();
+const { posts: allPosts, cacheHint: blogCacheHint } = await getBlogListing();
 
 const sortedPosts = allPosts.sort((a, b) => {
   return b.data.date.getTime() - a.data.date.getTime();
@@ -92,11 +95,6 @@ const featuredProject = toFeaturedProject(
   featuredProjectStats,
 );
 
-const locale =
-  Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
-  Astro.request.headers.get("Accept-Language") ||
-  "en-US";
-
 let errorMessage = "";
 let schedule: StreamGuestInfo[] = [];
 let upcomingStreams: StreamGuestInfo[] = [];
@@ -153,16 +151,14 @@ const latestContent = [
   .sort((a, b) => b.date.getTime() - a.date.getTime())
   .slice(0, 4);
 
-const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
-const timezone = rawTimezone || "UTC";
-
 if (!errorMessage) {
-  setFixedCdnCacheHeaders(
+  cacheRenderedContent(
     Astro.response.headers,
+    Astro.cache,
+    blogCacheHint,
     SCHEDULE_CDN_CACHE_SECONDS,
+    EXPIRING_CACHE_SWR_SECONDS,
   );
-  Astro.response.headers.set("timezone", timezone);
-  Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
 }
 scheduleSearchReindex("/", Astro.locals.netlify.context);
 
@@ -395,11 +391,7 @@ export const prerender = false;
                     category="Talk"
                   />
                 ) : (
-                  <StreamSchedule
-                    schedule={[event.item]}
-                    locale={locale}
-                    timezone={timezone}
-                  />
+                  <StreamSchedule schedule={[event.item]} />
                 )}
               </div>
             ))}
@@ -431,11 +423,7 @@ export const prerender = false;
 
                 if (content.kind === "stream") {
                   return (
-                    <StreamSchedule
-                      schedule={[content.item]}
-                      locale={locale}
-                      timezone={timezone}
-                    />
+                    <StreamSchedule schedule={[content.item]} />
                   );
                 }
 

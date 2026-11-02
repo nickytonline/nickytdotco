@@ -1,6 +1,7 @@
 import process from "node:process";
 import { defineConfig } from "astro/config";
 import netlify from "@astrojs/netlify";
+import { cacheNetlify } from "@astrojs/netlify/cache";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 import varlockintegration from "@varlock/astro-integration";
@@ -21,6 +22,9 @@ import { embedPlugin } from "./src/emdash/embed-plugin.ts";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
+  // EmDash publish routes call Astro.cache.invalidate. This provider turns
+  // those tags into Netlify durable cache purges.
+  cache: { provider: cacheNetlify() },
   // Only for local `astro dev`: Edge Functions emulation boots Deno via
   // @netlify/edge-functions-dev, which crashes on Deno 2.9.6+
   // (`unexpected argument '--allow-scripts'`). Never pass this on Netlify

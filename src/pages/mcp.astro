@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import site from "../data/site";
-import { getBlogPosts } from "../emdash/blog";
+import { getBlogListing } from "../emdash/blog";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import GuideCard from "../components/GuideCard.astro";
 import Layout from "../layouts/MainLayout.astro";
@@ -9,6 +9,10 @@ import SectionHeader from "../components/SectionHeader.astro";
 import TalkCard from "../components/TalkCard.astro";
 import { dateFilter } from "../utils/filters";
 import { isTalkUpcoming } from "../utils/cdn-cache";
+import {
+  cacheRenderedContent,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+} from "../utils/route-cache";
 
 export const prerender = false;
 
@@ -17,7 +21,13 @@ const hasMcpTag = (tags?: string[]) =>
   false;
 
 const now = Date.now();
-const allPosts = await getBlogPosts();
+const { posts: allPosts, cacheHint } = await getBlogListing();
+cacheRenderedContent(
+  Astro.response.headers,
+  Astro.cache,
+  cacheHint,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+);
 const mcpPosts = allPosts
   .filter((post) => hasMcpTag(post.data.tags))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());

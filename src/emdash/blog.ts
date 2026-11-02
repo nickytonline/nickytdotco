@@ -94,9 +94,36 @@ function mapLiveEntry(entry: {
   return { id: entry.id, data: mapData(entry.data, entry.id) };
 }
 
+export interface BlogCacheHint {
+  tags?: string[];
+  lastModified?: Date;
+}
+
+function mergeCacheHint(
+  current: BlogCacheHint,
+  next: BlogCacheHint | undefined
+): BlogCacheHint {
+  if (!next) return current;
+  const tags = [...new Set([...(current.tags ?? []), ...(next.tags ?? [])])];
+  const lastModified =
+    current.lastModified && next.lastModified
+      ? current.lastModified > next.lastModified
+        ? current.lastModified
+        : next.lastModified
+      : (current.lastModified ?? next.lastModified);
+  return {
+    ...(tags.length > 0 ? { tags } : {}),
+    ...(lastModified ? { lastModified } : {}),
+  };
+}
+
 /** Published posts from EmDash. Public queries omit drafts. */
-async function loadPosts(): Promise<BlogPost[]> {
+async function loadPosts(): Promise<{
+  posts: BlogPost[];
+  cacheHint: BlogCacheHint;
+}> {
   const collected: BlogPost[] = [];
+  let cacheHint: BlogCacheHint = {};
   let cursor: string | undefined;
   for (let page = 0; page < MAX_PAGES; page++) {
     const result = await getEmDashCollection("posts", {
@@ -104,6 +131,7 @@ async function loadPosts(): Promise<BlogPost[]> {
       cursor,
     });
     if (result.error) throw result.error;
+    cacheHint = mergeCacheHint(cacheHint, result.cacheHint);
     for (const entry of result.entries) {
       collected.push(
         mapLiveEntry({
@@ -113,9 +141,12 @@ async function loadPosts(): Promise<BlogPost[]> {
       );
     }
     if (!result.nextCursor) {
-      return collected.sort(
-        (a, b) => b.data.date.getTime() - a.data.date.getTime()
-      );
+      return {
+        posts: collected.sort(
+          (a, b) => b.data.date.getTime() - a.data.date.getTime()
+        ),
+        cacheHint,
+      };
     }
     cursor = result.nextCursor;
   }
@@ -128,18 +159,36 @@ function visiblePosts(posts: BlogPost[]): BlogPost[] {
     : posts;
 }
 
+export async function getBlogListing(): Promise<{
+  posts: BlogPost[];
+  cacheHint: BlogCacheHint;
+}> {
+  const loaded = await loadPosts();
+  return { posts: visiblePosts(loaded.posts), cacheHint: loaded.cacheHint };
+}
+
 export async function getBlogPosts(): Promise<BlogPost[]> {
-  return visiblePosts(await loadPosts());
+  return (await getBlogListing()).posts;
+}
+
+export async function getBlogPostResult(slug: string): Promise<{
+  post?: BlogPost;
+  cacheHint: BlogCacheHint;
+}> {
+  const { entry, error, cacheHint } = await getEmDashEntry("posts", slug);
+  if (error) throw error;
+  if (!entry) return { cacheHint: cacheHint ?? {} };
+  return {
+    post: mapLiveEntry({
+      id: entry.id,
+      data: entry.data as Record<string, unknown>,
+    }),
+    cacheHint: cacheHint ?? {},
+  };
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPost | undefined> {
-  const { entry, error } = await getEmDashEntry("posts", slug);
-  if (error) throw error;
-  if (!entry) return undefined;
-  return mapLiveEntry({
-    id: entry.id,
-    data: entry.data as Record<string, unknown>,
-  });
+  return (await getBlogPostResult(slug)).post;
 }
 
 export function headingsFor(

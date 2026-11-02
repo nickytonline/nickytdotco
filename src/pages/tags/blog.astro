@@ -1,5 +1,9 @@
 ---
-import { getBlogPosts } from "../../emdash/blog";
+import { getBlogListing } from "../../emdash/blog";
+import {
+  cacheRenderedContent,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+} from "../../utils/route-cache";
 import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
@@ -7,7 +11,13 @@ import Tag from "@/components/Tag.astro";
 import { curatedTagLabels, curatedTagSlugs } from "../../utils/tag-taxonomy";
 export const prerender = false;
 
-const blogPosts = await getBlogPosts();
+const { posts: blogPosts, cacheHint } = await getBlogListing();
+cacheRenderedContent(
+  Astro.response.headers,
+  Astro.cache,
+  cacheHint,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+);
 
 // Extract all unique tags and count their occurrences from blog posts only
 const tagCounts = new Map<string, number>();

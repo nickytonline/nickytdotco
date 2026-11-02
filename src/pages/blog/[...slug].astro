@@ -2,13 +2,24 @@
 export const prerender = false;
 
 import Post from "../../layouts/Post.astro";
-import { getBlogPost } from "../../emdash/blog";
+import { getBlogPostResult } from "../../emdash/blog";
+import {
+  cacheRenderedContent,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+} from "../../utils/route-cache";
 
 const slug = Astro.params.slug ?? "";
-const entry = slug ? await getBlogPost(slug) : undefined;
-if (!entry || (import.meta.env.PROD && entry.data.draft)) {
+const result = slug ? await getBlogPostResult(slug) : undefined;
+if (!result?.post || (import.meta.env.PROD && result.post.data.draft)) {
   return Astro.rewrite("/404");
 }
+const entry = result.post;
+cacheRenderedContent(
+  Astro.response.headers,
+  Astro.cache,
+  result.cacheHint,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+);
 ---
 
 <Post entry={entry} />

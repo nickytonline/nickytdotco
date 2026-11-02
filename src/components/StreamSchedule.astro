@@ -1,6 +1,6 @@
 ---
 import type { StreamGuestInfo } from "../utils/schedule-utils";
-import { getHeadingId, getLocalizedDate } from "../utils/schedule-utils";
+import { getHeadingId } from "../utils/schedule-utils";
 import { getYouTubeId } from "../utils/youtube-utils";
 import { slugifyVideo } from "../utils/video-utils";
 import LiveStreamCard from "./LiveStreamCard.astro";
@@ -9,13 +9,11 @@ import { isEventUpcoming } from "../utils/cdn-cache";
 const TWITCH_STREAM_URL = "https://www.twitch.tv/nickytonline";
 
 interface Props {
-  locale: string;
-  timezone: string;
   schedule: StreamGuestInfo[];
   showCategory?: boolean;
 }
 
-const { locale, timezone, schedule, showCategory = true } = Astro.props;
+const { schedule, showCategory = true } = Astro.props;
 
 const now = Date.now();
 const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
@@ -37,13 +35,6 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
         type,
         ogImageURL,
       } = scheduleItem;
-
-      const guestDate = getLocalizedDate({
-        date,
-        locale,
-        timezone,
-        showTime: true,
-      });
 
       const videoId = youtubeStreamLink
         ? getYouTubeId(youtubeStreamLink)
@@ -85,7 +76,6 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
         <LiveStreamCard
           title={title}
           guest={guestInfo}
-          datetime={guestDate}
           image={image}
           platforms={platformsList}
           eventDate={date}

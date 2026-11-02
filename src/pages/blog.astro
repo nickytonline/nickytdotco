@@ -4,11 +4,21 @@ import BlogArchiveHeader from "../components/BlogArchiveHeader.astro";
 import BlogArchiveYear from "../components/BlogArchiveYear.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import { dateFilter } from "../utils/filters";
-import { getBlogPosts } from "../emdash/blog";
+import { getBlogListing } from "../emdash/blog";
+import {
+  cacheRenderedContent,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+} from "../utils/route-cache";
 
 export const prerender = false;
 
-const allPosts = await getBlogPosts();
+const { posts: allPosts, cacheHint } = await getBlogListing();
+cacheRenderedContent(
+  Astro.response.headers,
+  Astro.cache,
+  cacheHint,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+);
 
 // Sort by date descending
 const sortedPosts = allPosts.sort((a, b) => {

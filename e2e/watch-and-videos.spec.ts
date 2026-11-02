@@ -29,12 +29,20 @@ test.describe("watch page", () => {
     ).toBeVisible();
   });
 
-  test("sets a timezone response header from geo context", async ({
+  test("localizes upcoming stream times in the browser", async ({
+    page,
     request,
   }) => {
     const response = await request.get("/watch");
     expect(response.ok()).toBeTruthy();
-    expect(response.headers()["timezone"]).toBeDefined();
+    expect(response.headers()["timezone"]).toBeUndefined();
+
+    await page.goto("/watch");
+    const times = page.locator("time[data-local-datetime]");
+    if ((await times.count()) === 0) return;
+
+    await expect(times.first()).toBeVisible();
+    await expect(times.first()).not.toContainText(" UTC");
   });
 });
 
@@ -114,7 +122,7 @@ test.describe("video archives", () => {
     ).toBeVisible();
   });
 
-  test("upcoming stream video pages set a timezone response header", async ({
+  test("upcoming stream video pages localize the start time in the browser", async ({
     page,
     request,
   }) => {
@@ -136,6 +144,11 @@ test.describe("video archives", () => {
     const href = await videoLink.getAttribute("href");
     const response = await request.get(href!);
     expect(response.ok()).toBeTruthy();
-    expect(response.headers()["timezone"]).toBeDefined();
+    expect(response.headers()["timezone"]).toBeUndefined();
+
+    await page.goto(href!);
+    const time = page.locator("time[data-local-datetime]");
+    await expect(time).toBeVisible();
+    await expect(time).not.toContainText(" UTC");
   });
 });

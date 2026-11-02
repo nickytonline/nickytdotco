@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import EventCalendar from "./EventCalendar";
 import Pill from "./Pill.astro";
 import StreamLinks from "./StreamLinks.astro";
+import LocalDateTime from "./LocalDateTime.astro";
 
 interface Platform {
   name: string;
@@ -12,7 +13,6 @@ interface Platform {
 interface Props {
   title: string;
   guest: string;
-  datetime: string;
   image?: string;
   platforms: Platform[];
   eventDate: string;
@@ -27,7 +27,6 @@ interface Props {
 const {
   title,
   guest,
-  datetime,
   image,
   platforms,
   eventDate,
@@ -96,9 +95,11 @@ const linkedinUrl = platforms.find((p) => p.name === "LinkedIn")?.url;
       }
     </h3>
     <p class="text-base text-muted-foreground">{guest}</p>
-    <time class="italic text-base text-muted-foreground font-normal"
-      >{datetime}</time
-    >
+    <LocalDateTime
+      date={eventDate}
+      showTime
+      class="italic text-base text-muted-foreground font-normal"
+    />
     {
       upcoming && (
         <StreamLinks

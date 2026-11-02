@@ -153,12 +153,17 @@ test.describe("home page", () => {
     expect(timestamps).toEqual([...timestamps].sort((a, b) => a - b));
   });
 
-  test("sets a timezone response header from geo context", async ({
-    request,
-  }) => {
+  test("localizes stream times in the browser", async ({ page, request }) => {
     const response = await request.get("/");
     expect(response.ok()).toBeTruthy();
-    expect(response.headers()["timezone"]).toBeDefined();
+    expect(response.headers()["timezone"]).toBeUndefined();
+
+    await page.goto("/");
+    const times = page.locator("time[data-local-datetime]");
+    if ((await times.count()) === 0) return;
+
+    await expect(times.first()).toBeVisible();
+    await expect(times.first()).not.toContainText(" UTC");
   });
 
   test("embeds Person JSON-LD structured data", async ({ page }) => {

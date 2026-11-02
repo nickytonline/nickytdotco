@@ -1,6 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import { getBlogPosts } from "../../emdash/blog";
+import { getBlogListing } from "../../emdash/blog";
+import {
+  cacheRenderedContent,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+} from "../../utils/route-cache";
 import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
@@ -20,7 +24,13 @@ function hasTag(tags: string[] | undefined): boolean {
 }
 
 const talks = await getCollection("talks");
-const blogPosts = await getBlogPosts();
+const { posts: blogPosts, cacheHint } = await getBlogListing();
+cacheRenderedContent(
+  Astro.response.headers,
+  Astro.cache,
+  cacheHint,
+  CONTENT_CACHE_MAX_AGE_SECONDS,
+);
 const taggedTalks = talks.filter((talk) => hasTag(talk.data.tags));
 const taggedBlogPosts = blogPosts.filter((post) => hasTag(post.data.tags));
 const originalTagCase =
