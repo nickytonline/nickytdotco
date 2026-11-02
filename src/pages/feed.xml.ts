@@ -3,12 +3,16 @@ import { getLiveCollection } from "astro:content";
 import { site } from "../data/site";
 import { slugifyVideo } from "../utils/video-utils";
 import type { APIContext } from "astro";
-import { getBlogPosts } from "../emdash/blog";
+import { getBlogListing } from "../emdash/blog";
+import {
+  cacheRenderedContent,
+  MIXED_FEED_CACHE_MAX_AGE_SECONDS,
+} from "../utils/route-cache";
 
 export const prerender = false;
 
 export async function GET(context: APIContext) {
-  const blog = await getBlogPosts();
+  const { posts: blog, cacheHint } = await getBlogListing();
 
   const videosResult = await getLiveCollection("streamVideos");
   const now = new Date();
@@ -36,11 +40,18 @@ export async function GET(context: APIContext) {
     (a, b) => b.pubDate.getTime() - a.pubDate.getTime()
   );
 
-  return rss({
+  const response = await rss({
     title: site.name,
     description: site.shortDesc,
     site: context.site?.toString() || site.url,
     items,
     customData: `<language>en-us</language>`,
   });
+  cacheRenderedContent(
+    response.headers,
+    context.cache,
+    cacheHint,
+    MIXED_FEED_CACHE_MAX_AGE_SECONDS
+  );
+  return response;
 }

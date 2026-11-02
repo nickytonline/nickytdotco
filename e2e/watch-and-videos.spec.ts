@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { escapeRegExp } from "./test-utils";
+import { escapeRegExp, expectBrowserLocalTime } from "./test-utils";
 
 test.describe("watch page", () => {
   test("renders the watch pitch and links to video archives", async ({
@@ -29,12 +29,19 @@ test.describe("watch page", () => {
     ).toBeVisible();
   });
 
-  test("sets a timezone response header from geo context", async ({
+  test("localizes upcoming stream times in the browser", async ({
+    page,
     request,
   }) => {
     const response = await request.get("/watch");
     expect(response.ok()).toBeTruthy();
-    expect(response.headers()["timezone"]).toBeDefined();
+    expect(response.headers()["timezone"]).toBeUndefined();
+
+    await page.goto("/watch");
+    const times = page.locator("time[data-local-datetime]");
+    if ((await times.count()) === 0) return;
+
+    await expectBrowserLocalTime(times.first());
   });
 });
 
@@ -114,7 +121,7 @@ test.describe("video archives", () => {
     ).toBeVisible();
   });
 
-  test("upcoming stream video pages set a timezone response header", async ({
+  test("upcoming stream video pages localize the start time in the browser", async ({
     page,
     request,
   }) => {
@@ -136,6 +143,9 @@ test.describe("video archives", () => {
     const href = await videoLink.getAttribute("href");
     const response = await request.get(href!);
     expect(response.ok()).toBeTruthy();
-    expect(response.headers()["timezone"]).toBeDefined();
+    expect(response.headers()["timezone"]).toBeUndefined();
+
+    await page.goto(href!);
+    await expectBrowserLocalTime(page.locator("time[data-local-datetime]"));
   });
 });

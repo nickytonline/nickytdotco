@@ -7,7 +7,11 @@ import TagList from "../../components/TagList.astro";
 import RelatedContent from "../../components/RelatedContent.astro";
 import TalkPromo from "../../components/TalkPromo.astro";
 import { getRelatedTalks, getRelatedPostsForTalk } from "../../utils/tag-utils";
-import { getBlogPosts } from "../../emdash/blog";
+import { getBlogListing } from "../../emdash/blog";
+import {
+  cacheRenderedContent,
+  EXPIRING_CACHE_SWR_SECONDS,
+} from "../../utils/route-cache";
 import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
 import { site } from "../../data/site";
@@ -15,9 +19,9 @@ import { Image } from "astro:assets";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import UpcomingBadge from "../../components/UpcomingBadge.astro";
 import {
+  cdnMaxAgeSeconds,
   eventExpiryTimestamp,
   isTalkUpcoming,
-  setCdnCacheHeaders,
 } from "../../utils/cdn-cache";
 import { upcomingTalkPromoHtml } from "../../utils/talk-promo";
 import {
@@ -45,12 +49,17 @@ const { title, date, venue, tags = [] } = talk.data;
 const { Content } = await render(talk);
 
 const isUpcoming = isTalkUpcoming(talk.data, now);
-setCdnCacheHeaders(
+cacheRenderedContent(
   Astro.response.headers,
-  isUpcoming
-    ? eventExpiryTimestamp(talk.data.endDate ?? talk.data.date)
-    : undefined,
-  now,
+  Astro.cache,
+  undefined,
+  cdnMaxAgeSeconds(
+    isUpcoming
+      ? eventExpiryTimestamp(talk.data.endDate ?? talk.data.date)
+      : undefined,
+    now,
+  ),
+  EXPIRING_CACHE_SWR_SECONDS,
 );
 const venueUrl = venue.url;
 const venueLocation = venue.location;
@@ -93,7 +102,11 @@ const relatedTalks = isUpcoming
   : getRelatedTalks(talk as CollectionEntry<"talks">, allTalks, 3);
 
 // Get related blog posts by shared tags
-const allPosts = await getBlogPosts();
+const { posts: allPosts, cacheHint } = await getBlogListing();
+Astro.cache.set({
+  tags: cacheHint.tags,
+  lastModified: cacheHint.lastModified,
+});
 const relatedPosts = getRelatedPostsForTalk(
   talk as CollectionEntry<"talks">,
   allPosts,

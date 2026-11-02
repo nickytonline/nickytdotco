@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { expectBrowserLocalTime } from "./test-utils";
 
 test.describe("home page", () => {
   test("renders the hero with a heading and headshot", async ({ page }) => {
@@ -153,12 +154,16 @@ test.describe("home page", () => {
     expect(timestamps).toEqual([...timestamps].sort((a, b) => a - b));
   });
 
-  test("sets a timezone response header from geo context", async ({
-    request,
-  }) => {
+  test("localizes stream times in the browser", async ({ page, request }) => {
     const response = await request.get("/");
     expect(response.ok()).toBeTruthy();
-    expect(response.headers()["timezone"]).toBeDefined();
+    expect(response.headers()["timezone"]).toBeUndefined();
+
+    await page.goto("/");
+    const times = page.locator("time[data-local-datetime]");
+    if ((await times.count()) === 0) return;
+
+    await expectBrowserLocalTime(times.first());
   });
 
   test("embeds Person JSON-LD structured data", async ({ page }) => {

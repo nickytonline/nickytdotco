@@ -1,12 +1,16 @@
 import { getCollection, getLiveCollection } from "astro:content";
 import type { APIContext } from "astro";
 import { extractYouTubeVideoId, slugifyVideo } from "../utils/video-utils";
-import { getBlogPosts } from "../emdash/blog";
+import { getBlogListing } from "../emdash/blog";
+import {
+  cacheRenderedContent,
+  MIXED_FEED_CACHE_MAX_AGE_SECONDS,
+} from "../utils/route-cache";
 
 export const prerender = false;
 
-export async function GET(_context: APIContext) {
-  const blog = await getBlogPosts();
+export async function GET(context: APIContext) {
+  const { posts: blog, cacheHint } = await getBlogListing();
 
   const talks = await getCollection("talks");
   const streamsResult = await getLiveCollection("streamVideos");
@@ -117,10 +121,17 @@ You are free to share and adapt this content for any purpose, even commercially,
 
   const content = `${header}${recentPosts}${recentTalks}${recentStreams}\n`;
 
-  return new Response(content, {
+  const response = new Response(content, {
     status: 200,
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
     },
   });
+  cacheRenderedContent(
+    response.headers,
+    context.cache,
+    cacheHint,
+    MIXED_FEED_CACHE_MAX_AGE_SECONDS
+  );
+  return response;
 }

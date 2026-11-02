@@ -12,16 +12,14 @@ import { slugifyVideo } from "@/utils/video-utils";
 import {
   isEventUpcoming,
   SCHEDULE_CDN_CACHE_SECONDS,
-  setFixedCdnCacheHeaders,
 } from "@/utils/cdn-cache";
 import { scheduleSearchReindex } from "@/lib/search/scheduleSearchReindex";
+import {
+  cacheRenderedContent,
+  EXPIRING_CACHE_SWR_SECONDS,
+} from "@/utils/route-cache";
 
 const now = Date.now();
-
-const locale =
-  Astro.request.headers.get("Accept-Language")?.split(",")[0] ||
-  Astro.request.headers.get("Accept-Language") ||
-  "en-US";
 
 let errorMessage = "";
 let schedule: StreamGuestInfo[] = [];
@@ -66,17 +64,15 @@ if (streamVideosResult.error) {
       : latestOverallVideos;
 }
 
-const { timezone: rawTimezone } = Astro.locals.netlify.context.geo;
-const timezone = rawTimezone || "UTC";
-
 if (!errorMessage) {
-  setFixedCdnCacheHeaders(
+  cacheRenderedContent(
     Astro.response.headers,
+    Astro.cache,
+    undefined,
     SCHEDULE_CDN_CACHE_SECONDS,
+    EXPIRING_CACHE_SWR_SECONDS,
   );
 }
-Astro.response.headers.set("timezone", timezone);
-Astro.response.headers.set("Netlify-Vary", "header=Accept-Language|timezone");
 scheduleSearchReindex("/watch", Astro.locals.netlify.context);
 
 export const prerender = false;
@@ -123,12 +119,7 @@ export const prerender = false;
           <h2 class="text-2xl lg:text-3xl font-bold mb-6 font-heading">
             Upcoming Live Streams
           </h2>
-          <StreamSchedule
-            schedule={schedule}
-            locale={locale}
-            timezone={timezone}
-            showCategory={false}
-          />
+          <StreamSchedule schedule={schedule} showCategory={false} />
         </section>
       )
     }

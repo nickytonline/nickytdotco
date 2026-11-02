@@ -1,0 +1,52 @@
+---
+import { getLocalizedDate } from "../utils/schedule-utils";
+
+interface Props {
+  date: string;
+  showTime?: boolean;
+  class?: string;
+}
+
+const { date, showTime = false, class: className } = Astro.props;
+const parsed = new Date(date);
+const utcLabel = Number.isNaN(parsed.getTime())
+  ? date
+  : getLocalizedDate({
+      date,
+      locale: "en-US",
+      timezone: "UTC",
+      showTime,
+    });
+// A time-style format already names the zone. Date-only does not.
+const fallback = showTime ? utcLabel : `${utcLabel} UTC`;
+---
+
+<time
+  datetime={Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString()}
+  data-local-datetime={date}
+  data-show-time={showTime ? "true" : "false"}
+  class={className}
+>
+  {fallback}
+</time>
+
+<script>
+  function formatLocalDateTimes() {
+    for (const node of document.querySelectorAll("[data-local-datetime]")) {
+      if (!(node instanceof HTMLElement)) continue;
+      const raw = node.dataset.localDatetime;
+      if (!raw) continue;
+      const parsed = new Date(raw);
+      if (Number.isNaN(parsed.getTime())) continue;
+      const showTime = node.dataset.showTime === "true";
+      node.textContent = parsed.toLocaleString(undefined, {
+        dateStyle: "full",
+        timeStyle: showTime ? "long" : undefined,
+      });
+      node.dataset.localized = "true";
+    }
+  }
+
+  formatLocalDateTimes();
+  document.addEventListener("astro:page-load", formatLocalDateTimes);
+</script>

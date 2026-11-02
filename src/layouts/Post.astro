@@ -14,7 +14,7 @@ import { PortableText } from "astro-portabletext";
 import EmbedBlock from "../components/EmbedBlock.astro";
 import PortableTextCode from "../components/PortableTextCode.astro";
 import PortableTextImage from "../components/PortableTextImage.astro";
-import { getBlogPosts, headingsFor, type BlogPost } from "../emdash/blog";
+import { getBlogListing, headingsFor, type BlogPost } from "../emdash/blog";
 
 export interface Props {
   entry: BlogPost;
@@ -28,8 +28,14 @@ const currentUrl = `/blog/${entry.id}`;
 // Get series posts if this is part of a series
 let seriesPosts: BlogPost[] = [];
 if (entry.data.series) {
-  const allPosts = await getBlogPosts();
-  seriesPosts = seriesFilter(allPosts, entry.data.series);
+  const listing = await getBlogListing();
+  seriesPosts = seriesFilter(listing.posts, entry.data.series);
+  // Tags accumulate with the entry tag set by the page. A sibling publish
+  // then drops this series navigation too.
+  Astro.cache.set({
+    tags: listing.cacheHint.tags,
+    lastModified: listing.cacheHint.lastModified,
+  });
 }
 
 // Get related talks by shared tags
