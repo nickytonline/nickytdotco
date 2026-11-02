@@ -1,7 +1,20 @@
 ---
 ---
 
-<span id="star-twinkle" class="star-twinkle" aria-hidden="true"></span>
+<span id="star-twinkle" class="star-twinkle" aria-hidden="true">
+  <svg
+    class="star-twinkle__icon"
+    viewBox="0 0 24 24"
+    width="100%"
+    height="100%"
+    focusable="false"
+  >
+    <!-- Classic 4-point sparkle (✦), upright — not a tilted + -->
+    <path
+      d="M12 1L14.2 9.8L23 12L14.2 14.2L12 23L9.8 14.2L1 12L9.8 9.8Z"
+      fill="currentColor"></path>
+  </svg>
+</span>
 
 <script is:inline>
   function startStarTwinkle() {
@@ -9,8 +22,11 @@
     window.__starTwinkleStarted = true;
 
     const GRID = 16;
-    const INTERVAL_MS = 10000;
-    const TWINKLE_MS = 1200;
+    // Ambient: less often than every 10s; jitter so it does not feel metronomic.
+    const MIN_INTERVAL_MS = 14000;
+    const MAX_INTERVAL_MS = 22000;
+    const FIRST_DELAY_MS = 2500;
+    const TWINKLE_MS = 1100;
     const MIN_WIDTH = 1024;
 
     const el = document.getElementById("star-twinkle");
@@ -18,6 +34,11 @@
 
     let timer = 0;
     let busy = false;
+    let enabled = false;
+
+    const nextDelay = () =>
+      MIN_INTERVAL_MS +
+      Math.floor(Math.random() * (MAX_INTERVAL_MS - MIN_INTERVAL_MS + 1));
 
     const canTwinkle = () =>
       window.matchMedia(`(min-width: ${MIN_WIDTH}px)`).matches &&
@@ -44,6 +65,15 @@
       };
     };
 
+    const schedule = (delay) => {
+      if (timer) window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        timer = 0;
+        twinkle();
+        if (enabled) schedule(nextDelay());
+      }, delay);
+    };
+
     const twinkle = () => {
       if (busy || !canTwinkle()) return;
       busy = true;
@@ -63,21 +93,21 @@
     };
 
     const sync = () => {
-      const enabled = canTwinkle();
-      el.hidden = !enabled;
-      if (!enabled) {
+      const nextEnabled = canTwinkle();
+      el.hidden = !nextEnabled;
+      if (!nextEnabled) {
         el.classList.remove("star-twinkle--active");
         busy = false;
+        enabled = false;
         if (timer) {
-          window.clearInterval(timer);
+          window.clearTimeout(timer);
           timer = 0;
         }
         return;
       }
-      if (!timer) {
-        // First sparkle shortly after becoming eligible, then every 10s.
-        window.setTimeout(twinkle, 1500);
-        timer = window.setInterval(twinkle, INTERVAL_MS);
+      if (!enabled) {
+        enabled = true;
+        schedule(FIRST_DELAY_MS);
       }
     };
 
