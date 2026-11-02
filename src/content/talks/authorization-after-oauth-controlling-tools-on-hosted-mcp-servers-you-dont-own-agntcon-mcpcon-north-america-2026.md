@@ -9,8 +9,8 @@ venue:
   name: "AGNTCon + MCPCon North America 2026"
   url: "https://events.linuxfoundation.org/agntcon-mcpcon-north-america/"
   location: "230A (Concourse Level), San Jose Convention Center, San Jose, CA"
-sessionUrl: "https://events.linuxfoundation.org/agntcon-mcpcon-north-america/program/schedule/?id=1253860"
-registrationUrl: "https://events.linuxfoundation.org/agntcon-mcpcon-north-america/register/"
+slideDeck: "https://sessionize.com/download/hyahseb~VDuVjkJJkP9Wco5g8oFHan.pdf~agntcon-mcpcon-slides.pdf"
+videoComingSoon: true
 tags: ["mcp", "security", "zero trust", "agentic ai", "oauth", "pomerium", "github"]
 ---
 

@@ -9,7 +9,8 @@ venue:
   name: "MCP Dev Summit Toronto"
   url: "https://events.linuxfoundation.org/mcp-dev-summit-toronto/"
   location: "Giovanni, The Conference Centre at the University of Toronto, Toronto, ON"
-sessionUrl: "https://events.linuxfoundation.org/mcp-dev-summit-toronto/program/schedule/?id=1287268"
+slideDeck: "https://sessionize.com/download/ccalicse~sWBamf157VcNWsgsY6uwrc.pdf~from-stdio-to-anywhere.pdf"
+videoComingSoon: true
 tags: ["mcp", "openclaw", "security", "identity", "trust", "oauth", "pomerium"]
 ---
 
