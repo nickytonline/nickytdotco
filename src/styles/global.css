@@ -1457,9 +1457,9 @@ nav[aria-label="main navigation"] .nav-link[aria-current="page"]:focus-visible {
 }
 
 /* One random background-dot sparkle (~14–22s). Matches the 16px grid.
-   SVG 4-point sparkle at ~2/3 the original size; upright, not a tilted +. */
+   SVG 4-point sparkle at ~3/4 the original size; upright, not a tilted +. */
 .star-twinkle {
-  --star-size: 9.3px;
+  --star-size: 10.5px;
   --star-color: oklch(0.62 0.24 350 / 0.78);
   --star-glow: oklch(0.65 0.25 350 / 0.5);
   position: fixed;
