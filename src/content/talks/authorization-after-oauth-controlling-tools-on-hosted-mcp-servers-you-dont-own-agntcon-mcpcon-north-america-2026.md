@@ -10,6 +10,7 @@ venue:
   url: "https://events.linuxfoundation.org/agntcon-mcpcon-north-america/"
   location: "230A (Concourse Level), San Jose Convention Center, San Jose, CA"
 slideDeck: "https://agentcon.netlify.app/"
+videoComingSoon: true
 tags: ["mcp", "security", "zero trust", "agentic ai", "oauth", "pomerium", "github"]
 ---
 
