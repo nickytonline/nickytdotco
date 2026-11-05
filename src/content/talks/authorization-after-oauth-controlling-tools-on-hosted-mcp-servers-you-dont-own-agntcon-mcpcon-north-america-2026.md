@@ -2,7 +2,6 @@
 title: "Authorization After OAuth: Controlling Tools on Hosted MCP Servers You Don't Own"
 date: 2026-10-23T22:35:00.000Z
 endDate: 2026-10-23T23:00:00.000Z
-upcoming: true
 cover_image: /assets/talks/agntcon-mcpcon-north-america-2026.jpg
 cover_image_large: /assets/talks/agntcon-mcpcon-north-america-2026.jpg
 venue:
@@ -10,7 +9,9 @@ venue:
   url: "https://events.linuxfoundation.org/agntcon-mcpcon-north-america/"
   location: "230A (Concourse Level), San Jose Convention Center, San Jose, CA"
 slideDeck: "https://agentcon.netlify.app/"
-videoComingSoon: true
+video:
+  type: "youtube"
+  url: "https://www.youtube.com/watch?v=oGuj56_aOWo"
 tags: ["mcp", "security", "zero trust", "agentic ai", "oauth", "pomerium", "github"]
 ---
 
