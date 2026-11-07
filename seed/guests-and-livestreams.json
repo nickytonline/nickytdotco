@@ -91,7 +91,7 @@
       "dateField": "date",
       "group": "Livestreams",
       "admin": {
-        "listColumns": ["date", "type", "on_schedule"]
+        "listColumns": ["date", "type"]
       },
       "fields": [
         {
@@ -133,12 +133,6 @@
           "slug": "linkedin_stream_link",
           "label": "LinkedIn stream link",
           "type": "string"
-        },
-        {
-          "slug": "on_schedule",
-          "label": "On schedule",
-          "type": "boolean",
-          "defaultValue": true
         },
         {
           "slug": "guests",

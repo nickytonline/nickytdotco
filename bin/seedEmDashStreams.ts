@@ -8,8 +8,9 @@
  * - Stores legacy_slug (= today's slugifyVideo) for a future redirect pass.
  *
  * Usage:
- *   varlock run -- node ./bin/seedEmDashStreams.ts           # dry-run (default)
- *   varlock run -- node ./bin/seedEmDashStreams.ts --apply
+ *   varlock run -- node ./bin/seedEmDashStreams.ts              # dry-run (default)
+ *   varlock run -- node ./bin/seedEmDashStreams.ts --apply      # create missing drafts (skip existing)
+ *   varlock run -- node ./bin/seedEmDashStreams.ts --update-schema  # sync collection fields only
  */
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -17,9 +18,15 @@ import { fileURLToPath } from "node:url";
 
 import { createClient } from "@libsql/client/http";
 import { LibsqlDialect } from "@libsql/kysely-libsql";
+import { SchemaRegistry } from "emdash";
 import { applySeed, validateSeed, type SeedFile } from "emdash/seed";
 import { Kysely } from "kysely";
 import slugify from "slugify";
+
+/** Fields removed from the seed that should be dropped on --update-schema. */
+const REMOVED_FIELDS: Array<{ collection: string; field: string }> = [
+  { collection: "livestreams", field: "on_schedule" },
+];
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -48,7 +55,6 @@ type StreamGuestRow = {
   bluesky: string | null;
   website: string | null;
   linkedin: string | null;
-  on_schedule: number | boolean | null;
 };
 
 type GuestDraft = {
@@ -77,7 +83,6 @@ type LivestreamDraft = {
   description: string;
   youtubeStreamLink?: string;
   linkedinStreamLink?: string;
-  onSchedule: boolean;
   guestSeedIds: string[];
   guestName: string;
 };
@@ -105,8 +110,11 @@ function isZeroGuestStream(guestName: string): boolean {
   return ZERO_GUEST_NAME.test(guestName.trim());
 }
 
-function parseArgs(argv: string[]): { apply: boolean } {
-  return { apply: argv.includes("--apply") };
+function parseArgs(argv: string[]): { apply: boolean; updateSchema: boolean } {
+  return {
+    apply: argv.includes("--apply"),
+    updateSchema: argv.includes("--update-schema"),
+  };
 }
 
 function createEmDashDb() {
@@ -137,8 +145,7 @@ async function loadStreamGuests(): Promise<StreamGuestRow[]> {
   const result = await client.execute(
     `SELECT id, type, date, title, description, guest_name, guest_title,
             youtube_stream_link, linkedin_stream_link,
-            twitter, twitch, github, youtube, bluesky, website, linkedin,
-            on_schedule
+            twitter, twitch, github, youtube, bluesky, website, linkedin
      FROM stream_guests
      ORDER BY date ASC`
   );
@@ -162,7 +169,6 @@ async function loadStreamGuests(): Promise<StreamGuestRow[]> {
       bluesky: (r.bluesky as string | null) ?? null,
       website: (r.website as string | null) ?? null,
       linkedin: (r.linkedin as string | null) ?? null,
-      on_schedule: (r.on_schedule as number | boolean | null) ?? null,
     } satisfies StreamGuestRow;
   });
 }
@@ -240,7 +246,6 @@ function buildLivestreams(
       description: row.description,
       youtubeStreamLink: asOptionalString(row.youtube_stream_link),
       linkedinStreamLink: asOptionalString(row.linkedin_stream_link),
-      onSchedule: row.on_schedule === true || row.on_schedule === 1,
       guestSeedIds,
       guestName,
     });
@@ -278,7 +283,6 @@ function livestreamData(stream: LivestreamDraft): Record<string, unknown> {
     ...(stream.linkedinStreamLink
       ? { linkedin_stream_link: stream.linkedinStreamLink }
       : {}),
-    on_schedule: stream.onSchedule,
     source_stream_guest_id: stream.sourceId,
     legacy_slug: stream.legacySlug,
     ...(stream.guestSeedIds.length > 0
@@ -347,8 +351,45 @@ function printDryRun(
   console.log("Re-run with --apply to write drafts to EmDash Turso.");
 }
 
+async function updateSchema(
+  db: Kysely<unknown>,
+  schema: SeedFile
+): Promise<void> {
+  console.log("Updating EmDash collection schema (no content import)…");
+  const result = await applySeed(db, schema, {
+    includeContent: false,
+    onConflict: "update",
+    skipMediaDownload: true,
+  });
+  console.log(
+    JSON.stringify(
+      {
+        collections: result.collections,
+        fields: result.fields,
+        relations: result.relations,
+      },
+      null,
+      2
+    )
+  );
+
+  const registry = new SchemaRegistry(db as never);
+  for (const { collection, field } of REMOVED_FIELDS) {
+    const existing = await registry.getField(collection, field);
+    if (!existing) {
+      console.log(`Field ${collection}.${field} already absent.`);
+      continue;
+    }
+    console.log(`Removing field ${collection}.${field}…`);
+    await registry.deleteField(collection, field);
+    console.log(`Removed ${collection}.${field}.`);
+  }
+}
+
 async function main(): Promise<void> {
-  const { apply } = parseArgs(process.argv.slice(2));
+  const { apply, updateSchema: shouldUpdateSchema } = parseArgs(
+    process.argv.slice(2)
+  );
 
   const schemaRaw = await readFile(SEED_SCHEMA_PATH, "utf-8");
   const schema = JSON.parse(schemaRaw) as SeedFile;
@@ -360,6 +401,17 @@ async function main(): Promise<void> {
   }
   for (const warning of validation.warnings) {
     console.warn(`schema warning: ${warning}`);
+  }
+
+  if (shouldUpdateSchema) {
+    const db = createEmDashDb();
+    try {
+      await updateSchema(db, schema);
+      console.log("Schema update done. Hard-refresh EmDash admin.");
+    } finally {
+      await db.destroy();
+    }
+    return;
   }
 
   const rows = await loadStreamGuests();
