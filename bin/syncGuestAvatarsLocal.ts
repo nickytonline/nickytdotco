@@ -29,7 +29,7 @@ function parseArgs(argv: string[]): { apply: boolean } {
 }
 
 function openBlobsStore(): Store {
-  if (process.env.NETLIFY_BLOBS_CONTEXT || process.env.NETLIFY === "true") {
+  if (process.env.NETLIFY_BLOBS_CONTEXT) {
     return getStore(BLOBS_STORE);
   }
   const siteID =

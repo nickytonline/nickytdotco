@@ -257,8 +257,10 @@ async function resolveAvatar(guest: GuestRow): Promise<{
 }
 
 function openBlobsStore(): Store {
-  // Netlify builds / Functions / `netlify serve` inject Blobs credentials.
-  if (process.env.NETLIFY_BLOBS_CONTEXT || process.env.NETLIFY === "true") {
+  // Runtime (Functions / `netlify serve`) injects NETLIFY_BLOBS_CONTEXT.
+  // Netlify *builds* do not — they need explicit siteID + token even when
+  // NETLIFY=true (that's what broke the first deploy-preview seed attempt).
+  if (process.env.NETLIFY_BLOBS_CONTEXT) {
     return getStore(BLOBS_STORE);
   }
   const siteID =
@@ -270,7 +272,7 @@ function openBlobsStore(): Store {
     process.env.NETLIFY_BLOBS_TOKEN?.trim();
   if (!token) {
     throw new Error(
-      "Missing Netlify Blobs auth. Set NETLIFY_AUTH_TOKEN (personal access token with Blobs access) and optionally NETLIFY_SITE_ID. Or run under netlify serve / a Netlify build so Blobs context is set."
+      "Missing Netlify Blobs auth. For deploy-preview/build seeding, set NETLIFY_AUTH_TOKEN in the Netlify UI (personal access token with Blobs access). SITE_ID is injected automatically on Netlify builds."
     );
   }
   return getStore({ name: BLOBS_STORE, siteID, token });
