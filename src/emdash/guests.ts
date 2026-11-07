@@ -1,7 +1,5 @@
 import { getEmDashEntry } from "emdash";
 
-export const DEFAULT_GUEST_AVATAR = "/assets/images/guest-avatar-default.svg";
-
 export interface GuestSocials {
   twitter?: string;
   twitch?: string;
@@ -17,9 +15,6 @@ export interface GuestInfo extends GuestSocials {
   slug: string;
   name: string;
   role?: string;
-  /** Resolved image URL, or the site default avatar. */
-  imageSrc: string;
-  imageAlt: string;
 }
 
 export interface GuestEpisode {
@@ -36,39 +31,6 @@ function asString(value: unknown): string | undefined {
     : undefined;
 }
 
-/** Pull a usable src from an EmDash image field value. */
-export function imageSrcFromField(image: unknown): string | undefined {
-  if (!image) return undefined;
-  if (typeof image === "string" && image.trim()) {
-    const value = image.trim();
-    // Bare media storage key or id → EmDash media file route.
-    if (!value.startsWith("/") && !/^https?:\/\//i.test(value)) {
-      return `/_emdash/api/media/file/${value}`;
-    }
-    return value;
-  }
-  if (typeof image !== "object") return undefined;
-  const record = image as Record<string, unknown>;
-  if (typeof record.src === "string" && record.src.trim()) {
-    return record.src.trim();
-  }
-  const asset = record.asset;
-  if (asset && typeof asset === "object") {
-    const url = (asset as Record<string, unknown>).url;
-    if (typeof url === "string" && url.trim()) return url.trim();
-  }
-  // MediaValue with id but no src — admin-style refs still need a public URL.
-  // Prefer storageKey in meta when present; otherwise callers keep the default avatar.
-  const meta = record.meta;
-  if (meta && typeof meta === "object") {
-    const storageKey = (meta as Record<string, unknown>).storageKey;
-    if (typeof storageKey === "string" && storageKey.trim()) {
-      return `/_emdash/api/media/file/${storageKey.trim()}`;
-    }
-  }
-  return undefined;
-}
-
 export function mapGuestEntry(entry: {
   id: string;
   data: Record<string, unknown>;
@@ -83,14 +45,10 @@ export function mapGuestEntry(entry: {
     // Referenced entries expose the public slug as `entry.id`.
     (entry.id.includes("/") ? entry.id.split("/").pop()! : entry.id);
 
-  const imageSrc = imageSrcFromField(entry.data.image) ?? DEFAULT_GUEST_AVATAR;
-
   return {
     slug,
     name,
     role: asString(entry.data.role),
-    imageSrc,
-    imageAlt: name,
     twitter: asString(entry.data.twitter),
     twitch: asString(entry.data.twitch),
     github: asString(entry.data.github),
