@@ -95,6 +95,28 @@ test.describe("video archives", () => {
     ).toHaveCount(0);
   });
 
+  test("loads linked EmDash guests on migrated video pages", async ({
+    page,
+    request,
+  }) => {
+    const href = "/videos/how-people-ai-vol-4-multiple-guests";
+    const response = await request.get(href);
+    expect(response.ok()).toBeTruthy();
+
+    await page.goto(href);
+
+    const guests = page.locator(
+      'section[aria-labelledby="stream-guests-heading"]'
+    );
+    await expect(guests).toBeVisible();
+    await expect(
+      guests.getByRole("link", { name: "Ray Deck" })
+    ).toHaveAttribute("href", "/guests/ray-deck");
+    await expect(
+      guests.getByRole("link", { name: "Sarah Shook" })
+    ).toHaveAttribute("href", "/guests/sarah-shook");
+  });
+
   test("upcoming stream video pages show calendar and live links", async ({
     page,
   }) => {
