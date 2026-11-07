@@ -5,7 +5,7 @@
  * - READ-ONLY against stream_guests (never mutates that table).
  * - Creates EmDash collection schema (if missing) and published content.
  * - Guest bios are left empty for later CMS backfill.
- * - Stores legacy_slug (= today's slugifyVideo) for a future redirect pass.
+ * - Uses the public video slug as the EmDash livestream slug.
  *
  * Usage:
  *   varlock run -- node ./bin/seedEmDashStreams.ts              # dry-run (default)
@@ -115,7 +115,6 @@ type GuestDraft = {
 type LivestreamDraft = {
   seedId: string;
   slug: string;
-  legacySlug: string;
   sourceId: string;
   type: "nickyt.live" | "pomerium-live";
   date: string;
@@ -141,7 +140,7 @@ function guestSlug(name: string): string {
   return slugify(name.trim(), SLUG_OPTS);
 }
 
-function slugifyVideo(title: string, guestName: string): string {
+function slugifyStream(title: string, guestName: string): string {
   const primaryGuest = guestName.split(",")[0]?.trim() || guestName;
   return `${slugify(title, SLUG_OPTS)}-${slugify(primaryGuest, SLUG_OPTS)}`;
 }
@@ -416,7 +415,7 @@ function buildLivestreams(
     }
 
     const guestName = row.guest_name.trim();
-    const legacySlug = slugifyVideo(row.title, guestName);
+    const slug = slugifyStream(row.title, guestName);
     const sourceId = String(row.id);
     const guestSeedIds: string[] = [];
 
@@ -427,8 +426,7 @@ function buildLivestreams(
 
     livestreams.push({
       seedId: `livestream:${sourceId}`,
-      slug: legacySlug,
-      legacySlug,
+      slug,
       sourceId,
       type: row.type,
       date: row.date,
@@ -474,7 +472,6 @@ function livestreamData(stream: LivestreamDraft): Record<string, unknown> {
       ? { linkedin_stream_link: stream.linkedinStreamLink }
       : {}),
     source_stream_guest_id: stream.sourceId,
-    legacy_slug: stream.legacySlug,
     ...(stream.guestSeedIds.length > 0
       ? { guests: stream.guestSeedIds.map((id) => `$ref:${id}`) }
       : { guests: [] }),

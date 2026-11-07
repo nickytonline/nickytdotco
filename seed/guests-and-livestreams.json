@@ -91,7 +91,7 @@
       "slug": "livestreams",
       "label": "Livestreams",
       "labelSingular": "Livestream",
-      "description": "Livestream / video episodes. Guests are linked via references (0..n). legacy_slug preserves today's /videos/ URLs for redirects.",
+      "description": "Livestream / video episodes. Guests are linked via references.",
       "icon": "broadcast",
       "supports": ["drafts", "revisions", "preview", "scheduling", "search"],
       "urlPattern": "/videos/{slug}",
@@ -156,12 +156,6 @@
           "label": "Source stream_guests id",
           "type": "string",
           "unique": true,
-          "indexed": true
-        },
-        {
-          "slug": "legacy_slug",
-          "label": "Legacy video slug",
-          "type": "string",
           "indexed": true
         }
       ]

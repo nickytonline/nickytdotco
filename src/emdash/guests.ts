@@ -22,7 +22,6 @@ export interface GuestEpisode {
   title: string;
   date: string;
   type?: string;
-  legacySlug?: string;
 }
 
 function asString(value: unknown): string | undefined {
@@ -68,32 +67,27 @@ function mapEpisode(entry: {
   const date = asString(entry.data.date);
   if (!title || !date) return null;
 
-  const legacySlug = asString(entry.data.legacy_slug);
-  const slug =
-    legacySlug ?? asString(entry.slug) ?? asString(entry.data.slug) ?? entry.id;
+  const slug = asString(entry.slug) ?? asString(entry.data.slug) ?? entry.id;
 
   return {
     slug,
     title,
     date,
     type: asString(entry.data.type),
-    legacySlug,
   };
 }
 
 /**
  * Guests linked to an EmDash livestream whose slug matches the public
- * `/videos/{slug}` legacy slug.
+ * `/videos/{slug}` URL.
  */
-export async function getLivestreamGuests(
-  legacySlug: string
-): Promise<GuestInfo[]> {
-  const { entry, error } = await getEmDashEntry("livestreams", legacySlug, {
+export async function getLivestreamGuests(slug: string): Promise<GuestInfo[]> {
+  const { entry, error } = await getEmDashEntry("livestreams", slug, {
     references: { guests: { limit: 24 } },
   });
   if (error) {
     console.error(
-      `[guests] Failed to load guests for livestream ${legacySlug}:`,
+      `[guests] Failed to load guests for livestream ${slug}:`,
       error
     );
     return [];
