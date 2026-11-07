@@ -40,11 +40,6 @@ const heading = guests.length === 1 ? "Guest" : "Guests";
                   {guest.name}
                 </a>
               </p>
-              {guest.role && (
-                <p class="mt-0.5 text-sm text-muted-foreground text-pretty">
-                  {guest.role}
-                </p>
-              )}
             </li>
           );
         })}
