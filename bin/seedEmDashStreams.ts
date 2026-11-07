@@ -254,6 +254,7 @@ function guestData(guest: GuestDraft): Record<string, unknown> {
     title: guest.name,
     ...(guest.role ? { role: guest.role } : {}),
     // Empty portable text — bios were never in Turso; backfill in CMS later.
+    // Photo (`image`) is an EmDash media upload — omit on import; upload in admin.
     bio: [],
     ...(guest.twitter ? { twitter: guest.twitter } : {}),
     ...(guest.twitch ? { twitch: guest.twitch } : {}),
