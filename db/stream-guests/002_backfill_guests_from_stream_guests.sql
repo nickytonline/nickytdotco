@@ -1,0 +1,36 @@
+-- STUB: do not run as-is.
+-- Backfill guests + appearances from denormalized stream_guests rows.
+-- Needs human review of duplicates before applying to production.
+--
+-- Known quirks in current data (from app code, not a live dump):
+-- - guest_name may be comma-separated for multi-guest episodes
+--   (see src/utils/video-utils.ts slugifyVideo).
+-- - Social fields may be handles, full URLs, or dirty values.
+-- - The same person may appear under slightly different name spellings.
+--
+-- Suggested approach once TURSO_* is available:
+--
+-- 1. Export distinct guest identities (split comma names, normalize).
+-- 2. Manually merge duplicates (same GitHub/LinkedIn/X handle wins).
+-- 3. INSERT INTO guests (…) with stable slugs.
+-- 4. INSERT INTO stream_episode_guests (episode_id, guest_id, guest_title, sort_order)
+--    for every stream_guests row.
+-- 5. Keep stream_guests.guest_* columns until loaders dual-read successfully.
+--
+-- Example sketch (incomplete; names/handles need real dedup rules):
+--
+-- INSERT INTO guests (slug, name, title, twitter, twitch, github, youtube, bluesky, website, linkedin)
+-- SELECT …
+-- FROM stream_guests
+-- WHERE …;
+--
+-- INSERT INTO stream_episode_guests (episode_id, guest_id, guest_title, sort_order)
+-- SELECT sg.id, g.id, sg.guest_title, 0
+-- FROM stream_guests sg
+-- JOIN guests g ON lower(g.name) = lower(sg.guest_name)
+-- WHERE sg.guest_name NOT LIKE '%,%';
+--
+-- Multi-guest rows need a splitter script (Node/SQL) rather than pure SQL.
+
+SELECT '002_backfill_guests_from_stream_guests.sql is a stub; do not apply.'
+  AS notice;
