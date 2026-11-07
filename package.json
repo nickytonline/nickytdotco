@@ -11,7 +11,6 @@
   "scripts": {
     "dev": "portless run astro dev",
     "start": "astro dev",
-    "prebuild": "node ./bin/maybeSeedGuestAvatarsOnDeployPreview.ts",
     "build": "npm run format:check && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -26,10 +25,6 @@
     "seed:emdash-streams:update-schema": "varlock run -- node ./bin/seedEmDashStreams.ts --update-schema",
     "seed:emdash-streams:publish": "varlock run -- node ./bin/seedEmDashStreams.ts --publish",
     "seed:emdash-streams:repair": "varlock run -- node ./bin/seedEmDashStreams.ts --repair",
-    "seed:guest-avatars": "varlock run -- node ./bin/seedGuestAvatars.ts",
-    "seed:guest-avatars:apply": "varlock run -- node ./bin/seedGuestAvatars.ts --apply",
-    "seed:guest-avatars:sync": "varlock run -- node ./bin/syncGuestAvatarsLocal.ts",
-    "seed:guest-avatars:sync:apply": "varlock run -- node ./bin/syncGuestAvatarsLocal.ts --apply",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
