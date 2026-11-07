@@ -5,7 +5,8 @@
  * Wired as npm `prebuild`. No-ops everywhere except:
  *   CONTEXT=deploy-preview (Netlify DP builds)
  *
- * Kill switch: SEED_GUEST_AVATARS=0
+ * Requires NETLIFY_AUTH_TOKEN in Netlify env (builds do not inject Blobs
+ * context; SITE_ID is automatic). Kill switch: SEED_GUEST_AVATARS=0.
  * Remove this hook + script after avatars are seeded.
  */
 import { spawn } from "node:child_process";
