@@ -20,6 +20,8 @@
     "lint:fix": "vp lint --fix .",
     "generate:posts": "varlock run --path env/devto -- node ./bin/generateDevToPosts.ts",
     "index:search": "varlock run --path env/search -- node ./bin/indexSearch.ts",
+    "seed:emdash-streams": "varlock run -- node ./bin/seedEmDashStreams.ts",
+    "seed:emdash-streams:apply": "varlock run -- node ./bin/seedEmDashStreams.ts --apply",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
