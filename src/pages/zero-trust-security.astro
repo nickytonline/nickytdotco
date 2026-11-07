@@ -7,7 +7,6 @@ import Breadcrumb from "../components/Breadcrumb.astro";
 import GuideCard from "../components/GuideCard.astro";
 import TalkCard from "../components/TalkCard.astro";
 import { dateFilter } from "../utils/filters";
-import { slugifyVideo } from "../utils/video-utils";
 import { isTalkUpcoming } from "../utils/cdn-cache";
 
 export const prerender = true;
@@ -243,7 +242,7 @@ const securityJsonLd = {
                   : "Nickyt.live"
               }
               date={dateFilter(new Date(stream.data.date))}
-              href={`/videos/${slugifyVideo(stream.data.title, stream.data.guestName)}`}
+              href={`/videos/${stream.data.slug}`}
               video={{ type: "youtube", url: stream.data.youtubeStreamLink }}
             />
           ))}

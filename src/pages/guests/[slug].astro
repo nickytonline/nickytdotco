@@ -1,0 +1,142 @@
+---
+import Layout from "../../layouts/MainLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import GuestSocialLinks from "../../components/GuestSocialLinks.astro";
+import { dateFilter } from "../../utils/filters";
+import { getGuestPage } from "../../emdash/guests";
+import {
+  setFixedCdnCacheHeaders,
+  UNTIL_DEPLOY_CDN_CACHE_SECONDS,
+} from "../../utils/cdn-cache";
+
+export const prerender = false;
+
+const { slug } = Astro.params;
+if (!slug) {
+  return Astro.rewrite("/404");
+}
+
+const page = await getGuestPage(slug);
+if (!page?.guest) {
+  return Astro.rewrite("/404");
+}
+
+const { guest, episodes } = page;
+
+setFixedCdnCacheHeaders(
+  Astro.response.headers,
+  UNTIL_DEPLOY_CDN_CACHE_SECONDS,
+);
+
+const hasSocials = Boolean(
+  guest.twitter ||
+    guest.bluesky ||
+    guest.github ||
+    guest.linkedin ||
+    guest.youtube ||
+    guest.twitch ||
+    guest.website,
+);
+
+const episodeLabel = episodes.length === 1 ? "episode" : "episodes";
+---
+
+<Layout
+  title={`${guest.name} | Livestream Guests`}
+  metaDesc={
+    guest.role
+      ? `${guest.name} — ${guest.role}. Livestream appearances on nickyt.live.`
+      : `${guest.name}'s livestream appearances on nickyt.live.`
+  }
+  socialImage="/assets/images/page-og/watch.jpg"
+>
+  <Breadcrumb
+    items={[
+      { label: "Watch", href: "/watch" },
+      { label: "Video Archives", href: "/videos" },
+      { label: guest.name },
+    ]}
+  />
+
+  <article>
+    <header>
+      <h1
+        class="text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-tight text-balance"
+      >
+        {guest.name}
+      </h1>
+      {
+        guest.role && (
+          <p class="mt-2 text-lg text-muted-foreground text-pretty">
+            {guest.role}
+          </p>
+        )
+      }
+      {
+        hasSocials && (
+          <GuestSocialLinks
+            class="mt-4"
+            name={guest.name}
+            twitter={guest.twitter}
+            bluesky={guest.bluesky}
+            github={guest.github}
+            linkedin={guest.linkedin}
+            youtube={guest.youtube}
+            twitch={guest.twitch}
+            website={guest.website}
+          />
+        )
+      }
+    </header>
+
+    <section class="mt-10" aria-labelledby="guest-episodes-heading">
+      <h2
+        id="guest-episodes-heading"
+        class="text-lg font-semibold text-foreground"
+      >
+        Livestreams
+      </h2>
+      <p class="mt-1 text-sm text-muted-foreground">
+        {episodes.length} {episodeLabel}
+      </p>
+
+      {
+        episodes.length === 0 ? (
+          <p class="mt-4 text-muted-foreground">
+            No linked livestreams yet.
+          </p>
+        ) : (
+          <ul class="mt-4 divide-y divide-border border-t border-border">
+            {episodes.map((episode) => (
+              <li class="py-4">
+                <a
+                  href={`/videos/${episode.slug}`}
+                  class="group block min-w-0"
+                >
+                  <p class="text-base font-semibold text-foreground text-balance group-hover:text-brand group-focus:text-brand transition-colors">
+                    {episode.title}
+                  </p>
+                  <time
+                    datetime={new Date(episode.date).toISOString()}
+                    class="mt-1 block text-sm italic text-muted-foreground"
+                  >
+                    {dateFilter(new Date(episode.date))}
+                  </time>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+
+    <div class="mt-8">
+      <a
+        href="/videos"
+        class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
+      >
+        Back to video archives
+      </a>
+    </div>
+  </article>
+</Layout>

@@ -9,10 +9,10 @@ import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import UpcomingBadge from "../../components/UpcomingBadge.astro";
 import EventCalendar from "../../components/EventCalendar";
 import StreamLinks from "../../components/StreamLinks.astro";
+import StreamGuestList from "../../components/StreamGuestList.astro";
 import LocalDateTime from "../../components/LocalDateTime.astro";
 import {
   extractYouTubeVideoId,
-  slugifyVideo,
 } from "../../utils/video-utils";
 import {
   cdnMaxAgeSeconds,
@@ -25,6 +25,7 @@ import {
   cacheRenderedContent,
   EXPIRING_CACHE_SWR_SECONDS,
 } from "../../utils/route-cache";
+import { getLivestreamGuests } from "../../emdash/guests";
 
 export const prerender = false;
 
@@ -44,7 +45,7 @@ if (result.error) {
 }
 
 const stream = (result.entries ?? []).find(
-  (entry) => slugifyVideo(entry.data.title, entry.data.guestName) === slug,
+  (entry) => entry.data.slug === slug,
 );
 
 if (!stream) {
@@ -56,11 +57,13 @@ const {
   date,
   description,
   guestName,
-  guestTitle,
   youtubeStreamLink,
   linkedinStreamLink,
   type,
 } = stream.data;
+
+const emdashGuests = await getLivestreamGuests(slug);
+const hasEmDashGuests = emdashGuests.length > 0;
 const now = Date.now();
 const isUpcoming = isEventUpcoming(new Date(date), now);
 
@@ -109,74 +112,18 @@ const videoJsonLd = {
     name: site.authorName,
     url: site.url,
   },
-  contributor: {
-    "@type": "Person",
-    name: guestName,
-    ...(guestTitle && { jobTitle: guestTitle }),
-  },
+  contributor: hasEmDashGuests
+    ? emdashGuests.map((guest) => ({
+        "@type": "Person",
+        name: guest.name,
+        ...(guest.role && { jobTitle: guest.role }),
+      }))
+    : {
+        "@type": "Person",
+        name: guestName,
+      },
 };
 
-function normalizeLink(
-  value: string,
-  baseUrl: string,
-  prefix = "",
-): { href: string; handle: string } {
-  if (value.startsWith("http://") || value.startsWith("https://")) {
-    const handle = new URL(value).pathname.replace(/^\//, "");
-    return { href: value, handle: prefix ? `${prefix}${handle}` : handle };
-  }
-  return {
-    href: `${baseUrl}${value}`,
-    handle: prefix ? `${prefix}${value}` : value,
-  };
-}
-
-const socials: { label: string; href: string; handle: string }[] = [];
-if (stream.data.twitter)
-  socials.push({
-    label: "X / Twitter",
-    ...normalizeLink(stream.data.twitter, "https://x.com/", "@"),
-  });
-if (stream.data.bluesky)
-  socials.push({
-    label: "Bluesky",
-    href: stream.data.bluesky.startsWith("http")
-      ? stream.data.bluesky
-      : `https://bsky.app/profile/${stream.data.bluesky}`,
-    handle: `@${stream.data.bluesky.startsWith("http") ? new URL(stream.data.bluesky).pathname.replace(/^\/profile\//, "") : stream.data.bluesky}`,
-  });
-if (stream.data.github)
-  socials.push({
-    label: "GitHub",
-    ...normalizeLink(stream.data.github, "https://github.com/"),
-  });
-if (stream.data.linkedin)
-  socials.push({
-    label: "LinkedIn",
-    href: stream.data.linkedin.startsWith("http")
-      ? stream.data.linkedin
-      : `https://linkedin.com/in/${stream.data.linkedin}`,
-    handle: stream.data.linkedin.replace(/^https?:\/\//, ""),
-  });
-if (stream.data.youtube)
-  socials.push({
-    label: "YouTube",
-    href: stream.data.youtube.startsWith("http")
-      ? stream.data.youtube
-      : `https://youtube.com/@${stream.data.youtube}`,
-    handle: stream.data.youtube.replace(/^https?:\/\//, ""),
-  });
-if (stream.data.twitch)
-  socials.push({
-    label: "Twitch",
-    ...normalizeLink(stream.data.twitch, "https://twitch.tv/", "@"),
-  });
-if (stream.data.website)
-  socials.push({
-    label: "Website",
-    href: stream.data.website,
-    handle: stream.data.website.replace(/^https?:\/\//, ""),
-  });
 ---
 
 <Layout
@@ -218,10 +165,6 @@ if (stream.data.website)
         )}
         {isUpcoming && <UpcomingBadge label="Upcoming livestream" />}
       </div>
-      <p class="text-base text-muted-foreground mt-1">
-        with <span class="font-semibold">{guestName}</span>
-        {guestTitle && <span> — {guestTitle}</span>}
-      </p>
       {
         isUpcoming && (
           <div class="mt-4 flex flex-col gap-3">
@@ -266,28 +209,7 @@ if (stream.data.website)
 
     <div class="prose max-w-none" set:html={descriptionHtml} />
 
-    {
-      socials.length > 0 && (
-        <div class="mt-6 pt-6 border-t border-border">
-          <h2 class="text-lg font-semibold mb-3">Links</h2>
-          <ul class="list-disc list-inside">
-            {socials.map(({ label, href, handle }) => (
-              <li>
-                {label}:{" "}
-                <a
-                  href={href}
-                  class="text-sm font-medium text-brand hover:underline focus:underline"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {handle}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )
-    }
+    <StreamGuestList guests={emdashGuests} />
 
     <div class="mt-8">
       <a

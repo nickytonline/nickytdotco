@@ -8,7 +8,6 @@ import { dateFilter } from "@/utils/filters";
 import { getLiveCollection } from "astro:content";
 import type { StreamVideoInfo } from "@/content/_loaders/stream-videos";
 import { getYouTubeId } from "@/utils/youtube-utils";
-import { slugifyVideo } from "@/utils/video-utils";
 import {
   isEventUpcoming,
   SCHEDULE_CDN_CACHE_SECONDS,
@@ -132,10 +131,7 @@ export const prerender = false;
             <div class="grid gap-6 xl:gap-8">
               {latestVideos.map((video) => {
                 const videoId = getYouTubeId(video.youtubeStreamLink);
-                const videoPageUrl = `/videos/${slugifyVideo(
-                  video.title,
-                  video.guestName,
-                )}`;
+                const videoPageUrl = `/videos/${video.slug}`;
 
                 return (
                   videoId && (
@@ -164,7 +160,6 @@ export const prerender = false;
                           </time>
                           <p class="text-base text-muted-foreground">
                             Guest: {video.guestName}
-                            {video.guestTitle ? `, ${video.guestTitle}` : ""}
                           </p>
                         </div>
                       </a>

@@ -2,7 +2,6 @@
 import type { StreamGuestInfo } from "../utils/schedule-utils";
 import { getHeadingId } from "../utils/schedule-utils";
 import { getYouTubeId } from "../utils/youtube-utils";
-import { slugifyVideo } from "../utils/video-utils";
 import LiveStreamCard from "./LiveStreamCard.astro";
 import { isEventUpcoming } from "../utils/cdn-cache";
 
@@ -42,7 +41,9 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
       const headingId = getHeadingId(guestName, date);
       const eventLocation = `${Astro.request.url}#${headingId}`;
       const videoPageUrl = youtubeStreamLink
-        ? `/videos/${slugifyVideo(title, guestName)}`
+        ? scheduleItem.slug
+          ? `/videos/${scheduleItem.slug}`
+          : undefined
         : undefined;
       const noGuest =
         guestName === "nickytonline" || guestName === "2Full2Stack";

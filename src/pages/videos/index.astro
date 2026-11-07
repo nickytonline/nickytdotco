@@ -5,10 +5,7 @@ import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import { dateFilter } from "../../utils/filters";
-import {
-  extractYouTubeVideoId,
-  slugifyVideo,
-} from "../../utils/video-utils";
+import { extractYouTubeVideoId } from "../../utils/video-utils";
 import {
   isEventUpcoming,
   setCdnCacheHeaders,
@@ -87,10 +84,6 @@ const years = Object.keys(streamsByYear)
 
           <div class="space-y-1">
             {streamsByYear[year].map((stream) => {
-              const slug = slugifyVideo(
-                stream.data.title,
-                stream.data.guestName
-              );
               const videoId = extractYouTubeVideoId(
                 stream.data.youtubeStreamLink
               );
@@ -102,7 +95,7 @@ const years = Object.keys(streamsByYear)
                   <div class="flex items-center gap-5">
                     {thumbnailUrl && (
                       <a
-                        href={`/videos/${slug}`}
+                        href={`/videos/${stream.data.slug}`}
                         class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
                         aria-hidden="true"
                         tabindex="-1"
@@ -121,7 +114,7 @@ const years = Object.keys(streamsByYear)
                     <div class="flex-1">
                       <h3 class="text-xl font-bold">
                         <a
-                          href={`/videos/${slug}`}
+                          href={`/videos/${stream.data.slug}`}
                           class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {stream.data.title}

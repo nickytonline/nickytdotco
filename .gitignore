@@ -110,3 +110,6 @@ emdash-env.d.ts
 env/**/.env
 env/**/.env.*
 !env/**/.env.schema
+
+# Local PR description screenshot scratch
+.pr-assets/
