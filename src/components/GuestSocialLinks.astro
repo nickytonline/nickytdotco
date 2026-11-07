@@ -27,6 +27,24 @@ function absoluteUrl(value: string, base: string): string {
   return `${base}${value.replace(/^@/, "")}`;
 }
 
+function safeWebsiteUrl(value: string): string | undefined {
+  const candidate = value.trim();
+  if (!candidate || /\s/.test(candidate)) return undefined;
+
+  const href = /^https?:\/\//i.test(candidate)
+    ? candidate
+    : `https://${candidate}`;
+
+  try {
+    const url = new URL(href);
+    return url.protocol === "http:" || url.protocol === "https:"
+      ? url.toString()
+      : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 const brandClasses: Record<Platform, string> = {
   youtube: "hover:bg-youtube focus:bg-youtube hover:text-white focus:text-white",
   github:
@@ -86,10 +104,11 @@ if (socials.twitch) {
     label: `${name}'s Twitch profile`,
   });
 }
-if (socials.website) {
+const websiteUrl = socials.website ? safeWebsiteUrl(socials.website) : undefined;
+if (websiteUrl) {
   items.push({
     platform: "website",
-    href: socials.website,
+    href: websiteUrl,
     label: `${name}'s website`,
   });
 }
