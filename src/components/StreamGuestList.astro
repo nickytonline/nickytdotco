@@ -1,6 +1,5 @@
 ---
 import type { GuestInfo } from "../emdash/guests";
-import GuestSocialLinks from "./GuestSocialLinks.astro";
 
 interface Props {
   guests: GuestInfo[];
@@ -46,17 +45,6 @@ const heading = guests.length === 1 ? "Guest" : "Guests";
                   {guest.role}
                 </p>
               )}
-              <GuestSocialLinks
-                class="mt-2"
-                name={guest.name}
-                twitter={guest.twitter}
-                bluesky={guest.bluesky}
-                github={guest.github}
-                linkedin={guest.linkedin}
-                youtube={guest.youtube}
-                twitch={guest.twitch}
-                website={guest.website}
-              />
             </li>
           );
         })}
