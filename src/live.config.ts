@@ -76,23 +76,14 @@ const brewfile = defineLiveCollection({
 const streamVideos = defineLiveCollection({
   loader: streamVideosLoader,
   schema: z.object({
+    slug: z.string().min(1),
     type: z.enum(["nickyt.live", "pomerium-live"]),
     date: z.string().min(1),
     title: z.string().min(1),
     description: z.string().min(1),
     guestName: z.string().min(1),
-    guestTitle: z.string().optional(),
     youtubeStreamLink: z.string().min(1),
-    // string (not z.url) so dirty Turso values cannot empty the collection;
-    // the loader already drops non-http(s) values
     linkedinStreamLink: z.string().optional(),
-    twitter: z.string().optional(),
-    youtube: z.string().optional(),
-    twitch: z.string().optional(),
-    github: z.string().optional(),
-    bluesky: z.string().optional(),
-    website: z.string().optional(),
-    linkedin: z.string().optional(),
   }),
 });
 

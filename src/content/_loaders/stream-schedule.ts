@@ -77,24 +77,55 @@ function mapRowToSchedule(row: Record<string, unknown>): StreamGuestInfo {
 
 export async function fetchPastGuestsWithYouTube(): Promise<StreamGuestInfo[]> {
   try {
-    const client = getClient();
+    const client = createClient({
+      url: ENV.EMDASH_TURSO_DATABASE_URL,
+      authToken: ENV.TURSO_AUTH_TOKEN,
+    });
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     const result = await client.execute({
-      sql: `SELECT * FROM stream_guests
-            WHERE on_schedule = 1
-              AND date < ?
-              AND youtube_stream_link IS NOT NULL
-              AND youtube_stream_link != ''
-            ORDER BY date DESC
+      sql: `SELECT
+              e.slug,
+              e.type,
+              e.date,
+              e.title,
+              e.description,
+              e.youtube_stream_link,
+              e.linkedin_stream_link,
+              COALESCE(NULLIF(group_concat(g.title, ', '), ''), 'Nick Taylor') AS guest_name
+            FROM ec_livestreams e
+            LEFT JOIN _emdash_content_references r
+              ON r.parent_group = e.id
+             AND r.relation_id = '01M6V4Y1GJVJVCRFJYMRAQE9YJ'
+            LEFT JOIN ec_guests g
+              ON g.id = r.child_group
+             AND g.status = 'published'
+             AND g.deleted_at IS NULL
+            WHERE e.status = 'published'
+              AND e.deleted_at IS NULL
+              AND e.date < ?
+              AND e.youtube_stream_link IS NOT NULL
+              AND e.youtube_stream_link != ''
+            GROUP BY e.id
+            ORDER BY e.date DESC
             LIMIT 2`,
       args: [today.toISOString()],
     });
 
-    return result.rows.map((row) =>
-      mapRowToSchedule(row as unknown as Record<string, unknown>)
-    );
+    return result.rows.map((row) => {
+      const r = row as unknown as Record<string, unknown>;
+      return {
+        slug: r.slug as string,
+        type: r.type as "nickyt.live" | "pomerium-live",
+        date: r.date as string,
+        guestName: r.guest_name as string,
+        title: r.title as string,
+        description: r.description as string,
+        youtubeStreamLink: r.youtube_stream_link as string,
+        linkedinStreamLink: sanitizeHttpUrl(r.linkedin_stream_link),
+      } satisfies StreamGuestInfo;
+    });
   } catch (error) {
     console.error("Error fetching past guests:", error);
     return [];

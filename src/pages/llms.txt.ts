@@ -1,6 +1,6 @@
 import { getCollection, getLiveCollection } from "astro:content";
 import type { APIContext } from "astro";
-import { extractYouTubeVideoId, slugifyVideo } from "../utils/video-utils";
+import { extractYouTubeVideoId } from "../utils/video-utils";
 import { getBlogListing } from "../emdash/blog";
 import {
   cacheRenderedContent,
@@ -109,11 +109,10 @@ You are free to share and adapt this content for any purpose, even commercially,
   const recentStreams = sortedStreams.length
     ? `\n\n## Recent Streams\n${sortedStreams
         .map((stream) => {
-          const slug = slugifyVideo(stream.data.title, stream.data.guestName);
           const videoId = extractYouTubeVideoId(stream.data.youtubeStreamLink);
           const ytUrl = videoId
             ? `https://www.youtube.com/watch?v=${videoId}`
-            : `https://www.nickyt.co/videos/${slug}/`;
+            : `https://www.nickyt.co/videos/${stream.data.slug}/`;
           return `- [${stream.data.title}](${ytUrl})`;
         })
         .join("\n")}`

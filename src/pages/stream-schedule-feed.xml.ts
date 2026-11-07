@@ -1,7 +1,6 @@
 import rss from "@astrojs/rss";
 import { getLiveCollection } from "astro:content";
 import { site } from "@/data/site";
-import { slugifyVideo } from "../utils/video-utils";
 import type { APIContext } from "astro";
 
 function getYouTubeThumbnailUrl(youtubeLink: string): string | null {
@@ -45,7 +44,7 @@ export async function GET(context: APIContext) {
         pubDate: new Date(stream.data.date),
         description: stream.data.description,
         link: stream.data.youtubeStreamLink
-          ? `${context.site || site.url}videos/${slugifyVideo(stream.data.title, stream.data.guestName)}`
+          ? stream.data.youtubeStreamLink
           : stream.data.linkedinStreamLink || site.url,
         categories: [stream.data.type],
         customData: thumbnailUrl

@@ -1,7 +1,6 @@
 import rss from "@astrojs/rss";
 import { getLiveCollection } from "astro:content";
 import { site } from "../data/site";
-import { slugifyVideo } from "../utils/video-utils";
 import type { APIContext } from "astro";
 import { getBlogListing } from "../emdash/blog";
 import {
@@ -32,7 +31,7 @@ export async function GET(context: APIContext) {
     title: video.data.title,
     pubDate: new Date(video.data.date),
     description: video.data.description || "",
-    link: `/videos/${slugifyVideo(video.data.title, video.data.guestName)}/`,
+    link: `/videos/${video.data.slug}/`,
     categories: ["video"],
   }));
 

@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import type { StreamGuestInfo } from "../utils/schedule-utils";
 import { getYouTubeId } from "../utils/youtube-utils";
-import { slugifyVideo } from "../utils/video-utils";
 import Pill from "./Pill.astro";
 import LocalDateTime from "./LocalDateTime.astro";
 
@@ -19,8 +18,8 @@ const videoId = youtubeStreamLink ? getYouTubeId(youtubeStreamLink) : null;
 const image = videoId
   ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
   : undefined;
-const videoPageUrl = youtubeStreamLink
-  ? `/videos/${slugifyVideo(title, guestName)}`
+const videoPageUrl = youtubeStreamLink && guest.slug
+  ? `/videos/${guest.slug}`
   : undefined;
 
 const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;

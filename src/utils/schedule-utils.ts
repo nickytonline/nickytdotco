@@ -1,6 +1,7 @@
 import Parser from "rss-parser";
 
 export interface StreamGuestInfo extends Record<string, unknown> {
+  slug?: string;
   type: "nickyt.live" | "pomerium-live";
   date: string;
   title: string;
