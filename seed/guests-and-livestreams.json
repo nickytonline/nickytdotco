@@ -75,6 +75,15 @@
           "slug": "linkedin",
           "label": "LinkedIn",
           "type": "string"
+        },
+        {
+          "slug": "livestreams",
+          "label": "Livestreams",
+          "type": "reference",
+          "validation": {
+            "relation": "livestream_guests",
+            "relationSide": "child"
+          }
         }
       ]
     },

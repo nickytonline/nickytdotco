@@ -1,0 +1,84 @@
+---
+import type { GuestInfo } from "../emdash/guests";
+import GuestSocialLinks from "./GuestSocialLinks.astro";
+
+interface Props {
+  guests: GuestInfo[];
+}
+
+const { guests } = Astro.props;
+
+const heading = guests.length === 1 ? "Guest" : "Guests";
+---
+
+{
+  guests.length > 0 && (
+    <section
+      class="mt-8 pt-6 border-t border-border"
+      aria-labelledby="stream-guests-heading"
+    >
+      <h2
+        id="stream-guests-heading"
+        class="text-lg font-semibold text-foreground"
+      >
+        {heading}
+      </h2>
+      <ul
+        class:list={[
+          "mt-4 grid gap-5",
+          guests.length > 1 ? "sm:grid-cols-2" : "grid-cols-1",
+        ]}
+      >
+        {guests.map((guest) => {
+          const profileHref = `/guests/${guest.slug}`;
+          return (
+            <li class="min-w-0 flex gap-3 sm:gap-4">
+              <a
+                href={profileHref}
+                class="shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <img
+                  src={guest.imageSrc}
+                  alt=""
+                  width={56}
+                  height={56}
+                  class="size-12 sm:size-14 rounded-full object-cover bg-secondary border border-border"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="min-w-0 flex-1">
+                <p class="text-base font-semibold text-foreground text-balance">
+                  <a
+                    href={profileHref}
+                    class="hover:text-brand focus:text-brand transition-colors"
+                  >
+                    {guest.name}
+                  </a>
+                </p>
+                {guest.role && (
+                  <p class="mt-0.5 text-sm text-muted-foreground text-pretty">
+                    {guest.role}
+                  </p>
+                )}
+                <GuestSocialLinks
+                  class="mt-2"
+                  name={guest.name}
+                  twitter={guest.twitter}
+                  bluesky={guest.bluesky}
+                  github={guest.github}
+                  linkedin={guest.linkedin}
+                  youtube={guest.youtube}
+                  twitch={guest.twitch}
+                  website={guest.website}
+                />
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )
+}

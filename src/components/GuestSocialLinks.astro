@@ -1,0 +1,230 @@
+---
+/**
+ * Icon-only social links for a guest, using the same brand icons/hover
+ * treatment as `/socials` (SocialLinks.astro). Accessible name via aria-label
+ * since the platform label is not shown as visible text.
+ */
+import type { GuestSocials } from "../emdash/guests";
+
+interface Props extends GuestSocials {
+  name: string;
+  class?: string;
+}
+
+type Platform =
+  | "youtube"
+  | "github"
+  | "x"
+  | "linkedin"
+  | "twitch"
+  | "bluesky"
+  | "website";
+
+const { name, class: className, ...socials } = Astro.props;
+
+function absoluteUrl(value: string, base: string): string {
+  if (/^https?:\/\//i.test(value)) return value;
+  return `${base}${value.replace(/^@/, "")}`;
+}
+
+const brandClasses: Record<Platform, string> = {
+  youtube: "hover:bg-youtube focus:bg-youtube hover:text-white focus:text-white",
+  github:
+    "hover:bg-github focus:bg-github hover:text-white focus:text-white dark:hover:border-foreground dark:focus:border-foreground",
+  x: "hover:bg-x focus:bg-x hover:text-white focus:text-white dark:hover:border-foreground dark:focus:border-foreground",
+  linkedin:
+    "hover:bg-linkedin focus:bg-linkedin hover:text-white focus:text-white",
+  twitch: "hover:bg-twitch focus:bg-twitch hover:text-white focus:text-white",
+  bluesky:
+    "hover:bg-bluesky focus:bg-bluesky hover:text-white focus:text-white",
+  website: "hover:bg-secondary focus:bg-secondary",
+};
+
+const items: { platform: Platform; href: string; label: string }[] = [];
+
+if (socials.twitter) {
+  items.push({
+    platform: "x",
+    href: absoluteUrl(socials.twitter, "https://x.com/"),
+    label: `${name}'s X (Twitter) profile`,
+  });
+}
+if (socials.bluesky) {
+  items.push({
+    platform: "bluesky",
+    href: absoluteUrl(socials.bluesky, "https://bsky.app/profile/"),
+    label: `${name}'s Bluesky profile`,
+  });
+}
+if (socials.github) {
+  items.push({
+    platform: "github",
+    href: absoluteUrl(socials.github, "https://github.com/"),
+    label: `${name}'s GitHub profile`,
+  });
+}
+if (socials.linkedin) {
+  items.push({
+    platform: "linkedin",
+    href: absoluteUrl(socials.linkedin, "https://linkedin.com/in/"),
+    label: `${name}'s LinkedIn profile`,
+  });
+}
+if (socials.youtube) {
+  items.push({
+    platform: "youtube",
+    href: socials.youtube.startsWith("http")
+      ? socials.youtube
+      : `https://youtube.com/@${socials.youtube.replace(/^@/, "")}`,
+    label: `${name}'s YouTube channel`,
+  });
+}
+if (socials.twitch) {
+  items.push({
+    platform: "twitch",
+    href: absoluteUrl(socials.twitch, "https://twitch.tv/"),
+    label: `${name}'s Twitch profile`,
+  });
+}
+if (socials.website) {
+  items.push({
+    platform: "website",
+    href: socials.website,
+    label: `${name}'s website`,
+  });
+}
+---
+
+{
+  items.length > 0 && (
+    <ul
+      class:list={["flex flex-wrap items-center gap-2", className]}
+      aria-label={`${name}'s social links`}
+    >
+      {items.map(({ platform, href, label }) => (
+        <li>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            title={label}
+            class:list={[
+              "inline-flex size-9 items-center justify-center rounded-full border-2 border-transparent bg-secondary text-secondary-foreground transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring",
+              brandClasses[platform],
+            ]}
+          >
+            {platform === "youtube" && (
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+              >
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+              </svg>
+            )}
+            {platform === "github" && (
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+              >
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            )}
+            {platform === "x" && (
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+              >
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg>
+            )}
+            {platform === "linkedin" && (
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+              >
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            )}
+            {platform === "twitch" && (
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+              >
+                <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" />
+              </svg>
+            )}
+            {platform === "bluesky" && (
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="size-4"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565C.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479c.815 2.736 3.713 3.66 6.383 3.364q.204-.03.415-.056q-.207.033-.415.056c-3.912.58-7.387 2.005-2.83 7.078c5.013 5.19 6.87-1.113 7.823-4.308c.953 3.195 2.05 9.271 7.733 4.308c4.267-4.308 1.172-6.498-2.74-7.078a9 9 0 0 1-.415-.056q.21.026.415.056c2.67.297 5.568-.628 6.383-3.364c.246-.828.624-5.79.624-6.478c0-.69-.139-1.861-.902-2.206c-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8"
+                />
+              </svg>
+            )}
+            {platform === "website" && (
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}
