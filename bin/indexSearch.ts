@@ -3,7 +3,6 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { load } from "js-yaml";
-import slugify from "slugify";
 import { loadSearchBlogPosts } from "../src/lib/search/blogPosts.ts";
 import { site } from "../src/data/site.ts";
 import {
@@ -32,28 +31,35 @@ import type {
 } from "../src/lib/search/types.ts";
 import { createClient } from "@libsql/client/http";
 
-const VIDEO_SLUG_OPTS = { lower: true, strict: true } as const;
-
-function slugifyVideoTitle(title: string, guestName: string): string {
-  const primaryGuest = guestName.split(",")[0].trim();
-  return `${slugify(title, VIDEO_SLUG_OPTS)}-${slugify(primaryGuest, VIDEO_SLUG_OPTS)}`;
-}
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const TALKS_DIR = path.join(ROOT, "src/content/talks");
 
-const VIDEO_SQL = `SELECT id, title, description, guest_name, date
-  FROM stream_guests
-  WHERE on_schedule = 1
-    AND youtube_stream_link IS NOT NULL
-    AND youtube_stream_link != ''
+const VIDEO_SQL = `SELECT
+    livestreams.id,
+    livestreams.slug,
+    livestreams.title,
+    livestreams.description,
+    group_concat(guests.title, ', ') AS guest_names
+  FROM ec_livestreams AS livestreams
+  LEFT JOIN _emdash_content_references AS refs
+    ON refs.parent_group = livestreams.translation_group
+  LEFT JOIN ec_guests AS guests
+    ON guests.translation_group = refs.child_group
+    AND guests.status = 'published'
+    AND guests.deleted_at IS NULL
+  WHERE livestreams.status = 'published'
+    AND livestreams.deleted_at IS NULL
+    AND livestreams.slug IS NOT NULL
+    AND livestreams.youtube_stream_link IS NOT NULL
+    AND livestreams.youtube_stream_link != ''
     AND (
-      youtube_stream_link LIKE '%v=___________%'
-      OR youtube_stream_link LIKE '%youtu.be/___________%'
-      OR youtube_stream_link LIKE '%/live/___________%'
+      livestreams.youtube_stream_link LIKE '%v=___________%'
+      OR livestreams.youtube_stream_link LIKE '%youtu.be/___________%'
+      OR livestreams.youtube_stream_link LIKE '%/live/___________%'
     )
-  ORDER BY date DESC`;
+  GROUP BY livestreams.id
+  ORDER BY livestreams.date DESC`;
 
 interface MarkdownFile {
   id: string;
@@ -199,11 +205,11 @@ async function collectVideoDocuments(): Promise<{
   documents: SearchDocumentInput[];
   available: boolean;
 }> {
-  const url = process.env.TURSO_DATABASE_URL;
+  const url = process.env.EMDASH_TURSO_DATABASE_URL;
   const authToken = process.env.TURSO_AUTH_TOKEN;
   if (!url || !authToken) {
     console.warn(
-      "Skipping stream documents; TURSO_DATABASE_URL / TURSO_AUTH_TOKEN are not set."
+      "Skipping stream documents; EMDASH_TURSO_DATABASE_URL / TURSO_AUTH_TOKEN are not set."
     );
     return { documents: [], available: false };
   }
@@ -216,19 +222,20 @@ async function collectVideoDocuments(): Promise<{
     available: true,
     documents: result.rows.flatMap((row) => {
       const title = asString(row.title);
-      const guestName = asString(row.guest_name);
+      const slug = asString(row.slug);
+      const guestNames = asString(row.guest_names);
       const description = asString(row.description);
-      if (!title || !guestName || !description) {
+      if (!title || !slug || !description) {
         return [];
       }
       return [
         buildDocument({
           id: `video:${String(row.id)}`,
-          url: siteUrl(`/videos/${slugifyVideoTitle(title, guestName)}/`),
+          url: siteUrl(`/videos/${slug}/`),
           title,
           excerpt: excerptFromText(description),
           type: "Stream",
-          body: `${guestName}\n\n${description}`,
+          body: [guestNames, description].filter(Boolean).join("\n\n"),
         }),
       ];
     }),

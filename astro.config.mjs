@@ -1,5 +1,5 @@
 import process from "node:process";
-import { defineConfig } from "astro/config";
+import { defineConfig, sessionDrivers } from "astro/config";
 import netlify from "@astrojs/netlify";
 import { cacheNetlify } from "@astrojs/netlify/cache";
 import mdx from "@astrojs/mdx";
@@ -19,12 +19,30 @@ import { blobs } from "./packages/emdash-netlify/src/index.ts";
 import { resolveEmDashSiteUrl } from "./packages/emdash-netlify/src/site-url.ts";
 import { embedPlugin } from "./src/emdash/embed-plugin.ts";
 
+const onNetlify = process.env.NETLIFY === "true";
+
 // https://astro.build/config
 export default defineConfig({
   output: "static",
   // EmDash publish routes call Astro.cache.invalidate. This provider turns
   // those tags into Netlify durable cache purges.
   cache: { provider: cacheNetlify() },
+  // EmDash admin auth uses Astro sessions. @astrojs/netlify defaults sessions
+  // to Netlify Blobs (`sessionDrivers.netlifyBlobs`). In local `astro dev`
+  // that driver still calls `getStore()` and throws MissingBlobsEnvironmentError
+  // unless `siteID` + `token` (or NETLIFY_BLOBS_CONTEXT) are present — the Vite
+  // Blobs emulation does not always inject that context into the session path.
+  // Use a filesystem driver locally; leave unset on Netlify so the adapter keeps
+  // Blobs sessions in production.
+  ...(!onNetlify
+    ? {
+        session: {
+          driver: sessionDrivers.fsLite({
+            base: ".astro/sessions",
+          }),
+        },
+      }
+    : {}),
   // Only for local `astro dev`: Edge Functions emulation boots Deno via
   // @netlify/edge-functions-dev, which crashes on Deno 2.9.6+
   // (`unexpected argument '--allow-scripts'`). Never pass this on Netlify
@@ -32,7 +50,7 @@ export default defineConfig({
   // limit) must keep their default enabled behavior. Remove once
   // netlify/primitives#790 ships.
   adapter: netlify(
-    process.env.NETLIFY
+    onNetlify
       ? {}
       : {
           devFeatures: {

@@ -1,0 +1,49 @@
+---
+import type { GuestInfo } from "../emdash/guests";
+
+interface Props {
+  guests: GuestInfo[];
+}
+
+const { guests } = Astro.props;
+
+const heading = guests.length === 1 ? "Guest" : "Guests";
+---
+
+{
+  guests.length > 0 && (
+    <section
+      class="mt-8 pt-6 border-t border-border"
+      aria-labelledby="stream-guests-heading"
+    >
+      <h2
+        id="stream-guests-heading"
+        class="text-lg font-semibold text-foreground"
+      >
+        {heading}
+      </h2>
+      <ul
+        class:list={[
+          "mt-4 grid list-disc gap-5 pl-5",
+          guests.length > 1 ? "sm:grid-cols-2" : "grid-cols-1",
+        ]}
+      >
+        {guests.map((guest) => {
+          const profileHref = `/guests/${guest.slug}`;
+          return (
+            <li class="min-w-0">
+              <p class="text-base font-semibold text-foreground text-balance">
+                <a
+                  href={profileHref}
+                  class="underline underline-offset-2 hover:text-brand focus:text-brand transition-colors"
+                >
+                  {guest.name}
+                </a>
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )
+}
