@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 /**
- * Seed EmDash `guests` + `livestreams` drafts from Turso `stream_guests`.
+ * Seed EmDash `guests` + `livestreams` from Turso `stream_guests`.
  *
  * - READ-ONLY against stream_guests (never mutates that table).
- * - Creates EmDash collection schema (if missing) and draft content.
+ * - Creates EmDash collection schema (if missing) and published content.
  * - Guest bios are left empty for later CMS backfill.
  * - Stores legacy_slug (= today's slugifyVideo) for a future redirect pass.
  *
  * Usage:
  *   varlock run -- node ./bin/seedEmDashStreams.ts              # dry-run (default)
- *   varlock run -- node ./bin/seedEmDashStreams.ts --apply      # create missing drafts (skip existing)
+ *   varlock run -- node ./bin/seedEmDashStreams.ts --apply      # create missing entries (skip existing)
+ *   varlock run -- node ./bin/seedEmDashStreams.ts --repair     # fix multi-guest splits + rewire refs
  *   varlock run -- node ./bin/seedEmDashStreams.ts --update-schema  # sync collection fields only
+ *   varlock run -- node ./bin/seedEmDashStreams.ts --publish    # publish draft guests + livestreams
  */
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -18,7 +20,7 @@ import { fileURLToPath } from "node:url";
 
 import { createClient } from "@libsql/client/http";
 import { LibsqlDialect } from "@libsql/kysely-libsql";
-import { SchemaRegistry } from "emdash";
+import { ContentRepository, RevisionRepository, SchemaRegistry } from "emdash";
 import { applySeed, validateSeed, type SeedFile } from "emdash/seed";
 import { Kysely } from "kysely";
 import slugify from "slugify";
@@ -34,9 +36,42 @@ const SEED_SCHEMA_PATH = path.join(ROOT, "seed/guests-and-livestreams.json");
 
 const SLUG_OPTS = { lower: true, strict: true } as const;
 
-/** Streams credited only to Nick / placeholder → 0 guest refs. */
-const ZERO_GUEST_NAME =
-  /^(nick taylor|nicky\s*taylor|nickytonline|multiple guests)$/i;
+/** Solo Nick streams → 0 guest refs (he hosts; not a guest). */
+const NICK_ONLY_GUEST_NAME = /^(nick taylor|nicky\s*taylor|nickytonline)$/i;
+
+/** Panel placeholder — guests are parsed from the description Panel list. */
+const MULTIPLE_GUESTS_NAME = /^multiple guests$/i;
+
+/** Known spelling fixes when creating guest records (description stays unchanged). */
+const GUEST_NAME_CORRECTIONS: Record<string, string> = {
+  "schalk neetling": "Schalk Neethling",
+};
+
+/**
+ * Composite / role-baked guest rows created by the first import. Soft-deleted
+ * during --repair once real people are split out.
+ */
+const MALFORMED_GUEST_SLUGS = [
+  "brian-douglas-chief-sauce-officer-and-john-mcbride",
+  "phil-miller-and-theo-ephraim",
+  "gregor-martynus-staff-software-engineer-at-github",
+  "kaelig-deloumeau-prigent-engineer-netlify",
+] as const;
+
+/**
+ * stream_guests ids whose guest links need rewiring after splits / panel parse.
+ * Includes How People AI Vol. 1–3 (Vol. 4 has no panel in the description).
+ */
+const REPAIR_STREAM_SOURCE_IDS = new Set([
+  "21",
+  "37",
+  "87",
+  "114",
+  "115",
+  "192",
+  "193",
+  "199",
+]);
 
 type StreamGuestRow = {
   id: string | number;
@@ -55,6 +90,11 @@ type StreamGuestRow = {
   bluesky: string | null;
   website: string | null;
   linkedin: string | null;
+};
+
+type ParsedGuest = {
+  name: string;
+  role?: string;
 };
 
 type GuestDraft = {
@@ -106,14 +146,168 @@ function slugifyVideo(title: string, guestName: string): string {
   return `${slugify(title, SLUG_OPTS)}-${slugify(primaryGuest, SLUG_OPTS)}`;
 }
 
-function isZeroGuestStream(guestName: string): boolean {
-  return ZERO_GUEST_NAME.test(guestName.trim());
+function isNickOnlyStream(guestName: string): boolean {
+  return NICK_ONLY_GUEST_NAME.test(guestName.trim());
 }
 
-function parseArgs(argv: string[]): { apply: boolean; updateSchema: boolean } {
+function correctGuestName(name: string): string {
+  const key = normalizeGuestKey(name);
+  return GUEST_NAME_CORRECTIONS[key] ?? name.trim();
+}
+
+/** "Francis Batac, Senior Software Engineer at GitHub" → person-shaped before comma. */
+function looksLikePersonName(value: string): boolean {
+  const beforeComma = value.split(",")[0]?.trim() ?? "";
+  const parts = beforeComma.split(/\s+/).filter(Boolean);
+  if (parts.length < 2) return false;
+  return parts.every((part) => /^[\p{L}][\p{L}'’.-]*$/u.test(part));
+}
+
+function splitNameAndRole(value: string): ParsedGuest {
+  const trimmed = value.trim();
+  const comma = trimmed.indexOf(",");
+  if (comma === -1) return { name: trimmed };
+  return {
+    name: trimmed.slice(0, comma).trim(),
+    role: asOptionalString(trimmed.slice(comma + 1)),
+  };
+}
+
+/**
+ * Parse `Panel:` bullet names from a How People AI-style description.
+ * Skips Nick; leaves the description text untouched in EmDash.
+ */
+function parsePanelGuestsFromDescription(description: string): ParsedGuest[] {
+  const panelMatch = description.match(
+    /Panel:\s*\n([\s\S]*?)(?:\n\s*\n|\nLinks:|$)/i
+  );
+  if (!panelMatch) return [];
+
+  const guests: ParsedGuest[] = [];
+  for (const line of panelMatch[1].split("\n")) {
+    const bullet = line.match(/^\s*-\s+(.+)$/);
+    if (!bullet) continue;
+
+    let namePart = bullet[1].trim();
+    // "- Name, [@handle](url)" or "- Name, @handle"
+    namePart = namePart
+      .replace(/,\s*\[[^\]]+\]\([^)]+\)\s*$/u, "")
+      .replace(/,\s*@\S+\s*$/u, "")
+      .trim();
+    if (!namePart) continue;
+    if (isNickOnlyStream(namePart)) continue;
+
+    guests.push({ name: correctGuestName(namePart) });
+  }
+  return guests;
+}
+
+/**
+ * Expand a stream_guests row into 0..n real people.
+ *
+ * Handles:
+ * - "Multiple Guests" → Panel list in description (excludes Nick)
+ * - "Phil Miller and Theo Ephraim" (+ shared guest_title role)
+ * - "Brian Douglas, Chief Sauce Officer and John McBride"
+ * - "Gregor…, Role" with guest_title "Francis…, Role" (second guest)
+ * - plain single guest names
+ */
+function parseGuestsFromRow(row: StreamGuestRow): ParsedGuest[] {
+  const guestName = row.guest_name.trim();
+  const guestTitle = asOptionalString(row.guest_title);
+
+  if (!guestName || isNickOnlyStream(guestName)) return [];
+
+  if (MULTIPLE_GUESTS_NAME.test(guestName)) {
+    return parsePanelGuestsFromDescription(row.description);
+  }
+
+  // "Name1 and Name2" (no role baked into the name string)
+  if (/^[^,]+?\s+and\s+[^,]+$/i.test(guestName)) {
+    const [left, right] = guestName.split(/\s+and\s+/i);
+    return [
+      { name: left.trim(), role: guestTitle },
+      { name: right.trim(), role: guestTitle },
+    ];
+  }
+
+  // "Name1, Role and Name2"
+  const nameRoleAndName = guestName.match(
+    /^([^,]+),\s*(.+?)\s+and\s+([^,]+)$/i
+  );
+  if (nameRoleAndName) {
+    return [
+      {
+        name: nameRoleAndName[1].trim(),
+        role: asOptionalString(nameRoleAndName[2]),
+      },
+      { name: nameRoleAndName[3].trim() },
+    ];
+  }
+
+  // "Name, Role" + guest_title that is itself "OtherName, OtherRole"
+  if (
+    guestName.includes(",") &&
+    guestTitle &&
+    looksLikePersonName(guestTitle)
+  ) {
+    return [splitNameAndRole(guestName), splitNameAndRole(guestTitle)];
+  }
+
+  // "Name, Role" alone (role baked into guest_name)
+  if (guestName.includes(",") && looksLikePersonName(guestName)) {
+    const parsed = splitNameAndRole(guestName);
+    return [{ name: parsed.name, role: parsed.role ?? guestTitle }];
+  }
+
+  return [{ name: guestName, role: guestTitle }];
+}
+
+function socialsFromRow(row: StreamGuestRow): Partial<GuestDraft> {
+  return {
+    twitter: asOptionalString(row.twitter),
+    twitch: asOptionalString(row.twitch),
+    github: asOptionalString(row.github),
+    youtube: asOptionalString(row.youtube),
+    bluesky: asOptionalString(row.bluesky),
+    website: asOptionalString(row.website),
+    linkedin: asOptionalString(row.linkedin),
+  };
+}
+
+function mergeGuest(
+  existing: GuestDraft | undefined,
+  incoming: GuestDraft
+): GuestDraft {
+  if (!existing) return incoming;
+
+  const newer = incoming.date >= existing.date ? incoming : existing;
+  const older = newer === incoming ? existing : incoming;
+
+  return {
+    ...newer,
+    role: newer.role ?? older.role,
+    twitter: newer.twitter ?? older.twitter,
+    twitch: newer.twitch ?? older.twitch,
+    github: newer.github ?? older.github,
+    youtube: newer.youtube ?? older.youtube,
+    bluesky: newer.bluesky ?? older.bluesky,
+    website: newer.website ?? older.website,
+    linkedin: newer.linkedin ?? older.linkedin,
+  };
+}
+
+function parseArgs(argv: string[]): {
+  apply: boolean;
+  repair: boolean;
+  updateSchema: boolean;
+  publish: boolean;
+} {
   return {
     apply: argv.includes("--apply"),
+    repair: argv.includes("--repair"),
     updateSchema: argv.includes("--update-schema"),
+    publish: argv.includes("--publish"),
   };
 }
 
@@ -177,29 +371,25 @@ function buildGuests(rows: StreamGuestRow[]): Map<string, GuestDraft> {
   const guests = new Map<string, GuestDraft>();
 
   for (const row of rows) {
-    const name = row.guest_name.trim();
-    if (!name || isZeroGuestStream(name)) continue;
+    const parsed = parseGuestsFromRow(row);
+    if (parsed.length === 0) continue;
 
-    const key = normalizeGuestKey(name);
-    const existing = guests.get(key);
-    // Most recent date wins for role/socials.
-    if (existing && row.date <= existing.date) continue;
+    // Social links on the Turso row belong to the primary (first) guest only.
+    const socials = socialsFromRow(row);
 
-    const slug = guestSlug(name);
-    guests.set(key, {
-      seedId: `guest:${slug}`,
-      slug,
-      name,
-      role: asOptionalString(row.guest_title),
-      twitter: asOptionalString(row.twitter),
-      twitch: asOptionalString(row.twitch),
-      github: asOptionalString(row.github),
-      youtube: asOptionalString(row.youtube),
-      bluesky: asOptionalString(row.bluesky),
-      website: asOptionalString(row.website),
-      linkedin: asOptionalString(row.linkedin),
-      date: row.date,
-    });
+    for (const [index, person] of parsed.entries()) {
+      const key = normalizeGuestKey(person.name);
+      const slug = guestSlug(person.name);
+      const incoming: GuestDraft = {
+        seedId: `guest:${slug}`,
+        slug,
+        name: person.name,
+        role: person.role,
+        date: row.date,
+        ...(index === 0 ? socials : {}),
+      };
+      guests.set(key, mergeGuest(guests.get(key), incoming));
+    }
   }
 
   return guests;
@@ -230,8 +420,8 @@ function buildLivestreams(
     const sourceId = String(row.id);
     const guestSeedIds: string[] = [];
 
-    if (!isZeroGuestStream(guestName)) {
-      const guest = guestsByKey.get(normalizeGuestKey(guestName));
+    for (const person of parseGuestsFromRow(row)) {
+      const guest = guestsByKey.get(normalizeGuestKey(person.name));
       if (guest) guestSeedIds.push(guest.seedId);
     }
 
@@ -303,13 +493,14 @@ function buildContentSeed(
       guests: guests.map((guest) => ({
         id: guest.seedId,
         slug: guest.slug,
-        status: "draft" as const,
+        // Not linked from the public site yet; published so they're editable/visible in admin.
+        status: "published" as const,
         data: guestData(guest),
       })),
       livestreams: livestreams.map((stream) => ({
         id: stream.seedId,
         slug: stream.slug,
-        status: "draft" as const,
+        status: "published" as const,
         data: livestreamData(stream),
       })),
     },
@@ -322,33 +513,161 @@ function printDryRun(
 ): void {
   const zeroGuest = livestreams.filter((s) => s.guestSeedIds.length === 0);
   const withGuests = livestreams.filter((s) => s.guestSeedIds.length > 0);
+  const multiGuest = livestreams.filter((s) => s.guestSeedIds.length > 1);
 
   console.log("=== EmDash streams seed dry-run ===");
   console.log(`Guests (deduped):     ${guests.length}`);
   console.log(`Livestreams:          ${livestreams.length}`);
   console.log(`  with guest refs:    ${withGuests.length}`);
+  console.log(`  multi-guest:        ${multiGuest.length}`);
   console.log(`  zero guests:        ${zeroGuest.length}`);
   console.log("");
-  console.log("Sample guests:");
-  for (const guest of guests.slice(0, 5)) {
+  console.log("Multi-guest livestreams:");
+  for (const stream of multiGuest) {
     console.log(
-      `  - ${guest.slug}  name=${guest.name}  role=${guest.role ?? "(none)"}  bio=empty`
+      `  - [${stream.sourceId}] ${stream.title} → ${stream.guestSeedIds.join(", ")}`
     );
   }
   console.log("");
-  console.log("Sample livestreams:");
-  for (const stream of livestreams.slice(0, 5)) {
+  console.log("Zero-guest livestreams:");
+  for (const stream of zeroGuest) {
     console.log(
-      `  - ${stream.slug}  guests=${stream.guestSeedIds.length}  legacy=${stream.legacySlug}  source=${stream.sourceId}`
+      `  - [${stream.sourceId}] ${stream.title}  guest_name=${stream.guestName}`
     );
   }
   console.log("");
-  console.log("Zero-guest livestream samples:");
-  for (const stream of zeroGuest.slice(0, 5)) {
-    console.log(`  - ${stream.slug}  guest_name=${stream.guestName}`);
+  console.log(
+    "Re-run with --apply to write content, or --repair to fix splits."
+  );
+}
+
+async function softDeleteMalformedGuests(db: Kysely<unknown>): Promise<void> {
+  const contentRepo = new ContentRepository(db as never);
+  for (const slug of MALFORMED_GUEST_SLUGS) {
+    const existing = await contentRepo.findBySlug("guests", slug);
+    if (!existing) {
+      console.log(`  guest ${slug}: already absent`);
+      continue;
+    }
+    await contentRepo.delete("guests", existing.id);
+    console.log(`  trashed guest ${slug} (${existing.id})`);
   }
-  console.log("");
-  console.log("Re-run with --apply to write drafts to EmDash Turso.");
+}
+
+async function repairGuestSplits(
+  db: Kysely<unknown>,
+  schema: SeedFile,
+  guests: GuestDraft[],
+  livestreams: LivestreamDraft[]
+): Promise<void> {
+  console.log("Trashing malformed composite guest entries…");
+  await softDeleteMalformedGuests(db);
+
+  const guestsBySeedId = new Map(guests.map((g) => [g.seedId, g]));
+  const repairStreams = livestreams.filter((s) =>
+    REPAIR_STREAM_SOURCE_IDS.has(s.sourceId)
+  );
+  const neededGuestIds = new Set(repairStreams.flatMap((s) => s.guestSeedIds));
+  const repairGuests = [...neededGuestIds]
+    .map((id) => guestsBySeedId.get(id))
+    .filter((g): g is GuestDraft => Boolean(g));
+
+  console.log(
+    `Re-applying ${repairGuests.length} guests + ${repairStreams.length} livestreams (onConflict=update)…`
+  );
+
+  const contentSeed = buildContentSeed(schema, repairGuests, repairStreams);
+  const validation = validateSeed(contentSeed);
+  if (!validation.valid) {
+    console.error("Repair seed invalid:");
+    for (const error of validation.errors) console.error(`  - ${error}`);
+    process.exit(1);
+  }
+
+  const result = await applySeed(db, contentSeed, {
+    includeContent: true,
+    onConflict: "update",
+    skipMediaDownload: true,
+  });
+  console.log(
+    JSON.stringify(
+      {
+        content: result.content,
+        relations: result.relations,
+      },
+      null,
+      2
+    )
+  );
+
+  console.log("\nRepaired livestream guest links:");
+  for (const stream of repairStreams) {
+    const names = stream.guestSeedIds
+      .map((id) => guestsBySeedId.get(id)?.name ?? id)
+      .join(" + ");
+    console.log(`  - [${stream.sourceId}] ${stream.title} → ${names}`);
+  }
+}
+
+async function publishDrafts(db: Kysely<unknown>): Promise<void> {
+  const contentRepo = new ContentRepository(db as never);
+  const revisionRepo = new RevisionRepository(db as never);
+  const client = createStreamClient(); // same Turso host as EmDash today
+
+  for (const collection of ["guests", "livestreams"] as const) {
+    const result = await client.execute({
+      sql: `SELECT id FROM ec_${collection} WHERE status = ? AND deleted_at IS NULL`,
+      args: ["draft"],
+    });
+    const ids = result.rows.map((row) => String(row.id));
+    console.log(`Publishing ${ids.length} draft ${collection}…`);
+
+    let published = 0;
+    for (const id of ids) {
+      const existing = await contentRepo.findById(collection, id);
+      if (!existing) {
+        console.warn(`  skip missing ${collection}/${id}`);
+        continue;
+      }
+      if (existing.status === "published") {
+        published++;
+        continue;
+      }
+
+      const draft = await revisionRepo.create({
+        collection,
+        entryId: id,
+        data: existing.data,
+      });
+      try {
+        await contentRepo.setDraftRevision(collection, id, draft.id);
+        await contentRepo.publish(
+          collection,
+          id,
+          undefined,
+          false,
+          undefined,
+          true,
+          true
+        );
+        published++;
+        if (published % 25 === 0) {
+          console.log(`  ${collection}: ${published}/${ids.length}`);
+        }
+      } catch (error) {
+        try {
+          await revisionRepo.deleteIfUnreferenced(collection, id, draft.id);
+        } catch (cleanupError) {
+          console.error(
+            `  failed cleanup for ${collection}/${id}:`,
+            cleanupError
+          );
+        }
+        throw error;
+      }
+    }
+    console.log(`Published ${published} ${collection}.`);
+  }
 }
 
 async function updateSchema(
@@ -387,9 +706,23 @@ async function updateSchema(
 }
 
 async function main(): Promise<void> {
-  const { apply, updateSchema: shouldUpdateSchema } = parseArgs(
-    process.argv.slice(2)
-  );
+  const {
+    apply,
+    repair,
+    updateSchema: shouldUpdateSchema,
+    publish,
+  } = parseArgs(process.argv.slice(2));
+
+  if (publish) {
+    const db = createEmDashDb();
+    try {
+      await publishDrafts(db);
+      console.log("Publish done. Hard-refresh EmDash admin.");
+    } finally {
+      await db.destroy();
+    }
+    return;
+  }
 
   const schemaRaw = await readFile(SEED_SCHEMA_PATH, "utf-8");
   const schema = JSON.parse(schemaRaw) as SeedFile;
@@ -420,6 +753,17 @@ async function main(): Promise<void> {
     a.name.localeCompare(b.name)
   );
   const livestreams = buildLivestreams(rows, guestsByKey);
+
+  if (repair) {
+    const db = createEmDashDb();
+    try {
+      await repairGuestSplits(db, schema, guests, livestreams);
+      console.log("Repair done. Hard-refresh EmDash admin.");
+    } finally {
+      await db.destroy();
+    }
+    return;
+  }
 
   if (!apply) {
     printDryRun(guests, livestreams);
