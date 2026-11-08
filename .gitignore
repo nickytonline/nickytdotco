@@ -102,7 +102,6 @@ src/blog/.christmas-tunes-55i1.md
 env.d.ts
 
 # EmDash generated types, migration manifest, and local media fallback
-emdash-env.d.ts
 .emdash/migrations.json
 .emdash/uploads
 
