@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { getLiveEntry } from "astro:content";
 import Layout from "../../layouts/MainLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import GuestSocialLinks from "../../components/GuestSocialLinks.astro";
@@ -23,7 +24,27 @@ if (!page?.guest) {
   return Astro.rewrite("/404");
 }
 
-const { guest, episodes } = page;
+const { guest } = page;
+const episodes = await Promise.all(
+  page.episodes.map(async (episode) => {
+    if (episode.youtubeStreamLink) return episode;
+
+    try {
+      // The EmDash reference can omit fields supplied by the live video loader.
+      const stream = await getLiveEntry("streamVideos", { id: episode.slug });
+      return {
+        ...episode,
+        youtubeStreamLink: stream.entry?.data.youtubeStreamLink,
+      };
+    } catch (error) {
+      console.error(
+        `[guests] Failed to load video link for episode ${episode.slug}:`,
+        error,
+      );
+      return episode;
+    }
+  }),
+);
 
 setFixedCdnCacheHeaders(
   Astro.response.headers,
