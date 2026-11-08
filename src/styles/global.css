@@ -516,14 +516,8 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
 /* Arial's northeast arrow is a long shaft. Keep the compact heading glyph from the other themes. */
 .windows95 .external-mark {
   font-family:
-    "Space Grotesk",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
+    "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 
