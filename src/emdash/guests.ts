@@ -1,4 +1,7 @@
-import { getEmDashEntry } from "emdash";
+import { getEmDashEntry, type InferCollectionData } from "emdash";
+
+type EmDashGuest = InferCollectionData<"guests">;
+type EmDashLivestream = InferCollectionData<"livestreams">;
 
 export interface GuestSocials {
   twitter?: string;
@@ -25,57 +28,38 @@ export interface GuestEpisode {
   youtubeStreamLink?: string;
 }
 
-function asString(value: unknown): string | undefined {
-  return typeof value === "string" && value.trim().length > 0
-    ? value.trim()
-    : undefined;
+function entrySlug(slug: string | null, id: string): string {
+  return slug ?? (id.includes("/") ? id.split("/").pop()! : id);
 }
 
 export function mapGuestEntry(entry: {
   id: string;
-  data: Record<string, unknown>;
-  slug?: string | null;
-}): GuestInfo | null {
-  const name = asString(entry.data.title);
-  if (!name) return null;
-
-  const slug =
-    asString(entry.slug) ??
-    asString(entry.data.slug) ??
-    // Referenced entries expose the public slug as `entry.id`.
-    (entry.id.includes("/") ? entry.id.split("/").pop()! : entry.id);
-
+  data: EmDashGuest;
+}): GuestInfo {
   return {
-    slug,
-    name,
-    role: asString(entry.data.role),
-    twitter: asString(entry.data.twitter),
-    twitch: asString(entry.data.twitch),
-    github: asString(entry.data.github),
-    youtube: asString(entry.data.youtube),
-    bluesky: asString(entry.data.bluesky),
-    website: asString(entry.data.website),
-    linkedin: asString(entry.data.linkedin),
+    slug: entrySlug(entry.data.slug, entry.id),
+    name: entry.data.title,
+    role: entry.data.role,
+    twitter: entry.data.twitter,
+    twitch: entry.data.twitch,
+    github: entry.data.github,
+    youtube: entry.data.youtube,
+    bluesky: entry.data.bluesky,
+    website: entry.data.website,
+    linkedin: entry.data.linkedin,
   };
 }
 
 function mapEpisode(entry: {
   id: string;
-  data: Record<string, unknown>;
-  slug?: string | null;
-}): GuestEpisode | null {
-  const title = asString(entry.data.title);
-  const date = asString(entry.data.date);
-  if (!title || !date) return null;
-
-  const slug = asString(entry.slug) ?? asString(entry.data.slug) ?? entry.id;
-
+  data: EmDashLivestream;
+}): GuestEpisode {
   return {
-    slug,
-    title,
-    date,
-    type: asString(entry.data.type),
-    youtubeStreamLink: asString(entry.data.youtubeStreamLink),
+    slug: entrySlug(entry.data.slug, entry.id),
+    title: entry.data.title,
+    date: entry.data.date,
+    type: entry.data.type,
+    youtubeStreamLink: entry.data.youtube_stream_link,
   };
 }
 
@@ -96,15 +80,7 @@ export async function getLivestreamGuests(slug: string): Promise<GuestInfo[]> {
   }
   if (!entry?.references?.guests?.entries?.length) return [];
 
-  return entry.references.guests.entries
-    .map((guestEntry) =>
-      mapGuestEntry({
-        id: guestEntry.id,
-        data: guestEntry.data as Record<string, unknown>,
-        slug: (guestEntry as { slug?: string }).slug,
-      })
-    )
-    .filter((guest): guest is GuestInfo => guest !== null);
+  return entry.references.guests.entries.map(mapGuestEntry);
 }
 
 /** Compact byline: "Name", "A and B", or "A, B, and C". */
@@ -129,22 +105,10 @@ export async function getGuestPage(slug: string): Promise<{
   }
   if (!entry) return null;
 
-  const guest = mapGuestEntry({
-    id: entry.id,
-    data: entry.data as Record<string, unknown>,
-    slug: (entry as { slug?: string }).slug ?? slug,
-  });
-  if (!guest) return null;
+  const guest = mapGuestEntry(entry);
 
   const episodes = (entry.references?.livestreams?.entries ?? [])
-    .map((streamEntry) =>
-      mapEpisode({
-        id: streamEntry.id,
-        data: streamEntry.data as Record<string, unknown>,
-        slug: (streamEntry as { slug?: string }).slug,
-      })
-    )
-    .filter((episode): episode is GuestEpisode => episode !== null)
+    .map(mapEpisode)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return { guest, episodes };
