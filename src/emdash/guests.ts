@@ -22,6 +22,7 @@ export interface GuestEpisode {
   title: string;
   date: string;
   type?: string;
+  youtubeStreamLink?: string;
 }
 
 function asString(value: unknown): string | undefined {
@@ -74,6 +75,7 @@ function mapEpisode(entry: {
     title,
     date,
     type: asString(entry.data.type),
+    youtubeStreamLink: asString(entry.data.youtubeStreamLink),
   };
 }
 

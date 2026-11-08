@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../../layouts/MainLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import GuestSocialLinks from "../../components/GuestSocialLinks.astro";
 import { dateFilter } from "../../utils/filters";
+import { extractYouTubeVideoId } from "../../utils/video-utils";
 import { getGuestPage } from "../../emdash/guests";
 import {
   setFixedCdnCacheHeaders,
@@ -106,25 +108,56 @@ const episodeLabel = episodes.length === 1 ? "episode" : "episodes";
             No linked livestreams yet.
           </p>
         ) : (
-          <ul class="mt-4 divide-y divide-border border-t border-border">
-            {episodes.map((episode) => (
-              <li class="py-4">
-                <a
-                  href={`/videos/${episode.slug}`}
-                  class="group block min-w-0"
-                >
-                  <p class="text-base font-semibold text-foreground text-balance group-hover:text-brand group-focus:text-brand transition-colors">
-                    {episode.title}
-                  </p>
-                  <time
-                    datetime={new Date(episode.date).toISOString()}
-                    class="mt-1 block text-sm italic text-muted-foreground"
-                  >
-                    {dateFilter(new Date(episode.date))}
-                  </time>
-                </a>
-              </li>
-            ))}
+          <ul class="mt-4 space-y-1">
+            {episodes.map((episode) => {
+              const videoId = episode.youtubeStreamLink
+                ? extractYouTubeVideoId(episode.youtubeStreamLink)
+                : undefined;
+              const thumbnailUrl = videoId
+                ? `https://img.youtube.com/vi/${videoId}/default.jpg`
+                : undefined;
+
+              return (
+                <li class="py-4">
+                  <div class="flex items-center gap-5">
+                    {thumbnailUrl && (
+                      <a
+                        href={`/videos/${episode.slug}`}
+                        class="hidden sm:block shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
+                        aria-hidden="true"
+                        tabindex="-1"
+                      >
+                        <Image
+                          src={thumbnailUrl}
+                          alt=""
+                          width={160}
+                          height={90}
+                          loading="lazy"
+                          decoding="async"
+                          class="w-40 h-22.5 object-cover"
+                        />
+                      </a>
+                    )}
+                    <div class="flex-1">
+                      <a
+                        href={`/videos/${episode.slug}`}
+                        class="group block min-w-0"
+                      >
+                        <p class="text-base font-semibold text-foreground text-balance group-hover:text-brand group-focus:text-brand transition-colors">
+                          {episode.title}
+                        </p>
+                        <time
+                          datetime={new Date(episode.date).toISOString()}
+                          class="mt-1 block text-sm italic text-muted-foreground"
+                        >
+                          {dateFilter(new Date(episode.date))}
+                        </time>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         )
       }
