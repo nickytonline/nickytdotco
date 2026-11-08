@@ -105,7 +105,6 @@
   },
   "homepage": "https://www.nickyt.co",
   "overrides": {
-    "vitest": "4.1.9",
     "sharp": "^0.35.0"
   }
 }
