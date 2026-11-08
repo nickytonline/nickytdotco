@@ -1,4 +1,10 @@
-import { getEmDashCollection, getEmDashEntry } from "emdash";
+import {
+  getEmDashCollection,
+  getEmDashEntry,
+  type InferCollectionData,
+} from "emdash";
+
+type EmDashPost = InferCollectionData<"posts">;
 
 export interface BlogSeries {
   name: string;
@@ -61,11 +67,8 @@ function asSeries(value: unknown): BlogSeries | undefined {
   return { name: series.name, collection_id: collectionId };
 }
 
-function mapData(data: Record<string, unknown>, slug: string): BlogPostData {
-  const dateValue = data.date;
-  const date = new Date(
-    typeof dateValue === "string" || dateValue instanceof Date ? dateValue : 0
-  );
+function mapData(data: EmDashPost, slug: string): BlogPostData {
+  const date = new Date(data.date);
   return {
     title: asString(data.title) ?? slug,
     date,
@@ -87,10 +90,7 @@ function mapData(data: Record<string, unknown>, slug: string): BlogPostData {
   };
 }
 
-function mapLiveEntry(entry: {
-  id: string;
-  data: Record<string, unknown>;
-}): BlogPost {
+function mapLiveEntry(entry: { id: string; data: EmDashPost }): BlogPost {
   return { id: entry.id, data: mapData(entry.data, entry.id) };
 }
 
@@ -133,12 +133,7 @@ async function loadPosts(): Promise<{
     if (result.error) throw result.error;
     cacheHint = mergeCacheHint(cacheHint, result.cacheHint);
     for (const entry of result.entries) {
-      collected.push(
-        mapLiveEntry({
-          id: entry.id,
-          data: entry.data as Record<string, unknown>,
-        })
-      );
+      collected.push(mapLiveEntry(entry));
     }
     if (!result.nextCursor) {
       return {
@@ -179,10 +174,7 @@ export async function getBlogPostResult(slug: string): Promise<{
   if (error) throw error;
   if (!entry) return { cacheHint: cacheHint ?? {} };
   return {
-    post: mapLiveEntry({
-      id: entry.id,
-      data: entry.data as Record<string, unknown>,
-    }),
+    post: mapLiveEntry(entry),
     cacheHint: cacheHint ?? {},
   };
 }
