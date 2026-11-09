@@ -14,7 +14,12 @@ import { PortableText } from "astro-portabletext";
 import EmbedBlock from "../components/EmbedBlock.astro";
 import PortableTextCode from "../components/PortableTextCode.astro";
 import PortableTextImage from "../components/PortableTextImage.astro";
-import { getBlogListing, headingsFor, type BlogPost } from "../emdash/blog";
+import {
+  contentWithHeadingIds,
+  getBlogListing,
+  headingsFor,
+  type BlogPost,
+} from "../emdash/blog";
 
 export interface Props {
   entry: BlogPost;
@@ -22,6 +27,7 @@ export interface Props {
 
 const { entry } = Astro.props;
 const headings = headingsFor(entry);
+const content = contentWithHeadingIds(entry);
 
 const currentUrl = `/blog/${entry.id}`;
 
@@ -122,7 +128,7 @@ const postSocialImage =
 
     <div class="prose prose-lg max-w-none">
       <PortableText
-        value={entry.data.content}
+        value={content}
         components={{
           type: {
             embed: EmbedBlock,

@@ -214,7 +214,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | undefined> {
 export function headingsFor(
   post: BlogPost
 ): Array<{ depth: number; slug: string; text: string }> {
-  return post.data.content.flatMap((block) => {
+  return contentWithHeadingIds(post).flatMap((block) => {
     if (block._type !== "block" || !isString(block.style)) return [];
     const match = /^h([1-6])$/.exec(block.style);
 
@@ -225,14 +225,40 @@ export function headingsFor(
       .join("")
       .trim();
 
-    if (!text) return [];
+    if (!text || !block.id) return [];
 
-    const slug = text
-      .toLowerCase()
-      .replace(/[^\p{L}\p{N}\s-]/gu, "")
-      .trim()
-      .replace(/\s+/g, "-");
+    return [{ depth: Number(match[1]), slug: block.id, text }];
+  });
+}
 
-    return [{ depth: Number(match[1]), slug, text }];
+/** Add IDs to Portable Text heading blocks so table-of-contents links resolve. */
+export function contentWithHeadingIds(
+  post: BlogPost
+): Array<PortableTextBlock & { id?: string }> {
+  const slugCounts = new Map<string, number>();
+
+  return post.data.content.map((block) => {
+    if (block._type !== "block" || !isString(block.style)) return block;
+
+    if (!/^h[1-6]$/.test(block.style)) return block;
+
+    const text = (block.children ?? [])
+      .map((child) => child.text ?? "")
+      .join("")
+      .trim();
+
+    if (!text) return block;
+
+    const baseSlug =
+      text
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}\s-]/gu, "")
+        .trim()
+        .replace(/\s+/g, "-") || "section";
+
+    const count = (slugCounts.get(baseSlug) ?? 0) + 1;
+    slugCounts.set(baseSlug, count);
+
+    return { ...block, id: count === 1 ? baseSlug : `${baseSlug}-${count}` };
   });
 }
