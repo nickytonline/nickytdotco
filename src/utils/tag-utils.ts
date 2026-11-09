@@ -6,24 +6,29 @@ interface ScoredItem<T> {
   score: number;
 }
 
-function scoreBySharedTags<T extends { data: { tags?: string[]; date: Date } }>(
+function scoreBySharedTags<
+  T extends { id: string; data: { tags?: string[]; date: Date } },
+>(
   currentTags: string[],
   currentId: string,
   allItems: T[],
   getTags: (item: T) => string[]
 ): ScoredItem<T>[] {
   return allItems
-    .filter((item) => (item as unknown as { id: string }).id !== currentId)
-    .map((item) => {
+    .flatMap((item) => {
+      if (item.id === currentId) return [];
+
       const itemTags = getTags(item);
       const sharedTags = itemTags.filter((tag) => currentTags.includes(tag));
-      return { item, score: sharedTags.length };
+      const score = sharedTags.length;
+
+      return score > 0 ? [{ item, score }] : [];
     })
-    .filter((scored) => scored.score > 0)
     .sort((a, b) => {
       if (b.score !== a.score) {
         return b.score - a.score;
       }
+
       return b.item.data.date.getTime() - a.item.data.date.getTime();
     });
 }
@@ -42,6 +47,7 @@ export function getRelatedTalks(
   limit: number = 3
 ): CollectionEntry<"talks">[] {
   const currentTags = currentTalk.data.tags || [];
+
   if (!currentTags.length) return [];
 
   const scored = scoreBySharedTags(
@@ -50,6 +56,7 @@ export function getRelatedTalks(
     allTalks,
     (talk) => talk.data.tags || []
   );
+
   return scored.slice(0, limit).map((s) => s.item);
 }
 
@@ -67,6 +74,7 @@ export function getRelatedTalksForPost(
   limit: number = 3
 ): CollectionEntry<"talks">[] {
   const currentTags = currentPost.data.tags || [];
+
   if (!currentTags.length) return [];
 
   const scored = scoreBySharedTags(
@@ -75,6 +83,7 @@ export function getRelatedTalksForPost(
     allTalks,
     (talk) => talk.data.tags || []
   );
+
   return scored.slice(0, limit).map((s) => s.item);
 }
 
@@ -92,6 +101,7 @@ export function getRelatedPostsForTalk(
   limit: number = 3
 ): BlogPost[] {
   const currentTags = currentTalk.data.tags || [];
+
   if (!currentTags.length) return [];
 
   const scored = scoreBySharedTags(
@@ -100,5 +110,6 @@ export function getRelatedPostsForTalk(
     allPosts,
     (post) => post.data.tags || []
   );
+
   return scored.slice(0, limit).map((s) => s.item);
 }

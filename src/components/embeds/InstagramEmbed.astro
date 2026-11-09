@@ -27,15 +27,15 @@ if (url.startsWith("http")) {
 <script>
   function loadInstagram() {
     const scriptSrc = "//www.instagram.com/embed.js";
+
     if (!document.querySelector(`script[src*="instagram.com/embed.js"]`)) {
       const script = document.createElement("script");
       script.async = true;
       script.src = scriptSrc;
       document.head.appendChild(script);
     } else {
-      const instgrm = (
-        window as Window & { instgrm?: { Embeds: { process: () => void } } }
-      ).instgrm;
+      const instgrm = window.instgrm;
+
       if (instgrm) {
         // Re-process embeds if script already loaded
         instgrm.Embeds.process();

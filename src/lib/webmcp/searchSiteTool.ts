@@ -9,6 +9,7 @@ import {
   normalizeSearchQuery,
   searchSite,
 } from "../search/searchSite";
+import { isNumber, isObject, isString } from "../../utils/type-guards";
 
 export const SEARCH_SITE_TOOL_NAME = "search_site";
 
@@ -50,7 +51,20 @@ export type SearchSiteToolInput = {
 
 export type SearchSiteFn = typeof searchSite;
 
-function isAbortError(error: unknown): boolean {
+function parseInput<Input>(value: Input): SearchSiteToolInput {
+  if (!isObject(value)) return { query: "" };
+
+  const fields = new Map(Object.entries(value));
+  const query = fields.get("query");
+  const limit = fields.get("limit");
+
+  return {
+    query: isString(query) ? query : "",
+    limit: isNumber(limit) ? limit : undefined,
+  };
+}
+
+function isAbortError<ErrorValue>(error: ErrorValue): boolean {
   return (
     (error instanceof DOMException && error.name === "AbortError") ||
     (error instanceof Error && error.name === "AbortError")
@@ -61,13 +75,13 @@ function isAbortError(error: unknown): boolean {
  * Headless WebMCP execute callback. Calls `/api/search` via `searchSite()`
  * and forwards the tool abort signal to fetch. Does not touch the Cmd-K UI.
  */
-export async function executeSearchSiteTool(
-  inputObject: object,
+export async function executeSearchSiteTool<Input>(
+  inputObject: Input,
   { signal }: { signal: AbortSignal },
   search: SearchSiteFn = searchSite
 ): Promise<string> {
-  const input = inputObject as SearchSiteToolInput;
-  const queryValue = typeof input.query === "string" ? input.query : "";
+  const input = parseInput(inputObject);
+  const queryValue = input.query;
   const trimmed = queryValue.trim();
   const normalized = normalizeSearchQuery(queryValue);
 
@@ -83,10 +97,11 @@ export async function executeSearchSiteTool(
     });
   }
 
-  const limit = typeof input.limit === "number" ? input.limit : undefined;
+  const limit = input.limit;
 
   try {
     const response = await search(trimmed, limit, signal);
+
     return JSON.stringify({
       query: response.query,
       count: response.results.length,
@@ -96,8 +111,13 @@ export async function executeSearchSiteTool(
     if (isAbortError(error) || signal.aborted) {
       throw error;
     }
-    const statusCode = (error as { status?: number }).status;
+
+    const statusCode = isObject(error)
+      ? Object.entries(error).find(([key]) => key === "status")?.[1]
+      : undefined;
+
     const kind = statusCode === 429 ? "rate-limit" : "unavailable";
+
     return JSON.stringify({
       error: SEARCH_SITE_TOOL_ERROR[kind],
     });
@@ -112,6 +132,7 @@ export async function registerSearchSiteTool(
   options?: WebMCP.ModelContextRegisterToolOptions
 ): Promise<boolean> {
   const modelContext = document.modelContext;
+
   if (!modelContext) {
     return false;
   }

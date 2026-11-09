@@ -129,6 +129,7 @@ describe("triggerSearchReindex", () => {
         async () => false
       ),
     });
+
     await expect(triggerSearchReindex("/watch", deps)).resolves.toEqual({
       status: "skipped",
       reason: "cooldown",
@@ -147,6 +148,7 @@ describe("triggerSearchReindex", () => {
         }
       ),
     });
+
     await expect(triggerSearchReindex("/watch", deps)).resolves.toEqual({
       status: "error",
       reason: "lock-failed",
@@ -165,7 +167,13 @@ describe("triggerSearchReindex", () => {
     });
 
     expect(deps.fetch).toHaveBeenCalledTimes(1);
-    const [url, init] = deps.fetch.mock.calls[0] as [string, RequestInit];
+    const call = deps.fetch.mock.calls[0];
+
+    if (!call) throw new Error("Expected the workflow dispatch request.");
+
+    const [url, init] = call;
+
+    if (!init) throw new Error("Expected request initialization options.");
     expect(url).toBe(
       "https://api.github.com/repos/nickytonline/nickytdotco/actions/workflows/index-search.yml/dispatches"
     );

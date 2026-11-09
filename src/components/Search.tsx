@@ -9,6 +9,7 @@ import {
 } from "../lib/search/constants";
 import { getSearchDialogLayout } from "../lib/search/searchDialogLayout";
 import { registerSearchSiteTool } from "../lib/webmcp/searchSiteTool";
+import { isNumber, isObject } from "../utils/type-guards";
 
 const SEARCH_PLACEHOLDER = "Search posts, talks, projects...";
 
@@ -58,6 +59,7 @@ const Search = () => {
         ) {
           return;
         }
+
         e.preventDefault();
         setIsOpen(true);
       } else if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -67,6 +69,7 @@ const Search = () => {
     };
 
     window.addEventListener("keydown", handleKeyDown);
+
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
 
@@ -76,6 +79,7 @@ const Search = () => {
     };
 
     document.addEventListener("astro:before-preparation", handleNavigation);
+
     return () => {
       document.removeEventListener(
         "astro:before-preparation",
@@ -101,17 +105,20 @@ const Search = () => {
     }
 
     const dialog = dialogRef.current;
+
     if (!dialog) {
       return;
     }
 
     const syncToVisualViewport = () => {
       const viewport = window.visualViewport;
+
       const layout = getSearchDialogLayout({
         visualHeight: viewport?.height ?? window.innerHeight,
         offsetTop: viewport?.offsetTop ?? 0,
         layoutHeight: window.innerHeight,
       });
+
       dialog.style.top = `${layout.top}px`;
       dialog.style.height = `${layout.height}px`;
       dialog.style.maxHeight = `${layout.maxHeight}px`;
@@ -144,9 +151,8 @@ const Search = () => {
 
   useEffect(() => {
     if (selectedIndex >= 0 && resultsRef.current) {
-      const selectedElement = resultsRef.current.children[
-        selectedIndex
-      ] as HTMLElement;
+      const selectedElement = resultsRef.current.children.item(selectedIndex);
+
       if (selectedElement) {
         selectedElement.scrollIntoView({ block: "nearest" });
       }
@@ -161,6 +167,7 @@ const Search = () => {
 
   const openSelectedResult = () => {
     const selected = results[selectedIndex];
+
     if (selected) {
       window.location.href = selected.url;
     }
@@ -168,11 +175,13 @@ const Search = () => {
 
   const performSearch = useCallback(async (rawQuery: string) => {
     const trimmed = rawQuery.trim();
+
     if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
       setResults([]);
       setSubmittedQuery("");
       setSearchError(null);
       setSelectedIndex(-1);
+
       return;
     }
 
@@ -197,10 +206,16 @@ const Search = () => {
       ) {
         return;
       }
+
       console.error("Search failed", error);
       setResults([]);
       setSelectedIndex(-1);
-      const statusCode = (error as { status?: number }).status;
+
+      const status = isObject(error)
+        ? Object.entries(error).find(([key]) => key === "status")?.[1]
+        : undefined;
+
+      const statusCode = isNumber(status) ? status : undefined;
       setSearchError(statusCode === 429 ? "rate-limit" : "unavailable");
     } finally {
       if (!controller.signal.aborted) {
@@ -229,6 +244,7 @@ const Search = () => {
     }
 
     const trimmed = query.trim();
+
     if (trimmed.length < SEARCH_MIN_QUERY_CHARS) {
       return;
     }
@@ -266,6 +282,7 @@ const Search = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const normalizedInput = query.trim();
+
     if (
       selectedIndex >= 0 &&
       results.length > 0 &&
@@ -273,8 +290,10 @@ const Search = () => {
       normalizedInput === submittedQuery
     ) {
       openSelectedResult();
+
       return;
     }
+
     void performSearch(query);
   };
 
@@ -284,6 +303,7 @@ const Search = () => {
       // field, leaving the dialog open until a second Escape.
       e.preventDefault();
       closeSearch();
+
       return;
     }
 
@@ -306,15 +326,20 @@ const Search = () => {
 
   const trimmedQuery = query.trim();
   const hasTypedEnough = trimmedQuery.length >= SEARCH_MIN_QUERY_CHARS;
+
   const isPendingSearch =
     hasTypedEnough && trimmedQuery !== submittedQuery && !isSearching;
+
   const showSearching = hasTypedEnough && (isSearching || isPendingSearch);
   // Drop stale hits as soon as Searching… is shown for a new query.
   const showResults = results.length > 0 && hasTypedEnough && !showSearching;
+
   const activeOptionId =
     showResults && selectedIndex >= 0 ? optionId(selectedIndex) : undefined;
+
   const resultCountLabel =
     results.length === 1 ? "1 result found" : `${results.length} results found`;
+
   const paneStatus = searchError
     ? SEARCH_ERROR_STATUS[searchError]
     : showSearching

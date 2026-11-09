@@ -1,6 +1,7 @@
 import { getEmDashEntry, type InferCollectionData } from "emdash";
 
 type EmDashGuest = InferCollectionData<"guests">;
+
 type EmDashLivestream = InferCollectionData<"livestreams">;
 
 export interface GuestSocials {
@@ -71,13 +72,16 @@ export async function getLivestreamGuests(slug: string): Promise<GuestInfo[]> {
   const { entry, error } = await getEmDashEntry("livestreams", slug, {
     references: { guests: { limit: 24 } },
   });
+
   if (error) {
     console.error(
       `[guests] Failed to load guests for livestream ${slug}:`,
       error
     );
+
     return [];
   }
+
   if (!entry?.references?.guests?.entries?.length) return [];
 
   return entry.references.guests.entries.map(mapGuestEntry);
@@ -86,9 +90,13 @@ export async function getLivestreamGuests(slug: string): Promise<GuestInfo[]> {
 /** Compact byline: "Name", "A and B", or "A, B, and C". */
 export function formatGuestByline(guests: GuestInfo[]): string {
   const names = guests.map((guest) => guest.name);
+
   if (names.length === 0) return "";
+
   if (names.length === 1) return names[0];
+
   if (names.length === 2) return `${names[0]} and ${names[1]}`;
+
   return `${names.slice(0, -1).join(", ")}, and ${names[names.length - 1]}`;
 }
 
@@ -99,10 +107,13 @@ export async function getGuestPage(slug: string): Promise<{
   const { entry, error } = await getEmDashEntry("guests", slug, {
     references: { livestreams: { limit: 100 } },
   });
+
   if (error) {
     console.error(`[guests] Failed to load guest ${slug}:`, error);
+
     return null;
   }
+
   if (!entry) return null;
 
   const guest = mapGuestEntry(entry);

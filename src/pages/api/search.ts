@@ -22,8 +22,8 @@ import { rewriteSearchResultUrl } from "../../lib/search/content";
 
 export const prerender = false;
 
-function json(
-  body: unknown,
+function json<Body>(
+  body: Body,
   status: number,
   headers: Record<string, string>
 ): Response {
@@ -38,6 +38,7 @@ function json(
 
 export const GET: APIRoute = async ({ url }) => {
   const query = normalizeSearchQuery(url.searchParams.get("q") ?? "");
+
   const limit = parseSearchLimit(
     url.searchParams.get("limit"),
     SEARCH_DEFAULT_LIMIT,
@@ -63,11 +64,14 @@ export const GET: APIRoute = async ({ url }) => {
   try {
     await ensureSearchTable();
     let embedding = await getCachedQueryEmbedding(query);
+
     if (!embedding) {
       embedding = await embedQuery(query);
       await cacheQueryEmbedding(query, embedding);
     }
+
     const results = await searchDocuments(query, embedding, limit);
+
     return json(
       {
         query,
@@ -81,6 +85,7 @@ export const GET: APIRoute = async ({ url }) => {
     );
   } catch (error) {
     console.error("Search request failed", error);
+
     return json(
       { error: "Search is temporarily unavailable." },
       503,

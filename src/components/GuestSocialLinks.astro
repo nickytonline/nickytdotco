@@ -24,11 +24,13 @@ const { name, class: className, ...socials } = Astro.props;
 
 function absoluteUrl(value: string, base: string): string {
   if (/^https?:\/\//i.test(value)) return value;
+
   return `${base}${value.replace(/^@/, "")}`;
 }
 
 function safeWebsiteUrl(value: string): string | undefined {
   const candidate = value.trim();
+
   if (!candidate || /\s/.test(candidate)) return undefined;
 
   const href = /^https?:\/\//i.test(candidate)
@@ -37,6 +39,7 @@ function safeWebsiteUrl(value: string): string | undefined {
 
   try {
     const url = new URL(href);
+
     return url.protocol === "http:" || url.protocol === "https:"
       ? url.toString()
       : undefined;
@@ -67,6 +70,7 @@ if (socials.twitter) {
     label: `${name}'s X (Twitter) profile`,
   });
 }
+
 if (socials.bluesky) {
   items.push({
     platform: "bluesky",
@@ -74,6 +78,7 @@ if (socials.bluesky) {
     label: `${name}'s Bluesky profile`,
   });
 }
+
 if (socials.github) {
   items.push({
     platform: "github",
@@ -81,6 +86,7 @@ if (socials.github) {
     label: `${name}'s GitHub profile`,
   });
 }
+
 if (socials.linkedin) {
   items.push({
     platform: "linkedin",
@@ -88,6 +94,7 @@ if (socials.linkedin) {
     label: `${name}'s LinkedIn profile`,
   });
 }
+
 if (socials.youtube) {
   items.push({
     platform: "youtube",
@@ -97,6 +104,7 @@ if (socials.youtube) {
     label: `${name}'s YouTube channel`,
   });
 }
+
 if (socials.twitch) {
   items.push({
     platform: "twitch",
@@ -104,7 +112,9 @@ if (socials.twitch) {
     label: `${name}'s Twitch profile`,
   });
 }
+
 const websiteUrl = socials.website ? safeWebsiteUrl(socials.website) : undefined;
+
 if (websiteUrl) {
   items.push({
     platform: "website",

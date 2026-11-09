@@ -6,8 +6,10 @@ import type { APIContext } from "astro";
 function getYouTubeThumbnailUrl(youtubeLink: string): string | null {
   try {
     const url = new URL(youtubeLink);
+
     const videoId =
       url.searchParams.get("v") ?? url.pathname.split("/live/")[1];
+
     return videoId
       ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
       : null;
@@ -39,6 +41,7 @@ export async function GET(context: APIContext) {
       const thumbnailUrl = stream.data.youtubeStreamLink
         ? getYouTubeThumbnailUrl(stream.data.youtubeStreamLink)
         : null;
+
       return {
         title: `${stream.data.title} - ${stream.data.guestName}`,
         pubDate: new Date(stream.data.date),

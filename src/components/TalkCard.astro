@@ -35,12 +35,14 @@ const {
 } = Astro.props;
 
 let thumbnailUrl: string | undefined;
+
 if (coverImage) {
   thumbnailUrl = coverImage;
 } else if (video?.type === "custom" && video.image) {
   thumbnailUrl = video.image.url;
 } else if (video?.type === "youtube") {
   const videoId = getYouTubeId(video.url);
+
   if (videoId) {
     thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
   }

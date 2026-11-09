@@ -22,20 +22,24 @@ const hasMcpTag = (tags?: string[]) =>
 
 const now = Date.now();
 const { posts: allPosts, cacheHint } = await getBlogListing();
+
 cacheRenderedContent(
   Astro.response.headers,
   Astro.cache,
   cacheHint,
   CONTENT_CACHE_MAX_AGE_SECONDS,
 );
+
 const mcpPosts = allPosts
   .filter((post) => hasMcpTag(post.data.tags))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const allTalks = await getCollection("talks");
+
 const excludedMcpTalks = new Set([
   "agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-blackhat-usa-2025",
 ]);
+
 const mcpTalks = allTalks
   .filter(
     (talk) =>
@@ -46,6 +50,7 @@ const mcpTalks = allTalks
 const mcpGuides = await getCollection("guides", ({ data }) =>
   hasMcpTag(data.tags)
 );
+
 const iximiuzCourseImage =
   "https://labs.iximiuz.com/content/files/courses/securing-mcp-servers-and-mcp-apps-with-pomerium-2d28fcaa/__static__/cover-v4.png";
 
@@ -56,15 +61,19 @@ const featuredPostSlugs = [
   "introducing-the-devto-mcp-server",
 ];
 
-const featuredPosts = featuredPostSlugs
-  .map((slug) => mcpPosts.find((post) => post.id === slug))
-  .filter((post): post is (typeof mcpPosts)[number] => Boolean(post));
+const featuredPosts = featuredPostSlugs.flatMap((slug) => {
+  const post = mcpPosts.find((candidate) => candidate.id === slug);
+
+  return post ? [post] : [];
+});
 
 const featuredMcpTalkSlug =
   "agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe";
+
 const featuredMcpTalk = mcpTalks.find(
   (talk) => talk.id === featuredMcpTalkSlug,
 );
+
 const pastTalks = mcpTalks
   .filter(
     (talk) =>
@@ -73,9 +82,11 @@ const pastTalks = mcpTalks
       talk.data.video,
   )
   .slice(0, featuredMcpTalk ? 4 : 5);
+
 const curatedMcpTalks = featuredMcpTalk
   ? [featuredMcpTalk, ...pastTalks]
   : pastTalks;
+
 const featuredLivestreams = [
   {
     title: "MCP Security & Authorization with Den Delimarsky",

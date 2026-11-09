@@ -6,9 +6,12 @@ interface Props {
 }
 
 const { title, headingLevel = 2, visuallyHidden = false } = Astro.props;
+
 const baseHeadingClasses =
   "text-5xl font-extrabold tracking-tight text-balance";
+
 const sectionHeadingClasses = "text-3xl font-bold text-foreground";
+
 const headingClasses =
   headingLevel === 1 ? baseHeadingClasses : sectionHeadingClasses;
 ---

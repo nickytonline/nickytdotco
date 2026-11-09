@@ -51,6 +51,7 @@ if (streamVideosResult.error) {
       ) ?? [];
 
   const latestOverallVideos = pastVideos.slice(0, 2);
+
   const latestNickytLiveVideo = pastVideos.find(
     (video) => video.type === "nickyt.live",
   );
@@ -72,6 +73,7 @@ if (!errorMessage) {
     EXPIRING_CACHE_SWR_SECONDS,
   );
 }
+
 scheduleSearchReindex("/watch", Astro.locals.netlify.context);
 
 export const prerender = false;

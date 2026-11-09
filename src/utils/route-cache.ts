@@ -4,13 +4,16 @@
  * `cacheNetlify()` is configured. Publish routes purge those tags.
  */
 export const CONTENT_CACHE_MAX_AGE_SECONDS = 86_400;
+
 /** Serve a stale page while a purged or expired render runs. */
 export const CONTENT_CACHE_SWR_SECONDS = 604_800;
+
 /**
  * Short window for pages whose TTL is the next event. Long SWR would keep
  * an "upcoming" badge up after the event.
  */
 export const EXPIRING_CACHE_SWR_SECONDS = 300;
+
 /** RSS and llms.txt also list Turso videos, which are not EmDash tags. */
 export const MIXED_FEED_CACHE_MAX_AGE_SECONDS = 3_600;
 
@@ -65,6 +68,7 @@ export async function purgeContentTags(
 ): Promise<void> {
   if (!cache.enabled) return;
   const unique = [...new Set(tags.filter((tag) => tag.length > 0))];
+
   for (let index = 0; index < unique.length; index += PURGE_BATCH_SIZE) {
     await cache.invalidate({
       tags: unique.slice(index, index + PURGE_BATCH_SIZE),

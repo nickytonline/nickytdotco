@@ -8,6 +8,7 @@ import {
 const mcpTemplate = curatedProjects.find(
   (project) => project.name === "mcp-typescript-template"
 )!;
+
 const pomeriumQuest = curatedProjects.find(
   (project) => project.name === "pomerium-quest"
 )!;

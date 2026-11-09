@@ -58,7 +58,7 @@ const socialLinks = [
   },
 ];
 
-const socialBrandClasses: Record<string, string> = {
+const socialBrandClasses = new Map<string, string>(Object.entries({
   youtube: "group-hover:bg-youtube group-focus:bg-youtube",
   github:
     "group-hover:bg-github group-focus:bg-github dark:group-hover:border-foreground dark:group-focus:border-foreground",
@@ -69,7 +69,7 @@ const socialBrandClasses: Record<string, string> = {
   twitch: "group-hover:bg-twitch group-focus:bg-twitch",
   bluesky: "group-hover:bg-bluesky group-focus:bg-bluesky",
   mastodon: "group-hover:bg-mastodon group-focus:bg-mastodon",
-};
+}));
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -84,7 +84,7 @@ const socialBrandClasses: Record<string, string> = {
         <div
           class:list={[
             "flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-transparent bg-secondary transition-colors duration-200",
-            socialBrandClasses[social.brand],
+            socialBrandClasses.get(social.brand),
           ]}
         >
           {social.icon === "youtube" && (

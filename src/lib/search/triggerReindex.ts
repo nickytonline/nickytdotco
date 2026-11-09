@@ -55,6 +55,7 @@ export async function triggerSearchReindex(
     deps.log(
       `[search-reindex] Skipping from ${source}: not production (context=${deps.netlifyContext ?? "unset"})`
     );
+
     return { status: "skipped", reason: "not-production" };
   }
 
@@ -62,20 +63,24 @@ export async function triggerSearchReindex(
     deps.error(
       "[search-reindex] Missing GITHUB_TOKEN; cannot dispatch workflow"
     );
+
     return { status: "skipped", reason: "missing-token" };
   }
 
   const nowSeconds = Math.floor(deps.now() / 1000);
   let claimed = false;
+
   try {
     claimed = await deps.claimTriggerSlot(nowSeconds, deps.cooldownSeconds);
   } catch (cause) {
     deps.error("[search-reindex] Failed to claim reindex lock", cause);
+
     return { status: "error", reason: "lock-failed" };
   }
 
   if (!claimed) {
     deps.log(`[search-reindex] Skipping from ${source}: cooldown`);
+
     return { status: "skipped", reason: "cooldown" };
   }
 
@@ -106,6 +111,7 @@ export async function triggerSearchReindex(
     deps.log(
       `[search-reindex] Kicked off GitHub Action ${deps.workflowFile} from ${source}`
     );
+
     return { status: "triggered" };
   } catch (cause) {
     try {
@@ -116,10 +122,12 @@ export async function triggerSearchReindex(
         releaseCause
       );
     }
+
     deps.error(
       "[search-reindex] Failed to dispatch index-search workflow",
       cause
     );
+
     return { status: "error", reason: "dispatch-failed" };
   }
 }

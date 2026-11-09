@@ -26,6 +26,7 @@ describe("EventCalendar", () => {
     const button = screen.getByRole("button", {
       name: "Add Test Stream to calendar",
     });
+
     expect(button.getAttribute("aria-expanded")).toBe("false");
     expect(screen.queryByRole("menu")).toBeNull();
 

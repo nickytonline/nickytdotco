@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { createClient, type Client, type Row } from "@libsql/client/http";
 import { ENV } from "varlock/env";
+import { isString } from "../../utils/type-guards.ts";
 import {
   SEARCH_COSINE_DISTANCE_GAP,
   SEARCH_EMBEDDING_DIMENSIONS,
@@ -19,9 +20,21 @@ import {
   selectSearchHits,
   type ScoredSearchHit,
 } from "./rank.ts";
-import type { SearchDocumentInput, SearchResult } from "./types.ts";
+import type {
+  SearchDocumentInput,
+  SearchDocumentType,
+  SearchResult,
+} from "./types.ts";
 
 let client: Client | undefined;
+
+function parseSearchDocumentType(value: Row["type"]): SearchDocumentType {
+  if (value === "Post" || value === "Talk" || value === "Stream") {
+    return value;
+  }
+
+  throw new Error(`Invalid search document type in the search index: ${value}`);
+}
 
 export function getSearchDb(): Client {
   if (!client) {
@@ -30,6 +43,7 @@ export function getSearchDb(): Client {
       authToken: ENV.TURSO_SEARCH_AUTH_TOKEN,
     });
   }
+
   return client;
 }
 
@@ -63,6 +77,7 @@ export async function ensureSearchTable(db: Client = getSearchDb()) {
       throw error;
     });
   }
+
   return tableReady;
 }
 
@@ -73,6 +88,7 @@ async function ensureSearchTextColumn(db: Client) {
     );
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
+
     if (
       !/duplicate column name/i.test(message) &&
       !/already exists/i.test(message)
@@ -86,16 +102,19 @@ function queryCacheHash(query: string): string {
   return createHash("sha256").update(query).digest("hex");
 }
 
-function parseStoredEmbedding(value: unknown): number[] | null {
+function parseStoredEmbedding<Value>(value: Value): number[] | null {
   if (value == null) {
     return null;
   }
+
   if (Array.isArray(value)) {
     return value.map(Number);
   }
-  if (typeof value === "string") {
+
+  if (isString(value)) {
     try {
-      const parsed = JSON.parse(value) as unknown;
+      const parsed: unknown = JSON.parse(value);
+
       if (Array.isArray(parsed)) {
         return parsed.map(Number);
       }
@@ -103,6 +122,7 @@ function parseStoredEmbedding(value: unknown): number[] | null {
       return null;
     }
   }
+
   return null;
 }
 
@@ -112,15 +132,19 @@ export async function getCachedQueryEmbedding(
 ): Promise<number[] | null> {
   const minCreatedAt =
     Math.floor(Date.now() / 1000) - SEARCH_QUERY_CACHE_TTL_SECONDS;
+
   const result = await db.execute({
     sql: `SELECT embedding FROM ${SEARCH_QUERY_CACHE_TABLE}
           WHERE query_hash = ? AND created_at >= ?`,
     args: [queryCacheHash(query), minCreatedAt],
   });
+
   const values = parseStoredEmbedding(result.rows[0]?.embedding);
+
   if (!values || values.length !== SEARCH_EMBEDDING_DIMENSIONS) {
     return null;
   }
+
   return values;
 }
 
@@ -149,8 +173,10 @@ export async function cacheQueryEmbedding(
   const countResult = await db.execute(
     `SELECT COUNT(*) AS count FROM ${SEARCH_QUERY_CACHE_TABLE}`
   );
+
   const count = Number(countResult.rows[0]?.count ?? 0);
   const excess = count - SEARCH_QUERY_CACHE_MAX_ROWS;
+
   if (excess > 0) {
     await db.execute({
       sql: `DELETE FROM ${SEARCH_QUERY_CACHE_TABLE}
@@ -170,10 +196,13 @@ export async function loadContentHashes(
   const result = await db.execute(
     `SELECT id, content_hash FROM ${SEARCH_TABLE}`
   );
+
   const hashes = new Map<string, string>();
+
   for (const row of result.rows) {
     hashes.set(String(row.id), String(row.content_hash));
   }
+
   return hashes;
 }
 
@@ -243,6 +272,7 @@ export async function deleteMissingSearchDocuments(
 ) {
   if (keepIds.length === 0) {
     await db.execute(`DELETE FROM ${SEARCH_TABLE}`);
+
     return;
   }
 
@@ -261,6 +291,7 @@ export async function searchDocuments(
 ): Promise<SearchResult[]> {
   const embeddingJson = JSON.stringify(queryEmbedding);
   const lexicalHits = await searchLexicalHits(query, embeddingJson, limit, db);
+
   if (lexicalHits.length > 0) {
     return selectSearchHits(
       lexicalHits,
@@ -272,6 +303,7 @@ export async function searchDocuments(
   }
 
   const vectorHits = await searchVectorHits(embeddingJson, limit, db);
+
   return selectSearchHits(
     [],
     vectorHits,
@@ -299,6 +331,7 @@ async function searchLexicalHits(
   db: Client
 ): Promise<ScoredSearchHit[]> {
   const tokens = phraseTokens(query);
+
   if (tokens.length === 0) {
     return [];
   }
@@ -306,7 +339,9 @@ async function searchLexicalHits(
   const tokenClauses = tokens
     .map(() => `instr(${SEARCH_HAYSTACK_SQL}, ?) > 0`)
     .join(" AND ");
+
   const candidateLimit = Math.max(limit, SEARCH_LEXICAL_CANDIDATE_LIMIT);
+
   const result = await db.execute({
     sql: `SELECT url, title, excerpt, type,
                  ${SEARCH_HAYSTACK_SQL} AS haystack,
@@ -323,7 +358,7 @@ async function searchLexicalHits(
       url: String(row.url),
       title: String(row.title),
       excerpt: String(row.excerpt),
-      type: row.type as SearchResult["type"],
+      type: parseSearchDocumentType(row.type),
       distance: Number(row.distance),
       haystack: String(row.haystack ?? ""),
     }))
@@ -343,6 +378,7 @@ async function searchVectorHits(
   db: Client
 ): Promise<ScoredSearchHit[]> {
   const candidateLimit = Math.max(limit, SEARCH_VECTOR_CANDIDATE_LIMIT);
+
   const result = await db.execute({
     sql: `SELECT url, title, excerpt, type,
                  vector_distance_cos(embedding, vector32(?)) AS distance
@@ -351,6 +387,7 @@ async function searchVectorHits(
           LIMIT ?`,
     args: [embeddingJson, candidateLimit],
   });
+
   return mapScoredHits(result.rows);
 }
 
@@ -359,7 +396,7 @@ function mapScoredHits(rows: Row[]): ScoredSearchHit[] {
     url: String(row.url),
     title: String(row.title),
     excerpt: String(row.excerpt),
-    type: row.type as SearchResult["type"],
+    type: parseSearchDocumentType(row.type),
     distance: Number(row.distance),
   }));
 }

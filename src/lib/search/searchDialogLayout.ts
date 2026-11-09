@@ -36,10 +36,13 @@ export function getSearchDialogLayout({
 }): SearchDialogLayout {
   const keyboardOpen =
     layoutHeight - visualHeight > SEARCH_DIALOG_KEYBOARD_THRESHOLD_PX;
+
   const topInset = SEARCH_DIALOG_BASE_INSET_PX;
+
   const bottomInset = keyboardOpen
     ? SEARCH_DIALOG_KEYBOARD_BOTTOM_INSET_PX
     : SEARCH_DIALOG_BASE_INSET_PX;
+
   const available = Math.max(0, visualHeight - topInset - bottomInset);
 
   return {

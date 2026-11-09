@@ -10,10 +10,13 @@ import {
 
 const slug = Astro.params.slug ?? "";
 const result = slug ? await getBlogPostResult(slug) : undefined;
+
 if (!result?.post || (import.meta.env.PROD && result.post.data.draft)) {
   return Astro.rewrite("/404");
 }
+
 const entry = result.post;
+
 cacheRenderedContent(
   Astro.response.headers,
   Astro.cache,

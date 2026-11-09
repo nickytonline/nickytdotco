@@ -14,15 +14,19 @@ export const prerender = true;
 const now = Date.now();
 
 const normalizeTag = (tag: string) => tag.toLowerCase().replace(/[\s-]+/g, "");
+
 const hasAnyTag = (tags: string[] | undefined, wanted: string[]) => {
   const normalizedWanted = new Set(wanted.map(normalizeTag));
+
   return tags?.some((tag) => normalizedWanted.has(normalizeTag(tag))) ?? false;
 };
 
 const allGuides = await getCollection("guides");
+
 const excludedSecurityGuides = new Set([
   "securing-mcp-servers-and-mcp-apps-with-pomerium",
 ]);
+
 const securityGuides = allGuides
   .filter(
     (guide) =>
@@ -39,6 +43,7 @@ const securityGuides = allGuides
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const allTalks = await getCollection("talks");
+
 const excludedSecurityTalks = new Set([
   "zero-trust--from-airports-to-identity-aware-proxies-sreday-san-francisco-2025-q2",
   "zero-trust--from-airports-to-identity-aware-proxies-sreday-london-2025-q1",
@@ -47,6 +52,7 @@ const excludedSecurityTalks = new Set([
   "agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-aicoding-2025",
   "agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe",
 ]);
+
 const securityTalks = allTalks
   .filter(
     (talk) =>
@@ -64,6 +70,7 @@ const securityTalks = allTalks
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const streamResult = await getLiveCollection("streamVideos");
+
 const securityStreams = (streamResult.entries ?? [])
   .filter(
     (stream) =>

@@ -13,6 +13,7 @@ import {
 export const prerender = false;
 
 const { posts: allPosts, cacheHint } = await getBlogListing();
+
 cacheRenderedContent(
   Astro.response.headers,
   Astro.cache,
@@ -26,16 +27,19 @@ const sortedPosts = allPosts.sort((a, b) => {
 });
 
 // Group posts by year
-const postsByYear = sortedPosts.reduce(
+const postsByYear = sortedPosts.reduce<Record<number, typeof sortedPosts>>(
   (acc, post) => {
     const year = post.data.date.getFullYear();
+
     if (!acc[year]) {
       acc[year] = [];
     }
+
     acc[year].push(post);
+
     return acc;
   },
-  {} as Record<number, typeof sortedPosts>
+  {}
 );
 
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
@@ -46,9 +50,12 @@ const startHereSlugs = [
   "stop-shipping-broken-env-config",
   "build-your-first-or-next-mcp-server-with-the-typescript-mcp-template",
 ];
-const curatedStartHerePosts = startHereSlugs
-  .map((slug) => sortedPosts.find((post) => post.id === slug))
-  .filter((post): post is (typeof sortedPosts)[number] => Boolean(post));
+
+const curatedStartHerePosts = startHereSlugs.flatMap((slug) => {
+  const post = sortedPosts.find((candidate) => candidate.id === slug);
+
+  return post ? [post] : [];
+});
 
 // Transform data for components
 const blogPostsByYear = years.map((year) => ({

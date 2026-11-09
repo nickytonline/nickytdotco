@@ -25,6 +25,7 @@ export function getThumbnailUrl(talk: CollectionEntry<"talks">) {
         String.raw`(?:youtube\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})`
       )
     )?.[1];
+
     if (videoId) {
       return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
     }
@@ -32,6 +33,7 @@ export function getThumbnailUrl(talk: CollectionEntry<"talks">) {
 
   if (talk.data.video?.type === "vimeo") {
     const videoId = talk.data.video.url.match(/(?:vimeo\.com\/)(\d+)/)?.[1];
+
     if (videoId) {
       return `https://vumbnail.com/${videoId}.jpg`;
     }

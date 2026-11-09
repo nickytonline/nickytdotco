@@ -108,6 +108,7 @@ async function fetchPinnedProjects(): Promise<GitHubPinnedProject[]> {
     );
   }
 
+  // SAFETY: The pinned-project query above selects the GraphQLResponse shape.
   const json = (await response.json()) as GraphQLResponse;
 
   if (json.errors) {
@@ -120,6 +121,7 @@ async function fetchPinnedProjects(): Promise<GitHubPinnedProject[]> {
     if (json.errors) {
       throw new Error(`GitHub GraphQL error: ${json.errors[0].message}`);
     }
+
     throw new Error(
       "Could not find GitHub user data. Check your GITHUB_TOKEN and username."
     );
@@ -162,6 +164,7 @@ export const githubPinnedProjectsLoader: LiveLoader<
   async loadCollection() {
     try {
       const projects = await fetchPinnedProjects();
+
       return {
         entries: projects.map((project) => ({
           id: project.name,

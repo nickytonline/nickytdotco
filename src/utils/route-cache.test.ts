@@ -9,6 +9,7 @@ import {
 function recordingCache(enabled = true) {
   const setCalls: unknown[] = [];
   const purged: string[][] = [];
+
   const cache: RouteCache = {
     enabled,
     set(input) {
@@ -18,6 +19,7 @@ function recordingCache(enabled = true) {
       purged.push(input.tags ?? []);
     },
   };
+
   return { cache, setCalls, purged };
 }
 
@@ -66,11 +68,13 @@ describe("purgeContentTags", () => {
 
   it("purges unique tags in batches of 100", async () => {
     const { cache, purged } = recordingCache();
+
     const tags = [
       "posts",
       "posts",
       ...Array.from({ length: 100 }, (_, index) => `id-${index}`),
     ];
+
     await purgeContentTags(cache, tags);
     expect(purged).toHaveLength(2);
     expect(purged[0]).toHaveLength(100);

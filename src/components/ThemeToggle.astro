@@ -149,10 +149,12 @@
   const getThemePreference = (): ThemeName => {
     if (typeof localStorage !== "undefined") {
       const stored = localStorage.getItem("theme");
+
       if (isThemeName(stored)) {
         return stored;
       }
     }
+
     return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
@@ -167,6 +169,7 @@
     const trigger = root.querySelector<HTMLButtonElement>(
       "#theme-switcher-trigger"
     );
+
     if (!trigger) {
       return;
     }
@@ -191,11 +194,13 @@
   ): void => {
     const html = document.documentElement;
     html.classList.remove("dark", "windows95");
+
     if (theme === "dark" || theme === "windows95") {
       html.classList.add(theme);
     }
 
     const menu = container.querySelector("#theme-switcher-menu");
+
     const options =
       menu?.querySelectorAll<HTMLButtonElement>("[data-theme]") ?? [];
 
@@ -216,7 +221,9 @@
     const trigger = root.querySelector<HTMLButtonElement>(
       "#theme-switcher-trigger"
     );
+
     const menu = root.querySelector<HTMLElement>("#theme-switcher-menu");
+
     if (!trigger || !menu) {
       return;
     }
@@ -232,9 +239,11 @@
       root.classList.add("theme-switcher--open");
     } else {
       root.classList.remove("theme-switcher--open");
+
       const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
       ).matches;
+
       if (prefersReducedMotion) {
         menu.hidden = true;
       }
@@ -243,6 +252,7 @@
     const options = [
       ...menu.querySelectorAll<HTMLButtonElement>("[data-theme]"),
     ];
+
     options.forEach((option) => {
       option.tabIndex = open ? 0 : -1;
     });
@@ -254,15 +264,18 @@
         options.find(
           (option) => option.getAttribute("aria-checked") === "true"
         ) ?? options[0];
+
       selected?.focus();
     }
   };
 
   const initThemeSwitcher = () => {
     const root = document.querySelector<HTMLElement>("[data-theme-switcher]");
-    const trigger = document.getElementById(
-      "theme-switcher-trigger"
-    ) as HTMLButtonElement | null;
+
+    const trigger = document.querySelector<HTMLButtonElement>(
+      "#theme-switcher-trigger"
+    );
+
     const menu = document.getElementById("theme-switcher-menu");
 
     if (!root || !trigger || !menu || root.dataset.initialized === "true") {
@@ -286,14 +299,18 @@
 
     menu.addEventListener("click", (event) => {
       const target = event.target;
+
       if (!(target instanceof Element)) {
         return;
       }
+
       const option = target.closest<HTMLButtonElement>("[data-theme]");
       const theme = option?.dataset.theme;
+
       if (!isThemeName(theme)) {
         return;
       }
+
       setTheme(theme);
       localStorage.setItem("theme", theme);
       setOpen(root, false, "trigger");
@@ -307,6 +324,7 @@
       if (event.key === "Escape") {
         event.preventDefault();
         setOpen(root, false, "trigger");
+
         return;
       }
 
@@ -324,13 +342,17 @@
       const options = [
         ...menu.querySelectorAll<HTMLButtonElement>("[data-theme]"),
       ];
+
       const currentIndex = options.findIndex(
         (option) => option === document.activeElement
       );
+
       const fallbackIndex = options.findIndex(
         (option) => option.getAttribute("aria-checked") === "true"
       );
+
       const activeIndex = currentIndex >= 0 ? currentIndex : fallbackIndex;
+
       if (activeIndex < 0) {
         return;
       }
@@ -338,6 +360,7 @@
       event.preventDefault();
 
       let nextIndex = activeIndex;
+
       if (event.key === "Home") {
         nextIndex = 0;
       } else if (event.key === "End") {
@@ -349,9 +372,11 @@
       }
 
       const nextTheme = options[nextIndex]?.dataset.theme;
+
       if (!isThemeName(nextTheme)) {
         return;
       }
+
       setTheme(nextTheme);
       localStorage.setItem("theme", nextTheme);
       options[nextIndex]?.focus();

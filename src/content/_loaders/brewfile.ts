@@ -9,7 +9,6 @@ export interface BrewfileEntry {
   homepage?: string;
   masId?: string;
   tap?: string;
-  [key: string]: unknown;
 }
 
 // Formulae that are pure transitive dependencies or too obvious to list on the uses page
@@ -45,6 +44,7 @@ const BREW_DENYLIST = new Set([
 
 const BREWFILE_URL =
   "https://raw.githubusercontent.com/nickytonline/dotfiles/main/Brewfile";
+
 const BREW_API_URL = "https://formulae.brew.sh/api/formula.json";
 const CASK_API_URL = "https://formulae.brew.sh/api/cask.json";
 const ITUNES_LOOKUP_URL = "https://itunes.apple.com/lookup?id=";
@@ -65,6 +65,7 @@ const APPLE_APP_BLOCKLIST = [
 
 function isAppleApp(entry: BrewfileEntry): boolean {
   const name = entry.displayName.toLowerCase();
+
   return APPLE_APP_BLOCKLIST.some(
     (app) => name === app || name.startsWith(`${app} `)
   );
@@ -79,6 +80,7 @@ function prettify(name: string): string {
     .split(/[-_]/)
     .map((word) => {
       if (word.toLowerCase() === "cli") return "CLI";
+
       return word.charAt(0).toUpperCase() + word.slice(1);
     })
     .join(" ");
@@ -96,21 +98,25 @@ function shortenDescription(desc?: string): string | undefined {
   // Get the first sentence by looking for a period followed by space or newline
   // We trim to handle cases where there might be leading/trailing whitespace
   const firstSentence = desc.split(/\.\s|\n/)[0].trim();
+
   if (firstSentence && !firstSentence.endsWith(".")) {
     return `${firstSentence}.`;
   }
+
   return firstSentence;
 }
 
 async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
   let brewfileText = "";
   let formulae: Array<{ name: string; desc?: string; homepage?: string }> = [];
+
   let casks: Array<{
     token: string;
     name?: string[];
     desc?: string;
     homepage?: string;
   }> = [];
+
   let masMetadata: Array<{
     trackId: number;
     trackName: string;
@@ -120,6 +126,7 @@ async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
 
   try {
     const brewfileRes = await fetch(BREWFILE_URL);
+
     if (!brewfileRes.ok) throw new Error("Brewfile fetch failed");
     brewfileText = await brewfileRes.text();
 
@@ -132,23 +139,35 @@ async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
       fetch(BREW_API_URL),
       fetch(CASK_API_URL),
     ];
+
     if (masIds.length > 0) {
       fetches.push(fetch(`${ITUNES_LOOKUP_URL}${masIds.join(",")}`));
     }
 
     const [brewApiRes, caskApiRes, itunesApiRes] = await Promise.all(fetches);
 
+    if (!brewApiRes.ok || !caskApiRes.ok) {
+      throw new Error("Homebrew metadata request failed.");
+    }
+
+    // SAFETY: The Homebrew formula endpoint documents this record array.
     formulae = (await brewApiRes.json()) as typeof formulae;
+    // SAFETY: The Homebrew cask endpoint documents this record array.
     casks = (await caskApiRes.json()) as typeof casks;
 
     if (itunesApiRes) {
+      if (!itunesApiRes.ok) throw new Error("Apple lookup request failed.");
+
+      // SAFETY: Apple's lookup endpoint returns its records in `results`.
       const itunesData = (await itunesApiRes.json()) as {
         results: typeof masMetadata;
       };
+
       masMetadata = itunesData.results || [];
     }
   } catch (error) {
     console.error("Error fetching brew data:", error);
+
     if (!brewfileText) throw error;
   }
 
@@ -161,12 +180,15 @@ async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
 
   for (const line of lines) {
     const trimmed = line.trim();
+
     if (!trimmed || trimmed.startsWith("#")) continue;
 
     const brewMatch = trimmed.match(/^brew\s+"([^"]+)"/);
+
     if (brewMatch) {
       const fullName = brewMatch[1];
       const name = fullName.split("/").pop() || fullName;
+
       if (BREW_DENYLIST.has(name)) continue;
 
       const tap = fullName.includes("/")
@@ -188,6 +210,7 @@ async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
     }
 
     const caskMatch = trimmed.match(/^cask\s+"([^"]+)"/);
+
     if (caskMatch) {
       const token = caskMatch[1];
       const meta = casksMap.get(token);
@@ -204,6 +227,7 @@ async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
     }
 
     const masMatch = trimmed.match(/^mas\s+"([^"]+)",\s*id:\s*(\d+)/);
+
     if (masMatch) {
       const id = masMatch[2];
       const masInfo = masMap.get(id);
@@ -221,6 +245,7 @@ async function fetchAndParseBrewfile(): Promise<BrewfileEntry[]> {
     }
 
     const tapMatch = trimmed.match(/^tap\s+"([^"]+)"/);
+
     if (tapMatch) {
       entries.push({
         id: `tap-${tapMatch[1]}`,
@@ -241,6 +266,7 @@ export const brewfileLoader: LiveLoader<BrewfileEntry, { id: string }> = {
   async loadCollection() {
     try {
       const entries = await fetchAndParseBrewfile();
+
       return {
         entries: entries.map((entry) => ({
           id: entry.id,

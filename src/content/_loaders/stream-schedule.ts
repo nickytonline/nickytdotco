@@ -1,4 +1,5 @@
 import { createClient } from "@libsql/client/http";
+import type { Row, Value } from "@libsql/client";
 import type { LiveLoader } from "astro/loaders";
 import { ENV } from "varlock/env";
 
@@ -15,63 +16,69 @@ function getClient() {
  * Returns the value only if it is a valid http(s) URL, otherwise undefined.
  * Keeps z.url() schema fields from rejecting dirty Turso values.
  */
-function sanitizeHttpUrl(value: unknown): string | undefined {
-  if (typeof value !== "string" || !value) return undefined;
+type StreamType = "nickyt.live" | "pomerium-live";
+
+function isString(value: Value): value is string {
+  return typeof value === "string";
+}
+
+function isStreamType(value: Value): value is StreamType {
+  return (
+    isString(value) && (value === "nickyt.live" || value === "pomerium-live")
+  );
+}
+
+function sanitizeHttpUrl(value: Value): string | undefined {
+  if (!isString(value) || !value) return undefined;
   const lower = value.toLowerCase();
+
   if (!lower.startsWith("http://") && !lower.startsWith("https://")) {
     return undefined;
   }
+
   try {
     new URL(value);
+
     return value;
   } catch {
     return undefined;
   }
 }
 
-function mapRowToSchedule(row: Record<string, unknown>): StreamGuestInfo {
-  const {
-    type,
-    date,
-    title,
-    description,
-    guest_name,
-    guest_title,
-    youtube_stream_link,
-    linkedin_stream_link,
-    twitter,
-    twitch,
-    github,
-    youtube,
-    bluesky,
-    website,
-    linkedin,
-  } = row;
+function mapRowToSchedule(row: Row): StreamGuestInfo {
+  const { type, date, title, description, guest_name } = row;
 
-  if (!date || !guest_name || !title || !description) {
+  if (
+    !isString(date) ||
+    !isString(guest_name) ||
+    !isString(title) ||
+    !isString(description)
+  ) {
     throw new Error("Missing required stream schedule fields.");
   }
 
-  if (type !== "nickyt.live" && type !== "pomerium-live") {
+  if (!isStreamType(type)) {
     throw new Error(`Invalid stream type: ${type}`);
   }
 
   return {
-    type: type as "nickyt.live" | "pomerium-live",
-    date: date as string,
-    guestName: guest_name as string,
-    guestTitle: (guest_title as string) ?? "",
-    title: title as string,
-    description: description as string,
-    youtubeStreamLink: (youtube_stream_link as string) ?? undefined,
-    linkedinStreamLink: sanitizeHttpUrl(linkedin_stream_link),
-    twitter: (twitter as string) ?? undefined,
-    twitch: (twitch as string) ?? undefined,
-    github: (github as string) ?? undefined,
-    youtube: (youtube as string) ?? undefined,
-    bluesky: (bluesky as string) ?? undefined,
-    website: (website as string) ?? undefined,
-    linkedin: (linkedin as string) ?? undefined,
+    type,
+    date,
+    guestName: guest_name,
+    guestTitle: isString(row.guest_title) ? row.guest_title : "",
+    title,
+    description,
+    youtubeStreamLink: isString(row.youtube_stream_link)
+      ? row.youtube_stream_link
+      : undefined,
+    linkedinStreamLink: sanitizeHttpUrl(row.linkedin_stream_link),
+    twitter: isString(row.twitter) ? row.twitter : undefined,
+    twitch: isString(row.twitch) ? row.twitch : undefined,
+    github: isString(row.github) ? row.github : undefined,
+    youtube: isString(row.youtube) ? row.youtube : undefined,
+    bluesky: isString(row.bluesky) ? row.bluesky : undefined,
+    website: isString(row.website) ? row.website : undefined,
+    linkedin: isString(row.linkedin) ? row.linkedin : undefined,
   } satisfies StreamGuestInfo;
 }
 
@@ -81,6 +88,7 @@ export async function fetchPastGuestsWithYouTube(): Promise<StreamGuestInfo[]> {
       url: ENV.EMDASH_TURSO_DATABASE_URL,
       authToken: ENV.TURSO_AUTH_TOKEN,
     });
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -114,20 +122,21 @@ export async function fetchPastGuestsWithYouTube(): Promise<StreamGuestInfo[]> {
     });
 
     return result.rows.map((row) => {
-      const r = row as unknown as Record<string, unknown>;
+      const data = mapRowToSchedule(row);
+
+      if (!isString(row.slug) || !isString(row.youtube_stream_link)) {
+        throw new Error("Missing required past stream fields.");
+      }
+
       return {
-        slug: r.slug as string,
-        type: r.type as "nickyt.live" | "pomerium-live",
-        date: r.date as string,
-        guestName: r.guest_name as string,
-        title: r.title as string,
-        description: r.description as string,
-        youtubeStreamLink: r.youtube_stream_link as string,
-        linkedinStreamLink: sanitizeHttpUrl(r.linkedin_stream_link),
+        ...data,
+        slug: row.slug,
+        youtubeStreamLink: row.youtube_stream_link,
       } satisfies StreamGuestInfo;
     });
   } catch (error) {
     console.error("Error fetching past guests:", error);
+
     return [];
   }
 }
@@ -152,10 +161,9 @@ export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
 
       return {
         entries: result.rows.map((row) => {
-          const r = row as unknown as Record<string, unknown>;
           return {
-            id: String(r.id),
-            data: mapRowToSchedule(r),
+            id: String(row.id),
+            data: mapRowToSchedule(row),
           };
         }),
       };
@@ -167,6 +175,7 @@ export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
       }
 
       const client = getClient();
+
       const result = await client.execute({
         sql: `SELECT * FROM stream_guests WHERE id = ? AND on_schedule = 1`,
         args: [filter.id],
@@ -178,7 +187,14 @@ export const streamScheduleLoader: LiveLoader<StreamGuestInfo, { id: string }> =
         };
       }
 
-      const row = result.rows[0] as unknown as Record<string, unknown>;
+      const row = result.rows[0];
+
+      if (!row) {
+        return {
+          error: new Error(`No stream guest found with id: ${filter.id}`),
+        };
+      }
+
       return {
         id: String(row.id),
         data: mapRowToSchedule(row),

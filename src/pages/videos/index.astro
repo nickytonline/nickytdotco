@@ -17,6 +17,7 @@ export const prerender = false;
 const result = await getLiveCollection("streamVideos");
 const now = Date.now();
 const allEntries = result.entries ?? [];
+
 setCdnCacheHeaders(
   Astro.response.headers,
   soonestExpiryTimestamp(
@@ -25,26 +26,31 @@ setCdnCacheHeaders(
   ),
   now,
 );
+
 const entries = allEntries.filter(
   (e) => !isEventUpcoming(new Date(e.data.date), now),
 );
+
 const sortedStreams = [...entries].sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
 
-const streamsByYear = sortedStreams.reduce(
+const streamsByYear = sortedStreams.reduce<Record<number, typeof sortedStreams>>(
   (
     acc: Record<number, typeof sortedStreams>,
     stream: (typeof sortedStreams)[number]
   ) => {
     const year = new Date(stream.data.date).getFullYear();
+
     if (!acc[year]) {
       acc[year] = [];
     }
+
     acc[year].push(stream);
+
     return acc;
   },
-  {} as Record<number, typeof sortedStreams>
+  {}
 );
 
 const years = Object.keys(streamsByYear)

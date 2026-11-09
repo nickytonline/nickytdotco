@@ -12,6 +12,7 @@ const urlOrRelative = z
     (value) => {
       try {
         new URL(value, "https://example.com");
+
         return true;
       } catch {
         return false;
@@ -26,6 +27,7 @@ function hasYouTubeVideoId(value: string): boolean {
   try {
     const url = new URL(value);
     const hostname = url.hostname.toLowerCase().replace(/^www\./, "");
+
     const videoId =
       hostname === "youtu.be"
         ? url.pathname.split("/").filter(Boolean)[0]
@@ -44,6 +46,7 @@ function hasVimeoVideoId(value: string): boolean {
   try {
     const url = new URL(value);
     const hostname = url.hostname.toLowerCase();
+
     return (
       (hostname === "vimeo.com" || hostname.endsWith(".vimeo.com")) &&
       /\/\d+(?:\/|$)/.test(url.pathname)

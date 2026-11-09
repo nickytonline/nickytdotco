@@ -1,4 +1,5 @@
 import { createClient } from "@libsql/client/http";
+import type { Row, Value } from "@libsql/client";
 import type { LiveLoader } from "astro/loaders";
 import { ENV } from "varlock/env";
 
@@ -26,10 +27,24 @@ function hasYouTubeVideoId(url: string): boolean {
   return YOUTUBE_VIDEO_ID_RE.test(url);
 }
 
-function sanitizeHttpUrl(value: unknown): string | undefined {
-  if (typeof value !== "string" || !value) return undefined;
+type StreamType = "nickyt.live" | "pomerium-live";
+
+function isString(value: Value): value is string {
+  return typeof value === "string";
+}
+
+function isStreamType(value: Value): value is StreamType {
+  return (
+    isString(value) && (value === "nickyt.live" || value === "pomerium-live")
+  );
+}
+
+function sanitizeHttpUrl(value: Value): string | undefined {
+  if (!isString(value) || !value) return undefined;
+
   try {
     const url = new URL(value);
+
     return url.protocol === "http:" || url.protocol === "https:"
       ? url.toString()
       : undefined;
@@ -38,7 +53,7 @@ function sanitizeHttpUrl(value: unknown): string | undefined {
   }
 }
 
-function mapRowToVideo(row: Record<string, unknown>): StreamVideoInfo {
+function mapRowToVideo(row: Row): StreamVideoInfo {
   const {
     slug,
     type,
@@ -51,17 +66,17 @@ function mapRowToVideo(row: Record<string, unknown>): StreamVideoInfo {
   } = row;
 
   if (
-    typeof slug !== "string" ||
-    typeof date !== "string" ||
-    typeof title !== "string" ||
-    typeof description !== "string" ||
-    typeof youtube_stream_link !== "string" ||
-    typeof guest_name !== "string"
+    !isString(slug) ||
+    !isString(date) ||
+    !isString(title) ||
+    !isString(description) ||
+    !isString(youtube_stream_link) ||
+    !isString(guest_name)
   ) {
     throw new Error("Missing required EmDash livestream fields.");
   }
 
-  if (type !== "nickyt.live" && type !== "pomerium-live") {
+  if (!isStreamType(type)) {
     throw new Error(`Invalid stream type: ${type}`);
   }
 
@@ -110,6 +125,7 @@ export const streamVideosLoader: LiveLoader<StreamVideoInfo, { id: string }> = {
 
   async loadCollection() {
     const client = getClient();
+
     const result = await client.execute({
       sql: `${VIDEO_QUERY}
         GROUP BY e.id
@@ -119,7 +135,8 @@ export const streamVideosLoader: LiveLoader<StreamVideoInfo, { id: string }> = {
 
     return {
       entries: result.rows.map((row) => {
-        const data = mapRowToVideo(row as unknown as Record<string, unknown>);
+        const data = mapRowToVideo(row);
+
         return { id: data.slug, data };
       }),
     };
@@ -131,6 +148,7 @@ export const streamVideosLoader: LiveLoader<StreamVideoInfo, { id: string }> = {
     }
 
     const client = getClient();
+
     const result = await client.execute({
       sql: `${VIDEO_QUERY}
         AND e.slug = ?
@@ -144,9 +162,16 @@ export const streamVideosLoader: LiveLoader<StreamVideoInfo, { id: string }> = {
       };
     }
 
-    const data = mapRowToVideo(
-      result.rows[0] as unknown as Record<string, unknown>
-    );
+    const row = result.rows[0];
+
+    if (!row) {
+      return {
+        error: new Error(`No EmDash livestream found with slug: ${filter.id}`),
+      };
+    }
+
+    const data = mapRowToVideo(row);
+
     return { id: data.slug, data };
   },
 };

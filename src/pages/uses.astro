@@ -7,6 +7,7 @@ const brewfileResult = await getLiveCollection("brewfile");
 const brewfile = brewfileResult.entries ?? [];
 
 const editorIds = ["visual-studio-code", "cursor"];
+
 const editorCasks = brewfile.filter(
   (entry) => entry.data.type === "cask" && editorIds.includes(entry.data.name),
 );
@@ -15,6 +16,7 @@ const getCanonicalName = (entry: (typeof brewfile)[number]) => {
   const name = entry.data.displayName.trim().toLowerCase().replace(/\s+/g, " ");
 
   if (name === "whatsapp messenger") return "whatsapp";
+
   return name;
 };
 
@@ -42,7 +44,9 @@ const getLink = (entry: (typeof brewfile)[number]) => {
   const canonicalName = getCanonicalName(entry);
 
   if (canonicalName === "codex") return "https://openai.com/codex";
+
   if (canonicalName === "whatsapp") return "https://www.whatsapp.com/";
+
   if (canonicalName === "herdr") return "https://herdr.dev";
 
   if (entry.data.homepage) return entry.data.homepage;
@@ -50,12 +54,15 @@ const getLink = (entry: (typeof brewfile)[number]) => {
   if (entry.data.type === "cask") {
     return `https://formulae.brew.sh/cask/${entry.data.name}`;
   }
+
   if (entry.data.type === "brew") {
     return `https://formulae.brew.sh/formula/${entry.data.name}`;
   }
+
   if (entry.data.type === "mas") {
     return `https://apps.apple.com/app/id${entry.data.masId}`;
   }
+
   return "#";
 };
 ---

@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { isString } from "./type-guards";
 
 /**
  * Appends the appropriate ordinal suffix to a number (e.g., 1st, 2nd, 3rd, 4th).
@@ -10,6 +11,7 @@ import { DateTime } from "luxon";
 function appendSuffix(n: number): string {
   const s = ["th", "st", "nd", "rd"];
   const v = n % 100;
+
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
@@ -52,6 +54,7 @@ export function dateFilter(value: string | Date | number): string {
  */
 export function w3DateFilter(value: string | Date | number): string {
   const dateObject = new Date(value);
+
   return dateObject.toISOString();
 }
 
@@ -78,6 +81,7 @@ export function truncate(
   length: number = 100
 ): string {
   if (!str || str.length <= length) return str || "";
+
   return str.substring(0, length) + "...";
 }
 
@@ -124,23 +128,22 @@ export function seriesFilter<T extends Post>(
   if (!series) return [];
 
   // Normalize series identifier
-  const seriesId =
-    typeof series === "string"
-      ? series
-      : "collection_id" in series && series.collection_id
-        ? String(series.collection_id)
-        : series.name;
+  const seriesId = isString(series)
+    ? series
+    : "collection_id" in series && series.collection_id
+      ? String(series.collection_id)
+      : series.name;
 
   return collection.filter((post) => {
     const postSeries = post.data.series;
+
     if (!postSeries) return false;
 
-    const postSeriesId =
-      typeof postSeries === "string"
-        ? postSeries
-        : "collection_id" in postSeries && postSeries.collection_id
-          ? String(postSeries.collection_id)
-          : postSeries.name;
+    const postSeriesId = isString(postSeries)
+      ? postSeries
+      : "collection_id" in postSeries && postSeries.collection_id
+        ? String(postSeries.collection_id)
+        : postSeries.name;
 
     return postSeriesId === seriesId;
   });
@@ -154,7 +157,8 @@ export function seriesFilter<T extends Post>(
  */
 export function seriesName(series: Series | null | undefined): string {
   if (!series) return "";
-  return typeof series === "string" ? series : series.name || "";
+
+  return isString(series) ? series : series.name || "";
 }
 
 /**
@@ -166,14 +170,19 @@ export function seriesName(series: Series | null | undefined): string {
 export function formatCompactNumber(num: number): string {
   if (num === 0) return "0";
   const abs = Math.abs(num);
+
   if (abs < 1000) return String(num);
   const suffixes = ["", "k", "M", "B"];
   const tier = Math.floor(Math.log10(abs) / 3);
+
   if (tier === 0) return String(num);
   const scale = Math.pow(10, tier * 3);
   const scaled = abs / scale;
+
   const formatted =
     scaled < 10 ? scaled.toFixed(1) : Math.round(scaled).toString();
+
   const suffix = suffixes[tier] || "";
+
   return num < 0 ? `-${formatted}${suffix}` : `${formatted}${suffix}`;
 }

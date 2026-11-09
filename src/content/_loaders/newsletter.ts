@@ -6,7 +6,10 @@ export interface NewsletterPost {
   link: string;
   description: string;
   date: string;
-  [key: string]: unknown;
+}
+
+interface NewsletterFeedItem extends Parser.Item {
+  "content:encoded"?: string;
 }
 
 const NEWSLETTER_RSS_URL = "https://rss.beehiiv.com/feeds/NggVbrRMab.xml";
@@ -24,32 +27,37 @@ function decodeEntities(text: string): string {
 function extractText(html: string): string {
   const noStyle = html.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, " ");
   const noTags = noStyle.replace(/<[^>]*>/g, " ");
+
   return decodeEntities(noTags).replace(/\s+/g, " ").trim();
 }
 
 async function fetchNewsletterFeed(): Promise<NewsletterPost[]> {
-  const parser = new Parser({
+  const parser = new Parser<Record<string, never>, NewsletterFeedItem>({
     customFields: {
       item: ["content:encoded"],
     },
   });
+
   const feed = await parser.parseURL(NEWSLETTER_RSS_URL);
 
-  return feed.items
-    .filter((item) => item.title && item.link && item.pubDate)
-    .map((item) => {
-      const html = (item["content:encoded"] as string) || "";
-      const text = extractText(html);
-      const description =
-        text.length > 200 ? text.slice(0, 200).trimEnd() + "..." : text;
+  return feed.items.flatMap((item) => {
+    if (!item.title || !item.link || !item.pubDate) return [];
 
-      return {
-        title: item.title || "",
-        link: item.link || "",
+    const html = item["content:encoded"] ?? "";
+    const text = extractText(html);
+
+    const description =
+      text.length > 200 ? text.slice(0, 200).trimEnd() + "..." : text;
+
+    return [
+      {
+        title: item.title,
+        link: item.link,
         description,
-        date: item.pubDate || new Date().toISOString(),
-      };
-    });
+        date: item.pubDate,
+      },
+    ];
+  });
 }
 
 export const newsletterLoader: LiveLoader<NewsletterPost, { id: string }> = {
@@ -70,6 +78,7 @@ export const newsletterLoader: LiveLoader<NewsletterPost, { id: string }> = {
     }
 
     const posts = await fetchNewsletterFeed();
+
     const post = posts.find(
       (_, index) => `newsletter-${index}-${posts[index].link}` === filter.id
     );

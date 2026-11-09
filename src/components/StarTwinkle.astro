@@ -30,6 +30,7 @@
     const MIN_WIDTH = 1024;
 
     const el = document.getElementById("star-twinkle");
+
     if (!(el instanceof HTMLElement)) return;
 
     let timer = 0;
@@ -50,15 +51,18 @@
       const overlayWidth = window.innerWidth * 0.6;
       const cols = Math.max(1, Math.floor(overlayWidth / GRID));
       const rows = Math.max(1, Math.floor(window.innerHeight / GRID));
+
       // Bias toward the top-right, where the dotted mask is densest.
       const col = Math.min(
         cols - 1,
         Math.floor((1 - Math.pow(Math.random(), 1.6)) * cols),
       );
+
       const row = Math.min(
         rows - 1,
         Math.floor(Math.pow(Math.random(), 1.8) * rows),
       );
+
       return {
         left: overlayLeft + col * GRID + GRID / 2,
         top: row * GRID + GRID / 2,
@@ -70,6 +74,7 @@
       timer = window.setTimeout(() => {
         timer = 0;
         twinkle();
+
         if (enabled) schedule(nextDelay());
       }, delay);
     };
@@ -95,16 +100,20 @@
     const sync = () => {
       const nextEnabled = canTwinkle();
       el.hidden = !nextEnabled;
+
       if (!nextEnabled) {
         el.classList.remove("star-twinkle--active");
         busy = false;
         enabled = false;
+
         if (timer) {
           window.clearTimeout(timer);
           timer = 0;
         }
+
         return;
       }
+
       if (!enabled) {
         enabled = true;
         schedule(FIRST_DELAY_MS);
@@ -126,5 +135,6 @@
   }
 
   startStarTwinkle();
+
   document.addEventListener("astro:page-load", startStarTwinkle);
 </script>

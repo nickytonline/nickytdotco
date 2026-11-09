@@ -80,12 +80,11 @@ describe("executeSearchSiteTool", () => {
   });
 
   it("maps a 429 from searchSite to a rate-limit error", async () => {
-    const error = new Error(
-      "Search request failed with status 429"
-    ) as Error & {
-      status: number;
-    };
-    error.status = 429;
+    const error = Object.assign(
+      new Error("Search request failed with status 429"),
+      { status: 429 }
+    );
+
     const search = vi.fn(async () => {
       throw error;
     });
@@ -104,12 +103,11 @@ describe("executeSearchSiteTool", () => {
   });
 
   it("maps other searchSite failures to an unavailable error", async () => {
-    const error = new Error(
-      "Search request failed with status 503"
-    ) as Error & {
-      status: number;
-    };
-    error.status = 503;
+    const error = Object.assign(
+      new Error("Search request failed with status 503"),
+      { status: 503 }
+    );
+
     const search = vi.fn(async () => {
       throw error;
     });
@@ -143,6 +141,7 @@ describe("executeSearchSiteTool", () => {
 
   it("forwards the tool abort signal and rejects when it fires", async () => {
     const controller = new AbortController();
+
     const search = vi.fn(
       async (
         _query: string,

@@ -7,6 +7,7 @@ const { tweetId } = Astro.props;
 
 // Try to fetch the tweet embed HTML
 let tweetHtml = "";
+
 try {
   const response = await fetch(
     `https://publish.twitter.com/oembed?url=${encodeURIComponent(
@@ -43,5 +44,6 @@ try {
   }
 
   loadTwitter();
+
   document.addEventListener("astro:page-load", loadTwitter);
 </script>

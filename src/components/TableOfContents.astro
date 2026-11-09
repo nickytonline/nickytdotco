@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { headings } = Astro.props;
+
 const filteredHeadings = headings
   .filter((h) => h.depth >= 2 && h.depth <= 3)
   .map((h) => ({

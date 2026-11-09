@@ -17,6 +17,7 @@ export function upcomingTalkPromoHtml(
   nowMs: number = Date.now()
 ): string | undefined {
   const promo = talk.promo?.trim();
+
   if (!promo || !isTalkUpcoming(talk, nowMs)) {
     return undefined;
   }

@@ -22,6 +22,7 @@ export interface StreamGuestInfo extends Record<string, unknown> {
 
 export function getHeadingId(name: string, dateTime: string) {
   const [date] = dateTime.split("T");
+
   return `${date}-${encodeURIComponent(name.replace(/\s+/, "-"))}`.toLowerCase();
 }
 
@@ -37,6 +38,7 @@ export function getLocalizedDate({
   showTime: boolean;
 }) {
   const timeStyle = showTime ? "long" : undefined;
+
   const options: Intl.DateTimeFormatOptions = {
     timeZone: timezone,
     dateStyle: "full",
@@ -61,7 +63,7 @@ export async function getPomeriumLiveStreamSchedule() {
       type: "pomerium-live" as const,
       title: item.title,
       link: item.link,
-      description: item.content as string,
+      description: item.content ?? "",
       date: item.pubDate,
       ogImage: item.media?.thumbnail?.[0]?.$.url ?? "",
     };

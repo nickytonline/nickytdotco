@@ -15,16 +15,19 @@ import {
 export const prerender = false;
 
 const { slug } = Astro.params;
+
 if (!slug) {
   return Astro.rewrite("/404");
 }
 
 const page = await getGuestPage(slug);
+
 if (!page?.guest) {
   return Astro.rewrite("/404");
 }
 
 const { guest } = page;
+
 const episodes = await Promise.all(
   page.episodes.map(async (episode) => {
     if (episode.youtubeStreamLink) return episode;
@@ -32,6 +35,7 @@ const episodes = await Promise.all(
     try {
       // The EmDash reference can omit fields supplied by the live video loader.
       const stream = await getLiveEntry("streamVideos", { id: episode.slug });
+
       return {
         ...episode,
         youtubeStreamLink: stream.entry?.data.youtubeStreamLink,
@@ -41,6 +45,7 @@ const episodes = await Promise.all(
         `[guests] Failed to load video link for episode ${episode.slug}:`,
         error,
       );
+
       return episode;
     }
   }),

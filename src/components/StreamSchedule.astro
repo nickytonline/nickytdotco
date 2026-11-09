@@ -15,6 +15,7 @@ interface Props {
 const { schedule, showCategory = true } = Astro.props;
 
 const now = Date.now();
+
 const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
   return new Date(a.date).getTime() - new Date(b.date).getTime();
 });

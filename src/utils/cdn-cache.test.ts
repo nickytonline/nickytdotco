@@ -46,6 +46,7 @@ describe("isTalkUpcoming", () => {
       date: new Date("2026-09-03T12:00:00.000Z"),
       endDate: new Date("2026-09-04T12:00:00.000Z"),
     };
+
     expect(isTalkUpcoming(talk, Date.parse("2026-09-04T11:59:00.000Z"))).toBe(
       true
     );

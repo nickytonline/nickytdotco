@@ -21,8 +21,26 @@ import { embedPlugin } from "./src/emdash/embed-plugin.ts";
 
 const onNetlify = process.env.NETLIFY === "true";
 
+const emdashConfig = {
+  storage: blobs(),
+  plugins: [embedPlugin()],
+  siteUrl: resolveEmDashSiteUrl({
+    url: ENV.URL,
+    deployPrimeUrl: ENV.DEPLOY_PRIME_URL,
+    context: process.env.CONTEXT,
+  }),
+};
+
+if (ENV.EMDASH_TURSO_DATABASE_URL) {
+  emdashConfig.database = libsql({
+    url: ENV.EMDASH_TURSO_DATABASE_URL,
+    authToken: ENV.TURSO_AUTH_TOKEN,
+    migrationAuthTokenEnv: "TURSO_AUTH_TOKEN",
+  });
+}
+
 // https://astro.build/config
-export default defineConfig({
+const astroConfig = {
   output: "static",
   // EmDash publish routes call Astro.cache.invalidate. This provider turns
   // those tags into Netlify durable cache purges.
@@ -34,15 +52,6 @@ export default defineConfig({
   // Blobs emulation does not always inject that context into the session path.
   // Use a filesystem driver locally; leave unset on Netlify so the adapter keeps
   // Blobs sessions in production.
-  ...(!onNetlify
-    ? {
-        session: {
-          driver: sessionDrivers.fsLite({
-            base: ".astro/sessions",
-          }),
-        },
-      }
-    : {}),
   // Only for local `astro dev`: Edge Functions emulation boots Deno via
   // @netlify/edge-functions-dev, which crashes on Deno 2.9.6+
   // (`unexpected argument '--allow-scripts'`). Never pass this on Netlify
@@ -78,24 +87,7 @@ export default defineConfig({
     mdx(),
     react(),
     sitemap(),
-    emdash({
-      ...(ENV.EMDASH_TURSO_DATABASE_URL
-        ? {
-            database: libsql({
-              url: ENV.EMDASH_TURSO_DATABASE_URL,
-              authToken: ENV.TURSO_AUTH_TOKEN,
-              migrationAuthTokenEnv: "TURSO_AUTH_TOKEN",
-            }),
-          }
-        : {}),
-      storage: blobs(),
-      plugins: [embedPlugin()],
-      siteUrl: resolveEmDashSiteUrl({
-        url: ENV.URL,
-        deployPrimeUrl: ENV.DEPLOY_PRIME_URL,
-        context: process.env.CONTEXT,
-      }),
-    }),
+    emdash(emdashConfig),
   ],
   markdown: {
     processor: unified({
@@ -134,4 +126,14 @@ export default defineConfig({
   server: {
     port: ENV.PORT,
   },
-});
+};
+
+if (!onNetlify) {
+  astroConfig.session = {
+    driver: sessionDrivers.fsLite({
+      base: ".astro/sessions",
+    }),
+  };
+}
+
+export default defineConfig(astroConfig);

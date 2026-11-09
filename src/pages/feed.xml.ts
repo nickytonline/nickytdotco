@@ -15,6 +15,7 @@ export async function GET(context: APIContext) {
 
   const videosResult = await getLiveCollection("streamVideos");
   const now = new Date();
+
   const videos = (videosResult.entries ?? []).filter(
     (e) => new Date(e.data.date) < now
   );
@@ -46,11 +47,13 @@ export async function GET(context: APIContext) {
     items,
     customData: `<language>en-us</language>`,
   });
+
   cacheRenderedContent(
     response.headers,
     context.cache,
     cacheHint,
     MIXED_FEED_CACHE_MAX_AGE_SECONDS
   );
+
   return response;
 }

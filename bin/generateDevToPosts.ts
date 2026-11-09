@@ -7,6 +7,7 @@ import { readFileSync } from "fs";
 import { dump } from "js-yaml";
 import slugify from "slugify";
 import siteData from "../src/data/site.ts";
+import { isObject, isString } from "../src/utils/type-guards.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,8 +15,9 @@ const __dirname = path.dirname(__filename);
 /**
  * Safely extracts error message from unknown error
  */
-function getErrorMessage(error: unknown): string {
+function getErrorMessage<ErrorValue>(error: ErrorValue): string {
   if (error instanceof Error) return error.message;
+
   return String(error);
 }
 
@@ -27,13 +29,15 @@ function createLocalSlug(title: string): string {
  * Type guard for series names object
  */
 function isSeriesNamesObject(value: unknown): value is Record<number, string> {
-  if (!value || typeof value !== "object") return false;
+  if (!isObject(value)) return false;
+
   return Object.entries(value).every(
-    ([key, val]) => !isNaN(Number(key)) && typeof val === "string"
+    ([key, val]) => !isNaN(Number(key)) && isString(val)
   );
 }
 
 const { DEV_API_KEY } = process.env;
+
 const SLUG_INCLUSION_LIST: string[] = JSON.parse(
   readFileSync(path.join(__dirname, "slugInclusionList.json"), "utf-8")
 );
@@ -61,19 +65,47 @@ interface DevToPostSyncState {
   posts: Record<string, string | null>;
 }
 
+type JsonValue =
+  | null
+  | boolean
+  | number
+  | string
+  | JsonValue[]
+  | { [key: string]: JsonValue };
+
+function isDevToPostSyncState(value: unknown): value is DevToPostSyncState {
+  if (!isObject(value) || Array.isArray(value)) return false;
+
+  const posts = Object.entries(value).find(([key]) => key === "posts")?.[1];
+
+  return (
+    isObject(posts) &&
+    !Array.isArray(posts) &&
+    Object.values(posts).every((post) => post === null || isString(post))
+  );
+}
+
+function errorCode<ErrorValue>(error: ErrorValue): string | undefined {
+  if (!isObject(error)) return undefined;
+
+  const code = Object.entries(error).find(([key]) => key === "code")?.[1];
+
+  return isString(code) ? code : undefined;
+}
+
 function loadDevToPostSyncState(): DevToPostSyncState {
   try {
-    const state = JSON.parse(
+    const state: unknown = JSON.parse(
       readFileSync(DEV_TO_SYNC_STATE_PATH, "utf-8")
-    ) as Partial<DevToPostSyncState>;
+    );
 
-    if (!state.posts || typeof state.posts !== "object") {
+    if (!isDevToPostSyncState(state)) {
       throw new Error("The sync state is missing its posts object.");
     }
 
     return { posts: state.posts };
   } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+    if (errorCode(error) === "ENOENT") {
       return { posts: {} };
     }
 
@@ -86,8 +118,10 @@ function loadDevToPostSyncState(): DevToPostSyncState {
 const devToPostSyncState = loadDevToPostSyncState();
 
 let SERIES_NAMES: Record<number, string> = {};
+
 try {
   const seriesModule = await import(SERIES_MAP_PATH);
+
   if (seriesModule?.default && isSeriesNamesObject(seriesModule.default)) {
     SERIES_NAMES = seriesModule.default;
   }
@@ -166,6 +200,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";'
       );
+
       return startTime
         ? `<YouTubeEmbed videoId="${videoId}" startTime="${startTime}" />`
         : `<YouTubeEmbed videoId="${videoId}" />`;
@@ -179,6 +214,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";'
       );
+
       return `<TwitterEmbed tweetId="${tweetId}" />`;
     }
   );
@@ -190,6 +226,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";'
       );
+
       return `<CodePenEmbed url="${url}" />`;
     }
   );
@@ -201,6 +238,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";'
       );
+
       return `<GitHubEmbed url="${url}" />`;
     }
   );
@@ -210,6 +248,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     /{%\s*embed\s+"?([^"\s]+)"?\s*%}/g,
     (_match, url) => {
       imports.add('import Embed from "@/components/Embed.astro";');
+
       return `<Embed url="${url}" />`;
     }
   );
@@ -221,6 +260,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";'
       );
+
       return `<DevLinkEmbed url="${url}" />`;
     }
   );
@@ -232,6 +272,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";'
       );
+
       return `<TwitchEmbed videoId="${videoId}" />`;
     }
   );
@@ -243,6 +284,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";'
       );
+
       return `<VimeoEmbed videoId="${videoId}" />`;
     }
   );
@@ -254,6 +296,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";'
       );
+
       return `<SpotifyEmbed uri="${uri}" />`;
     }
   );
@@ -265,6 +308,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";'
       );
+
       return `<CodeSandboxEmbed sandboxId="${sandboxId}" />`;
     }
   );
@@ -276,6 +320,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";'
       );
+
       return `<InstagramEmbed url="${url}" />`;
     }
   );
@@ -287,6 +332,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import YouTubeEmbed from "@/components/embeds/YouTubeEmbed.astro";'
       );
+
       return startTime
         ? `<YouTubeEmbed videoId="${videoId}" startTime="${startTime}" />`
         : `<YouTubeEmbed videoId="${videoId}" />`;
@@ -300,6 +346,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import TwitterEmbed from "@/components/embeds/TwitterEmbed.astro";'
       );
+
       return `<TwitterEmbed tweetId="${tweetId}" />`;
     }
   );
@@ -311,6 +358,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import CodePenEmbed from "@/components/embeds/CodePenEmbed.astro";'
       );
+
       return `<CodePenEmbed url="${url}" />`;
     }
   );
@@ -322,6 +370,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import GitHubEmbed from "@/components/embeds/GitHubEmbed.astro";'
       );
+
       return `<GitHubEmbed url="${url}" />`;
     }
   );
@@ -333,6 +382,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import GenericEmbed from "@/components/embeds/GenericEmbed.astro";'
       );
+
       return `<GenericEmbed url="${url}" />`;
     }
   );
@@ -342,6 +392,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
     imports.add(
       'import DevLinkEmbed from "@/components/embeds/DevLinkEmbed.astro";'
     );
+
     return `<DevLinkEmbed url="${url}" />`;
   });
 
@@ -352,6 +403,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import TwitchEmbed from "@/components/embeds/TwitchEmbed.astro";'
       );
+
       return `<TwitchEmbed videoId="${videoId}" />`;
     }
   );
@@ -363,6 +415,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import VimeoEmbed from "@/components/embeds/VimeoEmbed.astro";'
       );
+
       return `<VimeoEmbed videoId="${videoId}" />`;
     }
   );
@@ -374,6 +427,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import SpotifyEmbed from "@/components/embeds/SpotifyEmbed.astro";'
       );
+
       return `<SpotifyEmbed uri="${uri}" />`;
     }
   );
@@ -385,6 +439,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import CodeSandboxEmbed from "@/components/embeds/CodeSandboxEmbed.astro";'
       );
+
       return `<CodeSandboxEmbed sandboxId="${sandboxId}" />`;
     }
   );
@@ -396,6 +451,7 @@ function convertLiquidTagsToAstroComponents(content: string): ConversionResult {
       imports.add(
         'import InstagramEmbed from "@/components/embeds/InstagramEmbed.astro";'
       );
+
       return `<InstagramEmbed url="${url}" />`;
     }
   );
@@ -446,14 +502,18 @@ async function getOrFetchSeriesName(
 
   // Fetch the series page from dev.to
   const url = `https://dev.to/${username}/series/${collectionId}`;
+
   try {
     const resp = await fetchWithRetry(url);
+
     if (!resp.ok) {
       console.warn(
         `  ⚠️  Could not fetch series page for ID ${collectionId} (status ${resp.status}).`
       );
+
       return fallbackTitle || `Series ${collectionId}`;
     }
+
     const html = await resp.text();
     // Parse the <h1> which contains the series name
     const match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
@@ -491,46 +551,56 @@ async function getOrFetchSeriesName(
     console.warn(
       `  ⚠️  Error fetching series ${collectionId}: ${getErrorMessage(error)}`
     );
+
     return fallbackTitle || `Series ${collectionId}`;
   }
 }
 
 const POSTS_DIRECTORY = path.join(__dirname, "../src/content/blog");
+
 const VSCODE_TIPS_POSTS_DIRECTORY = path.join(
   __dirname,
   "../src/content/vscodetips"
 );
+
 const POSTS_IMAGES_PUBLIC_DIRECTORY = "/assets/images/posts";
+
 const POSTS_IMAGES_DIRECTORY = path.join(
   __dirname,
   "../public",
   POSTS_IMAGES_PUBLIC_DIRECTORY
 );
+
 const EMBEDDED_POSTS_MARKUP_FILE = path.join(
   __dirname,
   "../src/_data/embeddedPostsMarkup.json"
 );
+
 const TWITTER_EMBEDS_FILE = path.join(
   __dirname,
   "../src/_data/twitterEmbeds.json"
 );
 
-const currentBlogPostEmbeds: Record<string, unknown> = JSON.parse(
+const currentBlogPostEmbeds: Record<string, JsonValue> = JSON.parse(
   readFileSync(EMBEDDED_POSTS_MARKUP_FILE, "utf-8")
 );
-const blogPostEmbeds = new Map<string, unknown>(
+
+const blogPostEmbeds = new Map<string, JsonValue>(
   Object.entries(currentBlogPostEmbeds)
 );
+
 const newlyDiscoveredBlogPostEmbeds = new Set<string>();
 
 // Load existing Twitter embeds or initialize empty object
 let currentTwitterEmbeds: Record<string, string> = {};
+
 try {
   currentTwitterEmbeds = JSON.parse(readFileSync(TWITTER_EMBEDS_FILE, "utf-8"));
 } catch (_error) {
   // File doesn't exist yet, will be created
   currentTwitterEmbeds = {};
 }
+
 const twitterEmbeds = new Map<string, string>(
   Object.entries(currentTwitterEmbeds)
 );
@@ -556,6 +626,7 @@ function sanitizeMarkdownEmbeds(markdown: string): ConversionResult {
     /!\[([^\]]+)\]/g,
     (_match, altText: string) => {
       const escapedAlt = altText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
       return `![${escapedAlt}]`;
     }
   );
@@ -633,6 +704,7 @@ async function fetchWithRetry(
 ): Promise<Response> {
   let attempt = 0;
   let delay = initialDelay;
+
   while (attempt <= maxRetries) {
     const headers = new Headers(options.headers);
     headers.set("User-Agent", "nickytonline-blog-sync");
@@ -641,16 +713,20 @@ async function fetchWithRetry(
       ...options,
       headers,
     });
+
     if (response.status !== 429) {
       return response;
     }
+
     // Rate limited
     attempt++;
+
     if (attempt > maxRetries) {
       throw new Error(
         `Failed after ${maxRetries} retries due to rate limiting (429)`
       );
     }
+
     const retryAfter = response.headers.get("Retry-After");
     const retryAfterMs = retryAfter ? Number(retryAfter) * 1000 : 0;
     // Honor the server's Retry-After but never drop below exponential backoff,
@@ -662,6 +738,7 @@ async function fetchWithRetry(
     await sleep(waitTime);
     delay *= 2; // Exponential backoff
   }
+
   throw new Error("Unreachable code in fetchWithRetry");
 }
 
@@ -680,21 +757,22 @@ async function getDevPosts(): Promise<DevToPostSummary[]> {
       Accept: "application/vnd.forem.api-v1+json",
     },
   });
+
   if (!response.ok) {
     throw new Error(
       `Failed to fetch posts: ${response.status} ${response.statusText}`
     );
   }
+
   const posts: DevToPostSummary[] = await response.json();
 
   if (
     posts.some(
       (post) =>
         !Object.hasOwn(post, "canonical_url") ||
-        (post.canonical_url !== null &&
-          typeof post.canonical_url !== "string") ||
+        (post.canonical_url !== null && !isString(post.canonical_url)) ||
         !Object.hasOwn(post, "edited_at") ||
-        (post.edited_at !== null && typeof post.edited_at !== "string")
+        (post.edited_at !== null && !isString(post.edited_at))
     )
   ) {
     throw new Error(
@@ -711,6 +789,7 @@ async function getDevPosts(): Promise<DevToPostSummary[]> {
       },
     }
   );
+
   if (!publishedResponse.ok) {
     throw new Error(
       `Failed to fetch published post IDs: ${publishedResponse.status} ${publishedResponse.statusText}`
@@ -739,6 +818,7 @@ async function updateDevToPostCanonicalUrl(
   title: string
 ): Promise<string | null> {
   const updateArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
+
   const response = await fetchWithRetry(updateArticleUrl, {
     method: "PUT",
     headers: {
@@ -761,6 +841,7 @@ async function updateDevToPostCanonicalUrl(
     canonical_url?: unknown;
     body_markdown?: unknown;
   };
+
   try {
     updatedPost = await response.json();
   } catch (error) {
@@ -769,10 +850,11 @@ async function updateDevToPostCanonicalUrl(
     );
   }
 
+  const editedAt = updatedPost.edited_at;
+
   if (
     !Object.hasOwn(updatedPost, "edited_at") ||
-    (updatedPost.edited_at !== null &&
-      typeof updatedPost.edited_at !== "string")
+    (editedAt !== null && !isString(editedAt))
   ) {
     throw new Error(
       `DEV did not return edited_at after updating canonical URL for post ${blogPostId}. Refusing to update sync state.`
@@ -783,10 +865,12 @@ async function updateDevToPostCanonicalUrl(
     Object.hasOwn(updatedPost, "canonical_url") &&
     updatedPost.canonical_url !== canonicalUrl
   ) {
-    const bodyCanonicalUrlCount =
-      typeof updatedPost.body_markdown === "string"
-        ? (updatedPost.body_markdown.match(/^canonical_url:/gm) ?? []).length
-        : 0;
+    const bodyMarkdown = updatedPost.body_markdown;
+
+    const bodyCanonicalUrlCount = isString(bodyMarkdown)
+      ? (bodyMarkdown.match(/^canonical_url:/gm) ?? []).length
+      : 0;
+
     const legacyPostHint =
       bodyCanonicalUrlCount > 1
         ? " This may be a legacy DEV.to post with multiple canonical_url entries in its body; review and update the old entry manually."
@@ -801,7 +885,7 @@ async function updateDevToPostCanonicalUrl(
     `Updated DEV.to canonical URL for "${title}" (${blogPostId}) to ${canonicalUrl}`
   );
 
-  return updatedPost.edited_at as string | null;
+  return editedAt;
 }
 
 /**
@@ -842,6 +926,7 @@ async function tryUpdateDevToPostCanonicalUrl(
  */
 async function getDevPost(blogPostId: number): Promise<DevToPost> {
   const getArticleUrl = `${DEV_TO_API_URL}/articles/${blogPostId}`;
+
   const response = await fetchWithRetry(getArticleUrl, {
     headers: {
       "api-key": DEV_API_KEY!,
@@ -856,6 +941,7 @@ async function getDevPost(blogPostId: number): Promise<DevToPost> {
   }
 
   let post: DevToPost;
+
   try {
     post = await response.json();
   } catch (error) {
@@ -863,6 +949,7 @@ async function getDevPost(blogPostId: number): Promise<DevToPost> {
       `Failed to parse post JSON for ${getArticleUrl}: ${getErrorMessage(error)}`
     );
   }
+
   return post;
 }
 
@@ -927,6 +1014,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
         new Date(date).getFullYear().toString()
       )
     : POSTS_DIRECTORY;
+
   const postFile = path.join(basePath, `${createLocalSlug(title)}.mdx`);
   await fs.writeFile(postFile, markdown);
 
@@ -941,6 +1029,7 @@ async function createPostFile(post: DevToPost): Promise<{ status: string }> {
     if (!tweetId || twitterEmbeds.has(tweetId)) {
       continue;
     }
+
     try {
       const response = await fetchWithRetry(
         `https://publish.twitter.com/oembed?url=${encodeURIComponent(
@@ -981,10 +1070,13 @@ async function saveImageUrl(
 ): Promise<void> {
   try {
     const response = await fetch(imageUrl);
+
     if (!response.ok) {
       console.warn(`Failed to fetch image ${imageUrl}: ${response.status}`);
+
       return;
     }
+
     const buffer = Buffer.from(await response.arrayBuffer());
 
     await fs.writeFile(imageFilePath, buffer);
@@ -996,6 +1088,7 @@ async function saveImageUrl(
 
 function generateNewImageUrl(imageUrl: URL): string {
   const imagefilename = imageUrl.pathname.replaceAll("/", "_");
+
   const newImageUrl = new URL(
     path.join(POSTS_IMAGES_PUBLIC_DIRECTORY, imagefilename),
     siteUrl
@@ -1012,6 +1105,7 @@ async function saveMarkdownImageUrl(
   if (markdownImageUrl) {
     const imageUrl = new URL(markdownImageUrl);
     const imagefilename = imageUrl.pathname.replaceAll("/", "_");
+
     const localCoverImagePath = path.join(
       POSTS_IMAGES_DIRECTORY,
       imagefilename
@@ -1040,12 +1134,14 @@ async function updateMarkdownImageUrls(markdown: string): Promise<{
 }> {
   let updatedMarkdown = markdown;
   const imagesToSave: string[] = [];
+
   const matches = markdown.matchAll(
     /!\[.*?\]\((?<oldImageUrl>(?!\.\/)[^)]+)\)/g
   );
 
   for (const match of matches) {
     const { oldImageUrl } = match.groups || {};
+
     if (!oldImageUrl) continue;
 
     const imageUrl = new URL(oldImageUrl);
@@ -1074,6 +1170,7 @@ async function getDevBlogPostEmbedsMarkup(
 
   for (const match of matches) {
     const { embedType, embedUrl } = match.groups || {};
+
     if (!embedType || !embedUrl) continue;
 
     let url = null;
@@ -1093,10 +1190,12 @@ async function getDevBlogPostEmbedsMarkup(
     ) {
       try {
         const response = await fetch(embedUrl);
+
         if (!response.ok) {
           console.warn(`Failed to fetch embed ${embedUrl}: ${response.status}`);
           continue;
         }
+
         const markup = await response.text();
         embeds.set(embedUrl, markup);
         newlyDiscoveredBlogPostEmbeds.add(embedUrl);
@@ -1112,7 +1211,7 @@ async function getDevBlogPostEmbedsMarkup(
 }
 
 async function updateBlogPostEmbeds(
-  embeds: Map<string, unknown>,
+  embeds: Map<string, JsonValue>,
   filePaths: string,
   urlsToUpdate: Set<string>
 ): Promise<void> {
@@ -1120,7 +1219,7 @@ async function updateBlogPostEmbeds(
     return;
   }
 
-  const blogPostEmbedsMarkup: Record<string, unknown> = {};
+  const blogPostEmbedsMarkup: Record<string, JsonValue> = {};
 
   for (const [url] of embeds) {
     if (!urlsToUpdate.has(url)) {
@@ -1129,6 +1228,7 @@ async function updateBlogPostEmbeds(
 
     try {
       const response = await fetch(url);
+
       if (!response.ok) {
         console.warn(
           `Skipping embed for ${url} - received status ${response.status}`
@@ -1141,11 +1241,12 @@ async function updateBlogPostEmbeds(
 
       if (match) {
         const { blogPostId } = match.groups || {};
+
         if (!blogPostId) continue;
 
         try {
           const post = await getDevPost(Number(blogPostId));
-          const { ...data } = post;
+          const data: JsonValue = JSON.parse(JSON.stringify(post));
 
           blogPostEmbedsMarkup[url] = data;
         } catch (error) {
@@ -1234,6 +1335,7 @@ async function saveDevToPostSyncState(
   for (const postSummary of posts) {
     const syncKey = String(postSummary.id);
     const localCanonicalUrl = createLocalCanonicalUrl(postSummary.title);
+
     const isUnchanged =
       devToPostSyncState.posts[syncKey] === postSummary.edited_at;
 
@@ -1249,6 +1351,7 @@ async function saveDevToPostSyncState(
       // have canonical_url in their frontmatter, which makes DEV ignore the
       // API value while still changing edited_at for every PUT.
       const post = await getDevPost(postSummary.id);
+
       if (post.canonical_url === localCanonicalUrl) {
         skippedPostCount++;
         continue;
@@ -1267,12 +1370,14 @@ async function saveDevToPostSyncState(
         localCanonicalUrl,
         postSummary.title
       );
+
       if (canonicalUpdate.success) {
         devToPostSyncState.posts[syncKey] = canonicalUpdate.editedAt;
         updatedCanonicalUrlCount++;
       } else {
         canonicalUpdateFailureCount++;
       }
+
       continue;
     }
 
@@ -1289,11 +1394,13 @@ async function saveDevToPostSyncState(
         );
       } else {
         await sleep(1000);
+
         const canonicalUpdate = await tryUpdateDevToPostCanonicalUrl(
           postSummary.id,
           localCanonicalUrl,
           postSummary.title
         );
+
         if (canonicalUpdate.success) {
           syncEditedAt = canonicalUpdate.editedAt;
           updatedCanonicalUrlCount++;
@@ -1304,6 +1411,7 @@ async function saveDevToPostSyncState(
     }
 
     const updatedCoverImage = await saveMarkdownImageUrl(post.cover_image);
+
     const { markdown, imagesToSave } = await updateMarkdownImageUrls(
       post.body_markdown
     );
@@ -1318,6 +1426,7 @@ async function saveDevToPostSyncState(
       cover_image: updatedCoverImage,
       body_markdown: markdown,
     };
+
     const { status } = await createPostFile(updatedPost);
 
     if (status !== "success") {

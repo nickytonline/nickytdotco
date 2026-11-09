@@ -15,6 +15,7 @@ export const SEARCH_QUERY_CACHE_TTL_SECONDS = 60 * 60 * 24 * 7;
 export const SEARCH_QUERY_CACHE_MAX_ROWS = 2000;
 export const SEARCH_RATE_LIMIT_WINDOW_SECONDS = 60;
 export const SEARCH_RATE_LIMIT_PER_IP = 20;
+
 // Cosine distance is 0 for identical vectors and 1 for orthogonal ones.
 export const SEARCH_MAX_COSINE_DISTANCE = 0.5;
 export const SEARCH_COSINE_DISTANCE_GAP = 0.12;
@@ -24,6 +25,7 @@ export const SEARCH_TEXT_UPDATE_BATCH_SIZE = 50;
 export const SEARCH_REINDEX_GITHUB_REPO = "nickytonline/nickytdotco";
 export const SEARCH_REINDEX_WORKFLOW_FILE = "index-search.yml";
 export const SEARCH_REINDEX_REF = "main";
+
 // Collapse concurrent origin renders after a CDN miss.
 export const SEARCH_REINDEX_COOLDOWN_SECONDS = 60 * 60;
 export const SEARCH_REINDEX_MEMORY_COOLDOWN_MS = 60_000;

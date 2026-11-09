@@ -18,8 +18,10 @@ import SectionHeader from "../components/SectionHeader.astro";
 
 <script is:inline>
   const img = document.getElementById("gif-404");
+
   if (img) {
     img.onerror = () => img.remove();
+
     // In case the error fired before the script ran
     if (img.complete && img.naturalWidth === 0) {
       img.remove();
