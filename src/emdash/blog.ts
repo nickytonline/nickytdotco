@@ -19,6 +19,8 @@ export interface PortableTextBlock {
   children?: Array<{ text?: string }>;
 }
 
+type PortableTextBlockWithId = PortableTextBlock & { id?: string };
+
 export interface BlogPostData {
   title: string;
   date: Date;
@@ -212,9 +214,9 @@ export async function getBlogPost(slug: string): Promise<BlogPost | undefined> {
 }
 
 export function headingsFor(
-  post: BlogPost
+  content: PortableTextBlockWithId[]
 ): Array<{ depth: number; slug: string; text: string }> {
-  return post.data.content.flatMap((block) => {
+  return content.flatMap((block) => {
     if (block._type !== "block" || !isString(block.style)) return [];
     const match = /^h([1-6])$/.exec(block.style);
 
@@ -225,14 +227,47 @@ export function headingsFor(
       .join("")
       .trim();
 
-    if (!text) return [];
+    if (!text || !block.id) return [];
 
-    const slug = text
-      .toLowerCase()
-      .replace(/[^\p{L}\p{N}\s-]/gu, "")
-      .trim()
-      .replace(/\s+/g, "-");
+    return [{ depth: Number(match[1]), slug: block.id, text }];
+  });
+}
 
-    return [{ depth: Number(match[1]), slug, text }];
+/** Add IDs to Portable Text heading blocks so table-of-contents links resolve. */
+export function contentWithHeadingIds(
+  content: PortableTextBlock[]
+): PortableTextBlockWithId[] {
+  const assignedSlugs = new Set<string>();
+
+  return content.map((block) => {
+    if (block._type !== "block" || !isString(block.style)) return block;
+
+    if (!/^h[1-6]$/.test(block.style)) return block;
+
+    const text = (block.children ?? [])
+      .map((child) => child.text ?? "")
+      .join("")
+      .trim();
+
+    if (!text) return block;
+
+    const baseSlug =
+      text
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}\s-]/gu, "")
+        .trim()
+        .replace(/\s+/g, "-") || "section";
+
+    let slug = baseSlug;
+    let suffix = 2;
+
+    while (assignedSlugs.has(slug)) {
+      slug = `${baseSlug}-${suffix}`;
+      suffix += 1;
+    }
+
+    assignedSlugs.add(slug);
+
+    return { ...block, id: slug };
   });
 }
