@@ -3,7 +3,7 @@ import type { BlockProps } from "astro-portabletext/types";
 
 type HeadingStyle = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-type HeadingNode = BlockProps["node"] & { id?: string; style: HeadingStyle };
+type HeadingNode = BlockProps["node"] & { id?: string };
 
 interface Props {
   node: HeadingNode;
@@ -11,7 +11,14 @@ interface Props {
   isInline: boolean;
 }
 
+function isHeadingStyle(style: string): style is HeadingStyle {
+  return ["h1", "h2", "h3", "h4", "h5", "h6"].includes(style);
+}
+
 const { node } = Astro.props;
+
+if (!isHeadingStyle(node.style)) return null;
+
 const Heading = node.style;
 ---
 
