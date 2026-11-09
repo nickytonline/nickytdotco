@@ -218,13 +218,18 @@ export class NetlifyBlobsStorage implements Storage {
       const bytes = await toUint8Array(options.body);
       const lastModified = new Date().toISOString();
 
-      const metadata: BlobMetadata = {
-        contentType: options.contentType,
-        size: bytes.byteLength,
-        lastModified,
-      };
-
-      if (options.cacheControl) metadata.cacheControl = options.cacheControl;
+      const metadata = options.cacheControl
+        ? {
+            contentType: options.contentType,
+            size: bytes.byteLength,
+            lastModified,
+            cacheControl: options.cacheControl,
+          }
+        : {
+            contentType: options.contentType,
+            size: bytes.byteLength,
+            lastModified,
+          };
 
       await this.store().set(options.key, asArrayBuffer(bytes), { metadata });
 
