@@ -14,6 +14,7 @@ import { PortableText } from "astro-portabletext";
 import EmbedBlock from "../components/EmbedBlock.astro";
 import PortableTextCode from "../components/PortableTextCode.astro";
 import PortableTextImage from "../components/PortableTextImage.astro";
+import PortableTextHeading from "../components/PortableTextHeading.astro";
 import {
   contentWithHeadingIds,
   getBlogListing,
@@ -130,6 +131,14 @@ const postSocialImage =
       <PortableText
         value={content}
         components={{
+          block: {
+            h1: PortableTextHeading,
+            h2: PortableTextHeading,
+            h3: PortableTextHeading,
+            h4: PortableTextHeading,
+            h5: PortableTextHeading,
+            h6: PortableTextHeading,
+          },
           type: {
             embed: EmbedBlock,
             image: PortableTextImage,

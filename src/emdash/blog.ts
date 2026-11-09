@@ -237,7 +237,7 @@ export function headingsFor(
 export function contentWithHeadingIds(
   content: PortableTextBlock[]
 ): PortableTextBlockWithId[] {
-  const slugCounts = new Map<string, number>();
+  const assignedSlugs = new Set<string>();
 
   return content.map((block) => {
     if (block._type !== "block" || !isString(block.style)) return block;
@@ -258,9 +258,16 @@ export function contentWithHeadingIds(
         .trim()
         .replace(/\s+/g, "-") || "section";
 
-    const count = (slugCounts.get(baseSlug) ?? 0) + 1;
-    slugCounts.set(baseSlug, count);
+    let slug = baseSlug;
+    let suffix = 2;
 
-    return { ...block, id: count === 1 ? baseSlug : `${baseSlug}-${count}` };
+    while (assignedSlugs.has(slug)) {
+      slug = `${baseSlug}-${suffix}`;
+      suffix += 1;
+    }
+
+    assignedSlugs.add(slug);
+
+    return { ...block, id: slug };
   });
 }

@@ -53,3 +53,22 @@ test.describe("blog archive", () => {
     await expect(page.getByRole("article")).toBeVisible();
   });
 });
+
+test.describe("blog post table of contents", () => {
+  test("clicking a TOC link navigates to its heading", async ({ page }) => {
+    await page.goto(
+      "/blog/how-i-used-claude-code-to-speed-up-my-shell-startup-by-95percent"
+    );
+
+    const toc = page.getByRole("navigation", { name: "Table of Contents" });
+    const tocLink = toc.getByRole("link", { name: "The Problem", exact: true });
+
+    await expect(tocLink).toHaveAttribute("href", "#the-problem");
+    await tocLink.click();
+
+    await expect(page).toHaveURL(/#the-problem$/);
+    await expect(
+      page.getByRole("heading", { level: 2, name: "The Problem", exact: true })
+    ).toBeInViewport();
+  });
+});

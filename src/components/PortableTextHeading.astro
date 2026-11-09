@@ -1,0 +1,18 @@
+---
+import type { BlockProps } from "astro-portabletext/types";
+
+type HeadingStyle = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+type HeadingNode = BlockProps["node"] & { id?: string; style: HeadingStyle };
+
+interface Props {
+  node: HeadingNode;
+  index: number;
+  isInline: boolean;
+}
+
+const { node } = Astro.props;
+const Heading = node.style;
+---
+
+<Heading id={node.id}><slot /></Heading>
