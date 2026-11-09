@@ -26,8 +26,8 @@ export interface Props {
 }
 
 const { entry } = Astro.props;
-const headings = headingsFor(entry);
-const content = contentWithHeadingIds(entry);
+const content = contentWithHeadingIds(entry.data.content);
+const headings = headingsFor(content);
 
 const currentUrl = `/blog/${entry.id}`;
 

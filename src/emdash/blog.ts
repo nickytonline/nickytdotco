@@ -19,6 +19,8 @@ export interface PortableTextBlock {
   children?: Array<{ text?: string }>;
 }
 
+type PortableTextBlockWithId = PortableTextBlock & { id?: string };
+
 export interface BlogPostData {
   title: string;
   date: Date;
@@ -212,9 +214,9 @@ export async function getBlogPost(slug: string): Promise<BlogPost | undefined> {
 }
 
 export function headingsFor(
-  post: BlogPost
+  content: PortableTextBlockWithId[]
 ): Array<{ depth: number; slug: string; text: string }> {
-  return contentWithHeadingIds(post).flatMap((block) => {
+  return content.flatMap((block) => {
     if (block._type !== "block" || !isString(block.style)) return [];
     const match = /^h([1-6])$/.exec(block.style);
 
@@ -233,11 +235,11 @@ export function headingsFor(
 
 /** Add IDs to Portable Text heading blocks so table-of-contents links resolve. */
 export function contentWithHeadingIds(
-  post: BlogPost
-): Array<PortableTextBlock & { id?: string }> {
+  content: PortableTextBlock[]
+): PortableTextBlockWithId[] {
   const slugCounts = new Map<string, number>();
 
-  return post.data.content.map((block) => {
+  return content.map((block) => {
     if (block._type !== "block" || !isString(block.style)) return block;
 
     if (!/^h[1-6]$/.test(block.style)) return block;
