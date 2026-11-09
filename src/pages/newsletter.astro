@@ -19,21 +19,25 @@ const newsletter =
 const sortedPosts = [...newsletter].sort((a, b) => {
   const dateA = new Date(a.date);
   const dateB = new Date(b.date);
+
   return dateB.getTime() - dateA.getTime();
 });
 
 const SUBSCRIBE_URL =
   "https://OneTipAWeek.com?utm_source=nickytco&utm_medium=social";
+
 const RSS_URL = "https://onetipaweek.com/rss";
 
 Astro.response.headers.set(
   "Cache-Control",
   "public, max-age=0, must-revalidate"
 );
+
 Astro.response.headers.set(
   "Netlify-CDN-Cache-Control",
   "public, max-age=259200, must-revalidate"
 );
+
 scheduleSearchReindex("/newsletter", Astro.locals.netlify.context);
 
 export const prerender = false;

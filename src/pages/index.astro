@@ -41,6 +41,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 const featuredPosts = sortedPosts
   .filter((p) => p.data.featured === true)
   .slice(0, 1);
+
 const featuredPostIds = new Set(featuredPosts.map((p) => p.id));
 
 // Latest fallback: recency feed, excludes featured posts
@@ -57,6 +58,7 @@ const featuredTalks = allTalks
   .filter((t) => t.data.featured === true && !isTalkUpcoming(t.data, nowMs))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 2);
+
 // Exclude every featured talk from Latest, not only the Start here cap
 const allFeaturedTalkIds = new Set(
   allTalks.filter((t) => t.data.featured === true).map((t) => t.id),
@@ -64,6 +66,7 @@ const allFeaturedTalkIds = new Set(
 
 // Upcoming talks: all future events, not a capped subset.
 const upcomingTalks = allTalks.filter((t) => isTalkUpcoming(t.data, nowMs));
+
 const recentTalks = allTalks
   .filter(
     (t) =>
@@ -75,9 +78,11 @@ const recentTalks = allTalks
   .slice(0, 4);
 
 const allGuides = await getCollection("guides");
+
 const sortedGuides = allGuides.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
+
 const featuredGuides = sortedGuides
   .filter((g) => g.data.featured === true)
   .slice(0, 2);
@@ -87,9 +92,11 @@ const featuredProjectBase = curatedProjects.find(
     project.owner === featuredProjectRef.owner &&
     project.name === featuredProjectRef.name,
 )!;
+
 const [featuredProjectStats] = await enrichCuratedProjects([
   featuredProjectBase,
 ]);
+
 const featuredProject = toFeaturedProject(
   featuredProjectBase,
   featuredProjectStats,
@@ -160,6 +167,7 @@ if (!errorMessage) {
     EXPIRING_CACHE_SWR_SECONDS,
   );
 }
+
 scheduleSearchReindex("/", Astro.locals.netlify.context);
 
 export const prerender = false;

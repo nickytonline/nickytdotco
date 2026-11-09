@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { name, url }: Props = Astro.props;
+
 const blueskyUsername = url
   .replace(/https:\/\/(www\.)?bsky.app\/profile\//, "")
   .replace("@", "");

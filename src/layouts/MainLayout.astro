@@ -23,11 +23,14 @@ const {
   ogType,
   publishedTime,
 } = Astro.props;
+
 const { origin } = new URL(Astro.request.url);
 const canonicalUrl = `${origin}${Astro.url.pathname}`;
+
 const fullTitle = title.includes("Nick Taylor")
   ? title
   : `${title} | Nick Taylor`;
+
 const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
 const currentYear = new Date().getFullYear();
 ---
@@ -70,6 +73,7 @@ const currentYear = new Date().getFullYear();
       // Check for saved theme preference or default to system preference
       const applyThemeClass = (root, theme) => {
         root.classList.remove("dark", "windows95");
+
         if (theme === "dark" || theme === "windows95") {
           root.classList.add(theme);
         }
@@ -82,9 +86,11 @@ const currentYear = new Date().getFullYear();
         ) {
           return localStorage.getItem("theme");
         }
+
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
           return "dark";
         }
+
         return "light";
       };
 
@@ -167,8 +173,10 @@ const currentYear = new Date().getFullYear();
     <script is:inline>
       if (!window.__winClockStarted) {
         window.__winClockStarted = true;
+
         const tickWinClock = () => {
           const clock = document.querySelector("[data-win-clock]");
+
           if (!(clock instanceof HTMLTimeElement)) return;
           const now = new Date();
           clock.dateTime = now.toISOString();
@@ -177,6 +185,7 @@ const currentYear = new Date().getFullYear();
             minute: "2-digit",
           });
         };
+
         tickWinClock();
         window.setInterval(tickWinClock, 30000);
         document.addEventListener("astro:page-load", tickWinClock);
@@ -189,6 +198,7 @@ const currentYear = new Date().getFullYear();
 
         const readWinState = () => {
           const saved = sessionStorage.getItem(winStateKey);
+
           if (
             saved === "open" ||
             saved === "maximized" ||
@@ -197,19 +207,25 @@ const currentYear = new Date().getFullYear();
           ) {
             return saved;
           }
+
           return "open";
         };
 
         const applyWinState = (state) => {
           const root = document.documentElement;
+
           if (!root.classList.contains("windows95")) {
             delete root.dataset.winState;
+
             return;
           }
+
           root.dataset.winState = state;
+
           const maximize = document.querySelector(
             "[data-win-action='maximize']",
           );
+
           if (maximize instanceof HTMLButtonElement) {
             const isMaximized = state === "maximized";
             maximize.setAttribute(
@@ -227,6 +243,7 @@ const currentYear = new Date().getFullYear();
           if (state === "open" || state === "maximized") {
             lastOpenState = state;
           }
+
           sessionStorage.setItem(winStateKey, state);
           applyWinState(state);
         };
@@ -234,12 +251,16 @@ const currentYear = new Date().getFullYear();
         const syncWinState = () => {
           if (!document.documentElement.classList.contains("windows95")) {
             delete document.documentElement.dataset.winState;
+
             return;
           }
+
           const saved = readWinState();
+
           if (saved === "open" || saved === "maximized") {
             lastOpenState = saved;
           }
+
           applyWinState(saved);
         };
 
@@ -252,16 +273,20 @@ const currentYear = new Date().getFullYear();
 
         const toggleMaximized = () => {
           const current = document.documentElement.dataset.winState || "open";
+
           if (current === "minimized" || current === "closed") return;
           setWinState(current === "maximized" ? "open" : "maximized");
         };
 
         const titleLinkFrom = (target) => {
           if (!(target instanceof Element)) return null;
+
           if (!document.documentElement.classList.contains("windows95")) {
             return null;
           }
+
           const titleLink = target.closest("[data-site-header] .site-logo a");
+
           return titleLink instanceof HTMLAnchorElement ? titleLink : null;
         };
 
@@ -272,6 +297,7 @@ const currentYear = new Date().getFullYear();
           "pointerdown",
           (event) => {
             if (event.detail < 2) return;
+
             if (!titleLinkFrom(event.target)) return;
             cancelTitleClick();
           },
@@ -282,12 +308,14 @@ const currentYear = new Date().getFullYear();
           "click",
           (event) => {
             const titleLink = titleLinkFrom(event.target);
+
             if (!titleLink) return;
 
             if (event.detail > 1) {
               cancelTitleClick();
               event.preventDefault();
               event.stopPropagation();
+
               return;
             }
 
@@ -312,8 +340,11 @@ const currentYear = new Date().getFullYear();
 
         document.addEventListener("dblclick", (event) => {
           const target = event.target;
+
           if (!(target instanceof Element)) return;
+
           if (!document.documentElement.classList.contains("windows95")) return;
+
           if (!target.closest("[data-site-header] .site-logo")) return;
 
           cancelTitleClick();
@@ -323,13 +354,17 @@ const currentYear = new Date().getFullYear();
 
         document.addEventListener("click", (event) => {
           const target = event.target;
+
           if (!(target instanceof Element)) return;
+
           if (!document.documentElement.classList.contains("windows95")) return;
 
           const control = target.closest("[data-win-action]");
+
           if (control instanceof HTMLElement && control.dataset.winAction) {
             const action = control.dataset.winAction;
             const current = document.documentElement.dataset.winState || "open";
+
             if (action === "minimize") setWinState("minimized");
             else if (action === "close") setWinState("closed");
             else if (action === "maximize") {
@@ -337,12 +372,15 @@ const currentYear = new Date().getFullYear();
             } else if (action === "restore") {
               setWinState(lastOpenState === "maximized" ? "maximized" : "open");
             }
+
             return;
           }
 
           const start = target.closest("[data-win-taskbar] a[href='/']");
+
           if (!start) return;
           setWinState("open");
+
           if (location.pathname === "/") event.preventDefault();
         });
 

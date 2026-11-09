@@ -4,6 +4,7 @@ import Search from "./Search";
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
+
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Watch", href: "/watch" },
@@ -14,6 +15,7 @@ const navItems = [
   { label: "About", href: "/about" },
   { label: "Socials", href: "/socials" },
 ];
+
 const isCurrent = (href: string) =>
   href === "/" ? currentPath === "" : currentPath.startsWith(href.slice(1));
 ---
@@ -222,6 +224,8 @@ const isCurrent = (href: string) =>
   };
 
   document.addEventListener("click", closeOpenMobileMenus);
+
   initMobileMenu();
+
   document.addEventListener("astro:page-load", initMobileMenu);
 </script>

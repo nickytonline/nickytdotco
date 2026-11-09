@@ -7,6 +7,7 @@ describe("isAuthorizedScheduleRequest", () => {
     const request = new Request("https://www.nickyt.co/api/emdash-scheduled", {
       headers: { authorization: "Bearer schedule-secret" },
     });
+
     expect(isAuthorizedScheduleRequest(request, "schedule-secret")).toBe(true);
     expect(isAuthorizedScheduleRequest(request, "other-secret")).toBe(false);
     expect(isAuthorizedScheduleRequest(request, undefined)).toBe(false);
@@ -19,11 +20,13 @@ describe("postScheduledPublish", () => {
       siteUrl: undefined,
       secret: undefined,
     });
+
     expect(response.status).toBe(503);
   });
 
   it("posts the secret to the Astro maintenance route", async () => {
     const fetchImpl = vi.fn(async () => new Response("ok", { status: 200 }));
+
     const response = await postScheduledPublish({
       siteUrl: "https://preview.nickyt.co",
       secret: "schedule-secret",

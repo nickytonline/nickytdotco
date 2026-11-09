@@ -11,11 +11,13 @@ export interface ScoredSearchHit extends SearchResult {
 
 export function contentTokens(text: string): string[] {
   const tokens: string[] = [];
+
   for (const part of text.toLowerCase().split(/[^a-z0-9]+/)) {
     if (part.length >= 2) {
       tokens.push(part);
     }
   }
+
   return tokens;
 }
 
@@ -30,6 +32,7 @@ export function hasConsecutivePhrase(
   if (phrase.length === 0 || haystackTokens.length < phrase.length) {
     return false;
   }
+
   for (let index = 0; index <= haystackTokens.length - phrase.length; index++) {
     if (
       phrase.every((token, offset) => haystackTokens[index + offset] === token)
@@ -37,6 +40,7 @@ export function hasConsecutivePhrase(
       return true;
     }
   }
+
   return false;
 }
 
@@ -53,11 +57,14 @@ export function filterWeakVectorHits<T extends { distance: number }>(
   gap: number
 ): T[] {
   const finite = hits.filter((hit) => Number.isFinite(hit.distance));
+
   if (finite.length === 0) {
     return [];
   }
+
   const best = Math.min(...finite.map((hit) => hit.distance));
   const cutoff = Math.min(maxDistance, best + gap);
+
   return finite.filter((hit) => hit.distance <= cutoff);
 }
 

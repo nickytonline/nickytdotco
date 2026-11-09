@@ -1,5 +1,16 @@
 import { getStore, type Store } from "@netlify/blobs";
 import { createStorage as createLocalStorage } from "emdash/storage/local";
+import {
+  isNumber,
+  isObject,
+  isString,
+} from "../../../../src/utils/type-guards.ts";
+
+interface StorageConfig {
+  store?: unknown;
+  baseUrl?: unknown;
+  localDirectory?: unknown;
+}
 
 interface ByteRange {
   offset: number;
@@ -92,12 +103,13 @@ class StorageError extends Error {
 }
 
 function stringConfig(
-  config: Record<string, unknown>,
-  key: string,
+  config: StorageConfig,
+  key: keyof StorageConfig,
   fallback: string
 ): string {
   const value = config[key];
-  return typeof value === "string" && value.length > 0 ? value : fallback;
+
+  return isString(value) && value.length > 0 ? value : fallback;
 }
 
 function resolveByteRange(
@@ -105,18 +117,25 @@ function resolveByteRange(
   size: number
 ): { offset: number; length: number } | undefined {
   if (size <= 0) return undefined;
-  if (typeof range.suffix === "number") {
+
+  if (isNumber(range.suffix)) {
     const length = Math.min(Math.max(range.suffix, 0), size);
+
     if (length === 0) return undefined;
+
     return { offset: size - length, length };
   }
+
   if (range.offset >= size || range.offset < 0) return undefined;
   const available = size - range.offset;
+
   const length =
     range.length === undefined
       ? available
       : Math.min(Math.max(range.length, 0), available);
+
   if (length === 0) return undefined;
+
   return { offset: range.offset, length };
 }
 
@@ -125,17 +144,20 @@ async function toUint8Array(
 ): Promise<Uint8Array> {
   if (body instanceof Uint8Array) return body;
   const buffer = await new Response(body).arrayBuffer();
+
   return new Uint8Array(buffer);
 }
 
 function asArrayBuffer(bytes: Uint8Array): ArrayBuffer {
   const copy = new ArrayBuffer(bytes.byteLength);
   new Uint8Array(copy).set(bytes);
+
   return copy;
 }
 
 function streamFromBytes(bytes: Uint8Array): ReadableStream<Uint8Array> {
   const copy = new Uint8Array(asArrayBuffer(bytes));
+
   return new ReadableStream({
     start(controller) {
       controller.enqueue(copy);
@@ -144,17 +166,19 @@ function streamFromBytes(bytes: Uint8Array): ReadableStream<Uint8Array> {
   });
 }
 
-function metadataOf(value: unknown): BlobMetadata {
-  if (!value || typeof value !== "object") return {};
-  const record = value as Record<string, unknown>;
+function metadataOf<MetadataValue>(value: MetadataValue): BlobMetadata {
+  if (!isObject(value)) return {};
+  const fields = new Map(Object.entries(value));
+  const contentType = fields.get("contentType");
+  const size = fields.get("size");
+  const lastModified = fields.get("lastModified");
+  const cacheControl = fields.get("cacheControl");
+
   return {
-    contentType:
-      typeof record.contentType === "string" ? record.contentType : undefined,
-    size: typeof record.size === "number" ? record.size : undefined,
-    lastModified:
-      typeof record.lastModified === "string" ? record.lastModified : undefined,
-    cacheControl:
-      typeof record.cacheControl === "string" ? record.cacheControl : undefined,
+    contentType: isString(contentType) ? contentType : undefined,
+    size: isNumber(size) ? size : undefined,
+    lastModified: isString(lastModified) ? lastModified : undefined,
+    cacheControl: isString(cacheControl) ? cacheControl : undefined,
   };
 }
 
@@ -169,7 +193,7 @@ export class NetlifyBlobsStorage implements Storage {
   private openStore: (name: string) => Store;
 
   constructor(
-    config: Record<string, unknown>,
+    config: StorageConfig,
     openStore: (name: string) => Store = (name) => getStore(name)
   ) {
     this.storeName = stringConfig(config, "store", "emdash-media");
@@ -193,16 +217,22 @@ export class NetlifyBlobsStorage implements Storage {
     try {
       const bytes = await toUint8Array(options.body);
       const lastModified = new Date().toISOString();
-      await this.store().set(options.key, asArrayBuffer(bytes), {
-        metadata: {
-          contentType: options.contentType,
-          size: bytes.byteLength,
-          lastModified,
-          ...(options.cacheControl
-            ? { cacheControl: options.cacheControl }
-            : {}),
-        },
-      });
+
+      const metadata = options.cacheControl
+        ? {
+            contentType: options.contentType,
+            size: bytes.byteLength,
+            lastModified,
+            cacheControl: options.cacheControl,
+          }
+        : {
+            contentType: options.contentType,
+            size: bytes.byteLength,
+            lastModified,
+          };
+
+      await this.store().set(options.key, asArrayBuffer(bytes), { metadata });
+
       return {
         key: options.key,
         url: this.getPublicUrl(options.key),
@@ -226,26 +256,41 @@ export class NetlifyBlobsStorage implements Storage {
       const entry = await this.store().getWithMetadata(key, {
         type: "arrayBuffer",
       });
+
       if (!entry?.data)
         throw new StorageError(`File not found: ${key}`, "NOT_FOUND");
       const metadata = metadataOf(entry.metadata);
-      const bytes = new Uint8Array(entry.data as ArrayBuffer);
+
+      if (!(entry.data instanceof ArrayBuffer)) {
+        throw new StorageError(
+          `File is not stored as binary data: ${key}`,
+          "INVALID_DATA"
+        );
+      }
+
+      const bytes = new Uint8Array(entry.data);
       const size = metadata.size ?? bytes.byteLength;
+
       const range = options.range
         ? resolveByteRange(options.range, size)
         : undefined;
+
       const slice = range
         ? bytes.subarray(range.offset, range.offset + range.length)
         : bytes;
-      return {
+
+      const result: DownloadResult = {
         body: streamFromBytes(slice),
         contentType: metadata.contentType ?? "application/octet-stream",
         size,
         lastModified: metadata.lastModified
           ? new Date(metadata.lastModified)
           : undefined,
-        ...(range ? { range } : {}),
       };
+
+      if (range) result.range = range;
+
+      return result;
     } catch (error) {
       if (error instanceof StorageError) throw error;
       throw new StorageError(
@@ -271,6 +316,7 @@ export class NetlifyBlobsStorage implements Storage {
   async exists(key: string): Promise<boolean> {
     try {
       const metadata = await this.store().getMetadata(key);
+
       return metadata !== null;
     } catch {
       return false;
@@ -286,11 +332,13 @@ export class NetlifyBlobsStorage implements Storage {
       const start = Number(options.cursor ?? "0");
       const startIndex = Number.isFinite(start) && start > 0 ? start : 0;
       const page = listed.blobs.slice(startIndex, startIndex + limit);
+
       const files = await Promise.all(
         page.map(async (blob) => {
           const metadata = metadataOf(
             (await this.store().getMetadata(blob.key))?.metadata
           );
+
           return {
             key: blob.key,
             size: metadata.size ?? 0,
@@ -301,7 +349,9 @@ export class NetlifyBlobsStorage implements Storage {
           };
         })
       );
+
       const next = startIndex + limit;
+
       return {
         files,
         nextCursor: next < keys.length ? String(next) : undefined,
@@ -338,7 +388,9 @@ export class NetlifyBlobsStorage implements Storage {
  */
 export function shouldUseNetlifyBlobs(): boolean {
   if (process.env.NETLIFY === "true") return true;
+
   if (process.env.NETLIFY_BLOBS_CONTEXT) return true;
+
   return import.meta.env.PROD === true;
 }
 
@@ -346,8 +398,9 @@ export function shouldUseNetlifyBlobs(): boolean {
  * Runtime factory EmDash loads from the storage descriptor.
  * Netlify Functions use Blobs. Local `astro dev` uses disk.
  */
-export function createStorage(config: Record<string, unknown>): Storage {
+export function createStorage(config: StorageConfig): Storage {
   if (shouldUseNetlifyBlobs()) return new NetlifyBlobsStorage(config);
+
   return createLocalStorage({
     directory: stringConfig(config, "localDirectory", ".emdash/uploads"),
     baseUrl: stringConfig(config, "baseUrl", "/_emdash/api/media/file"),

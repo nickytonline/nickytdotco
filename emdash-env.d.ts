@@ -161,6 +161,7 @@ declare module "emdash" {
     posts: Post;
     talks: Talk;
   }
+
   interface EmDashCollectionReferences {
     guests: GuestReferences;
     livestreams: LivestreamReferences;

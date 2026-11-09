@@ -4,7 +4,11 @@ import Layout from "../../layouts/MainLayout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import Tag from "@/components/Tag.astro";
-import { curatedTagLabels, curatedTagSlugs } from "../../utils/tag-taxonomy";
+import {
+  curatedTagSlugs,
+  getCuratedTagLabel,
+} from "../../utils/tag-taxonomy";
+
 export const prerender = true;
 
 const talks = await getCollection("talks");
@@ -30,6 +34,7 @@ const sortedTags = Array.from(tagCounts.entries()).sort((a, b) => b[1] - a[1]);
 const alphabeticalTags = [...sortedTags].sort((a, b) =>
   a[0].localeCompare(b[0])
 );
+
 const curatedTags = sortedTags.filter(([tag]) => curatedTagSlugs.has(tag));
 ---
 
@@ -85,7 +90,7 @@ const curatedTags = sortedTags.filter(([tag]) => curatedTagSlugs.has(tag));
       <div class="flex flex-wrap gap-3">
         {
           curatedTags.map(([tag, count]) => (
-            <Tag tag={tag} label={curatedTagLabels[tag]} count={count} />
+            <Tag tag={tag} label={getCuratedTagLabel(tag)} count={count} />
           ))
         }
       </div>

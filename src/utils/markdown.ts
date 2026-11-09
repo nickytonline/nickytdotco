@@ -22,5 +22,5 @@ marked.setOptions({
  * @returns HTML string rendered from the markdown input
  */
 export function markdownFilter(value: string): string {
-  return marked.parse(value) as string;
+  return marked.parse(value, { async: false });
 }

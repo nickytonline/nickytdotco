@@ -1,4 +1,5 @@
 import type { Client } from "@libsql/client";
+import { isString } from "../../utils/type-guards.ts";
 
 export interface SearchBlogPost {
   slug: string;
@@ -20,23 +21,24 @@ export async function loadSearchBlogPosts(
   const result = await db.execute(
     "SELECT * FROM ec_posts WHERE status = 'published' AND deleted_at IS NULL"
   );
+
   return result.rows.flatMap((row) => {
     if (row.draft === 1) return [];
-    if (typeof row.slug !== "string" || typeof row.title !== "string") {
+
+    if (!isString(row.slug) || !isString(row.title)) {
       throw new Error("Published EmDash post is missing its slug or title.");
     }
+
     return [
       {
         slug: row.slug,
         data: {
           title: row.title,
-          excerpt: typeof row.excerpt === "string" ? row.excerpt : undefined,
-          description:
-            typeof row.description === "string" ? row.description : undefined,
-          content:
-            typeof row.content === "string"
-              ? JSON.parse(row.content)
-              : row.content,
+          excerpt: isString(row.excerpt) ? row.excerpt : undefined,
+          description: isString(row.description) ? row.description : undefined,
+          content: isString(row.content)
+            ? JSON.parse(row.content)
+            : row.content,
         },
       },
     ];

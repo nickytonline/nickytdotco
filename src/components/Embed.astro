@@ -15,11 +15,20 @@ interface Props {
   url: string;
 }
 
+interface EmbedProps {
+  url?: string;
+  videoId?: string;
+  startTime?: string;
+  tweetId?: string;
+  uri?: string;
+  sandboxId?: string;
+}
+
 const { url } = Astro.props;
 
 // Parse the URL to determine the embed type
 let embedType: string;
-let embedProps: Record<string, unknown> = { url };
+let embedProps: EmbedProps = { url };
 
 try {
   const urlObj = new URL(url);
@@ -35,6 +44,7 @@ try {
       // Format: youtu.be/VIDEO_ID or youtu.be/VIDEO_ID?t=123
       videoId = urlObj.pathname.slice(1).split("?")[0];
       const tParam = urlObj.searchParams.get("t");
+
       if (tParam) {
         // Convert time formats like "1m30s" or "90" to seconds
         startTime = tParam.replace(/[ms]/g, "");
@@ -45,6 +55,7 @@ try {
       // Check for various time parameters
       const tParam = urlObj.searchParams.get("t");
       const startParam = urlObj.searchParams.get("start");
+
       if (tParam) {
         startTime = tParam.replace(/[ms]/g, "");
       } else if (startParam) {
@@ -60,6 +71,7 @@ try {
     // Extract tweet ID from URL like twitter.com/user/status/1234567890
     const pathParts = urlObj.pathname.split("/");
     const statusIndex = pathParts.indexOf("status");
+
     if (statusIndex !== -1 && pathParts[statusIndex + 1]) {
       embedProps = { tweetId: pathParts[statusIndex + 1] };
     }
@@ -82,6 +94,7 @@ try {
     // Extract video ID from URL like twitch.tv/videos/1234567
     const pathParts = urlObj.pathname.split("/");
     const videosIndex = pathParts.indexOf("videos");
+
     if (videosIndex !== -1 && pathParts[videosIndex + 1]) {
       embedProps = { videoId: pathParts[videosIndex + 1] };
     }
@@ -91,6 +104,7 @@ try {
     embedType = "vimeo";
     // Extract video ID from URL like vimeo.com/1234567
     const videoId = urlObj.pathname.split("/")[1];
+
     if (videoId) {
       embedProps = { videoId };
     }
@@ -98,11 +112,13 @@ try {
   // Spotify detection
   else if (hostname === "spotify.com" || hostname.endsWith(".spotify.com")) {
     embedType = "spotify";
+
     // Extract URI from URL like open.spotify.com/episode/1234567 or open.spotify.com/track/1234567
     // The uri for SpotifyEmbed should be like "episode/1234567"
     const pathMatch = urlObj.pathname.match(
       /\/(episode|track|playlist|album)\/([^/?]+)/
     );
+
     if (pathMatch) {
       embedProps = { uri: `${pathMatch[1]}/${pathMatch[2]}` };
     }
@@ -112,6 +128,7 @@ try {
     embedType = "codesandbox";
     // Extract sandbox ID from URL like codesandbox.io/s/sandbox-id
     const pathMatch = urlObj.pathname.match(/\/s\/([^/?]+)/);
+
     if (pathMatch) {
       embedProps = { sandboxId: pathMatch[1] };
     }

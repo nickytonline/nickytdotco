@@ -38,8 +38,12 @@ const EventCalendar = ({
       onMouseLeave={closeMenu}
       onFocusCapture={openMenu}
       onBlurCapture={(event) => {
-        const nextFocusTarget = event.relatedTarget as Node | null;
-        if (!event.currentTarget.contains(nextFocusTarget)) {
+        const nextFocusTarget = event.relatedTarget;
+
+        if (
+          !(nextFocusTarget instanceof Node) ||
+          !event.currentTarget.contains(nextFocusTarget)
+        ) {
           closeMenu();
         }
       }}

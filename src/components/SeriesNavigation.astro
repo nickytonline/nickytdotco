@@ -25,6 +25,7 @@ if (sortedPosts.length <= 1) {
 const currentIndex = sortedPosts.findIndex(
   (post) => `/blog/${post.id}` === currentUrl,
 );
+
 const totalPosts = sortedPosts.length;
 const hasCollapse = totalPosts > 5;
 

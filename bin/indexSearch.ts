@@ -30,6 +30,7 @@ import type {
   SearchDocumentType,
 } from "../src/lib/search/types.ts";
 import { createClient } from "@libsql/client/http";
+import { isObject, isString } from "../src/utils/type-guards.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -63,23 +64,58 @@ const VIDEO_SQL = `SELECT
 
 interface MarkdownFile {
   id: string;
-  data: Record<string, unknown>;
+  data: MarkdownFrontmatter;
   body: string;
 }
 
-function parseFrontmatter(raw: string): {
-  data: Record<string, unknown>;
+interface MarkdownFrontmatter {
+  title?: string;
+  description?: string;
+  excerpt?: string;
+  venue?: string | { name?: string };
+}
+
+interface ParsedFrontmatter {
+  data: MarkdownFrontmatter;
   body: string;
-} {
+}
+
+function parseFrontmatter(raw: string): ParsedFrontmatter {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+
   if (!match) {
     return { data: {}, body: raw };
   }
+
   const parsed = load(match[1]);
-  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+
+  if (!isObject(parsed) || Array.isArray(parsed)) {
     return { data: {}, body: match[2] };
   }
-  return { data: parsed as Record<string, unknown>, body: match[2] };
+
+  const fields = new Map(Object.entries(parsed));
+  const title = fields.get("title");
+  const description = fields.get("description");
+  const excerpt = fields.get("excerpt");
+  const venue = fields.get("venue");
+
+  const venueName = isObject(venue)
+    ? Object.entries(venue).find(([key]) => key === "name")?.[1]
+    : undefined;
+
+  return {
+    data: {
+      title: isString(title) ? title : undefined,
+      description: isString(description) ? description : undefined,
+      excerpt: isString(excerpt) ? excerpt : undefined,
+      venue: isString(venue)
+        ? venue
+        : isString(venueName)
+          ? { name: venueName }
+          : undefined,
+    },
+    body: match[2],
+  };
 }
 
 async function readMarkdownDir(
@@ -88,10 +124,12 @@ async function readMarkdownDir(
 ): Promise<MarkdownFile[]> {
   const entries = await readdir(dir, { withFileTypes: true });
   const files: MarkdownFile[] = [];
+
   for (const entry of entries) {
     if (!entry.isFile() || !entry.name.endsWith(extension)) {
       continue;
     }
+
     const raw = await readFile(path.join(dir, entry.name), "utf8");
     const { data, body } = parseFrontmatter(raw);
     files.push({
@@ -100,6 +138,7 @@ async function readMarkdownDir(
       body,
     });
   }
+
   return files;
 }
 
@@ -107,8 +146,8 @@ function siteUrl(pathname: string): string {
   return new URL(pathname, `${site.url}/`).toString();
 }
 
-function asString(value: unknown): string | undefined {
-  return typeof value === "string" && value.trim() ? value : undefined;
+function asString<Value>(value: Value): string | undefined {
+  return isString(value) && value.trim() ? value : undefined;
 }
 
 function buildDocument(input: {
@@ -123,6 +162,7 @@ function buildDocument(input: {
     [input.title, input.excerpt, input.body].filter(Boolean).join("\n\n"),
     SEARCH_MAX_EMBED_CHARS
   );
+
   return {
     id: input.id,
     url: input.url,
@@ -136,30 +176,39 @@ function buildDocument(input: {
 async function collectBlogDocuments(): Promise<SearchDocumentInput[]> {
   const url = process.env.EMDASH_TURSO_DATABASE_URL;
   const authToken = process.env.TURSO_AUTH_TOKEN;
+
   if (!url || !authToken) {
     throw new Error(
       "Blog indexing requires EMDASH_TURSO_DATABASE_URL and TURSO_AUTH_TOKEN."
     );
   }
+
   const db = createClient({ url, authToken });
   let posts;
+
   try {
     posts = await loadSearchBlogPosts(db);
   } finally {
     db.close();
   }
+
   const documents: SearchDocumentInput[] = [];
+
   for (const post of posts) {
     const slug = post.slug;
     const title = asString(post.data?.title);
+
     if (!slug || !title) {
       continue;
     }
+
     const body = portableTextToSearchText(post.data?.content);
+
     const excerpt =
       asString(post.data?.excerpt) ??
       asString(post.data?.description) ??
       excerptFromText(body);
+
     documents.push(
       buildDocument({
         id: `blog:${slug}`,
@@ -171,23 +220,28 @@ async function collectBlogDocuments(): Promise<SearchDocumentInput[]> {
       })
     );
   }
+
   return documents;
 }
 
 async function collectTalkDocuments(): Promise<SearchDocumentInput[]> {
   const files = await readMarkdownDir(TALKS_DIR, ".md");
+
   return files.flatMap((file) => {
     const title = asString(file.data.title);
+
     if (!title) {
       return [];
     }
-    const venue =
-      file.data.venue && typeof file.data.venue === "object"
-        ? asString((file.data.venue as { name?: unknown }).name)
-        : undefined;
+
+    const venue = isString(file.data.venue)
+      ? file.data.venue
+      : file.data.venue?.name;
+
     const excerpt = excerptFromText(
       [venue, stripMdxImports(file.body)].filter(Boolean).join(". ")
     );
+
     return [
       buildDocument({
         id: `talk:${file.id}`,
@@ -207,17 +261,22 @@ async function collectVideoDocuments(): Promise<{
 }> {
   const url = process.env.EMDASH_TURSO_DATABASE_URL;
   const authToken = process.env.TURSO_AUTH_TOKEN;
+
   if (!url || !authToken) {
     console.warn(
       "Skipping stream documents; EMDASH_TURSO_DATABASE_URL / TURSO_AUTH_TOKEN are not set."
     );
+
     return { documents: [], available: false };
   }
+
   const db = createClient({
     url,
     authToken,
   });
+
   const result = await db.execute(VIDEO_SQL);
+
   return {
     available: true,
     documents: result.rows.flatMap((row) => {
@@ -225,9 +284,11 @@ async function collectVideoDocuments(): Promise<{
       const slug = asString(row.slug);
       const guestNames = asString(row.guest_names);
       const description = asString(row.description);
+
       if (!title || !slug || !description) {
         return [];
       }
+
       return [
         buildDocument({
           id: `video:${String(row.id)}`,
@@ -244,6 +305,7 @@ async function collectVideoDocuments(): Promise<{
 
 async function indexSearchDocuments() {
   const videos = await collectVideoDocuments();
+
   const documents = [
     ...(await collectBlogDocuments()),
     ...(await collectTalkDocuments()),
@@ -256,6 +318,7 @@ async function indexSearchDocuments() {
 
   const staleOrNew = documents.filter((document) => {
     const hash = hashSearchContent(document.textToEmbed);
+
     return existingHashes.get(document.id) !== hash;
   });
 
@@ -269,9 +332,11 @@ async function indexSearchDocuments() {
       console.log(
         `Embedding batch ${Math.floor(i / SEARCH_EMBED_BATCH_SIZE) + 1}/${Math.ceil(staleOrNew.length / SEARCH_EMBED_BATCH_SIZE)} (${chunk.length} docs)`
       );
+
       const vectors = await embedDocuments(
         chunk.map((document) => document.textToEmbed)
       );
+
       await upsertSearchDocuments(
         chunk.map((document, index) => ({
           ...document,
@@ -279,6 +344,7 @@ async function indexSearchDocuments() {
           embedding: vectors[index],
         }))
       );
+
       if (i + SEARCH_EMBED_BATCH_SIZE < staleOrNew.length) {
         await new Promise((resolve) =>
           setTimeout(resolve, SEARCH_EMBED_BATCH_DELAY_MS)
@@ -288,16 +354,19 @@ async function indexSearchDocuments() {
   }
 
   const keepIds = documents.map((document) => document.id);
+
   if (!videos.available) {
     for (const id of existingHashes.keys()) {
       if (id.startsWith("video:")) {
         keepIds.push(id);
       }
     }
+
     console.warn(
       "Preserving existing stream documents; guest Turso was unavailable."
     );
   }
+
   await deleteMissingSearchDocuments(keepIds);
   await updateSearchTexts(
     documents.map((document) => ({
@@ -308,7 +377,7 @@ async function indexSearchDocuments() {
   console.log("Search index updated.");
 }
 
-indexSearchDocuments().catch((error: unknown) => {
+indexSearchDocuments().catch((error) => {
   console.error(error);
   process.exit(1);
 });

@@ -45,6 +45,7 @@ async function claimTriggerSlot(
       triggered_at INTEGER NOT NULL
     )
   `);
+
   const result = await db.execute({
     sql: `INSERT INTO ${SEARCH_REINDEX_LOCK_TABLE} (id, triggered_at)
           VALUES (?, ?)
@@ -53,6 +54,7 @@ async function claimTriggerSlot(
           WHERE excluded.triggered_at - triggered_at >= ?`,
     args: [SEARCH_REINDEX_LOCK_ID, nowSeconds, cooldownSeconds],
   });
+
   return result.rowsAffected > 0;
 }
 
@@ -101,17 +103,21 @@ export function scheduleSearchReindex(
 ): void {
   const waitUntil = netlifyContext?.waitUntil?.bind(netlifyContext);
   const now = Date.now();
+
   if (now < nextAllowedAt) {
     return;
   }
+
   if (inFlight) {
     waitUntil?.(inFlight);
+
     return;
   }
 
   inFlight = triggerSearchReindex(source, createProductionDeps(netlifyContext))
     .catch((cause: unknown) => {
       console.error("[search-reindex] Unexpected failure", cause);
+
       return {
         status: "error",
         reason: "dispatch-failed",
@@ -124,7 +130,9 @@ export function scheduleSearchReindex(
 
   if (waitUntil) {
     waitUntil(inFlight);
+
     return;
   }
+
   void inFlight;
 }

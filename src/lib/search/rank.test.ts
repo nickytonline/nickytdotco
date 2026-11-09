@@ -93,6 +93,7 @@ describe("filterWeakVectorHits", () => {
       0.5,
       0.12
     );
+
     expect(kept.map((result) => result.url)).toEqual(["/a", "/b"]);
   });
 });

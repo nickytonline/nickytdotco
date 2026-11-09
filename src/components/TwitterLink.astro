@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { name, url }: Props = Astro.props;
+
 const twitterUserName = url
   .replace(/https:\/\/(www\.)?(twitter|x)\.com\//, "")
   .replace("@", "");

@@ -11,7 +11,13 @@ export default defineConfig({
   },
   lint: {
     plugins: ["oxc", "typescript", "unicorn", "react", "jsx-a11y"],
-    jsPlugins: ["eslint-plugin-astro"],
+    jsPlugins: [
+      "eslint-plugin-astro",
+      {
+        name: "anti-slop",
+        specifier: "./tools/oxlint/anti-slop/index.ts",
+      },
+    ],
     categories: {
       correctness: "warn",
     },
@@ -27,8 +33,29 @@ export default defineConfig({
       "*.cjs",
       "tailwind.config.cjs",
       "env.d.ts",
+      "emdash-env.d.ts",
+      "tools/oxlint/anti-slop/**",
     ],
     rules: {
+      "oxc/no-accumulating-spread": "error",
+      "anti-slop/no-array-filter-map": "error",
+      "anti-slop/no-reduce-accumulator-copy": "error",
+      "anti-slop/no-chained-type-assertions": "error",
+      "anti-slop/no-conditional-empty-object-spread": "error",
+      "anti-slop/no-known-value-widening": "error",
+      "anti-slop/no-module-mocking": "error",
+      "anti-slop/no-object-parameters": "error",
+      "anti-slop/no-reflect-apply": "error",
+      "anti-slop/no-reflect-get": "error",
+      "anti-slop/no-runtime-typeof": ["error", { allowInTypeGuards: true }],
+      "anti-slop/no-shape-in-symbol-names": "error",
+      "anti-slop/no-unknown-parameters": "error",
+      "anti-slop/no-unknown-returns": "error",
+      "anti-slop/no-unknown-type-aliases": "error",
+      "anti-slop/no-unsafe-dictionary-type": "error",
+      "anti-slop/no-widen-then-assert": "error",
+      "anti-slop/require-readable-spacing": "error",
+      "anti-slop/require-safety-comment-for-type-assertion": "error",
       "constructor-super": "error",
       "for-direction": "error",
       "getter-return": "error",
@@ -234,6 +261,13 @@ export default defineConfig({
         },
       },
       {
+        files: ["e2e/**/*.ts"],
+        rules: {
+          "anti-slop/require-readable-spacing": "off",
+          "anti-slop/require-safety-comment-for-type-assertion": "off",
+        },
+      },
+      {
         files: ["**/*.astro"],
         rules: {
           "jsx-a11y/label-has-associated-control": "off",
@@ -273,6 +307,8 @@ export default defineConfig({
       "src/**/*.md",
       "*.mdx",
       "env.d.ts",
+      "emdash-env.d.ts",
+      "tools/oxlint/anti-slop/**",
     ],
   },
 });

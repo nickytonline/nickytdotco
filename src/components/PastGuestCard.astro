@@ -15,9 +15,11 @@ const { guest, category } = Astro.props;
 const { date, title, guestName, guestTitle, youtubeStreamLink } = guest;
 
 const videoId = youtubeStreamLink ? getYouTubeId(youtubeStreamLink) : null;
+
 const image = videoId
   ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
   : undefined;
+
 const videoPageUrl = youtubeStreamLink && guest.slug
   ? `/videos/${guest.slug}`
   : undefined;

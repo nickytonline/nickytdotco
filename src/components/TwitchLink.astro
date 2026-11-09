@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { name, url }: Props = Astro.props;
+
 const twitchUsername = url
   .replace(/https:\/\/(www\.)?twitch\.tv\//, "")
   .replace("@", "");

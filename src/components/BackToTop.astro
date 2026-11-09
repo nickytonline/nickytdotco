@@ -25,11 +25,13 @@
 <script is:inline>
   function initBackToTop() {
     const button = document.getElementById("back-to-top");
+
     if (!button || button.dataset.initialized === "true") return;
     button.dataset.initialized = "true";
 
     function toggleVisibility() {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
       if (scrollTop > 600) {
         button.classList.remove(
           "opacity-0",
@@ -64,5 +66,6 @@
   }
 
   initBackToTop();
+
   document.addEventListener("astro:page-load", initBackToTop);
 </script>

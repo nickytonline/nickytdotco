@@ -78,6 +78,7 @@ export async function fetchRepositoryStats(
     );
   }
 
+  // SAFETY: The alias selection set above matches the GraphQLRepository fields.
   const json = (await response.json()) as GraphQLResponse;
 
   if (json.errors?.length) {
@@ -92,6 +93,7 @@ export async function fetchRepositoryStats(
 
   for (const [index, repo] of repositories.entries()) {
     const node = json.data[`repo${index}`];
+
     if (!node) {
       continue;
     }

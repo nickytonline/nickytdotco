@@ -24,6 +24,7 @@ export async function GET(context: APIContext) {
     .sort((a, b) => {
       const dateA = new Date(a.data.date || 0).getTime();
       const dateB = new Date(b.data.date || 0).getTime();
+
       return dateB - dateA;
     })
     .slice(0, 10);
@@ -110,9 +111,11 @@ You are free to share and adapt this content for any purpose, even commercially,
     ? `\n\n## Recent Streams\n${sortedStreams
         .map((stream) => {
           const videoId = extractYouTubeVideoId(stream.data.youtubeStreamLink);
+
           const ytUrl = videoId
             ? `https://www.youtube.com/watch?v=${videoId}`
             : `https://www.nickyt.co/videos/${stream.data.slug}/`;
+
           return `- [${stream.data.title}](${ytUrl})`;
         })
         .join("\n")}`
@@ -126,11 +129,13 @@ You are free to share and adapt this content for any purpose, even commercially,
       "Content-Type": "text/plain; charset=utf-8",
     },
   });
+
   cacheRenderedContent(
     response.headers,
     context.cache,
     cacheHint,
     MIXED_FEED_CACHE_MAX_AGE_SECONDS
   );
+
   return response;
 }

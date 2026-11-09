@@ -1,4 +1,4 @@
-export const curatedTagLabels: Record<string, string> = {
+export const curatedTagLabels = {
   accessibility: "Accessibility",
   agenticai: "Agentic AI",
   ai: "AI",
@@ -21,6 +21,12 @@ export const curatedTagLabels: Record<string, string> = {
   testing: "Testing",
   typescript: "TypeScript",
   zerotrust: "Zero Trust",
-};
+} satisfies Record<string, string>;
+
+const curatedTagLabelMap = new Map(Object.entries(curatedTagLabels));
+
+export function getCuratedTagLabel(tag: string): string {
+  return curatedTagLabelMap.get(tag) ?? tag;
+}
 
 export const curatedTagSlugs = new Set(Object.keys(curatedTagLabels));

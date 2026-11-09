@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
  */
 export interface StorageDescriptor {
   entrypoint: string;
-  config: Record<string, unknown>;
+  config: NetlifyBlobsStorageConfig;
 }
 
 export interface NetlifyBlobsStorageConfig {

@@ -1,7 +1,9 @@
 export const CDN_CACHE_MAX_SECONDS = 86_400;
+
 /** Fixed CDN TTL for Turso-backed schedule pages (/ and /watch). */
 export const SCHEDULE_CDN_CACHE_SECONDS = 172_800;
 export const PROJECTS_CACHE_MAX_SECONDS = 259_200;
+
 /**
  * Long CDN TTL for responses that only change on deploy.
  * Omit `durable` so Netlify still purges on the next deploy.
@@ -30,6 +32,7 @@ export function eventExpiryTimestamp(date: Date): number {
       date.getUTCDate() + 1
     );
   }
+
   return date.getTime();
 }
 
@@ -57,9 +60,11 @@ export function soonestExpiryTimestamp(
   dates: Date[],
   nowMs: number = Date.now()
 ): number | undefined {
-  const upcoming = dates
-    .map(eventExpiryTimestamp)
-    .filter((expiry) => expiry > nowMs);
+  const upcoming = dates.flatMap((date) => {
+    const expiry = eventExpiryTimestamp(date);
+
+    return expiry > nowMs ? [expiry] : [];
+  });
 
   if (upcoming.length === 0) {
     return undefined;

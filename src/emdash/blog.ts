@@ -3,6 +3,7 @@ import {
   getEmDashEntry,
   type InferCollectionData,
 } from "emdash";
+import { isNumber, isObject, isString } from "../utils/type-guards";
 
 type EmDashPost = InferCollectionData<"posts">;
 
@@ -16,7 +17,6 @@ export interface PortableTextBlock {
   _key?: string;
   style?: string;
   children?: Array<{ text?: string }>;
-  [key: string]: unknown;
 }
 
 export interface BlogPostData {
@@ -44,31 +44,45 @@ export interface BlogPost {
 const PAGE_SIZE = 100;
 const MAX_PAGES = 20;
 
-function asString(value: unknown): string | undefined {
-  return typeof value === "string" && value.length > 0 ? value : undefined;
+function asString<Value>(value: Value): string | undefined {
+  return isString(value) && value.length > 0 ? value : undefined;
 }
 
-function asBlocks(value: unknown): PortableTextBlock[] {
-  return Array.isArray(value) ? (value as PortableTextBlock[]) : [];
+function isPortableTextBlock(value: unknown): value is PortableTextBlock {
+  if (!isObject(value)) return false;
+
+  const type = Object.entries(value).find(([key]) => key === "_type")?.[1];
+
+  return isString(type);
 }
 
-function asTags(value: unknown): string[] | undefined {
+function asBlocks<Value>(value: Value): PortableTextBlock[] {
+  return Array.isArray(value) ? value.filter(isPortableTextBlock) : [];
+}
+
+function asTags<Value>(value: Value): string[] | undefined {
   if (!Array.isArray(value)) return undefined;
-  const tags = value.filter((tag): tag is string => typeof tag === "string");
+  const tags = value.filter(isString);
+
   return tags.length > 0 ? tags : undefined;
 }
 
-function asSeries(value: unknown): BlogSeries | undefined {
-  if (!value || typeof value !== "object") return undefined;
-  const series = value as { name?: unknown; collection_id?: unknown };
-  if (typeof series.name !== "string") return undefined;
-  const collectionId = Number(series.collection_id);
+function asSeries<Value>(value: Value): BlogSeries | undefined {
+  if (!isObject(value)) return undefined;
+  const fields = new Map(Object.entries(value));
+  const name = fields.get("name");
+
+  if (!isString(name)) return undefined;
+  const collectionId = Number(fields.get("collection_id"));
+
   if (!Number.isFinite(collectionId)) return undefined;
-  return { name: series.name, collection_id: collectionId };
+
+  return { name, collection_id: collectionId };
 }
 
 function mapData(data: EmDashPost, slug: string): BlogPostData {
   const date = new Date(data.date);
+
   return {
     title: asString(data.title) ?? slug,
     date,
@@ -80,10 +94,9 @@ function mapData(data: EmDashPost, slug: string): BlogPostData {
     canonical_url: asString(data.canonical_url),
     dev_to_url: asString(data.dev_to_url),
     draft: data.draft === true,
-    reading_time_minutes:
-      typeof data.reading_time_minutes === "number"
-        ? data.reading_time_minutes
-        : undefined,
+    reading_time_minutes: isNumber(data.reading_time_minutes)
+      ? data.reading_time_minutes
+      : undefined,
     series: asSeries(data.series),
     featured: data.featured === true,
     content: asBlocks(data.content),
@@ -105,16 +118,21 @@ function mergeCacheHint(
 ): BlogCacheHint {
   if (!next) return current;
   const tags = [...new Set([...(current.tags ?? []), ...(next.tags ?? [])])];
+
   const lastModified =
     current.lastModified && next.lastModified
       ? current.lastModified > next.lastModified
         ? current.lastModified
         : next.lastModified
       : (current.lastModified ?? next.lastModified);
-  return {
-    ...(tags.length > 0 ? { tags } : {}),
-    ...(lastModified ? { lastModified } : {}),
-  };
+
+  const merged: BlogCacheHint = {};
+
+  if (tags.length > 0) merged.tags = tags;
+
+  if (lastModified) merged.lastModified = lastModified;
+
+  return merged;
 }
 
 /** Published posts from EmDash. Public queries omit drafts. */
@@ -125,16 +143,20 @@ async function loadPosts(): Promise<{
   const collected: BlogPost[] = [];
   let cacheHint: BlogCacheHint = {};
   let cursor: string | undefined;
+
   for (let page = 0; page < MAX_PAGES; page++) {
     const result = await getEmDashCollection("posts", {
       limit: PAGE_SIZE,
       cursor,
     });
+
     if (result.error) throw result.error;
     cacheHint = mergeCacheHint(cacheHint, result.cacheHint);
+
     for (const entry of result.entries) {
       collected.push(mapLiveEntry(entry));
     }
+
     if (!result.nextCursor) {
       return {
         posts: collected.sort(
@@ -143,8 +165,10 @@ async function loadPosts(): Promise<{
         cacheHint,
       };
     }
+
     cursor = result.nextCursor;
   }
+
   throw new Error("Blog post query exceeded 2000 rows");
 }
 
@@ -159,6 +183,7 @@ export async function getBlogListing(): Promise<{
   cacheHint: BlogCacheHint;
 }> {
   const loaded = await loadPosts();
+
   return { posts: visiblePosts(loaded.posts), cacheHint: loaded.cacheHint };
 }
 
@@ -171,8 +196,11 @@ export async function getBlogPostResult(slug: string): Promise<{
   cacheHint: BlogCacheHint;
 }> {
   const { entry, error, cacheHint } = await getEmDashEntry("posts", slug);
+
   if (error) throw error;
+
   if (!entry) return { cacheHint: cacheHint ?? {} };
+
   return {
     post: mapLiveEntry(entry),
     cacheHint: cacheHint ?? {},
@@ -187,19 +215,24 @@ export function headingsFor(
   post: BlogPost
 ): Array<{ depth: number; slug: string; text: string }> {
   return post.data.content.flatMap((block) => {
-    if (block._type !== "block" || typeof block.style !== "string") return [];
+    if (block._type !== "block" || !isString(block.style)) return [];
     const match = /^h([1-6])$/.exec(block.style);
+
     if (!match) return [];
+
     const text = (block.children ?? [])
       .map((child) => child.text ?? "")
       .join("")
       .trim();
+
     if (!text) return [];
+
     const slug = text
       .toLowerCase()
       .replace(/[^\p{L}\p{N}\s-]/gu, "")
       .trim()
       .replace(/\s+/g, "-");
+
     return [{ depth: Number(match[1]), slug, text }];
   });
 }

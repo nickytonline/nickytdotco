@@ -20,7 +20,9 @@ export async function postScheduledPublish(
   if (!options.secret || !options.siteUrl) {
     return new Response("EmDash schedule is not configured", { status: 503 });
   }
+
   const fetchImpl = options.fetchImpl ?? fetch;
+
   const response = await fetchImpl(
     new URL("/api/emdash-scheduled", options.siteUrl),
     {
@@ -28,6 +30,7 @@ export async function postScheduledPublish(
       headers: { authorization: `Bearer ${options.secret}` },
     }
   );
+
   return new Response(await response.text(), { status: response.status });
 }
 

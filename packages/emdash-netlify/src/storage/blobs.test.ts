@@ -3,12 +3,18 @@ import { createStorage, NetlifyBlobsStorage } from "./blobs.ts";
 
 interface StoredBlob {
   bytes: Uint8Array;
-  metadata: Record<string, unknown>;
+  metadata: {
+    contentType?: string;
+    size?: number;
+    lastModified?: string;
+    cacheControl?: string;
+  };
   etag: string;
 }
 
 function memoryStore() {
   const objects = new Map<string, StoredBlob>();
+
   return {
     objects,
     store: {
@@ -19,16 +25,20 @@ function memoryStore() {
       ) {
         const bytes =
           value instanceof Uint8Array ? value : new Uint8Array(value);
+
         objects.set(key, {
           bytes,
           metadata: { ...options?.metadata },
           etag: `"${objects.size + 1}"`,
         });
+
         return { modified: true, etag: `"${objects.size}"` };
       },
       async getWithMetadata(key: string) {
         const found = objects.get(key);
+
         if (!found) return null;
+
         return {
           data: found.bytes.buffer.slice(
             found.bytes.byteOffset,
@@ -40,7 +50,9 @@ function memoryStore() {
       },
       async getMetadata(key: string) {
         const found = objects.get(key);
+
         if (!found) return null;
+
         return { etag: found.etag, metadata: found.metadata };
       },
       async delete(key: string) {
@@ -48,10 +60,11 @@ function memoryStore() {
       },
       async list(options?: { prefix?: string }) {
         const prefix = options?.prefix ?? "";
+
         return {
-          blobs: [...objects.entries()]
-            .filter(([key]) => key.startsWith(prefix))
-            .map(([key, value]) => ({ key, etag: value.etag })),
+          blobs: [...objects.entries()].flatMap(([key, value]) =>
+            key.startsWith(prefix) ? [{ key, etag: value.etag }] : []
+          ),
         };
       },
     },
@@ -61,10 +74,13 @@ function memoryStore() {
 describe("NetlifyBlobsStorage", () => {
   it("stores an object and reads it back with the saved metadata", async () => {
     const { store } = memoryStore();
+
+    // SAFETY: The in-memory stub implements the methods this test exercises.
     const storage = new NetlifyBlobsStorage(
       { baseUrl: "/_emdash/api/media/file" },
       () => store as never
     );
+
     const uploaded = await storage.upload({
       key: "photo.png",
       body: new Uint8Array([1, 2, 3, 4]),
@@ -79,9 +95,11 @@ describe("NetlifyBlobsStorage", () => {
     expect(await storage.exists("photo.png")).toBe(true);
 
     const downloaded = await storage.download("photo.png");
+
     const bytes = new Uint8Array(
       await new Response(downloaded.body).arrayBuffer()
     );
+
     expect(bytes).toEqual(new Uint8Array([1, 2, 3, 4]));
     expect(downloaded.contentType).toBe("image/png");
     expect(downloaded.size).toBe(4);
@@ -89,6 +107,7 @@ describe("NetlifyBlobsStorage", () => {
 
   it("serves a byte range and refuses signed upload URLs", async () => {
     const { store } = memoryStore();
+    // SAFETY: The in-memory stub implements the methods this test exercises.
     const storage = new NetlifyBlobsStorage({}, () => store as never);
     await storage.upload({
       key: "clip.bin",
@@ -99,9 +118,11 @@ describe("NetlifyBlobsStorage", () => {
     const partial = await storage.download("clip.bin", {
       range: { offset: 1, length: 2 },
     });
+
     const bytes = new Uint8Array(
       await new Response(partial.body).arrayBuffer()
     );
+
     expect(bytes).toEqual(new Uint8Array([20, 30]));
     expect(partial.range).toEqual({ offset: 1, length: 2 });
 
@@ -115,6 +136,7 @@ describe("NetlifyBlobsStorage", () => {
 
   it("lists by prefix and deletes without throwing when the key is already gone", async () => {
     const { store } = memoryStore();
+    // SAFETY: The in-memory stub implements the methods this test exercises.
     const storage = new NetlifyBlobsStorage({}, () => store as never);
     await storage.upload({
       key: "a/one.png",
@@ -143,22 +165,26 @@ describe("createStorage", () => {
   afterEach(() => {
     if (previousNetlify === undefined) delete process.env.NETLIFY;
     else process.env.NETLIFY = previousNetlify;
+
     if (previousBlobsContext === undefined) {
       delete process.env.NETLIFY_BLOBS_CONTEXT;
     } else {
       process.env.NETLIFY_BLOBS_CONTEXT = previousBlobsContext;
     }
+
     vi.unstubAllEnvs();
   });
 
   it("uses the local filesystem adapter in non-production without Netlify env", () => {
     delete process.env.NETLIFY;
     delete process.env.NETLIFY_BLOBS_CONTEXT;
+
     // Vitest runs with import.meta.env.PROD === false.
     const storage = createStorage({
       baseUrl: "/_emdash/api/media/file",
       localDirectory: ".emdash/uploads",
     });
+
     expect(storage).not.toBeInstanceOf(NetlifyBlobsStorage);
     expect(storage.getPublicUrl("photo.png")).toBe(
       "/_emdash/api/media/file/photo.png"
@@ -168,18 +194,22 @@ describe("createStorage", () => {
   it("uses Netlify Blobs when NETLIFY=true even if Blobs context is unset", () => {
     process.env.NETLIFY = "true";
     delete process.env.NETLIFY_BLOBS_CONTEXT;
+
     const storage = createStorage({
       baseUrl: "/_emdash/api/media/file",
     });
+
     expect(storage).toBeInstanceOf(NetlifyBlobsStorage);
   });
 
   it("uses Netlify Blobs when NETLIFY_BLOBS_CONTEXT is set without NETLIFY", () => {
     delete process.env.NETLIFY;
     process.env.NETLIFY_BLOBS_CONTEXT = "dGVzdA==";
+
     const storage = createStorage({
       baseUrl: "/_emdash/api/media/file",
     });
+
     expect(storage).toBeInstanceOf(NetlifyBlobsStorage);
   });
 });

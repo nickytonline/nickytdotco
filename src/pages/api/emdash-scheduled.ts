@@ -14,6 +14,7 @@ export const prerender = false;
  */
 export const POST: APIRoute = async ({ request, cache }) => {
   const secret = process.env.EMDASH_SCHEDULE_SECRET;
+
   if (!isAuthorizedScheduleRequest(request, secret)) {
     return new Response("Unauthorized", { status: 401 });
   }
@@ -25,9 +26,11 @@ export const POST: APIRoute = async ({ request, cache }) => {
       },
       invalidateContentCache: (tags) => purgeContentTags(cache, tags),
     });
+
     return Response.json({ published: published.length });
   } catch (error) {
     console.error("[emdash-scheduled] Sweep failed:", error);
+
     return new Response("Scheduled publish failed", { status: 500 });
   }
 };

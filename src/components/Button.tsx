@@ -5,7 +5,9 @@ const defaultClass =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand-solid px-5 py-2.5 text-base font-semibold leading-6 text-brand-foreground transition-colors hover:bg-brand-solid-hover focus:bg-brand-solid-hover";
 
 type AsAnchor = { href: string } & AnchorHTMLAttributes<HTMLAnchorElement>;
+
 type AsButton = { href?: never } & ButtonHTMLAttributes<HTMLButtonElement>;
+
 type ButtonProps = AsAnchor | AsButton;
 
 const Button = forwardRef<HTMLElement, ButtonProps>(
@@ -13,9 +15,10 @@ const Button = forwardRef<HTMLElement, ButtonProps>(
     if ("href" in props && props.href !== undefined) {
       return (
         <a
+          // SAFETY: The href branch renders the anchor variant of ButtonProps.
           ref={ref as React.Ref<HTMLAnchorElement>}
           className={className}
-          {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+          {...props}
         >
           {children}
         </a>
@@ -24,9 +27,10 @@ const Button = forwardRef<HTMLElement, ButtonProps>(
 
     return (
       <button
+        // SAFETY: The default branch renders the button variant of ButtonProps.
         ref={ref as React.Ref<HTMLButtonElement>}
         className={className}
-        {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
+        {...props}
       >
         {children}
       </button>

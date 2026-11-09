@@ -11,6 +11,7 @@ const { videoId, startTime, title: providedTitle } = Astro.props;
 
 // Use provided title or fetch from YouTube oEmbed API
 let title = providedTitle || "YouTube Video";
+
 if (!providedTitle) {
   try {
     const response = await fetch(

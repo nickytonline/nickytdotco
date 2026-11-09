@@ -1,6 +1,5 @@
 ---
 import { getEntry, getCollection, render } from "astro:content";
-import type { CollectionEntry } from "astro:content"; // used for related-content casts below
 import Layout from "../../layouts/MainLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import TagList from "../../components/TagList.astro";
@@ -49,6 +48,7 @@ const { title, date, venue, tags = [] } = talk.data;
 const { Content } = await render(talk);
 
 const isUpcoming = isTalkUpcoming(talk.data, now);
+
 cacheRenderedContent(
   Astro.response.headers,
   Astro.cache,
@@ -61,6 +61,7 @@ cacheRenderedContent(
   ),
   EXPIRING_CACHE_SWR_SECONDS,
 );
+
 const venueUrl = venue.url;
 const venueLocation = venue.location;
 const endDate = talk.data.endDate;
@@ -73,17 +74,21 @@ const additionalLinks = talk.data.additionalLinks ?? [];
 const coverImage = talk.data.cover_image;
 const coverImageLarge = talk.data.cover_image_large;
 const heroImage = coverImageLarge ?? coverImage;
+
 const recordingInput = {
   hasVideo: Boolean(video),
   isUpcoming,
   videoComingSoon: talk.data.videoComingSoon,
 };
+
 const showHeroImage = showTalkHeroImage({
   ...recordingInput,
   hasCover: Boolean(heroImage),
 });
+
 const recordingNote = talkRecordingNote(recordingInput);
 const promoHtml = upcomingTalkPromoHtml(talk.data, now);
+
 const isMultiDayEvent =
   isUpcoming &&
   endDate &&
@@ -93,30 +98,36 @@ const isMultiDayEvent =
 const dateDisplay = isMultiDayEvent
   ? `${dateFilter(date)} – ${dateFilter(endDate)}`
   : dateFilter(date);
+
 const talkMetaTitle = `${title} — ${venue.name} — ${dateDisplay}`;
 
 // Get all talks to find related ones (past talks only)
 const allTalks = await getCollection("talks");
+
 const relatedTalks = isUpcoming
   ? []
-  : getRelatedTalks(talk as CollectionEntry<"talks">, allTalks, 3);
+  : getRelatedTalks(talk, allTalks, 3);
 
 // Get related blog posts by shared tags
 const { posts: allPosts, cacheHint } = await getBlogListing();
+
 Astro.cache.set({
   tags: cacheHint.tags,
   lastModified: cacheHint.lastModified,
 });
+
 const relatedPosts = getRelatedPostsForTalk(
-  talk as CollectionEntry<"talks">,
+  talk,
   allPosts,
   3,
 );
 
 // Use the talk's video thumbnail or cover image as the Open Graph image
 let thumbnailUrl: string | undefined;
+
 if (video?.type === "youtube") {
   const videoId = getYouTubeId(video.url);
+
   if (videoId) {
     thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   }
@@ -130,12 +141,15 @@ if (video?.type === "youtube") {
 
 const pageUrl = new URL(Astro.url.pathname, site.url).toString();
 const talkDescription = `${title} — a talk by Nick Taylor at ${venue.name} on ${dateDisplay}.`;
+
 const venuePageUrl = venueUrl
   ? new URL(venueUrl, site.url).toString()
   : undefined;
+
 const isVirtualVenue =
   /live stream|online|virtual/i.test(venue.name) ||
   venuePageUrl?.includes("youtube.com");
+
 const eventLocation = isVirtualVenue
   ? {
       "@type": "VirtualLocation",
@@ -148,6 +162,7 @@ const eventLocation = isVirtualVenue
       ...(venueLocation && { address: venueLocation }),
       ...(venuePageUrl && { url: venuePageUrl }),
     };
+
 const eventJsonLd = {
   "@context": "https://schema.org",
   "@type": "Event",

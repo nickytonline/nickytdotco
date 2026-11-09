@@ -25,14 +25,17 @@ function hasTag(tags: string[] | undefined): boolean {
 
 const talks = await getCollection("talks");
 const { posts: blogPosts, cacheHint } = await getBlogListing();
+
 cacheRenderedContent(
   Astro.response.headers,
   Astro.cache,
   cacheHint,
   CONTENT_CACHE_MAX_AGE_SECONDS,
 );
+
 const taggedTalks = talks.filter((talk) => hasTag(talk.data.tags));
 const taggedBlogPosts = blogPosts.filter((post) => hasTag(post.data.tags));
+
 const originalTagCase =
   talks
     .flatMap((talk) => talk.data.tags)
@@ -49,9 +52,11 @@ const originalTagCase =
 const sortedTalks = taggedTalks.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+
 const sortedBlogPosts = taggedBlogPosts.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+
 const displayTag = originalTagCase;
 const totalCount = sortedTalks.length + sortedBlogPosts.length;
 

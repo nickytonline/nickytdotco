@@ -9,6 +9,7 @@ interface Props {
 
 const { date, showTime = false, class: className } = Astro.props;
 const parsed = new Date(date);
+
 const utcLabel = Number.isNaN(parsed.getTime())
   ? date
   : getLocalizedDate({
@@ -17,6 +18,7 @@ const utcLabel = Number.isNaN(parsed.getTime())
       timezone: "UTC",
       showTime,
     });
+
 // A time-style format already names the zone. Date-only does not.
 const fallback = showTime ? utcLabel : `${utcLabel} UTC`;
 ---
@@ -35,8 +37,10 @@ const fallback = showTime ? utcLabel : `${utcLabel} UTC`;
     for (const node of document.querySelectorAll("[data-local-datetime]")) {
       if (!(node instanceof HTMLElement)) continue;
       const raw = node.dataset.localDatetime;
+
       if (!raw) continue;
       const parsed = new Date(raw);
+
       if (Number.isNaN(parsed.getTime())) continue;
       const showTime = node.dataset.showTime === "true";
       node.textContent = parsed.toLocaleString(undefined, {
@@ -48,5 +52,6 @@ const fallback = showTime ? utcLabel : `${utcLabel} UTC`;
   }
 
   formatLocalDateTimes();
+
   document.addEventListener("astro:page-load", formatLocalDateTimes);
 </script>

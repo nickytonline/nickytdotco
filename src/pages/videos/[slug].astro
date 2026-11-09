@@ -41,6 +41,7 @@ const result = await getLiveCollection("streamVideos");
 
 if (result.error) {
   console.error("Error loading stream videos:", result.error);
+
   return Astro.rewrite("/404");
 }
 
@@ -82,18 +83,24 @@ if (isUpcoming) {
     UNTIL_DEPLOY_CDN_CACHE_SECONDS,
   );
 }
+
 const descriptionHtml = markdownFilter(description);
 
 const videoId = extractYouTubeVideoId(youtubeStreamLink);
+
 const socialImage = videoId
   ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   : "/assets/images/page-og/watch.jpg";
+
 const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+
 const eventName =
   guestName === "2Full2Stack"
     ? `2 Full 2 Stack - ${title}`
     : `${type === "pomerium-live" ? "Pomerium Live Stream" : "nickyt.live"}: ${title}`;
+
 const twitchStreamUrl = type === "nickyt.live" ? TWITCH_STREAM_URL : undefined;
+
 const videoJsonLd = {
   "@context": "https://schema.org",
   "@type": "VideoObject",

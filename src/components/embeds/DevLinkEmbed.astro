@@ -23,6 +23,7 @@ if (username === "nickytonline" || username === "opensauced") {
   const blogSlug = updatedUrl.pathname
     .replace("/blog/", "")
     .replace(/\/$/, "");
+
   title = (await getBlogPost(blogSlug))?.data.title;
 } else if (username && slug) {
   try {

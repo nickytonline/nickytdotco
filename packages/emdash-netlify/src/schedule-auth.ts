@@ -9,6 +9,8 @@ export function isAuthorizedScheduleRequest(
   const header = request.headers.get("authorization") ?? "";
   const expected = Buffer.from(`Bearer ${secret}`);
   const actual = Buffer.from(header);
+
   if (actual.length !== expected.length) return false;
+
   return timingSafeEqual(actual, expected);
 }

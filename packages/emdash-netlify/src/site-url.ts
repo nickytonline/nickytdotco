@@ -23,12 +23,14 @@ export interface EmDashSiteUrlInput {
 export function resolveEmDashSiteUrl(input: EmDashSiteUrlInput): string {
   if (usesDeployHost(input.context)) {
     const deployHost = originOf(input.deployPrimeUrl) ?? originOf(input.url);
+
     if (deployHost && !isProductionBranchHost(deployHost)) {
       return deployHost;
     }
   }
 
   const primary = originOf(input.url);
+
   if (primary && !isNetlifyHost(primary)) {
     return primary;
   }
@@ -42,6 +44,7 @@ function usesDeployHost(context: string | undefined): boolean {
 
 function originOf(value: string | undefined): string | undefined {
   if (!value) return undefined;
+
   try {
     return new URL(value).origin;
   } catch {

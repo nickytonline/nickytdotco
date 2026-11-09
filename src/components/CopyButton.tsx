@@ -61,6 +61,7 @@ const CopyButton = ({
     if (!content) {
       setDidCopy(false);
       setHasError(true);
+
       return;
     }
 
