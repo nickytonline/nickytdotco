@@ -1,0 +1,216 @@
+---
+---
+
+<img
+  id="ocean-swimmer"
+  class="ocean-swimmer"
+  alt=""
+  width="160"
+  height="85"
+  decoding="async"
+  aria-hidden="true"
+  hidden
+/>
+
+<script is:inline>
+  function startOceanSwimmer() {
+    if (window.__oceanSwimmerStarted) return;
+    window.__oceanSwimmerStarted = true;
+
+    const CREATURES = [
+      {
+        id: "whale-shark",
+        src: "/assets/images/ocean/whale-shark.webp",
+        width: 160,
+        height: 85,
+      },
+      {
+        id: "manta-ray",
+        src: "/assets/images/ocean/manta-ray.webp",
+        width: 150,
+        height: 118,
+      },
+    ];
+
+    // Occasional: first sighting after a few seconds, then sparse.
+    const MIN_INTERVAL_MS = 42000;
+    const MAX_INTERVAL_MS = 78000;
+    const FIRST_DELAY_MS = 6000;
+    const FIRST_JITTER_MS = 8000;
+    const SWIM_MS = 16000;
+    const MIN_WIDTH = 1024;
+
+    const el = document.getElementById("ocean-swimmer");
+
+    if (!(el instanceof HTMLImageElement)) return;
+
+    let timer = 0;
+    let busy = false;
+    let enabled = false;
+    let pageCreatureIndex = 0;
+
+    const nextDelay = () =>
+      MIN_INTERVAL_MS +
+      Math.floor(Math.random() * (MAX_INTERVAL_MS - MIN_INTERVAL_MS + 1));
+
+    const firstDelay = () =>
+      FIRST_DELAY_MS + Math.floor(Math.random() * (FIRST_JITTER_MS + 1));
+
+    const canSwim = () =>
+      window.matchMedia(`(min-width: ${MIN_WIDTH}px)`).matches &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+      !document.documentElement.classList.contains("windows95");
+
+    /** Stable one-creature-per-page pick from the path. */
+    const creatureForPath = (pathname) => {
+      let hash = 0;
+
+      for (let i = 0; i < pathname.length; i++) {
+        hash = (hash * 31 + pathname.charCodeAt(i)) >>> 0;
+      }
+
+      return hash % CREATURES.length;
+    };
+
+    const applyCreature = (index) => {
+      const creature = CREATURES[index];
+      pageCreatureIndex = index;
+      el.dataset.creature = creature.id;
+      el.width = creature.width;
+      el.height = creature.height;
+
+      if (el.getAttribute("src") !== creature.src) {
+        el.src = creature.src;
+      }
+    };
+
+    const pickLane = () => {
+      // Stay in the dotted overlay: right ~60% of the viewport.
+      const overlayLeft = window.innerWidth * 0.4;
+      const overlayWidth = window.innerWidth * 0.6;
+      const vh = window.innerHeight;
+      const size = Math.max(el.width, el.height);
+      const y = vh * (0.12 + Math.random() * 0.55);
+      const goRight = Math.random() > 0.45;
+
+      if (goRight) {
+        return {
+          fromX: overlayLeft - size,
+          toX: overlayLeft + overlayWidth + size * 0.35,
+          y,
+          flip: false,
+          bob: Math.random() > 0.5 ? 1 : -1,
+        };
+      }
+
+      return {
+        fromX: overlayLeft + overlayWidth + size * 0.2,
+        toX: overlayLeft - size,
+        y,
+        flip: true,
+        bob: Math.random() > 0.5 ? 1 : -1,
+      };
+    };
+
+    const schedule = (delay) => {
+      if (timer) window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        timer = 0;
+        swim();
+
+        if (enabled) schedule(nextDelay());
+      }, delay);
+    };
+
+    const swim = () => {
+      if (busy || !canSwim()) return;
+      busy = true;
+
+      const lane = pickLane();
+      el.style.setProperty("--ocean-from-x", `${lane.fromX}px`);
+      el.style.setProperty("--ocean-to-x", `${lane.toX}px`);
+      el.style.setProperty("--ocean-y", `${lane.y}px`);
+      el.style.setProperty("--ocean-bob", String(lane.bob));
+      el.classList.toggle("ocean-swimmer--flip", lane.flip);
+      el.classList.remove("ocean-swimmer--active");
+      void el.offsetWidth;
+      el.classList.add("ocean-swimmer--active");
+
+      window.setTimeout(() => {
+        el.classList.remove("ocean-swimmer--active");
+        busy = false;
+      }, SWIM_MS);
+    };
+
+    // Manual trigger for local demos / debugging (not used by the page).
+    window.__oceanSwimNow = () => {
+      if (!canSwim()) return false;
+      el.hidden = false;
+      swim();
+
+      return true;
+    };
+
+    const sync = () => {
+      applyCreature(creatureForPath(location.pathname));
+      const nextEnabled = canSwim();
+      el.hidden = !nextEnabled;
+
+      if (!nextEnabled) {
+        el.classList.remove("ocean-swimmer--active");
+        busy = false;
+        enabled = false;
+
+        if (timer) {
+          window.clearTimeout(timer);
+          timer = 0;
+        }
+
+        return;
+      }
+
+      if (!enabled) {
+        enabled = true;
+        schedule(firstDelay());
+      }
+    };
+
+    const onPageLoad = () => {
+      const nextIndex = creatureForPath(location.pathname);
+      const creatureChanged = nextIndex !== pageCreatureIndex;
+      applyCreature(nextIndex);
+
+      if (!canSwim()) {
+        sync();
+
+        return;
+      }
+
+      // New page → new creature schedule; keep swimming if same visit continues.
+      if (creatureChanged || !enabled) {
+        el.classList.remove("ocean-swimmer--active");
+        busy = false;
+        enabled = false;
+        sync();
+      }
+    };
+
+    sync();
+    window.addEventListener("resize", sync, { passive: true });
+    window
+      .matchMedia("(prefers-reduced-motion: reduce)")
+      .addEventListener("change", sync);
+    window
+      .matchMedia(`(min-width: ${MIN_WIDTH}px)`)
+      .addEventListener("change", sync);
+    new MutationObserver(sync).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    document.addEventListener("astro:page-load", onPageLoad);
+  }
+
+  startOceanSwimmer();
+
+  document.addEventListener("astro:page-load", startOceanSwimmer);
+</script>

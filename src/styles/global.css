@@ -1522,6 +1522,156 @@ nav[aria-label="main navigation"] .nav-link[aria-current="page"]:focus-visible {
   display: none;
 }
 
+/* Occasional whale shark / manta ray glide through the dotted overlay.
+   Sprites face right (head leading). Light theme inverts to white-on-black. */
+.ocean-swimmer {
+  --ocean-size: clamp(7.5rem, 11vw, 10rem);
+  --ocean-opacity: 0.58;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  display: block;
+  width: var(--ocean-size);
+  height: auto;
+  margin: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-120%, var(--ocean-y, 40vh), 0);
+  will-change: transform, opacity, filter;
+  filter: drop-shadow(0 0 10px oklch(0.65 0.25 350 / 0.18));
+}
+
+:root:not(.dark):not(.windows95) .ocean-swimmer {
+  --ocean-opacity: 0.5;
+  /* Black/white sprite → white body with dark spots on light UI */
+  filter: invert(1) drop-shadow(0 0 8px oklch(0.55 0.2 350 / 0.22));
+}
+
+:is(.dark) .ocean-swimmer {
+  --ocean-opacity: 0.7;
+  /* Slight lift so the charcoal body still reads on near-black */
+  filter: brightness(1.25) drop-shadow(0 0 12px oklch(0.75 0.18 350 / 0.28));
+}
+
+.ocean-swimmer--flip {
+  transform: translate3d(-120%, var(--ocean-y, 40vh), 0) scaleX(-1);
+}
+
+.ocean-swimmer--active {
+  animation: ocean-swim 16s cubic-bezier(0.33, 0.1, 0.25, 1) forwards;
+}
+
+.ocean-swimmer--flip.ocean-swimmer--active {
+  animation-name: ocean-swim-flip;
+}
+
+@keyframes ocean-swim {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--ocean-from-x), var(--ocean-y), 0)
+      rotate(calc(var(--ocean-bob, 1) * -4deg));
+  }
+  8% {
+    opacity: var(--ocean-opacity);
+  }
+  28% {
+    transform: translate3d(
+        calc(
+          var(--ocean-from-x) + (var(--ocean-to-x) - var(--ocean-from-x)) * 0.28
+        ),
+        calc(var(--ocean-y) + var(--ocean-bob, 1) * 18px),
+        0
+      )
+      rotate(calc(var(--ocean-bob, 1) * 5deg));
+  }
+  55% {
+    opacity: var(--ocean-opacity);
+    transform: translate3d(
+        calc(
+          var(--ocean-from-x) + (var(--ocean-to-x) - var(--ocean-from-x)) * 0.55
+        ),
+        calc(var(--ocean-y) - var(--ocean-bob, 1) * 14px),
+        0
+      )
+      rotate(calc(var(--ocean-bob, 1) * -3deg));
+  }
+  82% {
+    opacity: calc(var(--ocean-opacity) * 0.85);
+    transform: translate3d(
+        calc(
+          var(--ocean-from-x) + (var(--ocean-to-x) - var(--ocean-from-x)) * 0.82
+        ),
+        calc(var(--ocean-y) + var(--ocean-bob, 1) * 10px),
+        0
+      )
+      rotate(calc(var(--ocean-bob, 1) * 4deg));
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--ocean-to-x), var(--ocean-y), 0)
+      rotate(calc(var(--ocean-bob, 1) * -2deg));
+  }
+}
+
+@keyframes ocean-swim-flip {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--ocean-from-x), var(--ocean-y), 0) scaleX(-1)
+      rotate(calc(var(--ocean-bob, 1) * -4deg));
+  }
+  8% {
+    opacity: var(--ocean-opacity);
+  }
+  28% {
+    transform: translate3d(
+        calc(
+          var(--ocean-from-x) + (var(--ocean-to-x) - var(--ocean-from-x)) * 0.28
+        ),
+        calc(var(--ocean-y) + var(--ocean-bob, 1) * 18px),
+        0
+      )
+      scaleX(-1) rotate(calc(var(--ocean-bob, 1) * 5deg));
+  }
+  55% {
+    opacity: var(--ocean-opacity);
+    transform: translate3d(
+        calc(
+          var(--ocean-from-x) + (var(--ocean-to-x) - var(--ocean-from-x)) * 0.55
+        ),
+        calc(var(--ocean-y) - var(--ocean-bob, 1) * 14px),
+        0
+      )
+      scaleX(-1) rotate(calc(var(--ocean-bob, 1) * -3deg));
+  }
+  82% {
+    opacity: calc(var(--ocean-opacity) * 0.85);
+    transform: translate3d(
+        calc(
+          var(--ocean-from-x) + (var(--ocean-to-x) - var(--ocean-from-x)) * 0.82
+        ),
+        calc(var(--ocean-y) + var(--ocean-bob, 1) * 10px),
+        0
+      )
+      scaleX(-1) rotate(calc(var(--ocean-bob, 1) * 4deg));
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--ocean-to-x), var(--ocean-y), 0) scaleX(-1)
+      rotate(calc(var(--ocean-bob, 1) * -2deg));
+  }
+}
+
+@media (max-width: 1023px), (prefers-reduced-motion: reduce) {
+  .ocean-swimmer {
+    display: none;
+  }
+}
+
+:is(.windows95) .ocean-swimmer {
+  display: none;
+}
+
 [data-embed] {
   @apply my-4;
 }
