@@ -4,7 +4,6 @@ import OgMetaTags from "../components/OgMetaTags.astro";
 import Header from "../components/Header.astro";
 import SkipLink from "../components/SkipLink.astro";
 import BackToTop from "../components/BackToTop.astro";
-import StarTwinkle from "../components/StarTwinkle.astro";
 import OceanSwimmer from "../components/OceanSwimmer.astro";
 import site from "@/data/site";
 import { ClientRouter } from "astro:transitions";
@@ -394,7 +393,6 @@ const currentYear = new Date().getFullYear();
       }
     </script>
     <BackToTop transition:persist />
-    <StarTwinkle transition:persist />
     <OceanSwimmer transition:persist />
   </body>
 </html>
