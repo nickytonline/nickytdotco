@@ -52,6 +52,8 @@
   --brand-soft: oklch(0.969 0.015 12.422);
   --brand-soft-foreground: oklch(0.459 0.187 3.815);
   --brand-border: oklch(0.592 0.249 0.584 / 50%);
+  /* Soft brand-tinted bloom behind occasional ocean swimmers */
+  --ocean-swimmer-glow: oklch(0.55 0.2 350 / 0.22);
   --warning: oklch(0.828 0.189 84.429);
   --warning-foreground: oklch(0.473 0.137 46.201);
   --warning-soft: oklch(0.987 0.022 95.277);
@@ -380,6 +382,7 @@ nav a:not([aria-current="page"]):not(.tag-pill):focus {
   --brand-soft: oklch(0.408 0.153 2.432 / 30%);
   --brand-soft-foreground: var(--brand);
   --brand-border: oklch(0.718 0.202 349.761 / 50%);
+  --ocean-swimmer-glow: oklch(0.75 0.18 350 / 0.28);
   --warning: oklch(0.769 0.188 70.08);
   --warning-foreground: oklch(0.924 0.12 95.746);
   --warning-soft: oklch(0.473 0.137 46.201 / 30%);
@@ -1467,19 +1470,19 @@ nav[aria-label="main navigation"] .nav-link[aria-current="page"]:focus-visible {
   opacity: 0;
   transform: translate3d(-120%, var(--ocean-y, 40vh), 0);
   will-change: transform, opacity, filter;
-  filter: drop-shadow(0 0 10px oklch(0.65 0.25 350 / 0.18));
+  filter: drop-shadow(0 0 10px var(--ocean-swimmer-glow));
 }
 
 :root:not(.dark):not(.windows95) .ocean-swimmer {
   --ocean-opacity: 0.5;
   /* Black/white sprite → white body with dark spots on light UI */
-  filter: invert(1) drop-shadow(0 0 8px oklch(0.55 0.2 350 / 0.22));
+  filter: invert(1) drop-shadow(0 0 8px var(--ocean-swimmer-glow));
 }
 
 :is(.dark) .ocean-swimmer {
   --ocean-opacity: 0.7;
   /* Slight lift so the charcoal body still reads on near-black */
-  filter: brightness(1.25) drop-shadow(0 0 12px oklch(0.75 0.18 350 / 0.28));
+  filter: brightness(1.25) drop-shadow(0 0 12px var(--ocean-swimmer-glow));
 }
 
 .ocean-swimmer--flip {

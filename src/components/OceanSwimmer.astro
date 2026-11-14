@@ -45,9 +45,20 @@
     if (!(el instanceof HTMLImageElement)) return;
 
     let timer = 0;
+    let swimDone = 0;
     let busy = false;
     let enabled = false;
     let pageCreatureIndex = 0;
+
+    const clearSwim = () => {
+      if (swimDone) {
+        window.clearTimeout(swimDone);
+        swimDone = 0;
+      }
+
+      el.classList.remove("ocean-swimmer--active");
+      busy = false;
+    };
 
     const nextDelay = () =>
       MIN_INTERVAL_MS +
@@ -124,7 +135,6 @@
 
     const swim = () => {
       if (busy || !canSwim()) return;
-      busy = true;
 
       const lane = pickLane();
       el.style.setProperty("--ocean-from-x", `${lane.fromX}px`);
@@ -132,11 +142,13 @@
       el.style.setProperty("--ocean-y", `${lane.y}px`);
       el.style.setProperty("--ocean-bob", String(lane.bob));
       el.classList.toggle("ocean-swimmer--flip", lane.flip);
-      el.classList.remove("ocean-swimmer--active");
+      clearSwim();
+      busy = true;
       void el.offsetWidth;
       el.classList.add("ocean-swimmer--active");
 
-      window.setTimeout(() => {
+      swimDone = window.setTimeout(() => {
+        swimDone = 0;
         el.classList.remove("ocean-swimmer--active");
         busy = false;
       }, SWIM_MS);
@@ -157,8 +169,7 @@
       el.hidden = !nextEnabled;
 
       if (!nextEnabled) {
-        el.classList.remove("ocean-swimmer--active");
-        busy = false;
+        clearSwim();
         enabled = false;
 
         if (timer) {
@@ -188,8 +199,7 @@
 
       // New page → new creature schedule; keep swimming if same visit continues.
       if (creatureChanged || !enabled) {
-        el.classList.remove("ocean-swimmer--active");
-        busy = false;
+        clearSwim();
         enabled = false;
         sync();
       }
