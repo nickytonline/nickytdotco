@@ -1,3 +1,4 @@
+import type { WebMCP } from "@w3c/webmcp-polyfill";
 import {
   SEARCH_DEFAULT_LIMIT,
   SEARCH_MAX_LIMIT,
@@ -124,14 +125,35 @@ export async function executeSearchSiteTool<Input>(
   }
 }
 
+function hasNavigatorModelContext(
+  nav: Navigator
+): nav is Navigator & { readonly modelContext: WebMCP.ModelContext } {
+  return "modelContext" in nav;
+}
+
 /**
- * Registers the site search tool with WebMCP when the API is present.
- * Returns false when WebMCP is unavailable (no-op progressive enhancement).
+ * Registers the site search tool with WebMCP.
+ * Browsers load the polyfill only when neither native surface is present.
+ * Returns false outside the browser or when WebMCP cannot be installed.
  */
 export async function registerSearchSiteTool(
   options?: WebMCP.ModelContextRegisterToolOptions
 ): Promise<boolean> {
-  const modelContext = document.modelContext;
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  // The polyfill guards `document.modelContext`, not `navigator.modelContext`.
+  if (!("modelContext" in navigator) && !("modelContext" in document)) {
+    const { installWebMCP } = await import("@w3c/webmcp-polyfill");
+    installWebMCP();
+  }
+
+  const modelContext = document.modelContext
+    ? document.modelContext
+    : hasNavigatorModelContext(navigator)
+      ? navigator.modelContext
+      : undefined;
 
   if (!modelContext) {
     return false;
