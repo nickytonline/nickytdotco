@@ -84,7 +84,9 @@ test.describe("MCP topic hub", () => {
       watchSection.locator('a[href^="https://www.youtube.com/watch"]')
     ).toHaveCount(4);
 
-    const talkLinks = watchSection.locator('a[href^="/talks/"]');
+    const talkLinks = watchSection.locator(
+      'a[href^="/talks/"]:not([href="/talks/"])'
+    );
     const talkCount = await talkLinks.count();
     expect(talkCount).toBeGreaterThanOrEqual(1);
     expect(talkCount).toBeLessThanOrEqual(5);
