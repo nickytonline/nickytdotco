@@ -86,7 +86,17 @@ const astroConfig = {
     expressiveCode(),
     mdx(),
     react(),
-    sitemap(),
+    sitemap({
+      filter(page) {
+        const path = String(page).split("?")[0];
+
+        return (
+          !path.endsWith("/sitemap-posts.xml") &&
+          !path.endsWith("/sitemap-posts.xml/")
+        );
+      },
+      customSitemaps: ["https://www.nickyt.co/sitemap-posts.xml"],
+    }),
     emdash(emdashConfig),
   ],
   markdown: {

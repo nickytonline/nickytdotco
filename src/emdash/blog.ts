@@ -35,6 +35,8 @@ export interface BlogPostData {
   reading_time_minutes?: number;
   series?: BlogSeries;
   featured?: boolean;
+  updatedAt?: Date;
+  publishedAt?: Date;
   content: PortableTextBlock[];
 }
 
@@ -82,6 +84,18 @@ function asSeries<Value>(value: Value): BlogSeries | undefined {
   return { name, collection_id: collectionId };
 }
 
+function asDate(value: Date | string | null | undefined): Date | undefined {
+  if (value instanceof Date) {
+    return Number.isNaN(value.getTime()) ? undefined : value;
+  }
+
+  if (!isString(value) || value.length === 0) return undefined;
+
+  const parsed = new Date(value);
+
+  return Number.isNaN(parsed.getTime()) ? undefined : parsed;
+}
+
 function mapData(data: EmDashPost, slug: string): BlogPostData {
   const date = new Date(data.date);
 
@@ -101,6 +115,8 @@ function mapData(data: EmDashPost, slug: string): BlogPostData {
       : undefined,
     series: asSeries(data.series),
     featured: data.featured === true,
+    updatedAt: asDate(data.updatedAt),
+    publishedAt: asDate(data.publishedAt),
     content: asBlocks(data.content),
   };
 }

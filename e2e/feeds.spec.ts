@@ -31,6 +31,41 @@ test.describe("machine-readable endpoints", () => {
     expect(await sitemap.text()).toContain("<urlset");
   });
 
+  test("sitemap lists every published blog post", async ({ request }) => {
+    const index = await request.get("/sitemap-index.xml");
+    expect(index.ok()).toBeTruthy();
+    expect(await index.text()).toContain(
+      "https://www.nickyt.co/sitemap-posts.xml"
+    );
+
+    const [blog, postsSitemap] = await Promise.all([
+      request.get("/blog"),
+      request.get("/sitemap-posts.xml"),
+    ]);
+
+    expect(blog.ok()).toBeTruthy();
+    expect(postsSitemap.ok()).toBeTruthy();
+    expect(postsSitemap.headers()["content-type"]).toContain("xml");
+
+    const linked = new Set(
+      [...(await blog.text()).matchAll(/href="\/blog\/([a-z0-9-]+)\/?"/g)].map(
+        (match) => match[1]
+      )
+    );
+    const xml = await postsSitemap.text();
+    const listed = new Set(
+      [
+        ...xml.matchAll(
+          /<loc>https:\/\/www\.nickyt\.co\/blog\/([^<]+)<\/loc>/g
+        ),
+      ].map((match) => match[1].replace(/\/$/, ""))
+    );
+
+    expect(listed.size).toBeGreaterThan(0);
+    expect(listed).toEqual(linked);
+    expect(xml).toContain("<lastmod>");
+  });
+
   test("robots.txt allows crawling and references the sitemap", async ({
     request,
   }) => {
