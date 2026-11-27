@@ -58,7 +58,7 @@ const years = Object.keys(talksByYear)
   socialImage="/assets/images/page-og/talks.jpg"
 >
   <Breadcrumb
-    items={[{ label: "Speaking", href: "/speaking" }, { label: "Talks" }]}
+    items={[{ label: "Speaking", href: "/speaking/" }, { label: "Talks" }]}
   />
 
   <div class="mb-6">
@@ -132,7 +132,7 @@ const years = Object.keys(talksByYear)
                 <div class="py-5 px-6">
                   <div class="flex items-center gap-5">
                     <a
-                      href={`/talks/${slug}`}
+                      href={`/talks/${slug}/`}
                       aria-hidden="true"
                       tabindex="-1"
                       class="hidden sm:block relative shrink-0 rounded-lg overflow-hidden border border-border shadow-sm hover:border-brand-solid focus-visible:border-brand-solid transition-shadow"
@@ -181,7 +181,7 @@ const years = Object.keys(talksByYear)
                     <div class="flex-1">
                       <h3 class="text-xl font-bold">
                         <a
-                          href={`/talks/${slug}`}
+                          href={`/talks/${slug}/`}
                           class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {talk.data.title}

@@ -2,13 +2,13 @@ import { test, expect } from "@playwright/test";
 
 const NAV_LINKS: Array<{ name: string; href: string }> = [
   { name: "Home", href: "/" },
-  { name: "Watch", href: "/watch" },
-  { name: "Speaking", href: "/speaking" },
-  { name: "Blog", href: "/blog" },
-  { name: "Newsletter", href: "/newsletter" },
-  { name: "Projects", href: "/projects" },
-  { name: "About", href: "/about" },
-  { name: "Socials", href: "/socials" },
+  { name: "Watch", href: "/watch/" },
+  { name: "Speaking", href: "/speaking/" },
+  { name: "Blog", href: "/blog/" },
+  { name: "Newsletter", href: "/newsletter/" },
+  { name: "Projects", href: "/projects/" },
+  { name: "About", href: "/about/" },
+  { name: "Socials", href: "/socials/" },
 ];
 
 test.describe("primary navigation", () => {
@@ -81,7 +81,7 @@ test.describe("primary navigation", () => {
     await expect(footer.getByRole("link", { name: "Socials" })).toHaveCount(0);
     await expect(footer.getByRole("link", { name: "Uses" })).toHaveAttribute(
       "href",
-      "/uses"
+      "/uses/"
     );
   });
 

@@ -30,7 +30,7 @@ const { entry } = Astro.props;
 const content = contentWithHeadingIds(entry.data.content);
 const headings = headingsFor(content);
 
-const currentUrl = `/blog/${entry.id}`;
+const currentUrl = `/blog/${entry.id}/`;
 
 // Get series posts if this is part of a series
 let seriesPosts: BlogPost[] = [];
@@ -98,7 +98,7 @@ const postSocialImage =
   <article>
     <Breadcrumb
       items={[
-        { label: "Blog", href: "/blog" },
+        { label: "Blog", href: "/blog/" },
         { label: entry.data.title },
       ]}
     />

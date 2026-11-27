@@ -6,6 +6,7 @@ import SkipLink from "../components/SkipLink.astro";
 import BackToTop from "../components/BackToTop.astro";
 import StarTwinkle from "../components/StarTwinkle.astro";
 import site from "@/data/site";
+import { toCanonicalUrl } from "../utils/trailing-slash.ts";
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
@@ -25,7 +26,7 @@ const {
 } = Astro.props;
 
 const { origin } = new URL(Astro.request.url);
-const canonicalUrl = `${origin}${Astro.url.pathname}`;
+const canonicalUrl = toCanonicalUrl(origin, Astro.url.pathname);
 
 const fullTitle = title.includes("Nick Taylor")
   ? title
@@ -132,7 +133,7 @@ const currentYear = new Date().getFullYear();
         >
           <nav aria-label="Footer navigation" class="text-sm">
             <a
-              href="/uses"
+              href="/uses/"
               class="hover:text-brand focus:text-brand"
             >
               Uses

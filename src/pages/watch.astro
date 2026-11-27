@@ -95,7 +95,7 @@ export const prerender = false;
       </p>
       <div class="mt-6">
         <a
-          href="/videos"
+          href="/videos/"
           class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
         >
           Browse video archives
@@ -133,7 +133,7 @@ export const prerender = false;
             <div class="grid gap-6 xl:gap-8">
               {latestVideos.map((video) => {
                 const videoId = getYouTubeId(video.youtubeStreamLink);
-                const videoPageUrl = `/videos/${video.slug}`;
+                const videoPageUrl = `/videos/${video.slug}/`;
 
                 return (
                   videoId && (

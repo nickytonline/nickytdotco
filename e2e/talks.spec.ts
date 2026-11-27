@@ -8,7 +8,7 @@ test.describe("talks archive", () => {
     const breadcrumb = page.getByRole("navigation", { name: "Breadcrumb" });
     await expect(
       breadcrumb.getByRole("link", { name: "Speaking" })
-    ).toHaveAttribute("href", "/speaking");
+    ).toHaveAttribute("href", "/speaking/");
 
     await expect(
       page.getByRole("heading", { level: 1, name: "Talks" })
@@ -40,7 +40,7 @@ test.describe("talks archive", () => {
     const breadcrumb = page.getByRole("navigation", { name: "Breadcrumb" });
     await expect(
       breadcrumb.getByRole("link", { name: "Talks" })
-    ).toHaveAttribute("href", "/talks");
+    ).toHaveAttribute("href", "/talks/");
   });
 
   test("distinguishes repeated talk appearances in document titles", async ({
@@ -125,7 +125,7 @@ test.describe("speaking page", () => {
     ).toBeVisible();
     await expect(
       page.getByRole("main").getByRole("link", { name: "Talks" })
-    ).toHaveAttribute("href", "/talks");
+    ).toHaveAttribute("href", "/talks/");
     await expect(
       page.getByRole("link", { name: "Guest appearances" })
     ).toHaveAttribute(
