@@ -21,7 +21,7 @@ const image = videoId
   : undefined;
 
 const videoPageUrl = youtubeStreamLink && guest.slug
-  ? `/videos/${guest.slug}`
+  ? `/videos/${guest.slug}/`
   : undefined;
 
 const guestInfo = `Guest: ${guestName}${guestTitle ? `, ${guestTitle}` : ""}`;

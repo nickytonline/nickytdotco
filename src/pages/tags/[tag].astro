@@ -70,7 +70,7 @@ if (totalCount === 0) {
   metaDesc={`Blog posts and talks by Nick Taylor tagged with "${displayTag}".`}
   socialImage="/assets/images/page-og/tags.jpg"
 >
-  <Breadcrumb items={[{ label: "Tags", href: "/tags" }, { label: displayTag }]} />
+  <Breadcrumb items={[{ label: "Tags", href: "/tags/" }, { label: displayTag }]} />
 
   <div class="mb-12">
     <SectionHeader
@@ -92,7 +92,7 @@ if (totalCount === 0) {
         <p class="mt-6 text-lg text-muted-foreground">
           Looking for a curated path?{" "}
           <a
-            href="/mcp"
+            href="/mcp/"
             class="font-semibold text-foreground hover:text-brand hover:underline focus:text-brand focus:underline"
           >
             Explore the MCP hub
@@ -105,20 +105,20 @@ if (totalCount === 0) {
       sortedBlogPosts.length > 0 && sortedTalks.length > 0 && (
         <div class="mt-6 flex flex-wrap items-center gap-4">
           <a
-            href={`/tags/${tag}`}
+            href={`/tags/${tag}/`}
             class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-brand-solid text-brand-foreground hover:bg-brand-solid-hover focus:bg-brand-solid-hover focus:text-brand-foreground dark:bg-brand-solid"
             aria-current="page"
           >
             All Content
           </a>
           <a
-            href={`/tags/${tag}/blog`}
+            href={`/tags/${tag}/blog/`}
             class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
           >
             Blog Posts
           </a>
           <a
-            href={`/tags/${tag}/talks`}
+            href={`/tags/${tag}/talks/`}
             class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-base font-semibold transition-colors bg-secondary text-secondary-foreground hover:bg-brand-solid hover:text-brand-foreground focus:bg-brand-solid focus:text-brand-foreground dark:hover:bg-brand-solid dark:focus:bg-brand-solid"
           >
             Talks
@@ -129,7 +129,7 @@ if (totalCount === 0) {
 
     <div class="mt-6">
       <a
-        href="/tags"
+        href="/tags/"
         class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
       >
         View all tags
@@ -164,7 +164,7 @@ if (totalCount === 0) {
                     <div class="flex-1">
                       <h3 class="text-xl font-bold">
                         <a
-                          href={`/blog/${slug}`}
+                          href={`/blog/${slug}/`}
                           class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {post.data.title}
@@ -218,7 +218,7 @@ if (totalCount === 0) {
                     <div class="flex-1">
                       <h3 class="text-xl font-bold">
                         <a
-                          href={`/talks/${slug}`}
+                          href={`/talks/${slug}/`}
                           class="text-foreground hover:text-brand hover:underline focus:text-brand focus:underline dark:hover:text-brand dark:focus:text-brand"
                         >
                           {talk.data.title}

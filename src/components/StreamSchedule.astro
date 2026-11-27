@@ -43,7 +43,7 @@ const fullSchedule: Array<StreamGuestInfo> = schedule.sort((a, b) => {
       const eventLocation = `${Astro.request.url}#${headingId}`;
       const videoPageUrl = youtubeStreamLink
         ? scheduleItem.slug
-          ? `/videos/${scheduleItem.slug}`
+          ? `/videos/${scheduleItem.slug}/`
           : undefined
         : undefined;
       const noGuest =

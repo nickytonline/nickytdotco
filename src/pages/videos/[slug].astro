@@ -4,6 +4,7 @@ import Layout from "../../layouts/MainLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import { dateFilter } from "../../utils/filters";
 import { site } from "../../data/site";
+import { withTrailingSlash } from "../../utils/trailing-slash.ts";
 import { markdownFilter } from "../../utils/markdown";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import UpcomingBadge from "../../components/UpcomingBadge.astro";
@@ -92,7 +93,10 @@ const socialImage = videoId
   ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   : "/assets/images/page-og/watch.jpg";
 
-const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const pageUrl = new URL(
+  withTrailingSlash(Astro.url.pathname),
+  site.url,
+).toString();
 
 const eventName =
   guestName === "2Full2Stack"
@@ -147,8 +151,8 @@ const videoJsonLd = {
   </Fragment>
   <Breadcrumb
     items={[
-      { label: "Watch", href: "/watch" },
-      { label: "Video Archives", href: "/videos" },
+      { label: "Watch", href: "/watch/" },
+      { label: "Video Archives", href: "/videos/" },
       { label: title },
     ]}
   />
@@ -220,7 +224,7 @@ const videoJsonLd = {
 
     <div class="mt-8">
       <a
-        href="/videos"
+        href="/videos/"
         class="inline-flex items-center text-lg font-semibold text-foreground hover:text-brand focus:text-brand"
       >
         Back to video archives

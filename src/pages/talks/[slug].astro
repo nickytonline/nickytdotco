@@ -14,6 +14,7 @@ import {
 import { getYouTubeId } from "../../utils/youtube-utils";
 import { dateFilter } from "../../utils/filters";
 import { site } from "../../data/site";
+import { withTrailingSlash } from "../../utils/trailing-slash.ts";
 import { Image } from "astro:assets";
 import YouTubeEmbed from "../../components/embeds/YouTubeEmbed.astro";
 import UpcomingBadge from "../../components/UpcomingBadge.astro";
@@ -139,7 +140,11 @@ if (video?.type === "youtube") {
   thumbnailUrl = coverImage;
 }
 
-const pageUrl = new URL(Astro.url.pathname, site.url).toString();
+const pageUrl = new URL(
+  withTrailingSlash(Astro.url.pathname),
+  site.url,
+).toString();
+
 const talkDescription = `${title} — a talk by Nick Taylor at ${venue.name} on ${dateDisplay}.`;
 
 const venuePageUrl = venueUrl
@@ -209,8 +214,8 @@ const eventJsonLd = {
   </Fragment>
   <Breadcrumb
     items={[
-      { label: "Speaking", href: "/speaking" },
-      { label: "Talks", href: "/talks" },
+      { label: "Speaking", href: "/speaking/" },
+      { label: "Talks", href: "/talks/" },
       { label: title },
     ]}
   />
