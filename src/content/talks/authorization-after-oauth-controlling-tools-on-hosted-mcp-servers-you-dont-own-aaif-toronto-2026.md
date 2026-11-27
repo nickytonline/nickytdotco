@@ -1,7 +1,7 @@
 ---
 title: "Authorization After OAuth: Controlling Tools on Hosted MCP Servers You Don't Own"
 date: 2026-12-09T18:00:00-05:00
-endDate: 2026-12-09T20:30:00-05:00
+endDate: 2026-12-09T21:00:00-05:00
 upcoming: true
 cover_image: /assets/talks/aaif-toronto-agentic-ai-night-2026.jpg
 cover_image_large: /assets/talks/aaif-toronto-agentic-ai-night-2026.jpg
