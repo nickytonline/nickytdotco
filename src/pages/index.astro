@@ -226,7 +226,7 @@ export const prerender = false;
         </h1>
         <p class="text-lg leading-relaxed text-muted-foreground">
           <strong class="text-foreground"><em>Hi!</em> I'm Nick Taylor</strong> (<a
-            href="/socials">@nickytonline</a
+            href="/socials/">@nickytonline</a
           >), a software engineer and developer advocate focused on MCP,
           agentic AI, Zero Trust security, developer tooling, and open source.
           I'm currently in developer relations at
@@ -234,7 +234,7 @@ export const prerender = false;
         </p>
         <div class="flex flex-col gap-4 pt-2 md:flex-row md:flex-wrap">
           <a
-            href="/speaking"
+            href="/speaking/"
             class="inline-flex w-full items-center justify-center rounded-lg bg-brand-solid px-5 py-2.5 text-base font-semibold text-brand-foreground transition-colors hover:bg-brand-solid-hover focus:bg-brand-solid-hover md:w-auto"
           >
             Speaking &amp; guest appearances
@@ -298,13 +298,13 @@ export const prerender = false;
           </p>
           <div class="flex flex-col flex-wrap gap-3 pt-2 md:flex-row">
             <a
-              href="/mcp"
+              href="/mcp/"
               class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border px-5 py-2.5 text-base font-semibold text-foreground transition-colors hover:bg-secondary focus:bg-secondary md:w-auto md:justify-start"
             >
               Explore the MCP hub
             </a>
             <a
-              href="/zero-trust-security"
+              href="/zero-trust-security/"
               class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border px-5 py-2.5 text-base font-semibold text-foreground transition-colors hover:bg-secondary focus:bg-secondary md:w-auto md:justify-start"
             >
               Explore the Zero Trust security hub
@@ -321,7 +321,7 @@ export const prerender = false;
                     venueName={talk.data.venue.name}
                     venueUrl={talk.data.venue.url}
                     date={dateFilter(talk.data.date)}
-                    href={`/talks/${talk.id}`}
+                    href={`/talks/${talk.id}/`}
                     video={talk.data.video}
                     coverImage={talk.data.cover_image}
                     category="Talk"
@@ -359,7 +359,7 @@ export const prerender = false;
                     title={post.data.title}
                     date={dateFilter(post.data.date)}
                     image={post.data.cover_image}
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.id}/`}
                     category="Writing"
                   />
                 ))}
@@ -391,7 +391,7 @@ export const prerender = false;
                     venueName={event.item.data.venue.name}
                     venueUrl={event.item.data.venue.url}
                     date={dateFilter(event.item.data.date)}
-                    href={`/talks/${event.item.id}`}
+                    href={`/talks/${event.item.id}/`}
                     video={event.item.data.video}
                     coverImage={event.item.data.cover_image}
                     upcoming={true}
@@ -421,7 +421,7 @@ export const prerender = false;
                       venueName={content.item.data.venue.name}
                       venueUrl={content.item.data.venue.url}
                       date={dateFilter(content.item.data.date)}
-                      href={`/talks/${content.item.id}`}
+                      href={`/talks/${content.item.id}/`}
                       video={content.item.data.video}
                       coverImage={content.item.data.cover_image}
                       category="Talk"
@@ -440,7 +440,7 @@ export const prerender = false;
                     title={content.item.data.title}
                     date={dateFilter(content.item.data.date)}
                     image={content.item.data.cover_image}
-                    href={`/blog/${content.item.id}`}
+                    href={`/blog/${content.item.id}/`}
                     category="Writing"
                   />
                 );

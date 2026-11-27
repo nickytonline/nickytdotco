@@ -29,7 +29,7 @@ const heading = guests.length === 1 ? "Guest" : "Guests";
         ]}
       >
         {guests.map((guest) => {
-          const profileHref = `/guests/${guest.slug}`;
+          const profileHref = `/guests/${guest.slug}/`;
           return (
             <li class="min-w-0">
               <p class="text-base font-semibold text-foreground text-balance">

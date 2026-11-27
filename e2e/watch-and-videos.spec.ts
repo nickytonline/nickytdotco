@@ -12,7 +12,7 @@ test.describe("watch page", () => {
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Browse video archives" })
-    ).toHaveAttribute("href", "/videos");
+    ).toHaveAttribute("href", "/videos/");
   });
 
   test("lists the channels to watch on", async ({ page }) => {
@@ -52,7 +52,7 @@ test.describe("video archives", () => {
     const breadcrumb = page.getByRole("navigation", { name: "Breadcrumb" });
     await expect(
       breadcrumb.getByRole("link", { name: "Watch" })
-    ).toHaveAttribute("href", "/watch");
+    ).toHaveAttribute("href", "/watch/");
 
     await expect(
       page.getByRole("heading", { level: 1, name: "Video Archives" })
@@ -111,10 +111,10 @@ test.describe("video archives", () => {
     await expect(guests).toBeVisible();
     await expect(
       guests.getByRole("link", { name: "Ray Deck" })
-    ).toHaveAttribute("href", "/guests/ray-deck");
+    ).toHaveAttribute("href", "/guests/ray-deck/");
     await expect(
       guests.getByRole("link", { name: "Sarah Shook" })
-    ).toHaveAttribute("href", "/guests/sarah-shook");
+    ).toHaveAttribute("href", "/guests/sarah-shook/");
   });
 
   test("upcoming stream video pages show calendar and live links", async ({

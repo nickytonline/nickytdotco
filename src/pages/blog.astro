@@ -66,7 +66,7 @@ const blogPostsByYear = years.map((year) => ({
     readTime: post.data.reading_time_minutes
       ? `${post.data.reading_time_minutes} min read`
       : null,
-    url: `/blog/${post.id}`,
+    url: `/blog/${post.id}/`,
     coverImage: post.data.cover_image ?? null,
   })),
 }));
@@ -84,10 +84,10 @@ const blogPostsByYear = years.map((year) => ({
     </div>
     <div class="flex flex-wrap gap-2" aria-label="Blog topics">
       {[
-        ["AI & MCP", "/tags/mcp/blog"],
-        ["Security", "/tags/security/blog"],
-        ["Developer tooling", "/tags/developertools/blog"],
-        ["Open source", "/tags/opensource/blog"],
+        ["AI & MCP", "/tags/mcp/blog/"],
+        ["Security", "/tags/security/blog/"],
+        ["Developer tooling", "/tags/developertools/blog/"],
+        ["Open source", "/tags/opensource/blog/"],
       ].map(([label, href]) => (
         <a
           href={href}
@@ -103,7 +103,7 @@ const blogPostsByYear = years.map((year) => ({
           title={post.data.title}
           date={dateFilter(post.data.date)}
           image={post.data.cover_image}
-          href={`/blog/${post.id}`}
+          href={`/blog/${post.id}/`}
         />
       ))}
     </div>

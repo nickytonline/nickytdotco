@@ -72,7 +72,7 @@ export const curatedProjects: CuratedProjectBase[] = [
       { label: "Setup guide", url: "https://usepom.link/claw-guide" },
       {
         label: "AI Engineer Europe 2026 talk",
-        url: "/talks/claws-out-securing-and-building-with-openclaw-ai-engineer-europe-2026",
+        url: "/talks/claws-out-securing-and-building-with-openclaw-ai-engineer-europe-2026/",
       },
     ],
     fallbackStats: { stargazerCount: 381855, forkCount: 80092 },

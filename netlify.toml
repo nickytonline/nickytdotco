@@ -8,6 +8,36 @@ command = "npm run build"
 function = "search-rate-limit"
 path = "/api/search"
 
+# On-demand routes have no index.html, so Pretty URLs never 301s them.
+# A redirect rule cannot add the slash either: the CDN treats /path and
+# /path/ as the same rule. This runs before the edge cache.
+[[edge_functions]]
+function = "trailing-slash"
+path = "/*"
+excludedPath = [
+  "/api/*",
+  "/assets/*",
+  "/fonts/*",
+  "/pagefind/*",
+  "/_astro/*",
+  "/_emdash/*",
+  "/.well-known/*",
+  "/*.css",
+  "/*.js",
+  "/*.map",
+  "/*.xml",
+  "/*.txt",
+  "/*.svg",
+  "/*.png",
+  "/*.jpg",
+  "/*.jpeg",
+  "/*.gif",
+  "/*.webp",
+  "/*.ico",
+  "/*.woff",
+  "/*.woff2",
+]
+
 [[headers]]
 for = "/*"
 [headers.values]

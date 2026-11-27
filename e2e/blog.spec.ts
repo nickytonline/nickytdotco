@@ -48,7 +48,7 @@ test.describe("blog archive", () => {
     const breadcrumb = page.getByRole("navigation", { name: "Breadcrumb" });
     await expect(
       breadcrumb.getByRole("link", { name: "Blog" })
-    ).toHaveAttribute("href", "/blog");
+    ).toHaveAttribute("href", "/blog/");
 
     await expect(page.getByRole("article")).toBeVisible();
   });
