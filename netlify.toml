@@ -1290,6 +1290,14 @@ to = "/feed.xml"
 status = 301
 force = true
 
+# EmDash injects /sitemap.xml. Own that route in src/pages and force the
+# CDN redirect so the Astro index is the only sitemap entry point.
+[[redirects]]
+from = "/sitemap.xml"
+to = "/sitemap-index.xml"
+status = 301
+force = true
+
 # feed redirect
 [[redirects]]
 from = "/feed"

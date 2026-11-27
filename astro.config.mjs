@@ -88,14 +88,18 @@ const astroConfig = {
     react(),
     sitemap({
       filter(page) {
-        const path = String(page).split("?")[0];
+        const path = String(page).split("?")[0].replace(/\/$/, "");
 
         return (
           !path.endsWith("/sitemap-posts.xml") &&
-          !path.endsWith("/sitemap-posts.xml/")
+          !path.endsWith("/talks-sitemap.xml") &&
+          !path.endsWith("/sitemap.xml")
         );
       },
-      customSitemaps: ["https://www.nickyt.co/sitemap-posts.xml"],
+      customSitemaps: [
+        "https://www.nickyt.co/sitemap-posts.xml",
+        "https://www.nickyt.co/talks-sitemap.xml",
+      ],
     }),
     emdash(emdashConfig),
   ],

@@ -69,6 +69,56 @@ test.describe("machine-readable endpoints", () => {
     );
   });
 
+  test("sitemap lists every talk with a trailing slash", async ({
+    request,
+  }) => {
+    const index = await request.get("/sitemap-index.xml");
+    expect(index.ok()).toBeTruthy();
+    expect(await index.text()).toContain(
+      "https://www.nickyt.co/talks-sitemap.xml"
+    );
+
+    const [talks, talksSitemap] = await Promise.all([
+      request.get("/talks"),
+      request.get("/talks-sitemap.xml"),
+    ]);
+
+    expect(talks.ok()).toBeTruthy();
+    expect(talksSitemap.ok()).toBeTruthy();
+    expect(talksSitemap.headers()["content-type"]).toContain("xml");
+
+    const linked = new Set(
+      [
+        ...(await talks.text()).matchAll(/href="\/talks\/([a-z0-9-]+)\/?"/g),
+      ].map((match) => match[1])
+    );
+    const xml = await talksSitemap.text();
+    const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+      (match) => match[1]
+    );
+    const listed = new Set(
+      locs.map((loc) => loc.replace(/\/$/, "").split("/").pop() ?? "")
+    );
+
+    expect(listed.size).toBeGreaterThan(0);
+    expect(listed).toEqual(linked);
+    expect(xml).toContain("<lastmod>");
+    expect(locs.every((loc) => loc.endsWith("/"))).toBe(true);
+    expect(xml).toMatch(
+      /<loc>https:\/\/www\.nickyt\.co\/talks\/[a-z0-9-]+\/<\/loc>/
+    );
+    expect(xml).not.toMatch(
+      /<loc>https:\/\/www\.nickyt\.co\/talks\/[a-z0-9-]+<\/loc>/
+    );
+  });
+
+  test("sitemap.xml redirects to the sitemap index", async ({ request }) => {
+    const response = await request.get("/sitemap.xml", { maxRedirects: 0 });
+
+    expect(response.status()).toBe(301);
+    expect(response.headers()["location"]).toMatch(/\/sitemap-index\.xml$/);
+  });
+
   test("robots.txt allows crawling and references the sitemap", async ({
     request,
   }) => {
