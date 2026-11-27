@@ -6,8 +6,11 @@ import SeriesNavigation from "../components/SeriesNavigation.astro";
 import RelatedContent from "../components/RelatedContent.astro";
 import site from "../data/site";
 import { seriesFilter } from "../utils/filters";
-import { getRelatedTalksForPost } from "../utils/tag-utils";
-import { getCollection } from "astro:content";
+import {
+  getRelatedTalksForPost,
+  getRelatedVideosForPost,
+} from "../utils/tag-utils";
+import { getCollection, getLiveCollection } from "astro:content";
 import Tag from "@/components/Tag.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import { PortableText } from "astro-portabletext";
@@ -18,15 +21,19 @@ import PortableTextHeading from "../components/PortableTextHeading.astro";
 import {
   contentWithHeadingIds,
   getBlogListing,
+  getBlogPostResult,
   headingsFor,
   type BlogPost,
 } from "../emdash/blog";
+import { relatedSlugFor, resolveRelatedPost } from "../emdash/related-posts";
+import type { RelatedVariant } from "../emdash/related-variant";
 
 export interface Props {
   entry: BlogPost;
+  variant?: RelatedVariant;
 }
 
-const { entry } = Astro.props;
+const { entry, variant = "mixed" } = Astro.props;
 const content = contentWithHeadingIds(entry.data.content);
 const headings = headingsFor(content);
 
@@ -49,6 +56,48 @@ if (entry.data.series) {
 // Get related talks by shared tags
 const allTalks = await getCollection("talks");
 const relatedTalks = getRelatedTalksForPost(entry, allTalks, 3);
+
+const relatedSlug = relatedSlugFor(entry.id);
+let curatedPost: BlogPost | undefined;
+
+if (relatedSlug) {
+  const relatedResult = await getBlogPostResult(relatedSlug);
+  resolveRelatedPost(entry.id, relatedResult.post);
+  curatedPost = relatedResult.post;
+  Astro.cache.set({
+    tags: relatedResult.cacheHint.tags,
+    lastModified: relatedResult.cacheHint.lastModified,
+  });
+}
+
+const showSingleLink = variant === "link" && curatedPost !== undefined;
+let relatedVideos: Array<{ slug: string; title: string; date: Date }> = [];
+
+if (!showSingleLink) {
+  try {
+    const videosResult = await getLiveCollection("streamVideos");
+
+    if (!videosResult.error) {
+      const pastVideos = (videosResult.entries ?? [])
+        .map((video) => video.data)
+        .filter((video) => {
+          const time = new Date(video.date).getTime();
+
+          return Number.isFinite(time) && time < Date.now();
+        });
+
+      relatedVideos = getRelatedVideosForPost(entry, pastVideos).map(
+        (video) => ({
+          slug: video.slug,
+          title: video.title,
+          date: new Date(video.date),
+        })
+      );
+    }
+  } catch {
+    relatedVideos = [];
+  }
+}
 
 const postUrl = new URL(currentUrl, site.url).toString();
 
@@ -148,6 +197,14 @@ const postSocialImage =
       />
     </div>
 
+    <RelatedContent
+      posts={curatedPost ? [curatedPost] : []}
+      talks={showSingleLink ? [] : relatedTalks}
+      videos={relatedVideos}
+      postsFirst={true}
+      variant={showSingleLink ? "link" : "mixed"}
+    />
+
     <aside
       class="mt-12 rounded-xl border border-border bg-secondary/30 p-6"
     >
@@ -182,6 +239,5 @@ const postSocialImage =
       )
     }
 
-    <RelatedContent talks={relatedTalks} />
   </article>
 </MainLayout>

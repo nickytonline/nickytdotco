@@ -3,6 +3,7 @@ export const prerender = false;
 
 import Post from "../../layouts/Post.astro";
 import { getBlogPostResult } from "../../emdash/blog";
+import { resolveRelatedVariant } from "../../emdash/related-variant";
 import {
   cacheRenderedContent,
   CONTENT_CACHE_MAX_AGE_SECONDS,
@@ -16,6 +17,26 @@ if (!result?.post || (import.meta.env.PROD && result.post.data.draft)) {
 }
 
 const entry = result.post;
+const testEnabled = import.meta.env.RELATED_AB_TEST === "on";
+
+const assignment = resolveRelatedVariant({
+  testEnabled,
+  query: Astro.url.searchParams.get("related_variant"),
+  cookie: Astro.cookies.get("related_variant")?.value ?? null,
+});
+
+if (assignment.persist) {
+  Astro.cookies.set("related_variant", assignment.variant, {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 30,
+    sameSite: "lax",
+    secure: import.meta.env.PROD,
+  });
+}
+
+if (testEnabled) {
+  Astro.response.headers.set("Netlify-Vary", "query,cookie=related_variant");
+}
 
 cacheRenderedContent(
   Astro.response.headers,
@@ -25,4 +46,4 @@ cacheRenderedContent(
 );
 ---
 
-<Post entry={entry} />
+<Post entry={entry} variant={assignment.variant} />
