@@ -93,27 +93,27 @@ test.describe("MCP topic hub", () => {
     );
     await expect(
       watchSection.locator(
-        'a[href="/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe"]'
+        'a[href="/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe/"]'
       )
     ).toBeVisible();
     await expect(
       watchSection.locator(
-        'a[href="/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-blackhat-usa-2025"]'
+        'a[href="/talks/agentic-access-oauth-gets-you-in-zero-trust-keeps-you-safe-blackhat-usa-2025/"]'
       )
     ).toHaveCount(0);
 
     await expect(
       page.getByRole("link", { name: "Browse all MCP-tagged content" })
-    ).toHaveAttribute("href", "/tags/mcp");
+    ).toHaveAttribute("href", "/tags/mcp/");
     await expect(
       page.getByRole("link", { name: "See all projects" })
-    ).toHaveAttribute("href", "/projects");
+    ).toHaveAttribute("href", "/projects/");
     await expect(
       page.getByRole("link", { name: "Browse talk archive" })
-    ).toHaveAttribute("href", "/talks");
+    ).toHaveAttribute("href", "/talks/");
     await expect(
       page.getByRole("link", { name: "Browse video archive" })
-    ).toHaveAttribute("href", "/videos");
+    ).toHaveAttribute("href", "/videos/");
     await expect(
       page.locator(
         'section[aria-label="Build"] a[href="https://github.com/pomerium/mcp-app-typescript-template"]'
@@ -138,7 +138,7 @@ test.describe("MCP topic hub", () => {
     await page.goto("/tags/mcp");
     await expect(
       page.getByRole("link", { name: "Explore the MCP hub" })
-    ).toHaveAttribute("href", "/mcp");
+    ).toHaveAttribute("href", "/mcp/");
   });
 });
 

@@ -57,7 +57,7 @@ test.describe("tags", () => {
     const breadcrumb = page.getByRole("navigation", { name: "Breadcrumb" });
     await expect(
       breadcrumb.getByRole("link", { name: "Tags" })
-    ).toHaveAttribute("href", "/tags");
+    ).toHaveAttribute("href", "/tags/");
     await expect(
       page.getByRole("main").getByRole("heading", { level: 1 })
     ).toContainText("Content tagged with");

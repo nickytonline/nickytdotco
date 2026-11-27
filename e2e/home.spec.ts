@@ -21,7 +21,7 @@ test.describe("home page", () => {
     await page.goto("/");
     await expect(
       page.getByRole("main").getByRole("link", { name: "@nickytonline" })
-    ).toHaveAttribute("href", "/socials");
+    ).toHaveAttribute("href", "/socials/");
   });
 
   test("renders a curated Start here section with at least one content type", async ({
@@ -40,7 +40,7 @@ test.describe("home page", () => {
     await expect(subheadings.first()).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Explore the MCP hub" })
-    ).toHaveAttribute("href", "/mcp");
+    ).toHaveAttribute("href", "/mcp/");
   });
 
   test("shows a capped featured set in Start here", async ({ page }) => {
@@ -91,7 +91,7 @@ test.describe("home page", () => {
 
     await expect(
       page.getByRole("link", { name: "Speaking & guest appearances" })
-    ).toHaveAttribute("href", "/speaking");
+    ).toHaveAttribute("href", "/speaking/");
     await expect(
       page.getByRole("link", { name: "Get one dev tip a week" })
     ).toHaveAttribute(
