@@ -26,6 +26,7 @@ import {
 } from "../utils/cdn-cache";
 import { scheduleSearchReindex } from "../lib/search/scheduleSearchReindex";
 import { getBlogListing } from "../emdash/blog";
+import { selectLatestContent } from "../lib/homepage/selectLatestContent";
 import {
   cacheRenderedContent,
   EXPIRING_CACHE_SWR_SECONDS,
@@ -138,25 +139,39 @@ if (!hasUpcomingEvents && !errorMessage) {
   recentStreams = await fetchPastGuestsWithYouTube();
 }
 
-const latestContent = [
+const latestCandidates = [
   ...recentTalks.map((item) => ({
     kind: "talk" as const,
+    id: item.id,
     item,
     date: item.data.endDate ?? item.data.date,
   })),
   ...recentStreams.map((item) => ({
     kind: "stream" as const,
+    id: item.slug ?? item.date,
     item,
     date: new Date(item.date),
   })),
   ...recentPosts.map((item) => ({
     kind: "post" as const,
+    id: item.id,
     item,
     date: item.data.date,
   })),
-]
-  .sort((a, b) => b.date.getTime() - a.date.getTime())
-  .slice(0, 4);
+];
+
+const newestPost = recentPosts[0];
+
+const newestPostEntry = newestPost
+  ? {
+      kind: "post" as const,
+      id: newestPost.id,
+      item: newestPost,
+      date: newestPost.data.date,
+    }
+  : undefined;
+
+const latestContent = selectLatestContent(latestCandidates, newestPostEntry);
 
 if (!errorMessage) {
   cacheRenderedContent(
