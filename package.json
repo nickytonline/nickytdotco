@@ -54,7 +54,7 @@
     "clsx": "^2.1.1",
     "emdash": "^1.4.0",
     "geist": "^1.7.2",
-    "lite-youtube-embed": "^0.3.4",
+    "lite-youtube-embed": "^0.4.0",
     "lucide-react": "^1.53.0",
     "luxon": "^3.7.2",
     "marked": "^18.2.0",
