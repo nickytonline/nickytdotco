@@ -3,67 +3,131 @@ import type { CollectionEntry } from "astro:content";
 import { dateFilter } from "../utils/filters";
 import type { BlogPost } from "../emdash/blog";
 
+interface RelatedVideo {
+  slug: string;
+  title: string;
+  date: Date;
+}
+
 interface Props {
   talks?: CollectionEntry<"talks">[];
   posts?: BlogPost[];
+  videos?: RelatedVideo[];
+  postsFirst?: boolean;
+  variant?: "mixed" | "link";
 }
 
-const { talks, posts } = Astro.props;
-const hasContent = (talks && talks.length > 0) || (posts && posts.length > 0);
+const {
+  talks = [],
+  posts = [],
+  videos = [],
+  postsFirst = false,
+  variant,
+} = Astro.props;
+
+type RelatedItem = {
+  type: "post" | "talk" | "video";
+  title: string;
+  href: string;
+  detail?: string;
+  date: Date;
+};
+
+const postItems: RelatedItem[] = posts.map((post) => ({
+  type: "post",
+  title: post.data.title,
+  href: `/blog/${post.id}/`,
+  date: post.data.date,
+}));
+
+const talkItems: RelatedItem[] = talks.map((talk) => ({
+  type: "talk",
+  title: talk.data.title,
+  href: `/talks/${talk.id}/`,
+  detail: talk.data.venue.name,
+  date: talk.data.date,
+}));
+
+const videoItems: RelatedItem[] = videos.map((video) => ({
+  type: "video",
+  title: video.title,
+  href: `/videos/${video.slug}/`,
+  date: video.date,
+}));
+
+const items = postsFirst
+  ? [...postItems, ...talkItems, ...videoItems]
+  : [...talkItems, ...postItems, ...videoItems];
+
+const labels = { post: "Post", talk: "Talk", video: "Video" };
 ---
 
 {
-  hasContent && (
-    <aside class="pt-8 border-t border-muted">
-      {talks && talks.length > 0 && (
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-4 text-foreground">Related Talks</h2>
-          <div class="space-y-4">
-            {talks.map((talk) => (
-              <a
-                href={`/talks/${talk.id}`}
-                class="group block no-underline transition-colors"
-              >
-                <h3 class="text-lg font-semibold text-foreground group-hover:text-brand group-hover:underline group-focus:text-brand group-focus:underline dark:group-hover:text-brand dark:group-focus:text-brand">
-                  {talk.data.title}
-                </h3>
-                <div class="flex flex-wrap items-center gap-2 text-sm text-muted-foreground mt-1">
-                  <span class="font-medium text-brand">
-                    {talk.data.venue.name}
-                  </span>
+  items.length > 0 && (
+    <aside class="mt-12 border-t border-border pt-8" aria-labelledby="related-heading">
+      <h2 id="related-heading" class="mb-4 text-2xl font-bold text-foreground">
+        Related
+      </h2>
+      <div class="space-y-4">
+        {items.map((item) => (
+          <a
+            href={item.href}
+            data-related-variant={variant}
+            data-related-type={item.type}
+            class="group block no-underline transition-colors"
+          >
+            <h3 class="text-lg font-semibold text-foreground group-hover:text-brand group-hover:underline group-focus:text-brand group-focus:underline">
+              {item.title}
+            </h3>
+            <div class="mt-1 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+              <span class="font-medium text-brand">{labels[item.type]}</span>
+              {item.detail && (
+                <>
                   <span>•</span>
-                  <time datetime={talk.data.date.toISOString()}>
-                    {dateFilter(talk.data.date)}
-                  </time>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {posts && posts.length > 0 && (
-        <div>
-          <h2 class="text-2xl font-bold mb-4 text-foreground">Related Posts</h2>
-          <div class="space-y-4">
-            {posts.map((post) => (
-              <a
-                href={`/blog/${post.id}`}
-                class="group block no-underline transition-colors"
-              >
-                <h3 class="text-lg font-semibold text-foreground group-hover:text-brand group-hover:underline group-focus:text-brand group-focus:underline dark:group-hover:text-brand dark:group-focus:text-brand">
-                  {post.data.title}
-                </h3>
-                <div class="flex flex-wrap items-center gap-2 text-sm text-muted-foreground mt-1">
-                  <time datetime={post.data.date.toISOString()}>
-                    {dateFilter(post.data.date)}
-                  </time>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+                  <span>{item.detail}</span>
+                </>
+              )}
+              <span>•</span>
+              <time datetime={item.date.toISOString()}>{dateFilter(item.date)}</time>
+            </div>
+          </a>
+        ))}
+      </div>
     </aside>
   )
 }
+
+<script>
+  function isGtag(
+    value: unknown
+  ): value is (
+    command: "event",
+    name: string,
+    params: Record<string, string>
+  ) => void {
+    return typeof value === "function";
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+
+    if (!(target instanceof Element)) return;
+
+    const link = target.closest("a[data-related-variant][data-related-type]");
+
+    if (!(link instanceof HTMLAnchorElement)) return;
+
+    const variant = link.dataset.relatedVariant;
+    const contentType = link.dataset.relatedType;
+
+    if (!variant || !contentType) return;
+
+    if (!("gtag" in window) || !isGtag(window.gtag)) return;
+
+    window.gtag("event", "related_click", {
+      variant,
+      content_type: contentType,
+      link_url: link.href,
+    });
+  });
+</script>

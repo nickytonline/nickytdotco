@@ -113,3 +113,47 @@ export function getRelatedPostsForTalk(
 
   return scored.slice(0, limit).map((s) => s.item);
 }
+
+export interface RelatedVideoSource {
+  slug: string;
+  title: string;
+  description?: string;
+  date: string;
+}
+
+export function getRelatedVideosForPost(
+  currentPost: { id: string; data: { tags?: string[] } },
+  videos: RelatedVideoSource[],
+  limit = 2
+): RelatedVideoSource[] {
+  const currentTags = currentPost.data.tags ?? [];
+
+  if (currentTags.length === 0) return [];
+
+  const adapted = videos.flatMap((video) => {
+    const haystack = `${video.title}\n${video.description ?? ""}`.toLowerCase();
+
+    const tags = currentTags.filter(
+      (tag) => tag.length >= 3 && haystack.includes(tag.toLowerCase())
+    );
+
+    if (tags.length === 0) return [];
+
+    return [
+      {
+        id: video.slug,
+        data: { tags, date: new Date(video.date) },
+        video,
+      },
+    ];
+  });
+
+  return scoreBySharedTags(
+    currentTags,
+    currentPost.id,
+    adapted,
+    (item) => item.data.tags ?? []
+  )
+    .slice(0, limit)
+    .map((scored) => scored.item.video);
+}
