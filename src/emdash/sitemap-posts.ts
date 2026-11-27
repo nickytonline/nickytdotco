@@ -5,7 +5,7 @@ const SITE_ORIGIN = "https://www.nickyt.co";
 export function blogPostCanonicalUrl(site: URL, slug: string): string {
   const url = new URL(site.origin || SITE_ORIGIN);
 
-  url.pathname = `/blog/${slug}`;
+  url.pathname = `/blog/${slug}/`;
 
   return url.href;
 }

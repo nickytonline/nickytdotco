@@ -41,19 +41,16 @@ describe("renderBlogSitemap", () => {
     );
 
     expect(locs).toEqual([
-      "https://www.nickyt.co/blog/alpha",
-      "https://www.nickyt.co/blog/beta",
+      "https://www.nickyt.co/blog/alpha/",
+      "https://www.nickyt.co/blog/beta/",
     ]);
     expect(xml).toContain("<urlset");
     expect(locs).toHaveLength(2);
   });
 
-  it("uses absolute canonical URLs without a trailing slash", () => {
+  it("uses absolute canonical URLs with a trailing slash", () => {
     expect(blogPostCanonicalUrl(site, "stop-using-cat")).toBe(
-      "https://www.nickyt.co/blog/stop-using-cat"
-    );
-    expect(blogPostCanonicalUrl(site, "stop-using-cat").endsWith("/")).toBe(
-      false
+      "https://www.nickyt.co/blog/stop-using-cat/"
     );
   });
 
@@ -75,7 +72,7 @@ describe("renderBlogSitemap", () => {
     expect(xml).toContain("<lastmod>2022-03-04T05:06:07.000Z</lastmod>");
     expect(xml).not.toMatch(/undated[\s\S]*<lastmod>/);
     expect(xml).toContain(
-      "<loc>https://www.nickyt.co/blog/undated</loc>\n  </url>"
+      "<loc>https://www.nickyt.co/blog/undated/</loc>\n  </url>"
     );
   });
 
@@ -85,7 +82,7 @@ describe("renderBlogSitemap", () => {
       site
     );
 
-    expect(xml).toContain("<loc>https://www.nickyt.co/blog/a&amp;b</loc>");
-    expect(xml).not.toContain("<loc>https://www.nickyt.co/blog/a&b</loc>");
+    expect(xml).toContain("<loc>https://www.nickyt.co/blog/a&amp;b/</loc>");
+    expect(xml).not.toContain("<loc>https://www.nickyt.co/blog/a&b/</loc>");
   });
 });

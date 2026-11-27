@@ -64,6 +64,9 @@ test.describe("machine-readable endpoints", () => {
     expect(listed.size).toBeGreaterThan(0);
     expect(listed).toEqual(linked);
     expect(xml).toContain("<lastmod>");
+    expect(xml).toMatch(
+      /<loc>https:\/\/www\.nickyt\.co\/blog\/[a-z0-9-]+\/<\/loc>/
+    );
   });
 
   test("robots.txt allows crawling and references the sitemap", async ({
