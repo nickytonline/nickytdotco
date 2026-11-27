@@ -126,7 +126,8 @@ test.describe("home page", () => {
     await expect(contentItems.first()).toBeVisible();
 
     if (await latestHeading.count()) {
-      expect(await contentItems.count()).toBeLessThanOrEqual(4);
+      expect(await contentItems.count()).toBeLessThanOrEqual(5);
+      await expect(section.locator('a[href^="/blog/"]').first()).toBeVisible();
     }
   });
 
